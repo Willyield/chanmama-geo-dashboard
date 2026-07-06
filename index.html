@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>蝉妈妈 GEO 仪表盘公开入口</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f6f7f9;
+      color: #20242a;
+    }
+    body {
+      margin: 0;
+      padding: 40px;
+    }
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    p {
+      margin: 0 0 24px;
+      color: #5a6472;
+      line-height: 1.6;
+    }
+    .links {
+      display: grid;
+      gap: 12px;
+    }
+    a {
+      display: block;
+      padding: 18px 20px;
+      border: 1px solid #d9dee7;
+      border-radius: 8px;
+      background: #fff;
+      color: #1f5eff;
+      font-size: 17px;
+      font-weight: 650;
+      text-decoration: none;
+    }
+    a span {
+      display: block;
+      margin-top: 6px;
+      color: #667085;
+      font-size: 13px;
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>蝉妈妈 GEO 仪表盘</h1>
+    <p>公开访问入口。三个页面分别对应本地的原始看板、TOP2+TOP3 合并看板、TOP0~TOP3 总看板。</p>
+    <div class="links">
+      <a href="./top01/">原始仪表盘<span>对应 geo-dashboard/web/index.html</span></a>
+      <a href="./top2-top3/">TOP2+TOP3 合并仪表盘<span>对应 geo-dashboard/web_top2_top3/index.html</span></a>
+      <a href="./total/">TOP0~TOP3 总仪表盘<span>对应 geo-dashboard/web_total/index.html</span></a>
+    </div>
+  </main>
+</body>
+</html>
