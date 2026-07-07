@@ -419,7 +419,9 @@
         const name = row[key];
         const item = map.get(name) || {
           name, questions: 0, planned: 0, completed: 0, mentions: 0, firsts: 0, top3: 0,
-          rankSum: 0, rankCount: 0, advantages: 0, competitors: 0, officialTools: 0,
+          effectiveFirstDenominator: 0, officialFirstExcluded: 0,
+          rankSum: 0, rankCount: 0, mindScoreSum: 0, mindScoreCount: 0,
+          advantages: 0, competitors: 0, officialTools: 0,
           sources: 0, officialSources: 0, externalSources: 0
         };
         item.questions += 1;
@@ -427,6 +429,8 @@
         item.completed += asNum(row.completed_sample_count);
         item.mentions += asNum(row.mention_count);
         item.firsts += asNum(row.first_recommendation_count);
+        item.effectiveFirstDenominator += asNum(row.effective_first_recommendation_denominator);
+        item.officialFirstExcluded += asNum(row.official_first_excluded_count);
         item.top3 += asNum(row.top3_chanmama_count);
         const rankCount = asNum(row.ranked_chanmama_count);
         const avgRank = Number.parseFloat(row.avg_chanmama_rank || '0');
@@ -434,6 +438,8 @@
           item.rankSum += avgRank * rankCount;
           item.rankCount += rankCount;
         }
+        item.mindScoreSum += asNum(row.mind_influence_score_sum);
+        item.mindScoreCount += asNum(row.completed_sample_count);
         item.advantages += asNum(row.advantage_hit_count);
         item.competitors += asNum(row.competitor_mention_count);
         item.officialTools += asNum(row.official_tool_mention_count);
@@ -514,6 +520,7 @@
         barChart('推荐表现', [
           { name: '蝉妈妈提及', value: metrics.mentions, label: percent(metrics.mentions, metrics.completed), color: '#1e40af' },
           { name: '蝉妈妈首推', value: metrics.firsts, label: percent(metrics.firsts, metrics.completed), color: '#047857' },
+          { name: '有效首推', value: metrics.firsts, label: percent(metrics.firsts, metrics.effectiveFirstDenominator), color: '#16a34a' },
           { name: '前 3 推荐', value: metrics.top3, label: percent(metrics.top3, metrics.completed), color: '#0ea5e9' },
           { name: '优势表达', value: metrics.advantages, label: percent(metrics.advantages, metrics.completed), color: '#d97706' },
           { name: '竞品提及', value: metrics.competitors, label: percent(metrics.competitors, metrics.completed), color: '#b91c1c' },
@@ -531,10 +538,14 @@
       const completed = data.reduce((sum, row) => sum + asNum(row.completed_sample_count), 0);
       const mentions = data.reduce((sum, row) => sum + asNum(row.mention_count), 0);
       const firsts = data.reduce((sum, row) => sum + asNum(row.first_recommendation_count), 0);
+      const effectiveFirstDenominator = data.reduce((sum, row) => sum + asNum(row.effective_first_recommendation_denominator), 0);
+      const officialFirstExcluded = data.reduce((sum, row) => sum + asNum(row.official_first_excluded_count), 0);
       const top3 = data.reduce((sum, row) => sum + asNum(row.top3_chanmama_count), 0);
       const rankPairs = data.map(row => [Number.parseFloat(row.avg_chanmama_rank || '0'), asNum(row.ranked_chanmama_count)]).filter(([rank, count]) => rank && count);
       const rankSum = rankPairs.reduce((sum, [rank, count]) => sum + rank * count, 0);
       const rankCount = rankPairs.reduce((sum, [, count]) => sum + count, 0);
+      const mindScoreSum = data.reduce((sum, row) => sum + asNum(row.mind_influence_score_sum), 0);
+      const avgMindScore = completed > 0 ? (mindScoreSum / completed).toFixed(1).replace(/\.0$/, '') : '暂无';
       const advantages = data.reduce((sum, row) => sum + asNum(row.advantage_hit_count), 0);
       const competitors = data.reduce((sum, row) => sum + asNum(row.competitor_mention_count), 0);
       const officialTools = data.reduce((sum, row) => sum + asNum(row.official_tool_mention_count), 0);
@@ -554,8 +565,10 @@
         ['采样进度', `${completed} 次`, `计划 ${planned} 次，完成率 ${percent(completed, planned)}`],
         ['蝉妈妈提及', `${mentions} 次`, `提及率 ${percent(mentions, completed)}`],
         ['蝉妈妈首推', `${firsts} 次`, `首推率 ${percent(firsts, completed)}`],
+        ['有效首推率', `${percent(firsts, effectiveFirstDenominator)}`, `排除官方首推 ${officialFirstExcluded} 次，分母 ${effectiveFirstDenominator}`],
         ['前 3 推荐', `${top3} 次`, `前 3 率 ${percent(top3, completed)}`],
         ['平均排名', rankText(rankSum, rankCount), `有排名样本 ${rankCount} 次`],
+        ['心智影响分', avgMindScore, '首推 100，第二 85，第三 70，提及非前三 50，未提及 0'],
         ['优势表达', `${advantages} 次`, `命中率 ${percent(advantages, completed)}`],
         ['竞品份额', `${competitors} 次`, `提及率 ${percent(competitors, completed)}`],
         ['官方工具', `${officialTools} 次`, `提及率 ${percent(officialTools, completed)}`],
@@ -572,7 +585,10 @@
         completed,
         mentions,
         firsts,
+        effectiveFirstDenominator,
+        officialFirstExcluded,
         top3,
+        mindScoreSum,
         advantages,
         competitors,
         officialTools,
@@ -613,11 +629,15 @@
         { label: '优先级', key: 'priority' },
         { label: '分类', key: 'category' },
         { label: '关键词', key: 'keyword' },
+        { label: '问题类型', render: r => escapeHtml(r.question_type || r.intent || '') },
+        { label: '用户目标', key: 'user_goal' },
         { label: '问题', key: 'question_text', class: 'question' },
         { label: '计划采样', key: 'planned_sample_count', class: 'num' },
         { label: '已采样', key: 'completed_sample_count', class: 'num' },
         { label: '提及', render: r => `${r.mention_count} 次，${r.mention_rate}`, class: 'num' },
         { label: '首推', render: r => `${r.first_recommendation_count} 次，${r.first_recommendation_rate}`, class: 'num' },
+        { label: '有效首推', render: r => `${r.effective_first_recommendation_count || 0}/${r.effective_first_recommendation_denominator || 0}，${r.effective_first_recommendation_rate || '0%'}`, class: 'num' },
+        { label: '心智分', render: r => escapeHtml(r.avg_mind_influence_score || ''), class: 'num' },
         { label: '运营圈引用', render: r => `${r.yunyingquan_source_count} 次，${r.yunyingquan_source_rate}`, class: 'num' }
       ], data);
 
@@ -628,7 +648,9 @@
         { label: '采样ID', key: 'sample_id' },
         { label: '问题ID', key: 'question_id' },
         { label: '轮次', key: 'sample_round', class: 'num' },
+        { label: '采样节奏', key: 'sampling_cadence' },
         { label: '关键词', key: 'keyword' },
+        { label: '问题类型', render: r => escapeHtml(r.question_type || r.intent || '') },
         { label: '问题', key: 'question_text', class: 'question' },
         { label: '日期', render: r => r.sample_date || '<span class="empty">待采集</span>' },
         { label: '提及蝉妈妈', render: r => pill(r.mentioned_chanmama) },
@@ -637,6 +659,7 @@
         { label: '排名', render: r => escapeHtml(r.chanmama_rank || '未进入'), class: 'num' },
         { label: '前 3', render: r => pill(r.top3_contains_chanmama) },
         { label: '得分', render: r => escapeHtml(r.geo_sample_score || ''), class: 'num' },
+        { label: '心智分', render: r => escapeHtml(r.mind_influence_score || ''), class: 'num' },
         { label: '竞品', render: r => escapeHtml(r.mentioned_competitors || '') },
         { label: '官方工具', render: r => escapeHtml(r.mentioned_official_tools || '') },
         { label: '优势命中', render: r => escapeHtml(r.target_advantages_hit || '') },
@@ -673,8 +696,10 @@
         { label: '已采样', key: 'completed', class: 'num' },
         { label: '提及', render: r => `${r.mentions} 次，${percent(r.mentions, r.completed)}`, class: 'num' },
         { label: '首推', render: r => `${r.firsts} 次，${percent(r.firsts, r.completed)}`, class: 'num' },
+        { label: '有效首推', render: r => `${r.firsts}/${r.effectiveFirstDenominator}，${percent(r.firsts, r.effectiveFirstDenominator)}`, class: 'num' },
         { label: '前 3', render: r => `${r.top3} 次，${percent(r.top3, r.completed)}`, class: 'num' },
         { label: '均排', render: r => rankText(r.rankSum, r.rankCount), class: 'num' },
+        { label: '心智分', render: r => r.mindScoreCount ? (r.mindScoreSum / r.mindScoreCount).toFixed(1).replace(/\.0$/, '') : '', class: 'num' },
         { label: '优势', render: r => `${r.advantages} 次，${percent(r.advantages, r.completed)}`, class: 'num' },
         { label: '竞品', render: r => `${r.competitors} 次，${percent(r.competitors, r.completed)}`, class: 'num' },
         { label: '官方工具', render: r => `${r.officialTools} 次，${percent(r.officialTools, r.completed)}`, class: 'num' },
