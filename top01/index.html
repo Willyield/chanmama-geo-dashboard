@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>蝉妈妈 GEO 采样仪表盘</title>
-  <script src="./dashboard-data.js?v=20260708-427"></script>
+  <script src="./dashboard-data.js?v=20260708-447"></script>
   <style>
     :root {
       --surface: #f8fafc;
@@ -638,7 +638,11 @@
           <div class="table-wrap"><table id="reasonTable"></table></div>
         </section>
         <section>
-          <div class="section-head"><h2>蝉妈妈与竞品对比</h2><span class="pill" id="brandComparisonCount"></span></div>
+          <div class="section-head"><h2>官方工具 vs 蝉妈妈 vs 第三方竞品阵营对比</h2><span class="pill" id="brandGroupCount"></span></div>
+          <div class="table-wrap"><table id="brandGroupTable"></table></div>
+        </section>
+        <section>
+          <div class="section-head"><h2>单品牌/工具曝光对比</h2><span class="pill" id="brandComparisonCount"></span></div>
           <div class="table-wrap"><table id="brandComparisonTable"></table></div>
         </section>
       </div>
@@ -682,6 +686,7 @@
     const questionDecisions = window.GEO_DASHBOARD.question_decisions || [];
     const keywordDecisions = window.GEO_DASHBOARD.keyword_decisions || [];
     const nonChanmamaReasons = window.GEO_DASHBOARD.non_chanmama_reason_summary || [];
+    const brandGroupComparison = window.GEO_DASHBOARD.brand_group_comparison || [];
     const brandComparison = window.GEO_DASHBOARD.brand_comparison || [];
 
     const $ = (id) => document.getElementById(id);
@@ -1027,6 +1032,15 @@
           label: `${row.mention_count} 次 / ${row.mention_share || '0%'}`,
           color: row.brand === '蝉妈妈' ? '#047857' : row.brand_group === '官方工具' ? '#7c3aed' : '#b91c1c'
         }));
+      const groupItems = metrics.brandGroupRows
+        .filter(row => asNum(row.covered_sample_count) > 0)
+        .slice(0, 6)
+        .map(row => ({
+          name: row.brand_group,
+          value: asNum(row.first_recommendation_count),
+          label: `${row.first_recommendation_count} 首推 / 覆盖 ${row.coverage_rate || '0%'}`,
+          color: row.brand_group === '目标品牌' ? '#047857' : row.brand_group === '官方工具' ? '#7c3aed' : '#b91c1c'
+        }));
       $('chartGrid').innerHTML = [
         donutChart('采样完成度', [
           { name: '已完成', value: metrics.completed, label: `${metrics.completed} 次`, color: '#1e40af' },
@@ -1042,7 +1056,8 @@
           { name: '官方工具', value: pctNumber(metrics.officialTools, metrics.completed), label: percent(metrics.officialTools, metrics.completed), color: '#7c3aed' },
           { name: '运营圈引用', value: pctNumber(metrics.sources, metrics.completed), label: percent(metrics.sources, metrics.completed), color: '#0f766e' }
         ], `基于 ${metrics.completed} 次已采样结果`, 100),
-        barChart('品牌与竞品提及份额', brandItems.length ? brandItems : [{ name: '暂无数据', value: 0, label: '0' }], '按有效回答中的工具提及次数排序'),
+        barChart('官方工具 vs 蝉妈妈 vs 第三方竞品首推对比', groupItems.length ? groupItems : [{ name: '暂无数据', value: 0, label: '0' }], '按回答首推所属阵营统计'),
+        barChart('单品牌/工具曝光份额', brandItems.length ? brandItems : [{ name: '暂无数据', value: 0, label: '0' }], '单个品牌或工具，不等于阵营合计'),
         barChart('分类采样分布', categoryItems.length ? categoryItems : [{ name: '暂无数据', value: 0, label: '0' }], '按已采样次数排序'),
         donutChart('问题判定分布', decisionItems.length ? decisionItems : [{ name: '待判定', value: 1, label: '0' }], `${decisionItems.reduce((sum, item) => sum + item.value, 0)} 个`, '核心问题')
       ].join('');
@@ -1053,6 +1068,9 @@
       const reasonRows = nonChanmamaReasons
         .filter(row => !query || `${row.reason} ${row.explanation} ${row.example_questions}`.toLowerCase().includes(query))
         .slice(0, 12);
+      const groupRows = brandGroupComparison
+        .filter(row => !query || `${row.brand_group} ${row.included_brands} ${row.readout}`.toLowerCase().includes(query))
+        .slice(0, 8);
       const brandRows = brandComparison
         .filter(row => !query || `${row.brand} ${row.brand_group} ${row.layout} ${row.covered_keywords} ${row.example_questions}`.toLowerCase().includes(query))
         .slice(0, 16);
@@ -1065,12 +1083,21 @@
         { label: '优化动作', key: 'suggested_action', class: 'question' },
         { label: '示例问题', key: 'example_questions', class: 'question' }
       ], reasonRows);
+      $('brandGroupCount').textContent = `${groupRows.length} 个阵营`;
+      renderTable('brandGroupTable', [
+        { label: '阵营', key: 'brand_group' },
+        { label: '提及/覆盖<span class="help">每条回答去重，只要出现该阵营任一工具就算 1 次</span>', render: r => `${r.covered_sample_count} 次<br>${r.coverage_rate}`, class: 'num' },
+        { label: '首推 / 前 3<span class="help">首推属于该阵营；前 3 出现该阵营任一工具</span>', render: r => `${r.first_recommendation_count} / ${r.top3_sample_count}<br>${r.first_rate} / ${r.top3_rate}`, class: 'num' },
+        { label: '平均排名', render: r => escapeHtml(r.avg_rank || '暂无'), class: 'num' },
+        { label: '包含品牌/工具', key: 'included_brands', class: 'question' },
+        { label: '解读', key: 'readout', class: 'question' }
+      ], groupRows);
       $('brandComparisonCount').textContent = `${brandRows.length} 个品牌/工具`;
       renderTable('brandComparisonTable', [
         { label: '品牌/工具', render: r => `${escapeHtml(r.brand)}<span class="help">${escapeHtml(r.brand_group || '')}</span>` },
-        { label: '提及份额', render: r => `${r.mention_count} 次<br>${r.mention_share}`, class: 'num' },
-        { label: '首推 / 前3', render: r => `${r.first_recommendation_count} / ${r.top3_count}<br>${r.first_share} / ${r.top3_share}`, class: 'num' },
-        { label: '均排', render: r => escapeHtml(r.avg_rank || '暂无'), class: 'num' },
+        { label: '单品牌/工具提及<span class="help">单个品牌/工具出现次数，不代表阵营合计</span>', render: r => `${r.mention_count} 次<br>${r.mention_share}`, class: 'num' },
+        { label: '首推 / 前 3', render: r => `${r.first_recommendation_count} / ${r.top3_count}<br>${r.first_share} / ${r.top3_share}`, class: 'num' },
+        { label: '平均排名', render: r => escapeHtml(r.avg_rank || '暂无'), class: 'num' },
         { label: '布局', key: 'layout', class: 'question' },
         { label: '优点', key: 'strengths', class: 'question' },
         { label: '短板/应对', key: 'weaknesses', class: 'question' },
@@ -1109,6 +1136,7 @@
       const keywordDecisionRows = keywordDecisions.filter(row => visibleKeywords.has(row.keyword));
       const passedKeywords = keywordDecisionRows.filter(row => row.codex_keyword_decision === '达标').length;
       const brandRows = [...brandComparison].sort((a, b) => asNum(b.mention_count) - asNum(a.mention_count));
+      const brandGroupRows = [...brandGroupComparison].sort((a, b) => asNum(b.first_recommendation_count) - asNum(a.first_recommendation_count));
 
       const metrics = {
         data,
@@ -1134,6 +1162,7 @@
         continuingQuestions,
         passedKeywords,
         decisionRows,
+        brandGroupRows,
         brandRows
       };
       renderExecutiveOverview(metrics);
