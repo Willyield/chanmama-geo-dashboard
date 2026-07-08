@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>蝉妈妈 GEO 采样仪表盘</title>
-  <script src="./dashboard-data.js?v=20260708-403"></script>
+  <script src="./dashboard-data.js?v=20260708-427"></script>
   <style>
     :root {
       --surface: #f8fafc;
@@ -294,6 +294,12 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
+      margin-bottom: 20px;
+    }
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
       margin-bottom: 20px;
     }
     .chart-card {
@@ -626,6 +632,16 @@
         <label>搜索<input id="searchInput" type="search" placeholder="问题或关键词"></label>
       </div>
       <div class="chart-grid" id="chartGrid"></div>
+      <div class="analysis-grid">
+        <section>
+          <div class="section-head"><h2>非蝉妈妈首推原因分析</h2><span class="pill" id="reasonCount"></span></div>
+          <div class="table-wrap"><table id="reasonTable"></table></div>
+        </section>
+        <section>
+          <div class="section-head"><h2>蝉妈妈与竞品对比</h2><span class="pill" id="brandComparisonCount"></span></div>
+          <div class="table-wrap"><table id="brandComparisonTable"></table></div>
+        </section>
+      </div>
 
       <div class="grid">
         <section>
@@ -665,6 +681,8 @@
     const repairList = window.GEO_DASHBOARD.content_repair_list || tasks;
     const questionDecisions = window.GEO_DASHBOARD.question_decisions || [];
     const keywordDecisions = window.GEO_DASHBOARD.keyword_decisions || [];
+    const nonChanmamaReasons = window.GEO_DASHBOARD.non_chanmama_reason_summary || [];
+    const brandComparison = window.GEO_DASHBOARD.brand_comparison || [];
 
     const $ = (id) => document.getElementById(id);
     const uniq = (items) => [...new Set(items.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'zh-CN'));
@@ -749,7 +767,7 @@
       </div>
       <div class="metric-guide-grid">
         ${[
-          ['爱搜热度', '来自原始关键词表的流量字段，用来判断这个问题背后的搜索需求大小。'],
+          ['爱搜热度', '来自 AIDSO 官网搜索记录的热度值；未补采时显示待补采，不再使用源表流量代替。'],
           ['提及率', '已采样回答里出现“蝉妈妈”的比例，代表品牌是否被 AI 看见。'],
           ['首推率', '已采样回答里把蝉妈妈放在第一推荐的比例，代表推荐优先级。'],
           ['有效首推率', '把抖音官方工具首推样本剔除后再看蝉妈妈首推率，避免被抖音电商罗盘、巨量千川、巨量引擎等官方工具压低判断。'],
@@ -1000,6 +1018,15 @@
         decisionMap.set(name, (decisionMap.get(name) || 0) + 1);
       });
       const decisionItems = [...decisionMap.entries()].map(([name, value]) => ({ name, value, label: `${value}` }));
+      const brandItems = metrics.brandRows
+        .filter(row => asNum(row.mention_count) > 0)
+        .slice(0, 8)
+        .map(row => ({
+          name: row.brand,
+          value: asNum(row.mention_count),
+          label: `${row.mention_count} 次 / ${row.mention_share || '0%'}`,
+          color: row.brand === '蝉妈妈' ? '#047857' : row.brand_group === '官方工具' ? '#7c3aed' : '#b91c1c'
+        }));
       $('chartGrid').innerHTML = [
         donutChart('采样完成度', [
           { name: '已完成', value: metrics.completed, label: `${metrics.completed} 次`, color: '#1e40af' },
@@ -1015,9 +1042,40 @@
           { name: '官方工具', value: pctNumber(metrics.officialTools, metrics.completed), label: percent(metrics.officialTools, metrics.completed), color: '#7c3aed' },
           { name: '运营圈引用', value: pctNumber(metrics.sources, metrics.completed), label: percent(metrics.sources, metrics.completed), color: '#0f766e' }
         ], `基于 ${metrics.completed} 次已采样结果`, 100),
+        barChart('品牌与竞品提及份额', brandItems.length ? brandItems : [{ name: '暂无数据', value: 0, label: '0' }], '按有效回答中的工具提及次数排序'),
         barChart('分类采样分布', categoryItems.length ? categoryItems : [{ name: '暂无数据', value: 0, label: '0' }], '按已采样次数排序'),
         donutChart('问题判定分布', decisionItems.length ? decisionItems : [{ name: '待判定', value: 1, label: '0' }], `${decisionItems.reduce((sum, item) => sum + item.value, 0)} 个`, '核心问题')
       ].join('');
+    }
+
+    function renderCompetitiveAnalysis() {
+      const query = state.search.trim().toLowerCase();
+      const reasonRows = nonChanmamaReasons
+        .filter(row => !query || `${row.reason} ${row.explanation} ${row.example_questions}`.toLowerCase().includes(query))
+        .slice(0, 12);
+      const brandRows = brandComparison
+        .filter(row => !query || `${row.brand} ${row.brand_group} ${row.layout} ${row.covered_keywords} ${row.example_questions}`.toLowerCase().includes(query))
+        .slice(0, 16);
+      $('reasonCount').textContent = `${reasonRows.length} 类原因`;
+      renderTable('reasonTable', [
+        { label: '原因', key: 'reason' },
+        { label: '样本', render: r => `${r.sample_count} 次<br>${r.sample_rate}`, class: 'num' },
+        { label: '影响问题', render: r => `${r.affected_question_count} 个`, class: 'num' },
+        { label: '为什么会这样', key: 'explanation', class: 'question' },
+        { label: '优化动作', key: 'suggested_action', class: 'question' },
+        { label: '示例问题', key: 'example_questions', class: 'question' }
+      ], reasonRows);
+      $('brandComparisonCount').textContent = `${brandRows.length} 个品牌/工具`;
+      renderTable('brandComparisonTable', [
+        { label: '品牌/工具', render: r => `${escapeHtml(r.brand)}<span class="help">${escapeHtml(r.brand_group || '')}</span>` },
+        { label: '提及份额', render: r => `${r.mention_count} 次<br>${r.mention_share}`, class: 'num' },
+        { label: '首推 / 前3', render: r => `${r.first_recommendation_count} / ${r.top3_count}<br>${r.first_share} / ${r.top3_share}`, class: 'num' },
+        { label: '均排', render: r => escapeHtml(r.avg_rank || '暂无'), class: 'num' },
+        { label: '布局', key: 'layout', class: 'question' },
+        { label: '优点', key: 'strengths', class: 'question' },
+        { label: '短板/应对', key: 'weaknesses', class: 'question' },
+        { label: '覆盖关键词', key: 'covered_keywords', class: 'question' }
+      ], brandRows);
     }
 
     function render() {
@@ -1050,6 +1108,7 @@
       const continuingQuestions = decisionRows.filter(row => row.continue_sampling === '是').length;
       const keywordDecisionRows = keywordDecisions.filter(row => visibleKeywords.has(row.keyword));
       const passedKeywords = keywordDecisionRows.filter(row => row.codex_keyword_decision === '达标').length;
+      const brandRows = [...brandComparison].sort((a, b) => asNum(b.mention_count) - asNum(a.mention_count));
 
       const metrics = {
         data,
@@ -1074,10 +1133,12 @@
         passedQuestions,
         continuingQuestions,
         passedKeywords,
-        decisionRows
+        decisionRows,
+        brandRows
       };
       renderExecutiveOverview(metrics);
       renderCharts(metrics);
+      renderCompetitiveAnalysis();
 
       $('decisionCount').textContent = `${decisionRows.length} 个核心问题`;
       renderDecisionCards('decisionTable', decisionRows);
