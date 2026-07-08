@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>蝉妈妈 GEO 采样仪表盘</title>
-  <script src="./dashboard-data.js?v=20260708-447"></script>
+  <script src="./dashboard-data.js?v=20260708-450"></script>
   <style>
     :root {
       --surface: #f8fafc;
@@ -1039,7 +1039,7 @@
           name: row.brand_group,
           value: asNum(row.first_recommendation_count),
           label: `${row.first_recommendation_count} 首推 / 覆盖 ${row.coverage_rate || '0%'}`,
-          color: row.brand_group === '目标品牌' ? '#047857' : row.brand_group === '官方工具' ? '#7c3aed' : '#b91c1c'
+          color: row.brand_group === '蝉妈妈' ? '#047857' : row.brand_group === '官方工具' ? '#7c3aed' : '#b91c1c'
         }));
       $('chartGrid').innerHTML = [
         donutChart('采样完成度', [
