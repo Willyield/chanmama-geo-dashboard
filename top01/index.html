@@ -399,7 +399,7 @@
     }
     .bar-fill {
       height: 100%;
-      min-width: 2px;
+      min-width: 0;
       background: var(--blue);
     }
     .bar-value {
@@ -851,10 +851,10 @@
       </div>`);
     }
 
-    function barChart(title, items, note = '') {
-      const max = Math.max(...items.map(item => item.value), 1);
+    function barChart(title, items, note = '', scaleMax = null) {
+      const max = scaleMax || Math.max(...items.map(item => item.value), 1);
       const bars = items.map((item, index) => {
-        const width = Math.max(1, Math.round(item.value * 100 / max));
+        const width = item.value > 0 ? Math.max(1, Math.round(item.value * 100 / max)) : 0;
         const color = item.color || chartColors[index % chartColors.length];
         return `<div class="bar-row">
           <div class="bar-label" title="${escapeHtml(item.name)}">${escapeHtml(item.name)}</div>
@@ -1006,15 +1006,15 @@
           { name: '待采样', value: remaining, label: `${remaining} 次`, color: '#cbd5e1' }
         ], percent(metrics.completed, metrics.planned), `${metrics.completed}/${metrics.planned}`),
         barChart('推荐表现', [
-          { name: '蝉妈妈提及', value: metrics.mentions, label: percent(metrics.mentions, metrics.completed), color: '#1e40af' },
-          { name: '蝉妈妈首推', value: metrics.firsts, label: percent(metrics.firsts, metrics.completed), color: '#047857' },
-          { name: '有效首推', value: metrics.firsts, label: percent(metrics.firsts, metrics.effectiveFirstDenominator), color: '#16a34a' },
-          { name: '前 3 推荐', value: metrics.top3, label: percent(metrics.top3, metrics.completed), color: '#0ea5e9' },
-          { name: '优势表达', value: metrics.advantages, label: percent(metrics.advantages, metrics.completed), color: '#d97706' },
-          { name: '竞品提及', value: metrics.competitors, label: percent(metrics.competitors, metrics.completed), color: '#b91c1c' },
-          { name: '官方工具', value: metrics.officialTools, label: percent(metrics.officialTools, metrics.completed), color: '#7c3aed' },
-          { name: '运营圈引用', value: metrics.sources, label: percent(metrics.sources, metrics.completed), color: '#0f766e' }
-        ], `基于 ${metrics.completed} 次已采样结果`),
+          { name: '蝉妈妈提及', value: pctNumber(metrics.mentions, metrics.completed), label: percent(metrics.mentions, metrics.completed), color: '#1e40af' },
+          { name: '蝉妈妈首推', value: pctNumber(metrics.firsts, metrics.completed), label: percent(metrics.firsts, metrics.completed), color: '#047857' },
+          { name: '有效首推', value: pctNumber(metrics.firsts, metrics.effectiveFirstDenominator), label: percent(metrics.firsts, metrics.effectiveFirstDenominator), color: '#16a34a' },
+          { name: '前 3 推荐', value: pctNumber(metrics.top3, metrics.completed), label: percent(metrics.top3, metrics.completed), color: '#0ea5e9' },
+          { name: '优势表达', value: pctNumber(metrics.advantages, metrics.completed), label: percent(metrics.advantages, metrics.completed), color: '#d97706' },
+          { name: '竞品提及', value: pctNumber(metrics.competitors, metrics.completed), label: percent(metrics.competitors, metrics.completed), color: '#b91c1c' },
+          { name: '官方工具', value: pctNumber(metrics.officialTools, metrics.completed), label: percent(metrics.officialTools, metrics.completed), color: '#7c3aed' },
+          { name: '运营圈引用', value: pctNumber(metrics.sources, metrics.completed), label: percent(metrics.sources, metrics.completed), color: '#0f766e' }
+        ], `基于 ${metrics.completed} 次已采样结果`, 100),
         barChart('分类采样分布', categoryItems.length ? categoryItems : [{ name: '暂无数据', value: 0, label: '0' }], '按已采样次数排序'),
         donutChart('问题判定分布', decisionItems.length ? decisionItems : [{ name: '待判定', value: 1, label: '0' }], `${decisionItems.reduce((sum, item) => sum + item.value, 0)} 个`, '核心问题')
       ].join('');
