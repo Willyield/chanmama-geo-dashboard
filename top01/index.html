@@ -80,7 +80,51 @@
       padding: 8px 10px;
       font: inherit;
     }
-    .kpis {
+    .executive-brief {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: center;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      background: #111827;
+      color: #f8fafc;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+    .brief-kicker {
+      color: #93c5fd;
+      font-size: 12px;
+      font-weight: 850;
+    }
+    .brief-title {
+      margin-top: 8px;
+      font-size: clamp(20px, 2.5vw, 32px);
+      line-height: 1.18;
+      font-weight: 900;
+    }
+    .brief-note {
+      margin-top: 8px;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+    .brief-status {
+      display: grid;
+      justify-items: end;
+      gap: 8px;
+      min-width: 180px;
+      font-variant-numeric: tabular-nums;
+    }
+    .brief-status strong {
+      font-size: 30px;
+      line-height: 1;
+    }
+    .brief-status span {
+      color: #cbd5e1;
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .executive-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(160px, 1fr));
       gap: 12px;
@@ -92,29 +136,121 @@
       align-items: center;
       margin: 4px 0 10px;
     }
-    .kpi {
-      min-height: 104px;
+    .exec-card {
+      display: grid;
+      grid-template-rows: auto auto auto 1fr auto;
+      gap: 12px;
+      min-height: 288px;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: var(--panel);
-      padding: 14px;
+      padding: 16px;
     }
-    .kpi .label {
+    .exec-card.risk { border-top: 4px solid var(--red); }
+    .exec-card.warn { border-top: 4px solid var(--amber); }
+    .exec-card.ok { border-top: 4px solid var(--green); }
+    .exec-card.muted { border-top: 4px solid var(--muted); }
+    .exec-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .exec-title {
       color: var(--muted);
       font-size: 12px;
       font-weight: 800;
     }
-    .kpi .value {
-      margin-top: 12px;
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 12px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+    .status-chip.ok { background: #dcfce7; color: var(--green); }
+    .status-chip.warn { background: #fef3c7; color: #92400e; }
+    .status-chip.risk { background: #fee2e2; color: var(--red); }
+    .status-chip.muted { background: #e2e8f0; color: #475569; }
+    .exec-main {
       font-variant-numeric: tabular-nums;
-      font-size: 28px;
-      line-height: 1;
+      font-size: 34px;
+      line-height: 1.05;
       font-weight: 850;
     }
-    .kpi .note {
-      margin-top: 8px;
+    .exec-sub {
       color: var(--muted);
       font-size: 12px;
+      line-height: 1.45;
+    }
+    .evidence-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: #334155;
+      font-size: 12px;
+    }
+    .evidence-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid var(--line-soft);
+      padding-bottom: 6px;
+    }
+    .evidence-list strong {
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+    .exec-readout {
+      color: #334155;
+      line-height: 1.5;
+      font-weight: 700;
+    }
+    .exec-next {
+      border-top: 1px solid var(--line-soft);
+      padding-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .action-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 2fr;
+      gap: 16px;
+      align-items: start;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+    .action-panel h2 {
+      font-size: 16px;
+    }
+    .action-copy {
+      margin-top: 8px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .action-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .action-list li {
+      border: 1px solid var(--line-soft);
+      border-radius: 6px;
+      padding: 10px 12px;
+      background: #f8fafc;
+      color: #334155;
+      font-weight: 750;
     }
     .chart-grid {
       display: grid;
@@ -306,11 +442,13 @@
     .empty { color: var(--muted); }
     @media (max-width: 980px) {
       header, main { padding-left: 16px; padding-right: 16px; }
-      .filters, .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .filters, .executive-grid, .action-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .executive-brief, .action-panel { grid-template-columns: 1fr; }
+      .brief-status { justify-items: start; }
       .chart-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 620px) {
-      .filters, .kpis { grid-template-columns: 1fr; }
+      .filters, .executive-grid, .action-list { grid-template-columns: 1fr; }
       .donut-row { grid-template-columns: 1fr; justify-items: center; }
       h1 { font-size: 32px; }
     }
@@ -340,11 +478,13 @@
         <label>搜索<input id="searchInput" type="search" placeholder="问题或关键词"></label>
       </div>
 
+      <div class="executive-brief" id="executiveBrief"></div>
+      <div class="executive-grid" id="kpis"></div>
+      <section class="action-panel" id="actionPanel"></section>
       <div class="overview-head">
-        <h2>总览</h2>
-        <span class="pill">次数 + 百分比</span>
+        <h2>图表与明细</h2>
+        <span class="pill">支持下钻核对</span>
       </div>
-      <div class="kpis" id="kpis"></div>
       <div class="chart-grid" id="chartGrid"></div>
 
       <div class="grid">
@@ -500,6 +640,128 @@
       return chartCard(title, `<div class="bar-list">${bars}</div>${note ? `<div class="chart-note">${escapeHtml(note)}</div>` : ''}`);
     }
 
+    const pctNumber = (n, d) => d > 0 ? Math.round(n * 100 / d) : 0;
+
+    function confidenceState(completed, planned) {
+      const rate = planned > 0 ? completed / planned : 0;
+      if (completed < 30 || rate < 0.1) return { label: '早期观察', tone: 'muted', note: '样本不足，仅作早期信号' };
+      if (completed < 100 || rate < 0.35) return { label: '待验证', tone: 'warn', note: '已有方向，但仍需继续采样' };
+      if (completed < 300 || rate < 0.75) return { label: '可判断', tone: 'ok', note: '可以用于阶段判断' };
+      return { label: '稳定判断', tone: 'ok', note: '样本覆盖较充分' };
+    }
+
+    function brandState(avgMindScore, effectiveFirstRate) {
+      const score = Number.parseFloat(avgMindScore || '0');
+      if (!score) return { label: '暂无数据', tone: 'muted', note: '还没有足够样本判断品牌推荐力' };
+      if (score >= 80 && effectiveFirstRate >= 50) return { label: '强', tone: 'ok', note: '推荐力较强，已接近稳定首推' };
+      if (score >= 55) return { label: '中等', tone: 'warn', note: '推荐力中等，仍未形成稳定首推' };
+      return { label: '偏弱', tone: 'risk', note: '推荐力偏弱，需要优先补内容证据' };
+    }
+
+    function evidenceState(advantages, completed, sourceTotal) {
+      const advantageRate = pctNumber(advantages, completed);
+      if (!completed) return { label: '暂无数据', tone: 'muted', note: '还没有样本判断内容证据力' };
+      if (sourceTotal === 0) return { label: '弱', tone: 'risk', note: 'AI 能讲优势，但没有引用我方内容' };
+      if (advantageRate >= 60) return { label: '可加强', tone: 'warn', note: '已有优势表达，引用源仍需扩大' };
+      return { label: '弱', tone: 'risk', note: '优势表达和引用源都需要补强' };
+    }
+
+    function riskState(officialTools, competitors, completed) {
+      const officialRate = pctNumber(officialTools, completed);
+      const competitorRate = pctNumber(competitors, completed);
+      if (!completed) return { label: '待判断', tone: 'muted', note: '还没有样本判断压制来源' };
+      if (officialRate >= 50 && officialRate >= competitorRate) {
+        return { label: '官方工具压制', tone: 'warn', note: '主要不是竞品压制，而是抖音官方工具占位' };
+      }
+      if (competitorRate >= 30) return { label: '竞品压制', tone: 'risk', note: '竞品出现频率较高，需要反查引用源' };
+      return { label: '暂未显著', tone: 'ok', note: '暂未看到明显竞品或官方工具压制' };
+    }
+
+    function evidenceRows(rows) {
+      return `<ul class="evidence-list">${rows.map(([label, value]) => `<li><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></li>`).join('')}</ul>`;
+    }
+
+    function executiveCard(title, state, main, sub, rows, readout, next) {
+      return `<article class="exec-card ${state.tone}">
+        <div class="exec-top"><div class="exec-title">${escapeHtml(title)}</div><span class="status-chip ${state.tone}">${escapeHtml(state.label)}</span></div>
+        <div>
+          <div class="exec-main">${escapeHtml(main)}</div>
+          <div class="exec-sub">${escapeHtml(sub)}</div>
+        </div>
+        ${evidenceRows(rows)}
+        <div class="exec-readout">${escapeHtml(readout)}</div>
+        <div class="exec-next">${escapeHtml(next)}</div>
+      </article>`;
+    }
+
+    function renderExecutiveOverview(metrics) {
+      const completeRate = percent(metrics.completed, metrics.planned);
+      const effectiveFirstRate = pctNumber(metrics.firsts, metrics.effectiveFirstDenominator);
+      const mentionRate = percent(metrics.mentions, metrics.completed);
+      const firstRate = percent(metrics.firsts, metrics.completed);
+      const top3Rate = percent(metrics.top3, metrics.completed);
+      const advantageRate = percent(metrics.advantages, metrics.completed);
+      const sourceTotal = metrics.sources + metrics.officialSources + metrics.externalSources;
+      const confidence = confidenceState(metrics.completed, metrics.planned);
+      const brand = brandState(metrics.avgMindScore, effectiveFirstRate);
+      const evidence = evidenceState(metrics.advantages, metrics.completed, sourceTotal);
+      const risk = riskState(metrics.officialTools, metrics.competitors, metrics.completed);
+      const summaryPrefix = confidence.label === '早期观察' ? '早期信号' : '阶段判断';
+      const sourceProblem = sourceTotal === 0 ? '引用源缺失' : '引用源不足';
+      const riskAction = risk.label === '竞品压制'
+        ? '下一步：反查竞品引用源，补同类证据和第三方测评对比页。'
+        : '下一步：优先做官方后台 vs 第三方数据工具的客观对比页。';
+
+      $('executiveBrief').innerHTML = `<div>
+        <div class="brief-kicker">总结 / ${escapeHtml(window.GEO_DASHBOARD.meta.scope_label || '')}</div>
+        <div class="brief-title">${summaryPrefix}：蝉妈妈有可见度，但样本仍少；当前主要问题是${risk.label}与${sourceProblem}。</div>
+        <div class="brief-note">默认先看结论、风险和动作；复杂口径保留在下方图表与明细表中，便于复核。</div>
+      </div>
+      <div class="brief-status">
+        <span>GEO 健康度</span>
+        <strong>${escapeHtml(confidence.label)}</strong>
+        <span>${metrics.completed}/${metrics.planned}，完成率 ${completeRate}</span>
+      </div>`;
+
+      $('kpis').innerHTML = [
+        executiveCard('样本可信度', confidence, `${metrics.completed}/${metrics.planned}`, `完成率 ${completeRate}`, [
+          ['问题数', `${metrics.questionCount} 个`],
+          ['核心问题达标', `${metrics.passedQuestions} 个`],
+          ['关键词达标', `${metrics.passedKeywords} 个`],
+          ['周环比', '待积累']
+        ], confidence.note, confidence.label === '早期观察' ? '下一步：继续采样，避免过早下稳定结论。' : '下一步：进入周环比观察，确认趋势是否稳定。'),
+        executiveCard('品牌推荐力', brand, `${metrics.avgMindScore}`, `${brand.note}`, [
+          ['提及率', mentionRate],
+          ['首推率', firstRate],
+          ['有效首推率', `${effectiveFirstRate}%`],
+          ['前 3 率 / 均排', `${top3Rate} / ${rankText(metrics.rankSum, metrics.rankCount)}`]
+        ], `蝉妈妈已被看见，但首推和稳定排序仍需继续拉升。`, '下一步：补“为什么选蝉妈妈”的对比型内容和 FAQ。'),
+        executiveCard('内容证据力', evidence, evidence.label, evidence.note, [
+          ['优势表达', `${metrics.advantages} 次，${advantageRate}`],
+          ['运营圈引用', `${metrics.sources} 次，${percent(metrics.sources, metrics.completed)}`],
+          ['官网引用', `${metrics.officialSources} 次，${percent(metrics.officialSources, metrics.completed)}`],
+          ['外站引用', `${metrics.externalSources} 次，${percent(metrics.externalSources, metrics.completed)}`]
+        ], sourceTotal === 0 ? 'AI 能复述优势，但没有把运营圈、官网或外站当作证据引用。' : '已有引用迹象，但证据覆盖还不够。', '下一步：补运营圈可引用内容、官网说明页和外站分发证据。'),
+        executiveCard('压制风险', risk, risk.label, risk.note, [
+          ['官方工具', `${metrics.officialTools} 次，${percent(metrics.officialTools, metrics.completed)}`],
+          ['官方首推排除', `${metrics.officialFirstExcluded} 次`],
+          ['竞品提及', `${metrics.competitors} 次，${percent(metrics.competitors, metrics.completed)}`],
+          ['样本基数', `${metrics.completed} 次`]
+        ], risk.note, riskAction)
+      ].join('');
+
+      $('actionPanel').innerHTML = `<div>
+        <h2>下一步动作</h2>
+        <div class="action-copy">优先把“可被 AI 引用的证据”补齐，解决${risk.label}和${sourceProblem}，而不是先扩展更多指标。</div>
+      </div>
+      <ul class="action-list">
+        <li>官方后台 vs 第三方数据工具对比页</li>
+        <li>运营圈可引用内容</li>
+        <li>蝉妈妈优势 FAQ</li>
+        <li>外站分发证据</li>
+      </ul>`;
+    }
+
     function renderCharts(metrics) {
       const remaining = Math.max(metrics.planned - metrics.completed, 0);
       const categoryItems = aggregate(metrics.data, 'category')
@@ -560,27 +822,9 @@
       const keywordDecisionRows = keywordDecisions.filter(row => visibleKeywords.has(row.keyword));
       const passedKeywords = keywordDecisionRows.filter(row => row.codex_keyword_decision === '达标').length;
 
-      $('kpis').innerHTML = [
-        ['问题数', data.length, `首轮采样问题：${data.filter(r => r.in_first_wave === '是').length}`],
-        ['采样进度', `${completed} 次`, `计划 ${planned} 次，完成率 ${percent(completed, planned)}`],
-        ['蝉妈妈提及', `${mentions} 次`, `提及率 ${percent(mentions, completed)}`],
-        ['蝉妈妈首推', `${firsts} 次`, `首推率 ${percent(firsts, completed)}`],
-        ['有效首推率', `${percent(firsts, effectiveFirstDenominator)}`, `排除官方首推 ${officialFirstExcluded} 次，分母 ${effectiveFirstDenominator}`],
-        ['前 3 推荐', `${top3} 次`, `前 3 率 ${percent(top3, completed)}`],
-        ['平均排名', rankText(rankSum, rankCount), `有排名样本 ${rankCount} 次`],
-        ['心智影响分', avgMindScore, '首推 100，第二 85，第三 70，提及非前三 50，未提及 0'],
-        ['优势表达', `${advantages} 次`, `命中率 ${percent(advantages, completed)}`],
-        ['竞品份额', `${competitors} 次`, `提及率 ${percent(competitors, completed)}`],
-        ['官方工具', `${officialTools} 次`, `提及率 ${percent(officialTools, completed)}`],
-        ['运营圈引用', `${sources} 次`, `引用率 ${percent(sources, completed)}`],
-        ['官网 / 外站', `${officialSources} / ${externalSources}`, `官网率 ${percent(officialSources, completed)}，外站率 ${percent(externalSources, completed)}`],
-        ['核心问题达标', `${passedQuestions} 个`, `继续采样 ${continuingQuestions} 个`],
-        ['关键词达标', `${passedKeywords} 个`, '关键词按核心问题汇总'],
-        ['周环比', '待积累', '需要至少两周历史数据']
-      ].map(([label, value, note]) => `<div class="kpi"><div class="label">${label}</div><div class="value">${value}</div><div class="note">${note}</div></div>`).join('');
-
-      renderCharts({
+      const metrics = {
         data,
+        questionCount: data.length,
         planned,
         completed,
         mentions,
@@ -588,6 +832,9 @@
         effectiveFirstDenominator,
         officialFirstExcluded,
         top3,
+        rankSum,
+        rankCount,
+        avgMindScore,
         mindScoreSum,
         advantages,
         competitors,
@@ -595,8 +842,13 @@
         sources,
         officialSources,
         externalSources,
+        passedQuestions,
+        continuingQuestions,
+        passedKeywords,
         decisionRows
-      });
+      };
+      renderExecutiveOverview(metrics);
+      renderCharts(metrics);
 
       $('decisionCount').textContent = `${decisionRows.length} 个核心问题`;
       renderTable('decisionTable', [
@@ -630,6 +882,8 @@
         { label: '分类', key: 'category' },
         { label: '关键词', key: 'keyword' },
         { label: '问题类型', render: r => escapeHtml(r.question_type || r.intent || '') },
+        { label: '功能场景', key: 'chanmama_function_scene' },
+        { label: '功能匹配', key: 'chanmama_function_match', class: 'question' },
         { label: '用户目标', key: 'user_goal' },
         { label: '问题', key: 'question_text', class: 'question' },
         { label: '计划采样', key: 'planned_sample_count', class: 'num' },
