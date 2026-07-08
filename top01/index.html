@@ -785,7 +785,7 @@
         const maxScore = row.batch_max_score || row.weekly_max_score || '30';
         const scoreRate = row.batch_score_rate || row.weekly_score_rate || '0%';
         const completed = `${row.batch_completed_count || 0}/${row.batch_target_count || row.weekly_target_count || 6}`;
-        const heat = row.traffic || '暂无';
+        const aidsoHeat = row.aidso_heat || row.aidso_heat_value || row['爱搜热度'] || row['热度值'] || '';
         return `<article class="decision-card">
           <div class="decision-card-head">
             <div>
@@ -793,7 +793,7 @@
                 <span>${escapeHtml(row.priority || '')}</span>
                 <span>${escapeHtml(row.category || '')}</span>
                 <span>${escapeHtml(row.keyword || '')}</span>
-                <span>爱搜热度 ${escapeHtml(heat)}</span>
+                <span>爱搜热度 ${escapeHtml(aidsoHeat || '待补采')}</span>
               </div>
               <div class="decision-question">${escapeHtml(row.question_text || '')}</div>
             </div>
@@ -1094,7 +1094,8 @@
       renderTable('questionTable', [
         { label: '优先级', key: 'priority' },
         { label: '关键词', key: 'keyword' },
-        { label: '爱搜热度<span class="help">原始流量，代表问题需求大小</span>', render: r => escapeHtml(r.traffic || '暂无'), class: 'num' },
+        { label: '爱搜热度<span class="help">官网热度值，需从爱搜补采</span>', render: r => escapeHtml(r.aidso_heat || r.aidso_heat_value || r['爱搜热度'] || r['热度值'] || '待补采'), class: 'num' },
+        { label: '关键词流量<span class="help">源表流量，不等于爱搜热度</span>', render: r => escapeHtml(r.keyword_traffic || r.traffic || '暂无'), class: 'num' },
         { label: '问题', key: 'question_text', class: 'question' },
         { label: '问题类型', render: r => escapeHtml(r.question_type || r.intent || '') },
         { label: '采样<span class="help">已采样 / 计划</span>', render: r => `${r.completed_sample_count}/${r.planned_sample_count}`, class: 'num' },
