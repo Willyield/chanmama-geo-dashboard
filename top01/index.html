@@ -201,9 +201,21 @@
       border-bottom: 1px solid var(--line-soft);
       padding-bottom: 5px;
     }
+    .evidence-list li > span {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+    }
+    .evidence-list small {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.25;
+    }
     .evidence-list strong {
       color: var(--ink);
       font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
     }
     .exec-readout {
       color: #334155;
@@ -918,7 +930,7 @@
     }
 
     function evidenceRows(rows) {
-      return `<ul class="evidence-list">${rows.map(([label, value]) => `<li><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></li>`).join('')}</ul>`;
+      return `<ul class="evidence-list">${rows.map(([label, value, hint]) => `<li><span>${escapeHtml(label)}${hint ? `<small>${escapeHtml(hint)}</small>` : ''}</span><strong>${escapeHtml(value)}</strong></li>`).join('')}</ul>`;
     }
 
     function executiveCard(title, state, main, sub, rows, readout, next) {
@@ -965,8 +977,8 @@
       $('kpis').innerHTML = [
         executiveCard('样本可信度', confidence, `${metrics.completed}/${metrics.planned}`, `完成率 ${completeRate}`, [
           ['问题数', `${metrics.questionCount} 个`],
-          ['核心问题达标', `${metrics.passedQuestions} 个`],
-          ['关键词达标', `${metrics.passedKeywords} 个`],
+          ['核心问题达标', `${metrics.passedQuestions} 个`, '问题级：单题达到达标线'],
+          ['关键词达标', `${metrics.passedKeywords} 个`, '关键词级：该词下问题整体达标'],
           ['周环比', '待积累']
         ], confidence.note, confidence.label === '早期观察' ? '下一步：继续采样，避免过早下稳定结论。' : '下一步：进入周环比观察，确认趋势是否稳定。'),
         executiveCard('品牌推荐力', brand, `${metrics.avgMindScore}`, `${brand.note}`, [
