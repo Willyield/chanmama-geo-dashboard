@@ -979,6 +979,7 @@
       <div class="metric-guide-grid">
         ${[
           ['爱搜热度', '来自 AIDSO 官网搜索记录的热度值；未补采时显示待补采，不再使用源表流量代替。'],
+          ['累计 / 本周新增', '累计采样使用当前真实已采样数 / 计划样本数；本周新增只统计进入下一轮周度复测后的新增样本，本批次未进入周度复测时显示 0/6。'],
           ['提及率', '已采样回答里出现“蝉妈妈”的比例，代表品牌是否被 AI 看见。'],
           ['首推率', '已采样回答里把蝉妈妈放在第一推荐的比例，代表推荐优先级。'],
           ['有效首推率', '把抖音官方工具首推样本剔除后再看蝉妈妈首推率，避免被抖音电商罗盘、巨量千川、巨量引擎等官方工具压低判断。'],
@@ -1013,7 +1014,7 @@
         const score = row.batch_score || row.weekly_score || '0';
         const maxScore = row.batch_max_score || row.weekly_max_score || '10';
         const scoreRate = row.batch_score_rate || row.weekly_score_rate || '0%';
-        const completed = `${row.batch_completed_count || 0}/${row.batch_target_count || row.weekly_target_count || 6}`;
+        const completed = `${row.actual_completed_sample_count || row.completed_sample_count || 0}/${row.planned_sample_count || row.batch_target_count || row.weekly_target_count || 6}`;
         const aidsoHeat = row.aidso_heat || row.aidso_heat_value || row['爱搜热度'] || row['热度值'] || '';
         return `<article class="decision-card">
           <div class="decision-card-head">
@@ -1034,7 +1035,7 @@
               <div class="score-main">${escapeHtml(score)}/${escapeHtml(maxScore)} <span class="help">${escapeHtml(scoreRate)}</span></div>
               <div class="score-note">单次按首推5、第2名4、第3名3、提及2、未提及0记录；本卡统一换算为10分制，7.3分达标。</div>
               <ul class="mini-rows">
-                <li><span>本次累计</span><strong>${escapeHtml(completed)}</strong></li>
+                <li><span>累计采样</span><strong>${escapeHtml(completed)}</strong></li>
                 <li><span>本周新增</span><strong>${escapeHtml(row.weekly_completed_count || 0)}/${escapeHtml(row.weekly_target_count || 6)}</strong></li>
               </ul>
             </div>
@@ -1385,7 +1386,7 @@
       renderTable('keywordTable', [
         { label: '关键词', key: 'name' },
         { label: '状态', render: r => escapeHtml(r.codex_keyword_decision || '待判定') },
-        { label: '本次 / 本周', render: r => `${escapeHtml(r.baseline_progress_label || '6/6')}<br>${escapeHtml(r.weekly_progress_label || '0/6')}`, class: 'num' },
+        { label: '累计 / 本周新增', render: r => `${r.completed}/${r.planned}<br>${escapeHtml(r.weekly_progress_label || '0/6')}`, class: 'num' },
         { label: '原因', render: r => escapeHtml(r.decision_reason || ''), class: 'question' },
         { label: '下一步动作', render: r => escapeHtml(r.next_action || ''), class: 'question' },
         { label: '问题数', key: 'questions', class: 'num' },
