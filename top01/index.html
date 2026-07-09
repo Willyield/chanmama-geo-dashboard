@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>蝉妈妈 GEO 采样仪表盘</title>
-  <script src="./dashboard-data.js?v=20260708-450"></script>
+  <script src="./dashboard-data.js?v=20260709-96"></script>
   <style>
     :root {
       --surface: #f8fafc;
@@ -126,7 +126,7 @@
     }
     .executive-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
       margin-bottom: 12px;
     }
@@ -776,11 +776,11 @@
           ['提及率', '已采样回答里出现“蝉妈妈”的比例，代表品牌是否被 AI 看见。'],
           ['首推率', '已采样回答里把蝉妈妈放在第一推荐的比例，代表推荐优先级。'],
           ['有效首推率', '把抖音官方工具首推样本剔除后再看蝉妈妈首推率，避免被抖音电商罗盘、巨量千川、巨量引擎等官方工具压低判断。'],
-          ['得分', '单次样本：首推 5 分，第 2 名 4 分，第 3 名 3 分，提及但非前三 2 分，未提及 0 分；每题 6 次满分 30 分，22 分视为达标。'],
+          ['得分', '单次样本仍按首推 5 分、第 2 名 4 分、第 3 名 3 分、提及但非前三 2 分、未提及 0 分记录；每题 6 次后统一换算为 10 分制，7.3 分视为达标。'],
           ['均排', '蝉妈妈进入推荐排名时的平均名次，数字越小越好；未进入排名的样本不参与均排计算。'],
           ['心智分', '首推 100，第二 85，第三 70，提及但非前三 50，未提及 0，用来衡量 AI 对品牌推荐强度。'],
           ['结果差异', '同一问题多次采样后的回答分布，拆成未提及、提及非首推、首推三类看稳定性。'],
-          ['内容证据力', '看 AI 是否引用运营圈、官网或外站内容；只会说优势但没有引用，说明可被引用的内容还不够。']
+          ['优势表达', 'AI 回答里是否主动说出蝉妈妈优势，放在品牌推荐力里一起看；引用源仍在样本表和内容修复清单里复核。']
         ].map(([name, desc]) => metricGuideItem(name, desc)).join('')}
       </div>`;
     }
@@ -805,7 +805,7 @@
       const target = $(id);
       target.innerHTML = bodyRows.map(row => {
         const score = row.batch_score || row.weekly_score || '0';
-        const maxScore = row.batch_max_score || row.weekly_max_score || '30';
+        const maxScore = row.batch_max_score || row.weekly_max_score || '10';
         const scoreRate = row.batch_score_rate || row.weekly_score_rate || '0%';
         const completed = `${row.batch_completed_count || 0}/${row.batch_target_count || row.weekly_target_count || 6}`;
         const aidsoHeat = row.aidso_heat || row.aidso_heat_value || row['爱搜热度'] || row['热度值'] || '';
@@ -826,7 +826,7 @@
             <div class="mini-panel">
               <h3>采样与得分</h3>
               <div class="score-main">${escapeHtml(score)}/${escapeHtml(maxScore)} <span class="help">${escapeHtml(scoreRate)}</span></div>
-              <div class="score-note">首推5分，第2名4分，第3名3分，提及2分，未提及0分；22分达标。</div>
+              <div class="score-note">单次按首推5、第2名4、第3名3、提及2、未提及0记录；本卡统一换算为10分制，7.3分达标。</div>
               <ul class="mini-rows">
                 <li><span>本次累计</span><strong>${escapeHtml(completed)}</strong></li>
                 <li><span>本周新增</span><strong>${escapeHtml(row.weekly_completed_count || 0)}/${escapeHtml(row.weekly_target_count || 6)}</strong></li>
@@ -906,14 +906,6 @@
       return { label: '偏弱', tone: 'risk', note: '推荐力偏弱，需要优先补内容证据' };
     }
 
-    function evidenceState(advantages, completed, sourceTotal) {
-      const advantageRate = pctNumber(advantages, completed);
-      if (!completed) return { label: '暂无数据', tone: 'muted', note: '还没有样本判断内容证据力' };
-      if (sourceTotal === 0) return { label: '弱', tone: 'risk', note: 'AI 能讲优势，但没有引用我方内容' };
-      if (advantageRate >= 60) return { label: '可加强', tone: 'warn', note: '已有优势表达，引用源仍需扩大' };
-      return { label: '弱', tone: 'risk', note: '优势表达和引用源都需要补强' };
-    }
-
     function riskState(officialTools, competitors, completed) {
       const officialRate = pctNumber(officialTools, completed);
       const competitorRate = pctNumber(competitors, completed);
@@ -952,7 +944,6 @@
       const sourceTotal = metrics.sources + metrics.officialSources + metrics.externalSources;
       const confidence = confidenceState(metrics.completed, metrics.planned);
       const brand = brandState(metrics.avgMindScore, effectiveFirstRate);
-      const evidence = evidenceState(metrics.advantages, metrics.completed, sourceTotal);
       const risk = riskState(metrics.officialTools, metrics.competitors, metrics.completed);
       const summaryPrefix = confidence.label === '早期观察' ? '早期信号' : '阶段判断';
       const sourceProblem = sourceTotal === 0 ? '引用源缺失' : '引用源不足';
@@ -982,14 +973,9 @@
           ['提及率', mentionRate],
           ['首推率', firstRate],
           ['有效首推率', `${effectiveFirstRate}%（剔除官方工具）`],
-          ['前 3 率 / 均排', `${top3Rate} / ${rankText(metrics.rankSum, metrics.rankCount)}`]
-        ], `蝉妈妈已被看见，但首推和稳定排序仍需继续拉升；均排越低代表推荐位置越靠前。`, '下一步：补“为什么选蝉妈妈”的对比型内容和 FAQ。'),
-        executiveCard('内容证据力', evidence, evidence.label, evidence.note, [
-          ['优势表达', `${metrics.advantages} 次，${advantageRate}`],
-          ['运营圈引用', `${metrics.sources} 次，${percent(metrics.sources, metrics.completed)}`],
-          ['官网引用', `${metrics.officialSources} 次，${percent(metrics.officialSources, metrics.completed)}`],
-          ['外站引用', `${metrics.externalSources} 次，${percent(metrics.externalSources, metrics.completed)}`]
-        ], sourceTotal === 0 ? 'AI 能复述优势，但没有把运营圈、官网或外站当作证据引用。' : '已有引用迹象，但证据覆盖还不够。', '下一步：补运营圈可引用内容、官网说明页和外站分发证据。'),
+          ['前 3 率 / 均排', `${top3Rate} / ${rankText(metrics.rankSum, metrics.rankCount)}`],
+          ['优势表达', `${metrics.advantages} 次，${advantageRate}`]
+        ], `蝉妈妈已被看见，但首推、稳定排序和优势表达仍需继续拉升；均排越低代表推荐位置越靠前。`, '下一步：补“为什么选蝉妈妈”的对比型内容、优势 FAQ 和可引用证据。'),
         executiveCard('压制风险', risk, risk.label, risk.note, [
           ['官方工具', `${metrics.officialTools} 次，${percent(metrics.officialTools, metrics.completed)}`],
           ['官方首推排除', `${metrics.officialFirstExcluded} 次`],
