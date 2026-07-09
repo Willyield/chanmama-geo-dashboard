@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>蝉妈妈 GEO 采样仪表盘</title>
-  <script src="./dashboard-data.js?v=20260709-96"></script>
+  <script src="./dashboard-data.js?v=20260709-96-effective-first"></script>
   <style>
     :root {
       --surface: #f8fafc;
@@ -1174,9 +1174,23 @@
       $('categoryCount').textContent = `${categoryRows.length} 类`;
       renderTable('categoryTable', metricHeaders('分类'), categoryRows);
 
-      const keywordRows = aggregate(data, 'keyword');
+      const keywordDecisionMap = new Map(keywordDecisionRows.map(row => [row.keyword, row]));
+      const keywordRows = aggregate(data, 'keyword')
+        .map(row => ({...row, ...(keywordDecisionMap.get(row.name) || {})}));
       $('keywordCount').textContent = `${keywordRows.length} 个关键词`;
-      renderTable('keywordTable', metricHeaders('关键词'), keywordRows);
+      renderTable('keywordTable', [
+        { label: '关键词', key: 'name' },
+        { label: '状态', render: r => escapeHtml(r.codex_keyword_decision || '待判定') },
+        { label: '本次 / 本周', render: r => `${escapeHtml(r.baseline_progress_label || '6/6')}<br>${escapeHtml(r.weekly_progress_label || '0/6')}`, class: 'num' },
+        { label: '原因', render: r => escapeHtml(r.decision_reason || ''), class: 'question' },
+        { label: '下一步动作', render: r => escapeHtml(r.next_action || ''), class: 'question' },
+        { label: '问题数', key: 'questions', class: 'num' },
+        { label: '采样<span class="help">已采样 / 计划</span>', render: r => `${r.completed}/${r.planned}`, class: 'num' },
+        { label: '提及 / 首推', render: r => `${percent(r.mentions, r.completed)} / ${percent(r.firsts, r.completed)}`, class: 'num' },
+        { label: '前3 / 均排', render: r => `${percent(r.top3, r.completed)} / ${rankText(r.rankSum, r.rankCount)}`, class: 'num' },
+        { label: '优势表达', render: r => percent(r.advantages, r.completed), class: 'num' },
+        { label: '风险<span class="help">竞品 / 官方工具</span>', render: r => `${percent(r.competitors, r.completed)} / ${percent(r.officialTools, r.completed)}`, class: 'num' }
+      ], keywordRows);
 
       $('questionCount').textContent = `${data.length} 个问题`;
       renderTable('questionTable', [
@@ -1249,7 +1263,7 @@
         { label: '有效首推<span class="help">剔除官方工具首推</span>', render: r => `${r.firsts}/${r.effectiveFirstDenominator}<br>${percent(r.firsts, r.effectiveFirstDenominator)}`, class: 'num' },
         { label: '前3 / 均排', render: r => `${percent(r.top3, r.completed)} / ${rankText(r.rankSum, r.rankCount)}`, class: 'num' },
         { label: '心智分', render: r => r.mindScoreCount ? (r.mindScoreSum / r.mindScoreCount).toFixed(1).replace(/\.0$/, '') : '暂无', class: 'num' },
-        { label: '证据<span class="help">优势 / 运营圈引用</span>', render: r => `${percent(r.advantages, r.completed)} / ${percent(r.sources, r.completed)}`, class: 'num' },
+        { label: '优势表达', render: r => percent(r.advantages, r.completed), class: 'num' },
         { label: '风险<span class="help">竞品 / 官方工具</span>', render: r => `${percent(r.competitors, r.completed)} / ${percent(r.officialTools, r.completed)}`, class: 'num' }
       ];
     }
