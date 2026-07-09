@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>蝉妈妈 GEO 采样仪表盘</title>
-  <script src="./dashboard-data.js?v=20260709-96-baseline-audit"></script>
+  <script src="./dashboard-data.js?v=20260709-96-reason-evidence"></script>
   <style>
     :root {
       --surface: #f8fafc;
@@ -646,8 +646,12 @@
       <div class="chart-grid" id="chartGrid"></div>
       <div class="analysis-grid">
         <section>
-          <div class="section-head"><h2>非蝉妈妈首推原因分析</h2><span class="pill" id="reasonCount"></span></div>
+          <div class="section-head"><h2>为什么没首推</h2><span class="pill" id="reasonCount"></span></div>
           <div class="table-wrap"><table id="reasonTable"></table></div>
+        </section>
+        <section>
+          <div class="section-head"><h2>引用证据</h2><span class="pill" id="sourceEvidenceCount"></span></div>
+          <div class="table-wrap"><table id="sourceEvidenceTable"></table></div>
         </section>
         <section>
           <div class="section-head"><h2>官方工具 vs 蝉妈妈 vs 第三方竞品阵营对比</h2><span class="pill" id="brandGroupCount"></span></div>
@@ -698,6 +702,7 @@
     const questionDecisions = window.GEO_DASHBOARD.question_decisions || [];
     const keywordDecisions = window.GEO_DASHBOARD.keyword_decisions || [];
     const nonChanmamaReasons = window.GEO_DASHBOARD.non_chanmama_reason_summary || [];
+    const sourceEvidenceSummary = window.GEO_DASHBOARD.source_evidence_summary || [];
     const brandGroupComparison = window.GEO_DASHBOARD.brand_group_comparison || [];
     const brandComparison = window.GEO_DASHBOARD.brand_comparison || [];
 
@@ -1066,6 +1071,9 @@
       const reasonRows = nonChanmamaReasons
         .filter(row => !query || `${row.reason} ${row.explanation} ${row.example_questions}`.toLowerCase().includes(query))
         .slice(0, 12);
+      const sourceRows = sourceEvidenceSummary
+        .filter(row => !query || `${row.item} ${row.explanation} ${row.note}`.toLowerCase().includes(query))
+        .slice(0, 8);
       const groupRows = brandGroupComparison
         .filter(row => !query || `${row.brand_group} ${row.included_brands} ${row.readout}`.toLowerCase().includes(query))
         .slice(0, 8);
@@ -1075,12 +1083,19 @@
       $('reasonCount').textContent = `${reasonRows.length} 类原因`;
       renderTable('reasonTable', [
         { label: '原因', key: 'reason' },
-        { label: '样本', render: r => `${r.sample_count} 次<br>${r.sample_rate}`, class: 'num' },
+        { label: '非首推样本<span class="help">只统计蝉妈妈没有首推的样本</span>', render: r => `${r.sample_count}/${r.base_sample_count || '-'}<br>${r.sample_rate}`, class: 'num' },
         { label: '影响问题', render: r => `${r.affected_question_count} 个`, class: 'num' },
-        { label: '为什么会这样', key: 'explanation', class: 'question' },
+        { label: '怎么理解', key: 'explanation', class: 'question' },
         { label: '优化动作', key: 'suggested_action', class: 'question' },
         { label: '示例问题', key: 'example_questions', class: 'question' }
       ], reasonRows);
+      $('sourceEvidenceCount').textContent = `${sourceRows.length} 项`;
+      renderTable('sourceEvidenceTable', [
+        { label: '项目', key: 'item' },
+        { label: '全部样本<span class="help">按已完成样本计算，不参与首推原因分母</span>', render: r => `${r.sample_count}/${r.base_sample_count || '-'}<br>${r.sample_rate}`, class: 'num' },
+        { label: '说明', key: 'explanation', class: 'question' },
+        { label: '备注', key: 'note', class: 'question' }
+      ], sourceRows);
       $('brandGroupCount').textContent = `${groupRows.length} 个阵营`;
       renderTable('brandGroupTable', [
         { label: '阵营', key: 'brand_group' },
