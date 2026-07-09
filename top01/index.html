@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>蝉妈妈 GEO 采样仪表盘</title>
-  <script src="./dashboard-data.js?v=20260709-96-closure-final"></script>
+  <script src="./dashboard-data.js?v=20260709-96-optimization-plan"></script>
   <style>
     :root {
       --surface: #f8fafc;
@@ -591,6 +591,22 @@
     .pill.ok { border-color: #86efac; background: #dcfce7; color: var(--green); }
     .pill.warn { border-color: #fcd34d; background: #fef3c7; color: #92400e; }
     .question { min-width: 360px; }
+    .action-col { min-width: 190px; }
+    .action-cell {
+      display: grid;
+      gap: 4px;
+      color: #334155;
+    }
+    .action-cell strong {
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .action-cell span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
     .empty { color: var(--muted); }
     @media (max-width: 1280px) {
       .executive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -685,7 +701,7 @@
           <div class="table-wrap"><table id="sampleTable"></table></div>
         </section>
         <section>
-          <div class="section-head"><h2>GEO 内容修复清单</h2><span class="pill" id="taskCount"></span></div>
+          <div class="section-head"><h2>GEO 内容优化清单</h2><span class="pill" id="taskCount"></span></div>
           <div class="table-wrap"><table id="taskTable"></table></div>
         </section>
       </div>
@@ -718,6 +734,66 @@
 
     function escapeHtml(value) {
       return String(value ?? '').replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[s]));
+    }
+
+    function splitTerms(value) {
+      return String(value ?? '').split(/[、，,；;\/]+/).map(item => item.trim()).filter(Boolean);
+    }
+
+    function hasGap(row, gap) {
+      return splitTerms(row.content_gap_types || row.content_gap_type).some(item => item.includes(gap));
+    }
+
+    function shortList(value, fallback, limit = 3) {
+      const items = splitTerms(value);
+      if (!items.length) return fallback;
+      const head = items.slice(0, limit).join('、');
+      return items.length > limit ? `${head}等` : head;
+    }
+
+    function actionCell(title, note = '') {
+      return `<div class="action-cell"><strong>${escapeHtml(title)}</strong>${note ? `<span>${escapeHtml(note)}</span>` : ''}</div>`;
+    }
+
+    function optimizationDirection(row) {
+      const official = hasGap(row, '官方工具压制');
+      const competitor = hasGap(row, '竞品压制');
+      const missing = hasGap(row, '未提及蝉妈妈');
+      const notFirst = hasGap(row, '提及但不首推');
+      const source = hasGap(row, '引用来源不足') || hasGap(row, '引用源缺失');
+      if (official && competitor) return actionCell('官方对比 + 竞品替代', '同时解决官方工具和竞品抢位');
+      if (official && notFirst) return actionCell('官方对比 + 首推强化', '解释官方后台与蝉妈妈的分工');
+      if (official && missing) return actionCell('品牌入口 + 官方对比', '先让答案提到蝉妈妈');
+      if (competitor) return actionCell('竞品替代证明', '证明蝉妈妈在该场景更合适');
+      if (source) return actionCell('补引用证据', '让 AI 有可信来源可引用');
+      if (missing) return actionCell('补品牌可见内容', '覆盖工具推荐和场景问法');
+      if (notFirst) return actionCell('首推理由强化', '补足优先推荐蝉妈妈的理由');
+      return actionCell('持续观察', '保留周度复测');
+    }
+
+    function optimizationFocus(row) {
+      const focus = [];
+      if (hasGap(row, '官方工具压制')) focus.push('官方后台看经营结果，蝉妈妈补市场/达人/商品/竞品');
+      if (hasGap(row, '提及但不首推')) focus.push('补“为什么优先推荐蝉妈妈”');
+      if (hasGap(row, '竞品压制')) focus.push(`对比 ${shortList(row.mentioned_competitors, '飞瓜/抖查查/新抖', 3)}`);
+      if (hasGap(row, '未提及蝉妈妈')) focus.push(`围绕「${row.keyword || '核心场景'}」补工具推荐入口`);
+      if (hasGap(row, '引用来源不足') || hasGap(row, '引用源缺失')) focus.push('补官网、运营圈、外站可引用证据');
+      const title = focus[0] || `强化 ${shortList(row.target_advantages_hit, '数据覆盖/场景适配', 3)}`;
+      const note = focus.slice(1, 3).join('；') || `优势：${shortList(row.target_advantages_hit, '数据覆盖/场景适配', 3)}`;
+      return actionCell(title, note);
+    }
+
+    function optimizationDeliverable(row) {
+      const official = hasGap(row, '官方工具压制');
+      const competitor = hasGap(row, '竞品压制');
+      const missing = hasGap(row, '未提及蝉妈妈');
+      const source = hasGap(row, '引用来源不足') || hasGap(row, '引用源缺失');
+      if (official && competitor) return actionCell('三方对比页 / 替代页', `重点对比 ${shortList(row.mentioned_competitors, '飞瓜/抖查查/新抖', 2)}`);
+      if (official) return actionCell('对比页 / FAQ', '官方后台 vs 第三方工具分工');
+      if (competitor) return actionCell('竞品对比页 / 替代页', `重点对比 ${shortList(row.mentioned_competitors, '飞瓜/抖查查/新抖', 2)}`);
+      if (source) return actionCell('官网案例 / 外站测评', '确保可被 AI 引用');
+      if (missing) return actionCell('榜单页 / 场景页', `覆盖「${row.keyword || '核心'}」推荐问法`);
+      return actionCell('场景 FAQ', '下轮复测首推变化');
     }
 
     function filteredSummary() {
@@ -797,7 +873,7 @@
           ['均排', '蝉妈妈进入推荐排名时的平均名次，数字越小越好；未进入排名的样本不参与均排计算。'],
           ['心智分', '首推 100，第二 85，第三 70，提及但非前三 50，未提及 0，用来衡量 AI 对品牌推荐强度。'],
           ['结果差异', '同一问题多次采样后的回答分布，拆成未提及、提及非首推、首推三类看稳定性。'],
-          ['优势表达', 'AI 回答里是否主动说出蝉妈妈优势，放在品牌推荐力里一起看；引用源仍在样本表和内容修复清单里复核。']
+          ['优势表达', 'AI 回答里是否主动说出蝉妈妈优势，放在品牌推荐力里一起看；引用源仍在样本表和内容优化清单里复核。']
         ].map(([name, desc]) => metricGuideItem(name, desc)).join('')}
       </div>`;
     }
@@ -1245,7 +1321,7 @@
         { label: '官方工具', render: r => escapeHtml(r.mentioned_official_tools || '') },
         { label: '优势命中', render: r => escapeHtml(r.target_advantages_hit || '') },
         { label: '缺口', render: r => escapeHtml(r.content_gap_type || '') },
-        { label: '建议动作', render: r => escapeHtml(r.suggested_action || '') },
+        { label: '优化动作', render: r => escapeHtml(r.suggested_action || '') },
         { label: '运营圈引用', render: r => pill(r.mentioned_yunyingquan_source) },
         { label: '引用源', render: r => escapeHtml(r.source_urls || '待采集') }
       ], sampleRows);
@@ -1253,15 +1329,17 @@
       const taskRows = repairList.filter(row => visibleQuestionIds.has(row.question_id));
       $('taskCount').textContent = `${taskRows.length} 条任务`;
       renderTable('taskTable', [
-        { label: '修复ID', render: r => escapeHtml(r.repair_id || r.task_id || '') },
-        { label: '修复优先级', render: r => escapeHtml(r.repair_priority || r.priority || '') },
+        { label: '优化ID', render: r => escapeHtml(r.repair_id || r.task_id || '') },
+        { label: '优化优先级', render: r => escapeHtml(r.repair_priority || r.priority || '') },
         { label: '优先级', key: 'priority' },
         { label: '分类', key: 'category' },
         { label: '关键词', key: 'keyword' },
         { label: '问题', key: 'question_text', class: 'question' },
         { label: '影响样本', render: r => escapeHtml(r.affected_sample_count || '1'), class: 'num' },
         { label: '缺口类型', render: r => escapeHtml(r.content_gap_types || r.content_gap_type || '') },
-        { label: '建议动作', render: r => escapeHtml(r.suggested_actions || r.suggested_action || '') },
+        { label: '优化方向', render: optimizationDirection, class: 'action-col' },
+        { label: '补强内容', render: optimizationFocus, class: 'action-col' },
+        { label: '交付形式', render: optimizationDeliverable, class: 'action-col' },
         { label: '竞品', key: 'mentioned_competitors' },
         { label: '官方工具', key: 'mentioned_official_tools' },
         { label: '优势命中', key: 'target_advantages_hit' },
