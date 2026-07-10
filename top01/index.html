@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>蝉妈妈 GEO 采样仪表盘</title>
-  <script src="./dashboard-data.js?v=20260710-576-v3"></script>
+  <script src="./dashboard-data.js?v=20260710-576-v4"></script>
   <style>
     :root {
       --surface: #f8fafc;
@@ -984,8 +984,8 @@
       </div>`;
 
       $('kpis').innerHTML = [
-        executiveCard('样本可信度', confidence, baselineProgress, `本周新增 ${weeklyProgress}`, [
-          ['总样本', `${metrics.completed}/${metrics.planned}`, `完成率 ${completeRate}`],
+        executiveCard('样本可信度', confidence, `${metrics.completed}/${metrics.planned}`, `完成率 ${completeRate}`, [
+          ['本次累计', baselineProgress, `本周新增 ${weeklyProgress}`],
           ['问题数', `${metrics.questionCount} 个`],
           ['核心问题达标', `${metrics.passedQuestions} 个`, '问题级：单题达到达标线'],
           ['关键词达标', `${metrics.passedKeywords} 个`, '关键词级：该词下问题整体达标'],
