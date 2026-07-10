@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>蝉妈妈 GEO 采样仪表盘</title>
-  <script src="./dashboard-data.js?v=20260710-576-v5"></script>
+  <script src="./dashboard-data.js?v=20260710-576-v6"></script>
   <style>
     :root {
       --surface: #f8fafc;
@@ -591,6 +591,107 @@
     .pill.ok { border-color: #86efac; background: #dcfce7; color: var(--green); }
     .pill.warn { border-color: #fcd34d; background: #fef3c7; color: #92400e; }
     .question { min-width: 360px; }
+    .insight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      padding: 14px;
+      background: #fff;
+      border-top: 1px solid var(--line-soft);
+    }
+    .insight-card {
+      display: grid;
+      gap: 10px;
+      min-width: 0;
+      border: 1px solid var(--line-soft);
+      border-radius: 6px;
+      background: #f8fafc;
+      padding: 14px;
+    }
+    .insight-card.primary { border-color: #bfdbfe; background: #eff6ff; }
+    .insight-card.warn { border-color: #fde68a; background: #fffbeb; }
+    .insight-card.risk { border-color: #fecaca; background: #fff7f7; }
+    .insight-card.muted { background: #f8fafc; }
+    .insight-card-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: start;
+    }
+    .insight-title {
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+    .insight-value {
+      color: var(--ink);
+      font-size: 26px;
+      font-weight: 950;
+      line-height: 1.05;
+      font-variant-numeric: tabular-nums;
+    }
+    .insight-meta {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 750;
+      line-height: 1.45;
+    }
+    .insight-copy {
+      color: #334155;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .insight-action {
+      border-top: 1px solid var(--line-soft);
+      padding-top: 9px;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 750;
+      line-height: 1.45;
+    }
+    .insight-bar {
+      height: 7px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #e2e8f0;
+    }
+    .insight-bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--blue);
+    }
+    .insight-card.warn .insight-bar span { background: #d97706; }
+    .insight-card.risk .insight-bar span { background: var(--red); }
+    .insight-card.muted .insight-bar span { background: #64748b; }
+    .compact-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .compact-metric {
+      border: 1px solid var(--line-soft);
+      border-radius: 6px;
+      background: rgba(255,255,255,.72);
+      padding: 8px;
+    }
+    .compact-metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .compact-metric strong {
+      display: block;
+      margin-top: 4px;
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1.15;
+      font-variant-numeric: tabular-nums;
+    }
     .task-table {
       min-width: 1860px;
       table-layout: fixed;
@@ -754,15 +855,15 @@
       <div class="analysis-grid">
         <section>
           <div class="section-head"><h2>为什么没首推</h2><span class="pill" id="reasonCount"></span></div>
-          <div class="table-wrap"><table id="reasonTable"></table></div>
+          <div class="insight-grid" id="reasonCards"></div>
         </section>
         <section>
           <div class="section-head"><h2>引用证据</h2><span class="pill" id="sourceEvidenceCount"></span></div>
-          <div class="table-wrap"><table id="sourceEvidenceTable"></table></div>
+          <div class="insight-grid" id="sourceEvidenceCards"></div>
         </section>
         <section>
           <div class="section-head"><h2>官方工具 vs 蝉妈妈 vs 第三方竞品阵营对比</h2><span class="pill" id="brandGroupCount"></span></div>
-          <div class="table-wrap"><table id="brandGroupTable"></table></div>
+          <div class="insight-grid" id="brandGroupCards"></div>
         </section>
         <section>
           <div class="section-head"><h2>单品牌/工具曝光对比</h2><span class="pill" id="brandComparisonCount"></span></div>
@@ -1164,6 +1265,7 @@
 
     function renderTable(id, headers, bodyRows) {
       const table = $(id);
+      if (!table) return;
       table.innerHTML = `<thead><tr>${headers.map(h => `<th class="${h.class || ''}">${h.label}</th>`).join('')}</tr></thead><tbody>${
         bodyRows.map(row => `<tr>${headers.map(h => `<td class="${h.class || ''}">${h.render ? h.render(row) : escapeHtml(row[h.key])}</td>`).join('')}</tr>`).join('')
       }</tbody>`;
@@ -1459,6 +1561,139 @@
       ].join('');
     }
 
+    function pctValue(value) {
+      const num = Number.parseFloat(String(value || '0').replace('%', ''));
+      return Number.isFinite(num) ? Math.max(0, Math.min(100, num)) : 0;
+    }
+
+    function firstExample(value) {
+      const item = splitTerms(value)[0];
+      return item ? `<div class="insight-meta">示例：${escapeHtml(item)}</div>` : '';
+    }
+
+    function insightCard({ tone = '', title, badge, value, meta, copy, action, rate = 0, extra = '' }) {
+      return `<article class="insight-card ${tone}">
+        <div class="insight-card-head">
+          <div class="insight-title">${escapeHtml(title)}</div>
+          ${badge ? `<span class="pill">${escapeHtml(badge)}</span>` : ''}
+        </div>
+        <div>
+          <div class="insight-value">${value}</div>
+          <div class="insight-meta">${escapeHtml(meta)}</div>
+        </div>
+        <div class="insight-bar"><span style="width:${pctValue(rate)}%"></span></div>
+        ${copy ? `<div class="insight-copy">${escapeHtml(copy)}</div>` : ''}
+        ${extra}
+        ${action ? `<div class="insight-action">下一步：${escapeHtml(action)}</div>` : ''}
+      </article>`;
+    }
+
+    function metricTiles(items) {
+      return `<div class="compact-metrics">${items.map(([label, value]) => `
+        <div class="compact-metric">
+          <span>${escapeHtml(label)}</span>
+          <strong>${escapeHtml(value)}</strong>
+        </div>
+      `).join('')}</div>`;
+    }
+
+    function reasonTone(row, index) {
+      const title = String(row.reason || '');
+      if (title.includes('官方')) return 'risk';
+      if (title.includes('未首推')) return 'warn';
+      if (title.includes('未提')) return 'muted';
+      return index === 0 ? 'risk' : index === 1 ? 'warn' : 'muted';
+    }
+
+    function renderReasonCards(rows) {
+      const target = $('reasonCards');
+      if (!target) return;
+      target.innerHTML = rows.length ? rows.map((row, index) => insightCard({
+        tone: reasonTone(row, index),
+        title: row.reason || '未归类原因',
+        badge: row.sample_rate || '0%',
+        value: `${escapeHtml(row.sample_count || 0)}/${escapeHtml(row.base_sample_count || '-')}`,
+        meta: `非首推样本；影响 ${row.affected_question_count || 0} 个问题`,
+        rate: row.sample_rate,
+        copy: row.explanation,
+        extra: firstExample(row.example_questions),
+        action: row.suggested_action || '继续观察'
+      })).join('') : '<div class="empty">暂无非首推原因</div>';
+    }
+
+    function renderSourceEvidenceCards(rows) {
+      const target = $('sourceEvidenceCards');
+      if (!target) return;
+      target.innerHTML = rows.length ? rows.map(row => {
+        const item = String(row.item || '');
+        const tone = item.includes('有引用') ? 'primary' : item.includes('无引用') ? 'warn' : 'muted';
+        return insightCard({
+          tone,
+          title: row.item || '引用证据',
+          badge: row.sample_rate || '0%',
+          value: `${escapeHtml(row.sample_count || 0)}/${escapeHtml(row.base_sample_count || '-')}`,
+          meta: '全部已完成样本',
+          rate: row.sample_rate,
+          copy: row.explanation,
+          action: row.note
+        });
+      }).join('') : '<div class="empty">暂无引用证据数据</div>';
+    }
+
+    function groupTone(row) {
+      const group = String(row.brand_group || '');
+      if (group === '蝉妈妈') return 'primary';
+      if (group.includes('官方')) return 'warn';
+      return 'muted';
+    }
+
+    function renderBrandGroupCards(rows) {
+      const target = $('brandGroupCards');
+      if (!target) return;
+      target.innerHTML = rows.length ? rows.map(row => {
+        const brands = splitTerms(row.included_brands).slice(0, 4).join('、');
+        const group = String(row.brand_group || '');
+        const action = group === '蝉妈妈'
+          ? '补强首推理由、对比证据和外部引用，让已提及转成稳定首推'
+          : group.includes('官方')
+            ? '把官方后台定位为经营结果，把蝉妈妈定位为市场、竞品、达人和商品补充'
+            : '保留竞品监测，优先争夺高热度问题的前 3 推荐位';
+        return insightCard({
+          tone: groupTone(row),
+          title: group || '未归类阵营',
+          badge: row.coverage_rate || '0%',
+          value: `${escapeHtml(row.covered_sample_count || 0)} 次`,
+          meta: `提及覆盖；平均排名 ${row.avg_rank || '暂无'}`,
+          rate: row.coverage_rate,
+          copy: row.readout,
+          extra: metricTiles([
+            ['首推', `${row.first_recommendation_count || 0} / ${row.first_rate || '0%'}`],
+            ['前 3', `${row.top3_sample_count || 0} / ${row.top3_rate || '0%'}`],
+            ['均排', row.avg_rank || '暂无']
+          ]) + (brands ? `<div class="insight-meta">包含：${escapeHtml(brands)}</div>` : ''),
+          action
+        });
+      }).join('') : '<div class="empty">暂无阵营数据</div>';
+    }
+
+    function renderAnalysisCards(visibleQuestionIds) {
+      const query = state.search.trim().toLowerCase();
+      const reasonRows = buildFirstLossReasonRows(visibleQuestionIds)
+        .filter(row => !query || `${row.reason} ${row.explanation} ${row.example_questions}`.toLowerCase().includes(query));
+      const sourceRows = sourceEvidenceSummary
+        .filter(row => !query || `${row.item} ${row.explanation} ${row.note}`.toLowerCase().includes(query))
+        .slice(0, 8);
+      const groupRows = brandGroupComparison
+        .filter(row => !query || `${row.brand_group} ${row.included_brands} ${row.readout}`.toLowerCase().includes(query))
+        .slice(0, 8);
+      $('reasonCount').textContent = `${reasonRows.length} 类主原因`;
+      renderReasonCards(reasonRows);
+      $('sourceEvidenceCount').textContent = `${sourceRows.length} 项证据`;
+      renderSourceEvidenceCards(sourceRows);
+      $('brandGroupCount').textContent = `${groupRows.length} 个阵营`;
+      renderBrandGroupCards(groupRows);
+    }
+
     function renderCompetitiveAnalysis(visibleQuestionIds) {
       const query = state.search.trim().toLowerCase();
       const reasonRows = buildFirstLossReasonRows(visibleQuestionIds)
@@ -1578,6 +1813,7 @@
       renderExecutiveOverview(metrics);
       renderCharts(metrics);
       renderCompetitiveAnalysis(visibleQuestionIds);
+      renderAnalysisCards(visibleQuestionIds);
 
       $('decisionCount').textContent = `${decisionRows.length} 个核心问题`;
       renderDecisionCards('decisionTable', decisionRows);
