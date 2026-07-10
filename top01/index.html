@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>蝉妈妈 GEO 采样仪表盘</title>
-  <script src="./dashboard-data.js?v=20260710-576-fix1"></script>
+  <script src="./dashboard-data.js?v=20260710-576-v3"></script>
   <style>
     :root {
       --surface: #f8fafc;
@@ -591,113 +591,6 @@
     .pill.ok { border-color: #86efac; background: #dcfce7; color: var(--green); }
     .pill.warn { border-color: #fcd34d; background: #fef3c7; color: #92400e; }
     .question { min-width: 360px; }
-    .task-table {
-      min-width: 1860px;
-      table-layout: fixed;
-    }
-    .task-table th,
-    .task-table td {
-      padding: 9px 10px;
-    }
-    .task-id { width: 88px; }
-    .task-priority { width: 118px; }
-    .task-topic { width: 126px; }
-    .task-question {
-      width: 330px;
-      min-width: 330px;
-    }
-    .heat-col {
-      width: 94px;
-      color: var(--blue);
-      font-weight: 850;
-      white-space: nowrap;
-    }
-    .impact-col { width: 74px; }
-    .gap-col { width: 168px; }
-    .action-col {
-      width: 210px;
-      min-width: 210px;
-    }
-    .signal-col {
-      width: 300px;
-      min-width: 300px;
-    }
-    .action-cell {
-      display: grid;
-      gap: 4px;
-      color: #334155;
-    }
-    .action-cell strong {
-      color: var(--ink);
-      font-size: 13px;
-      line-height: 1.35;
-    }
-    .action-cell span {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.45;
-    }
-    .priority-cell {
-      display: grid;
-      gap: 4px;
-    }
-    .priority-cell strong {
-      color: var(--red);
-      font-size: 14px;
-      font-weight: 900;
-    }
-    .priority-cell span {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.35;
-    }
-    .topic-cell,
-    .signal-cell {
-      display: grid;
-      gap: 6px;
-    }
-    .topic-cell strong,
-    .signal-label {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 850;
-    }
-    .topic-cell span {
-      color: var(--ink);
-      font-weight: 750;
-    }
-    .signal-line {
-      display: grid;
-      grid-template-columns: 38px minmax(0, 1fr);
-      gap: 8px;
-      align-items: start;
-    }
-    .term-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-      min-width: 0;
-    }
-    .term-chip {
-      display: inline-flex;
-      align-items: center;
-      max-width: 112px;
-      min-height: 22px;
-      border: 1px solid var(--line-soft);
-      border-radius: 999px;
-      background: #f8fafc;
-      color: #334155;
-      padding: 2px 7px;
-      font-size: 12px;
-      line-height: 1.25;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .term-chip.more {
-      color: var(--muted);
-      background: #eef2f7;
-    }
     .empty { color: var(--muted); }
     @media (max-width: 1280px) {
       .executive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -793,7 +686,7 @@
         </section>
         <section>
           <div class="section-head"><h2>GEO 内容优先级看板</h2><span class="pill" id="taskCount"></span></div>
-          <div class="table-wrap"><table id="taskTable" class="task-table"></table></div>
+          <div class="table-wrap"><table id="taskTable"></table></div>
         </section>
       </div>
     </main>
@@ -825,290 +718,6 @@
 
     function escapeHtml(value) {
       return String(value ?? '').replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[s]));
-    }
-
-    function splitTerms(value) {
-      return String(value ?? '').split(/[、，,；;\/]+/).map(item => item.trim()).filter(Boolean);
-    }
-
-    function hasGap(row, gap) {
-      return splitTerms(row.content_gap_types || row.content_gap_type).some(item => item.includes(gap));
-    }
-
-    function shortList(value, fallback, limit = 3) {
-      const items = splitTerms(value);
-      if (!items.length) return fallback;
-      const head = items.slice(0, limit).join('、');
-      return items.length > limit ? `${head}等` : head;
-    }
-
-    function actionCell(title, note = '') {
-      return `<div class="action-cell"><strong>${escapeHtml(title)}</strong>${note ? `<span>${escapeHtml(note)}</span>` : ''}</div>`;
-    }
-
-    function formatHeat(value) {
-      const raw = String(value ?? '').replace(/,/g, '').trim();
-      if (!raw || raw === '待补采') return '待补采';
-      const num = Number(raw);
-      return Number.isFinite(num) && num > 0 ? num.toLocaleString('zh-CN') : raw;
-    }
-
-    function heatCell(row) {
-      const heat = formatHeat(row.aidso_heat || row.aidso_heat_value || row['爱搜热度']);
-      return heat === '待补采' ? '<span class="empty">待补采</span>' : escapeHtml(heat);
-    }
-
-    function heatNumber(row) {
-      const raw = String(row.aidso_heat || row.aidso_heat_value || row['爱搜热度'] || '').replace(/,/g, '').trim();
-      const num = Number(raw);
-      return Number.isFinite(num) ? num : 0;
-    }
-
-    function numFrom(row, keys) {
-      for (const key of keys) {
-        if (row[key] !== undefined && row[key] !== null && row[key] !== '') return asNum(row[key]);
-      }
-      return 0;
-    }
-
-    function keywordDecision(row) {
-      const completed = numFrom(row, ['completed', 'completed_sample_count']);
-      const mentions = numFrom(row, ['mentions', 'chanmama_mention_count', 'mention_count']);
-      const firsts = numFrom(row, ['firsts', 'chanmama_first_count', 'first_recommendation_count']);
-      if (!completed) {
-        return {
-          label: '待判定',
-          tone: 'muted',
-          reason: '当前还没有有效样本，暂不做关键词结论。',
-          action: '完成采样后再判定。'
-        };
-      }
-      if (firsts >= Math.ceil(completed / 2)) {
-        return {
-          label: '达标',
-          tone: 'ok',
-          reason: `蝉妈妈首推 ${firsts}/${completed}，已形成稳定首推。`,
-          action: '降低监测频率，改为每月抽检一次。'
-        };
-      }
-      if (mentions > 0) {
-        return {
-          label: '半达标',
-          tone: 'warn',
-          reason: `蝉妈妈提及 ${mentions}/${completed}，但首推仅 ${firsts}/${completed}，还未形成稳定首推。`,
-          action: '继续周度监测，同时生成内容加强任务。'
-        };
-      }
-      return {
-        label: '不达标',
-        tone: 'risk',
-        reason: `蝉妈妈提及 0/${completed}，当前样本未被 AI 看见。`,
-        action: '优先生成内容优化任务，下周继续复测。'
-      };
-    }
-
-    function keywordDecisionCell(row) {
-      const decision = keywordDecision(row);
-      return `<span class="status-chip ${decision.tone}">${escapeHtml(decision.label)}</span>`;
-    }
-
-    function keywordStatusSummary(keywordRows) {
-      const counts = { '达标': 0, '半达标': 0, '不达标': 0, '待判定': 0 };
-      keywordRows.forEach(row => {
-        counts[keywordDecision(row).label] += 1;
-      });
-      const total = keywordRows.length || 0;
-      const line = `${counts['半达标']}/${total} 半达标，${counts['达标']} 达标`;
-      const readout = total && counts['半达标'] >= Math.ceil(total / 2)
-        ? '多数关键词已被看见，但首推不稳定'
-        : total && counts['达标'] >= Math.ceil(total / 2)
-          ? '多数关键词已形成稳定首推'
-          : '关键词仍需继续观察';
-      return { counts, total, line, readout };
-    }
-
-    function topicCell(row) {
-      return `<div class="topic-cell"><strong>${escapeHtml(row.category || '')}</strong><span>${escapeHtml(row.keyword || '')}</span></div>`;
-    }
-
-    function termChips(value, emptyText, limit = 4) {
-      const items = splitTerms(value);
-      if (!items.length) return `<span class="empty">${escapeHtml(emptyText)}</span>`;
-      const chips = items.slice(0, limit).map(item => `<span class="term-chip" title="${escapeHtml(item)}">${escapeHtml(item)}</span>`).join('');
-      const more = items.length > limit ? `<span class="term-chip more">+${items.length - limit}</span>` : '';
-      return `<span class="term-list">${chips}${more}</span>`;
-    }
-
-    function signalRow(label, value, emptyText, limit = 4) {
-      return `<div class="signal-line"><span class="signal-label">${escapeHtml(label)}</span>${termChips(value, emptyText, limit)}</div>`;
-    }
-
-    function signalCell(row) {
-      return `<div class="signal-cell">
-        ${signalRow('竞品', row.mentioned_competitors, '无', 4)}
-        ${signalRow('官方', row.mentioned_official_tools, '无', 4)}
-        ${signalRow('优势', row.target_advantages_hit, '待补', 5)}
-      </div>`;
-    }
-
-    function sampleCompleted(row) {
-      return Boolean(row.sample_date || row.answer_text);
-    }
-
-    function sampleMentionsChanmama(row) {
-      return row.mentioned_chanmama === '是' || String(row.answer_text || '').includes('蝉妈妈');
-    }
-
-    function sampleIsChanmamaFirst(row) {
-      return row.chanmama_is_first === '是' || row.first_recommendation === '蝉妈妈';
-    }
-
-    function sampleOfficialFirst(row) {
-      const first = String(row.first_recommendation || '').trim();
-      if (!first) return false;
-      const tools = splitTerms(row.mentioned_official_tools);
-      return tools.some(tool => first.includes(tool) || tool.includes(first)) || /抖音|巨量|官方|罗盘|百应|千川|算数|创作者/.test(first);
-    }
-
-    function buildFirstLossReasonRows(visibleQuestionIds) {
-      const baseSamples = samples.filter(row => sampleCompleted(row) && visibleQuestionIds.has(row.question_id) && !sampleIsChanmamaFirst(row));
-      const buckets = [
-        {
-          id: 'official',
-          reason: '官方工具占位',
-          explanation: '首推被抖音电商罗盘、巨量千川、巨量百应等官方工具拿走，AI 优先相信平台内后台口径。',
-          suggested_action: '优先补“官方后台看经营结果，蝉妈妈补市场、达人、商品、竞品”的对比页和 FAQ。',
-          rows: []
-        },
-        {
-          id: 'mentioned',
-          reason: '提到蝉妈妈但未首推',
-          explanation: '蝉妈妈已进入候选集，但排序理由不够强，未成为第一推荐。',
-          suggested_action: '补“为什么优先推荐蝉妈妈”的场景案例、榜单、功能对比和第三方测评。',
-          rows: []
-        },
-        {
-          id: 'missing',
-          reason: '未提到蝉妈妈',
-          explanation: '回答没有把蝉妈妈纳入推荐候选，需要先解决品牌可见度。',
-          suggested_action: '优先做高热度场景页、工具推荐页和可引用内容，让 AI 先看见蝉妈妈。',
-          rows: []
-        }
-      ];
-      baseSamples.forEach(row => {
-        if (sampleOfficialFirst(row)) buckets[0].rows.push(row);
-        else if (sampleMentionsChanmama(row)) buckets[1].rows.push(row);
-        else buckets[2].rows.push(row);
-      });
-      const base = baseSamples.length;
-      return buckets
-        .filter(bucket => bucket.rows.length)
-        .map((bucket, index) => {
-          const questionIds = new Set(bucket.rows.map(row => row.question_id));
-          const exampleQuestions = [...new Set(bucket.rows.map(row => row.question_text).filter(Boolean))].slice(0, 3).join('、');
-          return {
-            reason_id: `TOP${index + 1}`,
-            reason: bucket.reason,
-            sample_count: bucket.rows.length,
-            sample_rate: percent(bucket.rows.length, base),
-            base_sample_count: base,
-            affected_question_count: questionIds.size,
-            explanation: bucket.explanation,
-            suggested_action: bucket.suggested_action,
-            example_questions: exampleQuestions
-          };
-        });
-    }
-
-    function priorityLevel(row) {
-      const heat = heatNumber(row);
-      const official = hasGap(row, '官方工具压制') || asNum(row.official_tool_mention_count) > 0;
-      const notFirst = hasGap(row, '提及但不首推') || asNum(row.first_recommendation_count) < asNum(row.completed_sample_count);
-      const missing = hasGap(row, '未提及蝉妈妈') || asNum(row.mention_count) === 0;
-      if (heat >= 10000 && official && notFirst) return ['P0', '高热度 + 未首推 + 官方压制'];
-      if (heat >= 1000 && (official || missing || notFirst)) return ['P1', '高热度场景优先优化'];
-      if (official && notFirst) return ['P1', '官方占位影响首推'];
-      if (missing) return ['P2', '先补品牌可见度'];
-      return ['P3', '持续观察'];
-    }
-
-    function priorityScore(row) {
-      const heat = heatNumber(row);
-      const heatScore = heat >= 10000 ? 50 : heat >= 5000 ? 42 : heat >= 1000 ? 34 : heat >= 100 ? 22 : 8;
-      const officialScore = hasGap(row, '官方工具压制') || asNum(row.official_tool_mention_count) > 0 ? 28 : 0;
-      const notFirstScore = hasGap(row, '提及但不首推') || asNum(row.first_recommendation_count) < asNum(row.completed_sample_count) ? 22 : 0;
-      const missingScore = hasGap(row, '未提及蝉妈妈') || asNum(row.mention_count) === 0 ? 20 : 0;
-      return heatScore + officialScore + notFirstScore + missingScore + asNum(row.affected_sample_count);
-    }
-
-    function priorityCell(row) {
-      const [level, reason] = priorityLevel(row);
-      return `<div class="priority-cell"><strong>${escapeHtml(level)}</strong><span>${escapeHtml(reason)}</span></div>`;
-    }
-
-    function boardEvidence(row) {
-      const completed = asNum(row.completed_sample_count);
-      const firsts = asNum(row.first_recommendation_count);
-      const official = asNum(row.official_tool_mention_count);
-      return `<div class="action-cell"><strong>${escapeHtml(`未首推 ${Math.max(completed - firsts, 0)}/${completed}`)}</strong><span>${escapeHtml(`官方工具 ${official}/${completed}；影响样本 ${row.affected_sample_count || 1}`)}</span></div>`;
-    }
-
-    function buildPriorityBoardRows(taskRows) {
-      const map = new Map();
-      taskRows.forEach(row => {
-        const key = row.question_id || row.question_text || row.repair_id || row.task_id;
-        const item = map.get(key) || {...row, affected_sample_count: 0};
-        item.affected_sample_count += asNum(row.affected_sample_count || 1);
-        item.content_gap_types = [...new Set([...splitTerms(item.content_gap_types || item.content_gap_type), ...splitTerms(row.content_gap_types || row.content_gap_type)])].join('、');
-        item.mentioned_competitors = [...new Set([...splitTerms(item.mentioned_competitors), ...splitTerms(row.mentioned_competitors)])].join('、');
-        item.mentioned_official_tools = [...new Set([...splitTerms(item.mentioned_official_tools), ...splitTerms(row.mentioned_official_tools)])].join('、');
-        item.target_advantages_hit = [...new Set([...splitTerms(item.target_advantages_hit), ...splitTerms(row.target_advantages_hit)])].join('、');
-        map.set(key, item);
-      });
-      return [...map.values()]
-        .map(row => ({...row, priority_score: priorityScore(row)}))
-        .sort((a, b) => b.priority_score - a.priority_score || heatNumber(b) - heatNumber(a));
-    }
-
-    function optimizationDirection(row) {
-      const official = hasGap(row, '官方工具压制');
-      const competitor = hasGap(row, '竞品压制');
-      const missing = hasGap(row, '未提及蝉妈妈');
-      const notFirst = hasGap(row, '提及但不首推');
-      const source = hasGap(row, '引用来源不足') || hasGap(row, '引用源缺失');
-      if (official && competitor) return actionCell('官方对比 + 竞品替代', '同时解决官方工具和竞品抢位');
-      if (official && notFirst) return actionCell('官方对比 + 首推强化', '解释官方后台与蝉妈妈的分工');
-      if (official && missing) return actionCell('品牌入口 + 官方对比', '先让答案提到蝉妈妈');
-      if (competitor) return actionCell('竞品替代证明', '证明蝉妈妈在该场景更合适');
-      if (source) return actionCell('补引用证据', '让 AI 有可信来源可引用');
-      if (missing) return actionCell('补品牌可见内容', '覆盖工具推荐和场景问法');
-      if (notFirst) return actionCell('首推理由强化', '补足优先推荐蝉妈妈的理由');
-      return actionCell('持续观察', '保留周度复测');
-    }
-
-    function optimizationFocus(row) {
-      const focus = [];
-      if (hasGap(row, '官方工具压制')) focus.push('官方看经营结果；蝉妈妈补市场/达人/商品/竞品');
-      if (hasGap(row, '提及但不首推')) focus.push('补“为什么优先推荐蝉妈妈”');
-      if (hasGap(row, '竞品压制')) focus.push(`对比 ${shortList(row.mentioned_competitors, '飞瓜/抖查查/新抖', 3)}`);
-      if (hasGap(row, '未提及蝉妈妈')) focus.push(`围绕「${row.keyword || '核心场景'}」补工具推荐入口`);
-      if (hasGap(row, '引用来源不足') || hasGap(row, '引用源缺失')) focus.push('补官网、运营圈、外站可引用证据');
-      const title = focus[0] || `强化 ${shortList(row.target_advantages_hit, '数据覆盖/场景适配', 3)}`;
-      const note = focus.slice(1, 3).join('；') || `优势：${shortList(row.target_advantages_hit, '数据覆盖/场景适配', 3)}`;
-      return actionCell(title, note);
-    }
-
-    function optimizationDeliverable(row) {
-      const official = hasGap(row, '官方工具压制');
-      const competitor = hasGap(row, '竞品压制');
-      const missing = hasGap(row, '未提及蝉妈妈');
-      const source = hasGap(row, '引用来源不足') || hasGap(row, '引用源缺失');
-      if (official && competitor) return actionCell('三方对比页 / 替代页', `重点对比 ${shortList(row.mentioned_competitors, '飞瓜/抖查查/新抖', 2)}`);
-      if (official) return actionCell('对比页 / FAQ', '官方后台 vs 第三方工具分工');
-      if (competitor) return actionCell('竞品对比页 / 替代页', `重点对比 ${shortList(row.mentioned_competitors, '飞瓜/抖查查/新抖', 2)}`);
-      if (source) return actionCell('官网案例 / 外站测评', '确保可被 AI 引用');
-      if (missing) return actionCell('榜单页 / 场景页', `覆盖「${row.keyword || '核心'}」推荐问法`);
-      return actionCell('场景 FAQ', '下轮复测首推变化');
     }
 
     function filteredSummary() {
@@ -1164,7 +773,7 @@
 
     function renderTable(id, headers, bodyRows) {
       const table = $(id);
-      table.innerHTML = `<thead><tr>${headers.map(h => `<th class="${h.class || ''}">${h.label}</th>`).join('')}</tr></thead><tbody>${
+      table.innerHTML = `<thead><tr>${headers.map(h => `<th>${h.label}</th>`).join('')}</tr></thead><tbody>${
         bodyRows.map(row => `<tr>${headers.map(h => `<td class="${h.class || ''}">${h.render ? h.render(row) : escapeHtml(row[h.key])}</td>`).join('')}</tr>`).join('')
       }</tbody>`;
     }
@@ -1181,12 +790,11 @@
       <div class="metric-guide-grid">
         ${[
           ['爱搜热度', '来自 AIDSO 官网搜索记录的热度值；未补采时显示待补采，不再使用源表流量代替。'],
-          ['累计 / 本周新增', '累计采样使用当前真实已采样数 / 计划样本数；本周新增只统计进入下一轮周度复测后的新增样本，本批次未进入周度复测时显示 0/6。'],
-          ['关键词判定', '达标=蝉妈妈首推稳定且稳定出现；半达标=已提到蝉妈妈但未形成稳定首推；不达标=当前样本未提到蝉妈妈。页面按当前样本首推是否达到半数以上判断稳定首推。'],
           ['提及率', '已采样回答里出现“蝉妈妈”的比例，代表品牌是否被 AI 看见。'],
           ['首推率', '已采样回答里把蝉妈妈放在第一推荐的比例，代表推荐优先级。'],
           ['有效首推率', '把抖音官方工具首推样本剔除后再看蝉妈妈首推率，避免被抖音电商罗盘、巨量千川、巨量引擎等官方工具压低判断。'],
           ['得分', '单次样本仍按首推 5 分、第 2 名 4 分、第 3 名 3 分、提及但非前三 2 分、未提及 0 分记录；每题 6 次后统一换算为 10 分制，7.3 分视为达标。'],
+          ['本次累计', '基线批次每个核心问题固定展示 6/6；本周新增 0/6 代表尚未进入下一轮复测，不是漏采。'],
           ['均排', '蝉妈妈进入推荐排名时的平均名次，数字越小越好；未进入排名的样本不参与均排计算。'],
           ['心智分', '首推 100，第二 85，第三 70，提及但非前三 50，未提及 0，用来衡量 AI 对品牌推荐强度。'],
           ['结果差异', '同一问题多次采样后的回答分布，拆成未提及、提及非首推、首推三类看稳定性。'],
@@ -1217,7 +825,7 @@
         const score = row.batch_score || row.weekly_score || '0';
         const maxScore = row.batch_max_score || row.weekly_max_score || '10';
         const scoreRate = row.batch_score_rate || row.weekly_score_rate || '0%';
-        const completed = `${row.actual_completed_sample_count || row.completed_sample_count || 0}/${row.planned_sample_count || row.batch_target_count || row.weekly_target_count || 6}`;
+        const completed = `${row.batch_completed_count || 0}/${row.batch_target_count || row.weekly_target_count || 6}`;
         const aidsoHeat = row.aidso_heat || row.aidso_heat_value || row['爱搜热度'] || row['热度值'] || '';
         return `<article class="decision-card">
           <div class="decision-card-head">
@@ -1238,8 +846,8 @@
               <div class="score-main">${escapeHtml(score)}/${escapeHtml(maxScore)} <span class="help">${escapeHtml(scoreRate)}</span></div>
               <div class="score-note">单次按首推5、第2名4、第3名3、提及2、未提及0记录；本卡统一换算为10分制，7.3分达标。</div>
               <ul class="mini-rows">
-                <li><span>累计采样</span><strong>${escapeHtml(completed)}</strong></li>
-                <li><span>本周新增</span><strong>${escapeHtml(row.weekly_completed_count || 0)}/${escapeHtml(row.weekly_target_count || 6)}</strong></li>
+                <li><span>本次累计</span><strong>${escapeHtml(row.baseline_progress_label || completed)}</strong></li>
+                <li><span>本周新增</span><strong>${escapeHtml(row.weekly_progress_label || String(row.weekly_completed_count || 0) + '/' + String(row.weekly_target_count || 6))}</strong></li>
               </ul>
             </div>
             ${resultBreakdown(row)}
@@ -1346,6 +954,9 @@
 
     function renderExecutiveOverview(metrics) {
       const completeRate = percent(metrics.completed, metrics.planned);
+      const meta = window.GEO_DASHBOARD.meta || {};
+      const baselineProgress = meta.baseline_progress_label || '6/6';
+      const weeklyProgress = meta.weekly_progress_label || '0/6';
       const effectiveFirstRate = pctNumber(metrics.firsts, metrics.effectiveFirstDenominator);
       const mentionRate = percent(metrics.mentions, metrics.completed);
       const firstRate = percent(metrics.firsts, metrics.completed);
@@ -1357,29 +968,29 @@
       const risk = riskState(metrics.officialTools, metrics.competitors, metrics.completed);
       const summaryPrefix = confidence.label === '早期观察' ? '早期信号' : '阶段判断';
       const sourceProblem = sourceTotal === 0 ? '引用源缺失' : '引用源不足';
-      const keywordReadout = metrics.keywordStatus?.readout || '关键词仍需继续观察';
       const riskAction = risk.label === '竞品压制'
         ? '下一步：反查竞品引用源，补同类证据和第三方测评对比页。'
         : '下一步：优先做官方后台 vs 第三方数据工具的客观对比页。';
 
       $('executiveBrief').innerHTML = `<div>
         <div class="brief-kicker">总结 / ${escapeHtml(window.GEO_DASHBOARD.meta.scope_label || '')}</div>
-        <div class="brief-title">${summaryPrefix}：蝉妈妈有可见度，但样本仍少；当前主要问题是${risk.label}与${sourceProblem}。</div>
-        <div class="brief-note">关键词判断：${escapeHtml(keywordReadout)}。默认先看结论、风险和动作；复杂口径保留在下方图表与明细表中，便于复核。</div>
+        <div class="brief-title">${summaryPrefix}：TOP0/TOP1 基线已封存；当前主要问题是${risk.label}与${sourceProblem}。</div>
+        <div class="brief-note">本次累计按单个核心问题展示 ${escapeHtml(baselineProgress)}；本周新增 ${escapeHtml(weeklyProgress)} 代表尚未进入下一轮复测，不是漏采。</div>
       </div>
       <div class="brief-status">
         <span>GEO 健康度</span>
         <strong>${escapeHtml(confidence.label)}</strong>
-        <span>${metrics.completed}/${metrics.planned}，完成率 ${completeRate}</span>
+        <span>总样本 ${metrics.completed}/${metrics.planned}，完成率 ${completeRate}</span>
       </div>`;
 
       $('kpis').innerHTML = [
-        executiveCard('样本可信度', confidence, `${metrics.completed}/${metrics.planned}`, `完成率 ${completeRate}`, [
+        executiveCard('样本可信度', confidence, baselineProgress, `本周新增 ${weeklyProgress}`, [
+          ['总样本', `${metrics.completed}/${metrics.planned}`, `完成率 ${completeRate}`],
           ['问题数', `${metrics.questionCount} 个`],
           ['核心问题达标', `${metrics.passedQuestions} 个`, '问题级：单题达到达标线'],
-          ['关键词状态', metrics.keywordStatus?.line || `${metrics.passedKeywords} 个达标`, '半达标=已提及但首推不稳定'],
+          ['关键词达标', `${metrics.passedKeywords} 个`, '关键词级：该词下问题整体达标'],
           ['周环比', '待积累']
-        ], confidence.note, confidence.label === '早期观察' ? '下一步：继续采样，避免过早下稳定结论。' : '下一步：进入周环比观察，确认趋势是否稳定。'),
+        ], '基线批次已封存；本周新增 0/6 不代表漏采。', '下一步：先审核判定、内容缺口和优化任务，确认后再进入 TOP2/TOP3。'),
         executiveCard('品牌推荐力', brand, `${metrics.avgMindScore}`, `${brand.note}`, [
           ['提及率', mentionRate],
           ['首推率', firstRate],
@@ -1460,10 +1071,11 @@
       ].join('');
     }
 
-    function renderCompetitiveAnalysis(visibleQuestionIds) {
+    function renderCompetitiveAnalysis() {
       const query = state.search.trim().toLowerCase();
-      const reasonRows = buildFirstLossReasonRows(visibleQuestionIds)
-        .filter(row => !query || `${row.reason} ${row.explanation} ${row.example_questions}`.toLowerCase().includes(query));
+      const reasonRows = nonChanmamaReasons
+        .filter(row => !query || `${row.reason} ${row.explanation} ${row.example_questions}`.toLowerCase().includes(query))
+        .slice(0, 12);
       const sourceRows = sourceEvidenceSummary
         .filter(row => !query || `${row.item} ${row.explanation} ${row.note}`.toLowerCase().includes(query))
         .slice(0, 8);
@@ -1473,12 +1085,12 @@
       const brandRows = brandComparison
         .filter(row => !query || `${row.brand} ${row.brand_group} ${row.layout} ${row.covered_keywords} ${row.example_questions}`.toLowerCase().includes(query))
         .slice(0, 16);
-      $('reasonCount').textContent = `${reasonRows.length} 类主原因`;
+      $('reasonCount').textContent = `${reasonRows.length} 类原因`;
       renderTable('reasonTable', [
-        { label: '主原因<span class="help">按非首推样本互斥归类，避免重复计算</span>', key: 'reason' },
-        { label: '非首推样本<span class="help">分母为蝉妈妈没有首推的样本</span>', render: r => `${r.sample_count}/${r.base_sample_count || '-'}<br>${r.sample_rate}`, class: 'num' },
+        { label: '原因', key: 'reason' },
+        { label: '非首推样本<span class="help">只统计蝉妈妈没有首推的样本</span>', render: r => `${r.sample_count}/${r.base_sample_count || '-'}<br>${r.sample_rate}`, class: 'num' },
         { label: '影响问题', render: r => `${r.affected_question_count} 个`, class: 'num' },
-        { label: '领导解读', key: 'explanation', class: 'question' },
+        { label: '怎么理解', key: 'explanation', class: 'question' },
         { label: '优化动作', key: 'suggested_action', class: 'question' },
         { label: '示例问题', key: 'example_questions', class: 'question' }
       ], reasonRows);
@@ -1540,11 +1152,7 @@
       const passedQuestions = decisionRows.filter(row => row.codex_question_decision === '达标').length;
       const continuingQuestions = decisionRows.filter(row => row.continue_sampling === '是').length;
       const keywordDecisionRows = keywordDecisions.filter(row => visibleKeywords.has(row.keyword));
-      const keywordDecisionMap = new Map(keywordDecisionRows.map(row => [row.keyword, row]));
-      const keywordRows = aggregate(data, 'keyword')
-        .map(row => ({...row, ...(keywordDecisionMap.get(row.name) || {})}));
-      const passedKeywords = keywordRows.filter(row => keywordDecision(row).label === '达标').length;
-      const keywordStatus = keywordStatusSummary(keywordRows);
+      const passedKeywords = keywordDecisionRows.filter(row => row.codex_keyword_decision === '达标').length;
       const brandRows = [...brandComparison].sort((a, b) => asNum(b.mention_count) - asNum(a.mention_count));
       const brandGroupRows = [...brandGroupComparison].sort((a, b) => asNum(b.first_recommendation_count) - asNum(a.first_recommendation_count));
 
@@ -1571,14 +1179,13 @@
         passedQuestions,
         continuingQuestions,
         passedKeywords,
-        keywordStatus,
         decisionRows,
         brandGroupRows,
         brandRows
       };
       renderExecutiveOverview(metrics);
       renderCharts(metrics);
-      renderCompetitiveAnalysis(visibleQuestionIds);
+      renderCompetitiveAnalysis();
 
       $('decisionCount').textContent = `${decisionRows.length} 个核心问题`;
       renderDecisionCards('decisionTable', decisionRows);
@@ -1587,13 +1194,16 @@
       $('categoryCount').textContent = `${categoryRows.length} 类`;
       renderTable('categoryTable', metricHeaders('分类'), categoryRows);
 
+      const keywordDecisionMap = new Map(keywordDecisionRows.map(row => [row.keyword, row]));
+      const keywordRows = aggregate(data, 'keyword')
+        .map(row => ({...row, ...(keywordDecisionMap.get(row.name) || {})}));
       $('keywordCount').textContent = `${keywordRows.length} 个关键词`;
       renderTable('keywordTable', [
         { label: '关键词', key: 'name' },
-        { label: '状态', render: keywordDecisionCell },
-        { label: '累计 / 本周新增', render: r => `${r.completed}/${r.planned}<br>${escapeHtml(r.weekly_progress_label || '0/6')}`, class: 'num' },
-        { label: '原因', render: r => escapeHtml(keywordDecision(r).reason), class: 'question' },
-        { label: '下一步动作', render: r => escapeHtml(keywordDecision(r).action), class: 'question' },
+        { label: '状态', render: r => escapeHtml(r.codex_keyword_decision || '待判定') },
+        { label: '本次累计 / 本周新增<span class="help">0/6 不是漏采，表示尚未进入下一轮复测</span>', render: r => `${escapeHtml(r.baseline_progress_label || '6/6')}<br>${escapeHtml(r.weekly_progress_label || '0/6')}`, class: 'num' },
+        { label: '原因', render: r => escapeHtml(r.decision_reason || ''), class: 'question' },
+        { label: '下一步动作', render: r => escapeHtml(r.next_action || ''), class: 'question' },
         { label: '问题数', key: 'questions', class: 'num' },
         { label: '采样<span class="help">已采样 / 计划</span>', render: r => `${r.completed}/${r.planned}`, class: 'num' },
         { label: '提及 / 首推', render: r => `${percent(r.mentions, r.completed)} / ${percent(r.firsts, r.completed)}`, class: 'num' },
@@ -1640,29 +1250,28 @@
         { label: '官方工具', render: r => escapeHtml(r.mentioned_official_tools || '') },
         { label: '优势命中', render: r => escapeHtml(r.target_advantages_hit || '') },
         { label: '缺口', render: r => escapeHtml(r.content_gap_type || '') },
-        { label: '优化动作', render: r => escapeHtml(r.suggested_action || '') },
+        { label: '建议动作', render: r => escapeHtml(r.suggested_action || '') },
         { label: '运营圈引用', render: r => pill(r.mentioned_yunyingquan_source) },
         { label: '引用源', render: r => escapeHtml(r.source_urls || '待采集') }
       ], sampleRows);
 
-      const taskRows = repairList
-        .filter(row => visibleQuestionIds.has(row.question_id))
-        .map(row => ({...(summaryByQuestionId.get(row.question_id) || {}), ...row}));
-      const priorityRows = buildPriorityBoardRows(taskRows);
-      $('taskCount').textContent = `${priorityRows.length} 个问题`;
+      const taskRows = repairList.filter(row => visibleQuestionIds.has(row.question_id));
+      $('taskCount').textContent = `${taskRows.length} 条任务`;
       renderTable('taskTable', [
-        { label: '优化ID', render: r => escapeHtml(r.question_id || r.repair_id || r.task_id || ''), class: 'task-id' },
-        { label: '优先级', render: priorityCell, class: 'task-priority' },
-        { label: '分类 / 关键词', render: topicCell, class: 'task-topic' },
-        { label: '爱搜热度', render: heatCell, class: 'num heat-col' },
-        { label: '问题', key: 'question_text', class: 'question task-question' },
-        { label: '影响样本', render: r => escapeHtml(r.affected_sample_count || '1'), class: 'num impact-col' },
-        { label: '排序依据', render: boardEvidence, class: 'gap-col' },
-        { label: '优化方向', render: optimizationDirection, class: 'action-col' },
-        { label: '补强内容', render: optimizationFocus, class: 'action-col' },
-        { label: '交付形式', render: optimizationDeliverable, class: 'action-col' },
-        { label: '相关信号', render: signalCell, class: 'signal-col' }
-      ], priorityRows);
+        { label: '优化ID', render: r => escapeHtml(r.repair_id || r.task_id || '') },
+        { label: '优化优先级', render: r => escapeHtml(r.repair_priority || r.priority || '') },
+        { label: '优先级', key: 'priority' },
+        { label: '分类', key: 'category' },
+        { label: '关键词', key: 'keyword' },
+        { label: '问题', key: 'question_text', class: 'question' },
+        { label: '影响样本', render: r => escapeHtml(r.affected_sample_count || '1'), class: 'num' },
+        { label: '缺口类型', render: r => escapeHtml(r.content_gap_types || r.content_gap_type || '') },
+        { label: '建议动作', render: r => escapeHtml(r.suggested_actions || r.suggested_action || '') },
+        { label: '竞品', key: 'mentioned_competitors' },
+        { label: '官方工具', key: 'mentioned_official_tools' },
+        { label: '优势命中', key: 'target_advantages_hit' },
+        { label: '来源类型', render: r => escapeHtml(r.source_types || r.source_type || '') }
+      ], taskRows);
     }
 
     function metricHeaders(label) {
