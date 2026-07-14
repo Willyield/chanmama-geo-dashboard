@@ -913,6 +913,8 @@
     const sourceEvidenceSummary = window.GEO_DASHBOARD.source_evidence_summary || [];
     const brandGroupComparison = window.GEO_DASHBOARD.brand_group_comparison || [];
     const brandComparison = window.GEO_DASHBOARD.brand_comparison || [];
+    const geoShortfallSamples = window.GEO_DASHBOARD.geo_shortfall_samples || [];
+    const shortfallBySampleId = new Map(geoShortfallSamples.map(row => [row.sample_id, row]));
 
     const $ = (id) => document.getElementById(id);
     const uniq = (items) => [...new Set(items.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'zh-CN'));
@@ -1048,7 +1050,7 @@
       return `<div class="signal-cell">
         ${signalRow('竞品', row.mentioned_competitors, '无', 4)}
         ${signalRow('官方', row.mentioned_official_tools, '无', 4)}
-        ${signalRow('优势', row.target_advantages_hit, '待补', 5)}
+        ${signalRow('命中词', row.target_advantages_hit, '待补', 5)}
       </div>`;
     }
 
@@ -1194,8 +1196,8 @@
       if (hasGap(row, '竞品压制')) focus.push(`对比 ${shortList(row.mentioned_competitors, '飞瓜/抖查查/新抖', 3)}`);
       if (hasGap(row, '未提及蝉妈妈')) focus.push(`围绕「${row.keyword || '核心场景'}」补工具推荐入口`);
       if (hasGap(row, '引用来源不足') || hasGap(row, '引用源缺失')) focus.push('补官网、运营圈、外站可引用证据');
-      const title = focus[0] || `强化 ${shortList(row.target_advantages_hit, '数据覆盖/场景适配', 3)}`;
-      const note = focus.slice(1, 3).join('；') || `优势：${shortList(row.target_advantages_hit, '数据覆盖/场景适配', 3)}`;
+      const title = focus[0] || `围绕 ${shortList(row.target_advantages_hit, '数据覆盖/场景适配', 3)} 补强`;
+      const note = focus.slice(1, 3).join('；') || `命中词：${shortList(row.target_advantages_hit, '数据覆盖/场景适配', 3)}`;
       return actionCell(title, note);
     }
 
@@ -1853,7 +1855,9 @@
       ], data);
 
       const questionById = new Map(questions.map(q => [q.question_id, q]));
-      const sampleRows = samples.filter(s => visibleQuestionIds.has(s.question_id)).map(s => ({...s, ...(questionById.get(s.question_id) || {})}));
+      const sampleRows = samples
+        .filter(s => visibleQuestionIds.has(s.question_id))
+        .map(s => ({...s, ...(questionById.get(s.question_id) || {}), ...(shortfallBySampleId.get(s.sample_id) || {})}));
       $('sampleCount').textContent = `${sampleRows.length} 条记录`;
       renderTable('sampleTable', [
         { label: '采样ID', key: 'sample_id' },
@@ -1873,7 +1877,9 @@
         { label: '心智分<span class="help">首推100，第二85，第三70</span>', render: r => escapeHtml(r.mind_influence_score || ''), class: 'num' },
         { label: '竞品', render: r => escapeHtml(r.mentioned_competitors || '') },
         { label: '官方工具', render: r => escapeHtml(r.mentioned_official_tools || '') },
-        { label: '优势命中', render: r => escapeHtml(r.target_advantages_hit || '') },
+        { label: '明确蝉妈妈优势<span class="help">严格优势表达口径：只统计与蝉妈妈绑定的明确优势、偏好、适用对象或比较表达</span>', render: r => pill(r.chanmama_advantage_explicit || '否') },
+        { label: '优势证据', render: r => escapeHtml(r.chanmama_advantage_evidence || '未明确说明'), class: 'question' },
+        { label: '命中词<span class="help">关键词/场景词命中，不等于首页“优势表达”计数</span>', render: r => escapeHtml(r.target_advantages_hit || '') },
         { label: '缺口', render: r => escapeHtml(r.content_gap_type || '') },
         { label: '优化动作', render: r => escapeHtml(r.suggested_action || '') },
         { label: '运营圈引用', render: r => pill(r.mentioned_yunyingquan_source) },
