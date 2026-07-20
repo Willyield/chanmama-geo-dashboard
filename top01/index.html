@@ -1233,7 +1233,7 @@
         const name = row[key];
         const item = map.get(name) || {
           name, questions: 0, planned: 0, completed: 0, mentions: 0, firsts: 0, top3: 0,
-          effectiveFirstDenominator: 0, officialFirstExcluded: 0,
+          effectiveFirsts: 0, effectiveFirstDenominator: 0, officialFirstExcluded: 0,
           rankSum: 0, rankCount: 0, mindScoreSum: 0, mindScoreCount: 0,
           advantages: 0, competitors: 0, officialTools: 0,
           sources: 0, officialSources: 0, externalSources: 0
@@ -1243,6 +1243,7 @@
         item.completed += asNum(row.completed_sample_count);
         item.mentions += asNum(row.mention_count);
         item.firsts += asNum(row.first_recommendation_count);
+        item.effectiveFirsts += asNum(row.effective_first_recommendation_count);
         item.effectiveFirstDenominator += asNum(row.effective_first_recommendation_denominator);
         item.officialFirstExcluded += asNum(row.official_first_excluded_count);
         item.top3 += asNum(row.top3_chanmama_count);
@@ -1288,7 +1289,7 @@
           ['关键词判定', '达标=蝉妈妈首推稳定且稳定出现；半达标=已提到蝉妈妈但未形成稳定首推；不达标=当前样本未提到蝉妈妈。页面按当前样本首推是否达到半数以上判断稳定首推。'],
           ['提及率', '已采样回答里出现“蝉妈妈”的比例，代表品牌是否被 AI 看见。'],
           ['首推率', '已采样回答里把蝉妈妈放在第一推荐的比例，代表推荐优先级。'],
-          ['有效首推率', '把抖音官方工具首推样本剔除后再看蝉妈妈首推率，避免被抖音电商罗盘、巨量千川、巨量引擎等官方工具压低判断。'],
+          ['有效首推率', '按回答推荐顺序移除抖音官方工具后重新排序；没有可识别非官方候选的回答不进入分母。'],
           ['得分', '单次样本仍按首推 5 分、第 2 名 4 分、第 3 名 3 分、提及但非前三 2 分、未提及 0 分记录；每题 6 次后统一换算为 10 分制，7.3 分视为达标。'],
           ['均排', '蝉妈妈进入推荐排名时的平均名次，数字越小越好；未进入排名的样本不参与均排计算。'],
           ['心智分', '首推 100，第二 85，第三 70，提及但非前三 50，未提及 0，用来衡量 AI 对品牌推荐强度。'],
@@ -1449,7 +1450,7 @@
 
     function renderExecutiveOverview(metrics) {
       const completeRate = percent(metrics.completed, metrics.planned);
-      const effectiveFirstRate = pctNumber(metrics.firsts, metrics.effectiveFirstDenominator);
+      const effectiveFirstRate = pctNumber(metrics.effectiveFirsts, metrics.effectiveFirstDenominator);
       const mentionRate = percent(metrics.mentions, metrics.completed);
       const firstRate = percent(metrics.firsts, metrics.completed);
       const top3Rate = percent(metrics.top3, metrics.completed);
@@ -1486,7 +1487,7 @@
         executiveCard('品牌推荐力', brand, `${metrics.avgMindScore}`, `${brand.note}`, [
           ['提及率', mentionRate],
           ['首推率', firstRate],
-          ['有效首推率', `${effectiveFirstRate}%（剔除官方工具）`],
+          ['有效首推率', `${effectiveFirstRate}%（去官方后重排）`],
           ['前 3 率 / 均排', `${top3Rate} / ${rankText(metrics.rankSum, metrics.rankCount)}`],
           ['优势表达', `${metrics.advantages} 次，${advantageRate}`]
         ], `蝉妈妈已被看见，但首推、稳定排序和优势表达仍需继续拉升；均排越低代表推荐位置越靠前。`, '下一步：补“为什么选蝉妈妈”的对比型内容、优势 FAQ 和可引用证据。'),
@@ -1549,7 +1550,7 @@
         barChart('推荐表现', [
           { name: '蝉妈妈提及', value: pctNumber(metrics.mentions, metrics.completed), label: percent(metrics.mentions, metrics.completed), color: '#1e40af' },
           { name: '蝉妈妈首推', value: pctNumber(metrics.firsts, metrics.completed), label: percent(metrics.firsts, metrics.completed), color: '#047857' },
-          { name: '有效首推', value: pctNumber(metrics.firsts, metrics.effectiveFirstDenominator), label: percent(metrics.firsts, metrics.effectiveFirstDenominator), color: '#16a34a' },
+          { name: '有效首推', value: pctNumber(metrics.effectiveFirsts, metrics.effectiveFirstDenominator), label: percent(metrics.effectiveFirsts, metrics.effectiveFirstDenominator), color: '#16a34a' },
           { name: '前 3 推荐', value: pctNumber(metrics.top3, metrics.completed), label: percent(metrics.top3, metrics.completed), color: '#0ea5e9' },
           { name: '优势表达', value: pctNumber(metrics.advantages, metrics.completed), label: percent(metrics.advantages, metrics.completed), color: '#d97706' },
           { name: '竞品提及', value: pctNumber(metrics.competitors, metrics.completed), label: percent(metrics.competitors, metrics.completed), color: '#b91c1c' },
@@ -1753,6 +1754,7 @@
       const completed = data.reduce((sum, row) => sum + asNum(row.completed_sample_count), 0);
       const mentions = data.reduce((sum, row) => sum + asNum(row.mention_count), 0);
       const firsts = data.reduce((sum, row) => sum + asNum(row.first_recommendation_count), 0);
+      const effectiveFirsts = data.reduce((sum, row) => sum + asNum(row.effective_first_recommendation_count), 0);
       const effectiveFirstDenominator = data.reduce((sum, row) => sum + asNum(row.effective_first_recommendation_denominator), 0);
       const officialFirstExcluded = data.reduce((sum, row) => sum + asNum(row.official_first_excluded_count), 0);
       const top3 = data.reduce((sum, row) => sum + asNum(row.top3_chanmama_count), 0);
@@ -1791,6 +1793,7 @@
         completed,
         mentions,
         firsts,
+        effectiveFirsts,
         effectiveFirstDenominator,
         officialFirstExcluded,
         top3,
@@ -1849,7 +1852,7 @@
         { label: '问题类型', render: r => escapeHtml(r.question_type || r.intent || '') },
         { label: '采样<span class="help">已采样 / 计划</span>', render: r => `${r.completed_sample_count}/${r.planned_sample_count}`, class: 'num' },
         { label: '提及 / 首推<span class="help">品牌可见度与第一推荐</span>', render: r => `${r.mention_count} 次，${r.mention_rate}<br>${r.first_recommendation_count} 次，${r.first_recommendation_rate}`, class: 'num' },
-        { label: '有效首推<span class="help">剔除抖音官方工具首推</span>', render: r => `${r.effective_first_recommendation_count || 0}/${r.effective_first_recommendation_denominator || 0}<br>${r.effective_first_recommendation_rate || '0%'}`, class: 'num' },
+        { label: '有效首推<span class="help">去官方后重新排序</span>', render: r => `${r.effective_first_recommendation_count || 0}/${r.effective_first_recommendation_denominator || 0}<br>${r.effective_first_recommendation_rate || '0%'}`, class: 'num' },
         { label: '均排 / 心智分<span class="help">均排越低越好；心智分越高越好</span>', render: r => `${escapeHtml(r.avg_chanmama_rank || '未进入')}<br>${escapeHtml(r.avg_mind_influence_score || '暂无')}`, class: 'num' },
         { label: '引用证据<span class="help">运营圈 / 官网 / 外站</span>', render: r => `${r.yunyingquan_source_count}/${r.official_source_count}/${r.external_source_count}`, class: 'num' }
       ], data);
@@ -1912,7 +1915,7 @@
         { label: '问题数', key: 'questions', class: 'num' },
         { label: '采样<span class="help">已采样 / 计划</span>', render: r => `${r.completed}/${r.planned}`, class: 'num' },
         { label: '提及 / 首推', render: r => `${percent(r.mentions, r.completed)} / ${percent(r.firsts, r.completed)}`, class: 'num' },
-        { label: '有效首推<span class="help">剔除官方工具首推</span>', render: r => `${r.firsts}/${r.effectiveFirstDenominator}<br>${percent(r.firsts, r.effectiveFirstDenominator)}`, class: 'num' },
+        { label: '有效首推<span class="help">去官方后重新排序</span>', render: r => `${r.effectiveFirsts}/${r.effectiveFirstDenominator}<br>${percent(r.effectiveFirsts, r.effectiveFirstDenominator)}`, class: 'num' },
         { label: '前3 / 均排', render: r => `${percent(r.top3, r.completed)} / ${rankText(r.rankSum, r.rankCount)}`, class: 'num' },
         { label: '心智分', render: r => r.mindScoreCount ? (r.mindScoreSum / r.mindScoreCount).toFixed(1).replace(/\.0$/, '') : '暂无', class: 'num' },
         { label: '优势表达', render: r => percent(r.advantages, r.completed), class: 'num' },
