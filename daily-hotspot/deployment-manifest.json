@@ -1,8 +1,8 @@
 {
   "title": "每日热点库与电商圈层行业活动追踪",
-  "generatedAt": "2026-07-20T07:21:57.674Z",
+  "generatedAt": "2026-07-20T10:12:05.261Z",
   "fileCount": 18,
-  "totalBytes": 1148540,
+  "totalBytes": 1274140,
   "files": [
     {
       "path": "assets/app.js",
@@ -21,13 +21,13 @@
     },
     {
       "path": "assets/hotspots.js",
-      "bytes": 18469,
-      "sha256": "d7890ce1d05d5443247f1bbc93e88b67ef19c5d23980540cfafffc01c24db29c"
+      "bytes": 34845,
+      "sha256": "dc252b642a1716bf573e50cb3c09fa60ac415f0ff38f88b5d515e4e58c66de78"
     },
     {
       "path": "assets/styles.css",
-      "bytes": 20476,
-      "sha256": "185a4d5e1e138dd75e89adfbf08a570ec59bd73a40f5a61d2657cf0bd51d191e"
+      "bytes": 25682,
+      "sha256": "a95491b2aaf8709dfa7e5232f28e57f9e8baf0ad27d590937a79117b4e2fdf29"
     },
     {
       "path": "assets/ui.js",
@@ -41,18 +41,18 @@
     },
     {
       "path": "data/events/2026-07-20.json",
-      "bytes": 186630,
-      "sha256": "b09f25961cb3d021c61b9180f27ffa90bb3ca5cbf8cb3991843e14e6c81c7d9a"
+      "bytes": 186631,
+      "sha256": "7c9ff69243ac026119195e2ec08fc7359b0c3984275c585c0ee29d43a8aa777e"
     },
     {
       "path": "data/events/index.json",
-      "bytes": 265,
-      "sha256": "54bf17bb9156318c39ecb2cabe8328d39d86204140197b95d9034fd78e81b7fb"
+      "bytes": 266,
+      "sha256": "46cb372c7dd6b15e865157f621483290918351945dd829ed57ed7b6c94d3e1ce"
     },
     {
       "path": "data/events/latest.json",
-      "bytes": 186630,
-      "sha256": "b09f25961cb3d021c61b9180f27ffa90bb3ca5cbf8cb3991843e14e6c81c7d9a"
+      "bytes": 186631,
+      "sha256": "7c9ff69243ac026119195e2ec08fc7359b0c3984275c585c0ee29d43a8aa777e"
     },
     {
       "path": "data/hotspots/2026-07-15.json",
@@ -71,23 +71,23 @@
     },
     {
       "path": "data/hotspots/2026-07-20.json",
-      "bytes": 55298,
-      "sha256": "e577269e7dc59e46749fac44c6d9b7df70c8ea45872e31a3aa1aa3b252651971"
+      "bytes": 107001,
+      "sha256": "a31f6f4c5a8db24e768593b9bfaa1ab07dece55a5b8a92c77bd2a1ba7a35455b"
     },
     {
       "path": "data/hotspots/index.json",
-      "bytes": 1270,
-      "sha256": "ba60ef8cdd2cc3230f9f917255f46956aa52d09f6cf6c1cb3265f0177c926ffe"
+      "bytes": 1879,
+      "sha256": "b10e073efe0da430ed3e27ba34647968438c0f433b3e6fab445bcb4dc7a77b5a"
     },
     {
       "path": "data/hotspots/latest.json",
-      "bytes": 55298,
-      "sha256": "e577269e7dc59e46749fac44c6d9b7df70c8ea45872e31a3aa1aa3b252651971"
+      "bytes": 107001,
+      "sha256": "a31f6f4c5a8db24e768593b9bfaa1ab07dece55a5b8a92c77bd2a1ba7a35455b"
     },
     {
       "path": "data/manifest.json",
       "bytes": 294,
-      "sha256": "4f8a096ad504a53ad596373d8eb7afa64b88088489232a18a125414c92817a8d"
+      "sha256": "0b56f2b669a1c36c86805068d94d6242444d62a1466dd5c30695ade424e52363"
     },
     {
       "path": "index.html",
