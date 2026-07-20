@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "module": "events",
   "date": "2026-07-20",
-  "observedAt": "2026-07-17 11:36",
+  "observedAt": "2026-07-20 15:12",
   "verifiedAt": "2026-07-20",
-  "revision": 5,
-  "updatedAt": "2026-07-20T04:35:43.923Z",
+  "revision": 6,
+  "updatedAt": "2026-07-20T07:20:02.395Z",
   "sourceType": "structured-data",
   "sourceLabel": "活动数据与核验记录",
   "sourceFiles": [
@@ -17,15 +17,15 @@
   "sourceWorkbook": null,
   "summary": {
     "counts": {
-      "total": 11,
-      "prepare": 8,
-      "watch": 1,
+      "total": 15,
+      "prepare": 10,
+      "watch": 3,
       "agendaMissing": 2,
-      "urgent": 5,
+      "urgent": 7,
       "conflicts": 3,
-      "verified": 11
+      "verified": 15
     },
-    "webSummary": "执行摘要：未来一个月已核验 11 场活动，优先准备 8 场、重点观察 1 场、待补议程 2 场；5 场距开场不超过 7 天。\n今日优先：2026跨境电商政策合规和体系运营闭门会、跨境家居纺织产业带卖家选品对接会、Wayfair官方招商启动会-苏州站。",
+    "webSummary": "执行摘要：未来一个月已核验 15 场活动，优先准备 10 场、重点观察 3 场、待补议程 2 场；7 场距开场不超过 7 天。\n今日优先：2026跨境电商政策合规和体系运营闭门会、跨境家居纺织产业带卖家选品对接会、Wayfair官方招商启动会-苏州站。",
     "topActions": [
       {
         "eventId": "EVT-005",
@@ -817,6 +817,344 @@
           "scope_or_field": "JSON/CSV/Excel/首页/8张表",
           "issue": "无",
           "action": "最终严格复核"
+        }
+      ]
+    },
+    {
+      "eventId": "EVT-013",
+      "seriesId": "DTC出海加速度系列沙龙",
+      "changeStatus": "new",
+      "priority": "优先准备",
+      "name": "独立站高利润掘金实战思享会",
+      "startAt": "2026-07-24T13:30:00+08:00",
+      "endAt": "2026-07-24T17:00:00+08:00",
+      "city": "福州",
+      "venue": "福州市仓山区花溪南路46号凯悦酒店二楼",
+      "eventType": "独立站实战思享会",
+      "primaryCategory": "T-A｜业务强相关",
+      "tags": [
+        "圈层活动",
+        "独立站",
+        "DTC出海",
+        "AI获客",
+        "内容增长",
+        "福州"
+      ],
+      "organizers": [
+        "Meta",
+        "雨果跨境"
+      ],
+      "partners": [],
+      "audience": "平台转型卖家、DTC初创团队、独立站操盘手、跨境企业主和意向出海创业者",
+      "attendance": {
+        "reported": "雨果活动页票务字段显示 soldCount=344、stockCount=9655（2026-07-20抓取）",
+        "interpretation": "平台报名/库存字段，不等同预计或实际到场人数",
+        "confidence": "不可作为到场预测"
+      },
+      "agendaSummary": "13:30签到；14:00 DTC趋势与增长路径；14:25独立站增长入门；15:00 AI获客与高转化；15:35 AI×内容双引擎提升GMV与ROI；16:15自由交流。",
+      "guests": "李晓楠、Blaike、Rocky Ge、Alex",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "cifnews.com",
+          "url": "https://www.cifnews.com/activity/3076",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 1",
+          "domain": "img.cifnews.com",
+          "url": "https://img.cifnews.com/dev/20260720/6a50687efa264a009c965e0c8abc3af4.jpg",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": null,
+      "observedAt": "2026-07-20T15:07:00+08:00",
+      "daysToStart": 4,
+      "interventionWindow": "紧，距开场4天；适合快速准备AI获客、内容增长和独立站ROI问题清单",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过",
+      "conflicts": [],
+      "missingFields": [
+        "预计参与人数",
+        "来源发布日期"
+      ],
+      "attentionReason": "高：AI获客、竞品流量缺口、红人广告闭环、GMV与ROI均具备强实操和传播属性",
+      "chanmamaRelevance": "可用竞品、达人、短视频、直播和商品数据验证流量缺口、内容素材与转化路径",
+      "recommendedAction": "会前整理AI获客与内容增长验证框架；会后24小时核对案例口径和工具可用性",
+      "formalScoreStatus": "暂不评分：窗口很紧且缺少持续热度数据",
+      "focusTopics": [
+        "2026 DTC趋势与独立站增长入门",
+        "AI获客：从流量获取到高转化",
+        "AI×内容双引擎提升独立站GMV与ROI"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-032",
+          "event_id": "EVT-013",
+          "topic": "2026 DTC趋势与独立站增长入门",
+          "evidence": "福州站官方议程：DTC趋势洞察、增长路径及独立站入门",
+          "shareability": "平台转独立站是明确业务决策，适合形成路线图和自查清单",
+          "priority": "优先准备",
+          "search_keywords": [
+            "2026 DTC出海趋势",
+            "平台卖家转独立站",
+            "独立站增长入门"
+          ],
+          "user_questions": [
+            "平台卖家什么时候适合转独立站？",
+            "DTC独立站第一阶段先做什么？"
+          ],
+          "chanmama_scenario": "用商品、达人和内容数据辅助验证品类与内容策略，不替代站外经营数据",
+          "content_to_prepare": "平台转独立站路线图和业务条件自查表",
+          "risk_or_gap": "活动前无法确认讲者案例的具体基线",
+          "score_status": "定性高潜"
+        },
+        {
+          "topic_id": "TOP-033",
+          "event_id": "EVT-013",
+          "topic": "AI获客：从流量获取到高转化",
+          "evidence": "福州站官方议程及亮点：AI重构流量、竞品流量缺口和红人广告闭环",
+          "shareability": "AI获客和竞品流量缺口可直接形成工具、方法和验证问题",
+          "priority": "优先准备",
+          "search_keywords": [
+            "AI独立站获客",
+            "竞品流量缺口",
+            "红人广告闭环"
+          ],
+          "user_questions": [
+            "AI如何找到竞品流量缺口？",
+            "红人广告怎样形成独立站转化闭环？"
+          ],
+          "chanmama_scenario": "用达人、短视频、直播和商品数据验证内容方向、达人选择与竞品表现",
+          "content_to_prepare": "AI获客工具清单、竞品分析模板和达人验证步骤",
+          "risk_or_gap": "需确认现场工具是否公开可用以及数据源是否合法",
+          "score_status": "定性高潜"
+        },
+        {
+          "topic_id": "TOP-034",
+          "event_id": "EVT-013",
+          "topic": "AI×内容双引擎提升独立站GMV与ROI",
+          "evidence": "福州站官方议程：AI×内容双引擎、红人广告跑通及Vibe coding广告与UGC体系",
+          "shareability": "GMV、ROI、UGC与AI内容均有强搜索和团队复测价值",
+          "priority": "优先准备",
+          "search_keywords": [
+            "AI内容独立站GMV",
+            "独立站ROI提升",
+            "Vibe coding广告",
+            "UGC广告体系"
+          ],
+          "user_questions": [
+            "AI内容怎样提升独立站GMV和ROI？",
+            "Vibe coding如何用于广告和UGC生产？"
+          ],
+          "chanmama_scenario": "用内容和达人表现验证素材方向；GMV与ROI必须补齐周期、投入和归因口径",
+          "content_to_prepare": "案例核验表、素材实验模板和ROI口径清单",
+          "risk_or_gap": "议程标题未披露实际增长数字和样本",
+          "score_status": "定性高潜，待案例核验"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-037",
+          "event_id": "EVT-013",
+          "check_type": "真实性复核",
+          "checked_at": "2026-07-20 15:07",
+          "status": "PASS",
+          "evidence": "雨果活动原页+页面内官方议程海报",
+          "scope_or_field": "名称/日期/城市/场馆/报名状态",
+          "issue": "无",
+          "action": "归档原始海报并保留链接"
+        },
+        {
+          "verification_id": "VER-038",
+          "event_id": "EVT-013",
+          "check_type": "字段复核",
+          "checked_at": "2026-07-20 15:08",
+          "status": "PASS_WITH_GAPS",
+          "evidence": "活动页结构化字段+官方议程海报",
+          "scope_or_field": "预计人数/票务口径",
+          "issue": "预计人数未披露；票务字段不可等同到场人数",
+          "action": "显式标暂缺并保留口径说明"
+        },
+        {
+          "verification_id": "VER-039",
+          "event_id": "EVT-013",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-07-20 15:20",
+          "status": "PASS",
+          "evidence": "JSON/CSV校验+网页字段对数+来源链接复核",
+          "scope_or_field": "结构化数据/首页/详情",
+          "issue": "无",
+          "action": "构建后严格复核"
+        }
+      ]
+    },
+    {
+      "eventId": "EVT-015",
+      "seriesId": "千星·全平台AI营销实战OPC造星计划",
+      "changeStatus": "new",
+      "priority": "重点观察",
+      "name": "洞悉全平台AI营销实战OPC公开课",
+      "startAt": "2026-07-26T00:00:00+08:00",
+      "endAt": "2026-07-26T23:59:00+08:00",
+      "city": "南京",
+      "venue": "南京，具体地点暂缺",
+      "eventType": "AI营销公益公开课",
+      "primaryCategory": "T-A｜业务强相关",
+      "tags": [
+        "圈层活动",
+        "AI营销",
+        "全平台运营",
+        "OPC",
+        "数字人直播",
+        "南京"
+      ],
+      "organizers": [
+        "南京技师学院",
+        "三合卓学"
+      ],
+      "partners": [],
+      "audience": "在校大学生、应届毕业生、数字技能爱好者，以及关注AI营销和轻资产创业的个人操盘手",
+      "attendance": {
+        "reported": "未披露",
+        "interpretation": "文章仅说明公益免费预约，不披露容量、报名数或预计到场人数",
+        "confidence": "缺失"
+      },
+      "agendaSummary": "90分钟公益公开课，覆盖AI时代营销趋势与商业机会、AI与营销共生革命、OPC理念与价值、AI营销底层逻辑，以及AI赋能企业和个人创业。",
+      "guests": "项目负责人王奕然；授课导师名单暂缺",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "mp.weixin.qq.com",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzcwOTM1NDQ3NA%3D%3D&mid=2247483674&idx=1",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": "2026-07-17",
+      "observedAt": "2026-07-20T15:12:00+08:00",
+      "daysToStart": 6,
+      "interventionWindow": "紧，距开课6天；适合快速整理AI营销工具、全平台内容分发和个人操盘问题",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过；具体时段和地点暂缺",
+      "conflicts": [],
+      "missingFields": [
+        "具体时段",
+        "具体地点",
+        "预计参与人数",
+        "授课导师名单",
+        "网页表单入口（仅文章二维码）"
+      ],
+      "attentionReason": "中高：AI营销、全平台流量统筹、数字人直播、智能体和私域增长容易形成团队验证问题",
+      "chanmamaRelevance": "可用短视频、直播、达人、商品和竞品数据验证AI生成内容与全平台营销方法",
+      "recommendedAction": "准备90分钟公开课问题清单；会后重点核实工具演示、案例基线和AI营销效果口径",
+      "formalScoreStatus": "暂不评分：受众偏人才培训且时间地点不完整",
+      "focusTopics": [
+        "AI时代营销趋势与全平台OPC方法",
+        "AI营销底层逻辑与企业创业应用",
+        "数字人直播、智能体与私域增长的后续训练场景"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-038",
+          "event_id": "EVT-015",
+          "topic": "AI时代营销趋势与全平台OPC方法",
+          "evidence": "主办方公众号原文：90分钟公开课核心模块",
+          "shareability": "一人借助AI统筹全平台的概念容易传播，但需要可执行步骤支撑",
+          "priority": "重点观察",
+          "search_keywords": [
+            "全平台OPC",
+            "AI营销操盘手",
+            "一个人加AI运营"
+          ],
+          "user_questions": [
+            "OPC全平台操盘手具体做什么？",
+            "一个人如何借助AI管理多个内容平台？"
+          ],
+          "chanmama_scenario": "用短视频、直播、达人和商品数据作为全平台内容验证层",
+          "content_to_prepare": "OPC概念解释、工作流草图和数据验证节点",
+          "risk_or_gap": "公开课时长有限，未承诺完整工具实操",
+          "score_status": "定性中潜"
+        },
+        {
+          "topic_id": "TOP-039",
+          "event_id": "EVT-015",
+          "topic": "AI营销底层逻辑与企业创业应用",
+          "evidence": "公开课模块：AI营销底层逻辑及AI赋能企业与个人创业",
+          "shareability": "企业应用和轻资产创业会形成大量提问，但需防止泛化和收益承诺",
+          "priority": "重点观察",
+          "search_keywords": [
+            "AI营销底层逻辑",
+            "AI轻资产创业",
+            "AI赋能企业营销"
+          ],
+          "user_questions": [
+            "AI营销如何真正落到业务？",
+            "个人用AI创业需要哪些工具和数据？"
+          ],
+          "chanmama_scenario": "用真实内容和商品表现验证AI生成策略，不对创业收益作承诺",
+          "content_to_prepare": "AI营销验证清单、工具边界和收益口径提醒",
+          "risk_or_gap": "活动未披露具体工具、案例与授课导师",
+          "score_status": "定性中潜"
+        },
+        {
+          "topic_id": "TOP-040",
+          "event_id": "EVT-015",
+          "topic": "数字人直播、智能体与私域增长的后续训练场景",
+          "evidence": "主办方原文对后续造星计划的场景说明，不是本次90分钟公开课的明确完整议程",
+          "shareability": "数字人直播和智能体搜索价值高，但必须区分公开课与后续训练营",
+          "priority": "重点观察",
+          "search_keywords": [
+            "AI数字人直播",
+            "营销智能体",
+            "AI私域增长",
+            "全平台内容分发"
+          ],
+          "user_questions": [
+            "数字人直播如何与内容数据结合？",
+            "营销智能体能否提高私域获客效率？"
+          ],
+          "chanmama_scenario": "可验证短视频、直播和达人内容表现；智能体与数字人能力需由产品团队确认",
+          "content_to_prepare": "公开课/后续训练场景区分表及能力核验清单",
+          "risk_or_gap": "这些内容属于后续体系描述，不能写成本次公开课已确定议程",
+          "score_status": "定性观察，不作本场爆点承诺"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-043",
+          "event_id": "EVT-015",
+          "check_type": "真实性复核",
+          "checked_at": "2026-07-20 15:12",
+          "status": "PASS",
+          "evidence": "联合发起方公众号原文+活动日期与课程模块",
+          "scope_or_field": "名称/日期/城市/主办/课程内容",
+          "issue": "无",
+          "action": "保存原文截图与稳定文章标识"
+        },
+        {
+          "verification_id": "VER-044",
+          "event_id": "EVT-015",
+          "check_type": "字段复核",
+          "checked_at": "2026-07-20 15:13",
+          "status": "PASS_WITH_GAPS",
+          "evidence": "公众号原文",
+          "scope_or_field": "具体时段/地点/人数/导师/表单",
+          "issue": "仅公开日期和二维码预约",
+          "action": "保留暂缺并区分本场与后续训练"
+        },
+        {
+          "verification_id": "VER-045",
+          "event_id": "EVT-015",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-07-20 15:20",
+          "status": "PASS",
+          "evidence": "JSON/CSV校验+网页字段对数+来源链接复核",
+          "scope_or_field": "结构化数据/首页/详情",
+          "issue": "无",
+          "action": "构建后严格复核"
         }
       ]
     },
@@ -1752,6 +2090,352 @@
           "scope_or_field": "JSON/CSV/Excel/首页/8张表",
           "issue": "无",
           "action": "最终严格复核"
+        }
+      ]
+    },
+    {
+      "eventId": "EVT-014",
+      "seriesId": null,
+      "changeStatus": "new",
+      "priority": "重点观察",
+      "name": "2026虹桥跨境供应链生态发展论坛",
+      "startAt": "2026-08-19T09:00:00+08:00",
+      "endAt": "2026-08-20T23:59:00+08:00",
+      "city": "上海",
+      "venue": "上海虹桥会议中心",
+      "eventType": "跨境供应链论坛及闭门会",
+      "primaryCategory": "T-B｜产品能力扩展",
+      "tags": [
+        "圈层活动",
+        "跨境供应链",
+        "企业出海",
+        "跨境金融",
+        "数字科技",
+        "上海"
+      ],
+      "organizers": [
+        "上海金融业联合会",
+        "上海市供应链发展促进会",
+        "华东师范大学长三角金融科技研究院",
+        "上海亚商发展集团有限公司"
+      ],
+      "partners": [
+        "上海现代服务业联合会",
+        "华东师范大学",
+        "宁波（中国）供应链创新学院",
+        "上海创中营科技有限责任公司",
+        "亚洲商务大学堂"
+      ],
+      "audience": "制造与品牌出海企业、跨境电商与外贸企业、供应链物流企业、金融投资机构、科技与数字化服务商及专业服务机构",
+      "attendance": {
+        "reported": "未披露",
+        "interpretation": "不得根据论坛名称、主办单位数量或会场推算人数",
+        "confidence": "缺失"
+      },
+      "agendaSummary": "8月19日上午主旨演讲与头部企业分享；下午跨境案例及全球化全周期需求圆桌。8月20日闭门讨论全球经贸格局、地缘波动下的供应链和企业长效出海战略。",
+      "guests": "重磅嘉宾、行业专家及头部企业代表，具体名单暂缺",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "mp.weixin.qq.com",
+          "url": "https://mp.weixin.qq.com/s?__biz=Mzg4NTUxMTUzMw%3D%3D&mid=2247499670&idx=1",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": "2026-07-20",
+      "observedAt": "2026-07-20T15:10:00+08:00",
+      "daysToStart": 30,
+      "interventionWindow": "有，距开场30天；适合追踪嘉宾与报名表单，并准备供应链数字化和企业出海案例框架",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过；公开报名表单和部分议程字段暂缺",
+      "conflicts": [],
+      "missingFields": [
+        "预计参与人数",
+        "具体嘉宾名单",
+        "公开报名表单",
+        "8月20日具体时段"
+      ],
+      "attentionReason": "中高：供应链数字化、AI降本增效、企业出海案例和全球化经营问题具有管理层传播价值",
+      "chanmamaRelevance": "可将内容电商数据作为品牌出海和零售案例的验证层；供应链金融与物流能力不属于产品承接范围",
+      "recommendedAction": "每周复扫嘉宾和报名页；提前准备AI供应链案例核验清单及品牌出海数据问答",
+      "formalScoreStatus": "暂不评分：报名量、嘉宾和细分议程尚不完整",
+      "focusTopics": [
+        "AI与数字化工具重塑跨境供应链",
+        "企业出海实战与全球化全周期需求",
+        "地缘波动下的供应链与长效经营策略"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-035",
+          "event_id": "EVT-014",
+          "topic": "AI与数字化工具重塑跨境供应链",
+          "evidence": "主办方公众号原文：前沿创新解决方案与人工智能、数字化工具降本增效",
+          "shareability": "管理层会关注降本增效，但需要具体工具和案例后才具备强传播性",
+          "priority": "重点观察",
+          "search_keywords": [
+            "AI跨境供应链",
+            "供应链数字化工具",
+            "供应链降本增效案例"
+          ],
+          "user_questions": [
+            "AI能改造跨境供应链哪些环节？",
+            "供应链数字化降本效果如何验证？"
+          ],
+          "chanmama_scenario": "可用内容电商数据验证品牌与零售案例；供应链系统和物流数据不属于产品承接范围",
+          "content_to_prepare": "AI供应链案例核验清单和电商数据可承接边界",
+          "risk_or_gap": "尚未公布具体分享企业、工具和案例数据",
+          "score_status": "定性中潜，待嘉宾议程"
+        },
+        {
+          "topic_id": "TOP-036",
+          "event_id": "EVT-014",
+          "topic": "企业出海实战与全球化全周期需求",
+          "evidence": "8月19日下午跨境实战案例与全球化全周期需求圆桌",
+          "shareability": "企业案例与出海周期框架适合管理层转发，但需识别行业和规模条件",
+          "priority": "重点观察",
+          "search_keywords": [
+            "企业出海全周期",
+            "跨境供应链实战案例",
+            "品牌全球化路径"
+          ],
+          "user_questions": [
+            "企业从走出去到走得稳需要哪些能力？",
+            "不同阶段的出海数据如何验证？"
+          ],
+          "chanmama_scenario": "用商品、内容和达人数据支持品牌出海的市场验证环节",
+          "content_to_prepare": "出海阶段框架、案例条件表和数据验证问题清单",
+          "risk_or_gap": "嘉宾与案例公司尚未公开",
+          "score_status": "定性中潜"
+        },
+        {
+          "topic_id": "TOP-037",
+          "event_id": "EVT-014",
+          "topic": "地缘波动下的供应链与长效经营策略",
+          "evidence": "8月20日闭门会议三项议题",
+          "shareability": "高层战略议题有内部传播价值，但公开搜索转化通常弱于实操工具",
+          "priority": "重点观察",
+          "search_keywords": [
+            "地缘波动供应链",
+            "企业长效出海战略",
+            "全球经贸格局重构"
+          ],
+          "user_questions": [
+            "地缘风险下供应链如何做冗余？",
+            "企业出海如何建立长期经营策略？"
+          ],
+          "chanmama_scenario": "仅承接内容电商和市场验证问题，不延伸到金融、物流或地缘风险咨询",
+          "content_to_prepare": "战略问题清单和蝉妈妈可承接边界说明",
+          "risk_or_gap": "闭门会议具体时段与发言人暂缺",
+          "score_status": "定性中潜"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-040",
+          "event_id": "EVT-014",
+          "check_type": "真实性复核",
+          "checked_at": "2026-07-20 15:10",
+          "status": "PASS",
+          "evidence": "主办方公众号原文+搜狗微信双条索引",
+          "scope_or_field": "名称/日期/城市/会场/组织架构",
+          "issue": "无",
+          "action": "保存原文截图与稳定文章标识"
+        },
+        {
+          "verification_id": "VER-041",
+          "event_id": "EVT-014",
+          "check_type": "字段复核",
+          "checked_at": "2026-07-20 15:11",
+          "status": "PASS_WITH_GAPS",
+          "evidence": "公众号原文议程与组织架构",
+          "scope_or_field": "报名表单/嘉宾/人数/闭门会时段",
+          "issue": "部分字段未公开",
+          "action": "保留暂缺并每周复扫"
+        },
+        {
+          "verification_id": "VER-042",
+          "event_id": "EVT-014",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-07-20 15:20",
+          "status": "PASS",
+          "evidence": "JSON/CSV校验+网页字段对数+来源链接复核",
+          "scope_or_field": "结构化数据/首页/详情",
+          "issue": "无",
+          "action": "构建后严格复核"
+        }
+      ]
+    },
+    {
+      "eventId": "EVT-012",
+      "seriesId": "2026日本乐天年度卖家大会巡回启动会",
+      "changeStatus": "new",
+      "priority": "优先准备",
+      "name": "2026日本乐天年度卖家大会·厦门站",
+      "startAt": "2026-08-20T14:00:00+08:00",
+      "endAt": "2026-08-20T17:00:00+08:00",
+      "city": "厦门",
+      "venue": "福建省厦门市，精确会场暂缺",
+      "eventType": "官方平台卖家大会",
+      "primaryCategory": "T-A｜业务强相关",
+      "tags": [
+        "圈层活动",
+        "日本乐天",
+        "平台招商",
+        "广告增长",
+        "厦门"
+      ],
+      "organizers": [
+        "雨果跨境",
+        "Rakuten日本乐天"
+      ],
+      "partners": [
+        "菜鸟",
+        "YOKOHAMA CHINA"
+      ],
+      "audience": "计划开拓日本市场、准备入驻或已经营日本乐天的跨境卖家、品牌方及生态服务商",
+      "attendance": {
+        "reported": "雨果活动页票务字段显示 soldCount=2400、stockCount=1904（2026-07-20抓取）",
+        "interpretation": "平台票务字段可能包含系列巡回场次累计或票务库存，不等同厦门站预计或实际到场人数",
+        "confidence": "不可作为到场预测"
+      },
+      "agendaSummary": "14:00市场解读；14:20日本乐天2026入驻政策；14:40官方赋能；15:00生态赋能；15:10运营心法；15:30物流方案；15:40广告增长；16:00大卖逆袭经验；16:15抽奖及16:20官方答疑。",
+      "guests": "彭威、齐思雨、肖超、蔡杰、Mia、日本乐天官方合作伙伴及神秘大卖（海报口径）",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "cifnews.com",
+          "url": "https://www.cifnews.com/activity/3027",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 1",
+          "domain": "img.cifnews.com",
+          "url": "https://img.cifnews.com/dev/20260630/2bf2efc407934f96990d23853dcdb92c.png",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": null,
+      "observedAt": "2026-07-20T15:05:00+08:00",
+      "daysToStart": 31,
+      "interventionWindow": "有，距开场31天；适合提前准备日本市场、入驻政策、广告和店铺增长内容",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过；精确会场暂缺",
+      "conflicts": [],
+      "missingFields": [
+        "精确会场",
+        "厦门站预计参与人数",
+        "来源发布日期"
+      ],
+      "attentionReason": "高：日本乐天入驻政策、广告增长、店铺效率和大卖实战均能形成明确搜索词与操作问题",
+      "chanmamaRelevance": "可用商品、达人、短视频和直播数据辅助日本市场选品与内容验证；日本乐天站内数据能力需另行确认",
+      "recommendedAction": "提前制作日本市场入驻政策核验表、广告增长问题清单和店铺经营案例验证模板",
+      "formalScoreStatus": "暂不评分：尚缺搜索趋势和内部转化基线",
+      "focusTopics": [
+        "日本乐天2026入驻政策与日本市场机会",
+        "日本乐天店铺运营与广告增长",
+        "物流降本与大卖逆袭经验"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-029",
+          "event_id": "EVT-012",
+          "topic": "日本乐天2026入驻政策与日本市场机会",
+          "evidence": "厦门站官方议程海报：市场解读、招商政策与官方赋能",
+          "shareability": "平台政策和市场数据都有明确搜索词，卖家可直接用于入驻判断",
+          "priority": "优先准备",
+          "search_keywords": [
+            "日本乐天2026入驻",
+            "Rakuten日本开店",
+            "日本电商市场数据"
+          ],
+          "user_questions": [
+            "2026日本乐天入驻政策有哪些变化？",
+            "哪些中国卖家和品类适合日本乐天？"
+          ],
+          "chanmama_scenario": "用商品、达人和内容表现辅助日本市场选品；入驻政策必须回到平台官方核验",
+          "content_to_prepare": "入驻政策对照表、日本市场数据卡和卖家自查清单",
+          "risk_or_gap": "活动海报不能替代日本乐天正式政策文件",
+          "score_status": "定性高潜，待官方政策复核"
+        },
+        {
+          "topic_id": "TOP-030",
+          "event_id": "EVT-012",
+          "topic": "日本乐天店铺运营与广告增长",
+          "evidence": "官方议程海报：运营心法、广告策略与乐天广告增长",
+          "shareability": "店铺效率、广告增长和实操策略容易被团队转发并要求复测",
+          "priority": "优先准备",
+          "search_keywords": [
+            "乐天广告投放",
+            "日本乐天店铺运营",
+            "Rakuten广告增长"
+          ],
+          "user_questions": [
+            "日本乐天广告如何定预算和素材？",
+            "小卖家怎样提升乐天店铺效率？"
+          ],
+          "chanmama_scenario": "用短视频、达人和商品数据辅助素材及品类验证；平台广告数据覆盖需先确认",
+          "content_to_prepare": "广告问题清单、素材验证框架和店铺效率指标表",
+          "risk_or_gap": "议程尚未披露具体案例数据和基线",
+          "score_status": "定性高潜"
+        },
+        {
+          "topic_id": "TOP-031",
+          "event_id": "EVT-012",
+          "topic": "物流降本与大卖逆袭经验",
+          "evidence": "官方议程海报：物流方案及从0到亿的逆袭攻略",
+          "shareability": "增长故事有传播性，但必须拆解条件，避免只传播结果数字",
+          "priority": "优先准备",
+          "search_keywords": [
+            "日本跨境物流方案",
+            "乐天亿级大卖",
+            "Rakuten卖家案例"
+          ],
+          "user_questions": [
+            "日本跨境物流怎样降本？",
+            "亿级卖家的增长路径哪些可以复制？"
+          ],
+          "chanmama_scenario": "用商品和内容数据核实增长阶段与可复制条件；物流成本不属于产品直接承接范围",
+          "content_to_prepare": "案例基线核验表、可复制条件清单和物流问题边界",
+          "risk_or_gap": "海报未披露案例周期、样本和利润口径",
+          "score_status": "定性高潜，需严格核验案例"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-034",
+          "event_id": "EVT-012",
+          "check_type": "真实性复核",
+          "checked_at": "2026-07-20 15:05",
+          "status": "PASS",
+          "evidence": "雨果活动原页+页面内官方议程海报",
+          "scope_or_field": "名称/日期/城市/报名状态",
+          "issue": "无",
+          "action": "归档原始海报并保留链接"
+        },
+        {
+          "verification_id": "VER-035",
+          "event_id": "EVT-012",
+          "check_type": "字段复核",
+          "checked_at": "2026-07-20 15:06",
+          "status": "PASS_WITH_GAPS",
+          "evidence": "活动页结构化字段+官方议程海报",
+          "scope_or_field": "精确会场/预计人数/票务口径",
+          "issue": "精确会场未披露；票务字段不可等同到场人数",
+          "action": "显式标暂缺并保留口径说明"
+        },
+        {
+          "verification_id": "VER-036",
+          "event_id": "EVT-012",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-07-20 15:20",
+          "status": "PASS",
+          "evidence": "JSON/CSV校验+网页字段对数+来源链接复核",
+          "scope_or_field": "结构化数据/首页/详情",
+          "issue": "无",
+          "action": "构建后严格复核"
         }
       ]
     }
@@ -4465,6 +5149,178 @@
       "verificationStatus": "已确认",
       "priority": "P0",
       "notes": ""
+    },
+    {
+      "id": "KW-136",
+      "category": "地域圈层",
+      "keyword": "厦门跨境电商",
+      "aliases": [
+        "厦门卖家圈",
+        "厦门跨境圈",
+        "厦门站"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "活动",
+        "卖家",
+        "跨境",
+        "平台招商"
+      ],
+      "excludeContext": [],
+      "source": "2026-07-20新增活动",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": "重点监测日本市场与平台活动"
+    },
+    {
+      "id": "KW-137",
+      "category": "地域圈层",
+      "keyword": "福州独立站",
+      "aliases": [
+        "福州跨境圈",
+        "福州DTC",
+        "福州站"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "活动",
+        "卖家",
+        "独立站",
+        "跨境"
+      ],
+      "excludeContext": [],
+      "source": "2026-07-20新增活动",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": "重点监测DTC与独立站实操"
+    },
+    {
+      "id": "KW-138",
+      "category": "平台与玩法",
+      "keyword": "日本乐天",
+      "aliases": [
+        "Rakuten",
+        "乐天市场",
+        "乐天卖家"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "入驻",
+        "广告",
+        "运营",
+        "日本市场"
+      ],
+      "excludeContext": [],
+      "source": "2026-07-20厦门活动",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-139",
+      "category": "专业表达",
+      "keyword": "DTC出海",
+      "aliases": [
+        "品牌出海DTC",
+        "DTC独立站"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "独立站",
+        "品牌",
+        "增长",
+        "出海"
+      ],
+      "excludeContext": [],
+      "source": "2026-07-20福州活动",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-140",
+      "category": "地域圈层",
+      "keyword": "上海跨境供应链",
+      "aliases": [
+        "虹桥供应链",
+        "上海出海论坛"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "活动",
+        "论坛",
+        "跨境",
+        "供应链"
+      ],
+      "excludeContext": [],
+      "source": "2026-07-20上海活动",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": "需同时出现活动或论坛语境"
+    },
+    {
+      "id": "KW-141",
+      "category": "专业表达",
+      "keyword": "跨境供应链数字化",
+      "aliases": [
+        "AI供应链",
+        "供应链数字工具"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "AI",
+        "数字化",
+        "出海",
+        "降本增效"
+      ],
+      "excludeContext": [],
+      "source": "2026-07-20上海活动",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-142",
+      "category": "专业表达",
+      "keyword": "全平台OPC",
+      "aliases": [
+        "全域平台商业操盘手",
+        "一个人加AI运营"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "AI",
+        "营销",
+        "全平台",
+        "操盘手"
+      ],
+      "excludeContext": [],
+      "source": "2026-07-20南京活动",
+      "verificationStatus": "待持续验证",
+      "priority": "P1",
+      "notes": "避免与建筑工程OPC混淆"
+    },
+    {
+      "id": "KW-143",
+      "category": "地域圈层",
+      "keyword": "南京AI营销",
+      "aliases": [
+        "南京电商智能体",
+        "南京AI公开课",
+        "南京电商圈"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "活动",
+        "培训",
+        "营销",
+        "电商"
+      ],
+      "excludeContext": [],
+      "source": "2026-07-20南京活动",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
     }
   ],
   "verificationLogs": [
@@ -4830,6 +5686,138 @@
       "scope_or_field": "JSON/CSV/Excel/首页/8张表",
       "issue": "无",
       "action": "最终严格复核"
+    },
+    {
+      "verification_id": "VER-034",
+      "event_id": "EVT-012",
+      "check_type": "真实性复核",
+      "checked_at": "2026-07-20 15:05",
+      "status": "PASS",
+      "evidence": "雨果活动原页+页面内官方议程海报",
+      "scope_or_field": "名称/日期/城市/报名状态",
+      "issue": "无",
+      "action": "归档原始海报并保留链接"
+    },
+    {
+      "verification_id": "VER-035",
+      "event_id": "EVT-012",
+      "check_type": "字段复核",
+      "checked_at": "2026-07-20 15:06",
+      "status": "PASS_WITH_GAPS",
+      "evidence": "活动页结构化字段+官方议程海报",
+      "scope_or_field": "精确会场/预计人数/票务口径",
+      "issue": "精确会场未披露；票务字段不可等同到场人数",
+      "action": "显式标暂缺并保留口径说明"
+    },
+    {
+      "verification_id": "VER-036",
+      "event_id": "EVT-012",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-07-20 15:20",
+      "status": "PASS",
+      "evidence": "JSON/CSV校验+网页字段对数+来源链接复核",
+      "scope_or_field": "结构化数据/首页/详情",
+      "issue": "无",
+      "action": "构建后严格复核"
+    },
+    {
+      "verification_id": "VER-037",
+      "event_id": "EVT-013",
+      "check_type": "真实性复核",
+      "checked_at": "2026-07-20 15:07",
+      "status": "PASS",
+      "evidence": "雨果活动原页+页面内官方议程海报",
+      "scope_or_field": "名称/日期/城市/场馆/报名状态",
+      "issue": "无",
+      "action": "归档原始海报并保留链接"
+    },
+    {
+      "verification_id": "VER-038",
+      "event_id": "EVT-013",
+      "check_type": "字段复核",
+      "checked_at": "2026-07-20 15:08",
+      "status": "PASS_WITH_GAPS",
+      "evidence": "活动页结构化字段+官方议程海报",
+      "scope_or_field": "预计人数/票务口径",
+      "issue": "预计人数未披露；票务字段不可等同到场人数",
+      "action": "显式标暂缺并保留口径说明"
+    },
+    {
+      "verification_id": "VER-039",
+      "event_id": "EVT-013",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-07-20 15:20",
+      "status": "PASS",
+      "evidence": "JSON/CSV校验+网页字段对数+来源链接复核",
+      "scope_or_field": "结构化数据/首页/详情",
+      "issue": "无",
+      "action": "构建后严格复核"
+    },
+    {
+      "verification_id": "VER-040",
+      "event_id": "EVT-014",
+      "check_type": "真实性复核",
+      "checked_at": "2026-07-20 15:10",
+      "status": "PASS",
+      "evidence": "主办方公众号原文+搜狗微信双条索引",
+      "scope_or_field": "名称/日期/城市/会场/组织架构",
+      "issue": "无",
+      "action": "保存原文截图与稳定文章标识"
+    },
+    {
+      "verification_id": "VER-041",
+      "event_id": "EVT-014",
+      "check_type": "字段复核",
+      "checked_at": "2026-07-20 15:11",
+      "status": "PASS_WITH_GAPS",
+      "evidence": "公众号原文议程与组织架构",
+      "scope_or_field": "报名表单/嘉宾/人数/闭门会时段",
+      "issue": "部分字段未公开",
+      "action": "保留暂缺并每周复扫"
+    },
+    {
+      "verification_id": "VER-042",
+      "event_id": "EVT-014",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-07-20 15:20",
+      "status": "PASS",
+      "evidence": "JSON/CSV校验+网页字段对数+来源链接复核",
+      "scope_or_field": "结构化数据/首页/详情",
+      "issue": "无",
+      "action": "构建后严格复核"
+    },
+    {
+      "verification_id": "VER-043",
+      "event_id": "EVT-015",
+      "check_type": "真实性复核",
+      "checked_at": "2026-07-20 15:12",
+      "status": "PASS",
+      "evidence": "联合发起方公众号原文+活动日期与课程模块",
+      "scope_or_field": "名称/日期/城市/主办/课程内容",
+      "issue": "无",
+      "action": "保存原文截图与稳定文章标识"
+    },
+    {
+      "verification_id": "VER-044",
+      "event_id": "EVT-015",
+      "check_type": "字段复核",
+      "checked_at": "2026-07-20 15:13",
+      "status": "PASS_WITH_GAPS",
+      "evidence": "公众号原文",
+      "scope_or_field": "具体时段/地点/人数/导师/表单",
+      "issue": "仅公开日期和二维码预约",
+      "action": "保留暂缺并区分本场与后续训练"
+    },
+    {
+      "verification_id": "VER-045",
+      "event_id": "EVT-015",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-07-20 15:20",
+      "status": "PASS",
+      "evidence": "JSON/CSV校验+网页字段对数+来源链接复核",
+      "scope_or_field": "结构化数据/首页/详情",
+      "issue": "无",
+      "action": "构建后严格复核"
     }
   ]
 }

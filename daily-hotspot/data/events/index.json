@@ -5,11 +5,11 @@
   "dates": [
     {
       "date": "2026-07-20",
-      "observedAt": "2026-07-17 11:36",
+      "observedAt": "2026-07-20 15:12",
       "verifiedAt": "2026-07-20",
-      "total": 11,
-      "prepare": 8,
-      "revision": 5
+      "total": 15,
+      "prepare": 10,
+      "revision": 6
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "title": "每日热点库与电商圈层行业活动追踪",
-  "generatedAt": "2026-07-20T04:36:41.556Z",
+  "generatedAt": "2026-07-20T07:21:57.674Z",
   "fileCount": 18,
-  "totalBytes": 1068105,
+  "totalBytes": 1148540,
   "files": [
     {
       "path": "assets/app.js",
@@ -41,18 +41,18 @@
     },
     {
       "path": "data/events/2026-07-20.json",
-      "bytes": 146413,
-      "sha256": "a0e9c2c7e3e1ac050d6a24e71678eff5e4eed8061780dd9db9a9aeadcaa324b4"
+      "bytes": 186630,
+      "sha256": "b09f25961cb3d021c61b9180f27ffa90bb3ca5cbf8cb3991843e14e6c81c7d9a"
     },
     {
       "path": "data/events/index.json",
-      "bytes": 264,
-      "sha256": "490463bf8f8189b5f953dd89ec0372975d602186699b29021150b005f09edf8f"
+      "bytes": 265,
+      "sha256": "54bf17bb9156318c39ecb2cabe8328d39d86204140197b95d9034fd78e81b7fb"
     },
     {
       "path": "data/events/latest.json",
-      "bytes": 146413,
-      "sha256": "a0e9c2c7e3e1ac050d6a24e71678eff5e4eed8061780dd9db9a9aeadcaa324b4"
+      "bytes": 186630,
+      "sha256": "b09f25961cb3d021c61b9180f27ffa90bb3ca5cbf8cb3991843e14e6c81c7d9a"
     },
     {
       "path": "data/hotspots/2026-07-15.json",
@@ -87,7 +87,7 @@
     {
       "path": "data/manifest.json",
       "bytes": 294,
-      "sha256": "7346b3d79e527323e44c27eafe429ccdb6b15aa5582a8d4c54338df99f7ea1c7"
+      "sha256": "4f8a096ad504a53ad596373d8eb7afa64b88088489232a18a125414c92817a8d"
     },
     {
       "path": "index.html",
