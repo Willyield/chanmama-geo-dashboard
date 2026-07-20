@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7f4">
+    <meta name="description" content="每日热点库与电商圈层行业活动追踪">
+    <title>每日热点库与电商圈层行业活动追踪</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    <link rel="stylesheet" href="./assets/styles.css">
+  </head>
+  <body>
+    <header class="global-header">
+      <a class="brand" href="#/hotspots/latest/overview" aria-label="每日热点库与电商圈层行业活动追踪首页">
+        <span class="brand-mark" aria-hidden="true">脉</span>
+        <span class="brand-copy">
+          <strong>每日热点库</strong>
+          <span>与电商圈层行业活动追踪</span>
+        </span>
+      </a>
+
+      <nav class="module-nav" aria-label="一级模块">
+        <button class="module-tab" type="button" data-module="hotspots">
+          <i data-lucide="flame"></i>
+          <span>每日热点</span>
+        </button>
+        <button class="module-tab" type="button" data-module="events">
+          <i data-lucide="calendar-days"></i>
+          <span>活动追踪</span>
+        </button>
+      </nav>
+
+      <div class="date-console" aria-label="历史日期切换">
+        <button class="icon-button" type="button" id="previous-date" title="上一期" aria-label="上一期">
+          <i data-lucide="chevron-left"></i>
+        </button>
+        <label class="date-select-wrap">
+          <i data-lucide="calendar-range"></i>
+          <select id="date-select" aria-label="选择历史日期"></select>
+        </label>
+        <button class="icon-button" type="button" id="next-date" title="下一期" aria-label="下一期">
+          <i data-lucide="chevron-right"></i>
+        </button>
+        <span class="update-stamp" id="update-stamp">正在读取</span>
+      </div>
+    </header>
+
+    <main id="app" class="app-shell" aria-live="polite">
+      <div class="loading-state">
+        <span class="loading-line"></span>
+        <span>正在读取历史热点与活动数据</span>
+      </div>
+    </main>
+
+    <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+    <aside class="detail-drawer" id="detail-drawer" aria-label="详情" aria-hidden="true">
+      <div class="drawer-header">
+        <div>
+          <span class="drawer-eyebrow" id="drawer-eyebrow">详情</span>
+          <h2 id="drawer-title">记录详情</h2>
+        </div>
+        <button class="icon-button" type="button" id="close-drawer" title="关闭" aria-label="关闭详情">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="drawer-content" id="drawer-content"></div>
+    </aside>
+
+    <div class="toast" id="toast" role="status" hidden></div>
+
+    <script src="./assets/vendor/lucide.min.js"></script>
+    <script type="module" src="./assets/app.js"></script>
+  </body>
+</html>

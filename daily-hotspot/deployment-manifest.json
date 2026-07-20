@@ -1,0 +1,98 @@
+{
+  "title": "每日热点库与电商圈层行业活动追踪",
+  "generatedAt": "2026-07-20T04:36:41.556Z",
+  "fileCount": 18,
+  "totalBytes": 1068105,
+  "files": [
+    {
+      "path": "assets/app.js",
+      "bytes": 9342,
+      "sha256": "93e6e613c622d0a68dae31a1b07a27312a789928c98dfaf49ea05606670bb84e"
+    },
+    {
+      "path": "assets/events.js",
+      "bytes": 18901,
+      "sha256": "6e793bf8e86a705b7c040010d10403b051105a33b99094a73c1095243012f10e"
+    },
+    {
+      "path": "assets/favicon.svg",
+      "bytes": 257,
+      "sha256": "f2b8103262ae9623acbe2d3bd0a090c7ad96dee71a026d55b8d15962dd0bdefd"
+    },
+    {
+      "path": "assets/hotspots.js",
+      "bytes": 18469,
+      "sha256": "d7890ce1d05d5443247f1bbc93e88b67ef19c5d23980540cfafffc01c24db29c"
+    },
+    {
+      "path": "assets/styles.css",
+      "bytes": 20476,
+      "sha256": "185a4d5e1e138dd75e89adfbf08a570ec59bd73a40f5a61d2657cf0bd51d191e"
+    },
+    {
+      "path": "assets/ui.js",
+      "bytes": 5569,
+      "sha256": "4c1c3bb9fd66fa651a7bdcf2dd303d5a331807f6b04511da6e47b643b1c43e76"
+    },
+    {
+      "path": "assets/vendor/lucide.min.js",
+      "bytes": 397450,
+      "sha256": "ab85225ecc1daa2033607856f03dd2dabcbc08e2d260a5b97e17c690aa929766"
+    },
+    {
+      "path": "data/events/2026-07-20.json",
+      "bytes": 146413,
+      "sha256": "a0e9c2c7e3e1ac050d6a24e71678eff5e4eed8061780dd9db9a9aeadcaa324b4"
+    },
+    {
+      "path": "data/events/index.json",
+      "bytes": 264,
+      "sha256": "490463bf8f8189b5f953dd89ec0372975d602186699b29021150b005f09edf8f"
+    },
+    {
+      "path": "data/events/latest.json",
+      "bytes": 146413,
+      "sha256": "a0e9c2c7e3e1ac050d6a24e71678eff5e4eed8061780dd9db9a9aeadcaa324b4"
+    },
+    {
+      "path": "data/hotspots/2026-07-15.json",
+      "bytes": 67238,
+      "sha256": "ea406513a89306c38d0fe923e62d20adf412fb2140126f2810947fd4d49f5a40"
+    },
+    {
+      "path": "data/hotspots/2026-07-16.json",
+      "bytes": 88637,
+      "sha256": "8bd14613072e4ed094af3e97de6d3fffa51a962e9991edcd7bfecefc3bb13d39"
+    },
+    {
+      "path": "data/hotspots/2026-07-17.json",
+      "bytes": 33521,
+      "sha256": "b5ab56658fefd7e1d7c82b64c01b6fdef56ab63fd1d4bea10381abf727d31338"
+    },
+    {
+      "path": "data/hotspots/2026-07-20.json",
+      "bytes": 55298,
+      "sha256": "e577269e7dc59e46749fac44c6d9b7df70c8ea45872e31a3aa1aa3b252651971"
+    },
+    {
+      "path": "data/hotspots/index.json",
+      "bytes": 1270,
+      "sha256": "ba60ef8cdd2cc3230f9f917255f46956aa52d09f6cf6c1cb3265f0177c926ffe"
+    },
+    {
+      "path": "data/hotspots/latest.json",
+      "bytes": 55298,
+      "sha256": "e577269e7dc59e46749fac44c6d9b7df70c8ea45872e31a3aa1aa3b252651971"
+    },
+    {
+      "path": "data/manifest.json",
+      "bytes": 294,
+      "sha256": "7346b3d79e527323e44c27eafe429ccdb6b15aa5582a8d4c54338df99f7ea1c7"
+    },
+    {
+      "path": "index.html",
+      "bytes": 2995,
+      "sha256": "f0680e3ec1eafb280d9e40dba40f4144f6a7805746e2e0f544885281602eb251"
+    }
+  ]
+}

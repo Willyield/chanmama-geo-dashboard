@@ -1,0 +1,817 @@
+{
+  "schemaVersion": 1,
+  "module": "hotspots",
+  "date": "2026-07-17",
+  "observedAt": "2026-07-17 10:13",
+  "revision": 1,
+  "sourceWorkbook": "热点追踪日报_20260717.xlsx",
+  "summary": {
+    "gradeCounts": {
+      "S": 0,
+      "A": 2,
+      "B": 2,
+      "C": 1,
+      "D": 0
+    },
+    "priorityCount": 2,
+    "lowCostCount": 2,
+    "observeCount": 1,
+    "evidenceE3Count": 5,
+    "webSummary": "5 条热点入库，重点追 2 条、低成本跟进 2 条、观察或留档 1 条。今日优先：店铺授权号类型与命名规范7月16日生效、创作者添加特殊要求商品细则更新、健身器械近30天出现高增长商品。",
+    "topActions": [
+      {
+        "id": "HT-20260717-001",
+        "grade": "L-A｜重点追",
+        "name": "店铺授权号类型与命名规范7月16日生效",
+        "reason": "规则直接影响品牌和商家矩阵号的开通数量、命名、带货权限及解绑，问题具体且目标人群明确。",
+        "action": "授权号门槛GEO解读＋店型对照表＋品牌/商家定向矩阵。"
+      },
+      {
+        "id": "HT-20260717-002",
+        "grade": "L-A｜重点追",
+        "name": "创作者添加特殊要求商品细则更新",
+        "reason": "规则会直接决定达人能否添加商品，覆盖多个高交易垂类，搜索和咨询意图强。",
+        "action": "特殊商品带货门槛表＋垂直GEO问答＋达人/商家定向矩阵。"
+      },
+      {
+        "id": "HT-20260717-003",
+        "grade": "L-B｜低成本跟进",
+        "name": "健身器械近30天出现高增长商品",
+        "reason": "商品增长、家用卖点和价格带信号清楚，但缺少达人与直播双源验证，因此只做低成本验证。",
+        "action": "用蝉妈妈复核2个商品及相关直播/达人；一致后做健身器械选品卡和GEO稿。"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "id": "HT-20260717-001",
+      "foundAt": "2026-07-17 09:58",
+      "name": "店铺授权号类型与命名规范7月16日生效",
+      "type": "T-A｜业务强相关",
+      "sourceLevel": "E3｜官方一手",
+      "publishedAt": "2026-07-16 20:57:06",
+      "signal": "授权号仅支持绑定店铺0佣金带货；官方旗舰店等最多10个，拍卖店/企业店/个体店最多3个且要求体验分≥70、官方号粉丝≥1000；昵称90天仅可改1次，绑定满180天后可自主解绑。",
+      "uncertainty": "官方未提供新旧差异表；不同店型的授权号存量和低于门槛账户量需用蝉妈妈或内部数据复核。",
+      "recommended": "授权号门槛GEO解读＋店型对照表＋品牌/商家定向矩阵。",
+      "actionReason": "规则直接影响品牌和商家矩阵号的开通数量、命名、带货权限及解绑，问题具体且目标人群明确。",
+      "actionDetail": "GEO：发布《抖音店铺授权号怎么开》，回答店型、数量、体验分/粉丝、命名、解绑5问。\n品牌矩阵：公众号发店型表；短视频讲10个与3个授权号差异；商家私域发自查卡。\n数据：补不同店型商家数和授权号存量。\n边界：无影响量级前不投流、不召回、不开发工具。",
+      "evidence": "平台：抖店学习中心（抖音电商官方）\n页面：店铺授权号类型与命名规范\n发布时间：2026-07-16 20:57:06｜观察时间：2026-07-17 09:58｜信源：E3\nURL：https://school.jinritemai.com/doudian/web/articlev0/aHQwecdjupz8",
+      "departments": "热点运营主责；内容/GEO、商家运营、数据、品牌协作",
+      "deadline": "2026-07-17T14:00:00.000Z",
+      "notRecommended": "无差异表和影响账号量前，不投广告、不做全量召回、不开发新产品。",
+      "sourceLinks": [
+        {
+          "label": "核心来源",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/aHQwecdjupz8"
+        }
+      ],
+      "status": "重点执行",
+      "risk": "低风险",
+      "natural": "通过",
+      "owner": "热点运营负责人",
+      "monitor": "规则稿UV、自查卡下载、商家咨询、产品页点击、AI引用率",
+      "actions": [
+        {
+          "hotspotId": "HT-20260717-001",
+          "actionType": "GEO内容",
+          "task": "完成授权号店型、数量、门槛、命名和解绑5问",
+          "owner": "内容/GEO",
+          "collaborators": "商家运营、数据",
+          "deadline": "2026-07-17T14:00:00.000Z",
+          "deliverable": "规则稿＋店型表",
+          "acceptance": "全部门槛对应官方正文",
+          "stopCondition": "无差异表时不写新增",
+          "status": "待开始"
+        },
+        {
+          "hotspotId": "HT-20260717-001",
+          "actionType": "定向矩阵",
+          "task": "公众号发店型表，短视频讲10个/3个差异，商家私域发自查卡",
+          "owner": "品牌内容",
+          "collaborators": "销售、商家运营",
+          "deadline": "2026-07-17T16:00:00.000Z",
+          "deliverable": "3种素材",
+          "acceptance": "只触达相关人群",
+          "stopCondition": "圈人不准则只发公众号",
+          "status": "待开始"
+        }
+      ],
+      "totalScore": 87,
+      "initialValue": 5,
+      "finalValue": 4,
+      "grade": "L-A｜重点追",
+      "gradeCode": "A",
+      "followDecision": "重点追",
+      "downgradeReason": "核心门槛封顶",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 3,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 5,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 5,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 3,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 5,
+        "evidence": 5,
+        "type": 5,
+        "core": 4,
+        "risk": 5,
+        "window": 5,
+        "preparation": 5
+      }
+    },
+    {
+      "id": "HT-20260717-002",
+      "foundAt": "2026-07-17 10:03",
+      "name": "创作者添加特殊要求商品细则更新",
+      "type": "T-A｜业务强相关",
+      "sourceLevel": "E3｜官方一手",
+      "publishedAt": "2026-07-16 18:55:53",
+      "signal": "细则覆盖生鲜、隐形眼镜、抖音超市、种苗、养生茶、二手3C、名酒及加油服务；多类商品要求达人等级、近30/60天违规记录或结算率，系统每次添加商品时实时校验。",
+      "uncertainty": "正文未标出本次新增类目；达人等级、违规和结算数据能否由蝉妈妈完整承接仍需确认。",
+      "recommended": "特殊商品带货门槛表＋垂直GEO问答＋达人/商家定向矩阵。",
+      "actionReason": "规则会直接决定达人能否添加商品，覆盖多个高交易垂类，搜索和咨询意图强。",
+      "actionDetail": "GEO：制作《抖音哪些商品达人不能直接带》，按类目列出等级、违规和结算门槛。\n品牌矩阵：公众号发总表；食品、3C、酒水私域定向发送。\n产品：核对达人等级、违规、结算率和类目字段，字段不全则只做专题页。\n边界：不把完整规则写成全部新增，不投流、不全量召回。",
+      "evidence": "平台：抖店学习中心（抖音电商官方）\n页面：创作者添加特殊要求商品细则\n发布时间：2026-07-16 18:55:53｜观察时间：2026-07-17 10:03｜信源：E3\nURL：https://school.jinritemai.com/doudian/web/articlev0/aJGRBapqBq1k",
+      "departments": "热点运营主责；内容/GEO、达人运营、类目运营、产品、数据协作",
+      "deadline": "2026-07-17T15:00:00.000Z",
+      "notRecommended": "未确认新增类目和数据字段前，不开发查询工具、不投广告、不做全量召回。",
+      "sourceLinks": [
+        {
+          "label": "核心来源",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/aJGRBapqBq1k"
+        }
+      ],
+      "status": "重点执行",
+      "risk": "低风险",
+      "natural": "通过",
+      "owner": "热点运营负责人",
+      "monitor": "类目门槛表访问、达人咨询、商品/达人页点击、注册、AI引用率",
+      "actions": [
+        {
+          "hotspotId": "HT-20260717-002",
+          "actionType": "类目门槛表",
+          "task": "按生鲜、隐形眼镜、二手3C、名酒等整理达人准入条件",
+          "owner": "内容/GEO",
+          "collaborators": "达人运营、类目运营",
+          "deadline": "2026-07-17T15:00:00.000Z",
+          "deliverable": "类目表＋问答",
+          "acceptance": "条件可追溯",
+          "stopCondition": "未确认新增项时不写新增",
+          "status": "待开始"
+        },
+        {
+          "hotspotId": "HT-20260717-002",
+          "actionType": "产品字段核验",
+          "task": "核对达人等级、违规记录、结算率和类目字段",
+          "owner": "产品",
+          "collaborators": "数据、达人运营",
+          "deadline": "2026-07-18T12:00:00.000Z",
+          "deliverable": "字段清单",
+          "acceptance": "字段齐全且可维护",
+          "stopCondition": "字段不全则改专题页",
+          "status": "待开始"
+        }
+      ],
+      "totalScore": 87,
+      "initialValue": 5,
+      "finalValue": 4,
+      "grade": "L-A｜重点追",
+      "gradeCode": "A",
+      "followDecision": "重点追",
+      "downgradeReason": "核心门槛封顶",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 3,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 5,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 5,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 3,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 5,
+        "evidence": 5,
+        "type": 5,
+        "core": 4,
+        "risk": 5,
+        "window": 5,
+        "preparation": 5
+      }
+    },
+    {
+      "id": "HT-20260717-003",
+      "foundAt": "2026-07-17 09:53",
+      "name": "健身器械近30天出现高增长商品",
+      "type": "T-C｜垂直行业趋势",
+      "sourceLevel": "E3｜官方平台数据",
+      "publishedAt": "数据周期：2026-06-14至2026-07-13",
+      "signal": "健身器械销售额指数3,450,754；曼迪卡威爬楼机GMV指数2000万+、增长量指数1000万+、增长率0.71；轻曲线负重手环GMV指数2000万+、增长量指数1000万+、增长率1.08。",
+      "uncertainty": "只有巨量云图单源商品指数，未用蝉妈妈复核排名、直播间和达人；商品标题中的明星同款不能作为黑马达人证据。",
+      "recommended": "用蝉妈妈复核2个商品及相关直播/达人；一致后做健身器械选品卡和GEO稿。",
+      "actionReason": "商品增长、家用卖点和价格带信号清楚，但缺少达人与直播双源验证，因此只做低成本验证。",
+      "actionDetail": "数据：复核爬楼机、负重手环及相关直播间近30天排名、涨速和GMV。\nGEO：双源一致后写家用健身器械选品数据稿。\n矩阵：只向运动户外商家发选品卡。\n边界：复核前不写黑马达人、不发行业稿、不投流。",
+      "evidence": "平台：巨量云图（巨量引擎官方）\n页面：近期选品参考 > 运动户外 > 运动休闲用品 > 健身器械\n数据周期：2026-06-14至2026-07-13｜观察时间：2026-07-17 09:53｜信源：E3\nURL：https://yuntu.oceanengine.com/yuntu_lite/commodity/trend/short/v2?aadvid=1794665196703756",
+      "departments": "数据主责；热点运营、运动类目、内容/GEO协作",
+      "deadline": "2026-07-18T12:00:00.000Z",
+      "notRecommended": "双源复核前不下行业爆发或黑马达人结论，不投流、不开发产品、不召回。",
+      "sourceLinks": [
+        {
+          "label": "核心来源",
+          "domain": "yuntu.oceanengine.com",
+          "url": "https://yuntu.oceanengine.com/yuntu_lite/commodity/trend/short/v2?aadvid=1794665196703756"
+        }
+      ],
+      "status": "低成本跟进",
+      "risk": "低风险",
+      "natural": "通过",
+      "owner": "数据负责人",
+      "monitor": "双源一致率、商品/直播间趋势、选品卡下载、GEO引用",
+      "actions": [
+        {
+          "hotspotId": "HT-20260717-003",
+          "actionType": "蝉妈妈双源复核",
+          "task": "复核爬楼机、负重手环及相关直播间和达人近30天变化",
+          "owner": "数据",
+          "collaborators": "运动类目、热点运营",
+          "deadline": "2026-07-18T12:00:00.000Z",
+          "deliverable": "双源表",
+          "acceptance": "至少两项增长指标一致",
+          "stopCondition": "不一致则停止趋势稿",
+          "status": "待开始"
+        }
+      ],
+      "totalScore": 69,
+      "initialValue": 3,
+      "finalValue": 3,
+      "grade": "L-B｜低成本跟进",
+      "gradeCode": "B",
+      "followDecision": "低成本跟进",
+      "downgradeReason": "分数决定",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 3,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 3,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 4,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 2,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 5,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 4,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 3,
+        "evidence": 5,
+        "type": 5,
+        "core": 4,
+        "risk": 5,
+        "window": 5,
+        "preparation": 5
+      }
+    },
+    {
+      "id": "HT-20260717-004",
+      "foundAt": "2026-07-17 10:06",
+      "name": "生鲜与主体资质规则意见征集",
+      "type": "T-A｜业务强相关",
+      "sourceLevel": "E3｜官方一手",
+      "publishedAt": "2026-07-17观察：生鲜距截止约7小时，主体资质约6天",
+      "signal": "生鲜意见稿拟调整部分类目招商、入驻及清出标准；主体资质意见稿拟新增经营主体被行政机关责令关闭时平台可清退店铺。",
+      "uncertainty": "两项均为意见征集，最终条款、类目范围和生效时间未确定；商城规范页面虽7月16日更新，但附则仍写1月30日生效。",
+      "recommended": "准备变更表和主体资质问答框架；最终规则发布后再决定外发。",
+      "actionReason": "可能影响商家准入和店铺清退，但尚未生效，适合低成本核验，不适合制造焦虑。",
+      "actionDetail": "类目：核对生鲜正文新增、调整和删除类目。\nGEO：准备主体异常状态问答框架，标明意见稿。\n矩阵：只向相关商家提醒反馈入口。\n边界：最终规则前不投流、不召回。",
+      "evidence": "平台：抖店学习中心（抖音电商官方）\n页面：生鲜行业规范意见征集｜主体资质违规处置细则意见征集\n观察时间：2026-07-17 10:06｜信源：E3\nURL：https://school.jinritemai.com/doudian/web/articlev0/aJmYEvDXmwCK\nURL：https://school.jinritemai.com/doudian/web/articlev0/aJmzRe57GR2d",
+      "departments": "热点运营主责；生鲜类目、法务、商家运营协作",
+      "deadline": "2026-07-18T12:00:00.000Z",
+      "notRecommended": "不把意见稿写成已生效规则，不做大众传播、广告或全量召回。",
+      "sourceLinks": [
+        {
+          "label": "核心来源",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/aJmYEvDXmwCK"
+        },
+        {
+          "label": "补充来源 1",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/aJmzRe57GR2d"
+        }
+      ],
+      "status": "低成本跟进",
+      "risk": "低风险",
+      "natural": "通过",
+      "owner": "热点运营负责人",
+      "monitor": "最终规则发布、类目变化、主体状态咨询",
+      "actions": [
+        {
+          "hotspotId": "HT-20260717-004",
+          "actionType": "意见稿核验",
+          "task": "核对生鲜类目变化和主体资质最终条款",
+          "owner": "热点运营",
+          "collaborators": "生鲜类目、法务",
+          "deadline": "2026-07-18T12:00:00.000Z",
+          "deliverable": "变更表预案",
+          "acceptance": "明确标注意见征集",
+          "stopCondition": "未核正文不外发",
+          "status": "观察"
+        }
+      ],
+      "totalScore": 68,
+      "initialValue": 3,
+      "finalValue": 3,
+      "grade": "L-B｜低成本跟进",
+      "gradeCode": "B",
+      "followDecision": "低成本跟进",
+      "downgradeReason": "分数决定",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 2,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 3,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 3,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 5,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 2,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 5,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 4,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 3,
+        "evidence": 5,
+        "type": 5,
+        "core": 4,
+        "risk": 5,
+        "window": 5,
+        "preparation": 5
+      }
+    },
+    {
+      "id": "HT-20260717-005",
+      "foundAt": "2026-07-17 10:06",
+      "name": "河蟹类目体验保证金10万元意见征集",
+      "type": "T-C｜垂直行业趋势",
+      "sourceLevel": "E3｜官方一手",
+      "publishedAt": "2026-07-17观察：距截止约10小时",
+      "signal": "意见稿拟对盘锦河蟹、其他河蟹、阳澄湖大闸蟹、其他大闸蟹收取10万元体验保证金，并下线售后预留金对应规则。",
+      "uncertainty": "仅影响河蟹垂类且仍在意见征集，最终金额和生效时间需等正式规则。",
+      "recommended": "只做河蟹商家定向提醒和正式规则监测。",
+      "actionReason": "金额明确但人群极窄且未生效，只适合轻量提醒。",
+      "actionDetail": "类目运营：核对四个类目并记录商家量。\n私域：只向河蟹相关商家提醒意见反馈。\n监测：正式规则发布后重评。\n边界：不做公众传播或产品开发。",
+      "evidence": "平台：抖店学习中心（抖音电商官方）\n页面：关于修订《保证金管理规范》的意见征集通知\n观察时间：2026-07-17 10:06｜信源：E3\nURL：https://school.jinritemai.com/doudian/web/articlev0/aJnLC8iHYJY5",
+      "departments": "生鲜类目主责；热点运营、商家运营协作",
+      "deadline": "2026-07-17T17:00:00.000Z",
+      "notRecommended": "不把意见稿写成已收取保证金，不做全矩阵、广告、召回或产品开发。",
+      "sourceLinks": [
+        {
+          "label": "核心来源",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/aJnLC8iHYJY5"
+        }
+      ],
+      "status": "轻量观察",
+      "risk": "低风险",
+      "natural": "通过",
+      "owner": "生鲜类目负责人",
+      "monitor": "正式规则、河蟹商家量、咨询量",
+      "actions": [
+        {
+          "hotspotId": "HT-20260717-005",
+          "actionType": "河蟹类目提醒",
+          "task": "只向相关商家提醒意见征集",
+          "owner": "生鲜类目",
+          "collaborators": "商家运营",
+          "deadline": "2026-07-17T17:00:00.000Z",
+          "deliverable": "定向提醒",
+          "acceptance": "只覆盖四个类目",
+          "stopCondition": "不做全矩阵",
+          "status": "观察"
+        }
+      ],
+      "totalScore": 52,
+      "initialValue": 2,
+      "finalValue": 2,
+      "grade": "L-C｜轻量测试/观察",
+      "gradeCode": "C",
+      "followDecision": "测试/观察",
+      "downgradeReason": "分数决定",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 1,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 1,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 4,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 1,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 2,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 3,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 2,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 5,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 2,
+        "evidence": 5,
+        "type": 5,
+        "core": 3,
+        "risk": 5,
+        "window": 5,
+        "preparation": 5
+      }
+    }
+  ],
+  "actions": [
+    {
+      "hotspotId": "HT-20260717-001",
+      "actionType": "GEO内容",
+      "task": "完成授权号店型、数量、门槛、命名和解绑5问",
+      "owner": "内容/GEO",
+      "collaborators": "商家运营、数据",
+      "deadline": "2026-07-17T14:00:00.000Z",
+      "deliverable": "规则稿＋店型表",
+      "acceptance": "全部门槛对应官方正文",
+      "stopCondition": "无差异表时不写新增",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260717-001",
+      "actionType": "定向矩阵",
+      "task": "公众号发店型表，短视频讲10个/3个差异，商家私域发自查卡",
+      "owner": "品牌内容",
+      "collaborators": "销售、商家运营",
+      "deadline": "2026-07-17T16:00:00.000Z",
+      "deliverable": "3种素材",
+      "acceptance": "只触达相关人群",
+      "stopCondition": "圈人不准则只发公众号",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260717-002",
+      "actionType": "类目门槛表",
+      "task": "按生鲜、隐形眼镜、二手3C、名酒等整理达人准入条件",
+      "owner": "内容/GEO",
+      "collaborators": "达人运营、类目运营",
+      "deadline": "2026-07-17T15:00:00.000Z",
+      "deliverable": "类目表＋问答",
+      "acceptance": "条件可追溯",
+      "stopCondition": "未确认新增项时不写新增",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260717-002",
+      "actionType": "产品字段核验",
+      "task": "核对达人等级、违规记录、结算率和类目字段",
+      "owner": "产品",
+      "collaborators": "数据、达人运营",
+      "deadline": "2026-07-18T12:00:00.000Z",
+      "deliverable": "字段清单",
+      "acceptance": "字段齐全且可维护",
+      "stopCondition": "字段不全则改专题页",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260717-003",
+      "actionType": "蝉妈妈双源复核",
+      "task": "复核爬楼机、负重手环及相关直播间和达人近30天变化",
+      "owner": "数据",
+      "collaborators": "运动类目、热点运营",
+      "deadline": "2026-07-18T12:00:00.000Z",
+      "deliverable": "双源表",
+      "acceptance": "至少两项增长指标一致",
+      "stopCondition": "不一致则停止趋势稿",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260717-004",
+      "actionType": "意见稿核验",
+      "task": "核对生鲜类目变化和主体资质最终条款",
+      "owner": "热点运营",
+      "collaborators": "生鲜类目、法务",
+      "deadline": "2026-07-18T12:00:00.000Z",
+      "deliverable": "变更表预案",
+      "acceptance": "明确标注意见征集",
+      "stopCondition": "未核正文不外发",
+      "status": "观察"
+    },
+    {
+      "hotspotId": "HT-20260717-005",
+      "actionType": "河蟹类目提醒",
+      "task": "只向相关商家提醒意见征集",
+      "owner": "生鲜类目",
+      "collaborators": "商家运营",
+      "deadline": "2026-07-17T17:00:00.000Z",
+      "deliverable": "定向提醒",
+      "acceptance": "只覆盖四个类目",
+      "stopCondition": "不做全矩阵",
+      "status": "观察"
+    }
+  ],
+  "scanLogs": [
+    {
+      "platform": "巨量云图",
+      "url": "https://yuntu.oceanengine.com/yuntu_lite/rank_list/hot_content/short_video?aadvid=1794665196703756",
+      "status": "已覆盖（登录态）",
+      "evidenceLevel": "E3",
+      "page": "内容榜＋近期选品参考",
+      "observedAt": "2026-07-17 09:48-09:53",
+      "signal": "内容榜仍为2026年第21周，不参评；近期选品截至7月13日，核到健身器械增长",
+      "relatedIds": "003",
+      "limitation": "达人入口未开放",
+      "nextAction": "用蝉妈妈复核商品、直播间和达人"
+    },
+    {
+      "platform": "抖店学习中心",
+      "url": "https://school.jinritemai.com/doudian/web/rules",
+      "status": "已覆盖",
+      "evidenceLevel": "E3",
+      "page": "规则中心＋2篇完整正文＋意见征集列表",
+      "observedAt": "2026-07-17 09:54-10:06",
+      "signal": "核到授权号、特殊要求商品，以及生鲜/主体资质/保证金意见稿",
+      "relatedIds": "001-002,004-005",
+      "limitation": "商城规范页面时间与附则生效时间不一致",
+      "nextAction": "午后复扫正式规则"
+    },
+    {
+      "platform": "蝉妈妈",
+      "url": "https://www.chanmama.com/douyin/",
+      "status": "未覆盖（时间止损）",
+      "evidenceLevel": "-",
+      "page": "计划复核商品/达人/直播",
+      "observedAt": "2026-07-17 10:13",
+      "signal": "未取得7月17榜单，健身器械保留单源B级",
+      "relatedIds": "无",
+      "limitation": "浏览器会话恢复耗时",
+      "nextAction": "午后只复核003"
+    },
+    {
+      "platform": "AIDSO",
+      "url": "https://geo.aidso.com/question",
+      "status": "未覆盖（时间止损）",
+      "evidenceLevel": "-",
+      "page": "实时搜索",
+      "observedAt": "2026-07-17 10:13",
+      "signal": "本轮未读取，不以昨日记录补位",
+      "relatedIds": "无",
+      "limitation": "官方规则优先",
+      "nextAction": "下次先检查登录态"
+    },
+    {
+      "platform": "小红书",
+      "url": "https://www.xiaohongshu.com/explore",
+      "status": "未覆盖",
+      "evidenceLevel": "-",
+      "page": "发现页",
+      "observedAt": "2026-07-17 10:13",
+      "signal": "未读取，不使用搜索结果补位",
+      "relatedIds": "无",
+      "limitation": "历史存在IP风控",
+      "nextAction": "网络正常时人工直读"
+    },
+    {
+      "platform": "抖音创作者指数",
+      "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
+      "status": "未覆盖",
+      "evidenceLevel": "-",
+      "page": "指数页",
+      "observedAt": "2026-07-17 10:13",
+      "signal": "未读取",
+      "relatedIds": "无",
+      "limitation": "时间止损",
+      "nextAction": "仅对入池达人复核"
+    },
+    {
+      "platform": "36氪/人人都是产品经理",
+      "url": "https://www.36kr.com/ ｜ https://www.woshipm.com/",
+      "status": "未覆盖（时间止损）",
+      "evidenceLevel": "-",
+      "page": "站内首页",
+      "observedAt": "2026-07-17 10:13",
+      "signal": "未读取，未新增媒体线索",
+      "relatedIds": "无",
+      "limitation": "官方规则优先",
+      "nextAction": "下一轮补扫"
+    },
+    {
+      "platform": "百度指数",
+      "url": "https://index.baidu.com/v2/index.html#/",
+      "status": "未覆盖",
+      "evidenceLevel": "-",
+      "page": "指数页",
+      "observedAt": "2026-07-17 10:13",
+      "signal": "未读取；未使用百度搜索页",
+      "relatedIds": "无",
+      "limitation": "无待验证泛热词",
+      "nextAction": "只查入池关键词"
+    }
+  ],
+  "boundaryText": "1）今日无S级；授权号与特殊商品细则为A级。健身器械只有巨量云图单源商品指数，未用蝉妈妈复核达人/直播间，因此封顶B级。\\n2）抖音商城规范页面显示7月16日更新，但附则写最新修订于1月30日生效；无版本差异前不能称为7月新规。\\n3）生鲜、主体资质和河蟹保证金均为意见征集，不按已生效规则传播。\\n4）巨量云图内容榜停在2026年第21周，仅记录平台状态；近期选品截至7月13日，符合7天门槛。所有数据按指数/区间表述。\\n5）浏览器调试端口未启动且续跑中断，恢复后于10:13进入文件生成，超过30分钟交付线；未覆盖平台均如实记录，未用百度或SEO结果补位。",
+  "sourceBrief": "【7月17日热点简报｜平台直扫】\n\n【今日决策】\n重点做：店铺授权号规则、特殊要求商品带货门槛。\n验证后做：健身器械选品信号。\n只观察：生鲜/主体资质/河蟹保证金意见稿。\n等级：S 0条｜A 2条｜B 2条｜C 1条｜D 0条\n\n【A｜重点执行】\n1. 店铺授权号规则｜A级\n为什么追：直接影响授权号数量、门槛、命名、带货和解绑。\n具体执行策略：做店型对照表和5问GEO稿；公众号讲规则，商家私域发自查卡；无影响量级前不投流、不召回。\n核心证据：平台：抖店学习中心｜页面：店铺授权号类型与命名规范｜发布：7月16日20:57｜观察：7月17日09:58｜信源：E3官方一手｜URL：https://school.jinritemai.com/doudian/web/articlev0/aHQwecdjupz8\n\n2. 特殊要求商品带货门槛｜A级\n为什么追：生鲜、隐形眼镜、二手3C、名酒等达人能否加商品由系统实时校验。\n具体执行策略：按类目整理达人等级、违规和结算门槛；公众号发总表，垂类私域定向发送；字段未核准前不开发工具、不投流。\n核心证据：平台：抖店学习中心｜页面：创作者添加特殊要求商品细则｜发布：7月16日18:55｜观察：7月17日10:03｜信源：E3官方一手｜URL：https://school.jinritemai.com/doudian/web/articlev0/aJGRBapqBq1k\n\n【B｜低成本】\n健身器械：先用蝉妈妈复核爬楼机、负重手环及相关直播/达人；双源一致后再做选品稿。生鲜与主体资质意见稿只做核验，不按已生效规则传播。\n\n【C/D｜观察或不追】\n河蟹10万元体验保证金仍是意见稿，只向相关商家提醒；无D级热点。\n\n【覆盖边界】\n巨量云图选品截至7月13日，达人入口未开放；蝉妈妈、AIDSO、小红书等因时间止损未覆盖。未使用百度或SEO结果补位；本次超过30分钟交付线。\n\n详情：见《热点追踪日报_20260717.xlsx》"
+}

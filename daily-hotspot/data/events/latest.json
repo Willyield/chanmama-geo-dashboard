@@ -1,0 +1,4835 @@
+{
+  "schemaVersion": 1,
+  "module": "events",
+  "date": "2026-07-20",
+  "observedAt": "2026-07-17 11:36",
+  "verifiedAt": "2026-07-20",
+  "revision": 5,
+  "updatedAt": "2026-07-20T04:35:43.923Z",
+  "sourceType": "structured-data",
+  "sourceLabel": "活动数据与核验记录",
+  "sourceFiles": [
+    "ecommerce-circle-events/data/events.json",
+    "ecommerce-circle-events/data/agenda_topics.json",
+    "ecommerce-circle-events/config/keywords.csv",
+    "ecommerce-circle-events/data/verification_log.csv"
+  ],
+  "sourceWorkbook": null,
+  "summary": {
+    "counts": {
+      "total": 11,
+      "prepare": 8,
+      "watch": 1,
+      "agendaMissing": 2,
+      "urgent": 5,
+      "conflicts": 3,
+      "verified": 11
+    },
+    "webSummary": "执行摘要：未来一个月已核验 11 场活动，优先准备 8 场、重点观察 1 场、待补议程 2 场；5 场距开场不超过 7 天。\n今日优先：2026跨境电商政策合规和体系运营闭门会、跨境家居纺织产业带卖家选品对接会、Wayfair官方招商启动会-苏州站。",
+    "topActions": [
+      {
+        "eventId": "EVT-005",
+        "name": "2026跨境电商政策合规和体系运营闭门会",
+        "action": "先做政策/运营问题清单；避免为5天窗口启动重型合作或产品开发",
+        "reason": "中高：政策、流量转化、品牌增长和AI工具有明确搜索需求，但活动规模很小"
+      },
+      {
+        "eventId": "EVT-006",
+        "name": "跨境家居纺织产业带卖家选品对接会",
+        "action": "准备家居纺织选品数据卡、TikTok内容拆解模板和AI选品验证步骤",
+        "reason": "高：选品、AI、Wayfair和TikTok内容都可转成明确搜索与验证问题"
+      },
+      {
+        "eventId": "EVT-009",
+        "name": "Wayfair官方招商启动会-苏州站",
+        "action": "用统一模板记录苏州站问题，供8月广州站前复用和迭代",
+        "reason": "中高：2026入驻政策、平台红利和苏州家居卖家案例具有明确搜索词"
+      }
+    ]
+  },
+  "events": [
+    {
+      "eventId": "EVT-005",
+      "seriesId": null,
+      "changeStatus": "new",
+      "priority": "优先准备",
+      "name": "2026跨境电商政策合规和体系运营闭门会",
+      "startAt": "2026-07-22T00:00:00+08:00",
+      "endAt": "2026-07-24T23:59:00+08:00",
+      "city": "苏州",
+      "venue": "苏州吴郡逸庭酒店",
+      "eventType": "三天闭门培训",
+      "primaryCategory": "T-A｜业务强相关",
+      "tags": [
+        "圈层活动",
+        "合规",
+        "运营体系",
+        "AI工具",
+        "供应链"
+      ],
+      "organizers": [
+        "公开页未清晰披露主办方"
+      ],
+      "partners": [
+        "雨果跨境活动页（报名发布）"
+      ],
+      "audience": "跨境电商企业负责人、财税/法务、运营、品牌、供应链与海外仓团队",
+      "attendance": {
+        "reported": "官方海报写明限额7人小班",
+        "interpretation": "招生名额口径，不等于实际到场人数",
+        "confidence": "官方海报"
+      },
+      "agendaSummary": "政策与税务、合规风险、平台运营与流量转化、品牌增长、供应链及海外仓、AI与数字化工具。课程价格3900元/5680元。",
+      "guests": "海报列出6位以上讲师；为避免OCR误读，姓名未逐一录入",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "cifnews.com",
+          "url": "https://www.cifnews.com/activity/3079",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": null,
+      "observedAt": "2026-07-17T11:30:00+08:00",
+      "daysToStart": 5,
+      "interventionWindow": "很紧，距开场5天；仅建议轻量内容准备与会后复盘",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过",
+      "conflicts": [],
+      "missingFields": [
+        "每日精确上课时段",
+        "清晰主办方名称",
+        "实际报名人数"
+      ],
+      "attentionReason": "中高：政策、流量转化、品牌增长和AI工具有明确搜索需求，但活动规模很小",
+      "chanmamaRelevance": "运营和流量模块可用数据案例承接；政策与财税需引用权威来源并明确非专业意见",
+      "recommendedAction": "先做政策/运营问题清单；避免为5天窗口启动重型合作或产品开发",
+      "formalScoreStatus": "暂不评分：响应窗口紧且缺少外部热度数据",
+      "focusTopics": [
+        "平台运营、流量获取与高效转化",
+        "AI与数字化工具在跨境电商应用",
+        "跨境政策、税务与合规风险"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-012",
+          "event_id": "EVT-005",
+          "topic": "平台运营、流量获取与高效转化",
+          "evidence": "官方课程海报模块3",
+          "shareability": "运营方法和转化案例容易沉淀为SOP",
+          "priority": "优先准备",
+          "search_keywords": [
+            "跨境流量转化",
+            "电商运营体系",
+            "低成本流量获取"
+          ],
+          "user_questions": [
+            "如何找出转化漏斗的主要损失点？",
+            "低成本流量如何判断质量？"
+          ],
+          "chanmama_scenario": "用商品、达人、内容和直播指标建立漏斗诊断",
+          "content_to_prepare": "流量转化漏斗模板与指标口径说明",
+          "risk_or_gap": "课程规模小，外部传播未必强",
+          "score_status": "定性中高潜"
+        },
+        {
+          "topic_id": "TOP-013",
+          "event_id": "EVT-005",
+          "topic": "AI与数字化工具在跨境电商应用",
+          "evidence": "官方课程海报模块6",
+          "shareability": "工具、效率和风险控制均能形成清单类内容",
+          "priority": "优先准备",
+          "search_keywords": [
+            "跨境电商AI工具",
+            "AI运营自动化",
+            "AI工具风险"
+          ],
+          "user_questions": [
+            "AI工具如何接入现有运营体系？",
+            "怎样防止AI输出错误影响经营？"
+          ],
+          "chanmama_scenario": "用标准数据样本验证AI建议，保留人工审核与结果追踪",
+          "content_to_prepare": "工具评估表、风险检查和人工复核节点",
+          "risk_or_gap": "未公开具体工具名称与案例",
+          "score_status": "定性中高潜，待课程内容"
+        },
+        {
+          "topic_id": "TOP-014",
+          "event_id": "EVT-005",
+          "topic": "跨境政策、税务与合规风险",
+          "evidence": "官方课程海报模块1、2",
+          "shareability": "政策变化会产生搜索，但内容错误成本高",
+          "priority": "重点观察",
+          "search_keywords": [
+            "2026跨境电商政策",
+            "跨境电商合规风险",
+            "9810税务"
+          ],
+          "user_questions": [
+            "2026政策变化影响哪些卖家？",
+            "如何建立合规风险清单？"
+          ],
+          "chanmama_scenario": "经营风险科普，不直接承接为产品功能",
+          "content_to_prepare": "权威政策来源、适用范围和待专业确认事项",
+          "risk_or_gap": "需法务/财税专业复核",
+          "score_status": "定性中潜，高风险需审核"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-013",
+          "event_id": "EVT-005",
+          "check_type": "真实性复核",
+          "checked_at": "2026-07-17 11:30",
+          "status": "PASS",
+          "evidence": "雨果活动原页+官方课程海报",
+          "scope_or_field": "名称/日期/场馆/价格/模块",
+          "issue": "无",
+          "action": "归档海报"
+        },
+        {
+          "verification_id": "VER-014",
+          "event_id": "EVT-005",
+          "check_type": "字段复核",
+          "checked_at": "2026-07-17 11:30",
+          "status": "PASS_WITH_GAPS",
+          "evidence": "页面+海报",
+          "scope_or_field": "主办方/每日时段/实际人数",
+          "issue": "未清晰披露",
+          "action": "7人仅作为限额口径"
+        },
+        {
+          "verification_id": "VER-015",
+          "event_id": "EVT-005",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-07-20（首页改版复核）",
+          "status": "PASS",
+          "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+          "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+          "issue": "无",
+          "action": "最终严格复核"
+        }
+      ]
+    },
+    {
+      "eventId": "EVT-006",
+      "seriesId": null,
+      "changeStatus": "new",
+      "priority": "优先准备",
+      "name": "跨境家居纺织产业带卖家选品对接会",
+      "startAt": "2026-07-23T13:00:00+08:00",
+      "endAt": "2026-07-23T17:30:00+08:00",
+      "city": "杭州",
+      "venue": "杭州市上城区，具体地址未公开",
+      "eventType": "选品对接会",
+      "primaryCategory": "T-A｜业务强相关",
+      "tags": [
+        "圈层活动",
+        "选品",
+        "产业带",
+        "家居纺织",
+        "TikTok内容"
+      ],
+      "organizers": [
+        "雨果跨境"
+      ],
+      "partners": [
+        "Wayfair（特邀平台，按海报）"
+      ],
+      "audience": "跨境家居纺织卖家、工厂、平台运营、选品与内容团队",
+      "attendance": {
+        "reported": "海报写明20余家产业带工厂、400+跨境热销SKU",
+        "interpretation": "工厂与SKU数量不是参会人数；预计参与人数未披露",
+        "confidence": "官方海报"
+      },
+      "agendaSummary": "家居纺织市场趋势、AI赋能、Wayfair平台机会、爆品选品逻辑、TikTok时代内容增长与转化。",
+      "guests": "海报列出多位行业嘉宾，含平台与服务商代表；姓名不逐一转录",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "cifnews.com",
+          "url": "https://www.cifnews.com/activity/3065",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": null,
+      "observedAt": "2026-07-17T11:31:00+08:00",
+      "daysToStart": 6,
+      "interventionWindow": "紧，距开场6天；适合快速做品类/内容数据卡片",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过",
+      "conflicts": [],
+      "missingFields": [
+        "具体会场",
+        "预计参与人数"
+      ],
+      "attentionReason": "高：选品、AI、Wayfair和TikTok内容都可转成明确搜索与验证问题",
+      "chanmamaRelevance": "用商品趋势、达人带货与短视频/直播数据验证品类机会和内容打法；海外平台覆盖需确认",
+      "recommendedAction": "准备家居纺织选品数据卡、TikTok内容拆解模板和AI选品验证步骤",
+      "formalScoreStatus": "暂不评分：响应窗口紧且无连续热度数据",
+      "focusTopics": [
+        "跨境家居纺织爆品选品逻辑",
+        "TikTok时代的内容增长与转化逻辑",
+        "AI赋能家居跨境运营"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-015",
+          "event_id": "EVT-006",
+          "topic": "跨境家居纺织爆品选品逻辑",
+          "evidence": "官方海报议程包含选品与爆品打造",
+          "shareability": "可直接形成选品清单、数据卡和团队验证任务",
+          "priority": "优先准备",
+          "search_keywords": [
+            "家居纺织跨境选品",
+            "家居爆品怎么选",
+            "家纺潜力品"
+          ],
+          "user_questions": [
+            "家居纺织哪些品类有增长机会？",
+            "如何用数据排除伪需求？",
+            "爆品复制要看哪些指标？"
+          ],
+          "chanmama_scenario": "结合商品趋势、达人带货和内容表现做品类对照；跨境站内数据覆盖需确认",
+          "content_to_prepare": "家居家纺选品卡、指标口径和样例复盘",
+          "risk_or_gap": "400+SKU为活动方口径，不代表全部具备增长潜力",
+          "score_status": "定性高潜"
+        },
+        {
+          "topic_id": "TOP-017",
+          "event_id": "EVT-006",
+          "topic": "TikTok时代的内容增长与转化逻辑",
+          "evidence": "官方海报末段议程明确提及TikTok内容增长与转化",
+          "shareability": "内容拆解、达人选择和转化路径都能形成明确搜索",
+          "priority": "优先准备",
+          "search_keywords": [
+            "TikTok内容增长",
+            "TikTok家居带货",
+            "TikTok短视频转化"
+          ],
+          "user_questions": [
+            "家居品类在TikTok应该拍什么？",
+            "如何判断视频有流量但不转化？",
+            "达人内容怎样复盘？"
+          ],
+          "chanmama_scenario": "用短视频、达人和商品数据建立拉片与转化复盘模板；海外覆盖需确认",
+          "content_to_prepare": "家居类内容拉片表、转化漏斗和素材复盘问题",
+          "risk_or_gap": "需区分国内抖音经验与TikTok市场差异",
+          "score_status": "定性高潜"
+        },
+        {
+          "topic_id": "TOP-016",
+          "event_id": "EVT-006",
+          "topic": "AI赋能家居跨境运营",
+          "evidence": "官方海报议程包含AI赋能",
+          "shareability": "若能落到选品、文案、素材或客服，容易转成工具教程",
+          "priority": "重点观察",
+          "search_keywords": [
+            "AI家居选品",
+            "AI跨境运营",
+            "家居AI内容"
+          ],
+          "user_questions": [
+            "AI怎样辅助家居选品？",
+            "AI生成家居内容如何验证转化？"
+          ],
+          "chanmama_scenario": "用真实商品和内容数据验证AI建议，不以AI输出代替事实数据",
+          "content_to_prepare": "同一商品的人工/AI分析对照实验",
+          "risk_or_gap": "海报未披露具体工具与案例",
+          "score_status": "定性中潜，待案例"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-016",
+          "event_id": "EVT-006",
+          "check_type": "真实性复核",
+          "checked_at": "2026-07-17 11:31",
+          "status": "PASS",
+          "evidence": "雨果活动原页+官方海报",
+          "scope_or_field": "名称/日期/城市/议程",
+          "issue": "无",
+          "action": "归档海报"
+        },
+        {
+          "verification_id": "VER-017",
+          "event_id": "EVT-006",
+          "check_type": "字段复核",
+          "checked_at": "2026-07-17 11:31",
+          "status": "PASS_WITH_GAPS",
+          "evidence": "页面+海报",
+          "scope_or_field": "精确会场/人数",
+          "issue": "未公开",
+          "action": "工厂数与SKU数不当作人数"
+        },
+        {
+          "verification_id": "VER-018",
+          "event_id": "EVT-006",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-07-20（首页改版复核）",
+          "status": "PASS",
+          "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+          "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+          "issue": "无",
+          "action": "最终严格复核"
+        }
+      ]
+    },
+    {
+      "eventId": "EVT-007",
+      "seriesId": null,
+      "changeStatus": "new",
+      "priority": "重点观察",
+      "name": "2026跨境电商税务合规增长私享会",
+      "startAt": "2026-07-23T13:30:00+08:00",
+      "endAt": "2026-07-23T17:00:00+08:00",
+      "city": "广州",
+      "venue": "广州市番禺区巨大创意产业园5栋2楼3号会议室",
+      "eventType": "私享会",
+      "primaryCategory": "T-A｜业务强相关",
+      "tags": [
+        "圈层活动",
+        "税务合规",
+        "跨境卖家",
+        "增长"
+      ],
+      "organizers": [
+        "雨果跨境",
+        "长风智税"
+      ],
+      "partners": [],
+      "audience": "跨境卖家，符合条件后电话或短信通知具体时间与地址",
+      "attendance": {
+        "reported": "未披露",
+        "interpretation": "不得按会议室或审核制反推人数",
+        "confidence": "缺失"
+      },
+      "agendaSummary": "2026跨境卖家合规路径、征收变化与9810、海外仓卖家财税合规、现场1对1咨询。",
+      "guests": "卢丽红、贾利鹏（按官方海报）",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "cifnews.com",
+          "url": "https://www.cifnews.com/activity/3049",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": null,
+      "observedAt": "2026-07-17T11:32:00+08:00",
+      "daysToStart": 6,
+      "interventionWindow": "紧，距开场6天；只适合权威政策问答和会后观察",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过但存在议程时间冲突",
+      "conflicts": [
+        "活动页为13:30-17:00；海报14:00-14:30签到，同时下一议题标注14:00-15:20，存在重叠"
+      ],
+      "missingFields": [
+        "预计参与人数"
+      ],
+      "attentionReason": "中：9810、海外仓与征收变化会形成搜索需求，但与蝉妈妈产品的直接关联偏弱",
+      "chanmamaRelevance": "适合作为商家经营风险内容；不得把蝉妈妈包装成税务工具或给出个案税务结论",
+      "recommendedAction": "仅准备权威来源索引和问题清单；内容发布前交由专业人员复核",
+      "formalScoreStatus": "暂不评分：业务关联和产品承接证据不足",
+      "focusTopics": [
+        "2026跨境卖家合规路径与9810",
+        "海外仓卖家财税合规"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-018",
+          "event_id": "EVT-007",
+          "topic": "2026跨境卖家合规路径与9810",
+          "evidence": "官方海报卢丽红议题，含征收、2026变化、9810",
+          "shareability": "问题具体、搜索意图强，但错误成本高",
+          "priority": "重点观察",
+          "search_keywords": [
+            "9810税务",
+            "2026跨境卖家合规",
+            "跨境电商征收变化"
+          ],
+          "user_questions": [
+            "9810适合哪些卖家？",
+            "2026征收变化如何影响店群卖家？"
+          ],
+          "chanmama_scenario": "仅作为经营环境信息，不宣称税务计算或申报能力",
+          "content_to_prepare": "权威政策原文、适用条件和专业审核清单",
+          "risk_or_gap": "财税内容必须专业复核；海报议程时间重叠",
+          "score_status": "定性中潜，高风险需审核"
+        },
+        {
+          "topic_id": "TOP-019",
+          "event_id": "EVT-007",
+          "topic": "海外仓卖家财税合规",
+          "evidence": "官方海报贾利鹏议题",
+          "shareability": "海外仓卖家问题集中，可能形成高意向咨询",
+          "priority": "重点观察",
+          "search_keywords": [
+            "海外仓税务合规",
+            "海外仓卖家财税",
+            "跨境电商税改"
+          ],
+          "user_questions": [
+            "海外仓卖家常见税务风险有哪些？",
+            "现行政策和税改方向如何理解？"
+          ],
+          "chanmama_scenario": "弱产品关联，只做风险信息索引",
+          "content_to_prepare": "问题清单和权威来源，不给个案结论",
+          "risk_or_gap": "需专业财税人员复核",
+          "score_status": "定性中潜，高风险需审核"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-019",
+          "event_id": "EVT-007",
+          "check_type": "真实性复核",
+          "checked_at": "2026-07-17 11:32",
+          "status": "PASS",
+          "evidence": "雨果活动原页+官方海报",
+          "scope_or_field": "名称/日期/城市/地址/讲师",
+          "issue": "无",
+          "action": "归档海报"
+        },
+        {
+          "verification_id": "VER-020",
+          "event_id": "EVT-007",
+          "check_type": "字段复核",
+          "checked_at": "2026-07-17 11:32",
+          "status": "PASS_WITH_CONFLICT",
+          "evidence": "活动页+海报",
+          "scope_or_field": "议程时间",
+          "issue": "签到与第一议题重叠",
+          "action": "保留冲突 不擅自修正"
+        },
+        {
+          "verification_id": "VER-021",
+          "event_id": "EVT-007",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-07-20（首页改版复核）",
+          "status": "PASS",
+          "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+          "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+          "issue": "无",
+          "action": "最终严格复核"
+        }
+      ]
+    },
+    {
+      "eventId": "EVT-009",
+      "seriesId": "Wayfair官方招商启动会",
+      "changeStatus": "new",
+      "priority": "优先准备",
+      "name": "Wayfair官方招商启动会-苏州站",
+      "startAt": "2026-07-23T13:30:00+08:00",
+      "endAt": "2026-07-23T16:00:00+08:00",
+      "city": "苏州",
+      "venue": "苏州市吴中区，具体地址以审核通知为准",
+      "eventType": "官方招商启动会",
+      "primaryCategory": "T-A｜业务强相关",
+      "tags": [
+        "圈层活动",
+        "Wayfair",
+        "平台招商",
+        "家居出海"
+      ],
+      "organizers": [
+        "雨果跨境"
+      ],
+      "partners": [
+        "Wayfair（特邀平台）"
+      ],
+      "audience": "预备入驻Wayfair的卖家，以及具备工贸一体实力的家居/品牌供应商",
+      "attendance": {
+        "reported": "未披露",
+        "interpretation": "不得根据往期照片或会场画面推算人数",
+        "confidence": "缺失"
+      },
+      "agendaSummary": "Wayfair平台介绍与2026最新入驻政策、运营定位与聚焦苏州卖家、同事创业独立站案例、官方面对面交流与生态资源链接。",
+      "guests": "George Yi、Amber Wang（按官方海报）",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "cifnews.com",
+          "url": "https://www.cifnews.com/activity/3095",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": null,
+      "observedAt": "2026-07-17T11:34:00+08:00",
+      "daysToStart": 6,
+      "interventionWindow": "紧，距开场6天；适合准备入驻政策和家居选品问答",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过",
+      "conflicts": [],
+      "missingFields": [
+        "精确会场",
+        "预计参与人数"
+      ],
+      "attentionReason": "中高：2026入驻政策、平台红利和苏州家居卖家案例具有明确搜索词",
+      "chanmamaRelevance": "可用内容电商选品与达人数据辅助家居品类验证；Wayfair站内数据能力需另行确认",
+      "recommendedAction": "用统一模板记录苏州站问题，供8月广州站前复用和迭代",
+      "formalScoreStatus": "暂不评分：窗口紧且缺少连续热度数据",
+      "focusTopics": [
+        "Wayfair 2026最新入驻政策",
+        "聚焦苏州家居卖家与独立站案例"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-024",
+          "event_id": "EVT-009",
+          "topic": "Wayfair 2026最新入驻政策",
+          "evidence": "苏州站官方海报议程",
+          "shareability": "政策明确、目标人群集中，容易形成搜索与报名转化",
+          "priority": "优先准备",
+          "search_keywords": [
+            "Wayfair 2026入驻",
+            "Wayfair入驻条件",
+            "Wayfair中国卖家"
+          ],
+          "user_questions": [
+            "2026 Wayfair入驻条件有哪些变化？",
+            "哪些家居卖家更适合Wayfair？"
+          ],
+          "chanmama_scenario": "用内容电商商品和达人数据辅助品类判断；政策必须引用Wayfair官方",
+          "content_to_prepare": "入驻政策对照表、官方链接和卖家自查清单",
+          "risk_or_gap": "活动海报不能替代平台正式政策文件",
+          "score_status": "定性高潜，待官方政策核验"
+        },
+        {
+          "topic_id": "TOP-025",
+          "event_id": "EVT-009",
+          "topic": "聚焦苏州家居卖家与独立站案例",
+          "evidence": "苏州站官方海报议程",
+          "shareability": "地域供应链与案例结合，适合圈层内传播",
+          "priority": "重点观察",
+          "search_keywords": [
+            "苏州家居跨境电商",
+            "Wayfair苏州卖家",
+            "家居独立站案例"
+          ],
+          "user_questions": [
+            "苏州家居供应链如何做跨境？",
+            "独立站经验能否迁移到Wayfair？"
+          ],
+          "chanmama_scenario": "用商品与内容数据验证品类和卖点，不把单一案例当通用结论",
+          "content_to_prepare": "地域产业带案例卡与可复制条件清单",
+          "risk_or_gap": "案例数据尚未公开",
+          "score_status": "定性中潜"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-025",
+          "event_id": "EVT-009",
+          "check_type": "真实性复核",
+          "checked_at": "2026-07-17 11:34",
+          "status": "PASS",
+          "evidence": "雨果活动原页+官方议程海报",
+          "scope_or_field": "名称/日期/城市/议程/嘉宾",
+          "issue": "无",
+          "action": "归档海报"
+        },
+        {
+          "verification_id": "VER-026",
+          "event_id": "EVT-009",
+          "check_type": "字段复核",
+          "checked_at": "2026-07-17 11:34",
+          "status": "PASS_WITH_GAPS",
+          "evidence": "页面+海报",
+          "scope_or_field": "精确会场/人数",
+          "issue": "未公开",
+          "action": "写审核通知或暂缺"
+        },
+        {
+          "verification_id": "VER-027",
+          "event_id": "EVT-009",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-07-20（首页改版复核）",
+          "status": "PASS",
+          "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+          "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+          "issue": "无",
+          "action": "最终严格复核"
+        }
+      ]
+    },
+    {
+      "eventId": "EVT-003",
+      "seriesId": "AI领航者闭门私享会",
+      "changeStatus": "new",
+      "priority": "优先准备",
+      "name": "AI全链增效与价值创造——AI领航者闭门私享会",
+      "startAt": "2026-07-23T14:00:00+08:00",
+      "endAt": "2026-07-23T18:00:00+08:00",
+      "city": "深圳",
+      "venue": "具体地址未公开",
+      "eventType": "闭门私享会",
+      "primaryCategory": "T-B｜产品能力扩展",
+      "tags": [
+        "圈层活动",
+        "AI Agent",
+        "自动化",
+        "老板圈层"
+      ],
+      "organizers": [
+        "雨果跨境"
+      ],
+      "partners": [],
+      "audience": "核心业务负责人、AI实践派、分享者；强调已有AI落地经验",
+      "attendance": {
+        "reported": "官方海报写明仅开放10+席",
+        "interpretation": "名额口径，不等于实际到场人数",
+        "confidence": "官方海报"
+      },
+      "agendaSummary": "AI应用经验与教训、AI Agent多模态与自动化、跨境AI新现象新思路、AI变局与未来趋势共识。",
+      "guests": "未公开具体姓名；参会者经审核",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "cifnews.com",
+          "url": "https://www.cifnews.com/activity/3056",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": null,
+      "observedAt": "2026-07-17T11:28:00+08:00",
+      "daysToStart": 6,
+      "interventionWindow": "紧，距开场6天；适合快速准备问答和会后验证清单，不适合重开发",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过",
+      "conflicts": [],
+      "missingFields": [
+        "具体地点",
+        "嘉宾姓名"
+      ],
+      "attentionReason": "高：真实教训、Agent自动化与可执行清单容易被参会者带回团队验证",
+      "chanmamaRelevance": "可用蝉妈妈数据样本验证AI分析、脚本生成和复盘工作流，但需明确哪些能力已上线",
+      "recommendedAction": "准备《AI在内容电商的可验证任务清单》与失败案例问答，活动次日复扫传播内容",
+      "formalScoreStatus": "暂不评分：无流量趋势、转化基线和内部执行负责人",
+      "focusTopics": [
+        "AI应用的真实经验与教训",
+        "AI Agent、多模态与自动化",
+        "跨境AI新现象与未来共识"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-005",
+          "event_id": "EVT-003",
+          "topic": "AI应用的真实经验与教训",
+          "evidence": "官方海报议程“AI应用的经验与教训”",
+          "shareability": "失败经验稀缺，容易被负责人转发给团队并要求避坑",
+          "priority": "优先准备",
+          "search_keywords": [
+            "电商AI落地失败",
+            "AI工具踩坑",
+            "AI提效真实案例"
+          ],
+          "user_questions": [
+            "AI工具用了半年为什么效率没提升？",
+            "哪些电商任务不适合交给AI？",
+            "如何核算AI投入产出？"
+          ],
+          "chanmama_scenario": "用固定任务、数据样本和人工基线验证AI是否真正提效",
+          "content_to_prepare": "《AI落地失败原因检查表》与投入产出计算模板",
+          "risk_or_gap": "闭门内容可能不会公开，需会后观察二次传播",
+          "score_status": "定性高潜，正式10维评分待传播数据"
+        },
+        {
+          "topic_id": "TOP-006",
+          "event_id": "EVT-003",
+          "topic": "AI Agent、多模态与自动化",
+          "evidence": "官方海报“AI AGENT、多模态、自动化”等议题",
+          "shareability": "方法可拆成工作流，容易形成SOP与工具清单",
+          "priority": "优先准备",
+          "search_keywords": [
+            "电商AI Agent",
+            "电商自动化工作流",
+            "多模态电商AI",
+            "AI智能体"
+          ],
+          "user_questions": [
+            "AI Agent如何接入选品和内容流程？",
+            "哪些环节需要人工复核？",
+            "自动化工作流怎样防止错误放大？"
+          ],
+          "chanmama_scenario": "把数据查询、案例分析、脚本草拟和人工审核串成可复核流程",
+          "content_to_prepare": "一张工作流图、输入输出字段、人工审核节点和失败回滚规则",
+          "risk_or_gap": "不得宣称未上线的自动化功能",
+          "score_status": "定性高潜，正式10维评分待产品承接确认"
+        },
+        {
+          "topic_id": "TOP-007",
+          "event_id": "EVT-003",
+          "topic": "跨境AI新现象与未来共识",
+          "evidence": "官方海报议程“跨境AI的新现象新思路”“AI变局与未来趋势共识”",
+          "shareability": "观点传播性较强，但若无数据和方法容易变成泛讨论",
+          "priority": "重点观察",
+          "search_keywords": [
+            "跨境AI趋势",
+            "2026电商AI趋势",
+            "AI电商新玩法"
+          ],
+          "user_questions": [
+            "2026跨境AI有哪些真正的新玩法？",
+            "哪些趋势已经有经营数据证明？"
+          ],
+          "chanmama_scenario": "用可验证的达人、内容、商品或直播数据区分趋势与观点",
+          "content_to_prepare": "“观点-证据-可验证动作”三列表",
+          "risk_or_gap": "共识类内容可能缺乏可复现证据",
+          "score_status": "定性中潜"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-007",
+          "event_id": "EVT-003",
+          "check_type": "真实性复核",
+          "checked_at": "2026-07-17 11:28",
+          "status": "PASS",
+          "evidence": "雨果活动原页+官方海报",
+          "scope_or_field": "名称/日期/城市/议程",
+          "issue": "无",
+          "action": "归档海报"
+        },
+        {
+          "verification_id": "VER-008",
+          "event_id": "EVT-003",
+          "check_type": "字段复核",
+          "checked_at": "2026-07-17 11:28",
+          "status": "PASS_WITH_GAPS",
+          "evidence": "页面+海报",
+          "scope_or_field": "地点/嘉宾",
+          "issue": "具体地址和嘉宾姓名未公开",
+          "action": "写暂缺 不推断"
+        },
+        {
+          "verification_id": "VER-009",
+          "event_id": "EVT-003",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-07-20（首页改版复核）",
+          "status": "PASS",
+          "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+          "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+          "issue": "无",
+          "action": "最终严格复核"
+        }
+      ]
+    },
+    {
+      "eventId": "EVT-011",
+      "seriesId": "Ozon全球产业带招商系列峰会",
+      "changeStatus": "new",
+      "priority": "待补议程",
+      "name": "2026 Ozon全球产业带招商系列峰会-成都站",
+      "startAt": "2026-07-30T13:30:00+08:00",
+      "endAt": "2026-07-30T18:00:00+08:00",
+      "city": "成都",
+      "venue": "成都瑞吉酒店2楼宴会厅",
+      "eventType": "产业带招商峰会",
+      "primaryCategory": "T-A｜业务强相关",
+      "tags": [
+        "圈层活动",
+        "Ozon",
+        "平台招商",
+        "产业带",
+        "成都"
+      ],
+      "organizers": [
+        "Ozon Global",
+        "雨果跨境"
+      ],
+      "partners": [],
+      "audience": "计划进入俄罗斯及相关市场的产业带工厂、跨境卖家与平台招商团队",
+      "attendance": {
+        "reported": "未披露",
+        "interpretation": "不得根据“峰会”或宴会厅推算人数",
+        "confidence": "缺失"
+      },
+      "agendaSummary": "公开页确认Ozon平台招商系列峰会及分享报名可获得官方运营指南；详细议程与嘉宾暂缺。",
+      "guests": "暂缺",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "cifnews.com",
+          "url": "https://www.cifnews.com/activity/2951",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": null,
+      "observedAt": "2026-07-17T11:36:00+08:00",
+      "daysToStart": 13,
+      "interventionWindow": "有，距开场13天；但应先补齐议程再投入内容资源",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过但议程不足",
+      "conflicts": [],
+      "missingFields": [
+        "详细议程",
+        "嘉宾",
+        "预计参与人数"
+      ],
+      "attentionReason": "观察：官方平台招商和运营指南有搜索价值，但当前没有足够议程证据判断具体爆点",
+      "chanmamaRelevance": "可做平台招商信息与内容电商方法论观察；Ozon站内数据覆盖必须先确认",
+      "recommendedAction": "3天后重开页面并检索主办方账号；议程未补齐前不做具体爆点分数",
+      "formalScoreStatus": "不评分：议程不足",
+      "focusTopics": [
+        "Ozon平台招商与官方运营指南"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-028",
+          "event_id": "EVT-011",
+          "topic": "Ozon平台招商与官方运营指南",
+          "evidence": "报名页与联合海报；详细议程未公开",
+          "shareability": "官方指南具备搜索价值，但没有足够证据判断具体规则和玩法",
+          "priority": "待补议程",
+          "search_keywords": [
+            "Ozon成都招商",
+            "Ozon入驻",
+            "Ozon运营指南"
+          ],
+          "user_questions": [
+            "Ozon入驻需要哪些条件？",
+            "成都产业带哪些品类适合Ozon？"
+          ],
+          "chanmama_scenario": "仅做平台招商信息和内容电商方法观察；Ozon数据覆盖先确认",
+          "content_to_prepare": "先收集Ozon官方入驻链接与问题清单，等待详细议程",
+          "risk_or_gap": "议程、嘉宾和预计参与人数均暂缺",
+          "score_status": "不生成具体爆点分数"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-031",
+          "event_id": "EVT-011",
+          "check_type": "真实性复核",
+          "checked_at": "2026-07-17 11:36",
+          "status": "PASS",
+          "evidence": "雨果活动原页+Ozon/雨果联合海报",
+          "scope_or_field": "名称/日期/城市/场馆",
+          "issue": "无",
+          "action": "归档海报"
+        },
+        {
+          "verification_id": "VER-032",
+          "event_id": "EVT-011",
+          "check_type": "字段复核",
+          "checked_at": "2026-07-17 11:36",
+          "status": "PASS_WITH_GAPS",
+          "evidence": "页面+海报",
+          "scope_or_field": "议程/嘉宾/人数",
+          "issue": "未公开",
+          "action": "不做具体爆点分数"
+        },
+        {
+          "verification_id": "VER-033",
+          "event_id": "EVT-011",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-07-20（首页改版复核）",
+          "status": "PASS",
+          "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+          "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+          "issue": "无",
+          "action": "最终严格复核"
+        }
+      ]
+    },
+    {
+      "eventId": "EVT-004",
+      "seriesId": null,
+      "changeStatus": "new",
+      "priority": "优先准备",
+      "name": "2026亿级大卖年中茶话私享会",
+      "startAt": "2026-07-31T14:00:00+08:00",
+      "endAt": "2026-07-31T20:00:00+08:00",
+      "city": "深圳",
+      "venue": "具体地址未公开",
+      "eventType": "茶话私享会",
+      "primaryCategory": "T-A｜业务强相关",
+      "tags": [
+        "圈层活动",
+        "亿级大卖",
+        "AI落地",
+        "降本增效",
+        "税务合规"
+      ],
+      "organizers": [
+        "雨果跨境",
+        "Airwallex空中云汇"
+      ],
+      "partners": [],
+      "audience": "年营业收入过亿的跨境卖家老板或高管，审核制",
+      "attendance": {
+        "reported": "未披露",
+        "interpretation": "不得按“私享会”或场地反推人数",
+        "confidence": "缺失"
+      },
+      "agendaSummary": "市场商机、降本增效、AI实质落地运用、税务合规；自由交流与高端私享晚宴。",
+      "guests": "未公开具体姓名，以卖家老板/高管同业交流为主",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "cifnews.com",
+          "url": "https://www.cifnews.com/activity/3083",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": null,
+      "observedAt": "2026-07-17T11:29:00+08:00",
+      "daysToStart": 14,
+      "interventionWindow": "有，距开场14天；可准备高价值经营案例和老板视角问答",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过",
+      "conflicts": [],
+      "missingFields": [
+        "具体地点",
+        "预计参与人数",
+        "嘉宾姓名"
+      ],
+      "attentionReason": "高：AI降本、利润增长、税务合规和新品突围均是高意向经营问题",
+      "chanmamaRelevance": "可用商品、达人、直播和内容数据拆解增长案例；税务内容仅做经营风险科普，不承诺专业税务意见",
+      "recommendedAction": "准备一页式《亿级卖家增长验证框架》及AI降本案例表，设置会后关键词复扫",
+      "formalScoreStatus": "暂不评分：闭门活动外部热度和转化证据不足",
+      "focusTopics": [
+        "跨境老板如何用AI提效及减负",
+        "流量红利见顶后的增长路径",
+        "新品推广内卷与差异化突围"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-008",
+          "event_id": "EVT-004",
+          "topic": "跨境老板如何用AI提效及减负",
+          "evidence": "官方海报列为现场详细探讨议题",
+          "shareability": "老板视角、降本和具体流程直接对应团队行动",
+          "priority": "优先准备",
+          "search_keywords": [
+            "AI降本增效电商",
+            "跨境老板AI工具",
+            "AI电商团队提效"
+          ],
+          "user_questions": [
+            "AI能减少哪些重复岗位工作？",
+            "怎样避免买了AI工具却没人用？",
+            "AI提效如何量化？"
+          ],
+          "chanmama_scenario": "以数据分析、选品、内容拆解和复盘任务建立人工与AI耗时对照",
+          "content_to_prepare": "老板版AI任务优先级表与ROI测算模板",
+          "risk_or_gap": "闭门会分享内容未必公开",
+          "score_status": "定性高潜"
+        },
+        {
+          "topic_id": "TOP-009",
+          "event_id": "EVT-004",
+          "topic": "流量红利见顶后的增长路径",
+          "evidence": "官方海报列为现场详细探讨议题",
+          "shareability": "与增长焦虑直接相关，容易形成搜索和咨询",
+          "priority": "优先准备",
+          "search_keywords": [
+            "流量红利见顶怎么办",
+            "电商增长第二曲线",
+            "跨境电商利润增长"
+          ],
+          "user_questions": [
+            "没有新增流量时如何增长？",
+            "应该先优化选品、内容还是投流？",
+            "怎样判断增长来自哪里？"
+          ],
+          "chanmama_scenario": "分解商品、达人、内容和直播表现，定位增长环节并建立基线",
+          "content_to_prepare": "增长诊断树与数据复盘清单",
+          "risk_or_gap": "需要真实案例数字，不能只引用观点",
+          "score_status": "定性高潜，待案例数据"
+        },
+        {
+          "topic_id": "TOP-010",
+          "event_id": "EVT-004",
+          "topic": "新品推广内卷与差异化突围",
+          "evidence": "官方海报列为现场详细探讨议题",
+          "shareability": "新品、选品和内容打法可产生明确方法类搜索",
+          "priority": "优先准备",
+          "search_keywords": [
+            "新品推广怎么突围",
+            "电商新品冷启动",
+            "差异化选品"
+          ],
+          "user_questions": [
+            "新品冷启动先找达人还是先投流？",
+            "如何判断产品差异点能否转化？"
+          ],
+          "chanmama_scenario": "对比同品类商品、达人和内容表现，验证差异化卖点",
+          "content_to_prepare": "新品冷启动检查表与同品类对照案例",
+          "risk_or_gap": "需避免把个案结果泛化",
+          "score_status": "定性高潜"
+        },
+        {
+          "topic_id": "TOP-011",
+          "event_id": "EVT-004",
+          "topic": "税务新规与跨境企业架构",
+          "evidence": "官方海报列出税务合规、企业架构与报税策略",
+          "shareability": "风险高、搜索意图强，但专业门槛和错误成本也高",
+          "priority": "重点观察",
+          "search_keywords": [
+            "跨境电商税务新规",
+            "跨境企业税务合规",
+            "跨境公司架构"
+          ],
+          "user_questions": [
+            "新规对跨境卖家有什么影响？",
+            "哪些做法可能触发税务风险？"
+          ],
+          "chanmama_scenario": "只做经营风险信息整理，不映射为产品能力",
+          "content_to_prepare": "权威来源索引、问题清单和专业审核流程",
+          "risk_or_gap": "必须由财税专业人员复核，不提供个案意见",
+          "score_status": "定性中潜，高风险需审核"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-010",
+          "event_id": "EVT-004",
+          "check_type": "真实性复核",
+          "checked_at": "2026-07-17 11:29",
+          "status": "PASS",
+          "evidence": "雨果活动原页+官方海报",
+          "scope_or_field": "名称/日期/城市/目标人群/议程",
+          "issue": "无",
+          "action": "归档海报"
+        },
+        {
+          "verification_id": "VER-011",
+          "event_id": "EVT-004",
+          "check_type": "字段复核",
+          "checked_at": "2026-07-17 11:29",
+          "status": "PASS_WITH_GAPS",
+          "evidence": "页面+海报",
+          "scope_or_field": "地点/人数/嘉宾",
+          "issue": "未公开",
+          "action": "写暂缺 不推断"
+        },
+        {
+          "verification_id": "VER-012",
+          "event_id": "EVT-004",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-07-20（首页改版复核）",
+          "status": "PASS",
+          "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+          "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+          "issue": "无",
+          "action": "最终严格复核"
+        }
+      ]
+    },
+    {
+      "eventId": "EVT-002",
+      "seriesId": null,
+      "changeStatus": "new",
+      "priority": "优先准备",
+      "name": "2026AI赋能跨境电商与海外达人合作展览会（KACE 2026）",
+      "startAt": "2026-08-04T09:00:00+08:00",
+      "endAt": "2026-08-05T18:00:00+08:00",
+      "city": "深圳",
+      "venue": "深圳福田会展中心3/4号馆",
+      "eventType": "展览会",
+      "primaryCategory": "T-B｜产品能力扩展",
+      "tags": [
+        "圈层活动",
+        "AI工具",
+        "跨境电商",
+        "海外达人"
+      ],
+      "organizers": [
+        "出海网跨境电商"
+      ],
+      "partners": [
+        "KACE",
+        "Kalodata"
+      ],
+      "audience": "跨境卖家、品牌方、AI工具服务商、海外达人、内容与平台运营团队",
+      "attendance": {
+        "reported": "主办方海报宣称参会人数20,000+；活动行另显示MaxInstance=500、报名76",
+        "interpretation": "20,000+为主办方宣传口径，未独立验证；500为平台容量字段，76为页面观察时报名数，均不等于预计到场",
+        "confidence": "宣传口径，需会后或主办方确认"
+      },
+      "agendaSummary": "海报展示AI智能体验、品牌出海增长、AI工具生态、达人合作等展区，并突出ChatGPT、Claude、Gemini等工具及海外达人/平台资源。",
+      "guests": "海报列出多名海外达人账号，未逐一转录，避免OCR误读",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "huodongxing.com",
+          "url": "https://www.huodongxing.com/event/4863525375500",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 1",
+          "domain": "cifnews.com",
+          "url": "https://www.cifnews.com/activity/3082",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": null,
+      "observedAt": "2026-07-17T11:25:00+08:00",
+      "daysToStart": 18,
+      "interventionWindow": "有，距开场18天；可提前准备AI工具横评、达人筛选和内容生产验证",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过但存在结束时间冲突及人数口径风险",
+      "conflicts": [
+        "活动行结束时间为8月5日18:00，雨果活动页为17:00；以活动行主页面字段建档"
+      ],
+      "missingFields": [
+        "逐场演讲时间表",
+        "可独立验证的预计到场人数"
+      ],
+      "attentionReason": "高：AI工具、海外达人合作、品牌出海和现场体验均能形成明确搜索词与团队验证任务",
+      "chanmamaRelevance": "用达人、短视频、直播和商品数据验证AI生成内容及达人匹配方法；海外平台数据覆盖需先确认",
+      "recommendedAction": "准备AI工具对照表、达人筛选清单和3个可复现案例；会前7天再次核对议程",
+      "formalScoreStatus": "暂不评分：缺少连续流量趋势、内部转化基线和完整执行准备字段",
+      "focusTopics": [
+        "ChatGPT、Claude、Gemini等AI工具用于跨境电商",
+        "海外达人匹配与合作",
+        "AI智能体验与品牌出海增长"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-002",
+          "event_id": "EVT-002",
+          "topic": "ChatGPT、Claude、Gemini等AI工具用于跨境电商",
+          "evidence": "官方海报列出多款AI工具及AI工具生态展区",
+          "shareability": "工具可直接试用，容易形成横评、教程和团队验证任务",
+          "priority": "优先准备",
+          "search_keywords": [
+            "跨境电商AI工具",
+            "ChatGPT跨境电商",
+            "Claude跨境运营",
+            "Gemini跨境电商"
+          ],
+          "user_questions": [
+            "哪款AI更适合写跨境商品文案？",
+            "如何用AI批量分析竞品内容？",
+            "AI生成内容怎样验证转化效果？"
+          ],
+          "chanmama_scenario": "选取同一商品/达人/短视频数据，比较不同AI输出的准确性和可执行性",
+          "content_to_prepare": "一张工具对照表、三组相同输入测试、可复现提示词与核验清单",
+          "risk_or_gap": "海报展示不等于平台官方联合演讲；工具能力需实测",
+          "score_status": "定性高潜，正式10维评分待流量与承接数据"
+        },
+        {
+          "topic_id": "TOP-003",
+          "event_id": "EVT-002",
+          "topic": "海外达人匹配与合作",
+          "evidence": "活动主题、达人合作展区及海报列出的海外达人账号",
+          "shareability": "达人筛选标准和合作流程可转成清单，适合团队转发",
+          "priority": "优先准备",
+          "search_keywords": [
+            "海外达人怎么找",
+            "TikTok达人筛选",
+            "海外达人合作报价",
+            "达人匹配工具"
+          ],
+          "user_questions": [
+            "怎样判断海外达人真实带货能力？",
+            "达人粉丝量和转化哪个更重要？",
+            "如何排除刷量达人？"
+          ],
+          "chanmama_scenario": "用可获得的达人、内容和商品表现数据建立筛选框架；海外数据覆盖先确认",
+          "content_to_prepare": "达人筛选字段表、红旗信号、合作前后效果复盘模板",
+          "risk_or_gap": "海外达人数据口径与蝉妈妈现有覆盖范围待产品确认",
+          "score_status": "定性高潜，正式10维评分待流量与承接数据"
+        },
+        {
+          "topic_id": "TOP-004",
+          "event_id": "EVT-002",
+          "topic": "AI智能体验与品牌出海增长",
+          "evidence": "官方海报展示AI智能体验、品牌出海增长等展区",
+          "shareability": "若现场出现可量化案例，传播潜力高；当前仍是展区级描述",
+          "priority": "重点观察",
+          "search_keywords": [
+            "AI品牌出海",
+            "AI出海增长案例",
+            "AI跨境营销"
+          ],
+          "user_questions": [
+            "AI能为品牌出海降低哪些成本？",
+            "AI增长案例的数据基线是什么？"
+          ],
+          "chanmama_scenario": "用活动前后内容、达人和商品数据验证案例，不直接复述主办方增长宣称",
+          "content_to_prepare": "案例核验卡：基线、周期、投入、结果、可复制条件",
+          "risk_or_gap": "主办方宣传口径需独立验证",
+          "score_status": "定性中高潜，待案例细节"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-004",
+          "event_id": "EVT-002",
+          "check_type": "真实性复核",
+          "checked_at": "2026-07-17 11:25",
+          "status": "PASS",
+          "evidence": "活动行原页+雨果活动页+官方海报",
+          "scope_or_field": "名称/日期/城市/场馆",
+          "issue": "无",
+          "action": "保留双来源与海报"
+        },
+        {
+          "verification_id": "VER-005",
+          "event_id": "EVT-002",
+          "check_type": "字段复核",
+          "checked_at": "2026-07-17 11:25",
+          "status": "PASS_WITH_CONFLICT",
+          "evidence": "活动行字段+雨果活动页",
+          "scope_or_field": "结束时间/人数",
+          "issue": "18:00与17:00冲突；多种人数口径",
+          "action": "显式区分宣传口径/容量/报名数/到场数"
+        },
+        {
+          "verification_id": "VER-006",
+          "event_id": "EVT-002",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-07-20（首页改版复核）",
+          "status": "PASS",
+          "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+          "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+          "issue": "无",
+          "action": "最终严格复核"
+        }
+      ]
+    },
+    {
+      "eventId": "EVT-008",
+      "seriesId": "欧洲出海卖家峰会",
+      "changeStatus": "new",
+      "priority": "优先准备",
+      "name": "2026欧洲出海卖家峰会-深圳站",
+      "startAt": "2026-08-11T13:30:00+08:00",
+      "endAt": "2026-08-11T17:30:00+08:00",
+      "city": "深圳",
+      "venue": "具体地址审核后通知",
+      "eventType": "卖家峰会",
+      "primaryCategory": "T-A｜业务强相关",
+      "tags": [
+        "圈层活动",
+        "欧洲市场",
+        "平台招商",
+        "内容电商"
+      ],
+      "organizers": [
+        "雨果跨境"
+      ],
+      "partners": [
+        "议程涉及Amazon、TEMU、SHEIN、Wayfair、eBay等平台；不等同于全部为联合主办"
+      ],
+      "audience": "计划进入或扩大欧洲市场的跨境卖家、平台招商及运营团队",
+      "attendance": {
+        "reported": "未披露",
+        "interpretation": "不得根据“峰会”称呼推算人数",
+        "confidence": "缺失"
+      },
+      "agendaSummary": "欧洲市场全景、Amazon新规、TEMU欧洲本地仓、SHEIN欧洲加速、内容电商、Wayfair多站点、eBay欧洲以及平台经理答疑；另设ManoMano、Bol.com、OnBuy等分会场。",
+      "guests": "以平台方/服务商分享为主，公开海报未给出完整姓名表",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "cifnews.com",
+          "url": "https://www.cifnews.com/activity/3106",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": null,
+      "observedAt": "2026-07-17T11:33:00+08:00",
+      "daysToStart": 25,
+      "interventionWindow": "有，距开场25天；适合做平台规则、内容电商和欧洲站点专题",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过",
+      "conflicts": [],
+      "missingFields": [
+        "具体会场",
+        "预计参与人数",
+        "完整嘉宾姓名"
+      ],
+      "attentionReason": "高：多个平台新规与入驻策略会产生连续搜索，内容电商议题可与蝉妈妈形成方法论关联",
+      "chanmamaRelevance": "内容电商、达人与商品洞察可迁移；Amazon/TEMU等平台级规则须引用官方来源，不承诺蝉妈妈覆盖全部平台",
+      "recommendedAction": "建立平台议题清单，重点准备Amazon新规、SHEIN内容策略与欧洲多站点问答",
+      "formalScoreStatus": "暂不评分：缺少流量趋势和内部承接基线",
+      "focusTopics": [
+        "Amazon欧洲站增长新引擎与规则变化",
+        "SHEIN欧洲加速与内容策略",
+        "内容电商欧洲增发"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-020",
+          "event_id": "EVT-008",
+          "topic": "Amazon欧洲站增长新引擎与规则变化",
+          "evidence": "官方议程海报Amazon段落",
+          "shareability": "平台规则变化会直接触发卖家搜索和内部核对",
+          "priority": "优先准备",
+          "search_keywords": [
+            "Amazon欧洲站新规",
+            "亚马逊欧洲站增长",
+            "Amazon欧洲运营"
+          ],
+          "user_questions": [
+            "2026 Amazon欧洲站有哪些新变化？",
+            "哪些变化会影响现有Listing和流量？"
+          ],
+          "chanmama_scenario": "可做内容电商方法和经营问题整理；平台规则必须回链Amazon官方",
+          "content_to_prepare": "规则变更对照表、官方链接和卖家自查清单",
+          "risk_or_gap": "活动议程概述不是官方规则原文",
+          "score_status": "定性高潜，待官方规则核验"
+        },
+        {
+          "topic_id": "TOP-021",
+          "event_id": "EVT-008",
+          "topic": "SHEIN欧洲加速与内容策略",
+          "evidence": "官方议程海报SHEIN段落",
+          "shareability": "内容策略可转成选品、素材和运营问题",
+          "priority": "优先准备",
+          "search_keywords": [
+            "SHEIN欧洲运营",
+            "SHEIN内容策略",
+            "SHEIN卖家入驻"
+          ],
+          "user_questions": [
+            "SHEIN欧洲消费者偏好怎么判断？",
+            "内容策略如何与商品结构配合？"
+          ],
+          "chanmama_scenario": "用内容、达人和商品表现建立分析框架；SHEIN站内数据覆盖先确认",
+          "content_to_prepare": "消费者偏好问题清单与内容/商品联动模板",
+          "risk_or_gap": "不能把活动方建议当成平台官方政策",
+          "score_status": "定性高潜"
+        },
+        {
+          "topic_id": "TOP-022",
+          "event_id": "EVT-008",
+          "topic": "内容电商欧洲增发",
+          "evidence": "官方议程海报“内容电商欧洲增发”段落",
+          "shareability": "与蝉妈妈内容电商场景最接近，能产生方法和案例搜索",
+          "priority": "优先准备",
+          "search_keywords": [
+            "欧洲内容电商",
+            "跨境内容增长",
+            "欧洲达人带货"
+          ],
+          "user_questions": [
+            "国内内容电商方法能否复制到欧洲？",
+            "欧洲内容投放如何选达人和素材？"
+          ],
+          "chanmama_scenario": "用达人、内容、商品和直播分析框架做方法迁移，明确市场差异与数据边界",
+          "content_to_prepare": "国内/欧洲内容电商差异表与案例核验模板",
+          "risk_or_gap": "需避免直接套用国内经验",
+          "score_status": "定性高潜"
+        },
+        {
+          "topic_id": "TOP-023",
+          "event_id": "EVT-008",
+          "topic": "Wayfair、TEMU、eBay等欧洲多平台入驻与运营",
+          "evidence": "官方主会场和分会场议程",
+          "shareability": "平台对比和入驻清单有稳定搜索价值",
+          "priority": "优先准备",
+          "search_keywords": [
+            "欧洲电商平台对比",
+            "Wayfair入驻",
+            "TEMU欧洲本地仓",
+            "eBay欧洲运营"
+          ],
+          "user_questions": [
+            "欧洲出海应该先选哪个平台？",
+            "不同平台的品类和运营要求有什么区别？"
+          ],
+          "chanmama_scenario": "提供内容电商和品类验证框架；不承诺平台站内数据或入驻服务",
+          "content_to_prepare": "多平台对照表：人群、品类、运营模式、官方入口、待核验事项",
+          "risk_or_gap": "平台信息必须逐条回到官方来源",
+          "score_status": "定性高潜"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-022",
+          "event_id": "EVT-008",
+          "check_type": "真实性复核",
+          "checked_at": "2026-07-17 11:33",
+          "status": "PASS",
+          "evidence": "雨果活动原页+官方议程海报",
+          "scope_or_field": "名称/日期/城市/平台议程",
+          "issue": "无",
+          "action": "归档海报"
+        },
+        {
+          "verification_id": "VER-023",
+          "event_id": "EVT-008",
+          "check_type": "字段复核",
+          "checked_at": "2026-07-17 11:33",
+          "status": "PASS_WITH_GAPS",
+          "evidence": "页面+海报",
+          "scope_or_field": "具体会场/人数/完整嘉宾表",
+          "issue": "未公开",
+          "action": "写审核后通知或暂缺"
+        },
+        {
+          "verification_id": "VER-024",
+          "event_id": "EVT-008",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-07-20（首页改版复核）",
+          "status": "PASS",
+          "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+          "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+          "issue": "无",
+          "action": "最终严格复核"
+        }
+      ]
+    },
+    {
+      "eventId": "EVT-010",
+      "seriesId": "Wayfair官方招商启动会",
+      "changeStatus": "new",
+      "priority": "优先准备",
+      "name": "Wayfair官方招商启动会-广州站",
+      "startAt": "2026-08-13T13:30:00+08:00",
+      "endAt": "2026-08-13T16:00:00+08:00",
+      "city": "广州",
+      "venue": "广州市番禺区，具体地址以审核通知为准",
+      "eventType": "官方招商启动会",
+      "primaryCategory": "T-A｜业务强相关",
+      "tags": [
+        "圈层活动",
+        "Wayfair",
+        "平台招商",
+        "家居出海"
+      ],
+      "organizers": [
+        "雨果跨境"
+      ],
+      "partners": [
+        "Wayfair（特邀平台）"
+      ],
+      "audience": "预备入驻Wayfair的卖家，以及具备工贸一体实力的家居/品牌供应商",
+      "attendance": {
+        "reported": "未披露",
+        "interpretation": "不得根据往期照片或会场画面推算人数",
+        "confidence": "缺失"
+      },
+      "agendaSummary": "Wayfair平台介绍与2026最新入驻政策、运营定位与聚焦广州卖家、官方面对面交流与生态资源链接。",
+      "guests": "公开海报未给出姓名",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "cifnews.com",
+          "url": "https://www.cifnews.com/activity/3143",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": null,
+      "observedAt": "2026-07-17T11:35:00+08:00",
+      "daysToStart": 27,
+      "interventionWindow": "有，距开场27天；可吸收苏州站反馈后再准备广州站内容",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过",
+      "conflicts": [],
+      "missingFields": [
+        "精确会场",
+        "预计参与人数",
+        "嘉宾姓名"
+      ],
+      "attentionReason": "中高：2026入驻政策、平台红利和广州家居供应链会形成明确搜索词",
+      "chanmamaRelevance": "可用内容电商选品与达人数据辅助品类验证；Wayfair站内数据能力需另行确认",
+      "recommendedAction": "设置苏州站会后复扫，将新问题纳入广州站会前内容包",
+      "formalScoreStatus": "暂不评分：缺少连续热度和内部转化基线",
+      "focusTopics": [
+        "Wayfair 2026最新入驻政策",
+        "聚焦广州家居卖家与生态资源链接"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-026",
+          "event_id": "EVT-010",
+          "topic": "Wayfair 2026最新入驻政策",
+          "evidence": "广州站官方海报议程",
+          "shareability": "政策明确且距活动较远，有充分会前准备窗口",
+          "priority": "优先准备",
+          "search_keywords": [
+            "Wayfair广州招商",
+            "Wayfair 2026入驻",
+            "Wayfair入驻条件"
+          ],
+          "user_questions": [
+            "广州家居卖家如何申请Wayfair？",
+            "2026入驻审核看哪些条件？"
+          ],
+          "chanmama_scenario": "用商品和内容数据辅助品类判断；政策必须引用Wayfair官方",
+          "content_to_prepare": "复用苏州站政策对照表，并根据会后问题迭代",
+          "risk_or_gap": "需在苏州站后复核是否更新",
+          "score_status": "定性高潜，待官方政策核验"
+        },
+        {
+          "topic_id": "TOP-027",
+          "event_id": "EVT-010",
+          "topic": "聚焦广州家居卖家与生态资源链接",
+          "evidence": "广州站官方海报议程",
+          "shareability": "广州供应链和平台招商结合，圈层相关性强",
+          "priority": "重点观察",
+          "search_keywords": [
+            "广州家居跨境电商",
+            "Wayfair广州卖家",
+            "家居出海平台"
+          ],
+          "user_questions": [
+            "广州家居供应链适合哪些出海品类？",
+            "怎样对接Wayfair生态资源？"
+          ],
+          "chanmama_scenario": "用商品趋势和内容表现做品类初筛，平台资源以主办方为准",
+          "content_to_prepare": "广州产业带品类问题清单与数据卡",
+          "risk_or_gap": "未披露具体案例和嘉宾",
+          "score_status": "定性中潜"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-028",
+          "event_id": "EVT-010",
+          "check_type": "真实性复核",
+          "checked_at": "2026-07-17 11:35",
+          "status": "PASS",
+          "evidence": "雨果活动原页+官方议程海报",
+          "scope_or_field": "名称/日期/城市/议程",
+          "issue": "无",
+          "action": "归档海报"
+        },
+        {
+          "verification_id": "VER-029",
+          "event_id": "EVT-010",
+          "check_type": "字段复核",
+          "checked_at": "2026-07-17 11:35",
+          "status": "PASS_WITH_GAPS",
+          "evidence": "页面+海报",
+          "scope_or_field": "精确会场/人数/嘉宾",
+          "issue": "未公开",
+          "action": "写审核通知或暂缺"
+        },
+        {
+          "verification_id": "VER-030",
+          "event_id": "EVT-010",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-07-20（首页改版复核）",
+          "status": "PASS",
+          "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+          "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+          "issue": "无",
+          "action": "最终严格复核"
+        }
+      ]
+    },
+    {
+      "eventId": "EVT-001",
+      "seriesId": null,
+      "changeStatus": "new",
+      "priority": "待补议程",
+      "name": "智赋新电商·AI创未来",
+      "startAt": "2026-08-14T11:00:00+08:00",
+      "endAt": "2026-08-14T13:00:00+08:00",
+      "city": "北京",
+      "venue": "中国国际展览中心（朝阳馆）5号馆论坛区",
+      "eventType": "论坛",
+      "primaryCategory": "T-B｜产品能力扩展",
+      "tags": [
+        "圈层活动",
+        "AI",
+        "新电商",
+        "数字员工"
+      ],
+      "organizers": [
+        "励展华博礼品展"
+      ],
+      "partners": [
+        "第54届中国北京国际礼品、赠品及家庭用品展览会（同期展会）"
+      ],
+      "audience": "礼品及家居采购、电商运营、品牌方、平台企业及行业服务商",
+      "attendance": {
+        "reported": "活动行页面 MaxInstance=500",
+        "interpretation": "报名平台容量字段，不是预计到场人数；预计参与人数未披露",
+        "confidence": "不可作为到场预测"
+      },
+      "agendaSummary": "公开信息仅确认“智赋新电商·AI创未来”论坛主题；详细议程与嘉宾暂缺。同期展会还包含礼业数字化、IP商业化及供需对接活动。",
+      "guests": "暂缺",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "huodongxing.com",
+          "url": "https://www.huodongxing.com/event/6869719596400",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 1",
+          "domain": "cn.chinadaily.com.cn",
+          "url": "https://cn.chinadaily.com.cn/a/202607/14/WS6a55f89aa310d709c2fbd787.html",
+          "verifiedAt": "2026-07-20",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": "2026-07-14",
+      "observedAt": "2026-07-17T11:25:00+08:00",
+      "daysToStart": 28,
+      "interventionWindow": "有，距开场28天；适合追踪议程、争取合作或提前准备AI新电商内容",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过但存在结束时间冲突",
+      "conflicts": [
+        "活动行结构化字段为11:00-13:00，活动海报为11:00-12:45；以页面字段建档并保留冲突"
+      ],
+      "missingFields": [
+        "详细议程",
+        "嘉宾",
+        "预计参与人数"
+      ],
+      "attentionReason": "观察：题目与AI新电商高度相关，但缺少可验证的具体方法、案例和工具议程",
+      "chanmamaRelevance": "可围绕内容电商数据、达人/商品/直播案例验证AI方法；具体承接能力须由产品团队确认",
+      "recommendedAction": "每周重开页面；若补充具体工具、案例或平台玩法，升级为优先准备",
+      "formalScoreStatus": "暂不评分：详细议程、流量趋势和转化承接证据不足",
+      "focusTopics": [
+        "AI驱动新电商与数字员工"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-001",
+          "event_id": "EVT-001",
+          "topic": "AI驱动新电商与数字员工",
+          "evidence": "活动标题及活动行标签；未公开详细议程",
+          "shareability": "题目明确但缺少方法、工具和案例，暂不能判断会后传播强度",
+          "priority": "待补议程",
+          "search_keywords": [
+            "AI新电商",
+            "电商数字员工",
+            "AI电商工具"
+          ],
+          "user_questions": [
+            "数字员工能替代电商团队的哪些环节？",
+            "AI新电商有哪些能直接落地的工具？"
+          ],
+          "chanmama_scenario": "用达人、商品、直播和短视频数据作为AI分析样本；具体功能须产品确认",
+          "content_to_prepare": "先建问题清单，等议程或嘉宾披露后再决定内容形式",
+          "risk_or_gap": "议程、嘉宾和案例均暂缺",
+          "score_status": "不生成具体爆点分数"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-001",
+          "event_id": "EVT-001",
+          "check_type": "真实性复核",
+          "checked_at": "2026-07-17 11:25",
+          "status": "PASS",
+          "evidence": "活动行原页+中国日报网",
+          "scope_or_field": "名称/日期/城市/场馆",
+          "issue": "无",
+          "action": "保留双来源"
+        },
+        {
+          "verification_id": "VER-002",
+          "event_id": "EVT-001",
+          "check_type": "字段复核",
+          "checked_at": "2026-07-17 11:25",
+          "status": "PASS_WITH_CONFLICT",
+          "evidence": "页面结构化字段+活动海报",
+          "scope_or_field": "结束时间",
+          "issue": "13:00与12:45冲突",
+          "action": "表内显式标注并以页面字段建档"
+        },
+        {
+          "verification_id": "VER-003",
+          "event_id": "EVT-001",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-07-20（首页改版复核）",
+          "status": "PASS",
+          "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+          "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+          "issue": "无",
+          "action": "最终严格复核"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-001",
+      "category": "活动形态",
+      "keyword": "交流会",
+      "aliases": [
+        "行业交流会",
+        "卖家交流会"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "电商",
+        "直播",
+        "跨境",
+        "投流",
+        "选品",
+        "AI"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": "活动发现基础词"
+    },
+    {
+      "id": "KW-002",
+      "category": "活动形态",
+      "keyword": "私享会",
+      "aliases": [
+        "闭门私享会",
+        "茶话私享会"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "电商",
+        "卖家",
+        "老板",
+        "品牌",
+        "跨境"
+      ],
+      "excludeContext": [],
+      "source": "用户任务+D0活动",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": "高圈层密度"
+    },
+    {
+      "id": "KW-003",
+      "category": "活动形态",
+      "keyword": "培训会",
+      "aliases": [
+        "培训班",
+        "线下培训"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "电商",
+        "直播",
+        "投流",
+        "运营",
+        "跨境"
+      ],
+      "excludeContext": [],
+      "source": "用户任务种子",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": "需排除泛职业培训"
+    },
+    {
+      "id": "KW-004",
+      "category": "活动形态",
+      "keyword": "闭门会",
+      "aliases": [
+        "闭门培训",
+        "闭门交流"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "卖家",
+        "老板",
+        "高管",
+        "电商",
+        "跨境"
+      ],
+      "excludeContext": [],
+      "source": "用户任务+D0活动",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": "通常人数少但价值密度高"
+    },
+    {
+      "id": "KW-005",
+      "category": "活动形态",
+      "keyword": "沙龙",
+      "aliases": [
+        "主题沙龙",
+        "卖家沙龙"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "电商",
+        "直播",
+        "品牌",
+        "AI",
+        "跨境"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-006",
+      "category": "活动形态",
+      "keyword": "峰会",
+      "aliases": [
+        "卖家峰会",
+        "平台招商峰会"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "电商",
+        "直播",
+        "跨境",
+        "平台",
+        "产业带"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": "不得仅凭峰会推算规模"
+    },
+    {
+      "id": "KW-007",
+      "category": "活动形态",
+      "keyword": "大会",
+      "aliases": [
+        "卖家大会",
+        "行业大会",
+        "圈层大会"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "电商",
+        "直播",
+        "跨境",
+        "内容"
+      ],
+      "excludeContext": [],
+      "source": "用户任务种子",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-008",
+      "category": "活动形态",
+      "keyword": "招商会",
+      "aliases": [
+        "官方招商会",
+        "平台招商会"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "平台",
+        "跨境",
+        "产业带",
+        "卖家"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-009",
+      "category": "活动形态",
+      "keyword": "启动会",
+      "aliases": [
+        "招商启动会",
+        "官方启动会"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "平台",
+        "入驻",
+        "卖家"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-010",
+      "category": "活动形态",
+      "keyword": "对接会",
+      "aliases": [
+        "选品对接会",
+        "供需对接会",
+        "资源对接会"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "选品",
+        "工厂",
+        "供应链",
+        "达人",
+        "平台"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-011",
+      "category": "活动形态",
+      "keyword": "茶话会",
+      "aliases": [
+        "年中茶话会",
+        "老板茶话会"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "卖家",
+        "老板",
+        "高管",
+        "电商"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-012",
+      "category": "活动形态",
+      "keyword": "研讨会",
+      "aliases": [
+        "专题研讨会",
+        "实战研讨会"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "电商",
+        "平台",
+        "直播",
+        "AI"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-013",
+      "category": "活动形态",
+      "keyword": "训练营",
+      "aliases": [
+        "实战训练营",
+        "陪跑营"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "电商",
+        "直播",
+        "投流",
+        "运营"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-014",
+      "category": "活动形态",
+      "keyword": "工作坊",
+      "aliases": [
+        "AI工作坊",
+        "电商工作坊"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "电商",
+        "直播",
+        "AI",
+        "内容"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-015",
+      "category": "活动形态",
+      "keyword": "路演",
+      "aliases": [
+        "平台招商路演",
+        "项目路演"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "电商",
+        "品牌",
+        "平台",
+        "卖家"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-016",
+      "category": "活动形态",
+      "keyword": "选品会",
+      "aliases": [
+        "选品大会",
+        "爆品选品会"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "商品",
+        "工厂",
+        "供应链",
+        "跨境"
+      ],
+      "excludeContext": [],
+      "source": "用户任务种子",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-017",
+      "category": "活动形态",
+      "keyword": "卖家大会",
+      "aliases": [
+        "区域卖家大会",
+        "平台卖家大会"
+      ],
+      "matchType": "精确",
+      "contextRequired": [],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-018",
+      "category": "活动形态",
+      "keyword": "产业带活动",
+      "aliases": [
+        "产业带对接",
+        "产业带招商"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "工厂",
+        "平台",
+        "选品",
+        "跨境"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-019",
+      "category": "活动形态",
+      "keyword": "城市站",
+      "aliases": [
+        "深圳站",
+        "广州站",
+        "成都站",
+        "苏州站"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "活动",
+        "峰会",
+        "招商",
+        "大会"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": "用于识别巡回活动"
+    },
+    {
+      "id": "KW-020",
+      "category": "活动形态",
+      "keyword": "系列峰会",
+      "aliases": [
+        "巡回峰会",
+        "招商系列峰会"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "平台",
+        "产业带",
+        "卖家"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": "需要series_id去重"
+    },
+    {
+      "id": "KW-021",
+      "category": "圈层机构",
+      "keyword": "万牛会",
+      "aliases": [],
+      "matchType": "精确",
+      "contextRequired": [
+        "电商",
+        "培训",
+        "活动",
+        "私享会"
+      ],
+      "excludeContext": [],
+      "source": "用户任务种子",
+      "verificationStatus": "待独立核验",
+      "priority": "P0",
+      "notes": "作为候选实体监测 不直接断言官方属性"
+    },
+    {
+      "id": "KW-022",
+      "category": "圈层机构",
+      "keyword": "雨果跨境",
+      "aliases": [
+        "YUGUO",
+        "雨果网"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": "跨境活动高频发布方"
+    },
+    {
+      "id": "KW-023",
+      "category": "圈层机构",
+      "keyword": "活动行",
+      "aliases": [
+        "huodongxing"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": "报名平台 不是活动主办方"
+    },
+    {
+      "id": "KW-024",
+      "category": "圈层机构",
+      "keyword": "出海网",
+      "aliases": [
+        "CHWANG"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "跨境",
+        "电商",
+        "活动"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-025",
+      "category": "圈层机构",
+      "keyword": "KACE",
+      "aliases": [
+        "KACE 2026"
+      ],
+      "matchType": "精确",
+      "contextRequired": [
+        "跨境",
+        "AI",
+        "达人"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-026",
+      "category": "圈层机构",
+      "keyword": "Kalodata",
+      "aliases": [],
+      "matchType": "精确",
+      "contextRequired": [
+        "跨境",
+        "达人",
+        "TikTok",
+        "活动"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-027",
+      "category": "圈层机构",
+      "keyword": "励展华博",
+      "aliases": [
+        "RX Huabo",
+        "华博礼品展"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "展会",
+        "礼品",
+        "电商",
+        "论坛"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-028",
+      "category": "圈层机构",
+      "keyword": "Airwallex",
+      "aliases": [
+        "空中云汇"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "跨境",
+        "卖家",
+        "私享会"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-029",
+      "category": "圈层机构",
+      "keyword": "长风智税",
+      "aliases": [],
+      "matchType": "精确",
+      "contextRequired": [
+        "跨境",
+        "税务",
+        "私享会"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "KW-030",
+      "category": "圈层机构",
+      "keyword": "Ozon Global",
+      "aliases": [
+        "Ozon"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "平台招商",
+        "跨境",
+        "卖家",
+        "峰会"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-031",
+      "category": "圈层机构",
+      "keyword": "Wayfair",
+      "aliases": [],
+      "matchType": "精确",
+      "contextRequired": [
+        "家居",
+        "平台招商",
+        "入驻",
+        "跨境"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-032",
+      "category": "平台机构",
+      "keyword": "亚马逊全球开店",
+      "aliases": [
+        "Amazon全球开店",
+        "Amazon"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "卖家",
+        "大会",
+        "峰会",
+        "入驻",
+        "运营"
+      ],
+      "excludeContext": [],
+      "source": "D0活动议程",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-033",
+      "category": "平台机构",
+      "keyword": "TikTok Shop",
+      "aliases": [
+        "TK Shop",
+        "TikTok电商"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "卖家",
+        "达人",
+        "内容",
+        "活动"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-034",
+      "category": "平台机构",
+      "keyword": "抖音电商",
+      "aliases": [
+        "抖店",
+        "抖音小店"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "短视频",
+        "投流",
+        "活动"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-035",
+      "category": "平台机构",
+      "keyword": "巨量引擎",
+      "aliases": [
+        "巨量千川",
+        "千川"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "投流",
+        "广告",
+        "直播",
+        "活动"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-036",
+      "category": "平台机构",
+      "keyword": "小红书电商",
+      "aliases": [
+        "小红书店播",
+        "小红书买手"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "电商",
+        "直播",
+        "选品",
+        "活动"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-037",
+      "category": "平台机构",
+      "keyword": "视频号小店",
+      "aliases": [
+        "微信小店",
+        "视频号电商"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "电商",
+        "活动"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-038",
+      "category": "平台机构",
+      "keyword": "SHEIN",
+      "aliases": [],
+      "matchType": "精确",
+      "contextRequired": [
+        "欧洲",
+        "卖家",
+        "运营",
+        "出海"
+      ],
+      "excludeContext": [],
+      "source": "D0活动议程",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-039",
+      "category": "平台机构",
+      "keyword": "TEMU",
+      "aliases": [],
+      "matchType": "精确",
+      "contextRequired": [
+        "欧洲",
+        "本地仓",
+        "卖家",
+        "出海"
+      ],
+      "excludeContext": [],
+      "source": "D0活动议程",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-040",
+      "category": "平台机构",
+      "keyword": "eBay",
+      "aliases": [],
+      "matchType": "精确",
+      "contextRequired": [
+        "欧洲",
+        "卖家",
+        "运营",
+        "出海"
+      ],
+      "excludeContext": [],
+      "source": "D0活动议程",
+      "verificationStatus": "已确认",
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "KW-041",
+      "category": "平台机构",
+      "keyword": "ManoMano",
+      "aliases": [],
+      "matchType": "精确",
+      "contextRequired": [
+        "欧洲",
+        "家居",
+        "卖家",
+        "平台"
+      ],
+      "excludeContext": [],
+      "source": "D0活动议程",
+      "verificationStatus": "已确认",
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "KW-042",
+      "category": "平台机构",
+      "keyword": "Bol.com",
+      "aliases": [],
+      "matchType": "精确",
+      "contextRequired": [
+        "欧洲",
+        "卖家",
+        "平台"
+      ],
+      "excludeContext": [],
+      "source": "D0活动议程",
+      "verificationStatus": "已确认",
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "KW-043",
+      "category": "平台机构",
+      "keyword": "OnBuy",
+      "aliases": [],
+      "matchType": "精确",
+      "contextRequired": [
+        "英国",
+        "卖家",
+        "平台"
+      ],
+      "excludeContext": [],
+      "source": "D0活动议程",
+      "verificationStatus": "已确认",
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "KW-044",
+      "category": "地域圈层",
+      "keyword": "厦门帮",
+      "aliases": [],
+      "matchType": "精确",
+      "contextRequired": [
+        "电商",
+        "直播",
+        "跨境",
+        "卖家",
+        "活动"
+      ],
+      "excludeContext": [
+        "旅游",
+        "影视",
+        "体育"
+      ],
+      "source": "用户任务种子",
+      "verificationStatus": "待语义校准",
+      "priority": "P0",
+      "notes": "歧义词 必须与电商语境共现"
+    },
+    {
+      "id": "KW-045",
+      "category": "地域圈层",
+      "keyword": "郑州帮",
+      "aliases": [],
+      "matchType": "精确",
+      "contextRequired": [
+        "电商",
+        "直播",
+        "跨境",
+        "卖家",
+        "活动"
+      ],
+      "excludeContext": [
+        "历史",
+        "体育",
+        "社会新闻"
+      ],
+      "source": "用户任务种子",
+      "verificationStatus": "待语义校准",
+      "priority": "P0",
+      "notes": "歧义词 必须与电商语境共现"
+    },
+    {
+      "id": "KW-046",
+      "category": "地域圈层",
+      "keyword": "珍珠帮",
+      "aliases": [],
+      "matchType": "精确",
+      "contextRequired": [
+        "电商",
+        "直播",
+        "跨境",
+        "卖家",
+        "活动"
+      ],
+      "excludeContext": [
+        "珠宝产品介绍",
+        "影视",
+        "社会新闻"
+      ],
+      "source": "用户任务种子",
+      "verificationStatus": "待语义校准",
+      "priority": "P0",
+      "notes": "歧义词 必须与电商语境共现"
+    },
+    {
+      "id": "KW-047",
+      "category": "地域圈层",
+      "keyword": "深圳跨境电商圈",
+      "aliases": [
+        "深圳大卖圈",
+        "深圳卖家圈"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "活动",
+        "私享会",
+        "峰会",
+        "交流"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "待持续补证",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-048",
+      "category": "地域圈层",
+      "keyword": "杭州直播电商圈",
+      "aliases": [
+        "杭州直播圈",
+        "杭州电商圈"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "活动",
+        "交流",
+        "培训",
+        "选品"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "待持续补证",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-049",
+      "category": "地域圈层",
+      "keyword": "广州电商圈",
+      "aliases": [
+        "广州服装电商",
+        "番禺电商圈"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "活动",
+        "选品",
+        "直播",
+        "跨境"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "待持续补证",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-050",
+      "category": "地域圈层",
+      "keyword": "义乌电商圈",
+      "aliases": [
+        "义乌跨境圈",
+        "义乌卖家圈"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "活动",
+        "选品",
+        "供应链",
+        "跨境"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "待持续补证",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-051",
+      "category": "地域圈层",
+      "keyword": "泉州鞋服跨境",
+      "aliases": [
+        "泉州卖家圈",
+        "泉州产业带"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "活动",
+        "选品",
+        "平台招商"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "待持续补证",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-052",
+      "category": "地域圈层",
+      "keyword": "成都跨境电商圈",
+      "aliases": [
+        "成都卖家圈",
+        "华西卖家"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "活动",
+        "峰会",
+        "招商",
+        "交流"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "待持续补证",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-053",
+      "category": "地域圈层",
+      "keyword": "苏州家居跨境",
+      "aliases": [
+        "苏州卖家",
+        "苏州家居产业带"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "活动",
+        "Wayfair",
+        "选品",
+        "跨境"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "待持续补证",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-054",
+      "category": "地域圈层",
+      "keyword": "临沂电商",
+      "aliases": [
+        "临沂产业带",
+        "临沂卖家"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "活动",
+        "平台招商",
+        "选品"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "待持续补证",
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "KW-055",
+      "category": "地域圈层",
+      "keyword": "东莞产业带",
+      "aliases": [
+        "东莞跨境",
+        "东莞卖家"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "活动",
+        "选品",
+        "供应链"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "待持续补证",
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "KW-056",
+      "category": "地域圈层",
+      "keyword": "中山产业带",
+      "aliases": [
+        "中山家电出海",
+        "中山卖家"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "活动",
+        "选品",
+        "平台招商"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "待持续补证",
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "KW-057",
+      "category": "直播投流",
+      "keyword": "投流",
+      "aliases": [
+        "付费流量",
+        "广告投放"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "短视频",
+        "电商",
+        "ROI"
+      ],
+      "excludeContext": [],
+      "source": "用户任务种子",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-058",
+      "category": "直播投流",
+      "keyword": "千川",
+      "aliases": [
+        "巨量千川"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "投放",
+        "直播",
+        "素材",
+        "计划"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-059",
+      "category": "直播投流",
+      "keyword": "全域推广",
+      "aliases": [
+        "全域投放"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "抖音",
+        "千川",
+        "直播",
+        "商品"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-060",
+      "category": "直播投流",
+      "keyword": "随心推",
+      "aliases": [
+        "DOU+",
+        "小店随心推"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "短视频",
+        "投放"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-061",
+      "category": "直播投流",
+      "keyword": "起号",
+      "aliases": [
+        "账号冷启动",
+        "新号起盘"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "短视频",
+        "电商"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-062",
+      "category": "直播投流",
+      "keyword": "憋单",
+      "aliases": [
+        "压单"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播间",
+        "成交",
+        "话术"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-063",
+      "category": "直播投流",
+      "keyword": "拉流",
+      "aliases": [
+        "引流",
+        "拉在线"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播间",
+        "投流",
+        "场观"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-064",
+      "category": "直播投流",
+      "keyword": "承接",
+      "aliases": [
+        "流量承接",
+        "直播承接"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "转化",
+        "投流"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": "单独命中歧义大"
+    },
+    {
+      "id": "KW-065",
+      "category": "直播投流",
+      "keyword": "排品",
+      "aliases": [
+        "直播排品",
+        "货品结构"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "商品",
+        "货盘"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-066",
+      "category": "直播投流",
+      "keyword": "人货场",
+      "aliases": [],
+      "matchType": "精确",
+      "contextRequired": [
+        "直播",
+        "电商",
+        "复盘"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-067",
+      "category": "直播投流",
+      "keyword": "GMV",
+      "aliases": [
+        "成交总额"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "电商",
+        "增长"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-068",
+      "category": "直播投流",
+      "keyword": "GPM",
+      "aliases": [
+        "千次观看成交额"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "电商",
+        "投流"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-069",
+      "category": "直播投流",
+      "keyword": "ROI",
+      "aliases": [
+        "投产比",
+        "保本ROI"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "投流",
+        "广告",
+        "直播",
+        "增长"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-070",
+      "category": "直播投流",
+      "keyword": "UV价值",
+      "aliases": [
+        "访客价值"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "电商",
+        "转化"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-071",
+      "category": "直播投流",
+      "keyword": "CTR",
+      "aliases": [
+        "点击率"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "素材",
+        "广告",
+        "投流",
+        "直播"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-072",
+      "category": "直播投流",
+      "keyword": "CVR",
+      "aliases": [
+        "转化率"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "电商",
+        "直播",
+        "广告"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-073",
+      "category": "直播投流",
+      "keyword": "自然流",
+      "aliases": [
+        "自然流量"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "短视频",
+        "电商"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-074",
+      "category": "直播投流",
+      "keyword": "付费流",
+      "aliases": [
+        "付费流量"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "短视频",
+        "电商"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-075",
+      "category": "直播投流",
+      "keyword": "素材跑量",
+      "aliases": [
+        "跑量素材",
+        "爆量素材"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "投流",
+        "广告",
+        "短视频"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-076",
+      "category": "直播投流",
+      "keyword": "放量",
+      "aliases": [
+        "计划放量",
+        "预算放量"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "投流",
+        "广告",
+        "ROI"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-077",
+      "category": "直播投流",
+      "keyword": "控成本",
+      "aliases": [
+        "成本控制",
+        "控投产"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "投流",
+        "广告",
+        "直播"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-078",
+      "category": "直播投流",
+      "keyword": "冷启动",
+      "aliases": [
+        "计划冷启动",
+        "商品冷启动"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "投流",
+        "新品",
+        "账号"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-079",
+      "category": "选品经营",
+      "keyword": "选品",
+      "aliases": [
+        "数据选品",
+        "选品策略"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "电商",
+        "直播",
+        "跨境",
+        "商品"
+      ],
+      "excludeContext": [],
+      "source": "用户任务种子",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-080",
+      "category": "选品经营",
+      "keyword": "测品",
+      "aliases": [
+        "新品测试",
+        "测款"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "电商",
+        "投流",
+        "直播"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-081",
+      "category": "选品经营",
+      "keyword": "爆品",
+      "aliases": [
+        "爆款商品",
+        "爆品复制"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "电商",
+        "直播",
+        "选品"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-082",
+      "category": "选品经营",
+      "keyword": "潜力品",
+      "aliases": [
+        "蓝海品",
+        "机会品"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "电商",
+        "选品",
+        "商品"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-083",
+      "category": "选品经营",
+      "keyword": "店群",
+      "aliases": [
+        "矩阵店群"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "电商",
+        "跨境",
+        "平台"
+      ],
+      "excludeContext": [],
+      "source": "用户任务种子",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-084",
+      "category": "选品经营",
+      "keyword": "无货源",
+      "aliases": [
+        "无货源店群"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "电商",
+        "店铺",
+        "平台"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-085",
+      "category": "选品经营",
+      "keyword": "铺货",
+      "aliases": [
+        "精品铺货",
+        "大铺货"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "跨境",
+        "店铺",
+        "商品"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-086",
+      "category": "选品经营",
+      "keyword": "精铺",
+      "aliases": [
+        "精品模式",
+        "精细化铺货"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "跨境",
+        "店铺",
+        "商品"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-087",
+      "category": "选品经营",
+      "keyword": "货盘",
+      "aliases": [
+        "直播货盘",
+        "达人货盘"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "选品",
+        "供应链"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-088",
+      "category": "选品经营",
+      "keyword": "供应链",
+      "aliases": [
+        "柔性供应链",
+        "源头供应链"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "电商",
+        "直播",
+        "选品",
+        "跨境"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-089",
+      "category": "选品经营",
+      "keyword": "产业带",
+      "aliases": [
+        "源头产业带",
+        "产业集群"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "电商",
+        "选品",
+        "平台招商"
+      ],
+      "excludeContext": [],
+      "source": "用户任务种子",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-090",
+      "category": "选品经营",
+      "keyword": "商品卡",
+      "aliases": [
+        "商品卡流量"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "抖音",
+        "搜索电商",
+        "成交"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-091",
+      "category": "选品经营",
+      "keyword": "搜索电商",
+      "aliases": [
+        "搜索流量",
+        "搜索成交"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "电商",
+        "商品卡",
+        "平台"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-092",
+      "category": "选品经营",
+      "keyword": "全托管",
+      "aliases": [
+        "平台全托管"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "跨境",
+        "TEMU",
+        "平台招商"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-093",
+      "category": "选品经营",
+      "keyword": "半托管",
+      "aliases": [
+        "平台半托管"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "跨境",
+        "TEMU",
+        "平台招商"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-094",
+      "category": "选品经营",
+      "keyword": "海外仓",
+      "aliases": [
+        "本地仓",
+        "仓配一体"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "跨境",
+        "平台",
+        "物流"
+      ],
+      "excludeContext": [],
+      "source": "D0活动议程",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-095",
+      "category": "AI内容",
+      "keyword": "AI拉片",
+      "aliases": [
+        "智能拉片",
+        "AI视频拆解"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "短视频",
+        "直播",
+        "素材",
+        "内容"
+      ],
+      "excludeContext": [],
+      "source": "用户任务种子",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-096",
+      "category": "AI内容",
+      "keyword": "拉片",
+      "aliases": [
+        "视频拉片",
+        "素材拉片"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "短视频",
+        "直播",
+        "脚本"
+      ],
+      "excludeContext": [],
+      "source": "用户任务种子",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-097",
+      "category": "AI内容",
+      "keyword": "AI Agent",
+      "aliases": [
+        "AI智能体",
+        "Agent工作流"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "电商",
+        "运营",
+        "自动化"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-098",
+      "category": "AI内容",
+      "keyword": "数字员工",
+      "aliases": [
+        "AI员工",
+        "虚拟员工"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "电商",
+        "运营",
+        "客服",
+        "活动"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-099",
+      "category": "AI内容",
+      "keyword": "AI选品",
+      "aliases": [
+        "智能选品",
+        "大模型选品"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "电商",
+        "跨境",
+        "直播"
+      ],
+      "excludeContext": [],
+      "source": "用户任务种子",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-100",
+      "category": "AI内容",
+      "keyword": "AI投流",
+      "aliases": [
+        "智能投放",
+        "AI优化投放"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "广告",
+        "千川",
+        "ROI"
+      ],
+      "excludeContext": [],
+      "source": "用户任务种子",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-101",
+      "category": "AI内容",
+      "keyword": "AI脚本",
+      "aliases": [
+        "智能脚本",
+        "AI口播文案"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "短视频",
+        "内容"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-102",
+      "category": "AI内容",
+      "keyword": "AI客服",
+      "aliases": [
+        "智能客服",
+        "客服Agent"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "电商",
+        "店铺",
+        "售后"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-103",
+      "category": "AI内容",
+      "keyword": "AI复盘",
+      "aliases": [
+        "智能复盘",
+        "自动复盘"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "投流",
+        "运营"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-104",
+      "category": "AI内容",
+      "keyword": "多模态",
+      "aliases": [
+        "多模态大模型"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "电商",
+        "内容",
+        "Agent"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-105",
+      "category": "AI内容",
+      "keyword": "工作流",
+      "aliases": [
+        "AI工作流",
+        "自动化工作流"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "AI",
+        "电商",
+        "运营"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-106",
+      "category": "AI内容",
+      "keyword": "RPA",
+      "aliases": [
+        "流程自动化"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "电商",
+        "运营",
+        "客服"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "KW-107",
+      "category": "AI内容",
+      "keyword": "提示词",
+      "aliases": [
+        "Prompt",
+        "提示词工程"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "AI",
+        "电商",
+        "内容"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-108",
+      "category": "AI内容",
+      "keyword": "AIGC素材",
+      "aliases": [
+        "AI素材",
+        "生成式素材"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "广告",
+        "短视频",
+        "直播"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-109",
+      "category": "AI内容",
+      "keyword": "数字人",
+      "aliases": [
+        "AI数字人",
+        "虚拟主播"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "短视频",
+        "电商"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-110",
+      "category": "AI内容",
+      "keyword": "批量混剪",
+      "aliases": [
+        "智能混剪",
+        "矩阵混剪"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "短视频",
+        "素材",
+        "账号"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-111",
+      "category": "AI内容",
+      "keyword": "直播切片",
+      "aliases": [
+        "切片分发",
+        "直播拆条"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "短视频",
+        "内容"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-112",
+      "category": "AI内容",
+      "keyword": "短直联动",
+      "aliases": [
+        "短视频直播联动"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "直播",
+        "短视频",
+        "转化"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-113",
+      "category": "AI内容",
+      "keyword": "达人分销",
+      "aliases": [
+        "达人带货",
+        "分销达人"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "商品",
+        "直播",
+        "短视频"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-114",
+      "category": "AI内容",
+      "keyword": "精选联盟",
+      "aliases": [
+        "联盟选品"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "抖音",
+        "达人",
+        "商品"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-115",
+      "category": "AI内容",
+      "keyword": "达人矩阵",
+      "aliases": [
+        "达人池",
+        "达人组合"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "带货",
+        "内容",
+        "投放"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-116",
+      "category": "AI内容",
+      "keyword": "达人建联",
+      "aliases": [
+        "达人邀约",
+        "达人合作"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "带货",
+        "跨境",
+        "内容"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-117",
+      "category": "AI内容",
+      "keyword": "海外达人",
+      "aliases": [
+        "海外KOL",
+        "海外创作者"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "跨境",
+        "TikTok",
+        "品牌"
+      ],
+      "excludeContext": [],
+      "source": "用户任务+D0活动",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-118",
+      "category": "AI内容",
+      "keyword": "爆款拆解",
+      "aliases": [
+        "案例拉片",
+        "爆品拆解"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "短视频",
+        "直播",
+        "商品"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-119",
+      "category": "爆点信号",
+      "keyword": "平台新政",
+      "aliases": [
+        "规则更新",
+        "政策变化"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "电商",
+        "直播",
+        "跨境",
+        "入驻"
+      ],
+      "excludeContext": [],
+      "source": "用户任务种子",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-120",
+      "category": "爆点信号",
+      "keyword": "最新入驻",
+      "aliases": [
+        "入驻政策",
+        "招商政策"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "平台",
+        "卖家",
+        "官方"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-121",
+      "category": "爆点信号",
+      "keyword": "首发",
+      "aliases": [
+        "首次发布",
+        "现场首发"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "工具",
+        "玩法",
+        "规则",
+        "案例"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-122",
+      "category": "爆点信号",
+      "keyword": "实操",
+      "aliases": [
+        "实战",
+        "手把手"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "工具",
+        "方法",
+        "流程",
+        "案例"
+      ],
+      "excludeContext": [],
+      "source": "用户任务种子",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-123",
+      "category": "爆点信号",
+      "keyword": "案例拆解",
+      "aliases": [
+        "案例复盘",
+        "增长案例"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "数据",
+        "增长",
+        "转化",
+        "ROI"
+      ],
+      "excludeContext": [],
+      "source": "用户任务种子",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-124",
+      "category": "爆点信号",
+      "keyword": "降本增效",
+      "aliases": [
+        "提效减负",
+        "成本下降"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "AI",
+        "运营",
+        "团队",
+        "案例"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-125",
+      "category": "爆点信号",
+      "keyword": "工具演示",
+      "aliases": [
+        "现场演示",
+        "工具体验"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "AI",
+        "投流",
+        "选品",
+        "内容"
+      ],
+      "excludeContext": [],
+      "source": "用户任务种子",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-126",
+      "category": "爆点信号",
+      "keyword": "SOP",
+      "aliases": [
+        "标准流程",
+        "操作流程"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "实操",
+        "运营",
+        "工具"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-127",
+      "category": "爆点信号",
+      "keyword": "模板",
+      "aliases": [
+        "可复制模板",
+        "表格模板"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "实操",
+        "案例",
+        "方法"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-128",
+      "category": "爆点信号",
+      "keyword": "清单",
+      "aliases": [
+        "检查清单",
+        "避坑清单"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "实操",
+        "方法",
+        "规则"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-129",
+      "category": "爆点信号",
+      "keyword": "增长百分比",
+      "aliases": [
+        "增长率",
+        "提升百分比"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "案例",
+        "GMV",
+        "ROI",
+        "转化"
+      ],
+      "excludeContext": [],
+      "source": "用户任务种子",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": "必须记录基线周期与样本"
+    },
+    {
+      "id": "KW-130",
+      "category": "报名信号",
+      "keyword": "限额",
+      "aliases": [
+        "限量名额",
+        "仅开放"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "报名",
+        "席位",
+        "人"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": "名额不等于到场人数"
+    },
+    {
+      "id": "KW-131",
+      "category": "报名信号",
+      "keyword": "审核制",
+      "aliases": [
+        "审核报名",
+        "定向审核"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "报名",
+        "卖家",
+        "老板",
+        "高管"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-132",
+      "category": "报名信号",
+      "keyword": "定向邀约",
+      "aliases": [
+        "邀请制",
+        "仅限受邀"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "私享会",
+        "闭门会",
+        "老板"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-133",
+      "category": "报名信号",
+      "keyword": "早鸟票",
+      "aliases": [
+        "早鸟报名",
+        "限时免费"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "报名",
+        "门票",
+        "截止"
+      ],
+      "excludeContext": [],
+      "source": "行业通用词",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-134",
+      "category": "报名信号",
+      "keyword": "官方招商",
+      "aliases": [
+        "平台招商",
+        "平台招商会"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "平台",
+        "入驻",
+        "卖家"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-135",
+      "category": "报名信号",
+      "keyword": "创始人",
+      "aliases": [
+        "老板",
+        "高管",
+        "业务负责人"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "私享会",
+        "闭门会",
+        "圈层",
+        "卖家"
+      ],
+      "excludeContext": [],
+      "source": "D0活动发现",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    }
+  ],
+  "verificationLogs": [
+    {
+      "verification_id": "VER-001",
+      "event_id": "EVT-001",
+      "check_type": "真实性复核",
+      "checked_at": "2026-07-17 11:25",
+      "status": "PASS",
+      "evidence": "活动行原页+中国日报网",
+      "scope_or_field": "名称/日期/城市/场馆",
+      "issue": "无",
+      "action": "保留双来源"
+    },
+    {
+      "verification_id": "VER-002",
+      "event_id": "EVT-001",
+      "check_type": "字段复核",
+      "checked_at": "2026-07-17 11:25",
+      "status": "PASS_WITH_CONFLICT",
+      "evidence": "页面结构化字段+活动海报",
+      "scope_or_field": "结束时间",
+      "issue": "13:00与12:45冲突",
+      "action": "表内显式标注并以页面字段建档"
+    },
+    {
+      "verification_id": "VER-003",
+      "event_id": "EVT-001",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-07-20（首页改版复核）",
+      "status": "PASS",
+      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+      "issue": "无",
+      "action": "最终严格复核"
+    },
+    {
+      "verification_id": "VER-004",
+      "event_id": "EVT-002",
+      "check_type": "真实性复核",
+      "checked_at": "2026-07-17 11:25",
+      "status": "PASS",
+      "evidence": "活动行原页+雨果活动页+官方海报",
+      "scope_or_field": "名称/日期/城市/场馆",
+      "issue": "无",
+      "action": "保留双来源与海报"
+    },
+    {
+      "verification_id": "VER-005",
+      "event_id": "EVT-002",
+      "check_type": "字段复核",
+      "checked_at": "2026-07-17 11:25",
+      "status": "PASS_WITH_CONFLICT",
+      "evidence": "活动行字段+雨果活动页",
+      "scope_or_field": "结束时间/人数",
+      "issue": "18:00与17:00冲突；多种人数口径",
+      "action": "显式区分宣传口径/容量/报名数/到场数"
+    },
+    {
+      "verification_id": "VER-006",
+      "event_id": "EVT-002",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-07-20（首页改版复核）",
+      "status": "PASS",
+      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+      "issue": "无",
+      "action": "最终严格复核"
+    },
+    {
+      "verification_id": "VER-007",
+      "event_id": "EVT-003",
+      "check_type": "真实性复核",
+      "checked_at": "2026-07-17 11:28",
+      "status": "PASS",
+      "evidence": "雨果活动原页+官方海报",
+      "scope_or_field": "名称/日期/城市/议程",
+      "issue": "无",
+      "action": "归档海报"
+    },
+    {
+      "verification_id": "VER-008",
+      "event_id": "EVT-003",
+      "check_type": "字段复核",
+      "checked_at": "2026-07-17 11:28",
+      "status": "PASS_WITH_GAPS",
+      "evidence": "页面+海报",
+      "scope_or_field": "地点/嘉宾",
+      "issue": "具体地址和嘉宾姓名未公开",
+      "action": "写暂缺 不推断"
+    },
+    {
+      "verification_id": "VER-009",
+      "event_id": "EVT-003",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-07-20（首页改版复核）",
+      "status": "PASS",
+      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+      "issue": "无",
+      "action": "最终严格复核"
+    },
+    {
+      "verification_id": "VER-010",
+      "event_id": "EVT-004",
+      "check_type": "真实性复核",
+      "checked_at": "2026-07-17 11:29",
+      "status": "PASS",
+      "evidence": "雨果活动原页+官方海报",
+      "scope_or_field": "名称/日期/城市/目标人群/议程",
+      "issue": "无",
+      "action": "归档海报"
+    },
+    {
+      "verification_id": "VER-011",
+      "event_id": "EVT-004",
+      "check_type": "字段复核",
+      "checked_at": "2026-07-17 11:29",
+      "status": "PASS_WITH_GAPS",
+      "evidence": "页面+海报",
+      "scope_or_field": "地点/人数/嘉宾",
+      "issue": "未公开",
+      "action": "写暂缺 不推断"
+    },
+    {
+      "verification_id": "VER-012",
+      "event_id": "EVT-004",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-07-20（首页改版复核）",
+      "status": "PASS",
+      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+      "issue": "无",
+      "action": "最终严格复核"
+    },
+    {
+      "verification_id": "VER-013",
+      "event_id": "EVT-005",
+      "check_type": "真实性复核",
+      "checked_at": "2026-07-17 11:30",
+      "status": "PASS",
+      "evidence": "雨果活动原页+官方课程海报",
+      "scope_or_field": "名称/日期/场馆/价格/模块",
+      "issue": "无",
+      "action": "归档海报"
+    },
+    {
+      "verification_id": "VER-014",
+      "event_id": "EVT-005",
+      "check_type": "字段复核",
+      "checked_at": "2026-07-17 11:30",
+      "status": "PASS_WITH_GAPS",
+      "evidence": "页面+海报",
+      "scope_or_field": "主办方/每日时段/实际人数",
+      "issue": "未清晰披露",
+      "action": "7人仅作为限额口径"
+    },
+    {
+      "verification_id": "VER-015",
+      "event_id": "EVT-005",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-07-20（首页改版复核）",
+      "status": "PASS",
+      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+      "issue": "无",
+      "action": "最终严格复核"
+    },
+    {
+      "verification_id": "VER-016",
+      "event_id": "EVT-006",
+      "check_type": "真实性复核",
+      "checked_at": "2026-07-17 11:31",
+      "status": "PASS",
+      "evidence": "雨果活动原页+官方海报",
+      "scope_or_field": "名称/日期/城市/议程",
+      "issue": "无",
+      "action": "归档海报"
+    },
+    {
+      "verification_id": "VER-017",
+      "event_id": "EVT-006",
+      "check_type": "字段复核",
+      "checked_at": "2026-07-17 11:31",
+      "status": "PASS_WITH_GAPS",
+      "evidence": "页面+海报",
+      "scope_or_field": "精确会场/人数",
+      "issue": "未公开",
+      "action": "工厂数与SKU数不当作人数"
+    },
+    {
+      "verification_id": "VER-018",
+      "event_id": "EVT-006",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-07-20（首页改版复核）",
+      "status": "PASS",
+      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+      "issue": "无",
+      "action": "最终严格复核"
+    },
+    {
+      "verification_id": "VER-019",
+      "event_id": "EVT-007",
+      "check_type": "真实性复核",
+      "checked_at": "2026-07-17 11:32",
+      "status": "PASS",
+      "evidence": "雨果活动原页+官方海报",
+      "scope_or_field": "名称/日期/城市/地址/讲师",
+      "issue": "无",
+      "action": "归档海报"
+    },
+    {
+      "verification_id": "VER-020",
+      "event_id": "EVT-007",
+      "check_type": "字段复核",
+      "checked_at": "2026-07-17 11:32",
+      "status": "PASS_WITH_CONFLICT",
+      "evidence": "活动页+海报",
+      "scope_or_field": "议程时间",
+      "issue": "签到与第一议题重叠",
+      "action": "保留冲突 不擅自修正"
+    },
+    {
+      "verification_id": "VER-021",
+      "event_id": "EVT-007",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-07-20（首页改版复核）",
+      "status": "PASS",
+      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+      "issue": "无",
+      "action": "最终严格复核"
+    },
+    {
+      "verification_id": "VER-022",
+      "event_id": "EVT-008",
+      "check_type": "真实性复核",
+      "checked_at": "2026-07-17 11:33",
+      "status": "PASS",
+      "evidence": "雨果活动原页+官方议程海报",
+      "scope_or_field": "名称/日期/城市/平台议程",
+      "issue": "无",
+      "action": "归档海报"
+    },
+    {
+      "verification_id": "VER-023",
+      "event_id": "EVT-008",
+      "check_type": "字段复核",
+      "checked_at": "2026-07-17 11:33",
+      "status": "PASS_WITH_GAPS",
+      "evidence": "页面+海报",
+      "scope_or_field": "具体会场/人数/完整嘉宾表",
+      "issue": "未公开",
+      "action": "写审核后通知或暂缺"
+    },
+    {
+      "verification_id": "VER-024",
+      "event_id": "EVT-008",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-07-20（首页改版复核）",
+      "status": "PASS",
+      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+      "issue": "无",
+      "action": "最终严格复核"
+    },
+    {
+      "verification_id": "VER-025",
+      "event_id": "EVT-009",
+      "check_type": "真实性复核",
+      "checked_at": "2026-07-17 11:34",
+      "status": "PASS",
+      "evidence": "雨果活动原页+官方议程海报",
+      "scope_or_field": "名称/日期/城市/议程/嘉宾",
+      "issue": "无",
+      "action": "归档海报"
+    },
+    {
+      "verification_id": "VER-026",
+      "event_id": "EVT-009",
+      "check_type": "字段复核",
+      "checked_at": "2026-07-17 11:34",
+      "status": "PASS_WITH_GAPS",
+      "evidence": "页面+海报",
+      "scope_or_field": "精确会场/人数",
+      "issue": "未公开",
+      "action": "写审核通知或暂缺"
+    },
+    {
+      "verification_id": "VER-027",
+      "event_id": "EVT-009",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-07-20（首页改版复核）",
+      "status": "PASS",
+      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+      "issue": "无",
+      "action": "最终严格复核"
+    },
+    {
+      "verification_id": "VER-028",
+      "event_id": "EVT-010",
+      "check_type": "真实性复核",
+      "checked_at": "2026-07-17 11:35",
+      "status": "PASS",
+      "evidence": "雨果活动原页+官方议程海报",
+      "scope_or_field": "名称/日期/城市/议程",
+      "issue": "无",
+      "action": "归档海报"
+    },
+    {
+      "verification_id": "VER-029",
+      "event_id": "EVT-010",
+      "check_type": "字段复核",
+      "checked_at": "2026-07-17 11:35",
+      "status": "PASS_WITH_GAPS",
+      "evidence": "页面+海报",
+      "scope_or_field": "精确会场/人数/嘉宾",
+      "issue": "未公开",
+      "action": "写审核通知或暂缺"
+    },
+    {
+      "verification_id": "VER-030",
+      "event_id": "EVT-010",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-07-20（首页改版复核）",
+      "status": "PASS",
+      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+      "issue": "无",
+      "action": "最终严格复核"
+    },
+    {
+      "verification_id": "VER-031",
+      "event_id": "EVT-011",
+      "check_type": "真实性复核",
+      "checked_at": "2026-07-17 11:36",
+      "status": "PASS",
+      "evidence": "雨果活动原页+Ozon/雨果联合海报",
+      "scope_or_field": "名称/日期/城市/场馆",
+      "issue": "无",
+      "action": "归档海报"
+    },
+    {
+      "verification_id": "VER-032",
+      "event_id": "EVT-011",
+      "check_type": "字段复核",
+      "checked_at": "2026-07-17 11:36",
+      "status": "PASS_WITH_GAPS",
+      "evidence": "页面+海报",
+      "scope_or_field": "议程/嘉宾/人数",
+      "issue": "未公开",
+      "action": "不做具体爆点分数"
+    },
+    {
+      "verification_id": "VER-033",
+      "event_id": "EVT-011",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-07-20（首页改版复核）",
+      "status": "PASS",
+      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
+      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
+      "issue": "无",
+      "action": "最终严格复核"
+    }
+  ]
+}

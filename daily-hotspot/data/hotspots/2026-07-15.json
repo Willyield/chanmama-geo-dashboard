@@ -1,0 +1,1829 @@
+{
+  "schemaVersion": 1,
+  "module": "hotspots",
+  "date": "2026-07-15",
+  "observedAt": "2026-07-15 18:04",
+  "revision": 1,
+  "sourceWorkbook": "热点追踪日报_20260715_首页优化版.xlsx",
+  "summary": {
+    "gradeCounts": {
+      "S": 0,
+      "A": 3,
+      "B": 6,
+      "C": 3,
+      "D": 0
+    },
+    "priorityCount": 3,
+    "lowCostCount": 6,
+    "observeCount": 3,
+    "evidenceE3Count": 7,
+    "webSummary": "12 条热点入库，重点追 3 条、低成本跟进 6 条、观察或留档 3 条。今日优先：7·15商家技术服务费与渠道费率规则簇、食品标签信息8月3日起强化治理、全球购体验分联动千川投放、活动和精选联盟。",
+    "topActions": [
+      {
+        "id": "HT-20260715-001",
+        "grade": "L-A｜重点追",
+        "name": "7·15商家技术服务费与渠道费率规则簇",
+        "reason": "规则覆盖全量商家并改变结算成本，商家会立即搜索费率差异和计算口径。先用内容抢响应窗口，再核字段评估工具，可避免在口径未确认时投入开发。",
+        "action": "GEO规则解读＋品牌矩阵＋行业稿；同步评估费率计算器/专题页。"
+      },
+      {
+        "id": "HT-20260715-002",
+        "grade": "L-A｜重点追",
+        "name": "食品标签信息8月3日起强化治理",
+        "reason": "8月3日有明确下架节点，食品、酒水、保健和母婴商家需要立即自查。清单能直接解决整改问题；召回须先核准受影响人群，避免打扰无关用户。",
+        "action": "GEO问答＋食品标签自查清单＋品牌矩阵；评估类目专题和精准召回。"
+      },
+      {
+        "id": "HT-20260715-003",
+        "grade": "L-A｜重点追",
+        "name": "全球购体验分联动千川投放、活动和精选联盟",
+        "reason": "体验分会直接限制千川投放、活动提报和精选联盟，属于跨境商家的经营中断风险。先做检查表并定向覆盖全球购用户，比面向大众传播更有效。",
+        "action": "GEO规则解读＋全球购商家检查表＋定向品牌矩阵；评估精准站内提醒。"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "id": "HT-20260715-001",
+      "foundAt": "2026-07-15 17:02",
+      "name": "7·15商家技术服务费与渠道费率规则簇",
+      "type": "T-A｜业务强相关",
+      "sourceLevel": "E3｜官方一手",
+      "publishedAt": "2026-07-15 10:51；配套费率表00:00",
+      "signal": "官方规则当日修订生效，覆盖平台所有商家；结算基数、类目费率及商城APP/豆包等特定渠道补充费均被明确。",
+      "uncertainty": "官方未提供新旧差异对照；需产品/财务再核对现有费率字段和历史口径。",
+      "recommended": "GEO规则解读＋品牌矩阵＋行业稿；同步评估费率计算器/专题页。",
+      "actionReason": "规则覆盖全量商家并改变结算成本，商家会立即搜索费率差异和计算口径。先用内容抢响应窗口，再核字段评估工具，可避免在口径未确认时投入开发。",
+      "actionDetail": "GEO：发布1篇规则解读，拆成“谁受影响、怎么计算、类目费率、渠道补充费、商家怎么自查”5个问答；每个答案注明生效时间、官方链接，并导向蝉妈妈相关页面。\n品牌矩阵：公众号发完整解读；抖音/视频号发60秒“三个变化”；员工号和私域发一张费率自查图。\n行业稿：用官方规则＋蝉妈妈类目数据分析商家成本变化；至少补1项独家数据并完成事实审核后再发布。\n产品：核对费率字段后评估查询/计算器；超过3天或字段不全就改做专题页。",
+      "evidence": "平台：抖店学习中心（抖音电商官方）\n页面：商家技术服务费管理规范\nURL：https://school.jinritemai.com/doudian/web/articlev0/106833\n页面：技术服务费费率标准（配套表）\nURL：https://school.jinritemai.com/doudian/web/articlev0/ahijyoja6hvb\n页面：【全球购】技术服务费费率标准\nURL：https://school.jinritemai.com/doudian/web/articlev0/aHMYyFoqESKn",
+      "departments": "热点运营主责；内容/GEO、数据、产品、品牌PR协作",
+      "deadline": "2026-07-15T20:00:00.000Z",
+      "notRecommended": "成熟落地页和埋点未确认前，不投广告、不做全量站内召回。",
+      "sourceLinks": [
+        {
+          "label": "核心来源",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/106833"
+        },
+        {
+          "label": "补充来源 1",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/ahijyoja6hvb"
+        },
+        {
+          "label": "补充来源 2",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/aHMYyFoqESKn"
+        }
+      ],
+      "status": "待立项",
+      "risk": "低风险",
+      "natural": "通过",
+      "owner": "热点运营负责人",
+      "monitor": "专题UV、费率工具使用、注册/咨询、AI引用率",
+      "actions": [
+        {
+          "hotspotId": "HT-20260715-001",
+          "actionType": "GEO内容",
+          "task": "完成技术服务费规则解读，列出结算基数、渠道补充费和商家自查问题",
+          "owner": "内容/GEO",
+          "collaborators": "热点运营、数据",
+          "deadline": "2026-07-15T20:00:00.000Z",
+          "deliverable": "1篇规则稿＋5个问答",
+          "acceptance": "事实100%对应官方原文；至少1个注册/咨询入口",
+          "stopCondition": "发现口径冲突立即停发",
+          "status": "待开始"
+        },
+        {
+          "hotspotId": "HT-20260715-001",
+          "actionType": "产品评估",
+          "task": "评估现有数据能否在2-3天内做费率查询/计算器，不承诺开发",
+          "owner": "产品",
+          "collaborators": "数据、热点运营",
+          "deadline": "2026-07-16T12:00:00.000Z",
+          "deliverable": "一页可行性结论",
+          "acceptance": "字段、工期、埋点、负责人齐全",
+          "stopCondition": "超过3天或缺核心字段转专题页",
+          "status": "待开始"
+        },
+        {
+          "hotspotId": "HT-20260715-001",
+          "actionType": "新闻稿预案",
+          "task": "基于官方规则和蝉妈妈数据准备行业影响稿提纲，审核后再决定付费发布",
+          "owner": "品牌PR",
+          "collaborators": "数据、内容",
+          "deadline": "2026-07-16T16:00:00.000Z",
+          "deliverable": "稿件提纲＋数据需求",
+          "acceptance": "至少1项独家数据和法务审核",
+          "stopCondition": "无独家数据则不发",
+          "status": "待开始"
+        }
+      ],
+      "totalScore": 86,
+      "initialValue": 5,
+      "finalValue": 4,
+      "grade": "L-A｜重点追",
+      "gradeCode": "A",
+      "followDecision": "重点追",
+      "downgradeReason": "核心门槛封顶",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 3,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 5,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 5,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 3,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 5,
+        "evidence": 5,
+        "type": 5,
+        "core": 4,
+        "risk": 5,
+        "window": 5,
+        "preparation": 5
+      }
+    },
+    {
+      "id": "HT-20260715-002",
+      "foundAt": "2026-07-15 17:02",
+      "name": "食品标签信息8月3日起强化治理",
+      "type": "T-A｜业务强相关",
+      "sourceLevel": "E3｜官方一手",
+      "publishedAt": "2026-07-15 12:20:25",
+      "signal": "覆盖食品、酒水、保健、母婴等多类目；平台要求立即自查，预计8月3日起对未整改商品陆续下架。",
+      "uncertainty": "受影响商品量、商家量和当前整改率需用蝉妈妈/内部数据补齐。",
+      "recommended": "GEO问答＋食品标签自查清单＋品牌矩阵；评估类目专题和精准召回。",
+      "actionReason": "8月3日有明确下架节点，食品、酒水、保健和母婴商家需要立即自查。清单能直接解决整改问题；召回须先核准受影响人群，避免打扰无关用户。",
+      "actionDetail": "GEO：制作1份食品标签自查清单，回答“哪些类目受影响、必须填什么、何时下架、怎么整改、去哪里申诉”5个问题。\n品牌矩阵：公众号发完整清单；抖音/视频号发30秒“3项必查”；食品商家私域发可保存的整改长图。\n数据：补受影响商品数、商家数和近30天销售额，所有数字标注口径。\n站内触达：只有能准确圈出食品相关商家并有整改入口时，才发1次定向提醒；不做全量弹窗。",
+      "evidence": "平台：抖店学习中心（抖音电商官方）\n页面：关于进一步加强食品标签信息规范填写的治理公告\nURL：https://school.jinritemai.com/doudian/web/articlev0/aJmqi8RNrLUS",
+      "departments": "热点运营主责；内容/GEO、类目数据、产品、用户运营协作",
+      "deadline": "2026-07-16T12:00:00.000Z",
+      "notRecommended": "没有食品商家标签和受影响量级前，不做全量召回或广告投流。",
+      "sourceLinks": [
+        {
+          "label": "核心来源",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/aJmqi8RNrLUS"
+        }
+      ],
+      "status": "待立项",
+      "risk": "低风险",
+      "natural": "通过",
+      "owner": "热点运营负责人",
+      "monitor": "清单下载、食品商家访问/咨询、注册、AI问题覆盖",
+      "actions": [
+        {
+          "hotspotId": "HT-20260715-002",
+          "actionType": "GEO内容",
+          "task": "制作食品标签整改清单和8月3日时间表",
+          "owner": "内容/GEO",
+          "collaborators": "类目运营、热点运营",
+          "deadline": "2026-07-16T12:00:00.000Z",
+          "deliverable": "清单＋问答",
+          "acceptance": "覆盖适用类目、处罚、整改入口",
+          "stopCondition": "无法确认类目范围则暂缓",
+          "status": "待开始"
+        },
+        {
+          "hotspotId": "HT-20260715-002",
+          "actionType": "数据补数",
+          "task": "估算受影响食品商品/商家量和近30天销量",
+          "owner": "数据",
+          "collaborators": "类目运营",
+          "deadline": "2026-07-16T15:00:00.000Z",
+          "deliverable": "影响量级表",
+          "acceptance": "口径、时间窗、样本范围可追溯",
+          "stopCondition": "数据覆盖不足只标样本",
+          "status": "待开始"
+        },
+        {
+          "hotspotId": "HT-20260715-002",
+          "actionType": "召回评估",
+          "task": "仅评估向食品商家定向站内提醒，不直接上线",
+          "owner": "用户运营",
+          "collaborators": "产品、热点运营",
+          "deadline": "2026-07-17T12:00:00.000Z",
+          "deliverable": "人群与频控方案",
+          "acceptance": "人群准确、入口明确、频控通过",
+          "stopCondition": "无法精准圈人则取消",
+          "status": "待开始"
+        }
+      ],
+      "totalScore": 81,
+      "initialValue": 4,
+      "finalValue": 4,
+      "grade": "L-A｜重点追",
+      "gradeCode": "A",
+      "followDecision": "重点追",
+      "downgradeReason": "分数决定",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 3,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 4,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 5,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 3,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 4,
+        "evidence": 5,
+        "type": 5,
+        "core": 4,
+        "risk": 5,
+        "window": 5,
+        "preparation": 5
+      }
+    },
+    {
+      "id": "HT-20260715-003",
+      "foundAt": "2026-07-15 17:02",
+      "name": "全球购体验分联动千川投放、活动和精选联盟",
+      "type": "T-A｜业务强相关",
+      "sourceLevel": "E3｜官方一手",
+      "publishedAt": "2026-07-14 11:09:50",
+      "signal": "正式阶段体验分50-100；低于千川门槛将禁止投放，并影响活动提报和精选联盟。",
+      "uncertainty": "仅影响全球购商家；具体千川门槛和受影响商家规模需补数。",
+      "recommended": "GEO规则解读＋全球购商家检查表＋定向品牌矩阵；评估精准站内提醒。",
+      "actionReason": "体验分会直接限制千川投放、活动提报和精选联盟，属于跨境商家的经营中断风险。先做检查表并定向覆盖全球购用户，比面向大众传播更有效。",
+      "actionDetail": "GEO：制作1页全球购检查表，写清体验分阶段、会被限制的经营动作和商家自查步骤；未确认的千川分数必须标“待官方确认”。\n品牌矩阵：公众号跨境栏目发完整解读；销售、客服和跨境社群只定向触达全球购商家；短视频只讲“低分会影响哪3件事”。\n数据：补全球购存量用户、低分商家和潜在受影响投放账户数量。\n站内触达：能准确圈人且检查表可用后，再做一次定向提醒；不面向普通商家。",
+      "evidence": "平台：抖店学习中心（抖音电商官方）\n页面：全球购体验分规则正文（联动千川、活动和精选联盟）\nURL：https://school.jinritemai.com/doudian/web/articlev0/aHMSpgQDfmxk",
+      "departments": "热点运营主责；内容/GEO、跨境运营、数据、用户运营协作",
+      "deadline": "2026-07-16T12:00:00.000Z",
+      "notRecommended": "不做大众广告；未识别全球购存量用户前不做全站弹窗。",
+      "sourceLinks": [
+        {
+          "label": "核心来源",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/aHMSpgQDfmxk"
+        }
+      ],
+      "status": "待立项",
+      "risk": "低风险",
+      "natural": "通过",
+      "owner": "热点运营负责人",
+      "monitor": "规则页UV、全球购用户点击/咨询、试用、AI引用率",
+      "actions": [
+        {
+          "hotspotId": "HT-20260715-003",
+          "actionType": "GEO内容",
+          "task": "解释体验分阶段、千川投放门槛和受影响动作",
+          "owner": "内容/GEO",
+          "collaborators": "跨境运营",
+          "deadline": "2026-07-16T12:00:00.000Z",
+          "deliverable": "规则解读＋检查表",
+          "acceptance": "不把未知千川分数写成事实",
+          "stopCondition": "门槛未核实则删具体分数",
+          "status": "待开始"
+        },
+        {
+          "hotspotId": "HT-20260715-003",
+          "actionType": "定向触达评估",
+          "task": "梳理全球购存量用户并设计精准提醒",
+          "owner": "用户运营",
+          "collaborators": "数据、热点运营",
+          "deadline": "2026-07-17T12:00:00.000Z",
+          "deliverable": "人群包需求＋文案",
+          "acceptance": "只触达全球购相关用户",
+          "stopCondition": "圈选误差高则取消",
+          "status": "待开始"
+        }
+      ],
+      "totalScore": 75,
+      "initialValue": 4,
+      "finalValue": 4,
+      "grade": "L-A｜重点追",
+      "gradeCode": "A",
+      "followDecision": "重点追",
+      "downgradeReason": "分数决定",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 2,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 3,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 5,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 3,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 4,
+        "evidence": 5,
+        "type": 5,
+        "core": 4,
+        "risk": 5,
+        "window": 5,
+        "preparation": 5
+      }
+    },
+    {
+      "id": "HT-20260715-004",
+      "foundAt": "2026-07-15 17:02",
+      "name": "全球购招商准入与品牌推广限制更新",
+      "type": "T-A｜业务强相关",
+      "sourceLevel": "E3｜官方一手",
+      "publishedAt": "2026-07-15 00:00:20",
+      "signal": "类目/品牌定向准入；部分未获一级授权品牌限制直播、视频、精选联盟、搜索展示等推广，当前页面列明Dior。",
+      "uncertainty": "影响面集中在跨境和特定品牌；品牌清单后续可能变化。",
+      "recommended": "GEO规则简报＋跨境品牌准入清单＋品牌矩阵低成本发布。",
+      "departments": "热点运营主责；内容/GEO、跨境类目运营协作",
+      "deadline": "2026-07-16T16:00:00.000Z",
+      "notRecommended": "不开发新产品、不投广告、不做全量召回。",
+      "sourceLinks": [
+        {
+          "label": "核心来源",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/108056"
+        }
+      ],
+      "status": "待执行",
+      "risk": "低风险",
+      "natural": "通过",
+      "owner": "热点运营专员",
+      "monitor": "简报UV、跨境商家咨询、品牌清单访问、AI引用率",
+      "actions": [
+        {
+          "hotspotId": "HT-20260715-004",
+          "actionType": "低成本内容",
+          "task": "更新跨境品牌准入和推广限制清单",
+          "owner": "内容/GEO",
+          "collaborators": "跨境运营",
+          "deadline": "2026-07-16T16:00:00.000Z",
+          "deliverable": "1页清单",
+          "acceptance": "品牌、限制动作、来源可查",
+          "stopCondition": "清单无法持续维护则不做专题",
+          "status": "待开始"
+        }
+      ],
+      "totalScore": 64,
+      "initialValue": 3,
+      "finalValue": 3,
+      "grade": "L-B｜低成本跟进",
+      "gradeCode": "B",
+      "followDecision": "低成本跟进",
+      "downgradeReason": "分数决定",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 2,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 2,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 4,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 2,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 2,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 3,
+        "evidence": 5,
+        "type": 5,
+        "core": 3,
+        "risk": 5,
+        "window": 5,
+        "preparation": 5
+      }
+    },
+    {
+      "id": "HT-20260715-005",
+      "foundAt": "2026-07-15 17:02",
+      "name": "7·15自然灾害影响地区发货与售后调整",
+      "type": "T-A｜业务强相关",
+      "sourceLevel": "E3｜官方一手",
+      "publishedAt": "2026-07-15 10:28:34更新",
+      "signal": "新增辽宁沈阳、抚顺等豁免区；延长发货/售后时效并豁免部分体验分和物流违规。",
+      "uncertainty": "区域性、短周期；名单可能继续更新，即时零售不适用。",
+      "recommended": "品牌矩阵/客服口径快速提醒；仅保留短问答，不做长周期专题。",
+      "actionReason": "豁免地区和时效调整会直接影响当天的发货、售后与违规判断。事件区域有限、变化快，客服和商家提醒比长文、投流或产品开发更及时。",
+      "actionDetail": "客服/私域：整理一张提醒卡，列清受影响地区、适用订单、延长时效、豁免项目和申诉入口；地区名单变化时立即替换旧版。\n品牌矩阵：公众号/员工号只发短提醒，不写长篇趋势稿；标题直接写受影响地区和适用日期。\nGEO：仅做“能否延迟发货、如何申诉”2个短问答，并持续引用最新官方公告。\n监测：记录相关地区咨询量和错误处罚反馈；公告恢复正常后停止传播。",
+      "evidence": "平台：抖店学习中心（抖音电商官方）\n页面：自然灾害影响地区发货及售后服务调整公告（7月15日更新）\nURL：https://school.jinritemai.com/doudian/web/articlev0/aJ5uc2mq9Bw6",
+      "departments": "热点运营主责；用户运营、客服、内容协作",
+      "deadline": "2026-07-15T18:30:00.000Z",
+      "notRecommended": "不做新闻稿、广告、产品开发或全量召回。",
+      "sourceLinks": [
+        {
+          "label": "核心来源",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/aJ5uc2mq9Bw6"
+        }
+      ],
+      "status": "待执行",
+      "risk": "低风险",
+      "natural": "通过",
+      "owner": "热点运营专员",
+      "monitor": "受影响地区用户触达、客服咨询量、错误处置反馈",
+      "actions": [
+        {
+          "hotspotId": "HT-20260715-005",
+          "actionType": "快速提醒",
+          "task": "面向受灾地区商家更新发货/售后豁免口径",
+          "owner": "用户运营",
+          "collaborators": "客服、热点运营",
+          "deadline": "2026-07-15T18:30:00.000Z",
+          "deliverable": "客服话术＋单条自媒体",
+          "acceptance": "地区、订单范围、申诉路径准确",
+          "stopCondition": "区域名单更新即替换旧文",
+          "status": "待开始"
+        }
+      ],
+      "totalScore": 55,
+      "initialValue": 3,
+      "finalValue": 3,
+      "grade": "L-B｜低成本跟进",
+      "gradeCode": "B",
+      "followDecision": "低成本跟进",
+      "downgradeReason": "分数决定",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 2,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 2,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 2,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 4,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 2,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 2,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 2,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 5,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 5,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 3,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 3,
+        "evidence": 5,
+        "type": 5,
+        "core": 3,
+        "risk": 5,
+        "window": 5,
+        "preparation": 5
+      }
+    },
+    {
+      "id": "HT-20260715-006",
+      "foundAt": "2026-07-15 17:29",
+      "name": "作业帮直播数据查询需求（GEO机会信号，非大众热点）",
+      "type": "T-C｜垂直需求信号（待验证）",
+      "sourceLevel": "E2｜双平台需求线索",
+      "publishedAt": "账号记录：2026-07-15 13:36:29",
+      "signal": "它不是全网热搜，而是AIDSO捕捉到的高意图GEO查询；该问题可由蝉妈妈现有直播数据直接承接，因此作为低成本需求线索入池。",
+      "uncertainty": "仅一条账号查询，不能证明作业帮或教育直播正在形成全网趋势；须补30天直播趋势、排名和明细后才能升级。",
+      "recommended": "仅做1篇GEO数据问答＋现有蝉妈妈数据入口；补30天教育直播数据快照验证。",
+      "actionReason": "入池依据不是大众热度，而是“高意图问题＋现有数据可直接回答”。承接成本低、转化链路短，适合L-B验证；证据不足以升级为行业趋势。",
+      "actionDetail": "GEO：回答“作业帮近期抖音直播数据怎么样”，至少给出近30天直播场次、观看/销量趋势和数据日期；同时对比3个教育类账号，避免用单场直播下结论。\n产品承接：正文直接链接蝉妈妈直播榜/直播间详情，并写清登录后可查看的指标。\n品牌矩阵：只在公众号或产品号发1条“如何查询教育直播数据”的方法型内容，不用“作业帮爆了”等热点口吻。\n验证：观察7天AI引用、产品点击和注册；没有新增需求就停止，不扩大投放。",
+      "evidence": "平台：AIDSO｜页面：实时搜索（账号内查询记录）\n记录：2026-07-15 13:36:29，热度79、引用网站39、文章79\nURL：https://geo.aidso.com/question\n平台：蝉妈妈｜页面：今日直播榜/直播间详情\n记录：作业帮官方旗舰店AI学习机P60直播条目（7月15日17:00观察）\nURL：https://www.chanmama.com/liveRank/Yc74U2U_mIsfV5HINq5-lL9Nt9MXlzmj.html",
+      "departments": "内容/GEO主责；数据、产品市场、热点运营协作",
+      "deadline": "2026-07-16T12:00:00.000Z",
+      "notRecommended": "不把单条账号记录写成全网趋势；不付费发稿、不投广告、不新开发产品。",
+      "sourceLinks": [
+        {
+          "label": "核心来源",
+          "domain": "geo.aidso.com",
+          "url": "https://geo.aidso.com/question"
+        },
+        {
+          "label": "补充来源 1",
+          "domain": "chanmama.com",
+          "url": "https://www.chanmama.com/liveRank/"
+        },
+        {
+          "label": "补充来源 2",
+          "domain": "chanmama.com",
+          "url": "https://www.chanmama.com/liveRank/Yc74U2U_mIsfV5HINq5-lL9Nt9MXlzmj.html"
+        }
+      ],
+      "status": "待执行",
+      "risk": "低风险",
+      "natural": "通过",
+      "owner": "内容/GEO负责人",
+      "monitor": "AI引用率、蝉妈妈落地页点击、教育类查询覆盖、注册",
+      "actions": [
+        {
+          "hotspotId": "HT-20260715-006",
+          "actionType": "GEO内容",
+          "task": "回答作业帮近期抖音直播表现，并明确数据日期与口径",
+          "owner": "内容/GEO",
+          "collaborators": "数据、产品市场",
+          "deadline": "2026-07-16T12:00:00.000Z",
+          "deliverable": "1篇数据问答",
+          "acceptance": "至少3个可核验指标并链向产品",
+          "stopCondition": "数据权限不足则只发方法论",
+          "status": "待开始"
+        },
+        {
+          "hotspotId": "HT-20260715-006",
+          "actionType": "承接优化",
+          "task": "检查相关蝉妈妈数据页标题、摘要和注册入口",
+          "owner": "产品市场",
+          "collaborators": "产品、内容/GEO",
+          "deadline": "2026-07-16T18:00:00.000Z",
+          "deliverable": "页面改进清单",
+          "acceptance": "入口可达、埋点存在、答案可引用",
+          "stopCondition": "不改动核心产品逻辑",
+          "status": "待开始"
+        }
+      ],
+      "totalScore": 79,
+      "initialValue": 4,
+      "finalValue": 3,
+      "grade": "L-B｜低成本跟进",
+      "gradeCode": "B",
+      "followDecision": "低成本跟进",
+      "downgradeReason": "信源封顶",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 3,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 2,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 4,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 5,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 3,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 5,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 4,
+        "evidence": 3,
+        "type": 5,
+        "core": 4,
+        "risk": 5,
+        "window": 5,
+        "preparation": 5
+      }
+    },
+    {
+      "id": "HT-20260715-007",
+      "foundAt": "2026-07-15 17:20",
+      "name": "阿里领投AI视频公司，资本继续集中AI视频赛道",
+      "type": "T-B｜产品能力扩展",
+      "sourceLevel": "E2｜可靠媒体",
+      "publishedAt": "2026-07-15 16:02",
+      "signal": "36氪文章称爱诗科技累计完成29.8亿元C轮融资，产品含PixVerse与拍我AI。",
+      "uncertainty": "转载自创投日报，无公司公告直链；金额和行业融资数据需回到官方公告复核。",
+      "recommended": "GEO低成本解读＋品牌矩阵，聚焦电商视频素材生产；发布前复核官方来源。",
+      "departments": "内容/GEO主责；产品、品牌、热点运营协作",
+      "deadline": "2026-07-16T18:00:00.000Z",
+      "notRecommended": "不因融资新闻立项产品、不投广告、不付费发稿。",
+      "sourceLinks": [
+        {
+          "label": "核心来源",
+          "domain": "36kr.com",
+          "url": "https://www.36kr.com/p/3896548137469574"
+        }
+      ],
+      "status": "待复核后执行",
+      "risk": "低风险",
+      "natural": "通过",
+      "owner": "内容/GEO负责人",
+      "monitor": "文章UV、AI问题覆盖/引用、工具页点击、试用",
+      "actions": [
+        {
+          "hotspotId": "HT-20260715-007",
+          "actionType": "低成本内容",
+          "task": "复核AI视频融资官方来源后，写电商素材生产影响短稿",
+          "owner": "内容/GEO",
+          "collaborators": "产品、品牌",
+          "deadline": "2026-07-16T18:00:00.000Z",
+          "deliverable": "短稿＋来源表",
+          "acceptance": "融资事实有官方或第二独立来源",
+          "stopCondition": "无复核证据则不发布金额",
+          "status": "待复核"
+        }
+      ],
+      "totalScore": 63,
+      "initialValue": 3,
+      "finalValue": 3,
+      "grade": "L-B｜低成本跟进",
+      "gradeCode": "B",
+      "followDecision": "低成本跟进",
+      "downgradeReason": "分数决定",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 3,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 3,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 3,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 2,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 4,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 3,
+        "evidence": 3,
+        "type": 5,
+        "core": 3,
+        "risk": 5,
+        "window": 5,
+        "preparation": 5
+      }
+    },
+    {
+      "id": "HT-20260715-008",
+      "foundAt": "2026-07-15 17:20",
+      "name": "AI漫剧以低成本和高供给进入增长期",
+      "type": "T-B｜产品能力扩展",
+      "sourceLevel": "E2｜可靠媒体",
+      "publishedAt": "2026-07-15",
+      "signal": "人人都是产品经理文章称红果榜单AI漫剧占比上升，并引用QuestMobile/DataEye多组增长数据。",
+      "uncertainty": "原始榜单/报告无直链；播放增量、市场规模、成本和投流数据必须二次核验。",
+      "recommended": "GEO趋势问答＋品牌矩阵小样；用蝉妈妈数据验证AI短剧/漫剧相关账号与商品增长。",
+      "departments": "内容/GEO主责；数据、产品、热点运营协作",
+      "deadline": "2026-07-16T18:00:00.000Z",
+      "notRecommended": "数据未复核前不发权威行业稿、不投广告、不开发功能。",
+      "sourceLinks": [
+        {
+          "label": "核心来源",
+          "domain": "woshipm.com",
+          "url": "https://www.woshipm.com/ai/6429518.html"
+        }
+      ],
+      "status": "待复核后执行",
+      "risk": "低风险",
+      "natural": "通过",
+      "owner": "内容/GEO负责人",
+      "monitor": "数据复核率、文章UV、AI引用、相关账号/商品访问",
+      "actions": [
+        {
+          "hotspotId": "HT-20260715-008",
+          "actionType": "数据验证",
+          "task": "回查QuestMobile/DataEye/榜单原始材料，并用蝉妈妈数据找相关账号/商品信号",
+          "owner": "数据",
+          "collaborators": "内容/GEO",
+          "deadline": "2026-07-17T12:00:00.000Z",
+          "deliverable": "证据核验表",
+          "acceptance": "核心数字至少两条可靠来源",
+          "stopCondition": "无法复核则只做观察",
+          "status": "待复核"
+        },
+        {
+          "hotspotId": "HT-20260715-008",
+          "actionType": "内容测试",
+          "task": "通过核验后发布1条AI漫剧与电商内容生产的低成本测试",
+          "owner": "内容/GEO",
+          "collaborators": "品牌",
+          "deadline": "2026-07-17T18:00:00.000Z",
+          "deliverable": "单渠道测试稿",
+          "acceptance": "点击/收藏达到账号近30日中位数",
+          "stopCondition": "低于中位数不扩量",
+          "status": "待复核"
+        }
+      ],
+      "totalScore": 65,
+      "initialValue": 3,
+      "finalValue": 3,
+      "grade": "L-B｜低成本跟进",
+      "gradeCode": "B",
+      "followDecision": "低成本跟进",
+      "downgradeReason": "分数决定",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 3,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 3,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 2,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 4,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 3,
+        "evidence": 3,
+        "type": 5,
+        "core": 3,
+        "risk": 5,
+        "window": 5,
+        "preparation": 5
+      }
+    },
+    {
+      "id": "HT-20260715-009",
+      "foundAt": "2026-07-15 17:20",
+      "name": "半年快递业务量超1000亿，电商竞争转向效率与体验",
+      "type": "T-C｜垂直行业趋势",
+      "sourceLevel": "E2｜可靠媒体",
+      "publishedAt": "2026-07-14",
+      "signal": "文章引用国家邮政局监测数据，并用多年零售额/快递量粗算客单价下降。",
+      "uncertainty": "官方公告无直链；电商件占比、客单价和“天花板”是作者口径/推演，不能写成官方结论。",
+      "recommended": "GEO数据稿＋品牌矩阵；用蝉妈妈类目/客单/销量数据验证“效率竞争”结论。",
+      "departments": "内容/GEO主责；数据、品牌、热点运营协作",
+      "deadline": "2026-07-17T12:00:00.000Z",
+      "notRecommended": "未完成内部数据验证前，不发新闻稿、不投广告、不做结论式传播。",
+      "sourceLinks": [
+        {
+          "label": "核心来源",
+          "domain": "woshipm.com",
+          "url": "https://www.woshipm.com/it/6428924.html"
+        }
+      ],
+      "status": "待复核后执行",
+      "risk": "低风险",
+      "natural": "通过",
+      "owner": "内容/GEO负责人",
+      "monitor": "数据验证项、报告UV、下载/注册、AI引用率",
+      "actions": [
+        {
+          "hotspotId": "HT-20260715-009",
+          "actionType": "数据稿",
+          "task": "用蝉妈妈类目销量、客单和商家效率数据验证“效率竞争”",
+          "owner": "数据",
+          "collaborators": "内容/GEO、品牌",
+          "deadline": "2026-07-17T12:00:00.000Z",
+          "deliverable": "验证表＋稿件提纲",
+          "acceptance": "作者推演与官方数据明确分开",
+          "stopCondition": "无内部数据不发结论稿",
+          "status": "待开始"
+        }
+      ],
+      "totalScore": 69,
+      "initialValue": 3,
+      "finalValue": 3,
+      "grade": "L-B｜低成本跟进",
+      "gradeCode": "B",
+      "followDecision": "低成本跟进",
+      "downgradeReason": "分数决定",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 3,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 4,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 4,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 2,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 3,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 4,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 3,
+        "evidence": 3,
+        "type": 5,
+        "core": 4,
+        "risk": 5,
+        "window": 5,
+        "preparation": 5
+      }
+    },
+    {
+      "id": "HT-20260715-010",
+      "foundAt": "2026-07-15 17:02",
+      "name": "“发布/分享混淆品牌信息”处置细则征求意见",
+      "type": "T-A｜业务强相关",
+      "sourceLevel": "E3｜官方一手",
+      "publishedAt": "2026-07-14 11:55:36",
+      "signal": "拟覆盖直播中断、购物车下架、佣金冻结，严重时永久关闭商品分享功能。",
+      "uncertainty": "正文征集期写7/14-7/15，但页面倒计时显示仍有5天18小时，截止期限冲突。",
+      "recommended": "先核对征集期与最终规则；仅准备内部风险提示，不对外定性。",
+      "actionReason": "页面截止时间存在冲突，而且内容仍处于征求意见阶段。先核验能避免把未生效规则写成已生效要求，造成合规误导。",
+      "actionDetail": "事实核验：保存正文和倒计时截图，向平台规则入口核对征集截止时间，并确认是否已发布最终版。\n内部提示：法务/风险整理1页说明，只写“拟议内容、可能影响、待确认项”，不得写成已生效处罚。\n对外预案：只有最终规则发布后，才制作1篇规则解读和1张达人自查卡；若仍是意见稿，只在内部更新状态。\n监测：每天检查页面状态；截止时间冲突未解决前不做GEO外发、品牌矩阵或召回。",
+      "evidence": "平台：抖店学习中心（抖音电商官方）\n页面：关于修订《【发布/分享混淆品牌信息】处置细则》的意见征集通知\nURL：https://school.jinritemai.com/doudian/web/articlev0/aJnVwyc63XRF",
+      "departments": "热点运营主责；法务/风险、内容协作",
+      "deadline": "2026-07-16T10:00:00.000Z",
+      "notRecommended": "不付费发稿、不投广告、不召回、不按已生效规则发布。",
+      "sourceLinks": [
+        {
+          "label": "核心来源",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/aJnVwyc63XRF"
+        }
+      ],
+      "status": "观察/待核验",
+      "risk": "中风险-待审核",
+      "natural": "通过",
+      "owner": "热点运营负责人",
+      "monitor": "征集期限、最终规则状态、受影响创作者范围",
+      "actions": [
+        {
+          "hotspotId": "HT-20260715-010",
+          "actionType": "风险核验",
+          "task": "核对意见征集截止时间和最终规则状态",
+          "owner": "热点运营",
+          "collaborators": "法务/风险",
+          "deadline": "2026-07-16T10:00:00.000Z",
+          "deliverable": "核验记录",
+          "acceptance": "页面冲突有明确解释",
+          "stopCondition": "未核实前不外发",
+          "status": "观察"
+        }
+      ],
+      "totalScore": 75,
+      "initialValue": 4,
+      "finalValue": 2,
+      "grade": "L-C｜轻量测试/观察",
+      "gradeCode": "C",
+      "followDecision": "测试/观察",
+      "downgradeReason": "风险封顶",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 3,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 4,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 5,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 3,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 2,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 2,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 4,
+        "evidence": 5,
+        "type": 5,
+        "core": 4,
+        "risk": 2,
+        "window": 2,
+        "preparation": 5
+      }
+    },
+    {
+      "id": "HT-20260715-011",
+      "foundAt": "2026-07-15 17:02",
+      "name": "河蟹/蟹卡季节性规则与10万元体验保证金预警",
+      "type": "T-C｜垂直行业趋势",
+      "sourceLevel": "E3｜官方一手",
+      "publishedAt": "2026-07-09至07-10；征集截至07-16/17",
+      "signal": "季节性爆品类目拟调整开通/关闭标准，部分河蟹类目拟收10万元体验保证金并接入卡券系统。",
+      "uncertainty": "不是今日发布，且仍处意见征集期；窗口很短，最终规则可能变化。",
+      "recommended": "监测类目商家/商品量并做内部提醒；等待最终规则后再决定公开内容。",
+      "departments": "热点运营主责；生鲜类目运营、数据、内容协作",
+      "deadline": "2026-07-16T10:00:00.000Z",
+      "notRecommended": "不做产品开发、广告、新闻稿或全量召回。",
+      "sourceLinks": [
+        {
+          "label": "核心来源",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/aJmYzDVDDZv1"
+        },
+        {
+          "label": "补充来源 1",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/aJnLC8iHYJY5"
+        },
+        {
+          "label": "补充来源 2",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/aJmYEvDXmwCK"
+        }
+      ],
+      "status": "观察",
+      "risk": "低风险",
+      "natural": "通过",
+      "owner": "热点运营专员",
+      "monitor": "最终规则、河蟹商家/商品量、搜索与咨询变化",
+      "actions": [
+        {
+          "hotspotId": "HT-20260715-011",
+          "actionType": "窗口监测",
+          "task": "在征集截止前核对河蟹类目商家量、商品量和最终规则",
+          "owner": "类目运营",
+          "collaborators": "数据、热点运营",
+          "deadline": "2026-07-16T10:00:00.000Z",
+          "deliverable": "影响清单",
+          "acceptance": "能识别受影响商家和最终规则",
+          "stopCondition": "规则仍未定则继续观察",
+          "status": "观察"
+        }
+      ],
+      "totalScore": 63,
+      "initialValue": 3,
+      "finalValue": 2,
+      "grade": "L-C｜轻量测试/观察",
+      "gradeCode": "C",
+      "followDecision": "测试/观察",
+      "downgradeReason": "窗口封顶",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 2,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 2,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 4,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 3,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 2,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 3,
+        "evidence": 5,
+        "type": 5,
+        "core": 3,
+        "risk": 5,
+        "window": 2,
+        "preparation": 5
+      }
+    },
+    {
+      "id": "HT-20260715-012",
+      "foundAt": "2026-07-15 17:26",
+      "name": "苹果AI国行/手机AI审批进入微博科技热搜",
+      "type": "T-D｜泛流量",
+      "sourceLevel": "E1｜站内热榜线索",
+      "publishedAt": "2026-07-15 17:26观察",
+      "signal": "微博科技榜可见Apple智能第2、苹果AI国行版已过审第3、华为苹果等7款手机AI获审批第6。",
+      "uncertainty": "热榜只证明讨论热度，不证明审批事实；本轮未取得官方公告或具体权威原文。",
+      "recommended": "持续观察并寻找官方原文；仅保留选题，不发布事实判断。",
+      "departments": "热点运营主责；内容/GEO知会",
+      "deadline": "2026-07-16T10:00:00.000Z",
+      "notRecommended": "不强行关联蝉妈妈，不发稿、不投广告、不开发产品、不召回。",
+      "sourceLinks": [
+        {
+          "label": "核心来源",
+          "domain": "s.weibo.com",
+          "url": "https://s.weibo.com/top/summary?cate=tech"
+        }
+      ],
+      "status": "观察",
+      "risk": "低风险",
+      "natural": "待确认",
+      "owner": "热点运营专员",
+      "monitor": "官方来源是否出现、热榜持续时间、自然业务提问量",
+      "actions": [
+        {
+          "hotspotId": "HT-20260715-012",
+          "actionType": "事实核验",
+          "task": "只寻找监管或厂商官方原文，确认手机AI审批事实",
+          "owner": "热点运营",
+          "collaborators": "内容/GEO",
+          "deadline": "2026-07-16T10:00:00.000Z",
+          "deliverable": "官方来源链接",
+          "acceptance": "取得官方原文",
+          "stopCondition": "只有热搜或转述则不发布",
+          "status": "观察"
+        }
+      ],
+      "totalScore": 57,
+      "initialValue": 3,
+      "finalValue": 2,
+      "grade": "L-C｜轻量测试/观察",
+      "gradeCode": "C",
+      "followDecision": "测试/观察",
+      "downgradeReason": "信源封顶",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 2,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 2,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 1,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 1,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 4,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 3,
+        "evidence": 2,
+        "type": 2,
+        "core": 3,
+        "risk": 5,
+        "window": 5,
+        "preparation": 5
+      }
+    }
+  ],
+  "actions": [
+    {
+      "hotspotId": "HT-20260715-001",
+      "actionType": "GEO内容",
+      "task": "完成技术服务费规则解读，列出结算基数、渠道补充费和商家自查问题",
+      "owner": "内容/GEO",
+      "collaborators": "热点运营、数据",
+      "deadline": "2026-07-15T20:00:00.000Z",
+      "deliverable": "1篇规则稿＋5个问答",
+      "acceptance": "事实100%对应官方原文；至少1个注册/咨询入口",
+      "stopCondition": "发现口径冲突立即停发",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260715-001",
+      "actionType": "产品评估",
+      "task": "评估现有数据能否在2-3天内做费率查询/计算器，不承诺开发",
+      "owner": "产品",
+      "collaborators": "数据、热点运营",
+      "deadline": "2026-07-16T12:00:00.000Z",
+      "deliverable": "一页可行性结论",
+      "acceptance": "字段、工期、埋点、负责人齐全",
+      "stopCondition": "超过3天或缺核心字段转专题页",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260715-001",
+      "actionType": "新闻稿预案",
+      "task": "基于官方规则和蝉妈妈数据准备行业影响稿提纲，审核后再决定付费发布",
+      "owner": "品牌PR",
+      "collaborators": "数据、内容",
+      "deadline": "2026-07-16T16:00:00.000Z",
+      "deliverable": "稿件提纲＋数据需求",
+      "acceptance": "至少1项独家数据和法务审核",
+      "stopCondition": "无独家数据则不发",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260715-002",
+      "actionType": "GEO内容",
+      "task": "制作食品标签整改清单和8月3日时间表",
+      "owner": "内容/GEO",
+      "collaborators": "类目运营、热点运营",
+      "deadline": "2026-07-16T12:00:00.000Z",
+      "deliverable": "清单＋问答",
+      "acceptance": "覆盖适用类目、处罚、整改入口",
+      "stopCondition": "无法确认类目范围则暂缓",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260715-002",
+      "actionType": "数据补数",
+      "task": "估算受影响食品商品/商家量和近30天销量",
+      "owner": "数据",
+      "collaborators": "类目运营",
+      "deadline": "2026-07-16T15:00:00.000Z",
+      "deliverable": "影响量级表",
+      "acceptance": "口径、时间窗、样本范围可追溯",
+      "stopCondition": "数据覆盖不足只标样本",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260715-002",
+      "actionType": "召回评估",
+      "task": "仅评估向食品商家定向站内提醒，不直接上线",
+      "owner": "用户运营",
+      "collaborators": "产品、热点运营",
+      "deadline": "2026-07-17T12:00:00.000Z",
+      "deliverable": "人群与频控方案",
+      "acceptance": "人群准确、入口明确、频控通过",
+      "stopCondition": "无法精准圈人则取消",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260715-003",
+      "actionType": "GEO内容",
+      "task": "解释体验分阶段、千川投放门槛和受影响动作",
+      "owner": "内容/GEO",
+      "collaborators": "跨境运营",
+      "deadline": "2026-07-16T12:00:00.000Z",
+      "deliverable": "规则解读＋检查表",
+      "acceptance": "不把未知千川分数写成事实",
+      "stopCondition": "门槛未核实则删具体分数",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260715-003",
+      "actionType": "定向触达评估",
+      "task": "梳理全球购存量用户并设计精准提醒",
+      "owner": "用户运营",
+      "collaborators": "数据、热点运营",
+      "deadline": "2026-07-17T12:00:00.000Z",
+      "deliverable": "人群包需求＋文案",
+      "acceptance": "只触达全球购相关用户",
+      "stopCondition": "圈选误差高则取消",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260715-004",
+      "actionType": "低成本内容",
+      "task": "更新跨境品牌准入和推广限制清单",
+      "owner": "内容/GEO",
+      "collaborators": "跨境运营",
+      "deadline": "2026-07-16T16:00:00.000Z",
+      "deliverable": "1页清单",
+      "acceptance": "品牌、限制动作、来源可查",
+      "stopCondition": "清单无法持续维护则不做专题",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260715-005",
+      "actionType": "快速提醒",
+      "task": "面向受灾地区商家更新发货/售后豁免口径",
+      "owner": "用户运营",
+      "collaborators": "客服、热点运营",
+      "deadline": "2026-07-15T18:30:00.000Z",
+      "deliverable": "客服话术＋单条自媒体",
+      "acceptance": "地区、订单范围、申诉路径准确",
+      "stopCondition": "区域名单更新即替换旧文",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260715-006",
+      "actionType": "GEO内容",
+      "task": "回答作业帮近期抖音直播表现，并明确数据日期与口径",
+      "owner": "内容/GEO",
+      "collaborators": "数据、产品市场",
+      "deadline": "2026-07-16T12:00:00.000Z",
+      "deliverable": "1篇数据问答",
+      "acceptance": "至少3个可核验指标并链向产品",
+      "stopCondition": "数据权限不足则只发方法论",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260715-006",
+      "actionType": "承接优化",
+      "task": "检查相关蝉妈妈数据页标题、摘要和注册入口",
+      "owner": "产品市场",
+      "collaborators": "产品、内容/GEO",
+      "deadline": "2026-07-16T18:00:00.000Z",
+      "deliverable": "页面改进清单",
+      "acceptance": "入口可达、埋点存在、答案可引用",
+      "stopCondition": "不改动核心产品逻辑",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260715-007",
+      "actionType": "低成本内容",
+      "task": "复核AI视频融资官方来源后，写电商素材生产影响短稿",
+      "owner": "内容/GEO",
+      "collaborators": "产品、品牌",
+      "deadline": "2026-07-16T18:00:00.000Z",
+      "deliverable": "短稿＋来源表",
+      "acceptance": "融资事实有官方或第二独立来源",
+      "stopCondition": "无复核证据则不发布金额",
+      "status": "待复核"
+    },
+    {
+      "hotspotId": "HT-20260715-008",
+      "actionType": "数据验证",
+      "task": "回查QuestMobile/DataEye/榜单原始材料，并用蝉妈妈数据找相关账号/商品信号",
+      "owner": "数据",
+      "collaborators": "内容/GEO",
+      "deadline": "2026-07-17T12:00:00.000Z",
+      "deliverable": "证据核验表",
+      "acceptance": "核心数字至少两条可靠来源",
+      "stopCondition": "无法复核则只做观察",
+      "status": "待复核"
+    },
+    {
+      "hotspotId": "HT-20260715-008",
+      "actionType": "内容测试",
+      "task": "通过核验后发布1条AI漫剧与电商内容生产的低成本测试",
+      "owner": "内容/GEO",
+      "collaborators": "品牌",
+      "deadline": "2026-07-17T18:00:00.000Z",
+      "deliverable": "单渠道测试稿",
+      "acceptance": "点击/收藏达到账号近30日中位数",
+      "stopCondition": "低于中位数不扩量",
+      "status": "待复核"
+    },
+    {
+      "hotspotId": "HT-20260715-009",
+      "actionType": "数据稿",
+      "task": "用蝉妈妈类目销量、客单和商家效率数据验证“效率竞争”",
+      "owner": "数据",
+      "collaborators": "内容/GEO、品牌",
+      "deadline": "2026-07-17T12:00:00.000Z",
+      "deliverable": "验证表＋稿件提纲",
+      "acceptance": "作者推演与官方数据明确分开",
+      "stopCondition": "无内部数据不发结论稿",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260715-010",
+      "actionType": "风险核验",
+      "task": "核对意见征集截止时间和最终规则状态",
+      "owner": "热点运营",
+      "collaborators": "法务/风险",
+      "deadline": "2026-07-16T10:00:00.000Z",
+      "deliverable": "核验记录",
+      "acceptance": "页面冲突有明确解释",
+      "stopCondition": "未核实前不外发",
+      "status": "观察"
+    },
+    {
+      "hotspotId": "HT-20260715-011",
+      "actionType": "窗口监测",
+      "task": "在征集截止前核对河蟹类目商家量、商品量和最终规则",
+      "owner": "类目运营",
+      "collaborators": "数据、热点运营",
+      "deadline": "2026-07-16T10:00:00.000Z",
+      "deliverable": "影响清单",
+      "acceptance": "能识别受影响商家和最终规则",
+      "stopCondition": "规则仍未定则继续观察",
+      "status": "观察"
+    },
+    {
+      "hotspotId": "HT-20260715-012",
+      "actionType": "事实核验",
+      "task": "只寻找监管或厂商官方原文，确认手机AI审批事实",
+      "owner": "热点运营",
+      "collaborators": "内容/GEO",
+      "deadline": "2026-07-16T10:00:00.000Z",
+      "deliverable": "官方来源链接",
+      "acceptance": "取得官方原文",
+      "stopCondition": "只有热搜或转述则不发布",
+      "status": "观察"
+    }
+  ],
+  "scanLogs": [
+    {
+      "platform": "抖店学习中心",
+      "url": "https://school.jinritemai.com/doudian/web/home",
+      "status": "已覆盖",
+      "evidenceLevel": "E3",
+      "page": "规则中心＋具体规则正文",
+      "observedAt": "2026-07-15",
+      "signal": "核到技术服务费、食品标签、全球购、灾害豁免等近期官方更新",
+      "relatedIds": "001-005、010-011",
+      "limitation": "部分页面是旧公告置顶或仅元数据刷新，已排除",
+      "nextAction": "每2小时扫规则列表；具体页再核正文生效日"
+    },
+    {
+      "platform": "抖音规则中心",
+      "url": "https://www.douyin.com/rule/main",
+      "status": "已覆盖",
+      "evidenceLevel": "E3",
+      "page": "规则首页＋社区自律公约",
+      "observedAt": "最新可见2024-12-24",
+      "signal": "未发现近72小时公告",
+      "relatedIds": "无",
+      "limitation": "首页并非抖店电商规则主入口",
+      "nextAction": "每日1次；规则热点优先看抖店学习中心"
+    },
+    {
+      "platform": "AIDSO",
+      "url": "https://geo.aidso.com/question",
+      "status": "部分覆盖",
+      "evidenceLevel": "E2",
+      "page": "账号内实时搜索记录",
+      "observedAt": "2026-07-15 13:36:29",
+      "signal": "核到作业帮抖音直播数据查询，热度79、引用网站39、文章79",
+      "relatedIds": "006",
+      "limitation": "不是全站热榜；出现滑块安全验证",
+      "nextAction": "不绕过验证；下次人工完成验证后再看新增记录"
+    },
+    {
+      "platform": "蝉妈妈",
+      "url": "https://www.chanmama.com/douyin/",
+      "status": "已覆盖",
+      "evidenceLevel": "E2",
+      "page": "首页热点、直播、达人和商品榜",
+      "observedAt": "2026-07-15 17:51",
+      "signal": "核到平台热点；今日直播榜可见作业帮官方旗舰店；昨日涨粉榜陈泽-增46.5万；AI图像视频课昨日销量10万+",
+      "relatedIds": "006",
+      "limitation": "公开首页可读；完整榜单和动态明细仍需登录导出",
+      "nextAction": "沿用安全文本提取；深层榜单由人工登录后导出"
+    },
+    {
+      "platform": "小红书",
+      "url": "https://www.xiaohongshu.com/explore",
+      "status": "未覆盖",
+      "evidenceLevel": "-",
+      "page": "发现页",
+      "observedAt": "2026-07-15 18:04",
+      "signal": "安全限制：error_code=300012，IP存在风险",
+      "relatedIds": "无",
+      "limitation": "无站内内容可采",
+      "nextAction": "更换可靠网络后人工进入，不绕过风控"
+    },
+    {
+      "platform": "抖音创作者指数",
+      "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
+      "status": "部分覆盖",
+      "evidenceLevel": "E1",
+      "page": "登录页公开热点榜/上升榜/直播榜",
+      "observedAt": "2026-07-15 18:04",
+      "signal": "热点榜TOP3为暑假学习做饭成果展、感受云南菌子的N种打开方式、上半年中国拿下N个世界第一",
+      "relatedIds": "无",
+      "limitation": "公共榜单可读；详细创作者指数仍需扫码登录",
+      "nextAction": "继续扫公开榜；人工登录后再导出指数与24小时增速"
+    },
+    {
+      "platform": "36氪",
+      "url": "https://www.36kr.com/information/AI/",
+      "status": "已覆盖",
+      "evidenceLevel": "E2",
+      "page": "AI频道＋具体文章页",
+      "observedAt": "2026-07-15 16:02",
+      "signal": "核到AI视频融资与能力趋势",
+      "relatedIds": "007",
+      "limitation": "文章无公司公告直链，不能升级E3",
+      "nextAction": "每日2次；文章事实需回官方原文"
+    },
+    {
+      "platform": "人人都是产品经理",
+      "url": "https://www.woshipm.com/",
+      "status": "已覆盖",
+      "evidenceLevel": "E2",
+      "page": "首页/AI/行业文章具体页",
+      "observedAt": "2026-07-15",
+      "signal": "核到AI漫剧与电商物流趋势文章",
+      "relatedIds": "008-009",
+      "limitation": "部分数据只列来源名称，无原始报告直链",
+      "nextAction": "每日2次；二级数据必须复核"
+    },
+    {
+      "platform": "百度指数",
+      "url": "https://index.baidu.com/v2/index.html#/",
+      "status": "已覆盖",
+      "evidenceLevel": "E1",
+      "page": "指数首页/最新动态入口",
+      "observedAt": "2026-07-15 18:04",
+      "signal": "未登录首页仅见雀骨、宋威龙、赵露思等词，无业务候选",
+      "relatedIds": "无",
+      "limitation": "没有关键词时间序列，不能评分涨速",
+      "nextAction": "人工登录后只查已入池关键词，不用百度搜索页"
+    },
+    {
+      "platform": "微博科技热搜",
+      "url": "https://s.weibo.com/top/summary?cate=tech",
+      "status": "已覆盖",
+      "evidenceLevel": "E1",
+      "page": "科技热搜榜",
+      "observedAt": "2026-07-15 17:26",
+      "signal": "Apple智能#2、苹果AI国行#3、7款手机AI审批#6",
+      "relatedIds": "012",
+      "limitation": "热榜只证明讨论热度，不证明事实",
+      "nextAction": "每小时观察；必须补官方原文才升级"
+    }
+  ],
+  "boundaryText": "",
+  "sourceBrief": ""
+}

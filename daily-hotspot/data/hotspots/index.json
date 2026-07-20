@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "module": "hotspots",
+  "latest": "2026-07-20",
+  "dates": [
+    {
+      "date": "2026-07-20",
+      "observedAt": "2026-07-20 10:23",
+      "total": 9,
+      "priority": 2,
+      "gradeCounts": {
+        "S": 0,
+        "A": 2,
+        "B": 5,
+        "C": 0,
+        "D": 2
+      },
+      "sourceWorkbook": "热点追踪日报_20260720.xlsx"
+    },
+    {
+      "date": "2026-07-17",
+      "observedAt": "2026-07-17 10:13",
+      "total": 5,
+      "priority": 2,
+      "gradeCounts": {
+        "S": 0,
+        "A": 2,
+        "B": 2,
+        "C": 1,
+        "D": 0
+      },
+      "sourceWorkbook": "热点追踪日报_20260717.xlsx"
+    },
+    {
+      "date": "2026-07-16",
+      "observedAt": "2026-07-16 11:16",
+      "total": 12,
+      "priority": 5,
+      "gradeCounts": {
+        "S": 0,
+        "A": 5,
+        "B": 5,
+        "C": 1,
+        "D": 1
+      },
+      "sourceWorkbook": "热点追踪日报_20260716.xlsx"
+    },
+    {
+      "date": "2026-07-15",
+      "observedAt": "2026-07-15 18:04",
+      "total": 12,
+      "priority": 3,
+      "gradeCounts": {
+        "S": 0,
+        "A": 3,
+        "B": 6,
+        "C": 3,
+        "D": 0
+      },
+      "sourceWorkbook": "热点追踪日报_20260715_首页优化版.xlsx"
+    }
+  ]
+}
