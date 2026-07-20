@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>蝉妈妈 GEO TOP0/TOP1 第二轮复测</title>
+  <script src="./dashboard-data.js"></script>
+  <style>
+    :root {
+      --canvas: #f4f6f8;
+      --surface: #ffffff;
+      --ink: #18212b;
+      --muted: #64707d;
+      --line: #d7dde3;
+      --line-strong: #aeb8c2;
+      --nav: #17212b;
+      --blue: #2457a7;
+      --blue-soft: #e8f0fb;
+      --green: #16734a;
+      --green-soft: #e5f5ec;
+      --amber: #a75b10;
+      --amber-soft: #fff0dc;
+      --red: #ad3030;
+      --red-soft: #fbe8e8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 0;
+    }
+    a { color: inherit; }
+    header {
+      background: var(--nav);
+      color: #f8fafc;
+      border-bottom: 4px solid #d59a27;
+    }
+    .header-inner, .content {
+      width: min(1600px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+    .header-inner { padding: 22px 0 0; }
+    .header-kicker {
+      color: #9fb4c8;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    h1 {
+      margin: 7px 0 8px;
+      font-size: 32px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      color: #c8d2dc;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .tabs {
+      display: flex;
+      gap: 2px;
+      margin-top: 18px;
+    }
+    .tab {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      border: 1px solid transparent;
+      border-bottom: 0;
+      padding: 9px 14px;
+      color: #dce5ed;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .tab.active {
+      background: var(--canvas);
+      color: var(--ink);
+      border-color: #4b5967;
+    }
+    .content { padding: 22px 0 48px; }
+    .brief {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      padding: 18px 0 22px;
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .brief-label { color: var(--blue); font-size: 12px; font-weight: 800; }
+    .brief-title { margin: 6px 0; font-size: 22px; line-height: 1.35; font-weight: 800; }
+    .brief-note { color: var(--muted); line-height: 1.6; }
+    .brief-total { text-align: right; font-variant-numeric: tabular-nums; }
+    .brief-total strong { display: block; font-size: 34px; }
+    .brief-total span { color: var(--muted); font-size: 12px; }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 18px 0 4px;
+    }
+    .kpi {
+      min-height: 112px;
+      padding: 14px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+    .kpi-label { color: var(--muted); font-size: 12px; font-weight: 700; }
+    .kpi-value { margin-top: 10px; font-size: 27px; font-weight: 800; font-variant-numeric: tabular-nums; }
+    .kpi-sub { margin-top: 7px; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    section {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    h2 { margin: 0; font-size: 19px; letter-spacing: 0; }
+    .section-note { color: var(--muted); font-size: 12px; text-align: right; }
+    .progress-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .progress-item { min-width: 0; }
+    .progress-top { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+    .progress-name { font-weight: 750; }
+    .progress-number { color: var(--muted); font-variant-numeric: tabular-nums; }
+    .track { height: 12px; background: #dfe4e9; border: 1px solid #c8d0d8; overflow: hidden; }
+    .fill { height: 100%; background: var(--blue); }
+    .fill.green { background: var(--green); }
+    .fill.amber { background: var(--amber); }
+    .source-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .source-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--green);
+      border-radius: 6px;
+      padding: 15px;
+    }
+    .source-title { font-size: 16px; font-weight: 800; }
+    .source-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+    .source-metric strong { display: block; font-size: 20px; font-variant-numeric: tabular-nums; }
+    .source-metric span { color: var(--muted); font-size: 11px; line-height: 1.4; }
+    .split-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; }
+    .split-grid > * { min-width: 0; }
+    .bar-list { display: grid; gap: 10px; }
+    .bar-row { display: grid; grid-template-columns: minmax(120px, 180px) minmax(100px, 1fr) 72px; gap: 10px; align-items: center; }
+    .bar-label { overflow-wrap: anywhere; }
+    .bar-track { height: 14px; background: #e1e6eb; border: 1px solid #ccd4dc; }
+    .bar-value { height: 100%; background: var(--blue); }
+    .bar-value.green { background: var(--green); }
+    .bar-value.amber { background: var(--amber); }
+    .bar-count { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+    .filters {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(150px, 1fr));
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    label { display: grid; gap: 5px; color: var(--muted); font-size: 12px; font-weight: 700; }
+    select, input {
+      width: 100%;
+      min-height: 38px;
+      border: 1px solid var(--line-strong);
+      border-radius: 5px;
+      background: var(--surface);
+      color: var(--ink);
+      padding: 8px 10px;
+      font: inherit;
+    }
+    .table-wrap { width: 100%; overflow-x: auto; border: 1px solid var(--line); background: var(--surface); }
+    table { width: 100%; border-collapse: collapse; table-layout: auto; }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid #e7ebef;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      line-height: 1.55;
+    }
+    th { background: #edf1f4; color: #3b4651; font-size: 12px; position: sticky; top: 0; z-index: 1; }
+    tr:last-child td { border-bottom: 0; }
+    .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .question-cell { min-width: 310px; }
+    .answer-cell { min-width: 440px; max-width: 760px; white-space: pre-wrap; }
+    .url-cell { min-width: 340px; white-space: pre-wrap; }
+    .status {
+      display: inline-block;
+      border-radius: 4px;
+      padding: 3px 7px;
+      font-size: 12px;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+    .status.ok { background: var(--green-soft); color: var(--green); }
+    .status.warn { background: var(--amber-soft); color: var(--amber); }
+    .status.bad { background: var(--red-soft); color: var(--red); }
+    .status.muted { background: #e8edf1; color: #52606d; }
+    .empty { padding: 28px 12px; color: var(--muted); text-align: center; }
+    .delta-up { color: var(--green); font-weight: 700; }
+    .delta-down { color: var(--red); font-weight: 700; }
+    .delta-flat { color: var(--muted); }
+    .footnote { margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .pager {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .icon-button {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--line-strong);
+      border-radius: 5px;
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .icon-button:disabled { cursor: default; opacity: .4; }
+    [hidden] { display: none !important; }
+    @media (max-width: 980px) {
+      .header-inner, .content { width: min(100% - 24px, 1600px); }
+      h1 { font-size: 25px; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .progress-grid, .source-grid, .split-grid { grid-template-columns: 1fr; }
+      .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .source-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 620px) {
+      .brief { grid-template-columns: 1fr; }
+      .brief-total { text-align: left; }
+      .kpi-grid, .filters { grid-template-columns: 1fr; }
+      .tabs { overflow-x: auto; }
+      .tab { white-space: nowrap; }
+      .bar-row { grid-template-columns: 110px minmax(80px, 1fr) 62px; }
+    }
+  </style>
+</head>
+<body data-mode="round2">
+  <header>
+    <div class="header-inner">
+      <div class="header-kicker">GEO / TOP0 + TOP1 / 豆包网页版快速模式</div>
+      <h1 id="pageTitle">蝉妈妈 GEO TOP0/TOP1 第二轮复测</h1>
+      <div class="meta" id="metaLine"></div>
+      <nav class="tabs" aria-label="仪表盘视图">
+        <a class="tab" id="round2Tab" href="#">第二轮复测</a>
+        <a class="tab" id="compareTab" href="#">两周对比</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="brief">
+      <div>
+        <div class="brief-label" id="briefLabel"></div>
+        <div class="brief-title" id="briefTitle"></div>
+        <div class="brief-note" id="briefNote"></div>
+      </div>
+      <div class="brief-total"><strong id="briefTotal">0/282</strong><span>有效样本 / 计划样本</span></div>
+    </div>
+
+    <div class="kpi-grid" id="kpiGrid"></div>
+
+    <section>
+      <div class="section-head">
+        <h2>采样与来源采集进度</h2>
+        <div class="section-note">Day 1 与 Day 2 必须分两个自然日完成</div>
+      </div>
+      <div class="progress-grid" id="progressGrid"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>官网引用对比</h2>
+        <div class="section-note">AIDSO 详情页真实引用：蝉妈妈 Open、蝉妈妈运营圈、飞瓜官网；不代表网站后台访问量</div>
+      </div>
+      <div class="source-grid" id="sourceGrid"></div>
+      <div class="split-grid" style="margin-top:20px">
+        <div>
+          <h2 style="font-size:15px;margin-bottom:12px">蝉妈妈栏目引用组合</h2>
+          <div class="bar-list" id="sourceDistribution"></div>
+        </div>
+        <div>
+          <h2 style="font-size:15px;margin-bottom:12px">高频引用页面</h2>
+          <div class="table-wrap"><table><thead><tr><th>栏目</th><th>页面</th><th class="num">次数</th></tr></thead><tbody id="sourcePages"></tbody></table></div>
+        </div>
+      </div>
+      <div class="footnote">基线 576 条未保存引用 URL，基线引用状态固定显示“未采集”，不计算虚假环比。</div>
+    </section>
+
+    <section id="compareSection">
+      <div class="section-head">
+        <h2>半达标问题两周变化</h2>
+        <div class="section-note">达标门槛：提及 ≥ 5/6、首推 ≥ 4/6、优势表达 ≥ 4/6</div>
+      </div>
+      <div class="split-grid">
+        <div><div class="bar-list" id="statusBars"></div></div>
+        <div><div class="bar-list" id="aggregateBars"></div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>官方工具、蝉妈妈与第三方竞品</h2>
+        <div class="section-note">同一样本内按工具首次出现顺序计算排名</div>
+      </div>
+      <div class="table-wrap"><table><thead><tr><th>阵营</th><th class="num">提及次数</th><th class="num">首推次数</th><th class="num">前 3 次数</th><th class="num">平均排名</th></tr></thead><tbody id="groupTable"></tbody></table></div>
+      <div class="table-wrap" style="margin-top:12px"><table><thead><tr><th>品牌/工具</th><th>阵营</th><th class="num">提及次数</th><th class="num">提及率</th><th class="num">首推次数</th><th class="num">前 3 次数</th><th class="num">平均排名</th></tr></thead><tbody id="brandTable"></tbody></table></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>逐问题对比</h2>
+        <div class="section-note" id="questionCount"></div>
+      </div>
+      <div class="filters">
+        <label>关键词<input id="questionSearch" type="search" placeholder="搜索关键词或问题"></label>
+        <label>优先级<select id="priorityFilter"><option value="">全部</option></select></label>
+        <label>分类<select id="categoryFilter"><option value="">全部</option></select></label>
+        <label>第二轮状态<select id="statusFilter"><option value="">全部</option></select></label>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>问题</th><th>关键词</th><th>状态变化</th><th class="num">提及</th><th class="num">首推</th><th class="num">前 3</th><th class="num">优势表达</th><th class="num">平均排名</th><th>当前缺口</th></tr></thead>
+          <tbody id="questionTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>第二轮样本明细</h2>
+        <div class="section-note" id="sampleCount"></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>样本</th><th>采样节奏</th><th>问题</th><th>状态</th><th>蝉妈妈表现</th><th>引用源</th><th>完整回答</th></tr></thead>
+          <tbody id="sampleTable"></tbody>
+        </table>
+      </div>
+      <div class="pager">
+        <button class="icon-button" id="samplePrev" type="button" title="上一页" aria-label="上一页">‹</button>
+        <span id="samplePage"></span>
+        <button class="icon-button" id="sampleNext" type="button" title="下一页" aria-label="下一页">›</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const data = window.GEO_ROUND2_DASHBOARD;
+      if (!data) {
+        document.body.innerHTML = '<div class="empty">仪表盘数据未加载</div>';
+        return;
+      }
+      const mode = data.mode || document.body.dataset.mode;
+      const summary = data.summary || {};
+      const esc = value => String(value ?? '').replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+      const pct = value => value === null || value === undefined || value === '' ? '待完成' : `${Number(value).toFixed(1)}%`;
+      const number = value => value === null || value === undefined || value === '' ? '—' : Number(value).toLocaleString('zh-CN');
+      const rank = value => value === null || value === undefined || value === '' ? '—' : Number(value).toFixed(2);
+      const statusClass = value => value === '达标' || value === '通过' ? 'ok' : value === '不达标' || value === '采样失败' || value === '不合格' ? 'bad' : value === '数据不足' || value === '待采样' ? 'muted' : 'warn';
+      const status = value => `<span class="status ${statusClass(value)}">${esc(value)}</span>`;
+      const delta = value => {
+        if (value === null || value === undefined || value === '') return '<span class="delta-flat">待完成</span>';
+        const numeric = Number(value);
+        const css = numeric > 0 ? 'delta-up' : numeric < 0 ? 'delta-down' : 'delta-flat';
+        return `<span class="${css}">${numeric > 0 ? '+' : ''}${numeric.toFixed(1)}</span>`;
+      };
+      const makeSiblingHref = target => {
+        const path = window.location.pathname;
+        if (path.includes('top01-round2') || path.includes('top01-two-week-compare')) {
+          return target === 'round2' ? '../top01-round2/' : '../top01-two-week-compare/';
+        }
+        return target === 'round2' ? '../web/index.html' : '../compare/index.html';
+      };
+
+      document.getElementById('round2Tab').href = makeSiblingHref('round2');
+      document.getElementById('compareTab').href = makeSiblingHref('compare');
+      document.getElementById(mode === 'compare' ? 'compareTab' : 'round2Tab').classList.add('active');
+      document.getElementById('metaLine').innerHTML = [
+        `批次：${esc(summary.batch_id)}`,
+        `基线：${esc(summary.baseline_batch_id)}`,
+        `生成：${esc(data.meta.generated_at)}`,
+        `平台：${esc(summary.platform)}`
+      ].map(item => `<span>${item}</span>`).join('');
+
+      document.getElementById('briefLabel').textContent = mode === 'compare' ? '两周状态验证' : '第二轮独立批次';
+      document.getElementById('briefTitle').textContent = mode === 'compare'
+        ? `${summary.converted_question_count || 0} 个半达标问题已转为达标`
+        : `${summary.valid_sample_count || 0} 条有效样本已写入第二轮数据`;
+      document.getElementById('briefNote').textContent = mode === 'compare'
+        ? `仅比较冻结的 ${summary.target_question_count || 0} 个原问题，问题文本保持不变。`
+        : `计划 ${summary.planned_sample_count || 0} 条，Day 1 和 Day 2 各 ${Math.floor((summary.planned_sample_count || 0) / 2)} 条。`;
+      document.getElementById('briefTotal').textContent = `${summary.valid_sample_count || 0}/${summary.planned_sample_count || 0}`;
+
+      const kpis = mode === 'compare' ? [
+        ['转为达标', number(summary.converted_question_count), `完成六次复测 ${number(summary.completed_question_count)} 个问题`],
+        ['两周转达标率', pct(summary.conversion_rate_pct), '分母仅含完成六次有效复测的问题'],
+        ['仍半达标', number(summary.still_half_pass_count), '蝉妈妈有提及但稳定门槛未全部达到'],
+        ['退化为不达标', number(summary.failed_question_count), '六次复测中提及少于 3 次'],
+        ['蝉妈妈提及率', pct(summary.chanmama_mention_rate_pct), `${number(summary.chanmama_mention_count)} 次提及`],
+        ['蝉妈妈首推率', pct(summary.chanmama_first_rate_pct), `${number(summary.chanmama_first_count)} 次真实首推`],
+        ['前 3 推荐率', pct(summary.chanmama_top3_rate_pct), `${number(summary.chanmama_top3_count)} 次进入前 3`],
+        ['优势表达率', pct(summary.chanmama_advantage_rate_pct), `${number(summary.chanmama_advantage_count)} 次明确归属蝉妈妈`]
+      ] : [
+        ['有效样本', `${number(summary.valid_sample_count)}/${number(summary.planned_sample_count)}`, pct(summary.completion_rate_pct)],
+        ['Day 1', `${number(summary.day1_valid_count)}/${number((summary.planned_sample_count || 0) / 2)}`, '每题第 1—3 遍'],
+        ['Day 2', `${number(summary.day2_valid_count)}/${number((summary.planned_sample_count || 0) / 2)}`, '下一自然日完成第 4—6 遍'],
+        ['来源采集覆盖率', pct(summary.source_coverage_rate_pct), `失败 ${number(summary.source_failed_count)}，待采集 ${number(summary.source_pending_count)}`],
+        ['蝉妈妈提及率', pct(summary.chanmama_mention_rate_pct), `${number(summary.chanmama_mention_count)} 次提及`],
+        ['蝉妈妈首推率', pct(summary.chanmama_first_rate_pct), `${number(summary.chanmama_first_count)} 次真实首推`],
+        ['前 3 推荐率', pct(summary.chanmama_top3_rate_pct), `${number(summary.chanmama_top3_count)} 次进入前 3`],
+        ['优势表达率', pct(summary.chanmama_advantage_rate_pct), `${number(summary.chanmama_advantage_count)} 次明确优势`]
+      ];
+      document.getElementById('kpiGrid').innerHTML = kpis.map(([label, value, sub]) => `<div class="kpi"><div class="kpi-label">${esc(label)}</div><div class="kpi-value">${esc(value)}</div><div class="kpi-sub">${esc(sub)}</div></div>`).join('');
+
+      const progressRows = [
+        ['Day 1', summary.day1_valid_count || 0, (summary.planned_sample_count || 0) / 2, 'blue'],
+        ['Day 2', summary.day2_valid_count || 0, (summary.planned_sample_count || 0) / 2, 'amber'],
+        ['引用源采集', summary.source_complete_count || 0, summary.valid_sample_count || 0, 'green']
+      ];
+      document.getElementById('progressGrid').innerHTML = progressRows.map(([label, value, total, color]) => {
+        const width = total ? Math.min(100, value * 100 / total) : 0;
+        return `<div class="progress-item"><div class="progress-top"><span class="progress-name">${esc(label)}</span><span class="progress-number">${number(value)}/${number(total)}</span></div><div class="track"><div class="fill ${color}" style="width:${width}%"></div></div></div>`;
+      }).join('');
+
+      document.getElementById('sourceGrid').innerHTML = (data.source_summary || []).map(row => `<div class="source-item"><div class="source-title">${esc(row.source_label)}</div><div class="source-metrics"><div class="source-metric"><strong>${number(row.citation_count)}</strong><span>引用链接次数</span></div><div class="source-metric"><strong>${number(row.cited_sample_count)}</strong><span>引用样本数</span></div><div class="source-metric"><strong>${pct(row.sample_citation_rate_pct)}</strong><span>样本引用率</span></div><div class="source-metric"><strong>${number(row.cited_question_count)}</strong><span>引用问题数</span></div><div class="source-metric"><strong>${pct(row.question_citation_rate_pct)}</strong><span>完整问题覆盖率</span></div><div class="source-metric"><strong>${number(row.unique_page_count)}</strong><span>唯一页面数</span></div></div></div>`).join('');
+
+      const renderBars = (elementId, rows, labelKey, valueKey, color = '') => {
+        const max = Math.max(1, ...rows.map(row => Number(row[valueKey] || 0)));
+        document.getElementById(elementId).innerHTML = rows.map(row => `<div class="bar-row"><div class="bar-label">${esc(row[labelKey])}</div><div class="bar-track"><div class="bar-value ${color}" style="width:${Number(row[valueKey] || 0) * 100 / max}%"></div></div><div class="bar-count">${number(row[valueKey])}</div></div>`).join('') || '<div class="empty">暂无数据</div>';
+      };
+      renderBars('sourceDistribution', data.source_distribution || [], 'distribution', 'sample_count', 'green');
+      renderBars('statusBars', data.status_counts || [], 'status', 'count', 'amber');
+
+      const pages = data.source_pages || [];
+      document.getElementById('sourcePages').innerHTML = pages.length ? pages.slice(0, 20).map(row => `<tr><td>${esc(row.source_label)}</td><td class="url-cell"><a href="${esc(row.normalized_url)}" target="_blank" rel="noreferrer">${esc(row.source_title || row.normalized_url)}</a><br>${esc(row.normalized_url)}</td><td class="num">${number(row.citation_count)}</td></tr>`).join('') : '<tr><td colspan="3" class="empty">尚未采集到三类目标来源引用</td></tr>';
+
+      const comparisons = data.questions || [];
+      const aggregate = name => {
+        const baselineCount = comparisons.reduce((sum, row) => sum + Number(row[`baseline_${name}_count`] || 0), 0);
+        const currentCount = comparisons.reduce((sum, row) => sum + Number(row[`round2_${name}_count`] || 0), 0);
+        return { label: ({mention:'提及次数',first:'首推次数',top3:'前 3 次数',advantage:'优势表达次数'})[name], value: currentCount, baseline: baselineCount };
+      };
+      const aggregates = ['mention','first','top3','advantage'].map(aggregate);
+      const maxAggregate = Math.max(1, ...aggregates.flatMap(row => [row.value, row.baseline]));
+      document.getElementById('aggregateBars').innerHTML = aggregates.map(row => `<div class="bar-row"><div class="bar-label">${esc(row.label)}</div><div><div class="bar-track"><div class="bar-value" style="width:${row.baseline * 100 / maxAggregate}%"></div></div><div class="bar-track" style="margin-top:3px"><div class="bar-value green" style="width:${row.value * 100 / maxAggregate}%"></div></div></div><div class="bar-count">${number(row.baseline)}→${number(row.value)}</div></div>`).join('');
+
+      const groupRows = data.brand_group_comparison || [];
+      document.getElementById('groupTable').innerHTML = groupRows.length ? groupRows.map(row => `<tr><td>${esc(row.brand_group_name)}</td><td class="num">${number(row.mention_count)}</td><td class="num">${number(row.first_count)}</td><td class="num">${number(row.top3_count)}</td><td class="num">${rank(row.avg_rank)}</td></tr>`).join('') : '<tr><td colspan="5" class="empty">尚无有效样本</td></tr>';
+      const brandRows = data.brand_comparison || [];
+      document.getElementById('brandTable').innerHTML = brandRows.length ? brandRows.map(row => `<tr><td>${esc(row.brand)}</td><td>${esc(row.brand_group)}</td><td class="num">${number(row.mention_count)}</td><td class="num">${pct(row.mention_rate_pct)}</td><td class="num">${number(row.first_count)}</td><td class="num">${number(row.top3_count)}</td><td class="num">${rank(row.avg_rank)}</td></tr>`).join('') : '<tr><td colspan="7" class="empty">尚无有效样本</td></tr>';
+
+      const fillSelect = (id, values) => {
+        const select = document.getElementById(id);
+        [...new Set(values.filter(Boolean))].sort().forEach(value => select.insertAdjacentHTML('beforeend', `<option value="${esc(value)}">${esc(value)}</option>`));
+      };
+      fillSelect('priorityFilter', comparisons.map(row => row.priority));
+      fillSelect('categoryFilter', comparisons.map(row => row.category));
+      fillSelect('statusFilter', comparisons.map(row => row.round2_status));
+
+      const renderQuestions = () => {
+        const query = document.getElementById('questionSearch').value.trim().toLowerCase();
+        const priority = document.getElementById('priorityFilter').value;
+        const category = document.getElementById('categoryFilter').value;
+        const state = document.getElementById('statusFilter').value;
+        const rows = comparisons.filter(row => (!query || `${row.keyword} ${row.question_text}`.toLowerCase().includes(query)) && (!priority || row.priority === priority) && (!category || row.category === category) && (!state || row.round2_status === state));
+        document.getElementById('questionCount').textContent = `${rows.length}/${comparisons.length} 个问题`;
+        document.getElementById('questionTable').innerHTML = rows.length ? rows.map(row => `<tr><td class="question-cell"><strong>${esc(row.question_id)}</strong><br>${esc(row.question_text)}</td><td>${esc(row.keyword)}<br>${esc(row.priority)} · ${esc(row.category)}</td><td>${status(row.round2_status)}<br>${esc(row.status_transition)}</td><td class="num">${number(row.baseline_mention_count)}→${number(row.round2_mention_count)}<br>${delta(row.mention_rate_pct_delta)} pp</td><td class="num">${number(row.baseline_first_count)}→${number(row.round2_first_count)}<br>${delta(row.first_rate_pct_delta)} pp</td><td class="num">${number(row.baseline_top3_count)}→${number(row.round2_top3_count)}<br>${delta(row.top3_rate_pct_delta)} pp</td><td class="num">${number(row.baseline_advantage_count)}→${number(row.round2_advantage_count)}<br>${delta(row.advantage_rate_pct_delta)} pp</td><td class="num">${rank(row.baseline_avg_rank)}→${rank(row.round2_avg_rank)}<br>${delta(row.avg_rank_delta)}</td><td>${esc(row.main_gap)}</td></tr>`).join('') : '<tr><td colspan="9" class="empty">没有符合筛选条件的问题</td></tr>';
+      };
+      ['questionSearch','priorityFilter','categoryFilter','statusFilter'].forEach(id => document.getElementById(id).addEventListener(id === 'questionSearch' ? 'input' : 'change', renderQuestions));
+      renderQuestions();
+
+      const samples = (data.samples || []).filter(row => row.answer_text);
+      const samplePageSize = 10;
+      let samplePageIndex = 0;
+      document.getElementById('sampleCount').textContent = `${samples.length} 条已写入记录`;
+      const renderSamples = () => {
+        const totalPages = Math.max(1, Math.ceil(samples.length / samplePageSize));
+        samplePageIndex = Math.min(samplePageIndex, totalPages - 1);
+        const pageRows = samples.slice(samplePageIndex * samplePageSize, (samplePageIndex + 1) * samplePageSize);
+        document.getElementById('sampleTable').innerHTML = pageRows.length ? pageRows.map(row => {
+          const capture = row.source_capture_status || '待采集';
+          const performance = `提及：${row.mentioned_chanmama || '—'}\n首推：${row.chanmama_is_first || '—'}\n排名：${row.chanmama_rank || '—'}\n优势：${row.chanmama_advantage_explicit || '—'}`;
+          const sourceCounts = `Open ${row.open_source_count || 0} / 运营圈 ${row.yunyingquan_source_count || 0} / 飞瓜官网 ${row.feigua_source_count || 0}`;
+          return `<tr><td>${esc(row.sample_id)}<br>${esc(row.sample_date)}</td><td>${esc(row.sampling_cadence)}</td><td class="question-cell">${esc(row.question_text)}</td><td>${status(capture === 'captured' || capture === 'no_references' ? '通过' : capture === 'failed' ? '采样失败' : '待采样')}</td><td style="white-space:pre-wrap">${esc(performance)}</td><td class="url-cell">${esc(sourceCounts)}<br>${esc(row.source_urls || '无匹配引用')}<br>状态：${esc(capture)}</td><td class="answer-cell">${esc(row.answer_text)}</td></tr>`;
+        }).join('') : '<tr><td colspan="7" class="empty">第二轮尚未开始采样</td></tr>';
+        document.getElementById('samplePage').textContent = `${samples.length ? samplePageIndex + 1 : 0}/${samples.length ? totalPages : 0}`;
+        document.getElementById('samplePrev').disabled = samplePageIndex === 0;
+        document.getElementById('sampleNext').disabled = samplePageIndex >= totalPages - 1 || !samples.length;
+      };
+      document.getElementById('samplePrev').addEventListener('click', () => { samplePageIndex -= 1; renderSamples(); });
+      document.getElementById('sampleNext').addEventListener('click', () => { samplePageIndex += 1; renderSamples(); });
+      renderSamples();
+    })();
+  </script>
+</body>
+</html>
