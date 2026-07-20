@@ -18,7 +18,7 @@ import {
 
 export const hotspotViews = [
   { id: "overview", label: "热点总览" },
-  { id: "meeting", label: "会议视图" },
+  { id: "meeting", label: "热点视图" },
   { id: "execution", label: "执行清单" },
   { id: "scan", label: "平台扫描" },
   { id: "archive", label: "每日归档" },

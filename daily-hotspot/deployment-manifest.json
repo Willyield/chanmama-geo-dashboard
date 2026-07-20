@@ -1,8 +1,8 @@
 {
   "title": "每日热点库与电商圈层行业活动追踪",
-  "generatedAt": "2026-07-20T10:12:05.261Z",
+  "generatedAt": "2026-07-20T10:37:20.434Z",
   "fileCount": 18,
-  "totalBytes": 1274140,
+  "totalBytes": 1273928,
   "files": [
     {
       "path": "assets/app.js",
@@ -22,7 +22,7 @@
     {
       "path": "assets/hotspots.js",
       "bytes": 34845,
-      "sha256": "dc252b642a1716bf573e50cb3c09fa60ac415f0ff38f88b5d515e4e58c66de78"
+      "sha256": "25b071814b38d0cba9ee1541cf279b3d024c5f70942617d238613ec300f8a332"
     },
     {
       "path": "assets/styles.css",
@@ -42,17 +42,17 @@
     {
       "path": "data/events/2026-07-20.json",
       "bytes": 186631,
-      "sha256": "7c9ff69243ac026119195e2ec08fc7359b0c3984275c585c0ee29d43a8aa777e"
+      "sha256": "2f50a580bbecb61634495dfa692c46507106bed99b68e8f9ffc44b8300f57408"
     },
     {
       "path": "data/events/index.json",
       "bytes": 266,
-      "sha256": "46cb372c7dd6b15e865157f621483290918351945dd829ed57ed7b6c94d3e1ce"
+      "sha256": "7f4dbfb83a5bf517d09c85c7912c09b73b9e82c1fb09be7e712e184f080a8375"
     },
     {
       "path": "data/events/latest.json",
       "bytes": 186631,
-      "sha256": "7c9ff69243ac026119195e2ec08fc7359b0c3984275c585c0ee29d43a8aa777e"
+      "sha256": "2f50a580bbecb61634495dfa692c46507106bed99b68e8f9ffc44b8300f57408"
     },
     {
       "path": "data/hotspots/2026-07-15.json",
@@ -71,23 +71,23 @@
     },
     {
       "path": "data/hotspots/2026-07-20.json",
-      "bytes": 107001,
-      "sha256": "a31f6f4c5a8db24e768593b9bfaa1ab07dece55a5b8a92c77bd2a1ba7a35455b"
+      "bytes": 106895,
+      "sha256": "b7d4bfdb8b20122045fff3669beee19f8947209de0785fe45a780f0c9ce6b29b"
     },
     {
       "path": "data/hotspots/index.json",
       "bytes": 1879,
-      "sha256": "b10e073efe0da430ed3e27ba34647968438c0f433b3e6fab445bcb4dc7a77b5a"
+      "sha256": "ba082b36145d385c43a735ba87354b4b9b623f4027d78a4d92179fe88ad6e960"
     },
     {
       "path": "data/hotspots/latest.json",
-      "bytes": 107001,
-      "sha256": "a31f6f4c5a8db24e768593b9bfaa1ab07dece55a5b8a92c77bd2a1ba7a35455b"
+      "bytes": 106895,
+      "sha256": "b7d4bfdb8b20122045fff3669beee19f8947209de0785fe45a780f0c9ce6b29b"
     },
     {
       "path": "data/manifest.json",
       "bytes": 294,
-      "sha256": "0b56f2b669a1c36c86805068d94d6242444d62a1466dd5c30695ade424e52363"
+      "sha256": "a28a419ef4149c36da4adb07b1bbf5a0e26d28511deb6d09ea7b1bf06861dbf7"
     },
     {
       "path": "index.html",
