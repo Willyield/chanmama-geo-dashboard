@@ -1,0 +1,5918 @@
+{
+  "schemaVersion": 1,
+  "module": "creators",
+  "date": "2026-07-21",
+  "observedAt": "2026-07-21T16:46:34.045+08:00",
+  "scheduledFor": "2026-07-21T16:00:00.000+08:00",
+  "publicationStatus": "TRIAL_PREVIEW",
+  "title": "抖音达人白名单库及热点判断",
+  "summary": {
+    "candidateCreators": 150,
+    "manualRound1Queue": 23,
+    "automatedGateFailed": 23,
+    "sampleInsufficient": 95,
+    "missingEvidence": 9,
+    "formalWhitelistA": 0,
+    "formalWhitelistB": 0,
+    "targetVideos": 622,
+    "successfulVideos": 53,
+    "failedVideos": 569,
+    "creatorsWithCurrentMetrics": 13,
+    "qualifiedTopics": 0,
+    "recommendations": 0,
+    "openConflicts": 3
+  },
+  "statusMessage": "试运行预览：150 位为候选池，23 位仅通过自动预筛；正式 A/B 白名单和已验证热点均为 0。",
+  "limitations": [
+    "抖音公开分享页在批量复取期间出现验证码中间页；622 条中仅 53 条成功，569 条当前值保持为空。",
+    "播放量在公开页不可用，全部保持 null，未估填。",
+    "逐视频真实基线时间跨度为 2026-07-20 17:06 至 2026-07-21 09:42，观察间隔为 7.07-23.67 小时，不能冒充统一 10:00-16:00 增速。",
+    "3 条作品出现收藏数 -1 的平台计数回落，已进入冲突队列，不按负增长处理。",
+    "尚未完成 Day 1 人工首审、20% 双人盲审、Day 7 复审和 5 个完整早期话题样本，因此正式白名单保持为 0。"
+  ],
+  "methodology": {
+    "admission": "D/M 与硬门槛决定达人准入；云图 Y 和星图 X 只做辅助排序，不能改变白名单结论。",
+    "video": "Q 独立判断单条视频是否超出本人和同行基线；单条高增长不等于达人合格或话题热点。",
+    "topic": "TP 独立判断跨账号扩散；FOLLOW_NOW 需 T+48h、3 个独立原创主体、2 个粉丝层级及最大主体贡献低于 60%。"
+  },
+  "sourceStatus": {
+    "scanStatus": "PUBLIC_REFETCH_STOPPED_PLATFORM_VERIFICATION",
+    "successfulVideos": 53,
+    "failedVideos": 569,
+    "captchaConfirmed": true,
+    "cookiesReadOrExported": false,
+    "valuesImputed": false
+  },
+  "audit": {
+    "snapshotSha256": "63a9971c846520d0ed2e6f8faa92b417c66a55402fa36663dc27769205b5bc7e",
+    "baselineObservationWindow": {
+      "start": "2026-07-20T17:06:21.759822+08:00",
+      "end": "2026-07-21T09:42:16.737888+08:00",
+      "complete": true
+    },
+    "snapshotRound": "DAY2_1600_PARTIAL_BASELINE_CORRECTED",
+    "correctedFromPriorSnapshot": true
+  },
+  "candidates": [
+    {
+      "id": "CR-001",
+      "rank": 1,
+      "nickname": "一龙·新媒体运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAiEpnguMmiYEp1k7Dkk51gME4CaaC6oShK0wa3v2jLbD6qmZEFMtVaD7MLrnaMLd5",
+      "accountKind": "personal_candidate",
+      "followers": 100,
+      "tracks": [
+        "短视频运营",
+        "增长转化"
+      ],
+      "videosLoaded": 36,
+      "profileVideoCards": 30,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 36,
+        "relevantRatio": 0.9722,
+        "corePracticeLowerBound": 0.1111,
+        "relatedVideos60d": 29,
+        "latestRelatedAgeDays": 0.72,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 36,
+        "successfulVideos": 1,
+        "validIncrements": 1,
+        "countDecreases": 0
+      },
+      "refetchStatus": "部分复取"
+    },
+    {
+      "id": "CR-002",
+      "rank": 2,
+      "nickname": "书亚-豪瑞电商主播培训",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAzboQOmi8YyJskxfO-M1KDwQtczVgpMgtn1hUNOza5T4",
+      "accountKind": "personal_candidate",
+      "followers": 31000,
+      "tracks": [
+        "直播运营",
+        "增长转化"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 20,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 16,
+        "relevantRatio": 0.9375,
+        "corePracticeLowerBound": 0.25,
+        "relatedVideos60d": 7,
+        "latestRelatedAgeDays": 10.65,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 21,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "验证码阻塞"
+    },
+    {
+      "id": "CR-003",
+      "rank": 3,
+      "nickname": "张振有点料",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAT0kVFmAtmcx84Iv_yBH4zkhwJnEF1bXAuvMd3GXojI0",
+      "accountKind": "personal_candidate",
+      "followers": 41000,
+      "tracks": [
+        "店铺与规则",
+        "直播运营"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 22,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 0.3889,
+        "corePracticeLowerBound": 0.0556,
+        "relatedVideos60d": 7,
+        "latestRelatedAgeDays": 3.54,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "relevant_ratio"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-004",
+      "rank": 4,
+      "nickname": "海来AI",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA8H76vrK7yHuhnLDHS1io1QicDtkcz1GuZ1m8kOaADSA",
+      "accountKind": "personal_candidate",
+      "followers": 4000,
+      "tracks": [
+        "短视频运营",
+        "直播运营",
+        "增长转化",
+        "电商 AI"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 13,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-005",
+      "rank": 5,
+      "nickname": "佳佳子自媒体",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAAVMSvDHZZLJ2Uabb-CY2QMxW2Qdc8pwVFM2_wPVuQTE",
+      "accountKind": "personal_candidate",
+      "followers": 415000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 21,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 0.4444,
+        "corePracticeLowerBound": 0.1111,
+        "relatedVideos60d": 8,
+        "latestRelatedAgeDays": 0.76,
+        "riskTermsDetected": [
+          "搬运"
+        ],
+        "automatedFailures": [
+          "relevant_ratio"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-006",
+      "rank": 6,
+      "nickname": "老朱叨叨",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA0WxBpTH93ySZQALw3UEv9dxsiopNQu-whTk-n5tg08k",
+      "accountKind": "personal_candidate",
+      "followers": 600,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 36,
+      "profileVideoCards": 30,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-007",
+      "rank": 7,
+      "nickname": "夏迎春",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA6_71dw-u6apbTcS6K5G7IvWy4KMxa8ZbxZM-Kt-2u7f0aoTqCuHqGpgYThaHgdEr",
+      "accountKind": "personal_candidate",
+      "followers": 200,
+      "tracks": [
+        "直播运营",
+        "增长转化"
+      ],
+      "videosLoaded": 22,
+      "profileVideoCards": 22,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-008",
+      "rank": 8,
+      "nickname": "海贼王的男人",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA4_zh4Bb0VrH419Ur0sKUoTUbtllA1yFswZqm074Ty_En01eGzihOHbDiKtkNxYTG",
+      "accountKind": "personal_candidate",
+      "followers": 5000,
+      "tracks": [
+        "短视频运营",
+        "直播运营",
+        "千川投放",
+        "增长转化"
+      ],
+      "videosLoaded": 20,
+      "profileVideoCards": 18,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 1,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 1,
+        "relatedVideos60d": 1,
+        "latestRelatedAgeDays": 49.58,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-009",
+      "rank": 9,
+      "nickname": "丰年Ai编导",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA9kg9vhIeXjKegcQP7RFEaioPq-h3W5JYfjl7zUZi2mM",
+      "accountKind": "personal_candidate",
+      "followers": 45000,
+      "tracks": [
+        "电商 AI"
+      ],
+      "videosLoaded": 20,
+      "profileVideoCards": 21,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 16,
+        "relevantRatio": 0.125,
+        "corePracticeLowerBound": 0.1875,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": 71.67,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-010",
+      "rank": 10,
+      "nickname": "隔壁小王",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAQeFnf2lgAvKCyW9HVrNKoY5kboRVNfTVdw3hMDLAfHA",
+      "accountKind": "personal_candidate",
+      "followers": 12000,
+      "tracks": [],
+      "videosLoaded": 21,
+      "profileVideoCards": 21,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 3,
+        "latestRelatedAgeDays": 46.7,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-011",
+      "rank": 11,
+      "nickname": "三农策划师-老孟（7月武汉课）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAYKFKUVpJI-1yvJCYqgsE1xj0pm_ALYb8xiP1idYA52E",
+      "accountKind": "personal_candidate",
+      "followers": 164000,
+      "tracks": [
+        "短视频运营",
+        "直播运营",
+        "增长转化"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 12,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.0556,
+        "relatedVideos60d": 18,
+        "latestRelatedAgeDays": 1.4,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 21,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "验证码阻塞"
+    },
+    {
+      "id": "CR-012",
+      "rank": 12,
+      "nickname": "马菲",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAanKExFJ7rHBI6CVYgr8iPz1gaSOUZhoL2o_dFnyufuA",
+      "accountKind": "personal_candidate",
+      "followers": 613000,
+      "tracks": [
+        "直播运营",
+        "增长转化"
+      ],
+      "videosLoaded": 36,
+      "profileVideoCards": 30,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 28,
+        "relevantRatio": 0.1786,
+        "corePracticeLowerBound": 0.1071,
+        "relatedVideos60d": 1,
+        "latestRelatedAgeDays": 46.68,
+        "riskTermsDetected": [
+          "躺赚"
+        ],
+        "automatedFailures": [
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-013",
+      "rank": 13,
+      "nickname": "抖百科",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAjGVFjhq3MOIUS4qlVQKisMppOsEtlldfG3VZUfvvPoE",
+      "accountKind": "personal_candidate",
+      "followers": 5000,
+      "tracks": [
+        "短视频运营",
+        "直播运营"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 30,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-014",
+      "rank": 14,
+      "nickname": "搞运营的阿连（7月28号分享会）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAIMdm08saks0qlQpKLEw8LWIoXPqOTbvUTvCRLlVLDHc",
+      "accountKind": "personal_candidate",
+      "followers": 33000,
+      "tracks": [
+        "短视频运营",
+        "千川投放",
+        "增长转化"
+      ],
+      "videosLoaded": 19,
+      "profileVideoCards": 20,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 7,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 3,
+        "latestRelatedAgeDays": 2.54,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "related_videos_60d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-015",
+      "rank": 15,
+      "nickname": "无忌",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAewiMNGy5sSg6SCLqWPP4BC9a3D3Ql5BxP1xq1RDZq-s",
+      "accountKind": "personal_candidate",
+      "followers": 78000,
+      "tracks": [],
+      "videosLoaded": 18,
+      "profileVideoCards": 30,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 3,
+        "relevantRatio": 0.3333,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 1,
+        "latestRelatedAgeDays": 35.94,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-016",
+      "rank": 16,
+      "nickname": "卡思运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAi5hBT7-KG6oYmzRoRcZg6IVY-_n3j4Hb_Laeo28wpWsZJO9_4Uh56RryprKeCTuZ",
+      "accountKind": "personal_candidate",
+      "followers": 114000,
+      "tracks": [
+        "千川投放",
+        "增长转化"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 30,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-017",
+      "rank": 17,
+      "nickname": "小三金",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA43bE0VY2CGMzXuez94pFw--VGK1aMwwJ_DRTsLlwYM_aehPNlji88ZFVLJNHM5st",
+      "accountKind": "personal_candidate",
+      "followers": 10000,
+      "tracks": [
+        "千川投放",
+        "增长转化"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 21,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-018",
+      "rank": 18,
+      "nickname": "周拾陆",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA4DUkPF9UWFfvVmOwkY-LL9r9jiCGn6NT9UHKkaO-eD-D95DCo6wKsaRQOMGEsDN_",
+      "accountKind": "personal_candidate",
+      "followers": 9000,
+      "tracks": [
+        "短视频运营",
+        "增长转化",
+        "电商 AI"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 21,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 0.1667,
+        "corePracticeLowerBound": 0.0556,
+        "relatedVideos60d": 3,
+        "latestRelatedAgeDays": 41.65,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-019",
+      "rank": 19,
+      "nickname": "Hello_程颖",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA7Q-sDM_EXyjma7je--CfV5TovAaP2Mt3-ul6I9Y5GJQ",
+      "accountKind": "personal_candidate",
+      "followers": 257000,
+      "tracks": [
+        "短视频运营",
+        "电商 AI"
+      ],
+      "videosLoaded": 19,
+      "profileVideoCards": 21,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 8,
+        "relevantRatio": 0.5,
+        "corePracticeLowerBound": 0.125,
+        "relatedVideos60d": 1,
+        "latestRelatedAgeDays": 39.45,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-020",
+      "rank": 20,
+      "nickname": "短视频投流老铁",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAB3XxL-87xg-7q59olKigMCMgR--W4MR8StzSH3Q0pgn9X2pz2zlRntUl4K_j7w6o",
+      "accountKind": "personal_candidate",
+      "followers": 4000,
+      "tracks": [
+        "短视频运营",
+        "千川投放"
+      ],
+      "videosLoaded": 33,
+      "profileVideoCards": 30,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-021",
+      "rank": 21,
+      "nickname": "电商工辑",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAABuEWnU-fcMIIhd3s6Ij2mceXRunyChVP-auWCkaJR5o",
+      "accountKind": "personal_candidate",
+      "followers": 75000,
+      "tracks": [
+        "店铺与规则"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 18,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-022",
+      "rank": 22,
+      "nickname": "Justin贾斯汀的电商日记",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAEK7dHjOJCCfiuppjT4l6cwKfLmcy73VPn-deOk8_FsXNwSbD0OX7BivxW4vVwMDn",
+      "accountKind": "personal_candidate",
+      "followers": 2000,
+      "tracks": [],
+      "videosLoaded": 21,
+      "profileVideoCards": 13,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-023",
+      "rank": 23,
+      "nickname": "商业小巨蛋",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAHdLS-2AW2epjzC_KsxD8016rEQLuIkNskVags9Oj6MQ",
+      "accountKind": "personal_candidate",
+      "followers": 528000,
+      "tracks": [],
+      "videosLoaded": 19,
+      "profileVideoCards": 0,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 5,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-024",
+      "rank": 24,
+      "nickname": "阿哲电商观",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAII5B0ddxlQ0evUiV4eoH4ZfS9v4q0lhXpnsh67W67gO2fz6wXyS7LfSGl9glDq3b",
+      "accountKind": "personal_candidate",
+      "followers": 200,
+      "tracks": [
+        "店铺与规则"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 0,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.1667,
+        "relatedVideos60d": 18,
+        "latestRelatedAgeDays": 3.09,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 21,
+        "successfulVideos": 1,
+        "validIncrements": 1,
+        "countDecreases": 0
+      },
+      "refetchStatus": "部分复取"
+    },
+    {
+      "id": "CR-025",
+      "rank": 25,
+      "nickname": "巨量课堂运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAPIZvnJBEb6XlzGLbcRMpQa99Spfw2ceJN-K3h259ulo",
+      "accountKind": "personal_candidate",
+      "followers": 200,
+      "tracks": [
+        "短视频运营",
+        "直播运营",
+        "千川投放",
+        "增长转化"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 0,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-026",
+      "rank": 26,
+      "nickname": "那村儿风起",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAATvJaZ0aXEd6tq0Z8KAyHfOoDth5874PJqjEALi4PuR4",
+      "accountKind": "personal_candidate",
+      "followers": 10000,
+      "tracks": [
+        "直播运营",
+        "千川投放",
+        "增长转化"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 17,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 1,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 1,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": 82.57,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-027",
+      "rank": 27,
+      "nickname": "抖音广告投放-大東",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAUwEU02SdwqMzkRUPp6W1CYr16Nlm7Y6z_lFgvz5xW5d1pG54IXHZBPlisOqRqTvH",
+      "accountKind": "personal_candidate",
+      "followers": 5000,
+      "tracks": [
+        "千川投放"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 22,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 11,
+        "relevantRatio": 0.6364,
+        "corePracticeLowerBound": 0.5455,
+        "relatedVideos60d": 3,
+        "latestRelatedAgeDays": 27.66,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "related_videos_60d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-028",
+      "rank": 28,
+      "nickname": "咪咪糖自媒体",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA_TJIAbZ4Y-W3izmxFr-tuZ_jLF5E5FBwOXM0fC5JkBI",
+      "accountKind": "personal_candidate",
+      "followers": 195000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 19,
+      "profileVideoCards": 19,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-029",
+      "rank": 29,
+      "nickname": "🔥杨老师",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAaT_yDiWkqjfM1BHqFg2O4daNAOULan44NoVgMDuO4uo",
+      "accountKind": "personal_candidate",
+      "followers": 11000,
+      "tracks": [
+        "短视频运营",
+        "直播运营",
+        "增长转化"
+      ],
+      "videosLoaded": 19,
+      "profileVideoCards": 16,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 1,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 1,
+        "latestRelatedAgeDays": 53.95,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-030",
+      "rank": 30,
+      "nickname": "森桢出海电商",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAc9VOLiCAPbSCWLURcOBqv5AFyT8yh1lHE5MVXXsZ0oNuG24DpDRfPVvoE-oBk7ls",
+      "accountKind": "personal_candidate",
+      "followers": 51000,
+      "tracks": [],
+      "videosLoaded": 20,
+      "profileVideoCards": 20,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-031",
+      "rank": 31,
+      "nickname": "牧爷聊抖音",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAcxowyLcsfRDM8x4_qTNfDtz2UCN5pGnlsfrB8d5Xf7k",
+      "accountKind": "personal_candidate",
+      "followers": 100,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 9,
+      "profileVideoCards": 9,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-032",
+      "rank": 32,
+      "nickname": "沙师兄Ai知识付费",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAnQ5jSkrbANCG1ZS4mVwtmseFhV5qBT5oTBBbXi4wy_4",
+      "accountKind": "personal_candidate",
+      "followers": 20000,
+      "tracks": [
+        "电商 AI"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 22,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-033",
+      "rank": 33,
+      "nickname": "三七运营日志",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAo-eH_RAaBoDRqss9fZc1M7QGeLEAJ6UaAk8FP54y7AF3p8pERouPBxoK84yjP7nF",
+      "accountKind": "personal_candidate",
+      "followers": 40000,
+      "tracks": [
+        "直播运营",
+        "增长转化"
+      ],
+      "videosLoaded": 19,
+      "profileVideoCards": 20,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-034",
+      "rank": 34,
+      "nickname": "魔鬼陈-默尘直播电商（专注精细化运营）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAArM--lON69HgwzA3FmLp4eR1F5-qWwOHWr0tZSPSbc7rimK-DUKKL5OIu0JgGcK16",
+      "accountKind": "personal_candidate",
+      "followers": 60000,
+      "tracks": [
+        "店铺与规则",
+        "短视频运营",
+        "直播运营",
+        "选品供应链",
+        "增长转化"
+      ],
+      "videosLoaded": 19,
+      "profileVideoCards": 20,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-035",
+      "rank": 35,
+      "nickname": "小马哥(擎动未来)",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAsIswjGhmTpdzJxGcAt5euIF4I_JN9ERt_F8Yhk1wpt62kO5uUxkIBpWMC98in-nj",
+      "accountKind": "personal_candidate",
+      "followers": 351000,
+      "tracks": [],
+      "videosLoaded": 16,
+      "profileVideoCards": 17,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 3,
+        "relevantRatio": 0.6667,
+        "corePracticeLowerBound": 0.3333,
+        "relatedVideos60d": 1,
+        "latestRelatedAgeDays": 48.73,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-036",
+      "rank": 36,
+      "nickname": "短视频小班班长",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAvOCCqDymP8jly9fFlFFDf4kQRb9hlhOJjGWyWs2JCRs",
+      "accountKind": "personal_candidate",
+      "followers": 1466000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 17,
+      "profileVideoCards": 18,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-037",
+      "rank": 37,
+      "nickname": "萌萌老师—汽车内容洞察",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAw6kFZ1rwYj4oYfaz3tm9JSnYFCRM_lmKAlNHKwoH49s",
+      "accountKind": "personal_candidate",
+      "followers": 33000,
+      "tracks": [
+        "短视频运营",
+        "直播运营",
+        "千川投放",
+        "增长转化"
+      ],
+      "videosLoaded": 20,
+      "profileVideoCards": 20,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-038",
+      "rank": 38,
+      "nickname": "米叔电商问答",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAwDnkAb9OajdLf8KM8jHEyB3Xtg0kHEEgOic_BRttOQ0",
+      "accountKind": "personal_candidate",
+      "followers": 105000,
+      "tracks": [],
+      "videosLoaded": 20,
+      "profileVideoCards": 21,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-039",
+      "rank": 39,
+      "nickname": "ai电商运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA1qisFWbEO5208EScYB1IN1gXXd4kUt5W2vWID4Usn7eCcyL66ixbWt3Mo4ae6m8b",
+      "accountKind": "personal_candidate",
+      "followers": 1173,
+      "tracks": [
+        "电商 AI"
+      ],
+      "videosLoaded": 12,
+      "profileVideoCards": 11,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 12,
+        "relevantRatio": 0.5,
+        "corePracticeLowerBound": 0.1667,
+        "relatedVideos60d": 6,
+        "latestRelatedAgeDays": 1.93,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-040",
+      "rank": 40,
+      "nickname": "飞瓜数据",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAOuBtbyLvEf4clLAX9m35HPXPRINCSEWoLHblgdJq9Jg",
+      "accountKind": "personal_candidate",
+      "followers": 90000,
+      "tracks": [
+        "data_tools"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 18,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-041",
+      "rank": 41,
+      "nickname": "玺承电商观察",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA-pWxEhrLfn5S6wdnm5b5KOHYOo-rO7KnnOhZqrcJ7O1wOJpDVwgI1_2zb5AW0HC8",
+      "accountKind": "personal_candidate",
+      "followers": 241000,
+      "tracks": [
+        "增长转化"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 22,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 16,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 4,
+        "latestRelatedAgeDays": 28.69,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "related_videos_60d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-042",
+      "rank": 42,
+      "nickname": "DOU+小课堂",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAvylG-MBd297Zv7TOljIKoUugsdJHByGiJR0jKXX8RNk",
+      "accountKind": "personal_candidate",
+      "followers": 3343000,
+      "tracks": [
+        "直播运营"
+      ],
+      "videosLoaded": 16,
+      "profileVideoCards": 2,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 16,
+        "relevantRatio": 0.8125,
+        "corePracticeLowerBound": 1,
+        "relatedVideos60d": 13,
+        "latestRelatedAgeDays": 7.65,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 16,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "验证码阻塞"
+    },
+    {
+      "id": "CR-043",
+      "rank": 43,
+      "nickname": "千川应用@卓卓说",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAPxLbAxOtN-ndNQxFxSX6ijSm7zOlXFW0yIh93t5Oksg",
+      "accountKind": "personal_candidate",
+      "followers": 65000,
+      "tracks": [
+        "千川投放"
+      ],
+      "videosLoaded": 13,
+      "profileVideoCards": 14,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-044",
+      "rank": 44,
+      "nickname": "抖店代运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA6xkf-We5nsA__McSFyl3yF_gbGhUYenb39Q3m_Gh-UU",
+      "accountKind": "needs_human_review",
+      "followers": 85000,
+      "tracks": [
+        "店铺与规则"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 17,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-045",
+      "rank": 45,
+      "nickname": "短视频运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAzEJ5KyO3z_x_NA0ucyQH0HMAZVyyAwllmtO8O0uEj0s",
+      "accountKind": "personal_candidate",
+      "followers": 104000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 0,
+      "profileVideoCards": 1,
+      "autoDisposition": "NO_MATCHED_API_EVIDENCE",
+      "dispositionLabel": "缺少匹配作品证据",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": null,
+        "relevantRatio": null,
+        "corePracticeLowerBound": null,
+        "relatedVideos60d": null,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": []
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-046",
+      "rank": 46,
+      "nickname": "义乌外贸全品类供应链",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAQH5FGm5ocRaQ2JCs9g_S4x-nWW51_rXzwejSUlrHxPs",
+      "accountKind": "personal_candidate",
+      "followers": 65000,
+      "tracks": [
+        "选品供应链"
+      ],
+      "videosLoaded": 20,
+      "profileVideoCards": 20,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 10,
+        "relevantRatio": 0.4,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": 61.55,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-047",
+      "rank": 47,
+      "nickname": "狼教授Ai电商",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAhmw95QlnEX2X0gGJUt-c0FDn6_dvWENVcxp7PR_nU2Q",
+      "accountKind": "personal_candidate",
+      "followers": 268000,
+      "tracks": [
+        "电商 AI"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 0,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.1111,
+        "relatedVideos60d": 18,
+        "latestRelatedAgeDays": 2.5,
+        "riskTermsDetected": [
+          "无货源"
+        ],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 21,
+        "successfulVideos": 2,
+        "validIncrements": 2,
+        "countDecreases": 0
+      },
+      "refetchStatus": "部分复取"
+    },
+    {
+      "id": "CR-048",
+      "rank": 48,
+      "nickname": "哈默",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAGRI4nTfziqusH5_HoDZcIrIYvZC8hoL5pwaNbmKwmhc",
+      "accountKind": "personal_candidate",
+      "followers": 75000,
+      "tracks": [
+        "data_tools"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 15,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-049",
+      "rank": 49,
+      "nickname": "天诺老吴企业流量增长",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAOlmedJoKcK3Tj2m9T0V9usp7pVmASPhLi4v5ItOhaq0",
+      "accountKind": "personal_candidate",
+      "followers": 1635000,
+      "tracks": [
+        "增长转化"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 1,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 0.2778,
+        "corePracticeLowerBound": 0.0556,
+        "relatedVideos60d": 5,
+        "latestRelatedAgeDays": 2.45,
+        "riskTermsDetected": [
+          "无货源"
+        ],
+        "automatedFailures": [
+          "relevant_ratio",
+          "related_videos_60d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-050",
+      "rank": 50,
+      "nickname": "交个朋友食品直播间",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAABWxzHmyaTcjM7T4O1SkyfZe2MNkknWP0_dced0n7Eco",
+      "accountKind": "personal_candidate",
+      "followers": 1512000,
+      "tracks": [
+        "直播运营"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 0,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 14,
+        "relevantRatio": 0.0714,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 1,
+        "latestRelatedAgeDays": 34.54,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-051",
+      "rank": 51,
+      "nickname": "羽川（直播电商全域经营）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAxkqwjpqCtOKE2teMgB20p5gH2qPctLVgtqUCZOmpLZs",
+      "accountKind": "personal_candidate",
+      "followers": 98000,
+      "tracks": [
+        "千川投放"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 0,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 20,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.5,
+        "relatedVideos60d": 19,
+        "latestRelatedAgeDays": 5.59,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 21,
+        "successfulVideos": 1,
+        "validIncrements": 1,
+        "countDecreases": 0
+      },
+      "refetchStatus": "部分复取"
+    },
+    {
+      "id": "CR-052",
+      "rank": 52,
+      "nickname": "阿妍抖店日记",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAVlyj84QI5fjAzO1aiKa3pfGdaVFNE_9vzZqxxyPOmGM",
+      "accountKind": "personal_candidate",
+      "followers": 161000,
+      "tracks": [
+        "店铺与规则"
+      ],
+      "videosLoaded": 19,
+      "profileVideoCards": 0,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.1667,
+        "relatedVideos60d": 18,
+        "latestRelatedAgeDays": 3.62,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 19,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "验证码阻塞"
+    },
+    {
+      "id": "CR-053",
+      "rank": 53,
+      "nickname": "鑫鑫直播培训",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAYhXpHwpJjYMqJ4rdSGAY_miIKb00qz4bhf4CL99-0NLrzUvsb3tz-Du0x7RgkwW4",
+      "accountKind": "needs_human_review",
+      "followers": 1339000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 21,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 19,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.5263,
+        "relatedVideos60d": 19,
+        "latestRelatedAgeDays": 0.89,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 21,
+        "successfulVideos": 2,
+        "validIncrements": 2,
+        "countDecreases": 0
+      },
+      "refetchStatus": "部分复取"
+    },
+    {
+      "id": "CR-054",
+      "rank": 54,
+      "nickname": "路路发全品类供应链",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAPv80TJde31cggIuj8kyn8j4N7t2Bhi4yDxWl3hYHiqhBcp6jOMMcxSaX4d3i2TgG",
+      "accountKind": "personal_candidate",
+      "followers": 81000,
+      "tracks": [
+        "选品供应链"
+      ],
+      "videosLoaded": 20,
+      "profileVideoCards": 0,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 14,
+        "relevantRatio": 0.9286,
+        "corePracticeLowerBound": 0.0714,
+        "relatedVideos60d": 4,
+        "latestRelatedAgeDays": 17.67,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "related_videos_60d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-055",
+      "rank": 55,
+      "nickname": "一度AI电商",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAADzU_-icCCeEgCcTLGVljYOOiHDXBSSNwbrpiqCFYDO3XzNgZPW6Oln1eOPrpAf_V",
+      "accountKind": "personal_candidate",
+      "followers": 69000,
+      "tracks": [
+        "电商 AI"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 1,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.3889,
+        "relatedVideos60d": 18,
+        "latestRelatedAgeDays": 0.78,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 18,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "验证码阻塞"
+    },
+    {
+      "id": "CR-056",
+      "rank": 56,
+      "nickname": "电商数据分析",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAKUXfN9dB7GexirQaCV2S8pMPcuOYBCb94oFqKYPLmN9pBql9itbRfGaWEXlIYo26",
+      "accountKind": "personal_candidate",
+      "followers": 9,
+      "tracks": [
+        "data_tools"
+      ],
+      "videosLoaded": 4,
+      "profileVideoCards": 0,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 4,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.5,
+        "relatedVideos60d": 4,
+        "latestRelatedAgeDays": 54.66,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-057",
+      "rank": 57,
+      "nickname": "大圣电商-巨合启力",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAItXXEfjv0RwwOI4hYijATHY7C8g4SJftGOUS0KEZspk",
+      "accountKind": "personal_candidate",
+      "followers": 612000,
+      "tracks": [
+        "增长转化"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 0,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 0.9444,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 17,
+        "latestRelatedAgeDays": 0.7,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 21,
+        "successfulVideos": 1,
+        "validIncrements": 1,
+        "countDecreases": 0
+      },
+      "refetchStatus": "部分复取"
+    },
+    {
+      "id": "CR-058",
+      "rank": 58,
+      "nickname": "直播间运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAnJR5u-seqLVy9PxYN6asoPOmTK3BqF25aHplrTL_HlZJFfd_P75wH5y47nqjs-bz",
+      "accountKind": "personal_candidate",
+      "followers": 1783,
+      "tracks": [
+        "直播运营"
+      ],
+      "videosLoaded": 3,
+      "profileVideoCards": 0,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-059",
+      "rank": 59,
+      "nickname": "千川巨量投放",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAASyLXH-b0FcR-MJLMGOlOzmVlFgYLO5oZlAc2HBtFb-NfPz-cJYxrUM9EHIxT7u62",
+      "accountKind": "personal_candidate",
+      "followers": 1044,
+      "tracks": [
+        "千川投放"
+      ],
+      "videosLoaded": 0,
+      "profileVideoCards": 0,
+      "autoDisposition": "NO_MATCHED_API_EVIDENCE",
+      "dispositionLabel": "缺少匹配作品证据",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": null,
+        "relevantRatio": null,
+        "corePracticeLowerBound": null,
+        "relatedVideos60d": null,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": []
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-060",
+      "rank": 60,
+      "nickname": "阿豪抖店交流板",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAANybSYwGYcCJMtHZRoTR5OlIqeIHPBwJyKOmys3Dn3qY",
+      "accountKind": "personal_candidate",
+      "followers": 24000,
+      "tracks": [
+        "店铺与规则"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 0,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 17,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.2353,
+        "relatedVideos60d": 13,
+        "latestRelatedAgeDays": 6.64,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 21,
+        "successfulVideos": 1,
+        "validIncrements": 0,
+        "countDecreases": 1
+      },
+      "refetchStatus": "部分复取"
+    },
+    {
+      "id": "CR-061",
+      "rank": 61,
+      "nickname": "张小伟（半无人带货）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAANcFvQ8uQsZZNW_RVTPj6EhVBQeDTH957pvrX2Vr3YAaMlg30Y3cKHEs8yzNTESy4",
+      "accountKind": "personal_candidate",
+      "followers": 144000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 0,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-062",
+      "rank": 62,
+      "nickname": "樱沐美甲供应链",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAw5LcYOBUHQq5v4X--wiVT6zXQIvm2ZkyqGIEaomLNaEYKdrnMLJ7NvMyXFZBeDm0",
+      "accountKind": "personal_candidate",
+      "followers": 54000,
+      "tracks": [
+        "选品供应链"
+      ],
+      "videosLoaded": 20,
+      "profileVideoCards": 0,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0.8333,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-063",
+      "rank": 63,
+      "nickname": "无羁AI电商",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAa5OpegFoTVFqAgU7_rZTLq7KYFsIYNz6wzZq8LLX9qA",
+      "accountKind": "personal_candidate",
+      "followers": 576000,
+      "tracks": [
+        "电商 AI"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 1,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 21,
+        "relevantRatio": 0.7143,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 15,
+        "latestRelatedAgeDays": 0.73,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 21,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "验证码阻塞"
+    },
+    {
+      "id": "CR-064",
+      "rank": 64,
+      "nickname": "电商好物分享",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAb6K9oknqNoC5VQmjeUU_z3SypsNL0U6FLmXSg9amqNoeWnmixNUZ8quW4j8YIkIh",
+      "accountKind": "personal_candidate",
+      "followers": 54000,
+      "tracks": [
+        "data_tools"
+      ],
+      "videosLoaded": 3,
+      "profileVideoCards": 0,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-065",
+      "rank": 65,
+      "nickname": "交个朋友电商学苑（7.10素材）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAACEFA75rhZc8t5N2p2SA5TFwVzWBo2Ll-AqTZADWhHAH9ZqG-d3Ak88Zmx7yJ5oUq",
+      "accountKind": "personal_candidate",
+      "followers": 907000,
+      "tracks": [
+        "增长转化"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 19,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.7778,
+        "relatedVideos60d": 18,
+        "latestRelatedAgeDays": 10.8,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 18,
+        "successfulVideos": 1,
+        "validIncrements": 1,
+        "countDecreases": 0
+      },
+      "refetchStatus": "部分复取"
+    },
+    {
+      "id": "CR-066",
+      "rank": 66,
+      "nickname": "交个朋友潮流服饰",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAK1DYr42JwP8zlKHEg6fYFhDfocCoVuciCoU4CetFsJE",
+      "accountKind": "personal_candidate",
+      "followers": 1514000,
+      "tracks": [
+        "直播运营"
+      ],
+      "videosLoaded": 19,
+      "profileVideoCards": 0,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-067",
+      "rank": 67,
+      "nickname": "小段要努力",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAFppQEPV8pf5p4dkRfr1ReVWSRD6lX6kM2ZYZZT98rkg",
+      "accountKind": "personal_candidate",
+      "followers": 741000,
+      "tracks": [
+        "千川投放"
+      ],
+      "videosLoaded": 20,
+      "profileVideoCards": 21,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-068",
+      "rank": 68,
+      "nickname": "抖店运营笔记 (南音)",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAgcI6ichFCa6vA-21Ch8bE1xdliri7qurh0ubxdWtILs",
+      "accountKind": "personal_candidate",
+      "followers": 114000,
+      "tracks": [
+        "店铺与规则"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 1,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-069",
+      "rank": 69,
+      "nickname": "张小伟（视频号带货）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAFsbaX8f-1bBcS6u3srfqFIMrhAS0MhZLpOWdqLoH2pM",
+      "accountKind": "personal_candidate",
+      "followers": 97000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 17,
+      "profileVideoCards": 0,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-070",
+      "rank": 70,
+      "nickname": "李元宝200°C（选品心法）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAvcYN5xC74crBEiu5zTUfD3jpn_CGaJ7FO3XelBlgHjg2aW3e5bTydDOVY1j3oOD3",
+      "accountKind": "personal_candidate",
+      "followers": 242000,
+      "tracks": [
+        "选品供应链"
+      ],
+      "videosLoaded": 3,
+      "profileVideoCards": 1,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-071",
+      "rank": 71,
+      "nickname": "iTLine电商AI运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAc35FjvjLZkW50veq4ff47JpvPCHw9zrmwXs3X1KLFc8",
+      "accountKind": "personal_candidate",
+      "followers": 54000,
+      "tracks": [
+        "电商 AI"
+      ],
+      "videosLoaded": 20,
+      "profileVideoCards": 1,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0.4444,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-072",
+      "rank": 72,
+      "nickname": "不是小肖",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAz0F5Wpevvtwz24vMBUp4827W6QI8VLWGPDHCxpKMdY3FNL0pFHiL8_Oc3S56Uq6c",
+      "accountKind": "personal_candidate",
+      "followers": 20000,
+      "tracks": [
+        "data_tools"
+      ],
+      "videosLoaded": 19,
+      "profileVideoCards": 0,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 7,
+        "relevantRatio": 0.8571,
+        "corePracticeLowerBound": 0.2857,
+        "relatedVideos60d": 4,
+        "latestRelatedAgeDays": 15.62,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "related_videos_60d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-073",
+      "rank": 73,
+      "nickname": "TikTok Shop跨境电商",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAsUywRpVHOdVeBbWE5EUJHqHcFCWBOcff-LcsHDD1bbIHHUV7pSVSA0YOFcl1mW3Z",
+      "accountKind": "personal_candidate",
+      "followers": 1300000,
+      "tracks": [
+        "增长转化"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 0,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.1667,
+        "relatedVideos60d": 18,
+        "latestRelatedAgeDays": 2.83,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 18,
+        "successfulVideos": 1,
+        "validIncrements": 0,
+        "countDecreases": 1
+      },
+      "refetchStatus": "部分复取"
+    },
+    {
+      "id": "CR-074",
+      "rank": 74,
+      "nickname": "华华互联",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAANBl_d18likIEalye27jbS9m6nxUz939J7m3I7kcXYqg",
+      "accountKind": "personal_candidate",
+      "followers": 540000,
+      "tracks": [
+        "直播运营"
+      ],
+      "videosLoaded": 2,
+      "profileVideoCards": 2,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-075",
+      "rank": 75,
+      "nickname": "实体店引流老宋",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAnoesjssyFzkJJsvCoicigQ0uJeIGBoMOpgHEtcH05no",
+      "accountKind": "personal_candidate",
+      "followers": 15000,
+      "tracks": [
+        "千川投放"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 19,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 10,
+        "relevantRatio": 0.5,
+        "corePracticeLowerBound": 0.3,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": 82.72,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-076",
+      "rank": 76,
+      "nickname": "阿凡日记本抖店干货",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAkysi_SNk0d3YF3gzASB19az-39CVEqjcXUKeig8JUaDpOuMulS0LTBNGCngTkPXj",
+      "accountKind": "personal_candidate",
+      "followers": 37000,
+      "tracks": [
+        "店铺与规则"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 0,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 19,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.3158,
+        "relatedVideos60d": 5,
+        "latestRelatedAgeDays": 23.88,
+        "riskTermsDetected": [
+          "无货源"
+        ],
+        "automatedFailures": [
+          "related_videos_60d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-077",
+      "rank": 77,
+      "nickname": "张小二（短视频带货）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA0SfNeU1graX9QTuSD9Kj-sEelFJZyI3LNA2RGD2m8PlZiLqefnWKZfgUH8QhIuWm",
+      "accountKind": "personal_candidate",
+      "followers": 51000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 9,
+      "profileVideoCards": 10,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-078",
+      "rank": 78,
+      "nickname": "南京俏品堂供应链有限公司",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAhtvUFmyTw8eHwslVGsJ6CAU21dySJ5Ht-MIr8Oegvmg",
+      "accountKind": "personal_candidate",
+      "followers": 118000,
+      "tracks": [
+        "选品供应链"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 21,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-079",
+      "rank": 79,
+      "nickname": "王总Ai实体运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAKqL4bqVnRjoj2EXukujJlJw9Moz98JFXegUqAnuzXkbwcNMCoCDW5ZMbisNFdo3s",
+      "accountKind": "personal_candidate",
+      "followers": 135000,
+      "tracks": [
+        "电商 AI"
+      ],
+      "videosLoaded": 4,
+      "profileVideoCards": 5,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-080",
+      "rank": 80,
+      "nickname": "数化万象营销",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAsPHP62F_RJ84T4ZyF-bcfXUrBOTNnlmbCWiqmorcsw9B-rAP-aWGPfsmasTrNF3T",
+      "accountKind": "personal_candidate",
+      "followers": 8889,
+      "tracks": [
+        "data_tools"
+      ],
+      "videosLoaded": 15,
+      "profileVideoCards": 16,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 15,
+        "relevantRatio": 0.4667,
+        "corePracticeLowerBound": 0.1333,
+        "relatedVideos60d": 6,
+        "latestRelatedAgeDays": 2.93,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "relevant_ratio"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-081",
+      "rank": 81,
+      "nickname": "帮帮堂电商管理",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAgcv0kF4WswgZvVoAHR-e1NUmPmuRIBs3hMVnvUfmSd4",
+      "accountKind": "personal_candidate",
+      "followers": 168000,
+      "tracks": [
+        "增长转化"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 20,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 0.8333,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 15,
+        "latestRelatedAgeDays": 3.66,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 21,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "验证码阻塞"
+    },
+    {
+      "id": "CR-082",
+      "rank": 82,
+      "nickname": "迪老诗",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAYjDHfP90DSws0gj8VngkdNixATY8Ig6jAu7ykwh_N4g",
+      "accountKind": "personal_candidate",
+      "followers": 11932000,
+      "tracks": [
+        "直播运营"
+      ],
+      "videosLoaded": 20,
+      "profileVideoCards": 21,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 3,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-083",
+      "rank": 83,
+      "nickname": "'ོ千ꦿ川巨量",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAyIcqaK6vfpWi8C55sDpKlSFwUyEfA1voxyZhKmwYUpusoC2VEVwTTdKeMMrPUQao",
+      "accountKind": "personal_candidate",
+      "followers": 363,
+      "tracks": [
+        "千川投放"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 18,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-084",
+      "rank": 84,
+      "nickname": "福鑫抖店日记(搜：心流)",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAw74wC8ez898yDF1cXZKjhIcbyHswUV7aXi_xf7T71Ak_KfsRV_sYfh9o_eSLQ0jy",
+      "accountKind": "personal_candidate",
+      "followers": 45000,
+      "tracks": [
+        "店铺与规则"
+      ],
+      "videosLoaded": 13,
+      "profileVideoCards": 12,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-085",
+      "rank": 85,
+      "nickname": "随心短视频运营（干货分享）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAF2FR0mvEVYbLL3lXaLtBFMm_sWegwcZSOpI0gDc4krc",
+      "accountKind": "personal_candidate",
+      "followers": 97000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 3,
+      "profileVideoCards": 3,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-086",
+      "rank": 86,
+      "nickname": "新疆疆音供应链",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAggXCW3R-g9sEDPBCpekA7omlZal0927zvbEGH4uby5DkO0cgeoSKcFPE2XoqLJkO",
+      "accountKind": "personal_candidate",
+      "followers": 78000,
+      "tracks": [
+        "选品供应链"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 19,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-087",
+      "rank": 87,
+      "nickname": "AI电商王彤",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAP7RohgY0NVu2OI5zHe4VZEkvzzu5vKrryvHkjz0dptA",
+      "accountKind": "personal_candidate",
+      "followers": 47000,
+      "tracks": [
+        "电商 AI"
+      ],
+      "videosLoaded": 20,
+      "profileVideoCards": 20,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 0.6111,
+        "corePracticeLowerBound": 0.0556,
+        "relatedVideos60d": 11,
+        "latestRelatedAgeDays": 11.59,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 20,
+        "successfulVideos": 1,
+        "validIncrements": 1,
+        "countDecreases": 0
+      },
+      "refetchStatus": "部分复取"
+    },
+    {
+      "id": "CR-088",
+      "rank": 88,
+      "nickname": "志阳叔～数据分析",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAB-fe8xKxPpijoM3wAllmMD-E3g1bsCeKP4_vL23ocGSE6vqnIyxRtzzvX9ayni1O",
+      "accountKind": "personal_candidate",
+      "followers": 7285,
+      "tracks": [
+        "data_tools"
+      ],
+      "videosLoaded": 4,
+      "profileVideoCards": 1,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 1,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-089",
+      "rank": 89,
+      "nickname": "大春说",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAACey9xtoVkvMGUTyDO_aAY9ThUzdhdZ37h4G1I3ud_lU",
+      "accountKind": "personal_candidate",
+      "followers": 34000,
+      "tracks": [
+        "增长转化"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 8,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 0.1667,
+        "corePracticeLowerBound": 0.1111,
+        "relatedVideos60d": 3,
+        "latestRelatedAgeDays": 17.81,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "relevant_ratio",
+          "related_videos_60d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-090",
+      "rank": 90,
+      "nickname": "当当网官方旗舰店直播间",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAOO2fJcuddgO1ubRaXWkL8mhHbkDktl3mmP4qGvtaNts",
+      "accountKind": "personal_candidate",
+      "followers": 351000,
+      "tracks": [
+        "直播运营"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 22,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 16,
+        "relevantRatio": 0.1875,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 3,
+        "latestRelatedAgeDays": 37.98,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-091",
+      "rank": 91,
+      "nickname": "千川巨量",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA8wy-l7gb9VxmBpYEsm8KktiYtdCojiAB9q3OowEGjfk",
+      "accountKind": "personal_candidate",
+      "followers": 871,
+      "tracks": [
+        "千川投放"
+      ],
+      "videosLoaded": 0,
+      "profileVideoCards": 0,
+      "autoDisposition": "NO_MATCHED_API_EVIDENCE",
+      "dispositionLabel": "缺少匹配作品证据",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": null,
+        "relevantRatio": null,
+        "corePracticeLowerBound": null,
+        "relatedVideos60d": null,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": []
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-092",
+      "rank": 92,
+      "nickname": "昂哥抖店运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAARUSjNmfcXZEETzO6xqL_PN_uQj0ANNaAJPeFTKL9NYFn0OtRNEVI6amBz_X30CfI",
+      "accountKind": "personal_candidate",
+      "followers": 14000,
+      "tracks": [
+        "店铺与规则"
+      ],
+      "videosLoaded": 20,
+      "profileVideoCards": 20,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 11,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.0909,
+        "relatedVideos60d": 6,
+        "latestRelatedAgeDays": 20.81,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-093",
+      "rank": 93,
+      "nickname": "短视频带货运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAAIc6EJUt6dS5kOAK8uIiSxXMS2aRC81sYv_hXHkJ2z-DHDUeGUxXPPJhei3S7gGI",
+      "accountKind": "personal_candidate",
+      "followers": 862,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 6,
+      "profileVideoCards": 7,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-094",
+      "rank": 94,
+      "nickname": "伊藤严选",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAy_r8als_5zOWaW5zYoYXWk5nac6hJEQy2Z1u-NevL2bV956HFCfjz01R-tCOlDBT",
+      "accountKind": "personal_candidate",
+      "followers": 31000,
+      "tracks": [
+        "选品供应链"
+      ],
+      "videosLoaded": 1,
+      "profileVideoCards": 2,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-095",
+      "rank": 95,
+      "nickname": "小汉哥ai视频实操",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAllGUDX6LsDVc1CL-IlW3QvGceVbaJ1kamv1GMrL3HEJSigMblPx77Pgg_kRGYY31",
+      "accountKind": "personal_candidate",
+      "followers": 223000,
+      "tracks": [
+        "电商 AI"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 22,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 0.2778,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 5,
+        "latestRelatedAgeDays": 3.61,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "relevant_ratio",
+          "related_videos_60d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-096",
+      "rank": 96,
+      "nickname": "电商小牛马",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAjypYD2r4QbPZVw_QywUw4IO7ex_QiAoR2WLFcUmbr6U",
+      "accountKind": "personal_candidate",
+      "followers": 7152,
+      "tracks": [
+        "data_tools"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 18,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.3333,
+        "relatedVideos60d": 18,
+        "latestRelatedAgeDays": 2.48,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 18,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "验证码阻塞"
+    },
+    {
+      "id": "CR-097",
+      "rank": 97,
+      "nickname": "火蝠电商",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAYYgl1OqvhukoTD_KwhH-qrASdI98mQUa9p0uBorC0Z4",
+      "accountKind": "personal_candidate",
+      "followers": 56000,
+      "tracks": [
+        "增长转化"
+      ],
+      "videosLoaded": 20,
+      "profileVideoCards": 14,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 18,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.1667,
+        "relatedVideos60d": 18,
+        "latestRelatedAgeDays": 2.64,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 20,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "验证码阻塞"
+    },
+    {
+      "id": "CR-098",
+      "rank": 98,
+      "nickname": "柒牌官方旗舰店",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAD8P-HeGuiE1_tNeddT52G7iCX_XPE0YHoMrYdVqsf5ohy16Rqkmr1B4w6ZxsCAdJ",
+      "accountKind": "personal_candidate",
+      "followers": 626000,
+      "tracks": [
+        "直播运营"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 21,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 20,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-099",
+      "rank": 99,
+      "nickname": "巨量广告",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAT90Vzhr8BRFQIoG1aS8tsct6TuKTFMawhuzYNMtIkvxNd5x_23_gPZzmTeDD3c6i",
+      "accountKind": "personal_candidate",
+      "followers": 391,
+      "tracks": [
+        "千川投放"
+      ],
+      "videosLoaded": 21,
+      "profileVideoCards": 10,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 5,
+        "relevantRatio": 0.6,
+        "corePracticeLowerBound": 0.6,
+        "relatedVideos60d": 3,
+        "latestRelatedAgeDays": 26.98,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "related_videos_60d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-100",
+      "rank": 100,
+      "nickname": "抖店运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA8YhnzNCrx_zSVOQF_voE86J7IehSduMeEGfgp5VKsCRUtb6LZSotp1ERFEFw-PPu",
+      "accountKind": "personal_candidate",
+      "followers": 1220,
+      "tracks": [
+        "店铺与规则"
+      ],
+      "videosLoaded": 18,
+      "profileVideoCards": 15,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-101",
+      "rank": 101,
+      "nickname": "阿飞（短视频直播带货）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAqyJXGCLVphm2_WHmjPnWVToKL_g7xIguZT4WuTtTM7s",
+      "accountKind": "personal_candidate",
+      "followers": 287000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 92,
+      "profileVideoCards": 92,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 14,
+        "relevantRatio": 0.2857,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 4,
+        "latestRelatedAgeDays": 15.82,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-102",
+      "rank": 102,
+      "nickname": "迈月甄选供应链",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAGGAwZEBTVgrU6Q056rVxX9Y5HeJxSJ3gbZvkOY_XTvk",
+      "accountKind": "personal_candidate",
+      "followers": 35000,
+      "tracks": [
+        "选品供应链"
+      ],
+      "videosLoaded": 91,
+      "profileVideoCards": 91,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 9,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-103",
+      "rank": 103,
+      "nickname": "时来",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA3T4T3eNwPxb6hXcpaTswTZbEIfzXAd2b6NtEzgTrDaezGAHgq_tfHPQp_qOEu0Lg",
+      "accountKind": "personal_candidate",
+      "followers": 15000,
+      "tracks": [
+        "电商 AI"
+      ],
+      "videosLoaded": 43,
+      "profileVideoCards": 43,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 43,
+        "relevantRatio": 0.8837,
+        "corePracticeLowerBound": 0.1395,
+        "relatedVideos60d": 32,
+        "latestRelatedAgeDays": 0.74,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 43,
+        "successfulVideos": 35,
+        "validIncrements": 34,
+        "countDecreases": 1
+      },
+      "refetchStatus": "部分复取"
+    },
+    {
+      "id": "CR-104",
+      "rank": 104,
+      "nickname": "电商数据汇",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAaXU-UDW8GG6GXPIwXVxbw-_vxdlHO1CPgeSYnNncQuo",
+      "accountKind": "personal_candidate",
+      "followers": 51000,
+      "tracks": [
+        "data_tools"
+      ],
+      "videosLoaded": 1,
+      "profileVideoCards": 1,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-105",
+      "rank": 105,
+      "nickname": "无极聊电商",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAkthg2yiBJVEeAN10LpxvWu3_J_dWCIdllLiqnSq0L13kPux_54li-7oZAUs6jYGk",
+      "accountKind": "personal_candidate",
+      "followers": 70000,
+      "tracks": [
+        "增长转化"
+      ],
+      "videosLoaded": 92,
+      "profileVideoCards": 92,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-106",
+      "rank": 106,
+      "nickname": "晓侠创业",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAGfPp5r1k2LkfWXXSL4rij9cId-A5aJ-k4OjNo2qbw3c",
+      "accountKind": "personal_candidate",
+      "followers": 3788000,
+      "tracks": [
+        "直播运营"
+      ],
+      "videosLoaded": 90,
+      "profileVideoCards": 90,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 17,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-107",
+      "rank": 107,
+      "nickname": "抖音广告投放_老马",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAvv7QFuc-bdtxMyDumlCTPNtkKG-xyJlZCP4jZNWUUCaMUqQKG_jlhdvHzv21kIta",
+      "accountKind": "personal_candidate",
+      "followers": 1415,
+      "tracks": [
+        "千川投放"
+      ],
+      "videosLoaded": 93,
+      "profileVideoCards": 93,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 5,
+        "relevantRatio": 0.4,
+        "corePracticeLowerBound": 0.2,
+        "relatedVideos60d": 2,
+        "latestRelatedAgeDays": 53.01,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-108",
+      "rank": 108,
+      "nickname": "抖店阿伟实战分享",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAd-Jhqd7_cXUhCYYIkX3b6a-mgQrW75Bb-ar-jkEeH9b3pdBgD54n7q3_nXJORBUM",
+      "accountKind": "personal_candidate",
+      "followers": 8441,
+      "tracks": [
+        "店铺与规则"
+      ],
+      "videosLoaded": 14,
+      "profileVideoCards": 14,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 14,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.1429,
+        "relatedVideos60d": 14,
+        "latestRelatedAgeDays": 0.67,
+        "riskTermsDetected": [
+          "无货源"
+        ],
+        "automatedFailures": [
+          "valid_videos_90d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-109",
+      "rank": 109,
+      "nickname": "AI短视频带货-TK雨飞老师",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA1MpK8UufEnVwplUWdNZ5PL1qwyIoFzblVfDsBBPCaiQ",
+      "accountKind": "personal_candidate",
+      "followers": 42000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 0,
+      "profileVideoCards": 0,
+      "autoDisposition": "NO_MATCHED_API_EVIDENCE",
+      "dispositionLabel": "缺少匹配作品证据",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": null,
+        "relevantRatio": null,
+        "corePracticeLowerBound": null,
+        "relatedVideos60d": null,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": []
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-110",
+      "rank": 110,
+      "nickname": "供我货定制选品",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAhiPBo_ZimJg2CEEL1awGzFzkEQtxc1MmRh2pIXl9b8KtAKbqpccP3VJmVZ7srhGh",
+      "accountKind": "personal_candidate",
+      "followers": 5739,
+      "tracks": [
+        "选品供应链"
+      ],
+      "videosLoaded": 12,
+      "profileVideoCards": 13,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 12,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.9167,
+        "relatedVideos60d": 8,
+        "latestRelatedAgeDays": 7.64,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-111",
+      "rank": 111,
+      "nickname": "昆明新媒体 电商 运营培训 李校",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA_tjUbKXkYQBvki513NnTBpJBJiTfSQsjilxdBsj2_VawiW4gpt48oW4iwuUSyBok",
+      "accountKind": "needs_human_review",
+      "followers": 89000,
+      "tracks": [
+        "电商 AI",
+        "短视频运营"
+      ],
+      "videosLoaded": 56,
+      "profileVideoCards": 56,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-112",
+      "rank": 112,
+      "nickname": "数据分析",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAARfGDalHAbKnlv7IaZ7TLTXy497CDhfIeHxLsHU838cX1CQ9ezNSEqJAXmGBwuds0",
+      "accountKind": "personal_candidate",
+      "followers": 867,
+      "tracks": [
+        "data_tools"
+      ],
+      "videosLoaded": 61,
+      "profileVideoCards": 61,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-113",
+      "rank": 113,
+      "nickname": "用户35712468",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA73Ycudd6r6w_-cEDGbsewdkdvrEJdHY_6oeofF_wBlCuwAPnCTwubBLg49SZ7Cv0",
+      "accountKind": "personal_candidate",
+      "followers": 554000,
+      "tracks": [
+        "增长转化"
+      ],
+      "videosLoaded": 0,
+      "profileVideoCards": 0,
+      "autoDisposition": "NO_MATCHED_API_EVIDENCE",
+      "dispositionLabel": "缺少匹配作品证据",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": null,
+        "relevantRatio": null,
+        "corePracticeLowerBound": null,
+        "relatedVideos60d": null,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": []
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-114",
+      "rank": 114,
+      "nickname": "北杰直播运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAQww-Q_qb4RlR23y9_xtslpeEyTWtwQE0w0f1Evawx2B4LNEQ_vM3u6HwF9Q35DbS",
+      "accountKind": "personal_candidate",
+      "followers": 70000,
+      "tracks": [
+        "直播运营"
+      ],
+      "videosLoaded": 92,
+      "profileVideoCards": 92,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-115",
+      "rank": 115,
+      "nickname": "巨量服务11",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAGURFHGhlysobigTDMWlaMTfYowJtYwiNofDbJ4ry-Cc",
+      "accountKind": "personal_candidate",
+      "followers": 1233,
+      "tracks": [
+        "千川投放"
+      ],
+      "videosLoaded": 90,
+      "profileVideoCards": 90,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-116",
+      "rank": 116,
+      "nickname": "抖店运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAKh8ZEnIrpXDUaXF7kT-3n7VBpKxI7vicCbayyRLC_p0",
+      "accountKind": "personal_candidate",
+      "followers": 735,
+      "tracks": [
+        "店铺与规则"
+      ],
+      "videosLoaded": 0,
+      "profileVideoCards": 0,
+      "autoDisposition": "NO_MATCHED_API_EVIDENCE",
+      "dispositionLabel": "缺少匹配作品证据",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": null,
+        "relevantRatio": null,
+        "corePracticeLowerBound": null,
+        "relatedVideos60d": null,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": []
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-117",
+      "rank": 117,
+      "nickname": "故梦自媒体短视频运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA7XRBacQgDoT4TT0unkyqsLeso20u0Grdm_jUlffLcEQ",
+      "accountKind": "personal_candidate",
+      "followers": 70000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 0,
+      "profileVideoCards": 0,
+      "autoDisposition": "NO_MATCHED_API_EVIDENCE",
+      "dispositionLabel": "缺少匹配作品证据",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": null,
+        "relevantRatio": null,
+        "corePracticeLowerBound": null,
+        "relatedVideos60d": null,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": []
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-118",
+      "rank": 118,
+      "nickname": "胶之舞胶枪研发中心（厂家供应链）蒋龙五金",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAcL_omw4BmOJrVnpjIsQyWwNZqHmKuUCqZQwyAq-hDoU",
+      "accountKind": "personal_candidate",
+      "followers": 415000,
+      "tracks": [
+        "选品供应链"
+      ],
+      "videosLoaded": 92,
+      "profileVideoCards": 93,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 89,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-119",
+      "rank": 119,
+      "nickname": "AI电商运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAC1yZnH54cb4bem9W_1zyvL3uxXrnVCVui49x44xm8O_bSvCHFRJSjDKwhBPnTE3V",
+      "accountKind": "personal_candidate",
+      "followers": 71,
+      "tracks": [
+        "电商 AI"
+      ],
+      "videosLoaded": 4,
+      "profileVideoCards": 4,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-120",
+      "rank": 120,
+      "nickname": "燕郊福成电脑培训",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAmc8vKyvgbiFIWopfaWoSc5kS9B0wsVe-EZCWNCgdOD5T6TafZ_ASfq3fyXE9JjBJ",
+      "accountKind": "needs_human_review",
+      "followers": 22000,
+      "tracks": [
+        "data_tools"
+      ],
+      "videosLoaded": 93,
+      "profileVideoCards": 93,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 8,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-121",
+      "rank": 121,
+      "nickname": "布鲁斯电商版",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAjnNJJ2eqMQtvJ7X2wt5P-akApjr-taL5eYp5obhQDTA",
+      "accountKind": "personal_candidate",
+      "followers": 102000,
+      "tracks": [
+        "增长转化"
+      ],
+      "videosLoaded": 19,
+      "profileVideoCards": 19,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 2,
+        "relevantRatio": 0.5,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": 84.67,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-122",
+      "rank": 122,
+      "nickname": "靳兴的运营速成指南",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAKo2XqwGfJ35ccbSdPBrqDB188wMCOMG-enaWAo9cFosAPLPRsejiWShhD2OOLOuh",
+      "accountKind": "personal_candidate",
+      "followers": 196000,
+      "tracks": [
+        "直播运营"
+      ],
+      "videosLoaded": 75,
+      "profileVideoCards": 75,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 72,
+        "relevantRatio": 0.8472,
+        "corePracticeLowerBound": 0.0556,
+        "relatedVideos60d": 42,
+        "latestRelatedAgeDays": 1.55,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 75,
+        "successfulVideos": 5,
+        "validIncrements": 5,
+        "countDecreases": 0
+      },
+      "refetchStatus": "部分复取"
+    },
+    {
+      "id": "CR-123",
+      "rank": 123,
+      "nickname": "巨量本地推，千川投放",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAHd0KQ3yVws_VFljJur6H5VZCFryjT5iew2bl7WwZDf1tGYLWzNmYs9mUfprsEtOm",
+      "accountKind": "personal_candidate",
+      "followers": 72,
+      "tracks": [
+        "千川投放"
+      ],
+      "videosLoaded": 54,
+      "profileVideoCards": 54,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 6,
+        "relevantRatio": 0.6667,
+        "corePracticeLowerBound": 0.6667,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": 72.93,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-124",
+      "rank": 124,
+      "nickname": "抖店运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAaxNKC-o8386Able4F4CHhJ4J5nG1ophON8WTU1FAS4erM35n2x5_ul1rc1oZocdu",
+      "accountKind": "personal_candidate",
+      "followers": 1616,
+      "tracks": [
+        "店铺与规则"
+      ],
+      "videosLoaded": 0,
+      "profileVideoCards": 0,
+      "autoDisposition": "NO_MATCHED_API_EVIDENCE",
+      "dispositionLabel": "缺少匹配作品证据",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": null,
+        "relevantRatio": null,
+        "corePracticeLowerBound": null,
+        "relatedVideos60d": null,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": []
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-125",
+      "rank": 125,
+      "nickname": "俊哥短视频",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAwqAYMkFNn-razT0ORXRcWN470XDaCDT3zFpw4c94T4CFOXZrIFp7Auvwgfzc_IJT",
+      "accountKind": "personal_candidate",
+      "followers": 68000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 22,
+      "profileVideoCards": 22,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-126",
+      "rank": 126,
+      "nickname": "阿东礼品供应链",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAARSMOVBT0x-2XhTiAWhcwE6PrZhunM87L7zpyVEUr12M",
+      "accountKind": "personal_candidate",
+      "followers": 513,
+      "tracks": [
+        "选品供应链"
+      ],
+      "videosLoaded": 73,
+      "profileVideoCards": 73,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 1,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 1,
+        "latestRelatedAgeDays": 11.74,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "related_videos_60d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-127",
+      "rank": 127,
+      "nickname": "刘小刘—一位温度的 AI 电商讲师",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAb86lQj9OhrZrNjP5qutCvC3Bhsau9rRxSYljVpQClfM",
+      "accountKind": "personal_candidate",
+      "followers": 510000,
+      "tracks": [
+        "电商 AI"
+      ],
+      "videosLoaded": 74,
+      "profileVideoCards": 74,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 23,
+        "relevantRatio": 0.4783,
+        "corePracticeLowerBound": 0.1739,
+        "relatedVideos60d": 6,
+        "latestRelatedAgeDays": 2.7,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "relevant_ratio"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-128",
+      "rank": 128,
+      "nickname": "做京东的盈盈",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA2B7x-jZeecMcsua5y5XQyC9ICJVKEV1of_4yId1Pxe8",
+      "accountKind": "personal_candidate",
+      "followers": 37000,
+      "tracks": [
+        "data_tools"
+      ],
+      "videosLoaded": 75,
+      "profileVideoCards": 75,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 12,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.9167,
+        "relatedVideos60d": 9,
+        "latestRelatedAgeDays": 1,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-129",
+      "rank": 129,
+      "nickname": "一洋电商｜管理即人性",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA5aWBnpLBduja8ZnSNj3GbCelYwqBOO-r0iXVMAn_6eg",
+      "accountKind": "personal_candidate",
+      "followers": 35000,
+      "tracks": [
+        "增长转化"
+      ],
+      "videosLoaded": 90,
+      "profileVideoCards": 90,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-130",
+      "rank": 130,
+      "nickname": "直播间运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA3jlerwq3XzPgXNDTyu-wBgjFqKuoilTQKCg-NKf9JemtsXs84V7w7PS3XqWFy755",
+      "accountKind": "personal_candidate",
+      "followers": 1702,
+      "tracks": [
+        "直播运营"
+      ],
+      "videosLoaded": 17,
+      "profileVideoCards": 17,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-131",
+      "rank": 131,
+      "nickname": "良朋-千川投流",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAALUosl14mqmPtf5j7jkjYSjTZYCwt5aqDJK_QiRdPE-IJ4S25xv6dOKWi3JMIROVG",
+      "accountKind": "personal_candidate",
+      "followers": 925,
+      "tracks": [
+        "千川投放"
+      ],
+      "videosLoaded": 3,
+      "profileVideoCards": 3,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-132",
+      "rank": 132,
+      "nickname": "笑长抖店运营（智谷）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAep9nPk_doX4WeSCQoZWtRKpA71YysHIu8_DUewu8GZGxCKTYaNJJ8Z5zUwUExrAD",
+      "accountKind": "personal_candidate",
+      "followers": 42000,
+      "tracks": [
+        "店铺与规则"
+      ],
+      "videosLoaded": 23,
+      "profileVideoCards": 23,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-133",
+      "rank": 133,
+      "nickname": "Q哥短视频带货运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAWfp8uWQk4pPyZPflqcYpTuoGa4pPCKCFgPr9-VhsFCNbuT4MF3Ch1jDX5Ntkjs6Z",
+      "accountKind": "personal_candidate",
+      "followers": 3083,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 57,
+      "profileVideoCards": 57,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-134",
+      "rank": 134,
+      "nickname": "零一众合供应链（爆品货盘）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAKkWmWv_poXB56GutlRwzoTEX-fPMPQ2Xkmht8Bss3hM",
+      "accountKind": "personal_candidate",
+      "followers": 1245,
+      "tracks": [
+        "选品供应链"
+      ],
+      "videosLoaded": 4,
+      "profileVideoCards": 4,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 4,
+        "relevantRatio": 0.5,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 2,
+        "latestRelatedAgeDays": 29.77,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-135",
+      "rank": 135,
+      "nickname": "小可超爱吃",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAYrJjwW0iKi1AeZztQ5ynhXfaEE3IWg_TwrGgTYd-cQ1jmPLfqbXLMXVFcy5XZzbS",
+      "accountKind": "personal_candidate",
+      "followers": 57000,
+      "tracks": [
+        "电商 AI"
+      ],
+      "videosLoaded": 8,
+      "profileVideoCards": 8,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 4,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-136",
+      "rank": 136,
+      "nickname": "绽放唠电商运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAtaFNmFxzvNVWRw0ltTJEqPChCho-FdqjApYf4c0wfMk",
+      "accountKind": "personal_candidate",
+      "followers": 57000,
+      "tracks": [
+        "data_tools"
+      ],
+      "videosLoaded": 57,
+      "profileVideoCards": 57,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 54,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.7963,
+        "relatedVideos60d": 54,
+        "latestRelatedAgeDays": 0.82,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 57,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "验证码阻塞"
+    },
+    {
+      "id": "CR-137",
+      "rank": 137,
+      "nickname": "宋有麒商贸（宋宋红薯运营）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAQQslA2VG2Tq3EdP1U4hZJLUDekJR2D0VmLwc-DJt93U",
+      "accountKind": "personal_candidate",
+      "followers": 32000,
+      "tracks": [
+        "增长转化"
+      ],
+      "videosLoaded": 56,
+      "profileVideoCards": 56,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-138",
+      "rank": 138,
+      "nickname": "李福贵",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAYjvHfv4ZLtml0z4Sy4gvw_3p6G6uE86QoLZeZrBBaDQ",
+      "accountKind": "personal_candidate",
+      "followers": 13024000,
+      "tracks": [
+        "直播运营"
+      ],
+      "videosLoaded": 53,
+      "profileVideoCards": 54,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 3,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-139",
+      "rank": 139,
+      "nickname": "小胡（千川）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA4cifHe2Ruw7vdSY4vHXYxFMbxb-FhdauEkWeZ15umF0",
+      "accountKind": "personal_candidate",
+      "followers": 331,
+      "tracks": [
+        "千川投放"
+      ],
+      "videosLoaded": 54,
+      "profileVideoCards": 54,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 1,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 1,
+        "relatedVideos60d": 1,
+        "latestRelatedAgeDays": 21.5,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "related_videos_60d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-140",
+      "rank": 140,
+      "nickname": "李哥抖店",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAHOe7il1XPWnNrynk6KHuGBF8gqu6C4EX5WK51g7TFyqOiU18bKpY7_qsOG0YFahD",
+      "accountKind": "personal_candidate",
+      "followers": 136000,
+      "tracks": [
+        "店铺与规则"
+      ],
+      "videosLoaded": 54,
+      "profileVideoCards": 53,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 1,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": 61.58,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-141",
+      "rank": 141,
+      "nickname": "可7-短视频运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAHZIRD81Upzhi_50BJxJURGQhZ4L4bsbbvB0Rl8pGY2Q",
+      "accountKind": "personal_candidate",
+      "followers": 7333,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 8,
+      "profileVideoCards": 8,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-142",
+      "rank": 142,
+      "nickname": "厦门煜富食材供应链",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAQtblRqviPGAFa1iyA-Jep2ihCuPuCGU9nbSox-OsndiI_x21gTsa__zqIf1hdcKN",
+      "accountKind": "personal_candidate",
+      "followers": 140,
+      "tracks": [
+        "选品供应链"
+      ],
+      "videosLoaded": 9,
+      "profileVideoCards": 9,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-143",
+      "rank": 143,
+      "nickname": "大志Ai实操",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA9NT2ZPzMZDo-cdvtlnGHJKNjYE_dfl2ikZoi1aiM7LLLC9GuHr2XP0AQXkgvu8X2",
+      "accountKind": "personal_candidate",
+      "followers": 89000,
+      "tracks": [
+        "电商 AI"
+      ],
+      "videosLoaded": 54,
+      "profileVideoCards": 54,
+      "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+      "dispositionLabel": "待人工首审",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 19,
+        "relevantRatio": 0.9474,
+        "corePracticeLowerBound": 0.0526,
+        "relatedVideos60d": 9,
+        "latestRelatedAgeDays": 12.81,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 54,
+        "successfulVideos": 1,
+        "validIncrements": 1,
+        "countDecreases": 0
+      },
+      "refetchStatus": "部分复取"
+    },
+    {
+      "id": "CR-144",
+      "rank": 144,
+      "nickname": "电商名人堂",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAV0BfB9cHEe0GLPHWAt3YXznt-7JwNhkuviW68MRjIpXGceWtgkEPowyyE4baMEEX",
+      "accountKind": "personal_candidate",
+      "followers": 22000,
+      "tracks": [
+        "data_tools"
+      ],
+      "videosLoaded": 54,
+      "profileVideoCards": 54,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-145",
+      "rank": 145,
+      "nickname": "电商软件指南",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAABQKBmWY8AJRISm4X5jnQdu7LBoebwjNJZnLDXOJkTXmH8sn82OKkMCB86xaaaJQa",
+      "accountKind": "personal_candidate",
+      "followers": 1076,
+      "tracks": [
+        "增长转化"
+      ],
+      "videosLoaded": 57,
+      "profileVideoCards": 57,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-146",
+      "rank": 146,
+      "nickname": "倍思舒适耳机官方直播间",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAFjFyRsGL8xOzeTX7-GA1FHFGep_2_zEUp3vecNToxu0",
+      "accountKind": "personal_candidate",
+      "followers": 1153000,
+      "tracks": [
+        "直播运营"
+      ],
+      "videosLoaded": 57,
+      "profileVideoCards": 57,
+      "autoDisposition": "FAIL_AUTOMATED_GATE",
+      "dispositionLabel": "自动门槛未通过",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 55,
+        "relevantRatio": 0.0182,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 1,
+        "latestRelatedAgeDays": 5.01,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "relevant_ratio",
+          "related_videos_60d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-147",
+      "rank": 147,
+      "nickname": "千川优化师-北晚.【接代投】",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAATl2gPRGBq3ixq3SSTQvTSSem_CBQvwmxF1pomKE0ALz7TDafbMgqNTXOO5z_wbco",
+      "accountKind": "personal_candidate",
+      "followers": 282,
+      "tracks": [
+        "千川投放"
+      ],
+      "videosLoaded": 6,
+      "profileVideoCards": 6,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 3,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 1,
+        "relatedVideos60d": 3,
+        "latestRelatedAgeDays": 13.89,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "related_videos_60d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-148",
+      "rank": 148,
+      "nickname": "魏哥抖店",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA9DtHOXk08C6yQMHTatacHFb2zDe4TYfbEk3AvWEfhZQL2S0-1RMGiljrF7SaqZld",
+      "accountKind": "personal_candidate",
+      "followers": 3800,
+      "tracks": [
+        "店铺与规则"
+      ],
+      "videosLoaded": 15,
+      "profileVideoCards": 15,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 13,
+        "relevantRatio": 1,
+        "corePracticeLowerBound": 0.4615,
+        "relatedVideos60d": 11,
+        "latestRelatedAgeDays": 4.5,
+        "riskTermsDetected": [
+          "无货源"
+        ],
+        "automatedFailures": [
+          "valid_videos_90d"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-149",
+      "rank": 149,
+      "nickname": "米冠科技-短视频拍摄",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAlGLvlB-5iqb5Pm0tU5P3geCDFmLmtFH9ZX8Ehycgjz1s2AZ2HBbjxEWS8JXENdN9",
+      "accountKind": "personal_candidate",
+      "followers": 273000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "videosLoaded": 54,
+      "profileVideoCards": 54,
+      "autoDisposition": "WATCH_SAMPLE_LT15",
+      "dispositionLabel": "样本不足观察",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": 0,
+        "relevantRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [
+          "valid_videos_90d",
+          "relevant_ratio",
+          "related_videos_60d",
+          "latest_related_age_days"
+        ],
+        "manualChecks": [
+          "core_practice_ratio >= 0.4"
+        ]
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    },
+    {
+      "id": "CR-150",
+      "rank": 150,
+      "nickname": "小琪优质选品",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAArXKu0U_0bog_CHltocwcuPJ8QvbW1fRIZYQtBbuh_bE",
+      "accountKind": "personal_candidate",
+      "followers": 3406,
+      "tracks": [
+        "选品供应链"
+      ],
+      "videosLoaded": 0,
+      "profileVideoCards": 0,
+      "autoDisposition": "NO_MATCHED_API_EVIDENCE",
+      "dispositionLabel": "缺少匹配作品证据",
+      "formalStatus": "未完成两轮审核",
+      "gates": {
+        "validVideos90d": null,
+        "relevantRatio": null,
+        "corePracticeLowerBound": null,
+        "relatedVideos60d": null,
+        "latestRelatedAgeDays": null,
+        "riskTermsDetected": [],
+        "automatedFailures": [],
+        "manualChecks": []
+      },
+      "refetch": {
+        "targetVideos": 0,
+        "successfulVideos": 0,
+        "validIncrements": 0,
+        "countDecreases": 0
+      },
+      "refetchStatus": "未纳入 16:00 定向复取"
+    }
+  ],
+  "videoSignals": [
+    {
+      "id": "VS-01",
+      "videoId": "7664519058817312101",
+      "creatorId": "CR-103",
+      "nickname": "时来",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA3T4T3eNwPxb6hXcpaTswTZbEIfzXAd2b6NtEzgTrDaezGAHgq_tfHPQp_qOEu0Lg",
+      "videoUrl": "https://www.iesdouyin.com/share/video/7664519058817312101",
+      "followers": 15000,
+      "title": "作品标题未返回",
+      "publishTime": "2026-07-20T08:08:26+00:00",
+      "baselineObservedAt": "2026-07-20T18:11:15.767972+08:00",
+      "observedAt": "2026-07-21T16:46:18.045+08:00",
+      "elapsedHours": 22.584,
+      "baseline": {
+        "digg_count": 41,
+        "comment_count": 13,
+        "share_count": 7,
+        "collect_count": 14,
+        "play_count": null
+      },
+      "current": {
+        "digg_count": 251,
+        "comment_count": 37,
+        "share_count": 46,
+        "collect_count": 137,
+        "play_count": null
+      },
+      "delta": {
+        "digg_count": 210,
+        "comment_count": 24,
+        "share_count": 39,
+        "collect_count": 123,
+        "play_count": null
+      },
+      "deepIncrement": 186,
+      "assessment": "单视频续跟",
+      "reason": "互动增长明显，但缺少播放量、统一 6 小时基线、同行 P90 与跨账号语义扩散证据，不能认定为热点。",
+      "nextCheck": "验证码解除后优先复取；按真实发布时间龄、本人同类型基线及同赛道 cohort 重算 Q。"
+    },
+    {
+      "id": "VS-02",
+      "videoId": "7664219013001661705",
+      "creatorId": "CR-122",
+      "nickname": "靳兴的运营速成指南",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAKo2XqwGfJ35ccbSdPBrqDB188wMCOMG-enaWAo9cFosAPLPRsejiWShhD2OOLOuh",
+      "videoUrl": "https://www.iesdouyin.com/share/video/7664219013001661705",
+      "followers": 196000,
+      "title": "20分钟小白也能干运营——汽车赛道 #短视频创业 #短视频运营",
+      "publishTime": "2026-07-19T12:44:16+00:00",
+      "baselineObservedAt": "2026-07-20T18:46:06.094642+08:00",
+      "observedAt": "2026-07-21T16:46:25.264+08:00",
+      "elapsedHours": 22.0053,
+      "baseline": {
+        "digg_count": 63,
+        "comment_count": 4,
+        "share_count": 8,
+        "collect_count": 30,
+        "play_count": null
+      },
+      "current": {
+        "digg_count": 468,
+        "comment_count": 8,
+        "share_count": 37,
+        "collect_count": 157,
+        "play_count": null
+      },
+      "delta": {
+        "digg_count": 405,
+        "comment_count": 4,
+        "share_count": 29,
+        "collect_count": 127,
+        "play_count": null
+      },
+      "deepIncrement": 160,
+      "assessment": "单视频续跟",
+      "reason": "互动增长明显，但缺少播放量、统一 6 小时基线、同行 P90 与跨账号语义扩散证据，不能认定为热点。",
+      "nextCheck": "验证码解除后优先复取；按真实发布时间龄、本人同类型基线及同赛道 cohort 重算 Q。"
+    }
+  ],
+  "topics": [],
+  "recommendations": []
+}

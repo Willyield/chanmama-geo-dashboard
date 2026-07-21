@@ -10,6 +10,12 @@ import {
   renderEventDetail,
   renderEventPage,
 } from "./events.js";
+import {
+  creatorFilterDefaults,
+  creatorViews,
+  renderCreatorDetail,
+  renderCreatorPage,
+} from "./creators.js";
 import { escapeHtml, icon, renderError } from "./ui.js";
 
 const app = document.querySelector("#app");
@@ -56,7 +62,7 @@ async function fetchJson(url) {
 
 function parseRoute() {
   const parts = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
-  const module = ["hotspots", "events"].includes(parts[0]) ? parts[0] : "hotspots";
+  const module = ["hotspots", "events", "creators"].includes(parts[0]) ? parts[0] : "hotspots";
   return { module, requestedDate: parts[1] || "latest", view: parts[2] || "overview" };
 }
 
@@ -67,12 +73,16 @@ function navigate(module, date = "latest", view = "overview") {
 }
 
 function validView(module, view) {
-  const views = module === "hotspots" ? hotspotViews : eventViews;
+  const views = module === "hotspots" ? hotspotViews : module === "events" ? eventViews : creatorViews;
   return views.some((item) => item.id === view) ? view : "overview";
 }
 
 function resetFilters(module) {
-  state.filters = module === "hotspots" ? { ...hotspotFilterDefaults } : { ...eventFilterDefaults };
+  state.filters = module === "hotspots"
+    ? { ...hotspotFilterDefaults }
+    : module === "events"
+      ? { ...eventFilterDefaults }
+      : { ...creatorFilterDefaults };
 }
 
 function renderHeader() {
@@ -88,15 +98,24 @@ function renderHeader() {
   nextDate.dataset.targetDate = nextDate.disabled ? "" : dates[position - 1].date;
   updateStamp.textContent = state.module === "hotspots"
     ? `观察 ${state.data.observedAt}`
-    : `复核 ${state.data.verifiedAt}`;
-  document.title = `${state.module === "hotspots" ? "每日热点" : "活动追踪"}｜每日热点库与电商圈层行业活动追踪`;
+    : state.module === "events"
+      ? `复核 ${state.data.verifiedAt}`
+      : `试运行 ${state.data.observedAt}`;
+  const title = state.module === "hotspots"
+    ? "每日热点"
+    : state.module === "events"
+      ? "活动追踪"
+      : "抖音达人白名单库及热点判断";
+  document.title = `${title}｜每日热点库与电商圈层行业活动追踪`;
 }
 
 function renderCurrent({ restoreFilter = null, selectionStart = null } = {}) {
   if (!state.data || !state.index) return;
   app.innerHTML = state.module === "hotspots"
     ? renderHotspotPage({ data: state.data, index: state.index, view: state.view, filters: state.filters })
-    : renderEventPage({ data: state.data, index: state.index, view: state.view, filters: state.filters });
+    : state.module === "events"
+      ? renderEventPage({ data: state.data, index: state.index, view: state.view, filters: state.filters })
+      : renderCreatorPage({ data: state.data, index: state.index, view: state.view, filters: state.filters });
   createIcons();
   if (restoreFilter) {
     const input = app.querySelector(`[data-filter="${CSS.escape(restoreFilter)}"]`);
@@ -114,7 +133,8 @@ async function loadRoute() {
   if (route.module !== state.module) resetFilters(route.module);
   state.module = route.module;
   state.view = validView(route.module, route.view);
-  app.innerHTML = `<div class="loading-state"><span class="loading-line"></span><span>正在读取${route.module === "hotspots" ? "热点历史" : "活动快照"}</span></div>`;
+  const loadingLabel = route.module === "hotspots" ? "热点历史" : route.module === "events" ? "活动快照" : "达人试运行快照";
+  app.innerHTML = `<div class="loading-state"><span class="loading-line"></span><span>正在读取${loadingLabel}</span></div>`;
   createIcons();
 
   try {
@@ -137,13 +157,18 @@ async function loadRoute() {
 
 function findRecord(id) {
   if (state.module === "hotspots") return state.data.candidates.find((candidate) => candidate.id === id);
-  return state.data.events.find((event) => event.eventId === id);
+  if (state.module === "events") return state.data.events.find((event) => event.eventId === id);
+  return state.data.candidates.find((candidate) => candidate.id === id);
 }
 
 function openDrawer(id) {
   const record = findRecord(id);
   if (!record) return;
-  const detail = state.module === "hotspots" ? renderHotspotDetail(record) : renderEventDetail(record);
+  const detail = state.module === "hotspots"
+    ? renderHotspotDetail(record)
+    : state.module === "events"
+      ? renderEventDetail(record)
+      : renderCreatorDetail(record);
   state.drawerDetail = detail;
   drawerEyebrow.textContent = detail.eyebrow;
   drawerTitle.textContent = detail.title;
