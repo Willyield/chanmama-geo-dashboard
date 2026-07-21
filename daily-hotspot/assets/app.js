@@ -168,7 +168,7 @@ function openDrawer(id) {
     ? renderHotspotDetail(record)
     : state.module === "events"
       ? renderEventDetail(record)
-      : renderCreatorDetail(record);
+      : renderCreatorDetail(record, state.data);
   state.drawerDetail = detail;
   drawerEyebrow.textContent = detail.eyebrow;
   drawerTitle.textContent = detail.title;

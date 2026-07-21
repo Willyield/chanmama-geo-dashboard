@@ -15,7 +15,7 @@ import {
 
 export const creatorViews = [
   { id: "overview", label: "候选总览" },
-  { id: "signals", label: "视频信号" },
+  { id: "signals", label: "实时热点" },
   { id: "coverage", label: "数据覆盖" },
   { id: "rules", label: "判断规则" },
 ];
@@ -134,7 +134,17 @@ function renderToolbar(data, filters, count) {
   </div>`;
 }
 
-function renderCandidateTable(candidates) {
+function creatorRealtimeSignals(videoSignals, creatorId) {
+  return (videoSignals || []).filter((signal) => signal.creatorId === creatorId);
+}
+
+function renderRealtimeHotspotCell(candidate, videoSignals, observedAt) {
+  const signals = creatorRealtimeSignals(videoSignals, candidate.id);
+  if (!signals.length) return `<span class="cell-primary mono">0 条</span><span class="cell-secondary">${escapeHtml(formatDateTime(observedAt))} 快照未发现续跟信号</span>`;
+  return `${statusChip(`${signals.length} 条续跟`, "status-watch")}<span class="cell-primary creator-hotspot-title">${escapeHtml(signals[0].title)}</span><span class="cell-secondary">已验证热点 0 · 仅观察</span>`;
+}
+
+function renderCandidateTable(candidates, videoSignals, observedAt) {
   if (!candidates.length) return `<div class="data-region">${renderEmpty("当前筛选条件下没有候选达人", "user-search")}</div>`;
   const rows = candidates.map((candidate) => `<tr data-open-id="${escapeHtml(candidate.id)}">
     <td>${statusChip(candidate.dispositionLabel, DISPOSITION_CLASS[candidate.autoDisposition] || "")}<span class="cell-secondary">${escapeHtml(candidate.formalStatus)}</span></td>
@@ -143,6 +153,7 @@ function renderCandidateTable(candidates) {
     <td><div class="tag-stack">${(candidate.tracks || []).map((track) => `<span class="tag">${escapeHtml(track)}</span>`).join("") || "缺失"}</div></td>
     <td>${renderEvidenceRail(candidate)}<span class="cell-secondary">有效 ${formatMetric(candidate.gates?.validVideos90d)} 条 · 相关 ${formatPercent(candidate.gates?.relevantRatio)}</span></td>
     <td><span class="cell-primary mono">${formatMetric(candidate.refetch?.successfulVideos)} / ${formatMetric(candidate.refetch?.targetVideos)}</span><span class="cell-secondary">${escapeHtml(candidate.refetchStatus)} · 有效增量 ${formatMetric(candidate.refetch?.validIncrements)}</span></td>
+    <td>${renderRealtimeHotspotCell(candidate, videoSignals, observedAt)}</td>
     <td><span class="cell-primary">${candidate.gates?.manualChecks?.length ? "仍需人工核验实操占比" : "无待办项"}</span><span class="cell-secondary">匹配作品 ${formatMetric(candidate.videosLoaded)} 条</span></td>
   </tr>`).join("");
   const mobile = candidates.map((candidate) => `<article class="mobile-item creator-mobile-item" data-open-id="${escapeHtml(candidate.id)}">
@@ -151,12 +162,13 @@ function renderCandidateTable(candidates) {
     <div class="tag-stack">${(candidate.tracks || []).map((track) => `<span class="tag">${escapeHtml(track)}</span>`).join("")}</div>
     ${renderEvidenceRail(candidate, true)}
     <div class="mobile-facts"><div class="mobile-fact"><span>有效样本</span><strong>${formatMetric(candidate.gates?.validVideos90d)} 条</strong></div><div class="mobile-fact"><span>复取成功</span><strong>${formatMetric(candidate.refetch?.successfulVideos)} / ${formatMetric(candidate.refetch?.targetVideos)}</strong></div></div>
+    <p><strong>实时热点：</strong>${creatorRealtimeSignals(videoSignals, candidate.id).length ? `${creatorRealtimeSignals(videoSignals, candidate.id).length} 条单视频续跟，已验证热点 0` : "当前快照 0 条"}</p>
     <p><strong>正式状态：</strong>${escapeHtml(candidate.formalStatus)}</p>
   </article>`).join("");
   return `<div class="data-region">
     <div class="data-table-wrap"><table class="data-table creator-table">
-      <colgroup><col style="width:14%"><col style="width:15%"><col style="width:9%"><col style="width:14%"><col style="width:20%"><col style="width:12%"><col style="width:16%"></colgroup>
-      <thead><tr><th>审核状态</th><th>达人</th><th>粉丝体量</th><th>候选赛道</th><th>证据完整度</th><th>16:00 复取</th><th>下一步</th></tr></thead>
+      <colgroup><col style="width:12%"><col style="width:14%"><col style="width:8%"><col style="width:12%"><col style="width:18%"><col style="width:10%"><col style="width:13%"><col style="width:13%"></colgroup>
+      <thead><tr><th>审核状态</th><th>达人</th><th>粉丝体量</th><th>候选赛道</th><th>证据完整度</th><th>16:00 复取</th><th>实时热点</th><th>下一步</th></tr></thead>
       <tbody>${rows}</tbody>
     </table></div>
     <div class="mobile-list">${mobile}</div>
@@ -168,7 +180,7 @@ function renderMetricPair(signal, key, label) {
 }
 
 function renderSignals(data) {
-  if (!data.videoSignals.length) return `<section class="section-band">${renderEmpty("当前没有达到续跟条件的单视频信号", "activity")}</section>`;
+  if (!data.videoSignals.length) return `<section class="section-band"><div class="section-title"><h2>实时热点列表</h2><span>最新快照 ${escapeHtml(formatDateTime(data.observedAt))}</span></div>${renderEmpty("当前最新快照没有实时热点或单视频续跟信号", "activity")}</section>`;
   const cards = data.videoSignals.map((signal) => `<article class="video-signal-card">
     <div class="video-signal-head">
       <div><span class="model-code">${escapeHtml(signal.id)} · ${escapeHtml(signal.creatorId)}</span><h3>${escapeHtml(signal.nickname)}</h3><p>${escapeHtml(signal.title)}</p></div>
@@ -183,6 +195,7 @@ function renderSignals(data) {
     </div>
     <div class="signal-context">
       <span>${icon("clock-3")}真实观察间隔 ${escapeHtml(signal.elapsedHours.toFixed(2))} 小时</span>
+      <span>${icon("radio-tower")}快照 ${escapeHtml(formatDateTime(signal.observedAt))}</span>
       <span>${icon("users")}达人粉丝 ${escapeHtml(formatFollowers(signal.followers))}</span>
       <span>${icon("layers-3")}深互动增量 +${escapeHtml(formatMetric(signal.deepIncrement))}</span>
     </div>
@@ -191,9 +204,20 @@ function renderSignals(data) {
     <div class="signal-links"><a class="command-button primary" href="${escapeHtml(safeUrl(signal.videoUrl))}" target="_blank" rel="noopener noreferrer">${icon("play")}查看视频</a><a class="command-button" href="${escapeHtml(safeUrl(signal.profileUrl))}" target="_blank" rel="noopener noreferrer">${icon("user-round")}查看达人</a></div>
   </article>`).join("");
   return `<div class="creator-signal-intro">
-      <div><span class="model-code">Q VIDEO QUALITY · REVIEW ONLY</span><h2>仅有 2 条单视频续跟信号，当前没有合格热点</h2></div>
-      <p>互动增长只说明该视频值得继续取数。缺少播放量、统一时间窗、本人及同行基线和跨账号扩散证据时，不进入热点或选题推荐。</p>
+      <div><span class="model-code">REALTIME HOTSPOT SNAPSHOT · Q / TP REVIEW</span><h2>实时热点列表：${data.videoSignals.length} 条观察信号，${data.summary.qualifiedTopics} 条已验证热点</h2><span class="hotspot-snapshot-note">最新快照 ${escapeHtml(formatDateTime(data.observedAt))}，不是秒级直播数据</span></div>
+      <p>列表按最新可回放快照展示。互动增长只说明该视频值得继续取数；缺少播放量、统一时间窗、本人及同行基线和跨账号扩散证据时，状态保持“单视频续跟”，不进入热点或选题推荐。</p>
     </div><div class="video-signal-grid">${cards}</div>`;
+}
+
+function renderCreatorRealtimeHotspots(candidate, data) {
+  const signals = creatorRealtimeSignals(data?.videoSignals, candidate.id);
+  if (!signals.length) return `<div class="drawer-hotspot-empty"><strong>当前快照 0 条</strong><p>截至 ${escapeHtml(formatDateTime(data?.observedAt))}，未发现该达人的单视频续跟信号或已验证热点。</p></div>`;
+  return `<div class="drawer-hotspot-summary"><span>${statusChip(`${signals.length} 条单视频续跟`, "status-watch")}</span><span>已验证热点 0</span><span>快照 ${escapeHtml(formatDateTime(data?.observedAt))}</span></div><div class="drawer-hotspot-list">${signals.map((signal) => `<article>
+    <div><span class="model-code">${escapeHtml(signal.id)} · ${escapeHtml(signal.assessment)}</span><strong>${escapeHtml(signal.title)}</strong></div>
+    <div class="drawer-hotspot-metrics"><span>点赞 <b>${formatMetric(signal.current?.digg_count)}</b> <em>${formatDelta(signal.delta?.digg_count)}</em></span><span>收藏 <b>${formatMetric(signal.current?.collect_count)}</b> <em>${formatDelta(signal.delta?.collect_count)}</em></span><span>转发 <b>${formatMetric(signal.current?.share_count)}</b> <em>${formatDelta(signal.delta?.share_count)}</em></span><span>播放 <b>${formatMetric(signal.current?.play_count)}</b></span></div>
+    <p>${escapeHtml(signal.reason)}</p>
+    <a class="source-link" href="${escapeHtml(safeUrl(signal.videoUrl))}" target="_blank" rel="noopener noreferrer"><span>查看原视频</span>${icon("external-link")}</a>
+  </article>`).join("")}</div>`;
 }
 
 function coverageStat(label, value, note, tone = "") {
@@ -291,12 +315,12 @@ export function renderCreatorPage({ data, index, view, filters }) {
   else if (view === "coverage") content = renderCoverage(data);
   else if (view === "rules") content = renderRules(data);
   else if (view === "archive") content = renderArchive(index);
-  else content = `${renderToolbar(data, filters, filtered.length)}${renderCandidateTable(filtered)}`;
+  else content = `${renderToolbar(data, filters, filtered.length)}${renderCandidateTable(filtered, data.videoSignals, data.observedAt)}`;
   return `${heading}${trialBanner}${summary}${content}`;
 }
 
-export function renderCreatorDetail(candidate) {
-  const signals = gateSignals(candidate);
+export function renderCreatorDetail(candidate, data) {
+  const gateEvidence = gateSignals(candidate);
   const gates = candidate.gates || {};
   const refetch = candidate.refetch || {};
   const gateFacts = factGrid([
@@ -307,7 +331,7 @@ export function renderCreatorDetail(candidate) {
     ["最近相关作品", gates.latestRelatedAgeDays == null ? "缺失" : `${escapeHtml(gates.latestRelatedAgeDays)} 天前`],
     ["自动门槛结果", statusChip(candidate.dispositionLabel, DISPOSITION_CLASS[candidate.autoDisposition] || "")],
   ]);
-  const signalList = `<div class="drawer-signal-list">${signals.map((signal) => `<div class="${signal.pass ? "is-pass" : "is-missing"}"><span>${signal.pass ? icon("check") : icon("minus")}</span><strong>${escapeHtml(signal.label)}</strong><small>${signal.pass ? "已有证据" : "待补证据"}</small></div>`).join("")}</div>`;
+  const signalList = `<div class="drawer-signal-list">${gateEvidence.map((signal) => `<div class="${signal.pass ? "is-pass" : "is-missing"}"><span>${signal.pass ? icon("check") : icon("minus")}</span><strong>${escapeHtml(signal.label)}</strong><small>${signal.pass ? "已有证据" : "待补证据"}</small></div>`).join("")}</div>`;
   const refetchFacts = factGrid([
     ["目标视频", formatMetric(refetch.targetVideos)],
     ["成功复取", formatMetric(refetch.successfulVideos)],
@@ -330,8 +354,10 @@ export function renderCreatorDetail(candidate) {
     ${detailSection("硬门槛证据", "shield-check", `${renderEvidenceRail(candidate)}<div class="drawer-gate-facts">${gateFacts}</div>`)}
     ${detailSection("证据状态", "scan-line", signalList)}
     ${detailSection("16:00 复取", "refresh-cw", refetchFacts)}
+    ${detailSection("实时热点列表", "radio-tower", renderCreatorRealtimeHotspots(candidate, data))}
     ${detailSection("待办与风险", "clipboard-check", `<strong>人工核验</strong>${listHtml(gates.manualChecks, "无")}<br><strong>自动门槛未通过项</strong>${listHtml(gates.automatedFailures, "无")}<br><strong>风险词命中</strong>${listHtml(gates.riskTermsDetected, "无")}`)}
   `;
-  const copyText = `【达人候选审核｜${candidate.nickname}】\n候选ID：${candidate.id}\n粉丝快照：${formatMetric(candidate.followers)}\n候选赛道：${(candidate.tracks || []).join("、") || "缺失"}\n自动预筛：${candidate.dispositionLabel}\n正式状态：${candidate.formalStatus}\n90天有效作品：${formatMetric(gates.validVideos90d)}\n相关占比：${formatPercent(gates.relevantRatio)}\n复取：${formatMetric(refetch.successfulVideos)}/${formatMetric(refetch.targetVideos)}\n主页：${profileUrl}`;
+  const realtimeSignals = creatorRealtimeSignals(data?.videoSignals, candidate.id);
+  const copyText = `【达人候选审核｜${candidate.nickname}】\n候选ID：${candidate.id}\n粉丝快照：${formatMetric(candidate.followers)}\n候选赛道：${(candidate.tracks || []).join("、") || "缺失"}\n自动预筛：${candidate.dispositionLabel}\n正式状态：${candidate.formalStatus}\n90天有效作品：${formatMetric(gates.validVideos90d)}\n相关占比：${formatPercent(gates.relevantRatio)}\n复取：${formatMetric(refetch.successfulVideos)}/${formatMetric(refetch.targetVideos)}\n实时热点观察：${realtimeSignals.length} 条；已验证热点：0\n主页：${profileUrl}`;
   return { eyebrow: `${candidate.id} · 候选达人`, title: candidate.nickname, html, copyText };
 }

@@ -1407,7 +1407,18 @@ p {
 }
 
 .creator-table {
-  min-width: 1260px;
+  min-width: 1380px;
+}
+
+.creator-hotspot-title {
+  margin-top: 6px;
+}
+
+.hotspot-snapshot-note {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 10px;
 }
 
 .rules-table-wrap {
@@ -1868,6 +1879,99 @@ p {
   color: var(--danger);
 }
 
+.drawer-hotspot-empty {
+  border: 1px dashed var(--border-strong);
+  background: var(--surface);
+  padding: 13px;
+}
+
+.drawer-hotspot-empty strong {
+  display: block;
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.drawer-hotspot-empty p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.drawer-hotspot-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px 14px;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.drawer-hotspot-list {
+  border: 1px solid var(--border-strong);
+}
+
+.drawer-hotspot-list article {
+  padding: 13px;
+}
+
+.drawer-hotspot-list article + article {
+  border-top: 1px solid var(--border);
+}
+
+.drawer-hotspot-list article strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.drawer-hotspot-list article p {
+  margin: 10px 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.drawer-hotspot-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 10px;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+.drawer-hotspot-metrics span {
+  min-width: 0;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 7px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.drawer-hotspot-metrics b,
+.drawer-hotspot-metrics em {
+  display: block;
+  overflow: hidden;
+  font-family: var(--mono);
+  font-style: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.drawer-hotspot-metrics b {
+  margin-top: 2px;
+  color: var(--ink);
+  font-size: 11px;
+}
+
+.drawer-hotspot-metrics em {
+  color: var(--primary);
+  font-size: 9px;
+}
+
 @media (max-width: 1100px) {
   .coverage-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1929,6 +2033,10 @@ p {
   }
 
   .drawer-signal-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .drawer-hotspot-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
