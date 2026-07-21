@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "module": "authoritySources",
+  "latest": "2026-07-21",
+  "dates": [
+    {
+      "date": "2026-07-21",
+      "observedAt": "2026-07-20T18:45:00+08:00",
+      "totalSources": 10,
+      "officialSources": 7,
+      "commercialInstitutions": 3,
+      "currentPlatformEvidence": 1,
+      "personalWhitelistCount": 0,
+      "publicationStatus": "SOURCE_POOL_SEED_WITH_VERIFICATION_GAPS"
+    }
+  ]
+}

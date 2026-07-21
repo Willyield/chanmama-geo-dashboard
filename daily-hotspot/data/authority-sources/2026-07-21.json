@@ -1,0 +1,475 @@
+{
+  "schemaVersion": 1,
+  "module": "authoritySources",
+  "date": "2026-07-21",
+  "observedAt": "2026-07-20T18:45:00+08:00",
+  "publicationStatus": "SOURCE_POOL_SEED_WITH_VERIFICATION_GAPS",
+  "summary": {
+    "totalSources": 10,
+    "officialSources": 7,
+    "commercialInstitutions": 3,
+    "currentPlatformEvidence": 1,
+    "personalWhitelistCount": 0
+  },
+  "policy": {
+    "ruleClaim": "优先使用带发布时间和版本的官方规则页；抖音账号内容只作补充解释。",
+    "topicClaim": "权威源只能提供信号或事实核实，话题热点仍需达人视频 Q 与跨账号 TP 独立通过。",
+    "conflict": "同一时间对齐后双源差异超过5%时引入第三来源或人工复核；未解决则降级。",
+    "missing": "缺失字段保持 null，不估填，不按零处理。"
+  },
+  "sources": [
+    {
+      "id": "AS-001",
+      "nickname": "电商小助手",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA2I9NdgAKZrz9e0tLm1csyDMNqLESPDm34TdYYqXe8-I",
+      "institutionType": "official_source",
+      "institutionLabel": "平台官方账号",
+      "authorityLevel": "AUTH_1_RECHECK_REQUIRED",
+      "authorityLabel": "官方账号待复核",
+      "authorityDefinition": "官方账号种子只有 E1 历史聚合证据；需在抖音主页或官方规则页完成当前复核。",
+      "tracks": [
+        "店铺与规则",
+        "直播运营",
+        "增长转化"
+      ],
+      "followers": 10725000,
+      "profileObservedAt": "2026-07-20T16:30:00+08:00",
+      "certification": {
+        "accountType": "企业/官方认证号",
+        "confidence": "high",
+        "verificationStatus": "已认证",
+        "verification": null,
+        "description": "电商小助手 | ⏰每周一至周五，解锁官方精品直播课程\n📣 点击作品合集，一键GET运营新技能\n👇 点击主页官网链接，轻松入驻抖店"
+      },
+      "evidence": [
+        {
+          "source": "AIDSO抖音引用历史作者聚合",
+          "sourceTier": "E1",
+          "url": "https://www.douyin.com/user/MS4wLjABAAAA2I9NdgAKZrz9e0tLm1csyDMNqLESPDm34TdYYqXe8-I",
+          "observedAt": "2026-07-20T16:30:00+08:00",
+          "limitation": "历史引用样本，只能用于发现候选，不能证明近90天垂直度或当前热度。"
+        }
+      ],
+      "latestObservedAt": "2026-07-20T16:30:00+08:00",
+      "whitelistEligible": false,
+      "allowedUses": [
+        "平台规则与运营术语交叉核实",
+        "候选话题与内容方向发现",
+        "达人观点的官方或机构语境对照"
+      ],
+      "prohibitedUses": [
+        "计入50位个人达人白名单",
+        "单独证明话题已跨账号扩散",
+        "用商业机构观点替代官方规则",
+        "在当前复核缺失时声称规则仍然有效"
+      ],
+      "nextVerification": "在抖音当前主页复核认证信息；官方账号还需映射对应官方规则页"
+    },
+    {
+      "id": "AS-002",
+      "nickname": "抖老板",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA_aBcTz655JzO6kFx4YwVXqNYlswV8v2Hi-MP6gA7Fno",
+      "institutionType": "commercial_institution",
+      "institutionLabel": "商业机构参考源",
+      "authorityLevel": "REF_1_INSTITUTION_ONLY",
+      "authorityLabel": "机构参考",
+      "authorityDefinition": "商业机构参考源；只用于发现线索和行业语境，不可作为平台规则唯一依据。",
+      "tracks": [],
+      "followers": 46000,
+      "profileObservedAt": "2026-07-20T16:30:00+08:00",
+      "certification": {
+        "accountType": "企业/官方认证号",
+        "confidence": "high",
+        "verificationStatus": "已认证",
+        "verification": null,
+        "description": "抖老板 | 太原橙瓜信息科技有限公司 | 太原橙瓜信息科技有限公司"
+      },
+      "evidence": [
+        {
+          "source": "AIDSO抖音引用历史作者聚合",
+          "sourceTier": "E1",
+          "url": "https://www.douyin.com/user/MS4wLjABAAAA_aBcTz655JzO6kFx4YwVXqNYlswV8v2Hi-MP6gA7Fno",
+          "observedAt": "2026-07-20T16:30:00+08:00",
+          "limitation": "历史引用样本，只能用于发现候选，不能证明近90天垂直度或当前热度。"
+        }
+      ],
+      "latestObservedAt": "2026-07-20T16:30:00+08:00",
+      "whitelistEligible": false,
+      "allowedUses": [
+        "平台规则与运营术语交叉核实",
+        "候选话题与内容方向发现",
+        "达人观点的官方或机构语境对照"
+      ],
+      "prohibitedUses": [
+        "计入50位个人达人白名单",
+        "单独证明话题已跨账号扩散",
+        "用商业机构观点替代官方规则",
+        "在当前复核缺失时声称规则仍然有效"
+      ],
+      "nextVerification": "在抖音当前主页复核认证信息；官方账号还需映射对应官方规则页"
+    },
+    {
+      "id": "AS-003",
+      "nickname": "抖音电商学习中心",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAPYj5Wacvl7-zjVl-_RtiTWCwWrD4S-AuFOvtF25T7Ts",
+      "institutionType": "official_source",
+      "institutionLabel": "平台官方账号",
+      "authorityLevel": "AUTH_1_RECHECK_REQUIRED",
+      "authorityLabel": "官方账号待复核",
+      "authorityDefinition": "官方账号种子只有 E1 历史聚合证据；需在抖音主页或官方规则页完成当前复核。",
+      "tracks": [],
+      "followers": 1501000,
+      "profileObservedAt": "2026-07-20T16:30:00+08:00",
+      "certification": {
+        "accountType": "企业/官方认证号",
+        "confidence": "high",
+        "verificationStatus": "已认证",
+        "verification": null,
+        "description": "抖音电商学习中心 | 抖音电商官方学习平台\n官方认证讲师、官方免费课程\n关注我，持续学习抖音电商知识！ | 抖音电商学习中心 | 抖音电商学习中心"
+      },
+      "evidence": [
+        {
+          "source": "AIDSO抖音引用历史作者聚合",
+          "sourceTier": "E1",
+          "url": "https://www.douyin.com/user/MS4wLjABAAAAPYj5Wacvl7-zjVl-_RtiTWCwWrD4S-AuFOvtF25T7Ts",
+          "observedAt": "2026-07-20T16:30:00+08:00",
+          "limitation": "历史引用样本，只能用于发现候选，不能证明近90天垂直度或当前热度。"
+        }
+      ],
+      "latestObservedAt": "2026-07-20T16:30:00+08:00",
+      "whitelistEligible": false,
+      "allowedUses": [
+        "平台规则与运营术语交叉核实",
+        "候选话题与内容方向发现",
+        "达人观点的官方或机构语境对照"
+      ],
+      "prohibitedUses": [
+        "计入50位个人达人白名单",
+        "单独证明话题已跨账号扩散",
+        "用商业机构观点替代官方规则",
+        "在当前复核缺失时声称规则仍然有效"
+      ],
+      "nextVerification": "在抖音当前主页复核认证信息；官方账号还需映射对应官方规则页"
+    },
+    {
+      "id": "AS-004",
+      "nickname": "抖音创作灵感",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAZAVe_TPiYhQ3SgX0qQObvSLTfQekCq58D5Qm3GYTvys",
+      "institutionType": "official_source",
+      "institutionLabel": "平台官方账号",
+      "authorityLevel": "AUTH_1_RECHECK_REQUIRED",
+      "authorityLabel": "官方账号待复核",
+      "authorityDefinition": "官方账号种子只有 E1 历史聚合证据；需在抖音主页或官方规则页完成当前复核。",
+      "tracks": [
+        "短视频运营"
+      ],
+      "followers": 4712000,
+      "profileObservedAt": "2026-07-20T16:30:00+08:00",
+      "certification": {
+        "accountType": "企业/官方认证号",
+        "confidence": "high",
+        "verificationStatus": "已认证",
+        "verification": null,
+        "description": "抖音创作灵感 | 聚焦创作灵感，汇集灵感趋势、创作指南与优秀案例故事，为创作者提供灵感启发与创作参考。 | 抖音创作者中心官方账号 | 抖音创作者中心官方账号"
+      },
+      "evidence": [
+        {
+          "source": "AIDSO抖音引用历史作者聚合",
+          "sourceTier": "E1",
+          "url": "https://www.douyin.com/user/MS4wLjABAAAAZAVe_TPiYhQ3SgX0qQObvSLTfQekCq58D5Qm3GYTvys",
+          "observedAt": "2026-07-20T16:30:00+08:00",
+          "limitation": "历史引用样本，只能用于发现候选，不能证明近90天垂直度或当前热度。"
+        }
+      ],
+      "latestObservedAt": "2026-07-20T16:30:00+08:00",
+      "whitelistEligible": false,
+      "allowedUses": [
+        "平台规则与运营术语交叉核实",
+        "候选话题与内容方向发现",
+        "达人观点的官方或机构语境对照"
+      ],
+      "prohibitedUses": [
+        "计入50位个人达人白名单",
+        "单独证明话题已跨账号扩散",
+        "用商业机构观点替代官方规则",
+        "在当前复核缺失时声称规则仍然有效"
+      ],
+      "nextVerification": "在抖音当前主页复核认证信息；官方账号还需映射对应官方规则页"
+    },
+    {
+      "id": "AS-005",
+      "nickname": "抖音小助手",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAGA9bHrExvrQmowuVfRZxjG4s07M7EUjf1PlaHRHqdls",
+      "institutionType": "official_source",
+      "institutionLabel": "平台官方账号",
+      "authorityLevel": "AUTH_1_RECHECK_REQUIRED",
+      "authorityLabel": "官方账号待复核",
+      "authorityDefinition": "官方账号种子只有 E1 历史聚合证据；需在抖音主页或官方规则页完成当前复核。",
+      "tracks": [
+        "短视频运营"
+      ],
+      "followers": 48813000,
+      "profileObservedAt": "2026-07-20T16:30:00+08:00",
+      "certification": {
+        "accountType": "企业/官方认证号",
+        "confidence": "high",
+        "verificationStatus": "已认证",
+        "verification": null,
+        "description": "抖音小助手 | 本宝宝暂时还没想到个性签名 | 抖音官方账号 | 抖音官方账号"
+      },
+      "evidence": [
+        {
+          "source": "AIDSO抖音引用历史作者聚合",
+          "sourceTier": "E1",
+          "url": "https://www.douyin.com/user/MS4wLjABAAAAGA9bHrExvrQmowuVfRZxjG4s07M7EUjf1PlaHRHqdls",
+          "observedAt": "2026-07-20T16:30:00+08:00",
+          "limitation": "历史引用样本，只能用于发现候选，不能证明近90天垂直度或当前热度。"
+        }
+      ],
+      "latestObservedAt": "2026-07-20T16:30:00+08:00",
+      "whitelistEligible": false,
+      "allowedUses": [
+        "平台规则与运营术语交叉核实",
+        "候选话题与内容方向发现",
+        "达人观点的官方或机构语境对照"
+      ],
+      "prohibitedUses": [
+        "计入50位个人达人白名单",
+        "单独证明话题已跨账号扩散",
+        "用商业机构观点替代官方规则",
+        "在当前复核缺失时声称规则仍然有效"
+      ],
+      "nextVerification": "在抖音当前主页复核认证信息；官方账号还需映射对应官方规则页"
+    },
+    {
+      "id": "AS-006",
+      "nickname": "抖音作者助手",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA-hAqMwU4p1xu2AlQSM4R38D7DhTKGOk6d-zYU_o0LxY",
+      "institutionType": "official_source",
+      "institutionLabel": "平台官方账号",
+      "authorityLevel": "AUTH_1_RECHECK_REQUIRED",
+      "authorityLabel": "官方账号待复核",
+      "authorityDefinition": "官方账号种子只有 E1 历史聚合证据；需在抖音主页或官方规则页完成当前复核。",
+      "tracks": [
+        "店铺与规则",
+        "短视频运营",
+        "数据工具"
+      ],
+      "followers": 10048000,
+      "profileObservedAt": "2026-07-20T16:30:00+08:00",
+      "certification": {
+        "accountType": "企业/官方认证号",
+        "confidence": "high",
+        "verificationStatus": "已认证",
+        "verification": null,
+        "description": "抖音作者助手 | 创作卡壳、规则迷茫、看不懂数据、憋不出梗？\n别硬抗，私信找我就对了\n你的全能作者助手，全天候为你在线 | 抖音创作者中心官方账号 | 抖音创作者中心官方账号"
+      },
+      "evidence": [
+        {
+          "source": "AIDSO抖音引用历史作者聚合",
+          "sourceTier": "E1",
+          "url": "https://www.douyin.com/user/MS4wLjABAAAA-hAqMwU4p1xu2AlQSM4R38D7DhTKGOk6d-zYU_o0LxY",
+          "observedAt": "2026-07-20T16:30:00+08:00",
+          "limitation": "历史引用样本，只能用于发现候选，不能证明近90天垂直度或当前热度。"
+        }
+      ],
+      "latestObservedAt": "2026-07-20T16:30:00+08:00",
+      "whitelistEligible": false,
+      "allowedUses": [
+        "平台规则与运营术语交叉核实",
+        "候选话题与内容方向发现",
+        "达人观点的官方或机构语境对照"
+      ],
+      "prohibitedUses": [
+        "计入50位个人达人白名单",
+        "单独证明话题已跨账号扩散",
+        "用商业机构观点替代官方规则",
+        "在当前复核缺失时声称规则仍然有效"
+      ],
+      "nextVerification": "在抖音当前主页复核认证信息；官方账号还需映射对应官方规则页"
+    },
+    {
+      "id": "AS-007",
+      "nickname": "百宝电商创研学苑",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAY-ZJpGroSZwsImRHPPsqXJ_5Cr3-eUim8_4ID5ISMjc",
+      "institutionType": "commercial_institution",
+      "institutionLabel": "商业机构参考源",
+      "authorityLevel": "REF_1_INSTITUTION_ONLY",
+      "authorityLabel": "机构参考",
+      "authorityDefinition": "商业机构参考源；只用于发现线索和行业语境，不可作为平台规则唯一依据。",
+      "tracks": [],
+      "followers": 659000,
+      "profileObservedAt": "2026-07-20T16:30:00+08:00",
+      "certification": {
+        "accountType": "企业/官方认证号",
+        "confidence": "high",
+        "verificationStatus": "已认证",
+        "verification": null,
+        "description": "百宝电商创研学苑 | 需要解决问题电话联系，或者私信留下联系方式。 | 成都百宝教育咨询有限公司 | 成都百宝教育咨询有限公司"
+      },
+      "evidence": [
+        {
+          "source": "AIDSO抖音引用历史作者聚合",
+          "sourceTier": "E1",
+          "url": "https://www.douyin.com/user/MS4wLjABAAAAY-ZJpGroSZwsImRHPPsqXJ_5Cr3-eUim8_4ID5ISMjc",
+          "observedAt": "2026-07-20T16:30:00+08:00",
+          "limitation": "历史引用样本，只能用于发现候选，不能证明近90天垂直度或当前热度。"
+        }
+      ],
+      "latestObservedAt": "2026-07-20T16:30:00+08:00",
+      "whitelistEligible": false,
+      "allowedUses": [
+        "平台规则与运营术语交叉核实",
+        "候选话题与内容方向发现",
+        "达人观点的官方或机构语境对照"
+      ],
+      "prohibitedUses": [
+        "计入50位个人达人白名单",
+        "单独证明话题已跨账号扩散",
+        "用商业机构观点替代官方规则",
+        "在当前复核缺失时声称规则仍然有效"
+      ],
+      "nextVerification": "在抖音当前主页复核认证信息；官方账号还需映射对应官方规则页"
+    },
+    {
+      "id": "AS-008",
+      "nickname": "百宝电商教育",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAADwdMbtksreDZhCsA7mL8yUj0l3pzJ6VTOFGFCMx-b_8",
+      "institutionType": "commercial_institution",
+      "institutionLabel": "商业机构参考源",
+      "authorityLevel": "REF_1_INSTITUTION_ONLY",
+      "authorityLabel": "机构参考",
+      "authorityDefinition": "商业机构参考源；只用于发现线索和行业语境，不可作为平台规则唯一依据。",
+      "tracks": [],
+      "followers": 101000,
+      "profileObservedAt": "2026-07-20T16:30:00+08:00",
+      "certification": {
+        "accountType": "未认证个人或商业创作者",
+        "confidence": "medium",
+        "verificationStatus": "未发现认证证据",
+        "verification": null,
+        "description": "百宝电商教育 | 有问题需要解决可以电话联系，私信很少看。\n别相评论区的任何人，谨防受骗。"
+      },
+      "evidence": [
+        {
+          "source": "AIDSO抖音引用历史作者聚合",
+          "sourceTier": "E1",
+          "url": "https://www.douyin.com/user/MS4wLjABAAAADwdMbtksreDZhCsA7mL8yUj0l3pzJ6VTOFGFCMx-b_8",
+          "observedAt": "2026-07-20T16:30:00+08:00",
+          "limitation": "历史引用样本，只能用于发现候选，不能证明近90天垂直度或当前热度。"
+        }
+      ],
+      "latestObservedAt": "2026-07-20T16:30:00+08:00",
+      "whitelistEligible": false,
+      "allowedUses": [
+        "平台规则与运营术语交叉核实",
+        "候选话题与内容方向发现",
+        "达人观点的官方或机构语境对照"
+      ],
+      "prohibitedUses": [
+        "计入50位个人达人白名单",
+        "单独证明话题已跨账号扩散",
+        "用商业机构观点替代官方规则",
+        "在当前复核缺失时声称规则仍然有效"
+      ],
+      "nextVerification": "在抖音当前主页复核认证信息；官方账号还需映射对应官方规则页"
+    },
+    {
+      "id": "AS-009",
+      "nickname": "巨量千川",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAdqtFnaUCSX84aVoztfOfjcZ4JO_byALdmfjstu0wwckbZ3Rs360VIEL83JL85kKK",
+      "institutionType": "official_source",
+      "institutionLabel": "平台官方账号",
+      "authorityLevel": "AUTH_2_CURRENT_PLATFORM",
+      "authorityLabel": "当前平台证据",
+      "authorityDefinition": "官方认证描述且存在当前抖音站内搜索 E2 证据；仍需与官方规则页核对具体规则。",
+      "tracks": [
+        "千川投放"
+      ],
+      "followers": 13268000,
+      "profileObservedAt": "2026-07-20T18:45:00+08:00",
+      "certification": {
+        "accountType": "企业/官方认证号",
+        "confidence": "high",
+        "verificationStatus": "已认证",
+        "verification": "巨量引擎电商广告官方平台",
+        "description": "巨量千川 | 🚀带你提高销量，玩转流量，马上关注！\n📚电商行业经营&投放干货免费学习 | 巨量引擎电商广告官方平台 | 巨量引擎电商广告官方平台"
+      },
+      "evidence": [
+        {
+          "source": "AIDSO抖音引用历史作者聚合",
+          "sourceTier": "E1",
+          "url": "https://www.douyin.com/user/MS4wLjABAAAAdqtFnaUCSX84aVoztfOfjcZ4JO_byALdmfjstu0wwckbZ3Rs360VIEL83JL85kKK",
+          "observedAt": "2026-07-20T16:30:00+08:00",
+          "limitation": "历史引用样本，只能用于发现候选，不能证明近90天垂直度或当前热度。"
+        },
+        {
+          "source": "抖音站内用户搜索",
+          "sourceTier": "E2",
+          "url": "https://www.douyin.com/user/MS4wLjABAAAAdqtFnaUCSX84aVoztfOfjcZ4JO_byALdmfjstu0wwckbZ3Rs360VIEL83JL85kKK",
+          "observedAt": "2026-07-20T18:45:00+08:00",
+          "limitation": "搜索结果只用于发现和当前账号快照，尚未审核近90天作品。"
+        }
+      ],
+      "latestObservedAt": "2026-07-20T18:45:00+08:00",
+      "whitelistEligible": false,
+      "allowedUses": [
+        "平台规则与运营术语交叉核实",
+        "候选话题与内容方向发现",
+        "达人观点的官方或机构语境对照"
+      ],
+      "prohibitedUses": [
+        "计入50位个人达人白名单",
+        "单独证明话题已跨账号扩散",
+        "用商业机构观点替代官方规则",
+        "在当前复核缺失时声称规则仍然有效"
+      ],
+      "nextVerification": "将具体规则映射到官方规则中心原文，并记录规则发布时间、版本和观察时间"
+    },
+    {
+      "id": "AS-010",
+      "nickname": "小店随心推专卖店",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAApFLr6ZPQewBnnau5Igo-Gijr8Ww2v5ISLSpwuglBQCucQin_u3Mn6oBP6QvSLvYX",
+      "institutionType": "official_source",
+      "institutionLabel": "平台官方账号",
+      "authorityLevel": "AUTH_1_RECHECK_REQUIRED",
+      "authorityLabel": "官方账号待复核",
+      "authorityDefinition": "官方账号种子只有 E1 历史聚合证据；需在抖音主页或官方规则页完成当前复核。",
+      "tracks": [
+        "直播运营"
+      ],
+      "followers": 2798000,
+      "profileObservedAt": "2026-07-20T16:30:00+08:00",
+      "certification": {
+        "accountType": "企业/官方认证号",
+        "confidence": "high",
+        "verificationStatus": "已认证",
+        "verification": null,
+        "description": "小店随心推专卖店 | 小店随心推抖音官方号\n关注我，了解随心推新政策、新活动、新玩法\n➡️点击私信，获取为你量身定制的经营诊断报告\n➡️周一到周五10:00-20:00干货直播"
+      },
+      "evidence": [
+        {
+          "source": "AIDSO抖音引用历史作者聚合",
+          "sourceTier": "E1",
+          "url": "https://www.douyin.com/user/MS4wLjABAAAApFLr6ZPQewBnnau5Igo-Gijr8Ww2v5ISLSpwuglBQCucQin_u3Mn6oBP6QvSLvYX",
+          "observedAt": "2026-07-20T16:30:00+08:00",
+          "limitation": "历史引用样本，只能用于发现候选，不能证明近90天垂直度或当前热度。"
+        }
+      ],
+      "latestObservedAt": "2026-07-20T16:30:00+08:00",
+      "whitelistEligible": false,
+      "allowedUses": [
+        "平台规则与运营术语交叉核实",
+        "候选话题与内容方向发现",
+        "达人观点的官方或机构语境对照"
+      ],
+      "prohibitedUses": [
+        "计入50位个人达人白名单",
+        "单独证明话题已跨账号扩散",
+        "用商业机构观点替代官方规则",
+        "在当前复核缺失时声称规则仍然有效"
+      ],
+      "nextVerification": "在抖音当前主页复核认证信息；官方账号还需映射对应官方规则页"
+    }
+  ]
+}

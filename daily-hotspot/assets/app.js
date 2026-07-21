@@ -100,7 +100,9 @@ function renderHeader() {
     ? `观察 ${state.data.observedAt}`
     : state.module === "events"
       ? `复核 ${state.data.verifiedAt}`
-      : `试运行 ${state.data.observedAt}`;
+      : state.data.decision
+        ? `决策 ${state.data.decision.decisionAsOf}`
+        : `试运行 ${state.data.observedAt}`;
   const title = state.module === "hotspots"
     ? "每日热点"
     : state.module === "events"
@@ -142,6 +144,14 @@ async function loadRoute() {
     const requestedDate = route.requestedDate === "latest" ? index.latest : route.requestedDate;
     const date = index.dates.some((item) => item.date === requestedDate) ? requestedDate : index.latest;
     const data = await fetchJson(`./data/${route.module}/${date}.json`);
+    if (route.module === "creators") {
+      try {
+        data.decision = await fetchJson(`./data/creators/decisions/${date}.json`);
+      } catch (error) {
+        if (!String(error.message).startsWith("404")) throw error;
+        data.decision = null;
+      }
+    }
     if (requestId !== state.requestId) return;
     state.index = index;
     state.date = date;
