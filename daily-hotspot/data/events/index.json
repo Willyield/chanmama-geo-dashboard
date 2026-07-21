@@ -1,15 +1,25 @@
 {
   "schemaVersion": 1,
   "module": "events",
-  "latest": "2026-07-20",
+  "latest": "2026-07-21",
   "dates": [
+    {
+      "date": "2026-07-21",
+      "observedAt": "2026-07-20 15:12",
+      "verifiedAt": "2026-07-21",
+      "total": 0,
+      "prepare": 0,
+      "excludedRecent": 15,
+      "revision": 2
+    },
     {
       "date": "2026-07-20",
       "observedAt": "2026-07-20 15:12",
       "verifiedAt": "2026-07-20",
-      "total": 15,
-      "prepare": 10,
-      "revision": 17
+      "total": 0,
+      "prepare": 0,
+      "excludedRecent": 15,
+      "revision": 18
     }
   ]
 }

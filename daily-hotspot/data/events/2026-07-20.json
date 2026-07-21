@@ -4,50 +4,56 @@
   "date": "2026-07-20",
   "observedAt": "2026-07-20 15:12",
   "verifiedAt": "2026-07-20",
-  "revision": 17,
-  "updatedAt": "2026-07-20T10:35:33.582Z",
+  "revision": 18,
+  "updatedAt": "2026-07-20T10:44:07.506Z",
   "sourceType": "structured-data",
   "sourceLabel": "活动数据与核验记录",
   "sourceFiles": [
     "ecommerce-circle-events/data/events.json",
     "ecommerce-circle-events/data/agenda_topics.json",
     "ecommerce-circle-events/config/keywords.csv",
+    "ecommerce-circle-events/config/monitoring_policy.json",
     "ecommerce-circle-events/data/verification_log.csv"
   ],
   "sourceWorkbook": null,
   "summary": {
     "counts": {
-      "total": 15,
-      "prepare": 10,
-      "watch": 3,
-      "agendaMissing": 2,
-      "urgent": 7,
-      "conflicts": 3,
-      "verified": 15
+      "total": 0,
+      "prepare": 0,
+      "watch": 0,
+      "agendaMissing": 0,
+      "urgent": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "excludedRecent": 15
     },
-    "webSummary": "执行摘要：未来一个月已核验 15 场活动，优先准备 10 场、重点观察 3 场、待补议程 2 场；7 场距开场不超过 7 天。\n今日优先：2026跨境电商政策合规和体系运营闭门会、跨境家居纺织产业带卖家选品对接会、Wayfair官方招商启动会-苏州站。",
-    "topActions": [
-      {
-        "eventId": "EVT-005",
-        "name": "2026跨境电商政策合规和体系运营闭门会",
-        "action": "先做政策/运营问题清单；避免为5天窗口启动重型合作或产品开发",
-        "reason": "中高：政策、流量转化、品牌增长和AI工具有明确搜索需求，但活动规模很小"
-      },
-      {
-        "eventId": "EVT-006",
-        "name": "跨境家居纺织产业带卖家选品对接会",
-        "action": "准备家居纺织选品数据卡、TikTok内容拆解模板和AI选品验证步骤",
-        "reason": "高：选品、AI、Wayfair和TikTok内容都可转成明确搜索与验证问题"
-      },
-      {
-        "eventId": "EVT-009",
-        "name": "Wayfair官方招商启动会-苏州站",
-        "action": "用统一模板记录苏州站问题，供8月广州站前复用和迭代",
-        "reason": "中高：2026入驻政策、平台红利和苏州家居卖家案例具有明确搜索词"
-      }
+    "webSummary": "执行摘要：本轮暂无活动满足至少提前 3 个自然月的准备门槛（最早准入日 2026-10-20）；15 场近期活动已排除并保留历史证据。\n今日优先：暂无满足三个月准备门槛且需要立即介入的活动。",
+    "topActions": []
+  },
+  "monitoringPolicy": {
+    "effectiveFrom": "2026-07-20",
+    "timezone": "Asia/Shanghai",
+    "minimumLeadMonths": 3,
+    "maximumHorizonMonths": null,
+    "includeThresholdDate": true,
+    "excludeNearTerm": true,
+    "farFutureOfficialConfirmationMonths": 12,
+    "monitoredCities": [
+      "北京",
+      "成都",
+      "福州",
+      "广州",
+      "杭州",
+      "南京",
+      "厦门",
+      "上海",
+      "深圳",
+      "苏州"
     ]
   },
-  "events": [
+  "thresholdDate": "2026-10-20",
+  "events": [],
+  "excludedEvents": [
     {
       "eventId": "EVT-005",
       "seriesId": null,
@@ -210,7 +216,9 @@
           "issue": "无",
           "action": "最终严格复核"
         }
-      ]
+      ],
+      "exclusionCategory": "inside-preparation-window",
+      "exclusionReason": "开场日 2026-07-22 早于最早准入日 2026-10-20"
     },
     {
       "eventId": "EVT-006",
@@ -375,7 +383,9 @@
           "issue": "无",
           "action": "最终严格复核"
         }
-      ]
+      ],
+      "exclusionCategory": "inside-preparation-window",
+      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-10-20"
     },
     {
       "eventId": "EVT-007",
@@ -515,7 +525,9 @@
           "issue": "无",
           "action": "最终严格复核"
         }
-      ]
+      ],
+      "exclusionCategory": "inside-preparation-window",
+      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-10-20"
     },
     {
       "eventId": "EVT-009",
@@ -655,7 +667,9 @@
           "issue": "无",
           "action": "最终严格复核"
         }
-      ]
+      ],
+      "exclusionCategory": "inside-preparation-window",
+      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-10-20"
     },
     {
       "eventId": "EVT-003",
@@ -818,7 +832,9 @@
           "issue": "无",
           "action": "最终严格复核"
         }
-      ]
+      ],
+      "exclusionCategory": "inside-preparation-window",
+      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-10-20"
     },
     {
       "eventId": "EVT-013",
@@ -989,7 +1005,9 @@
           "issue": "无",
           "action": "构建后严格复核"
         }
-      ]
+      ],
+      "exclusionCategory": "inside-preparation-window",
+      "exclusionReason": "开场日 2026-07-24 早于最早准入日 2026-10-20"
     },
     {
       "eventId": "EVT-015",
@@ -1156,7 +1174,9 @@
           "issue": "无",
           "action": "构建后严格复核"
         }
-      ]
+      ],
+      "exclusionCategory": "inside-preparation-window",
+      "exclusionReason": "开场日 2026-07-26 早于最早准入日 2026-10-20"
     },
     {
       "eventId": "EVT-011",
@@ -1275,7 +1295,9 @@
           "issue": "无",
           "action": "最终严格复核"
         }
-      ]
+      ],
+      "exclusionCategory": "inside-preparation-window",
+      "exclusionReason": "开场日 2026-07-30 早于最早准入日 2026-10-20"
     },
     {
       "eventId": "EVT-004",
@@ -1461,7 +1483,9 @@
           "issue": "无",
           "action": "最终严格复核"
         }
-      ]
+      ],
+      "exclusionCategory": "inside-preparation-window",
+      "exclusionReason": "开场日 2026-07-31 早于最早准入日 2026-10-20"
     },
     {
       "eventId": "EVT-002",
@@ -1637,7 +1661,9 @@
           "issue": "无",
           "action": "最终严格复核"
         }
-      ]
+      ],
+      "exclusionCategory": "inside-preparation-window",
+      "exclusionReason": "开场日 2026-08-04 早于最早准入日 2026-10-20"
     },
     {
       "eventId": "EVT-008",
@@ -1822,7 +1848,9 @@
           "issue": "无",
           "action": "最终严格复核"
         }
-      ]
+      ],
+      "exclusionCategory": "inside-preparation-window",
+      "exclusionReason": "开场日 2026-08-11 早于最早准入日 2026-10-20"
     },
     {
       "eventId": "EVT-010",
@@ -1963,7 +1991,9 @@
           "issue": "无",
           "action": "最终严格复核"
         }
-      ]
+      ],
+      "exclusionCategory": "inside-preparation-window",
+      "exclusionReason": "开场日 2026-08-13 早于最早准入日 2026-10-20"
     },
     {
       "eventId": "EVT-001",
@@ -2091,7 +2121,9 @@
           "issue": "无",
           "action": "最终严格复核"
         }
-      ]
+      ],
+      "exclusionCategory": "inside-preparation-window",
+      "exclusionReason": "开场日 2026-08-14 早于最早准入日 2026-10-20"
     },
     {
       "eventId": "EVT-014",
@@ -2264,7 +2296,9 @@
           "issue": "无",
           "action": "构建后严格复核"
         }
-      ]
+      ],
+      "exclusionCategory": "inside-preparation-window",
+      "exclusionReason": "开场日 2026-08-19 早于最早准入日 2026-10-20"
     },
     {
       "eventId": "EVT-012",
@@ -2437,7 +2471,9 @@
           "issue": "无",
           "action": "构建后严格复核"
         }
-      ]
+      ],
+      "exclusionCategory": "inside-preparation-window",
+      "exclusionReason": "开场日 2026-08-20 早于最早准入日 2026-10-20"
     }
   ],
   "keywords": [
@@ -5323,501 +5359,5 @@
       "notes": ""
     }
   ],
-  "verificationLogs": [
-    {
-      "verification_id": "VER-001",
-      "event_id": "EVT-001",
-      "check_type": "真实性复核",
-      "checked_at": "2026-07-17 11:25",
-      "status": "PASS",
-      "evidence": "活动行原页+中国日报网",
-      "scope_or_field": "名称/日期/城市/场馆",
-      "issue": "无",
-      "action": "保留双来源"
-    },
-    {
-      "verification_id": "VER-002",
-      "event_id": "EVT-001",
-      "check_type": "字段复核",
-      "checked_at": "2026-07-17 11:25",
-      "status": "PASS_WITH_CONFLICT",
-      "evidence": "页面结构化字段+活动海报",
-      "scope_or_field": "结束时间",
-      "issue": "13:00与12:45冲突",
-      "action": "表内显式标注并以页面字段建档"
-    },
-    {
-      "verification_id": "VER-003",
-      "event_id": "EVT-001",
-      "check_type": "输出一致性复核",
-      "checked_at": "2026-07-20（首页改版复核）",
-      "status": "PASS",
-      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
-      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
-      "issue": "无",
-      "action": "最终严格复核"
-    },
-    {
-      "verification_id": "VER-004",
-      "event_id": "EVT-002",
-      "check_type": "真实性复核",
-      "checked_at": "2026-07-17 11:25",
-      "status": "PASS",
-      "evidence": "活动行原页+雨果活动页+官方海报",
-      "scope_or_field": "名称/日期/城市/场馆",
-      "issue": "无",
-      "action": "保留双来源与海报"
-    },
-    {
-      "verification_id": "VER-005",
-      "event_id": "EVT-002",
-      "check_type": "字段复核",
-      "checked_at": "2026-07-17 11:25",
-      "status": "PASS_WITH_CONFLICT",
-      "evidence": "活动行字段+雨果活动页",
-      "scope_or_field": "结束时间/人数",
-      "issue": "18:00与17:00冲突；多种人数口径",
-      "action": "显式区分宣传口径/容量/报名数/到场数"
-    },
-    {
-      "verification_id": "VER-006",
-      "event_id": "EVT-002",
-      "check_type": "输出一致性复核",
-      "checked_at": "2026-07-20（首页改版复核）",
-      "status": "PASS",
-      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
-      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
-      "issue": "无",
-      "action": "最终严格复核"
-    },
-    {
-      "verification_id": "VER-007",
-      "event_id": "EVT-003",
-      "check_type": "真实性复核",
-      "checked_at": "2026-07-17 11:28",
-      "status": "PASS",
-      "evidence": "雨果活动原页+官方海报",
-      "scope_or_field": "名称/日期/城市/议程",
-      "issue": "无",
-      "action": "归档海报"
-    },
-    {
-      "verification_id": "VER-008",
-      "event_id": "EVT-003",
-      "check_type": "字段复核",
-      "checked_at": "2026-07-17 11:28",
-      "status": "PASS_WITH_GAPS",
-      "evidence": "页面+海报",
-      "scope_or_field": "地点/嘉宾",
-      "issue": "具体地址和嘉宾姓名未公开",
-      "action": "写暂缺 不推断"
-    },
-    {
-      "verification_id": "VER-009",
-      "event_id": "EVT-003",
-      "check_type": "输出一致性复核",
-      "checked_at": "2026-07-20（首页改版复核）",
-      "status": "PASS",
-      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
-      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
-      "issue": "无",
-      "action": "最终严格复核"
-    },
-    {
-      "verification_id": "VER-010",
-      "event_id": "EVT-004",
-      "check_type": "真实性复核",
-      "checked_at": "2026-07-17 11:29",
-      "status": "PASS",
-      "evidence": "雨果活动原页+官方海报",
-      "scope_or_field": "名称/日期/城市/目标人群/议程",
-      "issue": "无",
-      "action": "归档海报"
-    },
-    {
-      "verification_id": "VER-011",
-      "event_id": "EVT-004",
-      "check_type": "字段复核",
-      "checked_at": "2026-07-17 11:29",
-      "status": "PASS_WITH_GAPS",
-      "evidence": "页面+海报",
-      "scope_or_field": "地点/人数/嘉宾",
-      "issue": "未公开",
-      "action": "写暂缺 不推断"
-    },
-    {
-      "verification_id": "VER-012",
-      "event_id": "EVT-004",
-      "check_type": "输出一致性复核",
-      "checked_at": "2026-07-20（首页改版复核）",
-      "status": "PASS",
-      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
-      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
-      "issue": "无",
-      "action": "最终严格复核"
-    },
-    {
-      "verification_id": "VER-013",
-      "event_id": "EVT-005",
-      "check_type": "真实性复核",
-      "checked_at": "2026-07-17 11:30",
-      "status": "PASS",
-      "evidence": "雨果活动原页+官方课程海报",
-      "scope_or_field": "名称/日期/场馆/价格/模块",
-      "issue": "无",
-      "action": "归档海报"
-    },
-    {
-      "verification_id": "VER-014",
-      "event_id": "EVT-005",
-      "check_type": "字段复核",
-      "checked_at": "2026-07-17 11:30",
-      "status": "PASS_WITH_GAPS",
-      "evidence": "页面+海报",
-      "scope_or_field": "主办方/每日时段/实际人数",
-      "issue": "未清晰披露",
-      "action": "7人仅作为限额口径"
-    },
-    {
-      "verification_id": "VER-015",
-      "event_id": "EVT-005",
-      "check_type": "输出一致性复核",
-      "checked_at": "2026-07-20（首页改版复核）",
-      "status": "PASS",
-      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
-      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
-      "issue": "无",
-      "action": "最终严格复核"
-    },
-    {
-      "verification_id": "VER-016",
-      "event_id": "EVT-006",
-      "check_type": "真实性复核",
-      "checked_at": "2026-07-17 11:31",
-      "status": "PASS",
-      "evidence": "雨果活动原页+官方海报",
-      "scope_or_field": "名称/日期/城市/议程",
-      "issue": "无",
-      "action": "归档海报"
-    },
-    {
-      "verification_id": "VER-017",
-      "event_id": "EVT-006",
-      "check_type": "字段复核",
-      "checked_at": "2026-07-17 11:31",
-      "status": "PASS_WITH_GAPS",
-      "evidence": "页面+海报",
-      "scope_or_field": "精确会场/人数",
-      "issue": "未公开",
-      "action": "工厂数与SKU数不当作人数"
-    },
-    {
-      "verification_id": "VER-018",
-      "event_id": "EVT-006",
-      "check_type": "输出一致性复核",
-      "checked_at": "2026-07-20（首页改版复核）",
-      "status": "PASS",
-      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
-      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
-      "issue": "无",
-      "action": "最终严格复核"
-    },
-    {
-      "verification_id": "VER-019",
-      "event_id": "EVT-007",
-      "check_type": "真实性复核",
-      "checked_at": "2026-07-17 11:32",
-      "status": "PASS",
-      "evidence": "雨果活动原页+官方海报",
-      "scope_or_field": "名称/日期/城市/地址/讲师",
-      "issue": "无",
-      "action": "归档海报"
-    },
-    {
-      "verification_id": "VER-020",
-      "event_id": "EVT-007",
-      "check_type": "字段复核",
-      "checked_at": "2026-07-17 11:32",
-      "status": "PASS_WITH_CONFLICT",
-      "evidence": "活动页+海报",
-      "scope_or_field": "议程时间",
-      "issue": "签到与第一议题重叠",
-      "action": "保留冲突 不擅自修正"
-    },
-    {
-      "verification_id": "VER-021",
-      "event_id": "EVT-007",
-      "check_type": "输出一致性复核",
-      "checked_at": "2026-07-20（首页改版复核）",
-      "status": "PASS",
-      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
-      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
-      "issue": "无",
-      "action": "最终严格复核"
-    },
-    {
-      "verification_id": "VER-022",
-      "event_id": "EVT-008",
-      "check_type": "真实性复核",
-      "checked_at": "2026-07-17 11:33",
-      "status": "PASS",
-      "evidence": "雨果活动原页+官方议程海报",
-      "scope_or_field": "名称/日期/城市/平台议程",
-      "issue": "无",
-      "action": "归档海报"
-    },
-    {
-      "verification_id": "VER-023",
-      "event_id": "EVT-008",
-      "check_type": "字段复核",
-      "checked_at": "2026-07-17 11:33",
-      "status": "PASS_WITH_GAPS",
-      "evidence": "页面+海报",
-      "scope_or_field": "具体会场/人数/完整嘉宾表",
-      "issue": "未公开",
-      "action": "写审核后通知或暂缺"
-    },
-    {
-      "verification_id": "VER-024",
-      "event_id": "EVT-008",
-      "check_type": "输出一致性复核",
-      "checked_at": "2026-07-20（首页改版复核）",
-      "status": "PASS",
-      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
-      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
-      "issue": "无",
-      "action": "最终严格复核"
-    },
-    {
-      "verification_id": "VER-025",
-      "event_id": "EVT-009",
-      "check_type": "真实性复核",
-      "checked_at": "2026-07-17 11:34",
-      "status": "PASS",
-      "evidence": "雨果活动原页+官方议程海报",
-      "scope_or_field": "名称/日期/城市/议程/嘉宾",
-      "issue": "无",
-      "action": "归档海报"
-    },
-    {
-      "verification_id": "VER-026",
-      "event_id": "EVT-009",
-      "check_type": "字段复核",
-      "checked_at": "2026-07-17 11:34",
-      "status": "PASS_WITH_GAPS",
-      "evidence": "页面+海报",
-      "scope_or_field": "精确会场/人数",
-      "issue": "未公开",
-      "action": "写审核通知或暂缺"
-    },
-    {
-      "verification_id": "VER-027",
-      "event_id": "EVT-009",
-      "check_type": "输出一致性复核",
-      "checked_at": "2026-07-20（首页改版复核）",
-      "status": "PASS",
-      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
-      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
-      "issue": "无",
-      "action": "最终严格复核"
-    },
-    {
-      "verification_id": "VER-028",
-      "event_id": "EVT-010",
-      "check_type": "真实性复核",
-      "checked_at": "2026-07-17 11:35",
-      "status": "PASS",
-      "evidence": "雨果活动原页+官方议程海报",
-      "scope_or_field": "名称/日期/城市/议程",
-      "issue": "无",
-      "action": "归档海报"
-    },
-    {
-      "verification_id": "VER-029",
-      "event_id": "EVT-010",
-      "check_type": "字段复核",
-      "checked_at": "2026-07-17 11:35",
-      "status": "PASS_WITH_GAPS",
-      "evidence": "页面+海报",
-      "scope_or_field": "精确会场/人数/嘉宾",
-      "issue": "未公开",
-      "action": "写审核通知或暂缺"
-    },
-    {
-      "verification_id": "VER-030",
-      "event_id": "EVT-010",
-      "check_type": "输出一致性复核",
-      "checked_at": "2026-07-20（首页改版复核）",
-      "status": "PASS",
-      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
-      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
-      "issue": "无",
-      "action": "最终严格复核"
-    },
-    {
-      "verification_id": "VER-031",
-      "event_id": "EVT-011",
-      "check_type": "真实性复核",
-      "checked_at": "2026-07-17 11:36",
-      "status": "PASS",
-      "evidence": "雨果活动原页+Ozon/雨果联合海报",
-      "scope_or_field": "名称/日期/城市/场馆",
-      "issue": "无",
-      "action": "归档海报"
-    },
-    {
-      "verification_id": "VER-032",
-      "event_id": "EVT-011",
-      "check_type": "字段复核",
-      "checked_at": "2026-07-17 11:36",
-      "status": "PASS_WITH_GAPS",
-      "evidence": "页面+海报",
-      "scope_or_field": "议程/嘉宾/人数",
-      "issue": "未公开",
-      "action": "不做具体爆点分数"
-    },
-    {
-      "verification_id": "VER-033",
-      "event_id": "EVT-011",
-      "check_type": "输出一致性复核",
-      "checked_at": "2026-07-20（首页改版复核）",
-      "status": "PASS",
-      "evidence": "数据校验+首页字段对数+Excel重导入+8表渲染目视",
-      "scope_or_field": "JSON/CSV/Excel/首页/8张表",
-      "issue": "无",
-      "action": "最终严格复核"
-    },
-    {
-      "verification_id": "VER-034",
-      "event_id": "EVT-012",
-      "check_type": "真实性复核",
-      "checked_at": "2026-07-20 15:05",
-      "status": "PASS",
-      "evidence": "雨果活动原页+页面内官方议程海报",
-      "scope_or_field": "名称/日期/城市/报名状态",
-      "issue": "无",
-      "action": "归档原始海报并保留链接"
-    },
-    {
-      "verification_id": "VER-035",
-      "event_id": "EVT-012",
-      "check_type": "字段复核",
-      "checked_at": "2026-07-20 15:06",
-      "status": "PASS_WITH_GAPS",
-      "evidence": "活动页结构化字段+官方议程海报",
-      "scope_or_field": "精确会场/预计人数/票务口径",
-      "issue": "精确会场未披露；票务字段不可等同到场人数",
-      "action": "显式标暂缺并保留口径说明"
-    },
-    {
-      "verification_id": "VER-036",
-      "event_id": "EVT-012",
-      "check_type": "输出一致性复核",
-      "checked_at": "2026-07-20 15:20",
-      "status": "PASS",
-      "evidence": "JSON/CSV校验+网页字段对数+来源链接复核",
-      "scope_or_field": "结构化数据/首页/详情",
-      "issue": "无",
-      "action": "构建后严格复核"
-    },
-    {
-      "verification_id": "VER-037",
-      "event_id": "EVT-013",
-      "check_type": "真实性复核",
-      "checked_at": "2026-07-20 15:07",
-      "status": "PASS",
-      "evidence": "雨果活动原页+页面内官方议程海报",
-      "scope_or_field": "名称/日期/城市/场馆/报名状态",
-      "issue": "无",
-      "action": "归档原始海报并保留链接"
-    },
-    {
-      "verification_id": "VER-038",
-      "event_id": "EVT-013",
-      "check_type": "字段复核",
-      "checked_at": "2026-07-20 15:08",
-      "status": "PASS_WITH_GAPS",
-      "evidence": "活动页结构化字段+官方议程海报",
-      "scope_or_field": "预计人数/票务口径",
-      "issue": "预计人数未披露；票务字段不可等同到场人数",
-      "action": "显式标暂缺并保留口径说明"
-    },
-    {
-      "verification_id": "VER-039",
-      "event_id": "EVT-013",
-      "check_type": "输出一致性复核",
-      "checked_at": "2026-07-20 15:20",
-      "status": "PASS",
-      "evidence": "JSON/CSV校验+网页字段对数+来源链接复核",
-      "scope_or_field": "结构化数据/首页/详情",
-      "issue": "无",
-      "action": "构建后严格复核"
-    },
-    {
-      "verification_id": "VER-040",
-      "event_id": "EVT-014",
-      "check_type": "真实性复核",
-      "checked_at": "2026-07-20 15:10",
-      "status": "PASS",
-      "evidence": "主办方公众号原文+搜狗微信双条索引",
-      "scope_or_field": "名称/日期/城市/会场/组织架构",
-      "issue": "无",
-      "action": "保存原文截图与稳定文章标识"
-    },
-    {
-      "verification_id": "VER-041",
-      "event_id": "EVT-014",
-      "check_type": "字段复核",
-      "checked_at": "2026-07-20 15:11",
-      "status": "PASS_WITH_GAPS",
-      "evidence": "公众号原文议程与组织架构",
-      "scope_or_field": "报名表单/嘉宾/人数/闭门会时段",
-      "issue": "部分字段未公开",
-      "action": "保留暂缺并每周复扫"
-    },
-    {
-      "verification_id": "VER-042",
-      "event_id": "EVT-014",
-      "check_type": "输出一致性复核",
-      "checked_at": "2026-07-20 15:20",
-      "status": "PASS",
-      "evidence": "JSON/CSV校验+网页字段对数+来源链接复核",
-      "scope_or_field": "结构化数据/首页/详情",
-      "issue": "无",
-      "action": "构建后严格复核"
-    },
-    {
-      "verification_id": "VER-043",
-      "event_id": "EVT-015",
-      "check_type": "真实性复核",
-      "checked_at": "2026-07-20 15:12",
-      "status": "PASS",
-      "evidence": "联合发起方公众号原文+活动日期与课程模块",
-      "scope_or_field": "名称/日期/城市/主办/课程内容",
-      "issue": "无",
-      "action": "保存原文截图与稳定文章标识"
-    },
-    {
-      "verification_id": "VER-044",
-      "event_id": "EVT-015",
-      "check_type": "字段复核",
-      "checked_at": "2026-07-20 15:13",
-      "status": "PASS_WITH_GAPS",
-      "evidence": "公众号原文",
-      "scope_or_field": "具体时段/地点/人数/导师/表单",
-      "issue": "仅公开日期和二维码预约",
-      "action": "保留暂缺并区分本场与后续训练"
-    },
-    {
-      "verification_id": "VER-045",
-      "event_id": "EVT-015",
-      "check_type": "输出一致性复核",
-      "checked_at": "2026-07-20 15:20",
-      "status": "PASS",
-      "evidence": "JSON/CSV校验+网页字段对数+来源链接复核",
-      "scope_or_field": "结构化数据/首页/详情",
-      "issue": "无",
-      "action": "构建后严格复核"
-    }
-  ]
+  "verificationLogs": []
 }

@@ -61,7 +61,10 @@ function filterEvents(events, filters) {
 }
 
 function renderToolbar(data, filters, count) {
-  const cities = uniqueOptions(data.events.map((event) => event.city));
+  const cities = uniqueOptions([
+    ...(data.monitoringPolicy?.monitoredCities ?? []),
+    ...data.events.map((event) => event.city),
+  ]);
   return `<div class="toolbar"><div class="filter-group">
     <label class="search-box">${icon("search")}<input type="search" data-filter="search" value="${escapeHtml(filters.search)}" placeholder="搜索活动、议题、城市或动作"></label>
     <label class="filter-select">${icon("map-pin")}<select data-filter="city" aria-label="筛选城市"><option value="all">全部城市</option>${cities.map((city) => `<option value="${escapeHtml(city)}" ${filters.city === city ? "selected" : ""}>${escapeHtml(city)}</option>`).join("")}</select></label>
@@ -74,8 +77,13 @@ function renderToolbar(data, filters, count) {
   </div><span class="result-count">${count} / ${data.events.length} 场</span></div>`;
 }
 
-function renderOverviewTable(events) {
-  if (!events.length) return `<div class="data-region">${renderEmpty("当前筛选条件下没有活动")}</div>`;
+function renderOverviewTable(events, data) {
+  if (!events.length) {
+    const message = data.events.length
+      ? "当前筛选条件下没有活动"
+      : `当前暂无活动满足至少提前 ${data.monitoringPolicy?.minimumLeadMonths ?? 3} 个自然月的准备门槛（最早准入日 ${data.thresholdDate ?? "暂缺"}）；监测城市仍会持续抓取。`;
+    return `<div class="data-region">${renderEmpty(message, "calendar-search")}</div>`;
+  }
   const rows = events.map((event) => `<tr data-open-id="${escapeHtml(event.eventId)}">
     <td>${statusChip(event.priority, priorityClass(event.priority))}<span class="cell-secondary">${escapeHtml(event.changeStatus === "new" ? "首次入库" : event.changeStatus)}</span></td>
     <td><span class="cell-primary">${escapeHtml(event.name)}</span><span class="cell-secondary">${escapeHtml(event.city)}｜${escapeHtml(event.eventType)}</span></td>
@@ -103,6 +111,9 @@ function renderOverviewTable(events) {
 function renderMeeting(data) {
   const events = [...data.events]
     .sort((a, b) => ({ "优先准备": 0, "重点观察": 1, "待补议程": 2 }[a.priority] ?? 9) - ({ "优先准备": 0, "重点观察": 1, "待补议程": 2 }[b.priority] ?? 9) || a.startAt.localeCompare(b.startAt));
+  if (!events.length) {
+    return `<section class="section-band"><div class="section-title"><h2>活动会议视图</h2><span>按级别和举办时间排序</span></div>${renderEmpty(`暂无开场日不早于 ${data.thresholdDate ?? "当前门槛"} 的候选活动`, "calendar-search")}</section>`;
+  }
   const rows = events.map((event) => `<tr data-open-id="${escapeHtml(event.eventId)}">
     <td>${statusChip(event.priority, priorityClass(event.priority))}<span class="cell-primary">${escapeHtml(event.name)}</span></td>
     <td><span class="cell-primary mono">${formatEventRange(event.startAt, event.endAt)}</span><span class="cell-secondary">${escapeHtml(event.city)}</span></td>
@@ -145,6 +156,9 @@ function renderKeywords(data, filters) {
 function renderVerification(data) {
   const passCount = data.verificationLogs.filter((row) => row.status === "PASS").length;
   const issueCount = data.verificationLogs.filter((row) => row.status !== "PASS").length;
+  if (!data.verificationLogs.length) {
+    return `<section class="section-band"><div class="section-title"><h2>三重复核记录</h2><span>仅展示当前长线候选的复核记录</span></div>${renderEmpty("当前没有符合三个月准备门槛的活动，因此没有候选复核记录。", "shield-check")}</section>`;
+  }
   const rows = data.verificationLogs.map((row) => `<tr data-open-id="${escapeHtml(row.event_id)}"><td class="mono">${escapeHtml(row.verification_id)}</td><td><span class="cell-primary">${escapeHtml(data.events.find((event) => event.eventId === row.event_id)?.name || row.event_id)}</span><span class="cell-secondary">${escapeHtml(row.check_type)}</span></td><td class="mono">${escapeHtml(row.checked_at)}</td><td>${statusChip(row.status, row.status === "PASS" ? "status-pass" : "status-conflict")}</td><td><span class="cell-primary">${escapeHtml(row.evidence)}</span><span class="cell-secondary">范围：${escapeHtml(row.scope_or_field)}</span></td><td><span class="cell-primary">${escapeHtml(row.issue)}</span><span class="cell-secondary">动作：${escapeHtml(row.action)}</span></td></tr>`).join("");
   return `<section class="section-band"><div class="section-title"><h2>三重复核记录</h2><span>通过 ${passCount}｜带冲突或缺失 ${issueCount}</span></div>
     <div class="data-table-wrap" style="display:block"><table class="data-table" style="min-width:1120px"><colgroup><col style="width:9%"><col style="width:20%"><col style="width:14%"><col style="width:11%"><col style="width:24%"><col style="width:22%"></colgroup><thead><tr><th>复核ID</th><th>活动 / 类型</th><th>时间</th><th>状态</th><th>证据 / 范围</th><th>问题 / 动作</th></tr></thead><tbody>${rows}</tbody></table></div>
@@ -164,10 +178,10 @@ export function renderEventPage({ data, index, view, filters }) {
   const summary = renderSummaryBand({
     summary: data.summary.webSummary,
     metrics: [
-      { value: counts.total, label: "未来一个月活动" },
+      { value: counts.total, label: "长线候选" },
       { value: counts.prepare, label: "优先准备" },
       { value: counts.watch, label: "重点观察" },
-      { value: counts.urgent, label: "7天内开场" },
+      { value: counts.excludedRecent ?? 0, label: "近期已排除" },
       { value: counts.conflicts, label: "存在字段冲突" },
     ],
     observedAt: data.observedAt,
@@ -180,7 +194,7 @@ export function renderEventPage({ data, index, view, filters }) {
   else if (view === "archive") content = renderArchive(index);
   else if (view === "keywords") content = renderKeywords(data, filters);
   else if (view === "verification") content = renderVerification(data);
-  else content = `${renderToolbar(data, filters, filtered.length)}${renderOverviewTable(filtered)}`;
+  else content = `${renderToolbar(data, filters, filtered.length)}${renderOverviewTable(filtered, data)}`;
   return `${heading}${summary}${decisions}${content}`;
 }
 
