@@ -25,9 +25,47 @@ export const hotspotViews = [
   { id: "rules", label: "评分说明" },
 ];
 
-export const hotspotFilterDefaults = { search: "", domain: "all", grade: "all", type: "all" };
+export const hotspotFilterDefaults = { search: "", domain: "all", kind: "all", grade: "all", type: "all" };
 
 const ACTION_RANK = { S: 5, A: 4, B: 3, C: 2, D: 1 };
+
+const ACTION_LABELS = Object.freeze({
+  S: "跨部门重点跟进",
+  A: "重点跟进",
+  B: "低成本跟进",
+  C: "补证观察",
+  D: "不追",
+});
+
+const HOTNESS_LABELS = Object.freeze({
+  S: "全平台爆发",
+  A: "高热上升",
+  B: "明显升温",
+  C: "单点信号",
+  D: "未成热点",
+});
+
+const CONTENT_LABELS = Object.freeze({
+  S: "全渠道优先发布",
+  A: "优先发布",
+  B: "小范围测试",
+  C: "补证后再发",
+  D: "不发布",
+});
+
+const TECH_LABELS = Object.freeze({
+  S: "结构性突破",
+  A: "重要变化",
+  B: "值得验证",
+  C: "信息有限",
+  D: "无实质变化",
+});
+
+const SOURCE_LABELS = Object.freeze({
+  E3: "官方一手",
+  E2: "平台或专业来源",
+  E1: "单一线索",
+});
 
 const TECH_SCORE_RULES = [
   ["技术突破强度", 20, "是否带来范式、标准、基础能力或明确工作流变化"],
@@ -49,6 +87,34 @@ const BUSINESS_SCORE_RULES = [
   ["执行准备与成本", 10, "是否已有素材、页面、人群和监测条件可快速验证"],
 ];
 
+const HOTNESS_SCORE_RULES = [
+  ["需求规模", 20, "当前关注量是否足够"],
+  ["相对基线变化", 25, "是否明显偏离自身或类目7/30天正常水平"],
+  ["上升速度", 20, "排名、搜索、内容或交易是否快速增长"],
+  ["持续时间", 15, "是否持续2至3天，而非单日偶然"],
+  ["跨平台扩散", 15, "至少两个独立平台是否方向一致"],
+  ["数据新鲜度", 5, "数据日期是否能够核实且仍在响应窗口"],
+];
+
+const CONTENT_POTENTIAL_RULES = [
+  ["受众需求规模", 20, "搜索、提问或讨论人群是否足够"],
+  ["需求上涨速度", 15, "需求是否相对基线持续上涨"],
+  ["内容供给缺口", 15, "现有内容是否过时、空泛或缺少数据"],
+  ["目标用户匹配", 15, "是否匹配商家、达人、运营或广告从业者"],
+  ["蝉妈妈数据优势", 15, "能否提供比普通内容更具体的数据与案例"],
+  ["讨论与传播性", 10, "是否容易形成案例、避坑、争议或实用分享"],
+  ["内容生命周期", 5, "内容是否能持续获得搜索或讨论"],
+  ["响应窗口", 5, "现在发布是否仍然来得及"],
+];
+
+const CHANNEL_LABELS = {
+  website: "官网",
+  wechat: "公众号",
+  short_video: "抖音/视频号",
+  xiaohongshu: "小红书",
+  private_domain: "私域",
+};
+
 function gradeClass(grade) {
   return `status-${String(grade || "d").toLowerCase()}`;
 }
@@ -57,8 +123,16 @@ function isTechnology(candidate) {
   return candidate.domain === "technology" || candidate.scoring_model === "tech_v1" || candidate.scoringModel === "tech_v1";
 }
 
+function isPotentialTopic(candidate) {
+  return candidate.candidate_kind === "potential_topic" || candidate.candidateKind === "potential_topic";
+}
+
 function candidateDomain(candidate) {
   return isTechnology(candidate) ? "technology" : "commerce";
+}
+
+function typeLabel(value) {
+  return String(value || "待分类").replace(/^T-[A-E]\s*[｜|]\s*/, "");
 }
 
 function actionCode(candidate) {
@@ -68,12 +142,22 @@ function actionCode(candidate) {
 }
 
 function actionLabel(candidate) {
-  if (isTechnology(candidate)) return candidate.action_level || candidate.actionLevel || `L-${actionCode(candidate)}`;
-  return candidate.grade || `L-${actionCode(candidate)}`;
+  return ACTION_LABELS[actionCode(candidate)] || "待判断";
+}
+
+function levelCode(value, prefix) {
+  const match = String(value || "").toUpperCase().match(new RegExp(`(?:${prefix}-)?([SABCD])`));
+  return match?.[1] || null;
+}
+
+function sourceTierCode(candidate) {
+  const value = candidate.source_tier || candidate.sourceTier || candidate.sourceLevel || "";
+  return String(value).toUpperCase().match(/E[123]/)?.[0] || null;
 }
 
 function sourceTier(candidate) {
-  return candidate.source_tier || candidate.sourceTier || candidate.sourceLevel || "信源待核";
+  const code = sourceTierCode(candidate);
+  return code ? SOURCE_LABELS[code] : "信源待核";
 }
 
 function techImpactScore(candidate) {
@@ -81,11 +165,35 @@ function techImpactScore(candidate) {
 }
 
 function techLevel(candidate) {
-  return candidate.tech_level || candidate.techLevel || "T-待核";
+  const code = levelCode(candidate.tech_level || candidate.techLevel, "T");
+  return code ? TECH_LABELS[code] : "待判断";
 }
 
 function businessFitScore(candidate) {
   return candidate.business_fit_score ?? candidate.businessFitScore ?? null;
+}
+
+function hotnessScore(candidate) {
+  return candidate.hotness_score ?? candidate.hotnessScore ?? null;
+}
+
+function hotnessLevel(candidate) {
+  const code = levelCode(candidate.hotness_level || candidate.hotnessLevel, "H");
+  return code ? HOTNESS_LABELS[code] : "待判断";
+}
+
+function contentPotentialScore(candidate) {
+  return candidate.content_potential_score ?? candidate.contentPotentialScore ?? null;
+}
+
+function contentPotentialLevel(candidate) {
+  const code = levelCode(candidate.content_potential_level || candidate.contentPotentialLevel, "P");
+  return code ? CONTENT_LABELS[code] : "待判断";
+}
+
+function recommendedChannelLabels(candidate) {
+  const channels = candidate.recommended_channels || candidate.recommendedChannels || [];
+  return channels.map((channel) => CHANNEL_LABELS[channel] || channel);
 }
 
 function scoreNumber(value) {
@@ -163,16 +271,28 @@ function renderTechnologyScores(candidate, compact = false) {
   const bScore = businessFitScore(candidate);
   const tValue = tScore == null ? "待核" : tScore;
   const bValue = bScore == null ? "待核" : bScore;
-  return `<div class="score-triad${compact ? " is-compact" : ""}" aria-label="科技影响 ${escapeHtml(techLevel(candidate))} ${escapeHtml(tValue)} 分，业务承接 ${escapeHtml(bValue)} 分，最终执行 ${escapeHtml(actionLabel(candidate))}">
-    <span><small>T</small><strong>${escapeHtml(techLevel(candidate))}</strong><em>${escapeHtml(tValue)}</em></span>
-    <span><small>B</small><strong>承接</strong><em>${escapeHtml(bValue)}</em></span>
-    <span><small>L</small><strong>${escapeHtml(actionLabel(candidate))}</strong><em>执行</em></span>
+  return `<div class="score-triad${compact ? " is-compact" : ""}" aria-label="科技影响 ${escapeHtml(techLevel(candidate))} ${escapeHtml(tValue)} 分，业务承接 ${escapeHtml(bValue)} 分，执行建议 ${escapeHtml(actionLabel(candidate))}">
+    <span><small>科技影响</small><strong>${escapeHtml(techLevel(candidate))}</strong><em>${escapeHtml(tValue)}分</em></span>
+    <span><small>业务承接</small><strong>${escapeHtml(bValue)}分</strong><em>匹配度</em></span>
+    <span><small>执行建议</small><strong>${escapeHtml(actionLabel(candidate))}</strong><em>资源投入</em></span>
+  </div>`;
+}
+
+function renderTrafficScores(candidate, compact = false) {
+  const hScore = hotnessScore(candidate);
+  const pScore = contentPotentialScore(candidate);
+  return `<div class="traffic-score-pair${compact ? " is-compact" : ""}" aria-label="真实热度 ${escapeHtml(hotnessLevel(candidate))} ${escapeHtml(hScore ?? "待核")} 分，发布建议 ${escapeHtml(contentPotentialLevel(candidate))} ${escapeHtml(pScore ?? "待核")} 分">
+    <span><small>真实热度</small><strong>${escapeHtml(hotnessLevel(candidate))}</strong><em>${escapeHtml(hScore ?? "待核")}分</em></span>
+    <span><small>发布建议</small><strong>${escapeHtml(contentPotentialLevel(candidate))}</strong><em>${escapeHtml(pScore ?? "待核")}分</em></span>
   </div>`;
 }
 
 function renderCandidateScore(candidate, includeReason = true) {
-  if (isTechnology(candidate)) return renderTechnologyScores(candidate);
-  return `<div class="score-block"><span class="score-value">${escapeHtml(candidate.totalScore)}</span><span class="score-unit">/100</span></div>${includeReason ? `<span class="cell-secondary">${escapeHtml(candidate.downgradeReason)}</span>` : ""}`;
+  const traffic = hotnessScore(candidate) != null || contentPotentialScore(candidate) != null
+    ? renderTrafficScores(candidate)
+    : "";
+  if (isTechnology(candidate)) return `<div class="score-stack">${renderTechnologyScores(candidate)}${traffic}</div>`;
+  return `<div class="score-stack">${traffic || `<div class="score-block"><span class="score-value">${escapeHtml(candidate.totalScore)}</span><span class="score-unit">/100</span></div>`}${includeReason ? `<span class="cell-secondary">业务评分 ${escapeHtml(candidate.totalScore)}｜${escapeHtml(candidate.downgradeReason)}</span>` : ""}</div>`;
 }
 
 function filterCandidates(candidates, filters) {
@@ -182,9 +302,11 @@ function filterCandidates(candidates, filters) {
       techChange(candidate), chanmamaRelevance(candidate), nextStep(candidate), evidenceText(circleEvidence(candidate))]
       .some((value) => String(value || "").toLowerCase().includes(search));
     const matchesDomain = (filters.domain || "all") === "all" || candidateDomain(candidate) === filters.domain;
+    const matchesKind = (filters.kind || "all") === "all"
+      || (filters.kind === "potential_topic" ? isPotentialTopic(candidate) : !isPotentialTopic(candidate));
     const matchesGrade = filters.grade === "all" || actionCode(candidate) === filters.grade;
     const matchesType = filters.type === "all" || candidate.type === filters.type;
-    return matchesSearch && matchesDomain && matchesGrade && matchesType;
+    return matchesSearch && matchesDomain && matchesKind && matchesGrade && matchesType;
   });
 }
 
@@ -199,8 +321,21 @@ function renderToolbar(data, filters, count) {
     ["commerce", "电商经营", domainCounts.commerce],
     ["technology", "科技圈", domainCounts.technology],
   ];
+  const kindCounts = data.candidates.reduce((counts, candidate) => {
+    counts[isPotentialTopic(candidate) ? "potential_topic" : "event"] += 1;
+    return counts;
+  }, { event: 0, potential_topic: 0 });
+  const kinds = [
+    ["all", "全部内容", data.candidates.length],
+    ["event", "事件热点", kindCounts.event],
+    ["potential_topic", "潜力话题", kindCounts.potential_topic],
+  ];
   return `<div class="toolbar">
     <div class="filter-group">
+      <fieldset class="domain-segment kind-segment" aria-label="筛选候选类型">
+        <legend class="visually-hidden">候选类型</legend>
+        ${kinds.map(([value, label, kindCount]) => `<label><input type="radio" name="hotspot-kind" data-filter="kind" value="${value}" ${(filters.kind || "all") === value ? "checked" : ""}><span>${label}<b>${kindCount}</b></span></label>`).join("")}
+      </fieldset>
       <fieldset class="domain-segment" aria-label="筛选热点领域">
         <legend class="visually-hidden">热点领域</legend>
         ${domains.map(([value, label, domainCount]) => `<label><input type="radio" name="hotspot-domain" data-filter="domain" value="${value}" ${(filters.domain || "all") === value ? "checked" : ""}><span>${label}<b>${domainCount}</b></span></label>`).join("")}
@@ -208,11 +343,11 @@ function renderToolbar(data, filters, count) {
       <label class="search-box">${icon("search")}<input type="search" data-filter="search" value="${escapeHtml(filters.search)}" placeholder="搜索热点、信号或动作"></label>
       <label class="filter-select">${icon("gauge")}<select data-filter="grade" aria-label="筛选等级">
         <option value="all">全部等级</option>
-        ${["S", "A", "B", "C", "D"].map((grade) => `<option value="${grade}" ${filters.grade === grade ? "selected" : ""}>L-${grade}</option>`).join("")}
+        ${["S", "A", "B", "C", "D"].map((grade) => `<option value="${grade}" ${filters.grade === grade ? "selected" : ""}>${escapeHtml(ACTION_LABELS[grade])}</option>`).join("")}
       </select></label>
       <label class="filter-select">${icon("layers-3")}<select data-filter="type" aria-label="筛选热点类型">
         <option value="all">全部类型</option>
-        ${types.map((type) => `<option value="${escapeHtml(type)}" ${filters.type === type ? "selected" : ""}>${escapeHtml(type)}</option>`).join("")}
+        ${types.map((type) => `<option value="${escapeHtml(type)}" ${filters.type === type ? "selected" : ""}>${escapeHtml(typeLabel(type))}</option>`).join("")}
       </select></label>
     </div>
     <span class="result-count">${count} / ${data.candidates.length} 条</span>
@@ -223,26 +358,26 @@ function renderOverviewTable(candidates) {
   if (!candidates.length) return `<div class="data-region">${renderEmpty("当前筛选条件下没有热点")}</div>`;
   const rows = candidates.map((candidate) => `<tr data-open-id="${escapeHtml(candidate.id)}" data-domain="${candidateDomain(candidate)}">
     <td>${statusChip(actionLabel(candidate), gradeClass(actionCode(candidate)))}<span class="cell-secondary">${escapeHtml(candidate.followDecision || (isTechnology(candidate) ? "按业务承接执行" : ""))}</span></td>
-    <td><span class="cell-primary">${escapeHtml(candidate.name)}</span><span class="cell-secondary">${escapeHtml(candidate.type)}<br>${escapeHtml(candidate.status)}</span></td>
-    <td>${statusChip(sourceTier(candidate), String(sourceTier(candidate)).startsWith("E3") ? "status-pass" : "")}${sourceLinksHtml(candidate.sourceLinks || normalizeEvidenceLinks(officialEvidence(candidate)), 1)}</td>
+    <td><span class="cell-primary">${escapeHtml(candidate.name)}</span><span class="cell-secondary">${isPotentialTopic(candidate) ? "潜力话题" : "事件热点"}｜${escapeHtml(typeLabel(candidate.type))}<br>${escapeHtml(candidate.status)}</span></td>
+    <td>${statusChip(sourceTier(candidate), sourceTierCode(candidate) === "E3" ? "status-pass" : "")}${sourceLinksHtml(candidate.sourceLinks || normalizeEvidenceLinks(officialEvidence(candidate)), 1)}</td>
     <td>${renderCandidateScore(candidate)}</td>
     <td>${isTechnology(candidate) ? `<span class="field-kicker">技术变化</span><span class="cell-primary">${escapeHtml(techChange(candidate))}</span><span class="cell-secondary"><strong>与蝉妈妈有关：</strong>${escapeHtml(chanmamaRelevance(candidate))}</span>` : `<span class="cell-primary">${escapeHtml(candidate.actionReason)}</span>`}</td>
-    <td><span class="cell-primary">${escapeHtml(isTechnology(candidate) ? nextStep(candidate) : candidate.recommended)}</span><span class="cell-secondary">明确不做：${escapeHtml(firstLine(isTechnology(candidate) ? explicitlyNotDoing(candidate) : candidate.notRecommended))}</span></td>
-    <td>${isTechnology(candidate) ? `<div class="evidence-pair">${renderEvidencePreview("官方", officialEvidence(candidate), "官方证据未取得")}${renderEvidencePreview("圈层", circleEvidence(candidate), "圈层验证待补")}</div>` : `<span class="cell-primary">${escapeHtml(firstLine(candidate.evidence))}</span><span class="cell-secondary">${escapeHtml(candidate.risk)}｜${escapeHtml(candidate.publishedAt)}</span>`}</td>
+    <td><span class="cell-primary">${escapeHtml(isTechnology(candidate) ? nextStep(candidate) : candidate.recommended)}</span>${candidate.primary_topic ? `<span class="cell-secondary"><strong>内容题目：</strong>${escapeHtml(candidate.primary_topic)}</span>` : ""}<span class="cell-secondary">明确不做：${escapeHtml(firstLine(isTechnology(candidate) ? explicitlyNotDoing(candidate) : candidate.notRecommended))}</span></td>
+    <td>${isTechnology(candidate) ? `<div class="evidence-pair">${renderEvidencePreview("官方", officialEvidence(candidate), "官方证据未取得")}${renderEvidencePreview("圈层", circleEvidence(candidate), "圈层验证待补")}</div>` : `<span class="cell-primary">${escapeHtml(firstLine(candidate.evidence))}</span><span class="cell-secondary">${escapeHtml(candidate.risk)}｜${escapeHtml(candidate.publishedAt)}</span>`}${recommendedChannelLabels(candidate).length ? `<span class="cell-secondary"><strong>建议渠道：</strong>${escapeHtml(recommendedChannelLabels(candidate).join("、"))}</span>` : ""}</td>
   </tr>`).join("");
   const mobile = candidates.map((candidate) => `<article class="mobile-item" data-open-id="${escapeHtml(candidate.id)}" data-domain="${candidateDomain(candidate)}">
-    <div class="mobile-item-header">${statusChip(actionLabel(candidate), gradeClass(actionCode(candidate)))}${isTechnology(candidate) ? renderTechnologyScores(candidate, true) : `<span class="mono">${escapeHtml(candidate.totalScore)}</span>`}</div>
+    <div class="mobile-item-header">${statusChip(actionLabel(candidate), gradeClass(actionCode(candidate)))}${isTechnology(candidate) ? `<div class="score-stack">${renderTechnologyScores(candidate, true)}${hotnessScore(candidate) != null || contentPotentialScore(candidate) != null ? renderTrafficScores(candidate, true) : ""}</div>` : hotnessScore(candidate) != null || contentPotentialScore(candidate) != null ? renderTrafficScores(candidate, true) : `<span class="mono">${escapeHtml(candidate.totalScore)}</span>`}</div>
     <h3>${escapeHtml(candidate.name)}</h3>
     <div class="mobile-facts">
       <div class="mobile-fact"><span>来源</span><strong>${escapeHtml(sourceTier(candidate))}</strong></div>
-      <div class="mobile-fact"><span>类型</span><strong>${escapeHtml(candidate.type)}</strong></div>
+      <div class="mobile-fact"><span>类型</span><strong>${isPotentialTopic(candidate) ? "潜力话题" : "事件热点"}</strong></div>
     </div>
-    ${isTechnology(candidate) ? `<p><strong>技术变化：</strong>${escapeHtml(techChange(candidate))}</p><p><strong>与蝉妈妈有关：</strong>${escapeHtml(chanmamaRelevance(candidate))}</p><p><strong>下一步：</strong>${escapeHtml(nextStep(candidate))}</p><p class="execution-boundary"><strong>明确不做：</strong>${escapeHtml(explicitlyNotDoing(candidate))}</p><div class="mobile-evidence">${renderEvidencePreview("官方", officialEvidence(candidate), "官方证据未取得")}${renderEvidencePreview("圈层", circleEvidence(candidate), "圈层验证待补")}</div>` : `<p>${escapeHtml(candidate.actionReason)}</p><p><strong>立即动作：</strong>${escapeHtml(candidate.recommended)}</p>${sourceLinksHtml(candidate.sourceLinks, 1)}`}
+    ${isTechnology(candidate) ? `<p><strong>技术变化：</strong>${escapeHtml(techChange(candidate))}</p><p><strong>与蝉妈妈有关：</strong>${escapeHtml(chanmamaRelevance(candidate))}</p><p><strong>下一步：</strong>${escapeHtml(nextStep(candidate))}</p><p class="execution-boundary"><strong>明确不做：</strong>${escapeHtml(explicitlyNotDoing(candidate))}</p><div class="mobile-evidence">${renderEvidencePreview("官方", officialEvidence(candidate), "官方证据未取得")}${renderEvidencePreview("圈层", circleEvidence(candidate), "圈层验证待补")}</div>` : `<p>${escapeHtml(candidate.actionReason)}</p><p><strong>下一步：</strong>${escapeHtml(candidate.recommended)}</p>${candidate.primary_topic ? `<p><strong>内容题目：</strong>${escapeHtml(candidate.primary_topic)}</p>` : ""}${recommendedChannelLabels(candidate).length ? `<p><strong>渠道：</strong>${escapeHtml(recommendedChannelLabels(candidate).join("、"))}</p>` : ""}${sourceLinksHtml(candidate.sourceLinks, 1)}`}
   </article>`).join("");
   return `<div class="data-region">
     <div class="data-table-wrap"><table class="data-table">
       <colgroup><col style="width:10%"><col style="width:16%"><col style="width:11%"><col style="width:13%"><col style="width:20%"><col style="width:18%"><col style="width:12%"></colgroup>
-      <thead><tr><th>最终等级</th><th>热点</th><th>来源</th><th>评分</th><th>关键变化 / 为什么追</th><th>下一步 / 立即动作</th><th>官方及圈层证据</th></tr></thead>
+      <thead><tr><th>业务优先级</th><th>事件 / 潜力话题</th><th>来源</th><th>真实热度 / 发布建议</th><th>关键变化 / 为什么追</th><th>下一步 / 内容题目</th><th>证据 / 建议渠道</th></tr></thead>
       <tbody>${rows}</tbody>
     </table></div>
     <div class="mobile-list">${mobile}</div>
@@ -260,7 +395,7 @@ function renderMeeting(data) {
     <td><span class="cell-primary">${escapeHtml(isTechnology(candidate) ? explicitlyNotDoing(candidate) : candidate.notRecommended)}</span><span class="cell-secondary">${escapeHtml(candidate.downgradeReason || "")}</span></td>
   </tr>`).join("");
   const mobile = candidates.map((candidate) => `<article class="mobile-item" data-open-id="${escapeHtml(candidate.id)}">
-    <div class="mobile-item-header">${statusChip(actionLabel(candidate), gradeClass(actionCode(candidate)))}${isTechnology(candidate) ? renderTechnologyScores(candidate, true) : `<strong class="mono">${candidate.totalScore}</strong>`}</div>
+    <div class="mobile-item-header">${statusChip(actionLabel(candidate), gradeClass(actionCode(candidate)))}${isTechnology(candidate) ? `<div class="score-stack">${renderTechnologyScores(candidate, true)}${hotnessScore(candidate) != null || contentPotentialScore(candidate) != null ? renderTrafficScores(candidate, true) : ""}</div>` : hotnessScore(candidate) != null || contentPotentialScore(candidate) != null ? renderTrafficScores(candidate, true) : `<strong class="mono">${candidate.totalScore}</strong>`}</div>
     <h3>${escapeHtml(candidate.name)}</h3>
     ${isTechnology(candidate) ? `<p><strong>技术变化：</strong>${escapeHtml(techChange(candidate))}</p><p><strong>与蝉妈妈有关：</strong>${escapeHtml(chanmamaRelevance(candidate))}</p><p><strong>下一步：</strong>${escapeHtml(nextStep(candidate))}</p><p><strong>明确不做：</strong>${escapeHtml(explicitlyNotDoing(candidate))}</p><div class="mobile-evidence">${renderEvidencePreview("官方", officialEvidence(candidate), "官方证据未取得")}${renderEvidencePreview("圈层", circleEvidence(candidate), "圈层验证待补")}</div>` : `<p><strong>为什么追：</strong>${escapeHtml(candidate.actionReason)}</p><p><strong>怎么做：</strong>${escapeHtml(candidate.recommended)}</p><p><strong>边界：</strong>${escapeHtml(candidate.notRecommended)}</p>`}
   </article>`).join("");
@@ -321,7 +456,7 @@ function renderArchive(index) {
     <div class="archive-grid">${index.dates.map((item) => `<button type="button" class="archive-item" data-route-date="${escapeHtml(item.date)}">
       <time>${escapeHtml(item.date)}</time>
       <p>${item.total} 条热点｜重点追 ${item.priority} 条</p>
-      <p>S ${item.gradeCounts.S} · A ${item.gradeCounts.A} · B ${item.gradeCounts.B} · C ${item.gradeCounts.C} · D ${item.gradeCounts.D}</p>
+      <p>重点 ${item.gradeCounts.S + item.gradeCounts.A} · 低成本 ${item.gradeCounts.B} · 补证 ${item.gradeCounts.C} · 不追 ${item.gradeCounts.D}</p>
     </button>`).join("")}</div>
   </section>`;
 }
@@ -342,18 +477,25 @@ function renderRules() {
     ["GEO价值", 10, "用户会不会持续向 AI 提问"], ["产品承接", 5, "现有页面或功能能否接住"],
     ["执行成本", 5, "分数越高越省资源"], ["响应窗口", 5, "现在开始是否来得及"],
   ];
-  return `<section class="section-band rules-panel"><div class="section-title"><h2>双轨评分口径</h2><span>两个模型独立计算，不混成一个总分</span></div>
+  return `<section class="section-band rules-panel"><div class="section-title"><h2>证据、热度、业务与内容判断口径</h2><span>四个问题分开判断，不让一个大数字同时决定所有结论</span></div>
     <section class="model-rule" aria-labelledby="commerce-model-title">
-      <div class="model-rule-heading"><div><span class="model-code">commerce_v1</span><h3 id="commerce-model-title">电商经营热点</h3></div><p>沿用原 10 项加权总分与 S/A/B/C/D 执行动作等级，历史数据不重算。</p></div>
+      <div class="model-rule-heading"><div><span class="model-code">commerce_v1</span><h3 id="commerce-model-title">电商经营热点</h3></div><p>使用 10 项加权总分决定资源投入，历史数据不重算。</p></div>
       ${renderRuleTable("电商经营总分", "每项 0-5 分，加权换算为 0-100", commerceRules)}
-      <div class="rule-note"><strong>等级封顶：</strong>最终等级取分数、信源、类型、业务核心、事实风险、响应窗口和执行准备七项上限中的最低值。</div>
+      <div class="rule-note"><strong>业务优先：</strong>抖音官方实质规则只要直接影响经营且仍在响应窗口，最低保持“重点跟进”；意见稿必须明确尚未生效。所有高客单、低价高量、季节、活动、明星单场、小基数和平台估算信号，缺少可比基线、多周期增长和至少两项独立变化时，最高只能“补证观察”。</div>
+    </section>
+    <section class="model-rule" aria-labelledby="content-model-title">
+      <div class="model-rule-heading"><div><span class="model-code">hotness_v1 + content_potential_v1</span><h3 id="content-model-title">真实热度与内容流量潜力</h3></div><p>先判断是否真的变热，再判断是否值得官网或社媒发布；两者不降低官方实质规则的业务优先级。</p></div>
+      ${renderRuleTable("真实热度", "全平台爆发 85+｜高热上升 70-84｜明显升温 55-69｜单点信号 40-54｜未成热点 低于40", HOTNESS_SCORE_RULES)}
+      ${renderRuleTable("发布建议", "全渠道优先发布 85+｜优先发布 70-84｜小范围测试 55-69｜补证后再发 40-54｜不发布 低于40", CONTENT_POTENTIAL_RULES)}
+      <div class="rule-note"><strong>硬性门槛：</strong>单平台且无基线最多小范围测试；数据日期未核只能补证后再发；搜索路线未验证内容供给缺口最多小范围测试；没有渠道适配分达到70时只能补证；单篇媒体线索不能直接发布。</div>
+      <div class="rule-note"><strong>渠道选择：</strong>官网、公众号、抖音/视频号、小红书、私域分别打分，只选择一个主渠道和必要的辅助渠道，不默认全矩阵发布。</div>
     </section>
     <section class="model-rule" aria-labelledby="tech-model-title">
-      <div class="model-rule-heading"><div><span class="model-code">tech_v1</span><h3 id="tech-model-title">科技圈双轨评分</h3></div><p>T-score 判断科技圈本身的重要性；B-score 判断蝉妈妈是否值得行动；最终 L 级只负责资源投入。</p></div>
-      ${renderRuleTable("科技影响分 T-score", "T-S 85+｜T-A 70-84｜T-B 55-69｜T-C 40-54｜T-D 低于 40", TECH_SCORE_RULES)}
-      ${renderRuleTable("业务承接分 B-score", "目标用户、电商工作流、产品/GEO与执行准备单独判断", BUSINESS_SCORE_RULES)}
-      <div class="rule-note"><strong>最终执行：</strong>L-S 要求 T≥85、B≥80、E3、两项独立验证及完整承接与监测；L-A 为 T≥70 且 B≥65，或 T≥55 且 B≥80；L-B 以内容与数据验证为主。</div>
-      <div class="rule-note"><strong>硬性封顶：</strong>E1 最高 T-C/L-C，E2 最高 T-B/L-B；B&lt;35 或没有自然业务关联时最高 L-C；没有成熟页面、埋点和准确人群时，不投广告、不全量召回。</div>
+      <div class="model-rule-heading"><div><span class="model-code">tech_v1</span><h3 id="tech-model-title">科技圈双轨评分</h3></div><p>科技影响判断科技圈本身的重要性；业务承接判断蝉妈妈是否值得行动；执行建议只负责资源投入。</p></div>
+      ${renderRuleTable("科技影响", "结构性突破 85+｜重要变化 70-84｜值得验证 55-69｜信息有限 40-54｜无实质变化 低于40", TECH_SCORE_RULES)}
+      ${renderRuleTable("业务承接", "目标用户、电商工作流、产品/GEO与执行准备单独判断", BUSINESS_SCORE_RULES)}
+      <div class="rule-note"><strong>最终执行：</strong>只有科技影响与业务承接都高、官方证据与独立验证齐全，并已有承接和监测，才跨部门重点跟进；业务关联较弱时只做内容与数据验证。</div>
+      <div class="rule-note"><strong>硬性封顶：</strong>单一媒体线索最多补证观察；专业媒体或非官方证据最多低成本跟进；没有自然业务关联时最多补证观察；没有成熟页面、埋点和准确人群时，不投广告、不全量召回。</div>
     </section>
   </section>`;
 }
@@ -361,6 +503,8 @@ function renderRules() {
 export function renderHotspotPage({ data, index, view, filters }) {
   const filtered = sortCandidates(filterCandidates(data.candidates, filters));
   const counts = data.summary.gradeCounts;
+  const kindCounts = data.summary.candidateKindCounts || { event: data.candidates.length, potential_topic: 0 };
+  const potentialCounts = data.summary.contentPotentialCounts || { S: 0, A: 0, B: 0, C: 0, D: 0 };
   const heading = renderPageHeading({
     eyebrow: `HOTSPOT INTELLIGENCE / ${data.date}`,
     title: "每日热点",
@@ -372,15 +516,19 @@ export function renderHotspotPage({ data, index, view, filters }) {
     summary: data.summary.webSummary,
     metrics: [
       { value: data.candidates.length, label: "本期入库" },
-      { value: `${counts.S}/${counts.A}`, label: "S级 / A级" },
-      { value: counts.B, label: "低成本跟进" },
-      { value: data.summary.evidenceE3Count, label: "E3一手证据" },
+      { value: `${kindCounts.event}/${kindCounts.potential_topic}`, label: "事件 / 潜力" },
+      { value: counts.S + counts.A, label: "重点业务" },
+      { value: potentialCounts.S + potentialCounts.A, label: "可优先发布" },
+      { value: data.summary.evidenceE3Count, label: "官方一手证据" },
       { value: data.scanLogs.length, label: "扫描来源" },
     ],
     observedAt: data.observedAt,
     sourceWorkbook: data.sourceWorkbook,
   });
-  const decisions = renderDecisionStrip(data.summary.topActions, "id");
+  const decisions = `<div class="priority-lanes">
+    <section><div class="priority-lane-title"><strong>今天必须跟进</strong><span>按业务影响排序</span></div>${renderDecisionStrip(data.summary.topActions, "id")}</section>
+    <section><div class="priority-lane-title"><strong>内容机会排序</strong><span>${potentialCounts.S + potentialCounts.A ? "已有可优先发布选题" : "本轮暂无直接发布选题，先补证"}</span></div>${renderDecisionStrip(data.summary.topContentActions, "id")}</section>
+  </div>`;
   let content;
   if (view === "meeting") content = renderMeeting(data);
   else if (view === "execution") content = renderExecution(data);
@@ -424,6 +572,11 @@ export function renderHotspotDetail(candidate) {
   const scoreGrid = renderScoreGrid(candidate.scoreDetails || [], []);
   const techScoreGrid = renderScoreGrid(candidate.tech_score_details || candidate.techScoreDetails || candidate.tech_scores || candidate.techScores, TECH_SCORE_RULES);
   const businessScoreGrid = renderScoreGrid(candidate.business_score_details || candidate.businessScoreDetails || candidate.business_scores || candidate.businessScores, BUSINESS_SCORE_RULES);
+  const hotnessScoreGrid = renderScoreGrid(candidate.hotness_score_details || candidate.hotnessScoreDetails || [], HOTNESS_SCORE_RULES);
+  const contentPotentialScoreGrid = renderScoreGrid(candidate.content_score_details || candidate.contentScoreDetails || [], CONTENT_POTENTIAL_RULES);
+  const channelScoreGrid = Object.entries(candidate.channel_scores || candidate.channelScores || {})
+    .map(([channel, score]) => `<div class="score-row"><span>${escapeHtml(CHANNEL_LABELS[channel] || channel)}</span><span>${escapeHtml(score)} / 100</span></div>`)
+    .join("");
   const technology = isTechnology(candidate);
   const coreSource = primarySources[0];
   const html = `<div class="drawer-actions">
@@ -434,12 +587,16 @@ export function renderHotspotDetail(candidate) {
       ["最终执行等级", statusChip(actionLabel(candidate), gradeClass(actionCode(candidate)))],
       ["科技影响", `<span class="mono">${escapeHtml(techLevel(candidate))} · ${escapeHtml(techImpactScore(candidate) ?? "待核")} / 100</span>`],
       ["业务承接", `<span class="mono">${escapeHtml(businessFitScore(candidate) ?? "待核")} / 100</span>`],
+      ["热点成立度", `<span class="mono">${escapeHtml(hotnessLevel(candidate))} · ${escapeHtml(hotnessScore(candidate) ?? "待核")}</span>`],
+      ["内容潜力", `<span class="mono">${escapeHtml(contentPotentialLevel(candidate))} · ${escapeHtml(contentPotentialScore(candidate) ?? "待核")}</span>`],
       ["信源", escapeHtml(sourceTier(candidate))],
       ["评分模型", "tech_v1"],
       ["发布时间", escapeHtml(candidate.publishedAt || "待核")],
     ])) : detailSection("决策概览", "gauge", factGrid([
       ["最终等级", statusChip(actionLabel(candidate), gradeClass(actionCode(candidate)))],
       ["加权总分", `<span class="mono">${escapeHtml(candidate.totalScore)} / 100</span>`],
+      ["热点成立度", `<span class="mono">${escapeHtml(hotnessLevel(candidate))} · ${escapeHtml(hotnessScore(candidate) ?? "待核")}</span>`],
+      ["内容潜力", `<span class="mono">${escapeHtml(contentPotentialLevel(candidate))} · ${escapeHtml(contentPotentialScore(candidate) ?? "待核")}</span>`],
       ["信源", escapeHtml(sourceTier(candidate))],
       ["降级原因", escapeHtml(candidate.downgradeReason)],
       ["发布时间", escapeHtml(candidate.publishedAt)],
@@ -458,11 +615,14 @@ export function renderHotspotDetail(candidate) {
       ${detailSection("原始证据", "link", sources)}
       ${detailSection("评分拆解", "chart-no-axes-column", scoreGrid)}
     `}
+    ${hotnessScore(candidate) != null ? detailSection("真实热度拆解", "radar", `${hotnessScoreGrid}<div class="structured-note"><strong>封顶原因</strong>${renderStructuredNotes(candidate.hotness_caps || candidate.hotnessCaps, "未触发额外封顶")}</div>`) : ""}
+    ${contentPotentialScore(candidate) != null ? detailSection("发布建议与渠道", "megaphone", `<p class="drawer-prose"><strong>推荐题目：</strong>${escapeHtml(candidate.primary_topic || "待补")}</p><p class="drawer-prose"><strong>内容角度：</strong>${escapeHtml(candidate.content_angle || "待补")}</p><p class="drawer-prose"><strong>推荐渠道：</strong>${escapeHtml(recommendedChannelLabels(candidate).join("、") || "暂不发布")}</p><div class="score-grid">${channelScoreGrid}</div><p class="drawer-prose"><strong>监测：</strong>${escapeHtml(candidate.measurement_plan || "待补")}</p><p class="drawer-prose"><strong>停止条件：</strong>${escapeHtml(candidate.stop_condition || "待补")}</p>`) : ""}
+    ${contentPotentialScore(candidate) != null ? detailSection("内容流量潜力拆解", "chart-no-axes-column", `${contentPotentialScoreGrid}<div class="structured-note"><strong>封顶原因</strong>${renderStructuredNotes(candidate.content_caps || candidate.contentCaps, "未触发额外封顶")}</div>`) : ""}
     ${detailSection("执行时间线", "route", actionTimeline)}
     ${detailSection("监测指标", "activity", `<p class="drawer-prose">${escapeHtml(candidate.monitor)}</p>`)}
   `;
   const copyText = technology
-    ? `【${actionLabel(candidate)}｜${candidate.name}】\n科技影响：${techLevel(candidate)} · ${techImpactScore(candidate) ?? "待核"}\n业务承接：${businessFitScore(candidate) ?? "待核"}\n技术变化：${techChange(candidate)}\n与蝉妈妈有关：${chanmamaRelevance(candidate)}\n下一步：${nextStep(candidate)}\n明确不做：${explicitlyNotDoing(candidate)}\n核心来源：${coreSource?.url || "暂缺"}`
-    : `【${actionLabel(candidate)}｜${candidate.name}】\n总评分：${candidate.totalScore}\n为什么追：${candidate.actionReason}\n具体执行：${candidate.recommended}\n执行边界：${candidate.notRecommended}\n核心来源：${coreSource?.url || "暂缺"}`;
+    ? `【${actionLabel(candidate)}｜${candidate.name}】\n科技影响：${techLevel(candidate)} · ${techImpactScore(candidate) ?? "待核"}\n业务承接：${businessFitScore(candidate) ?? "待核"}\n热点成立：${hotnessLevel(candidate)} · ${hotnessScore(candidate) ?? "待核"}\n内容潜力：${contentPotentialLevel(candidate)} · ${contentPotentialScore(candidate) ?? "待核"}\n技术变化：${techChange(candidate)}\n与蝉妈妈有关：${chanmamaRelevance(candidate)}\n下一步：${nextStep(candidate)}\n核心来源：${coreSource?.url || "暂缺"}`
+    : `【${actionLabel(candidate)}｜${candidate.name}】\n业务总分：${candidate.totalScore}\n热点成立：${hotnessLevel(candidate)} · ${hotnessScore(candidate) ?? "待核"}\n内容潜力：${contentPotentialLevel(candidate)} · ${contentPotentialScore(candidate) ?? "待核"}\n为什么追：${candidate.actionReason}\n具体执行：${candidate.recommended}\n内容题目：${candidate.primary_topic || "待补"}\n渠道：${recommendedChannelLabels(candidate).join("、") || "暂不发布"}\n核心来源：${coreSource?.url || "暂缺"}`;
   return { eyebrow: `${candidate.id} · ${actionLabel(candidate)}`, title: candidate.name, html, copyText };
 }

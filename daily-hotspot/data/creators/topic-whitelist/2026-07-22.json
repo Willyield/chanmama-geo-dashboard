@@ -1,59 +1,124 @@
 {
-  "schemaVersion": "topic-whitelist-pilot-v1",
+  "schemaVersion": "topic-whitelist-cross-platform-v2",
   "module": "creator_topic_whitelist",
+  "snapshotId": "TW-20260722-1530-CROSSPLATFORM",
+  "snapshotMode": "IMMUTABLE_OBSERVATION",
   "date": "2026-07-22",
-  "observedAt": "2026-07-22T14:56:51+08:00",
-  "status": "T0_CAPTURED_INDEPENDENCE_PENDING",
-  "statusMessage": "T0 已取得蝉妈妈榜单与巨量云图可见信号，但视频语义、来源独立性、原创贡献和同龄 T1 增速尚未形成可验证闭环",
+  "observedAt": "2026-07-22T15:45:00+08:00",
+  "observationWindow": {
+    "start": "2026-07-22T15:30:00+08:00",
+    "end": "2026-07-22T15:45:00+08:00",
+    "timezone": "Asia/Shanghai"
+  },
+  "verificationAddenda": [
+    {
+      "topicId": "RT-20260722-101",
+      "observedAt": "2026-07-22 约16:00-16:59 +08:00（精确分钟未记录）",
+      "scope": "耐克与滔搏事实源媒体交叉验证",
+      "note": "共享浏览器补充核对新京报、北京日报等报道；报道均指向滔搏港交所公告，但公告原文直链仍待固化。"
+    },
+    {
+      "topicId": "RT-20260722-102",
+      "observedAt": "2026-07-22 约16:00-16:59 +08:00（精确分钟未记录）",
+      "scope": "Kimi K3 回应媒体交叉验证",
+      "note": "共享浏览器补充核对南都 N 视频转载与凤凰网科技报道；两条报道均指向 Kimi 企业业务负责人黄震昕 7 月 21 日集中回应，但仍不是第一方逐字稿。"
+    }
+  ],
+  "status": "CROSS_PLATFORM_REVIEWED_FORMAL_WHITELIST_PENDING",
+  "statusMessage": "本轮已形成跨平台运营结论：1 条可立即启动、1 条需补官方源、1 条转长尾；三条话题均未完成独立来源归并，因此正式话题白名单仍为 0。",
+  "decisionSummary": {
+    "publishNow": 1,
+    "conditionalFollowUp": 1,
+    "tailEvergreen": 1,
+    "formalTopicWhitelist": 0,
+    "formalCreatorWhitelist": 0,
+    "conclusion": "运营发布决策与正式白名单准入分开计算；可以做内容，不等于话题或参与账号已经进入白名单。"
+  },
   "sourceStatus": {
-    "scanStatus": "T0_PARTIAL_MULTISOURCE",
+    "scanStatus": "CROSS_PLATFORM_READ_ONLY_REVIEW",
+    "douyinCreatorIndexSession": "ACTIVE",
+    "douyinTopicDetail": "OBSERVED_VIA_CREATOR_INDEX",
+    "douyinPublicVideoRefetch": "BLOCKED_PLATFORM_VERIFICATION",
     "chanmamaSession": "ACTIVE",
-    "chanmamaDataDate": "2026-07-21",
     "yuntuSession": "ACTIVE",
-    "yuntuWindow": "RECENT_30D",
-    "douyinVideoRefetch": "BLOCKED_PLATFORM_VERIFICATION",
+    "xiaohongshuSession": "ACTIVE",
+    "xingtuSession": "LOGGED_OUT_NOT_USED_AS_EVIDENCE",
+    "bingPublicSearch": "AVAILABLE",
     "historicalBaselineDays": 0,
     "independenceResolved": false,
-    "valuesImputed": false
+    "valuesImputed": false,
+    "cookiesReadOrExported": false,
+    "captchaBypassed": false
   },
+  "platformCoverage": [
+    {
+      "platform": "抖音创作者指数",
+      "role": "发现上升话题并读取热点指数",
+      "status": "已复核",
+      "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+      "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+    },
+    {
+      "platform": "抖音话题详情",
+      "role": "核对参与账号与内容扩散",
+      "status": "已复核；公开视频批量复取仍被平台验证拦截",
+      "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+      "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+    },
+    {
+      "platform": "小红书",
+      "role": "验证跨平台讨论、新鲜度和内容供给",
+      "status": "已复核",
+      "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+      "url": "https://www.xiaohongshu.com/search_result"
+    },
+    {
+      "platform": "Bing 公开搜索",
+      "role": "寻找权威媒体及官方文件回源线索",
+      "status": "已复核耐克与滔搏话题；具体报道链接未固化",
+      "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+      "url": "https://www.bing.com/search"
+    },
+    {
+      "platform": "蝉妈妈",
+      "role": "达人画像、发布频率和互动量级复核",
+      "status": "已用于达人交叉验证；未用榜单账号替代话题白名单",
+      "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+      "url": "https://www.chanmama.com"
+    },
+    {
+      "platform": "巨量云图",
+      "role": "行业与商品趋势辅助验证",
+      "status": "会话可用；本轮三话题未取得可归因的话题级证据",
+      "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+      "url": "https://yuntu.oceanengine.com"
+    },
+    {
+      "platform": "巨量星图",
+      "role": "商业合作与达人画像辅助验证",
+      "status": "未登录，本轮不作为证据源",
+      "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+      "url": "https://www.xingtu.cn"
+    }
+  ],
   "policyNotes": [
-    "5 个名义账号只触发核验，不等于 5 个有效独立来源。",
-    "同 MCN、同品牌投放、同脚本或高度相似内容先合并为一个来源簇。",
-    "缺少 MCN、投放、原创或 T1 证据时保持 null，不得升级临时或重点白名单。",
-    "本轮是试运行 T0；建议在 2026-07-22 18:56 左右执行同龄 T1 复核。"
+    "运营决策回答“现在是否值得产出”，正式白名单回答“是否完成多账号独立共振证明”，两者不得互相替代。",
+    "名义参与账号数只触发核验；同 MCN、同品牌投放、转载、同脚本或高度相似内容先合并为一个来源簇。",
+    "未完成账号归属、原创性和投流归并时，N_eff、独立簇、原创贡献、集中度和历史分位保持 null。",
+    "榜单账号和平台搜索结果只属于发现线索，不展示为已审核达人或正式白名单成员。",
+    "本快照只记录 15:30-15:45 的可见事实；后续复核新增为新快照，不回写本轮观察值。"
   ],
   "topics": [
     {
-      "topicId": "RT-20260722-001",
-      "topic": "黑马榜高互动增量是否形成共同内容母题",
-      "density": "high",
-      "rawCreatorCount": 3,
-      "effectiveIndependentSources": null,
-      "independentClusters": null,
-      "followerTiers": 2,
-      "originalContributors": null,
-      "baselinePercentile": null,
-      "t1ContinuingSources": null,
-      "sameAgeAboveBaselineShare": null,
-      "effectiveSourceGrowthRate": null,
-      "newIndependentSources": null,
-      "newIndependentSources24h": null,
-      "topContributorShare": null,
-      "topTwoShare": null,
-      "websiteFit": null,
-      "socialFit": null,
-      "contentRelevant": null,
-      "evidenceLevel": "E1",
-      "riskVeto": false,
-      "nextAction": "补取三位达人的视频标题、字幕、发布时间和互动结构，先验证是否属于同一语义话题",
-      "stopCondition": "语义不一致、同脚本投放或 18:56 前没有新增独立来源即停止聚类",
-      "contributors": []
-    },
-    {
-      "topicId": "RT-20260722-002",
-      "topic": "居家轻健身器械与明星同款需求",
-      "density": "normal",
-      "rawCreatorCount": 3,
+      "topicId": "RT-20260722-101",
+      "topic": "耐克终止滔搏线上授权",
+      "topicAliases": [
+        "滔搏：耐克中国线上销售明年终止",
+        "耐克与滔搏线上销售授权调整"
+      ],
+      "density": "mass",
+      "rawCreatorCount": 10,
+      "rawCreatorCountLabel": "抖音话题详情可见至少 10 个参与账号",
       "effectiveIndependentSources": null,
       "independentClusters": null,
       "followerTiers": null,
@@ -69,101 +134,655 @@
       "websiteFit": null,
       "socialFit": null,
       "contentRelevant": true,
-      "evidenceLevel": "E1",
+      "evidenceLevel": "E2",
       "riskVeto": false,
-      "nextAction": "从巨量云图商品信号回查抖音视频与达人，区分自然内容、明星授权和品牌集中投放",
-      "stopCondition": "只有商品销量而没有独立内容扩散，或来源均属于同一品牌投放时停止",
+      "operationalDecision": {
+        "code": "PUBLISH_NOW_WITH_FACT_BOUNDARY",
+        "label": "现在可做",
+        "priority": 1,
+        "confidence": "B",
+        "canStartNow": true,
+        "conclusion": "立即启动官网快讯和社媒渠道解读；发布前必须保存港交所公告或滔搏公告原文，并限定“线上授权范围与生效时间”的事实边界。",
+        "why": [
+          "抖音飙升榜第 6，热点指数 852.0 万，处在平台上升窗口。",
+          "抖音话题详情可见至少 10 个参与账号，已经出现媒体、财经和垂类作者共同放大。",
+          "小红书 6 小时内出现数十条相关内容，并有分钟级新帖，说明不是抖音单平台孤立信号。",
+          "Bing 可见多家可信媒体引用港交所公告；新京报与北京日报具体报道已补充交叉验证。"
+        ],
+        "releaseGate": "发布负责人须打开并保存港交所公告或滔搏公告原文；未完成时只能备稿，不能把媒体转述写成官方原话。",
+        "contentPlan": {
+          "website": "耐克终止滔搏线上授权，品牌自播、经销商店播和达人分销会受到什么影响？",
+          "social": [
+            "一张图说明：授权调整影响的是哪条线上链路",
+            "品牌方、经销商和达人分别要核对的 3 件事"
+          ],
+          "positioning": "渠道结构解读，不渲染“耐克退出中国电商”。"
+        }
+      },
+      "formalWhitelistStatus": {
+        "code": "RECORD_PENDING_INDEPENDENCE_AUDIT",
+        "label": "仅记录，未进入正式话题白名单",
+        "isWhitelisted": false,
+        "reason": "目前只有名义参与账号量，尚未完成 MCN、转载、投放、同脚本和原创归并；有效独立来源 N_eff 不可判定。",
+        "requiredForTemporary": "全民事件赛道需至少 12 个有效独立来源，并同时通过独立簇、原创贡献、同龄增速、集中度、内容价值和风险门槛。"
+      },
+      "platformEvidence": [
+        {
+          "platform": "抖音创作者指数",
+          "evidenceType": "平台飙升榜",
+          "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+          "observation": "飙升榜第 6，热点指数 852.0 万。",
+          "verificationRole": "证明抖音站内处于上升窗口",
+          "urlKind": "平台入口",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        },
+        {
+          "platform": "抖音话题详情",
+          "evidenceType": "参与账号",
+          "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+          "observation": "页面可见至少 10 个参与账号；已登记财研社、红星新闻、荆楚网、海报新闻、吴扬扬羽球杂谈等。",
+          "verificationRole": "证明名义多账号放大；不能替代 N_eff",
+          "urlKind": "平台入口，详情定位为飙升榜第 6",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        },
+        {
+          "platform": "小红书",
+          "evidenceType": "跨平台搜索结果",
+          "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+          "observation": "6 小时内可见数十条相关内容，并有分钟级新增帖子；未固化精确条数。",
+          "verificationRole": "证明跨平台讨论和新鲜度",
+          "urlKind": "可复现搜索入口",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E6%BB%94%E6%90%8F%20%E8%80%90%E5%85%8B"
+        },
+        {
+          "platform": "Bing 公开搜索",
+          "evidenceType": "权威信源回源线索",
+          "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+          "observation": "搜索结果可见多家可信媒体引用港交所公告；本快照未固化各报道详情页。",
+          "verificationRole": "支持事实交叉核对，不替代官方原文",
+          "urlKind": "可复现搜索入口",
+          "url": "https://www.bing.com/search?q=%E6%BB%94%E6%90%8F+%E8%80%90%E5%85%8B+%E7%BA%BF%E4%B8%8A%E6%8E%88%E6%9D%83+%E6%B8%AF%E4%BA%A4%E6%89%80"
+        },
+        {
+          "platform": "新京报",
+          "evidenceType": "权威媒体交叉验证",
+          "observedAt": "2026-07-22 约16:00-16:59 +08:00（精确分钟未记录）",
+          "observation": "报道引用滔搏港交所公告说明耐克品牌产品线上授权安排。",
+          "verificationRole": "核对媒体转述是否一致；不替代港交所公告原文",
+          "evidencePhase": "POST_SNAPSHOT_FACT_CHECK_ADDENDUM",
+          "urlKind": "媒体详情页",
+          "url": "https://www.bjnews.com.cn/detail/1784704757168434.html"
+        },
+        {
+          "platform": "北京日报",
+          "evidenceType": "权威媒体交叉验证",
+          "observedAt": "2026-07-22 约16:00-16:59 +08:00（精确分钟未记录）",
+          "observation": "报道引用滔搏港交所公告说明相关线上授权调整。",
+          "verificationRole": "与新京报交叉核对媒体转述；不替代港交所公告原文",
+          "evidencePhase": "POST_SNAPSHOT_FACT_CHECK_ADDENDUM",
+          "urlKind": "媒体详情页",
+          "url": "https://news.bjd.com.cn/2026/07/22/11879212.shtml"
+        }
+      ],
+      "amplifyingAccounts": [
+        {
+          "nickname": "财研社",
+          "platform": "抖音",
+          "observedRole": "财经内容参与放大",
+          "originalityStatus": "待核",
+          "whitelistEligible": false
+        },
+        {
+          "nickname": "红星新闻",
+          "platform": "抖音",
+          "observedRole": "媒体内容参与放大",
+          "originalityStatus": "待核",
+          "whitelistEligible": false
+        },
+        {
+          "nickname": "荆楚网",
+          "platform": "抖音",
+          "observedRole": "媒体内容参与放大",
+          "originalityStatus": "待核",
+          "whitelistEligible": false
+        },
+        {
+          "nickname": "海报新闻",
+          "platform": "抖音",
+          "observedRole": "媒体内容参与放大",
+          "originalityStatus": "待核",
+          "whitelistEligible": false
+        },
+        {
+          "nickname": "吴扬扬羽球杂谈",
+          "platform": "抖音",
+          "observedRole": "运动垂类内容参与放大",
+          "originalityStatus": "待核",
+          "whitelistEligible": false
+        }
+      ],
+      "evidenceGaps": [
+        "新京报、北京日报等媒体均指向滔搏港交所公告，但公告原文链接尚未固化到快照。",
+        "参与账号尚未按 MCN、媒体转载、品牌投放和同脚本归并。",
+        "未取得每个账号的首发时间、原创等级、同龄表现和互动增速。",
+        "蝉妈妈、巨量云图和巨量星图尚未形成可归因到该话题的达人或交易证据。"
+      ],
+      "nextSteps": [
+        {
+          "owner": "热点编辑",
+          "timing": "15 分钟内",
+          "action": "保存港交所公告或滔搏公告原文，核对授权范围、生效日期和措辞。",
+          "acceptance": "正文每个关键事实可回链到原始公告。"
+        },
+        {
+          "owner": "达人研究",
+          "timing": "2 小时内",
+          "action": "对至少 10 个名义账号完成归属、转载、投放和原创聚类，计算 N_eff。",
+          "acceptance": "保留聚类依据；缺失值不估填。"
+        },
+        {
+          "owner": "内容运营",
+          "timing": "首稿发布后 4 小时",
+          "action": "复查抖音榜位、指数和新增跨平台内容，决定是否继续矩阵放大。",
+          "acceptance": "指数继续上升或出现新增独立来源才追加第二篇。"
+        }
+      ],
+      "nextAction": "立即备稿并完成官方原文回源；同时启动参与账号独立性归并。",
+      "stopCondition": "无法找到官方原文、事实边界与媒体转述冲突，或 4 小时后指数和新增内容同时走弱时停止矩阵扩发。",
       "contributors": []
+    },
+    {
+      "topicId": "RT-20260722-102",
+      "topic": "月之暗面回应 Kimi K3 火爆",
+      "topicAliases": [
+        "Kimi K3 火爆",
+        "月之暗面回应 Kimi K3"
+      ],
+      "density": "high",
+      "rawCreatorCount": null,
+      "rawCreatorCountLabel": "抖音可见多位 AI 作者和媒体参与，名义账号总数未固化",
+      "effectiveIndependentSources": null,
+      "independentClusters": null,
+      "followerTiers": null,
+      "originalContributors": null,
+      "baselinePercentile": null,
+      "t1ContinuingSources": null,
+      "sameAgeAboveBaselineShare": null,
+      "effectiveSourceGrowthRate": null,
+      "newIndependentSources": null,
+      "newIndependentSources24h": null,
+      "topContributorShare": null,
+      "topTwoShare": null,
+      "websiteFit": null,
+      "socialFit": null,
+      "contentRelevant": true,
+      "evidenceLevel": "E2",
+      "riskVeto": false,
+      "operationalDecision": {
+        "code": "PUBLISH_AFTER_OFFICIAL_SOURCE_CHECK",
+        "label": "补官方源后做",
+        "priority": 2,
+        "confidence": "B-",
+        "canStartNow": true,
+        "conclusion": "可以先做资料卡和提纲，但这是已经扩散约 5 天后的二次发酵，不按首发热点包装；找到月之暗面或 Kimi 官方回应原文后再发布。",
+        "why": [
+          "抖音飙升榜第 10，热点指数 782.2 万，当前仍有站内需求。",
+          "抖音话题详情可见多位 AI 作者和媒体参与，具备多账号扩散外观。",
+          "小红书相关讨论已持续约 5 天，1 天内仍有新内容，属于二次发酵而非第一波发现。",
+          "“官方回应”的原始出处尚未锁定，事实风险高于耐克与滔搏话题。"
+        ],
+        "releaseGate": "必须取得月之暗面、Kimi 官方账号、官方博客或可核验采访原文；只有自媒体转述时不发布“官方回应”标题。",
+        "contentPlan": {
+          "website": "Kimi K3 为什么在发布数日后再次升温？从官方回应看用户需求与产品能力",
+          "social": [
+            "K3 二次发酵的时间线",
+            "官方回应里真正确认了什么、没有确认什么"
+          ],
+          "positioning": "二次发酵解释稿，不抢首发，不复述未经核验的性能结论。"
+        }
+      },
+      "formalWhitelistStatus": {
+        "code": "RECORD_PENDING_INDEPENDENCE_AUDIT",
+        "label": "仅记录，未进入正式话题白名单",
+        "isWhitelisted": false,
+        "reason": "参与账号总数、独立来源数、原创贡献和传播集中度均未固化；多账号外观不能替代独立共振。",
+        "requiredForTemporary": "高噪声赛道需至少 8 个有效独立来源，并同时通过独立簇、原创贡献、同龄增速、集中度、内容价值和风险门槛。"
+      },
+      "platformEvidence": [
+        {
+          "platform": "抖音创作者指数",
+          "evidenceType": "平台飙升榜",
+          "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+          "observation": "飙升榜第 10，热点指数 782.2 万。",
+          "verificationRole": "证明抖音站内仍有上升需求",
+          "urlKind": "平台入口",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        },
+        {
+          "platform": "抖音话题详情",
+          "evidenceType": "参与账号",
+          "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+          "observation": "可见多位 AI 作者和媒体账号参与；未固化账号总数和账号清单。",
+          "verificationRole": "证明多账号扩散外观；不能替代 N_eff",
+          "urlKind": "平台入口，详情定位为飙升榜第 10",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        },
+        {
+          "platform": "小红书",
+          "evidenceType": "跨平台搜索结果",
+          "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+          "observation": "相关讨论跨约 5 天持续出现，1 天内仍有新内容；精确帖子数未固化。",
+          "verificationRole": "证明跨平台持续与二次发酵",
+          "urlKind": "可复现搜索入口",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=Kimi%20K3"
+        },
+        {
+          "platform": "Kimi 官方博客",
+          "evidenceType": "官方产品资料",
+          "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+          "observation": "Kimi 官方已发布 K3 产品博客，可用于核对产品能力与发布时间。",
+          "verificationRole": "只验证 K3 产品事实，不证明“回应火爆”这句话的出处",
+          "urlKind": "官方详情页",
+          "url": "https://www.kimi.com/blog/kimi-k3"
+        },
+        {
+          "platform": "Kimi 开放平台",
+          "evidenceType": "官方技术文档",
+          "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+          "observation": "Kimi K3 Quickstart 可用于核对调用方式和官方定义。",
+          "verificationRole": "只验证技术事实，不证明热点回应",
+          "urlKind": "官方详情页",
+          "url": "https://platform.kimi.com/docs/guide/kimi-k3-quickstart"
+        },
+        {
+          "platform": "InfoQ",
+          "evidenceType": "专业媒体报道",
+          "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+          "observation": "专业媒体已有 Kimi K3 相关报道，可用于补充行业背景。",
+          "verificationRole": "媒体交叉验证，不替代月之暗面官方回应原文",
+          "urlKind": "媒体详情页",
+          "url": "https://www.infoq.cn/article/NtfFE25blBHubhNNTmkJ"
+        },
+        {
+          "platform": "南都 N 视频转载（搜狐）",
+          "evidenceType": "媒体回应报道",
+          "observedAt": "2026-07-22 约16:00-16:59 +08:00（精确分钟未记录）",
+          "observation": "报道指向 Kimi 企业业务负责人黄震昕于 7 月 21 日就 K3 相关关注集中回应。",
+          "verificationRole": "与其他媒体交叉核对回应主体和日期；不是第一方逐字稿",
+          "evidencePhase": "POST_SNAPSHOT_FACT_CHECK_ADDENDUM",
+          "urlKind": "转载详情页",
+          "url": "https://www.sohu.com/a/1053207518_161795"
+        },
+        {
+          "platform": "凤凰网科技",
+          "evidenceType": "媒体回应报道",
+          "observedAt": "2026-07-22 约16:00-16:59 +08:00（精确分钟未记录）",
+          "observation": "报道指向 Kimi 企业业务负责人黄震昕于 7 月 21 日就 K3 相关关注集中回应。",
+          "verificationRole": "与南都 N 视频转载交叉核对回应主体和日期；不是第一方逐字稿",
+          "evidencePhase": "POST_SNAPSHOT_FACT_CHECK_ADDENDUM",
+          "urlKind": "媒体详情页",
+          "url": "https://tech.ifeng.com/c/8ux43dxX4WX"
+        }
+      ],
+      "amplifyingAccounts": [],
+      "evidenceGaps": [
+        "南都 N 视频转载与凤凰网科技均指向黄震昕 7 月 21 日集中回应，但第一方官方原文或逐字稿尚未锁定。",
+        "抖音参与账号清单和名义账号总数未固化。",
+        "未完成 MCN、转载、投放、同脚本和原创聚类，N_eff 不可判定。",
+        "未取得精确首发时间线，不能宣称本轮是第一波热点。"
+      ],
+      "nextSteps": [
+        {
+          "owner": "AI 内容编辑",
+          "timing": "30 分钟内",
+          "action": "回查月之暗面、Kimi 官方账号、官网博客及可信采访，固化回应原文。",
+          "acceptance": "标题中的“回应”可对应到原始出处和发布时间。"
+        },
+        {
+          "owner": "热点研究",
+          "timing": "2 小时内",
+          "action": "登记抖音参与账号和首发时间，区分原创解释、媒体转载和重复搬运。",
+          "acceptance": "给出可审计账号表与 N_eff；无法归并时保持 null。"
+        },
+        {
+          "owner": "内容运营",
+          "timing": "官方源确认后 2 小时内",
+          "action": "发布二次发酵解释稿，并把首波发布时间写入时间线。",
+          "acceptance": "不使用“刚刚爆火”或“首次回应”等未经时间证据支持的表述。"
+        }
+      ],
+      "nextAction": "先查官方回应原文和首发时间线，再决定是否发布二次发酵解释稿。",
+      "stopCondition": "2 小时内找不到官方原文，或所谓回应只能追溯到同一条自媒体转述时停止发布。",
+      "contributors": []
+    },
+    {
+      "topicId": "RT-20260722-103",
+      "topic": "我在豆包养宠物",
+      "topicAliases": [
+        "在豆包里养宠物",
+        "豆包 AI 宠物"
+      ],
+      "density": "high",
+      "rawCreatorCount": null,
+      "rawCreatorCountLabel": "抖音可见多位个人作者参与，名义账号总数未固化",
+      "effectiveIndependentSources": null,
+      "independentClusters": null,
+      "followerTiers": null,
+      "originalContributors": null,
+      "baselinePercentile": null,
+      "t1ContinuingSources": null,
+      "sameAgeAboveBaselineShare": null,
+      "effectiveSourceGrowthRate": null,
+      "newIndependentSources": null,
+      "newIndependentSources24h": null,
+      "topContributorShare": null,
+      "topTwoShare": null,
+      "websiteFit": null,
+      "socialFit": null,
+      "contentRelevant": true,
+      "evidenceLevel": "E2",
+      "riskVeto": false,
+      "operationalDecision": {
+        "code": "TAIL_EVERGREEN",
+        "label": "转长尾，不抢热点",
+        "priority": 3,
+        "confidence": "B",
+        "canStartNow": true,
+        "conclusion": "不再按潜力热点追涨；改做教程、玩法合集和常见问题，承接仍在持续的搜索流量。",
+        "why": [
+          "抖音热点指数从上午 1147.3 万降至本轮 909.4 万，按已记录值计算下降约 20.7%。",
+          "抖音话题详情仍有多位个人作者和高赞内容，说明需求没有消失。",
+          "小红书仍有新内容，具备跨平台长尾，但当前证据更符合峰后承接而非黑马起涨。"
+        ],
+        "releaseGate": "教程必须由编辑实际复现关键步骤；无法复现时只做玩法盘点，不承诺产品功能。",
+        "contentPlan": {
+          "website": "怎么在豆包里养宠物？玩法入口、设置步骤和常见问题",
+          "social": [
+            "3 种豆包宠物玩法实测",
+            "豆包养宠物常见失败原因"
+          ],
+          "positioning": "搜索型常青内容，不使用“正在爆发”“黑马热点”表述。"
+        }
+      },
+      "formalWhitelistStatus": {
+        "code": "RECORD_TREND_COOLING",
+        "label": "仅记录，未进入正式话题白名单",
+        "isWhitelisted": false,
+        "reason": "指数在两次观察间下降约 20.7%，且独立来源、原创贡献和集中度未完成归并；当前更适合长尾内容。",
+        "requiredForTemporary": "高噪声赛道需至少 8 个有效独立来源，并同时通过独立簇、原创贡献、同龄增速、集中度、内容价值和风险门槛。"
+      },
+      "platformEvidence": [
+        {
+          "platform": "抖音创作者指数",
+          "evidenceType": "同日两次热点指数",
+          "observedAt": "2026-07-22（上午，精确时刻未记录）",
+          "observation": "上午记录热点指数 1147.3 万。",
+          "verificationRole": "作为同日较早观察值",
+          "urlKind": "平台入口",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        },
+        {
+          "platform": "抖音创作者指数",
+          "evidenceType": "同日两次热点指数",
+          "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+          "observation": "本轮记录热点指数 909.4 万；相对上午记录值下降约 20.7%。",
+          "verificationRole": "证明热度已从上午高位回落",
+          "urlKind": "平台入口",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        },
+        {
+          "platform": "抖音话题详情",
+          "evidenceType": "参与账号与高赞内容",
+          "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+          "observation": "可见多位个人作者参与，并存在高赞内容；账号清单和精确互动数未固化。",
+          "verificationRole": "证明需求仍在，但不能证明继续加速",
+          "urlKind": "平台入口，详情定位为对应热点",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        },
+        {
+          "platform": "小红书",
+          "evidenceType": "跨平台搜索结果",
+          "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+          "observation": "可见新发布的相关帖子；精确帖子数未固化。",
+          "verificationRole": "证明仍有跨平台长尾内容供给",
+          "urlKind": "可复现搜索入口",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%B1%86%E5%8C%85%20%E5%85%BB%E5%AE%A0%E7%89%A9"
+        }
+      ],
+      "derivedMetrics": [
+        {
+          "metric": "同日热点指数变化",
+          "value": -0.2073,
+          "display": "约 -20.7%",
+          "formula": "(909.4 - 1147.3) / 1147.3",
+          "note": "上午观察的精确时间未记录，因此只用于方向判断，不作为标准化速度分。"
+        }
+      ],
+      "amplifyingAccounts": [],
+      "evidenceGaps": [
+        "上午 1147.3 万观察值的精确时刻未记录。",
+        "参与账号清单、名义账号总数和逐条互动数未固化。",
+        "未完成 MCN、投放、同脚本和原创归并，N_eff 不可判定。",
+        "缺少次日同龄复核，不能判断是否会再次反弹。"
+      ],
+      "nextSteps": [
+        {
+          "owner": "内容编辑",
+          "timing": "当天",
+          "action": "实际复现豆包宠物入口和关键步骤，制作教程型官网稿。",
+          "acceptance": "步骤、界面和功能边界均由编辑实测。"
+        },
+        {
+          "owner": "社媒运营",
+          "timing": "官网稿发布后",
+          "action": "拆成玩法合集和常见问题短内容，使用搜索型标题。",
+          "acceptance": "不使用“刚爆”“仍在加速”等峰值判断。"
+        },
+        {
+          "owner": "热点研究",
+          "timing": "次日同一时段",
+          "action": "复查指数和新增独立作者；只有出现反弹与新增来源才恢复热点跟踪。",
+          "acceptance": "记录精确时间和原始值，缺失不补估。"
+        }
+      ],
+      "nextAction": "转为教程和搜索长尾内容；次日同一时段仅做一次反弹检查。",
+      "stopCondition": "产品入口无法复现、功能已下线，或次日指数继续下降且没有新增独立作者时停止热点跟踪。",
+      "contributors": []
+    }
+  ],
+  "creatorCrossValidation": [
+    {
+      "creatorId": "CR-136",
+      "creator": "绽放唠电商运营",
+      "name": "绽放唠电商运营",
+      "nickname": "绽放唠电商运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAtaFNmFxzvNVWRw0ltTJEqPChCho-FdqjApYf4c0wfMk",
+      "observedAt": "2026-07-22 15:30-15:45 +08:00（本轮区间，未记录逐页精确时刻）",
+      "status": "专业常青来源候选；未进入正式达人白名单",
+      "conclusion": "专业相关性、更新稳定性和收藏转发结构较好，适合常青选题；当前日增粉为负，不属于本轮突然爆发的黑马达人。",
+      "operationalRole": {
+        "code": "PROFESSIONAL_EVERGREEN_SOURCE",
+        "label": "专业常青来源候选",
+        "conclusion": "适合跟踪淘宝运营方法、复盘框架和流程型选题；不属于本轮突然爆发的黑马达人。"
+      },
+      "formalWhitelistStatus": {
+        "code": "NOT_FORMAL_WHITELIST",
+        "label": "未进入正式达人白名单",
+        "reason": "虽然专业相关性和收藏转发结构较好，但最新账号日变化未显示爆发，且公开视频实时复取被平台验证拦截，尚未完成两轮审核。"
+      },
+      "platformEvidence": [
+        {
+          "platform": "抖音 30 条视频样本",
+          "sourceDate": "沿用 2026-07-21 已审样本",
+          "url": "https://www.douyin.com/user/MS4wLjABAAAAtaFNmFxzvNVWRw0ltTJEqPChCho-FdqjApYf4c0wfMk",
+          "facts": [
+            "粉丝 5.7 万",
+            "样本 30 条，中位点赞 113.5、中位收藏 85、中位转发 18",
+            "总收藏 3102、总转发 610，实用内容占比 100%",
+            "核心实操标题下界 79.63%，同行深度互动分位 74.8"
+          ],
+          "status": "已审历史样本；非本轮实时增量"
+        },
+        {
+          "platform": "抖音创作者指数",
+          "sourceDate": "2026-07-22 本轮可见值",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
+          "facts": [
+            "粉丝 5.7 万",
+            "累计获赞 39.2 万",
+            "作品 1021 条",
+            "日变化：获赞 +64、粉丝 -7、分享 +17"
+          ],
+          "status": "已复核；日变化不支持当前爆发"
+        },
+        {
+          "platform": "蝉妈妈",
+          "sourceDate": "2026-07-22 本轮可见值",
+          "url": "https://www.chanmama.com",
+          "facts": [
+            "粉丝 5.7 万、活跃粉丝 4506",
+            "近 30 天发布 24 条",
+            "近 30 天平均点赞 114",
+            "平均点赞粉丝比 0.20%"
+          ],
+          "status": "已复核；支持稳定更新和常青来源定位"
+        }
+      ],
+      "crossChecks": [
+        "三组来源的粉丝量均为 5.7 万，账号体量一致。",
+        "蝉妈妈近 30 天平均点赞 114，与抖音 30 条样本中位点赞 113.5 基本一致。",
+        "收藏中位数 85、转发中位数 18，说明方法型内容的留存价值明显高于点赞表面量。",
+        "创作者指数日增粉为 -7，不能据此判定黑马增长或热点放大者。"
+      ],
+      "evidenceGaps": [
+        "公开视频实时复取仍受平台验证拦截，未取得本轮逐视频最新增量。",
+        "未完成第二轮人工审核和跨审核员复核。",
+        "巨量星图未登录，未取得商业合作、受众重合和履约画像。",
+        "巨量云图本轮没有可直接归因到该账号的话题级数据。"
+      ],
+      "gaps": [
+        "公开视频实时复取仍受平台验证拦截，未取得本轮逐视频最新增量。",
+        "未完成第二轮人工审核和跨审核员复核。",
+        "巨量星图未登录，未取得商业合作、受众重合和履约画像。",
+        "巨量云图本轮没有可直接归因到该账号的话题级数据。"
+      ],
+      "nextAction": "保留在专业常青来源观察池；每周抽取 3 条高收藏/高转发内容形成选题，不作为实时热点黑马推荐。"
     }
   ],
   "observedRankSignals": [
     {
-      "id": "RS-20260722-001",
-      "list": "蝉妈妈黑马达人日榜",
-      "rankLabel": "第 1 / 进榜",
-      "creator": "susu麻薯",
+      "id": "XS-20260722-101",
+      "list": "抖音创作者指数飙升热点",
+      "rankLabel": "第 6",
+      "creator": "耐克终止滔搏线上授权",
       "metrics": [
-        { "label": "成长指数", "value": "991" },
-        { "label": "粉丝数", "value": "66.4万" },
-        { "label": "粉丝增量", "value": "+26" },
-        { "label": "点赞增量", "value": "+1982.7万" }
+        { "label": "热点指数", "value": "852.0万" },
+        { "label": "名义参与账号", "value": "至少10个" }
       ],
-      "statusLabel": "异常背离待核",
-      "reason": "点赞增量与粉丝增量明显背离；缺少具体视频、原创和投流证据，不能判为黑马话题",
-      "sourceUrl": "https://www.chanmama.com/bloggerRank/bloggerGrowing/?category=&dateType=day&day=2026-07-21"
+      "statusLabel": "平台热点证据",
+      "reason": "用于判断抖音上升窗口；名义账号数不能替代有效独立来源 N_eff。",
+      "sourceUrl": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
     },
     {
-      "id": "RS-20260722-002",
-      "list": "蝉妈妈黑马达人日榜",
-      "rankLabel": "第 2 / 进榜",
-      "creator": "赏颜捞头条君",
+      "id": "XS-20260722-102",
+      "list": "小红书搜索复核",
+      "rankLabel": "6小时窗口",
+      "creator": "耐克与滔搏线上授权调整",
       "metrics": [
-        { "label": "成长指数", "value": "435.5" },
-        { "label": "粉丝数", "value": "58.8万" },
-        { "label": "粉丝增量", "value": "+2758" },
-        { "label": "点赞增量", "value": "+871万" }
+        { "label": "内容供给", "value": "数十条" },
+        { "label": "新鲜度", "value": "含分钟级新帖" }
       ],
-      "statusLabel": "账号信号",
-      "reason": "粉丝与点赞同步增长，但尚未取得内容母题和独立传播证据",
-      "sourceUrl": "https://www.chanmama.com/bloggerRank/bloggerGrowing/?category=&dateType=day&day=2026-07-21"
+      "statusLabel": "跨平台扩散证据",
+      "reason": "证明话题不是抖音单平台孤立信号；精确条数未固化。",
+      "sourceUrl": "https://www.xiaohongshu.com/search_result?keyword=%E6%BB%94%E6%90%8F%20%E8%80%90%E5%85%8B"
     },
     {
-      "id": "RS-20260722-003",
-      "list": "蝉妈妈黑马达人日榜",
-      "rankLabel": "第 3 / 进榜",
-      "creator": "果冻布丁OvO",
+      "id": "XS-20260722-103",
+      "list": "Bing 公开搜索",
+      "rankLabel": "多家媒体",
+      "creator": "耐克与滔搏公告回源",
       "metrics": [
-        { "label": "成长指数", "value": "156.5" },
-        { "label": "粉丝数", "value": "21.3万" },
-        { "label": "粉丝增量", "value": "+2170" },
-        { "label": "点赞增量", "value": "+313.3万" }
+        { "label": "回源状态", "value": "发现港交所公告引用线索" }
       ],
-      "statusLabel": "账号信号",
-      "reason": "达到账号层异常增长，但不能证明与其他达人围绕同一话题持续放大",
-      "sourceUrl": "https://www.chanmama.com/bloggerRank/bloggerGrowing/?category=&dateType=day&day=2026-07-21"
+      "statusLabel": "事实回源线索",
+      "reason": "多家可信媒体引用港交所公告；发布前仍需保存官方原文。",
+      "sourceUrl": "https://www.bing.com/search?q=%E6%BB%94%E6%90%8F+%E8%80%90%E5%85%8B+%E7%BA%BF%E4%B8%8A%E6%8E%88%E6%9D%83+%E6%B8%AF%E4%BA%A4%E6%89%80"
     },
     {
-      "id": "RS-20260722-004",
-      "list": "蝉妈妈热搜达人日榜",
-      "rankLabel": "第 7 / 进榜",
-      "creator": "徐多多duo",
+      "id": "XS-20260722-104",
+      "list": "抖音创作者指数飙升热点",
+      "rankLabel": "第 10",
+      "creator": "月之暗面回应 Kimi K3 火爆",
       "metrics": [
-        { "label": "热搜指数", "value": "59" },
-        { "label": "粉丝数", "value": "27.7万" },
-        { "label": "粉丝增量", "value": "-111" }
+        { "label": "热点指数", "value": "782.2万" }
       ],
-      "statusLabel": "搜索关注",
-      "reason": "新进热搜榜但粉丝下降，只能证明账号搜索关注，不能证明话题共振",
-      "sourceUrl": "https://www.chanmama.com/bloggerRank/hotSearchAuthor/"
+      "statusLabel": "二次发酵信号",
+      "reason": "站内需求仍高，但小红书讨论已持续约 5 天，不属于第一波发现。",
+      "sourceUrl": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
     },
     {
-      "id": "RS-20260722-005",
-      "list": "蝉妈妈热搜达人日榜",
-      "rankLabel": "第 8 / 进榜",
-      "creator": "富牛牛",
+      "id": "XS-20260722-105",
+      "list": "小红书搜索复核",
+      "rankLabel": "约5天窗口",
+      "creator": "Kimi K3",
       "metrics": [
-        { "label": "热搜指数", "value": "57" },
-        { "label": "粉丝数", "value": "883万" },
-        { "label": "粉丝增量", "value": "+5.3万" }
+        { "label": "持续时间", "value": "约5天" },
+        { "label": "最近新增", "value": "1天内仍有" }
       ],
-      "statusLabel": "大体量事件信号",
-      "reason": "账号关注和粉丝同步增长，但体量较大且缺少可迁移话题证据，不属于低基数黑马",
-      "sourceUrl": "https://www.chanmama.com/bloggerRank/hotSearchAuthor/"
+      "statusLabel": "跨平台持续证据",
+      "reason": "支持二次发酵判断；官方回应原文仍待补。",
+      "sourceUrl": "https://www.xiaohongshu.com/search_result?keyword=Kimi%20K3"
     },
     {
-      "id": "RS-20260722-006",
-      "list": "巨量云图商品趋势 / 近30天",
-      "rankLabel": "健身器械 TOP3",
-      "creator": "OMR S9PRO 光能美塑仪",
+      "id": "XS-20260722-106",
+      "list": "抖音创作者指数同日复核",
+      "rankLabel": "上午→15:34",
+      "creator": "我在豆包养宠物",
       "metrics": [
-        { "label": "GMV指数", "value": "1000万+" },
-        { "label": "GMV增长率指数", "value": "30.28" },
-        { "label": "销售增长率指数", "value": "30.63" },
-        { "label": "销售量指数", "value": "6万+" }
+        { "label": "上午指数", "value": "1147.3万" },
+        { "label": "本轮指数", "value": "909.4万" },
+        { "label": "变化", "value": "约-20.7%" }
       ],
-      "statusLabel": "商品信号",
-      "reason": "单商品增长显著，但商品趋势不能替代多达人独立内容扩散",
-      "sourceUrl": "https://yuntu.oceanengine.com/yuntu_lite/commodity/trend/short/v2?aadvid=1794665196703756"
+      "statusLabel": "峰后回落信号",
+      "reason": "跨平台仍有内容，但指数已经回落，更适合教程和搜索长尾。",
+      "sourceUrl": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+    },
+    {
+      "id": "XS-20260722-107",
+      "list": "抖音创作者指数 + 蝉妈妈 + 视频样本",
+      "rankLabel": "三源复核",
+      "creator": "绽放唠电商运营",
+      "metrics": [
+        { "label": "粉丝", "value": "5.7万" },
+        { "label": "近30天平均点赞", "value": "114" },
+        { "label": "日增粉", "value": "-7" }
+      ],
+      "statusLabel": "专业常青来源候选",
+      "reason": "专业相关性和收藏转发结构较好，但日变化不支持当前爆发；不是本轮黑马达人。",
+      "sourceUrl": "https://www.douyin.com/user/MS4wLjABAAAAtaFNmFxzvNVWRw0ltTJEqPChCho-FdqjApYf4c0wfMk"
     }
-  ]
+  ],
+  "audit": {
+    "snapshotCreatedFrom": "2026-07-22 15:30-15:45 只读平台观察",
+    "immutable": true,
+    "valuesImputed": false,
+    "missingValuesKeptNull": true,
+    "formalWhitelistPromotionPerformed": false,
+    "derivedValues": [
+      {
+        "field": "我在豆包养宠物 / 同日热点指数变化",
+        "formula": "(909.4 - 1147.3) / 1147.3",
+        "result": -0.2073,
+        "display": "约 -20.7%"
+      }
+    ],
+      "knownLimitations": [
+        "部分平台只固化了可复现搜索入口，未固化具体详情页 URL。",
+        "耐克与滔搏话题在 16 点后补充了新京报、北京日报媒体详情页；该附录不改变 15:30-15:45 的平台观察值。",
+        "Kimi K3 话题在 16 点后补充了南都 N 视频转载与凤凰网科技报道；两者不等同于第一方回应逐字稿。",
+      "抖音公开视频批量复取仍被平台验证拦截，未绕过验证码。",
+      "巨量星图未登录，不作为本轮证据。",
+      "三条话题均未完成 N_eff 与 T1 速度复核，正式白名单保持为 0。"
+    ]
+  }
 }

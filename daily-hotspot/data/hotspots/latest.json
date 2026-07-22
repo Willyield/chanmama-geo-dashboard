@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "module": "hotspots",
   "date": "2026-07-22",
-  "observedAt": "2026-07-22T10:34:27+08:00",
-  "revision": 3,
-  "updatedAt": "2026-07-22T06:58:06.528Z",
+  "observedAt": "2026-07-22T15:18:00+08:00",
+  "revision": 8,
+  "updatedAt": "2026-07-22T08:12:35.005Z",
   "sourceType": "structured-data",
   "sourceArtifact": "incoming/hotspots/2026-07-22.json",
   "sourceWorkbook": null,
@@ -16,58 +16,58 @@
   "summary": {
     "gradeCounts": {
       "S": 0,
-      "A": 4,
-      "B": 2,
-      "C": 3,
+      "A": 5,
+      "B": 3,
+      "C": 4,
       "D": 0
     },
     "domainCounts": {
-      "commerce": 6,
+      "commerce": 9,
       "technology": 3
     },
     "candidateKindCounts": {
-      "event": 8,
-      "potential_topic": 1
+      "event": 9,
+      "potential_topic": 3
     },
     "contentPotentialCounts": {
       "S": 0,
       "A": 0,
-      "B": 5,
-      "C": 3,
+      "B": 7,
+      "C": 4,
       "D": 1
     },
-    "priorityCount": 4,
-    "lowCostCount": 2,
-    "observeCount": 3,
-    "evidenceE3Count": 5,
-    "webSummary": "9 条候选入库，其中事件热点 8 条、潜力话题 1 条。业务重点 4 条，内容P-A以上 0 条。\n今日业务优先：商品材质成分不符意见稿：首次涉嫌违规新增下架，高价值商品错放类目可升级清退、异常发品意见征集临近截止：无品牌资质商品可被限制发品3至60天、OpenAI推出ChatGPT小企业计划：电商、营销、库存工作流进入官方培训与伙伴体系。",
+    "priorityCount": 5,
+    "lowCostCount": 3,
+    "observeCount": 4,
+    "evidenceE3Count": 6,
+    "webSummary": "12 条候选入库，其中事件热点 9 条、潜力话题 3 条。重点业务 5 条，可优先发布内容 0 条。\n今日业务优先：商品材质成分不符意见稿：首次涉嫌违规新增下架，高价值商品错放类目可升级清退、商品卡免佣政策拟改为差异化任务：新增九折费率类型，个人店不再适用、异常发品意见征集临近截止：无品牌资质商品可被限制发品3至60天。",
     "topContentActions": [
       {
-        "id": "HT-20260722-003",
+        "id": "HT-20260722-012",
         "grade": "P-B",
-        "name": "OpenAI推出ChatGPT小企业计划：电商、营销、库存工作流进入官方培训与伙伴体系",
-        "reason": "用竞品周报、商品机会卡和库存建议三条实测回答，不写泛AI工具盘点。",
-        "action": "中小电商团队怎么用ChatGPT搭建经营工作流？",
-        "domain": "technology",
-        "contentPotentialScore": 78
-      },
-      {
-        "id": "HT-20260722-008",
-        "grade": "P-C",
-        "name": "Qwen-Image-3.0据称提升复杂排版与多语言生成，但官方发布尚未回源",
-        "reason": "取得官方入口后用三组电商素材盲测，不引用单篇媒体结论代替事实。",
-        "action": "Qwen-Image-3.0能否提升电商海报和多语言详情图？",
-        "domain": "technology",
-        "contentPotentialScore": 72
-      },
-      {
-        "id": "HT-20260722-001",
-        "grade": "P-B",
-        "name": "商品材质成分不符意见稿：首次涉嫌违规新增下架，高价值商品错放类目可升级清退",
-        "reason": "不复述规则原文，围绕下架风险、五处信息一致和申诉材料回答商家问题。",
-        "action": "抖音商品材质不符会怎样？商家自查与申诉清单",
+        "name": "潜力话题：滔搏与耐克中国线上销售调整登抖音飙升榜，官方文件待回源",
+        "reason": "用官方事实和蝉妈妈品牌渠道数据解释，不做退出中国电商式标题党。",
+        "action": "耐克中国线上渠道调整，对品牌自播和达人分销意味着什么？",
         "domain": "commerce",
-        "contentPotentialScore": 68
+        "contentPotentialScore": 90
+      },
+      {
+        "id": "HT-20260722-011",
+        "grade": "P-B",
+        "name": "潜力话题：金价银价油价集体上涨登抖音实时热点，待验证珠宝消费影响",
+        "reason": "把宏观热搜与珠宝订单、购买人数和价格带变化连接起来。",
+        "action": "金价上涨后，抖音珠宝直播是涨价还是转化？",
+        "domain": "commerce",
+        "contentPotentialScore": 87
+      },
+      {
+        "id": "HT-20260722-010",
+        "grade": "P-B",
+        "name": "商品卡免佣政策拟改为差异化任务：新增九折费率类型，个人店不再适用",
+        "reason": "用商家成本和任务变化切入，不复述整份政策。",
+        "action": "2026抖音商品卡免佣政策拟怎么改？任务与费率差异表",
+        "domain": "commerce",
+        "contentPotentialScore": 84
       }
     ],
     "topActions": [
@@ -83,6 +83,17 @@
         "businessFitScore": null
       },
       {
+        "id": "HT-20260722-010",
+        "grade": "L-A｜重点追",
+        "name": "商品卡免佣政策拟改为差异化任务：新增九折费率类型，个人店不再适用",
+        "reason": "直接影响商品卡订单技术服务费、任务门槛和个人店资格，属于官方实质经营政策；即使大众流量有限，也保持重点跟进。",
+        "action": "制作适用对象、任务组合、两种免佣类型和结算查询四张差异表；公众号与私域定向提醒商家，正式稿发布后复核。",
+        "domain": "commerce",
+        "totalScore": 93,
+        "techImpactScore": null,
+        "businessFitScore": null
+      },
+      {
         "id": "HT-20260722-002",
         "grade": "L-A｜重点追",
         "name": "异常发品意见征集临近截止：无品牌资质商品可被限制发品3至60天",
@@ -92,17 +103,6 @@
         "totalScore": 92,
         "techImpactScore": null,
         "businessFitScore": null
-      },
-      {
-        "id": "HT-20260722-003",
-        "grade": "L-A｜重点追",
-        "name": "OpenAI推出ChatGPT小企业计划：电商、营销、库存工作流进入官方培训与伙伴体系",
-        "reason": "蝉妈妈已有商品、达人、直播和行业数据，可作为工作流输入验证，但当前更适合内容与小测，不适合直接做新产品或投流。",
-        "action": "用脱敏数据验证“竞品周报、商品机会卡、库存与营销建议”三条工作流，记录节省时间、错误率和人工修正；产出中小商家可执行问答。",
-        "domain": "technology",
-        "totalScore": null,
-        "techImpactScore": 82,
-        "businessFitScore": 87
       }
     ]
   },
@@ -257,11 +257,22 @@
         "preparation": 5,
         "official_rule_floor": 4
       },
+      "baseline_assessment": {
+        "signal_type": "official_rule",
+        "requires_baseline": false,
+        "comparison_baseline_verified": false,
+        "baseline_type": "不适用",
+        "normalization_flags": [],
+        "multi_period_growth_verified": true,
+        "independent_change_signals": 0,
+        "is_verified": true
+      },
       "business_priority_basis": "综合评分与封顶规则决定。",
       "hotness_scoring_model": "hotness_v1",
       "hotness_score": 66,
       "raw_hotness_level": "H-B",
       "hotness_level": "H-C",
+      "hotness_final_value": 2,
       "hotness_score_details": [
         {
           "key": "absolute_demand",
@@ -322,10 +333,17 @@
         "首次涉嫌违规新增下架",
         "高价值商品错放类目可升级清退"
       ],
+      "hotness_requires_baseline": false,
+      "hotness_comparison_baseline_verified": true,
+      "hotness_baseline_type": "不适用",
+      "hotness_normalization_flags": [],
+      "hotness_multi_period_growth_verified": true,
+      "hotness_independent_change_signals": 2,
       "content_scoring_model": "content_potential_v1",
       "content_potential_score": 68,
       "raw_content_potential_level": "P-B",
       "content_potential_level": "P-B",
+      "content_final_value": 3,
       "content_score_details": [
         {
           "key": "audience_demand",
@@ -405,6 +423,12 @@
         "抖音电商官方意见征集，直接影响发品与处罚"
       ],
       "content_baseline_verified": false,
+      "content_requires_baseline": false,
+      "content_comparison_baseline_verified": false,
+      "content_baseline_type": "不适用",
+      "content_normalization_flags": [],
+      "content_multi_period_growth_verified": true,
+      "content_independent_change_signals": 0,
       "supply_gap_verified": false,
       "content_freshness_verified": true,
       "chanmama_answerable": true,
@@ -575,11 +599,22 @@
         "preparation": 5,
         "official_rule_floor": 4
       },
+      "baseline_assessment": {
+        "signal_type": "official_rule",
+        "requires_baseline": false,
+        "comparison_baseline_verified": false,
+        "baseline_type": "不适用",
+        "normalization_flags": [],
+        "multi_period_growth_verified": true,
+        "independent_change_signals": 0,
+        "is_verified": true
+      },
       "business_priority_basis": "综合评分与封顶规则决定。",
       "hotness_scoring_model": "hotness_v1",
       "hotness_score": 57,
       "raw_hotness_level": "H-B",
       "hotness_level": "H-C",
+      "hotness_final_value": 2,
       "hotness_score_details": [
         {
           "key": "absolute_demand",
@@ -640,10 +675,17 @@
         "限制发品时长拟调整为3至60天",
         "无品牌资质商品纳入识别"
       ],
+      "hotness_requires_baseline": false,
+      "hotness_comparison_baseline_verified": true,
+      "hotness_baseline_type": "不适用",
+      "hotness_normalization_flags": [],
+      "hotness_multi_period_growth_verified": true,
+      "hotness_independent_change_signals": 2,
       "content_scoring_model": "content_potential_v1",
       "content_potential_score": 68,
       "raw_content_potential_level": "P-B",
       "content_potential_level": "P-B",
+      "content_final_value": 3,
       "content_score_details": [
         {
           "key": "audience_demand",
@@ -723,6 +765,12 @@
         "抖音电商官方意见征集，直接影响发品权限"
       ],
       "content_baseline_verified": false,
+      "content_requires_baseline": false,
+      "content_comparison_baseline_verified": false,
+      "content_baseline_type": "不适用",
+      "content_normalization_flags": [],
+      "content_multi_period_growth_verified": true,
+      "content_independent_change_signals": 0,
       "supply_gap_verified": false,
       "content_freshness_verified": true,
       "chanmama_answerable": true,
@@ -1010,6 +1058,7 @@
       "hotness_score": 75,
       "raw_hotness_level": "H-A",
       "hotness_level": "H-A",
+      "hotness_final_value": 4,
       "hotness_score_details": [
         {
           "key": "absolute_demand",
@@ -1063,10 +1112,17 @@
         "官方计划覆盖电商与营销工作流",
         "百度指数显示ChatGPT保持高需求基线"
       ],
+      "hotness_requires_baseline": false,
+      "hotness_comparison_baseline_verified": true,
+      "hotness_baseline_type": "不适用",
+      "hotness_normalization_flags": [],
+      "hotness_multi_period_growth_verified": true,
+      "hotness_independent_change_signals": 2,
       "content_scoring_model": "content_potential_v1",
       "content_potential_score": 78,
       "raw_content_potential_level": "P-A",
       "content_potential_level": "P-B",
+      "content_final_value": 3,
       "content_score_details": [
         {
           "key": "audience_demand",
@@ -1141,6 +1197,12 @@
         "百度指数ChatGPT高需求基线"
       ],
       "content_baseline_verified": true,
+      "content_requires_baseline": false,
+      "content_comparison_baseline_verified": true,
+      "content_baseline_type": "不适用",
+      "content_normalization_flags": [],
+      "content_multi_period_growth_verified": true,
+      "content_independent_change_signals": 0,
       "supply_gap_verified": false,
       "content_freshness_verified": true,
       "chanmama_answerable": true,
@@ -1311,11 +1373,22 @@
         "preparation": 5,
         "official_rule_floor": 4
       },
+      "baseline_assessment": {
+        "signal_type": "official_rule",
+        "requires_baseline": false,
+        "comparison_baseline_verified": false,
+        "baseline_type": "不适用",
+        "normalization_flags": [],
+        "multi_period_growth_verified": true,
+        "independent_change_signals": 0,
+        "is_verified": true
+      },
       "business_priority_basis": "官方实质规则直接影响经营，保持高业务优先级。",
       "hotness_scoring_model": "hotness_v1",
       "hotness_score": 44,
       "raw_hotness_level": "H-C",
       "hotness_level": "H-C",
+      "hotness_final_value": 2,
       "hotness_score_details": [
         {
           "key": "absolute_demand",
@@ -1376,10 +1449,17 @@
         "低价订单赔付拟调整",
         "体验分相关处置拟删除"
       ],
+      "hotness_requires_baseline": false,
+      "hotness_comparison_baseline_verified": true,
+      "hotness_baseline_type": "不适用",
+      "hotness_normalization_flags": [],
+      "hotness_multi_period_growth_verified": true,
+      "hotness_independent_change_signals": 2,
       "content_scoring_model": "content_potential_v1",
       "content_potential_score": 59,
       "raw_content_potential_level": "P-B",
       "content_potential_level": "P-B",
+      "content_final_value": 3,
       "content_score_details": [
         {
           "key": "audience_demand",
@@ -1459,6 +1539,12 @@
         "抖音电商官方意见征集，影响欺诈发货赔付"
       ],
       "content_baseline_verified": false,
+      "content_requires_baseline": false,
+      "content_comparison_baseline_verified": false,
+      "content_baseline_type": "不适用",
+      "content_normalization_flags": [],
+      "content_multi_period_growth_verified": true,
+      "content_independent_change_signals": 0,
       "supply_gap_verified": false,
       "content_freshness_verified": true,
       "chanmama_answerable": true,
@@ -1487,7 +1573,7 @@
       "measurement_plan": "差异卡访问、商家咨询、搜索点击和私域打开。",
       "stop_condition": "正式版变化即更新；无精准访问和咨询则不追加内容。",
       "content_score_reasons": {
-        "business": "官方规则涉及赔付，保持L-A",
+        "business": "官方规则涉及赔付，保持重点跟进",
         "traffic": "关注面较窄，按精准内容处理"
       }
     },
@@ -1501,13 +1587,13 @@
       "publishedAt": "平台最新可选周期2026-06-21至2026-07-20；观察2026-07-22",
       "signal": "商品ID 3826144838877839746；GMV指数1000万+、销量指数6万+、GMV增长量指数1000万+、GMV增长率指数30.28、销售增长量指数6万+、销售增长率指数30.63。",
       "uncertainty": "巨量云图7月21日和22日日期均为禁用，当前最新截止日只能到7月20日；指标均为平台指数或区间，不是实际成交；健身器械销售额增长率中位数为-23.42%。",
-      "recommended": "按商品ID在蝉妈妈复核近30天商品、关联达人和直播间；当前只做单品机会卡，不外推行业普涨或黑马达人。",
-      "actionReason": "单品同时满足GMV、销量、增长量和增长率多项证据，适合选品验证；但类目中位增长为负且尚无双源复核，只能低成本跟进。",
-      "actionDetail": "数据：复核商品ID、同款、关联直播间和达人近30天；内容：只做“单品增长异常”机会卡；双源一致后再写案例。",
+      "recommended": "先按商品ID在蝉妈妈复核自身7/30天、同类目同价位中位数、关联达人和直播间；完成基线与双源验证前不公开发布。",
+      "actionReason": "单品存在多项平台增长指数，但这些指数仍可能受平台估算和单品自身基数影响；没有自身、同价位和跨平台基线时，只能作为待验证信号。",
+      "actionDetail": "数据：比较商品自身7/30天、同类目同价位中位数、蝉妈妈同商品/同款及关联达人直播间；内容：验证通过后才制作单品机会卡，不外推行业普涨。",
       "evidence": "平台：巨量云图；页面：近期选品参考>运动户外>健身器械；数据周期2026-06-21至2026-07-20；观察2026-07-22 09:46；E3；https://yuntu.oceanengine.com/yuntu_lite/commodity/trend/short/v2?aadvid=1794665196703756",
       "departments": "数据主责；类目运营协作",
       "deadline": "2026-07-24",
-      "notRecommended": "不把指数写成真实成交，不写行业普涨或黑马达人，不投广告、不开发产品、不召回。",
+      "notRecommended": "不把指数写成真实成交，补齐基线前不发公开案例，不写行业普涨或黑马达人，不投广告、不开发产品、不召回。",
       "sourceLinks": [
         {
           "label": "Core source",
@@ -1522,19 +1608,28 @@
           "url": "https://yuntu.oceanengine.com/yuntu_lite/commodity/trend/short/v2?aadvid=1794665196703756"
         }
       ],
-      "status": "低成本跟进",
+      "status": "补证观察",
       "risk": "低风险",
       "natural": "通过",
       "owner": "热点运营负责人",
-      "monitor": "蝉妈妈同商品、同款、直播间和达人近30天变化；双源不一致即留档。",
+      "monitor": "商品自身7/30天、同类目同价位中位数、蝉妈妈同商品/同款及关联直播间和达人；少于两项独立异常变化或双源不一致即留档。",
       "candidate_kind": "event",
       "signal_type": "single_product_growth",
-      "baseline_evidence": null,
+      "baseline_evidence": {
+        "requires_baseline": true,
+        "comparison_baseline_verified": false,
+        "baseline_type": "商品自身7/30天、同类目同价位中位数、蝉妈妈同商品或同款",
+        "normalization_flags": [
+          "platform_estimate"
+        ],
+        "multi_period_growth_verified": false,
+        "independent_change_signals": 1
+      },
       "official_rule": null,
       "technology_change": "商品ID 3826144838877839746；GMV指数1000万+、销量指数6万+、GMV增长量指数1000万+、GMV增长率指数30.28、销售增长量指数6万+、销售增长率指数30.63。",
-      "chanmama_relevance": "单品同时满足GMV、销量、增长量和增长率多项证据，适合选品验证；但类目中位增长为负且尚无双源复核，只能低成本跟进。",
-      "next_step": "按商品ID在蝉妈妈复核近30天商品、关联达人和直播间；当前只做单品机会卡，不外推行业普涨或黑马达人。",
-      "explicitly_not_doing": "不把指数写成真实成交，不写行业普涨或黑马达人，不投广告、不开发产品、不召回。",
+      "chanmama_relevance": "单品存在多项平台增长指数，但这些指数仍可能受平台估算和单品自身基数影响；没有自身、同价位和跨平台基线时，只能作为待验证信号。",
+      "next_step": "先按商品ID在蝉妈妈复核自身7/30天、同类目同价位中位数、关联达人和直播间；完成基线与双源验证前不公开发布。",
+      "explicitly_not_doing": "不把指数写成真实成交，补齐基线前不发公开案例，不写行业普涨或黑马达人，不投广告、不开发产品、不召回。",
       "official_evidence": [],
       "circle_evidence": [],
       "actions": [
@@ -1555,11 +1650,11 @@
       "scoring_model": "commerce_v1",
       "totalScore": 66,
       "initialValue": 3,
-      "finalValue": 3,
-      "grade": "L-B｜低成本跟进",
-      "gradeCode": "B",
-      "followDecision": "低成本跟进",
-      "downgradeReason": "分数决定",
+      "finalValue": 2,
+      "grade": "L-C｜轻量测试/观察",
+      "gradeCode": "C",
+      "followDecision": "测试/观察",
+      "downgradeReason": "基线校正封顶",
       "scoreDetails": [
         {
           "name": "流量热度",
@@ -1617,17 +1712,30 @@
         "evidence": 5,
         "type": 5,
         "core": 4,
-        "baseline": 5,
+        "baseline": 2,
         "risk": 5,
         "window": 5,
         "preparation": 5,
         "official_rule_floor": 0
+      },
+      "baseline_assessment": {
+        "signal_type": "single_product_growth",
+        "requires_baseline": true,
+        "comparison_baseline_verified": false,
+        "baseline_type": "商品自身7/30天、同类目同价位中位数、蝉妈妈同商品或同款",
+        "normalization_flags": [
+          "platform_estimate"
+        ],
+        "multi_period_growth_verified": false,
+        "independent_change_signals": 1,
+        "is_verified": false
       },
       "business_priority_basis": "综合评分与封顶规则决定。",
       "hotness_scoring_model": "hotness_v1",
       "hotness_score": 57,
       "raw_hotness_level": "H-B",
       "hotness_level": "H-C",
+      "hotness_final_value": 2,
       "hotness_score_details": [
         {
           "key": "absolute_demand",
@@ -1680,6 +1788,12 @@
           "reason": "只有单平台信号，热点成立度最高H-C。"
         },
         {
+          "rule": "baseline_normalization_cap",
+          "hotness_cap": "H-C",
+          "changed": false,
+          "reason": "该信号容易受客单价、销量规模、季节、活动、单场爆发、小基数或平台估算影响；缺少可比基线、多周期增长和两项独立变化信号时，不能判定为趋势热点。"
+        },
+        {
           "rule": "no_baseline_single_source",
           "hotness_cap": "H-C",
           "changed": false,
@@ -1693,10 +1807,19 @@
       "hotness_change_signals": [
         "单品多项增长指数突出"
       ],
+      "hotness_requires_baseline": true,
+      "hotness_comparison_baseline_verified": false,
+      "hotness_baseline_type": "商品自身7/30天、同类目同价位中位数、蝉妈妈同商品或同款",
+      "hotness_normalization_flags": [
+        "platform_estimate"
+      ],
+      "hotness_multi_period_growth_verified": false,
+      "hotness_independent_change_signals": 1,
       "content_scoring_model": "content_potential_v1",
       "content_potential_score": 59,
       "raw_content_potential_level": "P-B",
-      "content_potential_level": "P-B",
+      "content_potential_level": "P-C",
+      "content_final_value": 2,
       "content_score_details": [
         {
           "key": "audience_demand",
@@ -1757,6 +1880,12 @@
       ],
       "content_caps": [
         {
+          "rule": "baseline_normalization_unverified",
+          "potential_cap": "P-C",
+          "changed": true,
+          "reason": "选题结论依赖规模或增长信号，但尚未排除客单价、销量规模、季节、活动、单场爆发、小基数或平台估算偏差，补齐基线前不公开发布。"
+        },
+        {
           "rule": "single_platform_without_baseline",
           "potential_cap": "P-B",
           "changed": false,
@@ -1770,6 +1899,14 @@
         "巨量云图单品增长指数突出"
       ],
       "content_baseline_verified": false,
+      "content_requires_baseline": true,
+      "content_comparison_baseline_verified": false,
+      "content_baseline_type": "商品自身7/30天、同类目同价位中位数、蝉妈妈同商品或同款",
+      "content_normalization_flags": [
+        "platform_estimate"
+      ],
+      "content_multi_period_growth_verified": false,
+      "content_independent_change_signals": 1,
       "supply_gap_verified": false,
       "content_freshness_verified": true,
       "chanmama_answerable": true,
@@ -1788,10 +1925,7 @@
       "channel_reasons": {
         "primary": "产品视觉和使用场景更适合短视频与小红书，但必须先补蝉妈妈交叉验证。"
       },
-      "recommended_channels": [
-        "short_video",
-        "xiaohongshu"
-      ],
+      "recommended_channels": [],
       "primary_topic": "OMR S9PRO美塑仪为什么增长？先验证商品、达人和直播间",
       "content_angle": "只做单品案例，不外推健身器械或美容仪全行业上涨。",
       "measurement_plan": "商品页访问、视频完播、小红书收藏、同款搜索和注册。",
@@ -1832,7 +1966,7 @@
           "url": "https://www.chanmama.com/bloggerRankingGrowing/product?category=&category_id=-1&dateType=day&day=2026-07-21"
         }
       ],
-      "status": "低成本跟进",
+      "status": "补证观察",
       "risk": "低风险",
       "natural": "通过",
       "owner": "热点运营负责人",
@@ -1840,6 +1974,14 @@
       "candidate_kind": "event",
       "signal_type": "leaderboard_snapshot",
       "baseline_evidence": {
+        "requires_baseline": true,
+        "comparison_baseline_verified": false,
+        "baseline_type": "账号自身7/30天、珠宝类目中位数、同客单价区间和跨平台需求",
+        "normalization_flags": [
+          "high_ticket_category",
+          "platform_estimate",
+          "single_day_snapshot"
+        ],
         "category_baseline_verified": false,
         "multi_period_growth_verified": false,
         "independent_change_signals": 0,
@@ -1856,15 +1998,15 @@
       "actions": [
         {
           "hotspotId": "HT-20260722-006",
-          "actionType": "珠宝榜单连续性",
-          "task": "连续3天记录前三珠宝账号、直播场次、销售额区间和商品结构",
+          "actionType": "珠宝基线观察",
+          "task": "连续7天比较账号自身、类目中位数、订单、购买人数、开播账号和搜索趋势",
           "owner": "数据",
           "collaborators": "珠宝类目运营",
-          "deadline": "2026-07-24",
-          "deliverable": "连续性记录",
-          "acceptance": "平台预估区间原样标注",
-          "stopCondition": "掉出集中占位即停止升级",
-          "status": "待开始"
+          "deadline": "2026-07-29",
+          "deliverable": "基线对比记录",
+          "acceptance": "高客单和预估销售额不算增长",
+          "stopCondition": "少于两项异常变化即留档",
+          "status": "观察"
         }
       ],
       "domain": "commerce",
@@ -1939,11 +2081,26 @@
         "preparation": 5,
         "official_rule_floor": 0
       },
+      "baseline_assessment": {
+        "signal_type": "leaderboard_snapshot",
+        "requires_baseline": true,
+        "comparison_baseline_verified": false,
+        "baseline_type": "账号自身7/30天、珠宝类目中位数、同客单价区间和跨平台需求",
+        "normalization_flags": [
+          "high_ticket_category",
+          "platform_estimate",
+          "single_day_snapshot"
+        ],
+        "multi_period_growth_verified": false,
+        "independent_change_signals": 0,
+        "is_verified": false
+      },
       "business_priority_basis": "综合评分与封顶规则决定。",
       "hotness_scoring_model": "hotness_v1",
       "hotness_score": 12,
       "raw_hotness_level": "H-D",
       "hotness_level": "H-D",
+      "hotness_final_value": 1,
       "hotness_score_details": [
         {
           "key": "absolute_demand",
@@ -1996,10 +2153,10 @@
           "reason": "只有单平台信号，热点成立度最高H-C。"
         },
         {
-          "rule": "leaderboard_baseline_cap",
+          "rule": "baseline_normalization_cap",
           "hotness_cap": "H-C",
           "changed": false,
-          "reason": "单日榜缺少类目基线或两项变化信号，不能判定为趋势热点。"
+          "reason": "该信号容易受客单价、销量规模、季节、活动、单场爆发、小基数或平台估算影响；缺少可比基线、多周期增长和两项独立变化信号时，不能判定为趋势热点。"
         },
         {
           "rule": "no_baseline_single_source",
@@ -2013,10 +2170,21 @@
       "hotness_baseline_verified": false,
       "hotness_freshness_verified": true,
       "hotness_change_signals": [],
+      "hotness_requires_baseline": true,
+      "hotness_comparison_baseline_verified": false,
+      "hotness_baseline_type": "账号自身7/30天、珠宝类目中位数、同客单价区间和跨平台需求",
+      "hotness_normalization_flags": [
+        "high_ticket_category",
+        "platform_estimate",
+        "single_day_snapshot"
+      ],
+      "hotness_multi_period_growth_verified": false,
+      "hotness_independent_change_signals": 0,
       "content_scoring_model": "content_potential_v1",
       "content_potential_score": 33,
       "raw_content_potential_level": "P-D",
       "content_potential_level": "P-D",
+      "content_final_value": 1,
       "content_score_details": [
         {
           "key": "audience_demand",
@@ -2089,6 +2257,12 @@
           "reason": "没有达到最低受众需求门槛，不能因业务重要而抬高内容潜力。"
         },
         {
+          "rule": "baseline_normalization_unverified",
+          "potential_cap": "P-C",
+          "changed": false,
+          "reason": "选题结论依赖规模或增长信号，但尚未排除客单价、销量规模、季节、活动、单场爆发、小基数或平台估算偏差，补齐基线前不公开发布。"
+        },
+        {
           "rule": "single_platform_without_baseline",
           "potential_cap": "P-B",
           "changed": false,
@@ -2120,6 +2294,16 @@
         "蝉妈妈单日榜出现三个珠宝账号"
       ],
       "content_baseline_verified": false,
+      "content_requires_baseline": true,
+      "content_comparison_baseline_verified": false,
+      "content_baseline_type": "账号自身7/30天、珠宝类目中位数、同客单价区间和跨平台需求",
+      "content_normalization_flags": [
+        "high_ticket_category",
+        "platform_estimate",
+        "single_day_snapshot"
+      ],
+      "content_multi_period_growth_verified": false,
+      "content_independent_change_signals": 0,
       "supply_gap_verified": false,
       "content_freshness_verified": true,
       "chanmama_answerable": true,
@@ -2197,15 +2381,15 @@
       "actions": [
         {
           "hotspotId": "HT-20260722-007",
-          "actionType": "GEO问题承接",
-          "task": "发布店铺经营健康与抖音数据异常两篇排查型问答",
+          "actionType": "潜力话题补证",
+          "task": "核对完整关键词、数据日期、百度与创作者指数需求及内容供给缺口",
           "owner": "内容/GEO",
           "collaborators": "数据",
-          "deadline": "2026-07-24",
-          "deliverable": "2篇问答",
-          "acceptance": "标题注明非大众热点",
-          "stopCondition": "两周无收录或访问即停止",
-          "status": "待开始"
+          "deadline": "2026-07-23",
+          "deliverable": "需求与供给核验表",
+          "acceptance": "未验证前不发布主稿",
+          "stopCondition": "无第二平台或日期无法核实即停止",
+          "status": "待验证"
         }
       ],
       "domain": "commerce",
@@ -2280,11 +2464,22 @@
         "preparation": 5,
         "official_rule_floor": 0
       },
+      "baseline_assessment": {
+        "signal_type": "question_demand_signal",
+        "requires_baseline": false,
+        "comparison_baseline_verified": false,
+        "baseline_type": "不适用",
+        "normalization_flags": [],
+        "multi_period_growth_verified": true,
+        "independent_change_signals": 0,
+        "is_verified": true
+      },
       "business_priority_basis": "综合评分与封顶规则决定。",
       "hotness_scoring_model": "hotness_v1",
       "hotness_score": 35,
       "raw_hotness_level": "H-D",
       "hotness_level": "H-D",
+      "hotness_final_value": 1,
       "hotness_score_details": [
         {
           "key": "absolute_demand",
@@ -2354,10 +2549,17 @@
       "hotness_baseline_verified": false,
       "hotness_freshness_verified": false,
       "hotness_change_signals": [],
+      "hotness_requires_baseline": false,
+      "hotness_comparison_baseline_verified": false,
+      "hotness_baseline_type": "不适用",
+      "hotness_normalization_flags": [],
+      "hotness_multi_period_growth_verified": true,
+      "hotness_independent_change_signals": 0,
       "content_scoring_model": "content_potential_v1",
       "content_potential_score": 66,
       "raw_content_potential_level": "P-B",
       "content_potential_level": "P-C",
+      "content_final_value": 2,
       "content_score_details": [
         {
           "key": "audience_demand",
@@ -2455,6 +2657,12 @@
         "AIDSO显示三条相近高意图问题及引用网站数"
       ],
       "content_baseline_verified": false,
+      "content_requires_baseline": false,
+      "content_comparison_baseline_verified": false,
+      "content_baseline_type": "不适用",
+      "content_normalization_flags": [],
+      "content_multi_period_growth_verified": true,
+      "content_independent_change_signals": 0,
       "supply_gap_verified": false,
       "content_freshness_verified": false,
       "chanmama_answerable": true,
@@ -2484,7 +2692,7 @@
       "stop_condition": "无法取得完整关键词、最新日期或第二个平台需求信号则不发布主稿。",
       "content_score_reasons": {
         "advantage": "蝉妈妈能直接回答",
-        "evidence": "单平台且日期未核，暂时P-C"
+        "evidence": "单平台且日期未核，暂时补证后再发"
       }
     },
     {
@@ -2764,6 +2972,7 @@
       "hotness_score": 62,
       "raw_hotness_level": "H-B",
       "hotness_level": "H-C",
+      "hotness_final_value": 2,
       "hotness_score_details": [
         {
           "key": "absolute_demand",
@@ -2835,10 +3044,17 @@
       "hotness_change_signals": [
         "媒体称复杂排版与多语言生成提升"
       ],
+      "hotness_requires_baseline": false,
+      "hotness_comparison_baseline_verified": false,
+      "hotness_baseline_type": "不适用",
+      "hotness_normalization_flags": [],
+      "hotness_multi_period_growth_verified": true,
+      "hotness_independent_change_signals": 1,
       "content_scoring_model": "content_potential_v1",
       "content_potential_score": 72,
       "raw_content_potential_level": "P-A",
       "content_potential_level": "P-C",
+      "content_final_value": 2,
       "content_score_details": [
         {
           "key": "audience_demand",
@@ -2918,6 +3134,12 @@
         "AITNT单篇实测线索"
       ],
       "content_baseline_verified": false,
+      "content_requires_baseline": false,
+      "content_comparison_baseline_verified": false,
+      "content_baseline_type": "不适用",
+      "content_normalization_flags": [],
+      "content_multi_period_growth_verified": true,
+      "content_independent_change_signals": 0,
       "supply_gap_verified": false,
       "content_freshness_verified": true,
       "chanmama_answerable": true,
@@ -2946,7 +3168,7 @@
       "stop_condition": "48小时无官方原文、模型卡或可用入口即归档。",
       "content_score_reasons": {
         "traffic": "视觉话题传播性强",
-        "evidence": "E1单一媒体，强制P-C"
+        "evidence": "单一媒体线索，只能补证后再发"
       }
     },
     {
@@ -3054,7 +3276,7 @@
       ],
       "score_reasons": {
         "technology": "多个Agent相关项目同日高增，圈层信号明显；但只是平台星标，按E2最高T-B。",
-        "business": "与商家、达人和电商数据工作流没有直接证据，B-score低于35，最终最高L-C。"
+        "business": "与商家、达人和电商数据工作流没有直接证据，业务承接分低于35，最终最多补证观察。"
       },
       "score_caps": [
         {
@@ -3206,6 +3428,7 @@
       "hotness_score": 62,
       "raw_hotness_level": "H-B",
       "hotness_level": "H-C",
+      "hotness_final_value": 2,
       "hotness_score_details": [
         {
           "key": "absolute_demand",
@@ -3271,10 +3494,17 @@
       "hotness_change_signals": [
         "多个Agent工具进入GitHub日趋势"
       ],
+      "hotness_requires_baseline": false,
+      "hotness_comparison_baseline_verified": false,
+      "hotness_baseline_type": "不适用",
+      "hotness_normalization_flags": [],
+      "hotness_multi_period_growth_verified": true,
+      "hotness_independent_change_signals": 1,
       "content_scoring_model": "content_potential_v1",
       "content_potential_score": 48,
       "raw_content_potential_level": "P-C",
       "content_potential_level": "P-C",
+      "content_final_value": 2,
       "content_score_details": [
         {
           "key": "audience_demand",
@@ -3372,6 +3602,12 @@
         "GitHub Trending单日开发者趋势"
       ],
       "content_baseline_verified": false,
+      "content_requires_baseline": false,
+      "content_comparison_baseline_verified": false,
+      "content_baseline_type": "不适用",
+      "content_normalization_flags": [],
+      "content_multi_period_growth_verified": true,
+      "content_independent_change_signals": 0,
       "supply_gap_verified": false,
       "content_freshness_verified": true,
       "chanmama_answerable": false,
@@ -3398,6 +3634,1033 @@
       "content_score_reasons": {
         "circle": "开发者圈层升温",
         "business": "与蝉妈妈用户和内容承接弱"
+      }
+    },
+    {
+      "id": "HT-20260722-010",
+      "event_key": "douyin-product-card-commission-policy-aJngpC6yXAFs",
+      "foundAt": "2026-07-22 14:58",
+      "name": "商品卡免佣政策拟改为差异化任务：新增九折费率类型，个人店不再适用",
+      "type": "T-A｜业务强相关",
+      "sourceLevel": "E3｜抖音电商官方意见征集",
+      "publishedAt": "2026-07-17 23:59:59；征集期2026-07-18至2026-07-24",
+      "signal": "平台拟按商家经营与商品供给匹配差异化任务；新增费率减免至原费率90%的免佣类型；需完成基础必做和任一选做任务；个人店铺不再适用新活动。",
+      "uncertainty": "当前仍是意见征集稿；每月任务、适用类目和最终免佣结果以商家后台和正式政策为准，不能把免佣写成所有商品卡订单全部免费。",
+      "recommended": "制作适用对象、任务组合、两种免佣类型和结算查询四张差异表；公众号与私域定向提醒商家，正式稿发布后复核。",
+      "actionReason": "直接影响商品卡订单技术服务费、任务门槛和个人店资格，属于官方实质经营政策；即使大众流量有限，也保持重点跟进。",
+      "actionDetail": "官网题目：《2026抖音商品卡免佣政策拟怎么改？》；回答谁适用、必做/选做任务、两种减免方式、订单范围和账单查询。公众号发差异表，私域按店铺类型提醒；意见稿阶段不做免佣计算器。",
+      "evidence": "平台：抖音电商学习中心；页面：关于修订《2026年抖音电商商品卡免佣扶持政策》的意见征集通知；发布2026-07-17 23:59:59；复核2026-07-22 14:58；E3；https://school.jinritemai.com/doudian/web/articlev0/aJngpC6yXAFs",
+      "departments": "热点运营主责；内容/GEO、数据、商家运营协作",
+      "deadline": "2026-07-24",
+      "notRecommended": "不把意见稿写成正式政策，不承诺所有订单免佣，不投广告、不全量召回、不开发计算器。",
+      "sourceLinks": [
+        {
+          "label": "Core source",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/aJngpC6yXAFs"
+        }
+      ],
+      "source_links": [
+        {
+          "label": "Core source",
+          "domain": "school.jinritemai.com",
+          "url": "https://school.jinritemai.com/doudian/web/articlev0/aJngpC6yXAFs"
+        }
+      ],
+      "status": "重点执行",
+      "risk": "中风险-已通过",
+      "natural": "通过",
+      "owner": "热点运营负责人",
+      "monitor": "正式稿、商家后台任务、差异表访问、私域打开、商家咨询和注册；正式版变化即更新。",
+      "candidate_kind": "event",
+      "signal_type": "official_rule",
+      "baseline_evidence": null,
+      "official_rule": {
+        "substantive_change": true,
+        "direct_business_impact": true,
+        "active_window": true,
+        "business_priority_floor": "A",
+        "document_status": "意见征集稿，尚未正式生效"
+      },
+      "technology_change": "平台拟按商家经营与商品供给匹配差异化任务；新增费率减免至原费率90%的免佣类型；需完成基础必做和任一选做任务；个人店铺不再适用新活动。",
+      "chanmama_relevance": "直接影响商品卡订单技术服务费、任务门槛和个人店资格，属于官方实质经营政策；即使大众流量有限，也保持重点跟进。",
+      "next_step": "制作适用对象、任务组合、两种免佣类型和结算查询四张差异表；公众号与私域定向提醒商家，正式稿发布后复核。",
+      "explicitly_not_doing": "不把意见稿写成正式政策，不承诺所有订单免佣，不投广告、不全量召回、不开发计算器。",
+      "official_evidence": [],
+      "circle_evidence": [],
+      "actions": [
+        {
+          "hotspotId": "HT-20260722-010",
+          "actionType": "免佣政策差异表",
+          "task": "整理适用对象、必做/选做任务、两种免佣类型和账单查询",
+          "owner": "内容/GEO",
+          "collaborators": "数据、商家运营",
+          "deadline": "2026-07-23",
+          "deliverable": "四张差异表",
+          "acceptance": "明确意见稿状态和订单范围",
+          "stopCondition": "正式版变化即更新",
+          "status": "待开始"
+        }
+      ],
+      "domain": "commerce",
+      "scoring_model": "commerce_v1",
+      "totalScore": 93,
+      "initialValue": 5,
+      "finalValue": 4,
+      "grade": "L-A｜重点追",
+      "gradeCode": "A",
+      "followDecision": "重点追",
+      "downgradeReason": "风险封顶",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 3,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 5,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 5,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 5,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 5,
+        "evidence": 5,
+        "type": 5,
+        "core": 5,
+        "baseline": 5,
+        "risk": 4,
+        "window": 5,
+        "preparation": 5,
+        "official_rule_floor": 4
+      },
+      "baseline_assessment": {
+        "signal_type": "official_rule",
+        "requires_baseline": false,
+        "comparison_baseline_verified": false,
+        "baseline_type": "不适用",
+        "normalization_flags": [],
+        "multi_period_growth_verified": true,
+        "independent_change_signals": 0,
+        "is_verified": true
+      },
+      "business_priority_basis": "综合评分与封顶规则决定。",
+      "hotness_scoring_model": "hotness_v1",
+      "hotness_score": 69,
+      "raw_hotness_level": "H-B",
+      "hotness_level": "H-C",
+      "hotness_final_value": 2,
+      "hotness_score_details": [
+        {
+          "key": "absolute_demand",
+          "name": "需求规模",
+          "score": 2,
+          "weight": 20,
+          "weighted_score": 8
+        },
+        {
+          "key": "baseline_deviation",
+          "name": "相对基线变化",
+          "score": 5,
+          "weight": 25,
+          "weighted_score": 25
+        },
+        {
+          "key": "growth_velocity",
+          "name": "上升速度",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "persistence",
+          "name": "持续时间",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "cross_platform_spread",
+          "name": "跨平台扩散",
+          "score": 1,
+          "weight": 15,
+          "weighted_score": 3
+        },
+        {
+          "key": "freshness",
+          "name": "数据新鲜度",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "hotness_caps": [
+        {
+          "rule": "single_platform_cap",
+          "hotness_cap": "H-C",
+          "changed": true,
+          "reason": "只有单平台信号，热点成立度最高H-C。"
+        }
+      ],
+      "hotness_signal_type": "official_rule",
+      "hotness_independent_platform_count": 1,
+      "hotness_baseline_verified": true,
+      "hotness_freshness_verified": true,
+      "hotness_change_signals": [
+        "新增九折费率类型",
+        "个人店不再适用",
+        "必做加选做任务模式"
+      ],
+      "hotness_requires_baseline": false,
+      "hotness_comparison_baseline_verified": true,
+      "hotness_baseline_type": "不适用",
+      "hotness_normalization_flags": [],
+      "hotness_multi_period_growth_verified": true,
+      "hotness_independent_change_signals": 3,
+      "content_scoring_model": "content_potential_v1",
+      "content_potential_score": 84,
+      "raw_content_potential_level": "P-A",
+      "content_potential_level": "P-B",
+      "content_final_value": 3,
+      "content_score_details": [
+        {
+          "key": "audience_demand",
+          "name": "受众需求规模",
+          "score": 3,
+          "weight": 20,
+          "weighted_score": 12
+        },
+        {
+          "key": "demand_velocity",
+          "name": "需求上涨速度",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "content_supply_gap",
+          "name": "内容供给缺口",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "target_user_fit",
+          "name": "目标用户匹配",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "data_content_advantage",
+          "name": "蝉妈妈数据优势",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "discussion_shareability",
+          "name": "讨论与传播性",
+          "score": 4,
+          "weight": 10,
+          "weighted_score": 8
+        },
+        {
+          "key": "content_lifecycle",
+          "name": "内容生命周期",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "content_caps": [
+        {
+          "rule": "single_platform_without_baseline",
+          "potential_cap": "P-B",
+          "changed": true,
+          "reason": "只有单平台快照且没有历史基线，内容潜力最高P-B。"
+        },
+        {
+          "rule": "targeted_audience_cap",
+          "potential_cap": "P-B",
+          "changed": false,
+          "reason": "定向专业内容可以高业务优先，但不按大众高流量话题评为P-A。"
+        }
+      ],
+      "content_source_tier": "E3",
+      "traffic_route": "targeted",
+      "independent_platform_count": 1,
+      "demand_signals": [
+        "官方意见征集直接影响商品卡免佣成本"
+      ],
+      "content_baseline_verified": false,
+      "content_requires_baseline": false,
+      "content_comparison_baseline_verified": false,
+      "content_baseline_type": "不适用",
+      "content_normalization_flags": [],
+      "content_multi_period_growth_verified": true,
+      "content_independent_change_signals": 0,
+      "supply_gap_verified": false,
+      "content_freshness_verified": true,
+      "chanmama_answerable": true,
+      "query_cluster": [
+        "抖音商品卡免佣怎么参加",
+        "商品卡免佣任务有哪些",
+        "个人店还能参加免佣吗"
+      ],
+      "channel_scores": {
+        "website": 85,
+        "wechat": 90,
+        "short_video": 68,
+        "xiaohongshu": 76,
+        "private_domain": 94
+      },
+      "channel_reasons": {
+        "primary": "费用与任务问题意图强，但主要面向商家，适合官网、公众号和私域。"
+      },
+      "recommended_channels": [
+        "website",
+        "wechat",
+        "private_domain"
+      ],
+      "primary_topic": "2026抖音商品卡免佣政策拟怎么改？任务与费率差异表",
+      "content_angle": "用商家成本和任务变化切入，不复述整份政策。",
+      "measurement_plan": "搜索展现、差异表下载、公众号分享、私域打开、商家咨询和注册。",
+      "stop_condition": "正式稿变化即更新；两周无精准访问和咨询则停止扩写。",
+      "content_score_reasons": {
+        "business": "官方费用政策必须高优先",
+        "traffic": "精准商家流量，目标人群有限"
+      }
+    },
+    {
+      "id": "HT-20260722-011",
+      "event_key": "creator-index-gold-silver-oil-rise-20260722",
+      "foundAt": "2026-07-22 15:02",
+      "name": "潜力话题：金价银价油价集体上涨登抖音实时热点，待验证珠宝消费影响",
+      "type": "内容潜力｜社媒实时需求",
+      "sourceLevel": "E2｜抖音创作者指数实时热点",
+      "publishedAt": "2026-07-22 15:02观察；实时热点指数1104.4万",
+      "signal": "“金价银价油价集体上涨”位列抖音实时热点第2，热点指数约1104.4万；这是外部需求信号，不等于抖音珠宝直播销售同步上涨。",
+      "uncertainty": "组合话题同时包含金、银、油，珠宝消费意图尚未拆分；百度指数、AIDSO和蝉妈妈珠宝类目变化尚未交叉验证。",
+      "recommended": "先拆分金价、银价关键词，核对百度与AIDSO需求，再用蝉妈妈比较珠宝类目7/30天订单、购买人数、开播账号和价格带变化。",
+      "actionReason": "它提供了珠宝单日榜缺少的外部需求信号，可能形成“价格上涨后直播珠宝怎么卖”的内容机会；但必须验证需求与交易是否同向。",
+      "actionDetail": "验证通过后的官网题目：《金价上涨后，抖音珠宝直播是涨价还是转化？》；社媒做价格带与购买变化图。当前只补需求、类目基线和供给缺口。",
+      "evidence": "平台：抖音创作者指数；页面：抖音指数>抖音实时热点；观察2026-07-22 15:02；热点指数1104.4万；E2；https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
+      "departments": "热点运营主责；数据、珠宝类目内容协作",
+      "deadline": "2026-07-23",
+      "notRecommended": "不根据热搜直接宣称珠宝销量上涨，不用单日高销售额作证明，不投流、不全量发布。",
+      "sourceLinks": [
+        {
+          "label": "Core source",
+          "domain": "creator.douyin.com",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        }
+      ],
+      "source_links": [
+        {
+          "label": "Core source",
+          "domain": "creator.douyin.com",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        }
+      ],
+      "status": "补证观察",
+      "risk": "低风险",
+      "natural": "待确认",
+      "owner": "热点运营负责人",
+      "monitor": "金银关键词指数、AIDSO问题、珠宝类目7/30天订单与购买人数、开播账号和价格带；双源不同向即停止。",
+      "candidate_kind": "potential_topic",
+      "signal_type": "platform_realtime_topic",
+      "baseline_evidence": null,
+      "official_rule": null,
+      "technology_change": "“金价银价油价集体上涨”位列抖音实时热点第2，热点指数约1104.4万；这是外部需求信号，不等于抖音珠宝直播销售同步上涨。",
+      "chanmama_relevance": "它提供了珠宝单日榜缺少的外部需求信号，可能形成“价格上涨后直播珠宝怎么卖”的内容机会；但必须验证需求与交易是否同向。",
+      "next_step": "先拆分金价、银价关键词，核对百度与AIDSO需求，再用蝉妈妈比较珠宝类目7/30天订单、购买人数、开播账号和价格带变化。",
+      "explicitly_not_doing": "不根据热搜直接宣称珠宝销量上涨，不用单日高销售额作证明，不投流、不全量发布。",
+      "official_evidence": [],
+      "circle_evidence": [],
+      "actions": [
+        {
+          "hotspotId": "HT-20260722-011",
+          "actionType": "金银热点交叉验证",
+          "task": "拆分金银关键词并核对珠宝类目7/30天订单、购买人数、开播账号和价格带",
+          "owner": "数据",
+          "collaborators": "珠宝类目内容",
+          "deadline": "2026-07-23",
+          "deliverable": "需求与交易对照表",
+          "acceptance": "热搜不等于珠宝销量上涨",
+          "stopCondition": "双源不同向即停止",
+          "status": "待验证"
+        }
+      ],
+      "domain": "commerce",
+      "scoring_model": "commerce_v1",
+      "totalScore": 82,
+      "initialValue": 4,
+      "finalValue": 3,
+      "grade": "L-B｜低成本跟进",
+      "gradeCode": "B",
+      "followDecision": "低成本跟进",
+      "downgradeReason": "信源封顶",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 4,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 4,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 3,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 4,
+        "evidence": 3,
+        "type": 5,
+        "core": 4,
+        "baseline": 5,
+        "risk": 5,
+        "window": 5,
+        "preparation": 5,
+        "official_rule_floor": 0
+      },
+      "baseline_assessment": {
+        "signal_type": "platform_realtime_topic",
+        "requires_baseline": false,
+        "comparison_baseline_verified": false,
+        "baseline_type": "不适用",
+        "normalization_flags": [],
+        "multi_period_growth_verified": true,
+        "independent_change_signals": 0,
+        "is_verified": true
+      },
+      "business_priority_basis": "综合评分与封顶规则决定。",
+      "hotness_scoring_model": "hotness_v1",
+      "hotness_score": 70,
+      "raw_hotness_level": "H-A",
+      "hotness_level": "H-C",
+      "hotness_final_value": 2,
+      "hotness_score_details": [
+        {
+          "key": "absolute_demand",
+          "name": "需求规模",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "baseline_deviation",
+          "name": "相对基线变化",
+          "score": 4,
+          "weight": 25,
+          "weighted_score": 20
+        },
+        {
+          "key": "growth_velocity",
+          "name": "上升速度",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "persistence",
+          "name": "持续时间",
+          "score": 2,
+          "weight": 15,
+          "weighted_score": 6
+        },
+        {
+          "key": "cross_platform_spread",
+          "name": "跨平台扩散",
+          "score": 1,
+          "weight": 15,
+          "weighted_score": 3
+        },
+        {
+          "key": "freshness",
+          "name": "数据新鲜度",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "hotness_caps": [
+        {
+          "rule": "single_platform_cap",
+          "hotness_cap": "H-C",
+          "changed": true,
+          "reason": "只有单平台信号，热点成立度最高H-C。"
+        }
+      ],
+      "hotness_signal_type": "platform_realtime_topic",
+      "hotness_independent_platform_count": 1,
+      "hotness_baseline_verified": true,
+      "hotness_freshness_verified": true,
+      "hotness_change_signals": [
+        "抖音实时热点第2",
+        "热点指数1104.4万"
+      ],
+      "hotness_requires_baseline": false,
+      "hotness_comparison_baseline_verified": true,
+      "hotness_baseline_type": "不适用",
+      "hotness_normalization_flags": [],
+      "hotness_multi_period_growth_verified": true,
+      "hotness_independent_change_signals": 2,
+      "content_scoring_model": "content_potential_v1",
+      "content_potential_score": 87,
+      "raw_content_potential_level": "P-S",
+      "content_potential_level": "P-B",
+      "content_final_value": 3,
+      "content_score_details": [
+        {
+          "key": "audience_demand",
+          "name": "受众需求规模",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "demand_velocity",
+          "name": "需求上涨速度",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "content_supply_gap",
+          "name": "内容供给缺口",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "target_user_fit",
+          "name": "目标用户匹配",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "data_content_advantage",
+          "name": "蝉妈妈数据优势",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "discussion_shareability",
+          "name": "讨论与传播性",
+          "score": 5,
+          "weight": 10,
+          "weighted_score": 10
+        },
+        {
+          "key": "content_lifecycle",
+          "name": "内容生命周期",
+          "score": 4,
+          "weight": 5,
+          "weighted_score": 4
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "content_caps": [
+        {
+          "rule": "e2_evidence_cap",
+          "potential_cap": "P-B",
+          "changed": true,
+          "reason": "只有专业平台单源或非官方证据，内容潜力最高P-B。"
+        },
+        {
+          "rule": "search_gap_unverified",
+          "potential_cap": "P-B",
+          "changed": false,
+          "reason": "搜索路线尚未验证内容供给缺口，内容潜力最高P-B。"
+        },
+        {
+          "rule": "potential_s_gate",
+          "potential_cap": "P-A",
+          "changed": false,
+          "reason": "P-S需要E3、至少3个平台、有效基线、最新数据和85分以上渠道适配。"
+        }
+      ],
+      "content_source_tier": "E2",
+      "traffic_route": "mixed",
+      "independent_platform_count": 1,
+      "demand_signals": [
+        "抖音实时热点指数1104.4万"
+      ],
+      "content_baseline_verified": true,
+      "content_requires_baseline": false,
+      "content_comparison_baseline_verified": true,
+      "content_baseline_type": "不适用",
+      "content_normalization_flags": [],
+      "content_multi_period_growth_verified": true,
+      "content_independent_change_signals": 0,
+      "supply_gap_verified": false,
+      "content_freshness_verified": true,
+      "chanmama_answerable": true,
+      "query_cluster": [
+        "金价上涨怎么买黄金",
+        "金价上涨影响珠宝直播吗",
+        "抖音珠宝价格带怎么变"
+      ],
+      "channel_scores": {
+        "website": 82,
+        "wechat": 80,
+        "short_video": 90,
+        "xiaohongshu": 92,
+        "private_domain": 70
+      },
+      "channel_reasons": {
+        "primary": "高热话题适合短视频和小红书，蝉妈妈数据可增加独家性；当前缺跨平台和交易验证。"
+      },
+      "recommended_channels": [
+        "website",
+        "short_video",
+        "xiaohongshu"
+      ],
+      "primary_topic": "金价上涨后，抖音珠宝直播是涨价还是转化？",
+      "content_angle": "把宏观热搜与珠宝订单、购买人数和价格带变化连接起来。",
+      "measurement_plan": "关键词上涨、搜索展现、视频完播、收藏、珠宝数据页访问和注册。",
+      "stop_condition": "第二平台无需求或珠宝交易数据不支持关联时，不发布行业结论。",
+      "content_score_reasons": {
+        "demand": "抖音实时需求高",
+        "gap": "跨平台、交易和内容供给仍待验证"
+      }
+    },
+    {
+      "id": "HT-20260722-012",
+      "event_key": "creator-index-topsports-nike-online-sales-20260722",
+      "foundAt": "2026-07-22 15:02",
+      "name": "潜力话题：滔搏与耐克中国线上销售调整登抖音飙升榜，官方文件待回源",
+      "type": "内容潜力｜品牌电商渠道",
+      "sourceLevel": "E2｜抖音创作者指数飙升热点",
+      "publishedAt": "2026-07-22 15:02观察；飙升热点指数852.0万",
+      "signal": "“滔搏：耐克中国线上销售明年终止”位列抖音飙升热点第6，热点指数约852.0万，直接关联品牌线上渠道与经销体系。",
+      "uncertainty": "当前只取得抖音指数标题，尚未回源滔搏公告、交易所文件或耐克官方说明；“线上销售终止”的具体范围和生效时间不能推断。",
+      "recommended": "先回源滔搏公告或交易所文件，确认业务范围与时间；再用蝉妈妈复核耐克及运动品牌近30天店播、达人和商品结构。",
+      "actionReason": "话题热度高且与品牌电商渠道直接相关，适合行业解读；但事实边界尚未核实，现阶段只能进入潜力池。",
+      "actionDetail": "验证通过后的官网题目：《耐克中国线上渠道调整，对品牌自播和达人分销意味着什么？》；公众号做渠道结构图，短视频只讲经官方确认的变化。",
+      "evidence": "平台：抖音创作者指数；页面：抖音指数>抖音飙升热点；观察2026-07-22 15:02；热点指数852.0万；E2；https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
+      "departments": "热点运营主责；品牌、服饰类目数据协作",
+      "deadline": "2026-07-23",
+      "notRecommended": "官方回源前不写成已确认事实，不推断耐克退出中国电商，不投流、不全量矩阵发布。",
+      "sourceLinks": [
+        {
+          "label": "Core source",
+          "domain": "creator.douyin.com",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        }
+      ],
+      "source_links": [
+        {
+          "label": "Core source",
+          "domain": "creator.douyin.com",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        }
+      ],
+      "status": "补证观察",
+      "risk": "低风险",
+      "natural": "待确认",
+      "owner": "热点运营负责人",
+      "monitor": "官方公告、交易所文件、耐克相关店播与达人数据、搜索与内容增长；无法回源即归档。",
+      "candidate_kind": "potential_topic",
+      "signal_type": "platform_rising_topic",
+      "baseline_evidence": null,
+      "official_rule": null,
+      "technology_change": "“滔搏：耐克中国线上销售明年终止”位列抖音飙升热点第6，热点指数约852.0万，直接关联品牌线上渠道与经销体系。",
+      "chanmama_relevance": "话题热度高且与品牌电商渠道直接相关，适合行业解读；但事实边界尚未核实，现阶段只能进入潜力池。",
+      "next_step": "先回源滔搏公告或交易所文件，确认业务范围与时间；再用蝉妈妈复核耐克及运动品牌近30天店播、达人和商品结构。",
+      "explicitly_not_doing": "官方回源前不写成已确认事实，不推断耐克退出中国电商，不投流、不全量矩阵发布。",
+      "official_evidence": [],
+      "circle_evidence": [],
+      "actions": [
+        {
+          "hotspotId": "HT-20260722-012",
+          "actionType": "品牌渠道官方回源",
+          "task": "查找滔搏公告或交易所文件并复核耐克品牌店播、达人和商品结构",
+          "owner": "热点运营",
+          "collaborators": "品牌、数据",
+          "deadline": "2026-07-23",
+          "deliverable": "官方事实与品牌数据卡",
+          "acceptance": "不得推断耐克退出中国电商",
+          "stopCondition": "24小时无法回源即归档",
+          "status": "待验证"
+        }
+      ],
+      "domain": "commerce",
+      "scoring_model": "commerce_v1",
+      "totalScore": 85,
+      "initialValue": 5,
+      "finalValue": 3,
+      "grade": "L-B｜低成本跟进",
+      "gradeCode": "B",
+      "followDecision": "低成本跟进",
+      "downgradeReason": "信源封顶",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 4,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 4,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 4,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 5,
+        "evidence": 3,
+        "type": 5,
+        "core": 5,
+        "baseline": 5,
+        "risk": 5,
+        "window": 5,
+        "preparation": 5,
+        "official_rule_floor": 0
+      },
+      "baseline_assessment": {
+        "signal_type": "platform_rising_topic",
+        "requires_baseline": false,
+        "comparison_baseline_verified": false,
+        "baseline_type": "不适用",
+        "normalization_flags": [],
+        "multi_period_growth_verified": true,
+        "independent_change_signals": 0,
+        "is_verified": true
+      },
+      "business_priority_basis": "综合评分与封顶规则决定。",
+      "hotness_scoring_model": "hotness_v1",
+      "hotness_score": 79,
+      "raw_hotness_level": "H-A",
+      "hotness_level": "H-C",
+      "hotness_final_value": 2,
+      "hotness_score_details": [
+        {
+          "key": "absolute_demand",
+          "name": "需求规模",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "baseline_deviation",
+          "name": "相对基线变化",
+          "score": 5,
+          "weight": 25,
+          "weighted_score": 25
+        },
+        {
+          "key": "growth_velocity",
+          "name": "上升速度",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "persistence",
+          "name": "持续时间",
+          "score": 2,
+          "weight": 15,
+          "weighted_score": 6
+        },
+        {
+          "key": "cross_platform_spread",
+          "name": "跨平台扩散",
+          "score": 1,
+          "weight": 15,
+          "weighted_score": 3
+        },
+        {
+          "key": "freshness",
+          "name": "数据新鲜度",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "hotness_caps": [
+        {
+          "rule": "single_platform_cap",
+          "hotness_cap": "H-C",
+          "changed": true,
+          "reason": "只有单平台信号，热点成立度最高H-C。"
+        }
+      ],
+      "hotness_signal_type": "platform_rising_topic",
+      "hotness_independent_platform_count": 1,
+      "hotness_baseline_verified": true,
+      "hotness_freshness_verified": true,
+      "hotness_change_signals": [
+        "抖音飙升热点第6",
+        "热点指数852.0万"
+      ],
+      "hotness_requires_baseline": false,
+      "hotness_comparison_baseline_verified": true,
+      "hotness_baseline_type": "不适用",
+      "hotness_normalization_flags": [],
+      "hotness_multi_period_growth_verified": true,
+      "hotness_independent_change_signals": 2,
+      "content_scoring_model": "content_potential_v1",
+      "content_potential_score": 90,
+      "raw_content_potential_level": "P-S",
+      "content_potential_level": "P-B",
+      "content_final_value": 3,
+      "content_score_details": [
+        {
+          "key": "audience_demand",
+          "name": "受众需求规模",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "demand_velocity",
+          "name": "需求上涨速度",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "content_supply_gap",
+          "name": "内容供给缺口",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "target_user_fit",
+          "name": "目标用户匹配",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "data_content_advantage",
+          "name": "蝉妈妈数据优势",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "discussion_shareability",
+          "name": "讨论与传播性",
+          "score": 5,
+          "weight": 10,
+          "weighted_score": 10
+        },
+        {
+          "key": "content_lifecycle",
+          "name": "内容生命周期",
+          "score": 4,
+          "weight": 5,
+          "weighted_score": 4
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "content_caps": [
+        {
+          "rule": "e2_evidence_cap",
+          "potential_cap": "P-B",
+          "changed": true,
+          "reason": "只有专业平台单源或非官方证据，内容潜力最高P-B。"
+        },
+        {
+          "rule": "search_gap_unverified",
+          "potential_cap": "P-B",
+          "changed": false,
+          "reason": "搜索路线尚未验证内容供给缺口，内容潜力最高P-B。"
+        },
+        {
+          "rule": "potential_s_gate",
+          "potential_cap": "P-A",
+          "changed": false,
+          "reason": "P-S需要E3、至少3个平台、有效基线、最新数据和85分以上渠道适配。"
+        }
+      ],
+      "content_source_tier": "E2",
+      "traffic_route": "mixed",
+      "independent_platform_count": 1,
+      "demand_signals": [
+        "抖音飙升热点指数852.0万"
+      ],
+      "content_baseline_verified": true,
+      "content_requires_baseline": false,
+      "content_comparison_baseline_verified": true,
+      "content_baseline_type": "不适用",
+      "content_normalization_flags": [],
+      "content_multi_period_growth_verified": true,
+      "content_independent_change_signals": 0,
+      "supply_gap_verified": false,
+      "content_freshness_verified": true,
+      "chanmama_answerable": true,
+      "query_cluster": [
+        "滔搏耐克线上销售为什么调整",
+        "耐克中国电商渠道怎么变",
+        "品牌自播和达人分销有什么影响"
+      ],
+      "channel_scores": {
+        "website": 86,
+        "wechat": 88,
+        "short_video": 86,
+        "xiaohongshu": 84,
+        "private_domain": 72
+      },
+      "channel_reasons": {
+        "primary": "品牌渠道变化兼具行业深度和社媒讨论性，但官方回源是发布前置条件。"
+      },
+      "recommended_channels": [
+        "website",
+        "wechat",
+        "short_video"
+      ],
+      "primary_topic": "耐克中国线上渠道调整，对品牌自播和达人分销意味着什么？",
+      "content_angle": "用官方事实和蝉妈妈品牌渠道数据解释，不做退出中国电商式标题党。",
+      "measurement_plan": "官方回源、搜索展现、公众号分享、视频完播、品牌数据页访问和注册。",
+      "stop_condition": "24小时内无法取得官方文件，或官方事实与抖音标题不一致即停止。",
+      "content_score_reasons": {
+        "demand": "抖音飙升需求强",
+        "evidence": "只有平台标题，官方事实待核"
       }
     }
   ],
@@ -3476,27 +4739,27 @@
     },
     {
       "hotspotId": "HT-20260722-006",
-      "actionType": "珠宝榜单连续性",
-      "task": "连续3天记录前三珠宝账号、直播场次、销售额区间和商品结构",
+      "actionType": "珠宝基线观察",
+      "task": "连续7天比较账号自身、类目中位数、订单、购买人数、开播账号和搜索趋势",
       "owner": "数据",
       "collaborators": "珠宝类目运营",
-      "deadline": "2026-07-24",
-      "deliverable": "连续性记录",
-      "acceptance": "平台预估区间原样标注",
-      "stopCondition": "掉出集中占位即停止升级",
-      "status": "待开始"
+      "deadline": "2026-07-29",
+      "deliverable": "基线对比记录",
+      "acceptance": "高客单和预估销售额不算增长",
+      "stopCondition": "少于两项异常变化即留档",
+      "status": "观察"
     },
     {
       "hotspotId": "HT-20260722-007",
-      "actionType": "GEO问题承接",
-      "task": "发布店铺经营健康与抖音数据异常两篇排查型问答",
+      "actionType": "潜力话题补证",
+      "task": "核对完整关键词、数据日期、百度与创作者指数需求及内容供给缺口",
       "owner": "内容/GEO",
       "collaborators": "数据",
-      "deadline": "2026-07-24",
-      "deliverable": "2篇问答",
-      "acceptance": "标题注明非大众热点",
-      "stopCondition": "两周无收录或访问即停止",
-      "status": "待开始"
+      "deadline": "2026-07-23",
+      "deliverable": "需求与供给核验表",
+      "acceptance": "未验证前不发布主稿",
+      "stopCondition": "无第二平台或日期无法核实即停止",
+      "status": "待验证"
     },
     {
       "hotspotId": "HT-20260722-008",
@@ -3521,20 +4784,56 @@
       "acceptance": "星标不等于采用",
       "stopCondition": "无电商场景即归档",
       "status": "观察"
+    },
+    {
+      "hotspotId": "HT-20260722-010",
+      "actionType": "免佣政策差异表",
+      "task": "整理适用对象、必做/选做任务、两种免佣类型和账单查询",
+      "owner": "内容/GEO",
+      "collaborators": "数据、商家运营",
+      "deadline": "2026-07-23",
+      "deliverable": "四张差异表",
+      "acceptance": "明确意见稿状态和订单范围",
+      "stopCondition": "正式版变化即更新",
+      "status": "待开始"
+    },
+    {
+      "hotspotId": "HT-20260722-011",
+      "actionType": "金银热点交叉验证",
+      "task": "拆分金银关键词并核对珠宝类目7/30天订单、购买人数、开播账号和价格带",
+      "owner": "数据",
+      "collaborators": "珠宝类目内容",
+      "deadline": "2026-07-23",
+      "deliverable": "需求与交易对照表",
+      "acceptance": "热搜不等于珠宝销量上涨",
+      "stopCondition": "双源不同向即停止",
+      "status": "待验证"
+    },
+    {
+      "hotspotId": "HT-20260722-012",
+      "actionType": "品牌渠道官方回源",
+      "task": "查找滔搏公告或交易所文件并复核耐克品牌店播、达人和商品结构",
+      "owner": "热点运营",
+      "collaborators": "品牌、数据",
+      "deadline": "2026-07-23",
+      "deliverable": "官方事实与品牌数据卡",
+      "acceptance": "不得推断耐克退出中国电商",
+      "stopCondition": "24小时无法回源即归档",
+      "status": "待验证"
     }
   ],
   "scanLogs": [
     {
       "platform": "巨量云图",
       "url": "https://yuntu.oceanengine.com/yuntu_lite/commodity/trend/short/v2?aadvid=1794665196703756",
-      "status": "已覆盖（登录态）",
+      "status": "复扫完成（登录态）",
       "evidenceLevel": "E3",
       "page": "近期选品参考>健身器械",
-      "observedAt": "2026-07-22 09:46及10:14刷新",
-      "signal": "OMR S9PRO多项增长指数突出；健身器械销售额增长率中位数-23.42%",
+      "observedAt": "2026-07-22 14:47复扫",
+      "signal": "日期输入仍为2026-06-21至2026-07-20；OMR S9PRO多项增长指数突出，类目增长中位数-23.42%",
       "relatedIds": "005",
-      "limitation": "7月21日、22日日期均为禁用；指数不是实际成交；达人未交叉验证",
-      "nextAction": "等待平台更新并用蝉妈妈复核",
+      "limitation": "7月21日、22日仍不可选；指数不是实际成交；达人未交叉验证",
+      "nextAction": "等待平台开放新周期并用蝉妈妈复核",
       "loginStatus": null,
       "dataDate": "平台最新可选周期2026-06-21至2026-07-20",
       "queryTerms": [],
@@ -3544,16 +4843,16 @@
     {
       "platform": "抖音电商学习中心",
       "url": "https://school.jinritemai.com/doudian/web/rules",
-      "status": "已覆盖",
+      "status": "复扫完成",
       "evidenceLevel": "E3",
-      "page": "规则中心、意见征集与三篇规则原文",
-      "observedAt": "2026-07-22 09:36-10:24",
-      "signal": "材质成分不符、异常发品、欺诈发货三项意见稿",
-      "relatedIds": "001,002,004",
-      "limitation": "均为意见稿，尚未正式生效",
-      "nextAction": "征集结束后复核正式稿",
+      "page": "规则中心、意见征集与四篇规则原文",
+      "observedAt": "2026-07-22 14:55-15:00",
+      "signal": "新增回源商品卡免佣政策：差异化任务、九折费率类型、个人店不再适用",
+      "relatedIds": "001,002,004,010",
+      "limitation": "四项均含意见稿，尚未正式生效",
+      "nextAction": "保持业务高优先，征集结束后复核正式稿",
       "loginStatus": null,
-      "dataDate": "最新发现发布2026-07-21 19:44:59",
+      "dataDate": "最新规则列表更新至2026-07-22；免佣意见稿发布2026-07-17",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -3561,14 +4860,14 @@
     {
       "platform": "蝉妈妈",
       "url": "https://www.chanmama.com/douyin/",
-      "status": "已覆盖（登录态）",
+      "status": "复扫完成（登录态）",
       "evidenceLevel": "E2",
-      "page": "首页商品榜、带货达人榜、黑马达人榜>带货达人",
-      "observedAt": "2026-07-22 09:40-10:10",
-      "signal": "带货达人榜与商品榜已读取；黑马带货榜前三为珠宝账号",
-      "relatedIds": "005,006",
-      "limitation": "平台预估区间；普通账号只能查看前十；OMR尚未完成商品ID交叉验证",
-      "nextAction": "补商品ID与近30天趋势",
+      "page": "涨粉达人榜、黑马达人榜>带货达人",
+      "observedAt": "2026-07-22 14:49-14:53",
+      "signal": "榜单日期未前移；珠宝账号仍是单日结构快照，不具备类目基线与增速证据",
+      "relatedIds": "005,006,011,012",
+      "limitation": "平台预估区间；单日榜不能证明趋势；OMR及新潜力话题尚待近30天复核",
+      "nextAction": "按新规则补类目基线、订单/购买人数和跨平台信号",
       "loginStatus": null,
       "dataDate": "完整日榜2026-07-21；黑马带货榜更新2026-07-22 05:39",
       "queryTerms": [],
@@ -3578,16 +4877,16 @@
     {
       "platform": "百度指数",
       "url": "https://index.baidu.com/v2/index.html#/",
-      "status": "已覆盖（登录态）",
+      "status": "上午已覆盖；复扫页面无响应",
       "evidenceLevel": "E2",
       "page": "趋势研究",
-      "observedAt": "2026-07-22 10:11-10:14",
-      "signal": "ChatGPT搜索日均14,224、环比-22%；Qwen日均1,172、环比-11%；爬楼机、美塑仪、ChatGPT小企业未收录",
-      "relatedIds": "003,005,008",
-      "limitation": "未收录不等于零需求；数据每日12-16时可能延迟",
-      "nextAction": "只作需求验证，不替代事件证据",
+      "observedAt": "2026-07-22 14:54复扫尝试",
+      "signal": "上午数据保留；金价、银价、滔搏/耐克新词未取得复扫结果",
+      "relatedIds": "003,005,008,011,012",
+      "limitation": "同一登录标签CDP无响应，不沿用搜索引擎或旧数据冒充新词结果",
+      "nextAction": "页面恢复后优先补金银与品牌渠道关键词",
       "loginStatus": null,
-      "dataDate": "搜索至2026-07-21；资讯至2026-07-20",
+      "dataDate": "上午读取搜索至2026-07-21；资讯至2026-07-20",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -3595,14 +4894,14 @@
     {
       "platform": "抖音创作者指数",
       "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
-      "status": "已覆盖（登录态）",
+      "status": "复扫完成（登录态）",
       "evidenceLevel": "E2",
       "page": "实时榜与飙升榜",
-      "observedAt": "2026-07-22 10:09",
-      "signal": "我在豆包养宠物1147.3万；月之暗面回应Kimi K3爆火飙升榜776.8万",
-      "relatedIds": "无",
-      "limitation": "内容热度不等于电商转化或产品采用",
-      "nextAction": "仅作需求和内容信号",
+      "observedAt": "2026-07-22 15:02",
+      "signal": "金价银价油价集体上涨实时指数1104.4万；滔搏/耐克线上销售调整飙升指数852.0万",
+      "relatedIds": "011,012",
+      "limitation": "内容热度不等于交易增长；品牌事件仍需官方回源",
+      "nextAction": "补百度/AIDSO、公司公告和蝉妈妈类目/品牌数据",
       "loginStatus": null,
       "dataDate": "实时",
       "queryTerms": [],
@@ -3612,16 +4911,16 @@
     {
       "platform": "AIDSO",
       "url": "https://geo.aidso.com/question",
-      "status": "已覆盖（登录态，视觉读取）",
+      "status": "上午视觉覆盖；复扫CDP无响应",
       "evidenceLevel": "E2",
       "page": "实时搜索>搜索记录",
-      "observedAt": "2026-07-22 10:16",
-      "signal": "店铺经营健康问题热度705、引用13；数据异常问题热度532、引用10；工具选择问题热度59、引用7",
-      "relatedIds": "007",
-      "limitation": "页面拒绝CDP正文读取，改用同一登录窗口视觉核验；标题在列表中截断",
-      "nextAction": "只用页面可见字段，不补造标题或日期",
+      "observedAt": "2026-07-22 14:53复扫尝试",
+      "signal": "上午可见店铺健康705/引用13、数据异常532/引用10、工具选择59/引用7；未取得复扫正文",
+      "relatedIds": "007,011,012",
+      "limitation": "同一登录页正文与截图命令无响应；不补造完整标题、日期或新词结果",
+      "nextAction": "页面恢复后补完整关键词与第二平台验证",
       "loginStatus": null,
-      "dataDate": "记录生成日期未显示",
+      "dataDate": "记录生成日期仍未取得",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -3629,14 +4928,14 @@
     {
       "platform": "小红书",
       "url": "https://www.xiaohongshu.com/explore",
-      "status": "已覆盖（登录态推荐流）",
+      "status": "复扫完成（登录态推荐流）",
       "evidenceLevel": "E1",
       "page": "发现页",
-      "observedAt": "2026-07-22 10:31",
-      "signal": "推荐流以娱乐、生活和个性化内容为主，无可交叉验证的统一电商或科技趋势",
+      "observedAt": "2026-07-22 15:08",
+      "signal": "推荐流仍以娱乐生活个性化内容为主，未形成可验证的统一电商或科技趋势",
       "relatedIds": "无",
       "limitation": "推荐流个性化且缺统一日期",
-      "nextAction": "仅在已有候选词时做站内定向搜索",
+      "nextAction": "待候选词验证后再做站内定向搜索",
       "loginStatus": null,
       "dataDate": "实时推荐流，帖子日期未统一展示",
       "queryTerms": [],
@@ -3646,14 +4945,14 @@
     {
       "platform": "抖音站内搜索",
       "url": "https://www.douyin.com/",
-      "status": "验证受限",
+      "status": "复扫仍受限",
       "evidenceLevel": "E1",
       "page": "站内搜索",
-      "observedAt": "2026-07-22 09:45",
-      "signal": "搜索页出现安全验证iframe",
-      "relatedIds": "无",
-      "limitation": "不绕过验证码，不用SEO结果替代",
-      "nextAction": "平台恢复后再做定向词复核",
+      "observedAt": "2026-07-22 15:09",
+      "signal": "同一登录标签读取持续超时",
+      "relatedIds": "011,012",
+      "limitation": "不绕过安全机制，不用SEO结果替代",
+      "nextAction": "平台恢复后定向复核金银与品牌渠道话题",
       "loginStatus": null,
       "dataDate": "实时",
       "queryTerms": [],
@@ -3663,16 +4962,16 @@
     {
       "platform": "OpenAI官方",
       "url": "https://openai.com/index/introducing-chatgpt-small-business-program/",
-      "status": "已覆盖",
+      "status": "复扫完成",
       "evidenceLevel": "E3",
-      "page": "ChatGPT for small business program",
-      "observedAt": "2026-07-22 10:05",
-      "signal": "小企业培训、指南、伙伴技能和电商工作流",
+      "page": "News与小企业计划",
+      "observedAt": "2026-07-22 15:11",
+      "signal": "小企业计划仍是最新业务采用事件，无7月22日更晚新发布",
       "relatedIds": "003",
       "limitation": "效果为官方自报，缺独立样本",
       "nextAction": "用脱敏电商场景小测",
       "loginStatus": null,
-      "dataDate": "发布2026-07-21",
+      "dataDate": "最新发布仍为2026-07-21",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -3680,16 +4979,16 @@
     {
       "platform": "DeepSeek官方",
       "url": "https://www.deepseek.com/",
-      "status": "已覆盖",
+      "status": "复扫并回源完成",
       "evidenceLevel": "E3",
-      "page": "官网",
-      "observedAt": "2026-07-22 09:48",
-      "signal": "仍展示V4预览版，无7月22日新公告",
+      "page": "官网V4横幅与官方微信原文",
+      "observedAt": "2026-07-22 15:12",
+      "signal": "V4横幅不是7月22日新发布，不进入今日候选",
       "relatedIds": "无",
-      "limitation": "无可核日期的新事件",
-      "nextAction": "出现新公告再入池",
+      "limitation": "首页持续展示不能代替发布日期",
+      "nextAction": "只有新日期官方公告才入池",
       "loginStatus": null,
-      "dataDate": "页面持续更新",
+      "dataDate": "原文发布2026-04-24；修改2026-06-22",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -3697,16 +4996,16 @@
     {
       "platform": "豆包/火山引擎官方",
       "url": "https://www.volcengine.com/product/doubao",
-      "status": "已覆盖",
+      "status": "上午已覆盖；复扫超时",
       "evidenceLevel": "E3",
       "page": "豆包模型产品页",
-      "observedAt": "2026-07-22 09:47",
-      "signal": "无可核日期的7月22日新发布",
+      "observedAt": "2026-07-22 15:13复扫尝试",
+      "signal": "未取得可核日期的7月22日新发布",
       "relatedIds": "无",
-      "limitation": "产品页不等于当日事件",
+      "limitation": "复扫标签超时；产品页不等于当日事件",
       "nextAction": "官方公告触发后再入池",
       "loginStatus": null,
-      "dataDate": "页面持续更新",
+      "dataDate": "上午页面持续更新",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -3714,16 +5013,16 @@
     {
       "platform": "Hugging Face",
       "url": "https://huggingface.co/models?sort=trending",
-      "status": "重试成功",
+      "status": "复扫完成",
       "evidenceLevel": "E2",
-      "page": "Models / Trending",
-      "observedAt": "2026-07-22 10:18",
-      "signal": "thinkingmachines/Inkling居首；未见Qwen-Image-3.0官方模型卡",
+      "page": "Models / Trending与baidu/Unlimited-OCR模型卡",
+      "observedAt": "2026-07-22 15:14",
+      "signal": "Unlimited-OCR列趋势前列并有2.63k点赞，但不是7月22日新发布；Qwen-Image-3.0仍无官方模型卡",
       "relatedIds": "008",
-      "limitation": "下载和点赞不等于生产采用",
-      "nextAction": "只用官方模型卡和可复现产物升级信源",
+      "limitation": "下载与点赞是采用信号，不等于当日事件或生产采用",
+      "nextAction": "只在新发布且业务承接明确时入池",
       "loginStatus": null,
-      "dataDate": "实时趋势页",
+      "dataDate": "实时趋势；Unlimited-OCR原始发布2026-06-22、7月21日生态更新",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -3731,14 +5030,14 @@
     {
       "platform": "GitHub Trending",
       "url": "https://github.com/trending",
-      "status": "已覆盖，后续搜索触发二级限流",
+      "status": "复扫完成",
       "evidenceLevel": "E2",
       "page": "Repositories / Today",
-      "observedAt": "2026-07-22 09:49",
-      "signal": "多项Agent项目当日新增星标较高",
+      "observedAt": "2026-07-22 15:15",
+      "signal": "AI Agent书、代码图谱和Agent工具继续高增，但无蝉妈妈电商场景证据",
       "relatedIds": "009",
-      "limitation": "星标不等于生产采用；官方Qwen搜索触发rate limit",
-      "nextAction": "停止继续请求，保留已读榜单数据",
+      "limitation": "星标不等于生产采用",
+      "nextAction": "保持补证观察，不转成内容执行",
       "loginStatus": null,
       "dataDate": "Today",
       "queryTerms": [],
@@ -3748,16 +5047,16 @@
     {
       "platform": "新智元",
       "url": "https://aiera.com.cn/",
-      "status": "已覆盖",
+      "status": "上午已覆盖；复扫超时",
       "evidenceLevel": "E1",
       "page": "首页最新",
-      "observedAt": "2026-07-22 09:50",
-      "signal": "GPT-6、Gemini芯片等多条媒体线索",
+      "observedAt": "2026-07-22 15:15复扫尝试",
+      "signal": "上午媒体线索保留，复扫未取得新正文",
       "relatedIds": "无",
-      "limitation": "媒体发现源，未回官方前最高L-C",
-      "nextAction": "按事件回厂商官方",
+      "limitation": "媒体发现源且标签超时，未用搜索引擎补位",
+      "nextAction": "页面恢复后按事件回厂商官方",
       "loginStatus": null,
-      "dataDate": "2026-07-22",
+      "dataDate": "上午读取2026-07-22",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -3765,16 +5064,16 @@
     {
       "platform": "InfoQ AI",
       "url": "https://www.infoq.cn/topic/AI",
-      "status": "已覆盖",
+      "status": "复扫完成",
       "evidenceLevel": "E1",
       "page": "AI与大模型频道",
-      "observedAt": "2026-07-22 09:51",
-      "signal": "企业AI流程和Agent工程线索为主，无新增高业务承接事件",
+      "observedAt": "2026-07-22 15:16",
+      "signal": "开源大赛、AI购物助手和Agent工程线索为主，无新增完成官方回源的电商高优先事件",
       "relatedIds": "无",
       "limitation": "媒体和厂商供稿需回源",
       "nextAction": "命中电商工作流后回官方",
       "loginStatus": null,
-      "dataDate": "实时滚动",
+      "dataDate": "最新约13小时前",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -3782,16 +5081,16 @@
     {
       "platform": "36氪AI",
       "url": "https://www.36kr.com/information/AI/",
-      "status": "已覆盖",
+      "status": "上午已覆盖；复扫超时",
       "evidenceLevel": "E1",
       "page": "AI信息流",
-      "observedAt": "2026-07-22 09:51",
-      "signal": "Kimi、模型与机器人资讯密集，未新增完成官方回源的A级事项",
+      "observedAt": "2026-07-22 15:16复扫尝试",
+      "signal": "上午线索保留，未取得复扫正文",
       "relatedIds": "无",
-      "limitation": "媒体转载不算独立验证",
-      "nextAction": "重要事实回厂商官方",
+      "limitation": "媒体转载不算独立验证；未用搜索引擎补位",
+      "nextAction": "页面恢复后重要事实回厂商官方",
       "loginStatus": null,
-      "dataDate": "实时滚动",
+      "dataDate": "上午实时滚动",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -3799,14 +5098,14 @@
     {
       "platform": "雷峰网AI",
       "url": "https://www.leiphone.com/category/ai",
-      "status": "超时受限",
+      "status": "复扫仍超时",
       "evidenceLevel": "E1",
       "page": "人工智能频道",
-      "observedAt": "2026-07-22 10:19重试",
-      "signal": "页面导航连续超过30秒未完成",
+      "observedAt": "2026-07-22 15:17重试",
+      "signal": "固定标签正文连续超时",
       "relatedIds": "无",
       "limitation": "未用搜索引擎补位",
-      "nextAction": "下轮从固定标签重试",
+      "nextAction": "下轮从同一标签重试",
       "loginStatus": null,
       "dataDate": "未取得",
       "queryTerms": [],
@@ -3816,16 +5115,16 @@
     {
       "platform": "AITNT",
       "url": "https://www.aitntnews.com/",
-      "status": "已覆盖",
+      "status": "复扫完成",
       "evidenceLevel": "E1",
-      "page": "首页与Qwen-Image-3.0文章",
-      "observedAt": "2026-07-22 09:52及10:07",
-      "signal": "发现Qwen-Image-3.0和Gemini 3.6 Flash线索",
+      "page": "首页最新与Qwen-Image-3.0文章",
+      "observedAt": "2026-07-22 15:13",
+      "signal": "新增AI创作、向量检索、WAIC等媒体线索；Qwen-Image-3.0仍无可点击官方原文",
       "relatedIds": "008",
-      "limitation": "Qwen文章无可点击官方原文；媒体点击量不算采用",
-      "nextAction": "未回官方前保持C级",
+      "limitation": "媒体点击量不算采用，未回官方前最高C级",
+      "nextAction": "只对业务相关事件回官方",
       "loginStatus": null,
-      "dataDate": "最新2026-07-22 09:02",
+      "dataDate": "最新文章2026-07-22 10:35",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -3833,21 +5132,21 @@
     {
       "platform": "人人都是产品经理",
       "url": "https://www.woshipm.com/",
-      "status": "已覆盖",
+      "status": "上午已覆盖；复扫超时",
       "evidenceLevel": "E1",
       "page": "首页推荐与最新",
-      "observedAt": "2026-07-22 09:53",
-      "signal": "AI产品与运营观点为主，无新增可直接执行事件",
+      "observedAt": "2026-07-22 15:17复扫尝试",
+      "signal": "上午AI产品与运营观点线索保留，未取得复扫正文",
       "relatedIds": "无",
-      "limitation": "观点文章不能替代官方事实",
-      "nextAction": "只作线索发现",
+      "limitation": "观点文章不能替代官方事实；未用搜索引擎补位",
+      "nextAction": "页面恢复后只作线索发现",
       "loginStatus": null,
-      "dataDate": "实时滚动，部分文章无统一日期",
+      "dataDate": "上午实时滚动，部分文章无统一日期",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
     }
   ],
-  "boundaryText": "1）当日9条：电商6条使用commerce_v1，科技3条使用tech_v1；最终S0/A3/B4/C2/D0。科技影响分与业务承接分分开展示，technology记录的totalScore必须为null。\n2）巨量云图在7月22日强制刷新后，日期控件仍只允许选择到7月20日，7月21日和22日均为禁用；因此记录为“7月22日观察、平台最新数据截止7月20日”，不得伪改截止日。\n3）蝉妈妈完整榜单日期为7月21日，黑马带货榜最近更新为7月22日05:39；所有销售额、销量均为平台预估区间。\n4）AIDSO已登录并从同一持久化浏览器视觉读取；页面CDP正文无响应，标题和记录日期未完整展示，只使用可见热度值与引用网站数，不补造字段。\n5）Qwen-Image-3.0只有AITNT单一媒体线索，通义官方页、模型卡和代码未取得，按E1封顶T-C/L-C；GitHub星标不等于生产采用。\n6）雷峰网连续超时，抖音站内搜索触发安全验证；均未绕过，也未使用百度或SEO搜索结果替代平台证据。\n7）OpenAI小企业计划虽为E3官方发布，但没有成熟蝉妈妈承接页，不投广告、不全量召回，先做脱敏工作流小测与GEO内容。",
-  "sourceBrief": "今日决策：重点执行3条。第一，发布商品材质成分不符意见稿的类目风险表和商家自查卡；第二，在异常发品意见征集结束前完成无品牌资质商品与规避审核自查；第三，小范围验证ChatGPT小企业计划中的电商AI工作流。\n低成本跟进4条：欺诈发货赔付差异、OMR美塑仪单品、珠宝黑马带货榜、AIDSO店铺健康与数据异常问题。\n观察2条：Qwen-Image-3.0仍缺官方回源；GitHub Agent项目热度高但与蝉妈妈承接弱。\n等级：S 0｜A 3｜B 4｜C 2｜D 0；电商6｜科技3。"
+  "boundaryText": "1）本轮共12条：事件热点9条、潜力话题3条；电商9条、科技3条。业务判断为重点跟进5条、低成本跟进3条、补证观察4条、不追0条；发布建议为优先发布0条、小范围测试7条、补证后再发4条、不发布1条。\n2）证据可靠性、真实热度、业务优先和发布建议分开判断；网页只显示中文结论，字母代码仅保留在后台计算字段。\n3）基线校正不只针对珠宝。高客单、低价高销量、季节商品、促销活动、明星单场、小基数暴涨和平台估算数据，都必须比较自身或同类基线、验证多周期增长，并取得至少两项独立变化信号。\n4）材质、异常发品、欺诈发货和商品卡免佣均为抖音官方实质规则，保持重点跟进；但属于精准商家内容，最多小范围测试，不做全矩阵铺量。\n5）美塑仪单品因缺少自身、同价位和跨平台基线改为补证观察、补证后再发；珠宝单日榜属于未成热点、补证观察且不发布。\n6）巨量云图最新可选周期仍为2026-06-21至2026-07-20，7月21日和22日不可选；蝉妈妈完整日榜为7月21日，黑马榜更新于7月22日05:39。平台指数、区间和预估值不得写成实际成交。\n7）创作者指数发现的金银价格与滔搏/耐克话题只进入潜力池；前者需交易数据交叉验证，后者需公司官方文件回源。\n8）AIDSO和百度指数复扫标签无响应；抖音搜索、火山引擎、新智元、36氪、雷峰网和人人都是产品经理复扫受限，未用SEO结果补位。\n9）当前没有可直接大范围发布的选题；补证完成前只做验证，不投广告、不全量召回。",
+  "sourceBrief": "新规则复扫：业务重要、真实热度和内容流量分开判断。四项抖音官方实质规则保持重点跟进；珠宝单日榜属于未成热点、补证观察且不发布，美塑仪单品也因缺少自身与同类基线改为补证观察。新增3条潜力话题，其中金银价格和滔搏/耐克来自抖音指数高位信号，均需跨平台或官方回源后再发布；店铺经营健康问题仍因日期未核继续补证。当前没有可直接大范围发布的选题。"
 }
