@@ -918,6 +918,10 @@ p {
   background: var(--paper);
 }
 
+.priority-lanes > section:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
 .priority-lane-title {
   display: flex;
   align-items: baseline;
@@ -944,6 +948,10 @@ p {
   .priority-lanes {
     grid-template-columns: 1fr;
     padding: 0 14px;
+  }
+
+  .priority-lanes > section:nth-child(3) {
+    grid-column: auto;
   }
 
   .priority-lanes .decision-strip {

@@ -3,8 +3,8 @@
   "module": "hotspots",
   "date": "2026-07-22",
   "observedAt": "2026-07-22T15:18:00+08:00",
-  "revision": 8,
-  "updatedAt": "2026-07-22T08:12:35.005Z",
+  "revision": 10,
+  "updatedAt": "2026-07-22T09:52:20.496Z",
   "sourceType": "structured-data",
   "sourceArtifact": "incoming/hotspots/2026-07-22.json",
   "sourceWorkbook": null,
@@ -36,44 +36,88 @@
       "C": 4,
       "D": 1
     },
+    "topicValueCounts": {
+      "S": 2,
+      "A": 3,
+      "B": 5,
+      "C": 1,
+      "D": 1
+    },
+    "publicationStatusCounts": {
+      "priority_production": 0,
+      "early_test": 2,
+      "targeted_publish": 4,
+      "small_test": 1,
+      "observe": 2,
+      "do_not_publish": 3
+    },
     "priorityCount": 5,
     "lowCostCount": 3,
     "observeCount": 4,
     "evidenceE3Count": 6,
-    "webSummary": "12 条候选入库，其中事件热点 9 条、潜力话题 3 条。重点业务 5 条，可优先发布内容 0 条。\n今日业务优先：商品材质成分不符意见稿：首次涉嫌违规新增下架，高价值商品错放类目可升级清退、商品卡免佣政策拟改为差异化任务：新增九折费率类型，个人店不再适用、异常发品意见征集临近截止：无品牌资质商品可被限制发品3至60天。",
+    "publishNowCount": 7,
+    "webSummary": "12 条候选入库，其中事件热点 9 条、潜力话题 3 条。重点业务 5 条，当前可制作或试发 7 条，高潜力抢先试发 2 条。\n今日业务优先：商品材质成分不符意见稿：首次涉嫌违规新增下架，高价值商品错放类目可升级清退、商品卡免佣政策拟改为差异化任务：新增九折费率类型，个人店不再适用、异常发品意见征集临近截止：无品牌资质商品可被限制发品3至60天。",
     "topContentActions": [
       {
         "id": "HT-20260722-012",
-        "grade": "P-B",
+        "grade": "S",
         "name": "潜力话题：滔搏与耐克中国线上销售调整登抖音飙升榜，官方文件待回源",
-        "reason": "用官方事实和蝉妈妈品牌渠道数据解释，不做退出中国电商式标题党。",
-        "action": "耐克中国线上渠道调整，对品牌自播和达人分销意味着什么？",
+        "reason": "先解释已确认的抖音热度信号与观察框架，再在同一网址滚动补充官方信息和蝉妈妈品牌渠道数据。",
+        "action": "抢先试发｜耐克中国线上渠道讨论升温，品牌自播和达人分销应该观察哪些信号？",
         "domain": "commerce",
-        "contentPotentialScore": 90
+        "contentPotentialScore": 90,
+        "topicValueScore": 90,
+        "topicValueLabel": "高潜力",
+        "publicationStatus": "抢先试发",
+        "publicationStatusCode": "early_test"
       },
       {
         "id": "HT-20260722-011",
-        "grade": "P-B",
+        "grade": "S",
         "name": "潜力话题：金价银价油价集体上涨登抖音实时热点，待验证珠宝消费影响",
-        "reason": "把宏观热搜与珠宝订单、购买人数和价格带变化连接起来。",
-        "action": "金价上涨后，抖音珠宝直播是涨价还是转化？",
+        "reason": "首发解释已确认的价格话题和消费观察框架，再用珠宝订单、购买人数和价格带变化滚动更新。",
+        "action": "抢先试发｜金银价格讨论升温，抖音珠宝直播应该观察哪些变化？",
         "domain": "commerce",
-        "contentPotentialScore": 87
+        "contentPotentialScore": 87,
+        "topicValueScore": 87,
+        "topicValueLabel": "高潜力",
+        "publicationStatus": "抢先试发",
+        "publicationStatusCode": "early_test"
       },
       {
         "id": "HT-20260722-010",
-        "grade": "P-B",
+        "grade": "A",
         "name": "商品卡免佣政策拟改为差异化任务：新增九折费率类型，个人店不再适用",
         "reason": "用商家成本和任务变化切入，不复述整份政策。",
-        "action": "2026抖音商品卡免佣政策拟怎么改？任务与费率差异表",
+        "action": "定向发布｜2026抖音商品卡免佣政策拟怎么改？任务与费率差异表",
         "domain": "commerce",
-        "contentPotentialScore": 84
+        "contentPotentialScore": 84,
+        "topicValueScore": 84,
+        "topicValueLabel": "较高潜力",
+        "publicationStatus": "定向发布",
+        "publicationStatusCode": "targeted_publish"
+      }
+    ],
+    "topRollingUpdates": [
+      {
+        "id": "HT-20260722-012",
+        "name": "潜力话题：滔搏与耐克中国线上销售调整登抖音飙升榜，官方文件待回源",
+        "action": "试发后滚动确认：滔搏公告、交易所文件或耐克官方说明；蝉妈妈近30天品牌、商品、达人和直播数据；官方或原始信息待确认；第二个独立需求信号待确认；内容供给缺口待确认",
+        "topicValueScore": 90,
+        "publicationStatus": "抢先试发"
+      },
+      {
+        "id": "HT-20260722-011",
+        "name": "潜力话题：金价银价油价集体上涨登抖音实时热点，待验证珠宝消费影响",
+        "action": "试发后滚动确认：百度指数与AIDSO的金银消费需求；蝉妈妈珠宝类目7/30天订单、购买人数、开播账号和价格带；官方或原始信息待确认；第二个独立需求信号待确认；内容供给缺口待确认",
+        "topicValueScore": 87,
+        "publicationStatus": "抢先试发"
       }
     ],
     "topActions": [
       {
         "id": "HT-20260722-001",
-        "grade": "L-A｜重点追",
+        "grade": "L-A｜业务重点响应",
         "name": "商品材质成分不符意见稿：首次涉嫌违规新增下架，高价值商品错放类目可升级清退",
         "reason": "直接影响商品下架、限单、货款冻结和店铺清退，且覆盖珠宝、服饰、食品、家居等多个高交易类目；问题意图明确，适合规则解读和商家自查。",
         "action": "先做类目风险表、材质信息五处一致自查卡和申诉材料清单；按珠宝、服饰、食品等受影响商家定向发送，正式稿发布后复核。",
@@ -84,7 +128,7 @@
       },
       {
         "id": "HT-20260722-010",
-        "grade": "L-A｜重点追",
+        "grade": "L-A｜业务重点响应",
         "name": "商品卡免佣政策拟改为差异化任务：新增九折费率类型，个人店不再适用",
         "reason": "直接影响商品卡订单技术服务费、任务门槛和个人店资格，属于官方实质经营政策；即使大众流量有限，也保持重点跟进。",
         "action": "制作适用对象、任务组合、两种免佣类型和结算查询四张差异表；公众号与私域定向提醒商家，正式稿发布后复核。",
@@ -95,7 +139,7 @@
       },
       {
         "id": "HT-20260722-002",
-        "grade": "L-A｜重点追",
+        "grade": "L-A｜业务重点响应",
         "name": "异常发品意见征集临近截止：无品牌资质商品可被限制发品3至60天",
         "reason": "限制发品会直接中断商家经营，无品牌资质和规避审核场景又容易被误操作触发；征集即将截止，当前反馈和自查价值高。",
         "action": "发布异常发品四类识别卡和无品牌资质自查表，收集商家反馈并在正式稿发布后复核；只面向高风险商家定向触达。",
@@ -159,6 +203,10 @@
       "explicitly_not_doing": "不把意见稿写成正式生效规则；不对处罚结果作绝对承诺；不投广告、不全量召回、不新开发产品。",
       "official_evidence": [],
       "circle_evidence": [],
+      "business_response_code": "A",
+      "business_response_label": "业务重点响应",
+      "business_response_score": 94,
+      "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
           "hotspotId": "HT-20260722-001",
@@ -190,9 +238,9 @@
       "totalScore": 94,
       "initialValue": 5,
       "finalValue": 4,
-      "grade": "L-A｜重点追",
+      "grade": "L-A｜业务重点响应",
       "gradeCode": "A",
-      "followDecision": "重点追",
+      "followDecision": "业务重点响应",
       "downgradeReason": "风险封顶",
       "scoreDetails": [
         {
@@ -453,13 +501,26 @@
         "private_domain"
       ],
       "primary_topic": "抖音商品材质不符会怎样？商家自查与申诉清单",
+      "early_publish_title": "抖音商品材质不符会怎样？商家自查与申诉清单",
       "content_angle": "不复述规则原文，围绕下架风险、五处信息一致和申诉材料回答商家问题。",
       "measurement_plan": "官网搜索展现与点击、公众号阅读分享、私域清单打开、商家咨询和注册。",
       "stop_condition": "正式稿与意见稿不一致即更新；两周无搜索展现且无商家咨询则停止扩写。",
       "content_score_reasons": {
         "business": "官方规则业务重要",
         "traffic": "目标人群精准但大众需求未验证"
-      }
+      },
+      "topic_value_score": 68,
+      "topic_value_code": "B",
+      "topic_value_label": "中等潜力",
+      "publication_status_code": "targeted_publish",
+      "publication_status": "定向发布",
+      "publication_priority": 4,
+      "publication_mode": "专业人群定向解读",
+      "publication_basis": "官方事实明确但受众较窄，面向受影响人群定向发布。",
+      "fact_boundary": "只解释官方已发布内容及其明确影响，不扩大为大众趋势。",
+      "pending_confirmation": [],
+      "confirmed_trigger": true,
+      "publishable_channel": true
     },
     {
       "id": "HT-20260722-002",
@@ -513,6 +574,10 @@
       "explicitly_not_doing": "不把征集截止写成规则生效日；不做自动判罚承诺；不投广告、不全量召回。",
       "official_evidence": [],
       "circle_evidence": [],
+      "business_response_code": "A",
+      "business_response_label": "业务重点响应",
+      "business_response_score": 92,
+      "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
           "hotspotId": "HT-20260722-002",
@@ -532,9 +597,9 @@
       "totalScore": 92,
       "initialValue": 5,
       "finalValue": 4,
-      "grade": "L-A｜重点追",
+      "grade": "L-A｜业务重点响应",
       "gradeCode": "A",
-      "followDecision": "重点追",
+      "followDecision": "业务重点响应",
       "downgradeReason": "风险封顶",
       "scoreDetails": [
         {
@@ -795,13 +860,26 @@
         "private_domain"
       ],
       "primary_topic": "无品牌资质还能发布抖音商品吗？异常发品四类风险",
+      "early_publish_title": "无品牌资质还能发布抖音商品吗？异常发品四类风险",
       "content_angle": "从商家会遇到的限制发品场景切入，给识别卡和资质自查表。",
       "measurement_plan": "搜索展现、清单下载、私域打开、相关咨询和注册。",
       "stop_condition": "正式稿有变化即更新；两周无精准访问和咨询则不继续扩写。",
       "content_score_reasons": {
         "business": "官方规则直接影响经营权限",
         "traffic": "精准需求明确但大众规模未验证"
-      }
+      },
+      "topic_value_score": 68,
+      "topic_value_code": "B",
+      "topic_value_label": "中等潜力",
+      "publication_status_code": "targeted_publish",
+      "publication_status": "定向发布",
+      "publication_priority": 4,
+      "publication_mode": "专业人群定向解读",
+      "publication_basis": "官方事实明确但受众较窄，面向受影响人群定向发布。",
+      "fact_boundary": "只解释官方已发布内容及其明确影响，不扩大为大众趋势。",
+      "pending_confirmation": [],
+      "confirmed_trigger": true,
+      "publishable_channel": true
     },
     {
       "id": "HT-20260722-003",
@@ -877,6 +955,10 @@
           "url": "https://index.baidu.com/v2/main/index.html#/trend/ChatGPT?words=ChatGPT"
         }
       ],
+      "business_response_code": "A",
+      "business_response_label": "业务重点响应",
+      "business_response_score": 87,
+      "business_response_basis": "双轨分数矩阵决定",
       "actions": [
         {
           "hotspotId": "HT-20260722-003",
@@ -1049,10 +1131,10 @@
       "mature_landing_page": false,
       "measurement_ready": true,
       "totalScore": null,
-      "grade": "L-A｜重点追",
+      "grade": "L-A｜业务重点响应",
       "gradeCode": "A",
       "finalValue": 4,
-      "followDecision": "重点追",
+      "followDecision": "业务重点响应",
       "downgradeReason": "双轨分数矩阵决定",
       "hotness_scoring_model": "hotness_v1",
       "hotness_score": 75,
@@ -1227,13 +1309,28 @@
         "short_video"
       ],
       "primary_topic": "中小电商团队怎么用ChatGPT搭建经营工作流？",
+      "early_publish_title": "中小电商团队怎么用ChatGPT搭建经营工作流？",
       "content_angle": "用竞品周报、商品机会卡和库存建议三条实测回答，不写泛AI工具盘点。",
       "measurement_plan": "搜索展现、模板下载、视频完播、工作流完成率、错误率和注册。",
       "stop_condition": "供给缺口未验证前不做专题；实测错误率不可接受或无高意图访问即停止。",
       "content_score_reasons": {
         "demand": "需求基线高且官方事件新",
         "gap": "现有内容供给缺口尚未完成核验"
-      }
+      },
+      "topic_value_score": 78,
+      "topic_value_code": "A",
+      "topic_value_label": "较高潜力",
+      "publication_status_code": "small_test",
+      "publication_status": "小范围试发",
+      "publication_priority": 3,
+      "publication_mode": "单渠道轻量内容",
+      "publication_basis": "选题价值与渠道适配达到轻量测试要求，先用单渠道验证反馈。",
+      "fact_boundary": "只陈述当前已确认信号，不外推为全行业趋势。",
+      "pending_confirmation": [
+        "内容供给缺口待确认"
+      ],
+      "confirmed_trigger": true,
+      "publishable_channel": true
     },
     {
       "id": "HT-20260722-004",
@@ -1266,7 +1363,7 @@
           "url": "https://school.jinritemai.com/doudian/web/articlev0/aJnmFhufaD2R"
         }
       ],
-      "status": "低成本跟进",
+      "status": "业务重点响应",
       "risk": "中风险-已通过",
       "natural": "通过",
       "owner": "热点运营负责人",
@@ -1287,6 +1384,10 @@
       "explicitly_not_doing": "不写成处罚整体放松，不投广告、不全量召回、不开发赔付工具。",
       "official_evidence": [],
       "circle_evidence": [],
+      "business_response_code": "A",
+      "business_response_label": "业务重点响应",
+      "business_response_score": 68,
+      "business_response_basis": "官方实质规则直接影响经营，保持高业务优先级。",
       "actions": [
         {
           "hotspotId": "HT-20260722-004",
@@ -1306,9 +1407,9 @@
       "totalScore": 68,
       "initialValue": 3,
       "finalValue": 4,
-      "grade": "L-A｜重点追",
+      "grade": "L-A｜业务重点响应",
       "gradeCode": "A",
-      "followDecision": "重点追",
+      "followDecision": "业务重点响应",
       "downgradeReason": "抖音官方实质规则业务优先级下限",
       "scoreDetails": [
         {
@@ -1569,13 +1670,26 @@
         "private_domain"
       ],
       "primary_topic": "抖音欺诈发货怎么赔付？低价订单新旧规则差异",
+      "early_publish_title": "抖音欺诈发货怎么赔付？低价订单新旧规则差异",
       "content_angle": "用赔付差异表和常见欺诈场景解释，不复述整份规则。",
       "measurement_plan": "差异卡访问、商家咨询、搜索点击和私域打开。",
       "stop_condition": "正式版变化即更新；无精准访问和咨询则不追加内容。",
       "content_score_reasons": {
         "business": "官方规则涉及赔付，保持重点跟进",
         "traffic": "关注面较窄，按精准内容处理"
-      }
+      },
+      "topic_value_score": 59,
+      "topic_value_code": "B",
+      "topic_value_label": "中等潜力",
+      "publication_status_code": "targeted_publish",
+      "publication_status": "定向发布",
+      "publication_priority": 4,
+      "publication_mode": "专业人群定向解读",
+      "publication_basis": "官方事实明确但受众较窄，面向受影响人群定向发布。",
+      "fact_boundary": "只解释官方已发布内容及其明确影响，不扩大为大众趋势。",
+      "pending_confirmation": [],
+      "confirmed_trigger": true,
+      "publishable_channel": true
     },
     {
       "id": "HT-20260722-005",
@@ -1608,7 +1722,7 @@
           "url": "https://yuntu.oceanengine.com/yuntu_lite/commodity/trend/short/v2?aadvid=1794665196703756"
         }
       ],
-      "status": "补证观察",
+      "status": "继续观察",
       "risk": "低风险",
       "natural": "通过",
       "owner": "热点运营负责人",
@@ -1632,6 +1746,10 @@
       "explicitly_not_doing": "不把指数写成真实成交，补齐基线前不发公开案例，不写行业普涨或黑马达人，不投广告、不开发产品、不召回。",
       "official_evidence": [],
       "circle_evidence": [],
+      "business_response_code": "C",
+      "business_response_label": "继续观察",
+      "business_response_score": 66,
+      "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
           "hotspotId": "HT-20260722-005",
@@ -1651,9 +1769,9 @@
       "totalScore": 66,
       "initialValue": 3,
       "finalValue": 2,
-      "grade": "L-C｜轻量测试/观察",
+      "grade": "L-C｜继续观察",
       "gradeCode": "C",
-      "followDecision": "测试/观察",
+      "followDecision": "继续观察",
       "downgradeReason": "基线校正封顶",
       "scoreDetails": [
         {
@@ -1927,13 +2045,29 @@
       },
       "recommended_channels": [],
       "primary_topic": "OMR S9PRO美塑仪为什么增长？先验证商品、达人和直播间",
+      "early_publish_title": "OMR S9PRO美塑仪为什么增长？先验证商品、达人和直播间",
       "content_angle": "只做单品案例，不外推健身器械或美容仪全行业上涨。",
       "measurement_plan": "商品页访问、视频完播、小红书收藏、同款搜索和注册。",
       "stop_condition": "蝉妈妈未验证同款、达人和直播间增长，或双源方向不一致即不发布。",
       "content_score_reasons": {
         "signal": "单品涨速存在",
         "risk": "单平台且类目整体未普涨"
-      }
+      },
+      "topic_value_score": 59,
+      "topic_value_code": "B",
+      "topic_value_label": "中等潜力",
+      "publication_status_code": "observe",
+      "publication_status": "继续观察",
+      "publication_priority": 2,
+      "publication_mode": "只记录信号",
+      "publication_basis": "已有真实信号，但选题价值或内容承接尚不足，继续观察变化。",
+      "fact_boundary": "不对外形成确定性结论。",
+      "pending_confirmation": [
+        "第二个独立需求信号待确认",
+        "可比基线与多周期变化待确认"
+      ],
+      "confirmed_trigger": true,
+      "publishable_channel": false
     },
     {
       "id": "HT-20260722-006",
@@ -1947,7 +2081,7 @@
       "uncertainty": "缺少同类目7/30天基线、排名变化、订单或购买人数增速、开播账号数和跨平台需求变化，当前不能判断珠宝类目上涨。",
       "recommended": "只进入内部观察池；连续记录7天，并与珠宝类目30天中位数、账号自身基线和搜索需求对比，取得至少两项异常变化后再评估选题。",
       "actionReason": "这是一条榜单结构快照，不是热点。保留它只为验证后续是否出现持续异常，不能据此发布“珠宝爆发”文章。",
-      "actionDetail": "补证：比较7/30天排名、订单或购买人数增速、开播账号数、商品数和搜索趋势；发布条件：至少两项指标显著高于自身或类目基线并持续3天。",
+      "actionDetail": "信息确认：比较7/30天排名、订单或购买人数增速、开播账号数、商品数和搜索趋势；发布条件：至少两项指标显著高于自身或类目基线并持续3天。",
       "evidence": "平台：蝉妈妈；页面：黑马达人榜>带货达人；榜单日2026-07-21；最近更新2026-07-22 05:39；观察2026-07-22 10:08；E2；https://www.chanmama.com/bloggerRankingGrowing/product?category=&category_id=-1&dateType=day&day=2026-07-21",
       "departments": "数据主责；珠宝类目运营协作",
       "deadline": "2026-07-24",
@@ -1966,7 +2100,7 @@
           "url": "https://www.chanmama.com/bloggerRankingGrowing/product?category=&category_id=-1&dateType=day&day=2026-07-21"
         }
       ],
-      "status": "补证观察",
+      "status": "继续观察",
       "risk": "低风险",
       "natural": "通过",
       "owner": "热点运营负责人",
@@ -1995,6 +2129,10 @@
       "explicitly_not_doing": "不把高客单和单日高销售额当增长，不写珠宝行业爆发稿，不投流、不召回。",
       "official_evidence": [],
       "circle_evidence": [],
+      "business_response_code": "C",
+      "business_response_label": "继续观察",
+      "business_response_score": 49,
+      "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
           "hotspotId": "HT-20260722-006",
@@ -2014,9 +2152,9 @@
       "totalScore": 49,
       "initialValue": 2,
       "finalValue": 2,
-      "grade": "L-C｜轻量测试/观察",
+      "grade": "L-C｜继续观察",
       "gradeCode": "C",
-      "followDecision": "测试/观察",
+      "followDecision": "继续观察",
       "downgradeReason": "分数决定",
       "scoreDetails": [
         {
@@ -2324,13 +2462,31 @@
       },
       "recommended_channels": [],
       "primary_topic": "珠宝单日榜结构观察，暂不形成公开选题",
+      "early_publish_title": "珠宝单日榜结构观察，暂不形成公开选题",
       "content_angle": "等待类目基线和多日变化，不把高客单解释成行业升温。",
       "measurement_plan": "连续7天记录排名、订单、购买人数、开播账号数和搜索趋势。",
       "stop_condition": "7天内少于两项异常变化则留档，不再进入每日重点。",
       "content_score_reasons": {
         "baseline": "天然高客单且无类目基线",
         "traffic": "没有搜索或社媒需求增长证据"
-      }
+      },
+      "topic_value_score": 33,
+      "topic_value_code": "D",
+      "topic_value_label": "暂不采用",
+      "publication_status_code": "do_not_publish",
+      "publication_status": "不发布",
+      "publication_priority": 1,
+      "publication_mode": "不制作内容",
+      "publication_basis": "没有达到最低真实触发、时效或内容价值门槛，暂不制作。",
+      "fact_boundary": "不对外发布。",
+      "pending_confirmation": [
+        "官方或原始信息待确认",
+        "第二个独立需求信号待确认",
+        "可比基线与多周期变化待确认",
+        "蝉妈妈数据承接待确认"
+      ],
+      "confirmed_trigger": true,
+      "publishable_channel": false
     },
     {
       "id": "HT-20260722-007",
@@ -2363,7 +2519,7 @@
           "url": "https://geo.aidso.com/question"
         }
       ],
-      "status": "低成本跟进",
+      "status": "常规跟进",
       "risk": "低风险",
       "natural": "通过",
       "owner": "热点运营负责人",
@@ -2378,16 +2534,20 @@
       "explicitly_not_doing": "不写成大众热点，不补全页面未展示的标题，不开发新产品、不投广告、不全量召回。",
       "official_evidence": [],
       "circle_evidence": [],
+      "business_response_code": "B",
+      "business_response_label": "常规跟进",
+      "business_response_score": 83,
+      "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
           "hotspotId": "HT-20260722-007",
-          "actionType": "潜力话题补证",
+          "actionType": "潜力话题信息确认",
           "task": "核对完整关键词、数据日期、百度与创作者指数需求及内容供给缺口",
           "owner": "内容/GEO",
           "collaborators": "数据",
           "deadline": "2026-07-23",
           "deliverable": "需求与供给核验表",
-          "acceptance": "未验证前不发布主稿",
+          "acceptance": "日期未确认前不发布主稿",
           "stopCondition": "无第二平台或日期无法核实即停止",
           "status": "待验证"
         }
@@ -2397,9 +2557,9 @@
       "totalScore": 83,
       "initialValue": 4,
       "finalValue": 3,
-      "grade": "L-B｜低成本跟进",
+      "grade": "L-B｜常规跟进",
       "gradeCode": "B",
-      "followDecision": "低成本跟进",
+      "followDecision": "常规跟进",
       "downgradeReason": "信源封顶",
       "scoreDetails": [
         {
@@ -2687,13 +2847,31 @@
         "private_domain"
       ],
       "primary_topic": "抖音店铺经营是否健康，要看哪些数据？",
+      "early_publish_title": "抖音店铺经营是否健康，要看哪些数据？",
       "content_angle": "用蝉妈妈数据做排查顺序和指标清单，不写成新闻热点。",
       "measurement_plan": "验证阶段看两平台需求和供给缺口；发布后看搜索展现、GEO引用、收藏、访问和注册。",
       "stop_condition": "无法取得完整关键词、最新日期或第二个平台需求信号则不发布主稿。",
       "content_score_reasons": {
         "advantage": "蝉妈妈能直接回答",
-        "evidence": "单平台且日期未核，暂时补证后再发"
-      }
+        "evidence": "单平台且日期未确认，暂不发布"
+      },
+      "topic_value_score": 66,
+      "topic_value_code": "B",
+      "topic_value_label": "中等潜力",
+      "publication_status_code": "do_not_publish",
+      "publication_status": "不发布",
+      "publication_priority": 1,
+      "publication_mode": "不制作内容",
+      "publication_basis": "没有达到最低真实触发、时效或内容价值门槛，暂不制作。",
+      "fact_boundary": "不对外发布。",
+      "pending_confirmation": [
+        "官方或原始信息待确认",
+        "第二个独立需求信号待确认",
+        "内容供给缺口待确认",
+        "数据日期待确认"
+      ],
+      "confirmed_trigger": false,
+      "publishable_channel": true
     },
     {
       "id": "HT-20260722-008",
@@ -2778,6 +2956,10 @@
           "url": "https://index.baidu.com/v2/main/index.html#/trend/Qwen?words=Qwen"
         }
       ],
+      "business_response_code": "C",
+      "business_response_label": "继续观察",
+      "business_response_score": 77,
+      "business_response_basis": "只有单一媒体或传闻，科技影响与执行等级最高为C。",
       "actions": [
         {
           "hotspotId": "HT-20260722-008",
@@ -2963,10 +3145,10 @@
       "mature_landing_page": false,
       "measurement_ready": false,
       "totalScore": null,
-      "grade": "L-C｜轻量测试/观察",
+      "grade": "L-C｜继续观察",
       "gradeCode": "C",
       "finalValue": 2,
-      "followDecision": "测试/观察",
+      "followDecision": "继续观察",
       "downgradeReason": "只有单一媒体或传闻，科技影响与执行等级最高为C。",
       "hotness_scoring_model": "hotness_v1",
       "hotness_score": 62,
@@ -3163,13 +3345,29 @@
         "xiaohongshu"
       ],
       "primary_topic": "Qwen-Image-3.0能否提升电商海报和多语言详情图？",
+      "early_publish_title": "Qwen-Image-3.0能否提升电商海报和多语言详情图？",
       "content_angle": "取得官方入口后用三组电商素材盲测，不引用单篇媒体结论代替事实。",
       "measurement_plan": "官方证据、素材盲测、视频完播、收藏、模板访问和注册。",
       "stop_condition": "48小时无官方原文、模型卡或可用入口即归档。",
       "content_score_reasons": {
         "traffic": "视觉话题传播性强",
-        "evidence": "单一媒体线索，只能补证后再发"
-      }
+        "evidence": "单一媒体线索，只能继续观察"
+      },
+      "topic_value_score": 72,
+      "topic_value_code": "A",
+      "topic_value_label": "较高潜力",
+      "publication_status_code": "do_not_publish",
+      "publication_status": "不发布",
+      "publication_priority": 1,
+      "publication_mode": "不制作内容",
+      "publication_basis": "没有达到最低真实触发、时效或内容价值门槛，暂不制作。",
+      "fact_boundary": "不对外发布。",
+      "pending_confirmation": [
+        "官方或原始信息待确认",
+        "第二个独立需求信号待确认"
+      ],
+      "confirmed_trigger": false,
+      "publishable_channel": true
     },
     {
       "id": "HT-20260722-009",
@@ -3226,6 +3424,10 @@
           "url": "https://github.com/trending"
         }
       ],
+      "business_response_code": "C",
+      "business_response_label": "继续观察",
+      "business_response_score": 32,
+      "business_response_basis": "只有专业媒体或非官方交叉证据，科技影响与执行等级最高为B。",
       "actions": [
         {
           "hotspotId": "HT-20260722-009",
@@ -3276,7 +3478,7 @@
       ],
       "score_reasons": {
         "technology": "多个Agent相关项目同日高增，圈层信号明显；但只是平台星标，按E2最高T-B。",
-        "business": "与商家、达人和电商数据工作流没有直接证据，业务承接分低于35，最终最多补证观察。"
+        "business": "与商家、达人和电商数据工作流没有直接依据，业务承接分低于35，最终只能继续观察。"
       },
       "score_caps": [
         {
@@ -3419,10 +3621,10 @@
       "mature_landing_page": false,
       "measurement_ready": false,
       "totalScore": null,
-      "grade": "L-C｜轻量测试/观察",
+      "grade": "L-C｜继续观察",
       "gradeCode": "C",
       "finalValue": 2,
-      "followDecision": "测试/观察",
+      "followDecision": "继续观察",
       "downgradeReason": "只有专业媒体或非官方交叉证据，科技影响与执行等级最高为B。",
       "hotness_scoring_model": "hotness_v1",
       "hotness_score": 62,
@@ -3628,13 +3830,30 @@
       },
       "recommended_channels": [],
       "primary_topic": "Agent开发工具日趋势，暂不形成蝉妈妈公开选题",
+      "early_publish_title": "Agent开发工具日趋势，暂不形成蝉妈妈公开选题",
       "content_angle": "只有出现可验证电商内容、选品或经营工作流后才重新立项。",
       "measurement_plan": "观察真实集成、release和电商场景，不监测大众传播指标。",
       "stop_condition": "7天内没有电商工作流证据即归档。",
       "content_score_reasons": {
         "circle": "开发者圈层升温",
         "business": "与蝉妈妈用户和内容承接弱"
-      }
+      },
+      "topic_value_score": 48,
+      "topic_value_code": "C",
+      "topic_value_label": "低潜力",
+      "publication_status_code": "observe",
+      "publication_status": "继续观察",
+      "publication_priority": 2,
+      "publication_mode": "只记录信号",
+      "publication_basis": "已有真实信号，但选题价值或内容承接尚不足，继续观察变化。",
+      "fact_boundary": "不对外形成确定性结论。",
+      "pending_confirmation": [
+        "官方或原始信息待确认",
+        "第二个独立需求信号待确认",
+        "蝉妈妈数据承接待确认"
+      ],
+      "confirmed_trigger": true,
+      "publishable_channel": false
     },
     {
       "id": "HT-20260722-010",
@@ -3688,6 +3907,10 @@
       "explicitly_not_doing": "不把意见稿写成正式政策，不承诺所有订单免佣，不投广告、不全量召回、不开发计算器。",
       "official_evidence": [],
       "circle_evidence": [],
+      "business_response_code": "A",
+      "business_response_label": "业务重点响应",
+      "business_response_score": 93,
+      "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
           "hotspotId": "HT-20260722-010",
@@ -3707,9 +3930,9 @@
       "totalScore": 93,
       "initialValue": 5,
       "finalValue": 4,
-      "grade": "L-A｜重点追",
+      "grade": "L-A｜业务重点响应",
       "gradeCode": "A",
-      "followDecision": "重点追",
+      "followDecision": "业务重点响应",
       "downgradeReason": "风险封顶",
       "scoreDetails": [
         {
@@ -3971,13 +4194,26 @@
         "private_domain"
       ],
       "primary_topic": "2026抖音商品卡免佣政策拟怎么改？任务与费率差异表",
+      "early_publish_title": "2026抖音商品卡免佣政策拟怎么改？任务与费率差异表",
       "content_angle": "用商家成本和任务变化切入，不复述整份政策。",
       "measurement_plan": "搜索展现、差异表下载、公众号分享、私域打开、商家咨询和注册。",
       "stop_condition": "正式稿变化即更新；两周无精准访问和咨询则停止扩写。",
       "content_score_reasons": {
         "business": "官方费用政策必须高优先",
         "traffic": "精准商家流量，目标人群有限"
-      }
+      },
+      "topic_value_score": 84,
+      "topic_value_code": "A",
+      "topic_value_label": "较高潜力",
+      "publication_status_code": "targeted_publish",
+      "publication_status": "定向发布",
+      "publication_priority": 4,
+      "publication_mode": "专业人群定向解读",
+      "publication_basis": "官方事实明确但受众较窄，面向受影响人群定向发布。",
+      "fact_boundary": "只解释官方已发布内容及其明确影响，不扩大为大众趋势。",
+      "pending_confirmation": [],
+      "confirmed_trigger": true,
+      "publishable_channel": true
     },
     {
       "id": "HT-20260722-011",
@@ -3989,13 +4225,13 @@
       "publishedAt": "2026-07-22 15:02观察；实时热点指数1104.4万",
       "signal": "“金价银价油价集体上涨”位列抖音实时热点第2，热点指数约1104.4万；这是外部需求信号，不等于抖音珠宝直播销售同步上涨。",
       "uncertainty": "组合话题同时包含金、银、油，珠宝消费意图尚未拆分；百度指数、AIDSO和蝉妈妈珠宝类目变化尚未交叉验证。",
-      "recommended": "先拆分金价、银价关键词，核对百度与AIDSO需求，再用蝉妈妈比较珠宝类目7/30天订单、购买人数、开播账号和价格带变化。",
-      "actionReason": "它提供了珠宝单日榜缺少的外部需求信号，可能形成“价格上涨后直播珠宝怎么卖”的内容机会；但必须验证需求与交易是否同向。",
-      "actionDetail": "验证通过后的官网题目：《金价上涨后，抖音珠宝直播是涨价还是转化？》；社媒做价格带与购买变化图。当前只补需求、类目基线和供给缺口。",
+      "recommended": "先用已确认的抖音实时热点发布价格变化观察稿，解释珠宝商家应该看哪些消费信号；同一网址随后滚动补充百度、AIDSO及蝉妈妈珠宝类目7/30天数据。",
+      "actionReason": "它提供了珠宝单日榜缺少的外部需求信号，适合抢占“价格上涨后直播珠宝怎么卖”的内容窗口；交易数据尚未确认只限制销售结论，不阻止观察型内容试发。",
+      "actionDetail": "官网首发题目：《金银价格讨论升温，抖音珠宝直播应该观察哪些变化？》；短视频和小红书先讲价格、搜索和消费决策问题；订单、购买人数、开播账号和价格带数据在同一网址滚动更新。",
       "evidence": "平台：抖音创作者指数；页面：抖音指数>抖音实时热点；观察2026-07-22 15:02；热点指数1104.4万；E2；https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
       "departments": "热点运营主责；数据、珠宝类目内容协作",
       "deadline": "2026-07-23",
-      "notRecommended": "不根据热搜直接宣称珠宝销量上涨，不用单日高销售额作证明，不投流、不全量发布。",
+      "notRecommended": "不根据热搜直接宣称珠宝销量上涨，不用单日高销售额作证明；首发不投流、不使用结论式标题。",
       "sourceLinks": [
         {
           "label": "Core source",
@@ -4010,33 +4246,37 @@
           "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
         }
       ],
-      "status": "补证观察",
+      "status": "抢先试发",
       "risk": "低风险",
       "natural": "待确认",
       "owner": "热点运营负责人",
-      "monitor": "金银关键词指数、AIDSO问题、珠宝类目7/30天订单与购买人数、开播账号和价格带；双源不同向即停止。",
+      "monitor": "首发搜索展现、点击、收藏和分享；持续更新金银关键词、AIDSO问题、珠宝类目7/30天订单、购买人数、开播账号和价格带，信号不同向时更正结论。",
       "candidate_kind": "potential_topic",
       "signal_type": "platform_realtime_topic",
       "baseline_evidence": null,
       "official_rule": null,
       "technology_change": "“金价银价油价集体上涨”位列抖音实时热点第2，热点指数约1104.4万；这是外部需求信号，不等于抖音珠宝直播销售同步上涨。",
-      "chanmama_relevance": "它提供了珠宝单日榜缺少的外部需求信号，可能形成“价格上涨后直播珠宝怎么卖”的内容机会；但必须验证需求与交易是否同向。",
-      "next_step": "先拆分金价、银价关键词，核对百度与AIDSO需求，再用蝉妈妈比较珠宝类目7/30天订单、购买人数、开播账号和价格带变化。",
-      "explicitly_not_doing": "不根据热搜直接宣称珠宝销量上涨，不用单日高销售额作证明，不投流、不全量发布。",
+      "chanmama_relevance": "它提供了珠宝单日榜缺少的外部需求信号，适合抢占“价格上涨后直播珠宝怎么卖”的内容窗口；交易数据尚未确认只限制销售结论，不阻止观察型内容试发。",
+      "next_step": "先用已确认的抖音实时热点发布价格变化观察稿，解释珠宝商家应该看哪些消费信号；同一网址随后滚动补充百度、AIDSO及蝉妈妈珠宝类目7/30天数据。",
+      "explicitly_not_doing": "不根据热搜直接宣称珠宝销量上涨，不用单日高销售额作证明；首发不投流、不使用结论式标题。",
       "official_evidence": [],
       "circle_evidence": [],
+      "business_response_code": "B",
+      "business_response_label": "常规跟进",
+      "business_response_score": 82,
+      "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
           "hotspotId": "HT-20260722-011",
-          "actionType": "金银热点交叉验证",
-          "task": "拆分金银关键词并核对珠宝类目7/30天订单、购买人数、开播账号和价格带",
-          "owner": "数据",
-          "collaborators": "珠宝类目内容",
+          "actionType": "金银价格观察稿",
+          "task": "先发价格与消费观察框架，同一网址滚动补充珠宝类目7/30天订单、购买人数、开播账号和价格带",
+          "owner": "内容/GEO",
+          "collaborators": "数据、珠宝类目内容",
           "deadline": "2026-07-23",
-          "deliverable": "需求与交易对照表",
+          "deliverable": "观察稿＋滚动数据区",
           "acceptance": "热搜不等于珠宝销量上涨",
-          "stopCondition": "双源不同向即停止",
-          "status": "待验证"
+          "stopCondition": "首发无有效流量且数据不同向时停止扩大发布",
+          "status": "待开始"
         }
       ],
       "domain": "commerce",
@@ -4044,9 +4284,9 @@
       "totalScore": 82,
       "initialValue": 4,
       "finalValue": 3,
-      "grade": "L-B｜低成本跟进",
+      "grade": "L-B｜常规跟进",
       "gradeCode": "B",
-      "followDecision": "低成本跟进",
+      "followDecision": "常规跟进",
       "downgradeReason": "信源封顶",
       "scoreDetails": [
         {
@@ -4305,21 +4545,40 @@
         "private_domain": 70
       },
       "channel_reasons": {
-        "primary": "高热话题适合短视频和小红书，蝉妈妈数据可增加独家性；当前缺跨平台和交易验证。"
+        "primary": "高热话题适合官网、短视频和小红书先发观察内容，蝉妈妈数据用于后续升级。"
       },
       "recommended_channels": [
         "website",
         "short_video",
         "xiaohongshu"
       ],
-      "primary_topic": "金价上涨后，抖音珠宝直播是涨价还是转化？",
-      "content_angle": "把宏观热搜与珠宝订单、购买人数和价格带变化连接起来。",
-      "measurement_plan": "关键词上涨、搜索展现、视频完播、收藏、珠宝数据页访问和注册。",
-      "stop_condition": "第二平台无需求或珠宝交易数据不支持关联时，不发布行业结论。",
+      "primary_topic": "金银价格讨论升温，抖音珠宝直播应该观察哪些变化？",
+      "early_publish_title": "金银价格讨论升温，抖音珠宝直播应该观察哪些变化？",
+      "content_angle": "首发解释已确认的价格话题和消费观察框架，再用珠宝订单、购买人数和价格带变化滚动更新。",
+      "measurement_plan": "首发搜索展现、视频完播、收藏、分享和停留；后续记录数据更新带来的二次增长。",
+      "stop_condition": "第二平台没有需求或珠宝交易数据不支持关联时，保留价格观察但删除销售趋势结论。",
       "content_score_reasons": {
         "demand": "抖音实时需求高",
         "gap": "跨平台、交易和内容供给仍待验证"
-      }
+      },
+      "topic_value_score": 87,
+      "topic_value_code": "S",
+      "topic_value_label": "高潜力",
+      "publication_status_code": "early_test",
+      "publication_status": "抢先试发",
+      "publication_priority": 5,
+      "publication_mode": "观察型或问题型内容",
+      "publication_basis": "选题价值高且真实平台信号已确认；未确认信息只限制结论强度，不阻止用观察型内容抢占窗口。",
+      "fact_boundary": "只确认金价、银价、油价组合话题进入抖音实时热点；不据此宣称珠宝销量上涨，不把单日高GMV当成消费趋势。",
+      "pending_confirmation": [
+        "百度指数与AIDSO的金银消费需求",
+        "蝉妈妈珠宝类目7/30天订单、购买人数、开播账号和价格带",
+        "官方或原始信息待确认",
+        "第二个独立需求信号待确认",
+        "内容供给缺口待确认"
+      ],
+      "confirmed_trigger": true,
+      "publishable_channel": true
     },
     {
       "id": "HT-20260722-012",
@@ -4331,13 +4590,13 @@
       "publishedAt": "2026-07-22 15:02观察；飙升热点指数852.0万",
       "signal": "“滔搏：耐克中国线上销售明年终止”位列抖音飙升热点第6，热点指数约852.0万，直接关联品牌线上渠道与经销体系。",
       "uncertainty": "当前只取得抖音指数标题，尚未回源滔搏公告、交易所文件或耐克官方说明；“线上销售终止”的具体范围和生效时间不能推断。",
-      "recommended": "先回源滔搏公告或交易所文件，确认业务范围与时间；再用蝉妈妈复核耐克及运动品牌近30天店播、达人和商品结构。",
-      "actionReason": "话题热度高且与品牌电商渠道直接相关，适合行业解读；但事实边界尚未核实，现阶段只能进入潜力池。",
-      "actionDetail": "验证通过后的官网题目：《耐克中国线上渠道调整，对品牌自播和达人分销意味着什么？》；公众号做渠道结构图，短视频只讲经官方确认的变化。",
+      "recommended": "先用已确认的抖音飙升信号发布观察型内容，讨论品牌商家应关注的渠道信号；同一网址随后滚动补充滔搏公告、交易所文件及蝉妈妈近30天品牌、达人和商品数据。",
+      "actionReason": "话题热度高且与品牌电商渠道直接相关，适合抢占内容窗口；官方信息尚未确认只限制结论强度，不阻止以问题型、观察型内容试发。",
+      "actionDetail": "官网首发题目：《耐克中国线上渠道讨论升温，品牌自播和达人分销应该观察哪些信号？》；公众号做渠道观察清单；短视频只讲抖音热度信号和需要继续观察的数据，不把平台标题写成官方结论；后续在同一网址更新。",
       "evidence": "平台：抖音创作者指数；页面：抖音指数>抖音飙升热点；观察2026-07-22 15:02；热点指数852.0万；E2；https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
       "departments": "热点运营主责；品牌、服饰类目数据协作",
       "deadline": "2026-07-23",
-      "notRecommended": "官方回源前不写成已确认事实，不推断耐克退出中国电商，不投流、不全量矩阵发布。",
+      "notRecommended": "不把平台标题写成已确认事实，不推断耐克退出中国电商；首发不投流、不使用结论式标题。",
       "sourceLinks": [
         {
           "label": "Core source",
@@ -4352,33 +4611,37 @@
           "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
         }
       ],
-      "status": "补证观察",
+      "status": "抢先试发",
       "risk": "低风险",
       "natural": "待确认",
       "owner": "热点运营负责人",
-      "monitor": "官方公告、交易所文件、耐克相关店播与达人数据、搜索与内容增长；无法回源即归档。",
+      "monitor": "观察稿搜索展现、点击、分享与停留；持续确认官方公告、交易所文件、耐克相关店播、达人和商品数据，事实不一致时立即更正文案。",
       "candidate_kind": "potential_topic",
       "signal_type": "platform_rising_topic",
       "baseline_evidence": null,
       "official_rule": null,
       "technology_change": "“滔搏：耐克中国线上销售明年终止”位列抖音飙升热点第6，热点指数约852.0万，直接关联品牌线上渠道与经销体系。",
-      "chanmama_relevance": "话题热度高且与品牌电商渠道直接相关，适合行业解读；但事实边界尚未核实，现阶段只能进入潜力池。",
-      "next_step": "先回源滔搏公告或交易所文件，确认业务范围与时间；再用蝉妈妈复核耐克及运动品牌近30天店播、达人和商品结构。",
-      "explicitly_not_doing": "官方回源前不写成已确认事实，不推断耐克退出中国电商，不投流、不全量矩阵发布。",
+      "chanmama_relevance": "话题热度高且与品牌电商渠道直接相关，适合抢占内容窗口；官方信息尚未确认只限制结论强度，不阻止以问题型、观察型内容试发。",
+      "next_step": "先用已确认的抖音飙升信号发布观察型内容，讨论品牌商家应关注的渠道信号；同一网址随后滚动补充滔搏公告、交易所文件及蝉妈妈近30天品牌、达人和商品数据。",
+      "explicitly_not_doing": "不把平台标题写成已确认事实，不推断耐克退出中国电商；首发不投流、不使用结论式标题。",
       "official_evidence": [],
       "circle_evidence": [],
+      "business_response_code": "B",
+      "business_response_label": "常规跟进",
+      "business_response_score": 85,
+      "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
           "hotspotId": "HT-20260722-012",
-          "actionType": "品牌渠道官方回源",
-          "task": "查找滔搏公告或交易所文件并复核耐克品牌店播、达人和商品结构",
-          "owner": "热点运营",
+          "actionType": "品牌渠道观察稿",
+          "task": "先发抖音热度信号与渠道观察清单，同一网址滚动补充滔搏公告、交易所文件和耐克品牌数据",
+          "owner": "内容/GEO",
           "collaborators": "品牌、数据",
           "deadline": "2026-07-23",
-          "deliverable": "官方事实与品牌数据卡",
-          "acceptance": "不得推断耐克退出中国电商",
-          "stopCondition": "24小时无法回源即归档",
-          "status": "待验证"
+          "deliverable": "观察稿＋滚动更新区",
+          "acceptance": "不得把平台标题写成官方结论",
+          "stopCondition": "事实不一致时立即更正并停止扩大发布",
+          "status": "待开始"
         }
       ],
       "domain": "commerce",
@@ -4386,9 +4649,9 @@
       "totalScore": 85,
       "initialValue": 5,
       "finalValue": 3,
-      "grade": "L-B｜低成本跟进",
+      "grade": "L-B｜常规跟进",
       "gradeCode": "B",
-      "followDecision": "低成本跟进",
+      "followDecision": "常规跟进",
       "downgradeReason": "信源封顶",
       "scoreDetails": [
         {
@@ -4647,21 +4910,40 @@
         "private_domain": 72
       },
       "channel_reasons": {
-        "primary": "品牌渠道变化兼具行业深度和社媒讨论性，但官方回源是发布前置条件。"
+        "primary": "品牌渠道变化兼具行业深度和社媒讨论性；首发采用观察型表达，官方信息用于后续升级。"
       },
       "recommended_channels": [
         "website",
         "wechat",
         "short_video"
       ],
-      "primary_topic": "耐克中国线上渠道调整，对品牌自播和达人分销意味着什么？",
-      "content_angle": "用官方事实和蝉妈妈品牌渠道数据解释，不做退出中国电商式标题党。",
-      "measurement_plan": "官方回源、搜索展现、公众号分享、视频完播、品牌数据页访问和注册。",
-      "stop_condition": "24小时内无法取得官方文件，或官方事实与抖音标题不一致即停止。",
+      "primary_topic": "耐克中国线上渠道讨论升温，品牌自播和达人分销应该观察哪些信号？",
+      "early_publish_title": "耐克中国线上渠道讨论升温，品牌自播和达人分销应该观察哪些信号？",
+      "content_angle": "先解释已确认的抖音热度信号与观察框架，再在同一网址滚动补充官方信息和蝉妈妈品牌渠道数据。",
+      "measurement_plan": "首发搜索展现、点击、公众号分享、视频完播和停留；后续记录官方信息与蝉妈妈数据更新带来的二次增长。",
+      "stop_condition": "官方事实与抖音标题不一致时立即更正；首发没有搜索展现、分享和有效停留时停止扩大渠道。",
       "content_score_reasons": {
         "demand": "抖音飙升需求强",
         "evidence": "只有平台标题，官方事实待核"
-      }
+      },
+      "topic_value_score": 90,
+      "topic_value_code": "S",
+      "topic_value_label": "高潜力",
+      "publication_status_code": "early_test",
+      "publication_status": "抢先试发",
+      "publication_priority": 5,
+      "publication_mode": "观察型或问题型内容",
+      "publication_basis": "选题价值高且真实平台信号已确认；未确认信息只限制结论强度，不阻止用观察型内容抢占窗口。",
+      "fact_boundary": "只确认该话题进入抖音飙升榜；使用‘讨论升温’和‘值得观察’表述，不写成耐克已经终止中国线上销售，也不推断退出中国电商。",
+      "pending_confirmation": [
+        "滔搏公告、交易所文件或耐克官方说明",
+        "蝉妈妈近30天品牌、商品、达人和直播数据",
+        "官方或原始信息待确认",
+        "第二个独立需求信号待确认",
+        "内容供给缺口待确认"
+      ],
+      "confirmed_trigger": true,
+      "publishable_channel": true
     }
   ],
   "actions": [
@@ -4751,13 +5033,13 @@
     },
     {
       "hotspotId": "HT-20260722-007",
-      "actionType": "潜力话题补证",
+      "actionType": "潜力话题信息确认",
       "task": "核对完整关键词、数据日期、百度与创作者指数需求及内容供给缺口",
       "owner": "内容/GEO",
       "collaborators": "数据",
       "deadline": "2026-07-23",
       "deliverable": "需求与供给核验表",
-      "acceptance": "未验证前不发布主稿",
+      "acceptance": "日期未确认前不发布主稿",
       "stopCondition": "无第二平台或日期无法核实即停止",
       "status": "待验证"
     },
@@ -4799,27 +5081,27 @@
     },
     {
       "hotspotId": "HT-20260722-011",
-      "actionType": "金银热点交叉验证",
-      "task": "拆分金银关键词并核对珠宝类目7/30天订单、购买人数、开播账号和价格带",
-      "owner": "数据",
-      "collaborators": "珠宝类目内容",
+      "actionType": "金银价格观察稿",
+      "task": "先发价格与消费观察框架，同一网址滚动补充珠宝类目7/30天订单、购买人数、开播账号和价格带",
+      "owner": "内容/GEO",
+      "collaborators": "数据、珠宝类目内容",
       "deadline": "2026-07-23",
-      "deliverable": "需求与交易对照表",
+      "deliverable": "观察稿＋滚动数据区",
       "acceptance": "热搜不等于珠宝销量上涨",
-      "stopCondition": "双源不同向即停止",
-      "status": "待验证"
+      "stopCondition": "首发无有效流量且数据不同向时停止扩大发布",
+      "status": "待开始"
     },
     {
       "hotspotId": "HT-20260722-012",
-      "actionType": "品牌渠道官方回源",
-      "task": "查找滔搏公告或交易所文件并复核耐克品牌店播、达人和商品结构",
-      "owner": "热点运营",
+      "actionType": "品牌渠道观察稿",
+      "task": "先发抖音热度信号与渠道观察清单，同一网址滚动补充滔搏公告、交易所文件和耐克品牌数据",
+      "owner": "内容/GEO",
       "collaborators": "品牌、数据",
       "deadline": "2026-07-23",
-      "deliverable": "官方事实与品牌数据卡",
-      "acceptance": "不得推断耐克退出中国电商",
-      "stopCondition": "24小时无法回源即归档",
-      "status": "待验证"
+      "deliverable": "观察稿＋滚动更新区",
+      "acceptance": "不得把平台标题写成官方结论",
+      "stopCondition": "事实不一致时立即更正并停止扩大发布",
+      "status": "待开始"
     }
   ],
   "scanLogs": [
@@ -5037,7 +5319,7 @@
       "signal": "AI Agent书、代码图谱和Agent工具继续高增，但无蝉妈妈电商场景证据",
       "relatedIds": "009",
       "limitation": "星标不等于生产采用",
-      "nextAction": "保持补证观察，不转成内容执行",
+      "nextAction": "保持观察，不转成内容执行",
       "loginStatus": null,
       "dataDate": "Today",
       "queryTerms": [],
@@ -5147,6 +5429,6 @@
       "loginAction": null
     }
   ],
-  "boundaryText": "1）本轮共12条：事件热点9条、潜力话题3条；电商9条、科技3条。业务判断为重点跟进5条、低成本跟进3条、补证观察4条、不追0条；发布建议为优先发布0条、小范围测试7条、补证后再发4条、不发布1条。\n2）证据可靠性、真实热度、业务优先和发布建议分开判断；网页只显示中文结论，字母代码仅保留在后台计算字段。\n3）基线校正不只针对珠宝。高客单、低价高销量、季节商品、促销活动、明星单场、小基数暴涨和平台估算数据，都必须比较自身或同类基线、验证多周期增长，并取得至少两项独立变化信号。\n4）材质、异常发品、欺诈发货和商品卡免佣均为抖音官方实质规则，保持重点跟进；但属于精准商家内容，最多小范围测试，不做全矩阵铺量。\n5）美塑仪单品因缺少自身、同价位和跨平台基线改为补证观察、补证后再发；珠宝单日榜属于未成热点、补证观察且不发布。\n6）巨量云图最新可选周期仍为2026-06-21至2026-07-20，7月21日和22日不可选；蝉妈妈完整日榜为7月21日，黑马榜更新于7月22日05:39。平台指数、区间和预估值不得写成实际成交。\n7）创作者指数发现的金银价格与滔搏/耐克话题只进入潜力池；前者需交易数据交叉验证，后者需公司官方文件回源。\n8）AIDSO和百度指数复扫标签无响应；抖音搜索、火山引擎、新智元、36氪、雷峰网和人人都是产品经理复扫受限，未用SEO结果补位。\n9）当前没有可直接大范围发布的选题；补证完成前只做验证，不投广告、不全量召回。",
-  "sourceBrief": "新规则复扫：业务重要、真实热度和内容流量分开判断。四项抖音官方实质规则保持重点跟进；珠宝单日榜属于未成热点、补证观察且不发布，美塑仪单品也因缺少自身与同类基线改为补证观察。新增3条潜力话题，其中金银价格和滔搏/耐克来自抖音指数高位信号，均需跨平台或官方回源后再发布；店铺经营健康问题仍因日期未核继续补证。当前没有可直接大范围发布的选题。"
+  "boundaryText": "1）本轮共12条：事件热点9条、潜力话题3条；电商9条、科技3条。业务响应、热度信号、选题价值和内容动作分别计算，不能用一个标签代替全部结论。\n2）材质、异常发品、欺诈发货和商品卡免佣属于抖音官方实质规则，保持业务重点响应；受众较窄时只做定向发布。\n3）金银价格与滔搏/耐克均有真实抖音热度信号，选题价值高，采用观察型或问题型内容抢先试发；首发不下未确认结论，并在同一网址滚动更新官方信息与蝉妈妈数据。\n4）基线校正不只针对珠宝。高客单、低价高销量、季节商品、促销活动、明星单场、小基数暴涨和平台估算数据，都必须比较自身或同类基线、验证多周期增长，并取得至少两项独立变化信号。\n5）美塑仪单品缺少自身、同价位和跨平台基线，继续观察；珠宝单日榜属于未成热点，不发布。\n6）巨量云图最新可选周期仍为2026-06-21至2026-07-20，7月21日和22日不可选；蝉妈妈完整日榜为7月21日，黑马榜更新于7月22日05:39。平台指数、区间和预估值不得写成实际成交。\n7）AIDSO和百度指数复扫标签无响应；抖音搜索、火山引擎、新智元、36氪、雷峰网和人人都是产品经理复扫受限，未用SEO结果补位。\n8）抢先试发不等于事实确认：没有真实触发信号时不发布；没有成熟页面、埋点和准确人群时不投广告、不全量召回。",
+  "sourceBrief": "新匹配机制复扫：业务响应、热度信号、选题价值和内容动作分开判断。四项抖音官方实质规则保持业务重点响应并定向发布；珠宝单日榜与美塑仪单品因缺少可比基线继续观察。金银价格和滔搏/耐克为高潜力话题，已有真实抖音热度信号，先用观察型内容抢先试发，再在同一网址滚动更新官方信息和蝉妈妈数据。"
 }
