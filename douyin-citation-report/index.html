@@ -266,6 +266,51 @@
     tbody tr:hover { background: #f7f9fa; }
     .rank { color: var(--muted); font-family: var(--mono); }
 
+    .source-tool {
+      margin-top: 18px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .source-tool + .source-tool { margin-top: 18px; }
+    .source-tool-head { display: flex; justify-content: space-between; gap: 20px; align-items: start; }
+    .source-tool-head h3 { margin: 0 0 4px; }
+    .source-controls { display: grid; gap: 12px; align-items: end; margin: 18px 0 14px; }
+    .candidate-controls { grid-template-columns: repeat(3, minmax(160px, 1fr)); }
+    .url-controls { grid-template-columns: minmax(260px, 2fr) minmax(180px, 1fr) minmax(140px, .7fr); }
+    .source-control { display: grid; gap: 6px; min-width: 0; }
+    .source-control-label { color: var(--muted); font-size: 11px; font-weight: 700; }
+    .source-control input, .source-control select {
+      width: 100%; min-height: 38px; padding: 8px 10px;
+      border: 1px solid var(--line-strong); border-radius: 4px;
+      background: #fff; color: var(--ink); font: 500 13px/1.3 var(--sans);
+    }
+    .source-control input:focus, .source-control select:focus {
+      outline: 2px solid var(--blue-soft); outline-offset: 1px; border-color: var(--blue);
+    }
+    .source-summary {
+      min-height: 28px; display: flex; justify-content: space-between; gap: 12px;
+      align-items: center; margin-bottom: 8px; color: var(--muted); font-size: 12px;
+    }
+    .source-summary strong { color: var(--ink); font-size: 13px; }
+    .source-table { min-width: 820px; }
+    .source-url-table { min-width: 980px; }
+    .source-url-cell { width: 52%; }
+    .source-link { color: var(--blue); text-decoration: none; word-break: break-all; }
+    .source-link:hover { text-decoration: underline; }
+    .source-pagination {
+      display: flex; justify-content: flex-end; align-items: center;
+      gap: 8px; min-height: 36px; margin-top: 12px;
+    }
+    .icon-button {
+      width: 36px; height: 36px; padding: 0; border: 1px solid var(--line-strong);
+      border-radius: 4px; background: #fff; color: var(--ink); cursor: pointer; font-size: 18px;
+    }
+    .icon-button:hover:not(:disabled) { border-color: var(--blue); color: var(--blue); }
+    .icon-button:disabled { opacity: .38; cursor: not-allowed; }
+    .source-page-label { min-width: 92px; color: var(--muted); text-align: center; font-size: 12px; }
+    .empty-row { padding: 26px 14px; color: var(--muted); text-align: center; }
+
     .segmented { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 6px; padding: 2px; background: #eef1f3; }
     .segmented button {
       min-height: 30px; padding: 6px 10px; border: 0; border-radius: 4px;
@@ -398,6 +443,11 @@
       .grade { grid-column: 2; justify-self: start; }
       .quality-grid { grid-template-columns: 1fr; }
       .download-list { grid-template-columns: 1fr; }
+      .source-tool { padding: 14px; }
+      .source-tool-head { display: block; }
+      .candidate-controls, .url-controls { grid-template-columns: 1fr; }
+      .source-summary { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .source-pagination { justify-content: space-between; }
     }
     @media print {
       body { background: #fff; font-size: 11px; }
@@ -443,6 +493,7 @@
       <a href="#question-types">问题类型</a>
       <a href="#months">月份变化</a>
       <a href="#sources">来源结构</a>
+      <a href="#source-urls">网址与合作</a>
       <a href="#accounts">账号与互动</a>
       <a href="#answers">最终回答</a>
       <a href="#quality">质量与限制</a>
@@ -637,9 +688,97 @@
         <div class="caveat" style="margin-top:12px">“其他网站（合并项）”主要包括未归入上面固定类别的工具官网、数据服务站、企业站和其他长尾网站，例如 jzl.com、fanruan.com、deepnavi.cn、feigua.cn、newrank.cn。4,076次去重引用来自1,062个不同页面。</div>
       </section>
 
+      <section class="report-section" id="source-urls">
+        <div class="section-head">
+          <div><span class="section-number">06</span><h2>全部网址与合作候选</h2></div>
+          <p class="section-note">完整保留2,355条来源记录，并按平台域名聚合筛选具有一定样本引用体量的合作候选。</p>
+        </div>
+        <div class="caveat">合作候选仅依据本次576条回答中的引用次数和不同来源页面数筛选，不代表网站真实流量、用户规模或合作意愿。正式接洽前仍需核验公司主体、业务匹配和联系方式。</div>
+
+        <div class="source-tool" id="partner-candidates">
+          <div class="source-tool-head">
+            <div>
+              <h3>合作候选平台</h3>
+              <p class="caption">默认条件：至少50次去重引用、至少5个不同页面，仅看外部平台；按引用次数从高到低排列。</p>
+            </div>
+          </div>
+          <div class="source-controls candidate-controls">
+            <label class="source-control">
+              <span class="source-control-label">最少去重引用次数</span>
+              <input id="partner-min-citations" type="number" min="1" step="10" value="50" inputmode="numeric">
+            </label>
+            <label class="source-control">
+              <span class="source-control-label">最少不同页面数</span>
+              <input id="partner-min-urls" type="number" min="1" step="1" value="5" inputmode="numeric">
+            </label>
+            <label class="source-control">
+              <span class="source-control-label">平台体系</span>
+              <select id="partner-system-filter">
+                <option value="external" selected>外部平台</option>
+                <option value="all">全部体系</option>
+                <option value="bytedance">字节/头条系</option>
+              </select>
+            </label>
+          </div>
+          <div class="source-summary" role="status" aria-live="polite">
+            <strong id="partner-count">正在载入候选平台</strong>
+            <span>体量为样本内指标，不等同于市场规模</span>
+          </div>
+          <div class="table-wrap">
+            <table class="source-table">
+              <thead><tr><th>平台域名</th><th>去重引用次数</th><th>占全部引用</th><th>不同页面</th><th>来源类型</th><th>体系</th></tr></thead>
+              <tbody id="partner-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="source-tool" id="all-source-urls">
+          <div class="source-tool-head">
+            <div>
+              <h3>全部采样引用网址</h3>
+              <p class="caption">共2,355条来源记录。网址按规范URL保留，路径大小写不同的记录不合并。</p>
+            </div>
+          </div>
+          <div class="source-controls url-controls">
+            <label class="source-control">
+              <span class="source-control-label">搜索网址或域名</span>
+              <input id="source-url-search" type="search" placeholder="输入网址、域名或来源类型" autocomplete="off">
+            </label>
+            <label class="source-control">
+              <span class="source-control-label">来源类型</span>
+              <select id="source-type-filter"><option value="all">全部类型</option></select>
+            </label>
+            <label class="source-control">
+              <span class="source-control-label">每页显示</span>
+              <select id="source-page-size">
+                <option value="50" selected>50条</option>
+                <option value="100">100条</option>
+                <option value="250">250条</option>
+                <option value="all">全部2,355条</option>
+              </select>
+            </label>
+          </div>
+          <div class="source-summary" role="status" aria-live="polite">
+            <strong id="source-url-count">正在载入网址</strong>
+            <span id="source-url-range"></span>
+          </div>
+          <div class="table-wrap">
+            <table class="source-table source-url-table">
+              <thead><tr><th>网址</th><th>平台域名</th><th>来源类型</th><th>去重引用次数</th><th>覆盖问题</th></tr></thead>
+              <tbody id="source-url-table-body"></tbody>
+            </table>
+          </div>
+          <div class="source-pagination">
+            <button class="icon-button" id="source-page-prev" type="button" title="上一页" aria-label="上一页">←</button>
+            <span class="source-page-label" id="source-page-label">第1 / 1页</span>
+            <button class="icon-button" id="source-page-next" type="button" title="下一页" aria-label="下一页">→</button>
+          </div>
+        </div>
+      </section>
+
       <section class="report-section" id="accounts">
         <div class="section-head">
-          <div><span class="section-number">06</span><h2>账号特征与互动关系</h2></div>
+          <div><span class="section-number">07</span><h2>账号特征与互动关系</h2></div>
           <p class="section-note">账号结论证据较低：完整视频元数据仅覆盖72/547个视频，对应59个作者。</p>
         </div>
         <div class="caveat">以下账号分布只代表13.16%的元数据成功视频。不能从已引用子样本推断企业号、员工号或个人号的真实选择权重。</div>
@@ -673,7 +812,7 @@
 
       <section class="report-section" id="answers">
         <div class="section-head">
-          <div><span class="section-number">07</span><h2>五个最终问题</h2></div>
+          <div><span class="section-number">08</span><h2>五个最终问题</h2></div>
           <p class="section-note">“偏好”严格区分为已引用来源分布与算法选择权重。后者缺少未引用候选对照，不能识别。</p>
         </div>
         <div class="answer-list">
@@ -687,7 +826,7 @@
 
       <section class="report-section" id="quality">
         <div class="section-head">
-          <div><span class="section-number">08</span><h2>质量、边界与可复核性</h2></div>
+          <div><span class="section-number">09</span><h2>质量、边界与可复核性</h2></div>
           <p class="section-note">所有百分比均可从CSV复算；冲突保留原值与处理规则，不静默覆盖。</p>
         </div>
         <div class="quality-grid">
@@ -713,7 +852,7 @@
 
       <section class="report-section" id="downloads">
         <div class="section-head">
-          <div><span class="section-number">09</span><h2>数据与明细文件</h2></div>
+          <div><span class="section-number">10</span><h2>数据与明细文件</h2></div>
           <p class="section-note">报告结论对应到去重引用、来源、抖音视频明细与两轮质量检验文件。</p>
         </div>
         <div class="download-list">
@@ -731,6 +870,7 @@
   <footer>爱搜 × 豆包引用源研究 · 数据生成与双轮检验均完成于 2026-07-15</footer>
   <button class="back-top" id="back-top" type="button" title="回到顶部" aria-label="回到顶部">↑</button>
 
+  <script src="source_urls_data.js"></script>
   <script>
     const monthSeries = {
       unique: { label: '按不同来源页面统计', values: [28.57, 31.17, 28.72, 15.85] },
@@ -759,6 +899,140 @@
       });
     });
 
+    const sourceUrls = Array.isArray(window.SOURCE_URLS) ? window.SOURCE_URLS : [];
+    const sourceDomains = Array.isArray(window.SOURCE_DOMAINS) ? window.SOURCE_DOMAINS : [];
+    const numberFormat = new Intl.NumberFormat('zh-CN');
+    const totalCitationCount = sourceUrls.reduce((sum, item) => sum + item.citations, 0) || 9936;
+
+    function appendTextCell(row, text, className = '') {
+      const cell = document.createElement('td');
+      cell.textContent = text;
+      if (className) cell.className = className;
+      row.appendChild(cell);
+      return cell;
+    }
+
+    function appendLinkCell(row, href, label, className = '') {
+      const cell = document.createElement('td');
+      if (className) cell.className = className;
+      const link = document.createElement('a');
+      link.className = 'source-link';
+      link.href = href;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = label;
+      cell.appendChild(link);
+      row.appendChild(cell);
+    }
+
+    function renderEmptyRow(body, columnCount, message) {
+      const row = document.createElement('tr');
+      const cell = document.createElement('td');
+      cell.className = 'empty-row';
+      cell.colSpan = columnCount;
+      cell.textContent = message;
+      row.appendChild(cell);
+      body.appendChild(row);
+    }
+
+    const partnerMinCitations = document.getElementById('partner-min-citations');
+    const partnerMinUrls = document.getElementById('partner-min-urls');
+    const partnerSystemFilter = document.getElementById('partner-system-filter');
+    const partnerCount = document.getElementById('partner-count');
+    const partnerTableBody = document.getElementById('partner-table-body');
+
+    function renderPartnerCandidates() {
+      const minCitations = Math.max(1, Number.parseInt(partnerMinCitations.value, 10) || 1);
+      const minUrls = Math.max(1, Number.parseInt(partnerMinUrls.value, 10) || 1);
+      const system = partnerSystemFilter.value;
+      const candidates = sourceDomains.filter(item => {
+        const matchesSize = item.citations >= minCitations && item.urls >= minUrls;
+        const matchesSystem = system === 'all' || (system === 'bytedance' ? item.bytedance : !item.bytedance);
+        return matchesSize && matchesSystem;
+      });
+
+      partnerCount.textContent = `筛选出 ${numberFormat.format(candidates.length)} 个合作候选平台`;
+      partnerTableBody.replaceChildren();
+      if (!candidates.length) {
+        renderEmptyRow(partnerTableBody, 6, sourceDomains.length ? '当前条件下没有符合的平台' : '平台数据未载入');
+        return;
+      }
+
+      candidates.forEach(item => {
+        const row = document.createElement('tr');
+        appendLinkCell(row, `https://${item.domain}/`, item.domain);
+        appendTextCell(row, numberFormat.format(item.citations), 'numeric');
+        appendTextCell(row, `${(item.citations / totalCitationCount * 100).toFixed(2)}%`, 'numeric');
+        appendTextCell(row, numberFormat.format(item.urls), 'numeric');
+        appendTextCell(row, item.type);
+        appendTextCell(row, item.bytedance ? '字节/头条系' : '外部平台');
+        partnerTableBody.appendChild(row);
+      });
+    }
+
+    [partnerMinCitations, partnerMinUrls].forEach(input => input.addEventListener('input', renderPartnerCandidates));
+    partnerSystemFilter.addEventListener('change', renderPartnerCandidates);
+
+    const sourceUrlSearch = document.getElementById('source-url-search');
+    const sourceTypeFilter = document.getElementById('source-type-filter');
+    const sourcePageSize = document.getElementById('source-page-size');
+    const sourceUrlCount = document.getElementById('source-url-count');
+    const sourceUrlRange = document.getElementById('source-url-range');
+    const sourceUrlTableBody = document.getElementById('source-url-table-body');
+    const sourcePagePrev = document.getElementById('source-page-prev');
+    const sourcePageNext = document.getElementById('source-page-next');
+    const sourcePageLabel = document.getElementById('source-page-label');
+    let sourceUrlPage = 1;
+
+    [...new Set(sourceUrls.map(item => item.type))]
+      .sort((a, b) => a.localeCompare(b, 'zh-CN'))
+      .forEach(type => sourceTypeFilter.add(new Option(type, type)));
+
+    function renderSourceUrls() {
+      const keyword = sourceUrlSearch.value.trim().toLowerCase();
+      const selectedType = sourceTypeFilter.value;
+      const filtered = sourceUrls.filter(item => {
+        const matchesType = selectedType === 'all' || item.type === selectedType;
+        const searchable = `${item.url} ${item.domain} ${item.type}`.toLowerCase();
+        return matchesType && (!keyword || searchable.includes(keyword));
+      });
+      const showAll = sourcePageSize.value === 'all';
+      const pageSize = showAll ? Math.max(filtered.length, 1) : Number.parseInt(sourcePageSize.value, 10);
+      const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+      sourceUrlPage = Math.min(sourceUrlPage, totalPages);
+      const start = (sourceUrlPage - 1) * pageSize;
+      const end = Math.min(start + pageSize, filtered.length);
+      const pageRows = filtered.slice(start, end);
+
+      sourceUrlCount.textContent = `找到 ${numberFormat.format(filtered.length)} 条网址`;
+      sourceUrlRange.textContent = filtered.length ? `显示第 ${numberFormat.format(start + 1)}–${numberFormat.format(end)} 条` : '没有匹配结果';
+      sourcePageLabel.textContent = `第${numberFormat.format(sourceUrlPage)} / ${numberFormat.format(totalPages)}页`;
+      sourcePagePrev.disabled = sourceUrlPage <= 1;
+      sourcePageNext.disabled = sourceUrlPage >= totalPages;
+
+      sourceUrlTableBody.replaceChildren();
+      if (!pageRows.length) {
+        renderEmptyRow(sourceUrlTableBody, 5, sourceUrls.length ? '没有匹配的网址，请调整搜索或筛选条件' : '网址数据未载入');
+        return;
+      }
+
+      pageRows.forEach(item => {
+        const row = document.createElement('tr');
+        appendLinkCell(row, item.url, item.url, 'source-url-cell');
+        appendTextCell(row, item.domain);
+        appendTextCell(row, item.type);
+        appendTextCell(row, numberFormat.format(item.citations), 'numeric');
+        appendTextCell(row, numberFormat.format(item.questions), 'numeric');
+        sourceUrlTableBody.appendChild(row);
+      });
+    }
+
+    sourceUrlSearch.addEventListener('input', () => { sourceUrlPage = 1; renderSourceUrls(); });
+    sourceTypeFilter.addEventListener('change', () => { sourceUrlPage = 1; renderSourceUrls(); });
+    sourcePageSize.addEventListener('change', () => { sourceUrlPage = 1; renderSourceUrls(); });
+    sourcePagePrev.addEventListener('click', () => { if (sourceUrlPage > 1) { sourceUrlPage -= 1; renderSourceUrls(); } });
+    sourcePageNext.addEventListener('click', () => { sourceUrlPage += 1; renderSourceUrls(); });
+
     const navLinks = [...document.querySelectorAll('.side-nav a')];
     const sections = [...document.querySelectorAll('.report-section')];
     const observer = new IntersectionObserver(entries => {
@@ -773,6 +1047,8 @@
     backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     document.getElementById('print-report').addEventListener('click', () => window.print());
     renderMonthChart('unique');
+    renderPartnerCandidates();
+    renderSourceUrls();
   </script>
 </body>
 </html>
