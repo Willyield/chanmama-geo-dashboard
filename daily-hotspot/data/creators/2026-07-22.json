@@ -61,26 +61,26 @@
     "correctedFromPriorSnapshot": true,
     "previousSnapshotSha256": "63a9971c846520d0ed2e6f8faa92b417c66a55402fa36663dc27769205b5bc7e",
     "previousSnapshotDate": "2026-07-21",
-    "manifest": "../douyin-creator-monitor/data/videos/2026-07-22-1000-public-refetch-manifest-v1.json",
+    "manifest": "2026-07-22-1000-public-refetch-manifest-v1.json",
     "inputs": [
       {
-        "path": "../douyin-creator-monitor/data/videos/2026-07-22-1000-public-metadata-622-v1.jsonl",
+        "path": "2026-07-22-1000-public-metadata-622-v1.jsonl",
         "sha256": "252f7fe40e3b55ab073759f221c532b9f8bf99a110e4a7e3cb1a7ca8ef5a7472"
       },
       {
-        "path": "../douyin-creator-monitor/data/videos/2026-07-22-1000-vs-day2-public-delta-622-v1.jsonl",
+        "path": "2026-07-22-1000-vs-day2-public-delta-622-v1.jsonl",
         "sha256": "ab774db99423811260de3e5e0f27a657b733266d6e1d888165d335ebeb1ef098"
       },
       {
-        "path": "../douyin-creator-monitor/data/videos/2026-07-22-1000-public-metadata-622-summary-v1.json",
+        "path": "2026-07-22-1000-public-metadata-622-summary-v1.json",
         "sha256": "a1fab8f8d1b33fa0e9a0f2464d85ae22677795f973314003a37c1896312ae50c"
       },
       {
-        "path": "../douyin-creator-monitor/incoming/2026-07-22-1000-public-source-status-v1.json",
+        "path": "2026-07-22-1000-public-source-status-v1.json",
         "sha256": "77fc34c2e73be65249db3efc797c83e8aeda350d928f76710b734196b3440d16"
       },
       {
-        "path": "../douyin-creator-monitor/evidence/search/2026-07-22-0954-platform-preflight-v1.json",
+        "path": "2026-07-22-0954-platform-preflight-v1.json",
         "sha256": "971466d69a7adee93cb1db250210af440d2d687c6c1608ca7d977f6bd83413aa"
       }
     ],
@@ -118,7 +118,7 @@
       "refetch": {
         "targetVideos": 36,
         "successfulVideos": 0,
-        "validIncrements": 1,
+        "validIncrements": 0,
         "countDecreases": 0,
         "roundId": "DAY3_1000_T0",
         "observedAt": "2026-07-22T01:56:01.835Z",
@@ -1038,7 +1038,7 @@
       "refetch": {
         "targetVideos": 21,
         "successfulVideos": 0,
-        "validIncrements": 1,
+        "validIncrements": 0,
         "countDecreases": 0,
         "roundId": "DAY3_1000_T0",
         "observedAt": "2026-07-22T01:56:01.835Z",
@@ -1949,7 +1949,7 @@
       "refetch": {
         "targetVideos": 21,
         "successfulVideos": 0,
-        "validIncrements": 2,
+        "validIncrements": 0,
         "countDecreases": 0,
         "roundId": "DAY3_1000_T0",
         "observedAt": "2026-07-22T01:56:01.835Z",
@@ -2108,7 +2108,7 @@
       "refetch": {
         "targetVideos": 21,
         "successfulVideos": 0,
-        "validIncrements": 1,
+        "validIncrements": 0,
         "countDecreases": 0,
         "roundId": "DAY3_1000_T0",
         "observedAt": "2026-07-22T01:56:01.835Z",
@@ -2186,7 +2186,7 @@
       "refetch": {
         "targetVideos": 21,
         "successfulVideos": 0,
-        "validIncrements": 2,
+        "validIncrements": 0,
         "countDecreases": 0,
         "roundId": "DAY3_1000_T0",
         "observedAt": "2026-07-22T01:56:01.835Z",
@@ -2341,7 +2341,7 @@
       "refetch": {
         "targetVideos": 21,
         "successfulVideos": 0,
-        "validIncrements": 1,
+        "validIncrements": 0,
         "countDecreases": 0,
         "roundId": "DAY3_1000_T0",
         "observedAt": "2026-07-22T01:56:01.835Z",
@@ -2454,7 +2454,7 @@
         "targetVideos": 21,
         "successfulVideos": 0,
         "validIncrements": 0,
-        "countDecreases": 1,
+        "countDecreases": 0,
         "roundId": "DAY3_1000_T0",
         "observedAt": "2026-07-22T01:56:01.835Z",
         "failedVideos": 21,
@@ -2650,7 +2650,7 @@
       "refetch": {
         "targetVideos": 18,
         "successfulVideos": 0,
-        "validIncrements": 1,
+        "validIncrements": 0,
         "countDecreases": 0,
         "roundId": "DAY3_1000_T0",
         "observedAt": "2026-07-22T01:56:01.835Z",
@@ -2965,7 +2965,7 @@
         "targetVideos": 18,
         "successfulVideos": 0,
         "validIncrements": 0,
-        "countDecreases": 1,
+        "countDecreases": 0,
         "roundId": "DAY3_1000_T0",
         "observedAt": "2026-07-22T01:56:01.835Z",
         "failedVideos": 18,
@@ -3518,7 +3518,7 @@
       "refetch": {
         "targetVideos": 20,
         "successfulVideos": 0,
-        "validIncrements": 1,
+        "validIncrements": 0,
         "countDecreases": 0,
         "roundId": "DAY3_1000_T0",
         "observedAt": "2026-07-22T01:56:01.835Z",
@@ -4136,8 +4136,8 @@
       "refetch": {
         "targetVideos": 43,
         "successfulVideos": 0,
-        "validIncrements": 34,
-        "countDecreases": 1,
+        "validIncrements": 0,
+        "countDecreases": 0,
         "roundId": "DAY3_1000_T0",
         "observedAt": "2026-07-22T01:56:01.835Z",
         "failedVideos": 43,
@@ -4862,7 +4862,7 @@
       "refetch": {
         "targetVideos": 75,
         "successfulVideos": 0,
-        "validIncrements": 5,
+        "validIncrements": 0,
         "countDecreases": 0,
         "roundId": "DAY3_1000_T0",
         "observedAt": "2026-07-22T01:56:01.835Z",
@@ -5680,7 +5680,7 @@
       "refetch": {
         "targetVideos": 54,
         "successfulVideos": 0,
-        "validIncrements": 1,
+        "validIncrements": 0,
         "countDecreases": 0,
         "roundId": "DAY3_1000_T0",
         "observedAt": "2026-07-22T01:56:01.835Z",

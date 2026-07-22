@@ -145,12 +145,18 @@ async function loadRoute() {
     const date = index.dates.some((item) => item.date === requestedDate) ? requestedDate : index.latest;
     const data = await fetchJson(`./data/${route.module}/${date}.json`);
     if (route.module === "creators") {
-      try {
-        data.decision = await fetchJson(`./data/creators/decisions/${date}.json`);
-      } catch (error) {
-        if (!String(error.message).startsWith("404")) throw error;
-        data.decision = null;
-      }
+      const fetchOptional = async (url) => {
+        try {
+          return await fetchJson(url);
+        } catch (error) {
+          if (!String(error.message).startsWith("404")) throw error;
+          return null;
+        }
+      };
+      [data.decision, data.qualityReview] = await Promise.all([
+        fetchOptional(`./data/creators/decisions/${date}.json`),
+        fetchOptional(`./data/creators/quality-review/${date}.json`),
+      ]);
     }
     if (requestId !== state.requestId) return;
     state.index = index;

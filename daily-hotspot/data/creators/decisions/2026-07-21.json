@@ -12662,19 +12662,19 @@
     "cookiesReadOrExported": false,
     "inputs": [
       {
-        "path": "../douyin-creator-monitor/data/snapshots/2026-07-21/164634-DAY2_1600_PARTIAL_BASELINE_CORRECTED.json",
+        "path": "164634-DAY2_1600_PARTIAL_BASELINE_CORRECTED.json",
         "sha256": "63a9971c846520d0ed2e6f8faa92b417c66a55402fa36663dc27769205b5bc7e"
       },
       {
-        "path": "../douyin-creator-monitor/data/videos/2026-07-21-1000-profile-api-150.jsonl",
+        "path": "2026-07-21-1000-profile-api-150.jsonl",
         "sha256": "bc08da42e88ac60327c5e13271c24b64956ba671afafacf808daee8d061a0613"
       },
       {
-        "path": "../douyin-creator-monitor/data/videos/2026-07-21-source-baseline-to-1600-public-delta-23-corrected.jsonl",
+        "path": "2026-07-21-source-baseline-to-1600-public-delta-23-corrected.jsonl",
         "sha256": "c7f20523dd80f56faefb3aa1fc20ec8724065c6f7d02db19996f75cada8dc057"
       },
       {
-        "path": "../douyin-creator-monitor/data/candidates/2026-07-21-authority-source-pool-v1.json",
+        "path": "2026-07-21-authority-source-pool-v1.json",
         "sha256": "701cccdf953f56b35c75c44fe125a917d58e4e9d5986b503783b49bfa6d04416"
       }
     ]

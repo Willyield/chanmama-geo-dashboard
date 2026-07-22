@@ -11696,39 +11696,39 @@
     "cookiesReadOrExported": false,
     "inputs": [
       {
-        "path": "../douyin-creator-monitor/data/snapshots/2026-07-21/164634-DAY2_1600_PARTIAL_BASELINE_CORRECTED.json",
+        "path": "164634-DAY2_1600_PARTIAL_BASELINE_CORRECTED.json",
         "sha256": "63a9971c846520d0ed2e6f8faa92b417c66a55402fa36663dc27769205b5bc7e"
       },
       {
-        "path": "../douyin-creator-monitor/data/videos/2026-07-21-1000-profile-api-150.jsonl",
+        "path": "2026-07-21-1000-profile-api-150.jsonl",
         "sha256": "bc08da42e88ac60327c5e13271c24b64956ba671afafacf808daee8d061a0613"
       },
       {
-        "path": "../douyin-creator-monitor/data/videos/2026-07-21-source-baseline-to-1600-public-delta-23-corrected.jsonl",
+        "path": "2026-07-21-source-baseline-to-1600-public-delta-23-corrected.jsonl",
         "sha256": "c7f20523dd80f56faefb3aa1fc20ec8724065c6f7d02db19996f75cada8dc057"
       },
       {
-        "path": "../douyin-creator-monitor/data/candidates/2026-07-21-authority-source-pool-v1.json",
+        "path": "2026-07-21-authority-source-pool-v1.json",
         "sha256": "701cccdf953f56b35c75c44fe125a917d58e4e9d5986b503783b49bfa6d04416"
       },
       {
-        "path": "../douyin-creator-monitor/data/videos/2026-07-22-1000-public-metadata-622-v1.jsonl",
+        "path": "2026-07-22-1000-public-metadata-622-v1.jsonl",
         "sha256": "252f7fe40e3b55ab073759f221c532b9f8bf99a110e4a7e3cb1a7ca8ef5a7472"
       },
       {
-        "path": "../douyin-creator-monitor/data/videos/2026-07-22-1000-vs-day2-public-delta-622-v1.jsonl",
+        "path": "2026-07-22-1000-vs-day2-public-delta-622-v1.jsonl",
         "sha256": "ab774db99423811260de3e5e0f27a657b733266d6e1d888165d335ebeb1ef098"
       },
       {
-        "path": "../douyin-creator-monitor/data/videos/2026-07-22-1000-public-metadata-622-summary-v1.json",
+        "path": "2026-07-22-1000-public-metadata-622-summary-v1.json",
         "sha256": "a1fab8f8d1b33fa0e9a0f2464d85ae22677795f973314003a37c1896312ae50c"
       },
       {
-        "path": "../douyin-creator-monitor/incoming/2026-07-22-1000-public-source-status-v1.json",
+        "path": "2026-07-22-1000-public-source-status-v1.json",
         "sha256": "77fc34c2e73be65249db3efc797c83e8aeda350d928f76710b734196b3440d16"
       },
       {
-        "path": "../douyin-creator-monitor/evidence/search/2026-07-22-0954-platform-preflight-v1.json",
+        "path": "2026-07-22-0954-platform-preflight-v1.json",
         "sha256": "971466d69a7adee93cb1db250210af440d2d687c6c1608ca7d977f6bd83413aa"
       }
     ],

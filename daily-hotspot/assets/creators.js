@@ -54,6 +54,40 @@ const ACTION_META = {
   UNKNOWN: { label: "证据不足", className: "status-d", rank: 8 },
 };
 
+const QUALITY_LANE_META = {
+  Q0_HIGH_POTENTIAL_TOP_UP: { label: "Q0 高潜补样本", className: "status-pass" },
+  Q1_MANUAL_SEMANTIC_OR_ACTIVITY_RECHECK: { label: "Q1 语义 / 活跃复核", className: "status-watch" },
+  Q1_OVERFLOW_CONTENT_COLLECTION: { label: "Q1 外部线索采集", className: "status-d" },
+  Q2_IDENTITY_OR_RISK_REVIEW: { label: "Q2 身份 / 风险复核", className: "status-watch" },
+  Q3_HOLD: { label: "Q3 暂停投入", className: "status-conflict" },
+};
+
+const QUALITY_ACTION_LABELS = {
+  TOP_UP_SAMPLE_THEN_FULL_MANUAL_REVIEW: "补齐至 15 条后进入完整人工首审",
+  MANUAL_RISK_CONTEXT_REVIEW_THEN_TOP_UP_SAMPLE: "先核风险词语境，再补齐样本",
+  RECHECK_SUBTITLE_SEMANTICS_AND_ACTIVITY: "复核字幕、画面与 60 天活跃度",
+  RECHECK_RISK_CONTEXT_SUBTITLE_SEMANTICS_AND_ACTIVITY: "先核风险语境，再复核字幕与活跃度",
+  MANUAL_RISK_REVIEW_BEFORE_ANY_TOP_UP: "先排除违规玩法，再决定是否补样",
+  MANUAL_SEMANTIC_REVIEW_BEFORE_TOP_UP: "先核核心实操语义，再决定是否补样",
+  RECOVER_ACCOUNT_IDENTITY_AND_SAMPLE: "恢复稳定账号身份与作品样本",
+  VERIFY_IDENTITY_BEFORE_90D_COLLECTION: "先核账号身份，再采集 90 天作品",
+  COLLECT_PROFILE_AND_90D_SAMPLE_NO_QUALITY_CLAIM: "采集主页与 90 天作品，不作质量结论",
+  HOLD_DUPLICATE_SEARCH_LEAD: "重复线索，停止重复采集",
+  HOLD_GENERIC_SEARCH_LEAD: "泛化搜索线索，暂停投入",
+  HOLD_IDENTITY_OR_COMMERCIAL_RISK: "机构或商业获客身份，暂停投入",
+  HOLD_INSTITUTION_OR_COMMERCIAL_LEAD: "机构或商业线索，暂停投入",
+  HOLD_LOW_QUALITY_OR_GATE_DISTANCE: "质量或硬门槛距离过大，暂停投入",
+  HOLD_NO_EVIDENCE_GENERIC_IDENTITY: "无作品证据且身份泛化，暂停投入",
+  HOLD_WEAK_DOMAIN_MATCH: "领域匹配弱，暂停投入",
+};
+
+const QUALITY_STATUS_LABELS = {
+  WATCH_SAMPLE_LT15: "有效样本少于 15 条",
+  FAIL_AUTOMATED_GATE: "自动硬门槛未通过",
+  NO_MATCHED_API_EVIDENCE: "缺少匹配作品证据",
+  SEARCH_LEAD_NOT_IN_CANDIDATE_POOL: "外部搜索线索，尚未进入候选池",
+};
+
 const GATE_RULES = [
   ["90 天有效作品", ">= 15 条", "validVideos90d"],
   ["电商运营相关占比", ">= 60%", "relevantRatio"],
@@ -337,6 +371,9 @@ function normalizeDecision(data) {
     authoritySources: raw.authoritySources || null,
     methodology: firstValue(raw.methodology, data?.methodology, {}),
     limitations: uniqueStrings([...asArray(data?.limitations), ...asArray(raw.limitations)]),
+    qualityReview: data?.qualityReview && Array.isArray(data.qualityReview.entries)
+      ? data.qualityReview
+      : null,
   };
 }
 
@@ -379,6 +416,23 @@ function decisionConclusion(summary) {
 function renderDecisionLead(decision, data, compact = false) {
   const summary = decision.summary;
   const conclusion = decision.todayConclusion;
+  const reviewSummary = decision.qualityReview?.summary;
+  const kpis = reviewSummary
+    ? `<div><strong>${formatMetric(summary.immediateTopics)}</strong><span>立即推进</span></div>
+       <div><strong>${formatMetric(summary.draftTopics)}</strong><span>备稿议题</span></div>
+       <div><strong>${formatMetric(reviewSummary.high_potential_top_up)}</strong><span>Q0 高潜补样</span></div>
+       <div><strong>${formatMetric(reviewSummary.manual_semantic_or_activity_recheck)}</strong><span>Q1 语义复核</span></div>
+       <div><strong>${formatMetric(reviewSummary.held)}</strong><span>Q3 暂停投入</span></div>
+       <div title="${escapeHtml(formatConfidence(summary.confidence))}"><strong>${escapeHtml(confidenceGrade(summary.confidence))}</strong><span>结论置信</span></div>`
+    : `<div><strong>${formatMetric(summary.immediateTopics)}</strong><span>立即推进</span></div>
+       <div><strong>${formatMetric(summary.draftTopics)}</strong><span>备稿议题</span></div>
+       <div><strong>${formatMetric(summary.executeCreators)}</strong><span>优先达人</span></div>
+       <div><strong>${formatMetric(summary.watchCreators)}</strong><span>条件 / 观察</span></div>
+       <div><strong>${formatMetric(summary.scoutCreators)}</strong><span>话题侦察</span></div>
+       <div title="${escapeHtml(formatConfidence(summary.confidence))}"><strong>${escapeHtml(confidenceGrade(summary.confidence))}</strong><span>结论置信</span></div>`;
+  const reviewBoundary = reviewSummary
+    ? `质量优先队列 ${formatMetric(reviewSummary.queue_entries)} 条，仅 ${formatMetric(reviewSummary.high_potential_top_up)} 位进入高潜补样；该队列不改变候选状态。`
+    : `本轮个人复核 ${formatMetric(summary.personalReviewed)}，机构参考 ${formatMetric(summary.referenceReviewed)}。`;
   return `<section class="decision-lead${compact ? " is-compact" : ""}">
     <div class="decision-lead-copy">
       <span class="model-code">DECISION SNAPSHOT · ${escapeHtml(formatDateTime(summary.observedAt))}</span>
@@ -386,14 +440,9 @@ function renderDecisionLead(decision, data, compact = false) {
       <p>${escapeHtml(firstValue(conclusion?.why, summary.immediateTopics > 0 ? "按执行单推进，并持续监测停止条件。" : "没有足够证据时不给伪热点；先做可回收的备稿、补题和跨账号检索。"))}</p>
     </div>
     <div class="decision-kpis" aria-label="今日业务结论">
-      <div><strong>${formatMetric(summary.immediateTopics)}</strong><span>立即推进</span></div>
-      <div><strong>${formatMetric(summary.draftTopics)}</strong><span>备稿议题</span></div>
-      <div><strong>${formatMetric(summary.executeCreators)}</strong><span>优先达人</span></div>
-      <div><strong>${formatMetric(summary.watchCreators)}</strong><span>条件 / 观察</span></div>
-      <div><strong>${formatMetric(summary.scoutCreators)}</strong><span>话题侦察</span></div>
-      <div title="${escapeHtml(formatConfidence(summary.confidence))}"><strong>${escapeHtml(confidenceGrade(summary.confidence))}</strong><span>结论置信</span></div>
+      ${kpis}
     </div>
-    <div class="decision-boundary">${icon("shield-alert")}<span><strong>即时业务结论可直接执行</strong>；正式 A/B 白名单仍按完整审计门槛独立验收。当前正式白名单 ${formatMetric((data.summary?.formalWhitelistA || 0) + (data.summary?.formalWhitelistB || 0))}。本轮个人复核 ${formatMetric(summary.personalReviewed)}，机构参考 ${formatMetric(summary.referenceReviewed)}。${conclusion?.nextReview ? ` ${escapeHtml(conclusion.nextReview)}` : ""}</span></div>
+    <div class="decision-boundary">${icon("shield-alert")}<span><strong>即时业务结论可直接执行</strong>；正式 A/B 白名单仍按完整审计门槛独立验收。当前正式白名单 ${formatMetric((data.summary?.formalWhitelistA || 0) + (data.summary?.formalWhitelistB || 0))}。${reviewBoundary}${conclusion?.nextReview ? ` ${escapeHtml(conclusion.nextReview)}` : ""}</span></div>
   </section>`;
 }
 
@@ -442,6 +491,87 @@ function qualitySort(a, b) {
   const actionDiff = (ACTION_META[a.action]?.rank ?? 9) - (ACTION_META[b.action]?.rank ?? 9);
   if (actionDiff) return actionDiff;
   return (numberOrNull(b.score) ?? -1) - (numberOrNull(a.score) ?? -1);
+}
+
+function qualityLaneChip(item) {
+  const meta = QUALITY_LANE_META[item?.lane] || { label: firstValue(item?.lane, "未分层"), className: "status-d" };
+  return statusChip(meta.label, meta.className);
+}
+
+function qualityReviewAction(item) {
+  return firstValue(QUALITY_ACTION_LABELS[item?.required_action_v2], item?.required_action_v2, "等待人工复核");
+}
+
+function qualityReviewScore(item) {
+  const quality = numberOrNull(item?.quality_proxy_score);
+  const discovery = numberOrNull(item?.discovery_priority_score);
+  if (quality != null) return `<strong>${escapeHtml(formatScore(quality))}</strong><span>质量代理分</span>`;
+  if (discovery != null) return `<strong>${escapeHtml(formatScore(discovery))}</strong><span>发现优先分</span>`;
+  return `<strong>—</strong><span>无质量分</span>`;
+}
+
+function qualityReviewEvidence(item) {
+  const gates = item?.gates || {};
+  const metrics = item?.metrics || {};
+  const sample = numberOrNull(metrics.sampleSize);
+  if (sample == null) return `<span class="cell-primary">作品样本缺失</span><span class="cell-secondary">禁止估算内容质量</span>`;
+  return `<span class="cell-primary">样本 ${escapeHtml(formatMetric(sample))} · 相关 ${escapeHtml(formatPercent(gates.relevant_ratio))} · 实操 ${escapeHtml(formatPercent(gates.core_practice_title_lower_bound))}</span><span class="cell-secondary">60 天相关 ${escapeHtml(formatMetric(gates.related_videos_60d))} · 最近 ${gates.latest_related_age_days == null ? "缺失" : `${escapeHtml(formatMetric(gates.latest_related_age_days))} 天前`}</span>`;
+}
+
+function renderQualityReviewRows(rows) {
+  const desktopRows = rows.map((item) => {
+    const identity = firstValue(item.candidate_id, item.lead_id, item.creator_id, "未知账号");
+    const open = item.candidate_id ? ` data-open-id="${escapeHtml(item.candidate_id)}"` : "";
+    const profileUrl = safeUrl(item.profile_url);
+    const reasons = asArray(item.reason_codes);
+    return `<tr${open}>
+      <td>${qualityLaneChip(item)}<span class="cell-secondary mono">${escapeHtml(item.queue_id_v2)}</span></td>
+      <td><span class="cell-primary">${escapeHtml(item.nickname)}</span><span class="cell-secondary mono">${escapeHtml(identity)} · ${escapeHtml(formatFollowers(item.followers_snapshot))} 粉</span>${profileUrl !== "#" ? `<a class="table-link" href="${escapeHtml(profileUrl)}" target="_blank" rel="noopener noreferrer">${icon("external-link")}抖音主页</a>` : ""}</td>
+      <td><span class="quality-review-score">${qualityReviewScore(item)}</span>${qualityReviewEvidence(item)}</td>
+      <td><span class="cell-primary">${escapeHtml(qualityReviewAction(item))}</span><span class="cell-secondary">${escapeHtml(firstValue(QUALITY_STATUS_LABELS[item.current_status], item.current_status, "状态缺失"))}</span></td>
+      <td><span class="cell-primary">${escapeHtml(firstValue(reasons[0], "等待补证"))}</span><span class="cell-secondary">${escapeHtml(firstValue(reasons[1], "未记录第二条原因"))}</span></td>
+    </tr>`;
+  }).join("");
+  const mobileRows = rows.map((item) => {
+    const identity = firstValue(item.candidate_id, item.lead_id, item.creator_id, "未知账号");
+    const open = item.candidate_id ? ` data-open-id="${escapeHtml(item.candidate_id)}"` : "";
+    const reasons = asArray(item.reason_codes);
+    return `<article class="mobile-item quality-review-mobile"${open}>
+      <div class="mobile-item-header">${qualityLaneChip(item)}<span class="model-code">${escapeHtml(item.queue_id_v2)}</span></div>
+      <h3>${escapeHtml(item.nickname)}</h3><p>${escapeHtml(qualityReviewAction(item))}</p>
+      <div class="mobile-facts"><div class="mobile-fact"><span>账号</span><strong>${escapeHtml(identity)}</strong></div><div class="mobile-fact"><span>评分</span><strong>${escapeHtml(formatScore(firstValue(item.quality_proxy_score, item.discovery_priority_score)))}</strong></div></div>
+      <span class="cell-secondary">${escapeHtml(firstValue(reasons[0], "等待补证"))}</span>
+    </article>`;
+  }).join("");
+  return `<div class="data-region"><div class="data-table-wrap"><table class="data-table quality-review-table"><thead><tr><th>复核层级</th><th>达人 / 线索</th><th>证据</th><th>下一步</th><th>判定原因</th></tr></thead><tbody>${desktopRows}</tbody></table></div><div class="mobile-list">${mobileRows}</div></div>`;
+}
+
+function renderQualityReview(review) {
+  if (!review) return "";
+  const summary = review.summary || {};
+  const entries = asArray(review.entries);
+  const focusRows = entries.filter((item) => item.lane !== "Q3_HOLD" && numberOrNull(item.quality_proxy_score) != null);
+  const source = numberOrNull(summary.source_entries) || entries.length || 1;
+  const steps = [
+    ["Q0", "高潜补样", summary.high_potential_top_up, "is-q0"],
+    ["Q1", "语义复核", summary.manual_semantic_or_activity_recheck, "is-q1"],
+    ["EXT", "外部采集", summary.overflow_content_collection, "is-ext"],
+    ["Q2", "身份 / 风险", summary.identity_or_risk_review, "is-q2"],
+    ["Q3", "暂停投入", summary.held, "is-q3"],
+  ];
+  const funnel = steps.map(([code, label, value, tone]) => {
+    const count = numberOrNull(value) || 0;
+    const share = Math.max(0, Math.min(100, count / source * 100));
+    return `<div class="quality-funnel-step ${tone}"><span class="model-code">${code}</span><strong>${formatMetric(count)}</strong><small>${escapeHtml(label)}</small><span class="quality-funnel-bar"><i style="width:${share.toFixed(2)}%"></i></span></div>`;
+  }).join("");
+  return `<section class="quality-review-register">
+    <div class="section-title"><h2>质量优先复核队列</h2><span>${formatMetric(summary.queue_entries)} 条全量保留 · 观察 ${escapeHtml(formatDateTime(review.observed_at))}</span></div>
+    <div class="quality-review-boundary">${icon("shield-check")}<span><strong>当前结论：</strong>只有 ${formatMetric(summary.high_potential_top_up)} 位值得优先补样本；${formatMetric(summary.held)} 位暂停投入。风险词命中必须人工核验语境，不自动淘汰，也不能绕过合规门槛。</span></div>
+    <div class="quality-funnel" aria-label="质量优先审核漏斗">${funnel}</div>
+    <div class="quality-focus-heading"><div><span class="model-code">NEXT ACTION / ${formatMetric(focusRows.length)}</span><h3>有质量证据的优先复核</h3></div><span>质量代理分仅决定补证顺序，不是 D / M 分，也不是白名单评级</span></div>
+    ${renderQualityReviewRows(focusRows)}
+    <details class="quality-review-full"><summary>${icon("chevron-down")}<span>展开全部 ${formatMetric(entries.length)} 条审核队列</span><small>含外部线索、身份复核与暂停原因</small></summary>${renderQualityReviewRows(entries)}</details>
+  </section>`;
 }
 
 function renderQualityTable(decision) {
@@ -688,13 +818,19 @@ export function renderCreatorPage({ data, index, view, filters }) {
     activeView: view,
   });
   let content;
-  if (view === "quality") content = `${renderDecisionLead(decision, data, true)}${renderQualityTable(decision)}`;
+  if (view === "quality") content = `${renderDecisionLead(decision, data, true)}${decision.qualityReview ? renderQualityReview(decision.qualityReview) : renderQualityTable(decision)}`;
   else if (view === "topics") content = `${renderDecisionLead(decision, data, true)}${renderTopicCandidates(decision, data.sourceStatus)}${renderSingleVideoSignals(decision.singleVideoSignals, data.sourceStatus)}`;
   else if (view === "candidates") {
     const filtered = filterCandidates(data, filters, decisionMap);
     content = `${renderDecisionLead(decision, data, true)}${renderToolbar(data, filters, filtered.length)}${renderCandidateTable(filtered, decision.singleVideoSignals, decision.summary.observedAt, decisionMap, data.sourceStatus)}`;
   } else if (view === "evidence") content = renderEvidenceAndRules(data, decision, index);
-  else content = `${renderDecisionLead(decision, data)}${renderActionBriefs(decision)}<section class="overview-followup"><div><span class="model-code">NEXT / PEOPLE</span><h2>优质达人</h2><p>优先使用 ${decision.summary.executeCreators} 位，条件与观察 ${decision.summary.watchCreators} 位；业务处置优先，证据代理分只辅助排序。</p><button type="button" class="command-button" data-view="quality">${icon("users-round")}查看达人结论</button></div><div><span class="model-code">NEXT / TOPICS</span><h2>热点雷达</h2><p>立即推进 ${decision.summary.immediateTopics} 个，条件议题 ${decision.summary.draftTopics} 个；单视频与跨账号话题分层展示。</p><button type="button" class="command-button" data-view="topics">${icon("radio-tower")}查看话题证据</button></div></section>`;
+  else {
+    const reviewSummary = decision.qualityReview?.summary;
+    const peopleCopy = reviewSummary
+      ? `严格队列 ${formatMetric(reviewSummary.queue_entries)} 条，仅 ${formatMetric(reviewSummary.high_potential_top_up)} 位进入 Q0 补样，${formatMetric(reviewSummary.held)} 位暂停投入；正式白名单仍为 0。`
+      : `优先使用 ${decision.summary.executeCreators} 位，条件与观察 ${decision.summary.watchCreators} 位；业务处置优先，证据代理分只辅助排序。`;
+    content = `${renderDecisionLead(decision, data)}${renderActionBriefs(decision)}<section class="overview-followup"><div><span class="model-code">NEXT / PEOPLE</span><h2>严格达人复核</h2><p>${peopleCopy}</p><button type="button" class="command-button" data-view="quality">${icon("users-round")}查看完整审核队列</button></div><div><span class="model-code">NEXT / TOPICS</span><h2>热点雷达</h2><p>立即推进 ${decision.summary.immediateTopics} 个，条件议题 ${decision.summary.draftTopics} 个；单视频与跨账号话题分层展示。</p><button type="button" class="command-button" data-view="topics">${icon("radio-tower")}查看话题证据</button></div></section>`;
+  }
   return `${heading}${content}`;
 }
 
