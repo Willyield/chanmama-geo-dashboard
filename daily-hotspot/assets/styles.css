@@ -2826,6 +2826,103 @@ p {
   margin-bottom: 12px;
 }
 
+.review-readiness {
+  border: 1px solid var(--border-strong);
+  margin-bottom: 12px;
+  background: var(--paper);
+}
+
+.review-readiness-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--border-strong);
+  padding: 12px 14px;
+}
+
+.review-readiness-heading h3,
+.review-readiness-heading p,
+.review-readiness-step p {
+  margin: 0;
+}
+
+.review-readiness-heading h3 {
+  margin-top: 4px;
+  font-size: 15px;
+}
+
+.review-readiness-heading > p {
+  max-width: 520px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.review-readiness-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--border);
+}
+
+.review-readiness-step {
+  display: grid;
+  min-width: 0;
+  min-height: 132px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-content: center;
+  gap: 6px 10px;
+  background: var(--paper);
+  padding: 13px;
+}
+
+.review-readiness-step strong {
+  grid-column: 1 / -1;
+  font-family: var(--mono);
+  font-size: 24px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.review-readiness-step strong small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.review-readiness-label,
+.review-readiness-rate {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.review-readiness-rate {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.review-readiness-bar {
+  grid-column: 1 / -1;
+  height: 3px;
+  overflow: hidden;
+  background: var(--surface-muted);
+}
+
+.review-readiness-bar i {
+  display: block;
+  height: 100%;
+  background: var(--primary);
+}
+
+.review-readiness-step p {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.45;
+}
+
 .quality-funnel {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -4796,6 +4893,28 @@ p {
 
   .quality-funnel {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .review-readiness-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .review-readiness-heading > p {
+    text-align: left;
+  }
+
+  .review-readiness-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .review-readiness-step {
+    min-height: 116px;
+  }
+
+  .review-readiness-step:last-child {
+    grid-column: 1 / -1;
   }
 
   .quality-funnel-step {

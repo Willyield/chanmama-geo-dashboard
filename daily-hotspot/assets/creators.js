@@ -396,9 +396,26 @@ function renderIdentityCorrectionBand(data) {
   const summary = data?.identityCorrection?.summary;
   if (!summary) return "";
   const kappa = summary.cohenKappa == null ? "不可计算" : formatScore(summary.cohenKappa);
-  const coverage = numberOrNull(summary.blindReviewCoverage);
+  const coverage = numberOrNull(summary.assignedTaskCoverage);
   const coverageLabel = coverage == null ? "缺失" : `${(Math.abs(coverage) <= 1 ? coverage * 100 : coverage).toFixed(2)}%`;
-  return `<div class="quality-review-boundary identity-correction-band">${icon("shield-check")}<span><strong>身份纠正版：</strong>${formatMetric(summary.candidateCreators)} 位候选 = ${formatMetric(summary.personalCandidates)} 位个人 + ${formatMetric(summary.needsHumanReview)} 位身份待核；机构信源 ${formatMetric(summary.institutionalSources)}。自动预审 READY / WATCH / FAIL / 无证据为 ${formatMetric(summary.readyForManualRound1)} / ${formatMetric(summary.watchSampleLt15)} / ${formatMetric(summary.automatedGateFailed)} / ${formatMetric(summary.missingEvidence)}，距离 50 位至少还需 ${formatMetric(summary.minimumAdditionalReadyNeededFor50)} 位 READY。双盲覆盖 ${formatMetric(summary.blindReviewCandidates)} 位（${coverageLabel}），人工完成 ${formatMetric(summary.completedHumanReviews)}，正式达人 ${formatMetric(summary.formalWhitelistCount)}，Kappa ${escapeHtml(kappa)}。</span></div>`;
+  return `<div class="quality-review-boundary identity-correction-band">${icon("shield-check")}<span><strong>身份纠正版：</strong>${formatMetric(summary.candidateCreators)} 位候选 = ${formatMetric(summary.personalCandidates)} 位个人 + ${formatMetric(summary.needsHumanReview)} 位身份待核；机构信源 ${formatMetric(summary.institutionalSources)}。自动预审 READY / WATCH / FAIL / 无证据为 ${formatMetric(summary.readyForManualRound1)} / ${formatMetric(summary.watchSampleLt15)} / ${formatMetric(summary.automatedGateFailed)} / ${formatMetric(summary.missingEvidence)}，距离 50 位至少还需 ${formatMetric(summary.minimumAdditionalReadyNeededFor50)} 位 READY。已分配审核任务 ${formatMetric(summary.assignedReviewTasks)} 位（${coverageLabel}），其中达到 15 条样本 ${formatMetric(summary.tasksWithAtLeast15Videos)} 位；真实双人完成 ${formatMetric(summary.completedReviewTasks)} 位，正式达人 ${formatMetric(summary.formalWhitelistCount)}，Kappa ${escapeHtml(kappa)}。</span></div>`;
+}
+
+function renderReviewReadiness(summary) {
+  const stages = [
+    ["01", "任务已分配", summary.assignedReviewTasks, summary.candidateCreators, summary.assignedTaskCoverage, "只表示进入工作包"],
+    ["02", "存在视频证据", summary.tasksWithAnyVideo, summary.candidateCreators, summary.anyVideoTaskCoverage, "不代表证据充分"],
+    ["03", "达到 15 条", summary.tasksWithAtLeast15Videos, summary.candidateCreators, summary.atLeast15TaskCoverage, "具备等权盲审资格"],
+    ["04", "明确个人有效", summary.personalTasksWithAtLeast15Videos, summary.personalCandidates, summary.personalAtLeast15Coverage, "个人候选中的有效覆盖"],
+    ["05", "真实双人完成", summary.completedReviewTasks, summary.tasksWithAtLeast15Videos, summary.realDualReviewerCompletionRate, "完成后才计算 Kappa"],
+  ];
+  const items = stages.map(([code, label, count, denominator, rate, note]) => {
+    const numericRate = numberOrNull(rate);
+    const percent = numericRate == null ? "缺失" : `${(Math.abs(numericRate) <= 1 ? numericRate * 100 : numericRate).toFixed(2)}%`;
+    const width = numericRate == null ? 0 : Math.max(0, Math.min(100, Math.abs(numericRate) <= 1 ? numericRate * 100 : numericRate));
+    return `<div class="review-readiness-step"><span class="model-code">${code}</span><strong>${formatMetric(count)}<small> / ${formatMetric(denominator)}</small></strong><span class="review-readiness-label">${escapeHtml(label)}</span><span class="review-readiness-rate">${escapeHtml(percent)}</span><span class="review-readiness-bar"><i style="width:${width.toFixed(2)}%"></i></span><p>${escapeHtml(note)}</p></div>`;
+  }).join("");
+  return `<section class="review-readiness" aria-label="人工审核准备度阶梯"><div class="review-readiness-heading"><div><span class="model-code">REVIEW READINESS / V4</span><h3>人工审核准备度</h3></div><p>覆盖率分层计算；前一层不自动等于后一层，任何层级都不等于正式白名单。</p></div><div class="review-readiness-grid">${items}</div></section>`;
 }
 
 function decisionByCreator(decision) {
@@ -609,7 +626,7 @@ function renderIdentityCorrectedQuality(data, decisionMap) {
       || (numberOrNull(bDecision.score) ?? -1) - (numberOrNull(aDecision.score) ?? -1)
       || a.rank - b.rank;
   });
-  return `${renderIdentityCorrectionBand(data)}<section class="quality-review-register">
+  return `${renderIdentityCorrectionBand(data)}${renderReviewReadiness(summary)}<section class="quality-review-register">
     <div class="section-title"><h2>身份纠正后达人审核</h2><span>${formatMetric(summary.candidateCreators)} 位当前候选 · 旧 178 条质量队列仅作历史参考</span></div>
     <div class="quality-review-boundary">${icon("shield-check")}<span><strong>当前权威口径：</strong>逐 ${formatMetric(summary.candidateCreators)} 人按稳定 creator_id 与 registry ID 对账；先展示 ${formatMetric(summary.readyForManualRound1)} 位待人工首审，再展示观察、缺证据与自动失败对象。无匹配证据保持缺失，不估填；迁机构账号不再追加为当前达人。</span></div>
     ${renderCandidateTable(candidates, [], data.observedAt, decisionMap, data.sourceStatus)}
