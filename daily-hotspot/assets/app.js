@@ -153,9 +153,10 @@ async function loadRoute() {
           return null;
         }
       };
-      [data.decision, data.qualityReview] = await Promise.all([
+      [data.decision, data.qualityReview, data.topicWhitelist] = await Promise.all([
         fetchOptional(`./data/creators/decisions/${date}.json`),
         fetchOptional(`./data/creators/quality-review/${date}.json`),
+        fetchOptional(`./data/creators/topic-whitelist/${date}.json`),
       ]);
     }
     if (requestId !== state.requestId) return;

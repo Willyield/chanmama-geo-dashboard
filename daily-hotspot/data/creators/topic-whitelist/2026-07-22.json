@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "topic-whitelist-pilot-v1",
+  "module": "creator_topic_whitelist",
+  "date": "2026-07-22",
+  "observedAt": "2026-07-22T14:56:51+08:00",
+  "status": "T0_CAPTURED_INDEPENDENCE_PENDING",
+  "statusMessage": "T0 已取得蝉妈妈榜单与巨量云图可见信号，但视频语义、来源独立性、原创贡献和同龄 T1 增速尚未形成可验证闭环",
+  "sourceStatus": {
+    "scanStatus": "T0_PARTIAL_MULTISOURCE",
+    "chanmamaSession": "ACTIVE",
+    "chanmamaDataDate": "2026-07-21",
+    "yuntuSession": "ACTIVE",
+    "yuntuWindow": "RECENT_30D",
+    "douyinVideoRefetch": "BLOCKED_PLATFORM_VERIFICATION",
+    "historicalBaselineDays": 0,
+    "independenceResolved": false,
+    "valuesImputed": false
+  },
+  "policyNotes": [
+    "5 个名义账号只触发核验，不等于 5 个有效独立来源。",
+    "同 MCN、同品牌投放、同脚本或高度相似内容先合并为一个来源簇。",
+    "缺少 MCN、投放、原创或 T1 证据时保持 null，不得升级临时或重点白名单。",
+    "本轮是试运行 T0；建议在 2026-07-22 18:56 左右执行同龄 T1 复核。"
+  ],
+  "topics": [
+    {
+      "topicId": "RT-20260722-001",
+      "topic": "黑马榜高互动增量是否形成共同内容母题",
+      "density": "high",
+      "rawCreatorCount": 3,
+      "effectiveIndependentSources": null,
+      "independentClusters": null,
+      "followerTiers": 2,
+      "originalContributors": null,
+      "baselinePercentile": null,
+      "t1ContinuingSources": null,
+      "sameAgeAboveBaselineShare": null,
+      "effectiveSourceGrowthRate": null,
+      "newIndependentSources": null,
+      "newIndependentSources24h": null,
+      "topContributorShare": null,
+      "topTwoShare": null,
+      "websiteFit": null,
+      "socialFit": null,
+      "contentRelevant": null,
+      "evidenceLevel": "E1",
+      "riskVeto": false,
+      "nextAction": "补取三位达人的视频标题、字幕、发布时间和互动结构，先验证是否属于同一语义话题",
+      "stopCondition": "语义不一致、同脚本投放或 18:56 前没有新增独立来源即停止聚类",
+      "contributors": []
+    },
+    {
+      "topicId": "RT-20260722-002",
+      "topic": "居家轻健身器械与明星同款需求",
+      "density": "normal",
+      "rawCreatorCount": 3,
+      "effectiveIndependentSources": null,
+      "independentClusters": null,
+      "followerTiers": null,
+      "originalContributors": null,
+      "baselinePercentile": null,
+      "t1ContinuingSources": null,
+      "sameAgeAboveBaselineShare": null,
+      "effectiveSourceGrowthRate": null,
+      "newIndependentSources": null,
+      "newIndependentSources24h": null,
+      "topContributorShare": null,
+      "topTwoShare": null,
+      "websiteFit": null,
+      "socialFit": null,
+      "contentRelevant": true,
+      "evidenceLevel": "E1",
+      "riskVeto": false,
+      "nextAction": "从巨量云图商品信号回查抖音视频与达人，区分自然内容、明星授权和品牌集中投放",
+      "stopCondition": "只有商品销量而没有独立内容扩散，或来源均属于同一品牌投放时停止",
+      "contributors": []
+    }
+  ],
+  "observedRankSignals": [
+    {
+      "id": "RS-20260722-001",
+      "list": "蝉妈妈黑马达人日榜",
+      "rankLabel": "第 1 / 进榜",
+      "creator": "susu麻薯",
+      "metrics": [
+        { "label": "成长指数", "value": "991" },
+        { "label": "粉丝数", "value": "66.4万" },
+        { "label": "粉丝增量", "value": "+26" },
+        { "label": "点赞增量", "value": "+1982.7万" }
+      ],
+      "statusLabel": "异常背离待核",
+      "reason": "点赞增量与粉丝增量明显背离；缺少具体视频、原创和投流证据，不能判为黑马话题",
+      "sourceUrl": "https://www.chanmama.com/bloggerRank/bloggerGrowing/?category=&dateType=day&day=2026-07-21"
+    },
+    {
+      "id": "RS-20260722-002",
+      "list": "蝉妈妈黑马达人日榜",
+      "rankLabel": "第 2 / 进榜",
+      "creator": "赏颜捞头条君",
+      "metrics": [
+        { "label": "成长指数", "value": "435.5" },
+        { "label": "粉丝数", "value": "58.8万" },
+        { "label": "粉丝增量", "value": "+2758" },
+        { "label": "点赞增量", "value": "+871万" }
+      ],
+      "statusLabel": "账号信号",
+      "reason": "粉丝与点赞同步增长，但尚未取得内容母题和独立传播证据",
+      "sourceUrl": "https://www.chanmama.com/bloggerRank/bloggerGrowing/?category=&dateType=day&day=2026-07-21"
+    },
+    {
+      "id": "RS-20260722-003",
+      "list": "蝉妈妈黑马达人日榜",
+      "rankLabel": "第 3 / 进榜",
+      "creator": "果冻布丁OvO",
+      "metrics": [
+        { "label": "成长指数", "value": "156.5" },
+        { "label": "粉丝数", "value": "21.3万" },
+        { "label": "粉丝增量", "value": "+2170" },
+        { "label": "点赞增量", "value": "+313.3万" }
+      ],
+      "statusLabel": "账号信号",
+      "reason": "达到账号层异常增长，但不能证明与其他达人围绕同一话题持续放大",
+      "sourceUrl": "https://www.chanmama.com/bloggerRank/bloggerGrowing/?category=&dateType=day&day=2026-07-21"
+    },
+    {
+      "id": "RS-20260722-004",
+      "list": "蝉妈妈热搜达人日榜",
+      "rankLabel": "第 7 / 进榜",
+      "creator": "徐多多duo",
+      "metrics": [
+        { "label": "热搜指数", "value": "59" },
+        { "label": "粉丝数", "value": "27.7万" },
+        { "label": "粉丝增量", "value": "-111" }
+      ],
+      "statusLabel": "搜索关注",
+      "reason": "新进热搜榜但粉丝下降，只能证明账号搜索关注，不能证明话题共振",
+      "sourceUrl": "https://www.chanmama.com/bloggerRank/hotSearchAuthor/"
+    },
+    {
+      "id": "RS-20260722-005",
+      "list": "蝉妈妈热搜达人日榜",
+      "rankLabel": "第 8 / 进榜",
+      "creator": "富牛牛",
+      "metrics": [
+        { "label": "热搜指数", "value": "57" },
+        { "label": "粉丝数", "value": "883万" },
+        { "label": "粉丝增量", "value": "+5.3万" }
+      ],
+      "statusLabel": "大体量事件信号",
+      "reason": "账号关注和粉丝同步增长，但体量较大且缺少可迁移话题证据，不属于低基数黑马",
+      "sourceUrl": "https://www.chanmama.com/bloggerRank/hotSearchAuthor/"
+    },
+    {
+      "id": "RS-20260722-006",
+      "list": "巨量云图商品趋势 / 近30天",
+      "rankLabel": "健身器械 TOP3",
+      "creator": "OMR S9PRO 光能美塑仪",
+      "metrics": [
+        { "label": "GMV指数", "value": "1000万+" },
+        { "label": "GMV增长率指数", "value": "30.28" },
+        { "label": "销售增长率指数", "value": "30.63" },
+        { "label": "销售量指数", "value": "6万+" }
+      ],
+      "statusLabel": "商品信号",
+      "reason": "单商品增长显著，但商品趋势不能替代多达人独立内容扩散",
+      "sourceUrl": "https://yuntu.oceanengine.com/yuntu_lite/commodity/trend/short/v2?aadvid=1794665196703756"
+    }
+  ]
+}

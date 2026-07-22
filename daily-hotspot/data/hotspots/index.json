@@ -7,12 +7,12 @@
       "date": "2026-07-22",
       "observedAt": "2026-07-22T10:34:27+08:00",
       "total": 9,
-      "priority": 3,
+      "priority": 4,
       "gradeCounts": {
         "S": 0,
-        "A": 3,
-        "B": 4,
-        "C": 2,
+        "A": 4,
+        "B": 2,
+        "C": 3,
         "D": 0
       },
       "domainCounts": {
