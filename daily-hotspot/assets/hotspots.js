@@ -228,7 +228,7 @@ function renderOverviewTable(candidates) {
     <td>${renderCandidateScore(candidate)}</td>
     <td>${isTechnology(candidate) ? `<span class="field-kicker">技术变化</span><span class="cell-primary">${escapeHtml(techChange(candidate))}</span><span class="cell-secondary"><strong>与蝉妈妈有关：</strong>${escapeHtml(chanmamaRelevance(candidate))}</span>` : `<span class="cell-primary">${escapeHtml(candidate.actionReason)}</span>`}</td>
     <td><span class="cell-primary">${escapeHtml(isTechnology(candidate) ? nextStep(candidate) : candidate.recommended)}</span><span class="cell-secondary">明确不做：${escapeHtml(firstLine(isTechnology(candidate) ? explicitlyNotDoing(candidate) : candidate.notRecommended))}</span></td>
-    <td>${isTechnology(candidate) ? `<div class="evidence-pair">${renderEvidencePreview("官方", officialEvidence(candidate), candidate.evidence || "官方证据待补")}${renderEvidencePreview("圈层", circleEvidence(candidate), "圈层验证待补")}</div>` : `<span class="cell-primary">${escapeHtml(firstLine(candidate.evidence))}</span><span class="cell-secondary">${escapeHtml(candidate.risk)}｜${escapeHtml(candidate.publishedAt)}</span>`}</td>
+    <td>${isTechnology(candidate) ? `<div class="evidence-pair">${renderEvidencePreview("官方", officialEvidence(candidate), "官方证据未取得")}${renderEvidencePreview("圈层", circleEvidence(candidate), "圈层验证待补")}</div>` : `<span class="cell-primary">${escapeHtml(firstLine(candidate.evidence))}</span><span class="cell-secondary">${escapeHtml(candidate.risk)}｜${escapeHtml(candidate.publishedAt)}</span>`}</td>
   </tr>`).join("");
   const mobile = candidates.map((candidate) => `<article class="mobile-item" data-open-id="${escapeHtml(candidate.id)}" data-domain="${candidateDomain(candidate)}">
     <div class="mobile-item-header">${statusChip(actionLabel(candidate), gradeClass(actionCode(candidate)))}${isTechnology(candidate) ? renderTechnologyScores(candidate, true) : `<span class="mono">${escapeHtml(candidate.totalScore)}</span>`}</div>
@@ -237,7 +237,7 @@ function renderOverviewTable(candidates) {
       <div class="mobile-fact"><span>来源</span><strong>${escapeHtml(sourceTier(candidate))}</strong></div>
       <div class="mobile-fact"><span>类型</span><strong>${escapeHtml(candidate.type)}</strong></div>
     </div>
-    ${isTechnology(candidate) ? `<p><strong>技术变化：</strong>${escapeHtml(techChange(candidate))}</p><p><strong>与蝉妈妈有关：</strong>${escapeHtml(chanmamaRelevance(candidate))}</p><p><strong>下一步：</strong>${escapeHtml(nextStep(candidate))}</p><p class="execution-boundary"><strong>明确不做：</strong>${escapeHtml(explicitlyNotDoing(candidate))}</p><div class="mobile-evidence">${renderEvidencePreview("官方", officialEvidence(candidate), candidate.evidence || "官方证据待补")}${renderEvidencePreview("圈层", circleEvidence(candidate), "圈层验证待补")}</div>` : `<p>${escapeHtml(candidate.actionReason)}</p><p><strong>立即动作：</strong>${escapeHtml(candidate.recommended)}</p>${sourceLinksHtml(candidate.sourceLinks, 1)}`}
+    ${isTechnology(candidate) ? `<p><strong>技术变化：</strong>${escapeHtml(techChange(candidate))}</p><p><strong>与蝉妈妈有关：</strong>${escapeHtml(chanmamaRelevance(candidate))}</p><p><strong>下一步：</strong>${escapeHtml(nextStep(candidate))}</p><p class="execution-boundary"><strong>明确不做：</strong>${escapeHtml(explicitlyNotDoing(candidate))}</p><div class="mobile-evidence">${renderEvidencePreview("官方", officialEvidence(candidate), "官方证据未取得")}${renderEvidencePreview("圈层", circleEvidence(candidate), "圈层验证待补")}</div>` : `<p>${escapeHtml(candidate.actionReason)}</p><p><strong>立即动作：</strong>${escapeHtml(candidate.recommended)}</p>${sourceLinksHtml(candidate.sourceLinks, 1)}`}
   </article>`).join("");
   return `<div class="data-region">
     <div class="data-table-wrap"><table class="data-table">
@@ -262,7 +262,7 @@ function renderMeeting(data) {
   const mobile = candidates.map((candidate) => `<article class="mobile-item" data-open-id="${escapeHtml(candidate.id)}">
     <div class="mobile-item-header">${statusChip(actionLabel(candidate), gradeClass(actionCode(candidate)))}${isTechnology(candidate) ? renderTechnologyScores(candidate, true) : `<strong class="mono">${candidate.totalScore}</strong>`}</div>
     <h3>${escapeHtml(candidate.name)}</h3>
-    ${isTechnology(candidate) ? `<p><strong>技术变化：</strong>${escapeHtml(techChange(candidate))}</p><p><strong>与蝉妈妈有关：</strong>${escapeHtml(chanmamaRelevance(candidate))}</p><p><strong>下一步：</strong>${escapeHtml(nextStep(candidate))}</p><p><strong>明确不做：</strong>${escapeHtml(explicitlyNotDoing(candidate))}</p><div class="mobile-evidence">${renderEvidencePreview("官方", officialEvidence(candidate), candidate.evidence || "官方证据待补")}${renderEvidencePreview("圈层", circleEvidence(candidate), "圈层验证待补")}</div>` : `<p><strong>为什么追：</strong>${escapeHtml(candidate.actionReason)}</p><p><strong>怎么做：</strong>${escapeHtml(candidate.recommended)}</p><p><strong>边界：</strong>${escapeHtml(candidate.notRecommended)}</p>`}
+    ${isTechnology(candidate) ? `<p><strong>技术变化：</strong>${escapeHtml(techChange(candidate))}</p><p><strong>与蝉妈妈有关：</strong>${escapeHtml(chanmamaRelevance(candidate))}</p><p><strong>下一步：</strong>${escapeHtml(nextStep(candidate))}</p><p><strong>明确不做：</strong>${escapeHtml(explicitlyNotDoing(candidate))}</p><div class="mobile-evidence">${renderEvidencePreview("官方", officialEvidence(candidate), "官方证据未取得")}${renderEvidencePreview("圈层", circleEvidence(candidate), "圈层验证待补")}</div>` : `<p><strong>为什么追：</strong>${escapeHtml(candidate.actionReason)}</p><p><strong>怎么做：</strong>${escapeHtml(candidate.recommended)}</p><p><strong>边界：</strong>${escapeHtml(candidate.notRecommended)}</p>`}
   </article>`).join("");
   return `<section class="section-band"><div class="section-title"><h2>本期会议决策</h2><span>${candidates.length} 条进入会议</span></div>
     <div class="data-table-wrap"><table class="data-table" style="min-width:900px">
@@ -396,6 +396,11 @@ export function renderHotspotDetail(candidate) {
     ? `<ul class="timeline">${candidate.actions.map((action) => `<li><time>${escapeHtml(formatDateTime(action.deadline))} · ${escapeHtml(action.status)}</time><strong>${escapeHtml(action.actionType)}｜${escapeHtml(action.task)}</strong><div class="cell-secondary">${escapeHtml(action.owner)} · ${escapeHtml(action.deliverable)}</div></li>`).join("")}</ul>`
     : `<p class="drawer-prose">暂无拆分动作</p>`;
   const primarySources = (candidate.sourceLinks || []).length ? candidate.sourceLinks : normalizeEvidenceLinks(officialEvidence(candidate));
+  const groupedSourceUrls = new Set([
+    ...normalizeEvidenceLinks(officialEvidence(candidate)),
+    ...normalizeEvidenceLinks(circleEvidence(candidate)),
+  ].map((link) => link.url));
+  const otherSources = primarySources.filter((link) => !groupedSourceUrls.has(link.url));
   const sources = primarySources.length
     ? `<div class="source-stack">${primarySources.map((link) => sourceLinksHtml([link], 1)).join("")}</div><p class="drawer-prose">${escapeHtml(candidate.evidence)}</p>`
     : `<p class="drawer-prose">${escapeHtml(candidate.evidence || "来源暂缺")}</p>`;
@@ -443,7 +448,7 @@ export function renderHotspotDetail(candidate) {
     ${technology ? `${detailSection("一句话技术变化", "radar", `<p class="drawer-prose">${escapeHtml(techChange(candidate))}</p>`)}
       ${detailSection("为什么与蝉妈妈有关", "target", `<p class="drawer-prose">${escapeHtml(chanmamaRelevance(candidate))}</p>`)}
       ${detailSection("下一步与明确不做", "list-checks", `<p class="drawer-prose">${escapeHtml(candidate.actionDetail || nextStep(candidate))}</p><p class="drawer-prose"><strong>明确不做：</strong>${escapeHtml(explicitlyNotDoing(candidate))}</p>`)}
-      ${detailSection("官方及圈层证据", "link", `<div class="drawer-evidence-pair">${renderEvidenceGroup("官方一手", officialEvidence(candidate), candidate.evidence || "官方证据待补")}${renderEvidenceGroup("圈层验证", circleEvidence(candidate), "圈层验证待补")}</div>`)}
+      ${detailSection("官方及圈层证据", "link", `<div class="drawer-evidence-pair">${renderEvidenceGroup("官方一手", officialEvidence(candidate), "官方证据未取得")}${renderEvidenceGroup("圈层验证", circleEvidence(candidate), "圈层验证待补")}${otherSources.length ? renderEvidenceGroup("其他原始来源", otherSources) : ""}</div>`)}
       ${detailSection("科技影响分拆解", "chart-no-axes-column", techScoreGrid)}
       ${detailSection("业务承接分拆解", "chart-no-axes-column", businessScoreGrid)}
       ${detailSection("评分理由与封顶", "shield-check", `<div class="structured-note"><strong>评分理由</strong>${renderStructuredNotes(candidate.score_reasons || candidate.scoreReasons, "评分理由待补")}</div><div class="structured-note"><strong>封顶原因</strong>${renderStructuredNotes(candidate.score_caps || candidate.scoreCaps, candidate.downgradeReason || "未触发额外封顶")}</div>`)}
