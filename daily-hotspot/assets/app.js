@@ -16,6 +16,7 @@ import {
   renderCreatorDetail,
   renderCreatorPage,
 } from "./creators.js";
+import { applyCreatorIdentityCorrection } from "./creator-data.js";
 import { escapeHtml, icon, renderError } from "./ui.js";
 
 const app = document.querySelector("#app");
@@ -153,11 +154,13 @@ async function loadRoute() {
           return null;
         }
       };
-      [data.decision, data.qualityReview, data.topicWhitelist] = await Promise.all([
+      [data.decision, data.qualityReview, data.topicWhitelist, data.identityCorrection] = await Promise.all([
         fetchOptional(`./data/creators/decisions/${date}.json`),
         fetchOptional(`./data/creators/quality-review/${date}.json`),
         fetchOptional(`./data/creators/topic-whitelist/${date}.json`),
+        fetchOptional(`./data/creators/identity-correction/${date}.json`),
       ]);
+      applyCreatorIdentityCorrection(data);
     }
     if (requestId !== state.requestId) return;
     state.index = index;

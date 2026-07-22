@@ -34,12 +34,14 @@ const DISPOSITION_CLASS = {
   READY_FOR_MANUAL_ROUND1: "status-pass",
   FAIL_AUTOMATED_GATE: "status-conflict",
   WATCH_SAMPLE_LT15: "status-watch",
+  NO_MATCHED_EVIDENCE: "status-d",
   NO_MATCHED_API_EVIDENCE: "status-d",
 };
 
 const DISPOSITION_ORDER = {
   READY_FOR_MANUAL_ROUND1: 0,
   WATCH_SAMPLE_LT15: 1,
+  NO_MATCHED_EVIDENCE: 2,
   NO_MATCHED_API_EVIDENCE: 2,
   FAIL_AUTOMATED_GATE: 3,
 };
@@ -323,6 +325,7 @@ function normalizeDecision(data) {
   const raw = data?.decision || {};
   const candidates = asArray(data?.candidates);
   const candidateMap = new Map(candidates.map((candidate) => [candidate.id, candidate]));
+  const migratedLegacyIds = new Set(asArray(data?.identityCorrection?.migratedLegacyCandidateIds));
   const records = new Map();
   for (const record of asArray(raw.creatorDecisions)) {
     const id = firstValue(record?.creatorId, record?.id);
@@ -334,7 +337,7 @@ function normalizeDecision(data) {
   }
   const creatorDecisions = candidates.map((candidate) => normalizeCreatorDecision(records.get(candidate.id), candidate));
   for (const [id, record] of records) {
-    if (!candidateMap.has(id)) creatorDecisions.push(normalizeCreatorDecision(record, null));
+    if (!candidateMap.has(id) && !migratedLegacyIds.has(id)) creatorDecisions.push(normalizeCreatorDecision(record, null));
   }
   const topicCandidates = asArray(firstValue(raw.topicCandidates, data?.topics, [])).map(normalizeTopic);
   const rawTopicWhitelist = firstValue(data?.topicWhitelist, raw?.topicWhitelist, {});
@@ -387,6 +390,15 @@ function normalizeDecision(data) {
       ? data.qualityReview
       : null,
   };
+}
+
+function renderIdentityCorrectionBand(data) {
+  const summary = data?.identityCorrection?.summary;
+  if (!summary) return "";
+  const kappa = summary.cohenKappa == null ? "不可计算" : formatScore(summary.cohenKappa);
+  const coverage = numberOrNull(summary.blindReviewCoverage);
+  const coverageLabel = coverage == null ? "缺失" : `${(Math.abs(coverage) <= 1 ? coverage * 100 : coverage).toFixed(2)}%`;
+  return `<div class="quality-review-boundary identity-correction-band">${icon("shield-check")}<span><strong>身份纠正版：</strong>${formatMetric(summary.candidateCreators)} 位候选 = ${formatMetric(summary.personalCandidates)} 位个人 + ${formatMetric(summary.needsHumanReview)} 位身份待核；机构信源 ${formatMetric(summary.institutionalSources)}。自动预审 READY / WATCH / FAIL / 无证据为 ${formatMetric(summary.readyForManualRound1)} / ${formatMetric(summary.watchSampleLt15)} / ${formatMetric(summary.automatedGateFailed)} / ${formatMetric(summary.missingEvidence)}，距离 50 位至少还需 ${formatMetric(summary.minimumAdditionalReadyNeededFor50)} 位 READY。双盲覆盖 ${formatMetric(summary.blindReviewCandidates)} 位（${coverageLabel}），人工完成 ${formatMetric(summary.completedHumanReviews)}，正式达人 ${formatMetric(summary.formalWhitelistCount)}，Kappa ${escapeHtml(kappa)}。</span></div>`;
 }
 
 function decisionByCreator(decision) {
@@ -583,6 +595,24 @@ function renderQualityReview(review) {
     <div class="quality-focus-heading"><div><span class="model-code">NEXT ACTION / ${formatMetric(focusRows.length)}</span><h3>有质量证据的优先复核</h3></div><span>质量代理分仅决定补证顺序，不是 D / M 分，也不是白名单评级</span></div>
     ${renderQualityReviewRows(focusRows)}
     <details class="quality-review-full"><summary>${icon("chevron-down")}<span>展开全部 ${formatMetric(entries.length)} 条审核队列</span><small>含外部线索、身份复核与暂停原因</small></summary>${renderQualityReviewRows(entries)}</details>
+  </section>`;
+}
+
+function renderIdentityCorrectedQuality(data, decisionMap) {
+  const summary = data.identityCorrection.summary;
+  const candidates = [...asArray(data.candidates)].sort((a, b) => {
+    const dispositionDiff = (DISPOSITION_ORDER[a.autoDisposition] ?? 9) - (DISPOSITION_ORDER[b.autoDisposition] ?? 9);
+    if (dispositionDiff) return dispositionDiff;
+    const aDecision = decisionMap.get(a.id) || fallbackCreatorDecision(a);
+    const bDecision = decisionMap.get(b.id) || fallbackCreatorDecision(b);
+    return (ACTION_META[aDecision.action]?.rank ?? 9) - (ACTION_META[bDecision.action]?.rank ?? 9)
+      || (numberOrNull(bDecision.score) ?? -1) - (numberOrNull(aDecision.score) ?? -1)
+      || a.rank - b.rank;
+  });
+  return `${renderIdentityCorrectionBand(data)}<section class="quality-review-register">
+    <div class="section-title"><h2>身份纠正后达人审核</h2><span>${formatMetric(summary.candidateCreators)} 位当前候选 · 旧 178 条质量队列仅作历史参考</span></div>
+    <div class="quality-review-boundary">${icon("shield-check")}<span><strong>当前权威口径：</strong>逐 ${formatMetric(summary.candidateCreators)} 人按稳定 creator_id 与 registry ID 对账；先展示 ${formatMetric(summary.readyForManualRound1)} 位待人工首审，再展示观察、缺证据与自动失败对象。无匹配证据保持缺失，不估填；迁机构账号不再追加为当前达人。</span></div>
+    ${renderCandidateTable(candidates, [], data.observedAt, decisionMap, data.sourceStatus)}
   </section>`;
 }
 
@@ -941,8 +971,12 @@ function renderCreatorWhitelistDesk(decision, data) {
   const formalB = numberOrNull(data?.summary?.formalWhitelistB) || 0;
   const reviewSummary = decision.qualityReview?.summary || {};
   const crossValidationCount = nestedItems(topicWhitelist.creatorCrossValidation).length;
-  return `<section class="resonance-console creator-whitelist-console">
-    <div class="resonance-lead"><div><span class="model-code">CREATOR / FORMAL WHITELIST</span><h2>达人白名单</h2><p>本页只回答“哪些个人达人正式入选、为什么入选”。<strong>话题有热度、账号参与放大或进入榜单，都不能直接替代达人 D / M 与两轮审核。</strong></p></div><div class="resonance-kpis"><span class="is-publish"><strong>${formalA + formalB}</strong><small>正式 A/B</small></span><span><strong>${formalA}</strong><small>A 级</small></span><span><strong>${formalB}</strong><small>B 级</small></span><span class="is-track"><strong>${crossValidationCount}</strong><small>多源复核中</small></span><span><strong>${formatMetric(reviewSummary.high_potential_top_up)}</strong><small>高潜补样</small></span><span><strong>${formatMetric(reviewSummary.held)}</strong><small>暂停投入</small></span></div></div>
+  const correctionSummary = data?.identityCorrection?.summary;
+  const reviewKpis = correctionSummary
+    ? `<span><strong>${formatMetric(correctionSummary.blindReviewCandidates)}</strong><small>双盲样本</small></span><span><strong>${formatMetric(correctionSummary.completedHumanReviews)}</strong><small>人工完成</small></span>`
+    : `<span><strong>${formatMetric(reviewSummary.high_potential_top_up)}</strong><small>高潜补样</small></span><span><strong>${formatMetric(reviewSummary.held)}</strong><small>暂停投入</small></span>`;
+  return `${renderIdentityCorrectionBand(data)}<section class="resonance-console creator-whitelist-console">
+    <div class="resonance-lead"><div><span class="model-code">CREATOR / FORMAL WHITELIST</span><h2>达人白名单</h2><p>本页只回答“哪些个人达人正式入选、为什么入选”。<strong>话题有热度、账号参与放大或进入榜单，都不能直接替代达人 D / M 与两轮审核。</strong></p></div><div class="resonance-kpis"><span class="is-publish"><strong>${formalA + formalB}</strong><small>正式 A/B</small></span><span><strong>${formalA}</strong><small>A 级</small></span><span><strong>${formalB}</strong><small>B 级</small></span><span class="is-track"><strong>${crossValidationCount}</strong><small>多源复核中</small></span>${reviewKpis}</div></div>
     <div class="resonance-boundary">${icon("shield-alert")}<span><strong>名单边界：</strong>本页不展示热点选题和单平台榜单。正式 A/B 只计算个人或人格化达人；官方、机构、候选、观察和高潜补样均单独管理，不计入正式人数。</span></div>
     ${renderFormalCreatorRegister(data)}
     ${renderCreatorCrossValidation(topicWhitelist.creatorCrossValidation)}
@@ -1069,7 +1103,7 @@ function renderToolbar(data, filters, count) {
     <div class="filter-group">
       <label class="search-box">${icon("search")}<input type="search" data-filter="search" value="${escapeHtml(filters.search)}" placeholder="搜索达人、结论或降级原因"></label>
       <label class="filter-select">${icon("clipboard-check")}<select data-filter="action" aria-label="筛选业务结论"><option value="all">全部业务结论</option>${option("EXECUTE", filters.action, "直接使用")}${option("CONDITIONAL", filters.action, "条件使用")}${option("WATCH", filters.action, "重点观察")}${option("TOPIC_SCOUT", filters.action, "话题侦察")}${option("BACKFILL", filters.action, "优先补证")}${option("REFERENCE", filters.action, "机构参考")}${option("DEPRIORITIZE", filters.action, "降级/排除")}${option("POOL", filters.action, "候选池留档")}${option("UNKNOWN", filters.action, "证据不足")}</select></label>
-      <label class="filter-select">${icon("list-filter")}<select data-filter="disposition" aria-label="筛选审核状态"><option value="all">全部审核状态</option>${option("READY_FOR_MANUAL_ROUND1", filters.disposition, "待人工首审")}${option("WATCH_SAMPLE_LT15", filters.disposition, "样本不足观察")}${option("NO_MATCHED_API_EVIDENCE", filters.disposition, "缺匹配作品证据")}${option("FAIL_AUTOMATED_GATE", filters.disposition, "自动门槛未通过")}</select></label>
+      <label class="filter-select">${icon("list-filter")}<select data-filter="disposition" aria-label="筛选审核状态"><option value="all">全部审核状态</option>${option("READY_FOR_MANUAL_ROUND1", filters.disposition, "待人工首审")}${option("WATCH_SAMPLE_LT15", filters.disposition, "样本不足观察")}${option("NO_MATCHED_EVIDENCE", filters.disposition, "缺匹配作品证据")}${option("FAIL_AUTOMATED_GATE", filters.disposition, "自动门槛未通过")}</select></label>
       <label class="filter-select">${icon("tags")}<select data-filter="track" aria-label="筛选赛道"><option value="all">全部赛道</option>${tracks.map((track) => option(track, filters.track)).join("")}</select></label>
       <label class="filter-select">${icon("refresh-cw")}<select data-filter="refetch" aria-label="筛选复取状态"><option value="all">全部复取状态</option>${refetchStatuses.map((status) => option(status, filters.refetch)).join("")}</select></label>
     </div><span class="result-count">${count} / ${asArray(data.candidates).length} 位候选</span>
@@ -1164,22 +1198,25 @@ export function renderCreatorPage({ data, index, view, filters }) {
     activeView: view,
   });
   let content;
-  if (view === "quality") content = decision.qualityReview ? renderQualityReview(decision.qualityReview) : renderQualityTable(decision);
+  if (view === "quality") content = data.identityCorrection ? renderIdentityCorrectedQuality(data, decisionMap) : decision.qualityReview ? renderQualityReview(decision.qualityReview) : renderQualityTable(decision);
   else if (view === "resonance") content = renderCreatorWhitelistDesk(decision, data);
   else if (view === "topics") content = renderHotspotRadarDesk(decision, data.sourceStatus);
   else if (view === "candidates") {
     const filtered = filterCandidates(data, filters, decisionMap);
-    content = `${renderToolbar(data, filters, filtered.length)}${renderCandidateTable(filtered, decision.singleVideoSignals, decision.summary.observedAt, decisionMap, data.sourceStatus)}`;
+    content = `${renderIdentityCorrectionBand(data)}${renderToolbar(data, filters, filtered.length)}${renderCandidateTable(filtered, decision.singleVideoSignals, decision.summary.observedAt, decisionMap, data.sourceStatus)}`;
   } else if (view === "evidence") content = renderEvidenceAndRules(data, decision, index);
   else {
     const reviewSummary = decision.qualityReview?.summary;
     const formalTotal = (numberOrNull(data?.summary?.formalWhitelistA) || 0) + (numberOrNull(data?.summary?.formalWhitelistB) || 0);
-    const peopleCopy = reviewSummary
+    const correctionSummary = data?.identityCorrection?.summary;
+    const peopleCopy = correctionSummary
+      ? `身份纠正后候选 ${formatMetric(correctionSummary.candidateCreators)} 位，其中个人 ${formatMetric(correctionSummary.personalCandidates)} 位、身份待核 ${formatMetric(correctionSummary.needsHumanReview)} 位；双盲 ${formatMetric(correctionSummary.blindReviewCandidates)} 位，人工完成 ${formatMetric(correctionSummary.completedHumanReviews)} 位，正式达人 ${formatMetric(correctionSummary.formalWhitelistCount)} 位。`
+      : reviewSummary
       ? `正式 A/B 达人 ${formatMetric(formalTotal)} 位；严格审核队列 ${formatMetric(reviewSummary.queue_entries)} 条，仅 ${formatMetric(reviewSummary.high_potential_top_up)} 位进入高潜补样。`
       : `优先使用 ${decision.summary.executeCreators} 位，条件与观察 ${decision.summary.watchCreators} 位；业务处置优先，证据代理分只辅助排序。`;
     const radarSignals = decision.topicWhitelist.observedRankSignals.length;
     const today = renderTopicDecisionDesk(decision.topicWhitelist, data.sourceStatus);
-    content = `${today}<section class="overview-followup"><div><span class="model-code">NEXT / CREATOR</span><h2>达人白名单</h2><p>${peopleCopy}</p><button type="button" class="command-button" data-view="resonance">${icon("badge-check")}查看正式名单与复核证据</button></div><div><span class="model-code">NEXT / RADAR</span><h2>热点雷达</h2><p>单平台热点线索 ${formatMetric(radarSignals)} 条；它们尚未完成跨平台、跨账号和 N_eff 复核，不进入今日热点结论。</p><button type="button" class="command-button" data-view="topics">${icon("radar")}查看待验证热点</button></div></section>`;
+    content = `${renderIdentityCorrectionBand(data)}${today}<section class="overview-followup"><div><span class="model-code">NEXT / CREATOR</span><h2>达人白名单</h2><p>${peopleCopy}</p><button type="button" class="command-button" data-view="resonance">${icon("badge-check")}查看正式名单与复核证据</button></div><div><span class="model-code">NEXT / RADAR</span><h2>热点雷达</h2><p>单平台热点线索 ${formatMetric(radarSignals)} 条；它们尚未完成跨平台、跨账号和 N_eff 复核，不进入今日热点结论。</p><button type="button" class="command-button" data-view="topics">${icon("radar")}查看待验证热点</button></div></section>`;
   }
   return `${heading}${content}`;
 }

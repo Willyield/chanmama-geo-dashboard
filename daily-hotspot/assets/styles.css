@@ -2821,6 +2821,11 @@ p {
   color: var(--ink);
 }
 
+.identity-correction-band {
+  border: 1px solid var(--border-strong);
+  margin-bottom: 12px;
+}
+
 .quality-funnel {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
