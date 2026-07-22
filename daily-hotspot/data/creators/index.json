@@ -1,8 +1,18 @@
 {
   "schemaVersion": 1,
   "module": "creators",
-  "latest": "2026-07-21",
+  "latest": "2026-07-22",
   "dates": [
+    {
+      "date": "2026-07-22",
+      "observedAt": "2026-07-22T01:56:01.835Z",
+      "candidateCreators": 150,
+      "manualRound1Queue": 23,
+      "formalWhitelist": 0,
+      "successfulVideos": 0,
+      "qualifiedTopics": 0,
+      "publicationStatus": "TRIAL_PREVIEW"
+    },
     {
       "date": "2026-07-21",
       "observedAt": "2026-07-21T16:46:34.045+08:00",

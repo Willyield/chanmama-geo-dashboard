@@ -483,9 +483,16 @@ function topicDecisionClass(topic) {
   return /立即|执行|follow_now/i.test(topic.decision) ? "status-pass" : /停止|排除|stop/i.test(topic.decision) ? "status-conflict" : "status-watch";
 }
 
-function renderTopicCandidates(decision) {
+function sourceIsBlocked(sourceStatus) {
+  return sourceStatus?.captchaConfirmed || /BLOCKED|VERIFICATION/.test(sourceStatus?.scanStatus || "");
+}
+
+function renderTopicCandidates(decision, sourceStatus) {
   const topics = decision.topicCandidates;
   if (!topics.length) {
+    if (sourceIsBlocked(sourceStatus)) {
+      return `<section class="topic-radar-empty"><div><span class="model-code">TOPIC LAYER / SOURCE BLOCKED</span><h2>本轮跨账号热点不可判定</h2><p>平台验证拦截了当前指标复取；缺失值未估填，不能把采集失败解释为没有热点。</p></div>${statusChip("等待补证", "status-watch")}</section>`;
+    }
     return `<section class="topic-radar-empty"><div><span class="model-code">TOPIC LAYER / NO-GO</span><h2>当前没有形成跨账号热点候选</h2><p>单视频增长仍保留在下方待核队列，不用单条高互动替代话题扩散结论。</p></div>${statusChip("立即跟进 0", "status-d")}</section>`;
   }
   return `<section class="topic-radar"><div class="section-title"><h2>话题候选</h2><span>${topics.length} 个议题 · 按业务决策排序</span></div><div class="topic-row-list">${topics.map((topic) => {
@@ -514,8 +521,9 @@ function renderMetricPair(signal, key, label) {
   return `<div class="signal-metric"><span>${escapeHtml(label)}</span><strong>${formatMetric(current ?? delta)}</strong><em>${current == null ? (delta == null ? "缺失" : "本轮增量") : formatDelta(delta)}</em></div>`;
 }
 
-function renderSingleVideoSignals(signalsInput) {
+function renderSingleVideoSignals(signalsInput, sourceStatus) {
   const signals = [...asArray(signalsInput)].sort((a, b) => (normalizedSignalVelocity(b) ?? -1) - (normalizedSignalVelocity(a) ?? -1));
+  if (!signals.length && sourceIsBlocked(sourceStatus)) return `<section class="section-band"><div class="section-title"><h2>待核单视频</h2><span>本轮不可判定</span></div>${renderEmpty("平台验证拦截，当前单视频信号未取得", "shield-alert")}</section>`;
   if (!signals.length) return `<section class="section-band"><div class="section-title"><h2>待核单视频</h2><span>0 条</span></div>${renderEmpty("当前快照没有单视频增长信号", "activity")}</section>`;
   const visibleSignals = signals.slice(0, 12);
   return `<section class="single-signal-queue">
@@ -538,8 +546,10 @@ function creatorRealtimeSignals(videoSignals, creatorId) {
   return asArray(videoSignals).filter((signal) => signal.creatorId === creatorId);
 }
 
-function renderRealtimeHotspotCell(candidate, videoSignals, observedAt) {
+function renderRealtimeHotspotCell(candidate, videoSignals, observedAt, sourceStatus) {
   const signals = creatorRealtimeSignals(videoSignals, candidate.id);
+  const blocked = sourceIsBlocked(sourceStatus);
+  if (!signals.length && blocked) return `${statusChip("本轮不可判定", "status-watch")}<span class="cell-secondary">平台验证拦截 · 缺失未估填</span>`;
   if (!signals.length) return `<span class="cell-primary mono">0 条</span><span class="cell-secondary">${escapeHtml(formatDateTime(observedAt))} 快照未发现</span>`;
   const velocity = normalizedSignalVelocity(signals[0]);
   return `${statusChip(`${signals.length} 条待核`, "status-watch")}<span class="cell-primary creator-hotspot-title">${escapeHtml(signals[0].title)}</span><span class="cell-secondary">归一化速度 ${velocity == null ? "缺失" : velocity.toFixed(2)}</span>`;
@@ -590,7 +600,7 @@ function renderToolbar(data, filters, count) {
   </div>`;
 }
 
-function renderCandidateTable(candidates, videoSignals, observedAt, decisionMap) {
+function renderCandidateTable(candidates, videoSignals, observedAt, decisionMap, sourceStatus) {
   if (!candidates.length) return `<div class="data-region">${renderEmpty("当前筛选条件下没有候选达人", "user-search")}</div>`;
   const rows = candidates.map((candidate) => {
     const item = decisionMap.get(candidate.id) || fallbackCreatorDecision(candidate);
@@ -601,7 +611,7 @@ function renderCandidateTable(candidates, videoSignals, observedAt, decisionMap)
       <td><span class="cell-primary mono">${escapeHtml(formatFollowers(candidate.followers))}</span><div class="tag-stack">${asArray(candidate.tracks).map((track) => `<span class="tag">${escapeHtml(track)}</span>`).join("") || "缺失"}</div></td>
       <td>${renderEvidenceRail(candidate)}<span class="cell-secondary">相关 ${formatPercent(candidate.gates?.relevantRatio)} · 实操 ${formatPercent(candidate.gates?.corePracticeLowerBound)}</span></td>
       <td><span class="cell-primary">${escapeHtml(formatPercentile(item.metrics.peerPercentile))}</span><span class="cell-secondary">中位深互动 ${formatMetric(item.metrics.medianDeep)} · 爆款率 ${formatPercent(item.metrics.breakoutRate)}</span></td>
-      <td>${renderRealtimeHotspotCell(candidate, videoSignals, observedAt)}</td>
+      <td>${renderRealtimeHotspotCell(candidate, videoSignals, observedAt, sourceStatus)}</td>
       <td><span class="cell-primary candidate-gap">${escapeHtml(firstValue(reasons[0], "暂无关键缺口"))}</span><span class="cell-secondary">${escapeHtml(firstValue(reasons[1], item.reasons[0], "等待下一轮证据"))}</span></td>
       <td><span class="cell-primary">${escapeHtml(firstValue(item.reasons[0], item.action === "DEPRIORITIZE" ? "停止优先跟踪" : "补齐证据后复核"))}</span><span class="cell-secondary">${escapeHtml(candidate.dispositionLabel)}</span></td>
     </tr>`;
@@ -661,6 +671,8 @@ function renderArchive(index) {
 
 function renderCreatorRealtimeHotspots(candidate, data, decision) {
   const signals = creatorRealtimeSignals(decision?.singleVideoSignals || data?.videoSignals, candidate.id);
+  const blocked = sourceIsBlocked(data?.sourceStatus);
+  if (!signals.length && blocked) return `<div class="drawer-hotspot-empty"><strong>本轮实时热点不可判定</strong><p>截至 ${escapeHtml(formatDateTime(data?.observedAt))}，平台验证拦截了复取；缺失值未估填，不能写成 0 条热点。</p></div>`;
   if (!signals.length) return `<div class="drawer-hotspot-empty"><strong>当前快照 0 条</strong><p>截至 ${escapeHtml(formatDateTime(data?.observedAt))}，未发现该达人的单视频续跟信号或跨账号话题。</p></div>`;
   return `<div class="drawer-hotspot-summary"><span>${statusChip(`${signals.length} 条待核单视频`, "status-watch")}</span><span>跨账号热点需另行验证</span></div><div class="drawer-hotspot-list">${signals.map((signal) => `<article><div><span class="model-code">${escapeHtml(firstValue(signal.id, signal.videoId, "VIDEO"))} · ${escapeHtml(firstValue(signal.assessment, signal.semanticStatus, "待核"))}</span><strong>${escapeHtml(signal.title)}</strong></div><div class="drawer-hotspot-metrics"><span>点赞${signal.current ? "" : "增量"} <b>${formatMetric(firstValue(signal.current?.digg_count, signal.delta?.digg_count))}</b></span><span>收藏${signal.current ? "" : "增量"} <b>${formatMetric(firstValue(signal.current?.collect_count, signal.delta?.collect_count))}</b></span><span>转发${signal.current ? "" : "增量"} <b>${formatMetric(firstValue(signal.current?.share_count, signal.delta?.share_count))}</b></span><span>归一化速度 <b>${normalizedSignalVelocity(signal)?.toFixed(2) || "缺失"}</b></span></div><p>${escapeHtml(firstValue(signal.reason, "当前仅证明单条视频有互动增量，尚未证明跨账号扩散。"))}</p><a class="source-link" href="${escapeHtml(safeUrl(signal.videoUrl))}" target="_blank" rel="noopener noreferrer"><span>查看原视频</span>${icon("external-link")}</a></article>`).join("")}</div>`;
 }
@@ -677,10 +689,10 @@ export function renderCreatorPage({ data, index, view, filters }) {
   });
   let content;
   if (view === "quality") content = `${renderDecisionLead(decision, data, true)}${renderQualityTable(decision)}`;
-  else if (view === "topics") content = `${renderDecisionLead(decision, data, true)}${renderTopicCandidates(decision)}${renderSingleVideoSignals(decision.singleVideoSignals)}`;
+  else if (view === "topics") content = `${renderDecisionLead(decision, data, true)}${renderTopicCandidates(decision, data.sourceStatus)}${renderSingleVideoSignals(decision.singleVideoSignals, data.sourceStatus)}`;
   else if (view === "candidates") {
     const filtered = filterCandidates(data, filters, decisionMap);
-    content = `${renderDecisionLead(decision, data, true)}${renderToolbar(data, filters, filtered.length)}${renderCandidateTable(filtered, decision.singleVideoSignals, decision.summary.observedAt, decisionMap)}`;
+    content = `${renderDecisionLead(decision, data, true)}${renderToolbar(data, filters, filtered.length)}${renderCandidateTable(filtered, decision.singleVideoSignals, decision.summary.observedAt, decisionMap, data.sourceStatus)}`;
   } else if (view === "evidence") content = renderEvidenceAndRules(data, decision, index);
   else content = `${renderDecisionLead(decision, data)}${renderActionBriefs(decision)}<section class="overview-followup"><div><span class="model-code">NEXT / PEOPLE</span><h2>优质达人</h2><p>优先使用 ${decision.summary.executeCreators} 位，条件与观察 ${decision.summary.watchCreators} 位；业务处置优先，证据代理分只辅助排序。</p><button type="button" class="command-button" data-view="quality">${icon("users-round")}查看达人结论</button></div><div><span class="model-code">NEXT / TOPICS</span><h2>热点雷达</h2><p>立即推进 ${decision.summary.immediateTopics} 个，条件议题 ${decision.summary.draftTopics} 个；单视频与跨账号话题分层展示。</p><button type="button" class="command-button" data-view="topics">${icon("radio-tower")}查看话题证据</button></div></section>`;
   return `${heading}${content}`;
