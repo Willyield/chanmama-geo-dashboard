@@ -15,8 +15,8 @@ import { normalizeTopicWhitelistPayload } from "./topic-whitelist.js";
 
 export const creatorViews = [
   { id: "overview", label: "今日决策" },
-  { id: "quality", label: "优质达人" },
-  { id: "resonance", label: "共振白名单" },
+  { id: "resonance", label: "达人白名单" },
+  { id: "quality", label: "达人审核" },
   { id: "topics", label: "热点雷达" },
   { id: "candidates", label: "全部候选" },
   { id: "evidence", label: "证据与规则" },
@@ -695,12 +695,12 @@ function formalWhitelistDecision(topic) {
   )).toUpperCase();
   const independence = String(firstValue(detail.independenceStatus, detail.independence, detail.clusterStatus, "")).toUpperCase();
   const pendingIndependence = /PENDING_INDEPENDENCE|INDEPENDENCE_PENDING/.test(`${code} ${independence}`);
-  if (/PRIORITY_WHITELIST/.test(code)) return { code, label: "重点白名单", tone: "status-pass", approved: true, detail };
-  if (/TEMPORARY_WHITELIST/.test(code)) return { code, label: "临时白名单", tone: "status-pass", approved: true, detail };
-  if (/STOPPED|REJECTED/.test(code)) return { code, label: "已停止 / 不进入", tone: "status-conflict", approved: false, detail };
-  if (/CANDIDATE/.test(code)) return { code, label: "正式候选，仍需复核", tone: "status-watch", approved: false, detail };
-  if (pendingIndependence) return { code, label: "未进入：独立来源待核", tone: "status-watch", approved: false, detail };
-  return { code, label: "仅记录，未进入白名单", tone: "status-d", approved: false, detail };
+  if (/PRIORITY_WHITELIST/.test(code)) return { code, label: "重点确认热点", tone: "status-pass", approved: true, detail };
+  if (/TEMPORARY_WHITELIST/.test(code)) return { code, label: "已确认热点", tone: "status-pass", approved: true, detail };
+  if (/STOPPED|REJECTED/.test(code)) return { code, label: "已停止跟踪", tone: "status-conflict", approved: false, detail };
+  if (/CANDIDATE/.test(code)) return { code, label: "热点候选，仍需复核", tone: "status-watch", approved: false, detail };
+  if (pendingIndependence) return { code, label: "未确认：独立来源待核", tone: "status-watch", approved: false, detail };
+  return { code, label: "仅记录，尚未确认", tone: "status-d", approved: false, detail };
 }
 
 function resonanceGateClass(gateItem) {
@@ -790,11 +790,11 @@ function renderAmplifyingAccounts(topic) {
 function renderContributorAudit(topic) {
   const contributors = asArray(topic.contributors);
   if (!contributors.length) return "";
-  return `<section class="resonance-contributor-audit"><div class="resonance-panel-heading"><span>达人白名单资格</span><small>只审核贡献，不因参与话题自动入围</small></div><div class="resonance-contributor-list">${contributors.map((item) => `<div class="resonance-contributor ${item.eligible ? "is-eligible" : ""}">
+  return `<section class="resonance-contributor-audit"><div class="resonance-panel-heading"><span>参与账号贡献资格</span><small>贡献合格仍不等于进入达人白名单</small></div><div class="resonance-contributor-list">${contributors.map((item) => `<div class="resonance-contributor ${item.eligible ? "is-eligible" : ""}">
     <div><strong>${escapeHtml(item.nickname)}</strong><small>${escapeHtml(renderContributorRole(item.role))} · ${escapeHtml(item.originality)} · ${escapeHtml(item.evidenceLevel)}</small></div>
     <span class="mono">${item.sameAgeLift == null ? "倍数待核" : `${escapeHtml(item.sameAgeLift)}x`}</span>
-    ${statusChip(item.eligible ? "已通过达人白名单" : "未进入达人白名单", item.eligible ? "status-pass" : "status-d")}
-    <p>${escapeHtml(item.eligible ? "早期性、原创性、同龄表现和风险门均已通过" : firstValue(item.gaps?.[0], "贡献资格证据不足"))}</p>
+    ${statusChip(item.eligible ? "贡献门通过" : "贡献门未通过", item.eligible ? "status-pass" : "status-d")}
+    <p>${escapeHtml(item.eligible ? "早期性、原创性、同龄表现和风险门已通过；仍需单独完成达人 D / M 与两轮审核" : firstValue(item.gaps?.[0], "贡献资格证据不足"))}</p>
   </div>`).join("")}</div></section>`;
 }
 
@@ -805,7 +805,7 @@ function renderResonanceTopic(topic) {
   const evidence = platformEvidenceFor(topic, decision);
   const platformCount = new Set(evidence.map(platformName).filter(Boolean)).size;
   const gaps = copyItems(topic.evidenceGaps, decision.evidenceGaps, topic.gaps, topic.stopCondition);
-  const formalReason = firstValue(formal.detail.reason, formal.detail.conclusion, formal.detail.detail, formal.approved ? "已按正式硬门槛验收。" : "业务内容结论与正式白名单分开计算；当前不得称为正式白名单话题。");
+  const formalReason = firstValue(formal.detail.reason, formal.detail.conclusion, formal.detail.detail, formal.approved ? "已按热点确认硬门槛验收。" : "业务发布结论与热点确认分开计算；当前不得称为已确认热点。");
   return `<article class="resonance-topic-row resonance-decision-card ${lane.className}">
     <header><div><span class="model-code">${escapeHtml(topic.topicId)} · ${escapeHtml(topic.densityLabel)}</span><h3>${escapeHtml(topic.topic)}</h3><p>${escapeHtml(decision.conclusion)}</p></div><div class="resonance-topic-status">${statusChip(lane.label, lane.tone)}<small>判断置信：${escapeHtml(formatConfidence(decision.confidence))}</small></div></header>
     <div class="resonance-verdict-grid">
@@ -821,7 +821,7 @@ function renderResonanceTopic(topic) {
       <section><div class="resonance-panel-heading"><span>部门下一步做什么</span></div>${renderDecisionList(decision.actions, "暂不投入生产，下一轮只补跨平台与独立来源证据。")}</section>
     </div>
     <section class="resonance-formal-band">
-      <div><span>正式话题白名单</span><strong>${escapeHtml(formal.label)}</strong><p>${escapeHtml(formalReason)}</p></div>
+      <div><span>热点确认状态</span><strong>${escapeHtml(formal.label)}</strong><p>${escapeHtml(formalReason)}</p></div>
       <div class="resonance-topic-kpis">
         <span><small>名义参与账号</small><b>${formatMetric(topic.metrics.rawCreatorCount)}</b></span>
         <span><small>有效独立来源 N_eff</small><b>${topic.metrics.effectiveIndependentSources == null ? "待核 · 不估填" : formatMetric(topic.metrics.effectiveIndependentSources)}</b></span>
@@ -837,15 +837,15 @@ function renderResonanceTopic(topic) {
 
 function renderObservedRankSignals(signals) {
   if (!signals.length) return "";
-  return `<section class="resonance-signal-register"><div class="section-title"><h2>单平台发现线索</h2><span>${signals.length} 条 · 不是优质达人名单</span></div><div class="resonance-source-warning">${icon("shield-alert")}<div><strong>这里的账号全部未获批准</strong><p>蝉妈妈、巨量云图等榜单只负责发现异常，必须再经过抖音主页/视频、创作者指数、其他社媒或权威来源复核，才能进入达人审核。</p></div></div><div class="resonance-signal-list">${signals.map((signal) => {
+  return `<section class="resonance-signal-register"><div class="section-title"><h2>单平台热点线索</h2><span>${signals.length} 条 · 不是已确认热点</span></div><div class="resonance-source-warning">${icon("shield-alert")}<div><strong>这里的线索全部未完成热点确认</strong><p>蝉妈妈、创作者指数、巨量云图等榜单只负责发现异常；必须完成跨平台、跨账号、同龄增速和原创聚类复核，才能进入今日热点决策。</p></div></div><div class="resonance-signal-list">${signals.map((signal) => {
     const metrics = asArray(signal.metrics).filter((item) => item?.value != null && item?.value !== "");
-    return `<article class="resonance-signal-row"><div><span class="model-code">${escapeHtml(firstValue(signal.list, "榜单来源"))} · ${escapeHtml(firstValue(signal.rankLabel, signal.rank, "排名待核"))}</span><h3>${escapeHtml(firstValue(signal.creator, "未命名账号"))}</h3><p>${escapeHtml(firstValue(signal.reason, "只有账号层信号，尚未形成话题语义簇"))}</p><small>平台原始标签：${escapeHtml(firstValue(signal.statusLabel, "未标注"))}</small></div><div class="resonance-signal-metrics">${metrics.map((item) => `<span><small>${escapeHtml(item.label)}</small><b>${escapeHtml(String(item.value))}</b></span>`).join("") || "<span><small>指标</small><b>待补</b></span>"}</div><div>${statusChip("未批准 · 待交叉验证", "status-d")}${signal.sourceUrl ? `<a class="source-link" href="${escapeHtml(safeUrl(signal.sourceUrl))}" target="_blank" rel="noopener noreferrer"><span>查看原始榜单</span>${icon("external-link")}</a>` : ""}</div></article>`;
+    return `<article class="resonance-signal-row"><div><span class="model-code">${escapeHtml(firstValue(signal.list, "榜单来源"))} · ${escapeHtml(firstValue(signal.rankLabel, signal.rank, "排名待核"))}</span><h3>${escapeHtml(firstValue(signal.creator, "未命名线索"))}</h3><p>${escapeHtml(firstValue(signal.reason, "当前只有单平台信号，尚未形成可确认的话题语义簇"))}</p><small>平台原始标签：${escapeHtml(firstValue(signal.statusLabel, "未标注"))}</small></div><div class="resonance-signal-metrics">${metrics.map((item) => `<span><small>${escapeHtml(item.label)}</small><b>${escapeHtml(String(item.value))}</b></span>`).join("") || "<span><small>指标</small><b>待补</b></span>"}</div><div>${statusChip("未确认 · 待交叉验证", "status-d")}${signal.sourceUrl ? `<a class="source-link" href="${escapeHtml(safeUrl(signal.sourceUrl))}" target="_blank" rel="noopener noreferrer"><span>查看原始榜单</span>${icon("external-link")}</a>` : ""}</div></article>`;
   }).join("")}</div></section>`;
 }
 
 function renderCreatorCrossValidation(payload) {
   const records = nestedItems(payload);
-  if (!records.length) return `<section class="resonance-creator-validation"><div class="section-title"><h2>达人交叉验证</h2><span>达人质量与话题热度分开判断</span></div><div class="resonance-validation-empty">本轮没有新增的达人多源复核结论。榜单发现账号仍停留在下方“单平台发现线索”。</div></section>`;
+  if (!records.length) return `<section class="resonance-creator-validation"><div class="section-title"><h2>达人交叉验证</h2><span>达人质量与话题热度分开判断</span></div><div class="resonance-validation-empty">本轮没有新增的达人多源复核结论；榜单与话题线索请到“热点雷达”查看。</div></section>`;
   return `<section class="resonance-creator-validation"><div class="section-title"><h2>达人交叉验证</h2><span>${records.length} 位 · 不因上榜自动进入白名单</span></div><div class="resonance-validation-list">${records.map((record) => {
     const name = firstValue(record.nickname, record.creator, record.name, "未命名达人");
     const evidence = asArray(firstValue(record.platformEvidence, record.platforms, record.sources, record.verifiedPlatforms, []));
@@ -868,14 +868,14 @@ function renderCreatorCrossValidation(payload) {
   }).join("")}</div></section>`;
 }
 
-function renderResonanceRules(policy, densityRows) {
-  return `<details class="resonance-methodology"><summary><span>查看正式白名单的计算规则</span><small>用于审计，不替代上方业务结论</small></summary><div class="resonance-methodology-body">
+function renderTopicConfirmationRules(policy, densityRows) {
+  return `<details class="resonance-methodology"><summary><span>查看热点确认的计算规则</span><small>用于审计，不替代上方今日决策</small></summary><div class="resonance-methodology-body">
     <section class="resonance-gates"><div class="section-title"><h2>四道硬门</h2><span>任何一门失败都不能由总分补回</span></div><div class="resonance-gate-rail is-policy"><div class="resonance-gate"><span class="gate-index">01</span><div><strong>独立共振</strong><p>同主体、同投放、同脚本合并后再计算 N_eff。</p></div></div><div class="resonance-gate"><span class="gate-index">02</span><div><strong>同龄增速</strong><p>比较相同发布时长，不用累计点赞替代增长速度。</p></div></div><div class="resonance-gate"><span class="gate-index">03</span><div><strong>内容价值</strong><p>官网或社媒适配至少 70，并能形成明确内容产品。</p></div></div><div class="resonance-gate"><span class="gate-index">04</span><div><strong>风险否决</strong><p>刷量、搬运、统一投放或事实风险直接停止。</p></div></div></div></section>
-    <section class="resonance-policy-grid"><div><div class="section-title"><h2>赛道人数门槛</h2><span>按有效独立来源 N_eff 计算</span></div><div class="rules-table-wrap"><table class="data-table resonance-threshold-table"><thead><tr><th>赛道</th><th>候选</th><th>临时</th><th>重点</th></tr></thead><tbody>${densityRows}</tbody></table></div></div><div class="resonance-lifecycle"><div class="section-title"><h2>达人晋级与退出</h2><span>话题合格后再逐人审核</span></div><div class="lifecycle-steps"><div><span>O2+</span><strong>贡献资格</strong><p>源头、早期放大或专业解释；同龄表现至少 1.5 倍。</p></div><div><span>14D</span><strong>临时有效期</strong><p>二轮失败、关联重算或风险证据出现即降级。</p></div><div><span>90D</span><strong>长期晋级</strong><p>参与 3 个确认热点，至少 2 次属于源头或早期放大。</p></div></div></div></section>
+    <section class="resonance-policy-grid"><div><div class="section-title"><h2>赛道人数门槛</h2><span>按有效独立来源 N_eff 计算</span></div><div class="rules-table-wrap"><table class="data-table resonance-threshold-table"><thead><tr><th>赛道</th><th>进入复核</th><th>确认热点</th><th>重点热点</th></tr></thead><tbody>${densityRows}</tbody></table></div></div><div class="resonance-lifecycle"><div class="section-title"><h2>确认后的审核交接</h2><span>话题与达人分开定级</span></div><div class="lifecycle-steps"><div><span>TOPIC</span><strong>先确认热点</strong><p>跨账号扩散通过四道硬门，才能称为已确认热点。</p></div><div><span>PERSON</span><strong>再审核贡献</strong><p>只登记源头、早期放大或专业解释者，不把跟拍账号自动入围。</p></div><div><span>A / B</span><strong>最后评达人</strong><p>继续完成内容资格、D / M、两轮复审与风险审核。</p></div></div></div></section>
   </div></details>`;
 }
 
-function renderTopicWhitelistPilot(topicWhitelist, sourceStatus) {
+function renderTopicDecisionDesk(topicWhitelist, sourceStatus) {
   const summary = topicWhitelist.summary;
   const policy = topicWhitelist.policy;
   const blocked = sourceIsBlocked(sourceStatus) || /BLOCKED|VERIFICATION/.test(topicWhitelist.sourceStatus?.scanStatus || "");
@@ -894,16 +894,59 @@ function renderTopicWhitelistPilot(topicWhitelist, sourceStatus) {
       if (!rows.length) return "";
       return `<section class="resonance-topic-register resonance-lane-group ${operationalLane(rows[0]).className}" data-lane="${lane.key}"><div class="section-title"><h2>${lane.title}</h2><span>${rows.length} 个 · ${lane.note}</span></div>${rows.map(renderResonanceTopic).join("")}</section>`;
     }).join("")
-    : `<section class="resonance-empty"><div><span class="model-code">CURRENT ROUND / ${blocked ? "SOURCE BLOCKED" : "NO CONFIRMED TOPIC"}</span><h2>${blocked ? "本轮不能确认话题白名单" : "本轮没有达到共振门槛的话题"}</h2><p>${escapeHtml(topicWhitelist.statusMessage)}。缺失值保持为空，不把榜单进榜、单条高互动或采集失败写成正式白名单。</p></div>${statusChip(blocked ? "等待补证" : "正式白名单 0", blocked ? "status-watch" : "status-d")}</section>`;
+    : `<section class="resonance-empty"><div><span class="model-code">CURRENT ROUND / ${blocked ? "SOURCE BLOCKED" : "NO CONFIRMED TOPIC"}</span><h2>${blocked ? "本轮不能完成热点确认" : "本轮没有达到共振门槛的话题"}</h2><p>${escapeHtml(topicWhitelist.statusMessage)}。缺失值保持为空，不把榜单进榜、单条高互动或采集失败写成已确认热点。</p></div>${statusChip(blocked ? "等待补证" : "已确认热点 0", blocked ? "status-watch" : "status-d")}</section>`;
   const formalApproved = summary.temporaryTopics + summary.priorityTopics;
+  const missingIndependentSources = topicWhitelist.topics.filter((topic) => topic.metrics.effectiveIndependentSources == null).length;
 
-  return `<section class="resonance-console">
-    <div class="resonance-lead"><div><span class="model-code">话题决策 · 试运行规则</span><h2>热点与达人白名单决策</h2><p>先决定内容能不能做，再看是否达到正式白名单。<strong>业务可发布，不代表话题或达人已进入白名单。</strong></p></div><div class="resonance-kpis"><span class="is-publish"><strong>${laneCounts.publish}</strong><small>立即发布</small></span><span class="is-track"><strong>${laneCounts.track}</strong><small>条件跟进</small></span><span class="is-tail"><strong>${laneCounts.tail}</strong><small>长尾内容</small></span><span><strong>${laneCounts.clue}</strong><small>单源线索</small></span><span><strong>${formalApproved}</strong><small>正式话题白名单</small></span><span><strong>${formatMetric(summary.eligibleCreators)}</strong><small>正式达人白名单</small></span></div></div>
-    <div class="resonance-boundary">${icon("shield-alert")}<span><strong>阅读边界：</strong>“立即发布”是内容部门的时效判断；“正式白名单”还必须通过独立来源、同龄增速、内容价值和风险四道硬门。N_eff 未完成聚类时显示“待核”，不估填。</span></div>
+  return `<section class="resonance-console topic-decision-console">
+    <div class="resonance-lead"><div><span class="model-code">TODAY / TOPIC DECISION</span><h2>今日热点决策</h2><p>本页只回答“今天做什么、为什么、还缺什么”。<strong>话题可以发布，不代表它已完成热点确认，也不代表参与账号进入达人白名单。</strong></p></div><div class="resonance-kpis"><span class="is-publish"><strong>${laneCounts.publish}</strong><small>立即发布</small></span><span class="is-track"><strong>${laneCounts.track}</strong><small>条件跟进</small></span><span class="is-tail"><strong>${laneCounts.tail}</strong><small>长尾内容</small></span><span><strong>${laneCounts.clue}</strong><small>仅记录</small></span><span><strong>${formalApproved}</strong><small>已确认热点</small></span><span><strong>${missingIndependentSources}</strong><small>N_eff 待核</small></span></div></div>
+    <div class="resonance-boundary">${icon("shield-alert")}<span><strong>决策边界：</strong>“立即发布”是内容部门的时效判断；“已确认热点”还必须通过独立来源、同龄增速、内容价值和风险四道硬门。N_eff 未完成聚类时显示“待核”，不估填。</span></div>
     ${topicGroups}
+    ${renderTopicConfirmationRules(policy, densityRows)}
+  </section>`;
+}
+
+function explicitFormalCreatorGrade(candidate) {
+  const raw = firstValue(candidate?.whitelistGrade, candidate?.formalGrade, candidate?.grade);
+  const value = String(raw || "").trim().toUpperCase();
+  if (["A", "A级", "A_GRADE", "FORMAL_A", "WHITELIST_A"].includes(value)) return "A";
+  if (["B", "B级", "B_GRADE", "FORMAL_B", "WHITELIST_B"].includes(value)) return "B";
+  const status = String(candidate?.formalStatus || "").trim();
+  const match = status.match(/(?:正式)?([AB])级/i);
+  return match ? match[1].toUpperCase() : null;
+}
+
+function renderFormalCreatorRegister(data) {
+  const members = asArray(data?.candidates).map((candidate) => ({ candidate, grade: explicitFormalCreatorGrade(candidate) })).filter((item) => item.grade);
+  const declared = (numberOrNull(data?.summary?.formalWhitelistA) || 0) + (numberOrNull(data?.summary?.formalWhitelistB) || 0);
+  const rows = members.length
+    ? members.map(({ candidate, grade }) => `<div class="resonance-contributor is-eligible" data-open-id="${escapeHtml(candidate.id)}"><div><strong>${escapeHtml(candidate.nickname)}</strong><small>${escapeHtml(candidate.id)} · ${escapeHtml(formatFollowers(candidate.followers))} 粉</small></div><span class="mono">${escapeHtml(grade)} 级</span>${statusChip("正式达人", "status-pass")}<p>${escapeHtml(firstValue(candidate.formalReason, candidate.formalStatus, "已完成正式白名单审计"))}</p></div>`).join("")
+    : `<div class="resonance-contributor-empty"><strong>当前没有正式 A/B 达人</strong><p>候选、榜单账号、多源复核对象和高潜补样对象都不能代替正式名单。只有稳定账号 ID、至少 15 条有效样本、内容硬门槛、D / M 分级、两轮审核和风险门全部通过，才会显示在这里。</p></div>`;
+  const mismatch = declared !== members.length
+    ? `<div class="resonance-source-warning">${icon("triangle-alert")}<div><strong>正式人数与可逐条展示记录不一致</strong><p>汇总为 ${formatMetric(declared)} 位，当前可审计成员记录为 ${formatMetric(members.length)} 位；缺少逐人证据时不展示姓名。</p></div></div>`
+    : "";
+  return `<section class="resonance-topic-register creator-whitelist-register"><div class="section-title"><h2>正式 A/B 达人</h2><span>${members.length} 位 · 只展示可逐条审计记录</span></div>${mismatch}<div class="resonance-contributor-list">${rows}</div></section>`;
+}
+
+function renderCreatorWhitelistRules() {
+  return `<details class="resonance-methodology"><summary><span>查看达人白名单准入规则</span><small>话题热度不能替代达人审核</small></summary><div class="resonance-methodology-body">
+    <section class="resonance-gates"><div class="section-title"><h2>达人准入硬门</h2><span>任何一项缺失都不能直接定级</span></div><div class="resonance-gate-rail is-policy"><div class="resonance-gate"><span class="gate-index">01</span><div><strong>内容资格</strong><p>90 天至少 15 条；相关 ≥60%，实操 ≥40%，60 天相关内容 ≥6 条。</p></div></div><div class="resonance-gate"><span class="gate-index">02</span><div><strong>D / M 分级</strong><p>A：D≥80、M≥70；B：D≥75、M≥55。</p></div></div><div class="resonance-gate"><span class="gate-index">03</span><div><strong>两轮审核</strong><p>第 1 天首审，第 7 天复审新内容、活跃度和风险。</p></div></div><div class="resonance-gate"><span class="gate-index">04</span><div><strong>风险与一致性</strong><p>重大风险直接否决；20% 双人盲审且 Kappa ≥0.75。</p></div></div></div></section>
+    <section class="resonance-policy-grid"><div><div class="section-title"><h2>等级定义</h2><span>个人或人格化达人</span></div><div class="rules-table-wrap"><table class="data-table resonance-threshold-table"><thead><tr><th>层级</th><th>D</th><th>M</th><th>结果</th></tr></thead><tbody><tr><td><span class="cell-primary">A 级</span></td><td>≥80</td><td>≥70</td><td>正式</td></tr><tr><td><span class="cell-primary">B 级</span></td><td>≥75</td><td>≥55</td><td>正式</td></tr><tr><td><span class="cell-primary">观察池</span></td><td>65–74</td><td>待核</td><td>不入选</td></tr><tr><td><span class="cell-primary">淘汰池</span></td><td colspan="2">硬门槛失败或重大风险</td><td>停止</td></tr></tbody></table></div></div><div class="resonance-lifecycle"><div class="section-title"><h2>共振贡献的作用</h2><span>只是监测价值 M 的一部分</span></div><div class="lifecycle-steps"><div><span>O2+</span><strong>贡献证据</strong><p>源头、早期放大或专业解释可进入达人复核。</p></div><div><span>1.5×</span><strong>同龄表现</strong><p>必须超过账号自身与同体量基线，不能只看累计点赞。</p></div><div><span>A / B</span><strong>最终定级</strong><p>内容可信度、监测价值和两轮审核全部通过后才入选。</p></div></div></div></section>
+  </div></details>`;
+}
+
+function renderCreatorWhitelistDesk(decision, data) {
+  const topicWhitelist = decision.topicWhitelist;
+  const formalA = numberOrNull(data?.summary?.formalWhitelistA) || 0;
+  const formalB = numberOrNull(data?.summary?.formalWhitelistB) || 0;
+  const reviewSummary = decision.qualityReview?.summary || {};
+  const crossValidationCount = nestedItems(topicWhitelist.creatorCrossValidation).length;
+  return `<section class="resonance-console creator-whitelist-console">
+    <div class="resonance-lead"><div><span class="model-code">CREATOR / FORMAL WHITELIST</span><h2>达人白名单</h2><p>本页只回答“哪些个人达人正式入选、为什么入选”。<strong>话题有热度、账号参与放大或进入榜单，都不能直接替代达人 D / M 与两轮审核。</strong></p></div><div class="resonance-kpis"><span class="is-publish"><strong>${formalA + formalB}</strong><small>正式 A/B</small></span><span><strong>${formalA}</strong><small>A 级</small></span><span><strong>${formalB}</strong><small>B 级</small></span><span class="is-track"><strong>${crossValidationCount}</strong><small>多源复核中</small></span><span><strong>${formatMetric(reviewSummary.high_potential_top_up)}</strong><small>高潜补样</small></span><span><strong>${formatMetric(reviewSummary.held)}</strong><small>暂停投入</small></span></div></div>
+    <div class="resonance-boundary">${icon("shield-alert")}<span><strong>名单边界：</strong>本页不展示热点选题和单平台榜单。正式 A/B 只计算个人或人格化达人；官方、机构、候选、观察和高潜补样均单独管理，不计入正式人数。</span></div>
+    ${renderFormalCreatorRegister(data)}
     ${renderCreatorCrossValidation(topicWhitelist.creatorCrossValidation)}
-    ${renderObservedRankSignals(topicWhitelist.observedRankSignals)}
-    ${renderResonanceRules(policy, densityRows)}
+    ${renderCreatorWhitelistRules()}
   </section>`;
 }
 
@@ -959,6 +1002,19 @@ function renderSingleVideoSignals(signalsInput, sourceStatus) {
       </article>`;
     }).join("")}</div>
     ${signals.length > visibleSignals.length ? `<div class="signal-audit-tail">${icon("scan-line")}<span>默认只展示归一化速度前 ${visibleSignals.length} 条；其余 ${signals.length - visibleSignals.length} 条保留在审计数据中，不因页面折叠而删除。</span></div>` : ""}
+  </section>`;
+}
+
+function renderHotspotRadarDesk(decision, sourceStatus) {
+  const topicWhitelist = decision.topicWhitelist;
+  const signals = asArray(topicWhitelist.observedRankSignals);
+  const confirmed = topicWhitelist.summary.temporaryTopics + topicWhitelist.summary.priorityTopics;
+  return `<section class="resonance-console hotspot-radar-console">
+    <div class="resonance-lead"><div><span class="model-code">DISCOVERY / HOTSPOT RADAR</span><h2>热点雷达</h2><p>本页只负责发现异常增长和潜力话题。<strong>榜单、单平台指数和单条高互动都只是线索，完成交叉验证后才会进入“今日决策”。</strong></p></div><div class="resonance-kpis"><span class="is-track"><strong>${signals.length}</strong><small>单平台线索</small></span><span><strong>${decision.topicCandidates.length}</strong><small>跨账号候选</small></span><span><strong>${decision.singleVideoSignals.length}</strong><small>单视频待核</small></span><span class="is-publish"><strong>${confirmed}</strong><small>已确认热点</small></span></div></div>
+    <div class="resonance-boundary">${icon("radar")}<span><strong>流转规则：</strong>雷达发现 → 跨平台与跨账号复核 → 今日决策。没有新增独立原创账号、同龄增速和 N_eff 时，线索不会自动升级。</span></div>
+    ${renderObservedRankSignals(signals)}
+    ${renderTopicCandidates(decision, sourceStatus)}
+    ${renderSingleVideoSignals(decision.singleVideoSignals, sourceStatus)}
   </section>`;
 }
 
@@ -1103,25 +1159,27 @@ export function renderCreatorPage({ data, index, view, filters }) {
   const heading = renderPageHeading({
     eyebrow: `CREATOR DECISION DESK / ${data.date} / ${data.publicationStatus === "TRIAL_PREVIEW" ? "TRIAL" : "LIVE"}`,
     title: "抖音达人白名单库及热点判断",
-    subtitle: "先判断话题共振，再审核达人贡献；即时行动名单、话题临时名单与长期核心白名单严格分开",
+    subtitle: "今日热点决策、达人白名单与热点雷达分开呈现；话题热度、单条视频表现和达人资格互不替代",
     views: creatorViews,
     activeView: view,
   });
   let content;
-  if (view === "quality") content = `${renderDecisionLead(decision, data, true)}${decision.qualityReview ? renderQualityReview(decision.qualityReview) : renderQualityTable(decision)}`;
-  else if (view === "resonance") content = renderTopicWhitelistPilot(decision.topicWhitelist, data.sourceStatus);
-  else if (view === "topics") content = `${renderDecisionLead(decision, data, true)}${renderTopicCandidates(decision, data.sourceStatus)}${renderSingleVideoSignals(decision.singleVideoSignals, data.sourceStatus)}`;
+  if (view === "quality") content = decision.qualityReview ? renderQualityReview(decision.qualityReview) : renderQualityTable(decision);
+  else if (view === "resonance") content = renderCreatorWhitelistDesk(decision, data);
+  else if (view === "topics") content = renderHotspotRadarDesk(decision, data.sourceStatus);
   else if (view === "candidates") {
     const filtered = filterCandidates(data, filters, decisionMap);
-    content = `${renderDecisionLead(decision, data, true)}${renderToolbar(data, filters, filtered.length)}${renderCandidateTable(filtered, decision.singleVideoSignals, decision.summary.observedAt, decisionMap, data.sourceStatus)}`;
+    content = `${renderToolbar(data, filters, filtered.length)}${renderCandidateTable(filtered, decision.singleVideoSignals, decision.summary.observedAt, decisionMap, data.sourceStatus)}`;
   } else if (view === "evidence") content = renderEvidenceAndRules(data, decision, index);
   else {
     const reviewSummary = decision.qualityReview?.summary;
+    const formalTotal = (numberOrNull(data?.summary?.formalWhitelistA) || 0) + (numberOrNull(data?.summary?.formalWhitelistB) || 0);
     const peopleCopy = reviewSummary
-      ? `严格队列 ${formatMetric(reviewSummary.queue_entries)} 条，仅 ${formatMetric(reviewSummary.high_potential_top_up)} 位进入 Q0 补样，${formatMetric(reviewSummary.held)} 位暂停投入；正式白名单仍为 0。`
+      ? `正式 A/B 达人 ${formatMetric(formalTotal)} 位；严格审核队列 ${formatMetric(reviewSummary.queue_entries)} 条，仅 ${formatMetric(reviewSummary.high_potential_top_up)} 位进入高潜补样。`
       : `优先使用 ${decision.summary.executeCreators} 位，条件与观察 ${decision.summary.watchCreators} 位；业务处置优先，证据代理分只辅助排序。`;
-    const resonanceSummary = decision.topicWhitelist.summary;
-    content = `${renderDecisionLead(decision, data)}${renderActionBriefs(decision)}<section class="overview-followup"><div><span class="model-code">NEXT / PEOPLE</span><h2>严格达人复核</h2><p>${peopleCopy}</p><button type="button" class="command-button" data-view="quality">${icon("users-round")}查看完整审核队列</button></div><div><span class="model-code">NEXT / RESONANCE</span><h2>话题共振白名单</h2><p>候选 ${resonanceSummary.candidateTopics} 个，临时白名单 ${resonanceSummary.temporaryTopics} 个，重点白名单 ${resonanceSummary.priorityTopics} 个；名义账号数量不再直接决定入围。</p><button type="button" class="command-button" data-view="resonance">${icon("network")}查看共振证据</button></div></section>`;
+    const radarSignals = decision.topicWhitelist.observedRankSignals.length;
+    const today = renderTopicDecisionDesk(decision.topicWhitelist, data.sourceStatus);
+    content = `${today}<section class="overview-followup"><div><span class="model-code">NEXT / CREATOR</span><h2>达人白名单</h2><p>${peopleCopy}</p><button type="button" class="command-button" data-view="resonance">${icon("badge-check")}查看正式名单与复核证据</button></div><div><span class="model-code">NEXT / RADAR</span><h2>热点雷达</h2><p>单平台热点线索 ${formatMetric(radarSignals)} 条；它们尚未完成跨平台、跨账号和 N_eff 复核，不进入今日热点结论。</p><button type="button" class="command-button" data-view="topics">${icon("radar")}查看待验证热点</button></div></section>`;
   }
   return `${heading}${content}`;
 }
