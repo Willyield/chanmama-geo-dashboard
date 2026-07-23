@@ -5,19 +5,19 @@
   "dates": [
     {
       "date": "2026-07-23",
-      "observedAt": "2026-07-23 10:07:00+08:00",
-      "total": 7,
+      "observedAt": "2026-07-23 17:23:10+08:00",
+      "total": 10,
       "priority": 4,
       "gradeCounts": {
-        "S": 0,
-        "A": 4,
-        "B": 2,
-        "C": 1,
-        "D": 0
+          "S": 0,
+          "A": 4,
+          "B": 4,
+          "C": 2,
+          "D": 0
       },
       "domainCounts": {
-        "commerce": 5,
-        "technology": 2
+          "commerce": 8,
+          "technology": 2
       },
       "sourceType": "structured-data",
       "sourceArtifact": "incoming/hotspots/2026-07-23.json",

@@ -372,7 +372,40 @@ function renderCandidateScore(candidate, includeReason = true) {
     ? renderTrafficScores(candidate)
     : "";
   if (isTechnology(candidate)) return `<div class="score-stack">${renderTechnologyScores(candidate)}${traffic}</div>`;
-  return `<div class="score-stack">${traffic || `<div class="score-block"><span class="score-value">${escapeHtml(candidate.totalScore)}</span><span class="score-unit">/100</span></div>`}${includeReason ? `<span class="cell-secondary">业务评分 ${escapeHtml(candidate.totalScore)}｜${escapeHtml(candidate.downgradeReason)}</span>` : ""}</div>`;
+  const totalScore = candidate.totalScore == null ? "待核" : candidate.totalScore;
+  const scoreUnit = candidate.totalScore == null ? "" : "/100";
+  const scoreReason = candidate.downgradeReason ? `｜${escapeHtml(candidate.downgradeReason)}` : "";
+  return `<div class="score-stack">${traffic || `<div class="score-block"><span class="score-value">${escapeHtml(totalScore)}</span><span class="score-unit">${scoreUnit}</span></div>`}${includeReason ? `<span class="cell-secondary">业务评分 ${escapeHtml(totalScore)}${scoreReason}</span>` : ""}</div>`;
+}
+
+function renderTopicResonance(candidate) {
+  const resonance = candidate.topic_resonance || candidate.topicResonance;
+  if (!resonance) return "";
+  const gates = resonance.hard_gates || resonance.hardGates || {};
+  const gateLabels = {
+    independent_resonance: "独立共振",
+    same_age_growth: "同龄增速",
+    content_value: "内容价值",
+    risk_veto: "风险否决",
+  };
+  const gateStatus = (value) => {
+    const normalized = String(value || "UNKNOWN").toUpperCase();
+    if (normalized.startsWith("PASS")) return "通过";
+    if (normalized.startsWith("FAIL")) return "未通过";
+    if (normalized.includes("CONDITIONAL_PASS")) return "条件通过";
+    return "待核";
+  };
+  const rows = Object.entries(gateLabels).map(([key, label]) => [label, gateStatus(gates[key])]);
+  rows.unshift(
+    ["原始来源触发", resonance.raw_source_count_trigger ?? "待核"],
+    ["有效独立来源 N_eff", resonance.neff_conservative ?? "待核"],
+    ["常规门槛", `候选 ${resonance.candidate_threshold ?? 3}｜共振达标 ${resonance.temporary_threshold ?? 5}｜重点 ${resonance.priority_threshold ?? 8}`],
+  );
+  rows.push(
+    ["确认热点", resonance.confirmed_hotspot ? "是" : "否"],
+    ["话题共振达标", resonance.resonance_qualified ? "是" : "否"],
+  );
+  return detailSection("话题共振审核", "network", factGrid(rows));
 }
 
 function filterCandidates(candidates, filters) {
@@ -447,7 +480,7 @@ function renderOverviewTable(candidates) {
     <td>${isTechnology(candidate) ? `<div class="evidence-pair">${renderEvidencePreview("官方", officialEvidence(candidate), "官方信息待确认")}${renderEvidencePreview("圈层", circleEvidence(candidate), "圈层信号待确认")}</div>` : `<span class="cell-primary">${escapeHtml(firstLine(candidate.evidence))}</span><span class="cell-secondary">${escapeHtml(candidate.risk)}｜${escapeHtml(candidate.publishedAt)}</span>`}${pendingConfirmation(candidate).length ? `<span class="cell-secondary"><strong>待确认：</strong>${escapeHtml(pendingConfirmation(candidate).join("；"))}</span>` : ""}${recommendedChannelLabels(candidate).length ? `<span class="cell-secondary"><strong>建议渠道：</strong>${escapeHtml(recommendedChannelLabels(candidate).join("、"))}</span>` : ""}</td>
   </tr>`).join("");
   const mobile = candidates.map((candidate) => `<article class="mobile-item" data-open-id="${escapeHtml(candidate.id)}" data-domain="${candidateDomain(candidate)}">
-    <div class="mobile-item-header">${statusChip(mainDecisionLabel(candidate), mainDecisionClass(candidate))}${isTechnology(candidate) ? `<div class="score-stack">${renderTechnologyScores(candidate, true)}${hotnessScore(candidate) != null || contentPotentialScore(candidate) != null ? renderTrafficScores(candidate, true) : ""}</div>` : hotnessScore(candidate) != null || contentPotentialScore(candidate) != null ? renderTrafficScores(candidate, true) : `<span class="mono">${escapeHtml(candidate.totalScore)}</span>`}</div>
+    <div class="mobile-item-header">${statusChip(mainDecisionLabel(candidate), mainDecisionClass(candidate))}${isTechnology(candidate) ? `<div class="score-stack">${renderTechnologyScores(candidate, true)}${hotnessScore(candidate) != null || contentPotentialScore(candidate) != null ? renderTrafficScores(candidate, true) : ""}</div>` : hotnessScore(candidate) != null || contentPotentialScore(candidate) != null ? renderTrafficScores(candidate, true) : `<span class="mono">${escapeHtml(candidate.totalScore ?? "待核")}</span>`}</div>
     <h3>${escapeHtml(displayName(candidate))}</h3>
     <div class="mobile-facts">
       <div class="mobile-fact"><span>来源</span><strong>${escapeHtml(sourceTier(candidate))}</strong></div>
@@ -603,6 +636,8 @@ export function renderHotspotPage({ data, index, view, filters }) {
     metrics: [
       { value: data.candidates.length, label: "本期入库" },
       { value: `${kindCounts.event}/${kindCounts.potential_topic}`, label: "事件 / 潜力" },
+      { value: data.summary.confirmedHotspotCount ?? 0, label: "确认热点" },
+      { value: data.summary.resonanceQualifiedCount ?? 0, label: "共振达标" },
       { value: counts.S + counts.A, label: "重点业务" },
       { value: topicValueCounts.S + topicValueCounts.A, label: "高价值选题" },
       { value: data.summary.publishNowCount ?? 0, label: "可制作 / 试发" },
@@ -682,7 +717,7 @@ export function renderHotspotDetail(candidate) {
       ["评分模型", "tech_v1"],
     ])) : detailSection("决策概览", "gauge", factGrid([
       ["业务响应", statusChip(businessResponseLabel(candidate), gradeClass(actionCode(candidate)))],
-      ["业务响应分", `<span class="mono">${escapeHtml(candidate.totalScore)} / 100</span>`],
+      ["业务响应分", `<span class="mono">${escapeHtml(candidate.totalScore ?? "待核")}${candidate.totalScore == null ? "" : " / 100"}</span>`],
       ["热度信号", `<span class="mono">${escapeHtml(hotnessLevel(candidate))} · ${escapeHtml(hotnessScore(candidate) ?? "待核")}</span>`],
       ["选题价值", `<span class="mono">${escapeHtml(topicValueLabel(candidate))} · ${escapeHtml(topicValueScore(candidate) ?? "待核")}</span>`],
       ["内容动作", statusChip(publicationStatus(candidate), publicationClass(candidate))],
@@ -690,6 +725,7 @@ export function renderHotspotDetail(candidate) {
       ["发布时间", escapeHtml(candidate.publishedAt)],
       ["判断依据", escapeHtml(candidate.business_response_basis || candidate.downgradeReason)],
     ]))}
+    ${renderTopicResonance(candidate)}
     ${technology ? `${detailSection("一句话技术变化", "radar", `<p class="drawer-prose">${escapeHtml(techChange(candidate))}</p>`)}
       ${detailSection("为什么与蝉妈妈有关", "target", `<p class="drawer-prose">${escapeHtml(chanmamaRelevance(candidate))}</p>`)}
       ${detailSection("下一步与事实边界", "list-checks", `<p class="drawer-prose">${escapeHtml(candidate.actionDetail || nextStep(candidate))}</p><p class="drawer-prose"><strong>事实边界：</strong>${escapeHtml(factBoundary(candidate))}</p>`)}
@@ -711,6 +747,6 @@ export function renderHotspotDetail(candidate) {
   `;
   const copyText = technology
     ? `【${mainDecisionLabel(candidate)}｜${displayName(candidate)}】\n科技影响：${techLevel(candidate)} · ${techImpactScore(candidate) ?? "待核"}\n业务承接：${businessFitScore(candidate) ?? "待核"}\n热度信号：${hotnessLevel(candidate)} · ${hotnessScore(candidate) ?? "待核"}\n选题价值：${topicValueLabel(candidate)} · ${topicValueScore(candidate) ?? "待核"}\n内容动作：${publicationStatus(candidate)}\n事实边界：${factBoundary(candidate)}\n下一步：${nextStep(candidate)}\n核心来源：${coreSource?.url || "暂缺"}`
-    : `【${mainDecisionLabel(candidate)}｜${displayName(candidate)}】\n业务响应：${businessResponseLabel(candidate)} · ${candidate.totalScore}\n热度信号：${hotnessLevel(candidate)} · ${hotnessScore(candidate) ?? "待核"}\n选题价值：${topicValueLabel(candidate)} · ${topicValueScore(candidate) ?? "待核"}\n内容动作：${publicationStatus(candidate)}\n为什么做：${candidate.actionReason}\n具体执行：${candidate.recommended}\n事实边界：${factBoundary(candidate)}\n内容题目：${candidate.early_publish_title || candidate.primary_topic || "待补"}\n渠道：${recommendedChannelLabels(candidate).join("、") || "暂不发布"}\n核心来源：${coreSource?.url || "暂缺"}`;
+    : `【${mainDecisionLabel(candidate)}｜${displayName(candidate)}】\n业务响应：${businessResponseLabel(candidate)} · ${candidate.totalScore ?? "待核"}\n热度信号：${hotnessLevel(candidate)} · ${hotnessScore(candidate) ?? "待核"}\n选题价值：${topicValueLabel(candidate)} · ${topicValueScore(candidate) ?? "待核"}\n内容动作：${publicationStatus(candidate)}\n为什么做：${candidate.actionReason}\n具体执行：${candidate.recommended}\n事实边界：${factBoundary(candidate)}\n内容题目：${candidate.early_publish_title || candidate.primary_topic || "待补"}\n渠道：${recommendedChannelLabels(candidate).join("、") || "暂不发布"}\n核心来源：${coreSource?.url || "暂缺"}`;
   return { eyebrow: `${candidate.id} · ${mainDecisionLabel(candidate)}`, title: displayName(candidate), html, copyText };
 }
