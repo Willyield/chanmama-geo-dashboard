@@ -1,23 +1,43 @@
 {
   "schemaVersion": 2,
   "module": "hotspots",
-  "latest": "2026-07-23",
+  "latest": "2026-07-24",
   "dates": [
+    {
+      "date": "2026-07-24",
+      "observedAt": "2026-07-24T02:13:15.931Z",
+      "total": 8,
+      "priority": 4,
+      "gradeCounts": {
+        "S": 0,
+        "A": 4,
+        "B": 3,
+        "C": 1,
+        "D": 0
+      },
+      "domainCounts": {
+        "commerce": 5,
+        "technology": 3
+      },
+      "sourceType": "structured-data",
+      "sourceArtifact": "incoming/hotspots/2026-07-24.json",
+      "sourceWorkbook": null
+    },
     {
       "date": "2026-07-23",
       "observedAt": "2026-07-23 17:23:10+08:00",
       "total": 10,
       "priority": 4,
       "gradeCounts": {
-          "S": 0,
-          "A": 4,
-          "B": 4,
-          "C": 2,
-          "D": 0
+        "S": 0,
+        "A": 4,
+        "B": 4,
+        "C": 2,
+        "D": 0
       },
       "domainCounts": {
-          "commerce": 8,
-          "technology": 2
+        "commerce": 8,
+        "technology": 2
       },
       "sourceType": "structured-data",
       "sourceArtifact": "incoming/hotspots/2026-07-23.json",
