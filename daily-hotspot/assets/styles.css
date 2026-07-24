@@ -847,6 +847,34 @@ p {
   gap: 6px;
 }
 
+.resonance-inline {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3px 8px;
+  margin-top: 7px;
+  border-top: 1px solid var(--border);
+  padding-top: 6px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.resonance-inline span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.resonance-inline strong {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.resonance-inline .is-blocked strong {
+  color: var(--danger);
+}
+
 .traffic-score-pair {
   display: grid;
   width: 172px;

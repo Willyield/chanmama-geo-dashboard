@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "module": "hotspots",
   "date": "2026-07-24",
-  "observedAt": "2026-07-24T02:13:15.931Z",
-  "revision": 1,
-  "updatedAt": "2026-07-24T02:13:16.022Z",
+  "observedAt": "2026-07-24T02:30:32.359Z",
+  "revision": 6,
+  "updatedAt": "2026-07-24T02:53:58.502Z",
   "sourceType": "structured-data",
   "sourceArtifact": "incoming/hotspots/2026-07-24.json",
   "sourceWorkbook": null,
@@ -17,8 +17,8 @@
     "gradeCounts": {
       "S": 0,
       "A": 4,
-      "B": 3,
-      "C": 1,
+      "B": 2,
+      "C": 2,
       "D": 0
     },
     "domainCounts": {
@@ -37,8 +37,8 @@
       "D": 0
     },
     "topicValueCounts": {
-      "S": 3,
-      "A": 3,
+      "S": 2,
+      "A": 4,
       "B": 1,
       "C": 1,
       "D": 0
@@ -52,8 +52,8 @@
       "do_not_publish": 0
     },
     "priorityCount": 4,
-    "lowCostCount": 3,
-    "observeCount": 1,
+    "lowCostCount": 2,
+    "observeCount": 2,
     "evidenceE3Count": 7,
     "publishNowCount": 6,
     "webSummary": "8 条候选入库，其中事件热点 7 条、潜力话题 1 条。重点业务 4 条，当前可制作或试发 6 条，高潜力抢先试发 1 条。\n今日优先：2026抖音商城七夕好礼季启动招商：活动、选品和内容窗口已经明确、抖音关联劣质商家处置细则：关联主体可能被限单、冻结结算或清退、抖音发布/分享混淆品牌信息处置细则：标题、图片和口播都要核对。",
@@ -85,17 +85,17 @@
         "publicationStatusCode": "priority_production"
       },
       {
-        "id": "HT-20260724-004",
-        "grade": "S",
-        "name": "潜力话题：贵州豆豉火锅进入抖音实时热点，小红书同步出现做法、配菜和底料需求",
-        "reason": "先承接大众问题，再补商品和达人数据，不反向编造销量。",
-        "action": "抢先试发｜贵州豆豉火锅突然火了：怎么做、配什么菜、底料怎么选",
+        "id": "HT-20260724-001",
+        "grade": "A",
+        "name": "抖音关联劣质商家处置细则：关联主体可能被限单、冻结结算或清退",
+        "reason": "把抽象规则翻译成商家可操作的关系排查清单。",
+        "action": "定向发布｜抖音店铺被判关联劣质商家怎么办？五类关系自查",
         "domain": "commerce",
-        "contentPotentialScore": 87,
-        "topicValueScore": 87,
-        "topicValueLabel": "高潜力",
-        "publicationStatus": "抢先试发",
-        "publicationStatusCode": "early_test"
+        "contentPotentialScore": 79,
+        "topicValueScore": 79,
+        "topicValueLabel": "较高潜力",
+        "publicationStatus": "定向发布",
+        "publicationStatusCode": "targeted_publish"
       }
     ],
     "topRollingUpdates": [
@@ -103,7 +103,7 @@
         "id": "HT-20260724-004",
         "name": "潜力话题：贵州豆豉火锅进入抖音实时热点，小红书同步出现做法、配菜和底料需求",
         "action": "试发后滚动确认：蝉妈妈底料商品销量与增幅；关联达人和直播间；百度指数是否形成持续搜索；官方或原始信息待确认；内容供给缺口待确认",
-        "topicValueScore": 87,
+        "topicValueScore": 78,
         "publicationStatus": "抢先试发"
       }
     ],
@@ -188,6 +188,7 @@
         "freshness_verified": true,
         "normalization_flags": []
       },
+      "topic_resonance": null,
       "official_rule": {
         "substantive_change": true,
         "direct_business_impact": true,
@@ -548,6 +549,7 @@
           "campaign_event"
         ]
       },
+      "topic_resonance": null,
       "official_rule": {
         "substantive_change": true,
         "direct_business_impact": true,
@@ -914,6 +916,7 @@
         "freshness_verified": true,
         "normalization_flags": []
       },
+      "topic_resonance": null,
       "official_rule": {
         "substantive_change": true,
         "direct_business_impact": true,
@@ -1236,12 +1239,12 @@
       "type": "内容潜力｜食品消费话题",
       "sourceLevel": "E2",
       "publishedAt": "2026-07-24实时观察",
-      "signal": "抖音实时热点第6，热点指数1027.2万；蝉妈妈首页种草热点同步出现；小红书近两天仍有新增笔记，并形成做法、配菜、底料和品牌搜索联想。",
-      "uncertainty": "蝉妈妈商品搜索本轮读取超时，尚未验证具体底料商品、达人和直播间转化；热点成立不等于商品已经爆发。",
+      "signal": "抖音创作者中心10:27实时热点第5、指数1027.9万；抖音站内10:28当前可见结果涉及5个不同账号；蝉妈妈首页种草热点与小红书问题需求构成补充信号。",
+      "uncertainty": "5个可见账号的MCN、主体和投放关系尚未归并，N_eff保持null；站内结果发布时间跨度较大，尚无4至8小时同口径增长窗；具体底料商品、达人和直播间转化未验证。",
       "recommended": "先发解释与消费决策内容抢窗口，再滚动补底料商品、达人、直播间和搜索趋势数据。",
       "actionReason": "它同时具备实时高热、跨平台扩散和明确问题簇，比只在专业圈传播的规则更容易获得泛流量；证据缺口只限制商品结论，不阻止低成本抢先发布。",
       "actionDetail": "官网首发：《贵州豆豉火锅为什么突然火了？做法、配菜和底料怎么选》；短视频做口味与配菜清单，小红书做底料选择和避坑；后续补蝉妈妈食品类目、商品和达人数据。未验证转化前不写爆品、不投广告、不开发专题工具。",
-      "evidence": "平台：抖音创作者指数；页面：抖音实时热点；观察2026-07-24 09:42；第6、指数1027.2万；E2；https://creator.douyin.com/creator-micro/creator-count/arithmetic-index；补充平台：小红书；页面：贵州豆豉火锅站内搜索；观察2026-07-24 09:45；E2；https://www.xiaohongshu.com/search_result/?keyword=%E8%B4%B5%E5%B7%9E%E8%B1%86%E8%B1%89%E7%81%AB%E9%94%85&source=web_explore_feed&type=51",
+      "evidence": "平台：抖音创作者中心；页面：抖音实时热点；观察2026-07-24 10:27；第5、指数1027.9万；E2；https://creator.douyin.com/creator-micro/creator-count/arithmetic-index；补充平台：抖音站内搜索；观察2026-07-24 10:28；当前可见结果5个不同账号、来源簇关系未完成；E1；https://www.douyin.com/search/%E8%B4%B5%E5%B7%9E%E8%B1%86%E8%B1%89%E7%81%AB%E9%94%85?type=general；小红书观察沿用09:45的E2站内信号。",
       "departments": "内容/GEO主责；食品类目数据协作",
       "deadline": "2026-07-25",
       "notRecommended": "不把内容热度写成底料销量爆发；未补齐商品和达人数据前不投广告、不做爆品行业稿。",
@@ -1260,6 +1263,11 @@
           "label": "Supporting source 2",
           "domain": "chanmama.com",
           "url": "https://www.chanmama.com/douyin/"
+        },
+        {
+          "label": "Supporting source 3",
+          "domain": "douyin.com",
+          "url": "https://www.douyin.com/search/%E8%B4%B5%E5%B7%9E%E8%B1%86%E8%B1%89%E7%81%AB%E9%94%85?type=general"
         }
       ],
       "source_links": [
@@ -1277,6 +1285,11 @@
           "label": "Supporting source 2",
           "domain": "chanmama.com",
           "url": "https://www.chanmama.com/douyin/"
+        },
+        {
+          "label": "Supporting source 3",
+          "domain": "douyin.com",
+          "url": "https://www.douyin.com/search/%E8%B4%B5%E5%B7%9E%E8%B1%86%E8%B1%89%E7%81%AB%E9%94%85?type=general"
         }
       ],
       "status": "抢先试发",
@@ -1288,19 +1301,31 @@
       "signal_type": "platform_realtime_topic",
       "baseline_evidence": {
         "signal_type": "platform_realtime_topic",
-        "baseline_verified": true,
+        "baseline_verified": false,
         "freshness_verified": true,
-        "normalization_flags": []
+        "normalization_flags": [
+          "single_day_snapshot"
+        ]
+      },
+      "topic_resonance": {
+        "raw_visible_account_count": 5,
+        "effective_independent_source_count": null,
+        "source_cluster_status": "UNKNOWN",
+        "same_age_growth_status": "UNKNOWN",
+        "content_value_status": "PASS_FOR_LOW_COST_TEST",
+        "risk_gate_status": "PASS_WITH_FACT_BOUNDARY",
+        "confirmed_hotspot": false,
+        "temporary_creator_whitelist_count": 0
       },
       "official_rule": null,
-      "technology_change": "抖音实时热点第6，热点指数1027.2万；蝉妈妈首页种草热点同步出现；小红书近两天仍有新增笔记，并形成做法、配菜、底料和品牌搜索联想。",
+      "technology_change": "抖音创作者中心10:27实时热点第5、指数1027.9万；抖音站内10:28当前可见结果涉及5个不同账号；蝉妈妈首页种草热点与小红书问题需求构成补充信号。",
       "chanmama_relevance": "它同时具备实时高热、跨平台扩散和明确问题簇，比只在专业圈传播的规则更容易获得泛流量；证据缺口只限制商品结论，不阻止低成本抢先发布。",
       "next_step": "先发解释与消费决策内容抢窗口，再滚动补底料商品、达人、直播间和搜索趋势数据。",
       "explicitly_not_doing": "不把内容热度写成底料销量爆发；未补齐商品和达人数据前不投广告、不做爆品行业稿。",
       "official_evidence": [],
       "circle_evidence": [],
-      "business_response_code": "B",
-      "business_response_label": "常规跟进",
+      "business_response_code": "C",
+      "business_response_label": "继续观察",
       "business_response_score": 81,
       "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
@@ -1321,11 +1346,11 @@
       "scoring_model": "commerce_v1",
       "totalScore": 81,
       "initialValue": 4,
-      "finalValue": 3,
-      "grade": "L-B｜常规跟进",
-      "gradeCode": "B",
-      "followDecision": "常规跟进",
-      "downgradeReason": "信源封顶",
+      "finalValue": 2,
+      "grade": "L-C｜继续观察",
+      "gradeCode": "C",
+      "followDecision": "继续观察",
+      "downgradeReason": "基线校正封顶",
       "scoreDetails": [
         {
           "name": "流量热度",
@@ -1383,7 +1408,7 @@
         "evidence": 3,
         "type": 5,
         "core": 4,
-        "baseline": 5,
+        "baseline": 2,
         "risk": 4,
         "window": 5,
         "preparation": 5,
@@ -1391,20 +1416,22 @@
       },
       "baseline_assessment": {
         "signal_type": "platform_realtime_topic",
-        "requires_baseline": false,
-        "comparison_baseline_verified": true,
-        "baseline_type": "不适用",
-        "normalization_flags": [],
-        "multi_period_growth_verified": true,
+        "requires_baseline": true,
+        "comparison_baseline_verified": false,
+        "baseline_type": "未提供",
+        "normalization_flags": [
+          "single_day_snapshot"
+        ],
+        "multi_period_growth_verified": false,
         "independent_change_signals": 0,
-        "is_verified": true
+        "is_verified": false
       },
       "business_priority_basis": "综合评分与封顶规则决定。",
       "hotness_scoring_model": "hotness_v1",
       "hotness_score": 94,
       "raw_hotness_level": "H-S",
-      "hotness_level": "H-S",
-      "hotness_final_value": 5,
+      "hotness_level": "H-C",
+      "hotness_final_value": 2,
       "hotness_score_details": [
         {
           "key": "absolute_demand",
@@ -1449,25 +1476,35 @@
           "weighted_score": 5
         }
       ],
-      "hotness_caps": [],
+      "hotness_caps": [
+        {
+          "rule": "baseline_normalization_cap",
+          "hotness_cap": "H-C",
+          "changed": true,
+          "reason": "该信号容易受客单价、销量规模、季节、活动、单场爆发、小基数或平台估算影响；缺少可比基线、多周期增长和两项独立变化信号时，不能判定为趋势热点。"
+        }
+      ],
       "hotness_signal_type": "platform_realtime_topic",
       "hotness_independent_platform_count": 3,
-      "hotness_baseline_verified": true,
+      "hotness_baseline_verified": false,
       "hotness_freshness_verified": true,
       "hotness_change_signals": [
-        "抖音实时热点第6、指数1027.2万",
+        "抖音创作者中心实时热点第5、指数1027.9万",
+        "抖音站内当前可见5个不同账号，N_eff尚未计算",
         "蝉妈妈种草热点同步",
         "小红书近两天持续新增内容"
       ],
-      "hotness_requires_baseline": false,
-      "hotness_comparison_baseline_verified": true,
-      "hotness_baseline_type": "不适用",
-      "hotness_normalization_flags": [],
-      "hotness_multi_period_growth_verified": true,
-      "hotness_independent_change_signals": 3,
+      "hotness_requires_baseline": true,
+      "hotness_comparison_baseline_verified": false,
+      "hotness_baseline_type": "未提供",
+      "hotness_normalization_flags": [
+        "single_day_snapshot"
+      ],
+      "hotness_multi_period_growth_verified": false,
+      "hotness_independent_change_signals": 4,
       "content_scoring_model": "content_potential_v1",
-      "content_potential_score": 87,
-      "raw_content_potential_level": "P-S",
+      "content_potential_score": 78,
+      "raw_content_potential_level": "P-A",
       "content_potential_level": "P-B",
       "content_final_value": 3,
       "content_score_details": [
@@ -1481,9 +1518,9 @@
         {
           "key": "demand_velocity",
           "name": "需求上涨速度",
-          "score": 5,
+          "score": 2,
           "weight": 15,
-          "weighted_score": 15
+          "weighted_score": 6
         },
         {
           "key": "content_supply_gap",
@@ -1540,12 +1577,6 @@
           "potential_cap": "P-B",
           "changed": false,
           "reason": "搜索路线尚未验证内容供给缺口，内容潜力最高P-B。"
-        },
-        {
-          "rule": "potential_s_gate",
-          "potential_cap": "P-A",
-          "changed": false,
-          "reason": "P-S需要E3、至少3个平台、有效基线、最新数据和85分以上渠道适配。"
         }
       ],
       "content_source_tier": "E2",
@@ -1555,9 +1586,9 @@
         "抖音实时热点指数1027.2万",
         "小红书形成做法、配菜、底料和品牌问题簇"
       ],
-      "content_baseline_verified": true,
+      "content_baseline_verified": false,
       "content_requires_baseline": false,
-      "content_comparison_baseline_verified": true,
+      "content_comparison_baseline_verified": false,
       "content_baseline_type": "不适用",
       "content_normalization_flags": [],
       "content_multi_period_growth_verified": true,
@@ -1595,15 +1626,15 @@
         "demand": "实时高热且跨平台扩散",
         "risk": "商品转化仍需蝉妈妈验证"
       },
-      "topic_value_score": 87,
-      "topic_value_code": "S",
-      "topic_value_label": "高潜力",
+      "topic_value_score": 78,
+      "topic_value_code": "A",
+      "topic_value_label": "较高潜力",
       "publication_status_code": "early_test",
       "publication_status": "抢先试发",
       "publication_priority": 5,
       "publication_mode": "观察型或问题型内容",
       "publication_basis": "选题价值高且真实平台信号已确认；未确认信息只限制结论强度，不阻止用观察型内容抢占窗口。",
-      "fact_boundary": "只确认多平台内容热度和问题需求；不确认底料商品已经爆发。",
+      "fact_boundary": "只确认实时榜在榜、当前可见多账号内容和跨平台问题需求；不确认持续增长、有效独立来源数或底料商品已经爆发。",
       "pending_confirmation": [
         "蝉妈妈底料商品销量与增幅",
         "关联达人和直播间",
@@ -1663,6 +1694,7 @@
       "candidate_kind": "event",
       "signal_type": "official_adoption_ranking",
       "baseline_evidence": null,
+      "topic_resonance": null,
       "official_rule": null,
       "technology_change": "内容平台开始把可执行Skill直接挂入笔记和创作者场景，AI能力从外部工具转向平台内分发与使用。",
       "chanmama_relevance": "可用于内容生产、商品素材和创作者运营；蝉妈妈可用自身数据设计评测任务，但当前不需要立刻开发产品。",
@@ -2103,6 +2135,7 @@
       "candidate_kind": "event",
       "signal_type": "official_api_change",
       "baseline_evidence": null,
+      "topic_resonance": null,
       "official_rule": null,
       "technology_change": "API调用名称进入迁移节点，直接影响仍使用旧名称的开发者和自动化流程。",
       "chanmama_relevance": "若内部或用户自动化脚本调用DeepSeek API，需要检查兼容性；对大多数商家和达人没有直接影响。",
@@ -2549,6 +2582,7 @@
       "candidate_kind": "event",
       "signal_type": "developer_ecosystem_trending",
       "baseline_evidence": null,
+      "topic_resonance": null,
       "official_rule": null,
       "technology_change": "开放OCR模型进入开发者趋势，可用于复杂图文、票据和商品素材信息提取。",
       "chanmama_relevance": "可能帮助提取商品图、资质和票据信息，但当前没有现成功能或成熟承接页。",
@@ -3005,6 +3039,7 @@
           "platform_estimate"
         ]
       },
+      "topic_resonance": null,
       "official_rule": null,
       "technology_change": "潜力爆品榜出现POKIMOKI美瞳昨日销量7703、近一年7743，白色美式弯刀牛仔裤昨日销量4311、近一年8560；黑马日榜出现小粉丝量单场高销售达人。",
       "chanmama_relevance": "日榜能发现线索，但单日绝对销量和单场销售额不足以证明趋势；先做基线验证可以避免把高客单或小基数误判为热点。",
@@ -3810,5 +3845,5 @@
     }
   ],
   "boundaryText": "21个固定平台入口均已逐项检查并记录状态。巨量云图近期选品最新周期止于2026-07-22，短视频内容榜仍停在2026年第21周；蝉妈妈完整日榜为2026-07-23，单日、小基数、高客单和单场信号均未直接判为热点。AIDSO可读到2026-07-23 13:38但验证组件仍覆盖；百度指数关键词曲线、OpenAI与GitHub本轮连接受限，状态保持未完成。贵州豆豉火锅只确认内容热度和问题需求，不确认底料商品爆发；DeepSeek只确认旧API名称停止日期，不确认V4今日发布。全程未用百度或SEO搜索结果代替平台站内与官方证据。",
-  "sourceBrief": "今日优先执行两类内容：一是2026抖音七夕好礼季，兼具官方经营节点与大众节日流量；二是贵州豆豉火锅潜力话题，已获抖音实时榜、蝉妈妈种草热点和小红书问题需求支持，先发内容、后补商品转化。关联劣质商家和混淆品牌信息两条官方细则继续保持高业务优先级，用定向自查卡承接。科技圈重点跟进小红书REDSkill，已有官方使用榜单和明确电商内容场景；DeepSeek旧API与Unlimited-OCR只做低成本提醒或实测。"
+  "sourceBrief": "10:30补采后，今日大众热点优先级为：邓煜王虹获菲尔兹奖抢时发布、夏日度假限定motd低成本试发、贵州豆豉火锅低成本试发。三者均未完成来源簇归并和4至8小时同口径增长复核，因此只能作为内容决策候选，confirmedHotspot均为false。电商侧继续优先执行2026抖音七夕好礼季，并用定向自查卡承接关联劣质商家、混淆品牌信息两条官方细则。"
 }
