@@ -1,8 +1,8 @@
 {
   "title": "每日热点库与电商圈层行业活动追踪",
-  "generatedAt": "2026-07-24T03:03:33.734Z",
+  "generatedAt": "2026-07-24T09:09:18.886Z",
   "fileCount": 43,
-  "totalBytes": 5601994,
+  "totalBytes": 5627569,
   "files": [
     {
       "path": "assets/app.js",
@@ -147,17 +147,17 @@
     {
       "path": "data/events/2026-07-24.json",
       "bytes": 213880,
-      "sha256": "f4ea9065d04b240d40b5ba5c205090befe84aa6ca1909dd4a66ec9d6dfeaeb9a"
+      "sha256": "08c3f09bda8528068536c0cef982fcf54481cb7135f2e9dd2fca1c47636413ae"
     },
     {
       "path": "data/events/index.json",
       "bytes": 1097,
-      "sha256": "eeda67f2a5be1e81c5b4db8ceb8a82d245b94554a8c1e3493623bab1a0083ffb"
+      "sha256": "a7047b8fef0e20fa55ed4af4a09ca1618dabbf75f1f858f0c0aedb18ea6ac501"
     },
     {
       "path": "data/events/latest.json",
       "bytes": 213880,
-      "sha256": "f4ea9065d04b240d40b5ba5c205090befe84aa6ca1909dd4a66ec9d6dfeaeb9a"
+      "sha256": "08c3f09bda8528068536c0cef982fcf54481cb7135f2e9dd2fca1c47636413ae"
     },
     {
       "path": "data/hotspots/2026-07-15.json",
@@ -196,23 +196,23 @@
     },
     {
       "path": "data/hotspots/2026-07-24.json",
-      "bytes": 141571,
-      "sha256": "cbd59b95df4df64eb85a6622a9a73f2ccbb72a1ca1b31a0ae20ca9f7b550ca06"
+      "bytes": 154358,
+      "sha256": "4ae5360562ce2e0d94125e20cf5da825347c5894c6966d28ca90612d5ea849a3"
     },
     {
       "path": "data/hotspots/index.json",
-      "bytes": 3676,
-      "sha256": "4fc7bcde223b50f7dbbf4425765209b5bef86a91ec7b5c4354387508db00dfa2"
+      "bytes": 3677,
+      "sha256": "10638ef087d03eaabbaf5a5820a0d31beb869b767120842b8fe179a56ab6e269"
     },
     {
       "path": "data/hotspots/latest.json",
-      "bytes": 141571,
-      "sha256": "cbd59b95df4df64eb85a6622a9a73f2ccbb72a1ca1b31a0ae20ca9f7b550ca06"
+      "bytes": 154358,
+      "sha256": "4ae5360562ce2e0d94125e20cf5da825347c5894c6966d28ca90612d5ea849a3"
     },
     {
       "path": "data/manifest.json",
       "bytes": 366,
-      "sha256": "01e27e1607517b4f455468ba4bb72ae8773fe0c45a91816411840e9e8504e3b7"
+      "sha256": "6b6146a17dafa2fb28e6b14a9d92c72605cf0c533ff8d28e539347bb77118df4"
     },
     {
       "path": "index.html",

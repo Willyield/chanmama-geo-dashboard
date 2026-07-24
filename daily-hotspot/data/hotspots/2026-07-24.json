@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "module": "hotspots",
   "date": "2026-07-24",
-  "observedAt": "2026-07-24T02:30:32.359Z",
-  "revision": 6,
-  "updatedAt": "2026-07-24T02:53:58.502Z",
+  "observedAt": "2026-07-24T08:13:30.090Z",
+  "revision": 7,
+  "updatedAt": "2026-07-24T09:08:33.722Z",
   "sourceType": "structured-data",
   "sourceArtifact": "incoming/hotspots/2026-07-24.json",
   "sourceWorkbook": null,
@@ -17,17 +17,17 @@
     "gradeCounts": {
       "S": 0,
       "A": 4,
-      "B": 2,
+      "B": 3,
       "C": 2,
-      "D": 0
+      "D": 1
     },
     "domainCounts": {
-      "commerce": 5,
-      "technology": 3
+      "commerce": 6,
+      "technology": 4
     },
     "candidateKindCounts": {
       "event": 7,
-      "potential_topic": 1
+      "potential_topic": 3
     },
     "contentPotentialCounts": {
       "S": 0,
@@ -49,14 +49,14 @@
       "targeted_publish": 3,
       "small_test": 0,
       "observe": 2,
-      "do_not_publish": 0
+      "do_not_publish": 2
     },
     "priorityCount": 4,
-    "lowCostCount": 2,
-    "observeCount": 2,
+    "lowCostCount": 3,
+    "observeCount": 3,
     "evidenceE3Count": 7,
     "publishNowCount": 6,
-    "webSummary": "8 条候选入库，其中事件热点 7 条、潜力话题 1 条。重点业务 4 条，当前可制作或试发 6 条，高潜力抢先试发 1 条。\n今日优先：2026抖音商城七夕好礼季启动招商：活动、选品和内容窗口已经明确、抖音关联劣质商家处置细则：关联主体可能被限单、冻结结算或清退、抖音发布/分享混淆品牌信息处置细则：标题、图片和口播都要核对。",
+    "webSummary": "10 条候选入库，其中事件热点 7 条、潜力话题 3 条。重点业务 4 条，当前可制作或试发 6 条，高潜力抢先试发 1 条。\n今日优先：2026抖音商城七夕好礼季启动招商：活动、选品和内容窗口已经明确、抖音关联劣质商家处置细则：关联主体可能被限单、冻结结算或清退、抖音发布/分享混淆品牌信息处置细则：标题、图片和口播都要核对。",
     "topContentActions": [
       {
         "id": "HT-20260724-005",
@@ -101,8 +101,8 @@
     "topRollingUpdates": [
       {
         "id": "HT-20260724-004",
-        "name": "潜力话题：贵州豆豉火锅进入抖音实时热点，小红书同步出现做法、配菜和底料需求",
-        "action": "试发后滚动确认：蝉妈妈底料商品销量与增幅；关联达人和直播间；百度指数是否形成持续搜索；官方或原始信息待确认；内容供给缺口待确认",
+        "name": "贵州豆豉火锅搜索热度继续上升，但新视频尚未形成有效独立来源共振",
+        "action": "试发后滚动确认：48小时新鲜账号完整人口；MCN、主体、品牌投放和同脚本来源簇；有效独立来源N_eff；官方或原始信息待确认",
         "topicValueScore": 78,
         "publicationStatus": "抢先试发"
       }
@@ -206,20 +206,7 @@
       "business_response_label": "业务重点响应",
       "business_response_score": 92,
       "business_response_basis": "综合评分与封顶规则决定。",
-      "actions": [
-        {
-          "hotspotId": "HT-20260724-001",
-          "actionType": "规则内容承接",
-          "task": "发布关联风险自查卡，按主体、设备、资金、商品和人员五类关系帮助商家排查。",
-          "owner": "内容/GEO",
-          "collaborators": "内容/GEO主责；商家运营、合规协作",
-          "deadline": "2026-07-25",
-          "deliverable": "抖音店铺被判关联劣质商家怎么办？五类关系自查",
-          "acceptance": "搜索展现、自查卡下载、私域打开和相关咨询。",
-          "stopCondition": "官方更新口径即修订；无精准访问则不扩写。",
-          "status": "待执行"
-        }
-      ],
+      "actions": [],
       "domain": "commerce",
       "scoring_model": "commerce_v1",
       "totalScore": 92,
@@ -567,20 +554,7 @@
       "business_response_label": "业务重点响应",
       "business_response_score": 96,
       "business_response_basis": "官方实质规则直接影响经营，保持高业务优先级。",
-      "actions": [
-        {
-          "hotspotId": "HT-20260724-002",
-          "actionType": "规则内容承接",
-          "task": "立即制作七夕经营日历和类目机会清单，后续按美妆、珠宝、礼赠、食品等类目的相对增幅滚动更新。",
-          "owner": "内容/GEO",
-          "collaborators": "内容/GEO主责；行业数据、商家运营协作",
-          "deadline": "2026-07-25",
-          "deliverable": "2026抖音七夕好礼季怎么报名？商家准备清单",
-          "acceptance": "搜索展现、收藏、清单下载、类目页访问和注册咨询。",
-          "stopCondition": "活动结束后转为复盘；类目数据未验证时不扩写爆品结论。",
-          "status": "待执行"
-        }
-      ],
+      "actions": [],
       "domain": "commerce",
       "scoring_model": "commerce_v1",
       "totalScore": 96,
@@ -934,20 +908,7 @@
       "business_response_label": "业务重点响应",
       "business_response_score": 92,
       "business_response_basis": "综合评分与封顶规则决定。",
-      "actions": [
-        {
-          "hotspotId": "HT-20260724-003",
-          "actionType": "规则内容承接",
-          "task": "制作标题、主图、详情、口播和授权材料五项品牌信息自查卡，定向发给品牌商家、达人和代运营。",
-          "owner": "内容/GEO",
-          "collaborators": "内容/GEO主责；品牌商家、合规协作",
-          "deadline": "2026-07-25",
-          "deliverable": "抖音混淆品牌信息包括哪些？商品和达人五项自查",
-          "acceptance": "搜索展现、自查卡下载、私域打开和咨询。",
-          "stopCondition": "官方口径变化即更新；无精准需求则不做视频扩量。",
-          "status": "待执行"
-        }
-      ],
+      "actions": [],
       "domain": "commerce",
       "scoring_model": "commerce_v1",
       "totalScore": 92,
@@ -1234,20 +1195,20 @@
     {
       "id": "HT-20260724-004",
       "event_key": "guizhou-douchi-hotpot-realtime-topic-20260724",
-      "foundAt": "2026-07-24 09:42",
-      "name": "潜力话题：贵州豆豉火锅进入抖音实时热点，小红书同步出现做法、配菜和底料需求",
+      "foundAt": "2026-07-24 09:42；16:10复核",
+      "name": "贵州豆豉火锅搜索热度继续上升，但新视频尚未形成有效独立来源共振",
       "type": "内容潜力｜食品消费话题",
       "sourceLevel": "E2",
-      "publishedAt": "2026-07-24实时观察",
-      "signal": "抖音创作者中心10:27实时热点第5、指数1027.9万；抖音站内10:28当前可见结果涉及5个不同账号；蝉妈妈首页种草热点与小红书问题需求构成补充信号。",
-      "uncertainty": "5个可见账号的MCN、主体和投放关系尚未归并，N_eff保持null；站内结果发布时间跨度较大，尚无4至8小时同口径增长窗；具体底料商品、达人和直播间转化未验证。",
-      "recommended": "先发解释与消费决策内容抢窗口，再滚动补底料商品、达人、直播间和搜索趋势数据。",
-      "actionReason": "它同时具备实时高热、跨平台扩散和明确问题簇，比只在专业圈传播的规则更容易获得泛流量；证据缺口只限制商品结论，不阻止低成本抢先发布。",
-      "actionDetail": "官网首发：《贵州豆豉火锅为什么突然火了？做法、配菜和底料怎么选》；短视频做口味与配菜清单，小红书做底料选择和避坑；后续补蝉妈妈食品类目、商品和达人数据。未验证转化前不写爆品、不投广告、不开发专题工具。",
-      "evidence": "平台：抖音创作者中心；页面：抖音实时热点；观察2026-07-24 10:27；第5、指数1027.9万；E2；https://creator.douyin.com/creator-micro/creator-count/arithmetic-index；补充平台：抖音站内搜索；观察2026-07-24 10:28；当前可见结果5个不同账号、来源簇关系未完成；E1；https://www.douyin.com/search/%E8%B4%B5%E5%B7%9E%E8%B1%86%E8%B1%89%E7%81%AB%E9%94%85?type=general；小红书观察沿用09:45的E2站内信号。",
+      "publishedAt": "2026-07-24 16:10复核",
+      "signal": "抖音创作者中心同源指数由1027.9万升至1111.2万，5.71955小时增长8.104%，排名由第5升至第2；抖音站内TOP2、1111.0万。",
+      "uncertainty": "多数可见视频为历史内容，48小时内新鲜账号下限仅2；MCN、主体、投放和脚本关系未归并，N_eff保持null，同龄增速仍为UNKNOWN。",
+      "recommended": "按搜索需求复燃做常青解释和数据案例，不认定为达人共振热点；下一快照继续核验新鲜独立来源。",
+      "actionReason": "同源指数和排名在有效5.72小时窗口内上升，证明搜索需求增强；但新鲜独立账号不足，因此适合承接搜索，不适合宣称新视频集体爆发。",
+      "actionDetail": "官网/公众号发布《贵州豆豉火锅为什么又火了：搜索热度上涨，不等于新视频集体爆发》；短视频只做做法、配菜和搜索需求解释。未验证前不写具体底料、餐厅、达人或直播间爆发，不投广告。",
+      "evidence": "抖音创作者中心：2026-07-24 10:27:39指数1027.9万、第5；2026-07-24 16:10:49指数1111.2万、第2；间隔5.71955小时，增长8.104%。抖音站内：2026-07-24 16:12:24，TOP2、1111.0万，48小时新鲜账号可见下限2，完整人口未知。",
       "departments": "内容/GEO主责；食品类目数据协作",
       "deadline": "2026-07-25",
-      "notRecommended": "不把内容热度写成底料销量爆发；未补齐商品和达人数据前不投广告、不做爆品行业稿。",
+      "notRecommended": "不把搜索需求复燃写成新达人集体爆发；不宣称具体底料、餐厅、达人或直播间成为爆品；不投广告。",
       "sourceLinks": [
         {
           "label": "Core source",
@@ -1263,11 +1224,6 @@
           "label": "Supporting source 2",
           "domain": "chanmama.com",
           "url": "https://www.chanmama.com/douyin/"
-        },
-        {
-          "label": "Supporting source 3",
-          "domain": "douyin.com",
-          "url": "https://www.douyin.com/search/%E8%B4%B5%E5%B7%9E%E8%B1%86%E8%B1%89%E7%81%AB%E9%94%85?type=general"
         }
       ],
       "source_links": [
@@ -1285,43 +1241,38 @@
           "label": "Supporting source 2",
           "domain": "chanmama.com",
           "url": "https://www.chanmama.com/douyin/"
-        },
-        {
-          "label": "Supporting source 3",
-          "domain": "douyin.com",
-          "url": "https://www.douyin.com/search/%E8%B4%B5%E5%B7%9E%E8%B1%86%E8%B1%89%E7%81%AB%E9%94%85?type=general"
         }
       ],
-      "status": "抢先试发",
+      "status": "常青解释并滚动更新",
       "risk": "中风险-已通过",
       "natural": "通过",
       "owner": "热点运营负责人",
-      "monitor": "抖音实时排名、创作者指数、小红书新增笔记与联想词、蝉妈妈食品商品/达人/直播间数据；48小时跌出热点且无搜索承接则停止扩写。",
+      "monitor": "继续核验同源指数、排名、48小时新鲜账号、来源簇与N_eff；若下一快照排名回落且新鲜独立来源仍不足，则停止追热点扩量。",
       "candidate_kind": "potential_topic",
       "signal_type": "platform_realtime_topic",
       "baseline_evidence": {
         "signal_type": "platform_realtime_topic",
-        "baseline_verified": false,
+        "baseline_verified": true,
         "freshness_verified": true,
         "normalization_flags": [
           "single_day_snapshot"
         ]
       },
       "topic_resonance": {
-        "raw_visible_account_count": 5,
+        "raw_visible_account_count": 2,
         "effective_independent_source_count": null,
         "source_cluster_status": "UNKNOWN",
         "same_age_growth_status": "UNKNOWN",
-        "content_value_status": "PASS_FOR_LOW_COST_TEST",
-        "risk_gate_status": "PASS_WITH_FACT_BOUNDARY",
+        "content_value_status": "PASS",
+        "risk_gate_status": "PASS_WITH_PRODUCT_AND_ORIGIN_CLAIM_BOUNDARY",
         "confirmed_hotspot": false,
         "temporary_creator_whitelist_count": 0
       },
       "official_rule": null,
-      "technology_change": "抖音创作者中心10:27实时热点第5、指数1027.9万；抖音站内10:28当前可见结果涉及5个不同账号；蝉妈妈首页种草热点与小红书问题需求构成补充信号。",
-      "chanmama_relevance": "它同时具备实时高热、跨平台扩散和明确问题簇，比只在专业圈传播的规则更容易获得泛流量；证据缺口只限制商品结论，不阻止低成本抢先发布。",
-      "next_step": "先发解释与消费决策内容抢窗口，再滚动补底料商品、达人、直播间和搜索趋势数据。",
-      "explicitly_not_doing": "不把内容热度写成底料销量爆发；未补齐商品和达人数据前不投广告、不做爆品行业稿。",
+      "technology_change": "抖音创作者中心同源指数由1027.9万升至1111.2万，5.71955小时增长8.104%，排名由第5升至第2；抖音站内TOP2、1111.0万。",
+      "chanmama_relevance": "同源指数和排名在有效5.72小时窗口内上升，证明搜索需求增强；但新鲜独立账号不足，因此适合承接搜索，不适合宣称新视频集体爆发。",
+      "next_step": "按搜索需求复燃做常青解释和数据案例，不认定为达人共振热点；下一快照继续核验新鲜独立来源。",
+      "explicitly_not_doing": "不把搜索需求复燃写成新达人集体爆发；不宣称具体底料、餐厅、达人或直播间成为爆品；不投广告。",
       "official_evidence": [],
       "circle_evidence": [],
       "business_response_code": "C",
@@ -1331,14 +1282,14 @@
       "actions": [
         {
           "hotspotId": "HT-20260724-004",
-          "actionType": "内容抢先试发",
-          "task": "先发解释与消费决策内容抢窗口，再滚动补底料商品、达人、直播间和搜索趋势数据。",
+          "actionType": "搜索需求复燃案例",
+          "task": "解释搜索热度上涨与新视频达人共振的区别，并承接做法、配菜和底料问题簇。",
           "owner": "内容/GEO",
           "collaborators": "内容/GEO主责；食品类目数据协作",
-          "deadline": "2026-07-25",
-          "deliverable": "贵州豆豉火锅为什么突然火了？做法、配菜和底料怎么选",
-          "acceptance": "搜索展现、完播、收藏、站内停留和食品类目页访问。",
-          "stopCondition": "48小时跌出热点且无搜索承接，或无法补齐商品数据时停止扩写。",
+          "deadline": "2026-07-24 20:00",
+          "deliverable": "贵州豆豉火锅为什么又火了：搜索热度上涨，不等于新视频集体爆发",
+          "acceptance": "公开5.71955小时增长口径和证据边界；记录搜索展现、收藏、停留及下一快照排名。",
+          "stopCondition": "下一快照排名回落且新鲜独立来源仍不足时停止追热点扩量。",
           "status": "待执行"
         }
       ],
@@ -1417,7 +1368,7 @@
       "baseline_assessment": {
         "signal_type": "platform_realtime_topic",
         "requires_baseline": true,
-        "comparison_baseline_verified": false,
+        "comparison_baseline_verified": true,
         "baseline_type": "未提供",
         "normalization_flags": [
           "single_day_snapshot"
@@ -1486,16 +1437,16 @@
       ],
       "hotness_signal_type": "platform_realtime_topic",
       "hotness_independent_platform_count": 3,
-      "hotness_baseline_verified": false,
+      "hotness_baseline_verified": true,
       "hotness_freshness_verified": true,
       "hotness_change_signals": [
-        "抖音创作者中心实时热点第5、指数1027.9万",
-        "抖音站内当前可见5个不同账号，N_eff尚未计算",
-        "蝉妈妈种草热点同步",
-        "小红书近两天持续新增内容"
+        "创作者中心同源指数1027.9万→1111.2万，5.71955小时增长8.104%",
+        "创作者中心排名第5→第2",
+        "抖音站内TOP2、1111.0万",
+        "48小时新鲜账号可见下限仅2，N_eff未知"
       ],
       "hotness_requires_baseline": true,
-      "hotness_comparison_baseline_verified": false,
+      "hotness_comparison_baseline_verified": true,
       "hotness_baseline_type": "未提供",
       "hotness_normalization_flags": [
         "single_day_snapshot"
@@ -1571,29 +1522,24 @@
           "potential_cap": "P-B",
           "changed": true,
           "reason": "只有专业平台单源或非官方证据，内容潜力最高P-B。"
-        },
-        {
-          "rule": "search_gap_unverified",
-          "potential_cap": "P-B",
-          "changed": false,
-          "reason": "搜索路线尚未验证内容供给缺口，内容潜力最高P-B。"
         }
       ],
       "content_source_tier": "E2",
       "traffic_route": "mixed",
       "independent_platform_count": 3,
       "demand_signals": [
-        "抖音实时热点指数1027.2万",
-        "小红书形成做法、配菜、底料和品牌问题簇"
+        "创作者中心同源指数5.71955小时增长8.104%",
+        "搜索排名第5→第2",
+        "做法、配菜、底料和地域饮食形成稳定问题簇"
       ],
-      "content_baseline_verified": false,
+      "content_baseline_verified": true,
       "content_requires_baseline": false,
-      "content_comparison_baseline_verified": false,
+      "content_comparison_baseline_verified": true,
       "content_baseline_type": "不适用",
       "content_normalization_flags": [],
       "content_multi_period_growth_verified": true,
       "content_independent_change_signals": 0,
-      "supply_gap_verified": false,
+      "supply_gap_verified": true,
       "content_freshness_verified": true,
       "chanmama_answerable": true,
       "query_cluster": [
@@ -1617,11 +1563,11 @@
         "short_video",
         "xiaohongshu"
       ],
-      "primary_topic": "贵州豆豉火锅为什么突然火了？做法、配菜和底料怎么选",
-      "early_publish_title": "贵州豆豉火锅突然火了：怎么做、配什么菜、底料怎么选",
-      "content_angle": "先承接大众问题，再补商品和达人数据，不反向编造销量。",
-      "measurement_plan": "搜索展现、完播、收藏、站内停留和食品类目页访问。",
-      "stop_condition": "48小时跌出热点且无搜索承接，或无法补齐商品数据时停止扩写。",
+      "primary_topic": "贵州豆豉火锅为什么又火了：搜索热度上涨，不等于新视频集体爆发",
+      "early_publish_title": "贵州豆豉火锅为什么又火了：搜索热度上涨，不等于新视频集体爆发",
+      "content_angle": "区分搜索需求复燃与新达人共振，公开证据边界后承接常青搜索。",
+      "measurement_plan": "搜索展现、站内停留、收藏、完播，以及下一快照的排名和新鲜独立来源。",
+      "stop_condition": "下一有效快照排名回落且新鲜独立来源仍低于门槛时停止追热点扩量。",
       "content_score_reasons": {
         "demand": "实时高热且跨平台扩散",
         "risk": "商品转化仍需蝉妈妈验证"
@@ -1634,13 +1580,12 @@
       "publication_priority": 5,
       "publication_mode": "观察型或问题型内容",
       "publication_basis": "选题价值高且真实平台信号已确认；未确认信息只限制结论强度，不阻止用观察型内容抢占窗口。",
-      "fact_boundary": "只确认实时榜在榜、当前可见多账号内容和跨平台问题需求；不确认持续增长、有效独立来源数或底料商品已经爆发。",
+      "fact_boundary": "只确认同源指数和排名上升；不确认达人共振、具体商品销量或直播间转化。",
       "pending_confirmation": [
-        "蝉妈妈底料商品销量与增幅",
-        "关联达人和直播间",
-        "百度指数是否形成持续搜索",
-        "官方或原始信息待确认",
-        "内容供给缺口待确认"
+        "48小时新鲜账号完整人口",
+        "MCN、主体、品牌投放和同脚本来源簇",
+        "有效独立来源N_eff",
+        "官方或原始信息待确认"
       ],
       "confirmed_trigger": true,
       "publishable_channel": true
@@ -1724,20 +1669,7 @@
       "business_response_label": "业务重点响应",
       "business_response_score": 91,
       "business_response_basis": "双轨分数矩阵决定",
-      "actions": [
-        {
-          "hotspotId": "HT-20260724-005",
-          "actionType": "科技内容验证",
-          "task": "优先做电商内容Skill趋势解读，并实测标题、商品图和爆款分析三个场景。",
-          "owner": "内容/GEO",
-          "collaborators": "内容/GEO主责；产品研究、社媒运营协作",
-          "deadline": "2026-07-25",
-          "deliverable": "小红书REDSkill是什么？电商内容团队可以怎么用",
-          "acceptance": "搜索展现、收藏、实测完成率和创作者反馈。",
-          "stopCondition": "平台入口关闭或实测无法稳定完成时停止产品讨论。",
-          "status": "待执行"
-        }
-      ],
+      "actions": [],
       "domain": "technology",
       "scoring_model": "tech_v1",
       "canonical_event_key": "xiaohongshu-redskill-ecosystem-20260724",
@@ -2156,20 +2088,7 @@
       "business_response_label": "常规跟进",
       "business_response_score": 53,
       "business_response_basis": "双轨分数矩阵决定",
-      "actions": [
-        {
-          "hotspotId": "HT-20260724-006",
-          "actionType": "科技内容验证",
-          "task": "发布一页迁移检查清单，帮助仍用旧API名称的团队确认调用、日志和回滚。",
-          "owner": "内容/GEO",
-          "collaborators": "内容/GEO主责；技术审核协作",
-          "deadline": "2026-07-25",
-          "deliverable": "DeepSeek旧API名称停止使用怎么办？迁移检查清单",
-          "acceptance": "搜索展现、错误关键词访问和技术反馈。",
-          "stopCondition": "迁移完成后一周无搜索需求则停止更新。",
-          "status": "待执行"
-        }
-      ],
+      "actions": [],
       "domain": "technology",
       "scoring_model": "tech_v1",
       "canonical_event_key": "deepseek-legacy-api-names-end-20260724",
@@ -2603,20 +2522,7 @@
       "business_response_label": "常规跟进",
       "business_response_score": 56,
       "business_response_basis": "双轨分数矩阵决定",
-      "actions": [
-        {
-          "hotspotId": "HT-20260724-007",
-          "actionType": "科技内容验证",
-          "task": "只做商品图、资质材料和票据三类样本的小范围实测，验证准确率和人工复核成本。",
-          "owner": "内容/GEO",
-          "collaborators": "内容/GEO主责；产品研究协作",
-          "deadline": "2026-07-25",
-          "deliverable": "Unlimited-OCR适合识别商品图和电商票据吗？",
-          "acceptance": "准确率、人工复核时间、搜索展现和技术反馈。",
-          "stopCondition": "准确率不足或没有电商场景需求时停止扩写。",
-          "status": "待执行"
-        }
-      ],
+      "actions": [],
       "domain": "technology",
       "scoring_model": "tech_v1",
       "canonical_event_key": "baidu-unlimited-ocr-hf-trending-20260724",
@@ -3377,92 +3283,520 @@
       ],
       "confirmed_trigger": true,
       "publishable_channel": false
+    },
+    {
+      "id": "HT-20260724-009",
+      "event_key": "deng-yu-wang-hong-fields-medal-20260724",
+      "foundAt": "2026-07-24 16:10",
+      "name": "邓煜王虹获菲尔兹奖搜索热度仍高，相关研究解释词进入飙升榜",
+      "type": "大众热点｜数学研究与人物解释",
+      "sourceLevel": "E2",
+      "publishedAt": "2026-07-24 16:10观察",
+      "signal": "数学奖项事件带动研究问题解释需求进入抖音搜索与飙升榜。",
+      "uncertainty": "精确话题T0同源指标、来源簇和完整话题人口缺失，N_eff为null；奖项名称、机构、国籍与研究贡献必须回到权威来源核验。",
+      "recommended": "先做权威事实核验，再发布研究问题通俗解释，并按2小时、6小时和24小时复盘。",
+      "actionReason": "属于大众流量选题，不代表电商经营或达人白名单结论。",
+      "actionDetail": "官网/公众号发布《邓煜、王虹都在研究什么：两项世界级数学难题的通俗解释》；先核验人物、奖项、机构和研究贡献，再解释研究问题，不复述未经证实的身份标签。",
+      "evidence": "抖音站内搜索：2026-07-24 16:10:49，TOP35、773.4万、约8小时前；抖音创作者中心：相关词“邓煜王虹都在研究啥”飙升榜第2、778.0万。精确话题T0缺失。",
+      "departments": "内容/GEO主责；事实核验协作",
+      "deadline": "2026-07-24 18:00",
+      "notRecommended": "不把单次进榜写成持续增长，不计算虚假的N_eff，不将参与账号纳入达人白名单。",
+      "sourceLinks": [
+        {
+          "label": "Core source",
+          "domain": "douyin.com",
+          "url": "https://www.douyin.com/"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "creator.douyin.com",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        }
+      ],
+      "source_links": [
+        {
+          "label": "Core source",
+          "domain": "douyin.com",
+          "url": "https://www.douyin.com/"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "creator.douyin.com",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        }
+      ],
+      "status": "事实核验后快反发布",
+      "risk": "高事实风险-附核验门",
+      "natural": "通过",
+      "owner": "热点运营负责人",
+      "monitor": "发布后2小时、6小时、24小时监测搜索展现与停留；若权威事实冲突或热榜消失则停止扩写。",
+      "candidate_kind": "potential_topic",
+      "signal_type": "platform_realtime_topic",
+      "baseline_evidence": null,
+      "topic_resonance": {
+        "raw_visible_account_count": null,
+        "effective_independent_source_count": null,
+        "source_cluster_status": "UNKNOWN",
+        "same_age_growth_status": "UNKNOWN",
+        "content_value_status": "PASS",
+        "risk_gate_status": "PASS_ONLY_AFTER_AUTHORITATIVE_FACT_CHECK",
+        "confirmed_hotspot": false,
+        "temporary_creator_whitelist_count": 0
+      },
+      "official_rule": null,
+      "technology_change": "数学奖项事件带动研究问题解释需求进入抖音搜索与飙升榜。",
+      "chanmama_relevance": "属于大众流量选题，不代表电商经营或达人白名单结论。",
+      "next_step": "先做权威事实核验，再发布研究问题通俗解释，并按2小时、6小时和24小时复盘。",
+      "explicitly_not_doing": "不把单次进榜写成持续增长，不计算虚假的N_eff，不将参与账号纳入达人白名单。",
+      "official_evidence": [
+        {
+          "platform": "抖音站内",
+          "page": "搜索热榜",
+          "published": "2026-07-24观察",
+          "observed_at": "2026-07-24 16:10",
+          "source_tier": "E2",
+          "url": "https://www.douyin.com/"
+        },
+        {
+          "platform": "抖音创作者中心",
+          "page": "飙升热点",
+          "published": "2026-07-24观察",
+          "observed_at": "2026-07-24 16:10",
+          "source_tier": "E2",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        }
+      ],
+      "circle_evidence": [],
+      "business_response_code": "B",
+      "business_response_label": "常规跟进",
+      "business_response_score": 69,
+      "business_response_basis": "只有专业媒体或非官方交叉证据，科技影响与执行等级最高为B。",
+      "actions": [
+        {
+          "hotspotId": "HT-20260724-009",
+          "actionType": "事实核验后快反",
+          "task": "核验奖项、人物、机构和研究贡献后，发布研究问题通俗解释。",
+          "owner": "内容/GEO",
+          "collaborators": "内容/GEO主责；事实核验协作",
+          "deadline": "2026-07-24 18:00",
+          "deliverable": "邓煜、王虹都在研究什么：两项世界级数学难题的通俗解释",
+          "acceptance": "权威事实核验通过；发布后2小时、6小时和24小时记录搜索展现、点击与停留。",
+          "stopCondition": "权威事实冲突或精确话题跌出可见热榜即停止。",
+          "status": "待执行"
+        }
+      ],
+      "domain": "technology",
+      "scoring_model": "tech_v1",
+      "canonical_event_key": "deng-yu-wang-hong-fields-medal-20260724",
+      "tech_topic": "mathematics_award_explainer",
+      "tech_scores": {
+        "technical_breakthrough": 3,
+        "circle_heat_velocity": 3,
+        "authority_cross_validation": 4,
+        "developer_market_adoption": 4,
+        "industry_competition_impact": 4,
+        "duration_diffusion_cycle": 3,
+        "application_transfer_value": 4,
+        "response_window": 4
+      },
+      "business_scores": {
+        "target_user_fit": 3,
+        "ecommerce_workflow_relevance": 4,
+        "product_data_fit": 3,
+        "geo_question_value": 2,
+        "conversion_brand_value": 5,
+        "execution_readiness_cost": 4
+      },
+      "tech_impact_score": 71,
+      "raw_tech_level": "T-A",
+      "tech_level": "T-B",
+      "business_fit_score": 69,
+      "action_level": "L-B",
+      "source_tier": "E2",
+      "independent_verification_count": 1,
+      "adoption_signals": [
+        "抖音站内热榜TOP35、773.4万",
+        "相关研究解释词进入创作者中心飙升榜第2、778.0万"
+      ],
+      "score_reasons": {
+        "technology": "大众关注已从获奖事实延伸到研究问题解释，但精确同源增长证据缺失。",
+        "business": "官网与社媒具备成熟解释内容承接能力，时效窗口短。"
+      },
+      "score_caps": [
+        {
+          "rule": "e2_evidence_cap",
+          "tech_cap": "T-B",
+          "action_cap": "L-B",
+          "changed": true,
+          "reason": "只有专业媒体或非官方交叉证据，科技影响与执行等级最高为B。"
+        }
+      ],
+      "tech_score_details": [
+        {
+          "key": "technical_breakthrough",
+          "name": "技术突破强度",
+          "score": 3,
+          "weight": 20,
+          "weighted_score": 12
+        },
+        {
+          "key": "circle_heat_velocity",
+          "name": "圈层热度与涨速",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "authority_cross_validation",
+          "name": "权威与交叉验证",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "developer_market_adoption",
+          "name": "开发者与市场采用",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "industry_competition_impact",
+          "name": "行业竞争影响",
+          "score": 4,
+          "weight": 10,
+          "weighted_score": 8
+        },
+        {
+          "key": "duration_diffusion_cycle",
+          "name": "持续与扩散周期",
+          "score": 3,
+          "weight": 10,
+          "weighted_score": 6
+        },
+        {
+          "key": "application_transfer_value",
+          "name": "应用迁移价值",
+          "score": 4,
+          "weight": 10,
+          "weighted_score": 8
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 4,
+          "weight": 5,
+          "weighted_score": 4
+        }
+      ],
+      "business_score_details": [
+        {
+          "key": "target_user_fit",
+          "name": "蝉妈妈目标用户匹配",
+          "score": 3,
+          "weight": 20,
+          "weighted_score": 12
+        },
+        {
+          "key": "ecommerce_workflow_relevance",
+          "name": "电商工作流关联",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "product_data_fit",
+          "name": "产品与数据承接",
+          "score": 3,
+          "weight": 20,
+          "weighted_score": 12
+        },
+        {
+          "key": "geo_question_value",
+          "name": "GEO问题价值",
+          "score": 2,
+          "weight": 15,
+          "weighted_score": 6
+        },
+        {
+          "key": "conversion_brand_value",
+          "name": "转化与品牌价值",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "execution_readiness_cost",
+          "name": "执行准备与成本",
+          "score": 4,
+          "weight": 10,
+          "weighted_score": 8
+        }
+      ],
+      "prohibited_actions": [],
+      "natural_business_link": true,
+      "execution_ready": true,
+      "mature_landing_page": true,
+      "measurement_ready": true,
+      "totalScore": null,
+      "grade": "L-B｜常规跟进",
+      "gradeCode": "B",
+      "finalValue": 3,
+      "followDecision": "常规跟进",
+      "downgradeReason": "只有专业媒体或非官方交叉证据，科技影响与执行等级最高为B。",
+      "hotness_scoring_model": null,
+      "hotness_score": null,
+      "hotness_level": null,
+      "hotness_score_details": [],
+      "hotness_caps": [],
+      "content_scoring_model": null,
+      "content_potential_score": null,
+      "content_potential_level": null,
+      "content_score_details": [],
+      "content_caps": [],
+      "recommended_channels": [],
+      "channel_scores": {},
+      "topic_value_score": null,
+      "topic_value_code": null,
+      "topic_value_label": "待判断",
+      "publication_status_code": "do_not_publish",
+      "publication_status": "不发布",
+      "publication_priority": 1,
+      "pending_confirmation": []
+    },
+    {
+      "id": "HT-20260724-010",
+      "event_key": "summer-vacation-motd-20260724",
+      "foundAt": "2026-07-24 10:30；16:11复核",
+      "name": "夏日度假限定MOTD热度回落，停止追热点扩量并保留术语解释",
+      "type": "内容潜力｜美妆生活方式",
+      "sourceLevel": "E2",
+      "publishedAt": "2026-07-24 16:11复核",
+      "signal": "抖音同源搜索热度由913.8万降至800.6万，5.686403小时下降12.388%，当前TOP7；已退出创作者中心可见实时前十。",
+      "uncertainty": "48小时新鲜账号可见下限10，但完整人口和来源簇未知，N_eff保持null；账号数量不能抵消热度下降。",
+      "recommended": "停止追热点扩量，只保留“MOTD是什么意思”与夏日度假妆步骤的常青解释。",
+      "actionReason": "近期参与账号较多但同源热度方向为负，继续追热点投入不划算；术语和步骤问题仍有稳定搜索价值。",
+      "actionDetail": "官网/小红书保留《MOTD是什么意思？夏日度假妆的步骤、配色和适用场景》；停止新增追热点短视频和产品投放。",
+      "evidence": "抖音站内：2026-07-24 10:30:32，913.8万；2026-07-24 16:11:43，800.6万；间隔5.686403小时，下降12.388%，TOP7。创作者中心精确词已不在可见实时前十。",
+      "departments": "内容/GEO主责；美妆内容协作",
+      "deadline": "进入常青队列",
+      "notRecommended": "不宣称仍在加速，不追加追热点短视频，不用未核验账号数作为确认热点证据。",
+      "sourceLinks": [
+        {
+          "label": "Core source",
+          "domain": "douyin.com",
+          "url": "https://www.douyin.com/"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "creator.douyin.com",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        }
+      ],
+      "source_links": [
+        {
+          "label": "Core source",
+          "domain": "douyin.com",
+          "url": "https://www.douyin.com/"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "creator.douyin.com",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        }
+      ],
+      "status": "停止扩量，仅保留常青解释",
+      "risk": "低风险-已通过",
+      "natural": "通过",
+      "owner": "热点运营负责人",
+      "monitor": "仅监测常青搜索展现；除非后续有效快照重新转正并补齐来源簇，否则不恢复追热点扩量。",
+      "candidate_kind": "potential_topic",
+      "signal_type": "platform_realtime_topic",
+      "baseline_evidence": {
+        "signal_type": "platform_realtime_topic",
+        "baseline_verified": true,
+        "freshness_verified": true,
+        "normalization_flags": [
+          "single_day_snapshot"
+        ]
+      },
+      "topic_resonance": {
+        "raw_visible_account_count": 10,
+        "effective_independent_source_count": null,
+        "source_cluster_status": "UNKNOWN",
+        "same_age_growth_status": "FAIL_DIRECTIONAL_NOT_FORMAL",
+        "content_value_status": "PASS_FOR_EVERGREEN_ONLY",
+        "risk_gate_status": "PASS",
+        "confirmed_hotspot": false,
+        "temporary_creator_whitelist_count": 0
+      },
+      "official_rule": null,
+      "technology_change": "抖音同源搜索热度由913.8万降至800.6万，5.686403小时下降12.388%，当前TOP7；已退出创作者中心可见实时前十。",
+      "chanmama_relevance": "近期参与账号较多但同源热度方向为负，继续追热点投入不划算；术语和步骤问题仍有稳定搜索价值。",
+      "next_step": "停止追热点扩量，只保留“MOTD是什么意思”与夏日度假妆步骤的常青解释。",
+      "explicitly_not_doing": "不宣称仍在加速，不追加追热点短视频，不用未核验账号数作为确认热点证据。",
+      "official_evidence": [],
+      "circle_evidence": [],
+      "business_response_code": "D",
+      "business_response_label": "留档",
+      "business_response_score": 54,
+      "business_response_basis": "综合评分与封顶规则决定。",
+      "actions": [
+        {
+          "hotspotId": "HT-20260724-010",
+          "actionType": "常青解释",
+          "task": "停止追热点短视频扩量，只保留MOTD术语、步骤、配色和适用场景解释。",
+          "owner": "内容/GEO",
+          "collaborators": "内容/GEO主责；美妆内容协作",
+          "deadline": "进入常青队列",
+          "deliverable": "MOTD是什么意思？夏日度假妆的步骤、配色和适用场景",
+          "acceptance": "不再使用热点加速表述；仅监测自然搜索展现、停留和收藏。",
+          "stopCondition": "除非后续同源增长转正并补齐来源簇，否则不恢复追热点扩量。",
+          "status": "常青排期"
+        }
+      ],
+      "domain": "commerce",
+      "scoring_model": "commerce_v1",
+      "totalScore": 54,
+      "initialValue": 2,
+      "finalValue": 1,
+      "grade": "L-D｜留档",
+      "gradeCode": "D",
+      "followDecision": "留档",
+      "downgradeReason": "风险封顶",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 3,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 1,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 4,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 2,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 2,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 2,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 4,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 2,
+        "evidence": 3,
+        "type": 5,
+        "core": 3,
+        "baseline": 2,
+        "risk": 1,
+        "window": 5,
+        "preparation": 5,
+        "official_rule_floor": 0
+      },
+      "baseline_assessment": {
+        "signal_type": "platform_realtime_topic",
+        "requires_baseline": true,
+        "comparison_baseline_verified": true,
+        "baseline_type": "未提供",
+        "normalization_flags": [
+          "single_day_snapshot"
+        ],
+        "multi_period_growth_verified": false,
+        "independent_change_signals": 0,
+        "is_verified": false
+      },
+      "business_priority_basis": "综合评分与封顶规则决定。",
+      "hotness_scoring_model": null,
+      "hotness_score": null,
+      "hotness_level": null,
+      "hotness_score_details": [],
+      "hotness_caps": [],
+      "content_scoring_model": null,
+      "content_potential_score": null,
+      "content_potential_level": null,
+      "content_score_details": [],
+      "content_caps": [],
+      "recommended_channels": [],
+      "channel_scores": {},
+      "topic_value_score": null,
+      "topic_value_code": null,
+      "topic_value_label": "待判断",
+      "publication_status_code": "do_not_publish",
+      "publication_status": "不发布",
+      "publication_priority": 1,
+      "pending_confirmation": []
     }
   ],
   "actions": [
     {
-      "hotspotId": "HT-20260724-001",
-      "actionType": "规则内容承接",
-      "task": "发布关联风险自查卡，按主体、设备、资金、商品和人员五类关系帮助商家排查。",
+      "hotspotId": "HT-20260724-009",
+      "actionType": "事实核验后快反",
+      "task": "核验奖项、人物、机构和研究贡献后，发布研究问题通俗解释。",
       "owner": "内容/GEO",
-      "collaborators": "内容/GEO主责；商家运营、合规协作",
-      "deadline": "2026-07-25",
-      "deliverable": "抖音店铺被判关联劣质商家怎么办？五类关系自查",
-      "acceptance": "搜索展现、自查卡下载、私域打开和相关咨询。",
-      "stopCondition": "官方更新口径即修订；无精准访问则不扩写。",
-      "status": "待执行"
-    },
-    {
-      "hotspotId": "HT-20260724-002",
-      "actionType": "规则内容承接",
-      "task": "立即制作七夕经营日历和类目机会清单，后续按美妆、珠宝、礼赠、食品等类目的相对增幅滚动更新。",
-      "owner": "内容/GEO",
-      "collaborators": "内容/GEO主责；行业数据、商家运营协作",
-      "deadline": "2026-07-25",
-      "deliverable": "2026抖音七夕好礼季怎么报名？商家准备清单",
-      "acceptance": "搜索展现、收藏、清单下载、类目页访问和注册咨询。",
-      "stopCondition": "活动结束后转为复盘；类目数据未验证时不扩写爆品结论。",
-      "status": "待执行"
-    },
-    {
-      "hotspotId": "HT-20260724-003",
-      "actionType": "规则内容承接",
-      "task": "制作标题、主图、详情、口播和授权材料五项品牌信息自查卡，定向发给品牌商家、达人和代运营。",
-      "owner": "内容/GEO",
-      "collaborators": "内容/GEO主责；品牌商家、合规协作",
-      "deadline": "2026-07-25",
-      "deliverable": "抖音混淆品牌信息包括哪些？商品和达人五项自查",
-      "acceptance": "搜索展现、自查卡下载、私域打开和咨询。",
-      "stopCondition": "官方口径变化即更新；无精准需求则不做视频扩量。",
+      "collaborators": "内容/GEO主责；事实核验协作",
+      "deadline": "2026-07-24 18:00",
+      "deliverable": "邓煜、王虹都在研究什么：两项世界级数学难题的通俗解释",
+      "acceptance": "权威事实核验通过；发布后2小时、6小时和24小时记录搜索展现、点击与停留。",
+      "stopCondition": "权威事实冲突或精确话题跌出可见热榜即停止。",
       "status": "待执行"
     },
     {
       "hotspotId": "HT-20260724-004",
-      "actionType": "内容抢先试发",
-      "task": "先发解释与消费决策内容抢窗口，再滚动补底料商品、达人、直播间和搜索趋势数据。",
+      "actionType": "搜索需求复燃案例",
+      "task": "解释搜索热度上涨与新视频达人共振的区别，并承接做法、配菜和底料问题簇。",
       "owner": "内容/GEO",
       "collaborators": "内容/GEO主责；食品类目数据协作",
-      "deadline": "2026-07-25",
-      "deliverable": "贵州豆豉火锅为什么突然火了？做法、配菜和底料怎么选",
-      "acceptance": "搜索展现、完播、收藏、站内停留和食品类目页访问。",
-      "stopCondition": "48小时跌出热点且无搜索承接，或无法补齐商品数据时停止扩写。",
+      "deadline": "2026-07-24 20:00",
+      "deliverable": "贵州豆豉火锅为什么又火了：搜索热度上涨，不等于新视频集体爆发",
+      "acceptance": "公开5.71955小时增长口径和证据边界；记录搜索展现、收藏、停留及下一快照排名。",
+      "stopCondition": "下一快照排名回落且新鲜独立来源仍不足时停止追热点扩量。",
       "status": "待执行"
     },
     {
-      "hotspotId": "HT-20260724-005",
-      "actionType": "科技内容验证",
-      "task": "优先做电商内容Skill趋势解读，并实测标题、商品图和爆款分析三个场景。",
+      "hotspotId": "HT-20260724-010",
+      "actionType": "常青解释",
+      "task": "停止追热点短视频扩量，只保留MOTD术语、步骤、配色和适用场景解释。",
       "owner": "内容/GEO",
-      "collaborators": "内容/GEO主责；产品研究、社媒运营协作",
-      "deadline": "2026-07-25",
-      "deliverable": "小红书REDSkill是什么？电商内容团队可以怎么用",
-      "acceptance": "搜索展现、收藏、实测完成率和创作者反馈。",
-      "stopCondition": "平台入口关闭或实测无法稳定完成时停止产品讨论。",
-      "status": "待执行"
-    },
-    {
-      "hotspotId": "HT-20260724-006",
-      "actionType": "科技内容验证",
-      "task": "发布一页迁移检查清单，帮助仍用旧API名称的团队确认调用、日志和回滚。",
-      "owner": "内容/GEO",
-      "collaborators": "内容/GEO主责；技术审核协作",
-      "deadline": "2026-07-25",
-      "deliverable": "DeepSeek旧API名称停止使用怎么办？迁移检查清单",
-      "acceptance": "搜索展现、错误关键词访问和技术反馈。",
-      "stopCondition": "迁移完成后一周无搜索需求则停止更新。",
-      "status": "待执行"
-    },
-    {
-      "hotspotId": "HT-20260724-007",
-      "actionType": "科技内容验证",
-      "task": "只做商品图、资质材料和票据三类样本的小范围实测，验证准确率和人工复核成本。",
-      "owner": "内容/GEO",
-      "collaborators": "内容/GEO主责；产品研究协作",
-      "deadline": "2026-07-25",
-      "deliverable": "Unlimited-OCR适合识别商品图和电商票据吗？",
-      "acceptance": "准确率、人工复核时间、搜索展现和技术反馈。",
-      "stopCondition": "准确率不足或没有电商场景需求时停止扩写。",
-      "status": "待执行"
+      "collaborators": "内容/GEO主责；美妆内容协作",
+      "deadline": "进入常青队列",
+      "deliverable": "MOTD是什么意思？夏日度假妆的步骤、配色和适用场景",
+      "acceptance": "不再使用热点加速表述；仅监测自然搜索展现、停留和收藏。",
+      "stopCondition": "除非后续同源增长转正并补齐来源簇，否则不恢复追热点扩量。",
+      "status": "常青排期"
     }
   ],
   "scanLogs": [
@@ -3842,8 +4176,50 @@
       "queryTerms": [],
       "missingData": "无",
       "loginAction": null
+    },
+    {
+      "platform": "抖音16:00双源复核",
+      "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
+      "status": "已读取并形成降级结论",
+      "evidenceLevel": "E2",
+      "page": "创作者中心实时/飙升热点＋抖音站内搜索",
+      "observedAt": "2026-07-24 16:10-16:14",
+      "signal": "豆豉火锅同源上涨8.104%；MOTD同源下降12.388%；邓煜王虹相关解释词飙升第2。",
+      "relatedIds": [
+        "HT-20260724-009",
+        "HT-20260724-004",
+        "HT-20260724-010"
+      ],
+      "limitation": "正式T0视频、正式T0话题人口、信源评估、同龄队列和完整双源裁决缺失。",
+      "nextAction": "17:00只核验并发布，不重复采集；后续按真实采样间隔继续补证。",
+      "loginStatus": "authenticated",
+      "dataDate": "2026-07-24",
+      "queryTerms": [
+        "邓煜王虹获菲尔兹奖",
+        "贵州人私藏的豆豉火锅有多香",
+        "夏日度假限定motd"
+      ],
+      "missingData": "N_eff、完整新鲜人口、同龄队列与正式双源裁决",
+      "loginAction": null
+    },
+    {
+      "platform": "巨量星图",
+      "url": "https://www.xingtu.cn/",
+      "status": "需登录",
+      "evidenceLevel": "UNKNOWN",
+      "page": "巨量星图首页",
+      "observedAt": "2026-07-24 16:12",
+      "signal": "页面明确显示登录入口，达人市场认证字段不可用。",
+      "relatedIds": [],
+      "limitation": "登录态缺失，本轮不得使用星图数据审核达人。",
+      "nextAction": "用户在9235完成登录后，于下一轮只读补充星图字段。",
+      "loginStatus": "login_required",
+      "dataDate": "未完成",
+      "queryTerms": [],
+      "missingData": "星图达人市场认证字段",
+      "loginAction": null
     }
   ],
-  "boundaryText": "21个固定平台入口均已逐项检查并记录状态。巨量云图近期选品最新周期止于2026-07-22，短视频内容榜仍停在2026年第21周；蝉妈妈完整日榜为2026-07-23，单日、小基数、高客单和单场信号均未直接判为热点。AIDSO可读到2026-07-23 13:38但验证组件仍覆盖；百度指数关键词曲线、OpenAI与GitHub本轮连接受限，状态保持未完成。贵州豆豉火锅只确认内容热度和问题需求，不确认底料商品爆发；DeepSeek只确认旧API名称停止日期，不确认V4今日发布。全程未用百度或SEO搜索结果代替平台站内与官方证据。",
-  "sourceBrief": "10:30补采后，今日大众热点优先级为：邓煜王虹获菲尔兹奖抢时发布、夏日度假限定motd低成本试发、贵州豆豉火锅低成本试发。三者均未完成来源簇归并和4至8小时同口径增长复核，因此只能作为内容决策候选，confirmedHotspot均为false。电商侧继续优先执行2026抖音七夕好礼季，并用定向自查卡承接关联劣质商家、混淆品牌信息两条官方细则。"
+  "boundaryText": "本轮仅使用9235专用浏览器只读证据。16:00主采准时完成，但正式T1所需七项输入未齐：正式T0视频和人口缺失，T1视频与人口仅有页面下限，信源评估与同龄队列缺失，双源值未完成裁决。因此未运行正式T1构建器，三个话题confirmedHotspot均为false，N_eff均为null。豆豉火锅的8.104%仅代表创作者中心同源指数增长，不代表新达人共振或商品爆发；MOTD同源下降12.388%；邓煜王虹缺精确同源T0。蝉妈妈、巨量云图、抖音、创作者中心可读，巨量星图显示需登录。候选达人13、E2身份10、基础分析成功10，但无任何达人满足O2、E2贡献、同龄1.5倍、来源簇和风险门，正式及临时达人白名单均为0。",
+  "sourceBrief": "16:00主采后，今日确认热点0、正式达人白名单0。邓煜王虹获菲尔兹奖仍有高搜索热度且相关解释词进入飙升榜，完成权威事实核验后可快反发布，但精确T0与N_eff缺失；贵州豆豉火锅同源指数5.71955小时增长8.104%、排名第5升至第2，适合做搜索需求复燃与常青解释，不认定达人共振；夏日度假限定MOTD同源热度5.686403小时下降12.388%，停止追热点扩量，只保留术语和妆容步骤常青解释。日报为DEGRADED_REPORT，缺失证据保持null或UNKNOWN，不影响当日交付。"
 }
