@@ -1,8 +1,8 @@
 {
   "title": "每日热点库与电商圈层行业活动追踪",
-  "generatedAt": "2026-07-24T09:09:18.886Z",
-  "fileCount": 43,
-  "totalBytes": 5627569,
+  "generatedAt": "2026-07-27T02:19:37.154Z",
+  "fileCount": 45,
+  "totalBytes": 5968201,
   "files": [
     {
       "path": "assets/app.js",
@@ -150,14 +150,19 @@
       "sha256": "08c3f09bda8528068536c0cef982fcf54481cb7135f2e9dd2fca1c47636413ae"
     },
     {
+      "path": "data/events/2026-07-27.json",
+      "bytes": 227166,
+      "sha256": "67ecb4c0fec851e49b31aed28e3bf6038f29bf11cff1f5635d40d69bd7f2815d"
+    },
+    {
       "path": "data/events/index.json",
-      "bytes": 1097,
-      "sha256": "a7047b8fef0e20fa55ed4af4a09ca1618dabbf75f1f858f0c0aedb18ea6ac501"
+      "bytes": 1298,
+      "sha256": "b8b1257e149cc1aa8805b9b7074cd251c3cc9a310fc34ee0e724c1f945a5e8d7"
     },
     {
       "path": "data/events/latest.json",
-      "bytes": 213880,
-      "sha256": "08c3f09bda8528068536c0cef982fcf54481cb7135f2e9dd2fca1c47636413ae"
+      "bytes": 227166,
+      "sha256": "67ecb4c0fec851e49b31aed28e3bf6038f29bf11cff1f5635d40d69bd7f2815d"
     },
     {
       "path": "data/hotspots/2026-07-15.json",
@@ -200,19 +205,24 @@
       "sha256": "4ae5360562ce2e0d94125e20cf5da825347c5894c6966d28ca90612d5ea849a3"
     },
     {
+      "path": "data/hotspots/2026-07-27.json",
+      "bytes": 126944,
+      "sha256": "91daf3d552c7c334c4748f7dad8272e21a8e85c6585f72cc9e03e4693020f40d"
+    },
+    {
       "path": "data/hotspots/index.json",
-      "bytes": 3677,
-      "sha256": "10638ef087d03eaabbaf5a5820a0d31beb869b767120842b8fe179a56ab6e269"
+      "bytes": 4126,
+      "sha256": "e4b44a6e188b522685e22dccb8e1395640c4aa7ad73b6679426d795cfc83f1c8"
     },
     {
       "path": "data/hotspots/latest.json",
-      "bytes": 154358,
-      "sha256": "4ae5360562ce2e0d94125e20cf5da825347c5894c6966d28ca90612d5ea849a3"
+      "bytes": 126944,
+      "sha256": "91daf3d552c7c334c4748f7dad8272e21a8e85c6585f72cc9e03e4693020f40d"
     },
     {
       "path": "data/manifest.json",
       "bytes": 366,
-      "sha256": "6b6146a17dafa2fb28e6b14a9d92c72605cf0c533ff8d28e539347bb77118df4"
+      "sha256": "f61f749067d0545f719be2c0a6b16394212e800dbdad0e8b8d8397db66d9fda0"
     },
     {
       "path": "index.html",
