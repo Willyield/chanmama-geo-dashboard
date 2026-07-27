@@ -2,13 +2,13 @@
   "schemaVersion": 2,
   "module": "hotspots",
   "date": "2026-07-27",
-  "observedAt": "2026-07-27T10:35:00+08:00",
-  "revision": 3,
-  "updatedAt": "2026-07-27T02:57:42.658Z",
+  "observedAt": "2026-07-27T16:09:33+08:00",
+  "revision": 4,
+  "updatedAt": "2026-07-27T08:12:53.320Z",
   "sourceType": "structured-data",
   "sourceArtifact": "incoming/hotspots/2026-07-27.json",
   "sourceWorkbook": null,
-  "inputStatus": "incomplete",
+  "inputStatus": "DEGRADED_REPORT",
   "scoringModels": [
     "commerce_v1",
     "tech_v1"
@@ -56,12 +56,12 @@
     "observeCount": 4,
     "evidenceE3Count": 8,
     "publishNowCount": 5,
-    "webSummary": "9 条候选入库，其中事件热点 8 条、潜力话题 1 条。重点业务 4 条，当前可制作或试发 5 条，高潜力抢先试发 0 条。\n今日优先：夏日复古风通勤穿搭：抖音双榜高位，百度大词需求同步上升、抖音保证金管理规范：普通类目按上月支付GMV分档、Midjourney V8.2发布：图像质量、创意和个性化升级。",
+    "webSummary": "9 条候选入库，其中事件热点 8 条、潜力话题 1 条。重点业务 4 条，当前可制作或试发 5 条，高潜力抢先试发 0 条。\n今日优先：夏日复古风通勤穿搭：T1降温，但常青搜索承接价值仍高、抖音保证金管理规范：普通类目按上月支付GMV分档、Midjourney V8.2发布：图像质量、创意和个性化升级。",
     "topContentActions": [
       {
         "id": "HT-20260727-001",
         "grade": "S",
-        "name": "夏日复古风通勤穿搭：抖音双榜高位，百度大词需求同步上升",
+        "name": "夏日复古风通勤穿搭：T1降温，但常青搜索承接价值仍高",
         "reason": "用通勤场景解决搭配问题，热度数据只负责说明窗口，不替代方法内容。",
         "action": "优先制作｜夏日复古风通勤穿搭火了：一周上班不重样怎么搭",
         "domain": "commerce",
@@ -103,9 +103,9 @@
       {
         "id": "HT-20260727-001",
         "grade": "L-A｜业务重点响应",
-        "name": "夏日复古风通勤穿搭：抖音双榜高位，百度大词需求同步上升",
+        "name": "夏日复古风通勤穿搭：T1降温，但常青搜索承接价值仍高",
         "reason": "四个平台形成真实触发，既有当日社媒热度，也有可承接的常青搜索问题；内容价值明显高于普通单日榜单。",
-        "action": "官网先做穿搭方法与问题簇文章，抖音/小红书用一周搭配和小个子通勤两个切口分发，并用蝉妈妈服饰数据滚动补充相关商品与内容案例。",
+        "action": "停止以‘正在爆发’为卖点扩量，保留官网方法型文章与社媒收藏型内容；标题转向一周通勤搭配、小个子和男生通勤等常青问题，不再追加追热预算。",
         "domain": "commerce",
         "totalScore": 91,
         "techImpactScore": null,
@@ -140,13 +140,13 @@
       "id": "HT-20260727-001",
       "event_key": "summer-retro-commute-outfit-20260727",
       "foundAt": "2026-07-27 09:20-10:18",
-      "name": "夏日复古风通勤穿搭：抖音双榜高位，百度大词需求同步上升",
+      "name": "夏日复古风通勤穿搭：T1降温，但常青搜索承接价值仍高",
       "type": "内容潜力｜服饰穿搭话题",
       "sourceLevel": "E3",
       "publishedAt": "2026-07-27",
       "signal": "抖音创作者指数实时榜第2、指数1210.2万；抖音站内热榜TOP4、约1189.7万；蝉妈妈同词同时进入种草热点和平台热点；百度指数‘通勤穿搭’近30日搜索环比+34%、资讯环比+47%。",
-      "uncertainty": "百度未收录完整长词，且‘通勤穿搭’同比仍下降；只能确认抖音当日高热与大词环比回升，不能写成全网大盘爆发。",
-      "recommended": "官网先做穿搭方法与问题簇文章，抖音/小红书用一周搭配和小个子通勤两个切口分发，并用蝉妈妈服饰数据滚动补充相关商品与内容案例。",
+      "uncertainty": "抖音站内与创作者中心同属字节生态，不能作为两个独立来源；缺完整话题人口、同龄队列、来源簇和双源值，因此不能确认热点或生成达人白名单。",
+      "recommended": "停止以‘正在爆发’为卖点扩量，保留官网方法型文章与社媒收藏型内容；标题转向一周通勤搭配、小个子和男生通勤等常青问题，不再追加追热预算。",
       "actionReason": "四个平台形成真实触发，既有当日社媒热度，也有可承接的常青搜索问题；内容价值明显高于普通单日榜单。",
       "actionDetail": "GEO题目：《夏日复古风通勤穿搭怎么搭？一周上班不重样思路》；必答复古元素、通勤边界、小个子比例、基础单品、不同温度层次。官网发完整方法，公众号发一周清单，抖音/小红书发可视化搭配；不写全民爆发，不用未核商品销量做结论。",
       "evidence": "抖音创作者指数：实时榜第2、1210.2万；抖音站内：TOP4、约1189.7万；蝉妈妈：首页种草热点与平台热点，更新07/27 09:20；百度指数：通勤穿搭，统计2026-06-27至2026-07-26，搜索日均41、环比+34%，资讯日均28874、环比+47%。",
@@ -207,11 +207,11 @@
           "url": "https://www.douyin.com/search/%E5%A4%8F%E6%97%A5%E5%A4%8D%E5%8F%A4%E9%A3%8E%E9%80%9A%E5%8B%A4%E7%A9%BF%E6%90%AD%E6%9D%A5%E5%95%A6?type=general"
         }
       ],
-      "status": "跨部门重点响应",
+      "status": "T1降温-常青内容保留",
       "risk": "中风险-已通过",
       "natural": "通过",
       "owner": "热点运营负责人",
-      "monitor": "抖音榜位和指数、百度大词环比、文章搜索展现/停留、短视频完播/收藏；连续两次快照跌出TOP20且搜索展现无增长时停止扩量。",
+      "monitor": "T+24复核是否跌出TOP20；官网看搜索展现、停留和问题词进入量，社媒看收藏率和完播率。连续两次跌出TOP20且搜索展现无增长时停止扩量。",
       "candidate_kind": "potential_topic",
       "signal_type": "platform_realtime_topic",
       "baseline_evidence": {
@@ -270,12 +270,41 @@
             "visible_likes": "7.7万",
             "role": "旧内容"
           }
-        ]
+        ],
+        "t1_observed_at": "2026-07-27T16:09:33+08:00",
+        "t1_actual_interval_hours": 6.1846,
+        "t1_conclusion": "DECAYING_TOP10_EVERGREEN_RETAIN",
+        "t1_creator_index": {
+          "t0_rank": 2,
+          "t0_index_wan": 1210.2,
+          "t1_rank": 6,
+          "t1_index_wan": 1035.4,
+          "change_pct": -14.444
+        },
+        "t1_douyin_search": {
+          "t0_rank": 4,
+          "t0_index_wan": 1194,
+          "t1_rank": 6,
+          "t1_index_wan": 1034.5,
+          "change_pct": -13.358
+        },
+        "t1_strict_evidence": {
+          "complete": false,
+          "conclusion_eligible": false,
+          "report_delivery_eligible": true,
+          "missing": [
+            "完整同指标视频T0/T1",
+            "完整话题人口T0/T1",
+            "来源簇评估",
+            "同龄队列",
+            "独立双源值"
+          ]
+        }
       },
       "official_rule": null,
       "technology_change": "抖音创作者指数实时榜第2、指数1210.2万；抖音站内热榜TOP4、约1189.7万；蝉妈妈同词同时进入种草热点和平台热点；百度指数‘通勤穿搭’近30日搜索环比+34%、资讯环比+47%。",
       "chanmama_relevance": "四个平台形成真实触发，既有当日社媒热度，也有可承接的常青搜索问题；内容价值明显高于普通单日榜单。",
-      "next_step": "官网先做穿搭方法与问题簇文章，抖音/小红书用一周搭配和小个子通勤两个切口分发，并用蝉妈妈服饰数据滚动补充相关商品与内容案例。",
+      "next_step": "停止以‘正在爆发’为卖点扩量，保留官网方法型文章与社媒收藏型内容；标题转向一周通勤搭配、小个子和男生通勤等常青问题，不再追加追热预算。",
       "explicitly_not_doing": "不宣称全网搜索爆发；不把单日热榜直接写成服饰销量趋势；未完成商品多周期验证前不投广告、不全量召回。",
       "official_evidence": [],
       "circle_evidence": [
@@ -3012,13 +3041,13 @@
       "id": "HT-20260727-008",
       "event_key": "changxin-tech-listing-discussion-20260727",
       "foundAt": "2026-07-27 09:40",
-      "name": "长鑫科技今日上市：高热上升，但挂牌事实与达人共振仍待闭环",
+      "name": "长鑫科技上市首日讨论升至榜首：事件簇延续，事实与独立共振待闭环",
       "type": "大众热点｜科技与资本市场",
       "sourceLevel": "E2",
       "publishedAt": "2026-07-27",
       "signal": "国产DRAM企业的资本市场进程引发财经与产业内容集中解释，但本轮只确认上交所注册生效页面，尚未取得当日挂牌公告原文。",
-      "uncertainty": "N_eff未完成同MCN、同主体、同脚本归并；同龄增速缺T1；上交所项目页确认注册生效，不等于已经核实7月27日挂牌、发行价、首日涨幅或估值。",
-      "recommended": "财经审核先核挂牌公告、股票代码、发行价和交易状态；内容组准备《长鑫科技为何突然进入热榜？从注册生效到挂牌要看哪些官方文件》；16:00复核指数、排名、新鲜账号和来源簇。",
+      "uncertainty": "榜首和搜索页均来自抖音生态，独立来源门未通过；新标题中的收涨幅度、市值、发行价等市场数据尚未由本轮交易所公告原文复核；完整话题人口、来源簇、同龄队列和双源值仍缺失。",
+      "recommended": "继续跟踪并优先完成事实核验。可先发布‘为什么突然登榜、哪些数字必须看官方公告’的问题型文章；涉及涨幅、市值、发行价和收益的内容，须在交易所原文复核后再写入。",
       "actionReason": "可获取大众搜索流量，但与电商运营工作流关联弱；只能作为大众流量内容，不升级为产品或商家策略议题。",
       "actionDetail": "官网准备问题型SEO页，公众号准备官方流程图，社媒只发待核观察卡；严禁写4万亿估值、翻倍收益、首日涨幅等未由原始公告确认的数据。",
       "evidence": "抖音创作者中心实时榜与抖音站内搜索均在2026-07-27 09:55-09:58可读；上交所发行上市项目页确认注册生效、融资金额295亿元，未显示本轮所需的当日挂牌公告。",
@@ -3059,11 +3088,11 @@
           "url": "https://www.sse.com.cn/listing/renewal/ipo/index_listing_detail.shtml?auditId=2170"
         }
       ],
-      "status": "条件跟进",
+      "status": "T1继续跟踪-事实核验",
       "risk": "高风险-事实未闭环",
       "natural": "条件通过",
       "owner": "内容/GEO负责人",
-      "monitor": "16:00复核同口径指数、排名、新鲜账号数、来源簇、重复脚本和官方挂牌公告。",
+      "monitor": "T+24复核事件簇是否仍在前20、是否出现跨平台独立讨论，并补交易所公告、来源簇和同龄队列；未闭环前不升级确认热点。",
       "candidate_kind": "event",
       "signal_type": "realtime_rank_plus_search_supply",
       "baseline_evidence": null,
@@ -3108,12 +3137,46 @@
             "visible_likes": "2000",
             "role": "估值讨论-高风险"
           }
-        ]
+        ],
+        "t1_observed_at": "2026-07-27T16:09:33+08:00",
+        "t1_actual_interval_hours": 6.1948,
+        "t1_conclusion": "EVENT_CLUSTER_EVOLVED_CONTINUE_FACT_CHECK",
+        "t1_creator_index": {
+          "t0_topic": "长鑫科技今日上市",
+          "t0_rank": 4,
+          "t0_index_wan": 1189.1,
+          "t1_topic": "长鑫科技上市首日收涨465%",
+          "t1_rank": 1,
+          "t1_index_wan": 1200.9,
+          "comparable": false
+        },
+        "t1_douyin_search": {
+          "t0_topic": "长鑫科技今日上市",
+          "t0_rank": 1,
+          "t0_index_wan": 1209.5,
+          "t1_topic": "长鑫科技上市首日收涨465%",
+          "t1_rank": 1,
+          "t1_index_wan": 1200.7,
+          "comparable": false
+        },
+        "t1_strict_evidence": {
+          "complete": false,
+          "conclusion_eligible": false,
+          "report_delivery_eligible": true,
+          "missing": [
+            "同题同指标T0/T1",
+            "完整话题人口T0/T1",
+            "来源簇评估",
+            "同龄队列",
+            "独立双源值",
+            "市场数据官方原文"
+          ]
+        }
       },
       "official_rule": null,
       "technology_change": "国产DRAM企业的资本市场进程引发财经与产业内容集中解释，但本轮只确认上交所注册生效页面，尚未取得当日挂牌公告原文。",
       "chanmama_relevance": "可获取大众搜索流量，但与电商运营工作流关联弱；只能作为大众流量内容，不升级为产品或商家策略议题。",
-      "next_step": "财经审核先核挂牌公告、股票代码、发行价和交易状态；内容组准备《长鑫科技为何突然进入热榜？从注册生效到挂牌要看哪些官方文件》；16:00复核指数、排名、新鲜账号和来源簇。",
+      "next_step": "继续跟踪并优先完成事实核验。可先发布‘为什么突然登榜、哪些数字必须看官方公告’的问题型文章；涉及涨幅、市值、发行价和收益的内容，须在交易所原文复核后再写入。",
       "explicitly_not_doing": "不做股价预测，不写收益承诺，不把媒体或抖音文案替代上市公告。",
       "official_evidence": [
         {
@@ -3538,13 +3601,13 @@
       "id": "HT-20260727-009",
       "event_key": "jingdezhen-world-heritage-20260727",
       "foundAt": "2026-07-27 09:40",
-      "name": "景德镇手工瓷业遗存进入UNESCO名录：事实已核，热度仍待T1",
+      "name": "景德镇手工瓷业遗存进入UNESCO名录：T1明显回落，停止热点扩量",
       "type": "大众热点｜文化与知识解释",
       "sourceLevel": "E3",
       "publishedAt": "2026-07-26至2026-07-27",
-      "signal": "09:58创作者中心飙升榜第8、765.0万；09:57抖音搜索764.4万、1天前，星球研究所6.3万赞、人民日报5.8万赞。UNESCO官方名录检索可见Jingdezhen Handicraft Porcelain Industry Sites。",
-      "uncertainty": "可见账号尚未完成MCN/主体/脚本归并，N_eff为null；“领先欧洲500年”是抖音话题表述，尚未由本轮官方史料逐项核实。",
-      "recommended": "先完成权威解释稿并进入排版，标题改为UNESCO名录事实；16:00若指数持续上升且来源簇达到门槛，再增加热点标签和社媒扩量。",
+      "signal": "T0创作者中心飙升榜第8、765.0万，T1刷新后退出飙升榜前30；抖音站内同题热度由约764.4万降至447.5万，约下降41.5%。UNESCO名录事实仍成立，但平台热度窗口已明显收窄。",
+      "uncertainty": "来源簇、完整话题人口、同龄队列和独立双源值仍缺失；‘领先欧洲500年’不能由抖音AI总结替代一手史料。当前只能下‘热度回落’运营结论，不能确认热点或准入达人。",
+      "recommended": "停止热点标签和社媒加量；已有素材改为UNESCO名录、景德镇工艺与产业链的常青解释稿，逐项引用官方名录或一手史料。",
       "actionReason": "官方事实明确、平台热度和高质量解释账号均存在，适合做知识型GEO内容；但达人共振和同龄增长还没有闭环。",
       "actionDetail": "官网稿回答入选事实、遗产名称、工艺与产业体系；公众号做时间线；短视频只引用UNESCO名录和已核公开资料，不复述AI摘要中的具体窑温、成品率或技术窃取说法。",
       "evidence": "UNESCO World Heritage List检索Jingdezhen返回1项中国遗产；抖音创作者中心与站内搜索在同一T0窗口可读。",
@@ -3585,11 +3648,11 @@
           "url": "https://www.douyin.com/search/%E6%99%AF%E5%BE%B7%E9%95%87%E5%88%B6%E7%93%B7%E5%87%AD%E5%95%A5%E9%A2%86%E5%85%88%E6%AC%A7%E6%B4%B2500%E5%B9%B4?type=general"
         }
       ],
-      "status": "优先备稿",
+      "status": "T1退出热点扩量",
       "risk": "低风险-标题需改写",
       "natural": "通过",
       "owner": "内容/GEO负责人",
-      "monitor": "16:00复核飙升榜排名、指数、新鲜账号、来源簇和高质量解释内容增长。",
+      "monitor": "仅做T+24低成本复核；若未重回飙升榜前20，不再追热。常青稿按搜索需求和内容质量排期。",
       "candidate_kind": "event",
       "signal_type": "official_event_plus_rising_rank",
       "baseline_evidence": null,
@@ -3634,12 +3697,39 @@
             "visible_likes": "4.3万",
             "role": "旧内容-不计新鲜共振"
           }
-        ]
+        ],
+        "t1_observed_at": "2026-07-27T16:09:33+08:00",
+        "t1_actual_interval_hours": 6.2023,
+        "t1_conclusion": "SHARP_DECAY_STOP_HOTSPOT_AMPLIFICATION",
+        "t1_creator_index": {
+          "t0_rank": 8,
+          "t0_index_wan": 765,
+          "t1_rank": null,
+          "t1_index_wan": null,
+          "change_pct": null
+        },
+        "t1_douyin_search": {
+          "t0_index_wan": 764.4,
+          "t1_index_wan": 447.5,
+          "change_pct": -41.463
+        },
+        "t1_strict_evidence": {
+          "complete": false,
+          "conclusion_eligible": false,
+          "report_delivery_eligible": true,
+          "missing": [
+            "完整同指标视频T0/T1",
+            "完整话题人口T0/T1",
+            "来源簇评估",
+            "同龄队列",
+            "独立双源值"
+          ]
+        }
       },
       "official_rule": null,
-      "technology_change": "09:58创作者中心飙升榜第8、765.0万；09:57抖音搜索764.4万、1天前，星球研究所6.3万赞、人民日报5.8万赞。UNESCO官方名录检索可见Jingdezhen Handicraft Porcelain Industry Sites。",
+      "technology_change": "T0创作者中心飙升榜第8、765.0万，T1刷新后退出飙升榜前30；抖音站内同题热度由约764.4万降至447.5万，约下降41.5%。UNESCO名录事实仍成立，但平台热度窗口已明显收窄。",
       "chanmama_relevance": "官方事实明确、平台热度和高质量解释账号均存在，适合做知识型GEO内容；但达人共振和同龄增长还没有闭环。",
-      "next_step": "先完成权威解释稿并进入排版，标题改为UNESCO名录事实；16:00若指数持续上升且来源簇达到门槛，再增加热点标签和社媒扩量。",
+      "next_step": "停止热点标签和社媒加量；已有素材改为UNESCO名录、景德镇工艺与产业链的常青解释稿，逐项引用官方名录或一手史料。",
       "explicitly_not_doing": "不把“领先欧洲500年”当作已核史实，不引用抖音AI总结里的具体技术数值，不把同一账号多条视频重复计数。",
       "official_evidence": [
         {
@@ -4620,8 +4710,62 @@
         "第二轮审核"
       ],
       "loginAction": null
+    },
+    {
+      "platform": "抖音创作者中心T1",
+      "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
+      "status": "已刷新并完成T1复核",
+      "evidenceLevel": "E3",
+      "page": "抖音实时热点与飙升热点",
+      "observedAt": "2026-07-27 16:09",
+      "signal": "长鑫事件簇第1、1200.9万；夏日通勤第6、1035.4万；景德镇退出飙升榜前30。",
+      "relatedIds": [
+        "HT-20260727-001",
+        "HT-20260727-008",
+        "HT-20260727-009"
+      ],
+      "limitation": "与抖音站内同属字节生态，不能增加独立来源数；榜单值不能替代完整话题人口和同龄队列。",
+      "nextAction": "按各话题T1结论执行，T+24仅做允许窗口内复核。",
+      "loginStatus": "authenticated",
+      "dataDate": "2026-07-27",
+      "queryTerms": [],
+      "missingData": [
+        "独立双源值",
+        "完整话题人口",
+        "同龄队列"
+      ],
+      "loginAction": null
+    },
+    {
+      "platform": "抖音站内T1",
+      "url": "https://www.douyin.com/search/",
+      "status": "三个话题均已完成T1搜索快照",
+      "evidenceLevel": "E2",
+      "page": "站内搜索",
+      "observedAt": "2026-07-27 16:04",
+      "signal": "长鑫事件簇TOP1、1200.7万；夏日通勤TOP6、1034.5万；景德镇447.5万。",
+      "relatedIds": [
+        "HT-20260727-001",
+        "HT-20260727-008",
+        "HT-20260727-009"
+      ],
+      "limitation": "可见视频和互动值不是完整话题人口或N_eff；长鑫标题语义已变化，不能直接计算同题增长。",
+      "nextAction": "长鑫继续事实核验，夏日转常青承接，景德镇停止热点扩量。",
+      "loginStatus": "public_results_visible",
+      "dataDate": "2026-07-27",
+      "queryTerms": [
+        "长鑫科技今日上市",
+        "景德镇制瓷凭啥领先欧洲500年",
+        "夏日复古风通勤穿搭来啦"
+      ],
+      "missingData": [
+        "来源簇",
+        "同龄队列",
+        "完整播放量"
+      ],
+      "loginAction": null
     }
   ],
-  "boundaryText": "本日报为2026-07-27 10:00主采后的合并快照。9条候选均已进入同一评分契约；确认热点仍为0。长鑫科技与景德镇遗产缺少完整N_eff和T1同龄增速，不得升为确认热点；夏日复古通勤穿搭虽有双榜与搜索需求，但本轮承接内容以4月至6月存量为主，不构成新账号共振。可见账号只作参与观察，未完成同主体、同MCN、同脚本和同投放聚类前不计入N_eff，也不进入达人白名单。缺失字段保持null，不估填。",
-  "sourceBrief": "今日共9条候选：远端已核7条与本轮新增2条已在输入层合并。确认热点0条、话题临时白名单0人、正式达人白名单0人。内容优先执行夏日复古通勤穿搭、抖音保证金分档、河蟹及蟹卡经营清单；长鑫科技与景德镇遗产进入条件跟进/权威备稿。所有候选继续保留来源、事实边界和停止条件，未知字段不估填。"
+  "boundaryText": "本日报为DEGRADED_REPORT：T0至T1实际间隔约6.1至6.2小时，满足4至8小时增长窗口，且两轮跨度均小于15分钟。因缺完整同指标视频快照、完整话题人口、来源簇评估、同龄队列和独立双源值，三项话题均不得升级为确认热点；候选账号、榜单账号和可见账号不得升级为达人白名单。巨量星图仍需登录，巨量云图当前页与候选话题不匹配。",
+  "sourceBrief": "16:09已完成T1复核。今日保留9条候选，确认热点0、临时/重点达人白名单0、正式达人白名单0。长鑫事件簇升至榜首但事实与独立共振未闭环，继续核验后做大众流量稿；夏日通勤约下降14%，转方法型常青稿；景德镇约下降41%并退出飙升榜前30，停止热点扩量。"
 }
