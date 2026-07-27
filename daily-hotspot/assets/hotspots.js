@@ -306,6 +306,27 @@ function renderResonanceDetail(candidate) {
   ]));
 }
 
+function renderCreatorObservations(candidate) {
+  const resonance = topicResonance(candidate);
+  const observations = resonance?.creator_observations || resonance?.creatorObservations || [];
+  if (!Array.isArray(observations) || observations.length === 0) return "";
+  const rows = observations.map((observation) => `<div class="creator-observation-row" role="row">
+    <strong class="creator-observation-cell" data-label="账号" role="cell">${escapeHtml(observation.nickname || "待核")}</strong>
+    <span class="creator-observation-cell" data-label="参与角色" role="cell">${escapeHtml(observation.role || "待核")}</span>
+    <span class="creator-observation-cell mono" data-label="发布时间" role="cell">${escapeHtml(observation.published_age || observation.publishedAge || "待核")}</span>
+    <span class="creator-observation-cell mono" data-label="可见点赞" role="cell">${escapeHtml(observation.visible_likes || observation.visibleLikes || "待核")}</span>
+  </div>`).join("");
+  return detailSection("实时参与账号", "users", `<div class="creator-observation-table" role="table" aria-label="实时参与账号">
+    <div class="creator-observation-head" role="row">
+      <span role="columnheader">账号</span>
+      <span role="columnheader">参与角色</span>
+      <span role="columnheader">发布时间</span>
+      <span role="columnheader">可见点赞</span>
+    </div>
+    ${rows}
+  </div><p class="drawer-prose creator-observation-boundary"><strong>名单边界：</strong>这里只记录当前可见参与账号；未完成同主体、同 MCN、同脚本和同投放聚类前，不计入 N_eff，也不进入达人白名单。</p>`);
+}
+
 function mainDecisionLabel(candidate) {
   return isPotentialTopic(candidate) ? publicationStatus(candidate) : businessResponseLabel(candidate);
 }
@@ -754,6 +775,7 @@ export function renderHotspotDetail(candidate) {
       ${detailSection("业务响应分拆解", "chart-no-axes-column", scoreGrid)}
     `}
     ${renderResonanceDetail(candidate)}
+    ${renderCreatorObservations(candidate)}
     ${hotnessScore(candidate) != null ? detailSection("热度信号拆解", "radar", `${hotnessScoreGrid}<div class="structured-note"><strong>热点判断限制</strong>${renderStructuredNotes(candidate.hotness_caps || candidate.hotnessCaps, "未触发额外限制")}</div>`) : ""}
     ${contentPotentialScore(candidate) != null ? detailSection("内容制作与渠道", "megaphone", `<p class="drawer-prose"><strong>内容动作：</strong>${escapeHtml(publicationStatus(candidate))}｜${escapeHtml(candidate.publication_mode || "待判断")}</p><p class="drawer-prose"><strong>推荐题目：</strong>${escapeHtml(candidate.early_publish_title || candidate.primary_topic || "待补")}</p><p class="drawer-prose"><strong>内容角度：</strong>${escapeHtml(candidate.content_angle || "待补")}</p><p class="drawer-prose"><strong>事实边界：</strong>${escapeHtml(factBoundary(candidate))}</p>${pendingConfirmation(candidate).length ? `<p class="drawer-prose"><strong>待确认信息：</strong>${escapeHtml(pendingConfirmation(candidate).join("；"))}</p>` : ""}<p class="drawer-prose"><strong>推荐渠道：</strong>${escapeHtml(recommendedChannelLabels(candidate).join("、") || "暂不发布")}</p><div class="score-grid">${channelScoreGrid}</div><p class="drawer-prose"><strong>监测：</strong>${escapeHtml(candidate.measurement_plan || "待补")}</p><p class="drawer-prose"><strong>停止条件：</strong>${escapeHtml(candidate.stop_condition || "待补")}</p>`) : ""}
     ${contentPotentialScore(candidate) != null ? detailSection("选题价值拆解", "chart-no-axes-column", `${contentPotentialScoreGrid}<div class="structured-note"><strong>发布条件限制（不降低选题价值）</strong>${renderStructuredNotes(candidate.content_caps || candidate.contentCaps, "未触发额外限制")}</div>`) : ""}

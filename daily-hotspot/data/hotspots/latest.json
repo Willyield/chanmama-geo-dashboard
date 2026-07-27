@@ -3,8 +3,8 @@
   "module": "hotspots",
   "date": "2026-07-27",
   "observedAt": "2026-07-27T10:35:00+08:00",
-  "revision": 1,
-  "updatedAt": "2026-07-27T01:54:45.169Z",
+  "revision": 3,
+  "updatedAt": "2026-07-27T02:57:42.658Z",
   "sourceType": "structured-data",
   "sourceArtifact": "incoming/hotspots/2026-07-27.json",
   "sourceWorkbook": null,
@@ -18,28 +18,28 @@
       "S": 0,
       "A": 4,
       "B": 1,
-      "C": 2,
-      "D": 0
+      "C": 3,
+      "D": 1
     },
     "domainCounts": {
-      "commerce": 4,
-      "technology": 3
+      "commerce": 5,
+      "technology": 4
     },
     "candidateKindCounts": {
-      "event": 6,
+      "event": 8,
       "potential_topic": 1
     },
     "contentPotentialCounts": {
       "S": 1,
       "A": 2,
       "B": 2,
-      "C": 2,
+      "C": 4,
       "D": 0
     },
     "topicValueCounts": {
       "S": 2,
       "A": 3,
-      "B": 1,
+      "B": 3,
       "C": 1,
       "D": 0
     },
@@ -48,15 +48,15 @@
       "early_test": 0,
       "targeted_publish": 2,
       "small_test": 0,
-      "observe": 2,
+      "observe": 4,
       "do_not_publish": 0
     },
     "priorityCount": 4,
     "lowCostCount": 1,
-    "observeCount": 2,
-    "evidenceE3Count": 7,
+    "observeCount": 4,
+    "evidenceE3Count": 8,
     "publishNowCount": 5,
-    "webSummary": "7 条候选入库，其中事件热点 6 条、潜力话题 1 条。重点业务 4 条，当前可制作或试发 5 条，高潜力抢先试发 0 条。\n今日优先：夏日复古风通勤穿搭：抖音双榜高位，百度大词需求同步上升、抖音保证金管理规范：普通类目按上月支付GMV分档、Midjourney V8.2发布：图像质量、创意和个性化升级。",
+    "webSummary": "9 条候选入库，其中事件热点 8 条、潜力话题 1 条。重点业务 4 条，当前可制作或试发 5 条，高潜力抢先试发 0 条。\n今日优先：夏日复古风通勤穿搭：抖音双榜高位，百度大词需求同步上升、抖音保证金管理规范：普通类目按上月支付GMV分档、Midjourney V8.2发布：图像质量、创意和个性化升级。",
     "topContentActions": [
       {
         "id": "HT-20260727-001",
@@ -155,46 +155,56 @@
       "notRecommended": "不宣称全网搜索爆发；不把单日热榜直接写成服饰销量趋势；未完成商品多周期验证前不投广告、不全量召回。",
       "sourceLinks": [
         {
-          "label": "抖音创作者指数",
-          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
-          "domain": "creator.douyin.com"
+          "label": "Core source",
+          "domain": "creator.douyin.com",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
         },
         {
-          "label": "抖音站内搜索",
-          "url": "https://www.douyin.com/search/夏日复古风通勤穿搭",
-          "domain": "douyin.com"
+          "label": "Supporting source 1",
+          "domain": "douyin.com",
+          "url": "https://www.douyin.com/search/夏日复古风通勤穿搭"
         },
         {
-          "label": "蝉妈妈首页",
-          "url": "https://www.chanmama.com/douyin/",
-          "domain": "chanmama.com"
+          "label": "Supporting source 2",
+          "domain": "chanmama.com",
+          "url": "https://www.chanmama.com/douyin/"
         },
         {
-          "label": "百度指数-通勤穿搭",
-          "url": "https://index.baidu.com/v2/main/index.html#/trend/通勤穿搭?words=通勤穿搭",
-          "domain": "index.baidu.com"
+          "label": "Supporting source 3",
+          "domain": "index.baidu.com",
+          "url": "https://index.baidu.com/v2/main/index.html#/trend/通勤穿搭?words=通勤穿搭"
+        },
+        {
+          "label": "Supporting source 4",
+          "domain": "douyin.com",
+          "url": "https://www.douyin.com/search/%E5%A4%8F%E6%97%A5%E5%A4%8D%E5%8F%A4%E9%A3%8E%E9%80%9A%E5%8B%A4%E7%A9%BF%E6%90%AD%E6%9D%A5%E5%95%A6?type=general"
         }
       ],
       "source_links": [
         {
-          "label": "抖音创作者指数",
-          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
-          "domain": "creator.douyin.com"
+          "label": "Core source",
+          "domain": "creator.douyin.com",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
         },
         {
-          "label": "抖音站内搜索",
-          "url": "https://www.douyin.com/search/夏日复古风通勤穿搭",
-          "domain": "douyin.com"
+          "label": "Supporting source 1",
+          "domain": "douyin.com",
+          "url": "https://www.douyin.com/search/夏日复古风通勤穿搭"
         },
         {
-          "label": "蝉妈妈首页",
-          "url": "https://www.chanmama.com/douyin/",
-          "domain": "chanmama.com"
+          "label": "Supporting source 2",
+          "domain": "chanmama.com",
+          "url": "https://www.chanmama.com/douyin/"
         },
         {
-          "label": "百度指数-通勤穿搭",
-          "url": "https://index.baidu.com/v2/main/index.html#/trend/通勤穿搭?words=通勤穿搭",
-          "domain": "index.baidu.com"
+          "label": "Supporting source 3",
+          "domain": "index.baidu.com",
+          "url": "https://index.baidu.com/v2/main/index.html#/trend/通勤穿搭?words=通勤穿搭"
+        },
+        {
+          "label": "Supporting source 4",
+          "domain": "douyin.com",
+          "url": "https://www.douyin.com/search/%E5%A4%8F%E6%97%A5%E5%A4%8D%E5%8F%A4%E9%A3%8E%E9%80%9A%E5%8B%A4%E7%A9%BF%E6%90%AD%E6%9D%A5%E5%95%A6?type=general"
         }
       ],
       "status": "跨部门重点响应",
@@ -213,14 +223,79 @@
         "freshness_verified": true,
         "normalization_flags": []
       },
-      "topic_resonance": null,
+      "topic_resonance": {
+        "confirmed_hotspot": false,
+        "raw_visible_account_count": 7,
+        "effective_independent_source_count": null,
+        "source_cluster_status": "UNKNOWN",
+        "same_age_growth_status": "FAIL",
+        "content_value_status": "PASS",
+        "risk_gate_status": "PASS",
+        "temporary_creator_whitelist_count": 0,
+        "priority_creator_whitelist_count": 0,
+        "creator_observations": [
+          {
+            "nickname": "Jim9ie-",
+            "published_age": "4月21日",
+            "visible_likes": "2.0万",
+            "role": "旧内容"
+          },
+          {
+            "nickname": "TNIT",
+            "published_age": "6月2日",
+            "visible_likes": "3.2万",
+            "role": "旧内容"
+          },
+          {
+            "nickname": "人",
+            "published_age": "6月6日",
+            "visible_likes": "37.3万",
+            "role": "旧高互动内容"
+          },
+          {
+            "nickname": "周土豆",
+            "published_age": "5月26日",
+            "visible_likes": "3.5万",
+            "role": "旧内容"
+          },
+          {
+            "nickname": "阿泽爱吃面_",
+            "published_age": "5月20日",
+            "visible_likes": "1.1万",
+            "role": "旧内容"
+          },
+          {
+            "nickname": "叁菜",
+            "published_age": "6月18日",
+            "visible_likes": "7.7万",
+            "role": "旧内容"
+          }
+        ]
+      },
       "official_rule": null,
       "technology_change": "抖音创作者指数实时榜第2、指数1210.2万；抖音站内热榜TOP4、约1189.7万；蝉妈妈同词同时进入种草热点和平台热点；百度指数‘通勤穿搭’近30日搜索环比+34%、资讯环比+47%。",
       "chanmama_relevance": "四个平台形成真实触发，既有当日社媒热度，也有可承接的常青搜索问题；内容价值明显高于普通单日榜单。",
       "next_step": "官网先做穿搭方法与问题簇文章，抖音/小红书用一周搭配和小个子通勤两个切口分发，并用蝉妈妈服饰数据滚动补充相关商品与内容案例。",
       "explicitly_not_doing": "不宣称全网搜索爆发；不把单日热榜直接写成服饰销量趋势；未完成商品多周期验证前不投广告、不全量召回。",
       "official_evidence": [],
-      "circle_evidence": [],
+      "circle_evidence": [
+        {
+          "platform": "抖音创作者中心",
+          "page": "抖音实时热点",
+          "published": "实时",
+          "observed_at": "2026-07-27 09:58",
+          "source_tier": "E2",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        },
+        {
+          "platform": "抖音站内",
+          "page": "夏日复古通勤穿搭搜索",
+          "published": "实时",
+          "observed_at": "2026-07-27 09:58",
+          "source_tier": "E2",
+          "url": "https://www.douyin.com/search/%E5%A4%8F%E6%97%A5%E5%A4%8D%E5%8F%A4%E9%A3%8E%E9%80%9A%E5%8B%A4%E7%A9%BF%E6%90%AD%E6%9D%A5%E5%95%A6?type=general"
+        }
+      ],
       "business_response_code": "A",
       "business_response_label": "业务重点响应",
       "business_response_score": 91,
@@ -498,10 +573,7 @@
       "content_angle": "用通勤场景解决搭配问题，热度数据只负责说明窗口，不替代方法内容。",
       "measurement_plan": "官网搜索展现、停留和问题词进入量；社媒完播、收藏、评论问题；次日榜位变化。",
       "stop_condition": "连续两次快照跌出TOP20且官网搜索展现无增长时停止扩量。",
-      "content_score_reasons": {
-        "demand": "四平台交叉形成真实需求触发",
-        "business": "服饰内容与蝉妈妈数据、商家和达人用户自然相关"
-      },
+      "content_score_reasons": {},
       "topic_value_score": 96,
       "topic_value_code": "S",
       "topic_value_label": "高潜力",
@@ -858,10 +930,7 @@
       "content_angle": "把规则转成分档计算和自查步骤。",
       "measurement_plan": "搜索展现、表格下载、商家咨询和私域打开。",
       "stop_condition": "规则失效或后台口径变化时立即修订。",
-      "content_score_reasons": {
-        "business": "直接影响经营资金",
-        "traffic": "专业高意图，适合定向发布"
-      },
+      "content_score_reasons": {},
       "topic_value_score": 79,
       "topic_value_code": "A",
       "topic_value_label": "较高潜力",
@@ -1218,10 +1287,7 @@
       "content_angle": "围绕准入、发布、兑换和售后给出一页清单。",
       "measurement_plan": "精准搜索、清单下载、生鲜商家咨询。",
       "stop_condition": "蟹季结束或规则被替代后停止主动分发。",
-      "content_score_reasons": {
-        "business": "直接影响生鲜商家经营",
-        "traffic": "垂直受众，定向发布"
-      },
+      "content_score_reasons": {},
       "topic_value_score": 74,
       "topic_value_code": "A",
       "topic_value_label": "较高潜力",
@@ -1254,16 +1320,16 @@
       "notRecommended": "不把指数写成真实GMV或销量；不因明星同款、绝对规模或单品小基数增长判定类目趋势；不发布、不投广告。",
       "sourceLinks": [
         {
-          "label": "巨量云图近期选品参考",
-          "url": "https://yuntu.oceanengine.com/yuntu_lite/commodity/trend/short/v2?aadvid=1794665196703756",
-          "domain": "yuntu.oceanengine.com"
+          "label": "Core source",
+          "domain": "yuntu.oceanengine.com",
+          "url": "https://yuntu.oceanengine.com/yuntu_lite/commodity/trend/short/v2?aadvid=1794665196703756"
         }
       ],
       "source_links": [
         {
-          "label": "巨量云图近期选品参考",
-          "url": "https://yuntu.oceanengine.com/yuntu_lite/commodity/trend/short/v2?aadvid=1794665196703756",
-          "domain": "yuntu.oceanengine.com"
+          "label": "Core source",
+          "domain": "yuntu.oceanengine.com",
+          "url": "https://yuntu.oceanengine.com/yuntu_lite/commodity/trend/short/v2?aadvid=1794665196703756"
         }
       ],
       "status": "继续观察",
@@ -1612,10 +1678,7 @@
       "content_angle": "只记录信号和验证条件。",
       "measurement_plan": "多周期类目增速、商品连续排名和蝉妈妈交叉变化。",
       "stop_condition": "下一周期未出现第二独立变化信号则继续不发布。",
-      "content_score_reasons": {
-        "value": "有垂直选品参考",
-        "risk": "单周期指数受季节、明星和平台估算影响"
-      },
+      "content_score_reasons": {},
       "topic_value_score": 63,
       "topic_value_code": "B",
       "topic_value_label": "中等潜力",
@@ -1749,20 +1812,7 @@
       "business_response_label": "常规跟进",
       "business_response_score": 61,
       "business_response_basis": "双轨分数矩阵决定",
-      "actions": [
-        {
-          "hotspotId": "HT-20260727-005",
-          "actionType": "科技快评与实测",
-          "task": "用三项电商运营任务测试Opus 5，完成后再发布实测结论。",
-          "owner": "内容/GEO",
-          "collaborators": "产品研究",
-          "deadline": "2026-07-29",
-          "deliverable": "Claude Opus 5电商运营任务实测",
-          "acceptance": "区分官方基准与蝉妈妈实测，记录成本、耗时、完成率和人工修订。",
-          "stopCondition": "实测无明显效率提升则停止业务化扩写。",
-          "status": "待执行"
-        }
-      ],
+      "actions": [],
       "domain": "technology",
       "scoring_model": "tech_v1",
       "canonical_event_key": "anthropic-claude-opus-5-20260724",
@@ -2099,10 +2149,7 @@
       "content_angle": "以官方事实为底，再用蝉妈妈三项任务实测限制结论。",
       "measurement_plan": "搜索展现、测试完成率、成本和人工修订量。",
       "stop_condition": "实测无明显效率提升时停止业务化扩写。",
-      "content_score_reasons": {
-        "demand": "科技圈发布后多平台持续讨论",
-        "business": "适合用工作流测试而非产品开发"
-      },
+      "content_score_reasons": {},
       "topic_value_score": 84,
       "topic_value_code": "A",
       "topic_value_label": "较高潜力",
@@ -2176,20 +2223,7 @@
       "business_response_label": "业务重点响应",
       "business_response_score": 79,
       "business_response_basis": "双轨分数矩阵决定",
-      "actions": [
-        {
-          "hotspotId": "HT-20260727-006",
-          "actionType": "优先制作",
-          "task": "用同一商品完成主图、场景图和社媒封面三类V8.2样张。",
-          "owner": "内容/GEO",
-          "collaborators": "创意、品牌运营",
-          "deadline": "2026-07-29",
-          "deliverable": "Midjourney V8.2电商素材实测",
-          "acceptance": "至少9张样张，记录一次可用率、人工修订和品牌审核结果。",
-          "stopCondition": "三类任务均无效率提升时停止扩写。",
-          "status": "待执行"
-        }
-      ],
+      "actions": [],
       "domain": "technology",
       "scoring_model": "tech_v1",
       "canonical_event_key": "midjourney-v8-2-20260724",
@@ -2537,10 +2571,7 @@
       "content_angle": "以同一商品同任务实测替代产品发布复述。",
       "measurement_plan": "一次可用率、人工修订量、审核通过率和内容收藏。",
       "stop_condition": "三类任务均无效率提升时停止扩写。",
-      "content_score_reasons": {
-        "demand": "重要图像工具升级",
-        "business": "电商素材场景自然且可立刻实测"
-      },
+      "content_score_reasons": {},
       "topic_value_score": 86,
       "topic_value_code": "S",
       "topic_value_label": "高潜力",
@@ -2960,10 +2991,7 @@
       "content_angle": "只测一个品牌配乐场景。",
       "measurement_plan": "配乐可用率、版权提示和短视频完播。",
       "stop_condition": "测试不可控或无独立采用信号即停止。",
-      "content_score_reasons": {
-        "demand": "单一官方新功能信号",
-        "business": "电商关联弱且数据承接不足"
-      },
+      "content_score_reasons": {},
       "topic_value_score": 54,
       "topic_value_code": "C",
       "topic_value_label": "低潜力",
@@ -2975,6 +3003,961 @@
       "fact_boundary": "只确认官方功能更新和页面浏览量；不确认真实使用规模或电商转化。",
       "pending_confirmation": [
         "第二个独立需求信号待确认",
+        "蝉妈妈数据承接待确认"
+      ],
+      "confirmed_trigger": true,
+      "publishable_channel": true
+    },
+    {
+      "id": "HT-20260727-008",
+      "event_key": "changxin-tech-listing-discussion-20260727",
+      "foundAt": "2026-07-27 09:40",
+      "name": "长鑫科技今日上市：高热上升，但挂牌事实与达人共振仍待闭环",
+      "type": "大众热点｜科技与资本市场",
+      "sourceLevel": "E2",
+      "publishedAt": "2026-07-27",
+      "signal": "国产DRAM企业的资本市场进程引发财经与产业内容集中解释，但本轮只确认上交所注册生效页面，尚未取得当日挂牌公告原文。",
+      "uncertainty": "N_eff未完成同MCN、同主体、同脚本归并；同龄增速缺T1；上交所项目页确认注册生效，不等于已经核实7月27日挂牌、发行价、首日涨幅或估值。",
+      "recommended": "财经审核先核挂牌公告、股票代码、发行价和交易状态；内容组准备《长鑫科技为何突然进入热榜？从注册生效到挂牌要看哪些官方文件》；16:00复核指数、排名、新鲜账号和来源簇。",
+      "actionReason": "可获取大众搜索流量，但与电商运营工作流关联弱；只能作为大众流量内容，不升级为产品或商家策略议题。",
+      "actionDetail": "官网准备问题型SEO页，公众号准备官方流程图，社媒只发待核观察卡；严禁写4万亿估值、翻倍收益、首日涨幅等未由原始公告确认的数据。",
+      "evidence": "抖音创作者中心实时榜与抖音站内搜索均在2026-07-27 09:55-09:58可读；上交所发行上市项目页确认注册生效、融资金额295亿元，未显示本轮所需的当日挂牌公告。",
+      "departments": "内容/GEO主责；财经审核、社媒运营协作",
+      "deadline": "2026-07-27 16:20",
+      "notRecommended": "不做股价预测，不写收益承诺，不把媒体或抖音文案替代上市公告。",
+      "sourceLinks": [
+        {
+          "label": "Core source",
+          "domain": "creator.douyin.com",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "douyin.com",
+          "url": "https://www.douyin.com/search/%E9%95%BF%E9%91%AB%E7%A7%91%E6%8A%80%E4%BB%8A%E6%97%A5%E4%B8%8A%E5%B8%82?type=general"
+        },
+        {
+          "label": "Supporting source 2",
+          "domain": "sse.com.cn",
+          "url": "https://www.sse.com.cn/listing/renewal/ipo/index_listing_detail.shtml?auditId=2170"
+        }
+      ],
+      "source_links": [
+        {
+          "label": "Core source",
+          "domain": "creator.douyin.com",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "douyin.com",
+          "url": "https://www.douyin.com/search/%E9%95%BF%E9%91%AB%E7%A7%91%E6%8A%80%E4%BB%8A%E6%97%A5%E4%B8%8A%E5%B8%82?type=general"
+        },
+        {
+          "label": "Supporting source 2",
+          "domain": "sse.com.cn",
+          "url": "https://www.sse.com.cn/listing/renewal/ipo/index_listing_detail.shtml?auditId=2170"
+        }
+      ],
+      "status": "条件跟进",
+      "risk": "高风险-事实未闭环",
+      "natural": "条件通过",
+      "owner": "内容/GEO负责人",
+      "monitor": "16:00复核同口径指数、排名、新鲜账号数、来源簇、重复脚本和官方挂牌公告。",
+      "candidate_kind": "event",
+      "signal_type": "realtime_rank_plus_search_supply",
+      "baseline_evidence": null,
+      "topic_resonance": {
+        "confirmed_hotspot": false,
+        "raw_visible_account_count": 7,
+        "effective_independent_source_count": null,
+        "source_cluster_status": "UNKNOWN",
+        "same_age_growth_status": "UNKNOWN",
+        "content_value_status": "PASS",
+        "risk_gate_status": "UNKNOWN",
+        "temporary_creator_whitelist_count": 0,
+        "priority_creator_whitelist_count": 0,
+        "creator_observations": [
+          {
+            "nickname": "饭统戴老板",
+            "published_age": "16小时",
+            "visible_likes": "1.5万",
+            "role": "产业解释"
+          },
+          {
+            "nickname": "小羽见闻录",
+            "published_age": "22小时",
+            "visible_likes": "106",
+            "role": "事件讨论"
+          },
+          {
+            "nickname": "铁马Talk",
+            "published_age": "16小时",
+            "visible_likes": "146",
+            "role": "产业解释"
+          },
+          {
+            "nickname": "L...",
+            "published_age": "12小时",
+            "visible_likes": "29",
+            "role": "事件放大"
+          },
+          {
+            "nickname": "关权教授",
+            "published_age": "5天",
+            "visible_likes": "2000",
+            "role": "估值讨论-高风险"
+          }
+        ]
+      },
+      "official_rule": null,
+      "technology_change": "国产DRAM企业的资本市场进程引发财经与产业内容集中解释，但本轮只确认上交所注册生效页面，尚未取得当日挂牌公告原文。",
+      "chanmama_relevance": "可获取大众搜索流量，但与电商运营工作流关联弱；只能作为大众流量内容，不升级为产品或商家策略议题。",
+      "next_step": "财经审核先核挂牌公告、股票代码、发行价和交易状态；内容组准备《长鑫科技为何突然进入热榜？从注册生效到挂牌要看哪些官方文件》；16:00复核指数、排名、新鲜账号和来源簇。",
+      "explicitly_not_doing": "不做股价预测，不写收益承诺，不把媒体或抖音文案替代上市公告。",
+      "official_evidence": [
+        {
+          "platform": "上海证券交易所",
+          "page": "长鑫科技发行上市项目页",
+          "published": "更新至2026-06-15",
+          "observed_at": "2026-07-27 10:20",
+          "source_tier": "E3",
+          "url": "https://www.sse.com.cn/listing/renewal/ipo/index_listing_detail.shtml?auditId=2170"
+        }
+      ],
+      "circle_evidence": [
+        {
+          "platform": "抖音创作者中心",
+          "page": "抖音实时热点",
+          "published": "实时",
+          "observed_at": "2026-07-27 09:58",
+          "source_tier": "E2",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        },
+        {
+          "platform": "抖音站内",
+          "page": "长鑫科技今日上市搜索",
+          "published": "实时",
+          "observed_at": "2026-07-27 09:57",
+          "source_tier": "E2",
+          "url": "https://www.douyin.com/search/%E9%95%BF%E9%91%AB%E7%A7%91%E6%8A%80%E4%BB%8A%E6%97%A5%E4%B8%8A%E5%B8%82?type=general"
+        }
+      ],
+      "business_response_code": "C",
+      "business_response_label": "继续观察",
+      "business_response_score": 39,
+      "business_response_basis": "只有专业媒体或非官方交叉证据，科技影响与执行等级最高为B。",
+      "actions": [],
+      "domain": "technology",
+      "scoring_model": "tech_v1",
+      "canonical_event_key": "changxin-tech-listing-discussion-20260727",
+      "tech_topic": "domestic_dram_capital_market_event",
+      "tech_scores": {
+        "technical_breakthrough": 3,
+        "circle_heat_velocity": 5,
+        "authority_cross_validation": 4,
+        "developer_market_adoption": 3,
+        "industry_competition_impact": 5,
+        "duration_diffusion_cycle": 3,
+        "application_transfer_value": 2,
+        "response_window": 5
+      },
+      "business_scores": {
+        "target_user_fit": 2,
+        "ecommerce_workflow_relevance": 1,
+        "product_data_fit": 1,
+        "geo_question_value": 3,
+        "conversion_brand_value": 2,
+        "execution_readiness_cost": 4
+      },
+      "tech_impact_score": 73,
+      "raw_tech_level": "T-A",
+      "tech_level": "T-B",
+      "business_fit_score": 39,
+      "action_level": "L-C",
+      "source_tier": "E2",
+      "independent_verification_count": 1,
+      "adoption_signals": [
+        "抖音出现多账号财经与产业解释内容"
+      ],
+      "score_reasons": {
+        "technology": "产业与资本市场影响显著，但不是新技术发布。",
+        "business": "大众流量价值高，电商运营直接关联弱。"
+      },
+      "score_caps": [
+        {
+          "rule": "e2_evidence_cap",
+          "tech_cap": "T-B",
+          "action_cap": "L-B",
+          "changed": true,
+          "reason": "只有专业媒体或非官方交叉证据，科技影响与执行等级最高为B。"
+        },
+        {
+          "rule": "no_natural_business_link",
+          "tech_cap": null,
+          "action_cap": "L-C",
+          "changed": true,
+          "reason": "没有自然业务关联，只保留科技影响判断，最终执行等级最高为L-C。"
+        },
+        {
+          "rule": "high_cost_action_block",
+          "tech_cap": null,
+          "action_cap": null,
+          "changed": false,
+          "reason": "缺少执行准备、成熟承接页或监测，禁止广告投流和全量召回。"
+        }
+      ],
+      "tech_score_details": [
+        {
+          "key": "technical_breakthrough",
+          "name": "技术突破强度",
+          "score": 3,
+          "weight": 20,
+          "weighted_score": 12
+        },
+        {
+          "key": "circle_heat_velocity",
+          "name": "圈层热度与涨速",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "authority_cross_validation",
+          "name": "权威与交叉验证",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "developer_market_adoption",
+          "name": "开发者与市场采用",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "industry_competition_impact",
+          "name": "行业竞争影响",
+          "score": 5,
+          "weight": 10,
+          "weighted_score": 10
+        },
+        {
+          "key": "duration_diffusion_cycle",
+          "name": "持续与扩散周期",
+          "score": 3,
+          "weight": 10,
+          "weighted_score": 6
+        },
+        {
+          "key": "application_transfer_value",
+          "name": "应用迁移价值",
+          "score": 2,
+          "weight": 10,
+          "weighted_score": 4
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "business_score_details": [
+        {
+          "key": "target_user_fit",
+          "name": "蝉妈妈目标用户匹配",
+          "score": 2,
+          "weight": 20,
+          "weighted_score": 8
+        },
+        {
+          "key": "ecommerce_workflow_relevance",
+          "name": "电商工作流关联",
+          "score": 1,
+          "weight": 20,
+          "weighted_score": 4
+        },
+        {
+          "key": "product_data_fit",
+          "name": "产品与数据承接",
+          "score": 1,
+          "weight": 20,
+          "weighted_score": 4
+        },
+        {
+          "key": "geo_question_value",
+          "name": "GEO问题价值",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "conversion_brand_value",
+          "name": "转化与品牌价值",
+          "score": 2,
+          "weight": 15,
+          "weighted_score": 6
+        },
+        {
+          "key": "execution_readiness_cost",
+          "name": "执行准备与成本",
+          "score": 4,
+          "weight": 10,
+          "weighted_score": 8
+        }
+      ],
+      "prohibited_actions": [
+        "广告投流",
+        "全量召回"
+      ],
+      "natural_business_link": false,
+      "execution_ready": true,
+      "mature_landing_page": false,
+      "measurement_ready": true,
+      "totalScore": null,
+      "grade": "L-C｜继续观察",
+      "gradeCode": "C",
+      "finalValue": 2,
+      "followDecision": "继续观察",
+      "downgradeReason": "只有专业媒体或非官方交叉证据，科技影响与执行等级最高为B。",
+      "hotness_scoring_model": "hotness_v1",
+      "hotness_score": 73,
+      "raw_hotness_level": "H-A",
+      "hotness_level": "H-A",
+      "hotness_final_value": 4,
+      "hotness_score_details": [
+        {
+          "key": "absolute_demand",
+          "name": "需求规模",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "baseline_deviation",
+          "name": "相对基线变化",
+          "score": 2,
+          "weight": 25,
+          "weighted_score": 10
+        },
+        {
+          "key": "growth_velocity",
+          "name": "上升速度",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "persistence",
+          "name": "持续时间",
+          "score": 2,
+          "weight": 15,
+          "weighted_score": 6
+        },
+        {
+          "key": "cross_platform_spread",
+          "name": "跨平台扩散",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "freshness",
+          "name": "数据新鲜度",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "hotness_caps": [],
+      "hotness_signal_type": "realtime_rank_plus_search_supply",
+      "hotness_independent_platform_count": 2,
+      "hotness_baseline_verified": false,
+      "hotness_freshness_verified": true,
+      "hotness_change_signals": [
+        "抖音站内TOP1且标记23分钟前",
+        "创作者中心实时榜第4",
+        "至少4个12至22小时新鲜账号承接"
+      ],
+      "hotness_requires_baseline": false,
+      "hotness_comparison_baseline_verified": false,
+      "hotness_baseline_type": "不适用",
+      "hotness_normalization_flags": [],
+      "hotness_multi_period_growth_verified": false,
+      "hotness_independent_change_signals": 0,
+      "content_scoring_model": "content_potential_v1",
+      "content_potential_score": 68,
+      "raw_content_potential_level": "P-B",
+      "content_potential_level": "P-C",
+      "content_final_value": 2,
+      "content_score_details": [
+        {
+          "key": "audience_demand",
+          "name": "受众需求规模",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "demand_velocity",
+          "name": "需求上涨速度",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "content_supply_gap",
+          "name": "内容供给缺口",
+          "score": 2,
+          "weight": 15,
+          "weighted_score": 6
+        },
+        {
+          "key": "target_user_fit",
+          "name": "目标用户匹配",
+          "score": 2,
+          "weight": 15,
+          "weighted_score": 6
+        },
+        {
+          "key": "data_content_advantage",
+          "name": "蝉妈妈数据优势",
+          "score": 1,
+          "weight": 15,
+          "weighted_score": 3
+        },
+        {
+          "key": "discussion_shareability",
+          "name": "讨论与传播性",
+          "score": 5,
+          "weight": 10,
+          "weighted_score": 10
+        },
+        {
+          "key": "content_lifecycle",
+          "name": "内容生命周期",
+          "score": 3,
+          "weight": 5,
+          "weighted_score": 3
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "content_caps": [
+        {
+          "rule": "e2_evidence_cap",
+          "potential_cap": "P-B",
+          "changed": false,
+          "reason": "只有专业平台单源或非官方证据，内容潜力最高P-B。"
+        },
+        {
+          "rule": "weak_content_advantage",
+          "potential_cap": "P-C",
+          "changed": true,
+          "reason": "蝉妈妈不能提供明显更好的内容或数据，内容潜力最高P-C。"
+        },
+        {
+          "rule": "search_gap_unverified",
+          "potential_cap": "P-B",
+          "changed": false,
+          "reason": "搜索路线尚未验证内容供给缺口，内容潜力最高P-B。"
+        }
+      ],
+      "content_source_tier": "E2",
+      "traffic_route": "mixed",
+      "independent_platform_count": 2,
+      "demand_signals": [
+        "抖音站内TOP1",
+        "创作者中心实时榜第4"
+      ],
+      "content_baseline_verified": false,
+      "content_requires_baseline": false,
+      "content_comparison_baseline_verified": false,
+      "content_baseline_type": "不适用",
+      "content_normalization_flags": [],
+      "content_multi_period_growth_verified": false,
+      "content_independent_change_signals": 0,
+      "supply_gap_verified": false,
+      "content_freshness_verified": true,
+      "chanmama_answerable": false,
+      "query_cluster": [
+        "长鑫科技是做什么的",
+        "长鑫科技上市进程",
+        "长鑫科技股票代码",
+        "长鑫科技上市公告"
+      ],
+      "channel_scores": {
+        "website": 86,
+        "wechat": 82,
+        "short_video": 72,
+        "xiaohongshu": 55,
+        "private_domain": 45
+      },
+      "channel_reasons": {
+        "primary": "问题型官网稿和官方流程解释适配度高；短视频只能用待核表述。"
+      },
+      "recommended_channels": [
+        "website",
+        "wechat"
+      ],
+      "primary_topic": "长鑫科技为何突然进入热榜？从注册生效到挂牌要看哪些官方文件",
+      "early_publish_title": "长鑫科技为何突然进入热榜？从注册生效到挂牌要看哪些官方文件",
+      "content_angle": "用上交所原页解释流程，用问题型标题承接搜索，不写股价预测。",
+      "measurement_plan": "记录发布后2小时与6小时的搜索展现、点击、停留和收藏；16:00同步更新事实状态。",
+      "stop_condition": "官方挂牌事实无法闭环、排名退出前10且新鲜账号停止增长时停止追热。",
+      "content_score_reasons": {},
+      "topic_value_score": 68,
+      "topic_value_code": "B",
+      "topic_value_label": "中等潜力",
+      "publication_status_code": "observe",
+      "publication_status": "继续观察",
+      "publication_priority": 2,
+      "publication_mode": "只记录信号",
+      "publication_basis": "已有真实信号，但选题价值或内容承接尚不足，继续观察变化。",
+      "fact_boundary": "只确认上交所项目页的注册生效和抖音平台当前热度；挂牌日期、发行价、涨幅和估值均待官方原文。",
+      "pending_confirmation": [
+        "上交所挂牌公告待确认",
+        "T1同龄增速待确认",
+        "来源簇与N_eff待归并",
+        "官方或原始信息待确认",
+        "内容供给缺口待确认",
+        "蝉妈妈数据承接待确认"
+      ],
+      "confirmed_trigger": true,
+      "publishable_channel": true
+    },
+    {
+      "id": "HT-20260727-009",
+      "event_key": "jingdezhen-world-heritage-20260727",
+      "foundAt": "2026-07-27 09:40",
+      "name": "景德镇手工瓷业遗存进入UNESCO名录：事实已核，热度仍待T1",
+      "type": "大众热点｜文化与知识解释",
+      "sourceLevel": "E3",
+      "publishedAt": "2026-07-26至2026-07-27",
+      "signal": "09:58创作者中心飙升榜第8、765.0万；09:57抖音搜索764.4万、1天前，星球研究所6.3万赞、人民日报5.8万赞。UNESCO官方名录检索可见Jingdezhen Handicraft Porcelain Industry Sites。",
+      "uncertainty": "可见账号尚未完成MCN/主体/脚本归并，N_eff为null；“领先欧洲500年”是抖音话题表述，尚未由本轮官方史料逐项核实。",
+      "recommended": "先完成权威解释稿并进入排版，标题改为UNESCO名录事实；16:00若指数持续上升且来源簇达到门槛，再增加热点标签和社媒扩量。",
+      "actionReason": "官方事实明确、平台热度和高质量解释账号均存在，适合做知识型GEO内容；但达人共振和同龄增长还没有闭环。",
+      "actionDetail": "官网稿回答入选事实、遗产名称、工艺与产业体系；公众号做时间线；短视频只引用UNESCO名录和已核公开资料，不复述AI摘要中的具体窑温、成品率或技术窃取说法。",
+      "evidence": "UNESCO World Heritage List检索Jingdezhen返回1项中国遗产；抖音创作者中心与站内搜索在同一T0窗口可读。",
+      "departments": "内容/GEO主责；历史事实审核、社媒运营协作",
+      "deadline": "2026-07-27 14:30",
+      "notRecommended": "不把“领先欧洲500年”当作已核史实，不引用抖音AI总结里的具体技术数值，不把同一账号多条视频重复计数。",
+      "sourceLinks": [
+        {
+          "label": "Core source",
+          "domain": "whc.unesco.org",
+          "url": "https://whc.unesco.org/en/list/?search=Jingdezhen"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "creator.douyin.com",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        },
+        {
+          "label": "Supporting source 2",
+          "domain": "douyin.com",
+          "url": "https://www.douyin.com/search/%E6%99%AF%E5%BE%B7%E9%95%87%E5%88%B6%E7%93%B7%E5%87%AD%E5%95%A5%E9%A2%86%E5%85%88%E6%AC%A7%E6%B4%B2500%E5%B9%B4?type=general"
+        }
+      ],
+      "source_links": [
+        {
+          "label": "Core source",
+          "domain": "whc.unesco.org",
+          "url": "https://whc.unesco.org/en/list/?search=Jingdezhen"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "creator.douyin.com",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        },
+        {
+          "label": "Supporting source 2",
+          "domain": "douyin.com",
+          "url": "https://www.douyin.com/search/%E6%99%AF%E5%BE%B7%E9%95%87%E5%88%B6%E7%93%B7%E5%87%AD%E5%95%A5%E9%A2%86%E5%85%88%E6%AC%A7%E6%B4%B2500%E5%B9%B4?type=general"
+        }
+      ],
+      "status": "优先备稿",
+      "risk": "低风险-标题需改写",
+      "natural": "通过",
+      "owner": "内容/GEO负责人",
+      "monitor": "16:00复核飙升榜排名、指数、新鲜账号、来源簇和高质量解释内容增长。",
+      "candidate_kind": "event",
+      "signal_type": "official_event_plus_rising_rank",
+      "baseline_evidence": null,
+      "topic_resonance": {
+        "confirmed_hotspot": false,
+        "raw_visible_account_count": 5,
+        "effective_independent_source_count": null,
+        "source_cluster_status": "UNKNOWN",
+        "same_age_growth_status": "UNKNOWN",
+        "content_value_status": "PASS",
+        "risk_gate_status": "PASS",
+        "temporary_creator_whitelist_count": 0,
+        "priority_creator_whitelist_count": 0,
+        "creator_observations": [
+          {
+            "nickname": "星球研究所",
+            "published_age": "1天",
+            "visible_likes": "6.3万",
+            "role": "专业解释"
+          },
+          {
+            "nickname": "人民日报",
+            "published_age": "1天",
+            "visible_likes": "5.8万",
+            "role": "权威解释"
+          },
+          {
+            "nickname": "娱呗在线",
+            "published_age": "1天",
+            "visible_likes": "4163",
+            "role": "事件放大"
+          },
+          {
+            "nickname": "油管推荐官",
+            "published_age": "1天",
+            "visible_likes": "341",
+            "role": "外网反应转述"
+          },
+          {
+            "nickname": "听泉赏宝",
+            "published_age": "2024-10-31",
+            "visible_likes": "4.3万",
+            "role": "旧内容-不计新鲜共振"
+          }
+        ]
+      },
+      "official_rule": null,
+      "technology_change": "09:58创作者中心飙升榜第8、765.0万；09:57抖音搜索764.4万、1天前，星球研究所6.3万赞、人民日报5.8万赞。UNESCO官方名录检索可见Jingdezhen Handicraft Porcelain Industry Sites。",
+      "chanmama_relevance": "官方事实明确、平台热度和高质量解释账号均存在，适合做知识型GEO内容；但达人共振和同龄增长还没有闭环。",
+      "next_step": "先完成权威解释稿并进入排版，标题改为UNESCO名录事实；16:00若指数持续上升且来源簇达到门槛，再增加热点标签和社媒扩量。",
+      "explicitly_not_doing": "不把“领先欧洲500年”当作已核史实，不引用抖音AI总结里的具体技术数值，不把同一账号多条视频重复计数。",
+      "official_evidence": [
+        {
+          "platform": "UNESCO World Heritage Centre",
+          "page": "World Heritage List: Jingdezhen",
+          "published": "2026名录",
+          "observed_at": "2026-07-27 10:23",
+          "source_tier": "E3",
+          "url": "https://whc.unesco.org/en/list/?search=Jingdezhen"
+        }
+      ],
+      "circle_evidence": [
+        {
+          "platform": "抖音创作者中心",
+          "page": "抖音飙升热点",
+          "published": "实时",
+          "observed_at": "2026-07-27 09:58",
+          "source_tier": "E2",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index"
+        },
+        {
+          "platform": "抖音站内",
+          "page": "景德镇制瓷话题搜索",
+          "published": "实时",
+          "observed_at": "2026-07-27 09:57",
+          "source_tier": "E2",
+          "url": "https://www.douyin.com/search/%E6%99%AF%E5%BE%B7%E9%95%87%E5%88%B6%E7%93%B7%E5%87%AD%E5%95%A5%E9%A2%86%E5%85%88%E6%AC%A7%E6%B4%B2500%E5%B9%B4?type=general"
+        }
+      ],
+      "business_response_code": "D",
+      "business_response_label": "留档",
+      "business_response_score": 55,
+      "business_response_basis": "综合评分与封顶规则决定。",
+      "actions": [],
+      "domain": "commerce",
+      "scoring_model": "commerce_v1",
+      "totalScore": 55,
+      "initialValue": 3,
+      "finalValue": 1,
+      "grade": "L-D｜留档",
+      "gradeCode": "D",
+      "followDecision": "留档",
+      "downgradeReason": "风险封顶",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 3,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 4,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 1,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 1,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 1,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 4,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 3,
+        "evidence": 5,
+        "type": 5,
+        "core": 3,
+        "baseline": 5,
+        "risk": 1,
+        "window": 5,
+        "preparation": 5,
+        "official_rule_floor": 0
+      },
+      "baseline_assessment": {
+        "signal_type": "official_event_plus_rising_rank",
+        "requires_baseline": false,
+        "comparison_baseline_verified": false,
+        "baseline_type": "不适用",
+        "normalization_flags": [],
+        "multi_period_growth_verified": true,
+        "independent_change_signals": 0,
+        "is_verified": true
+      },
+      "business_priority_basis": "综合评分与封顶规则决定。",
+      "hotness_scoring_model": "hotness_v1",
+      "hotness_score": 67,
+      "raw_hotness_level": "H-B",
+      "hotness_level": "H-B",
+      "hotness_final_value": 3,
+      "hotness_score_details": [
+        {
+          "key": "absolute_demand",
+          "name": "需求规模",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "baseline_deviation",
+          "name": "相对基线变化",
+          "score": 2,
+          "weight": 25,
+          "weighted_score": 10
+        },
+        {
+          "key": "growth_velocity",
+          "name": "上升速度",
+          "score": 3,
+          "weight": 20,
+          "weighted_score": 12
+        },
+        {
+          "key": "persistence",
+          "name": "持续时间",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "cross_platform_spread",
+          "name": "跨平台扩散",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "freshness",
+          "name": "数据新鲜度",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "hotness_caps": [],
+      "hotness_signal_type": "official_event_plus_rising_rank",
+      "hotness_independent_platform_count": 3,
+      "hotness_baseline_verified": false,
+      "hotness_freshness_verified": true,
+      "hotness_change_signals": [
+        "创作者中心飙升榜第8",
+        "抖音搜索1天内出现高互动解释内容",
+        "UNESCO官方名录已收录"
+      ],
+      "hotness_requires_baseline": false,
+      "hotness_comparison_baseline_verified": false,
+      "hotness_baseline_type": "不适用",
+      "hotness_normalization_flags": [],
+      "hotness_multi_period_growth_verified": false,
+      "hotness_independent_change_signals": 0,
+      "content_scoring_model": "content_potential_v1",
+      "content_potential_score": 68,
+      "raw_content_potential_level": "P-B",
+      "content_potential_level": "P-C",
+      "content_final_value": 2,
+      "content_score_details": [
+        {
+          "key": "audience_demand",
+          "name": "受众需求规模",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "demand_velocity",
+          "name": "需求上涨速度",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "content_supply_gap",
+          "name": "内容供给缺口",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "target_user_fit",
+          "name": "目标用户匹配",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "data_content_advantage",
+          "name": "蝉妈妈数据优势",
+          "score": 1,
+          "weight": 15,
+          "weighted_score": 3
+        },
+        {
+          "key": "discussion_shareability",
+          "name": "讨论与传播性",
+          "score": 5,
+          "weight": 10,
+          "weighted_score": 10
+        },
+        {
+          "key": "content_lifecycle",
+          "name": "内容生命周期",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 4,
+          "weight": 5,
+          "weighted_score": 4
+        }
+      ],
+      "content_caps": [
+        {
+          "rule": "weak_content_advantage",
+          "potential_cap": "P-C",
+          "changed": true,
+          "reason": "蝉妈妈不能提供明显更好的内容或数据，内容潜力最高P-C。"
+        },
+        {
+          "rule": "search_gap_unverified",
+          "potential_cap": "P-B",
+          "changed": false,
+          "reason": "搜索路线尚未验证内容供给缺口，内容潜力最高P-B。"
+        }
+      ],
+      "content_source_tier": "E3",
+      "traffic_route": "mixed",
+      "independent_platform_count": 3,
+      "demand_signals": [
+        "创作者中心飙升榜765.0万",
+        "抖音搜索764.4万",
+        "星球研究所与人民日报均有1天内高互动内容"
+      ],
+      "content_baseline_verified": false,
+      "content_requires_baseline": false,
+      "content_comparison_baseline_verified": false,
+      "content_baseline_type": "不适用",
+      "content_normalization_flags": [],
+      "content_multi_period_growth_verified": false,
+      "content_independent_change_signals": 0,
+      "supply_gap_verified": false,
+      "content_freshness_verified": true,
+      "chanmama_answerable": false,
+      "query_cluster": [
+        "景德镇申遗成功",
+        "景德镇手工瓷业遗存是什么",
+        "景德镇制瓷为什么有名",
+        "景德镇世界遗产名录"
+      ],
+      "channel_scores": {
+        "website": 90,
+        "wechat": 88,
+        "short_video": 78,
+        "xiaohongshu": 76,
+        "private_domain": 42
+      },
+      "channel_reasons": {
+        "primary": "权威事实和知识解释适合官网与公众号；短视频需控制史料边界。"
+      },
+      "recommended_channels": [
+        "website",
+        "wechat",
+        "short_video"
+      ],
+      "primary_topic": "景德镇手工瓷业遗存为何进入世界遗产名录",
+      "early_publish_title": "景德镇手工瓷业遗存为何进入世界遗产名录？从一座城的制瓷体系说起",
+      "content_angle": "从UNESCO官方名录出发，解释遗产对象和知识问题，不跟随未经核实的500年断言。",
+      "measurement_plan": "记录官网搜索展现、点击、停留和社媒收藏；16:00更新排名与来源簇。",
+      "stop_condition": "官方项目状态变化、史料无法核实或T1排名与指数同步回落时不做热点扩量。",
+      "content_score_reasons": {},
+      "topic_value_score": 68,
+      "topic_value_code": "B",
+      "topic_value_label": "中等潜力",
+      "publication_status_code": "observe",
+      "publication_status": "继续观察",
+      "publication_priority": 2,
+      "publication_mode": "只记录信号",
+      "publication_basis": "已有真实信号，但选题价值或内容承接尚不足，继续观察变化。",
+      "fact_boundary": "只确认UNESCO官方名录已出现该遗产名称及抖音当前热度；不把“领先欧洲500年”和AI摘要细节写成已核事实。",
+      "pending_confirmation": [
+        "T1同龄增速待确认",
+        "来源簇与N_eff待归并",
+        "历史细节史料待核",
+        "内容供给缺口待确认",
         "蝉妈妈数据承接待确认"
       ],
       "confirmed_trigger": true,
@@ -3017,30 +4000,6 @@
       "acceptance": "只面向生鲜相关人群，不扩大为全食品规则。",
       "stopCondition": "蟹季结束或规则被替代。",
       "status": "待执行"
-    },
-    {
-      "hotspotId": "HT-20260727-005",
-      "actionType": "科技快评与实测",
-      "task": "用三项电商运营任务测试Opus 5，完成后再发布实测结论。",
-      "owner": "内容/GEO",
-      "collaborators": "产品研究",
-      "deadline": "2026-07-29",
-      "deliverable": "Claude Opus 5电商运营任务实测",
-      "acceptance": "区分官方基准与蝉妈妈实测，记录成本、耗时、完成率和人工修订。",
-      "stopCondition": "实测无明显效率提升则停止业务化扩写。",
-      "status": "待执行"
-    },
-    {
-      "hotspotId": "HT-20260727-006",
-      "actionType": "优先制作",
-      "task": "用同一商品完成主图、场景图和社媒封面三类V8.2样张。",
-      "owner": "内容/GEO",
-      "collaborators": "创意、品牌运营",
-      "deadline": "2026-07-29",
-      "deliverable": "Midjourney V8.2电商素材实测",
-      "acceptance": "至少9张样张，记录一次可用率、人工修订和品牌审核结果。",
-      "stopCondition": "三类任务均无效率提升时停止扩写。",
-      "status": "待执行"
     }
   ],
   "scanLogs": [
@@ -3054,6 +4013,7 @@
       "signal": "页面可见日期：7.08",
       "relatedIds": [],
       "limitation": "最近30天周期2026-06-26至2026-07-25；指数与区间按原样记录，健身器械缺多周期基线。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3070,6 +4030,7 @@
       "signal": "页面可见日期：7.3、7.6、7.7",
       "relatedIds": [],
       "limitation": "本轮已按平台站内页扫描；无足以升级为今日候选的新增信号。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3086,6 +4047,7 @@
       "signal": "页面可见日期：07.06、07.12、07.27、07.21、07.20、07.13、07.11、07.10、07.05、07.04",
       "relatedIds": [],
       "limitation": "本轮已按平台站内页扫描；无足以升级为今日候选的新增信号。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3102,6 +4064,7 @@
       "signal": "页面可见日期：07/27、2026-07-27、2026-07-26、07/20、07/15、07/23",
       "relatedIds": [],
       "limitation": "热点更新07/27 09:20；昨日达人/商品榜为单日快照，未据此认定黑马达人或趋势。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3118,6 +4081,7 @@
       "signal": "已完成站内检查",
       "relatedIds": [],
       "limitation": "‘通勤穿搭’统计至07/26；完整长词未收录。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3134,6 +4098,7 @@
       "signal": "页面可见日期：7.8、7.9",
       "relatedIds": [],
       "limitation": "实时榜读取成功；夏日复古风通勤穿搭第2、1210.2万。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3150,6 +4115,7 @@
       "signal": "已完成站内检查",
       "relatedIds": [],
       "limitation": "发现页框架已加载，但内容流未完整读取；不以小红书单源支持今日结论。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3166,6 +4132,7 @@
       "signal": "页面可见日期：07.06、07.12、07.27、07.21、07.20、07.13、07.11、07.10、07.05、07.04",
       "relatedIds": [],
       "limitation": "专题搜索页读取‘夏日复古风通勤穿搭’TOP4、约1189.7万。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3182,6 +4149,7 @@
       "signal": "页面可见日期：2026-07-24",
       "relatedIds": [],
       "limitation": "本轮已按平台站内页扫描；无足以升级为今日候选的新增信号。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3198,6 +4166,7 @@
       "signal": "页面可见日期：07-19、07-14、7.5、07-02、07-23、07-10、07-20",
       "relatedIds": [],
       "limitation": "本轮已按平台站内页扫描；无足以升级为今日候选的新增信号。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3214,6 +4183,7 @@
       "signal": "页面可见日期：2026-07-24、2026-07-23",
       "relatedIds": [],
       "limitation": "页面触发拖动拼图安全验证，只能看到7月24日历史问题；未取得7月27日最新数据。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3230,6 +4200,7 @@
       "signal": "已完成站内检查",
       "relatedIds": [],
       "limitation": "本轮已按平台站内页扫描；无足以升级为今日候选的新增信号。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3246,6 +4217,7 @@
       "signal": "已完成站内检查",
       "relatedIds": [],
       "limitation": "本轮已按平台站内页扫描；无足以升级为今日候选的新增信号。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3262,6 +4234,7 @@
       "signal": "页面可见日期：2026年7月23日、2026年7月22日、2026年7月21日、2026年7月20日、2026年7月17日、2026年7月16日",
       "relatedIds": [],
       "limitation": "新闻页公开内容可读，登录按钮不代表采集失败；今日未发现比既有候选更相关的新发布。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3278,6 +4251,7 @@
       "signal": "已完成站内检查",
       "relatedIds": [],
       "limitation": "首轮连接错误，后续恢复；趋势页读取Unlimited-OCR、Laguna-S-2.1等最新条目。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3294,6 +4268,7 @@
       "signal": "已完成站内检查",
       "relatedIds": [],
       "limitation": "今日榜读取成功；ego-lite约900 stars、Instatic约888、buzz约1710，未将榜单星数直接外推为电商热点。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3310,6 +4285,7 @@
       "signal": "页面可见日期：2026年7月27日、2026年7月26日",
       "relatedIds": [],
       "limitation": "本轮已按平台站内页扫描；无足以升级为今日候选的新增信号。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3326,6 +4302,7 @@
       "signal": "页面可见日期：07-25、07-24、07-23、07-22",
       "relatedIds": [],
       "limitation": "本轮已按平台站内页扫描；无足以升级为今日候选的新增信号。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3342,6 +4319,7 @@
       "signal": "页面可见日期：2026-07-25、2026-07-24",
       "relatedIds": [],
       "limitation": "本轮已按平台站内页扫描；无足以升级为今日候选的新增信号。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3358,6 +4336,7 @@
       "signal": "页面可见日期：07月24日、07月23日、07月20日、07月22日",
       "relatedIds": [],
       "limitation": "本轮已按平台站内页扫描；无足以升级为今日候选的新增信号。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3374,6 +4353,7 @@
       "signal": "页面可见日期：2026-07-27、2026年7月29日、2026-07-26、2026年7月19日、2026-07-25、7月16日",
       "relatedIds": [],
       "limitation": "本轮已按平台站内页扫描；无足以升级为今日候选的新增信号。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3392,6 +4372,7 @@
         "HT-20260727-005"
       ],
       "limitation": "官方基准需用独立任务测试，不能直接外推。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3410,6 +4391,7 @@
         "HT-20260727-006"
       ],
       "limitation": "尚缺独立采用与电商转化证据。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
@@ -3428,13 +4410,218 @@
         "HT-20260727-007"
       ],
       "limitation": "浏览量不等于真实采用。",
+      "nextAction": "按证据缺口继续复核。",
       "loginStatus": null,
       "dataDate": null,
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
+    },
+    {
+      "platform": "抖音创作者中心",
+      "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
+      "status": "已读可用",
+      "evidenceLevel": "E3",
+      "page": "抖音实时热点与飙升热点",
+      "observedAt": "2026-07-27 09:55-09:58",
+      "signal": "夏日复古通勤第2、1210.2万；长鑫科技第4、1189.1万；景德镇飙升第8、765.0万。",
+      "relatedIds": [
+        "HT-20260727-001",
+        "HT-20260727-002",
+        "HT-20260727-003"
+      ],
+      "limitation": "登录预检被公告中的“账号登录”误报，实际榜单完整可读。",
+      "nextAction": "16:00按同页面同口径复核。",
+      "loginStatus": "authenticated",
+      "dataDate": "2026-07-27",
+      "queryTerms": [],
+      "missingData": [
+        "历史分位",
+        "T1增量"
+      ],
+      "loginAction": null
+    },
+    {
+      "platform": "抖音站内",
+      "url": "https://www.douyin.com/",
+      "status": "三个话题均已完成T0搜索快照",
+      "evidenceLevel": "E2",
+      "page": "站内搜索",
+      "observedAt": "2026-07-27 09:57-09:58",
+      "signal": "长鑫TOP1、1209.5万；景德镇764.4万；夏日通勤TOP4、1194.0万。",
+      "relatedIds": [
+        "HT-20260727-001",
+        "HT-20260727-002",
+        "HT-20260727-003"
+      ],
+      "limitation": "搜索页可见视频数不是N_eff；部分页面存在验证码iframe但主结果可读，未绕过验证。",
+      "nextAction": "16:00复核同一关键词与新鲜账号。",
+      "loginStatus": "public_results_visible",
+      "dataDate": "2026-07-27",
+      "queryTerms": [
+        "长鑫科技今日上市",
+        "景德镇制瓷凭啥领先欧洲500年",
+        "夏日复古风通勤穿搭来啦"
+      ],
+      "missingData": [
+        "来源簇",
+        "同龄增速",
+        "完整播放量"
+      ],
+      "loginAction": null
+    },
+    {
+      "platform": "蝉妈妈",
+      "url": "https://www.chanmama.com/bloggerRank/bloggerGrowing/",
+      "status": "财经、个人管理、科技黑马榜均已采集50条",
+      "evidenceLevel": "E2",
+      "page": "内容黑马达人日榜",
+      "observedAt": "2026-07-27 09:55-09:56",
+      "signal": "财经榜学习课代表18.6万粉、日增2.8万；科技榜乘风聊科技82.2万粉、日增3.5万；仅作为E1/E2发现候选。",
+      "relatedIds": [],
+      "limitation": "榜单为蝉妈妈预估数据；未完成内容垂直度、身份、原创、同龄表现和风险门，不能进入达人白名单。",
+      "nextAction": "仅挑选高增长且内容相关者进入逐人复核，不部署候选名单。",
+      "loginStatus": "page_visible",
+      "dataDate": "2026-07-26",
+      "queryTerms": [
+        "财经黑马",
+        "个人管理黑马",
+        "科技黑马"
+      ],
+      "missingData": [
+        "最新15条内容垂直度",
+        "MCN归属",
+        "原创证据",
+        "同龄基线"
+      ],
+      "loginAction": null
+    },
+    {
+      "platform": "蝉妈妈热搜达人榜",
+      "url": "https://www.chanmama.com/bloggerRank/hotSearchAuthor/",
+      "status": "已读",
+      "evidenceLevel": "E2",
+      "page": "达人日榜",
+      "observedAt": "2026-07-27 09:57",
+      "signal": "榜单前列以服饰带货和头部账号为主，属于搜索热度发现源，不等于垂直领域白名单。",
+      "relatedIds": [],
+      "limitation": "没有按电商运营内容垂直度过滤。",
+      "nextAction": "仅用于发现，不直接准入。",
+      "loginStatus": "page_visible",
+      "dataDate": "2026-07-26",
+      "queryTerms": [],
+      "missingData": [
+        "垂直内容占比",
+        "原创与身份复核"
+      ],
+      "loginAction": null
+    },
+    {
+      "platform": "巨量云图",
+      "url": "https://yuntu.oceanengine.com/yuntu_lite/rank_list/hot_content/short_video",
+      "status": "已登录可读但主题不匹配",
+      "evidenceLevel": "E3",
+      "page": "工具类软件短视频榜",
+      "observedAt": "2026-07-27 09:50-09:58",
+      "signal": "当前默认行业榜为工具类软件广告内容，未命中三个候选话题。",
+      "relatedIds": [],
+      "limitation": "不能把平台可读性当作话题双源值。",
+      "nextAction": "16:00若可切到相关行业/关键词，再补充同口径字段。",
+      "loginStatus": "authenticated",
+      "dataDate": "current_page",
+      "queryTerms": [],
+      "missingData": [
+        "候选话题相关行业值"
+      ],
+      "loginAction": null
+    },
+    {
+      "platform": "巨量星图",
+      "url": "https://www.xingtu.cn/",
+      "status": "需要登录",
+      "evidenceLevel": "UNKNOWN",
+      "page": "公开首页",
+      "observedAt": "2026-07-27 09:55-09:58",
+      "signal": "达人市场认证字段不可用。",
+      "relatedIds": [],
+      "limitation": "本轮不得使用星图字段审核达人。",
+      "nextAction": "仅在平台会话恢复后补证，不阻止日报。",
+      "loginStatus": "login_required",
+      "dataDate": null,
+      "queryTerms": [],
+      "missingData": [
+        "星图达人认证字段"
+      ],
+      "loginAction": null
+    },
+    {
+      "platform": "上海证券交易所",
+      "url": "https://www.sse.com.cn/listing/renewal/ipo/index_listing_detail.shtml?auditId=2170",
+      "status": "已核官方原页",
+      "evidenceLevel": "E3",
+      "page": "长鑫科技发行上市项目页",
+      "observedAt": "2026-07-27 10:20补充核验",
+      "signal": "注册生效日期2026-06-12，项目更新至2026-06-15。",
+      "relatedIds": [
+        "HT-20260727-001"
+      ],
+      "limitation": "该页不是7月27日挂牌公告，不能证明发行价、股票代码、首日涨幅和估值。",
+      "nextAction": "继续补挂牌公告原文。",
+      "loginStatus": "public",
+      "dataDate": "2026-06-15",
+      "queryTerms": [],
+      "missingData": [
+        "挂牌公告原文"
+      ],
+      "loginAction": null
+    },
+    {
+      "platform": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/?search=Jingdezhen",
+      "status": "已核官方名录",
+      "evidenceLevel": "E3",
+      "page": "World Heritage List",
+      "observedAt": "2026-07-27 10:23补充核验",
+      "signal": "检索Jingdezhen返回中国项目Jingdezhen Handicraft Porcelain Industry Sites。",
+      "relatedIds": [
+        "HT-20260727-002"
+      ],
+      "limitation": "官方名录不自动证明抖音话题中的全部历史和技术细节。",
+      "nextAction": "稿件逐项引用官方或一手史料。",
+      "loginStatus": "public",
+      "dataDate": "2026",
+      "queryTerms": [
+        "Jingdezhen"
+      ],
+      "missingData": [
+        "500年断言的一手史料"
+      ],
+      "loginAction": null
+    },
+    {
+      "platform": "达人历史候选复核",
+      "url": "https://www.chanmama.com/",
+      "status": "13位P0候选复核完成",
+      "evidenceLevel": "E2",
+      "page": "蝉妈妈只读基础分析",
+      "observedAt": "2026-07-27 09:59",
+      "signal": "身份E2为4位，基础分析成功3位，正式白名单0。",
+      "relatedIds": [],
+      "limitation": "9位身份UNKNOWN；缺收藏、转发、同龄队列、原创与风险门。",
+      "nextAction": "仅对三农策划师-老孟、抖音广告投放-大東、羽川、阿豪抖店交流板继续补证；未过门前不部署。",
+      "loginStatus": "page_visible",
+      "dataDate": "2026-04-28至2026-07-26",
+      "queryTerms": [],
+      "missingData": [
+        "9位身份确认",
+        "同龄队列",
+        "原创贡献",
+        "风险门",
+        "第二轮审核"
+      ],
+      "loginAction": null
     }
   ],
-  "boundaryText": "本轮直接读取平台站内页和官方原始页面，未使用百度/SEO搜索结果替代平台证据。AIDSO于2026-07-27仍触发拖动拼图验证，只能读取7月24日历史问题；小红书内容流未完整加载。蝉妈妈商品/达人榜和巨量云图指数均按快照、区间或指数原样记录，未外推为真实成交额、精确销量、黑马达人或行业趋势。‘夏日复古风通勤穿搭’只确认抖音当日高热与百度大词环比回升，不宣称全网大盘爆发。",
-  "sourceBrief": "今日内容队列优先制作‘夏日复古风通勤穿搭’，四个平台共同确认抖音当日高热与通勤穿搭大词环比回升；业务队列重点响应保证金管理规范与河蟹/蟹卡规则。科技圈中，Claude Opus 5科技影响高但业务承接中等，先做工作流实测；Midjourney V8.2与电商素材关联更直接，进入优先制作。巨量云图健身器械仅保留观察，不以绝对规模或单周期增长判定趋势。AIDSO仍需拼图验证，日报状态为incomplete。"
+  "boundaryText": "本日报为2026-07-27 10:00主采后的合并快照。9条候选均已进入同一评分契约；确认热点仍为0。长鑫科技与景德镇遗产缺少完整N_eff和T1同龄增速，不得升为确认热点；夏日复古通勤穿搭虽有双榜与搜索需求，但本轮承接内容以4月至6月存量为主，不构成新账号共振。可见账号只作参与观察，未完成同主体、同MCN、同脚本和同投放聚类前不计入N_eff，也不进入达人白名单。缺失字段保持null，不估填。",
+  "sourceBrief": "今日共9条候选：远端已核7条与本轮新增2条已在输入层合并。确认热点0条、话题临时白名单0人、正式达人白名单0人。内容优先执行夏日复古通勤穿搭、抖音保证金分档、河蟹及蟹卡经营清单；长鑫科技与景德镇遗产进入条件跟进/权威备稿。所有候选继续保留来源、事实边界和停止条件，未知字段不估填。"
 }
