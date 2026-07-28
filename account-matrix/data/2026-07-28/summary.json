@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reportDate": "2026-07-28",
-  "generatedAt": "2026-07-28T05:30:49.686Z",
+  "generatedAt": "2026-07-28T06:24:19.898Z",
   "status": "PARTIAL",
   "period": {
     "kind": "BASELINE",
@@ -76,20 +76,6 @@
   },
   "categories": [
     {
-      "categoryId": "unclassified",
-      "categoryLabel": "待分类",
-      "contentCount": 1,
-      "totalViews": 5,
-      "totalViewDelta": null,
-      "medianViews": 5,
-      "commonInteractions": 0,
-      "commonInteractionDelta": null,
-      "commonInteractionRate": 0,
-      "medianRelativeIndex": 5,
-      "highPerformanceCount": 1,
-      "scorableCount": 1
-    },
-    {
       "categoryId": "competitor_comparison",
       "categoryLabel": "竞品对比",
       "contentCount": 13,
@@ -102,6 +88,20 @@
       "medianRelativeIndex": 3,
       "highPerformanceCount": 1,
       "scorableCount": 10
+    },
+    {
+      "categoryId": "current_hotspot",
+      "categoryLabel": "时事热点",
+      "contentCount": 10,
+      "totalViews": 278,
+      "totalViewDelta": null,
+      "medianViews": 1,
+      "commonInteractions": 6,
+      "commonInteractionDelta": null,
+      "commonInteractionRate": 0.0216,
+      "medianRelativeIndex": 2.862,
+      "highPerformanceCount": 1,
+      "scorableCount": 3
     },
     {
       "categoryId": "industry_insight",
@@ -144,20 +144,6 @@
       "medianRelativeIndex": 1,
       "highPerformanceCount": 4,
       "scorableCount": 33
-    },
-    {
-      "categoryId": "current_hotspot",
-      "categoryLabel": "时事热点",
-      "contentCount": 9,
-      "totalViews": 273,
-      "totalViewDelta": null,
-      "medianViews": 0.5,
-      "commonInteractions": 6,
-      "commonInteractionDelta": null,
-      "commonInteractionRate": 0.022,
-      "medianRelativeIndex": 0.724,
-      "highPerformanceCount": 0,
-      "scorableCount": 2
     },
     {
       "categoryId": "ranking_data",
@@ -550,26 +536,10 @@
       "platformLabel": "头条号",
       "categoryId": "current_hotspot",
       "categoryLabel": "时事热点",
-      "contentCount": 2,
-      "totalViews": 1,
+      "contentCount": 3,
+      "totalViews": 6,
       "totalViewDelta": null,
-      "medianViews": 0.5,
-      "commonInteractions": 0,
-      "commonInteractionDelta": null,
-      "commonInteractionRate": 0,
-      "medianRelativeIndex": null,
-      "highPerformanceCount": 0,
-      "scorableCount": 0
-    },
-    {
-      "platformId": "toutiao",
-      "platformLabel": "头条号",
-      "categoryId": "unclassified",
-      "categoryLabel": "待分类",
-      "contentCount": 1,
-      "totalViews": 5,
-      "totalViewDelta": null,
-      "medianViews": 5,
+      "medianViews": 1,
       "commonInteractions": 0,
       "commonInteractionDelta": null,
       "commonInteractionRate": 0,

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reportDate": "2026-07-28",
-  "generatedAt": "2026-07-28T05:30:49.686Z",
+  "generatedAt": "2026-07-28T06:24:19.898Z",
   "records": [
     {
       "platformId": "zhihu",
@@ -4141,7 +4141,7 @@
       "publishedAt": "2026-07-23T05:36:00.000Z",
       "observedAt": "2026-07-28T05:14:04.312Z",
       "platformAsOf": null,
-      "categoryId": "unclassified",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -4160,10 +4160,10 @@
       "label": "4-7天",
       "ageDays": 4,
       "classification": {
-        "categoryId": "unclassified",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中固定分类规则"
+        "categoryId": "current_hotspot",
+        "confidence": "MANUAL",
+        "source": "manual_override",
+        "reason": "用户确认：该内容属于时事热点"
       },
       "deltas": {
         "views": null,

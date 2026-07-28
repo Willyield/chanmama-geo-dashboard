@@ -35,7 +35,7 @@ const formatNumber = (value) => Number.isFinite(value)
   : "--";
 const formatExact = (value) => Number.isFinite(value) ? new Intl.NumberFormat("zh-CN").format(value) : "--";
 const formatPercent = (value) => Number.isFinite(value) ? `${(value * 100).toFixed(value < 0.01 ? 2 : 1)}%` : "--";
-const formatMultiple = (value) => Number.isFinite(value) ? `${value.toFixed(1)}x` : "--";
+const formatMultiple = (value) => Number.isFinite(value) ? `${value.toFixed(1)}×` : "--";
 const formatDateTime = (value) => value ? new Intl.DateTimeFormat("zh-CN", {
   timeZone: "Asia/Shanghai", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false,
 }).format(new Date(value)) : "--";
@@ -177,16 +177,27 @@ const metricStrip = () => {
   </section>`;
 };
 
-const barList = (items, { labelKey, valueKey, countKey = "contentCount", routeView, routeIdKey }) => {
-  const maximum = Math.max(1, ...items.map((item) => item[valueKey] || 0));
-  return `<div class="bar-list">${items.map((item, index) => {
-    const width = Math.max(1, ((item[valueKey] || 0) / maximum) * 100);
+const barList = (items, {
+  labelKey,
+  labelTitle = "分类",
+  valueKey,
+  countKey = "contentCount",
+  routeView,
+  routeIdKey,
+}) => {
+  const rankedItems = [...items].sort((a, b) =>
+    (b[countKey] || 0) - (a[countKey] || 0)
+    || (b[valueKey] || 0) - (a[valueKey] || 0),
+  );
+  const maximum = Math.max(1, ...rankedItems.map((item) => item[countKey] || 0));
+  return `<div class="bar-list"><div class="bar-head" aria-hidden="true"><span>${escapeHtml(labelTitle)}</span><span>发布量</span><span>篇数</span><span>相对</span></div>${rankedItems.map((item, index) => {
+    const width = Math.max(1, ((item[countKey] || 0) / maximum) * 100);
     const query = new URLSearchParams({ date: state.reportDate });
     return `<button class="bar-row" type="button" data-route="${escapeHtml(makeRoute(routeView, item[routeIdKey], query))}">
       <span class="bar-name">${escapeHtml(item[labelKey])}</span>
       <span class="bar-track"><span class="bar-fill" style="width:${width.toFixed(1)}%;background:var(--category-${(index % 6) + 1})"></span></span>
-      <span class="bar-value">${formatMultiple(item[valueKey])}</span>
-      <span class="bar-count">n=${formatExact(item[countKey])}</span>
+      <span class="bar-count">${formatExact(item[countKey])}篇</span>
+      <span class="bar-index">${formatMultiple(item[valueKey])}</span>
     </button>`;
   }).join("") || `<div class="empty-state">暂无可比较数据</div>`}</div>`;
 };
@@ -257,7 +268,7 @@ const renderOverview = (route) => {
   app.innerHTML = `${heading("经营数据总览", `${state.summary.reportDate} / ${state.summary.period.kind === "WEEKEND_72H" ? "周五至周日合并" : "连续快照区间"}`)}
     ${renderFilters(route.query)}${metricStrip()}${qualityBand()}
     <div class="dashboard-grid">
-      <section class="section"><div class="section-header"><h2>分类相对表现</h2><span>相对本平台同龄中位数</span></div>${barList(state.summary.categories, { labelKey: "categoryLabel", valueKey: "medianRelativeIndex", routeView: "category", routeIdKey: "categoryId" })}</section>
+      <section class="section"><div class="section-header"><h2>分类表现与发布量</h2><span>相对本平台同龄中位数</span></div>${barList(state.summary.categories, { labelKey: "categoryLabel", valueKey: "medianRelativeIndex", routeView: "category", routeIdKey: "categoryId" })}</section>
       <section class="section"><div class="section-header"><h2>高表现内容定位</h2><span>点击进入单篇详情</span></div>${topSignals(filtered)}</section>
     </div>
     ${trendChart(route.query)}
@@ -282,7 +293,7 @@ const renderCategory = (route) => {
   const aggregates = state.summary.platformCategories.filter((item) => item.categoryId === categoryId);
   app.innerHTML = `${heading(CATEGORY_LABELS[categoryId] || categoryId, "比较同一类内容在不同平台的原始数据和平台相对表现")}
     ${renderFilters(route.query, { hideCategory: true })}${qualityBand()}
-    <section class="section"><div class="section-header"><h2>跨平台相对表现</h2><span>原值不合并为统一总分</span></div>${barList(aggregates, { labelKey: "platformLabel", valueKey: "medianRelativeIndex", routeView: "platform", routeIdKey: "platformId" })}</section>
+    <section class="section"><div class="section-header"><h2>跨平台相对表现</h2><span>原值不合并为统一总分</span></div>${barList(aggregates, { labelKey: "platformLabel", labelTitle: "平台", valueKey: "medianRelativeIndex", routeView: "platform", routeIdKey: "platformId" })}</section>
     <section class="section"><div class="section-header"><h2>分类内容</h2><span>${records.length} 篇</span></div>${renderTable(records, route.query)}</section>`;
 };
 
