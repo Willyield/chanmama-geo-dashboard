@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reportDate": "2026-07-28",
-  "generatedAt": "2026-07-28T07:09:59.939Z",
+  "generatedAt": "2026-07-28T08:17:07.855Z",
   "records": [
     {
       "platformId": "zhihu",
@@ -231,7 +231,7 @@
       "publishedAt": "2026-07-28T01:47:00.000Z",
       "observedAt": "2026-07-28T05:14:04.341Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -250,10 +250,10 @@
       "label": "0-1天",
       "ageDays": 0,
       "classification": {
-        "categoryId": "brand_product",
+        "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "命中关键词：复盘"
       },
       "deltas": {
         "views": null,
@@ -301,7 +301,7 @@
       "publishedAt": "2026-07-27T08:13:56.893Z",
       "observedAt": "2026-07-28T05:13:56.893Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -320,10 +320,10 @@
       "label": "0-1天",
       "ageDays": 0,
       "classification": {
-        "categoryId": "brand_product",
+        "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "命中关键词：通勤"
       },
       "deltas": {
         "views": null,
@@ -371,7 +371,7 @@
       "publishedAt": "2026-07-27T07:55:00.000Z",
       "observedAt": "2026-07-28T05:14:04.370Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -393,10 +393,10 @@
       "label": "0-1天",
       "ageDays": 0,
       "classification": {
-        "categoryId": "tutorial_method",
+        "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
         "source": "rule",
-        "reason": "命中关键词：怎么"
+        "reason": "命中关键词：复古风"
       },
       "deltas": {
         "views": null,
@@ -444,7 +444,7 @@
       "publishedAt": "2026-07-27T07:53:00.000Z",
       "observedAt": "2026-07-28T05:14:04.341Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -463,10 +463,10 @@
       "label": "0-1天",
       "ageDays": 0,
       "classification": {
-        "categoryId": "tutorial_method",
+        "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
         "source": "rule",
-        "reason": "命中关键词：怎么"
+        "reason": "命中关键词：夏季"
       },
       "deltas": {
         "views": null,
@@ -587,7 +587,7 @@
       "publishedAt": "2026-07-27T07:51:00.000Z",
       "observedAt": "2026-07-28T05:14:04.312Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -606,10 +606,10 @@
       "label": "0-1天",
       "ageDays": 0,
       "classification": {
-        "categoryId": "tutorial_method",
+        "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
         "source": "rule",
-        "reason": "命中关键词：如何"
+        "reason": "命中关键词：需求上升"
       },
       "deltas": {
         "views": null,
@@ -727,7 +727,7 @@
       "publishedAt": "2026-07-27T07:48:00.000Z",
       "observedAt": "2026-07-28T05:14:04.389Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -746,10 +746,10 @@
       "label": "0-1天",
       "ageDays": 0,
       "classification": {
-        "categoryId": "tutorial_method",
+        "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
         "source": "rule",
-        "reason": "命中关键词：怎么"
+        "reason": "命中关键词：通勤"
       },
       "deltas": {
         "views": null,
@@ -1365,7 +1365,7 @@
       "publishedAt": "2026-07-26T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.897Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -1384,10 +1384,10 @@
       "label": "0-1天",
       "ageDays": 1,
       "classification": {
-        "categoryId": "tutorial_method",
+        "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
         "source": "rule",
-        "reason": "命中关键词：怎么"
+        "reason": "命中关键词：通勤"
       },
       "deltas": {
         "views": null,
@@ -1505,7 +1505,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -1524,10 +1524,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -1575,7 +1575,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -1594,10 +1594,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -1645,7 +1645,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -1664,10 +1664,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -1715,7 +1715,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -1734,10 +1734,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -1785,7 +1785,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -1804,10 +1804,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -1855,7 +1855,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -1874,10 +1874,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -1925,7 +1925,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -1944,10 +1944,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -1995,7 +1995,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2014,10 +2014,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -2065,7 +2065,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2084,10 +2084,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -2135,7 +2135,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2154,10 +2154,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -2205,7 +2205,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2224,10 +2224,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -2275,7 +2275,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2294,10 +2294,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -2345,7 +2345,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2364,10 +2364,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -2415,7 +2415,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2434,10 +2434,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -2485,7 +2485,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2504,10 +2504,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -2555,7 +2555,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2574,10 +2574,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -2625,7 +2625,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2644,10 +2644,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -2695,7 +2695,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2714,10 +2714,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -2765,7 +2765,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2784,10 +2784,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -2835,7 +2835,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2854,10 +2854,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -2905,7 +2905,7 @@
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.886Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "ranking_data",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2924,10 +2924,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "ranking_data",
+        "confidence": "HIGH",
         "source": "rule",
-        "reason": "命中关键词：发布"
+        "reason": "命中关键词：榜"
       },
       "deltas": {
         "views": null,
@@ -3543,7 +3543,7 @@
       "publishedAt": "2026-07-24T01:48:00.000Z",
       "observedAt": "2026-07-28T05:14:04.416Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -3562,10 +3562,10 @@
       "label": "4-7天",
       "ageDays": 4,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "tutorial_method",
+        "confidence": "LOW",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "未命中前三类明确规则，按通用方法内容归类"
       },
       "deltas": {
         "views": null,
@@ -3882,7 +3882,7 @@
         "lowBase": true,
         "lowBaseThreshold": 10,
         "reasons": [
-          "播放/阅读为中位数3.0倍"
+          "高于同类常规水平200%"
         ]
       }
     },
@@ -4377,8 +4377,8 @@
         "lowBase": true,
         "lowBaseThreshold": 10,
         "reasons": [
-          "同龄样本前10%",
-          "播放/阅读为中位数5.0倍"
+          "进入同类前10%",
+          "高于同类常规水平400%"
         ]
       }
     },
@@ -4825,7 +4825,7 @@
       "publishedAt": "2026-07-23T01:47:00.000Z",
       "observedAt": "2026-07-28T05:14:04.416Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -4844,10 +4844,10 @@
       "label": "4-7天",
       "ageDays": 5,
       "classification": {
-        "categoryId": "tutorial_method",
+        "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
         "source": "rule",
-        "reason": "命中关键词：怎么"
+        "reason": "命中关键词：流量下滑"
       },
       "deltas": {
         "views": null,
@@ -4878,8 +4878,8 @@
         "lowBase": false,
         "lowBaseThreshold": 10,
         "reasons": [
-          "同龄样本前10%",
-          "播放/阅读为中位数2.1倍"
+          "进入同类前10%",
+          "高于同类常规水平105%"
         ]
       }
     },
@@ -5041,7 +5041,7 @@
       "publishedAt": "2026-07-22T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.886Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "ranking_data",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -5060,10 +5060,10 @@
       "label": "4-7天",
       "ageDays": 5,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "ranking_data",
+        "confidence": "HIGH",
         "source": "rule",
-        "reason": "命中关键词：蝉妈妈"
+        "reason": "命中关键词：销量观察"
       },
       "deltas": {
         "views": null,
@@ -5517,7 +5517,7 @@
         "lowBase": true,
         "lowBaseThreshold": 10,
         "reasons": [
-          "同龄样本前10%"
+          "进入同类前10%"
         ]
       }
     },
@@ -6390,7 +6390,7 @@
       "publishedAt": "2026-07-21T07:17:00.000Z",
       "observedAt": "2026-07-28T05:14:04.389Z",
       "platformAsOf": null,
-      "categoryId": "industry_insight",
+      "categoryId": "ranking_data",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -6409,10 +6409,10 @@
       "label": "4-7天",
       "ageDays": 6,
       "classification": {
-        "categoryId": "industry_insight",
-        "confidence": "MEDIUM",
+        "categoryId": "ranking_data",
+        "confidence": "HIGH",
         "source": "rule",
-        "reason": "命中关键词：行业"
+        "reason": "命中关键词：榜"
       },
       "deltas": {
         "views": null,
@@ -6443,7 +6443,7 @@
         "lowBase": false,
         "lowBaseThreshold": 10,
         "reasons": [
-          "同龄样本前10%"
+          "进入同类前10%"
         ]
       }
     },
@@ -6587,7 +6587,7 @@
         "lowBase": false,
         "lowBaseThreshold": 10,
         "reasons": [
-          "同龄样本前10%"
+          "进入同类前10%"
         ]
       }
     },
@@ -6932,7 +6932,7 @@
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
         "sampleSize": 4,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": 2,
         "percentile": null,
         "medianMultiple": null,
@@ -6958,7 +6958,7 @@
       "publishedAt": "2026-07-19T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.886Z",
       "platformAsOf": null,
-      "categoryId": "brand_product",
+      "categoryId": "ranking_data",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -6977,10 +6977,10 @@
       "label": "8-14天",
       "ageDays": 8,
       "classification": {
-        "categoryId": "brand_product",
-        "confidence": "MEDIUM",
+        "categoryId": "ranking_data",
+        "confidence": "HIGH",
         "source": "rule",
-        "reason": "命中关键词：发布"
+        "reason": "命中关键词：榜"
       },
       "deltas": {
         "views": null,
@@ -7074,7 +7074,7 @@
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
         "sampleSize": 4,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": 2,
         "percentile": null,
         "medianMultiple": null,
@@ -7216,7 +7216,7 @@
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
         "sampleSize": 4,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": 2,
         "percentile": null,
         "medianMultiple": null,
@@ -7358,7 +7358,7 @@
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
         "sampleSize": 4,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": 2,
         "percentile": null,
         "medianMultiple": null,
@@ -7524,7 +7524,7 @@
       "publishedAt": "2026-07-14T01:58:00.000Z",
       "observedAt": "2026-07-28T05:14:04.442Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -7545,10 +7545,10 @@
       "label": "8-14天",
       "ageDays": 14,
       "classification": {
-        "categoryId": "tutorial_method",
+        "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
         "source": "rule",
-        "reason": "命中关键词：怎么"
+        "reason": "命中关键词：热度飙升"
       },
       "deltas": {
         "views": null,
@@ -7570,7 +7570,7 @@
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
         "sampleSize": 4,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": 2,
         "percentile": null,
         "medianMultiple": null,
@@ -7649,7 +7649,7 @@
         "lowBase": false,
         "lowBaseThreshold": 10,
         "reasons": [
-          "同龄样本前10%"
+          "进入同类前10%"
         ]
       }
     },
