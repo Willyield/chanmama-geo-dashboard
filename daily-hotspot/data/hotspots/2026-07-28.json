@@ -2,13 +2,13 @@
   "schemaVersion": 2,
   "module": "hotspots",
   "date": "2026-07-28",
-  "observedAt": "2026-07-28T10:10:16+08:00",
-  "revision": 2,
-  "updatedAt": "2026-07-28T02:11:53.511Z",
+  "observedAt": "2026-07-28T10:13:42+08:00",
+  "revision": 4,
+  "updatedAt": "2026-07-28T02:43:10.596Z",
   "sourceType": "structured-data",
   "sourceArtifact": "incoming/hotspots/2026-07-28.json",
   "sourceWorkbook": null,
-  "inputStatus": "complete",
+  "inputStatus": "DEGRADED_REPORT",
   "scoringModels": [
     "tech_v1",
     "commerce_v1"
@@ -56,7 +56,7 @@
     "observeCount": 0,
     "evidenceE3Count": 3,
     "publishNowCount": 4,
-    "webSummary": "4 条候选入库，其中事件热点 3 条、潜力话题 1 条。重点业务 3 条，当前可制作或试发 4 条，高潜力抢先试发 1 条。\n今日优先：2026抖音商城七夕好礼季：8月15日至19日活动，立减折扣统一15%、抖音电商店铺命名规范更新：覆盖所有商家、七类店型与号店绑定、Kimi K3开源：首个3T级原生多模态Agent模型进入开发生态。",
+    "webSummary": "今日纳入4条候选观察，确认热点0条；话题临时/重点白名单均为0，正式达人白名单0人。内容执行队列收敛为3条：优先制作Kimi K3电商任务实测稿、抢先试发大学生纯吃旅行观察稿、定向发布七夕好礼季经营清单。店铺命名规范保留为业务候选，本轮不占用前三选题。T0已于10:13完成，但N_eff、来源簇、同龄队列、T1增长和独立双源值仍缺失，因此本日报为DEGRADED_REPORT，不把榜单进榜、可见账号或单视频互动升级为确认热点或达人白名单。",
     "topContentActions": [
       {
         "id": "HT-20260728-001",
@@ -231,7 +231,50 @@
       "candidate_kind": "event",
       "signal_type": "official_model_release",
       "baseline_evidence": null,
-      "topic_resonance": null,
+      "topic_resonance": {
+        "stage": "T0_CANDIDATE",
+        "confirmed_hotspot": false,
+        "raw_visible_account_count": null,
+        "effective_independent_source_count": null,
+        "source_cluster_status": "UNKNOWN",
+        "same_age_growth_status": "UNKNOWN",
+        "content_value_status": "PASS_WITH_FACT_BOUNDARY",
+        "risk_gate_status": "UNKNOWN",
+        "temporary_creator_whitelist_count": 0,
+        "missing_inputs": [
+          "完整话题人口",
+          "来源簇归并",
+          "同龄队列",
+          "T1增长",
+          "独立双源值"
+        ],
+        "creator_observations": [
+          {
+            "nickname": "Kimi 智能助手",
+            "role": "官方源头（待身份复核）",
+            "published_age": "10小时前",
+            "visible_likes": "4565"
+          },
+          {
+            "nickname": "阿甘探AI",
+            "role": "早期放大候选",
+            "published_age": "8小时前",
+            "visible_likes": "1020"
+          },
+          {
+            "nickname": "晓辉博士",
+            "role": "专业解释候选",
+            "published_age": "1小时前",
+            "visible_likes": "385"
+          },
+          {
+            "nickname": "林洪祥AI新商业",
+            "role": "商业解释候选",
+            "published_age": "12小时前",
+            "visible_likes": "233"
+          }
+        ]
+      },
       "official_rule": null,
       "technology_change": "Kimi K3以2.8T总参数、104B激活参数、原生视觉和100万上下文进入开源生态，面向长时编码、深度研究和多工具Agent任务开放模型权重与技术报告。",
       "chanmama_relevance": "百万上下文、原生视觉与Agent能力可用于长直播复盘、商品图与文档联合理解、行业研究和内容生产，但现阶段以内容和内部工作流实测承接，不直接承诺产品化。",
@@ -688,7 +731,38 @@
         "freshness_verified": true,
         "normalization_flags": []
       },
-      "topic_resonance": null,
+      "topic_resonance": {
+        "stage": "T0_CANDIDATE",
+        "confirmed_hotspot": false,
+        "raw_visible_account_count": null,
+        "effective_independent_source_count": null,
+        "source_cluster_status": "UNKNOWN",
+        "same_age_growth_status": "UNKNOWN",
+        "content_value_status": "PASS_WITH_FACT_BOUNDARY",
+        "risk_gate_status": "UNKNOWN",
+        "temporary_creator_whitelist_count": 0,
+        "missing_inputs": [
+          "完整话题人口",
+          "来源簇归并",
+          "同龄队列",
+          "T1增长",
+          "独立双源值"
+        ],
+        "creator_observations": [
+          {
+            "nickname": "电商小助手",
+            "role": "官方经营信息源",
+            "published_age": "4天前",
+            "visible_likes": "19"
+          },
+          {
+            "nickname": "蝉妈妈选品顾问玲玲",
+            "role": "行业解释候选",
+            "published_age": "3天前",
+            "visible_likes": "1"
+          }
+        ]
+      },
       "official_rule": {
         "substantive_change": true,
         "direct_business_impact": true,
@@ -1052,7 +1126,25 @@
         "freshness_verified": true,
         "normalization_flags": []
       },
-      "topic_resonance": null,
+      "topic_resonance": {
+        "stage": "OFFICIAL_RULE_CANDIDATE",
+        "confirmed_hotspot": false,
+        "raw_visible_account_count": null,
+        "effective_independent_source_count": null,
+        "source_cluster_status": "UNKNOWN",
+        "same_age_growth_status": "UNKNOWN",
+        "content_value_status": "PASS_WITH_FACT_BOUNDARY",
+        "risk_gate_status": "UNKNOWN",
+        "temporary_creator_whitelist_count": 0,
+        "missing_inputs": [
+          "抖音同题T0快照",
+          "完整话题人口",
+          "来源簇归并",
+          "同龄队列",
+          "独立双源值"
+        ],
+        "creator_observations": []
+      },
       "official_rule": {
         "substantive_change": true,
         "direct_business_impact": true,
@@ -1070,20 +1162,7 @@
       "business_response_label": "跨部门重点响应",
       "business_response_score": 88,
       "business_response_basis": "综合评分与封顶规则决定。",
-      "actions": [
-        {
-          "hotspotId": "HT-20260728-003",
-          "actionType": "定向发布",
-          "task": "制作各店型命名格式、授权、改名次数、禁用词和号店绑定对照表。",
-          "owner": "内容/GEO",
-          "collaborators": "商家运营、品牌合规",
-          "deadline": "2026-07-28",
-          "deliverable": "抖音小店命名规则对照表",
-          "acceptance": "不虚构版本差异，不承诺后台一定审核通过。",
-          "stopCondition": "规则或后台产品口径变化时立即更新。",
-          "status": "待执行"
-        }
-      ],
+      "actions": [],
       "domain": "commerce",
       "scoring_model": "commerce_v1",
       "totalScore": 88,
@@ -1440,7 +1519,44 @@
         "freshness_verified": true,
         "normalization_flags": []
       },
-      "topic_resonance": null,
+      "topic_resonance": {
+        "stage": "T0_CANDIDATE",
+        "confirmed_hotspot": false,
+        "raw_visible_account_count": null,
+        "effective_independent_source_count": null,
+        "source_cluster_status": "UNKNOWN",
+        "same_age_growth_status": "UNKNOWN",
+        "content_value_status": "PASS_FOR_LOW_COST_TEST",
+        "risk_gate_status": "UNKNOWN",
+        "temporary_creator_whitelist_count": 0,
+        "missing_inputs": [
+          "完整话题人口",
+          "来源簇归并",
+          "同龄队列",
+          "T1增长",
+          "抖音生态外独立双源值"
+        ],
+        "creator_observations": [
+          {
+            "nickname": "我叫毕语航",
+            "role": "近义内容供给（待聚类）",
+            "published_age": "1天前",
+            "visible_likes": "6.9万"
+          },
+          {
+            "nickname": "金贵七七（环游中国版）",
+            "role": "旧内容供给（不计早期放大）",
+            "published_age": "7月10日",
+            "visible_likes": "8.5万"
+          },
+          {
+            "nickname": "旺来周游记",
+            "role": "地方逛吃内容候选",
+            "published_age": "6月30日",
+            "visible_likes": "3627"
+          }
+        ]
+      },
       "official_rule": null,
       "technology_change": "“暑期大学生已开启纯吃模式”在抖音创作者实时榜第8、指数932.1万；蝉妈妈种草热点第2，07/28 09:30更新；抖音搜索TOP8、930.3万，出现大同、南昌、郑州等城市纯吃旅行内容。",
       "chanmama_relevance": "大众内容需求和城市美食场景已经出现真实触发，适合争取搜索与社媒流量；但对蝉妈妈的直接业务紧迫性低于官方规则，因此业务队列只作常规跟进。",
@@ -1786,18 +1902,6 @@
       "deliverable": "2026抖音七夕好礼季报名与经营清单",
       "acceptance": "15%立减、价格校验和资源条件均回到官方规则与后台口径。",
       "stopCondition": "官方规则变化时立即修订。",
-      "status": "待执行"
-    },
-    {
-      "hotspotId": "HT-20260728-003",
-      "actionType": "定向发布",
-      "task": "制作各店型命名格式、授权、改名次数、禁用词和号店绑定对照表。",
-      "owner": "内容/GEO",
-      "collaborators": "商家运营、品牌合规",
-      "deadline": "2026-07-28",
-      "deliverable": "抖音小店命名规则对照表",
-      "acceptance": "不虚构版本差异，不承诺后台一定审核通过。",
-      "stopCondition": "规则或后台产品口径变化时立即更新。",
       "status": "待执行"
     },
     {
@@ -2228,8 +2332,114 @@
       ],
       "missingData": [],
       "loginAction": null
+    },
+    {
+      "platform": "抖音站内T0",
+      "url": "https://www.douyin.com/search/Kimi%20K3%E5%BC%80%E6%BA%90?type=general",
+      "status": "已完成只读快照",
+      "evidenceLevel": "E2",
+      "page": "Kimi K3开源搜索结果",
+      "observedAt": "2026-07-28 10:13:03",
+      "signal": "可见官方与多位AI账号近1至21小时内容；最高新内容可见点赞4565，另有1020、385、233等。",
+      "relatedIds": [
+        "HT-20260728-001"
+      ],
+      "limitation": "可见结果不是完整话题人口；同主体、同MCN、同脚本尚未聚类；无T1同龄增速。",
+      "nextAction": "16:00至16:15按同关键词采集T1并计算实际间隔。",
+      "loginStatus": "authenticated",
+      "dataDate": "2026-07-28",
+      "queryTerms": [
+        "Kimi K3开源"
+      ],
+      "missingData": [
+        "完整话题人口",
+        "来源簇",
+        "同龄队列",
+        "T1增长",
+        "独立双源值"
+      ],
+      "loginAction": null
+    },
+    {
+      "platform": "抖音站内T0",
+      "url": "https://www.douyin.com/search/%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%BA%AF%E5%90%83%E6%97%85%E8%A1%8C?type=general",
+      "status": "已完成只读快照",
+      "evidenceLevel": "E2",
+      "page": "大学生纯吃旅行搜索结果",
+      "observedAt": "2026-07-28 10:13:22",
+      "signal": "创作者中心实时榜第8、热点指数934.4万；站内搜索可见多城市美食旅行内容。",
+      "relatedIds": [
+        "HT-20260728-004"
+      ],
+      "limitation": "大量结果是近义或历史内容，不能直接视为同一话题独立来源；抖音与创作者中心同属平台生态。",
+      "nextAction": "16:00至16:15复核榜位、同关键词新内容和有效来源簇。",
+      "loginStatus": "authenticated",
+      "dataDate": "2026-07-28",
+      "queryTerms": [
+        "大学生纯吃旅行"
+      ],
+      "missingData": [
+        "完整话题人口",
+        "来源簇",
+        "同龄队列",
+        "T1增长",
+        "生态外独立双源值"
+      ],
+      "loginAction": null
+    },
+    {
+      "platform": "抖音站内T0",
+      "url": "https://www.douyin.com/search/2026%E6%8A%96%E9%9F%B3%E5%95%86%E5%9F%8E%E4%B8%83%E5%A4%95%E5%A5%BD%E7%A4%BC%E5%AD%A3?type=general",
+      "status": "已完成只读快照",
+      "evidenceLevel": "E2",
+      "page": "2026抖音商城七夕好礼季搜索结果",
+      "observedAt": "2026-07-28 10:13:42",
+      "signal": "可见电商小助手、蝉妈妈选品顾问等近期内容，但互动较低且官方供给占主导。",
+      "relatedIds": [
+        "HT-20260728-002"
+      ],
+      "limitation": "当前证据支持经营规则内容，不支持大众爆发或独立共振结论。",
+      "nextAction": "16:00至16:15复核是否出现新的独立账号和持续增长。",
+      "loginStatus": "authenticated",
+      "dataDate": "2026-07-28",
+      "queryTerms": [
+        "2026抖音商城七夕好礼季"
+      ],
+      "missingData": [
+        "完整话题人口",
+        "来源簇",
+        "同龄队列",
+        "T1增长",
+        "独立双源值"
+      ],
+      "loginAction": null
+    },
+    {
+      "platform": "蝉妈妈黑马达人榜",
+      "url": "https://www.chanmama.com/bloggerRank/bloggerGrowing/",
+      "status": "候选发现快照已完成",
+      "evidenceLevel": "E1",
+      "page": "内容黑马达人日榜",
+      "observedAt": "2026-07-28 10:07:56",
+      "signal": "采集50条公开候选链接，仅用于后续逐人身份、垂直度、原创、同龄表现和风险复核。",
+      "relatedIds": [],
+      "limitation": "榜单包含大量非电商运营账号；榜单进榜、昵称和单日增长均不能直接进入达人白名单。",
+      "nextAction": "仅抽取内容垂直且增长异常的少量账号进入观察池，逐人补证后再评审。",
+      "loginStatus": "authenticated",
+      "dataDate": "2026-07-27",
+      "queryTerms": [],
+      "missingData": [
+        "内容垂直度",
+        "稳定账号ID",
+        "MCN归属",
+        "原创贡献",
+        "同龄队列",
+        "风险门",
+        "第二轮复审"
+      ],
+      "loginAction": null
     }
   ],
-  "boundaryText": "今日结论截至2026-07-28 10:10（北京时间）。AIDSO已完成07/28单题验证：热度值0、蝉妈妈未收录或提及、引用网站10、引用文章18；这是主动单题结果，不代表自然搜索量、全网需求或品牌承接已经形成。页面中的腾讯验证码组件实际位于屏幕外，未构成可见验证阻塞。抖音、创作者指数、蝉妈妈和巨量云图的指数、区间、观看人次与销售额均按页面原样记录，不等于精确人数或真实成交额。巨量云图健身器械仍缺多周期基线和第二独立变化信号，不判趋势。DeepSeek V4官方原文首发04/24，不作为07/28新热点。媒体转载不算独立验证，Kimi官方基准不等于电商任务实测。",
-  "sourceBrief": "今日确认4条候选：跨部门重点响应2条、业务重点响应1条、常规跟进1条。内容队列为优先制作1条、抢先试发1条、定向发布2条。Kimi K3是科技与内容双高优先项；七夕活动和店铺命名按官方规则保持高业务优先级；大学生纯吃旅行只按抖音生态真实信号抢先试发，不外推为全网趋势。AIDSO已完成07/28单题验证：该问题热度值为0，蝉妈妈未收录或提及，只作为需求与品牌承接边界，不作为升温证据。"
+  "boundaryText": "本日为DEGRADED_REPORT，结论截至2026-07-28 10:13:42（北京时间）。10:00 T0三话题快照已在允许时间窗内完成；但N_eff、来源簇、同龄队列、T1增长、完整话题人口和独立双源值仍缺失，因此确认热点0条、话题临时白名单0条、重点白名单0条、临时达人白名单0人、正式达人白名单0人。页面所列实时参与账号仅为当前搜索结果中的可见样本，不计入N_eff，也不代表白名单准入。AIDSO单题热度值0且蝉妈妈未收录或提及，只作为需求边界。抖音、创作者指数、蝉妈妈和巨量云图的指数、区间、观看人次与销售额均按页面原样记录，不等于精确人数或真实成交额。巨量星图当前需要登录，星图字段不参与本轮达人审核。媒体转载不算独立验证，Kimi官方基准不等于电商任务实测。",
+  "sourceBrief": "今日纳入4条候选观察，确认热点0条；话题临时/重点白名单均为0，正式达人白名单0人。内容执行队列收敛为3条：优先制作Kimi K3电商任务实测稿、抢先试发大学生纯吃旅行观察稿、定向发布七夕好礼季经营清单。店铺命名规范保留为业务候选，本轮不占用前三选题。T0已于10:13完成，但N_eff、来源簇、同龄队列、T1增长和独立双源值仍缺失，因此本日报为DEGRADED_REPORT，不把榜单进榜、可见账号或单视频互动升级为确认热点或达人白名单。"
 }

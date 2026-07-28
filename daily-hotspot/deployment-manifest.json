@@ -1,8 +1,8 @@
 {
   "title": "每日热点库与电商圈层行业活动追踪",
-  "generatedAt": "2026-07-28T02:24:09.510Z",
-  "fileCount": 46,
-  "totalBytes": 6069535,
+  "generatedAt": "2026-07-28T02:44:11.152Z",
+  "fileCount": 47,
+  "totalBytes": 6312242,
   "files": [
     {
       "path": "assets/app.js",
@@ -155,14 +155,19 @@
       "sha256": "a66aac75a2e679c5723002396eed5fc5e0e2d45530d2d0e30be10e3471fd4c68"
     },
     {
+      "path": "data/events/2026-07-28.json",
+      "bytes": 227166,
+      "sha256": "cdbbb22f113c9367a99778feb3571451df4606da776c67677ab1875e324892a4"
+    },
+    {
       "path": "data/events/index.json",
-      "bytes": 1298,
-      "sha256": "a04ff6e67a75b8e0f184f048e03bbd2ee324f15d2732cc9b152b212a2b40c11b"
+      "bytes": 1499,
+      "sha256": "d6969588e6637967f0c584f999d8b680cc49a7393c153bb1e1009c212e002332"
     },
     {
       "path": "data/events/latest.json",
       "bytes": 227166,
-      "sha256": "a66aac75a2e679c5723002396eed5fc5e0e2d45530d2d0e30be10e3471fd4c68"
+      "sha256": "cdbbb22f113c9367a99778feb3571451df4606da776c67677ab1875e324892a4"
     },
     {
       "path": "data/hotspots/2026-07-15.json",
@@ -211,23 +216,23 @@
     },
     {
       "path": "data/hotspots/2026-07-28.json",
-      "bytes": 88150,
-      "sha256": "71ba5a7e080fbe6d15881040d5e2ba1063d1473e6ecf983d367ac579bb086f75"
+      "bytes": 95820,
+      "sha256": "6754b196d86a84ec98c27f3a46047ff32a920f6cf25b5b97bb65832c0bcb5fdf"
     },
     {
       "path": "data/hotspots/index.json",
       "bytes": 4575,
-      "sha256": "0e1415754ffaf83777d3e60670ba5373b436228e1a739e691bda5cd200387ae6"
+      "sha256": "17b45b2e53acd535f1c27e62850a899e0f48a6fae51b7045a99f3ba3258a8f18"
     },
     {
       "path": "data/hotspots/latest.json",
-      "bytes": 88150,
-      "sha256": "71ba5a7e080fbe6d15881040d5e2ba1063d1473e6ecf983d367ac579bb086f75"
+      "bytes": 95820,
+      "sha256": "6754b196d86a84ec98c27f3a46047ff32a920f6cf25b5b97bb65832c0bcb5fdf"
     },
     {
       "path": "data/manifest.json",
       "bytes": 367,
-      "sha256": "59c107ce40838608f8390e2b79e4ed6faed0f7c1f80caf261da77840051ca4f6"
+      "sha256": "e16844438bc0572273bbcc8faef62b50ca38efd677aabf2bf9eeeda8da397344"
     },
     {
       "path": "index.html",
