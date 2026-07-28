@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>账号矩阵数据日报</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-primary">
+      <a class="brand" href="#/overview" aria-label="账号矩阵数据日报总览">
+        <span class="brand-mark">CM</span>
+        <span>
+          <strong>账号矩阵数据日报</strong>
+          <small id="report-meta">正在读取日报</small>
+        </span>
+      </a>
+      <nav class="primary-nav" aria-label="日报视图">
+        <a href="#/overview" data-nav="overview">总览</a>
+        <a href="#/platform" data-nav="platform">平台</a>
+        <a href="#/category" data-nav="category">分类</a>
+        <a href="#/contents" data-nav="contents">内容明细</a>
+      </nav>
+      <div id="header-status" class="header-status" aria-live="polite"></div>
+    </div>
+    <div class="age-ruler" aria-label="发布龄比较分组">
+      <span><b>01</b>0-1天</span>
+      <span><b>02</b>2-3天</span>
+      <span><b>03</b>4-7天</span>
+      <span><b>04</b>8-14天</span>
+      <span><b>05</b>15-30天</span>
+    </div>
+  </header>
+  <main id="app" tabindex="-1">
+    <div class="loading-state" role="status">载入数据中</div>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
