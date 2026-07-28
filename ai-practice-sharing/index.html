@@ -1,0 +1,2847 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <meta name="theme-color" content="#241711" />
+    <title>从一个网页，到一套自动运行的工作流</title>
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+SC:wght@400;500;600;700;800;900&family=Noto+Serif+SC:wght@600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ===========================================
+         THEME: LEATHER NOTEBOOK / AI BUILD LOG
+         =========================================== */
+      :root {
+        --paper: #f4eee3;
+        --paper-2: #e8ddcf;
+        --surface: #fffaf1;
+        --ink: #241c17;
+        --ink-2: #3d3129;
+        --muted: #79695d;
+        --line: #cbb9a6;
+        --line-dark: #55463d;
+        --green: #2d6b50;
+        --green-soft: #dce9dc;
+        --lime: #b9e557;
+        --orange: #d95d3e;
+        --orange-soft: #f3d9cf;
+        --blue: #2763d8;
+        --yellow: #e4bd3e;
+        --font-display: "Noto Serif SC", "Source Han Serif SC", STZhongsong, SimSun, serif;
+        --font-body: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+        --font-mono: "IBM Plex Mono", "Microsoft YaHei", monospace;
+        --title-size: clamp(2.2rem, 6.2vw, 6.8rem);
+        --h2-size: clamp(1.55rem, 3.4vw, 3.5rem);
+        --h3-size: clamp(1rem, 1.8vw, 1.45rem);
+        --body-size: clamp(0.78rem, 1.2vw, 1.08rem);
+        --small-size: clamp(0.64rem, 0.86vw, 0.82rem);
+        --slide-padding: clamp(1.2rem, 3.4vw, 3.4rem);
+        --content-gap: clamp(0.8rem, 2vw, 2rem);
+        --element-gap: clamp(0.45rem, 1vw, 1rem);
+        --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        --duration: 420ms;
+        --page-turn-duration: 560ms;
+        --page-turn-distance: clamp(0.75rem, 1.4vw, 1.25rem);
+        --page-turn-ease: cubic-bezier(0.22, 0.78, 0.24, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: var(--font-body);
+        background: var(--paper);
+      }
+
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+
+      button {
+        color: inherit;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      /* ===========================================
+         VIEWPORT FITTING: MANDATORY BASE STYLES
+         =========================================== */
+      html,
+      body {
+        height: 100%;
+        overflow-x: hidden;
+      }
+
+      html {
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        overscroll-behavior-y: contain;
+      }
+
+      .slide {
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        overflow: hidden;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .slide-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-height: 100%;
+        overflow: hidden;
+        padding: var(--slide-padding);
+      }
+
+      .card,
+      .container,
+      .content-box {
+        max-width: min(90vw, 1000px);
+        max-height: min(80vh, 700px);
+      }
+
+      .feature-list,
+      .bullet-list {
+        gap: clamp(0.4rem, 1vh, 1rem);
+      }
+
+      .feature-list li,
+      .bullet-list li {
+        font-size: var(--body-size);
+        line-height: 1.4;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+        gap: clamp(0.5rem, 1.5vw, 1rem);
+      }
+
+      img,
+      .image-container {
+        max-width: 100%;
+        max-height: min(50vh, 400px);
+        object-fit: contain;
+      }
+
+      @media (max-height: 700px) {
+        :root {
+          --slide-padding: clamp(0.75rem, 3vw, 2rem);
+          --content-gap: clamp(0.4rem, 1.5vw, 1rem);
+          --title-size: clamp(1.65rem, 4.8vw, 3.5rem);
+          --h2-size: clamp(1.2rem, 3vw, 2rem);
+        }
+      }
+
+      @media (max-height: 600px) {
+        :root {
+          --slide-padding: clamp(0.5rem, 2.5vw, 1.5rem);
+          --content-gap: clamp(0.3rem, 1vw, 0.75rem);
+          --title-size: clamp(1.4rem, 4vw, 2.5rem);
+          --body-size: clamp(0.7rem, 1.2vw, 0.95rem);
+        }
+
+        .nav-dots,
+        .decorative {
+          display: none;
+        }
+      }
+
+      @media (max-height: 500px) {
+        :root {
+          --slide-padding: clamp(0.4rem, 2vw, 1rem);
+          --title-size: clamp(1.2rem, 3.5vw, 2rem);
+          --h2-size: clamp(1rem, 2.5vw, 1.45rem);
+          --body-size: clamp(0.65rem, 1vw, 0.85rem);
+        }
+      }
+
+      @media (max-width: 600px) {
+        :root {
+          --title-size: clamp(1.8rem, 9vw, 3.25rem);
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.2s !important;
+        }
+
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      /* ===========================================
+         PRESENTATION CHROME
+         =========================================== */
+      .progress-bar {
+        position: fixed;
+        inset: 0 auto auto 0;
+        z-index: 1000;
+        width: 0;
+        height: 4px;
+        background: var(--orange);
+        transition: width 220ms ease;
+      }
+
+      .nav-dots {
+        position: fixed;
+        z-index: 900;
+        top: 50%;
+        right: clamp(0.45rem, 1vw, 1rem);
+        display: flex;
+        flex-direction: column;
+        gap: clamp(0.25rem, 0.5vh, 0.45rem);
+        transform: translateY(-50%);
+      }
+
+      .nav-dot {
+        width: clamp(0.34rem, 0.55vw, 0.48rem);
+        height: clamp(0.34rem, 0.55vw, 0.48rem);
+        padding: 0;
+        border: 1px solid rgba(19, 25, 22, 0.48);
+        border-radius: 50%;
+        background: transparent;
+        cursor: pointer;
+        transition: transform 180ms ease, background 180ms ease;
+      }
+
+      .nav-dot.active {
+        background: var(--orange);
+        border-color: var(--orange);
+        transform: scale(1.35);
+      }
+
+      .slide-tools {
+        position: fixed;
+        z-index: 1100;
+        top: clamp(0.65rem, 1.4vw, 1.2rem);
+        right: clamp(0.8rem, 1.8vw, 1.6rem);
+        display: flex;
+        gap: clamp(0.35rem, 0.6vw, 0.55rem);
+      }
+
+      .icon-button {
+        display: grid;
+        place-items: center;
+        width: clamp(2.15rem, 3.2vw, 2.7rem);
+        aspect-ratio: 1;
+        padding: 0;
+        border: 1px solid rgba(19, 25, 22, 0.25);
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.88);
+        box-shadow: 0 4px 14px rgba(19, 25, 22, 0.08);
+        cursor: pointer;
+        backdrop-filter: blur(8px);
+      }
+
+      .icon-button:hover,
+      .icon-button:focus-visible {
+        border-color: var(--orange);
+        outline: none;
+      }
+
+      .slide-number {
+        position: absolute;
+        right: clamp(6.4rem, 9vw, 9rem);
+        bottom: clamp(0.8rem, 2vw, 1.7rem);
+        z-index: 10;
+        color: var(--muted);
+        font-family: var(--font-mono);
+        font-size: var(--small-size);
+      }
+
+      .dark .slide-number,
+      .dark .eyebrow,
+      .dark .source-note {
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      /* ===========================================
+         EDITING AND SPEAKER NOTES
+         =========================================== */
+      .edit-hotzone {
+        position: fixed;
+        z-index: 1199;
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+      }
+
+      .edit-toggle {
+        position: fixed;
+        z-index: 1200;
+        top: clamp(0.7rem, 1.5vw, 1.2rem);
+        left: clamp(0.7rem, 1.5vw, 1.2rem);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 180ms ease;
+      }
+
+      .edit-toggle.show,
+      .edit-toggle.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .edit-banner {
+        position: fixed;
+        z-index: 1200;
+        top: clamp(0.7rem, 1.5vw, 1.2rem);
+        left: 50%;
+        display: none;
+        padding: clamp(0.35rem, 0.7vw, 0.55rem) clamp(0.7rem, 1.2vw, 1rem);
+        color: var(--surface);
+        border-radius: 4px;
+        background: var(--green);
+        transform: translateX(-50%);
+        font-size: var(--small-size);
+      }
+
+      .edit-banner.active {
+        display: block;
+      }
+
+      body.edit-active [data-editable] {
+        outline: 1px dashed var(--orange);
+        outline-offset: 4px;
+        cursor: text;
+      }
+
+      .notes-panel {
+        position: fixed;
+        z-index: 1300;
+        right: clamp(0.8rem, 2vw, 1.5rem);
+        bottom: clamp(0.8rem, 2vw, 1.5rem);
+        width: min(440px, calc(100vw - 1.6rem));
+        max-height: min(48vh, 420px);
+        overflow: auto;
+        padding: clamp(0.9rem, 2vw, 1.25rem);
+        color: var(--surface);
+        border: 1px solid var(--line-dark);
+        border-radius: 6px;
+        background: rgba(19, 25, 22, 0.96);
+        box-shadow: 0 16px 46px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(12px);
+        transition: opacity 180ms ease, transform 180ms ease;
+      }
+
+      .notes-panel.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .notes-panel strong {
+        display: block;
+        margin-bottom: clamp(0.45rem, 1vw, 0.7rem);
+        color: var(--lime);
+        font-family: var(--font-mono);
+        font-size: var(--small-size);
+      }
+
+      .notes-panel p {
+        margin: 0;
+        font-size: clamp(0.78rem, 1.1vw, 0.95rem);
+        line-height: 1.7;
+        white-space: pre-line;
+      }
+
+      /* ===========================================
+         CORE SLIDE LAYOUT
+         =========================================== */
+      .slide::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-image:
+          linear-gradient(rgba(19, 25, 22, 0.045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(19, 25, 22, 0.045) 1px, transparent 1px);
+        background-size: clamp(24px, 3vw, 48px) clamp(24px, 3vw, 48px);
+        pointer-events: none;
+      }
+
+      .slide.dark {
+        color: var(--surface);
+        background: var(--ink);
+      }
+
+      .slide.dark::before {
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+      }
+
+      .slide-content {
+        z-index: 1;
+        gap: var(--content-gap);
+      }
+
+      .slide-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--content-gap);
+        padding-bottom: clamp(0.65rem, 1.2vw, 1rem);
+        border-bottom: 2px solid currentColor;
+      }
+
+      .eyebrow {
+        margin: 0;
+        color: var(--green);
+        font-family: var(--font-mono);
+        font-size: var(--small-size);
+        font-weight: 600;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-display);
+        letter-spacing: 0;
+      }
+
+      h1 {
+        max-width: 12ch;
+        font-size: var(--title-size);
+        font-weight: 900;
+        line-height: 1.02;
+      }
+
+      h2 {
+        font-size: var(--h2-size);
+        font-weight: 800;
+        line-height: 1.1;
+      }
+
+      h3 {
+        font-size: var(--h3-size);
+        font-weight: 750;
+        line-height: 1.22;
+      }
+
+      .lead {
+        max-width: 47ch;
+        color: var(--ink-2);
+        font-size: clamp(0.95rem, 1.7vw, 1.45rem);
+        line-height: 1.55;
+      }
+
+      .dark .lead {
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .source-note {
+        color: var(--muted);
+        font-size: var(--small-size);
+        line-height: 1.4;
+      }
+
+      .source-note a {
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(clamp(0.45rem, 0.9vw, 0.7rem));
+        transition: opacity var(--duration) var(--ease), transform var(--duration) var(--ease);
+      }
+
+      .slide.visible .reveal {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal:nth-child(2) {
+        transition-delay: 45ms;
+      }
+
+      .reveal:nth-child(3) {
+        transition-delay: 85ms;
+      }
+
+      .reveal:nth-child(4) {
+        transition-delay: 125ms;
+      }
+
+      /* ===========================================
+         REUSABLE CONTENT COMPONENTS
+         =========================================== */
+      .accent-line {
+        width: clamp(4rem, 10vw, 10rem);
+        height: clamp(0.3rem, 0.55vw, 0.5rem);
+        background: var(--orange);
+      }
+
+      .route {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: clamp(0.45rem, 1vw, 0.9rem);
+        font-family: var(--font-mono);
+        font-size: var(--small-size);
+      }
+
+      .route span:not(.arrow) {
+        padding: clamp(0.3rem, 0.55vw, 0.5rem) clamp(0.55rem, 0.9vw, 0.8rem);
+        border: 1px solid currentColor;
+        border-radius: 999px;
+      }
+
+      .route .arrow {
+        color: var(--orange);
+      }
+
+      .panel-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(0.65rem, 1.5vw, 1.25rem);
+        min-height: 0;
+      }
+
+      .panel-grid.three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .panel-grid.four {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .panel {
+        min-width: 0;
+        padding: clamp(0.8rem, 1.7vw, 1.5rem);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.92);
+      }
+
+      .dark .panel {
+        border-color: var(--line-dark);
+        background: rgba(255, 255, 255, 0.045);
+      }
+
+      .panel strong,
+      .panel h3 {
+        display: block;
+        margin-bottom: clamp(0.35rem, 0.7vw, 0.65rem);
+      }
+
+      .panel p,
+      .panel li {
+        color: var(--muted);
+        font-size: var(--body-size);
+        line-height: 1.48;
+      }
+
+      .dark .panel p,
+      .dark .panel li {
+        color: rgba(255, 255, 255, 0.68);
+      }
+
+      .panel-index {
+        display: inline-block;
+        margin-bottom: clamp(0.4rem, 0.8vw, 0.75rem);
+        color: var(--green);
+        font-family: var(--font-mono);
+        font-size: var(--small-size);
+        font-weight: 600;
+      }
+
+      .dark .panel-index {
+        color: var(--lime);
+      }
+
+      .flat-list {
+        display: grid;
+        gap: clamp(0.45rem, 0.8vw, 0.75rem);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .flat-list li {
+        padding-top: clamp(0.45rem, 0.8vw, 0.7rem);
+        border-top: 1px solid var(--line);
+      }
+
+      .dark .flat-list li {
+        border-top-color: var(--line-dark);
+      }
+
+      .big-number {
+        font-family: var(--font-mono);
+        font-size: clamp(2rem, 5vw, 5rem);
+        font-weight: 600;
+        line-height: 1;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        min-height: clamp(1.45rem, 2.2vw, 1.85rem);
+        padding: clamp(0.18rem, 0.4vw, 0.34rem) clamp(0.5rem, 0.8vw, 0.7rem);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        font-family: var(--font-mono);
+        font-size: var(--small-size);
+        line-height: 1.2;
+      }
+
+      .tag.green {
+        color: #075c4f;
+        border-color: #9ecfc1;
+        background: var(--green-soft);
+      }
+
+      .tag.orange {
+        color: #a42f18;
+        border-color: #efb2a5;
+        background: var(--orange-soft);
+      }
+
+      .tag.lime {
+        color: var(--ink);
+        border-color: var(--lime);
+        background: var(--lime);
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(0.35rem, 0.7vw, 0.6rem);
+      }
+
+      .code-block {
+        overflow: hidden;
+        padding: clamp(0.9rem, 1.8vw, 1.5rem);
+        color: #eef5ef;
+        border: 1px solid var(--line-dark);
+        border-radius: 6px;
+        background: #151b18;
+        font-family: var(--font-mono);
+        font-size: clamp(0.68rem, 1.05vw, 0.95rem);
+        line-height: 1.65;
+        white-space: pre-wrap;
+      }
+
+      .code-block .key {
+        color: var(--lime);
+      }
+
+      .code-block .value {
+        color: #f5b2a5;
+      }
+
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: clamp(0.45rem, 1vw, 0.9rem);
+        align-items: stretch;
+      }
+
+      .flow.seven {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+      }
+
+      .flow.six {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+
+      .flow-step {
+        position: relative;
+        min-width: 0;
+        padding: clamp(0.8rem, 1.6vw, 1.4rem);
+        border-top: 4px solid var(--green);
+        background: var(--surface);
+      }
+
+      .flow-step:not(:last-child)::after {
+        content: "→";
+        position: absolute;
+        top: 50%;
+        right: calc(-1 * clamp(0.55rem, 1vw, 0.85rem));
+        z-index: 2;
+        color: var(--orange);
+        transform: translate(50%, -50%);
+        font-family: var(--font-mono);
+        font-size: clamp(0.9rem, 1.5vw, 1.4rem);
+      }
+
+      .flow-step strong {
+        display: block;
+        font-size: var(--body-size);
+      }
+
+      .flow-step span {
+        display: block;
+        margin-top: clamp(0.3rem, 0.6vw, 0.55rem);
+        color: var(--muted);
+        font-size: var(--small-size);
+        line-height: 1.45;
+      }
+
+      .comparison {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(0.7rem, 1.5vw, 1.3rem);
+        min-height: 0;
+      }
+
+      .comparison figure {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        margin: 0;
+        padding: clamp(0.65rem, 1vw, 0.9rem);
+        border: 1px solid var(--line);
+        background: var(--surface);
+      }
+
+      .comparison img {
+        width: 100%;
+        max-height: min(53vh, 500px);
+        border-radius: 4px;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      .comparison figcaption {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--element-gap);
+        margin-top: clamp(0.45rem, 0.8vw, 0.7rem);
+        font-size: var(--small-size);
+      }
+
+      .screenshot {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        box-shadow: 0 12px 30px rgba(19, 25, 22, 0.12);
+      }
+
+      .quote {
+        max-width: 24ch;
+        font-size: clamp(1.6rem, 4vw, 4.2rem);
+        font-weight: 800;
+        line-height: 1.18;
+      }
+
+      .quote em {
+        color: var(--orange);
+        font-style: normal;
+      }
+
+      .matrix {
+        display: grid;
+        grid-template-columns: minmax(100px, 0.8fr) repeat(4, minmax(0, 1fr));
+        border-top: 1px solid var(--line);
+        border-left: 1px solid var(--line);
+      }
+
+      .matrix > div {
+        min-width: 0;
+        padding: clamp(0.65rem, 1.2vw, 1rem);
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.82);
+        font-size: var(--small-size);
+        line-height: 1.45;
+      }
+
+      .matrix .head {
+        color: var(--surface);
+        background: var(--ink);
+        font-family: var(--font-mono);
+        font-weight: 600;
+      }
+
+      .matrix .row-head {
+        font-weight: 750;
+      }
+
+      .media-frame {
+        position: relative;
+        overflow: hidden;
+        width: min(100%, 1500px);
+        height: min(72vh, 760px);
+        margin: 0 auto;
+        border: 1px solid var(--line-dark);
+        background: #070907;
+      }
+
+      .media-frame video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: #070907;
+      }
+
+      .media-caption {
+        position: absolute;
+        top: clamp(0.6rem, 1.2vw, 1rem);
+        left: clamp(0.6rem, 1.2vw, 1rem);
+        max-width: min(520px, 70%);
+        padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.7rem, 1.2vw, 1rem);
+        color: var(--surface);
+        border-left: 4px solid var(--lime);
+        background: rgba(8, 12, 10, 0.82);
+        backdrop-filter: blur(8px);
+      }
+
+      .media-caption strong {
+        display: block;
+        font-size: clamp(0.85rem, 1.4vw, 1.15rem);
+      }
+
+      .media-caption span {
+        display: block;
+        margin-top: clamp(0.2rem, 0.4vw, 0.35rem);
+        color: rgba(255, 255, 255, 0.68);
+        font-size: var(--small-size);
+      }
+
+      .board-frame {
+        width: 100%;
+        height: min(72vh, 700px);
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        background: var(--surface);
+      }
+
+      .prompt-slide-content {
+        padding-top: clamp(0.8rem, 1.8vw, 1.35rem);
+        padding-bottom: clamp(0.8rem, 1.8vw, 1.35rem);
+      }
+
+      .prompt-frame {
+        width: 100%;
+        height: min(68vh, 650px);
+        min-height: 0;
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        background: var(--paper);
+        box-shadow: 0 10px 24px rgba(41, 24, 13, 0.12);
+      }
+
+      .quality-showcase {
+        display: grid;
+        grid-template-columns: minmax(0, 1.75fr) minmax(250px, 0.65fr);
+        gap: var(--content-gap);
+        min-height: 0;
+        align-items: center;
+      }
+
+      .quality-visual {
+        min-width: 0;
+        margin: 0;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(41, 24, 13, 0.14);
+      }
+
+      .quality-visual img {
+        display: block;
+        width: 100%;
+        max-height: min(64vh, 610px);
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      .quality-copy h2 {
+        font-size: clamp(1.35rem, 2.7vw, 2.5rem);
+      }
+
+      .compact-checks {
+        display: grid;
+        gap: clamp(0.4rem, 0.8vw, 0.65rem);
+        margin-top: clamp(0.55rem, 1vw, 0.9rem);
+      }
+
+      .compact-check {
+        padding: clamp(0.55rem, 1vw, 0.85rem);
+        border-top: 1px solid var(--line);
+      }
+
+      .compact-check strong {
+        display: block;
+        font-size: clamp(0.78rem, 1.25vw, 1rem);
+      }
+
+      .compact-check span {
+        display: block;
+        margin-top: 0.2rem;
+        color: var(--muted);
+        font-size: clamp(0.65rem, 1vw, 0.82rem);
+        line-height: 1.42;
+      }
+
+      .task-chain {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(0.75rem, 1.5vw, 1.35rem);
+        align-items: stretch;
+      }
+
+      .task-stage {
+        position: relative;
+        min-width: 0;
+        padding: clamp(0.9rem, 1.8vw, 1.5rem) 0;
+        border-top: 5px solid var(--green);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .task-stage:nth-child(2) {
+        border-top-color: var(--yellow);
+      }
+
+      .task-stage:nth-child(3) {
+        border-top-color: var(--orange);
+      }
+
+      .task-stage:not(:last-child)::after {
+        content: "→";
+        position: absolute;
+        top: 50%;
+        right: calc(-1 * clamp(0.55rem, 1vw, 0.85rem));
+        color: var(--orange);
+        font-size: clamp(1rem, 1.7vw, 1.45rem);
+        transform: translate(50%, -50%);
+      }
+
+      .task-stage span,
+      .risk-path span,
+      .concept-step span {
+        color: var(--green);
+        font-family: var(--font-mono);
+        font-size: var(--small-size);
+        font-weight: 700;
+      }
+
+      .task-stage h3,
+      .risk-path h3,
+      .concept-step h3 {
+        margin: clamp(0.45rem, 0.8vw, 0.7rem) 0 0;
+      }
+
+      .task-stage p,
+      .risk-path p,
+      .concept-step p {
+        margin-top: clamp(0.35rem, 0.7vw, 0.6rem);
+        color: var(--muted);
+        font-size: var(--small-size);
+        line-height: 1.5;
+      }
+
+      .human-roles {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: clamp(0.45rem, 1vw, 0.85rem);
+        padding-top: clamp(0.7rem, 1.4vw, 1.1rem);
+        border-top: 2px solid var(--ink);
+      }
+
+      .human-roles strong {
+        margin-right: auto;
+      }
+
+      .human-roles span {
+        padding: clamp(0.3rem, 0.55vw, 0.45rem) clamp(0.55rem, 0.85vw, 0.75rem);
+        color: var(--surface);
+        background: var(--ink);
+        font-size: var(--small-size);
+        font-weight: 700;
+      }
+
+      .risk-axis {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: clamp(1.2rem, 3vw, 3rem);
+        align-items: stretch;
+      }
+
+      .risk-path {
+        position: relative;
+        min-width: 0;
+        padding: clamp(1rem, 2vw, 1.6rem);
+        border-top: 5px solid var(--green);
+        background: rgba(255, 255, 255, 0.58);
+      }
+
+      .risk-path.high {
+        border-top-color: var(--orange);
+      }
+
+      .risk-path:first-child::after {
+        content: "→";
+        position: absolute;
+        top: 50%;
+        right: calc(-1 * clamp(0.8rem, 1.7vw, 1.5rem));
+        color: var(--orange);
+        font-size: clamp(1.2rem, 2.4vw, 2rem);
+        transform: translate(50%, -50%);
+      }
+
+      .risk-example {
+        margin-top: clamp(0.8rem, 1.4vw, 1.1rem);
+        padding-top: clamp(0.65rem, 1vw, 0.85rem);
+        border-top: 1px solid var(--line);
+        color: var(--ink) !important;
+        font-weight: 700;
+      }
+
+      .decision-line {
+        margin: 0;
+        text-align: center;
+        font-size: clamp(0.85rem, 1.45vw, 1.15rem);
+        font-weight: 750;
+      }
+
+      .concept-ladder {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: clamp(0.6rem, 1.2vw, 1rem);
+        align-items: end;
+      }
+
+      .concept-step {
+        min-width: 0;
+        min-height: calc(clamp(8rem, 14vw, 11rem) + var(--level, 0) * 1.2rem);
+        padding: clamp(0.85rem, 1.6vw, 1.3rem);
+        border-top: 5px solid var(--green);
+        background: rgba(255, 255, 255, 0.64);
+      }
+
+      .concept-step:nth-child(2) { border-top-color: var(--yellow); }
+      .concept-step:nth-child(3) { border-top-color: var(--orange); }
+      .concept-step:nth-child(4) {
+        color: var(--surface);
+        border-top-color: var(--lime);
+        background: var(--ink);
+      }
+
+      .concept-step:nth-child(4) p { color: rgba(255, 255, 255, 0.68); }
+      .concept-step:nth-child(4) span { color: var(--lime); }
+
+      .iteration-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: clamp(0.4rem, 0.8vw, 0.7rem);
+        margin-top: clamp(0.55rem, 1vw, 0.85rem);
+      }
+
+      .iteration-strip span {
+        padding-top: clamp(0.4rem, 0.75vw, 0.6rem);
+        border-top: 3px solid var(--green);
+        font-size: var(--small-size);
+        font-weight: 750;
+      }
+
+      .board-check-visual {
+        position: relative;
+      }
+
+      .board-marker {
+        position: absolute;
+        z-index: 2;
+        padding: clamp(0.28rem, 0.55vw, 0.42rem) clamp(0.42rem, 0.75vw, 0.62rem);
+        color: var(--surface);
+        border: 1px solid rgba(255, 255, 255, 0.78);
+        background: var(--ink);
+        box-shadow: 0 4px 12px rgba(19, 25, 22, 0.22);
+        font-size: clamp(0.58rem, 0.9vw, 0.75rem);
+        font-weight: 750;
+      }
+
+      .board-marker.names { top: 48%; left: 2%; }
+      .board-marker.pending { top: 48%; left: 62%; }
+      .board-marker.filters { top: 34%; right: 2%; }
+
+      /* ===========================================
+         SLIDE-SPECIFIC COMPOSITIONS
+         =========================================== */
+      .title-slide .slide-content {
+        justify-content: space-between;
+      }
+
+      .title-slide::after {
+        content: "构建 / 检查 / 交付";
+        position: absolute;
+        right: clamp(1rem, 4vw, 4rem);
+        bottom: clamp(1rem, 4vw, 3rem);
+        color: rgba(19, 25, 22, 0.24);
+        font-family: var(--font-mono);
+        font-size: clamp(0.7rem, 1vw, 0.9rem);
+        writing-mode: vertical-rl;
+      }
+
+      .title-block {
+        display: grid;
+        grid-template-columns: minmax(0, 1.5fr) minmax(240px, 0.65fr);
+        gap: var(--content-gap);
+        align-items: end;
+      }
+
+      .title-side {
+        padding: clamp(1rem, 2vw, 1.6rem);
+        border-top: 5px solid var(--orange);
+        background: var(--surface);
+      }
+
+      .title-side strong {
+        display: block;
+        font-size: clamp(1rem, 2vw, 1.6rem);
+      }
+
+      .title-side p {
+        margin-top: clamp(0.4rem, 0.8vw, 0.7rem);
+        color: var(--muted);
+        font-size: var(--body-size);
+        line-height: 1.5;
+      }
+
+      .timeline {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        border-top: 2px solid var(--ink);
+      }
+
+      .timeline-item {
+        position: relative;
+        min-width: 0;
+        padding: clamp(1rem, 2vw, 1.7rem) clamp(0.55rem, 1.1vw, 1rem) 0;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        top: calc(-1 * clamp(0.38rem, 0.65vw, 0.5rem));
+        left: clamp(0.55rem, 1.1vw, 1rem);
+        width: clamp(0.65rem, 1vw, 0.9rem);
+        aspect-ratio: 1;
+        border: 2px solid var(--paper);
+        background: var(--green);
+        box-shadow: 0 0 0 1px var(--ink);
+      }
+
+      .timeline-item:nth-child(2n)::before {
+        background: var(--orange);
+      }
+
+      .timeline-item strong {
+        display: block;
+        font-size: var(--body-size);
+      }
+
+      .timeline-item p {
+        margin-top: clamp(0.35rem, 0.7vw, 0.6rem);
+        color: var(--muted);
+        font-size: var(--small-size);
+        line-height: 1.5;
+      }
+
+      .task-window-collage {
+        display: grid;
+        grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+        gap: var(--content-gap);
+        align-items: center;
+      }
+
+      .window-stack {
+        display: grid;
+        gap: clamp(0.5rem, 1vw, 0.8rem);
+        padding: clamp(0.75rem, 1.4vw, 1.1rem);
+        border: 1px solid var(--line-dark);
+        background: #1d211f;
+      }
+
+      .window-stack img {
+        width: 100%;
+        max-height: min(25vh, 220px);
+        object-fit: contain;
+      }
+
+      .skill-anatomy {
+        display: grid;
+        grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+        gap: var(--content-gap);
+        min-height: 0;
+        align-items: stretch;
+      }
+
+      .folder-tree {
+        display: grid;
+        align-content: center;
+        gap: clamp(0.5rem, 1vw, 0.85rem);
+        padding: clamp(1rem, 2vw, 1.7rem);
+        color: var(--surface);
+        border-left: 5px solid var(--lime);
+        background: var(--ink);
+        font-family: var(--font-mono);
+        font-size: clamp(0.72rem, 1.1vw, 1rem);
+        line-height: 1.55;
+      }
+
+      .folder-tree span {
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      .loop-ring {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: clamp(0.45rem, 1vw, 0.9rem);
+        align-items: center;
+      }
+
+      .loop-node {
+        position: relative;
+        display: grid;
+        place-items: center;
+        min-height: clamp(7rem, 14vw, 11rem);
+        padding: clamp(0.6rem, 1.2vw, 1rem);
+        text-align: center;
+        border: 1px solid var(--line-dark);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.045);
+      }
+
+      .loop-node:not(:last-child)::after {
+        content: "→";
+        position: absolute;
+        right: calc(-1 * clamp(0.6rem, 1.1vw, 0.95rem));
+        color: var(--orange);
+        font-size: clamp(1rem, 1.8vw, 1.5rem);
+      }
+
+      .loop-node strong {
+        display: block;
+        color: var(--lime);
+        font-size: var(--body-size);
+      }
+
+      .loop-node span {
+        display: block;
+        margin-top: clamp(0.25rem, 0.5vw, 0.45rem);
+        color: rgba(255, 255, 255, 0.62);
+        font-size: var(--small-size);
+      }
+
+      .dashboard-showcase {
+        display: grid;
+        grid-template-columns: minmax(0, 1.55fr) minmax(230px, 0.45fr);
+        gap: var(--content-gap);
+        min-height: 0;
+        align-items: center;
+      }
+
+      .dashboard-showcase img {
+        width: 100%;
+        max-height: min(70vh, 720px);
+        object-fit: contain;
+        object-position: top;
+      }
+
+      .closing-ladder {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        align-items: end;
+        gap: clamp(0.45rem, 1vw, 0.8rem);
+      }
+
+      .ladder-step {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: calc(clamp(7rem, 12vw, 10rem) + var(--level, 0) * 2.2rem);
+        padding: clamp(0.8rem, 1.6vw, 1.35rem);
+        color: var(--surface);
+        border-top: 5px solid var(--lime);
+        background: var(--ink);
+      }
+
+      .ladder-step:nth-child(2) {
+        border-top-color: var(--green);
+      }
+
+      .ladder-step:nth-child(3) {
+        border-top-color: var(--yellow);
+      }
+
+      .ladder-step:nth-child(4) {
+        border-top-color: var(--orange);
+      }
+
+      .ladder-step span {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: var(--small-size);
+      }
+
+      .ladder-step strong {
+        margin-top: clamp(1rem, 2vw, 1.8rem);
+        font-size: var(--h3-size);
+      }
+
+      /* ===========================================
+         RESPONSIVE LAYOUT OVERRIDES
+         =========================================== */
+      @media (max-width: 900px) {
+        .panel-grid.three,
+        .panel-grid.four {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .title-block,
+        .task-window-collage,
+        .skill-anatomy,
+        .dashboard-showcase {
+          grid-template-columns: 1fr;
+        }
+
+        .title-side,
+        .dashboard-showcase aside {
+          display: none;
+        }
+
+        .timeline {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: clamp(0.7rem, 1.4vw, 1rem) 0;
+        }
+
+        .timeline-item:nth-child(n + 4) {
+          margin-top: clamp(0.6rem, 1vw, 0.9rem);
+          border-top: 1px solid var(--line);
+        }
+
+        .matrix {
+          grid-template-columns: minmax(80px, 0.7fr) repeat(4, minmax(95px, 1fr));
+        }
+
+        .loop-ring {
+          grid-template-columns: repeat(5, minmax(90px, 1fr));
+        }
+
+        .loop-node {
+          min-height: clamp(5rem, 13vw, 7.5rem);
+          border-radius: 6px;
+        }
+
+        .window-stack {
+          display: none;
+        }
+
+        .task-window-collage {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .title-slide .slide-content {
+          padding-bottom: clamp(4.25rem, 12vh, 6rem);
+        }
+
+        .title-slide .route {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.55rem;
+          width: min(100%, 20rem);
+        }
+
+        .title-slide .route span:not(.arrow) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 0;
+          text-align: center;
+        }
+
+        .title-slide .route .arrow {
+          display: none;
+        }
+
+        .slide-tools {
+          top: auto;
+          right: clamp(0.7rem, 2vw, 1rem);
+          bottom: clamp(0.6rem, 2vw, 1rem);
+        }
+
+        .nav-dots {
+          display: none;
+        }
+
+        .slide-number {
+          right: auto;
+          left: clamp(0.75rem, 3vw, 1rem);
+          bottom: clamp(0.6rem, 2vw, 1rem);
+        }
+
+        .panel-grid,
+        .panel-grid.three,
+        .panel-grid.four,
+        .comparison {
+          grid-template-columns: 1fr;
+        }
+
+        .panel-grid.mobile-two {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .panel-grid .panel:nth-child(n + 5) {
+          display: none;
+        }
+
+        .flow {
+          grid-template-columns: 1fr;
+        }
+
+        .flow.seven {
+          grid-template-columns: 1fr;
+        }
+
+        .flow.six,
+        .task-chain,
+        .risk-axis {
+          grid-template-columns: 1fr;
+        }
+
+        .task-stage:not(:last-child)::after,
+        .risk-path:first-child::after {
+          display: none;
+        }
+
+        .task-stage {
+          padding: clamp(0.48rem, 1.6vw, 0.7rem) 0;
+        }
+
+        .human-roles {
+          padding-top: 0.45rem;
+        }
+
+        .risk-axis {
+          gap: clamp(0.5rem, 1.4vw, 0.75rem);
+        }
+
+        .risk-path {
+          padding: clamp(0.55rem, 1.8vw, 0.8rem);
+        }
+
+        .concept-ladder,
+        .iteration-strip {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .concept-step {
+          min-height: clamp(6rem, 20vw, 7.5rem);
+        }
+
+        .flow-step {
+          display: grid;
+          grid-template-columns: 90px 1fr;
+          align-items: center;
+          padding: clamp(0.45rem, 1.5vw, 0.7rem);
+          border-top: 0;
+          border-left: 4px solid var(--green);
+        }
+
+        .flow-step:not(:last-child)::after {
+          display: none;
+        }
+
+        .flow-step span {
+          margin-top: 0;
+        }
+
+        .timeline {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .timeline-item:nth-child(n + 3) {
+          margin-top: clamp(0.35rem, 1vw, 0.6rem);
+          border-top: 1px solid var(--line);
+        }
+
+        .matrix {
+          grid-template-columns: minmax(72px, 0.7fr) repeat(4, minmax(82px, 1fr));
+          overflow: hidden;
+        }
+
+        .matrix > div {
+          padding: clamp(0.3rem, 1vw, 0.5rem);
+          font-size: clamp(0.52rem, 1.8vw, 0.65rem);
+        }
+
+        .comparison {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.42rem;
+        }
+
+        .comparison figure {
+          padding: 0.35rem;
+        }
+
+        .comparison img {
+          aspect-ratio: 16 / 9;
+          max-height: none;
+        }
+
+        .comparison figcaption {
+          display: grid;
+          gap: 0.12rem;
+          font-size: clamp(0.52rem, 2vw, 0.65rem);
+        }
+
+        .loop-ring {
+          grid-template-columns: 1fr;
+          gap: clamp(0.35rem, 1vw, 0.55rem);
+        }
+
+        .loop-node {
+          min-height: auto;
+          grid-template-columns: 88px 1fr;
+          border-radius: 5px;
+          text-align: left;
+        }
+
+        .loop-node:not(:last-child)::after {
+          display: none;
+        }
+
+        .loop-node span {
+          margin-top: 0;
+        }
+
+        .closing-ladder {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .ladder-step {
+          min-height: clamp(6.5rem, 24vw, 8.5rem);
+        }
+
+        .board-frame {
+          height: min(68vh, 640px);
+        }
+
+        .prompt-frame {
+          height: min(65vh, 610px);
+        }
+
+        .quality-showcase {
+          grid-template-columns: 1fr;
+          gap: clamp(0.55rem, 1.4vw, 0.8rem);
+        }
+
+        .quality-visual img {
+          max-height: min(33vh, 300px);
+        }
+
+        .quality-copy h2 {
+          font-size: clamp(1.15rem, 5vw, 1.75rem);
+        }
+
+        .compact-checks {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .media-frame {
+          height: min(69vh, 620px);
+        }
+      }
+
+      /* ===========================================
+         TACTILE LEATHER NOTEBOOK SKIN
+         =========================================== */
+      body {
+        background: #241711;
+      }
+
+      .slide {
+        padding: clamp(0.7rem, 1.45vw, 1.4rem);
+        background-color: #241711;
+        background-image:
+          repeating-linear-gradient(12deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 5px),
+          repeating-linear-gradient(102deg, rgba(0, 0, 0, 0.05) 0 2px, transparent 2px 8px);
+        perspective: 1800px;
+      }
+
+      .slide::before {
+        inset: clamp(0.3rem, 0.65vw, 0.65rem);
+        z-index: 0;
+        border: 1px solid #745646;
+        border-radius: clamp(0.8rem, 1.8vw, 1.7rem);
+        background-color: #34241c;
+        background-image:
+          repeating-linear-gradient(18deg, rgba(255, 255, 255, 0.014) 0 1px, transparent 1px 5px),
+          repeating-linear-gradient(108deg, rgba(0, 0, 0, 0.035) 0 2px, transparent 2px 9px);
+        box-shadow:
+          inset 0 0 0 clamp(0.18rem, 0.35vw, 0.32rem) #1a110d,
+          inset 0 0 0 clamp(0.28rem, 0.52vw, 0.5rem) #654a3b,
+          0 clamp(0.6rem, 1.2vw, 1rem) clamp(1.5rem, 3vw, 3rem) rgba(0, 0, 0, 0.38);
+      }
+
+      .slide::after {
+        content: "";
+        position: absolute;
+        inset: clamp(0.58rem, 1vw, 0.95rem);
+        z-index: 1;
+        border: 1px dashed #bd7c49;
+        border-radius: clamp(0.55rem, 1.3vw, 1.25rem);
+        opacity: 0.72;
+        pointer-events: none;
+      }
+
+      .slide.dark {
+        color: var(--surface);
+        background-color: #241711;
+      }
+
+      .slide.dark::before {
+        background-color: #34241c;
+        background-image:
+          repeating-linear-gradient(18deg, rgba(255, 255, 255, 0.014) 0 1px, transparent 1px 5px),
+          repeating-linear-gradient(108deg, rgba(0, 0, 0, 0.035) 0 2px, transparent 2px 9px);
+      }
+
+      .slide-content {
+        position: relative;
+        z-index: 3;
+        isolation: isolate;
+        margin: clamp(0.22rem, 0.45vw, 0.42rem);
+        border: 1px solid #c8b9a7;
+        border-radius: clamp(0.55rem, 1.2vw, 1.1rem);
+        background-color: var(--paper);
+        background-image:
+          repeating-linear-gradient(0deg, transparent 0 clamp(1.85rem, 3.1vw, 2.8rem), rgba(100, 79, 62, 0.075) clamp(1.85rem, 3.1vw, 2.8rem) calc(clamp(1.85rem, 3.1vw, 2.8rem) + 1px)),
+          linear-gradient(90deg, rgba(168, 78, 52, 0.26) 1px, transparent 1px);
+        background-position: 0 0, clamp(2.8rem, 5vw, 5.2rem) 0;
+        background-size: 100% auto, 100% 100%;
+        box-shadow:
+          inset 0 0 clamp(1.1rem, 2.4vw, 2.4rem) rgba(88, 62, 40, 0.12),
+          0 clamp(0.45rem, 0.9vw, 0.8rem) clamp(1rem, 2.4vw, 2rem) rgba(8, 5, 3, 0.28);
+        transform-origin: left center;
+      }
+
+      .slide-content::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 7;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .slide-content::after {
+        content: "";
+        position: absolute;
+        z-index: 8;
+        right: 0;
+        bottom: 0;
+        width: clamp(1rem, 2.2vw, 2rem);
+        aspect-ratio: 1;
+        background: linear-gradient(135deg, rgba(126, 101, 78, 0.16) 0 48%, #ded1c0 50% 100%);
+        clip-path: polygon(0 100%, 100% 0, 100% 100%);
+        pointer-events: none;
+      }
+
+      .slide.dark .slide-content {
+        color: var(--surface);
+        border-color: #594a40;
+        background-color: #171e1a;
+        background-image:
+          repeating-linear-gradient(0deg, transparent 0 clamp(1.85rem, 3.1vw, 2.8rem), rgba(255, 255, 255, 0.038) clamp(1.85rem, 3.1vw, 2.8rem) calc(clamp(1.85rem, 3.1vw, 2.8rem) + 1px)),
+          linear-gradient(90deg, rgba(185, 229, 87, 0.18) 1px, transparent 1px);
+        background-position: 0 0, clamp(2.8rem, 5vw, 5.2rem) 0;
+        background-size: 100% auto, 100% 100%;
+        box-shadow:
+          inset 0 0 clamp(1.1rem, 2.4vw, 2.4rem) rgba(0, 0, 0, 0.36),
+          0 clamp(0.45rem, 0.9vw, 0.8rem) clamp(1rem, 2.4vw, 2rem) rgba(8, 5, 3, 0.4);
+      }
+
+      .slide.dark .slide-content::after {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0 48%, #2c3831 50% 100%);
+      }
+
+      .slide-header {
+        border-bottom-color: currentColor;
+      }
+
+      h1,
+      h2 {
+        text-wrap: balance;
+      }
+
+      h3 {
+        font-family: var(--font-body);
+      }
+
+      .panel,
+      .title-side,
+      .board-frame,
+      .media-frame,
+      .code-block,
+      .prompt-block {
+        box-shadow: 0 clamp(0.25rem, 0.6vw, 0.5rem) clamp(0.6rem, 1.4vw, 1.2rem) rgba(52, 37, 27, 0.12);
+      }
+
+      .panel,
+      .title-side {
+        background: rgba(255, 250, 241, 0.88);
+      }
+
+      .migration-strip {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: clamp(0.55rem, 1vw, 0.9rem);
+        align-items: center;
+        padding: clamp(0.45rem, 0.8vw, 0.7rem) clamp(0.65rem, 1.2vw, 1rem);
+        border: 1px solid var(--line);
+        border-left: 5px solid var(--orange);
+        background: rgba(255, 250, 241, 0.78);
+        font-size: var(--small-size);
+        line-height: 1.45;
+      }
+
+      .migration-strip strong {
+        color: var(--green);
+        font-family: var(--font-mono);
+      }
+
+      .title-side {
+        border: 1px solid var(--line);
+        border-top: 5px solid var(--orange);
+        transform: rotate(0.6deg);
+      }
+
+      .notebook-binding {
+        position: absolute;
+        z-index: 12;
+        left: clamp(0.3rem, 0.62vw, 0.58rem);
+        top: clamp(4.5rem, 10vh, 7.2rem);
+        bottom: clamp(4.5rem, 10vh, 7.2rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        pointer-events: none;
+      }
+
+      .notebook-ring {
+        position: relative;
+        display: block;
+        width: clamp(1.95rem, 2.8vw, 2.85rem);
+        height: clamp(0.72rem, 1.05vw, 0.98rem);
+        border: clamp(2px, 0.2vw, 3px) solid #694417;
+        border-right: 0;
+        border-radius: 999px 0 0 999px;
+        background: transparent;
+        box-shadow:
+          inset 0 2px 0 #f0cd88,
+          inset 0 -2px 0 #9b672c,
+          0 2px 4px rgba(0, 0, 0, 0.45);
+        isolation: isolate;
+      }
+
+      .notebook-ring::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        right: calc(-1 * clamp(0.42rem, 0.66vw, 0.62rem));
+        top: 50%;
+        width: clamp(0.68rem, 0.92vw, 0.9rem);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: radial-gradient(circle at 38% 34%, #79583b 0 9%, #352117 34%, #140c08 70%, #4b3225 73% 100%);
+        box-shadow:
+          inset 1px 1px 3px rgba(0, 0, 0, 0.85),
+          0 1px 2px rgba(255, 255, 255, 0.18);
+        transform: translateY(-50%);
+      }
+
+      .notebook-ring::after {
+        content: "";
+        position: absolute;
+        left: 12%;
+        right: 5%;
+        top: 16%;
+        height: 2px;
+        border-radius: 999px;
+        background: rgba(255, 236, 183, 0.72);
+      }
+
+      .slide-number {
+        right: clamp(6.4rem, 9vw, 9rem);
+        bottom: clamp(0.75rem, 1.6vw, 1.35rem);
+        padding: clamp(0.25rem, 0.45vw, 0.4rem) clamp(0.48rem, 0.8vw, 0.7rem);
+        color: #4e3b30 !important;
+        border: 1px solid #bca98f;
+        border-radius: 2px;
+        background: #eee2d1;
+        box-shadow: 0 3px 8px rgba(30, 19, 13, 0.2);
+        transform: rotate(-1deg);
+      }
+
+      .progress-bar {
+        height: 5px;
+        background: linear-gradient(90deg, var(--orange), var(--lime));
+      }
+
+      .nav-dot {
+        border-color: #d4bc9e;
+        background: #4d3529;
+      }
+
+      .nav-dot.active {
+        border-color: var(--lime);
+        background: var(--lime);
+      }
+
+      @keyframes notebook-page-enter-forward {
+        0% {
+          opacity: 0.94;
+          transform: translate3d(0, var(--page-turn-distance), 0) rotateX(-0.65deg) scale(0.997);
+        }
+        68% {
+          opacity: 1;
+          transform: translate3d(0, -0.1rem, 0) rotateX(0.08deg) scale(1);
+        }
+        100% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0) rotateX(0) scale(1);
+        }
+      }
+
+      @keyframes notebook-page-enter-backward {
+        0% {
+          opacity: 0.94;
+          transform: translate3d(0, calc(-1 * var(--page-turn-distance)), 0) rotateX(0.65deg) scale(0.997);
+        }
+        68% {
+          opacity: 1;
+          transform: translate3d(0, 0.1rem, 0) rotateX(-0.08deg) scale(1);
+        }
+        100% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0) rotateX(0) scale(1);
+        }
+      }
+
+      @keyframes notebook-page-exit-forward {
+        from { opacity: 1; transform: translate3d(0, 0, 0) rotateX(0) scale(1); }
+        to { opacity: 0.96; transform: translate3d(0, -0.5rem, 0) rotateX(0.28deg) scale(0.998); }
+      }
+
+      @keyframes notebook-page-exit-backward {
+        from { opacity: 1; transform: translate3d(0, 0, 0) rotateX(0) scale(1); }
+        to { opacity: 0.96; transform: translate3d(0, 0.5rem, 0) rotateX(-0.28deg) scale(0.998); }
+      }
+
+      @keyframes notebook-corner-settle {
+        from { opacity: 0.55; transform: scale(0.82); }
+        to { opacity: 1; transform: scale(1); }
+      }
+
+      @keyframes notebook-crease-settle {
+        0% { opacity: 0.2; }
+        62% { opacity: 0.045; }
+        100% { opacity: 0; }
+      }
+
+      @keyframes notebook-line-draw {
+        from { transform: scaleX(0); }
+        to { transform: scaleX(1); }
+      }
+
+      .slide.page-enter-forward .slide-content,
+      .slide.page-enter-backward .slide-content,
+      .slide.page-exit-forward .slide-content,
+      .slide.page-exit-backward .slide-content {
+        will-change: transform, opacity;
+      }
+
+      .slide.page-enter-forward .slide-content {
+        transform-origin: center top;
+        animation: notebook-page-enter-forward var(--page-turn-duration) var(--page-turn-ease) both;
+      }
+
+      .slide.page-enter-backward .slide-content {
+        transform-origin: center bottom;
+        animation: notebook-page-enter-backward var(--page-turn-duration) var(--page-turn-ease) both;
+      }
+
+      .slide.page-exit-forward .slide-content {
+        transform-origin: center bottom;
+        animation: notebook-page-exit-forward 280ms cubic-bezier(0.4, 0, 0.8, 0.4) both;
+      }
+
+      .slide.page-exit-backward .slide-content {
+        transform-origin: center top;
+        animation: notebook-page-exit-backward 280ms cubic-bezier(0.4, 0, 0.8, 0.4) both;
+      }
+
+      .slide.page-enter-forward .slide-content::after,
+      .slide.page-enter-backward .slide-content::after {
+        transform-origin: right bottom;
+        animation: notebook-corner-settle var(--page-turn-duration) var(--page-turn-ease) both;
+      }
+
+      .slide.page-enter-forward .slide-content::before {
+        background: linear-gradient(to bottom, rgba(64, 39, 23, 0.24), transparent 16%);
+        animation: notebook-crease-settle var(--page-turn-duration) var(--page-turn-ease) both;
+      }
+
+      .slide.page-enter-backward .slide-content::before {
+        background: linear-gradient(to top, rgba(64, 39, 23, 0.24), transparent 16%);
+        animation: notebook-crease-settle var(--page-turn-duration) var(--page-turn-ease) both;
+      }
+
+      .accent-line {
+        transform: scaleX(0);
+        transform-origin: left center;
+      }
+
+      .slide.active-slide .accent-line {
+        animation: notebook-line-draw 480ms 120ms var(--ease) both;
+      }
+
+      @media (max-height: 700px) {
+        .slide {
+          padding: clamp(0.45rem, 1vw, 0.8rem);
+        }
+
+        .notebook-binding {
+          top: clamp(3rem, 8vh, 4.5rem);
+          bottom: clamp(3rem, 8vh, 4.5rem);
+        }
+      }
+
+      @media (max-height: 500px) {
+        .notebook-binding {
+          display: none;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .slide {
+          padding: 0.42rem;
+        }
+
+        .slide::before {
+          inset: 0.14rem;
+          border-radius: 0.78rem;
+        }
+
+        .slide::after {
+          inset: 0.32rem;
+          border-radius: 0.6rem;
+        }
+
+        .slide-content {
+          margin: 0.12rem;
+          border-radius: 0.62rem;
+          background-position: 0 0, 2rem 0;
+        }
+
+        .notebook-binding {
+          display: none;
+        }
+
+        .slide-number {
+          right: auto;
+          left: 0.72rem;
+          bottom: 0.55rem;
+        }
+
+        .title-slide .slide-content {
+          padding-bottom: clamp(3.7rem, 10vh, 4.7rem);
+        }
+
+        .migration-strip {
+          grid-template-columns: 1fr;
+          gap: 0.2rem;
+          padding: 0.4rem 0.55rem;
+          font-size: clamp(0.52rem, 1.7vw, 0.64rem);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .slide.page-enter-forward .slide-content,
+        .slide.page-enter-backward .slide-content,
+        .slide.page-exit-forward .slide-content,
+        .slide.page-exit-backward .slide-content,
+        .slide.page-enter-forward .slide-content::before,
+        .slide.page-enter-backward .slide-content::before,
+        .slide.page-enter-forward .slide-content::after,
+        .slide.page-enter-backward .slide-content::after,
+        .slide.active-slide .accent-line,
+        .slide.active-slide .notebook-ring {
+          animation: none !important;
+        }
+
+        .accent-line {
+          transform: scaleX(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress-bar" aria-hidden="true"></div>
+    <nav class="nav-dots" aria-label="幻灯片导航"></nav>
+
+    <div class="edit-hotzone" aria-hidden="true"></div>
+    <button class="icon-button edit-toggle" id="editToggle" type="button" title="编辑" aria-label="切换编辑模式">✎</button>
+    <div class="edit-banner">临时编辑 · 刷新还原 · Ctrl+S 导出</div>
+
+    <div class="slide-tools">
+      <button class="icon-button" id="notesToggle" type="button" title="讲稿" aria-label="显示讲稿">▤</button>
+      <button class="icon-button" id="fullscreenToggle" type="button" title="全屏" aria-label="切换全屏">⛶</button>
+    </div>
+    <aside class="notes-panel" aria-live="polite">
+      <strong id="notesTitle">演讲备注</strong>
+      <p id="notesText"></p>
+    </aside>
+
+    <main>
+      <!-- 01: TITLE -->
+      <section
+        class="slide title-slide"
+        data-title="封面"
+        data-note="开场不要先讲工具。先告诉大家：今天不是教编程，而是展示怎样从一个小网页开始，逐步让AI承担真实任务。"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal">
+            <p class="eyebrow">AI 实践分享 / 2026.07.24</p>
+            <div class="accent-line"></div>
+          </div>
+          <div class="title-block">
+            <div>
+              <h1 class="reveal" data-editable>从一个网页，到一套自动运行的工作流</h1>
+              <p class="lead reveal" data-editable>提示词、技能包与自动化的真实实践</p>
+            </div>
+            <aside class="title-side reveal">
+              <strong data-editable>先做成一个小任务</strong>
+              <p data-editable>再把方法写下来、反复验证，直到它可以稳定复用。</p>
+            </aside>
+          </div>
+          <div class="route reveal" aria-label="分享主线">
+            <span>提示词</span><span class="arrow">→</span><span>工作流</span><span class="arrow">→</span><span>技能包</span><span class="arrow">→</span><span>自动化</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02: OUTCOMES -->
+      <section
+        class="slide"
+        data-title="今天带走什么"
+        data-note="把预期压缩成三件事：能写清任务，能做出第一个网页，能理解如何把一次经验升级为重复执行。"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">今日目标</p><p class="source-note">60分钟：分享 + 演示 + 交流</p></div>
+          <h2 class="reveal" data-editable>今天只带走三件事</h2>
+          <div class="panel-grid three reveal">
+            <article class="panel">
+              <span class="panel-index">01 / 描述</span>
+              <h3 data-editable>把模糊想法写成可执行任务</h3>
+              <p data-editable>说清目标、上下文、交付物、边界与验收。</p>
+            </article>
+            <article class="panel">
+              <span class="panel-index">02 / 构建</span>
+              <h3 data-editable>完成自己的第一个网页</h3>
+              <p data-editable>从材料、受众和审美出发，边看效果边调整。</p>
+            </article>
+            <article class="panel">
+              <span class="panel-index">03 / 复用</span>
+              <h3 data-editable>把经验沉淀成技能包与循环</h3>
+              <p data-editable>让AI不只回答一次，而是按规则持续完成任务。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03: PERSONAL JOURNEY -->
+      <section
+        class="slide"
+        data-title="成长主线"
+        data-note="个人经历只讲三分钟。关键不是项目数量，而是场景越来越真实、约束越来越复杂、自己开始对结果负责。"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">成长主线</p><p class="source-note">应用场景变真实，约束逐渐变复杂</p></div>
+          <h2 class="reveal" data-editable>不是能力突然跃迁，是任务逐渐变真实</h2>
+          <div class="timeline reveal">
+            <article class="timeline-item"><strong data-editable>了解</strong><p data-editable>大一下：作业、资料整理，AI还是辅助工具。</p></article>
+            <article class="timeline-item"><strong data-editable>生产</strong><p data-editable>2025.12：美图AI贴纸，第一次参与真实产出。</p></article>
+            <article class="timeline-item"><strong data-editable>转折</strong><p data-editable>个人网站：第一次相信AI能完成一个完整作品。</p></article>
+            <article class="timeline-item"><strong data-editable>产品</strong><p data-editable>2026.04–06：水豚记账MVP，参与拆解、实现和迭代。</p></article>
+            <article class="timeline-item"><strong data-editable>复用</strong><p data-editable>把选题、视觉和检查标准写成工作流与技能包。</p></article>
+            <article class="timeline-item"><strong data-editable>系统</strong><p data-editable>2026.07：数据、评分、网页、部署和定时任务闭环。</p></article>
+          </div>
+        </div>
+      </section>
+
+      <!-- TASK CHAIN -->
+      <section
+        class="slide"
+        data-title="AI先改变任务"
+        data-note="承接成长主线：变化的不是AI突然更强，而是我开始把完整任务链交给AI。先讲三层变化，再落到人的三个责任；下一页回答任务要怎样说清楚。"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">为什么会提效</p><p class="source-note">从一个动作，走向一整条任务链</p></div>
+          <h2 class="reveal" data-editable>AI真正改变的，是一整条任务链</h2>
+          <div class="task-chain reveal">
+            <article class="task-stage"><span>内容生成</span><h3 data-editable>让AI先写</h3><p data-editable>邮件、周报、方案和大纲更快，但资料与判断仍主要由人完成。</p></article>
+            <article class="task-stage"><span>任务协作</span><h3 data-editable>让AI参与过程</h3><p data-editable>提取、比较、质疑和检查，被拆成相互衔接的步骤。</p></article>
+            <article class="task-stage"><span>工作流重构</span><h3 data-editable>让AI负责链路</h3><p data-editable>从信息输入到行动输出，都有规则、验收、人工决策和复盘。</p></article>
+          </div>
+          <div class="human-roles reveal"><strong data-editable>人仍然负责</strong><span>拆解任务</span><span>业务判断</span><span>结果验收</span></div>
+          <p class="source-note reveal">参考：<a href="https://www.woshipm.com/ai/6429830.html" target="_blank" rel="noreferrer">AI先改变任务</a>；<a href="https://www.woshipm.com/ai/6431562.html" target="_blank" rel="noreferrer">用了AI为什么仍未提效</a></p>
+        </div>
+      </section>
+
+      <!-- 05: PROMPT LEVELS -->
+      <section
+        class="slide"
+        data-title="提示词不必都很长"
+        data-note="上一页说AI可以承担一条任务链，这一页回答：任务要写多详细？判断标准不是字数，而是错误是否容易发现、结果是否需要直接交付。右侧会议看板自然引出下一页四段式。"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">提示词</p><p class="source-note">判断标准不是字数，而是错误成本</p></div>
+          <h2 class="reveal" data-editable>提示词写多长，要看“错了会怎样”</h2>
+          <div class="risk-axis reveal">
+            <article class="risk-path">
+              <span>错误马上能发现</span>
+              <h3 data-editable>直接说明想要的结果</h3>
+              <p data-editable>结果直观、可以马上重来，不必先写一整页规则。</p>
+              <p class="risk-example" data-editable>例如：整理会议待办。</p>
+            </article>
+            <article class="risk-path high">
+              <span>错误难发现或要直接交付</span>
+              <h3 data-editable>写清结构，再检查结果</h3>
+              <p data-editable>涉及人名、功能和交付标准时，必须告诉AI怎样做、怎样查。</p>
+              <p class="risk-example" data-editable>例如：生成可筛选会议看板。</p>
+            </article>
+          </div>
+          <p class="decision-line reveal" data-editable>越需要对结果负责，越要把需求、过程、检查和交付说清楚。</p>
+          <p class="source-note reveal">参考：<a href="https://learn.chatgpt.com/docs/prompting" target="_blank" rel="noreferrer">OpenAI 提示词指南</a>；<a href="https://www.woshipm.com/ai/6429815.html" target="_blank" rel="noreferrer">中文解读</a></p>
+        </div>
+      </section>
+
+      <!-- 06: FOUR PART PROMPT -->
+      <section
+        class="slide"
+        data-title="四段式提示词"
+        data-note="上一页用风险判断是否需要写详细，这一页给出重要任务的最低结构。四段依次回答做什么、怎么做、怎么查、交付什么；下一页继续讲AI收到任务后怎样完成网页。"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">四段式任务</p><p class="source-note">重要任务的最低信息量</p></div>
+          <h2 class="reveal" data-editable>一句话也可以有结构：做什么、怎么做、怎么查、交付什么</h2>
+          <div class="panel-grid four reveal">
+            <article class="panel"><span class="panel-index">01 / 需求</span><h3 data-editable>需求</h3><p data-editable>要解决什么问题、给谁使用、现有材料和限制是什么。</p></article>
+            <article class="panel"><span class="panel-index">02 / 过程</span><h3 data-editable>执行过程</h3><p data-editable>先做什么、后做什么，缺失信息和异常怎样处理。</p></article>
+            <article class="panel"><span class="panel-index">03 / 检查</span><h3 data-editable>检查</h3><p data-editable>核对事实、数据、功能和不同屏幕下的页面表现。</p></article>
+            <article class="panel"><span class="panel-index">04 / 交付</span><h3 data-editable>交付结果</h3><p data-editable>最终文件、打开方式、完成状态和待确认事项。</p></article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09: MEETING BOARD PROMPT -->
+      <section
+        class="slide"
+        data-title="会议看板一句话提示词"
+        data-note="上一页刚讲完六步，这里把它压缩成一段小白也能直接使用的四段式提示词。复制后把会议原文粘到末尾，交给Codex；下一页马上打开生成后的看板。"
+      >
+        <div class="slide-content prompt-slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">一句话提示词</p><a class="source-note" href="prompt-library.html#meeting-board" target="_blank" rel="noreferrer">打开并复制提示词 ↗</a></div>
+          <iframe class="prompt-frame reveal" src="prompt-library.html?embed=1#meeting-board" title="会议任务看板网页制作提示词"></iframe>
+        </div>
+      </section>
+
+      <!-- 08: PLAN TO GOAL -->
+      <section
+        class="slide"
+        data-title="计划到执行"
+        data-note="把原来的执行流程和网页七步合成一页。先选小任务并准备材料，再让AI计划；人工只修正业务与审美，随后目标执行、迭代和双重检查。下一页直接展示这套方法写成的一句话提示词。"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">网页制作</p><p class="source-note">从材料到可交付结果</p></div>
+          <h2 class="reveal" data-editable>做一个网页，先走完这六步</h2>
+          <div class="flow six reveal">
+            <article class="flow-step"><strong data-editable>选小任务</strong><span data-editable>10分钟能看懂结果</span></article>
+            <article class="flow-step"><strong data-editable>准备材料</strong><span data-editable>受众、内容与审美参考</span></article>
+            <article class="flow-step"><strong data-editable>安装技能包</strong><span data-editable>网页、审美与浏览器检查</span></article>
+            <article class="flow-step"><strong data-editable>计划与人工调整</strong><span data-editable>AI拆步骤，人修正业务细节</span></article>
+            <article class="flow-step"><strong data-editable>目标执行</strong><span data-editable>生成、预览并持续迭代</span></article>
+            <article class="flow-step"><strong data-editable>双重检查与交付</strong><span data-editable>内容、功能和移动端</span></article>
+          </div>
+          <p class="decision-line reveal" data-editable>审美偏好在执行前说清楚，功能与事实在交付前逐项检查。</p>
+        </div>
+      </section>
+
+      <!-- 09: OBJECTIVITY AND DOUBLE CHECK -->
+      <section
+        class="slide"
+        data-title="客观评价与双重检查"
+        data-note="紧接现场看板：能打开不等于能交付。先让AI客观评价需求有没有矛盾，再逐条核对负责人、任务和待确认项，最后检查筛选、移动端与错误状态。下一页用个人网站说明为什么第一版仍需要迭代。"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">验收</p><p class="source-note">承接刚才的会议任务看板</p></div>
+          <div class="quality-showcase">
+            <figure class="quality-visual board-check-visual reveal">
+              <img src="assets/meeting-board-check.png" alt="更新姓名后的会议任务看板" />
+              <span class="board-marker names">核对负责人</span>
+              <span class="board-marker pending">保留待确认</span>
+              <span class="board-marker filters">测试筛选</span>
+            </figure>
+            <div class="quality-copy reveal">
+              <h2 data-editable>看板能打开，只完成了一半</h2>
+              <div class="compact-checks">
+                <div class="compact-check"><strong data-editable>先做客观评价</strong><span data-editable>先指出需求里的矛盾、风险和错误假设。</span></div>
+                <div class="compact-check"><strong data-editable>第一轮：内容核对</strong><span data-editable>负责人、任务、依赖和截止时间逐条对照会议原文。</span></div>
+                <div class="compact-check"><strong data-editable>缺失信息标记待确认</strong><span data-editable>会议没有说明的内容不猜测，也不自动补齐。</span></div>
+                <div class="compact-check"><strong data-editable>第二轮：网页核对</strong><span data-editable>测试搜索、筛选、重置、移动端与错误状态。</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10: CONCEPT MAP -->
+      <section
+        class="slide"
+        data-title="四个概念"
+        data-note="个人网站说明一次任务可以反复迭代，这一页继续追问：如果同类任务每周都要做，怎样保存方法？四个概念只讲各自负责什么，不再逐格读表。下一页开始展示实际常用技能包。"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">从一次到复用</p><p class="source-note">一次说明 → 固定步骤 → 稳定复用 → 定时唤醒</p></div>
+          <h2 class="reveal" data-editable>同一件事反复做，方法要逐级沉淀</h2>
+          <div class="concept-ladder reveal">
+            <article class="concept-step" style="--level: 0"><span>一次说明</span><h3 data-editable>提示词</h3><p data-editable>告诉AI这一次要做什么、怎样检查和交付。</p></article>
+            <article class="concept-step" style="--level: 1"><span>固定步骤</span><h3 data-editable>工作流</h3><p data-editable>把一项任务拆成稳定的执行顺序和人工节点。</p></article>
+            <article class="concept-step" style="--level: 2"><span>稳定复用</span><h3 data-editable>技能包</h3><p data-editable>保存规则、资料、输出格式、边界和验收标准。</p></article>
+            <article class="concept-step" style="--level: 3"><span>定时唤醒</span><h3 data-editable>自动化</h3><p data-editable>在正确时间和窗口调用技能包，并汇报结果。</p></article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11: SKILLS LIST -->
+      <section
+        class="slide"
+        data-title="常用技能包"
+        data-note="这里不逐个教学，只告诉大家技能包覆盖网页、研究、内容、视觉、视频和复杂任务。安装时让Codex查找并安装，但要检查来源、安装量、用途和权限。"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">常用技能包</p><p class="source-note">让Codex查找、核对来源并安装</p></div>
+          <h2 class="reveal" data-editable>常用技能包：按任务找，不必一次装完</h2>
+          <div class="panel-grid three reveal">
+            <article class="panel"><span class="panel-index">网页</span><h3 data-editable>网页与审美</h3><div class="tag-row"><span class="tag green">frontend-design</span><span class="tag green">design-taste-frontend</span></div></article>
+            <article class="panel"><span class="panel-index">检查</span><h3 data-editable>网页检查</h3><div class="tag-row"><span class="tag green">browser-qa</span></div></article>
+            <article class="panel"><span class="panel-index">研究</span><h3 data-editable>浏览器与研究</h3><div class="tag-row"><span class="tag green">agent-browser</span><span class="tag green">deep-research</span></div></article>
+            <article class="panel"><span class="panel-index">内容</span><h3 data-editable>内容生产</h3><div class="tag-row"><span class="tag orange">dbs-content</span><span class="tag orange">dbs-xhs-title</span></div></article>
+            <article class="panel"><span class="panel-index">视觉</span><h3 data-editable>图片与视频</h3><div class="tag-row"><span class="tag orange">imagegen</span><span class="tag orange">FFmpeg Video Editor</span></div></article>
+            <article class="panel"><span class="panel-index">复杂任务</span><h3 data-editable>复杂任务</h3><div class="tag-row"><span class="tag lime">context-control</span></div></article>
+          </div>
+          <p class="source-note reveal" data-editable>安装前检查：来源、用途、安装量、文件读写范围和账号权限。</p>
+        </div>
+      </section>
+
+      <!-- 12: MEETING SKILL -->
+      <section
+        class="slide dark"
+        data-title="会议总结技能包"
+        data-note="用会议总结技能包做入门案例。讲清一个技能包至少包含触发条件、输入、固定步骤、输出契约、边界和验收。一个小任务可以这样复用，下一页再看多个能力怎样组成工作台。"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">入门技能包</p><p class="source-note">meeting-action-summary</p></div>
+          <h2 class="reveal" data-editable>把“帮我总结会议”写成稳定能力</h2>
+          <div class="skill-anatomy reveal">
+            <div class="folder-tree">meeting-action-summary/
+  SKILL.md
+  references/
+    task-schema.md
+    name-rules.md
+<span>  assets/（可选）</span></div>
+            <div class="panel-grid mobile-two">
+              <article class="panel"><span class="panel-index">触发</span><h3 data-editable>什么时候调用</h3><p data-editable>会议总结、任务拆解、逐人分工。</p></article>
+              <article class="panel"><span class="panel-index">输入</span><h3 data-editable>需要什么</h3><p data-editable>录音转写、参会人、已有任务背景。</p></article>
+              <article class="panel"><span class="panel-index">输出</span><h3 data-editable>交付什么</h3><p data-editable>负责人、任务、优先级、依赖、截止时间。</p></article>
+              <article class="panel"><span class="panel-index">边界</span><h3 data-editable>不能做什么</h3><p data-editable>不得猜人名、状态和会议未说明的数据。</p></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13: LIVE BOARD -->
+      <section
+        class="slide"
+        data-title="会议任务看板"
+        data-note="现场演示页。把刚才的四段式提示词交给Codex后，打开这张结构化任务看板，再用负责人和状态筛选。先让大家看到结果，下一页再问：能打开是否就等于能交付？"
+      >
+        <div class="slide-content" style="padding-top: clamp(0.8rem, 2vw, 1.5rem); padding-bottom: clamp(0.8rem, 2vw, 1.5rem)">
+          <div class="slide-header reveal"><p class="eyebrow">现场演示</p><a class="source-note" href="meeting-task-board.html?v=20260724-names-v2" target="_blank" rel="noreferrer">打开独立看板 ↗</a></div>
+          <iframe class="board-frame reveal" src="meeting-task-board.html?v=20260724-names-v2" title="会议任务看板"></iframe>
+        </div>
+      </section>
+
+      <!-- 15: PORTFOLIO BEFORE/AFTER -->
+      <section
+        class="slide"
+        data-title="个人网站迭代"
+        data-note="承接刚才的看板验收：网页能跑只是第一版。个人网站经过四到五轮，每轮只解决一种可观察问题；这页讲完后追问，同类任务反复做时怎样把方法保存下来。"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">第一份网页</p><p class="source-note">第一版 → 最终版 · <a href="http://127.0.0.1:5175/" target="_blank" rel="noreferrer">打开个人网站 ↗</a></p></div>
+          <h2 class="reveal" data-editable>AI能把想法变成现实，但第一版不会自动变好</h2>
+          <div class="comparison reveal">
+            <figure><img src="assets/portfolio-first.png" alt="个人网站第一版" /><figcaption><strong>第一版</strong><span>文字重叠 · 信息层级不稳</span></figcaption></figure>
+            <figure><img src="assets/portfolio-final.png" alt="个人网站最终版" /><figcaption><strong>最终版</strong><span>定位清楚 · 结构、视觉与交互统一</span></figcaption></figure>
+          </div>
+          <div class="iteration-strip reveal" aria-label="四轮迭代重点"><span>第1轮 · 内容</span><span>第2轮 · 结构</span><span>第3轮 · 视觉</span><span>第4轮 · 细节</span></div>
+          <p class="source-note reveal" data-editable>四五轮不是反复说“更高级”，而是每轮只修改一类可观察问题。</p>
+        </div>
+      </section>
+
+      <!-- 17: ADVANCED WORKBENCH -->
+      <section
+        class="slide dark"
+        data-title="我的AI工作台"
+        data-note="这页展示广度，不逐个讲。把七个窗口归为采集判断、结果呈现和业务沉淀三类，然后进入热点追踪这个代表案例。"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">进阶工作台</p><p class="source-note">多个窗口，其实是同一条任务链</p></div>
+          <div class="task-window-collage">
+            <div class="window-stack reveal"><img src="assets/task-windows-a.png" alt="热点与会议任务窗口" /><img src="assets/task-windows-b.png" alt="仪表盘与GEO任务窗口" /></div>
+            <div class="reveal">
+              <h2 data-editable>七个窗口，可以归成三层</h2>
+              <div class="panel-grid three" style="margin-top: clamp(0.8rem, 1.6vw, 1.3rem)">
+                <article class="panel"><span class="panel-index">01 / 采集</span><h3 data-editable>信息采集与判断</h3><p data-editable>热点、活动、达人、关键词与引用源。</p></article>
+                <article class="panel"><span class="panel-index">02 / 交付</span><h3 data-editable>结果呈现与复核</h3><p data-editable>评分、仪表盘、网页、浏览器与部署检查。</p></article>
+                <article class="panel"><span class="panel-index">03 / 沉淀</span><h3 data-editable>会议与业务沉淀</h3><p data-editable>把问题、方法和检查规则写成可复用技能包。</p></article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 18: ADVANCED HOTSPOT PROMPT -->
+      <section
+        class="slide"
+        data-title="热点追踪完整提示词"
+        data-note="这一页不再展示抽象文件树，而是直接打开真实提示词。重点讲厚技能包、薄自动化：规则、证据、评分、输出和停止条件集中保存在一个可复用能力中。"
+      >
+        <div class="slide-content prompt-slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">进阶提示词</p><a class="source-note" href="prompt-library.html#hotspot-skill" target="_blank" rel="noreferrer">打开并复制完整提示词 ↗</a></div>
+          <iframe class="prompt-frame reveal" src="prompt-library.html?embed=1#hotspot-skill" title="蝉妈妈每日热点追踪技能包提示词"></iframe>
+        </div>
+      </section>
+
+      <!-- 19: LOOP ENGINEERING -->
+      <section
+        class="slide dark"
+        data-title="循环工程"
+        data-note="承接自动化：定时唤醒只是开始，真正决定系统是否可靠的是每一轮怎样验证、失败后怎样修正、什么时候停止。下一页用真实网页操作视频，让循环从概念变成可见过程。"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">循环工程</p><p class="source-note">从设计一句话，转向设计会自己运行的系统</p></div>
+          <h2 class="reveal" data-editable>提示词没有消失，它只是退到循环里的一个组件</h2>
+          <div class="loop-ring reveal">
+            <div class="loop-node"><strong data-editable>观察</strong><span data-editable>读取状态与新输入</span></div>
+            <div class="loop-node"><strong data-editable>判断</strong><span data-editable>选择下一步动作</span></div>
+            <div class="loop-node"><strong data-editable>执行</strong><span data-editable>调用工具完成任务</span></div>
+            <div class="loop-node"><strong data-editable>验证</strong><span data-editable>对照标准检查结果</span></div>
+            <div class="loop-node"><strong data-editable>继续 / 停止</strong><span data-editable>未达标则进入下一轮</span></div>
+          </div>
+          <p class="source-note reveal">参考：<a href="https://www.woshipm.com/ai/6432466.html" target="_blank" rel="noreferrer">Claude Code定义四种循环：AI编程从写提示词转向设计系统</a></p>
+        </div>
+      </section>
+
+      <!-- 21: AUTOMATION -->
+      <section
+        class="slide"
+        data-title="技能包变成自动化"
+        data-note="自动化只负责什么时候醒来、在哪个窗口调用哪个技能包、失败如何通知。完整业务规则只保留在技能包，避免两份规则漂移。接下来追问：被唤醒以后，它怎样一轮轮工作并知道何时停下？"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">自动化</p><p class="source-note">时间循环 + 目标验证 + 人工闸门</p></div>
+          <h2 class="reveal" data-editable>自动化不是复制一大段提示词，而是定时调用稳定技能包</h2>
+          <div class="flow reveal">
+            <article class="flow-step"><strong data-editable>北京时间</strong><span data-editable>明确时区与执行窗口</span></article>
+            <article class="flow-step"><strong data-editable>固定任务</strong><span data-editable>进入正确窗口与项目</span></article>
+            <article class="flow-step"><strong data-editable>调用技能包</strong><span data-editable>读取最新规则与参考文件</span></article>
+            <article class="flow-step"><strong data-editable>状态记录</strong><span data-editable>同日修订、跨日保留历史</span></article>
+            <article class="flow-step"><strong data-editable>验收通知</strong><span data-editable>成功、失败或不完整</span></article>
+          </div>
+          <div class="panel-grid three reveal">
+            <article class="panel"><span class="panel-index">09:30 / 工作日</span><h3 data-editable>蝉妈妈热点追踪</h3></article>
+            <article class="panel"><span class="panel-index">09:30 / 工作日</span><h3 data-editable>电商圈层活动监测</h3></article>
+            <article class="panel"><span class="panel-index">10:00 + 16:00 / 每日</span><h3 data-editable>达人白名单双轮试运行</h3></article>
+          </div>
+          <div class="migration-strip reveal"><strong>本地 → 云端</strong><span data-editable>本地文件迁移到版本库或云存储 → 密钥改用环境变量 → 定时任务交给云端调度 → 上线后继续双重检查</span></div>
+        </div>
+      </section>
+
+      <!-- 22: VIDEO -->
+      <section
+        class="slide dark"
+        data-title="AI操作真实网页"
+        data-note="播放约35到45秒即可。讲解AI正在读取问题、进入AIDSO、等待结果、切换任务并回到Codex，而不是只在聊天框里给建议。"
+      >
+        <div class="slide-content" style="padding: clamp(0.7rem, 1.6vw, 1.2rem); padding-left: clamp(3.8rem, 4.8vw, 4.8rem)">
+          <div class="media-frame reveal">
+            <video controls preload="metadata" playsinline poster="assets/aidso-browser-poster.jpg">
+              <source src="assets/aidso-browser-automation.mp4" type="video/mp4" />
+            </video>
+            <div class="media-caption"><strong data-editable>AI不只回答问题，它还能实际操作网页</strong><span data-editable>读取任务 → 打开 AIDSO → 等待结果 → 继续采集 → 返回检查</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 23: DASHBOARD RESULT -->
+      <section
+        class="slide"
+        data-title="自动化结果"
+        data-note="承接前一页的网页操作演示：AI跑完流程后，必须交付一个人能查看、理解和复核的结果。这里只讲四件事：发生了什么、为什么这样判断、下一步做什么、历史如何保留。"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">最终结果</p><p class="source-note">从自动运行，回到可用交付</p></div>
+          <div class="dashboard-showcase">
+            <img class="screenshot reveal" src="assets/hotspot-dashboard.png" alt="每日热点自动化仪表盘" />
+            <aside class="reveal">
+              <span class="panel-index">自动化交付</span>
+              <h2 data-editable>跑完不是终点，能复核才算交付</h2>
+              <ul class="flat-list" style="margin-top: clamp(0.8rem, 1.6vw, 1.2rem)">
+                <li data-editable>发生了什么：候选热点与业务影响</li>
+                <li data-editable>为什么判断：来源链接与证据强度</li>
+                <li data-editable>下一步做什么：内容动作与停止边界</li>
+                <li data-editable>怎样回头检查：日期、修订与历史快照</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- 24: FAILURES -->
+      <section
+        class="slide"
+        data-title="失败处理"
+        data-note="删除分散的异常类型，只保留一个核心判断：自动化不能把未完成包装成成功。讲清成功与未完成两种结果状态即可。"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">异常处理</p><p class="source-note">失败不是隐藏，而是进入结果状态</p></div>
+          <h2 class="reveal" data-editable>自动化只有两种诚实结果：成功，或明确未完成</h2>
+          <div class="code-block reveal"><span class="key">成功</span> = 数据完成 + 证据可用 + 网页通过检查
+<span class="key">未完成</span> = 记录缺失来源、失败原因、已完成范围和下一次重试</div>
+        </div>
+      </section>
+
+      <!-- 25: CLOSE -->
+      <section
+        class="slide title-slide"
+        data-title="从哪里开始"
+        data-note="最后不要以复杂自动化收尾，而是把行动拉回一个小任务：选一份自己熟悉的材料，做一个10分钟能看见结果的网页。"
+      >
+        <div class="slide-content">
+          <div class="slide-header reveal"><p class="eyebrow">从小任务开始</p><div class="accent-line"></div></div>
+          <div>
+            <h2 class="reveal" data-editable>不用从自动化开始，先完成一个小网页</h2>
+            <p class="lead reveal" data-editable>当你第一次看见想法变成可用结果，就会开始建立对AI的信任，也会更清楚下一次该怎样描述任务。</p>
+          </div>
+          <div class="closing-ladder reveal">
+            <article class="ladder-step" style="--level: 0"><span>一次说明</span><strong data-editable>提示词</strong></article>
+            <article class="ladder-step" style="--level: 1"><span>固定步骤</span><strong data-editable>工作流</strong></article>
+            <article class="ladder-step" style="--level: 2"><span>稳定复用</span><strong data-editable>技能包</strong></article>
+            <article class="ladder-step" style="--level: 3"><span>持续执行</span><strong data-editable>自动化</strong></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      /* ===========================================
+         PRACTICAL-FIRST SLIDE ORDER
+         =========================================== */
+      const slideSequence = [
+        "封面",
+        "今天带走什么",
+        "成长主线",
+        "AI先改变任务",
+        "提示词不必都很长",
+        "四段式提示词",
+        "计划到执行",
+        "会议看板一句话提示词",
+        "会议任务看板",
+        "客观评价与双重检查",
+        "个人网站迭代",
+        "四个概念",
+        "常用技能包",
+        "会议总结技能包",
+        "我的AI工作台",
+        "热点追踪完整提示词",
+        "技能包变成自动化",
+        "循环工程",
+        "AI操作真实网页",
+        "自动化结果",
+        "失败处理",
+        "从哪里开始",
+      ];
+
+      const slideContainer = document.querySelector("main");
+      const slidesByTitle = new Map(
+        Array.from(slideContainer.querySelectorAll(":scope > .slide")).map((slide) => [slide.dataset.title, slide]),
+      );
+      slideSequence.forEach((title) => {
+        const slide = slidesByTitle.get(title);
+        if (slide) slideContainer.appendChild(slide);
+      });
+
+      /* ===========================================
+         SLIDE PRESENTATION CONTROLLER
+         =========================================== */
+      class SlidePresentation {
+        constructor() {
+          this.slides = Array.from(document.querySelectorAll(".slide"));
+          this.currentSlide = 0;
+          this.wheelLocked = false;
+          this.touchStartY = 0;
+          this.touchStartX = 0;
+          this.touchStartedInNativeArea = false;
+          this.isTurning = false;
+          this.pageTurnTimer = null;
+          this.reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+          this.navDotsContainer = document.querySelector(".nav-dots");
+          this.progressBar = document.querySelector(".progress-bar");
+          this.setupNotebookDetails();
+          this.setupSlideNumbers();
+          this.setupNavDots();
+          this.setupIntersectionObserver();
+          this.setupKeyboardNav();
+          this.setupTouchNav();
+          this.setupWheelNav();
+          this.update(0);
+        }
+
+        setupNotebookDetails() {
+          this.slides.forEach((slide) => {
+            const binding = document.createElement("div");
+            binding.className = "notebook-binding";
+            binding.setAttribute("aria-hidden", "true");
+            for (let index = 0; index < 7; index += 1) {
+              const ring = document.createElement("i");
+              ring.className = "notebook-ring";
+              binding.appendChild(ring);
+            }
+            slide.appendChild(binding);
+          });
+        }
+
+        setupSlideNumbers() {
+          this.slides.forEach((slide, index) => {
+            const number = document.createElement("span");
+            number.className = "slide-number";
+            number.textContent = `${String(index + 1).padStart(2, "0")} / ${String(this.slides.length).padStart(2, "0")}`;
+            slide.appendChild(number);
+          });
+        }
+
+        setupNavDots() {
+          this.navDotsContainer.innerHTML = "";
+          this.slides.forEach((slide, index) => {
+            const dot = document.createElement("button");
+            dot.className = "nav-dot";
+            dot.type = "button";
+            dot.title = slide.dataset.title || `第 ${index + 1} 页`;
+            dot.setAttribute("aria-label", dot.title);
+            dot.addEventListener("click", () => this.goTo(index));
+            this.navDotsContainer.appendChild(dot);
+          });
+        }
+
+        setupIntersectionObserver() {
+          this.observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
+                  const index = this.slides.indexOf(entry.target);
+                  entry.target.classList.add("visible");
+                  if (!this.isTurning || index === this.currentSlide) this.update(index);
+                }
+              });
+            },
+            { threshold: [0.55, 0.8] },
+          );
+          this.slides.forEach((slide) => this.observer.observe(slide));
+        }
+
+        setupKeyboardNav() {
+          document.addEventListener("keydown", (event) => {
+            const target = event.target;
+            const isInteractive = target.matches("input, select, textarea, button, video, [contenteditable='true']");
+            if (isInteractive) return;
+
+            if (["ArrowRight", "ArrowDown", "PageDown", " "].includes(event.key)) {
+              event.preventDefault();
+              this.goTo(this.currentSlide + 1);
+            }
+            if (["ArrowLeft", "ArrowUp", "PageUp"].includes(event.key)) {
+              event.preventDefault();
+              this.goTo(this.currentSlide - 1);
+            }
+            if (event.key === "Home") this.goTo(0);
+            if (event.key === "End") this.goTo(this.slides.length - 1);
+          });
+        }
+
+        setupTouchNav() {
+          document.addEventListener("touchstart", (event) => {
+            this.touchStartedInNativeArea = this.isNativeInteraction(event);
+            this.touchStartY = event.changedTouches[0].clientY;
+            this.touchStartX = event.changedTouches[0].clientX;
+          }, { passive: true });
+          document.addEventListener("touchmove", (event) => {
+            if (this.touchStartedInNativeArea || this.isNativeInteraction(event)) return;
+            const distanceY = this.touchStartY - event.changedTouches[0].clientY;
+            const distanceX = this.touchStartX - event.changedTouches[0].clientX;
+            if (Math.abs(distanceY) > Math.abs(distanceX) + 6) event.preventDefault();
+          }, { passive: false });
+          document.addEventListener("touchend", (event) => {
+            if (this.touchStartedInNativeArea || this.isNativeInteraction(event)) return;
+            const distance = this.touchStartY - event.changedTouches[0].clientY;
+            const horizontalDistance = this.touchStartX - event.changedTouches[0].clientX;
+            if (Math.abs(distance) < 42 || Math.abs(distance) <= Math.abs(horizontalDistance)) return;
+            this.goTo(this.currentSlide + (distance > 0 ? 1 : -1));
+          }, { passive: true });
+        }
+
+        setupWheelNav() {
+          document.addEventListener("wheel", (event) => {
+            if (this.wheelLocked || Math.abs(event.deltaY) < 20) return;
+            if (this.isNativeInteraction(event)) return;
+            event.preventDefault();
+            this.wheelLocked = true;
+            this.goTo(this.currentSlide + (event.deltaY > 0 ? 1 : -1));
+            window.setTimeout(() => { this.wheelLocked = false; }, 650);
+          }, { passive: false });
+        }
+
+        isNativeInteraction(event) {
+          return event.composedPath().some((node) => (
+            node instanceof Element && node.matches("iframe, video, .notes-panel")
+          ));
+        }
+
+        clearPageTurnClasses() {
+          this.slides.forEach((slide) => {
+            slide.classList.remove(
+              "page-enter-forward",
+              "page-enter-backward",
+              "page-exit-forward",
+              "page-exit-backward",
+            );
+          });
+        }
+
+        goTo(index) {
+          const safeIndex = Math.max(0, Math.min(index, this.slides.length - 1));
+          if (safeIndex === this.currentSlide || (this.isTurning && !this.reducedMotion.matches)) return;
+
+          const previousIndex = this.currentSlide;
+          const direction = safeIndex > previousIndex ? "forward" : "backward";
+          const outgoingSlide = this.slides[previousIndex];
+          const incomingSlide = this.slides[safeIndex];
+
+          window.clearTimeout(this.pageTurnTimer);
+          this.clearPageTurnClasses();
+          if (!this.reducedMotion.matches) {
+            this.isTurning = true;
+            outgoingSlide.classList.add(`page-exit-${direction}`);
+            incomingSlide.classList.add(`page-enter-${direction}`);
+          }
+
+          incomingSlide.scrollIntoView({
+            behavior: this.reducedMotion.matches ? "auto" : "smooth",
+            block: "start",
+          });
+          this.update(safeIndex);
+
+          if (!this.reducedMotion.matches) {
+            this.pageTurnTimer = window.setTimeout(() => {
+              this.clearPageTurnClasses();
+              this.isTurning = false;
+            }, 620);
+          }
+        }
+
+        update(index) {
+          this.currentSlide = index;
+          const progress = ((index + 1) / this.slides.length) * 100;
+          this.progressBar.style.width = `${progress}%`;
+          this.slides.forEach((slide, slideIndex) => {
+            slide.classList.toggle("active-slide", slideIndex === index);
+          });
+          Array.from(this.navDotsContainer.children).forEach((dot, dotIndex) => {
+            dot.classList.toggle("active", dotIndex === index);
+          });
+          window.dispatchEvent(new CustomEvent("slidechange", { detail: { index, slide: this.slides[index] } }));
+        }
+      }
+
+      /* ===========================================
+         SPEAKER NOTES AND FULLSCREEN
+         =========================================== */
+      class PresentationTools {
+        constructor(presentation) {
+          this.presentation = presentation;
+          this.notesPanel = document.querySelector(".notes-panel");
+          this.notesText = document.querySelector("#notesText");
+          this.notesTitle = document.querySelector("#notesTitle");
+          this.notesOpen = false;
+          document.querySelector("#notesToggle").addEventListener("click", () => this.toggleNotes());
+          document.querySelector("#fullscreenToggle").addEventListener("click", () => this.toggleFullscreen());
+          document.addEventListener("keydown", (event) => {
+            if ((event.key === "n" || event.key === "N") && !event.target.matches("input, textarea, [contenteditable='true']")) this.toggleNotes();
+            if (event.key === "Escape" && this.notesOpen) this.toggleNotes(false);
+          });
+          window.addEventListener("slidechange", (event) => this.updateNotes(event.detail.slide, event.detail.index));
+          this.updateNotes(presentation.slides[0], 0);
+        }
+
+        updateNotes(slide, index) {
+          this.notesTitle.textContent = `演讲备注 / ${String(index + 1).padStart(2, "0")}`;
+          this.notesText.textContent = slide.dataset.note || "";
+        }
+
+        toggleNotes(force) {
+          this.notesOpen = typeof force === "boolean" ? force : !this.notesOpen;
+          this.notesPanel.classList.toggle("active", this.notesOpen);
+        }
+
+        async toggleFullscreen() {
+          if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
+          else await document.exitFullscreen();
+        }
+      }
+
+      /* ===========================================
+         INLINE EDITOR WITH EXPORT
+         =========================================== */
+      class DeckEditor {
+        constructor() {
+          this.isActive = false;
+          this.editable = Array.from(document.querySelectorAll("[data-editable]"));
+          this.editToggle = document.querySelector("#editToggle");
+          this.editBanner = document.querySelector(".edit-banner");
+          this.hotzone = document.querySelector(".edit-hotzone");
+          this.hideTimeout = null;
+          this.setupControls();
+        }
+
+        setupControls() {
+          this.editToggle.addEventListener("click", () => this.toggleEditMode());
+          this.hotzone.addEventListener("click", () => this.toggleEditMode());
+          this.hotzone.addEventListener("mouseenter", () => {
+            window.clearTimeout(this.hideTimeout);
+            this.editToggle.classList.add("show");
+          });
+          this.hotzone.addEventListener("mouseleave", () => {
+            this.hideTimeout = window.setTimeout(() => {
+              if (!this.isActive) this.editToggle.classList.remove("show");
+            }, 400);
+          });
+          this.editToggle.addEventListener("mouseenter", () => window.clearTimeout(this.hideTimeout));
+          this.editToggle.addEventListener("mouseleave", () => {
+            this.hideTimeout = window.setTimeout(() => {
+              if (!this.isActive) this.editToggle.classList.remove("show");
+            }, 400);
+          });
+          document.addEventListener("keydown", (event) => {
+            if ((event.key === "e" || event.key === "E") && !event.target.getAttribute("contenteditable")) this.toggleEditMode();
+            if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "s" && this.isActive) {
+              event.preventDefault();
+              this.exportFile();
+            }
+          });
+        }
+
+        toggleEditMode() {
+          this.isActive = !this.isActive;
+          document.body.classList.toggle("edit-active", this.isActive);
+          this.editToggle.classList.toggle("active", this.isActive);
+          this.editBanner.classList.toggle("active", this.isActive);
+          this.editable.forEach((element) => {
+            if (this.isActive) element.setAttribute("contenteditable", "true");
+            else element.removeAttribute("contenteditable");
+          });
+        }
+
+        exportFile() {
+          const editableElements = Array.from(document.querySelectorAll("[contenteditable]"));
+          editableElements.forEach((element) => element.removeAttribute("contenteditable"));
+          document.body.classList.remove("edit-active");
+          this.editToggle.classList.remove("active", "show");
+          this.editBanner.classList.remove("active");
+
+          const html = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+
+          document.body.classList.add("edit-active");
+          editableElements.forEach((element) => element.setAttribute("contenteditable", "true"));
+          this.editToggle.classList.add("active");
+          this.editBanner.classList.add("active");
+
+          const blob = new Blob([html], { type: "text/html" });
+          const anchor = document.createElement("a");
+          anchor.href = URL.createObjectURL(blob);
+          anchor.download = "AI实践分享-已编辑.html";
+          anchor.click();
+          URL.revokeObjectURL(anchor.href);
+        }
+      }
+
+      const presentation = new SlidePresentation();
+      new PresentationTools(presentation);
+      new DeckEditor();
+      presentation.slides[0].classList.add("visible");
+    </script>
+  </body>
+</html>
