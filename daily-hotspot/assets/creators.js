@@ -1211,7 +1211,7 @@ function auditReportLabel(value) {
     ON_TIME_FULL: "准时完整日报",
     LATE_FULL: "迟到完整日报",
     DEGRADED_REPORT: "降级日报",
-    INCIDENT_REPORT: "事件日报",
+    INCIDENT_REPORT: "故障日报",
   })[value] || value || "状态未知";
 }
 
@@ -1219,6 +1219,7 @@ function auditPlatformLabel(value) {
   return ({
     douyin: "抖音",
     creatorCenter: "抖音创作者中心",
+    chanmama: "蝉妈妈",
     chanmamaFormalPreflight: "蝉妈妈正式预检",
     chanmamaBlackhorseSnapshot: "蝉妈妈黑马达人榜",
     yuntu: "巨量云图",
@@ -1239,6 +1240,7 @@ function auditPlatformStatusLabel(value) {
     CAPTURED: "已采集",
     UNKNOWN: "未确认",
     LOGIN_REQUIRED: "需要登录",
+    TAB_NOT_OPEN: "标签页未打开",
     CAPTCHA_OR_EVALUATION_TIMEOUT: "验证码或读取超时",
     INTERACTABLE_BUT_AUTH_STATE_UNKNOWN: "可交互，登录态未确认",
   })[value] || value;
@@ -1247,11 +1249,23 @@ function auditPlatformStatusLabel(value) {
 function auditMissingInputLabel(value) {
   return ({
     "complete topic populations": "完整话题参与账号总体",
+    "T1 video snapshots": "T1 视频快照",
+    "T1 topic populations": "T1 话题参与账号总体",
     "source-cluster assessment": "来源簇归并评估",
     "same-age cohort": "同龄队列",
     "T1 growth snapshots": "T1 增长快照",
     "independent dual-source values": "独立双源数值",
     "complete creator identity and risk review": "完整达人身份与风险审核",
+  })[value] || value;
+}
+
+function auditTopicResultLabel(value) {
+  return ({
+    T0_CANDIDATE_HELD_T1_UNAVAILABLE: "T0候选保留，T1不可用",
+    T0_PRIORITY_TRACK_HELD_T1_UNAVAILABLE: "T0重点观察保留，T1不可用",
+    T0_CANDIDATE_HELD_T1_STRICT_INPUTS_UNAVAILABLE: "T0候选保留，T1严格输入不完整",
+    T0_PRIORITY_TRACK_HELD_T1_STRICT_INPUTS_UNAVAILABLE: "T0重点观察保留，T1严格输入不完整",
+    OFFICIAL_RULE_CONTENT_ONLY: "仅作为官方规则内容",
   })[value] || value;
 }
 
@@ -1270,6 +1284,8 @@ function renderCreatorDailyAudit({ data, index, view }) {
   const missingInputs = asArray(audit.missingInputs);
   const displayedMissingInputs = missingInputs.map(auditMissingInputLabel);
   const evidenceRefs = asArray(audit.evidenceRefs);
+  const topics = asArray(data.topics);
+  const recommendations = asArray(data.recommendations);
   const reportLabel = auditReportLabel(data.publicationStatus);
   const viewMeta = ({
     overview: ["今日达人审计结论", "回答今天达人是否新增、为什么，以及证据还缺什么。"],
@@ -1299,6 +1315,9 @@ function renderCreatorDailyAudit({ data, index, view }) {
     creatorDecision.topicContribution ? `话题贡献：${creatorDecision.topicContribution}` : null,
   ].filter(Boolean);
   const schedule = audit.schedule || {};
+  const topicHtml = topics.length
+    ? `<div class="resonance-platform-list">${topics.map((item) => `<article class="resonance-platform-item"><div><strong>${escapeHtml(firstValue(item.topic, "未命名话题"))}</strong><span>${statusChip(auditTopicResultLabel(firstValue(item.result, "UNKNOWN")), "status-watch")}</span></div><p>${escapeHtml(firstValue(item.reason, "原始审计未提供原因。"))}</p><p>有效独立来源：${formatMetric(item.effectiveIndependentSources)} · 临时白名单达人：${formatMetric(item.temporaryWhitelistCreators)} · 确认热点：${item.confirmedHotspot === true ? "是" : "否"}</p></article>`).join("")}</div>`
+    : renderEmpty("本日审计没有可展示的话题结论。", "radar");
   return `${heading}<section class="resonance-console creator-daily-audit">
     <section class="decision-lead">
       <div class="decision-lead-copy"><span class="model-code">${escapeHtml(reportLabel)} · ${escapeHtml(formatDateTime(data.observedAt))}</span><h2>${escapeHtml(viewMeta[0])}</h2><p>${escapeHtml(viewMeta[1])}</p></div>
@@ -1312,7 +1331,7 @@ function renderCreatorDailyAudit({ data, index, view }) {
     </section>
     <section class="section-band"><div class="section-title"><h2>本日达人结论</h2><span>${statusChip(auditCreatorDecisionLabel(firstValue(creatorDecision.result, "NO_CREATOR_ADMISSION")), formalCount || temporaryCount ? "status-pass" : "status-watch")}</span></div>
       ${factGrid([
-        ["日报类型", statusChip(reportLabel, data.publicationStatus === "DEGRADED_REPORT" ? "status-watch" : "status-pass")],
+        ["日报类型", statusChip(reportLabel, ["ON_TIME_FULL", "LATE_FULL"].includes(data.publicationStatus) ? "status-pass" : "status-watch")],
         ["实际观察时间", escapeHtml(formatDateTime(data.observedAt))],
         ["计划窗口", escapeHtml(firstValue(schedule.slot, data.scheduledFor, "未记录"))],
         ["是否准时", schedule.on_time == null ? "未记录" : statusChip(schedule.on_time ? "是" : "否", schedule.on_time ? "status-pass" : "status-watch")],
@@ -1322,6 +1341,8 @@ function renderCreatorDailyAudit({ data, index, view }) {
       ${listHtml(decisionDetails, "原始审计未提供进一步的达人准入说明。")}
       ${priorityAccounts.length ? `<div class="section-title"><h3>优先观察账号</h3><span>仅观察，不进入白名单</span></div>${listHtml(priorityAccounts)}` : ""}
     </section>
+    <section class="section-band"><div class="section-title"><h2>本日话题判断</h2><span>${topics.length} 个真实审计结论</span></div>${topicHtml}</section>
+    <section class="section-band"><div class="section-title"><h2>部门执行动作</h2><span>最多 3 条</span></div>${listHtml(recommendations.slice(0, 3), "本日审计未提供可执行动作。")}</section>
     <div class="resonance-evidence-grid">
       <section><div class="section-title"><h2>平台状态</h2><span>${platforms.length} 个平台记录</span></div>${platformHtml}</section>
       <section><div class="section-title"><h2>缺失输入</h2><span>${missingInputs.length} 项未闭环</span></div>${listHtml(displayedMissingInputs, "原始审计未列出缺失输入。")}</section>

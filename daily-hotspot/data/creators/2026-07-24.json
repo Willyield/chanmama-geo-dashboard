@@ -103,6 +103,33 @@
   },
   "candidates": [],
   "videoSignals": [],
-  "topics": [],
-  "recommendations": []
+  "topics": [
+    {
+      "topic": "邓煜王虹获菲尔兹奖",
+      "result": "UNKNOWN",
+      "confirmedHotspot": false,
+      "effectiveIndependentSources": null,
+      "temporaryWhitelistCreators": 0,
+      "reason": "The exact query still has high current search heat and the related explainer query is rising, but the exact-topic T0 metric and formal population evidence are missing."
+    },
+    {
+      "topic": "贵州人私藏的豆豉火锅有多香",
+      "result": "UNKNOWN",
+      "confirmedHotspot": false,
+      "effectiveIndependentSources": null,
+      "temporaryWhitelistCreators": 0,
+      "reason": "The same-source platform index increased, but most visible videos are historical and the fresh independent-account lower bound is insufficient for resonance confirmation."
+    },
+    {
+      "topic": "夏日度假限定motd",
+      "result": "UNKNOWN",
+      "confirmedHotspot": false,
+      "effectiveIndependentSources": null,
+      "temporaryWhitelistCreators": 0,
+      "reason": "Many recent creators are visible, but the same-source search heat declined and the topic left the visible Creator Center realtime top 10. Do not expand a trend-chasing package."
+    }
+  ],
+  "recommendations": [
+    "[object Object]"
+  ]
 }

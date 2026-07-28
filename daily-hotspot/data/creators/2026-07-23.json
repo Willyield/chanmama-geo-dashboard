@@ -113,6 +113,49 @@
   },
   "candidates": [],
   "videoSignals": [],
-  "topics": [],
-  "recommendations": []
+  "topics": [
+    {
+      "topic": "今年菲尔兹奖候选人都在研究啥",
+      "result": "UNKNOWN",
+      "confirmedHotspot": false,
+      "effectiveIndependentSources": null,
+      "temporaryWhitelistCreators": 0,
+      "reason": "原始审计未提供原因。"
+    },
+    {
+      "topic": "未来5年我们的出行将有新变化",
+      "result": "UNKNOWN",
+      "confirmedHotspot": false,
+      "effectiveIndependentSources": null,
+      "temporaryWhitelistCreators": 0,
+      "reason": "原始审计未提供原因。"
+    },
+    {
+      "topic": "乒超联赛推出双向限制新规引争议",
+      "result": "UNKNOWN",
+      "confirmedHotspot": false,
+      "effectiveIndependentSources": null,
+      "temporaryWhitelistCreators": 0,
+      "reason": "原始审计未提供原因。"
+    },
+    {
+      "topic": "台湾海峡部分海域进行实弹射击",
+      "result": "UNKNOWN",
+      "confirmedHotspot": false,
+      "effectiveIndependentSources": null,
+      "temporaryWhitelistCreators": 0,
+      "reason": "原始审计未提供原因。"
+    },
+    {
+      "topic": "美防长听证会被连怼“失败”",
+      "result": "UNKNOWN",
+      "confirmedHotspot": false,
+      "effectiveIndependentSources": null,
+      "temporaryWhitelistCreators": 0,
+      "reason": "原始审计未提供原因。"
+    }
+  ],
+  "recommendations": [
+    "[object Object]"
+  ]
 }

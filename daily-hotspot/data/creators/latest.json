@@ -3,8 +3,8 @@
   "module": "creators",
   "dataMode": "DAILY_AUDIT_ONLY",
   "date": "2026-07-28",
-  "observedAt": "2026-07-28T10:13:42+08:00",
-  "scheduledFor": "T0_1000",
+  "observedAt": "2026-07-28T16:31:31.008+08:00",
+  "scheduledFor": "T1_1600",
   "publicationStatus": "DEGRADED_REPORT",
   "title": "抖音达人白名单库及热点判断",
   "summary": {
@@ -22,10 +22,10 @@
   },
   "statusMessage": "本日审计未新增达人白名单；6 项关键输入仍未闭环。",
   "limitations": [
-    "complete topic populations",
+    "T1 video snapshots",
+    "T1 topic populations",
     "source-cluster assessment",
     "same-age cohort",
-    "T1 growth snapshots",
     "independent dual-source values",
     "complete creator identity and risk review"
   ],
@@ -34,52 +34,46 @@
     "candidatesPromotedToWhitelist": false,
     "platforms": [
       {
-        "platform": "douyin",
-        "status": "VISIBLE_READ_ONLY",
-        "observedAt": "2026-07-28T10:13:42+08:00",
-        "evidence": null
-      },
-      {
-        "platform": "creatorCenter",
-        "status": "VISIBLE_READ_ONLY",
-        "observedAt": "2026-07-28T10:13:42+08:00",
-        "evidence": null
-      },
-      {
-        "platform": "chanmamaFormalPreflight",
-        "status": "UNKNOWN",
-        "observedAt": "2026-07-28T10:13:42+08:00",
-        "evidence": null
-      },
-      {
-        "platform": "chanmamaBlackhorseSnapshot",
-        "status": "CAPTURED",
-        "observedAt": "2026-07-28T10:13:42+08:00",
+        "platform": "chanmama",
+        "status": "AUTHENTICATED",
+        "observedAt": "2026-07-28T16:31:31.008+08:00",
         "evidence": null
       },
       {
         "platform": "yuntu",
         "status": "AUTHENTICATED",
-        "observedAt": "2026-07-28T10:13:42+08:00",
+        "observedAt": "2026-07-28T16:31:31.008+08:00",
         "evidence": null
       },
       {
         "platform": "xingtu",
-        "status": "LOGIN_REQUIRED",
-        "observedAt": "2026-07-28T10:13:42+08:00",
+        "status": "TAB_NOT_OPEN",
+        "observedAt": "2026-07-28T16:31:31.008+08:00",
+        "evidence": null
+      },
+      {
+        "platform": "douyin",
+        "status": "TAB_NOT_OPEN",
+        "observedAt": "2026-07-28T16:31:31.008+08:00",
+        "evidence": null
+      },
+      {
+        "platform": "creatorCenter",
+        "status": "TAB_NOT_OPEN",
+        "observedAt": "2026-07-28T16:31:31.008+08:00",
         "evidence": null
       }
     ]
   },
   "audit": {
-    "sourcePath": "data/audits/2026-07-28-1028-t0-degraded-hotspot-and-creator-decision-v1.json",
-    "sourceSha256": "0477a0b4473af2e94bf2d1a59582fc986aba55f3228261792940adbfeed2eee1",
+    "sourcePath": "data/audits/2026-07-28-1631-t1-degraded-hotspot-and-creator-decision-v2.json",
+    "sourceSha256": "6b8918b857a4a05234df3882e6a8fe1d7f1b96d24f7ee6f20bd4c4feca366eef",
     "reportType": "DEGRADED_REPORT",
     "schedule": {
-      "slot": "T0_1000",
-      "on_time": true,
-      "supplementalRefresh": false,
-      "window": "10:00 +/- 15 minutes"
+      "slot": "T1_1600",
+      "on_time": false,
+      "supplementalRefresh": true,
+      "window": "16:00 +/- 15 minutes"
     },
     "creatorDecision": {
       "result": "NO_CREATOR_ADMISSION",
@@ -87,21 +81,20 @@
       "priorityObservationAccounts": []
     },
     "missingInputs": [
-      "complete topic populations",
+      "T1 video snapshots",
+      "T1 topic populations",
       "source-cluster assessment",
       "same-age cohort",
-      "T1 growth snapshots",
       "independent dual-source values",
       "complete creator identity and risk review"
     ],
     "evidenceRefs": [
-      "evidence/formal-t0-browser/2026-07-28T02-02-56-053Z-t0-03-tab-interactability.json",
-      "evidence/formal-t0-browser/2026-07-28T02-02-56-053Z-t0-07-yuntu-trends.json",
-      "evidence/formal-t0-browser/2026-07-28T02-02-56-053Z-t0-08-douyin-creator-videos.json",
-      "evidence/topic-round/2026-07-28-t0-kimi-k3.json",
-      "evidence/topic-round/2026-07-28-t0-pure-eat-travel.json",
-      "evidence/topic-round/2026-07-28-t0-qixi-mall.json",
-      "evidence/blackhorse/2026-07-28-t0-general.json"
+      "evidence/2026-07-28T08-31-09-747Z-platform-session-preflight-v2.json",
+      "evidence/blackhorse/2026-07-28-t0-general.json",
+      "evidence/blackhorse/2026-07-28-t1-general.json",
+      "evidence/topic-round/2026-07-28-t1-platform-pages.json",
+      "data/audits/2026-07-28-1028-t0-degraded-hotspot-and-creator-decision-v1.json",
+      "data/audits/2026-07-28-1606-t1-incident-hotspot-and-creator-decision-v1.json"
     ],
     "constraints": {
       "cookiesReadOrExported": false,
@@ -112,8 +105,8 @@
       "sealedV6ManifestModified": false
     },
     "nextCapture": {
-      "slot": "T1_1600",
-      "recommendedWindow": "2026-07-28T16:00:00+08:00/2026-07-28T16:15:00+08:00",
+      "slot": "T1_SUPPLEMENT_1700",
+      "condition": "RETRY_DOUYIN_CREATOR_CENTER_AND_XINGTU_ONLY_IF_LOGIN_RECOVERED",
       "keywords": [
         "Kimi K3开源",
         "大学生纯吃旅行",
@@ -123,6 +116,38 @@
   },
   "candidates": [],
   "videoSignals": [],
-  "topics": [],
-  "recommendations": []
+  "topics": [
+    {
+      "topicId": "HT-20260728-001",
+      "topic": "Kimi K3开源",
+      "result": "T0_CANDIDATE_HELD_T1_STRICT_INPUTS_UNAVAILABLE",
+      "confirmedHotspot": false,
+      "effectiveIndependentSources": null,
+      "temporaryWhitelistCreators": 0,
+      "reason": "蝉妈妈候选榜已补采，但缺少同题视频T1数值、完整话题人口、同龄队列和独立双源值，禁止升级。"
+    },
+    {
+      "topicId": "HT-20260728-004",
+      "topic": "大学生暑期纯吃旅行",
+      "result": "T0_PRIORITY_TRACK_HELD_T1_STRICT_INPUTS_UNAVAILABLE",
+      "confirmedHotspot": false,
+      "effectiveIndependentSources": null,
+      "temporaryWhitelistCreators": 0,
+      "reason": "仅保留上午观察；本轮未获得可计算的独立来源增长与持续共振证据。"
+    },
+    {
+      "topicId": "HT-20260728-002",
+      "topic": "2026抖音商城七夕好礼季",
+      "result": "OFFICIAL_RULE_CONTENT_ONLY",
+      "confirmedHotspot": false,
+      "effectiveIndependentSources": null,
+      "temporaryWhitelistCreators": 0,
+      "reason": "可继续作为官方规则定向内容，不得表述为大众热点或达人共振。"
+    }
+  ],
+  "recommendations": [
+    "Kimi K3稿件仅保留实测/解释角度，不使用热点已爆表述",
+    "大学生暑期纯吃旅行仅保留观察稿，补齐同题T1数据后再判断是否发布",
+    "七夕好礼季可发布官方规则清单，但与热点结论分开"
+  ]
 }
