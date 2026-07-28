@@ -101,6 +101,8 @@ function renderHeader() {
     ? `观察 ${state.data.observedAt}`
     : state.module === "events"
       ? `复核 ${state.data.verifiedAt}`
+      : state.data.dataMode === "DAILY_AUDIT_ONLY"
+        ? `审计 ${state.data.observedAt}`
       : state.data.decision
         ? `决策 ${state.data.decision.decisionAsOf}`
         : `试运行 ${state.data.observedAt}`;
@@ -146,21 +148,23 @@ async function loadRoute() {
     const date = index.dates.some((item) => item.date === requestedDate) ? requestedDate : index.latest;
     const data = await fetchJson(`./data/${route.module}/${date}.json`);
     if (route.module === "creators") {
-      const fetchOptional = async (url) => {
-        try {
-          return await fetchJson(url);
-        } catch (error) {
-          if (!String(error.message).startsWith("404")) throw error;
-          return null;
-        }
-      };
-      [data.decision, data.qualityReview, data.topicWhitelist, data.identityCorrection] = await Promise.all([
-        fetchOptional(`./data/creators/decisions/${date}.json`),
-        fetchOptional(`./data/creators/quality-review/${date}.json`),
-        fetchOptional(`./data/creators/topic-whitelist/${date}.json`),
-        fetchOptional(`./data/creators/identity-correction/${date}.json`),
-      ]);
-      applyCreatorIdentityCorrection(data);
+      if (data.dataMode !== "DAILY_AUDIT_ONLY") {
+        const fetchOptional = async (url) => {
+          try {
+            return await fetchJson(url);
+          } catch (error) {
+            if (!String(error.message).startsWith("404")) throw error;
+            return null;
+          }
+        };
+        [data.decision, data.qualityReview, data.topicWhitelist, data.identityCorrection] = await Promise.all([
+          fetchOptional(`./data/creators/decisions/${date}.json`),
+          fetchOptional(`./data/creators/quality-review/${date}.json`),
+          fetchOptional(`./data/creators/topic-whitelist/${date}.json`),
+          fetchOptional(`./data/creators/identity-correction/${date}.json`),
+        ]);
+        applyCreatorIdentityCorrection(data);
+      }
     }
     if (requestId !== state.requestId) return;
     state.index = index;

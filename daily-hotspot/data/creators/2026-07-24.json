@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "module": "creators",
+  "dataMode": "DAILY_AUDIT_ONLY",
+  "date": "2026-07-24",
+  "observedAt": "2026-07-24T08:13:30.090Z",
+  "scheduledFor": "16:00",
+  "publicationStatus": "DEGRADED_REPORT",
+  "title": "抖音达人白名单库及热点判断",
+  "summary": {
+    "candidateCreators": null,
+    "discoveryCandidateCount": 13,
+    "manualRound1Queue": null,
+    "formalWhitelistA": 0,
+    "formalWhitelistB": 0,
+    "formalCreatorWhitelist": 0,
+    "temporaryCreatorWhitelist": 0,
+    "successfulVideos": null,
+    "qualifiedTopics": 0,
+    "confirmedHotspots": 0,
+    "contentActions": 3
+  },
+  "statusMessage": "本日审计未新增达人白名单；7 项关键输入仍未闭环。",
+  "limitations": [
+    "t0Videos: MISSING",
+    "t1Videos: PARTIAL_RAW_PAGE_EVIDENCE_ONLY",
+    "t0Population: MISSING",
+    "t1Population: PARTIAL_VISIBLE_LOWER_BOUND_ONLY",
+    "assessments: MISSING",
+    "cohort: MISSING",
+    "dualSource: PARTIAL_NOT_ADJUDICATED"
+  ],
+  "sourceStatus": {
+    "valuesImputed": false,
+    "candidatesPromotedToWhitelist": false,
+    "platforms": [
+      {
+        "platform": "CHANMAMA",
+        "status": "AUTHENTICATED_VISIBLE_READ_ONLY",
+        "observedAt": "2026-07-24T08:13:30.090Z",
+        "evidence": "The blackhorse ranking and the 13-candidate P0 review were visible."
+      },
+      {
+        "platform": "YUNTU",
+        "status": "AUTHENTICATED_VISIBLE_READ_ONLY",
+        "observedAt": "2026-07-24T08:12:24.486Z",
+        "evidence": "The hot-content short-video ranking and masked account identity were visible."
+      },
+      {
+        "platform": "XINGTU",
+        "status": "LOGIN_REQUIRED",
+        "observedAt": "2026-07-24T08:12:24.486Z",
+        "evidence": "The public landing page displayed the Login command; creator-market authenticated fields were unavailable."
+      },
+      {
+        "platform": "DOUYIN",
+        "status": "AUTHENTICATED_VISIBLE_READ_ONLY",
+        "observedAt": "2026-07-24T08:12:24.486Z",
+        "evidence": "Search results, account names, dates and topic heat values were visible after the same-profile browser restart."
+      },
+      {
+        "platform": "CREATOR_CENTER",
+        "status": "AUTHENTICATED_VISIBLE_READ_ONLY",
+        "observedAt": "2026-07-24T08:10:49.713Z",
+        "evidence": "The realtime and rising hotspot tables were visible."
+      }
+    ]
+  },
+  "audit": {
+    "sourcePath": "data/audits/2026-07-24-1616-degraded-hotspot-and-creator-decision-v2.json",
+    "sourceSha256": "da2e010c330dc8aed2c70136b13a366f07505b628bd53309adec4355963c6ff0",
+    "reportType": "DEGRADED_REPORT",
+    "schedule": {
+      "slot": "16:00",
+      "main_collection_observed_at": "2026-07-24T08:04:39.345Z",
+      "on_time": true,
+      "catchup_performed": false,
+      "sla_effect_on_business_conclusion": "NONE"
+    },
+    "creatorDecision": {
+      "result": "NO_CREATOR_ADMISSION",
+      "reason": "The second-round snapshot does not supply complete O2 originality, E2 contribution, same-age performance, source-cluster and risk evidence for any creator.",
+      "priorityObservationAccounts": []
+    },
+    "missingInputs": [
+      "t0Videos: MISSING",
+      "t1Videos: PARTIAL_RAW_PAGE_EVIDENCE_ONLY",
+      "t0Population: MISSING",
+      "t1Population: PARTIAL_VISIBLE_LOWER_BOUND_ONLY",
+      "assessments: MISSING",
+      "cohort: MISSING",
+      "dualSource: PARTIAL_NOT_ADJUDICATED"
+    ],
+    "evidenceRefs": [
+      "data/audits/2026-07-24-1030-degraded-hotspot-and-creator-decision-v1.json",
+      "evidence/topic-round/2026-07-24/2026-07-24T16-11-topic-round-pages-v1.json",
+      "evidence/topic-round/2026-07-24/2026-07-24T16-13-topic-round-motd-v1.json",
+      "evidence/topic-round/2026-07-24/2026-07-24T16-14-topic-round-douchihuoguo-v1.json",
+      "data/snapshots/chanmama-p0/2026-07-24T08-13-30-090Z-chanmama-p0-snapshot.json"
+    ],
+    "constraints": null,
+    "nextCapture": null
+  },
+  "candidates": [],
+  "videoSignals": [],
+  "topics": [],
+  "recommendations": []
+}

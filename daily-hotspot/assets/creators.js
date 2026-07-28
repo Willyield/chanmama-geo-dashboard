@@ -1193,7 +1193,9 @@ function renderEvidenceAndRules(data, decision, index) {
 function renderArchive(index) {
   const dates = asArray(index?.dates);
   if (!dates.length) return "";
-  return `<section class="section-band"><div class="section-title"><h2>达人快照归档</h2><span>历史数据不可覆盖</span></div><div class="archive-grid">${dates.map((item) => `<button type="button" class="archive-item" data-route-date="${escapeHtml(item.date)}"><time>${escapeHtml(item.date)}</time><p>候选 ${formatMetric(item.candidateCreators)} 位 · 待首审 ${formatMetric(item.manualRound1Queue)} 位</p><p>正式白名单 ${formatMetric(item.formalWhitelist)} · 合格话题 ${formatMetric(item.qualifiedTopics)}</p></button>`).join("")}</div></section>`;
+  return `<section class="section-band"><div class="section-title"><h2>达人快照归档</h2><span>完整审核与每日审计分开标识</span></div><div class="archive-grid">${dates.map((item) => item.dataMode === "DAILY_AUDIT_ONLY"
+    ? `<button type="button" class="archive-item" data-route-date="${escapeHtml(item.date)}"><time>${escapeHtml(item.date)}</time><p>每日审计 · 发现候选 ${formatMetric(item.candidateCreators)}</p><p>正式白名单 ${formatMetric(item.formalWhitelist)} · 确认热点 ${formatMetric(item.qualifiedTopics)}</p></button>`
+    : `<button type="button" class="archive-item" data-route-date="${escapeHtml(item.date)}"><time>${escapeHtml(item.date)}</time><p>完整审核 · 候选 ${formatMetric(item.candidateCreators)} 位 · 待首审 ${formatMetric(item.manualRound1Queue)} 位</p><p>正式白名单 ${formatMetric(item.formalWhitelist)} · 合格话题 ${formatMetric(item.qualifiedTopics)}</p></button>`).join("")}</div></section>`;
 }
 
 function renderCreatorRealtimeHotspots(candidate, data, decision) {
@@ -1204,7 +1206,133 @@ function renderCreatorRealtimeHotspots(candidate, data, decision) {
   return `<div class="drawer-hotspot-summary"><span>${statusChip(`${signals.length} 条待核单视频`, "status-watch")}</span><span>跨账号热点需另行验证</span></div><div class="drawer-hotspot-list">${signals.map((signal) => `<article><div><span class="model-code">${escapeHtml(firstValue(signal.id, signal.videoId, "VIDEO"))} · ${escapeHtml(firstValue(signal.assessment, signal.semanticStatus, "待核"))}</span><strong>${escapeHtml(signal.title)}</strong></div><div class="drawer-hotspot-metrics"><span>点赞${signal.current ? "" : "增量"} <b>${formatMetric(firstValue(signal.current?.digg_count, signal.delta?.digg_count))}</b></span><span>收藏${signal.current ? "" : "增量"} <b>${formatMetric(firstValue(signal.current?.collect_count, signal.delta?.collect_count))}</b></span><span>转发${signal.current ? "" : "增量"} <b>${formatMetric(firstValue(signal.current?.share_count, signal.delta?.share_count))}</b></span><span>归一化速度 <b>${normalizedSignalVelocity(signal)?.toFixed(2) || "缺失"}</b></span></div><p>${escapeHtml(firstValue(signal.reason, "当前仅证明单条视频有互动增量，尚未证明跨账号扩散。"))}</p><a class="source-link" href="${escapeHtml(safeUrl(signal.videoUrl))}" target="_blank" rel="noopener noreferrer"><span>查看原视频</span>${icon("external-link")}</a></article>`).join("")}</div>`;
 }
 
+function auditReportLabel(value) {
+  return ({
+    ON_TIME_FULL: "准时完整日报",
+    LATE_FULL: "迟到完整日报",
+    DEGRADED_REPORT: "降级日报",
+    INCIDENT_REPORT: "事件日报",
+  })[value] || value || "状态未知";
+}
+
+function auditPlatformLabel(value) {
+  return ({
+    douyin: "抖音",
+    creatorCenter: "抖音创作者中心",
+    chanmamaFormalPreflight: "蝉妈妈正式预检",
+    chanmamaBlackhorseSnapshot: "蝉妈妈黑马达人榜",
+    yuntu: "巨量云图",
+    xingtu: "巨量星图",
+    CHANMAMA: "蝉妈妈",
+    YUNTU: "巨量云图",
+    XINGTU: "巨量星图",
+    DOUYIN: "抖音",
+    CREATOR_CENTER: "抖音创作者中心",
+  })[value] || value;
+}
+
+function auditPlatformStatusLabel(value) {
+  return ({
+    VISIBLE_READ_ONLY: "只读可见",
+    AUTHENTICATED: "已登录",
+    AUTHENTICATED_VISIBLE_READ_ONLY: "已登录，只读可见",
+    CAPTURED: "已采集",
+    UNKNOWN: "未确认",
+    LOGIN_REQUIRED: "需要登录",
+    CAPTCHA_OR_EVALUATION_TIMEOUT: "验证码或读取超时",
+    INTERACTABLE_BUT_AUTH_STATE_UNKNOWN: "可交互，登录态未确认",
+  })[value] || value;
+}
+
+function auditMissingInputLabel(value) {
+  return ({
+    "complete topic populations": "完整话题参与账号总体",
+    "source-cluster assessment": "来源簇归并评估",
+    "same-age cohort": "同龄队列",
+    "T1 growth snapshots": "T1 增长快照",
+    "independent dual-source values": "独立双源数值",
+    "complete creator identity and risk review": "完整达人身份与风险审核",
+  })[value] || value;
+}
+
+function auditCreatorDecisionLabel(value) {
+  return ({
+    NO_CREATOR_ADMISSION: "本日无达人准入",
+    CREATOR_ADMISSION_RECORDED: "本日存在达人准入记录",
+  })[value] || value;
+}
+
+function renderCreatorDailyAudit({ data, index, view }) {
+  const audit = data.audit || {};
+  const summary = data.summary || {};
+  const creatorDecision = audit.creatorDecision || {};
+  const platforms = asArray(data.sourceStatus?.platforms);
+  const missingInputs = asArray(audit.missingInputs);
+  const displayedMissingInputs = missingInputs.map(auditMissingInputLabel);
+  const evidenceRefs = asArray(audit.evidenceRefs);
+  const reportLabel = auditReportLabel(data.publicationStatus);
+  const viewMeta = ({
+    overview: ["今日达人审计结论", "回答今天达人是否新增、为什么，以及证据还缺什么。"],
+    resonance: ["达人白名单结论", "白名单只认通过四道硬门的达人，榜单候选不自动进入名单。"],
+    quality: ["达人审核完整性", "本日仅展示实际完成的审核输入，不沿用旧日候选指标。"],
+    topics: ["达人话题贡献审核", "话题贡献缺少独立来源、同龄增速或原创证据时保持未知。"],
+    candidates: ["候选发现边界", "候选数量只代表发现线索，本页不生成未经逐人审核的候选表。"],
+    evidence: ["证据与规则", "原始审计、缺失输入和采样时间共同限定本日结论。"],
+  })[view] || ["今日达人审计结论", data.statusMessage];
+  const heading = renderPageHeading({
+    eyebrow: `CREATOR DAILY AUDIT / ${data.date} / ${data.publicationStatus}`,
+    title: "抖音达人白名单库及热点判断",
+    subtitle: "每日审计与完整达人审核分开呈现；候选发现、热点贡献和白名单资格互不替代",
+    views: creatorViews,
+    activeView: view,
+  });
+  const formalCount = numberOrNull(summary.formalCreatorWhitelist) || 0;
+  const temporaryCount = numberOrNull(summary.temporaryCreatorWhitelist) || 0;
+  const discoveryCount = numberOrNull(summary.discoveryCandidateCount);
+  const platformHtml = platforms.length
+    ? `<div class="resonance-platform-list">${platforms.map((item) => `<article class="resonance-platform-item"><div><strong>${escapeHtml(auditPlatformLabel(item.platform))}</strong><span>${statusChip(auditPlatformStatusLabel(item.status), /AUTH|VISIBLE|CAPTURED/i.test(item.status) ? "status-pass" : /LOGIN|CAPTCHA|UNKNOWN/i.test(item.status) ? "status-watch" : "status-d")}</span></div><p>${escapeHtml(firstValue(item.evidence, `观察时间：${formatDateTime(item.observedAt)}`))}</p></article>`).join("")}</div>`
+    : renderEmpty("本日审计未提供逐平台状态，不能据此推断平台通过。", "database-zap");
+  const priorityAccounts = asArray(creatorDecision.priorityObservationAccounts);
+  const decisionDetails = [
+    creatorDecision.reason,
+    creatorDecision.verticalMatch ? `电商运营垂直匹配：${creatorDecision.verticalMatch}` : null,
+    creatorDecision.topicContribution ? `话题贡献：${creatorDecision.topicContribution}` : null,
+  ].filter(Boolean);
+  const schedule = audit.schedule || {};
+  return `${heading}<section class="resonance-console creator-daily-audit">
+    <section class="decision-lead">
+      <div class="decision-lead-copy"><span class="model-code">${escapeHtml(reportLabel)} · ${escapeHtml(formatDateTime(data.observedAt))}</span><h2>${escapeHtml(viewMeta[0])}</h2><p>${escapeHtml(viewMeta[1])}</p></div>
+      <div class="decision-kpis" aria-label="达人审计结论">
+        <div><strong>${formatMetric(formalCount)}</strong><span>正式白名单</span></div>
+        <div><strong>${formatMetric(temporaryCount)}</strong><span>临时白名单</span></div>
+        <div><strong>${formatMetric(discoveryCount)}</strong><span>发现候选</span></div>
+        <div><strong>${formatMetric(summary.confirmedHotspots)}</strong><span>确认热点</span></div>
+      </div>
+      <div class="decision-boundary">${icon("shield-alert")}<span><strong>结论边界：</strong>${escapeHtml(data.statusMessage)} 候选发现只作触发器，不代表达人审核通过。</span></div>
+    </section>
+    <section class="section-band"><div class="section-title"><h2>本日达人结论</h2><span>${statusChip(auditCreatorDecisionLabel(firstValue(creatorDecision.result, "NO_CREATOR_ADMISSION")), formalCount || temporaryCount ? "status-pass" : "status-watch")}</span></div>
+      ${factGrid([
+        ["日报类型", statusChip(reportLabel, data.publicationStatus === "DEGRADED_REPORT" ? "status-watch" : "status-pass")],
+        ["实际观察时间", escapeHtml(formatDateTime(data.observedAt))],
+        ["计划窗口", escapeHtml(firstValue(schedule.slot, data.scheduledFor, "未记录"))],
+        ["是否准时", schedule.on_time == null ? "未记录" : statusChip(schedule.on_time ? "是" : "否", schedule.on_time ? "status-pass" : "status-watch")],
+        ["缺失值策略", "null / UNKNOWN，不估填"],
+        ["原始审计哈希", audit.sourceSha256 ? statusChip("已记录 SHA-256", "status-pass") : statusChip("缺失", "status-watch")],
+      ])}
+      ${listHtml(decisionDetails, "原始审计未提供进一步的达人准入说明。")}
+      ${priorityAccounts.length ? `<div class="section-title"><h3>优先观察账号</h3><span>仅观察，不进入白名单</span></div>${listHtml(priorityAccounts)}` : ""}
+    </section>
+    <div class="resonance-evidence-grid">
+      <section><div class="section-title"><h2>平台状态</h2><span>${platforms.length} 个平台记录</span></div>${platformHtml}</section>
+      <section><div class="section-title"><h2>缺失输入</h2><span>${missingInputs.length} 项未闭环</span></div>${listHtml(displayedMissingInputs, "原始审计未列出缺失输入。")}</section>
+    </div>
+    <section class="section-band"><div class="section-title"><h2>证据回执</h2><span>${escapeHtml(firstValue(audit.sourcePath, "原始审计路径缺失"))}</span></div>${listHtml(evidenceRefs, "本日没有附加证据回执；仅保留原始审计文件。")}</section>
+    ${renderArchive(index)}
+  </section>`;
+}
+
 export function renderCreatorPage({ data, index, view, filters }) {
+  if (data.dataMode === "DAILY_AUDIT_ONLY") return renderCreatorDailyAudit({ data, index, view });
   const decision = normalizeDecision(data);
   const decisionMap = decisionByCreator(decision);
   const heading = renderPageHeading({

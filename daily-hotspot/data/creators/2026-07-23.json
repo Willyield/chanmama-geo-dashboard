@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "module": "creators",
+  "dataMode": "DAILY_AUDIT_ONLY",
+  "date": "2026-07-23",
+  "observedAt": "2026-07-23T17:01:09.645+08:00",
+  "scheduledFor": "2026-07-24",
+  "publicationStatus": "DEGRADED_REPORT",
+  "title": "抖音达人白名单库及热点判断",
+  "summary": {
+    "candidateCreators": null,
+    "discoveryCandidateCount": 20,
+    "manualRound1Queue": null,
+    "formalWhitelistA": 0,
+    "formalWhitelistB": 0,
+    "formalCreatorWhitelist": 0,
+    "temporaryCreatorWhitelist": 0,
+    "successfulVideos": null,
+    "qualifiedTopics": 0,
+    "confirmedHotspots": 0,
+    "contentActions": 3
+  },
+  "statusMessage": "本日审计未新增达人白名单；2 项关键输入仍未闭环。",
+  "limitations": [
+    "电商运营垂直匹配：UNKNOWN",
+    "话题贡献：UNKNOWN"
+  ],
+  "sourceStatus": {
+    "valuesImputed": false,
+    "candidatesPromotedToWhitelist": false,
+    "platforms": [
+      {
+        "platform": "yuntu",
+        "status": "AUTHENTICATED_SIGNAL",
+        "observedAt": "2026-07-23T17:01:09.645+08:00",
+        "evidence": null
+      },
+      {
+        "platform": "douyin_creator_center",
+        "status": "AUTHENTICATED_SIGNAL",
+        "observedAt": "2026-07-23T17:01:09.645+08:00",
+        "evidence": null
+      },
+      {
+        "platform": "xingtu",
+        "status": "LOGIN_REQUIRED",
+        "observedAt": "2026-07-23T17:01:09.645+08:00",
+        "evidence": null
+      },
+      {
+        "platform": "douyin",
+        "status": "CAPTCHA_OR_EVALUATION_TIMEOUT",
+        "observedAt": "2026-07-23T17:01:09.645+08:00",
+        "evidence": null
+      },
+      {
+        "platform": "chanmama",
+        "status": "INTERACTABLE_BUT_AUTH_STATE_UNKNOWN",
+        "observedAt": "2026-07-23T17:01:09.645+08:00",
+        "evidence": null
+      }
+    ]
+  },
+  "audit": {
+    "sourcePath": "data/audits/2026-07-23-1723-late-supplement-topic-and-creator-decision-v1.json",
+    "sourceSha256": "645c3791f34cb8bcb6d38318c97ce3e5ee74c169a77574f8d5937abec71cce33",
+    "reportType": "DEGRADED_REPORT",
+    "schedule": {
+      "t0_on_time": false,
+      "t1_on_time": false,
+      "late_data_backfilled_as_on_time": false,
+      "eligible_as_new_7_day_start": false
+    },
+    "creatorDecision": {
+      "result": "NO_CREATOR_ADMISSION",
+      "reason": "同时出现进榜和较高粉丝增量，仅作为大众领域放大者观察信号。",
+      "verticalMatch": "UNKNOWN",
+      "topicContribution": "UNKNOWN",
+      "priorityObservationAccounts": [
+        "ally",
+        "小怡",
+        "木森（卷土重来）",
+        "陆仙人"
+      ]
+    },
+    "missingInputs": [
+      "电商运营垂直匹配：UNKNOWN",
+      "话题贡献：UNKNOWN"
+    ],
+    "evidenceRefs": [
+      "evidence/search/2026-07-23T17-20-chanmama-hot-search-creators-late-supplement-v1.json",
+      "data/topics/2026-07-23-1720-yuntu-visible-selling-points-corrected-v1.json",
+      "evidence/search/2026-07-23T17-22-topic-crosscheck-late-supplement-v1.json"
+    ],
+    "constraints": {
+      "sealed_v6_manifest_modified": false,
+      "late_data_backfilled_as_on_time": false,
+      "missing_values_estimated": false,
+      "cookie_or_web_storage_read": false,
+      "captcha_bypassed": false,
+      "candidate_promoted": false,
+      "confirmed_hotspot_count": 0,
+      "temporary_creator_whitelist_count": 0,
+      "formal_personal_creator_count": 0
+    },
+    "nextCapture": {
+      "date": "2026-07-24",
+      "preflight_at": "09:45+08:00",
+      "t0_start_at": "09:55+08:00",
+      "t1_at": "16:00+08:00",
+      "new_7_day_start_condition": "FIRST_DATE_WITH_BOTH_T0_AND_T1_ON_TIME"
+    }
+  },
+  "candidates": [],
+  "videoSignals": [],
+  "topics": [],
+  "recommendations": []
+}

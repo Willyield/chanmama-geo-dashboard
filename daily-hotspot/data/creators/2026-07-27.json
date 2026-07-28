@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 2,
+  "module": "creators",
+  "dataMode": "DAILY_AUDIT_ONLY",
+  "date": "2026-07-27",
+  "observedAt": "2026-07-27T16:09:33+08:00",
+  "scheduledFor": "T1_1600",
+  "publicationStatus": "DEGRADED_REPORT",
+  "title": "抖音达人白名单库及热点判断",
+  "summary": {
+    "candidateCreators": null,
+    "discoveryCandidateCount": null,
+    "manualRound1Queue": null,
+    "formalWhitelistA": 0,
+    "formalWhitelistB": 0,
+    "formalCreatorWhitelist": 0,
+    "temporaryCreatorWhitelist": 0,
+    "successfulVideos": null,
+    "qualifiedTopics": 0,
+    "confirmedHotspots": 0,
+    "contentActions": 0
+  },
+  "statusMessage": "本日审计未新增达人白名单；5 项关键输入仍未闭环。",
+  "limitations": [
+    "t0/t1 complete video snapshots",
+    "t0/t1 complete topic populations",
+    "source assessments",
+    "same-age cohort",
+    "independent dual-source values"
+  ],
+  "sourceStatus": {
+    "valuesImputed": false,
+    "candidatesPromotedToWhitelist": false,
+    "platforms": []
+  },
+  "audit": {
+    "sourcePath": "data/audits/2026-07-27-1610-t1-degraded-hotspot-and-creator-decision-v1.json",
+    "sourceSha256": "268eba2530c2fd7f0463dc8d8a8ae8e57ac0cc4c04047abcfc9be91962f6d5c0",
+    "reportType": "DEGRADED_REPORT",
+    "schedule": {
+      "slot": "T1_1600",
+      "on_time": true,
+      "supplementalRefresh": true
+    },
+    "creatorDecision": {
+      "result": "NO_CREATOR_ADMISSION",
+      "reason": "原始审计未记录满足独立共振、同龄增速、内容价值和风险门的达人，因此本日未新增达人白名单。",
+      "priorityObservationAccounts": []
+    },
+    "missingInputs": [
+      "t0/t1 complete video snapshots",
+      "t0/t1 complete topic populations",
+      "source assessments",
+      "same-age cohort",
+      "independent dual-source values"
+    ],
+    "evidenceRefs": [
+      "evidence/topic-round/2026-07-27-t0-changxin.json",
+      "evidence/topic-round/2026-07-27-t0-jingdezhen.json",
+      "evidence/topic-round/2026-07-27-t0-summer-commute.json",
+      "evidence/topic-round/2026-07-27-t1-changxin.json",
+      "evidence/topic-round/2026-07-27-t1-jingdezhen.json",
+      "evidence/topic-round/2026-07-27-t1-summer-commute.json",
+      "evidence/topic-round/2026-07-27-t1-creator-center-refresh.json"
+    ],
+    "constraints": {
+      "cookiesReadOrExported": false,
+      "verificationBypassed": false,
+      "missingValuesEstimated": false,
+      "candidatePromotedToWhitelist": false
+    },
+    "nextCapture": null
+  },
+  "candidates": [],
+  "videoSignals": [],
+  "topics": [],
+  "recommendations": []
+}
