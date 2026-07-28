@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reportDate": "2026-07-28",
-  "generatedAt": "2026-07-28T06:24:19.898Z",
+  "generatedAt": "2026-07-28T07:09:59.939Z",
   "status": "PARTIAL",
   "period": {
     "kind": "BASELINE",
@@ -57,22 +57,32 @@
     "commonInteractionDelta": null,
     "commonInteractionRate": 0.0225,
     "medianRelativeIndex": 1.0325,
+    "trustedRelativeIndex": 1.0034,
     "highPerformanceCount": 7,
-    "scorableCount": 50
+    "credibleHighPerformanceCount": 4,
+    "lowBaseCount": 32,
+    "fallbackCount": 55,
+    "scorableCount": 50,
+    "credibleScorableCount": 18
   },
   "bestCategory": {
-    "categoryId": "competitor_comparison",
-    "categoryLabel": "竞品对比",
-    "contentCount": 13,
-    "totalViews": 13,
+    "categoryId": "tutorial_method",
+    "categoryLabel": "教程方法",
+    "contentCount": 59,
+    "totalViews": 3157,
     "totalViewDelta": null,
-    "medianViews": 0,
-    "commonInteractions": 2,
+    "medianViews": 1,
+    "commonInteractions": 77,
     "commonInteractionDelta": null,
-    "commonInteractionRate": 0.1538,
-    "medianRelativeIndex": 3,
-    "highPerformanceCount": 1,
-    "scorableCount": 10
+    "commonInteractionRate": 0.0244,
+    "medianRelativeIndex": 1,
+    "trustedRelativeIndex": 1,
+    "highPerformanceCount": 4,
+    "credibleHighPerformanceCount": 3,
+    "lowBaseCount": 18,
+    "fallbackCount": 23,
+    "scorableCount": 33,
+    "credibleScorableCount": 15
   },
   "categories": [
     {
@@ -86,8 +96,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": 0.1538,
       "medianRelativeIndex": 3,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 1,
-      "scorableCount": 10
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 10,
+      "fallbackCount": 13,
+      "scorableCount": 10,
+      "credibleScorableCount": 0
     },
     {
       "categoryId": "current_hotspot",
@@ -100,8 +115,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": 0.0216,
       "medianRelativeIndex": 2.862,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 1,
-      "scorableCount": 3
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 2,
+      "fallbackCount": 10,
+      "scorableCount": 3,
+      "credibleScorableCount": 1
     },
     {
       "categoryId": "industry_insight",
@@ -114,8 +134,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": 0.0087,
       "medianRelativeIndex": 1.7635,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 1,
-      "scorableCount": 1
+      "credibleHighPerformanceCount": 1,
+      "lowBaseCount": 0,
+      "fallbackCount": 1,
+      "scorableCount": 1,
+      "credibleScorableCount": 1
     },
     {
       "categoryId": "brand_product",
@@ -128,8 +153,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": 0,
       "medianRelativeIndex": 1.0769,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 2
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 1,
+      "fallbackCount": 6,
+      "scorableCount": 2,
+      "credibleScorableCount": 1
     },
     {
       "categoryId": "tutorial_method",
@@ -142,8 +172,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": 0.0244,
       "medianRelativeIndex": 1,
+      "trustedRelativeIndex": 1,
       "highPerformanceCount": 4,
-      "scorableCount": 33
+      "credibleHighPerformanceCount": 3,
+      "lowBaseCount": 18,
+      "fallbackCount": 23,
+      "scorableCount": 33,
+      "credibleScorableCount": 15
     },
     {
       "categoryId": "ranking_data",
@@ -156,8 +191,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 1
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 1,
+      "fallbackCount": 2,
+      "scorableCount": 1,
+      "credibleScorableCount": 0
     }
   ],
   "platforms": [
@@ -172,8 +212,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 16
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 16,
+      "fallbackCount": 10,
+      "scorableCount": 16,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "bilibili",
@@ -186,8 +231,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 0
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 0,
+      "fallbackCount": 5,
+      "scorableCount": 0,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "chanmama_bi",
@@ -200,8 +250,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 0
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 0,
+      "fallbackCount": 0,
+      "scorableCount": 0,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "csdn",
@@ -214,8 +269,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": 0.0274,
       "medianRelativeIndex": 1.0034,
+      "trustedRelativeIndex": 1.0034,
       "highPerformanceCount": 3,
-      "scorableCount": 12
+      "credibleHighPerformanceCount": 3,
+      "lowBaseCount": 0,
+      "fallbackCount": 4,
+      "scorableCount": 12,
+      "credibleScorableCount": 12
     },
     {
       "platformId": "smzdm",
@@ -228,8 +288,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 0
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 0,
+      "fallbackCount": 3,
+      "scorableCount": 0,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "sohu",
@@ -242,8 +307,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": 1,
+      "trustedRelativeIndex": 1,
       "highPerformanceCount": 1,
-      "scorableCount": 6
+      "credibleHighPerformanceCount": 1,
+      "lowBaseCount": 0,
+      "fallbackCount": 9,
+      "scorableCount": 6,
+      "credibleScorableCount": 6
     },
     {
       "platformId": "toutiao",
@@ -256,8 +326,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": 0.25,
       "medianRelativeIndex": 4,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 3,
-      "scorableCount": 12
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 12,
+      "fallbackCount": 9,
+      "scorableCount": 12,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "zhihu",
@@ -270,8 +345,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 4
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 4,
+      "fallbackCount": 15,
+      "scorableCount": 4,
+      "credibleScorableCount": 0
     }
   ],
   "platformCategories": [
@@ -288,8 +368,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 1
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 1,
+      "fallbackCount": 1,
+      "scorableCount": 1,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "baijiahao",
@@ -304,8 +389,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 10
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 10,
+      "fallbackCount": 2,
+      "scorableCount": 10,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "baijiahao",
@@ -320,8 +410,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 0
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 0,
+      "fallbackCount": 2,
+      "scorableCount": 0,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "baijiahao",
@@ -336,8 +431,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 5
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 5,
+      "fallbackCount": 5,
+      "scorableCount": 5,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "bilibili",
@@ -352,8 +452,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 0
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 0,
+      "fallbackCount": 4,
+      "scorableCount": 0,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "bilibili",
@@ -368,8 +473,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 0
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 0,
+      "fallbackCount": 1,
+      "scorableCount": 0,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "chanmama_bi",
@@ -384,8 +494,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 0
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 0,
+      "fallbackCount": 0,
+      "scorableCount": 0,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "csdn",
@@ -400,8 +515,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": 0.0295,
       "medianRelativeIndex": 1,
+      "trustedRelativeIndex": 1,
       "highPerformanceCount": 2,
-      "scorableCount": 11
+      "credibleHighPerformanceCount": 2,
+      "lowBaseCount": 0,
+      "fallbackCount": 2,
+      "scorableCount": 11,
+      "credibleScorableCount": 11
     },
     {
       "platformId": "csdn",
@@ -416,8 +536,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": 0.0326,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 0
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 0,
+      "fallbackCount": 1,
+      "scorableCount": 0,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "csdn",
@@ -432,8 +557,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": 0.0087,
       "medianRelativeIndex": 1.7635,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 1,
-      "scorableCount": 1
+      "credibleHighPerformanceCount": 1,
+      "lowBaseCount": 0,
+      "fallbackCount": 1,
+      "scorableCount": 1,
+      "credibleScorableCount": 1
     },
     {
       "platformId": "smzdm",
@@ -448,8 +578,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 0
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 0,
+      "fallbackCount": 3,
+      "scorableCount": 0,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "sohu",
@@ -464,8 +599,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 0
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 0,
+      "fallbackCount": 1,
+      "scorableCount": 0,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "sohu",
@@ -480,8 +620,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": 1.1991,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 1,
-      "scorableCount": 4
+      "credibleHighPerformanceCount": 1,
+      "lowBaseCount": 0,
+      "fallbackCount": 5,
+      "scorableCount": 4,
+      "credibleScorableCount": 4
     },
     {
       "platformId": "sohu",
@@ -496,8 +641,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": 0.724,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 1
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 0,
+      "fallbackCount": 2,
+      "scorableCount": 1,
+      "credibleScorableCount": 1
     },
     {
       "platformId": "sohu",
@@ -512,8 +662,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": 1.0769,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 1
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 0,
+      "fallbackCount": 1,
+      "scorableCount": 1,
+      "credibleScorableCount": 1
     },
     {
       "platformId": "toutiao",
@@ -528,8 +683,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": 0.3333,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 1,
-      "scorableCount": 8
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 8,
+      "fallbackCount": 3,
+      "scorableCount": 8,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "toutiao",
@@ -544,8 +704,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": 0,
       "medianRelativeIndex": 5,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 1,
-      "scorableCount": 1
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 1,
+      "fallbackCount": 3,
+      "scorableCount": 1,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "toutiao",
@@ -560,8 +725,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 1
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 1,
+      "fallbackCount": 1,
+      "scorableCount": 1,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "toutiao",
@@ -576,8 +746,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": 0.6667,
       "medianRelativeIndex": 3,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 1,
-      "scorableCount": 2
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 2,
+      "fallbackCount": 2,
+      "scorableCount": 2,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "zhihu",
@@ -592,8 +767,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 0
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 0,
+      "fallbackCount": 7,
+      "scorableCount": 0,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "zhihu",
@@ -608,8 +788,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 1
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 1,
+      "fallbackCount": 2,
+      "scorableCount": 1,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "zhihu",
@@ -624,8 +809,13 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 3
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 3,
+      "fallbackCount": 5,
+      "scorableCount": 3,
+      "credibleScorableCount": 0
     },
     {
       "platformId": "zhihu",
@@ -640,21 +830,20 @@
       "commonInteractionDelta": null,
       "commonInteractionRate": null,
       "medianRelativeIndex": null,
+      "trustedRelativeIndex": null,
       "highPerformanceCount": 0,
-      "scorableCount": 0
+      "credibleHighPerformanceCount": 0,
+      "lowBaseCount": 0,
+      "fallbackCount": 1,
+      "scorableCount": 0,
+      "credibleScorableCount": 0
     }
   ],
   "topContents": [
-    "toutiao::chanmama-growth::7665592951825547819",
-    "toutiao::dianshang-data-observer::7665903018973413930",
-    "sohu::chanmama::1053665403_122634602",
-    "csdn::chanmama8888::163078778",
     "csdn::chanmama8888::163069176",
     "csdn::chanmama8888::162841583",
-    "toutiao::chanmama-growth::7665246220134220307",
-    "sohu::chanmama::1053786552_122634602",
-    "sohu::chanmama::1054127780_122634602",
-    "csdn::chanmama8888::162894600"
+    "sohu::chanmama::1053665403_122634602",
+    "csdn::chanmama8888::163078778"
   ],
   "trend": [
     {
