@@ -2,64 +2,93 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#202124">
-  <title>蝉镜AI GEO仪表盘</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="robots" content="noindex, nofollow">
+  <title>蝉镜AI GEO 双端采样仪表盘</title>
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand-block">
-      <a class="back-link" href="../" aria-label="返回GEO仪表盘入口">←</a>
-      <div>
-        <h1>蝉镜AI GEO仪表盘</h1>
-        <p id="run-meta">正在读取数据</p>
-      </div>
-    </div>
-    <div class="coverage" aria-label="样本覆盖">
-      <strong id="coverage-value">0 / 520</strong>
-      <span id="coverage-status">读取中</span>
-    </div>
-  </header>
-
-  <nav class="tabs" aria-label="数据视图">
-    <button class="tab active" data-view="overview" aria-selected="true">总览</button>
-    <button class="tab" data-view="web" aria-selected="false">网页</button>
-    <button class="tab" data-view="mobile" aria-selected="false">手机</button>
-    <button class="tab" data-view="compare" aria-selected="false">双端差异</button>
-  </nav>
-
-  <section class="progress-panel" aria-label="采样进度">
-    <div class="progress-summary">
-      <span id="status-badge" class="status-badge">读取中</span>
-      <div class="progress-track" aria-hidden="true"><span id="progress-fill"></span></div>
-      <strong id="progress-percent">0%</strong>
-    </div>
-    <div class="progress-breakdown">
-      <span>有效 <strong id="count-collected">—</strong></span>
-      <span>WEB <strong id="count-web">—</strong></span>
-      <span>MOBILE <strong id="count-mobile">—</strong></span>
-      <span>PAIRED <strong id="count-paired">—</strong></span>
-      <span class="time-range" id="time-range">采样时间 —</span>
-    </div>
-  </section>
-
-  <main>
-    <section id="metrics" class="metrics" aria-label="核心指标"></section>
-    <section class="workspace">
-      <div class="workspace-head">
-        <div>
-          <h2 id="view-title">总览</h2>
-          <p id="view-caption"></p>
+  <div class="app">
+    <header class="masthead">
+      <div class="tick-rule" aria-hidden="true"></div>
+      <div class="masthead-row">
+        <a class="back-link" href="../" aria-label="返回仪表盘入口" title="返回仪表盘入口">&#8592;</a>
+        <div class="title-block">
+          <h1 id="page-title">蝉镜AI GEO 第一轮问题批次</h1>
+          <div class="subtitle">
+            <span>入口：蝉镜AI / 豆包 / 网页+手机 / 快速</span>
+            <span>批次：T0100</span>
+            <span id="run-meta">正在读取数据</span>
+          </div>
         </div>
-        <label class="search-control">
-          <span>筛选</span>
-          <input id="search" type="search" placeholder="问题或主题" autocomplete="off">
-        </label>
       </div>
-      <div id="content" class="content" aria-live="polite"></div>
-    </section>
-  </main>
+    </header>
+
+    <main>
+      <section id="executive-brief" class="executive-brief" aria-label="阶段判断"></section>
+      <section id="diagnostic-cards" class="executive-grid" aria-label="核心诊断"></section>
+
+      <section class="action-panel" aria-labelledby="action-title">
+        <div>
+          <h2 id="action-title">下一步动作</h2>
+          <p>先补足双端成对样本，再围绕低可见主题和首推差异做内容验证，避免用当前 100 条阶段样本外推整体结论。</p>
+        </div>
+        <ul class="action-list">
+          <li>继续补齐网页与手机双端样本</li>
+          <li>优先复测低可见度主题</li>
+          <li>持续观察双端提及与首推差异</li>
+          <li>反查首推结果与可引用来源</li>
+        </ul>
+      </section>
+
+      <section class="metric-guide" aria-labelledby="guide-title">
+        <div class="section-heading">
+          <h2 id="guide-title">指标说明</h2>
+          <span>口径随 T0100 冻结快照</span>
+        </div>
+        <div class="metric-guide-grid">
+          <div class="metric-guide-item"><strong>总覆盖</strong><span>已有效采集样本数 / 计划 520 条；当前 PARTIAL 只代表阶段进度。</span></div>
+          <div class="metric-guide-item"><strong>提及率</strong><span>回答中出现“蝉镜”的样本比例，代表品牌是否被 AI 看见。</span></div>
+          <div class="metric-guide-item"><strong>首推率</strong><span>回答第一推荐为蝉镜的样本比例，代表推荐优先级。</span></div>
+          <div class="metric-guide-item"><strong>有效配对</strong><span>同一问题在网页端和手机端都完成采样，才计为一组配对。</span></div>
+          <div class="metric-guide-item"><strong>引用量</strong><span>回答中记录的普通来源链接数量，不等同于蝉镜自有引用或推荐强度。</span></div>
+          <div class="metric-guide-item"><strong>终端差值</strong><span>手机端指标减网页端指标；样本未满时只用于发现方向，不作稳定趋势。</span></div>
+        </div>
+      </section>
+
+      <section class="detail-shell" aria-labelledby="detail-title">
+        <div class="detail-toolbar">
+          <div>
+            <span class="eyebrow">明细复核</span>
+            <h2 id="detail-title">采样数据</h2>
+          </div>
+          <label class="search-control">
+            <span>筛选</span>
+            <input id="search" type="search" placeholder="输入问题或主题" autocomplete="off">
+          </label>
+        </div>
+
+        <nav class="tabs" role="tablist" aria-label="数据视图">
+          <button class="tab active" type="button" data-view="overview" role="tab" aria-selected="true">总览</button>
+          <button class="tab" type="button" data-view="web" role="tab" aria-selected="false">网页</button>
+          <button class="tab" type="button" data-view="mobile" role="tab" aria-selected="false">手机</button>
+          <button class="tab" type="button" data-view="compare" role="tab" aria-selected="false">双端差异</button>
+        </nav>
+
+        <div class="view-heading">
+          <div>
+            <h3 id="view-title">总览</h3>
+            <p id="view-caption"></p>
+          </div>
+          <strong id="view-count">0 条</strong>
+        </div>
+        <div id="metrics" class="metrics" aria-label="当前视图指标"></div>
+        <div id="content" class="content" aria-live="polite"></div>
+      </section>
+    </main>
+  </div>
 
   <script src="./app.js"></script>
 </body>
