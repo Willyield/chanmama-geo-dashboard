@@ -1,78 +1,8 @@
 {
   "schemaVersion": 1,
   "reportDate": "2026-07-28",
-  "generatedAt": "2026-07-28T08:17:07.855Z",
+  "generatedAt": "2026-07-29T02:10:13.071Z",
   "records": [
-    {
-      "platformId": "zhihu",
-      "accountId": "dianshang-data-observer",
-      "contentId": "2063616719646627242",
-      "key": "zhihu::dianshang-data-observer::2063616719646627242",
-      "sourceId": "zhihu-dianshang-data-observer",
-      "platformLabel": "知乎",
-      "accountName": "电商数据观察员",
-      "title": "运动品牌官方阵地怎么建？抖音运营3步实操 发布于 07-23",
-      "description": null,
-      "publicUrl": "https://zhuanlan.zhihu.com/p/2063616719646627242",
-      "adminUrl": "https://zhuanlan.zhihu.com/p/2063616719646627242/edit",
-      "publishedAt": "2026-12-31T16:00:00.000Z",
-      "observedAt": "2026-07-28T05:13:56.893Z",
-      "platformAsOf": null,
-      "categoryId": "tutorial_method",
-      "classificationConfidence": null,
-      "tags": [],
-      "metrics": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "favorites": 0,
-        "shares": null,
-        "coins": null,
-        "followersGained": null,
-        "averageWatchSeconds": null,
-        "completionRate": null
-      },
-      "platformMetrics": {},
-      "id": "age_0_1",
-      "label": "0-1天",
-      "ageDays": 0,
-      "classification": {
-        "categoryId": "tutorial_method",
-        "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
-      },
-      "deltas": {
-        "views": null,
-        "likes": null,
-        "comments": null,
-        "favorites": null,
-        "shares": null,
-        "coins": null,
-        "followersGained": null,
-        "averageWatchSeconds": null,
-        "completionRate": null
-      },
-      "interval": {
-        "hours": null,
-        "kind": "BASELINE"
-      },
-      "commonInteractions": 0,
-      "commonInteractionRate": null,
-      "comparison": {
-        "status": "INSUFFICIENT_SAMPLE",
-        "sampleSize": 4,
-        "basis": "PLATFORM_AGE_FALLBACK",
-        "median": 0,
-        "percentile": null,
-        "medianMultiple": null,
-        "highPerformance": false,
-        "credibleHighPerformance": false,
-        "lowBase": false,
-        "lowBaseThreshold": 10,
-        "reasons": []
-      }
-    },
     {
       "platformId": "zhihu",
       "accountId": "dianshang-data-observer",
@@ -109,8 +39,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：如何"
+        "source": "intent_rule",
+        "reason": "明确教程意图：如何"
       },
       "deltas": {
         "views": null,
@@ -131,7 +61,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
-        "sampleSize": 4,
+        "sampleSize": 3,
         "basis": "PLATFORM_AGE_FALLBACK",
         "median": 0,
         "percentile": null,
@@ -182,8 +112,8 @@
       "classification": {
         "categoryId": "competitor_comparison",
         "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：飞瓜"
+        "source": "intent_rule",
+        "reason": "明确竞品对比意图：飞瓜"
       },
       "deltas": {
         "views": null,
@@ -252,8 +182,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：复盘"
+        "source": "intent_rule",
+        "reason": "明确教程意图：复盘"
       },
       "deltas": {
         "views": null,
@@ -322,8 +252,8 @@
       "classification": {
         "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：通勤"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：通勤"
       },
       "deltas": {
         "views": null,
@@ -344,7 +274,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
-        "sampleSize": 4,
+        "sampleSize": 3,
         "basis": "PLATFORM_AGE_FALLBACK",
         "median": 0,
         "percentile": null,
@@ -395,8 +325,8 @@
       "classification": {
         "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：复古风"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：复古风"
       },
       "deltas": {
         "views": null,
@@ -465,8 +395,8 @@
       "classification": {
         "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：夏季"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：夏季"
       },
       "deltas": {
         "views": null,
@@ -514,7 +444,7 @@
       "publishedAt": "2026-07-27T07:52:00.000Z",
       "observedAt": "2026-07-28T05:14:04.355Z",
       "platformAsOf": null,
-      "categoryId": "ranking_data",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -536,10 +466,10 @@
       "label": "0-1天",
       "ageDays": 0,
       "classification": {
-        "categoryId": "ranking_data",
-        "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：榜单"
+        "categoryId": "current_hotspot",
+        "confidence": "MEDIUM",
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：这样判断"
       },
       "deltas": {
         "views": null,
@@ -608,8 +538,8 @@
       "classification": {
         "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：需求上升"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：需求上升"
       },
       "deltas": {
         "views": null,
@@ -678,8 +608,8 @@
       "classification": {
         "categoryId": "competitor_comparison",
         "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：竞品"
+        "source": "intent_rule",
+        "reason": "明确竞品对比意图：竞品"
       },
       "deltas": {
         "views": null,
@@ -748,8 +678,8 @@
       "classification": {
         "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：通勤"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：通勤"
       },
       "deltas": {
         "views": null,
@@ -820,8 +750,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -893,8 +823,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -963,8 +893,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -1033,8 +963,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -1103,8 +1033,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -1176,8 +1106,8 @@
       "classification": {
         "categoryId": "competitor_comparison",
         "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：对比"
+        "source": "intent_rule",
+        "reason": "明确竞品对比意图：对比"
       },
       "deltas": {
         "views": null,
@@ -1246,8 +1176,8 @@
       "classification": {
         "categoryId": "competitor_comparison",
         "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：竞品"
+        "source": "intent_rule",
+        "reason": "明确竞品对比意图：竞品"
       },
       "deltas": {
         "views": null,
@@ -1316,8 +1246,8 @@
       "classification": {
         "categoryId": "competitor_comparison",
         "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：飞瓜"
+        "source": "intent_rule",
+        "reason": "明确竞品对比意图：飞瓜"
       },
       "deltas": {
         "views": null,
@@ -1338,7 +1268,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
-        "sampleSize": 4,
+        "sampleSize": 3,
         "basis": "PLATFORM_AGE_FALLBACK",
         "median": 0,
         "percentile": null,
@@ -1386,8 +1316,8 @@
       "classification": {
         "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：通勤"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：通勤"
       },
       "deltas": {
         "views": null,
@@ -1408,7 +1338,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
-        "sampleSize": 4,
+        "sampleSize": 3,
         "basis": "PLATFORM_AGE_FALLBACK",
         "median": 0,
         "percentile": null,
@@ -1456,8 +1386,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -1478,7 +1408,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
-        "sampleSize": 4,
+        "sampleSize": 3,
         "basis": "PLATFORM_AGE_FALLBACK",
         "median": 0,
         "percentile": null,
@@ -1498,14 +1428,14 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "复古通勤爆款怎么找？蝉妈妈拆解双榜选品逻辑",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1969.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -1524,10 +1454,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "categoryId": "current_hotspot",
+        "confidence": "MEDIUM",
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：通勤"
       },
       "deltas": {
         "views": null,
@@ -1549,7 +1479,7 @@
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
         "sampleSize": 0,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": null,
         "percentile": null,
         "medianMultiple": null,
@@ -1568,14 +1498,14 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "【2026年07月26日蝉妈妈抖音美妆销量观察】：江昆夫妇带货4席，眼部护理登顶",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1968.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "ranking_data",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -1594,10 +1524,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "categoryId": "ranking_data",
+        "confidence": "HIGH",
+        "source": "intent_rule",
+        "reason": "明确日期与榜单发布信号"
       },
       "deltas": {
         "views": null,
@@ -1619,7 +1549,7 @@
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
         "sampleSize": 0,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": null,
         "percentile": null,
         "medianMultiple": null,
@@ -1638,14 +1568,14 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "【2026年7月20日-7月26日蝉妈妈抖音美妆销量观察周度趋势】：白云山连霸5天，洁面气垫热销",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1967.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "ranking_data",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -1664,10 +1594,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "categoryId": "ranking_data",
+        "confidence": "HIGH",
+        "source": "intent_rule",
+        "reason": "明确日期与榜单发布信号"
       },
       "deltas": {
         "views": null,
@@ -1689,7 +1619,7 @@
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
         "sampleSize": 0,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": null,
         "percentile": null,
         "medianMultiple": null,
@@ -1708,7 +1638,7 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "蝉妈妈怎么复刻图文口播？短视频运营拆解爆款",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1966.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
@@ -1735,9 +1665,9 @@
       "ageDays": 2,
       "classification": {
         "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "confidence": "MEDIUM",
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -1778,7 +1708,7 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "达人历史带货数据如何复盘？蝉妈妈四维拆解合作稳定性",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1965.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
@@ -1805,9 +1735,9 @@
       "ageDays": 2,
       "classification": {
         "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "confidence": "MEDIUM",
+        "source": "intent_rule",
+        "reason": "明确教程意图：如何"
       },
       "deltas": {
         "views": null,
@@ -1848,7 +1778,7 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "蝉妈妈商品卡转化怎么看？选品运营3步拆解",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1964.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
@@ -1875,9 +1805,9 @@
       "ageDays": 2,
       "classification": {
         "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "confidence": "MEDIUM",
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -1918,7 +1848,7 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "投流操盘手短视频复盘：5步拆解内容到转化",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1963.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
@@ -1945,9 +1875,9 @@
       "ageDays": 2,
       "classification": {
         "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "confidence": "MEDIUM",
+        "source": "intent_rule",
+        "reason": "明确教程意图：拆解"
       },
       "deltas": {
         "views": null,
@@ -1988,7 +1918,7 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "蝉妈妈评估品牌表现：4层拆解市场水位",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1962.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
@@ -2015,9 +1945,9 @@
       "ageDays": 2,
       "classification": {
         "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "confidence": "MEDIUM",
+        "source": "intent_rule",
+        "reason": "明确教程意图：拆解"
       },
       "deltas": {
         "views": null,
@@ -2058,14 +1988,14 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "七夕选品怎么做？蝉妈妈锁定爆品与内容窗口",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1961.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2084,10 +2014,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "categoryId": "current_hotspot",
+        "confidence": "MEDIUM",
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：七夕"
       },
       "deltas": {
         "views": null,
@@ -2109,7 +2039,7 @@
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
         "sampleSize": 0,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": null,
         "percentile": null,
         "medianMultiple": null,
@@ -2128,14 +2058,14 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "【2026年7月23日蝉妈妈抖音美妆销量观察】：JM面膜日销破百万登顶，头部达人专属机制引爆贴片面膜品类",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1960.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "ranking_data",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2154,10 +2084,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "categoryId": "ranking_data",
+        "confidence": "HIGH",
+        "source": "intent_rule",
+        "reason": "明确日期与榜单发布信号"
       },
       "deltas": {
         "views": null,
@@ -2179,7 +2109,7 @@
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
         "sampleSize": 0,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": null,
         "percentile": null,
         "medianMultiple": null,
@@ -2198,14 +2128,14 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "短视频运营追热点如何规避蹭错流量风险？核心逻辑与筛查清单",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1959.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2224,10 +2154,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "categoryId": "current_hotspot",
+        "confidence": "MEDIUM",
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：热点"
       },
       "deltas": {
         "views": null,
@@ -2249,7 +2179,7 @@
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
         "sampleSize": 0,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": null,
         "percentile": null,
         "medianMultiple": null,
@@ -2268,14 +2198,14 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "多视频对比复盘怎么找最优模板？蝉妈妈4步拆解可复用脚本",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1958.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "competitor_comparison",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2294,10 +2224,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "categoryId": "competitor_comparison",
+        "confidence": "HIGH",
+        "source": "intent_rule",
+        "reason": "明确竞品对比意图：对比"
       },
       "deltas": {
         "views": null,
@@ -2319,7 +2249,7 @@
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
         "sampleSize": 0,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": null,
         "percentile": null,
         "medianMultiple": null,
@@ -2338,7 +2268,7 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "哪些行业适合用蝉妈妈筛选抖音带货达人？7个高匹配赛道筛选逻辑",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1957.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
@@ -2408,14 +2338,14 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "抖音品牌竞争格局怎么看？蝉妈妈4步拆解竞品增长路径",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1956.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "competitor_comparison",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2434,10 +2364,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "categoryId": "competitor_comparison",
+        "confidence": "HIGH",
+        "source": "intent_rule",
+        "reason": "明确竞品对比意图：竞品"
       },
       "deltas": {
         "views": null,
@@ -2459,7 +2389,7 @@
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
         "sampleSize": 0,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": null,
         "percentile": null,
         "medianMultiple": null,
@@ -2478,7 +2408,7 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "达人商务如何筛选带货达人？蝉妈妈多维度筛选实操指南",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1955.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
@@ -2505,9 +2435,9 @@
       "ageDays": 2,
       "classification": {
         "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "confidence": "MEDIUM",
+        "source": "intent_rule",
+        "reason": "明确教程意图：如何"
       },
       "deltas": {
         "views": null,
@@ -2548,7 +2478,7 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "耐克收回线上经销权背后：品牌为什么越来越重视抖音官方旗舰店？",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1954.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
@@ -2618,14 +2548,14 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "【2026年7月22日美妆行业抖音销量榜】：递欧香水排名跃升83位，片仔癀居首",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1953.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "ranking_data",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2644,10 +2574,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "categoryId": "ranking_data",
+        "confidence": "HIGH",
+        "source": "intent_rule",
+        "reason": "明确日期与榜单发布信号"
       },
       "deltas": {
         "views": null,
@@ -2669,7 +2599,7 @@
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
         "sampleSize": 0,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": null,
         "percentile": null,
         "medianMultiple": null,
@@ -2688,14 +2618,14 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "蝉妈妈怎么查竞品投流？4步拆解千川素材",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1952.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "competitor_comparison",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2714,10 +2644,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "categoryId": "competitor_comparison",
+        "confidence": "HIGH",
+        "source": "intent_rule",
+        "reason": "明确竞品对比意图：竞品"
       },
       "deltas": {
         "views": null,
@@ -2739,7 +2669,7 @@
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
         "sampleSize": 0,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": null,
         "percentile": null,
         "medianMultiple": null,
@@ -2758,7 +2688,7 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "素材库存不足怎么办？短视频运营4步复刻爆款",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1951.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
@@ -2785,9 +2715,9 @@
       "ageDays": 2,
       "classification": {
         "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "confidence": "MEDIUM",
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -2828,14 +2758,14 @@
       "sourceId": "chanmama-bi-chanmama-yunyingquan",
       "platformLabel": "蝉妈妈 BI 官网",
       "accountName": "蝉妈妈运营圈",
-      "title": "蝉妈妈运营圈文章合集",
+      "title": "竞品爆款能实时上榜吗？蝉妈妈监控与拆解",
       "description": null,
       "publicUrl": "https://www.chanmama.com/yunyingquan/article/1950.html",
       "adminUrl": "https://www.chanmama.com/yunyingquan/articles/",
       "publishedAt": "2026-07-25T16:00:00.000Z",
       "observedAt": "2026-07-28T05:13:18.834Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "competitor_comparison",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -2854,10 +2784,10 @@
       "label": "2-3天",
       "ageDays": 2,
       "classification": {
-        "categoryId": "tutorial_method",
-        "confidence": "LOW",
-        "source": "rule",
-        "reason": "未命中前三类明确规则，按通用方法内容归类"
+        "categoryId": "competitor_comparison",
+        "confidence": "HIGH",
+        "source": "intent_rule",
+        "reason": "明确竞品对比意图：竞品"
       },
       "deltas": {
         "views": null,
@@ -2879,7 +2809,7 @@
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
         "sampleSize": 0,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": null,
         "percentile": null,
         "medianMultiple": null,
@@ -2927,7 +2857,7 @@
         "categoryId": "ranking_data",
         "confidence": "HIGH",
         "source": "rule",
-        "reason": "命中关键词：榜"
+        "reason": "命中关键词：上榜"
       },
       "deltas": {
         "views": null,
@@ -2996,8 +2926,8 @@
       "classification": {
         "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：七夕"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：七夕"
       },
       "deltas": {
         "views": null,
@@ -3069,8 +2999,8 @@
       "classification": {
         "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：七夕"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：七夕"
       },
       "deltas": {
         "views": null,
@@ -3139,8 +3069,8 @@
       "classification": {
         "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：七夕"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：七夕"
       },
       "deltas": {
         "views": null,
@@ -3209,8 +3139,8 @@
       "classification": {
         "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：七夕"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：七夕"
       },
       "deltas": {
         "views": null,
@@ -3282,8 +3212,8 @@
       "classification": {
         "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：七夕"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：七夕"
       },
       "deltas": {
         "views": null,
@@ -3352,8 +3282,8 @@
       "classification": {
         "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：七夕"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：七夕"
       },
       "deltas": {
         "views": null,
@@ -3424,8 +3354,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -3494,8 +3424,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -3516,11 +3446,11 @@
       "commonInteractionRate": 0.034482758620689655,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 5,
-        "basis": "PLATFORM_CATEGORY_AGE",
-        "median": 189,
-        "percentile": 0.25,
-        "medianMultiple": 0.9206349206349206,
+        "sampleSize": 6,
+        "basis": "PLATFORM_AGE_FALLBACK",
+        "median": 194.5,
+        "percentile": 0.2,
+        "medianMultiple": 0.8946015424164524,
         "highPerformance": false,
         "credibleHighPerformance": false,
         "lowBase": false,
@@ -3637,8 +3567,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -3659,7 +3589,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 8,
+        "sampleSize": 7,
         "basis": "PLATFORM_CATEGORY_AGE",
         "median": 0,
         "percentile": 0.5,
@@ -3707,8 +3637,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -3729,11 +3659,11 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 5,
-        "basis": "PLATFORM_CATEGORY_AGE",
-        "median": 0,
-        "percentile": 0.25,
-        "medianMultiple": null,
+        "sampleSize": 7,
+        "basis": "PLATFORM_AGE_FALLBACK",
+        "median": 1,
+        "percentile": 0.16666666666666666,
+        "medianMultiple": 0,
         "highPerformance": false,
         "credibleHighPerformance": false,
         "lowBase": true,
@@ -3780,8 +3710,8 @@
       "classification": {
         "categoryId": "competitor_comparison",
         "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：对比"
+        "source": "intent_rule",
+        "reason": "明确竞品对比意图：对比"
       },
       "deltas": {
         "views": null,
@@ -3850,8 +3780,8 @@
       "classification": {
         "categoryId": "competitor_comparison",
         "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：对比"
+        "source": "intent_rule",
+        "reason": "明确竞品对比意图：对比"
       },
       "deltas": {
         "views": null,
@@ -3922,8 +3852,8 @@
       "classification": {
         "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：七夕"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：七夕"
       },
       "deltas": {
         "views": null,
@@ -3944,7 +3874,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
-        "sampleSize": 6,
+        "sampleSize": 7,
         "basis": "PLATFORM_AGE_FALLBACK",
         "median": 0,
         "percentile": null,
@@ -3992,8 +3922,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -4014,7 +3944,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
-        "sampleSize": 2,
+        "sampleSize": 3,
         "basis": "PLATFORM_CATEGORY_AGE",
         "median": 0,
         "percentile": null,
@@ -4062,8 +3992,8 @@
       "classification": {
         "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：七夕"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：七夕"
       },
       "deltas": {
         "views": null,
@@ -4084,7 +4014,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 6,
+        "sampleSize": 7,
         "basis": "PLATFORM_AGE_FALLBACK",
         "median": 0,
         "percentile": 0.5,
@@ -4132,8 +4062,8 @@
       "classification": {
         "categoryId": "competitor_comparison",
         "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：飞瓜"
+        "source": "intent_rule",
+        "reason": "明确竞品对比意图：飞瓜"
       },
       "deltas": {
         "views": null,
@@ -4154,7 +4084,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 6,
+        "sampleSize": 7,
         "basis": "PLATFORM_AGE_FALLBACK",
         "median": 0,
         "percentile": 0.5,
@@ -4202,8 +4132,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -4224,11 +4154,11 @@
       "commonInteractionRate": 0.028901734104046242,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 5,
-        "basis": "PLATFORM_CATEGORY_AGE",
-        "median": 189,
+        "sampleSize": 6,
+        "basis": "PLATFORM_AGE_FALLBACK",
+        "median": 194.5,
         "percentile": 0,
-        "medianMultiple": 0.9153439153439153,
+        "medianMultiple": 0.8894601542416453,
         "highPerformance": false,
         "credibleHighPerformance": false,
         "lowBase": false,
@@ -4275,8 +4205,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：如何"
+        "source": "intent_rule",
+        "reason": "明确教程意图：如何"
       },
       "deltas": {
         "views": null,
@@ -4297,7 +4227,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 8,
+        "sampleSize": 7,
         "basis": "PLATFORM_CATEGORY_AGE",
         "median": 0,
         "percentile": 0.5,
@@ -4418,8 +4348,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -4491,8 +4421,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：如何"
+        "source": "intent_rule",
+        "reason": "明确教程意图：如何"
       },
       "deltas": {
         "views": null,
@@ -4513,7 +4443,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 8,
+        "sampleSize": 7,
         "basis": "PLATFORM_CATEGORY_AGE",
         "median": 0,
         "percentile": 0.5,
@@ -4561,8 +4491,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -4583,11 +4513,11 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 5,
-        "basis": "PLATFORM_CATEGORY_AGE",
-        "median": 0,
-        "percentile": 0.25,
-        "medianMultiple": null,
+        "sampleSize": 7,
+        "basis": "PLATFORM_AGE_FALLBACK",
+        "median": 1,
+        "percentile": 0.16666666666666666,
+        "medianMultiple": 0,
         "highPerformance": false,
         "credibleHighPerformance": false,
         "lowBase": true,
@@ -4631,8 +4561,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -4653,11 +4583,11 @@
       "commonInteractionRate": 0.021164021164021163,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 5,
-        "basis": "PLATFORM_CATEGORY_AGE",
-        "median": 189,
-        "percentile": 0.5,
-        "medianMultiple": 1,
+        "sampleSize": 6,
+        "basis": "PLATFORM_AGE_FALLBACK",
+        "median": 194.5,
+        "percentile": 0.4,
+        "medianMultiple": 0.9717223650385605,
         "highPerformance": false,
         "credibleHighPerformance": false,
         "lowBase": false,
@@ -4703,8 +4633,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -4776,8 +4706,8 @@
       "classification": {
         "categoryId": "competitor_comparison",
         "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：竞品"
+        "source": "intent_rule",
+        "reason": "明确竞品对比意图：竞品"
       },
       "deltas": {
         "views": null,
@@ -4846,8 +4776,8 @@
       "classification": {
         "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：流量下滑"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：流量下滑"
       },
       "deltas": {
         "views": null,
@@ -4898,7 +4828,7 @@
       "publishedAt": "2026-07-23T01:45:00.000Z",
       "observedAt": "2026-07-28T05:14:04.312Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -4917,10 +4847,10 @@
       "label": "4-7天",
       "ageDays": 5,
       "classification": {
-        "categoryId": "tutorial_method",
+        "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：趋势"
       },
       "deltas": {
         "views": null,
@@ -4941,11 +4871,11 @@
       "commonInteractionRate": 0,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 5,
-        "basis": "PLATFORM_CATEGORY_AGE",
-        "median": 0,
-        "percentile": 0.75,
-        "medianMultiple": null,
+        "sampleSize": 7,
+        "basis": "PLATFORM_AGE_FALLBACK",
+        "median": 1,
+        "percentile": 0.5,
+        "medianMultiple": 1,
         "highPerformance": false,
         "credibleHighPerformance": false,
         "lowBase": true,
@@ -4968,7 +4898,7 @@
       "publishedAt": "2026-07-23T01:41:00.000Z",
       "observedAt": "2026-07-28T05:14:04.370Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -4990,10 +4920,10 @@
       "label": "4-7天",
       "ageDays": 5,
       "classification": {
-        "categoryId": "tutorial_method",
+        "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：趋势"
       },
       "deltas": {
         "views": null,
@@ -5014,8 +4944,8 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 8,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "sampleSize": 11,
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": 0,
         "percentile": 0.5,
         "medianMultiple": null,
@@ -5062,8 +4992,8 @@
       "classification": {
         "categoryId": "ranking_data",
         "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：销量观察"
+        "source": "intent_rule",
+        "reason": "明确日期与榜单发布信号"
       },
       "deltas": {
         "views": null,
@@ -5132,8 +5062,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -5154,7 +5084,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
-        "sampleSize": 2,
+        "sampleSize": 3,
         "basis": "PLATFORM_CATEGORY_AGE",
         "median": 0,
         "percentile": null,
@@ -5202,8 +5132,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -5224,7 +5154,77 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
-        "sampleSize": 2,
+        "sampleSize": 3,
+        "basis": "PLATFORM_CATEGORY_AGE",
+        "median": 0,
+        "percentile": null,
+        "medianMultiple": null,
+        "highPerformance": false,
+        "credibleHighPerformance": false,
+        "lowBase": false,
+        "lowBaseThreshold": 10,
+        "reasons": []
+      }
+    },
+    {
+      "platformId": "zhihu",
+      "accountId": "dianshang-data-observer",
+      "contentId": "2063616719646627242",
+      "key": "zhihu::dianshang-data-observer::2063616719646627242",
+      "sourceId": "zhihu-dianshang-data-observer",
+      "platformLabel": "知乎",
+      "accountName": "电商数据观察员",
+      "title": "运动品牌官方阵地怎么建？抖音运营3步实操 发布于 07-23",
+      "description": null,
+      "publicUrl": "https://zhuanlan.zhihu.com/p/2063616719646627242",
+      "adminUrl": "https://zhuanlan.zhihu.com/p/2063616719646627242/edit",
+      "publishedAt": "2026-07-22T16:00:00.000Z",
+      "observedAt": "2026-07-28T05:13:56.893Z",
+      "platformAsOf": null,
+      "categoryId": "tutorial_method",
+      "classificationConfidence": null,
+      "tags": [],
+      "metrics": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "favorites": 0,
+        "shares": null,
+        "coins": null,
+        "followersGained": null,
+        "averageWatchSeconds": null,
+        "completionRate": null
+      },
+      "platformMetrics": {},
+      "id": "age_4_7",
+      "label": "4-7天",
+      "ageDays": 5,
+      "classification": {
+        "categoryId": "tutorial_method",
+        "confidence": "MEDIUM",
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
+      },
+      "deltas": {
+        "views": null,
+        "likes": null,
+        "comments": null,
+        "favorites": null,
+        "shares": null,
+        "coins": null,
+        "followersGained": null,
+        "averageWatchSeconds": null,
+        "completionRate": null
+      },
+      "interval": {
+        "hours": null,
+        "kind": "BASELINE"
+      },
+      "commonInteractions": 0,
+      "commonInteractionRate": null,
+      "comparison": {
+        "status": "INSUFFICIENT_SAMPLE",
+        "sampleSize": 3,
         "basis": "PLATFORM_CATEGORY_AGE",
         "median": 0,
         "percentile": null,
@@ -5272,8 +5272,8 @@
       "classification": {
         "categoryId": "competitor_comparison",
         "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：飞瓜"
+        "source": "intent_rule",
+        "reason": "明确竞品对比意图：飞瓜"
       },
       "deltas": {
         "views": null,
@@ -5294,7 +5294,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 6,
+        "sampleSize": 7,
         "basis": "PLATFORM_AGE_FALLBACK",
         "median": 0,
         "percentile": 0.5,
@@ -5345,8 +5345,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -5367,7 +5367,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 8,
+        "sampleSize": 7,
         "basis": "PLATFORM_CATEGORY_AGE",
         "median": 0,
         "percentile": 0.5,
@@ -5415,8 +5415,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -5485,8 +5485,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：如何"
+        "source": "intent_rule",
+        "reason": "明确教程意图：如何"
       },
       "deltas": {
         "views": null,
@@ -5507,17 +5507,17 @@
       "commonInteractionRate": 0.5,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 5,
-        "basis": "PLATFORM_CATEGORY_AGE",
-        "median": 0,
-        "percentile": 1,
-        "medianMultiple": null,
+        "sampleSize": 7,
+        "basis": "PLATFORM_AGE_FALLBACK",
+        "median": 1,
+        "percentile": 0.6666666666666666,
+        "medianMultiple": 2,
         "highPerformance": true,
         "credibleHighPerformance": false,
         "lowBase": true,
         "lowBaseThreshold": 10,
         "reasons": [
-          "进入同类前10%"
+          "高于同类常规水平100%"
         ]
       }
     },
@@ -5560,8 +5560,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -5582,7 +5582,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 8,
+        "sampleSize": 7,
         "basis": "PLATFORM_CATEGORY_AGE",
         "median": 0,
         "percentile": 0.5,
@@ -5630,8 +5630,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -5652,11 +5652,11 @@
       "commonInteractionRate": 0.02,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 5,
-        "basis": "PLATFORM_CATEGORY_AGE",
-        "median": 189,
-        "percentile": 0.75,
-        "medianMultiple": 1.0582010582010581,
+        "sampleSize": 6,
+        "basis": "PLATFORM_AGE_FALLBACK",
+        "median": 194.5,
+        "percentile": 0.6,
+        "medianMultiple": 1.0282776349614395,
         "highPerformance": false,
         "credibleHighPerformance": false,
         "lowBase": false,
@@ -5679,7 +5679,7 @@
       "publishedAt": "2026-07-22T02:13:00.000Z",
       "observedAt": "2026-07-28T05:14:04.442Z",
       "platformAsOf": null,
-      "categoryId": "ranking_data",
+      "categoryId": "tutorial_method",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -5700,10 +5700,10 @@
       "label": "4-7天",
       "ageDays": 6,
       "classification": {
-        "categoryId": "ranking_data",
-        "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：榜单"
+        "categoryId": "tutorial_method",
+        "confidence": "MEDIUM",
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -5775,8 +5775,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -5797,7 +5797,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 8,
+        "sampleSize": 7,
         "basis": "PLATFORM_CATEGORY_AGE",
         "median": 0,
         "percentile": 0.5,
@@ -5845,8 +5845,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -5915,8 +5915,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -5937,11 +5937,11 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 5,
-        "basis": "PLATFORM_CATEGORY_AGE",
-        "median": 0,
-        "percentile": 0.25,
-        "medianMultiple": null,
+        "sampleSize": 7,
+        "basis": "PLATFORM_AGE_FALLBACK",
+        "median": 1,
+        "percentile": 0.16666666666666666,
+        "medianMultiple": 0,
         "highPerformance": false,
         "credibleHighPerformance": false,
         "lowBase": true,
@@ -5988,8 +5988,8 @@
       "classification": {
         "categoryId": "competitor_comparison",
         "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：竞品"
+        "source": "intent_rule",
+        "reason": "明确竞品对比意图：竞品"
       },
       "deltas": {
         "views": null,
@@ -6058,8 +6058,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：如何"
+        "source": "intent_rule",
+        "reason": "明确教程意图：如何"
       },
       "deltas": {
         "views": null,
@@ -6080,7 +6080,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
-        "sampleSize": 2,
+        "sampleSize": 3,
         "basis": "PLATFORM_CATEGORY_AGE",
         "median": 0,
         "percentile": null,
@@ -6128,8 +6128,8 @@
       "classification": {
         "categoryId": "competitor_comparison",
         "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：竞品"
+        "source": "intent_rule",
+        "reason": "明确竞品对比意图：竞品"
       },
       "deltas": {
         "views": null,
@@ -6150,7 +6150,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
-        "sampleSize": 6,
+        "sampleSize": 7,
         "basis": "PLATFORM_AGE_FALLBACK",
         "median": 0,
         "percentile": null,
@@ -6198,8 +6198,8 @@
       "classification": {
         "categoryId": "competitor_comparison",
         "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：对比"
+        "source": "intent_rule",
+        "reason": "明确竞品对比意图：对比"
       },
       "deltas": {
         "views": null,
@@ -6220,7 +6220,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 6,
+        "sampleSize": 7,
         "basis": "PLATFORM_AGE_FALLBACK",
         "median": 0,
         "percentile": 0.5,
@@ -6268,8 +6268,8 @@
       "classification": {
         "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：新规"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：新规"
       },
       "deltas": {
         "views": null,
@@ -6341,8 +6341,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：如何"
+        "source": "intent_rule",
+        "reason": "明确教程意图：如何"
       },
       "deltas": {
         "views": null,
@@ -6363,7 +6363,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 8,
+        "sampleSize": 7,
         "basis": "PLATFORM_CATEGORY_AGE",
         "median": 0,
         "percentile": 0.5,
@@ -6411,8 +6411,8 @@
       "classification": {
         "categoryId": "ranking_data",
         "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：榜"
+        "source": "intent_rule",
+        "reason": "明确日期与榜单发布信号"
       },
       "deltas": {
         "views": null,
@@ -6462,7 +6462,7 @@
       "publishedAt": "2026-07-21T02:32:00.000Z",
       "observedAt": "2026-07-28T05:14:04.442Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -6483,10 +6483,10 @@
       "label": "4-7天",
       "ageDays": 7,
       "classification": {
-        "categoryId": "tutorial_method",
+        "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：趋势"
       },
       "deltas": {
         "views": null,
@@ -6534,7 +6534,7 @@
       "publishedAt": "2026-07-21T02:30:00.000Z",
       "observedAt": "2026-07-28T05:14:04.389Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -6553,10 +6553,10 @@
       "label": "4-7天",
       "ageDays": 7,
       "classification": {
-        "categoryId": "tutorial_method",
+        "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：如何"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：趋势"
       },
       "deltas": {
         "views": null,
@@ -6577,18 +6577,16 @@
       "commonInteractionRate": 0.02527075812274368,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 5,
-        "basis": "PLATFORM_CATEGORY_AGE",
-        "median": 189,
-        "percentile": 1,
-        "medianMultiple": 1.4656084656084656,
-        "highPerformance": true,
-        "credibleHighPerformance": true,
+        "sampleSize": 6,
+        "basis": "PLATFORM_AGE_FALLBACK",
+        "median": 194.5,
+        "percentile": 0.8,
+        "medianMultiple": 1.424164524421594,
+        "highPerformance": false,
+        "credibleHighPerformance": false,
         "lowBase": false,
         "lowBaseThreshold": 10,
-        "reasons": [
-          "进入同类前10%"
-        ]
+        "reasons": []
       }
     },
     {
@@ -6627,8 +6625,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -6649,7 +6647,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
-        "sampleSize": 2,
+        "sampleSize": 3,
         "basis": "PLATFORM_CATEGORY_AGE",
         "median": 0,
         "percentile": null,
@@ -6697,8 +6695,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -6719,7 +6717,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
-        "sampleSize": 2,
+        "sampleSize": 3,
         "basis": "PLATFORM_CATEGORY_AGE",
         "median": 0,
         "percentile": null,
@@ -6767,8 +6765,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -6789,7 +6787,7 @@
       "commonInteractionRate": null,
       "comparison": {
         "status": "INSUFFICIENT_SAMPLE",
-        "sampleSize": 2,
+        "sampleSize": 3,
         "basis": "PLATFORM_CATEGORY_AGE",
         "median": 0,
         "percentile": null,
@@ -6837,8 +6835,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -6859,11 +6857,11 @@
       "commonInteractionRate": 0.049723756906077346,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 6,
+        "sampleSize": 5,
         "basis": "PLATFORM_CATEGORY_AGE",
-        "median": 221.5,
-        "percentile": 0.2,
-        "medianMultiple": 0.8171557562076749,
+        "median": 220,
+        "percentile": 0.25,
+        "medianMultiple": 0.8227272727272728,
         "highPerformance": false,
         "credibleHighPerformance": false,
         "lowBase": false,
@@ -6909,8 +6907,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -6979,8 +6977,8 @@
       "classification": {
         "categoryId": "ranking_data",
         "confidence": "HIGH",
-        "source": "rule",
-        "reason": "命中关键词：榜"
+        "source": "intent_rule",
+        "reason": "明确日期与榜单发布信号"
       },
       "deltas": {
         "views": null,
@@ -7051,8 +7049,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -7100,7 +7098,7 @@
       "publishedAt": "2026-07-17T02:04:00.000Z",
       "observedAt": "2026-07-28T05:14:04.389Z",
       "platformAsOf": null,
-      "categoryId": "tutorial_method",
+      "categoryId": "current_hotspot",
       "classificationConfidence": null,
       "tags": [],
       "metrics": {
@@ -7119,10 +7117,10 @@
       "label": "8-14天",
       "ageDays": 11,
       "classification": {
-        "categoryId": "tutorial_method",
+        "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：如何"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：趋势"
       },
       "deltas": {
         "views": null,
@@ -7144,7 +7142,7 @@
       "comparison": {
         "status": "SCORABLE",
         "sampleSize": 6,
-        "basis": "PLATFORM_CATEGORY_AGE",
+        "basis": "PLATFORM_AGE_FALLBACK",
         "median": 221.5,
         "percentile": 0.6,
         "medianMultiple": 1.0067720090293453,
@@ -7193,8 +7191,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -7263,8 +7261,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：如何"
+        "source": "intent_rule",
+        "reason": "明确教程意图：如何"
       },
       "deltas": {
         "views": null,
@@ -7285,11 +7283,11 @@
       "commonInteractionRate": 0.0472972972972973,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 6,
+        "sampleSize": 5,
         "basis": "PLATFORM_CATEGORY_AGE",
-        "median": 221.5,
+        "median": 220,
         "percentile": 0,
-        "medianMultiple": 0.6681715575620768,
+        "medianMultiple": 0.6727272727272727,
         "highPerformance": false,
         "credibleHighPerformance": false,
         "lowBase": false,
@@ -7335,8 +7333,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -7405,8 +7403,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：如何"
+        "source": "intent_rule",
+        "reason": "明确教程意图：如何"
       },
       "deltas": {
         "views": null,
@@ -7427,11 +7425,11 @@
       "commonInteractionRate": 0.02531645569620253,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 6,
+        "sampleSize": 5,
         "basis": "PLATFORM_CATEGORY_AGE",
-        "median": 221.5,
-        "percentile": 0.8,
-        "medianMultiple": 1.069977426636569,
+        "median": 220,
+        "percentile": 0.75,
+        "medianMultiple": 1.0772727272727274,
         "highPerformance": false,
         "credibleHighPerformance": false,
         "lowBase": false,
@@ -7475,8 +7473,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：方法"
+        "source": "intent_rule",
+        "reason": "明确教程意图：方法"
       },
       "deltas": {
         "views": null,
@@ -7497,11 +7495,11 @@
       "commonInteractionRate": 0.022727272727272728,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 6,
+        "sampleSize": 5,
         "basis": "PLATFORM_CATEGORY_AGE",
-        "median": 221.5,
-        "percentile": 0.4,
-        "medianMultiple": 0.9932279909706546,
+        "median": 220,
+        "percentile": 0.5,
+        "medianMultiple": 1,
         "highPerformance": false,
         "credibleHighPerformance": false,
         "lowBase": false,
@@ -7547,8 +7545,8 @@
       "classification": {
         "categoryId": "current_hotspot",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：热度飙升"
+        "source": "intent_rule",
+        "reason": "明确热点或趋势意图：热度飙升"
       },
       "deltas": {
         "views": null,
@@ -7617,8 +7615,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -7639,11 +7637,11 @@
       "commonInteractionRate": 0.03146853146853147,
       "comparison": {
         "status": "SCORABLE",
-        "sampleSize": 6,
+        "sampleSize": 5,
         "basis": "PLATFORM_CATEGORY_AGE",
-        "median": 221.5,
+        "median": 220,
         "percentile": 1,
-        "medianMultiple": 1.2911963882618511,
+        "medianMultiple": 1.3,
         "highPerformance": true,
         "credibleHighPerformance": true,
         "lowBase": false,
@@ -7689,8 +7687,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -7759,8 +7757,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：怎么"
+        "source": "intent_rule",
+        "reason": "明确教程意图：怎么"
       },
       "deltas": {
         "views": null,
@@ -7829,8 +7827,8 @@
       "classification": {
         "categoryId": "tutorial_method",
         "confidence": "MEDIUM",
-        "source": "rule",
-        "reason": "命中关键词：实操"
+        "source": "intent_rule",
+        "reason": "明确教程意图：实操"
       },
       "deltas": {
         "views": null,

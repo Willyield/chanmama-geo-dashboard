@@ -37,6 +37,19 @@ const formatPercent = (value) => Number.isFinite(value) ? `${(value * 100).toFix
 const formatDateTime = (value) => value ? new Intl.DateTimeFormat("zh-CN", {
   timeZone: "Asia/Shanghai", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false,
 }).format(new Date(value)) : "暂无";
+const formatFullDateTime = (value) => {
+  if (!value) return "暂无";
+  const parts = Object.fromEntries(new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).formatToParts(new Date(value)).map((part) => [part.type, part.value]));
+  return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}`;
+};
 
 const basisLabel = (basis) => BASIS_LABELS[basis] || "比较范围不可用";
 
@@ -142,7 +155,7 @@ const syncHeader = () => {
     if (active) link.setAttribute("aria-current", "page"); else link.removeAttribute("aria-current");
   });
   if (!state.summary) return;
-  reportMeta.textContent = `${state.summary.reportDate} / ${state.summary.period.kind === "WEEKEND_72H" ? "周末合并" : "日报"} / ${formatDateTime(state.summary.generatedAt)} 更新`;
+  reportMeta.textContent = `数据采样截至 ${formatFullDateTime(state.summary.period.observedTo)}（北京时间） · 生成时间 ${formatFullDateTime(state.summary.generatedAt)}`;
   headerStatus.innerHTML = `<span class="status-chip ${statusClass(state.summary.status)}">${statusLabel(state.summary.status)}</span>`;
 };
 
@@ -227,7 +240,7 @@ const executiveSummary = () => {
   const opportunityTitle = best ? `${best.categoryLabel}样本最具参考性` : "分类参考内容仍在积累";
   const opportunityText = best
     ? `${best.contentCount}篇内容中有${best.credibleScorableCount}篇可比较，${formatPerformance(best.trustedRelativeIndex)}。`
-    : "尚无分类达到至少5篇可靠参考内容，暂不输出最佳分类。";
+    : "尚无分类达到至少5篇可比较内容，暂不输出最佳分类。";
   const riskTitle = `${summary.coverage.partialAccounts.length}个来源部分受限`;
   const riskText = `可比较内容${totals.credibleScorableCount}篇，共${totals.contentCount}篇；${totals.lowBaseCount}篇常规阅读量过小，${totals.fallbackCount}篇采用同平台同期参考。`;
   return `<section class="executive-summary" aria-label="管理摘要"><div class="executive-heading"><h2>今日结论</h2><span>${baseline ? "首次基线" : "连续快照"}</span></div><div class="executive-grid">
@@ -244,7 +257,7 @@ const metricStrip = () => {
     <div class="metric-cell"><span class="metric-label">已采集账号</span><strong class="metric-value">${state.summary.coverage.collectedAccounts}个账号</strong><small class="metric-note">计划监测${state.summary.coverage.expectedAccounts}个</small></div>
     <div class="metric-cell"><span class="metric-label">${baseline ? "累计播放/阅读" : "区间新增播放/阅读"}</span><strong class="metric-value ${!baseline && totals.totalViewDelta > 0 ? "metric-positive" : ""}">${formatNumber(baseline ? totals.totalViews : totals.totalViewDelta)}</strong><small class="metric-note">${baseline ? "首日累计基线" : `累计 ${formatNumber(totals.totalViews)}`}</small></div>
     <div class="metric-cell"><span class="metric-label">内容总数</span><strong class="metric-value">${formatExact(totals.contentCount)}</strong><small class="metric-note">共同互动 ${formatExact(totals.commonInteractions)}</small></div>
-    <div class="metric-cell"><span class="metric-label">表现突出内容</span><strong class="metric-value">${formatExact(totals.credibleHighPerformanceCount)}</strong><small class="metric-note">已排除常规阅读量过小的结果</small></div>
+    <div class="metric-cell"><span class="metric-label">数据表现优秀</span><strong class="metric-value">${formatExact(totals.credibleHighPerformanceCount)}</strong><small class="metric-note">已排除常规阅读量过小的结果</small></div>
   </section>`;
 };
 
@@ -283,7 +296,7 @@ const topSignals = (records) => {
     <span class="signal-index">${index + 1}</span>
     <div class="signal-title"><button type="button" data-route="${escapeHtml(makeRoute("content", record.key, new URLSearchParams({ date: state.reportDate })))}"><strong>${escapeHtml(record.title)}</strong><small>${escapeHtml(record.platformLabel)} / ${escapeHtml(record.accountName)} / ${escapeHtml(CATEGORY_LABELS[record.categoryId] || record.categoryId)}</small><small class="signal-explanation">${escapeHtml(comparisonSummary(record))}</small></button></div>
     <span class="signal-score"><strong>${formatExact(record.metrics.views)}</strong><small>播放/阅读</small></span>
-  </div>`).join("") || `<div class="empty-state">当前没有可靠的表现突出内容</div>`}</div>`;
+  </div>`).join("") || `<div class="empty-state">当前没有数据表现优秀内容</div>`}</div>`;
 };
 
 const trendChart = (query) => {
@@ -332,7 +345,7 @@ const renderTable = (records, query) => {
     <tbody>${rows.map((record) => `<tr>
       <td class="table-title"><a href="${escapeHtml(record.publicUrl || detailRoute(record))}"${record.publicUrl ? " target=\"_blank\" rel=\"noopener noreferrer\"" : ""}>${escapeHtml(record.title)}</a><small>${formatDateTime(record.publishedAt)}</small></td>
       <td>${escapeHtml(record.platformLabel)}<br><small>${escapeHtml(record.accountName)}</small></td>
-      <td><span class="tag">${escapeHtml(CATEGORY_LABELS[record.categoryId] || record.categoryId)}</span>${record.comparison?.credibleHighPerformance ? " <span class=\"high-flag\">表现突出</span>" : ""}${record.comparison?.lowBase ? " <span class=\"low-base-flag\">参考价值低</span>" : ""}${record.comparison?.basis === "PLATFORM_AGE_FALLBACK" ? " <span class=\"fallback-flag\">同平台同期参考</span>" : ""}</td>
+      <td><span class="tag">${escapeHtml(CATEGORY_LABELS[record.categoryId] || record.categoryId)}</span>${record.comparison?.credibleHighPerformance ? " <span class=\"high-flag\">数据优秀</span>" : ""}${record.comparison?.lowBase ? " <span class=\"low-base-flag\">参考价值低</span>" : ""}${record.comparison?.basis === "PLATFORM_AGE_FALLBACK" ? " <span class=\"fallback-flag\">同平台同期参考</span>" : ""}</td>
       <td class="number">${formatExact(record.metrics.views)}</td>
       <td class="number ${record.deltas.views > 0 ? "metric-positive" : ""}">${formatExact(record.deltas.views)}</td>
       <td class="number">${formatPercent(record.commonInteractionRate)}</td>
@@ -352,8 +365,8 @@ const renderOverview = (route) => {
   app.innerHTML = `${heading("经营数据总览", `${state.summary.reportDate} / ${periodLabel}`)}
     ${executiveSummary()}${metricStrip()}
     <div class="dashboard-grid">
-      <section class="section"><div class="section-header"><h2>分类表现与发布量</h2><span>相对值仅使用可信可比样本</span></div>${barList(state.summary.categories, { labelKey: "categoryLabel", valueKey: "trustedRelativeIndex", colorKey: "categoryId", routeView: "category", routeIdKey: "categoryId" })}</section>
-      <section class="section"><div class="section-header"><h2>可信高表现内容</h2><span>实际数据优先 · 点击查看依据</span></div>${topSignals(filtered)}</section>
+      <section class="section"><div class="section-header"><h2>分类表现与发布量</h2><span>同类表现仅使用可比较样本</span></div>${barList(state.summary.categories, { labelKey: "categoryLabel", valueKey: "trustedRelativeIndex", colorKey: "categoryId", routeView: "category", routeIdKey: "categoryId" })}</section>
+      <section class="section"><div class="section-header"><h2>数据表现优秀内容</h2><span>实际数据优先 · 点击查看依据</span></div>${topSignals(filtered)}</section>
     </div>
     ${qualityBand()}
     <section class="section operation-section"><div class="section-header"><h2>运营筛选</h2><span>平台、账号、分类与比较质量</span></div>${renderFilters(route.query)}</section>
@@ -369,7 +382,7 @@ const renderPlatform = (route) => {
   const aggregates = state.summary.platformCategories.filter((item) => item.platformId === platformId);
   app.innerHTML = `${heading(platform.platformLabel, "查看该平台四类内容的累计数据、区间增量和同类表现")}
     ${renderFilters(route.query, { hidePlatform: true })}${qualityBand()}
-    <section class="section"><div class="section-header"><h2>分类比较</h2><span>仅使用可信参考内容</span></div>${barList(aggregates, { labelKey: "categoryLabel", valueKey: "trustedRelativeIndex", colorKey: "categoryId", routeView: "category", routeIdKey: "categoryId" })}</section>
+    <section class="section"><div class="section-header"><h2>分类比较</h2><span>仅使用可比较样本</span></div>${barList(aggregates, { labelKey: "categoryLabel", valueKey: "trustedRelativeIndex", colorKey: "categoryId", routeView: "category", routeIdKey: "categoryId" })}</section>
     <section class="section"><div class="section-header"><h2>平台内容</h2><span>${records.length} 篇</span></div>${renderTable(records, route.query)}</section>`;
 };
 
@@ -379,7 +392,7 @@ const renderCategory = (route) => {
   const aggregates = state.summary.platformCategories.filter((item) => item.categoryId === categoryId);
   app.innerHTML = `${heading(CATEGORY_LABELS[categoryId] || categoryId, "比较同一类内容在不同平台的实际数据和同类表现")}
     ${renderFilters(route.query, { hideCategory: true })}${qualityBand()}
-    <section class="section"><div class="section-header"><h2>跨平台同类表现</h2><span>仅使用可信参考内容</span></div>${barList(aggregates, { labelKey: "platformLabel", labelTitle: "平台", valueKey: "trustedRelativeIndex", routeView: "platform", routeIdKey: "platformId" })}</section>
+    <section class="section"><div class="section-header"><h2>跨平台同类表现</h2><span>仅使用可比较样本</span></div>${barList(aggregates, { labelKey: "platformLabel", labelTitle: "平台", valueKey: "trustedRelativeIndex", routeView: "platform", routeIdKey: "platformId" })}</section>
     <section class="section"><div class="section-header"><h2>分类内容</h2><span>${records.length} 篇</span></div>${renderTable(records, route.query)}</section>`;
 };
 
@@ -396,10 +409,10 @@ const renderContent = (route) => {
   const reasons = record.comparison?.reasons?.length ? record.comparison.reasons.join("；") : "未达到高表现门槛或样本不足";
   const comparison = record.comparison || {};
   const performanceLabel = comparison.credibleHighPerformance
-    ? "表现突出"
-    : comparison.lowBase && comparison.highPerformance ? "有突出信号，但参考价值低"
+    ? "数据表现优秀"
+    : comparison.lowBase && comparison.highPerformance ? "数据较高，但常规阅读量过小"
       : comparison.status === "INSUFFICIENT_SAMPLE" ? "暂不可比" : "接近常规表现";
-  const comparisonReliability = comparison.lowBase
+  const comparabilityNote = comparison.lowBase
     ? `参考价值低：同类常规阅读量低于 ${formatExact(comparison.lowBaseThreshold)}`
     : comparison.status === "SCORABLE" ? "可用于比较" : "参考内容不足";
   const backQuery = new URLSearchParams(route.query);
@@ -420,7 +433,7 @@ const renderContent = (route) => {
         <div class="definition-row"><dt>领先 / 落后幅度</dt><dd>${escapeHtml(formatPerformance(comparison.medianMultiple))}</dd></div>
         <div class="definition-row"><dt>参考内容数</dt><dd>${formatExact(comparison.sampleSize)}篇</dd></div>
         <div class="definition-row"><dt>比较范围</dt><dd>${escapeHtml(basisLabel(comparison.basis))}${comparison.basis === "PLATFORM_AGE_FALLBACK" ? "（同类参考不足，改用同平台同期内容）" : ""}</dd></div>
-        <div class="definition-row"><dt>参考可靠性</dt><dd>${escapeHtml(comparisonReliability)}</dd></div>
+        <div class="definition-row"><dt>可比性说明</dt><dd>${escapeHtml(comparabilityNote)}</dd></div>
         <div class="definition-row"><dt>判断原因</dt><dd>${escapeHtml(reasons)}</dd></div>
         <div class="definition-row"><dt>分类依据</dt><dd>${escapeHtml(record.classification?.reason || "--")}</dd></div>
         <div class="definition-row"><dt>标签</dt><dd>${record.tags?.length ? record.tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join(" ") : "--"}</dd></div>
