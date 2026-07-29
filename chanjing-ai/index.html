@@ -54,39 +54,72 @@
           <div class="metric-guide-item"><strong>首推率</strong><span>回答第一推荐为蝉镜的样本比例，代表推荐优先级。</span></div>
           <div class="metric-guide-item"><strong>有效配对</strong><span>同一问题在网页端和手机端都完成采样，才计为一组配对。</span></div>
           <div class="metric-guide-item"><strong>引用量</strong><span>回答中记录的普通来源链接数量，不等同于蝉镜自有引用或推荐强度。</span></div>
-          <div class="metric-guide-item"><strong>终端差值</strong><span>手机端指标减网页端指标；样本未满时只用于发现方向，不作稳定趋势。</span></div>
+          <div class="metric-guide-item"><strong>终端差异</strong><span>只比较同一问题的网页端与手机端结果，直接写明哪一端多、相差多少；样本未满时不作稳定趋势。</span></div>
         </div>
       </section>
 
-      <section class="detail-shell" aria-labelledby="detail-title">
-        <div class="detail-toolbar">
-          <div>
-            <span class="eyebrow">明细复核</span>
-            <h2 id="detail-title">采样数据</h2>
-          </div>
-          <label class="search-control">
-            <span>筛选</span>
-            <input id="search" type="search" placeholder="输入问题或主题" autocomplete="off">
-          </label>
-        </div>
+      <div class="overview-head">
+        <h2>图表与明细</h2>
+        <span class="pill">支持下钻核对</span>
+      </div>
 
-        <nav class="tabs" role="tablist" aria-label="数据视图">
-          <button class="tab active" type="button" data-view="overview" role="tab" aria-selected="true">总览</button>
-          <button class="tab" type="button" data-view="web" role="tab" aria-selected="false">网页</button>
-          <button class="tab" type="button" data-view="mobile" role="tab" aria-selected="false">手机</button>
-          <button class="tab" type="button" data-view="compare" role="tab" aria-selected="false">双端差异</button>
-        </nav>
+      <div class="filters" aria-label="数据筛选">
+        <label>终端
+          <select id="terminal-filter">
+            <option value="all">全部终端</option>
+            <option value="web">网页端</option>
+            <option value="mobile">手机端</option>
+          </select>
+        </label>
+        <label>主题<select id="section-filter"></select></label>
+        <label>提及状态
+          <select id="mention-filter">
+            <option value="all">全部</option>
+            <option value="yes">已提及蝉镜</option>
+            <option value="no">未提及蝉镜</option>
+          </select>
+        </label>
+        <label>首位状态
+          <select id="first-filter">
+            <option value="all">全部</option>
+            <option value="yes">蝉镜首位</option>
+            <option value="no">蝉镜非首位</option>
+          </select>
+        </label>
+        <label>搜索<input id="search" type="search" placeholder="问题或主题" autocomplete="off"></label>
+      </div>
 
-        <div class="view-heading">
-          <div>
-            <h3 id="view-title">总览</h3>
-            <p id="view-caption"></p>
-          </div>
-          <strong id="view-count">0 条</strong>
-        </div>
-        <div id="metrics" class="metrics" aria-label="当前视图指标"></div>
-        <div id="content" class="content" aria-live="polite"></div>
-      </section>
+      <div id="chart-grid" class="chart-grid" aria-label="核心图表"></div>
+
+      <div class="analysis-grid">
+        <section>
+          <div class="section-head"><h2>首位推荐分布</h2><span class="pill" id="first-recommendation-count"></span></div>
+          <div class="insight-grid" id="first-recommendation-cards"></div>
+        </section>
+        <section>
+          <div class="section-head"><h2>引用证据</h2><span class="pill" id="source-evidence-count"></span></div>
+          <div class="insight-grid" id="source-evidence-cards"></div>
+        </section>
+        <section>
+          <div class="section-head"><h2>双端差异怎么读</h2><span class="pill" id="paired-insight-count"></span></div>
+          <div class="insight-grid" id="paired-insight-cards"></div>
+        </section>
+      </div>
+
+      <div class="grid">
+        <section>
+          <div class="section-head"><h2>主题维度</h2><span class="pill" id="section-count"></span></div>
+          <div class="table-wrap"><table id="section-table"></table></div>
+        </section>
+        <section>
+          <div class="section-head"><h2>双端配对明细</h2><span class="pill" id="paired-count"></span></div>
+          <div class="table-wrap"><table id="paired-table"></table></div>
+        </section>
+        <section>
+          <div class="section-head"><h2>单次采样记录</h2><span class="pill" id="sample-count"></span></div>
+          <div class="table-wrap"><table id="sample-table"></table></div>
+        </section>
+      </div>
     </main>
   </div>
 

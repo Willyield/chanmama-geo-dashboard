@@ -1,19 +1,29 @@
 'use strict';
 
-const state = { data: null, view: 'overview', query: '' };
-const labels = { overview: '主题总览', web: '网页端样本', mobile: '手机端样本', compare: '双端差异' };
+const state = {
+  data: null,
+  terminal: 'all',
+  section: 'all',
+  mention: 'all',
+  first: 'all',
+  search: '',
+};
+
+const colors = {
+  blue: '#1e40af',
+  cyan: '#0e7490',
+  green: '#047857',
+  amber: '#d97706',
+  red: '#b91c1c',
+  muted: '#cbd5e1',
+};
 
 function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>'"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[char]));
 }
 
-function pct(value, denominator) {
-  return denominator ? `${Number(value).toFixed(1)}%` : '—';
-}
-
-function pp(value) {
-  const number = Number(value || 0);
-  return `${number > 0 ? '+' : ''}${number.toFixed(1)}pp`;
+function percent(count, denominator) {
+  return denominator ? `${(count * 100 / denominator).toFixed(1)}%` : '尚无样本';
 }
 
 function formatTime(value, dateOnly = false) {
@@ -29,14 +39,44 @@ function tag(value) {
   return `<span class="tag ${value === '是' ? 'yes' : 'no'}">${escapeHtml(value)}</span>`;
 }
 
-function matches(row) {
-  if (!state.query) return true;
-  const haystack = `${row.question_text || ''} ${row.section_name || ''} ${row.sample_id || ''}`.toLowerCase();
-  return haystack.includes(state.query.toLowerCase());
-}
-
 function renderTicks() {
   document.querySelector('.tick-rule').innerHTML = '<i></i>'.repeat(84);
+}
+
+function pairedStats(rows) {
+  const count = rows.length;
+  const webMentions = rows.filter((row) => row.web_mentioned === '是').length;
+  const mobileMentions = rows.filter((row) => row.mobile_mentioned === '是').length;
+  const webFirsts = rows.filter((row) => row.web_first === '是').length;
+  const mobileFirsts = rows.filter((row) => row.mobile_first === '是').length;
+  const webCitations = rows.reduce((sum, row) => sum + Number(row.web_citations || 0), 0);
+  const mobileCitations = rows.reduce((sum, row) => sum + Number(row.mobile_citations || 0), 0);
+  return {
+    count,
+    webMentions,
+    mobileMentions,
+    webFirsts,
+    mobileFirsts,
+    webCitations,
+    mobileCitations,
+    webMentionRate: count ? webMentions * 100 / count : 0,
+    mobileMentionRate: count ? mobileMentions * 100 / count : 0,
+    webFirstRate: count ? webFirsts * 100 / count : 0,
+    mobileFirstRate: count ? mobileFirsts * 100 / count : 0,
+  };
+}
+
+function countDifferenceLabel(webCount, mobileCount, unit) {
+  const difference = mobileCount - webCount;
+  if (difference > 0) return `手机端多 ${difference} ${unit}`;
+  if (difference < 0) return `网页端多 ${Math.abs(difference)} ${unit}`;
+  return `两端${unit}数量相同`;
+}
+
+function pointDifferenceLabel(webRate, mobileRate) {
+  const difference = mobileRate - webRate;
+  if (Math.abs(difference) < 0.05) return '两端比例相同';
+  return `${difference > 0 ? '手机端' : '网页端'}高 ${Math.abs(difference).toFixed(1)} 个百分点`;
 }
 
 function executiveCard(title, tone, status, main, sub, evidence, next) {
@@ -54,21 +94,17 @@ function renderExecutive() {
   const web = data.terminal_summary.web;
   const mobile = data.terminal_summary.mobile;
   const planned = data.planned_slots || 520;
-  const coverageRate = data.collected / planned * 100;
+  const coverageRate = data.collected * 100 / planned;
   const mentionCount = web.mention_count + mobile.mention_count;
-  const mentionRate = mentionCount / data.collected * 100;
   const firstCount = web.first_count + mobile.first_count;
-  const firstRate = firstCount / data.collected * 100;
-  const pairedRate = data.paired_count / (data.question_count || 260) * 100;
-  const mentionGap = mobile.mention_rate - web.mention_rate;
-  const firstGap = mobile.first_rate - web.first_rate;
-  const citationGap = mobile.citation_count - web.citation_count;
   const uniqueQuestions = new Set(data.samples.map((row) => row.question_id)).size;
+  const pairs = pairedStats(data.paired);
+  const pairedMentionGap = Math.abs(pairs.mobileMentionRate - pairs.webMentionRate);
 
   document.querySelector('#executive-brief').innerHTML = `<div>
     <div class="brief-kicker">总结 / 第一轮问题批次 · T0100</div>
-    <div class="brief-title">阶段判断：蝉镜已有初步可见度，但样本覆盖仍少；手机端提及率暂高于网页端。</div>
-    <div class="brief-note">当前结果来自 ${data.collected} 条有效样本和 ${data.paired_count} 组双端配对，只用于识别早期方向。默认先看覆盖、品牌可见度和终端差异，下方保留全部明细供复核。</div>
+    <div class="brief-title">阶段判断：蝉镜已有初步可见度，但样本覆盖仍少；49 组同题对比中，手机端多提及蝉镜 3 个问题。</div>
+    <div class="brief-note">当前结果来自 ${data.collected} 条有效样本，只用于识别早期方向。双端差异统一按同一问题的网页端与手机端配对计算，避免把未配对样本混入比较。</div>
   </div>
   <div class="brief-status">
     <span>GEO 健康度</span>
@@ -81,122 +117,275 @@ function renderExecutive() {
     executiveCard('样本可信度', 'warn', '样本不足', `${data.collected}/${planned}`, `完成率 ${coverageRate.toFixed(1)}%，仅作阶段判断`, [
       ['已覆盖问题', `${uniqueQuestions} / ${data.question_count || 260}`],
       ['主题数', `${data.sections.length} 个`],
-      ['网页 / 手机', `${web.collected} / ${mobile.collected}`],
-      ['有效双端配对', `${data.paired_count} 组（${pairedRate.toFixed(1)}%）`],
+      ['网页 / 手机样本', `${web.collected} / ${mobile.collected}`],
+      ['有效双端配对', `${data.paired_count} 组`],
     ], '下一步：继续成对采样，覆盖不足前不形成稳定趋势结论。'),
-    executiveCard('品牌可见度', 'ok', '已有基础', `${mentionRate.toFixed(1)}%`, `${mentionCount} 次提及 / ${data.collected} 条有效样本`, [
-      ['网页提及率', `${web.mention_count}/${web.collected}，${pct(web.mention_rate, web.collected)}`],
-      ['手机提及率', `${mobile.mention_count}/${mobile.collected}，${pct(mobile.mention_rate, mobile.collected)}`],
-      ['综合首推率', `${firstCount}/${data.collected}，${firstRate.toFixed(1)}%`],
+    executiveCard('品牌可见度', 'ok', '已有基础', `${(mentionCount * 100 / data.collected).toFixed(1)}%`, `${mentionCount} 条回答提及蝉镜`, [
+      ['网页端提及', `${web.mention_count}/${web.collected}，${percent(web.mention_count, web.collected)}`],
+      ['手机端提及', `${mobile.mention_count}/${mobile.collected}，${percent(mobile.mention_count, mobile.collected)}`],
+      ['综合首推', `${firstCount}/${data.collected}，${percent(firstCount, data.collected)}`],
       ['网页 / 手机首推', `${web.first_count} / ${mobile.first_count}`],
     ], '下一步：优先补“为什么选择蝉镜”的场景证据和可引用内容。'),
-    executiveCard('双端差异', 'info', '手机端暂高', pp(mentionGap), '手机端提及率减网页端提及率', [
-      ['提及率', `${pct(web.mention_rate, web.collected)} → ${pct(mobile.mention_rate, mobile.collected)}`],
-      ['首推率差', pp(firstGap)],
-      ['引用量差', `${citationGap > 0 ? '+' : ''}${citationGap}`],
-      ['配对基数', `${data.paired_count} 组`],
+    executiveCard('双端差异', 'info', '手机端暂高', countDifferenceLabel(pairs.webMentions, pairs.mobileMentions, '个提及问题'), `同题配对提及率相差 ${pairedMentionGap.toFixed(1)} 个百分点`, [
+      ['提及问题', `手机 ${pairs.mobileMentions} 个，网页 ${pairs.webMentions} 个`],
+      ['提及率', `手机 ${pairs.mobileMentionRate.toFixed(1)}%，网页 ${pairs.webMentionRate.toFixed(1)}%`],
+      ['首推问题', `手机 ${pairs.mobileFirsts} 个，网页 ${pairs.webFirsts} 个`],
+      ['引用来源', `手机 ${pairs.mobileCitations} 个，网页 ${pairs.webCitations} 个`],
     ], '下一步：保持同题双端复测，确认差异是否随样本扩大而持续。'),
   ].join('');
 }
 
-function currentMetrics() {
-  const data = state.data;
-  const web = data.terminal_summary.web;
-  const mobile = data.terminal_summary.mobile;
-  if (state.view === 'web') return [
-    ['网页覆盖', `${web.collected} / 260`, '有效样本'],
-    ['蝉镜提及率', pct(web.mention_rate, web.collected), `${web.mention_count} 次提及`],
-    ['首位推荐率', pct(web.first_rate, web.collected), `${web.first_count} 次首位`],
-    ['回答引用量', web.citation_count, '普通来源链接'],
-  ];
-  if (state.view === 'mobile') return [
-    ['手机覆盖', `${mobile.collected} / 260`, '有效样本'],
-    ['蝉镜提及率', pct(mobile.mention_rate, mobile.collected), `${mobile.mention_count} 次提及`],
-    ['首位推荐率', pct(mobile.first_rate, mobile.collected), `${mobile.first_count} 次首位`],
-    ['回答引用量', mobile.citation_count, '普通来源链接'],
-  ];
-  if (state.view === 'compare') return [
-    ['有效配对', `${data.paired_count} / 260`, '同题双端配对'],
-    ['提及率差', pp(mobile.mention_rate - web.mention_rate), '手机 - 网页'],
-    ['首位率差', pp(mobile.first_rate - web.first_rate), '手机 - 网页'],
-    ['引用量差', mobile.citation_count - web.citation_count, '手机 - 网页'],
-  ];
-  return [
-    ['总覆盖', `${data.collected} / ${data.planned_slots || 520}`, data.status],
-    ['网页提及率', pct(web.mention_rate, web.collected), `${web.collected} 个网页样本`],
-    ['手机提及率', pct(mobile.mention_rate, mobile.collected), `${mobile.collected} 个手机样本`],
-    ['有效配对', `${data.paired_count} / 260`, '同题一对一'],
-  ];
+function sampleMatches(row) {
+  if (state.terminal !== 'all' && row.target_terminal !== state.terminal) return false;
+  if (state.section !== 'all' && row.section_name !== state.section) return false;
+  if (state.mention === 'yes' && row.mentioned_chanjing !== '是') return false;
+  if (state.mention === 'no' && row.mentioned_chanjing !== '否') return false;
+  if (state.first === 'yes' && row.chanjing_is_first !== '是') return false;
+  if (state.first === 'no' && row.chanjing_is_first !== '否') return false;
+  if (!state.search) return true;
+  return `${row.sample_id} ${row.section_name} ${row.question_text}`.toLowerCase().includes(state.search);
 }
 
-function renderMetrics() {
-  document.querySelector('#metrics').innerHTML = currentMetrics().map(([name, value, note]) => `<div class="metric"><span>${escapeHtml(name)}</span><strong>${escapeHtml(value)}</strong><small>${escapeHtml(note)}</small></div>`).join('');
+function pairMatches(row) {
+  if (state.section !== 'all' && row.section_name !== state.section) return false;
+  if (state.search && !`${row.section_name} ${row.question_text}`.toLowerCase().includes(state.search)) return false;
+  const mentionValue = state.terminal === 'web' ? row.web_mentioned : state.terminal === 'mobile' ? row.mobile_mentioned : (row.web_mentioned === '是' || row.mobile_mentioned === '是' ? '是' : '否');
+  const firstValue = state.terminal === 'web' ? row.web_first : state.terminal === 'mobile' ? row.mobile_first : (row.web_first === '是' || row.mobile_first === '是' ? '是' : '否');
+  if (state.mention === 'yes' && mentionValue !== '是') return false;
+  if (state.mention === 'no' && mentionValue !== '否') return false;
+  if (state.first === 'yes' && firstValue !== '是') return false;
+  if (state.first === 'no' && firstValue !== '否') return false;
+  return true;
+}
+
+function filteredSamples() {
+  return state.data.samples.filter(sampleMatches);
+}
+
+function filteredPairs() {
+  return state.data.paired.filter(pairMatches);
+}
+
+function donutChart(title, items, centerValue, centerLabel) {
+  const total = items.reduce((sum, item) => sum + item.value, 0) || 1;
+  const circumference = 263.89;
+  let offset = 0;
+  const circles = items.map((item) => {
+    const length = item.value / total * circumference;
+    const circle = `<circle cx="50" cy="50" r="42" stroke="${item.color}" stroke-dasharray="${length.toFixed(2)} ${(circumference - length).toFixed(2)}" stroke-dashoffset="${(-offset).toFixed(2)}"></circle>`;
+    offset += length;
+    return circle;
+  }).join('');
+  return `<section class="chart-card"><div class="section-head"><h2>${escapeHtml(title)}</h2></div><div class="chart-body"><div class="donut-row">
+    <div class="donut"><svg viewBox="0 0 100 100" role="img" aria-label="${escapeHtml(title)}">${circles}</svg><div class="donut-center">${escapeHtml(centerValue)}<small>${escapeHtml(centerLabel)}</small></div></div>
+    <div class="legend">${items.map((item) => `<div class="legend-item"><span class="legend-name"><i class="swatch" style="background:${item.color}"></i>${escapeHtml(item.name)}</span><strong>${escapeHtml(item.label)}</strong></div>`).join('')}</div>
+  </div></div></section>`;
+}
+
+function barChart(title, items, note, maxValue = null) {
+  const maximum = maxValue || Math.max(...items.map((item) => item.value), 1);
+  return `<section class="chart-card"><div class="section-head"><h2>${escapeHtml(title)}</h2></div><div class="chart-body"><div class="bar-list">${items.map((item) => `<div class="bar-row">
+    <span class="bar-label" title="${escapeHtml(item.name)}">${escapeHtml(item.name)}</span><div class="bar-track"><div class="bar-fill" style="width:${Math.max(0, Math.min(100, item.value / maximum * 100))}%;background:${item.color || colors.blue}"></div></div><span class="bar-value">${escapeHtml(item.label)}</span>
+  </div>`).join('')}</div><div class="chart-note">${escapeHtml(note)}</div></div></section>`;
+}
+
+function renderCharts(samples, pairs) {
+  const data = state.data;
+  const pending = Math.max((data.planned_slots || 520) - data.collected, 0);
+  const first = samples.filter((row) => row.chanjing_is_first === '是').length;
+  const mentioned = samples.filter((row) => row.mentioned_chanjing === '是').length;
+  const mentionOnly = Math.max(mentioned - first, 0);
+  const notMentioned = Math.max(samples.length - mentioned, 0);
+  const pairData = pairedStats(pairs);
+  const sectionCounts = new Map();
+  samples.forEach((row) => sectionCounts.set(row.section_name, (sectionCounts.get(row.section_name) || 0) + 1));
+  const sectionItems = [...sectionCounts.entries()].sort((a, b) => b[1] - a[1]).map(([name, value]) => ({ name, value, label: `${value} 条`, color: colors.blue }));
+
+  document.querySelector('#chart-grid').innerHTML = [
+    donutChart('采样完成度', [
+      { name: '已完成', value: data.collected, label: `${data.collected} 条`, color: colors.blue },
+      { name: '待采样', value: pending, label: `${pending} 条`, color: colors.muted },
+    ], `${(data.collected * 100 / (data.planned_slots || 520)).toFixed(1)}%`, `${data.collected}/${data.planned_slots || 520}`),
+    donutChart('当前筛选结果', [
+      { name: '蝉镜首推', value: first, label: `${first} 条`, color: colors.green },
+      { name: '提及但非首推', value: mentionOnly, label: `${mentionOnly} 条`, color: colors.blue },
+      { name: '未提及蝉镜', value: notMentioned, label: `${notMentioned} 条`, color: colors.muted },
+    ], `${samples.length} 条`, '当前筛选'),
+    barChart('双端品牌表现', pairData.count ? [
+      { name: '网页端提及蝉镜', value: pairData.webMentionRate, label: `${pairData.webMentions}/${pairData.count}，${pairData.webMentionRate.toFixed(1)}%`, color: colors.blue },
+      { name: '手机端提及蝉镜', value: pairData.mobileMentionRate, label: `${pairData.mobileMentions}/${pairData.count}，${pairData.mobileMentionRate.toFixed(1)}%`, color: colors.cyan },
+      { name: '网页端首推蝉镜', value: pairData.webFirstRate, label: `${pairData.webFirsts}/${pairData.count}，${pairData.webFirstRate.toFixed(1)}%`, color: colors.green },
+      { name: '手机端首推蝉镜', value: pairData.mobileFirstRate, label: `${pairData.mobileFirsts}/${pairData.count}，${pairData.mobileFirstRate.toFixed(1)}%`, color: colors.amber },
+    ] : [{ name: '当前筛选无配对', value: 0, label: '0 条', color: colors.muted }], `只比较当前筛选下的 ${pairData.count} 组同题配对`, 100),
+    barChart('主题采样分布', sectionItems.length ? sectionItems : [{ name: '当前筛选无样本', value: 0, label: '0 条', color: colors.muted }], '按当前筛选的有效样本数排序'),
+  ].join('');
+}
+
+function insightCard({ title, badge, value, meta, copy, rate, tone = '' }) {
+  return `<article class="insight-card ${tone}"><div class="insight-card-head"><div class="insight-title">${escapeHtml(title)}</div><span class="pill">${escapeHtml(badge)}</span></div>
+    <div><div class="insight-value">${escapeHtml(value)}</div><div class="insight-meta">${escapeHtml(meta)}</div></div>
+    <div class="insight-bar"><span style="width:${Math.max(0, Math.min(100, rate || 0))}%"></span></div>
+    <div class="insight-copy">${escapeHtml(copy)}</div></article>`;
+}
+
+function renderFirstRecommendations(samples) {
+  const groups = new Map();
+  samples.forEach((row) => {
+    const name = row.first_recommendation || '未识别明确首位';
+    groups.set(name, (groups.get(name) || 0) + 1);
+  });
+  const rows = [...groups.entries()].sort((a, b) => b[1] - a[1]);
+  document.querySelector('#first-recommendation-count').textContent = `${rows.length} 种结果`;
+  document.querySelector('#first-recommendation-cards').innerHTML = rows.length ? rows.map(([name, count]) => insightCard({
+    title: name,
+    badge: percent(count, samples.length),
+    value: `${count}/${samples.length}`,
+    meta: '当前筛选样本的第一推荐',
+    copy: name === '蝉镜' ? '蝉镜被识别为回答中的第一推荐。' : name === '未识别明确首位' ? '回答中没有识别到明确的品牌或工具首位。' : `${name} 被识别为回答中的第一推荐。`,
+    rate: samples.length ? count * 100 / samples.length : 0,
+    tone: name === '蝉镜' ? 'ok' : name === '剪映' ? 'warn' : '',
+  })).join('') : '<div class="empty">当前筛选下没有样本</div>';
+}
+
+function splitUrls(value) {
+  return String(value || '').split('|').map((item) => item.trim()).filter(Boolean);
+}
+
+function renderSourceEvidence(samples) {
+  const withSources = samples.filter((row) => splitUrls(row.source_urls).length > 0).length;
+  const citationCount = samples.reduce((sum, row) => sum + Number(row.citation_count || 0), 0);
+  const urls = samples.flatMap((row) => splitUrls(row.source_urls));
+  const uniqueUrls = new Set(urls).size;
+  const total = samples.length;
+  document.querySelector('#source-evidence-count').textContent = `${withSources}/${total} 条有来源`;
+  const cards = [
+    { title: '有可点击来源', value: `${withSources}/${total}`, meta: percent(withSources, total), copy: '这些样本记录了至少一个可点击来源页面。', rate: total ? withSources * 100 / total : 0, tone: 'ok' },
+    { title: '未记录来源', value: `${total - withSources}/${total}`, meta: percent(total - withSources, total), copy: '这些样本没有记录来源链接，不能据此判断引用质量。', rate: total ? (total - withSources) * 100 / total : 0, tone: 'warn' },
+    { title: '回答识别引用', value: `${citationCount} 个`, meta: '回答解析得到的引用总数', copy: '这是回答中的普通引用数量，不等同于蝉镜自有引用。', rate: total ? Math.min(100, citationCount / total * 10) : 0 },
+    { title: '可点击来源页面', value: `${urls.length} 个`, meta: `去重后 ${uniqueUrls} 个页面`, copy: '同一页面在不同回答中出现会重复计入来源条目。', rate: urls.length ? uniqueUrls * 100 / urls.length : 0, tone: 'primary' },
+  ];
+  document.querySelector('#source-evidence-cards').innerHTML = cards.map(insightCard).join('');
+}
+
+function renderPairedInsights(pairs) {
+  const stats = pairedStats(pairs);
+  document.querySelector('#paired-insight-count').textContent = `${stats.count} 组同题配对`;
+  if (!stats.count) {
+    document.querySelector('#paired-insight-cards').innerHTML = '<div class="empty">当前筛选下没有双端配对</div>';
+    return;
+  }
+  const mentionGap = Math.abs(stats.mobileMentionRate - stats.webMentionRate);
+  const firstGap = Math.abs(stats.mobileFirstRate - stats.webFirstRate);
+  const citationDifference = stats.mobileCitations - stats.webCitations;
+  const cards = [
+    { title: '蝉镜提及差异', value: countDifferenceLabel(stats.webMentions, stats.mobileMentions, '个问题'), badge: pointDifferenceLabel(stats.webMentionRate, stats.mobileMentionRate), meta: `手机 ${stats.mobileMentions}/${stats.count}（${stats.mobileMentionRate.toFixed(1)}%）；网页 ${stats.webMentions}/${stats.count}（${stats.webMentionRate.toFixed(1)}%）`, copy: `两端提及率相差 ${mentionGap.toFixed(1)} 个百分点。百分点是两个百分比直接相减，不是增长率。`, rate: mentionGap, tone: 'primary' },
+    { title: '蝉镜首推差异', value: countDifferenceLabel(stats.webFirsts, stats.mobileFirsts, '个问题'), badge: pointDifferenceLabel(stats.webFirstRate, stats.mobileFirstRate), meta: `手机 ${stats.mobileFirsts}/${stats.count}（${stats.mobileFirstRate.toFixed(1)}%）；网页 ${stats.webFirsts}/${stats.count}（${stats.webFirstRate.toFixed(1)}%）`, copy: `两端首推率相差 ${firstGap.toFixed(1)} 个百分点。`, rate: firstGap, tone: 'ok' },
+    { title: '引用来源数量差异', value: citationDifference > 0 ? `手机端合计多 ${citationDifference} 个` : citationDifference < 0 ? `网页端合计多 ${Math.abs(citationDifference)} 个` : '两端合计相同', badge: `${stats.count} 组`, meta: `手机端 ${stats.mobileCitations} 个；网页端 ${stats.webCitations} 个`, copy: '这是同题配对回答记录的来源数量之和；每个问题的增减方向可能不同。', rate: Math.min(100, Math.abs(citationDifference)), tone: 'warn' },
+    { title: '比较样本基数', value: `${stats.count} 组`, badge: '同一问题', meta: `${stats.count} 个网页回答 + ${stats.count} 个手机回答`, copy: '只有同一问题在两个终端都完成，才进入双端差异计算。', rate: stats.count * 100 / 260 },
+  ];
+  document.querySelector('#paired-insight-cards').innerHTML = cards.map(insightCard).join('');
+}
+
+function tableHtml(headers, rows) {
+  return `<thead><tr>${headers.map((header) => `<th>${header}</th>`).join('')}</tr></thead><tbody>${rows.join('')}</tbody>`;
+}
+
+function sectionDifference(row) {
+  if (!row.web_count || !row.mobile_count) return '<span class="plain-difference">尚不能比较</span>';
+  const difference = row.mobile_mention_rate - row.web_mention_rate;
+  const className = difference > 0 ? 'mobile-higher' : difference < 0 ? 'web-higher' : '';
+  return `<span class="plain-difference ${className}">${escapeHtml(pointDifferenceLabel(row.web_mention_rate, row.mobile_mention_rate))}</span>`;
+}
+
+function terminalSummary(count, rate) {
+  if (!count) return '尚未采样';
+  const mentionCount = Math.round(count * rate / 100);
+  return `${count}/20 条<br>提及 ${mentionCount} 条（${Number(rate).toFixed(1)}%）`;
+}
+
+function renderSectionTable() {
+  const query = state.search;
+  const sections = state.data.sections.filter((row) => (state.section === 'all' || row.section_name === state.section) && (!query || row.section_name.toLowerCase().includes(query)));
+  document.querySelector('#section-count').textContent = `${sections.length} 个主题`;
+  const rows = sections.map((row) => `<tr><td class="question-cell"><strong>${escapeHtml(row.section_name)}</strong></td>
+    <td>${row.web_count + row.mobile_count}/40 条</td><td>${terminalSummary(row.web_count, row.web_mention_rate)}</td><td>${terminalSummary(row.mobile_count, row.mobile_mention_rate)}</td><td>${sectionDifference(row)}</td></tr>`);
+  document.querySelector('#section-table').innerHTML = tableHtml(['主题', '总采样', '网页端', '手机端', '双端提及率差异'], rows.length ? rows : ['<tr><td colspan="5" class="empty">当前筛选下没有主题</td></tr>']);
+}
+
+function mentionChangeLabel(row) {
+  if (row.web_mentioned === '是' && row.mobile_mentioned === '是') return '两端都提及蝉镜';
+  if (row.web_mentioned === '否' && row.mobile_mentioned === '是') return '手机端新增提及蝉镜';
+  if (row.web_mentioned === '是' && row.mobile_mentioned === '否') return '手机端未再提及蝉镜';
+  return '两端都未提及蝉镜';
+}
+
+function firstChangeLabel(row) {
+  if (row.web_first === '是' && row.mobile_first === '是') return '两端都首推蝉镜';
+  if (row.web_first === '否' && row.mobile_first === '是') return '手机端改为首推蝉镜';
+  if (row.web_first === '是' && row.mobile_first === '否') return '手机端不再首推蝉镜';
+  return '两端都未首推蝉镜';
+}
+
+function citationDifferenceLabel(value) {
+  const difference = Number(value || 0);
+  if (difference > 0) return `手机端多 ${difference} 个来源`;
+  if (difference < 0) return `手机端少 ${Math.abs(difference)} 个来源`;
+  return '两端来源数量相同';
+}
+
+function renderPairedTable(pairs) {
+  document.querySelector('#paired-count').textContent = `${pairs.length} 组配对`;
+  const rows = pairs.map((row) => `<tr><td class="question-cell"><strong>${escapeHtml(row.section_name)}</strong><br>${escapeHtml(row.question_text)}</td>
+    <td>${tag(row.web_mentioned)}</td><td>${tag(row.mobile_mentioned)}</td><td class="plain-difference">${escapeHtml(mentionChangeLabel(row))}</td>
+    <td>${tag(row.web_first)}</td><td>${tag(row.mobile_first)}</td><td class="plain-difference">${escapeHtml(firstChangeLabel(row))}</td>
+    <td class="plain-difference">${escapeHtml(citationDifferenceLabel(row.citation_delta))}</td></tr>`);
+  document.querySelector('#paired-table').innerHTML = tableHtml(['问题', '网页提及', '手机提及', '提及变化', '网页首推', '手机首推', '首推变化', '引用来源变化'], rows.length ? rows : ['<tr><td colspan="8" class="empty">当前筛选下没有双端配对</td></tr>']);
 }
 
 function sourceLinks(value) {
-  const urls = String(value || '').split('|').map((item) => item.trim()).filter(Boolean);
-  if (!urls.length) return '<span>未记录</span>';
+  const urls = splitUrls(value);
+  if (!urls.length) return '<span>未记录来源</span>';
   return `<details class="source-details"><summary>${urls.length} 个来源</summary><div class="source-list">${urls.map((url, index) => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">来源 ${index + 1}</a>`).join('')}</div></details>`;
 }
 
-function sampleTable(terminal) {
-  const rows = state.data.samples.filter((row) => row.target_terminal === terminal && matches(row));
-  if (!rows.length) return '<div class="empty">当前筛选下没有样本</div>';
-  return `<div class="table-wrap"><table><thead><tr><th>样本</th><th>主题 / 问题</th><th>蝉镜提及</th><th>首位推荐</th><th>来源</th><th>回答</th></tr></thead><tbody>${rows.map((row) => `<tr>
-    <td class="sample-id">${escapeHtml(row.sample_id)}</td>
-    <td class="question-cell"><strong>${escapeHtml(row.section_name)}</strong><br>${escapeHtml(row.question_text)}</td>
-    <td>${tag(row.mentioned_chanjing)}</td>
-    <td>${tag(row.chanjing_is_first)}<br>${escapeHtml(row.first_recommendation || '未识别')}</td>
-    <td>${sourceLinks(row.source_urls)}</td>
-    <td class="answer-cell"><details class="answer-details"><summary>查看回答</summary><div class="answer-text">${escapeHtml(row.answer_text)}</div></details></td>
-  </tr>`).join('')}</tbody></table></div>`;
+function renderSampleTable(samples) {
+  document.querySelector('#sample-count').textContent = `${samples.length} 条记录`;
+  const rows = samples.map((row) => `<tr><td class="sample-id">${escapeHtml(row.sample_id)}</td><td>${row.target_terminal === 'web' ? '网页端' : '手机端'}</td>
+    <td class="question-cell"><strong>${escapeHtml(row.section_name)}</strong><br>${escapeHtml(row.question_text)}</td><td>${tag(row.mentioned_chanjing)}</td>
+    <td>${escapeHtml(row.first_recommendation || '未识别明确首位')}</td><td>${sourceLinks(row.source_urls)}</td>
+    <td class="answer-cell"><details class="answer-details"><summary>查看回答</summary><div class="answer-text">${escapeHtml(row.answer_text)}</div></details></td></tr>`);
+  document.querySelector('#sample-table').innerHTML = tableHtml(['采样ID', '终端', '主题 / 问题', '蝉镜提及', '第一推荐', '引用来源', '回答'], rows.length ? rows : ['<tr><td colspan="7" class="empty">当前筛选下没有样本</td></tr>']);
 }
 
-function overviewTable() {
-  const rows = state.data.sections.filter(matches);
-  if (!rows.length) return '<div class="empty">当前筛选下没有主题</div>';
-  return `<div class="table-wrap"><table><thead><tr><th>主题</th><th>网页覆盖</th><th>网页提及率</th><th>手机覆盖</th><th>手机提及率</th><th>手机 - 网页</th></tr></thead><tbody>${rows.map((row) => `<tr>
-    <td class="question-cell"><strong>${escapeHtml(row.section_name)}</strong></td>
-    <td>${row.web_count} / 20</td>
-    <td>${pct(row.web_mention_rate, row.web_count)}<div class="bar"><span style="width:${row.web_count ? row.web_mention_rate : 0}%"></span></div></td>
-    <td>${row.mobile_count} / 20</td>
-    <td>${pct(row.mobile_mention_rate, row.mobile_count)}<div class="bar mobile"><span style="width:${row.mobile_count ? row.mobile_mention_rate : 0}%"></span></div></td>
-    <td class="delta">${row.web_count && row.mobile_count ? pp(row.mobile_mention_rate - row.web_mention_rate) : '—'}</td>
-  </tr>`).join('')}</tbody></table></div>`;
+function renderAll() {
+  const samples = filteredSamples();
+  const pairs = filteredPairs();
+  renderCharts(samples, pairs);
+  renderFirstRecommendations(samples);
+  renderSourceEvidence(samples);
+  renderPairedInsights(pairs);
+  renderSectionTable();
+  renderPairedTable(pairs);
+  renderSampleTable(samples);
 }
 
-function compareTable() {
-  const rows = state.data.paired.filter(matches);
-  if (!rows.length) return '<div class="empty">当前筛选下没有有效双端配对</div>';
-  return `<div class="table-wrap"><table><thead><tr><th>问题</th><th>网页提及</th><th>手机提及</th><th>提及变化</th><th>网页首位</th><th>手机首位</th><th>引用差</th></tr></thead><tbody>${rows.map((row) => `<tr>
-    <td class="question-cell"><strong>${escapeHtml(row.section_name)}</strong><br>${escapeHtml(row.question_text)}</td>
-    <td>${tag(row.web_mentioned)}</td><td>${tag(row.mobile_mentioned)}</td><td>${row.mention_changed ? '有' : '无'}</td>
-    <td>${tag(row.web_first)}</td><td>${tag(row.mobile_first)}</td><td class="delta">${row.citation_delta > 0 ? '+' : ''}${row.citation_delta}</td>
-  </tr>`).join('')}</tbody></table></div>`;
-}
-
-function visibleRows() {
-  if (state.view === 'overview') return state.data.sections.filter(matches).length;
-  if (state.view === 'compare') return state.data.paired.filter(matches).length;
-  return state.data.samples.filter((row) => row.target_terminal === state.view && matches(row)).length;
-}
-
-function render() {
-  const captions = {
-    overview: '13 个业务主题，网页端与手机端并列比较',
-    web: '豆包网页端快速模式的逐题样本与来源',
-    mobile: '豆包手机端快速模式的逐题样本与来源',
-    compare: '仅使用同一问题的有效双端配对',
-  };
-  document.querySelector('#view-title').textContent = labels[state.view];
-  document.querySelector('#view-caption').textContent = captions[state.view];
-  document.querySelector('#view-count').textContent = `${visibleRows()} 条`;
-  renderMetrics();
-  document.querySelector('#content').innerHTML = state.view === 'overview'
-    ? overviewTable()
-    : state.view === 'compare'
-      ? compareTable()
-      : sampleTable(state.view);
+function bindFilters() {
+  const sectionSelect = document.querySelector('#section-filter');
+  sectionSelect.innerHTML = `<option value="all">全部主题</option>${state.data.sections.map((row) => `<option value="${escapeHtml(row.section_name)}">${escapeHtml(row.section_name)}</option>`).join('')}`;
+  const bindings = [
+    ['#terminal-filter', 'terminal', 'change'],
+    ['#section-filter', 'section', 'change'],
+    ['#mention-filter', 'mention', 'change'],
+    ['#first-filter', 'first', 'change'],
+  ];
+  bindings.forEach(([selector, key, eventName]) => document.querySelector(selector).addEventListener(eventName, (event) => {
+    state[key] = event.target.value;
+    renderAll();
+  }));
+  document.querySelector('#search').addEventListener('input', (event) => {
+    state.search = event.target.value.trim().toLowerCase();
+    renderAll();
+  });
 }
 
 async function boot() {
@@ -208,26 +397,11 @@ async function boot() {
   document.querySelector('#page-title').textContent = `蝉镜AI GEO ${batchDate} 第一轮问题批次`;
   document.querySelector('#run-meta').textContent = `更新：${formatTime(state.data.generated_at)}`;
   renderExecutive();
-
-  const compareTab = document.querySelector('[data-view="compare"]');
-  compareTab.disabled = state.data.paired_count === 0;
-  compareTab.title = compareTab.disabled ? '暂无有效双端配对' : '';
-  document.querySelectorAll('.tab').forEach((button) => button.addEventListener('click', () => {
-    state.view = button.dataset.view;
-    document.querySelectorAll('.tab').forEach((item) => {
-      item.classList.toggle('active', item === button);
-      item.setAttribute('aria-selected', item === button ? 'true' : 'false');
-    });
-    render();
-  }));
-  document.querySelector('#search').addEventListener('input', (event) => {
-    state.query = event.target.value.trim();
-    render();
-  });
-  render();
+  bindFilters();
+  renderAll();
 }
 
 boot().catch((error) => {
-  document.querySelector('#content').innerHTML = `<div class="empty">${escapeHtml(error.message)}</div>`;
+  document.querySelector('main').insertAdjacentHTML('beforeend', `<div class="empty">${escapeHtml(error.message)}</div>`);
   throw error;
 });
