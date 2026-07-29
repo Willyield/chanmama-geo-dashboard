@@ -1,0 +1,86 @@
+:root {
+  color-scheme: light;
+  --ink: #202124;
+  --muted: #687078;
+  --line: #d9dde1;
+  --paper: #ffffff;
+  --canvas: #f3f5f6;
+  --red: #d93535;
+  --cyan: #087f8c;
+  --green: #2b7a4b;
+  --amber: #9b6514;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; background: var(--canvas); color: var(--ink); font-family: Inter, "Microsoft YaHei", Arial, sans-serif; letter-spacing: 0; }
+body { min-width: 320px; }
+button, input { font: inherit; letter-spacing: 0; }
+.topbar { min-height: 76px; padding: 14px 22px; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 18px; border-bottom: 4px solid var(--red); }
+.brand-block { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.back-link { width: 36px; height: 36px; display: grid; place-items: center; flex: 0 0 36px; color: #fff; border: 1px solid #596066; text-decoration: none; font-size: 22px; }
+h1, h2, p { margin: 0; }
+h1 { font-size: 20px; line-height: 1.25; }
+.brand-block p { margin-top: 4px; color: #cbd0d4; font-size: 12px; }
+.coverage { text-align: right; flex: 0 0 auto; }
+.coverage strong { display: block; font-size: 18px; }
+.coverage span { display: block; color: #cbd0d4; font-size: 11px; margin-top: 2px; }
+.tabs { height: 48px; display: flex; gap: 0; padding: 0 22px; background: var(--paper); border-bottom: 1px solid var(--line); overflow-x: auto; }
+.tab { min-width: 92px; height: 48px; padding: 0 16px; border: 0; border-bottom: 3px solid transparent; background: transparent; color: var(--muted); cursor: pointer; }
+.tab.active { color: var(--ink); border-bottom-color: var(--red); font-weight: 700; }
+.tab:disabled { color: #a5abb0; cursor: not-allowed; }
+.progress-panel { padding: 10px 22px 11px; background: #fff; border-bottom: 1px solid var(--line); }
+.progress-summary { display: grid; grid-template-columns: auto minmax(120px, 1fr) auto; align-items: center; gap: 12px; }
+.status-badge { min-width: 68px; padding: 4px 8px; border: 1px solid #d9b35e; background: #fff8e8; color: #74501a; font: 700 11px/1.2 Consolas, monospace; text-align: center; }
+.status-badge.full { border-color: #78ad8c; background: #edf7f0; color: var(--green); }
+.progress-track { height: 8px; overflow: hidden; background: #e4e7e9; }
+.progress-track > span { display: block; width: 0; height: 100%; background: var(--cyan); transition: width 220ms ease-out; }
+.progress-summary > strong { min-width: 50px; font: 700 12px/1 Consolas, monospace; text-align: right; }
+.progress-breakdown { display: flex; align-items: center; flex-wrap: wrap; gap: 7px 18px; margin-top: 9px; color: var(--muted); font-size: 11px; }
+.progress-breakdown strong { color: var(--ink); font-family: Consolas, monospace; }
+.progress-breakdown .time-range { margin-left: auto; }
+main { max-width: 1500px; margin: 0 auto; padding: 18px 22px 36px; }
+.metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 18px; }
+.metric { min-height: 92px; padding: 14px; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--cyan); border-radius: 4px; }
+.metric:nth-child(2) { border-top-color: var(--red); }
+.metric:nth-child(3) { border-top-color: var(--green); }
+.metric:nth-child(4) { border-top-color: var(--amber); }
+.metric span { display: block; color: var(--muted); font-size: 12px; }
+.metric strong { display: block; margin-top: 8px; font-size: 24px; line-height: 1; }
+.metric small { display: block; margin-top: 7px; color: var(--muted); }
+.workspace { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.workspace-head { min-height: 70px; padding: 13px 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); }
+.workspace-head h2 { font-size: 16px; }
+.workspace-head p { margin-top: 4px; color: var(--muted); font-size: 12px; }
+.search-control { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; }
+.search-control input { width: 230px; height: 34px; padding: 0 10px; border: 1px solid #b9c0c5; border-radius: 3px; color: var(--ink); background: #fff; }
+.content { min-height: 280px; }
+.table-wrap { max-width: 100%; overflow: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th { position: sticky; top: 0; z-index: 1; padding: 10px 12px; background: #eef0f2; color: #4d555c; text-align: left; white-space: nowrap; border-bottom: 1px solid #c6ccd1; }
+td { padding: 10px 12px; vertical-align: top; border-bottom: 1px solid #e5e8ea; line-height: 1.5; }
+tr:hover td { background: #fafbfb; }
+.question-cell { min-width: 280px; max-width: 460px; }
+.answer-cell { min-width: 360px; max-width: 640px; white-space: pre-wrap; }
+.tag { display: inline-block; min-width: 38px; padding: 2px 5px; text-align: center; border: 1px solid #cbd1d5; border-radius: 3px; }
+.tag.yes { color: var(--green); border-color: #88b89c; background: #eef8f2; }
+.tag.no { color: #687078; }
+.bar { width: 150px; height: 8px; background: #e4e7e9; overflow: hidden; }
+.bar > span { display: block; height: 100%; background: var(--cyan); }
+.bar.mobile > span { background: var(--red); }
+.delta { font-variant-numeric: tabular-nums; }
+.empty { padding: 56px 18px; color: var(--muted); text-align: center; }
+@media (max-width: 800px) {
+  .topbar { align-items: flex-start; padding: 12px 14px; }
+  h1 { font-size: 17px; }
+  .tabs { padding: 0; }
+  .tab { min-width: 86px; padding: 0 10px; }
+  main { padding: 12px 0 28px; }
+  .progress-panel { padding: 10px; }
+  .progress-breakdown { gap: 7px 12px; }
+  .progress-breakdown .time-range { width: 100%; margin-left: 0; line-height: 1.45; }
+  .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 0 10px; }
+  .metric { min-height: 82px; padding: 11px; }
+  .metric strong { font-size: 21px; }
+  .workspace-head { align-items: flex-start; flex-direction: column; padding: 12px; }
+  .search-control, .search-control input { width: 100%; }
+  .coverage strong { font-size: 15px; }
+}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#202124">
+  <title>蝉镜AI GEO仪表盘</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-block">
+      <a class="back-link" href="../" aria-label="返回GEO仪表盘入口">←</a>
+      <div>
+        <h1>蝉镜AI GEO仪表盘</h1>
+        <p id="run-meta">正在读取数据</p>
+      </div>
+    </div>
+    <div class="coverage" aria-label="样本覆盖">
+      <strong id="coverage-value">0 / 520</strong>
+      <span id="coverage-status">读取中</span>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="数据视图">
+    <button class="tab active" data-view="overview" aria-selected="true">总览</button>
+    <button class="tab" data-view="web" aria-selected="false">网页</button>
+    <button class="tab" data-view="mobile" aria-selected="false">手机</button>
+    <button class="tab" data-view="compare" aria-selected="false">双端差异</button>
+  </nav>
+
+  <section class="progress-panel" aria-label="采样进度">
+    <div class="progress-summary">
+      <span id="status-badge" class="status-badge">读取中</span>
+      <div class="progress-track" aria-hidden="true"><span id="progress-fill"></span></div>
+      <strong id="progress-percent">0%</strong>
+    </div>
+    <div class="progress-breakdown">
+      <span>有效 <strong id="count-collected">—</strong></span>
+      <span>WEB <strong id="count-web">—</strong></span>
+      <span>MOBILE <strong id="count-mobile">—</strong></span>
+      <span>PAIRED <strong id="count-paired">—</strong></span>
+      <span class="time-range" id="time-range">采样时间 —</span>
+    </div>
+  </section>
+
+  <main>
+    <section id="metrics" class="metrics" aria-label="核心指标"></section>
+    <section class="workspace">
+      <div class="workspace-head">
+        <div>
+          <h2 id="view-title">总览</h2>
+          <p id="view-caption"></p>
+        </div>
+        <label class="search-control">
+          <span>筛选</span>
+          <input id="search" type="search" placeholder="问题或主题" autocomplete="off">
+        </label>
+      </div>
+      <div id="content" class="content" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
