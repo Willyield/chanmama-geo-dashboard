@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "module": "creators",
   "dataMode": "DAILY_AUDIT_ONLY",
-  "date": "2026-07-30",
-  "observedAt": "2026-07-30T10:07:55.375+08:00",
-  "scheduledFor": "T0_1000",
+  "date": "2026-07-29",
+  "observedAt": "2026-07-29T16:19:21.402+08:00",
+  "scheduledFor": "T1_1600",
   "publicationStatus": "DEGRADED_REPORT",
   "title": "抖音达人白名单库及热点判断",
   "summary": {
@@ -20,11 +20,12 @@
     "confirmedHotspots": 0,
     "contentActions": 3
   },
-  "statusMessage": "本日审计未新增达人白名单；8 项关键输入仍未闭环。",
+  "statusMessage": "本日审计未新增达人白名单；9 项关键输入仍未闭环。",
   "limitations": [
     "T0 video snapshots",
+    "T1 video snapshots",
     "T0 topic populations",
-    "T1 same-metric snapshots",
+    "T1 topic populations",
     "source-cluster assessment",
     "same-age cohort",
     "independent dual-source values",
@@ -38,46 +39,46 @@
       {
         "platform": "chanmama",
         "status": "VISIBLE_READ_ONLY_AUTH_UNKNOWN",
-        "observedAt": "2026-07-30T10:07:55.375+08:00",
+        "observedAt": "2026-07-29T16:19:21.402+08:00",
         "evidence": null
       },
       {
         "platform": "yuntu",
-        "status": "AUTHENTICATED_SIGNAL",
-        "observedAt": "2026-07-30T10:07:55.375+08:00",
+        "status": "AUTHENTICATED",
+        "observedAt": "2026-07-29T16:19:21.402+08:00",
         "evidence": null
       },
       {
         "platform": "xingtu",
         "status": "LOGIN_REQUIRED",
-        "observedAt": "2026-07-30T10:07:55.375+08:00",
+        "observedAt": "2026-07-29T16:19:21.402+08:00",
         "evidence": null
       },
       {
         "platform": "douyin",
-        "status": "VISIBLE_READ_ONLY_AUTH_UNKNOWN",
-        "observedAt": "2026-07-30T10:07:55.375+08:00",
+        "status": "PUBLIC_RESULTS_VISIBLE_AUTH_UNKNOWN_AFTER_LOGIN_SIGNAL",
+        "observedAt": "2026-07-29T16:19:21.402+08:00",
         "evidence": null
       },
       {
         "platform": "creatorCenter",
-        "status": "AUTHENTICATED_SIGNAL",
-        "observedAt": "2026-07-30T10:07:55.375+08:00",
+        "status": "AUTHENTICATED",
+        "observedAt": "2026-07-29T16:19:21.402+08:00",
         "evidence": null
       }
     ]
   },
   "audit": {
-    "sourcePath": "data/audits/2026-07-30-1010-t0-degraded-hotspot-and-creator-decision-v1.json",
-    "sourceSha256": "112567218bd604ed010f2ef017a8e702c7e5365da72e0d8038750ada4c45a379",
+    "sourcePath": "data/audits/2026-07-29-1621-t1-degraded-hotspot-and-creator-decision-v1.json",
+    "sourceSha256": "15300edb23217b894f1ecd096926c8351f81647a831bf8bf62a35d3fe898a78c",
     "reportType": "DEGRADED_REPORT",
     "schedule": {
-      "slot": "T0_1000",
+      "slot": "T1_1600",
       "on_time": true,
       "supplementalRefresh": false,
       "captureDelayedByRecovery": true,
-      "window": "10:00 +/- 15 minutes",
-      "originalTriggerAt": "2026-07-30T10:00:30.435+08:00",
+      "window": "16:00 +/- 15 minutes",
+      "originalTriggerAt": "2026-07-29T16:02:04.029+08:00",
       "lateSnapshotBackfilledAsOnTime": false
     },
     "creatorDecision": {
@@ -87,8 +88,9 @@
     },
     "missingInputs": [
       "T0 video snapshots",
+      "T1 video snapshots",
       "T0 topic populations",
-      "T1 same-metric snapshots",
+      "T1 topic populations",
       "source-cluster assessment",
       "same-age cohort",
       "independent dual-source values",
@@ -96,9 +98,15 @@
       "Xingtu authenticated creator cross-check"
     ],
     "evidenceRefs": [
-      "evidence/2026-07-30T02-06-29-041Z-platform-session-preflight-v2.json",
-      "evidence/blackhorse/2026-07-30-t0-general.json",
-      "evidence/topic-round/2026-07-30-t0-platform-pages.json"
+      "evidence/2026-07-29T08-15-22-705Z-platform-session-preflight-v2.json",
+      "evidence/2026-07-29T08-17-25-939Z-platform-session-preflight-v2.json",
+      "evidence/blackhorse/2026-07-29-t0-supplement-general.json",
+      "evidence/blackhorse/2026-07-29-t1-general.json",
+      "evidence/blackhorse/2026-07-29-t0-t1-delta-v1.json",
+      "evidence/topic-round/2026-07-29-t0-supplement-platform-pages.json",
+      "evidence/topic-round/2026-07-29-t1-platform-pages.json",
+      "data/audits/2026-07-29-1100-t0-supplement-degraded-hotspot-and-creator-decision-v1.json",
+      "data/audits/2026-07-29-1605-t1-incident-hotspot-and-creator-decision-v1.json"
     ],
     "constraints": {
       "cookiesReadOrExported": false,
@@ -111,9 +119,8 @@
       "deploymentPerformed": false
     },
     "nextCapture": {
-      "slot": "T0_SUPPLEMENT_1100",
-      "condition": "VERIFY_ONLY_WHEN_T0_REPORT_AND_EVIDENCE_ARE_COMPLETE;DO_NOT_REPEAT_SNAPSHOTS",
-      "followingMainSlot": "T1_1600",
+      "slot": "T1_SUPPLEMENT_1700",
+      "condition": "VERIFY_ONLY_WHEN_NO_NEW_LOGIN_OR_IDENTITY_CHANGE;DO_NOT_REPEAT_COMPLETE_SNAPSHOTS",
       "doNotBackfillOnTime": true
     }
   },
@@ -121,31 +128,31 @@
   "videoSignals": [],
   "topics": [
     {
-      "topicId": "HT-20260730-001",
-      "topic": "电商运营零经验入行",
-      "result": "T0_VISIBLE_EVERGREEN_CANDIDATE_NOT_HOTSPOT",
+      "topicId": "HT-20260729-001",
+      "topic": "电商运营没经验怎么入行",
+      "result": "T0_T1_VISIBLE_EVERGREEN_NOT_HOTSPOT",
       "confirmedHotspot": false,
       "effectiveIndependentSources": null,
       "temporaryWhitelistCreators": 0,
-      "reason": "Multiple visible search results establish evergreen demand, not fresh independent resonance or growth."
+      "reason": "The query remains visible in both rounds, but no fresh same-topic population or independent-source growth is available."
     },
     {
-      "topicId": "HT-20260730-002",
-      "topic": "夏季服饰舒适透气显瘦卖点",
-      "result": "T0_YUNTU_MARKETING_SIGNAL_NOT_HOTSPOT",
+      "topicId": "HT-20260729-002",
+      "topic": "电商运营每天要检查什么",
+      "result": "T0_T1_VISIBLE_PRACTICAL_CONTENT_NOT_HOTSPOT",
       "confirmedHotspot": false,
       "effectiveIndependentSources": null,
       "temporaryWhitelistCreators": 0,
-      "reason": "Yuntu shows large marketing volumes, but no matching independent Douyin topic population or creator contribution review exists."
+      "reason": "The same older single-video signal remains visible; it does not establish multi-source resonance or T1 growth."
     },
     {
-      "topicId": "HT-20260730-003",
-      "topic": "打工人吐槽大会",
-      "result": "T0_CREATOR_CENTER_ACTIVITY_NOT_HOTSPOT",
+      "topicId": "HT-20260729-003",
+      "topic": "月薪5千和5万运营的复盘差别",
+      "result": "T0_T1_VISIBLE_SINGLE_SOURCE_TEST_NOT_HOTSPOT",
       "confirmedHotspot": false,
       "effectiveIndependentSources": null,
       "temporaryWhitelistCreators": 0,
-      "reason": "A creator-center activity is visible, but an activity listing alone does not establish independent resonance or hotspot growth."
+      "reason": "The same 1.5w visible single-source item remains present, with no valid source cluster, cohort or dual-source growth evidence."
     }
   ],
   "recommendations": [

@@ -15,7 +15,7 @@ import {
   creatorViews,
   renderCreatorDetail,
   renderCreatorPage,
-} from "./creators.js?v=20260728creator2";
+} from "./creators.js?v=20260730top50";
 import { applyCreatorIdentityCorrection } from "./creator-data.js";
 import { escapeHtml, icon, renderError } from "./ui.js";
 
@@ -148,15 +148,16 @@ async function loadRoute() {
     const date = index.dates.some((item) => item.date === requestedDate) ? requestedDate : index.latest;
     const data = await fetchJson(`./data/${route.module}/${date}.json`);
     if (route.module === "creators") {
+      const fetchOptional = async (url) => {
+        try {
+          return await fetchJson(url);
+        } catch (error) {
+          if (!String(error.message).startsWith("404")) throw error;
+          return null;
+        }
+      };
+      data.operationalWhitelist = await fetchOptional(`./data/creators/operational-whitelist/${date}.json`);
       if (data.dataMode !== "DAILY_AUDIT_ONLY") {
-        const fetchOptional = async (url) => {
-          try {
-            return await fetchJson(url);
-          } catch (error) {
-            if (!String(error.message).startsWith("404")) throw error;
-            return null;
-          }
-        };
         [data.decision, data.qualityReview, data.topicWhitelist, data.identityCorrection] = await Promise.all([
           fetchOptional(`./data/creators/decisions/${date}.json`),
           fetchOptional(`./data/creators/quality-review/${date}.json`),

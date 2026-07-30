@@ -1,0 +1,2457 @@
+{
+  "schemaVersion": 1,
+  "module": "creator-operational-whitelist",
+  "date": "2026-07-30",
+  "generatedAt": "2026-07-30T03:04:08.883Z",
+  "status": "PUBLISHED_CANDIDATE_SET_READY",
+  "title": "抖音电商运营达人 Top 50",
+  "listType": "OPERATIONAL_RECOMMENDATION_WHITELIST",
+  "summary": {
+    "sourceCandidates": 150,
+    "personalCandidates": 144,
+    "eligibleAfterSafetyExclusions": 107,
+    "selectedCount": 50,
+    "coreCount": 10,
+    "recommendedCount": 20,
+    "expansionCount": 20,
+    "highConfidenceCount": 6,
+    "mediumConfidenceCount": 15,
+    "limitedConfidenceCount": 29,
+    "excludedCount": 43
+  },
+  "selectionPolicy": {
+    "userDecision": "不再使用七天正式白名单门槛，直接基于现有全部记录输出最适合的 50 个达人",
+    "sevenDayReviewUsed": false,
+    "hotspotQualificationUsed": false,
+    "positiveSignals": [
+      "稳定个人账号身份与主页链接",
+      "90 天有效样本、垂直相关率、实操内容下界与近期活跃度",
+      "历史达人决策分、质量代理分与后续样本复核"
+    ],
+    "rankingMethod": "先按综合证据分确定前 50；核心 10 人要求证据可信度至少为 MEDIUM，其余按综合证据分降序排列；同分按候选 ID 稳定排序。",
+    "hardExclusions": [
+      "机构、商业主体或身份待核",
+      "历史明确降级或仅作机构参考",
+      "重复、泛化、无证据身份或已知风险事项",
+      "缺少稳定账号 ID 或主页链接"
+    ],
+    "boundary": "这是运营推荐名单，不代表付费合作背书；缺失字段保持 null，涉及平台规则、收益或履约建议仍需逐条人工终审。"
+  },
+  "creators": [
+    {
+      "rank": 1,
+      "tier": "CORE_10",
+      "candidateId": "CR-136",
+      "stableProfileId": "MS4wLjABAAAAtaFNmFxzvNVWRw0ltTJEqPChCho-FdqjApYf4c0wfMk",
+      "nickname": "绽放唠电商运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAtaFNmFxzvNVWRw0ltTJEqPChCho-FdqjApYf4c0wfMk",
+      "followers": 57000,
+      "tracks": [
+        "电商数据分析"
+      ],
+      "evidenceScore": 112.7,
+      "confidence": "HIGH",
+      "evidence": {
+        "validSamples90d": 54,
+        "relevanceRatio": 1,
+        "corePracticeLowerBound": 0.7963,
+        "relatedVideos60d": 54,
+        "latestRelatedAgeDays": 0.82,
+        "historicalDecisionScore": 80,
+        "qualityProxyScore": null,
+        "historicalAction": "EXECUTE_PRIORITY",
+        "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+        "qualityLane": null
+      },
+      "evidenceSummary": [
+        "90 天有效样本 54 条",
+        "垂直相关率 100%",
+        "60 天相关内容 54 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 22,
+        "relevance": 20,
+        "practice": 11.1,
+        "activity": 8,
+        "recency": 6.8,
+        "decision": 14.4,
+        "quality": 0,
+        "audience": 2.4,
+        "disposition": 10,
+        "historicalAction": 18,
+        "reviewLane": 0,
+        "laterEvidence": 0
+      },
+      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+    },
+    {
+      "rank": 2,
+      "tier": "CORE_10",
+      "candidateId": "CR-051",
+      "stableProfileId": "MS4wLjABAAAAxkqwjpqCtOKE2teMgB20p5gH2qPctLVgtqUCZOmpLZs",
+      "nickname": "羽川（直播电商全域经营）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAxkqwjpqCtOKE2teMgB20p5gH2qPctLVgtqUCZOmpLZs",
+      "followers": 98000,
+      "tracks": [
+        "巨量千川与付费投放"
+      ],
+      "evidenceScore": 104.9,
+      "confidence": "HIGH",
+      "evidence": {
+        "validSamples90d": 21,
+        "relevanceRatio": 1,
+        "corePracticeLowerBound": 0.5,
+        "relatedVideos60d": 19,
+        "latestRelatedAgeDays": 5.59,
+        "historicalDecisionScore": 57,
+        "qualityProxyScore": null,
+        "historicalAction": "KEEP_WATCH",
+        "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+        "qualityLane": null
+      },
+      "evidenceSummary": [
+        "90 天有效样本 21 条",
+        "垂直相关率 100%",
+        "60 天相关内容 19 条",
+        "后续样本门已复核"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 15.4,
+        "relevance": 20,
+        "practice": 7,
+        "activity": 8,
+        "recency": 5.7,
+        "decision": 10.3,
+        "quality": 0,
+        "audience": 2.5,
+        "disposition": 10,
+        "historicalAction": 10,
+        "reviewLane": 0,
+        "laterEvidence": 16
+      },
+      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+    },
+    {
+      "rank": 3,
+      "tier": "CORE_10",
+      "candidateId": "CR-052",
+      "stableProfileId": "MS4wLjABAAAAVlyj84QI5fjAzO1aiKa3pfGdaVFNE_9vzZqxxyPOmGM",
+      "nickname": "阿妍抖店日记",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAVlyj84QI5fjAzO1aiKa3pfGdaVFNE_9vzZqxxyPOmGM",
+      "followers": 161000,
+      "tracks": [
+        "店铺运营与平台规则"
+      ],
+      "evidenceScore": 98.6,
+      "confidence": "HIGH",
+      "evidence": {
+        "validSamples90d": 18,
+        "relevanceRatio": 1,
+        "corePracticeLowerBound": 0.1667,
+        "relatedVideos60d": 18,
+        "latestRelatedAgeDays": 3.62,
+        "historicalDecisionScore": 57.4,
+        "qualityProxyScore": null,
+        "historicalAction": "KEEP_WATCH",
+        "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+        "qualityLane": null
+      },
+      "evidenceSummary": [
+        "90 天有效样本 18 条",
+        "垂直相关率 100%",
+        "60 天相关内容 18 条",
+        "后续样本门已复核"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 13.2,
+        "relevance": 20,
+        "practice": 2.3,
+        "activity": 8,
+        "recency": 6.2,
+        "decision": 10.3,
+        "quality": 0,
+        "audience": 2.6,
+        "disposition": 10,
+        "historicalAction": 10,
+        "reviewLane": 0,
+        "laterEvidence": 16
+      },
+      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+    },
+    {
+      "rank": 4,
+      "tier": "CORE_10",
+      "candidateId": "CR-128",
+      "stableProfileId": "MS4wLjABAAAA2B7x-jZeecMcsua5y5XQyC9ICJVKEV1of_4yId1Pxe8",
+      "nickname": "做京东的盈盈",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA2B7x-jZeecMcsua5y5XQyC9ICJVKEV1of_4yId1Pxe8",
+      "followers": 37000,
+      "tracks": [
+        "电商数据分析"
+      ],
+      "evidenceScore": 93.5,
+      "confidence": "MEDIUM",
+      "evidence": {
+        "validSamples90d": 12,
+        "relevanceRatio": 1,
+        "corePracticeLowerBound": 0.9167,
+        "relatedVideos60d": 9,
+        "latestRelatedAgeDays": 1,
+        "historicalDecisionScore": 63.4,
+        "qualityProxyScore": 64.2,
+        "historicalAction": "BACKFILL_PRIORITY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q0_HIGH_POTENTIAL_TOP_UP"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 12 条",
+        "垂直相关率 100%",
+        "60 天相关内容 9 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 8.8,
+        "relevance": 20,
+        "practice": 12.8,
+        "activity": 6,
+        "recency": 6.8,
+        "decision": 11.4,
+        "quality": 6.4,
+        "audience": 2.3,
+        "disposition": 4,
+        "historicalAction": 7,
+        "reviewLane": 8,
+        "laterEvidence": 0
+      },
+      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+    },
+    {
+      "rank": 5,
+      "tier": "CORE_10",
+      "candidateId": "CR-103",
+      "stableProfileId": "MS4wLjABAAAA3T4T3eNwPxb6hXcpaTswTZbEIfzXAd2b6NtEzgTrDaezGAHgq_tfHPQp_qOEu0Lg",
+      "nickname": "时来",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA3T4T3eNwPxb6hXcpaTswTZbEIfzXAd2b6NtEzgTrDaezGAHgq_tfHPQp_qOEu0Lg",
+      "followers": 15000,
+      "tracks": [
+        "电商AI与运营工具"
+      ],
+      "evidenceScore": 80.4,
+      "confidence": "HIGH",
+      "evidence": {
+        "validSamples90d": 43,
+        "relevanceRatio": 0.8837,
+        "corePracticeLowerBound": 0.1395,
+        "relatedVideos60d": 32,
+        "latestRelatedAgeDays": 0.74,
+        "historicalDecisionScore": 49.3,
+        "qualityProxyScore": null,
+        "historicalAction": "TOPIC_SCOUT",
+        "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+        "qualityLane": null
+      },
+      "evidenceSummary": [
+        "90 天有效样本 43 条",
+        "垂直相关率 88%",
+        "60 天相关内容 32 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 22,
+        "relevance": 17.7,
+        "practice": 2,
+        "activity": 8,
+        "recency": 6.8,
+        "decision": 8.9,
+        "quality": 0,
+        "audience": 2.1,
+        "disposition": 10,
+        "historicalAction": 3,
+        "reviewLane": 0,
+        "laterEvidence": 0
+      },
+      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+    },
+    {
+      "rank": 6,
+      "tier": "CORE_10",
+      "candidateId": "CR-122",
+      "stableProfileId": "MS4wLjABAAAAKo2XqwGfJ35ccbSdPBrqDB188wMCOMG-enaWAo9cFosAPLPRsejiWShhD2OOLOuh",
+      "nickname": "靳兴的运营速成指南",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAKo2XqwGfJ35ccbSdPBrqDB188wMCOMG-enaWAo9cFosAPLPRsejiWShhD2OOLOuh",
+      "followers": 196000,
+      "tracks": [
+        "直播运营"
+      ],
+      "evidenceScore": 77,
+      "confidence": "HIGH",
+      "evidence": {
+        "validSamples90d": 72,
+        "relevanceRatio": 0.8472,
+        "corePracticeLowerBound": 0.0556,
+        "relatedVideos60d": 42,
+        "latestRelatedAgeDays": 1.55,
+        "historicalDecisionScore": 39,
+        "qualityProxyScore": null,
+        "historicalAction": "TOPIC_SCOUT",
+        "autoDisposition": "READY_FOR_MANUAL_ROUND1",
+        "qualityLane": null
+      },
+      "evidenceSummary": [
+        "90 天有效样本 72 条",
+        "垂直相关率 85%",
+        "60 天相关内容 42 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 22,
+        "relevance": 16.9,
+        "practice": 0.8,
+        "activity": 8,
+        "recency": 6.6,
+        "decision": 7,
+        "quality": 0,
+        "audience": 2.6,
+        "disposition": 10,
+        "historicalAction": 3,
+        "reviewLane": 0,
+        "laterEvidence": 0
+      },
+      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+    },
+    {
+      "rank": 7,
+      "tier": "CORE_10",
+      "candidateId": "CR-027",
+      "stableProfileId": "MS4wLjABAAAAUwEU02SdwqMzkRUPp6W1CYr16Nlm7Y6z_lFgvz5xW5d1pG54IXHZBPlisOqRqTvH",
+      "nickname": "抖音广告投放-大東",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAUwEU02SdwqMzkRUPp6W1CYr16Nlm7Y6z_lFgvz5xW5d1pG54IXHZBPlisOqRqTvH",
+      "followers": 5000,
+      "tracks": [
+        "巨量千川与付费投放"
+      ],
+      "evidenceScore": 57.8,
+      "confidence": "MEDIUM",
+      "evidence": {
+        "validSamples90d": 11,
+        "relevanceRatio": 0.6364,
+        "corePracticeLowerBound": 0.5455,
+        "relatedVideos60d": 3,
+        "latestRelatedAgeDays": 27.66,
+        "historicalDecisionScore": 56.4,
+        "qualityProxyScore": 58,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q1_MANUAL_SEMANTIC_OR_ACTIVITY_RECHECK"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 11 条",
+        "垂直相关率 64%",
+        "60 天相关内容 3 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 8.1,
+        "relevance": 12.7,
+        "practice": 7.6,
+        "activity": 2,
+        "recency": 0.5,
+        "decision": 10.2,
+        "quality": 5.8,
+        "audience": 1.8,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": 5,
+        "laterEvidence": 0
+      },
+      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+    },
+    {
+      "rank": 8,
+      "tier": "CORE_10",
+      "candidateId": "CR-092",
+      "stableProfileId": "MS4wLjABAAAARUSjNmfcXZEETzO6xqL_PN_uQj0ANNaAJPeFTKL9NYFn0OtRNEVI6amBz_X30CfI",
+      "nickname": "昂哥抖店运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAARUSjNmfcXZEETzO6xqL_PN_uQj0ANNaAJPeFTKL9NYFn0OtRNEVI6amBz_X30CfI",
+      "followers": 14000,
+      "tracks": [
+        "店铺运营与平台规则"
+      ],
+      "evidenceScore": 57.6,
+      "confidence": "MEDIUM",
+      "evidence": {
+        "validSamples90d": 11,
+        "relevanceRatio": 1,
+        "corePracticeLowerBound": 0.0909,
+        "relatedVideos60d": 6,
+        "latestRelatedAgeDays": 20.81,
+        "historicalDecisionScore": 56.2,
+        "qualityProxyScore": 49.2,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q2_IDENTITY_OR_RISK_REVIEW"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 11 条",
+        "垂直相关率 100%",
+        "60 天相关内容 6 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 8.1,
+        "relevance": 20,
+        "practice": 1.3,
+        "activity": 4,
+        "recency": 2.1,
+        "decision": 10.1,
+        "quality": 4.9,
+        "audience": 2.1,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": 1,
+        "laterEvidence": 0
+      },
+      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+    },
+    {
+      "rank": 9,
+      "tier": "CORE_10",
+      "candidateId": "CR-039",
+      "stableProfileId": "MS4wLjABAAAA1qisFWbEO5208EScYB1IN1gXXd4kUt5W2vWID4Usn7eCcyL66ixbWt3Mo4ae6m8b",
+      "nickname": "ai电商运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA1qisFWbEO5208EScYB1IN1gXXd4kUt5W2vWID4Usn7eCcyL66ixbWt3Mo4ae6m8b",
+      "followers": 1173,
+      "tracks": [
+        "电商AI与运营工具"
+      ],
+      "evidenceScore": 43.9,
+      "confidence": "MEDIUM",
+      "evidence": {
+        "validSamples90d": 12,
+        "relevanceRatio": 0.5,
+        "corePracticeLowerBound": 0.1667,
+        "relatedVideos60d": 6,
+        "latestRelatedAgeDays": 1.93,
+        "historicalDecisionScore": 51.4,
+        "qualityProxyScore": 53.8,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 12 条",
+        "垂直相关率 50%",
+        "60 天相关内容 6 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 8.8,
+        "relevance": 10,
+        "practice": 2.3,
+        "activity": 4,
+        "recency": 6.5,
+        "decision": 9.3,
+        "quality": 5.4,
+        "audience": 1.5,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+    },
+    {
+      "rank": 10,
+      "tier": "CORE_10",
+      "candidateId": "CR-127",
+      "stableProfileId": "MS4wLjABAAAAb86lQj9OhrZrNjP5qutCvC3Bhsau9rRxSYljVpQClfM",
+      "nickname": "刘小刘—一位温度的 AI 电商讲师",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAb86lQj9OhrZrNjP5qutCvC3Bhsau9rRxSYljVpQClfM",
+      "followers": 510000,
+      "tracks": [
+        "电商AI与运营工具"
+      ],
+      "evidenceScore": 39.4,
+      "confidence": "MEDIUM",
+      "evidence": {
+        "validSamples90d": 23,
+        "relevanceRatio": 0.4783,
+        "corePracticeLowerBound": 0.1739,
+        "relatedVideos60d": 6,
+        "latestRelatedAgeDays": 2.7,
+        "historicalDecisionScore": 29.4,
+        "qualityProxyScore": 49.7,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "FAIL_AUTOMATED_GATE",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 23 条",
+        "垂直相关率 48%",
+        "60 天相关内容 6 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 16.9,
+        "relevance": 9.6,
+        "practice": 2.4,
+        "activity": 4,
+        "recency": 6.4,
+        "decision": 5.3,
+        "quality": 5,
+        "audience": 2.9,
+        "disposition": -5,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+    },
+    {
+      "rank": 11,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-147",
+      "stableProfileId": "MS4wLjABAAAATl2gPRGBq3ixq3SSTQvTSSem_CBQvwmxF1pomKE0ALz7TDafbMgqNTXOO5z_wbco",
+      "nickname": "千川优化师-北晚.【接代投】",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAATl2gPRGBq3ixq3SSTQvTSSem_CBQvwmxF1pomKE0ALz7TDafbMgqNTXOO5z_wbco",
+      "followers": 282,
+      "tracks": [
+        "巨量千川与付费投放"
+      ],
+      "evidenceScore": 51.7,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": 3,
+        "relevanceRatio": 1,
+        "corePracticeLowerBound": 1,
+        "relatedVideos60d": 3,
+        "latestRelatedAgeDays": 13.89,
+        "historicalDecisionScore": 44,
+        "qualityProxyScore": 45.6,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 3 条",
+        "垂直相关率 100%",
+        "60 天相关内容 3 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 2.2,
+        "relevance": 20,
+        "practice": 14,
+        "activity": 2,
+        "recency": 3.8,
+        "decision": 7.9,
+        "quality": 4.6,
+        "audience": 1.2,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 12,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-008",
+      "stableProfileId": "MS4wLjABAAAA4_zh4Bb0VrH419Ur0sKUoTUbtllA1yFswZqm074Ty_En01eGzihOHbDiKtkNxYTG",
+      "nickname": "海贼王的男人",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA4_zh4Bb0VrH419Ur0sKUoTUbtllA1yFswZqm074Ty_En01eGzihOHbDiKtkNxYTG",
+      "followers": 5000,
+      "tracks": [
+        "短视频运营",
+        "直播运营",
+        "巨量千川与付费投放",
+        "增长转化"
+      ],
+      "evidenceScore": 51.6,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": 1,
+        "relevanceRatio": 1,
+        "corePracticeLowerBound": 1,
+        "relatedVideos60d": 1,
+        "latestRelatedAgeDays": 49.58,
+        "historicalDecisionScore": 79,
+        "qualityProxyScore": 41.6,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 1 条",
+        "垂直相关率 100%",
+        "60 天相关内容 1 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0.7,
+        "relevance": 20,
+        "practice": 14,
+        "activity": 0.7,
+        "recency": 0,
+        "decision": 14.2,
+        "quality": 4.2,
+        "audience": 1.8,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 13,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-026",
+      "stableProfileId": "MS4wLjABAAAATvJaZ0aXEd6tq0Z8KAyHfOoDth5874PJqjEALi4PuR4",
+      "nickname": "那村儿风起",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAATvJaZ0aXEd6tq0Z8KAyHfOoDth5874PJqjEALi4PuR4",
+      "followers": 10000,
+      "tracks": [
+        "直播运营",
+        "巨量千川与付费投放",
+        "增长转化"
+      ],
+      "evidenceScore": 48.8,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": 1,
+        "relevanceRatio": 1,
+        "corePracticeLowerBound": 1,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": 82.57,
+        "historicalDecisionScore": 68.4,
+        "qualityProxyScore": 37.6,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 1 条",
+        "垂直相关率 100%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0.7,
+        "relevance": 20,
+        "practice": 14,
+        "activity": 0,
+        "recency": 0,
+        "decision": 12.3,
+        "quality": 3.8,
+        "audience": 2,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 14,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-056",
+      "stableProfileId": "MS4wLjABAAAAKUXfN9dB7GexirQaCV2S8pMPcuOYBCb94oFqKYPLmN9pBql9itbRfGaWEXlIYo26",
+      "nickname": "电商数据分析",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAKUXfN9dB7GexirQaCV2S8pMPcuOYBCb94oFqKYPLmN9pBql9itbRfGaWEXlIYo26",
+      "followers": 9,
+      "tracks": [
+        "电商数据分析"
+      ],
+      "evidenceScore": 43.2,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": 4,
+        "relevanceRatio": 1,
+        "corePracticeLowerBound": 0.5,
+        "relatedVideos60d": 4,
+        "latestRelatedAgeDays": 54.66,
+        "historicalDecisionScore": 54.7,
+        "qualityProxyScore": 41.1,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 4 条",
+        "垂直相关率 100%",
+        "60 天相关内容 4 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 2.9,
+        "relevance": 20,
+        "practice": 7,
+        "activity": 2.7,
+        "recency": 0,
+        "decision": 9.8,
+        "quality": 4.1,
+        "audience": 0.6,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 15,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-072",
+      "stableProfileId": "MS4wLjABAAAAz0F5Wpevvtwz24vMBUp4827W6QI8VLWGPDHCxpKMdY3FNL0pFHiL8_Oc3S56Uq6c",
+      "nickname": "不是小肖",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAz0F5Wpevvtwz24vMBUp4827W6QI8VLWGPDHCxpKMdY3FNL0pFHiL8_Oc3S56Uq6c",
+      "followers": 20000,
+      "tracks": [
+        "电商数据分析"
+      ],
+      "evidenceScore": 41.7,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": 7,
+        "relevanceRatio": 0.8571,
+        "corePracticeLowerBound": 0.2857,
+        "relatedVideos60d": 4,
+        "latestRelatedAgeDays": 15.62,
+        "historicalDecisionScore": 37.8,
+        "qualityProxyScore": 44.7,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 7 条",
+        "垂直相关率 86%",
+        "60 天相关内容 4 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 5.1,
+        "relevance": 17.1,
+        "practice": 4,
+        "activity": 2.7,
+        "recency": 3.4,
+        "decision": 6.8,
+        "quality": 4.5,
+        "audience": 2.2,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 16,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-139",
+      "stableProfileId": "MS4wLjABAAAA4cifHe2Ruw7vdSY4vHXYxFMbxb-FhdauEkWeZ15umF0",
+      "nickname": "小胡（千川）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA4cifHe2Ruw7vdSY4vHXYxFMbxb-FhdauEkWeZ15umF0",
+      "followers": 331,
+      "tracks": [
+        "巨量千川与付费投放"
+      ],
+      "evidenceScore": 40.2,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": 1,
+        "relevanceRatio": 1,
+        "corePracticeLowerBound": 1,
+        "relatedVideos60d": 1,
+        "latestRelatedAgeDays": 21.5,
+        "historicalDecisionScore": 12.1,
+        "qualityProxyScore": 33.9,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 1 条",
+        "垂直相关率 100%",
+        "60 天相关内容 1 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0.7,
+        "relevance": 20,
+        "practice": 14,
+        "activity": 0.7,
+        "recency": 2,
+        "decision": 2.2,
+        "quality": 3.4,
+        "audience": 1.3,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 17,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-010",
+      "stableProfileId": "MS4wLjABAAAAQeFnf2lgAvKCyW9HVrNKoY5kboRVNfTVdw3hMDLAfHA",
+      "nickname": "隔壁小王",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAQeFnf2lgAvKCyW9HVrNKoY5kboRVNfTVdw3hMDLAfHA",
+      "followers": 12000,
+      "tracks": [],
+      "evidenceScore": 34.4,
+      "confidence": "HIGH",
+      "evidence": {
+        "validSamples90d": 18,
+        "relevanceRatio": 1,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 3,
+        "latestRelatedAgeDays": 46.7,
+        "historicalDecisionScore": 34,
+        "qualityProxyScore": 40.5,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "FAIL_AUTOMATED_GATE",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 18 条",
+        "垂直相关率 100%",
+        "60 天相关内容 3 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 13.2,
+        "relevance": 20,
+        "practice": 0,
+        "activity": 2,
+        "recency": 0,
+        "decision": 6.1,
+        "quality": 4.1,
+        "audience": 2,
+        "disposition": -5,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 18,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-140",
+      "stableProfileId": "MS4wLjABAAAAHOe7il1XPWnNrynk6KHuGBF8gqu6C4EX5WK51g7TFyqOiU18bKpY7_qsOG0YFahD",
+      "nickname": "李哥抖店",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAHOe7il1XPWnNrynk6KHuGBF8gqu6C4EX5WK51g7TFyqOiU18bKpY7_qsOG0YFahD",
+      "followers": 136000,
+      "tracks": [
+        "店铺运营与平台规则"
+      ],
+      "evidenceScore": 33.1,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": 1,
+        "relevanceRatio": 1,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": 61.58,
+        "historicalDecisionScore": 62.4,
+        "qualityProxyScore": 26.1,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 1 条",
+        "垂直相关率 100%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0.7,
+        "relevance": 20,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 11.2,
+        "quality": 2.6,
+        "audience": 2.6,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 19,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-123",
+      "stableProfileId": "MS4wLjABAAAAHd0KQ3yVws_VFljJur6H5VZCFryjT5iew2bl7WwZDf1tGYLWzNmYs9mUfprsEtOm",
+      "nickname": "巨量本地推，千川投放",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAHd0KQ3yVws_VFljJur6H5VZCFryjT5iew2bl7WwZDf1tGYLWzNmYs9mUfprsEtOm",
+      "followers": 72,
+      "tracks": [
+        "巨量千川与付费投放"
+      ],
+      "evidenceScore": 31.3,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": 6,
+        "relevanceRatio": 0.6667,
+        "corePracticeLowerBound": 0.6667,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": 72.93,
+        "historicalDecisionScore": 24.2,
+        "qualityProxyScore": 29.2,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 6 条",
+        "垂直相关率 67%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 4.4,
+        "relevance": 13.3,
+        "practice": 9.3,
+        "activity": 0,
+        "recency": 0,
+        "decision": 4.4,
+        "quality": 2.9,
+        "audience": 1,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 20,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-003",
+      "stableProfileId": "MS4wLjABAAAAT0kVFmAtmcx84Iv_yBH4zkhwJnEF1bXAuvMd3GXojI0",
+      "nickname": "张振有点料",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAT0kVFmAtmcx84Iv_yBH4zkhwJnEF1bXAuvMd3GXojI0",
+      "followers": 41000,
+      "tracks": [
+        "店铺运营与平台规则",
+        "直播运营"
+      ],
+      "evidenceScore": 31.1,
+      "confidence": "MEDIUM",
+      "evidence": {
+        "validSamples90d": 18,
+        "relevanceRatio": 0.3889,
+        "corePracticeLowerBound": 0.0556,
+        "relatedVideos60d": 7,
+        "latestRelatedAgeDays": 3.54,
+        "historicalDecisionScore": 26.6,
+        "qualityProxyScore": 44.5,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "FAIL_AUTOMATED_GATE",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 18 条",
+        "垂直相关率 39%",
+        "60 天相关内容 7 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 13.2,
+        "relevance": 7.8,
+        "practice": 0.8,
+        "activity": 4.7,
+        "recency": 6.2,
+        "decision": 4.8,
+        "quality": 4.5,
+        "audience": 2.3,
+        "disposition": -5,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 21,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-099",
+      "stableProfileId": "MS4wLjABAAAAT90Vzhr8BRFQIoG1aS8tsct6TuKTFMawhuzYNMtIkvxNd5x_23_gPZzmTeDD3c6i",
+      "nickname": "巨量广告",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAT90Vzhr8BRFQIoG1aS8tsct6TuKTFMawhuzYNMtIkvxNd5x_23_gPZzmTeDD3c6i",
+      "followers": 391,
+      "tracks": [
+        "巨量千川与付费投放"
+      ],
+      "evidenceScore": 29,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": 5,
+        "relevanceRatio": 0.6,
+        "corePracticeLowerBound": 0.6,
+        "relatedVideos60d": 3,
+        "latestRelatedAgeDays": 26.98,
+        "historicalDecisionScore": 16.3,
+        "qualityProxyScore": 19.7,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 5 条",
+        "垂直相关率 60%",
+        "60 天相关内容 3 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 3.7,
+        "relevance": 12,
+        "practice": 8.4,
+        "activity": 2,
+        "recency": 0.7,
+        "decision": 2.9,
+        "quality": 2,
+        "audience": 1.3,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 22,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-095",
+      "stableProfileId": "MS4wLjABAAAAllGUDX6LsDVc1CL-IlW3QvGceVbaJ1kamv1GMrL3HEJSigMblPx77Pgg_kRGYY31",
+      "nickname": "小汉哥ai视频实操",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAllGUDX6LsDVc1CL-IlW3QvGceVbaJ1kamv1GMrL3HEJSigMblPx77Pgg_kRGYY31",
+      "followers": 223000,
+      "tracks": [
+        "电商AI与运营工具"
+      ],
+      "evidenceScore": 27.7,
+      "confidence": "MEDIUM",
+      "evidence": {
+        "validSamples90d": 18,
+        "relevanceRatio": 0.2778,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 5,
+        "latestRelatedAgeDays": 3.61,
+        "historicalDecisionScore": 33.8,
+        "qualityProxyScore": 36.7,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "FAIL_AUTOMATED_GATE",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 18 条",
+        "垂直相关率 28%",
+        "60 天相关内容 5 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 13.2,
+        "relevance": 5.6,
+        "practice": 0,
+        "activity": 3.3,
+        "recency": 6.2,
+        "decision": 6.1,
+        "quality": 3.7,
+        "audience": 2.7,
+        "disposition": -5,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 23,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-101",
+      "stableProfileId": "MS4wLjABAAAAqyJXGCLVphm2_WHmjPnWVToKL_g7xIguZT4WuTtTM7s",
+      "nickname": "阿飞（短视频直播带货）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAqyJXGCLVphm2_WHmjPnWVToKL_g7xIguZT4WuTtTM7s",
+      "followers": 287000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "evidenceScore": 26.3,
+      "confidence": "MEDIUM",
+      "evidence": {
+        "validSamples90d": 14,
+        "relevanceRatio": 0.2857,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 4,
+        "latestRelatedAgeDays": 15.82,
+        "historicalDecisionScore": 14.2,
+        "qualityProxyScore": 30.1,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 14 条",
+        "垂直相关率 29%",
+        "60 天相关内容 4 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 10.3,
+        "relevance": 5.7,
+        "practice": 0,
+        "activity": 2.7,
+        "recency": 3.3,
+        "decision": 2.6,
+        "quality": 3,
+        "audience": 2.7,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 24,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-075",
+      "stableProfileId": "MS4wLjABAAAAnoesjssyFzkJJsvCoicigQ0uJeIGBoMOpgHEtcH05no",
+      "nickname": "实体店引流老宋",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAnoesjssyFzkJJsvCoicigQ0uJeIGBoMOpgHEtcH05no",
+      "followers": 15000,
+      "tracks": [
+        "巨量千川与付费投放"
+      ],
+      "evidenceScore": 25.8,
+      "confidence": "MEDIUM",
+      "evidence": {
+        "validSamples90d": 10,
+        "relevanceRatio": 0.5,
+        "corePracticeLowerBound": 0.3,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": 82.72,
+        "historicalDecisionScore": 20.5,
+        "qualityProxyScore": 25.2,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 10 条",
+        "垂直相关率 50%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 7.3,
+        "relevance": 10,
+        "practice": 4.2,
+        "activity": 0,
+        "recency": 0,
+        "decision": 3.7,
+        "quality": 2.5,
+        "audience": 2.1,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 25,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-019",
+      "stableProfileId": "MS4wLjABAAAA7Q-sDM_EXyjma7je--CfV5TovAaP2Mt3-ul6I9Y5GJQ",
+      "nickname": "Hello_程颖",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA7Q-sDM_EXyjma7je--CfV5TovAaP2Mt3-ul6I9Y5GJQ",
+      "followers": 257000,
+      "tracks": [
+        "短视频运营",
+        "电商AI与运营工具"
+      ],
+      "evidenceScore": 24.8,
+      "confidence": "MEDIUM",
+      "evidence": {
+        "validSamples90d": 8,
+        "relevanceRatio": 0.5,
+        "corePracticeLowerBound": 0.125,
+        "relatedVideos60d": 1,
+        "latestRelatedAgeDays": 39.45,
+        "historicalDecisionScore": 27.3,
+        "qualityProxyScore": 28.9,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 8 条",
+        "垂直相关率 50%",
+        "60 天相关内容 1 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 5.9,
+        "relevance": 10,
+        "practice": 1.8,
+        "activity": 0.7,
+        "recency": 0,
+        "decision": 4.9,
+        "quality": 2.9,
+        "audience": 2.7,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 26,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-035",
+      "stableProfileId": "MS4wLjABAAAAsIswjGhmTpdzJxGcAt5euIF4I_JN9ERt_F8Yhk1wpt62kO5uUxkIBpWMC98in-nj",
+      "nickname": "小马哥(擎动未来)",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAsIswjGhmTpdzJxGcAt5euIF4I_JN9ERt_F8Yhk1wpt62kO5uUxkIBpWMC98in-nj",
+      "followers": 351000,
+      "tracks": [],
+      "evidenceScore": 24.8,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": 3,
+        "relevanceRatio": 0.6667,
+        "corePracticeLowerBound": 0.3333,
+        "relatedVideos60d": 1,
+        "latestRelatedAgeDays": 48.73,
+        "historicalDecisionScore": 17.9,
+        "qualityProxyScore": 19.1,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 3 条",
+        "垂直相关率 67%",
+        "60 天相关内容 1 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 2.2,
+        "relevance": 13.3,
+        "practice": 4.7,
+        "activity": 0.7,
+        "recency": 0,
+        "decision": 3.2,
+        "quality": 1.9,
+        "audience": 2.8,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 27,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-029",
+      "stableProfileId": "MS4wLjABAAAAaT_yDiWkqjfM1BHqFg2O4daNAOULan44NoVgMDuO4uo",
+      "nickname": "🔥杨老师",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAaT_yDiWkqjfM1BHqFg2O4daNAOULan44NoVgMDuO4uo",
+      "followers": 11000,
+      "tracks": [
+        "短视频运营",
+        "直播运营",
+        "增长转化"
+      ],
+      "evidenceScore": 22.5,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": 1,
+        "relevanceRatio": 1,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 1,
+        "latestRelatedAgeDays": 53.95,
+        "historicalDecisionScore": 6.9,
+        "qualityProxyScore": 18.6,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 1 条",
+        "垂直相关率 100%",
+        "60 天相关内容 1 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0.7,
+        "relevance": 20,
+        "practice": 0,
+        "activity": 0.7,
+        "recency": 0,
+        "decision": 1.2,
+        "quality": 1.9,
+        "audience": 2,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 28,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-089",
+      "stableProfileId": "MS4wLjABAAAACey9xtoVkvMGUTyDO_aAY9ThUzdhdZ37h4G1I3ud_lU",
+      "nickname": "大春说",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAACey9xtoVkvMGUTyDO_aAY9ThUzdhdZ37h4G1I3ud_lU",
+      "followers": 34000,
+      "tracks": [
+        "增长转化"
+      ],
+      "evidenceScore": 20.7,
+      "confidence": "MEDIUM",
+      "evidence": {
+        "validSamples90d": 18,
+        "relevanceRatio": 0.1667,
+        "corePracticeLowerBound": 0.1111,
+        "relatedVideos60d": 3,
+        "latestRelatedAgeDays": 17.81,
+        "historicalDecisionScore": 26.1,
+        "qualityProxyScore": 38.1,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "FAIL_AUTOMATED_GATE",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 18 条",
+        "垂直相关率 17%",
+        "60 天相关内容 3 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 13.2,
+        "relevance": 3.3,
+        "practice": 1.6,
+        "activity": 2,
+        "recency": 2.8,
+        "decision": 4.7,
+        "quality": 3.8,
+        "audience": 2.3,
+        "disposition": -5,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 29,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-071",
+      "stableProfileId": "MS4wLjABAAAAc35FjvjLZkW50veq4ff47JpvPCHw9zrmwXs3X1KLFc8",
+      "nickname": "iTLine电商AI运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAc35FjvjLZkW50veq4ff47JpvPCHw9zrmwXs3X1KLFc8",
+      "followers": 54000,
+      "tracks": [
+        "电商AI与运营工具"
+      ],
+      "evidenceScore": 17.5,
+      "confidence": "MEDIUM",
+      "evidence": {
+        "validSamples90d": 18,
+        "relevanceRatio": 0,
+        "corePracticeLowerBound": 0.4444,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "historicalDecisionScore": 28.8,
+        "qualityProxyScore": 35.2,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "FAIL_AUTOMATED_GATE",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 18 条",
+        "垂直相关率 0%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 13.2,
+        "relevance": 0,
+        "practice": 6.2,
+        "activity": 0,
+        "recency": 0,
+        "decision": 5.2,
+        "quality": 3.5,
+        "audience": 2.4,
+        "disposition": -5,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 30,
+      "tier": "RECOMMENDED_20",
+      "candidateId": "CR-107",
+      "stableProfileId": "MS4wLjABAAAAvv7QFuc-bdtxMyDumlCTPNtkKG-xyJlZCP4jZNWUUCaMUqQKG_jlhdvHzv21kIta",
+      "nickname": "抖音广告投放_老马",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAvv7QFuc-bdtxMyDumlCTPNtkKG-xyJlZCP4jZNWUUCaMUqQKG_jlhdvHzv21kIta",
+      "followers": 1415,
+      "tracks": [
+        "巨量千川与付费投放"
+      ],
+      "evidenceScore": 17,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": 5,
+        "relevanceRatio": 0.4,
+        "corePracticeLowerBound": 0.2,
+        "relatedVideos60d": 2,
+        "latestRelatedAgeDays": 53.01,
+        "historicalDecisionScore": 7.1,
+        "qualityProxyScore": 23.8,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 5 条",
+        "垂直相关率 40%",
+        "60 天相关内容 2 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 3.7,
+        "relevance": 8,
+        "practice": 2.8,
+        "activity": 1.3,
+        "recency": 0,
+        "decision": 1.3,
+        "quality": 2.4,
+        "audience": 1.6,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "用于垂直内容研究与稳定观察"
+    },
+    {
+      "rank": 31,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-018",
+      "stableProfileId": "MS4wLjABAAAA4DUkPF9UWFfvVmOwkY-LL9r9jiCGn6NT9UHKkaO-eD-D95DCo6wKsaRQOMGEsDN_",
+      "nickname": "周拾陆",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA4DUkPF9UWFfvVmOwkY-LL9r9jiCGn6NT9UHKkaO-eD-D95DCo6wKsaRQOMGEsDN_",
+      "followers": 9000,
+      "tracks": [
+        "短视频运营",
+        "增长转化",
+        "电商AI与运营工具"
+      ],
+      "evidenceScore": 16.2,
+      "confidence": "MEDIUM",
+      "evidence": {
+        "validSamples90d": 18,
+        "relevanceRatio": 0.1667,
+        "corePracticeLowerBound": 0.0556,
+        "relatedVideos60d": 3,
+        "latestRelatedAgeDays": 41.65,
+        "historicalDecisionScore": 25.9,
+        "qualityProxyScore": 32.6,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "FAIL_AUTOMATED_GATE",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 18 条",
+        "垂直相关率 17%",
+        "60 天相关内容 3 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 13.2,
+        "relevance": 3.3,
+        "practice": 0.8,
+        "activity": 2,
+        "recency": 0,
+        "decision": 4.7,
+        "quality": 3.3,
+        "audience": 2,
+        "disposition": -5,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 32,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-009",
+      "stableProfileId": "MS4wLjABAAAA9kg9vhIeXjKegcQP7RFEaioPq-h3W5JYfjl7zUZi2mM",
+      "nickname": "丰年Ai编导",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA9kg9vhIeXjKegcQP7RFEaioPq-h3W5JYfjl7zUZi2mM",
+      "followers": 45000,
+      "tracks": [
+        "电商AI与运营工具"
+      ],
+      "evidenceScore": 14.9,
+      "confidence": "MEDIUM",
+      "evidence": {
+        "validSamples90d": 16,
+        "relevanceRatio": 0.125,
+        "corePracticeLowerBound": 0.1875,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": 71.67,
+        "historicalDecisionScore": 30.3,
+        "qualityProxyScore": 32.3,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "FAIL_AUTOMATED_GATE",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 16 条",
+        "垂直相关率 13%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 11.7,
+        "relevance": 2.5,
+        "practice": 2.6,
+        "activity": 0,
+        "recency": 0,
+        "decision": 5.5,
+        "quality": 3.2,
+        "audience": 2.3,
+        "disposition": -5,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 33,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-121",
+      "stableProfileId": "MS4wLjABAAAAjnNJJ2eqMQtvJ7X2wt5P-akApjr-taL5eYp5obhQDTA",
+      "nickname": "布鲁斯电商版",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAjnNJJ2eqMQtvJ7X2wt5P-akApjr-taL5eYp5obhQDTA",
+      "followers": 102000,
+      "tracks": [
+        "增长转化"
+      ],
+      "evidenceScore": 14.3,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": 2,
+        "relevanceRatio": 0.5,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": 84.67,
+        "historicalDecisionScore": 16.4,
+        "qualityProxyScore": 13.5,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 2 条",
+        "垂直相关率 50%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 1.5,
+        "relevance": 10,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 3,
+        "quality": 1.4,
+        "audience": 2.5,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 34,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-015",
+      "stableProfileId": "MS4wLjABAAAAewiMNGy5sSg6SCLqWPP4BC9a3D3Ql5BxP1xq1RDZq-s",
+      "nickname": "无忌",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAewiMNGy5sSg6SCLqWPP4BC9a3D3Ql5BxP1xq1RDZq-s",
+      "followers": 78000,
+      "tracks": [],
+      "evidenceScore": 13.3,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": 3,
+        "relevanceRatio": 0.3333,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 1,
+        "latestRelatedAgeDays": 35.94,
+        "historicalDecisionScore": 21.8,
+        "qualityProxyScore": 13.9,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 3 条",
+        "垂直相关率 33%",
+        "60 天相关内容 1 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 2.2,
+        "relevance": 6.7,
+        "practice": 0,
+        "activity": 0.7,
+        "recency": 0,
+        "decision": 3.9,
+        "quality": 1.4,
+        "audience": 2.4,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 35,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-023",
+      "stableProfileId": "MS4wLjABAAAAHdLS-2AW2epjzC_KsxD8016rEQLuIkNskVags9Oj6MQ",
+      "nickname": "商业小巨蛋",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAHdLS-2AW2epjzC_KsxD8016rEQLuIkNskVags9Oj6MQ",
+      "followers": 528000,
+      "tracks": [],
+      "evidenceScore": 8.4,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": 5,
+        "relevanceRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "historicalDecisionScore": 25,
+        "qualityProxyScore": 13.9,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 5 条",
+        "垂直相关率 0%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 3.7,
+        "relevance": 0,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 4.5,
+        "quality": 1.4,
+        "audience": 2.9,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 36,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-032",
+      "stableProfileId": "MS4wLjABAAAAnQ5jSkrbANCG1ZS4mVwtmseFhV5qBT5oTBBbXi4wy_4",
+      "nickname": "沙师兄Ai知识付费",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAnQ5jSkrbANCG1ZS4mVwtmseFhV5qBT5oTBBbXi4wy_4",
+      "followers": 20000,
+      "tracks": [
+        "电商AI与运营工具"
+      ],
+      "evidenceScore": 8.2,
+      "confidence": "MEDIUM",
+      "evidence": {
+        "validSamples90d": 18,
+        "relevanceRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "historicalDecisionScore": 19.6,
+        "qualityProxyScore": 22.9,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "FAIL_AUTOMATED_GATE",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 18 条",
+        "垂直相关率 0%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 13.2,
+        "relevance": 0,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 3.5,
+        "quality": 2.3,
+        "audience": 2.2,
+        "disposition": -5,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 37,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-036",
+      "stableProfileId": "MS4wLjABAAAAvOCCqDymP8jly9fFlFFDf4kQRb9hlhOJjGWyWs2JCRs",
+      "nickname": "短视频小班班长",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAvOCCqDymP8jly9fFlFFDf4kQRb9hlhOJjGWyWs2JCRs",
+      "followers": 1466000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "evidenceScore": 8,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": null,
+        "relevanceRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "historicalDecisionScore": null,
+        "qualityProxyScore": null,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q2_IDENTITY_OR_RISK_REVIEW"
+      },
+      "evidenceSummary": [
+        "有效样本数待补",
+        "垂直相关率 0%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0,
+        "relevance": 0,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 0,
+        "quality": 0,
+        "audience": 3,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": 1,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 38,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-070",
+      "stableProfileId": "MS4wLjABAAAAvcYN5xC74crBEiu5zTUfD3jpn_CGaJ7FO3XelBlgHjg2aW3e5bTydDOVY1j3oOD3",
+      "nickname": "李元宝200°C（选品心法）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAvcYN5xC74crBEiu5zTUfD3jpn_CGaJ7FO3XelBlgHjg2aW3e5bTydDOVY1j3oOD3",
+      "followers": 242000,
+      "tracks": [
+        "选品定价与供应链"
+      ],
+      "evidenceScore": 7.7,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": null,
+        "relevanceRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "historicalDecisionScore": null,
+        "qualityProxyScore": null,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q2_IDENTITY_OR_RISK_REVIEW"
+      },
+      "evidenceSummary": [
+        "有效样本数待补",
+        "垂直相关率 0%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0,
+        "relevance": 0,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 0,
+        "quality": 0,
+        "audience": 2.7,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": 1,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 39,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-061",
+      "stableProfileId": "MS4wLjABAAAANcFvQ8uQsZZNW_RVTPj6EhVBQeDTH957pvrX2Vr3YAaMlg30Y3cKHEs8yzNTESy4",
+      "nickname": "张小伟（半无人带货）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAANcFvQ8uQsZZNW_RVTPj6EhVBQeDTH957pvrX2Vr3YAaMlg30Y3cKHEs8yzNTESy4",
+      "followers": 144000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "evidenceScore": 7.6,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": null,
+        "relevanceRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "historicalDecisionScore": null,
+        "qualityProxyScore": null,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q2_IDENTITY_OR_RISK_REVIEW"
+      },
+      "evidenceSummary": [
+        "有效样本数待补",
+        "垂直相关率 0%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0,
+        "relevance": 0,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 0,
+        "quality": 0,
+        "audience": 2.6,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": 1,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 40,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-079",
+      "stableProfileId": "MS4wLjABAAAAKqL4bqVnRjoj2EXukujJlJw9Moz98JFXegUqAnuzXkbwcNMCoCDW5ZMbisNFdo3s",
+      "nickname": "王总Ai实体运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAKqL4bqVnRjoj2EXukujJlJw9Moz98JFXegUqAnuzXkbwcNMCoCDW5ZMbisNFdo3s",
+      "followers": 135000,
+      "tracks": [
+        "电商AI与运营工具"
+      ],
+      "evidenceScore": 7.6,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": null,
+        "relevanceRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "historicalDecisionScore": null,
+        "qualityProxyScore": null,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q2_IDENTITY_OR_RISK_REVIEW"
+      },
+      "evidenceSummary": [
+        "有效样本数待补",
+        "垂直相关率 0%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0,
+        "relevance": 0,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 0,
+        "quality": 0,
+        "audience": 2.6,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": 1,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 41,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-016",
+      "stableProfileId": "MS4wLjABAAAAi5hBT7-KG6oYmzRoRcZg6IVY-_n3j4Hb_Laeo28wpWsZJO9_4Uh56RryprKeCTuZ",
+      "nickname": "卡思运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAi5hBT7-KG6oYmzRoRcZg6IVY-_n3j4Hb_Laeo28wpWsZJO9_4Uh56RryprKeCTuZ",
+      "followers": 114000,
+      "tracks": [
+        "巨量千川与付费投放",
+        "增长转化"
+      ],
+      "evidenceScore": 7.5,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": null,
+        "relevanceRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "historicalDecisionScore": null,
+        "qualityProxyScore": null,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q2_IDENTITY_OR_RISK_REVIEW"
+      },
+      "evidenceSummary": [
+        "有效样本数待补",
+        "垂直相关率 0%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0,
+        "relevance": 0,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 0,
+        "quality": 0,
+        "audience": 2.5,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": 1,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 42,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-038",
+      "stableProfileId": "MS4wLjABAAAAwDnkAb9OajdLf8KM8jHEyB3Xtg0kHEEgOic_BRttOQ0",
+      "nickname": "米叔电商问答",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAwDnkAb9OajdLf8KM8jHEyB3Xtg0kHEEgOic_BRttOQ0",
+      "followers": 105000,
+      "tracks": [],
+      "evidenceScore": 7.5,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": null,
+        "relevanceRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "historicalDecisionScore": null,
+        "qualityProxyScore": null,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q2_IDENTITY_OR_RISK_REVIEW"
+      },
+      "evidenceSummary": [
+        "有效样本数待补",
+        "垂直相关率 0%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0,
+        "relevance": 0,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 0,
+        "quality": 0,
+        "audience": 2.5,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": 1,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 43,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-040",
+      "stableProfileId": "MS4wLjABAAAAOuBtbyLvEf4clLAX9m35HPXPRINCSEWoLHblgdJq9Jg",
+      "nickname": "飞瓜数据",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAOuBtbyLvEf4clLAX9m35HPXPRINCSEWoLHblgdJq9Jg",
+      "followers": 90000,
+      "tracks": [
+        "电商数据分析"
+      ],
+      "evidenceScore": 7.5,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": null,
+        "relevanceRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "historicalDecisionScore": null,
+        "qualityProxyScore": null,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q2_IDENTITY_OR_RISK_REVIEW"
+      },
+      "evidenceSummary": [
+        "有效样本数待补",
+        "垂直相关率 0%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0,
+        "relevance": 0,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 0,
+        "quality": 0,
+        "audience": 2.5,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": 1,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 44,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-068",
+      "stableProfileId": "MS4wLjABAAAAgcI6ichFCa6vA-21Ch8bE1xdliri7qurh0ubxdWtILs",
+      "nickname": "抖店运营笔记 (南音)",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAgcI6ichFCa6vA-21Ch8bE1xdliri7qurh0ubxdWtILs",
+      "followers": 114000,
+      "tracks": [
+        "店铺运营与平台规则"
+      ],
+      "evidenceScore": 7.5,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": null,
+        "relevanceRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "historicalDecisionScore": null,
+        "qualityProxyScore": null,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q2_IDENTITY_OR_RISK_REVIEW"
+      },
+      "evidenceSummary": [
+        "有效样本数待补",
+        "垂直相关率 0%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0,
+        "relevance": 0,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 0,
+        "quality": 0,
+        "audience": 2.5,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": 1,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 45,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-069",
+      "stableProfileId": "MS4wLjABAAAAFsbaX8f-1bBcS6u3srfqFIMrhAS0MhZLpOWdqLoH2pM",
+      "nickname": "张小伟（视频号带货）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAFsbaX8f-1bBcS6u3srfqFIMrhAS0MhZLpOWdqLoH2pM",
+      "followers": 97000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "evidenceScore": 7.5,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": null,
+        "relevanceRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "historicalDecisionScore": null,
+        "qualityProxyScore": null,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q2_IDENTITY_OR_RISK_REVIEW"
+      },
+      "evidenceSummary": [
+        "有效样本数待补",
+        "垂直相关率 0%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0,
+        "relevance": 0,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 0,
+        "quality": 0,
+        "audience": 2.5,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": 1,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 46,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-085",
+      "stableProfileId": "MS4wLjABAAAAF2FR0mvEVYbLL3lXaLtBFMm_sWegwcZSOpI0gDc4krc",
+      "nickname": "随心短视频运营（干货分享）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAF2FR0mvEVYbLL3lXaLtBFMm_sWegwcZSOpI0gDc4krc",
+      "followers": 97000,
+      "tracks": [
+        "短视频运营"
+      ],
+      "evidenceScore": 7.5,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": null,
+        "relevanceRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "historicalDecisionScore": null,
+        "qualityProxyScore": null,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q2_IDENTITY_OR_RISK_REVIEW"
+      },
+      "evidenceSummary": [
+        "有效样本数待补",
+        "垂直相关率 0%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0,
+        "relevance": 0,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 0,
+        "quality": 0,
+        "audience": 2.5,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": 1,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 47,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-021",
+      "stableProfileId": "MS4wLjABAAAABuEWnU-fcMIIhd3s6Ij2mceXRunyChVP-auWCkaJR5o",
+      "nickname": "电商工辑",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAABuEWnU-fcMIIhd3s6Ij2mceXRunyChVP-auWCkaJR5o",
+      "followers": 75000,
+      "tracks": [
+        "店铺运营与平台规则"
+      ],
+      "evidenceScore": 7.4,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": null,
+        "relevanceRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "historicalDecisionScore": null,
+        "qualityProxyScore": null,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q2_IDENTITY_OR_RISK_REVIEW"
+      },
+      "evidenceSummary": [
+        "有效样本数待补",
+        "垂直相关率 0%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0,
+        "relevance": 0,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 0,
+        "quality": 0,
+        "audience": 2.4,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": 1,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 48,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-030",
+      "stableProfileId": "MS4wLjABAAAAc9VOLiCAPbSCWLURcOBqv5AFyT8yh1lHE5MVXXsZ0oNuG24DpDRfPVvoE-oBk7ls",
+      "nickname": "森桢出海电商",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAc9VOLiCAPbSCWLURcOBqv5AFyT8yh1lHE5MVXXsZ0oNuG24DpDRfPVvoE-oBk7ls",
+      "followers": 51000,
+      "tracks": [],
+      "evidenceScore": 7.4,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": null,
+        "relevanceRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "historicalDecisionScore": null,
+        "qualityProxyScore": null,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q2_IDENTITY_OR_RISK_REVIEW"
+      },
+      "evidenceSummary": [
+        "有效样本数待补",
+        "垂直相关率 0%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0,
+        "relevance": 0,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 0,
+        "quality": 0,
+        "audience": 2.4,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": 1,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 49,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-034",
+      "stableProfileId": "MS4wLjABAAAArM--lON69HgwzA3FmLp4eR1F5-qWwOHWr0tZSPSbc7rimK-DUKKL5OIu0JgGcK16",
+      "nickname": "魔鬼陈-默尘直播电商（专注精细化运营）",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAArM--lON69HgwzA3FmLp4eR1F5-qWwOHWr0tZSPSbc7rimK-DUKKL5OIu0JgGcK16",
+      "followers": 60000,
+      "tracks": [
+        "店铺运营与平台规则",
+        "短视频运营",
+        "直播运营",
+        "选品定价与供应链",
+        "增长转化"
+      ],
+      "evidenceScore": 7.4,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": null,
+        "relevanceRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "historicalDecisionScore": null,
+        "qualityProxyScore": null,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q2_IDENTITY_OR_RISK_REVIEW"
+      },
+      "evidenceSummary": [
+        "有效样本数待补",
+        "垂直相关率 0%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0,
+        "relevance": 0,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 0,
+        "quality": 0,
+        "audience": 2.4,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": 1,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    },
+    {
+      "rank": 50,
+      "tier": "EXPANSION_20",
+      "candidateId": "CR-043",
+      "stableProfileId": "MS4wLjABAAAAPxLbAxOtN-ndNQxFxSX6ijSm7zOlXFW0yIh93t5Oksg",
+      "nickname": "千川应用@卓卓说",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAPxLbAxOtN-ndNQxFxSX6ijSm7zOlXFW0yIh93t5Oksg",
+      "followers": 65000,
+      "tracks": [
+        "巨量千川与付费投放"
+      ],
+      "evidenceScore": 7.4,
+      "confidence": "LIMITED",
+      "evidence": {
+        "validSamples90d": null,
+        "relevanceRatio": 0,
+        "corePracticeLowerBound": 0,
+        "relatedVideos60d": 0,
+        "latestRelatedAgeDays": null,
+        "historicalDecisionScore": null,
+        "qualityProxyScore": null,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q2_IDENTITY_OR_RISK_REVIEW"
+      },
+      "evidenceSummary": [
+        "有效样本数待补",
+        "垂直相关率 0%",
+        "60 天相关内容 0 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 0,
+        "relevance": 0,
+        "practice": 0,
+        "activity": 0,
+        "recency": 0,
+        "decision": 0,
+        "quality": 0,
+        "audience": 2.4,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": 1,
+        "laterEvidence": 0
+      },
+      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+    }
+  ],
+  "excludedSummary": {
+    "count": 43,
+    "reasons": [
+      {
+        "reason": "历史处置为 DEPRIORITIZE",
+        "count": 11
+      },
+      {
+        "reason": "质量处置为 HOLD_NO_EVIDENCE_GENERIC_IDENTITY",
+        "count": 18
+      },
+      {
+        "reason": "历史记录存在明确风险词",
+        "count": 7
+      },
+      {
+        "reason": "质量处置为 HOLD_IDENTITY_OR_COMMERCIAL_RISK",
+        "count": 4
+      },
+      {
+        "reason": "非已确认个人达人身份",
+        "count": 6
+      },
+      {
+        "reason": "历史处置为 REFERENCE_ONLY",
+        "count": 1
+      },
+      {
+        "reason": "后续风险复核存在未关闭事项",
+        "count": 1
+      }
+    ]
+  },
+  "sources": {
+    "identity": {
+      "artifact": "2026-07-22.json",
+      "sha256": "6f8dec7e5fddb352a1af28bc930f1dc246bc48e5e3abad834c0ac542281da933"
+    },
+    "decisions": {
+      "artifact": "2026-07-22.json",
+      "sha256": "fd299514d4df79f8ae4851a1be15bf34946c2d5d562e987b01440bfbab697da0"
+    },
+    "quality": {
+      "artifact": "2026-07-22.json",
+      "sha256": "f79e131d2d9f2249ffd8afb5ee58aac6417904b346bd5f1073be4717919c7427"
+    },
+    "rapid": {
+      "artifact": "2026-07-30-rapid-temporary-creator-whitelist-v1.json",
+      "sha256": "e76ae81a1555742f611541e67ea6433cac1b7201ed449bba4c80e6909134a8f8"
+    },
+    "sampleReview": {
+      "artifact": "2026-07-23-1230-cr011-cr051-cr052-current-profile-review-v1.json",
+      "sha256": "ede9484d891bc55a9ba5abf384c56858603a2f96a97088bb59db80501751b0d0"
+    },
+    "riskReview": {
+      "artifact": "2026-07-23-1201-cr108-sample-gate-reconciliation-v1.json",
+      "sha256": "38d572cdc700a4dc9ff94bc18c076290d167084ea77e8e8666893a928b00b066"
+    }
+  }
+}
