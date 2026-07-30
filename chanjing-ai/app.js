@@ -8,14 +8,17 @@ const state = {
   first: 'all',
   search: '',
   filtersBound: false,
+  detailCache: new Map(),
+  detailLoads: new Map(),
 };
 
-const assetVersion = document.currentScript?.dataset.version || 'latest';
-const dataUrl = new URL('./dashboard-data.json', window.location.href);
+const entryScript = document.currentScript;
+const assetVersion = entryScript?.dataset.version || 'latest';
+const dataFile = entryScript?.dataset.dataFile || 'dashboard-data.json';
+const dataUrl = new URL(`./${dataFile}`, window.location.href);
 dataUrl.searchParams.set('v', assetVersion);
 const DATA_URL = dataUrl.toString();
-const LOAD_ATTEMPTS = 3;
-const LOAD_TIMEOUT_MS = 90000;
+const LOAD_ATTEMPTS = 2;
 
 const colors = {
   blue: '#1e40af',
@@ -88,23 +91,14 @@ async function loadDashboardData() {
   let lastError;
   for (let attempt = 1; attempt <= LOAD_ATTEMPTS; attempt += 1) {
     renderLoadState(attempt);
-    const controller = new AbortController();
-    let timedOut = false;
-    const timeout = window.setTimeout(() => {
-      timedOut = true;
-      controller.abort();
-    }, LOAD_TIMEOUT_MS);
     try {
       const response = await fetch(DATA_URL, {
         cache: attempt === 1 ? 'default' : 'reload',
-        signal: controller.signal,
       });
       if (!response.ok) throw new Error(`数据请求返回 ${response.status}`);
       return await response.json();
     } catch (error) {
-      lastError = timedOut ? new Error('数据请求超时') : error;
-    } finally {
-      window.clearTimeout(timeout);
+      lastError = error;
     }
     if (attempt < LOAD_ATTEMPTS) await delay(attempt * 800);
   }
@@ -138,7 +132,7 @@ function countDifferenceLabel(webCount, mobileCount, unit) {
   const difference = mobileCount - webCount;
   if (difference > 0) return `手机端多 ${difference} ${unit}`;
   if (difference < 0) return `网页端多 ${Math.abs(difference)} ${unit}`;
-  return `两端${unit}数量相同`;
+  return `两端${unit.replace(/^个/, '')}数量相同`;
 }
 
 function mentionDifferenceSummary(webCount, mobileCount) {
@@ -344,18 +338,26 @@ function splitUrls(value) {
   return String(value || '').split('|').map((item) => item.trim()).filter(Boolean);
 }
 
+function sourceMetrics(row) {
+  const urls = splitUrls(row.source_urls);
+  const count = Number.isInteger(row.source_count) ? row.source_count : urls.length;
+  const keys = Array.isArray(row.source_keys) ? row.source_keys : urls;
+  return { count, keys };
+}
+
 function renderSourceEvidence(samples) {
-  const withSources = samples.filter((row) => splitUrls(row.source_urls).length > 0).length;
+  const metrics = samples.map(sourceMetrics);
+  const withSources = metrics.filter((item) => item.count > 0).length;
   const citationCount = samples.reduce((sum, row) => sum + Number(row.citation_count || 0), 0);
-  const urls = samples.flatMap((row) => splitUrls(row.source_urls));
-  const uniqueUrls = new Set(urls).size;
+  const sourceCount = metrics.reduce((sum, item) => sum + item.count, 0);
+  const uniqueUrls = new Set(metrics.flatMap((item) => item.keys)).size;
   const total = samples.length;
   document.querySelector('#source-evidence-count').textContent = `${withSources}/${total} 条有来源`;
   const cards = [
     { title: '有可点击来源', value: `${withSources}/${total}`, meta: percent(withSources, total), copy: '这些样本记录了至少一个可点击来源页面。', rate: total ? withSources * 100 / total : 0, tone: 'ok' },
     { title: '未记录来源', value: `${total - withSources}/${total}`, meta: percent(total - withSources, total), copy: '这些样本没有记录来源链接，不能据此判断引用质量。', rate: total ? (total - withSources) * 100 / total : 0, tone: 'warn' },
     { title: '回答识别引用', value: `${citationCount} 个`, meta: '回答解析得到的引用总数', copy: '这是回答中的普通引用数量，不等同于蝉镜自有引用。', rate: total ? Math.min(100, citationCount / total * 10) : 0 },
-    { title: '可点击来源页面', value: `${urls.length} 个`, meta: `去重后 ${uniqueUrls} 个页面`, copy: '同一页面在不同回答中出现会重复计入来源条目。', rate: urls.length ? uniqueUrls * 100 / urls.length : 0, tone: 'primary' },
+    { title: '可点击来源页面', value: `${sourceCount} 个`, meta: `去重后 ${uniqueUrls} 个页面`, copy: '同一页面在不同回答中出现会重复计入来源条目。', rate: sourceCount ? uniqueUrls * 100 / sourceCount : 0, tone: 'primary' },
   ];
   document.querySelector('#source-evidence-cards').innerHTML = cards.map(insightCard).join('');
 }
@@ -435,18 +437,93 @@ function renderPairedTable(pairs) {
   document.querySelector('#paired-table').innerHTML = tableHtml(['问题', '网页提及', '手机提及', '提及变化', '网页首推', '手机首推', '首推变化', '引用来源变化'], rows.length ? rows : ['<tr><td colspan="8" class="empty">当前筛选下没有双端配对</td></tr>']);
 }
 
-function sourceLinks(value) {
-  const urls = splitUrls(value);
+function detailValue(row) {
+  return state.detailCache.get(row.sample_id) || row;
+}
+
+function sourceLinks(row) {
+  const detail = detailValue(row);
+  const urls = splitUrls(detail.source_urls);
   if (!urls.length) return '<span>未记录来源</span>';
-  return `<details class="source-details"><summary>${urls.length} 个来源</summary><div class="source-list">${urls.map((url, index) => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">来源 ${index + 1}</a>`).join('')}</div></details>`;
+  return `<details class="source-details"><summary>${urls.length} 个来源</summary><div class="source-list">${sourceLinkList(urls)}</div></details>`;
+}
+
+function sourceLinkList(urls) {
+  return urls.map((url, index) => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">来源 ${index + 1}</a>`).join('');
+}
+
+function deferredSourceLinks(row) {
+  const detail = state.detailCache.get(row.sample_id);
+  if (detail || Object.prototype.hasOwnProperty.call(row, 'source_urls')) return sourceLinks(row);
+  if (!row.source_count) return '<span>未记录来源</span>';
+  return `<details class="source-details deferred-details" data-detail-sample="${escapeHtml(row.sample_id)}" data-detail-kind="sources"><summary>${row.source_count} 个来源</summary><div class="source-list deferred-detail">展开后加载来源</div></details>`;
+}
+
+function answerDetails(row) {
+  const detail = detailValue(row);
+  if (Object.prototype.hasOwnProperty.call(detail, 'answer_text')) {
+    return `<details class="answer-details"><summary>查看回答</summary><div class="answer-text">${escapeHtml(detail.answer_text)}</div></details>`;
+  }
+  return `<details class="answer-details deferred-details" data-detail-sample="${escapeHtml(row.sample_id)}" data-detail-kind="answer"><summary>查看回答</summary><div class="answer-text deferred-detail">展开后加载回答</div></details>`;
+}
+
+async function loadSampleDetail(sampleId) {
+  if (state.detailCache.has(sampleId)) return state.detailCache.get(sampleId);
+  if (state.detailLoads.has(sampleId)) return state.detailLoads.get(sampleId);
+  const sample = state.data.samples.find((row) => row.sample_id === sampleId);
+  if (!sample?.detail_path) throw new Error('该样本没有公开明细路径');
+  const detailUrl = new URL(sample.detail_path, window.location.href);
+  detailUrl.searchParams.set('v', assetVersion);
+  const request = fetch(detailUrl, { cache: 'default' }).then(async (response) => {
+    if (!response.ok) throw new Error(`明细请求返回 ${response.status}`);
+    const detail = await response.json();
+    if (detail.sample_id !== sampleId) throw new Error('明细样本标识不一致');
+    state.detailCache.set(sampleId, detail);
+    return detail;
+  }).finally(() => state.detailLoads.delete(sampleId));
+  state.detailLoads.set(sampleId, request);
+  return request;
+}
+
+function hydrateSampleDetail(sampleId, detail) {
+  document.querySelectorAll('.deferred-details').forEach((element) => {
+    if (element.dataset.detailSample !== sampleId) return;
+    if (element.dataset.detailKind === 'sources') {
+      const urls = splitUrls(detail.source_urls);
+      element.querySelector('.source-list').innerHTML = urls.length ? sourceLinkList(urls) : '<span>未记录来源</span>';
+    } else {
+      element.querySelector('.answer-text').textContent = detail.answer_text || '';
+    }
+    element.classList.remove('deferred-details');
+    delete element.dataset.detailSample;
+    delete element.dataset.detailKind;
+  });
+}
+
+function bindDeferredDetails() {
+  const table = document.querySelector('#sample-table');
+  if (table.dataset.detailsBound === 'true') return;
+  table.addEventListener('toggle', async (event) => {
+    const details = event.target;
+    if (!(details instanceof HTMLDetailsElement) || !details.open || !details.dataset.detailSample) return;
+    const placeholder = details.querySelector('.deferred-detail');
+    if (placeholder) placeholder.textContent = '正在加载...';
+    try {
+      const detail = await loadSampleDetail(details.dataset.detailSample);
+      hydrateSampleDetail(details.dataset.detailSample, detail);
+    } catch (error) {
+      if (placeholder) placeholder.textContent = '加载失败，请收起后重试';
+    }
+  }, true);
+  table.dataset.detailsBound = 'true';
 }
 
 function renderSampleTable(samples, unresolved) {
   document.querySelector('#sample-count').textContent = `${samples.length + unresolved.length} 个样本位`;
   const rows = samples.map((row) => `<tr><td class="sample-id">${escapeHtml(row.sample_id)}</td><td>${row.target_terminal === 'web' ? '网页端' : '手机端'}</td>
     <td class="question-cell"><strong>${escapeHtml(row.section_name)}</strong><br>${escapeHtml(row.question_text)}</td><td>${tag(row.mentioned_chanjing)}</td>
-    <td>${escapeHtml(row.first_recommendation || '未识别明确首位')}</td><td>${sourceLinks(row.source_urls)}</td>
-    <td class="answer-cell"><details class="answer-details"><summary>查看回答</summary><div class="answer-text">${escapeHtml(row.answer_text)}</div></details></td></tr>`);
+    <td>${escapeHtml(row.first_recommendation || '未识别明确首位')}</td><td>${deferredSourceLinks(row)}</td>
+    <td class="answer-cell">${answerDetails(row)}</td></tr>`);
   unresolved.forEach((row) => rows.push(`<tr><td class="sample-id">${escapeHtml(row.sample_id)}</td><td>${row.target_terminal === 'web' ? '网页端' : '手机端'}</td>
     <td class="question-cell"><strong>${escapeHtml(row.section_name)}</strong><br>${escapeHtml(row.question_text)}</td><td><span class="tag">未完成</span></td>
     <td>不计入</td><td>未记录来源</td><td class="answer-cell">${escapeHtml(row.status_label || '平台结果未完成')}</td></tr>`));
@@ -485,6 +562,7 @@ function bindFilters() {
     renderAll();
   });
   state.filtersBound = true;
+  bindDeferredDetails();
 }
 
 async function boot() {
