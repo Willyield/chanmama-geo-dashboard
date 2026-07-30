@@ -1,3 +1,12 @@
+import {
+  buildClassificationComparison,
+  buildFilteredPublishCohort,
+  buildLineGeometry,
+  matchesPublishedDate,
+  metricCoverageLabel,
+  selectTrendPoints,
+} from "./trend-view.mjs";
+
 const CATEGORY_LABELS = {
   tutorial_method: "教程方法",
   competitor_comparison: "竞品对比",
@@ -109,6 +118,10 @@ const normalizeLegacyRoute = (route) => {
     query.delete("age");
     changed = true;
   }
+  if (query.has("publishedDate") && !/^\d{4}-\d{2}-\d{2}$/.test(query.get("publishedDate"))) {
+    query.delete("publishedDate");
+    changed = true;
+  }
   const queryCategory = query.get("category");
   if (queryCategory && !CATEGORY_LABELS[queryCategory]) {
     query.delete("category");
@@ -166,6 +179,7 @@ const filterRecords = (records, query, forced = {}) => {
     category: forced.category || query.get("category") || "",
     high: query.get("high") || "",
     quality: query.get("quality") || "",
+    publishedDate: query.get("publishedDate") || "",
     search: (query.get("search") || "").trim().toLowerCase(),
   };
   return records.filter((record) => {
@@ -177,6 +191,7 @@ const filterRecords = (records, query, forced = {}) => {
     if (filters.quality === "low_base" && !record.comparison?.lowBase) return false;
     if (filters.quality === "fallback" && record.comparison?.basis !== "PLATFORM_AGE_FALLBACK") return false;
     if (filters.quality === "insufficient" && record.comparison?.status !== "INSUFFICIENT_SAMPLE") return false;
+    if (!matchesPublishedDate(record, filters.publishedDate)) return false;
     if (filters.search && !`${record.title} ${record.accountName} ${record.platformLabel}`.toLowerCase().includes(filters.search)) return false;
     return true;
   });
@@ -187,22 +202,24 @@ const optionList = (items, selected, emptyLabel) => [
   ...items.map(({ value, label }) => `<option value="${escapeHtml(value)}"${value === selected ? " selected" : ""}>${escapeHtml(label)}</option>`),
 ].join("");
 
-const renderFilters = (query, { hidePlatform = false, hideCategory = false } = {}) => {
+const renderFilters = (query, { hidePlatform = false, hideCategory = false, resultCount = null } = {}) => {
   const platforms = [...new Map(state.records.map((record) => [record.platformId, record.platformLabel])).entries()]
     .map(([value, label]) => ({ value, label })).sort((a, b) => a.label.localeCompare(b.label, "zh-CN"));
   const sources = [...new Map(state.records.map((record) => [record.sourceId, `${record.platformLabel} / ${record.accountName}`])).entries()]
     .map(([value, label]) => ({ value, label })).sort((a, b) => a.label.localeCompare(b.label, "zh-CN"));
   const categories = Object.entries(CATEGORY_LABELS).map(([value, label]) => ({ value, label }));
   const dates = (state.index?.reports || []).map((report) => ({ value: report.reportDate, label: `${report.reportDate} / ${statusLabel(report.status)}` }));
+  const publishedDate = query.get("publishedDate") || "";
   return `<div class="filter-bar" aria-label="日报筛选">
-    <div class="filter-field"><label for="filter-date">日期</label><select id="filter-date" data-filter="date">${optionList(dates, state.reportDate, "选择日期")}</select></div>
+    <div class="filter-field"><label for="filter-date">日报日期</label><select id="filter-date" data-filter="date">${optionList(dates, state.reportDate, "选择日期")}</select></div>
     ${hidePlatform ? "" : `<div class="filter-field"><label for="filter-platform">平台</label><select id="filter-platform" data-filter="platform">${optionList(platforms, query.get("platform") || "", "全部平台")}</select></div>`}
     <div class="filter-field"><label for="filter-source">账号</label><select id="filter-source" data-filter="source">${optionList(sources, query.get("source") || "", "全部账号")}</select></div>
     ${hideCategory ? "" : `<div class="filter-field"><label for="filter-category">分类</label><select id="filter-category" data-filter="category">${optionList(categories, query.get("category") || "", "全部分类")}</select></div>`}
+    <div class="filter-field"><label for="filter-published-date">发布日期</label><input id="filter-published-date" data-filter="publishedDate" type="date" value="${escapeHtml(publishedDate)}"></div>
     <div class="filter-field"><label for="filter-high">表现突出</label><select id="filter-high" data-filter="high"><option value="">全部状态</option><option value="yes"${query.get("high") === "yes" ? " selected" : ""}>仅表现突出</option><option value="no"${query.get("high") === "no" ? " selected" : ""}>排除表现突出</option></select></div>
     <div class="filter-field"><label for="filter-quality">比较质量</label><select id="filter-quality" data-filter="quality"><option value="">全部状态</option><option value="low_base"${query.get("quality") === "low_base" ? " selected" : ""}>仅参考价值低</option><option value="fallback"${query.get("quality") === "fallback" ? " selected" : ""}>仅同平台同期参考</option><option value="insufficient"${query.get("quality") === "insufficient" ? " selected" : ""}>仅暂不可比</option></select></div>
     <div class="filter-field"><label for="filter-search">搜索</label><input id="filter-search" data-filter="search" type="search" value="${escapeHtml(query.get("search") || "")}" placeholder="标题、平台或账号"></div>
-  </div>`;
+  </div>${Number.isInteger(resultCount) ? `<p class="filter-result" role="status" aria-live="polite">筛选结果：${formatExact(resultCount)}篇${publishedDate ? ` · 发布于${escapeHtml(publishedDate)}` : ""}</p>` : ""}`;
 };
 
 const qualityBand = () => {
@@ -299,18 +316,165 @@ const topSignals = (records) => {
   </div>`).join("") || `<div class="empty-state">当前没有数据表现优秀内容</div>`}</div>`;
 };
 
-const trendChart = (query) => {
-  if (state.summary.period.kind === "BASELINE") {
-    return `<section class="section"><div class="section-header"><h2>播放/阅读趋势</h2><span>等待连续快照</span></div><div class="baseline-note"><strong>首次基线已建立</strong><span>第二次成功快照后开始显示真实区间增量，不反推历史变化。</span></div></section>`;
+const pathData = (points, xOffset = 22) => points
+  .map((point, index) => `${index ? "L" : "M"}${(point.x + xOffset).toFixed(2)},${point.y.toFixed(2)}`)
+  .join(" ");
+
+const trendRoute = (query, publishedDate) => {
+  const nextQuery = new URLSearchParams(query);
+  nextQuery.set("date", state.reportDate);
+  nextQuery.set("publishedDate", publishedDate);
+  return makeRoute("contents", null, nextQuery);
+};
+
+const renderPublishTrendPlot = (points, query, days) => {
+  const width = days === 7 ? 720 : 1320;
+  const innerWidth = width - 44;
+  const totalHeight = 156;
+  const medianHeight = 112;
+  const volumeHeight = 92;
+  const totalGeometry = buildLineGeometry(points, (point) => point.views.total, {
+    width: innerWidth,
+    height: totalHeight,
+    top: 18,
+    bottom: 16,
+  });
+  const medianGeometry = buildLineGeometry(points, (point) => point.views.median, {
+    width: innerWidth,
+    height: medianHeight,
+    top: 14,
+    bottom: 24,
+  });
+  const maximumCount = Math.max(1, ...points.map((point) => point.contentCount));
+  const step = points.length > 1 ? innerWidth / (points.length - 1) : innerWidth;
+  const barWidth = Math.max(5, Math.min(18, step * 0.4));
+  const bars = points.map((point, index) => {
+    const height = point.contentCount ? Math.max(3, point.contentCount / maximumCount * 48) : 0;
+    const x = 22 + index * step - barWidth / 2;
+    return `<rect class="trend-volume-bar" x="${x.toFixed(2)}" y="${(volumeHeight - 25 - height).toFixed(2)}" width="${barWidth.toFixed(2)}" height="${height.toFixed(2)}"></rect>`;
+  }).join("");
+  const paths = totalGeometry.paths.map((path) => `<path class="trend-line trend-line-total" d="${pathData(path)}"></path>`).join("");
+  const medianPaths = medianGeometry.paths.map((path) => `<path class="trend-line trend-line-median" d="${pathData(path)}"></path>`).join("");
+  const dateLabels = points.map((point, index) => {
+    if (days === 30 && index % 5 !== 0 && index !== points.length - 1) return "";
+    return `<text class="trend-axis-label" x="${(22 + index * step).toFixed(2)}" y="${volumeHeight - 6}" text-anchor="middle">${escapeHtml(point.date.slice(5))}</text>`;
+  }).join("");
+  const links = points.map((point, index) => {
+    const geometry = totalGeometry.points[index];
+    const x = geometry.x + 22;
+    const y = geometry.y ?? totalHeight - 16;
+    const route = trendRoute(query, point.date);
+    const coverage = metricCoverageLabel(point.views);
+    const label = `${point.date}，发布${point.contentCount}篇，当前累计播放阅读${formatExact(point.views.total)}，单篇常规阅读${formatExact(point.views.median)}，${coverage}`;
+    const tooltipX = Math.max(4, Math.min(width - 224, x - 106));
+    const tooltipY = y < 54 ? y + 16 : y - 50;
+    return `<a class="trend-point-link${geometry.y === null ? " is-unknown" : ""}" href="${escapeHtml(route)}" data-route="${escapeHtml(route)}" aria-label="${escapeHtml(label)}">
+      <title>${escapeHtml(label)}</title>
+      <circle class="trend-hit-area" cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="22"></circle>
+      <circle class="trend-point" cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="4"></circle>
+      <g class="trend-point-tooltip" transform="translate(${tooltipX.toFixed(2)} ${tooltipY.toFixed(2)})">
+        <rect width="220" height="42"></rect>
+        <text x="10" y="16">${escapeHtml(`${point.date.slice(5)} · ${point.contentCount}篇 · 阅读${formatExact(point.views.total)}`)}</text>
+        <text x="10" y="32">${escapeHtml(`常规${formatExact(point.views.median)} · ${coverage}`)}</text>
+      </g>
+    </a>`;
+  }).join("");
+  const medianPoints = medianGeometry.points.map((point) => point.y === null ? "" : `<circle class="trend-median-point" cx="${(point.x + 22).toFixed(2)}" cy="${point.y.toFixed(2)}" r="3"></circle>`).join("");
+  return `<div class="trend-scroll" tabindex="0" aria-label="趋势图，可横向滚动"><div class="trend-stage" style="width:${width}px">
+    <div class="trend-panel-label"><strong>当前累计播放/阅读</strong><span>柱形为当日发布量 · 折线缺口表示指标未知</span></div>
+    <svg class="trend-svg trend-svg-primary" viewBox="0 0 ${width} ${totalHeight}" role="img" aria-label="按发布日期分组的当前累计播放阅读趋势">
+      <line class="trend-grid-line" x1="22" y1="${totalHeight - 16}" x2="${width - 22}" y2="${totalHeight - 16}"></line>
+      ${paths}${links}
+    </svg>
+    <div class="trend-panel-label trend-panel-label-secondary"><strong>单篇常规阅读</strong><span>青绿虚线 · 仅使用播放/阅读已知的内容</span></div>
+    <svg class="trend-svg trend-svg-secondary" viewBox="0 0 ${width} ${medianHeight}" role="img" aria-label="按发布日期分组的单篇常规阅读趋势">
+      <line class="trend-grid-line" x1="22" y1="${medianHeight - 24}" x2="${width - 22}" y2="${medianHeight - 24}"></line>
+      ${medianPaths}${medianPoints}
+    </svg>
+    <div class="trend-panel-label trend-panel-label-secondary"><strong>发布量</strong><span>每日发布内容篇数</span></div>
+    <svg class="trend-svg trend-svg-volume" viewBox="0 0 ${width} ${volumeHeight}" role="img" aria-label="按发布日期分组的内容发布量">
+      <line class="trend-grid-line" x1="22" y1="${volumeHeight - 25}" x2="${width - 22}" y2="${volumeHeight - 25}"></line>
+      ${bars}${dateLabels}
+    </svg>
+  </div></div>`;
+};
+
+const categoryComposition = (query) => {
+  const contractPoints = state.summary.trends?.publishCohortCurrent?.points || [];
+  const dateKeys = contractPoints.map((point) => point.date);
+  if (dateKeys.length < 14) return "";
+  const comparisonQuery = new URLSearchParams(query);
+  comparisonQuery.delete("category");
+  comparisonQuery.delete("publishedDate");
+  const records = filterRecords(state.records, comparisonQuery);
+  const categoryIds = Object.keys(CATEGORY_LABELS);
+  const comparison = buildClassificationComparison(records, dateKeys, categoryIds);
+  const activeCategory = query.get("category") || "";
+  const renderPeriod = (period, label) => {
+    const coverage = `${period.views.knownCount}篇 / ${period.views.totalCount}篇`;
+    const segments = period.categories.map((category) => {
+      if (!category.count) return "";
+      const routeLabel = `${label}${CATEGORY_LABELS[category.categoryId]}${category.count}篇，占${formatPercent(category.share)}`;
+      return `<button type="button" class="composition-segment category-${CATEGORY_COLOR_SLOTS[category.categoryId]}" style="width:${(category.share * 100).toFixed(4)}%" data-category-trend="${escapeHtml(category.categoryId)}" aria-pressed="${activeCategory === category.categoryId}" aria-label="${escapeHtml(routeLabel)}" title="${escapeHtml(routeLabel)}">${category.share >= 0.12 ? escapeHtml(`${category.count}篇`) : ""}</button>`;
+    }).join("");
+    const legend = period.categories.map((category) => `<button type="button" class="composition-legend-item" data-category-trend="${escapeHtml(category.categoryId)}" aria-pressed="${activeCategory === category.categoryId}"><span class="composition-swatch category-${CATEGORY_COLOR_SLOTS[category.categoryId]}"></span><strong>${escapeHtml(CATEGORY_LABELS[category.categoryId])}</strong><span>${formatExact(category.count)}篇 · ${formatPercent(category.share)}</span></button>`).join("");
+    return `<div class="composition-period"><div class="composition-period-heading"><div><strong>${escapeHtml(label)}</strong><span>${escapeHtml(period.from)} 至 ${escapeHtml(period.to)}</span></div><div><strong>${formatExact(period.contentCount)}篇</strong><span>活跃${formatExact(period.activeSourceCount)}个账号 · 阅读已知${escapeHtml(coverage)}</span></div></div><div class="composition-bar" aria-label="${escapeHtml(`${label}分类构成，共${period.contentCount}篇`)}">${segments || `<span class="composition-empty">暂无发布</span>`}</div><div class="composition-legend">${legend}</div></div>`;
+  };
+  return `<section class="section composition-section"><div class="section-header"><div><h2>两期分类构成</h2><span>点击分类筛选同一趋势与内容明细</span></div><span>绝对篇数与占比同时展示</span></div>${renderPeriod(comparison.latest7, "最近7日")}${renderPeriod(comparison.previous7, "此前7日")}<div class="trend-disclosure">两期账号构成、内容发布时间与指标覆盖不同；当前累计数据只反映采样时可见值，不代表内容效果升降，也不用于因果判断。</div></section>`;
+};
+
+const renderIncrementTrend = (query, days, dateKeys) => {
+  const byDate = new Map((state.summary.trends?.snapshotIncrement || []).map((point) => [point.date, point]));
+  const points = dateKeys.map((date) => byDate.get(date) || { date, views: null, status: "NO_SNAPSHOT" });
+  const available = points.filter((point) => Number.isFinite(point.views));
+  if (!available.length) {
+    return `<div class="baseline-note"><strong>真实新增趋势尚未形成</strong><span>需要相邻两次11账号完整成功快照。缺失日期保持空档，周一合并区间只记录一个点，不拆分周末数值。</span></div>`;
   }
+  const width = days === 7 ? 720 : 1320;
+  const geometry = buildLineGeometry(points, (point) => point.views, { width: width - 44, height: 220, top: 18, bottom: 30 });
+  const paths = geometry.paths.map((path) => `<path class="trend-line trend-line-total" d="${pathData(path)}"></path>`).join("");
+  return `<div class="trend-scroll" tabindex="0" aria-label="真实新增趋势图，可横向滚动"><div class="trend-stage" style="width:${width}px"><svg class="trend-svg" viewBox="0 0 ${width} 220" role="img" aria-label="相邻完整快照之间的真实新增播放阅读">${paths}</svg></div></div>`;
+};
+
+const trendChart = (query) => {
   const days = query.get("trend") === "7" ? 7 : 30;
-  const items = (state.summary.trend || []).slice(-days);
-  const maximum = Math.max(1, ...items.map((item) => item.totalViewDelta || 0));
-  return `<section class="section"><div class="section-header"><h2>新增播放/阅读趋势</h2><div class="segmented" aria-label="趋势时间范围"><button type="button" data-trend="7" aria-pressed="${days === 7}">7日</button><button type="button" data-trend="30" aria-pressed="${days === 30}">30日</button></div></div>
-    <div class="trend-chart">${items.map((item) => {
-      const height = Math.max(1, ((item.totalViewDelta || 0) / maximum) * 100);
-      return `<div class="trend-column ${item.periodKind === "WEEKEND_72H" ? "weekend" : ""}" title="${escapeHtml(item.reportDate)} / 新增 ${formatExact(item.totalViewDelta)}"><div class="trend-bar"><span style="height:${height.toFixed(1)}%"></span></div><small>${escapeHtml(item.reportDate.slice(5))}</small></div>`;
-    }).join("") || `<div class="empty-state">第二次成功快照后形成趋势</div>`}</div></section>`;
+  const mode = query.get("trendMode") === "increment" ? "increment" : "cohort";
+  const contract = state.summary.trends?.publishCohortCurrent;
+  const contractPoints = selectTrendPoints(contract?.points || [], days);
+  const dateKeys = contractPoints.map((point) => point.date);
+  const filteredRecords = filterRecords(state.records, query);
+  const points = buildFilteredPublishCohort(filteredRecords, dateKeys);
+  const contentCount = points.reduce((sum, point) => sum + point.contentCount, 0);
+  const knownViews = points.reduce((sum, point) => sum + point.views.knownCount, 0);
+  const knownViewTotal = points.reduce((sum, point) => sum + (point.views.total || 0), 0);
+  const totalViews = knownViews ? knownViewTotal : contentCount ? null : 0;
+  const coverage = contentCount ? knownViews / contentCount : null;
+  const collectionCoverage = state.summary.rolling30Days?.collectionCoverage;
+  const collectionNote = collectionCoverage?.status === "COMPLETE"
+    ? `${collectionCoverage.completeSources}个来源均已覆盖到窗口起点或平台末尾`
+    : `当前可见快照 · ${collectionCoverage?.completeSources ?? 0} / ${collectionCoverage?.expectedSources ?? state.summary.coverage.expectedAccounts}个来源已证明完整覆盖`;
+  const rangeControls = `<div class="trend-controls"><div class="segmented" aria-label="趋势口径"><button type="button" data-trend-mode="cohort" aria-pressed="${mode === "cohort"}">按发布日期</button><button type="button" data-trend-mode="increment" aria-pressed="${mode === "increment"}">真实新增</button></div><div class="segmented" aria-label="趋势时间范围"><button type="button" data-trend="7" aria-pressed="${days === 7}">近7日</button><button type="button" data-trend="30" aria-pressed="${days === 30}">近30日</button></div></div>`;
+  const body = mode === "cohort"
+    ? `${contractPoints.length ? renderPublishTrendPlot(points, query, days) : `<div class="empty-state">暂无发布日期趋势契约</div>`}<div class="trend-footnote">按发布日期分组，展示截至本次采样的当前累计表现，不代表历史日新增。末日数据截至${formatFullDateTime(state.summary.period.observedTo)}。${escapeHtml(collectionNote)}。</div>`
+    : renderIncrementTrend(query, days, dateKeys);
+  return `<section class="section trend-workbench"><div class="section-header"><div><h2>内容与播放趋势</h2><span>${mode === "cohort" ? "发布同期当前表现" : "相邻完整快照真实新增"}</span></div>${rangeControls}</div>
+    <div class="trend-summary" aria-label="趋势摘要"><div><span>发布内容</span><strong>${formatExact(contentCount)}篇</strong></div><div><span>已知播放/阅读</span><strong>${formatExact(totalViews)}</strong></div><div><span>指标覆盖</span><strong>${Number.isFinite(coverage) ? formatPercent(coverage) : "暂无"}</strong><small>已知${knownViews}篇 / 共${contentCount}篇</small></div></div>
+    ${body}
+  </section>`;
+};
+
+const rollingAccountTable = () => {
+  const rolling = state.summary.rolling30Days;
+  if (!rolling) return "";
+  const platformLabels = new Map(state.summary.platforms.map((platform) => [platform.platformId, platform.platformLabel]));
+  const complete = rolling.collectionCoverage?.status === "COMPLETE";
+  const coverageText = complete
+    ? `采集窗口完整 · ${rolling.collectionCoverage.completeSources}个来源`
+    : `窗口待补采 · 已证明${rolling.collectionCoverage?.completeSources ?? 0}个 / 共${rolling.collectionCoverage?.expectedSources ?? rolling.accounts.length}个来源`;
+  return `<section class="section"><div class="section-header"><div><h2>${complete ? "近30日账号汇总" : "近30日可见内容汇总"}</h2><span>${escapeHtml(rolling.window.from)} 至 ${escapeHtml(rolling.window.to)} · 末日截至采样时刻</span></div><span>${escapeHtml(coverageText)}</span></div>${complete ? "" : `<div class="trend-coverage-warning">当前快照未证明全部账号已翻页到窗口起点或平台末尾，本表仅用于调查，不作为完整30日结论或部署依据。</div>`}<div class="table-scroll"><table class="data-table account-trend-table">
+    <thead><tr><th>平台 / 账号</th><th class="number">发布内容</th><th class="number">累计播放/阅读</th><th class="number">单篇平均</th><th class="number">单篇常规阅读</th><th>阅读指标覆盖</th><th class="number">共同互动率</th><th>采集窗口</th><th class="number">数据优秀</th></tr></thead>
+    <tbody>${rolling.accounts.map((account) => `<tr><td><strong>${escapeHtml(platformLabels.get(account.platformId) || account.platformId)}</strong><small>${escapeHtml(account.accountName)}</small></td><td class="number">${formatExact(account.contentCount)}</td><td class="number">${formatExact(account.views.total)}</td><td class="number">${formatExact(account.views.average)}</td><td class="number">${formatExact(account.views.median)}</td><td><strong>${escapeHtml(metricCoverageLabel(account.views))}</strong><small>${Number.isFinite(account.views.coverage) ? formatPercent(account.views.coverage) : "暂无"}</small></td><td class="number">${formatPercent(account.interaction.rate)}<small>已知${account.interaction.knownCount}篇 / 共${account.interaction.totalCount}篇</small></td><td><strong>${account.collectionCoverage?.status === "COMPLETE" ? "完整" : "待补采"}</strong><small>${Number.isInteger(account.collectionCoverage?.pagesFetched) ? `${account.collectionCoverage.pagesFetched}页` : "暂无翻页证据"}</small></td><td class="number">${formatExact(account.highPerformanceCount)}</td></tr>`).join("")}</tbody>
+  </table></div></section>`;
 };
 
 const sortedRecords = (records, sort) => [...records].sort((a, b) => {
@@ -369,8 +533,10 @@ const renderOverview = (route) => {
       <section class="section"><div class="section-header"><h2>数据表现优秀内容</h2><span>实际数据优先 · 点击查看依据</span></div>${topSignals(filtered)}</section>
     </div>
     ${qualityBand()}
-    <section class="section operation-section"><div class="section-header"><h2>运营筛选</h2><span>平台、账号、分类与比较质量</span></div>${renderFilters(route.query)}</section>
+    <section class="section operation-section"><div class="section-header"><h2>运营筛选</h2><span>平台、账号、分类、发布日期与比较质量</span></div>${renderFilters(route.query, { resultCount: filtered.length })}</section>
     ${trendChart(route.query)}
+    ${categoryComposition(route.query)}
+    ${rollingAccountTable()}
     <section class="section"><div class="section-header"><h2>内容明细</h2><span>${filtered.length} 篇</span></div>${renderTable(filtered.slice(0, 20), route.query)}</section>`;
 };
 
@@ -381,7 +547,7 @@ const renderPlatform = (route) => {
   const records = filterRecords(state.records, route.query, { platform: platformId });
   const aggregates = state.summary.platformCategories.filter((item) => item.platformId === platformId);
   app.innerHTML = `${heading(platform.platformLabel, "查看该平台四类内容的累计数据、区间增量和同类表现")}
-    ${renderFilters(route.query, { hidePlatform: true })}${qualityBand()}
+    ${renderFilters(route.query, { hidePlatform: true, resultCount: records.length })}${qualityBand()}
     <section class="section"><div class="section-header"><h2>分类比较</h2><span>仅使用可比较样本</span></div>${barList(aggregates, { labelKey: "categoryLabel", valueKey: "trustedRelativeIndex", colorKey: "categoryId", routeView: "category", routeIdKey: "categoryId" })}</section>
     <section class="section"><div class="section-header"><h2>平台内容</h2><span>${records.length} 篇</span></div>${renderTable(records, route.query)}</section>`;
 };
@@ -391,15 +557,15 @@ const renderCategory = (route) => {
   const records = filterRecords(state.records, route.query, { category: categoryId });
   const aggregates = state.summary.platformCategories.filter((item) => item.categoryId === categoryId);
   app.innerHTML = `${heading(CATEGORY_LABELS[categoryId] || categoryId, "比较同一类内容在不同平台的实际数据和同类表现")}
-    ${renderFilters(route.query, { hideCategory: true })}${qualityBand()}
+    ${renderFilters(route.query, { hideCategory: true, resultCount: records.length })}${qualityBand()}
     <section class="section"><div class="section-header"><h2>跨平台同类表现</h2><span>仅使用可比较样本</span></div>${barList(aggregates, { labelKey: "platformLabel", labelTitle: "平台", valueKey: "trustedRelativeIndex", routeView: "platform", routeIdKey: "platformId" })}</section>
     <section class="section"><div class="section-header"><h2>分类内容</h2><span>${records.length} 篇</span></div>${renderTable(records, route.query)}</section>`;
 };
 
 const renderContents = (route) => {
   const records = filterRecords(state.records, route.query);
-  app.innerHTML = `${heading("内容明细", "按标题、平台、账号、分类和表现状态定位内容")}
-    ${renderFilters(route.query)}
+  app.innerHTML = `${heading("内容明细", "按标题、平台、账号、分类、发布日期和表现状态定位内容")}
+    ${renderFilters(route.query, { resultCount: records.length })}
     <section class="section"><div class="section-header"><h2>全部内容</h2><span>${records.length} 篇</span></div>${renderTable(records, route.query)}</section>`;
 };
 
@@ -475,6 +641,21 @@ app.addEventListener("click", (event) => {
   if (sortTarget) setQuery("sort", sortTarget.dataset.sort);
   const trendTarget = event.target.closest("[data-trend]");
   if (trendTarget) setQuery("trend", trendTarget.dataset.trend);
+  const trendModeTarget = event.target.closest("[data-trend-mode]");
+  if (trendModeTarget) setQuery("trendMode", trendModeTarget.dataset.trendMode);
+  const categoryTarget = event.target.closest("[data-category-trend]");
+  if (categoryTarget) {
+    const selected = routeState().query.get("category");
+    setQuery("category", selected === categoryTarget.dataset.categoryTrend ? "" : categoryTarget.dataset.categoryTrend);
+  }
+});
+
+app.addEventListener("keydown", (event) => {
+  if (event.key !== " ") return;
+  const routeTarget = event.target.closest("a[data-route]");
+  if (!routeTarget) return;
+  event.preventDefault();
+  location.hash = routeTarget.dataset.route;
 });
 
 app.addEventListener("change", async (event) => {

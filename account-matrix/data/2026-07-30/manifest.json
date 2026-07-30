@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "reportDate": "2026-07-30",
+  "generatedAt": "2026-07-30T05:55:47.233Z",
+  "status": "PARTIAL",
+  "accountCount": 11,
+  "contentCount": 395,
+  "files": {
+    "summary.json": "dc2dffb04ef276729fcbc47673e1706dcd3352c51ae9bd2453d0ba762f8982fe",
+    "contents.json": "2f5a265e09dfc5dec8008673788e6ff50d26d91de43365be10e11ce59313e854"
+  }
+}
