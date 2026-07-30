@@ -15,7 +15,7 @@ import { normalizeTopicWhitelistPayload } from "./topic-whitelist.js";
 
 export const creatorViews = [
   { id: "overview", label: "今日决策" },
-  { id: "resonance", label: "达人白名单" },
+  { id: "resonance", label: "达人追踪池" },
   { id: "quality", label: "达人审核" },
   { id: "topics", label: "热点雷达" },
   { id: "candidates", label: "全部候选" },
@@ -1278,10 +1278,27 @@ function auditCreatorDecisionLabel(value) {
 
 function operationalTierMeta(value) {
   return ({
-    CORE_10: { label: "核心 10", className: "status-pass" },
-    RECOMMENDED_20: { label: "推荐 20", className: "status-watch" },
-    EXPANSION_20: { label: "扩展 20", className: "status-d" },
+    CORE_TRACKING: { label: "核心追踪", className: "status-pass" },
+    OBSERVATION: { label: "观察名单", className: "status-watch" },
+    EXPANSION_CANDIDATE: { label: "扩展候选", className: "status-d" },
   })[value] || { label: value || "未分层", className: "status-d" };
+}
+
+function operationalPriorityMeta(value) {
+  return ({
+    ACTIVE_CORE_TRACKING: { label: "持续监测", className: "status-pass" },
+    CORE_PRIORITY_REVIEW: { label: "核心优先核验", className: "status-watch" },
+    FOLLOWUP_TRACKING: { label: "T+24 / T+72", className: "status-watch" },
+    LIGHT_SCREEN_ONLY: { label: "仅轻筛", className: "status-d" },
+  })[value] || { label: "待安排", className: "status-d" };
+}
+
+function coreGateMeta(value) {
+  return ({
+    PASS: { label: "全部通过", className: "status-pass" },
+    UNKNOWN: { label: "证据待补", className: "status-watch" },
+    FAIL: { label: "暂未达标", className: "status-d" },
+  })[value] || { label: "未评估", className: "status-d" };
 }
 
 function operationalConfidenceMeta(value) {
@@ -1297,39 +1314,60 @@ function renderOperationalWhitelistPage({ data, view }) {
   const summary = whitelist.summary || {};
   const creators = asArray(whitelist.creators);
   const heading = renderPageHeading({
-    eyebrow: `CREATOR TOP 50 / ${whitelist.date} / OPERATIONAL`,
-    title: "抖音电商运营达人 Top 50",
-    subtitle: "基于现有全部身份、样本、内容质量与后续复核记录综合排序；本版不使用七天复审和热点资格作为准入门槛",
+    eyebrow: `CREATOR TRACKING POOL / ${whitelist.date} / THREE TIERS`,
+    title: "抖音电商达人滚动追踪池",
+    subtitle: "核心追踪、观察名单与扩展候选分层管理；人数不是质量目标，缺少关键证据时不进入核心",
     views: creatorViews,
     activeView: view,
   });
-  const rows = creators.map((creator) => {
+  const renderRow = (creator) => {
     const tier = operationalTierMeta(creator.tier);
+    const priority = operationalPriorityMeta(creator.reviewPriority);
     const confidence = operationalConfidenceMeta(creator.confidence);
     const evidence = creator.evidence || {};
+    const coreGate = creator.coreTrackingGate || {};
+    const gateResult = coreGateMeta(coreGate.result);
     const evidenceText = [
       evidence.validSamples90d == null ? "样本待补" : `${formatMetric(evidence.validSamples90d)} 条样本`,
       evidence.relevanceRatio == null ? "相关率待补" : `${formatPercent(evidence.relevanceRatio)} 相关`,
-      evidence.relatedVideos60d == null ? null : `60 天 ${formatMetric(evidence.relatedVideos60d)} 条`,
+      evidence.corePracticeLowerBound == null ? "原创/实用待补" : `${formatPercent(evidence.corePracticeLowerBound)} 原创/实用`,
     ].filter(Boolean).join(" · ");
-    return `<div class="operational-whitelist-row">
-      <div class="operational-rank" data-label="排名"><strong>${String(creator.rank).padStart(2, "0")}</strong></div>
+    const gateDetail = [
+      `${formatMetric(coreGate.passCount)} / 7 通过`,
+      coreGate.failCount ? `${formatMetric(coreGate.failCount)} 项未达标` : null,
+      coreGate.unknownCount ? `${formatMetric(coreGate.unknownCount)} 项待补` : null,
+    ].filter(Boolean).join(" · ");
+    const gateReasons = [...asArray(coreGate.failed), ...asArray(coreGate.missing)].join("；");
+    return `<div class="operational-whitelist-row" data-tier="${escapeHtml(creator.tier)}" data-review-priority="${escapeHtml(creator.reviewPriority)}">
+      <div class="operational-rank" data-label="序号"><strong>${String(creator.poolPosition || creator.rank).padStart(2, "0")}</strong></div>
       <div class="operational-creator" data-label="达人"><a href="${escapeHtml(safeUrl(creator.profileUrl))}" target="_blank" rel="noopener noreferrer"><strong>${escapeHtml(creator.nickname)}</strong>${icon("external-link")}</a><small class="mono">${escapeHtml(creator.candidateId)}</small></div>
-      <div data-label="层级">${statusChip(tier.label, tier.className)}</div>
+      <div data-label="层级">${statusChip(tier.label, tier.className)}<small>${statusChip(priority.label, priority.className)}</small></div>
       <div class="operational-score" data-label="综合分"><strong>${formatScore(creator.evidenceScore)}</strong><small>${statusChip(`置信度 ${confidence.label}`, confidence.className)}</small></div>
       <div data-label="体量"><strong>${escapeHtml(formatFollowers(creator.followers))}</strong><small>${asArray(creator.tracks).map((track) => escapeHtml(track)).join(" / ") || "赛道待细分"}</small></div>
       <div data-label="现有证据"><strong>${escapeHtml(evidenceText)}</strong><small>${escapeHtml(asArray(creator.evidenceSummary).join("；"))}</small></div>
-      <div data-label="建议"><strong>${escapeHtml(creator.recommendation)}</strong><small>${escapeHtml(creator.knownRiskStatus === "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS" ? "已审记录无明确风险项" : creator.knownRiskStatus)}</small></div>
+      <div data-label="核心门"><strong>${statusChip(gateResult.label, gateResult.className)} ${escapeHtml(gateDetail)}</strong><small>${escapeHtml(gateReasons || creator.recommendation)}</small></div>
     </div>`;
+  };
+  const tierGroups = [
+    { key: "CORE_TRACKING", label: "核心追踪", description: "七项门槛全部通过后进入，用于日常内容监测；不代表商业合作背书。" },
+    { key: "OBSERVATION", label: "观察名单", description: "高证据账号优先补门，中证据账号执行 T+24 增速观察与 T+72 稳定比较。" },
+    { key: "EXPANSION_CANDIDATE", label: "扩展候选", description: "仅作赛道覆盖与历史轻筛，不进入高成本持续跟踪。" },
+  ];
+  const tierRegisters = tierGroups.map((group) => {
+    const rows = creators.filter((creator) => creator.tier === group.key);
+    return `<section class="operational-whitelist-register operational-tier-register tier-${group.key.toLowerCase()}" data-tier-group="${group.key}">
+      <div class="section-title"><div><h2>${group.label}</h2><p>${group.description}</p></div><span>${rows.length} 位</span></div>
+      ${rows.length ? `<div class="operational-whitelist-head"><span>序号</span><span>达人</span><span>层级 / 动作</span><span>综合分</span><span>体量 / 赛道</span><span>现有证据</span><span>核心门</span></div>${rows.map(renderRow).join("")}` : `<div class="operational-tier-empty">当前没有达人通过全部七项核心门；缺失证据不估填，也不为满足人数配额降门槛。</div>`}
+    </section>`;
   }).join("");
   return `${heading}<section class="operational-whitelist-console">
     <section class="operational-whitelist-lead">
-      <div><span class="model-code">OPERATIONAL RECOMMENDATION / NO 7-DAY GATE</span><h2>50 位运营推荐达人</h2><p>名单用于内容研究、选题和人工合作初筛。排序综合现有样本量、垂直相关度、实操内容、近期活跃、历史决策与后续复核；核心 10 要求证据可信度至少为中等，缺失值不估填。</p></div>
-      <div class="operational-whitelist-kpis"><span><strong>${formatMetric(summary.selectedCount)}</strong><small>总人数</small></span><span><strong>${formatMetric(summary.coreCount)}</strong><small>核心</small></span><span><strong>${formatMetric(summary.recommendedCount)}</strong><small>推荐</small></span><span><strong>${formatMetric(summary.expansionCount)}</strong><small>扩展</small></span><span><strong>${formatMetric(summary.highConfidenceCount)}</strong><small>高置信</small></span></div>
-      <div class="decision-boundary">${icon("shield-check")}<span><strong>本版口径：</strong>七天复审和热点资格不参与排名；机构/商业主体、身份不明、重复泛化线索和已知明确风险仍然排除。涉及收益、平台规则或履约建议的内容继续逐条人工终审。</span></div>
+      <div><span class="model-code">ROLLING POOL / EVIDENCE GATED / NO FIXED QUOTA</span><h2>三层滚动名单</h2><p>现有 50 人作为首批迁移池。核心追踪不设人数目标，观察层只跟踪约 20–30 人，扩展候选保持低成本轻筛；综合分只决定核验顺序，不决定核心资格。</p></div>
+      <div class="operational-whitelist-kpis"><span><strong>${formatMetric(summary.poolCount ?? summary.selectedCount)}</strong><small>首批池</small></span><span><strong>${formatMetric(summary.coreTrackingCount)}</strong><small>核心追踪</small></span><span><strong>${formatMetric(summary.corePriorityReviewCount)}</strong><small>核心优先核验</small></span><span><strong>${formatMetric(summary.observationCount)}</strong><small>观察</small></span><span><strong>${formatMetric(summary.expansionCount)}</strong><small>扩展</small></span></div>
+      <div class="decision-boundary">${icon("shield-check")}<span><strong>使用边界：</strong>核心追踪仅表示适合纳入日常内容监测，不等于正式白名单或商业合作背书。缺失字段保持 null，单条爆款不能替代多条内容的稳定证据。</span></div>
     </section>
-    <section class="operational-whitelist-register"><div class="section-title"><h2>达人名单</h2><span>共 ${creators.length} 位 · 点击达人名打开抖音主页</span></div><div class="operational-whitelist-head"><span>排名</span><span>达人</span><span>层级</span><span>综合分</span><span>体量 / 赛道</span><span>现有证据</span><span>使用建议</span></div>${rows}</section>
-    <details class="resonance-methodology operational-methodology"><summary><span>查看评分与边界</span><small>可复核、不可估填</small></summary><div class="resonance-methodology-body"><section class="resonance-gates"><div class="section-title"><h2>综合排序信号</h2><span>不是单一粉丝榜</span></div><div class="resonance-gate-rail is-policy"><div class="resonance-gate"><span class="gate-index">01</span><div><strong>账号身份</strong><p>只保留稳定主页 ID 对应的个人达人。</p></div></div><div class="resonance-gate"><span class="gate-index">02</span><div><strong>内容证据</strong><p>样本量、相关率、实操内容和近期活跃共同计分。</p></div></div><div class="resonance-gate"><span class="gate-index">03</span><div><strong>历史判断</strong><p>合并达人决策分、质量代理分和后续样本复核。</p></div></div><div class="resonance-gate"><span class="gate-index">04</span><div><strong>风险排除</strong><p>机构、身份问题、重复线索和明确风险不进入 Top 50。</p></div></div></div></section></div></details>
+    ${tierRegisters}
+    <details class="resonance-methodology operational-methodology"><summary><span>查看准入与追踪规则</span><small>七项核心门 · 两阶段验证</small></summary><div class="resonance-methodology-body"><section class="resonance-gates"><div class="section-title"><h2>核心追踪七项门</h2><span>任一失败或未知均不进入核心</span></div><div class="resonance-gate-rail is-policy"><div class="resonance-gate"><span class="gate-index">01</span><div><strong>身份 + 样本</strong><p>当前个人身份与主页已核验，最近不少于 15 条有效内容。</p></div></div><div class="resonance-gate"><span class="gate-index">02</span><div><strong>垂直 + 原创实用</strong><p>垂直相关率不低于 70%，原创/实用内容不低于 50%。</p></div></div><div class="resonance-gate"><span class="gate-index">03</span><div><strong>活跃 + 同龄表现</strong><p>近 30 天不少于 4 条相关发布，同赛道同量级同龄比较达到 P60。</p></div></div><div class="resonance-gate"><span class="gate-index">04</span><div><strong>风险否决</strong><p>身份、商业导流或其他明确风险出现时立即移出核心。</p></div></div></div></section><section class="resonance-gates"><div class="section-title"><h2>两阶段验证</h2><span>控制采集成本</span></div><div class="resonance-gate-rail is-policy"><div class="resonance-gate"><span class="gate-index">A</span><div><strong>全池轻筛</strong><p>候选池目标容量 100–150 人，不要求凑满，只做身份、内容和风险历史筛选。</p></div></div><div class="resonance-gate"><span class="gate-index">B</span><div><strong>重点跟踪</strong><p>只对筛出的约 20–30 人跟踪后续内容。</p></div></div><div class="resonance-gate"><span class="gate-index">24</span><div><strong>T+24</strong><p>观察增速；指标定义、窗口和单位必须一致。</p></div></div><div class="resonance-gate"><span class="gate-index">72</span><div><strong>T+72</strong><p>作为稳定比较主口径；T0 仅在接近发布时间取得时使用。</p></div></div></div></section></div></details>
   </section>`;
 }
 
@@ -1346,7 +1384,7 @@ function renderCreatorDailyAudit({ data, index, view }) {
   const reportLabel = auditReportLabel(data.publicationStatus);
   const viewMeta = ({
     overview: ["今日达人审计结论", "回答今天达人是否新增、为什么，以及证据还缺什么。"],
-    resonance: ["达人白名单结论", "本版另行提供基于现有全部记录的运营推荐 Top 50，不使用七天复审门槛。"],
+    resonance: ["达人滚动追踪池", "核心追踪、观察和扩展候选分层呈现，不再用固定 Top 50 冒充质量结论。"],
     quality: ["达人审核完整性", "本日仅展示实际完成的审核输入，不沿用旧日候选指标。"],
     topics: ["达人话题贡献审核", "话题贡献缺少独立来源、同龄增速或原创证据时保持未知。"],
     candidates: ["候选发现边界", "候选数量只代表发现线索，本页不生成未经逐人审核的候选表。"],
@@ -1361,7 +1399,8 @@ function renderCreatorDailyAudit({ data, index, view }) {
   });
   const formalCount = numberOrNull(summary.formalCreatorWhitelist) || 0;
   const temporaryCount = numberOrNull(summary.temporaryCreatorWhitelist) || 0;
-  const operationalCount = numberOrNull(data.operationalWhitelist?.summary?.selectedCount);
+  const operationalCount = numberOrNull(data.operationalWhitelist?.summary?.poolCount ?? data.operationalWhitelist?.summary?.selectedCount);
+  const coreTrackingCount = numberOrNull(data.operationalWhitelist?.summary?.coreTrackingCount);
   const discoveryCount = numberOrNull(summary.discoveryCandidateCount);
   const platformHtml = platforms.length
     ? `<div class="resonance-platform-list">${platforms.map((item) => `<article class="resonance-platform-item"><div><strong>${escapeHtml(auditPlatformLabel(item.platform))}</strong><span>${statusChip(auditPlatformStatusLabel(item.status), /AUTH|VISIBLE|CAPTURED/i.test(item.status) ? "status-pass" : /LOGIN|CAPTCHA|UNKNOWN/i.test(item.status) ? "status-watch" : "status-d")}</span></div><p>${escapeHtml(firstValue(item.evidence, `观察时间：${formatDateTime(item.observedAt)}`))}</p></article>`).join("")}</div>`
@@ -1373,7 +1412,7 @@ function renderCreatorDailyAudit({ data, index, view }) {
     creatorDecision.topicContribution ? `话题贡献：${creatorDecision.topicContribution}` : null,
   ].filter(Boolean);
   const schedule = audit.schedule || {};
-  const operationalCallout = operationalCount == null ? "" : `<section class="operational-whitelist-callout"><div><span class="model-code">NEW / OPERATIONAL TOP 50</span><h2>已生成 ${formatMetric(operationalCount)} 位运营推荐达人</h2><p>按用户最新口径取消七天复审限制，保留身份和明确风险排除；完整名单在“达人白名单”页。</p></div><button type="button" class="command-button" data-view="resonance">${icon("users-round")}查看 50 人名单</button></section>`;
+  const operationalCallout = operationalCount == null ? "" : `<section class="operational-whitelist-callout"><div><span class="model-code">ROLLING / THREE-TIER POOL</span><h2>${formatMetric(operationalCount)} 位首批迁移，${formatMetric(coreTrackingCount)} 位已达核心门</h2><p>名单已拆分为核心追踪、观察和扩展候选；人数不再作为质量目标，缺证据不升层。</p></div><button type="button" class="command-button" data-view="resonance">${icon("users-round")}查看追踪池</button></section>`;
   const topicHtml = topics.length
     ? `<div class="resonance-platform-list">${topics.map((item) => `<article class="resonance-platform-item"><div><strong>${escapeHtml(firstValue(item.topic, "未命名话题"))}</strong><span>${statusChip(auditTopicResultLabel(firstValue(item.result, "UNKNOWN")), "status-watch")}</span></div><p>${escapeHtml(firstValue(item.reason, "原始审计未提供原因。"))}</p><p>有效独立来源：${formatMetric(item.effectiveIndependentSources)} · 临时白名单达人：${formatMetric(item.temporaryWhitelistCreators)} · 确认热点：${item.confirmedHotspot === true ? "是" : "否"}</p></article>`).join("")}</div>`
     : renderEmpty("本日审计没有可展示的话题结论。", "radar");
@@ -1382,7 +1421,7 @@ function renderCreatorDailyAudit({ data, index, view }) {
       <div class="decision-lead-copy"><span class="model-code">${escapeHtml(reportLabel)} · ${escapeHtml(formatDateTime(data.observedAt))}</span><h2>${escapeHtml(viewMeta[0])}</h2><p>${escapeHtml(viewMeta[1])}</p></div>
       <div class="decision-kpis" aria-label="达人审计结论">
         <div><strong>${formatMetric(formalCount)}</strong><span>正式白名单</span></div>
-        <div><strong>${formatMetric(operationalCount ?? temporaryCount)}</strong><span>${operationalCount == null ? "临时白名单" : "运营推荐"}</span></div>
+        <div><strong>${formatMetric(operationalCount ?? temporaryCount)}</strong><span>${operationalCount == null ? "临时白名单" : "追踪池"}</span></div>
         <div><strong>${formatMetric(discoveryCount)}</strong><span>发现候选</span></div>
         <div><strong>${formatMetric(summary.confirmedHotspots)}</strong><span>确认热点</span></div>
       </div>

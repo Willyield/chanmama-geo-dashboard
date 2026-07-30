@@ -1,46 +1,76 @@
 {
-  "schemaVersion": 1,
-  "module": "creator-operational-whitelist",
+  "schemaVersion": 2,
+  "module": "creator-tracking-pool",
   "date": "2026-07-30",
-  "generatedAt": "2026-07-30T03:04:08.883Z",
-  "status": "PUBLISHED_CANDIDATE_SET_READY",
-  "title": "抖音电商运营达人 Top 50",
-  "listType": "OPERATIONAL_RECOMMENDATION_WHITELIST",
+  "generatedAt": "2026-07-30T06:26:45.452Z",
+  "status": "ROLLING_TIERED_POOL_READY",
+  "title": "抖音电商达人滚动追踪池",
+  "listType": "OPERATIONAL_CREATOR_TRACKING_POOL",
   "summary": {
     "sourceCandidates": 150,
     "personalCandidates": 144,
     "eligibleAfterSafetyExclusions": 107,
     "selectedCount": 50,
-    "coreCount": 10,
-    "recommendedCount": 20,
-    "expansionCount": 20,
+    "poolCount": 50,
+    "coreTrackingCount": 0,
+    "corePriorityReviewCount": 6,
+    "observationCount": 21,
+    "expansionCount": 29,
+    "followupTrackingCount": 21,
     "highConfidenceCount": 6,
     "mediumConfidenceCount": 15,
     "limitedConfidenceCount": 29,
     "excludedCount": 43
   },
   "selectionPolicy": {
-    "userDecision": "不再使用七天正式白名单门槛，直接基于现有全部记录输出最适合的 50 个达人",
+    "userDecision": "取消固定 Top 50 单层名单，改为核心追踪、观察名单、扩展候选三层滚动池",
     "sevenDayReviewUsed": false,
     "hotspotQualificationUsed": false,
+    "fixedQuotaUsed": false,
+    "targetCoverageCapacity": "100-150",
     "positiveSignals": [
       "稳定个人账号身份与主页链接",
       "90 天有效样本、垂直相关率、实操内容下界与近期活跃度",
       "历史达人决策分、质量代理分与后续样本复核"
     ],
-    "rankingMethod": "先按综合证据分确定前 50；核心 10 人要求证据可信度至少为 MEDIUM，其余按综合证据分降序排列；同分按候选 ID 稳定排序。",
+    "rankingMethod": "现有 50 人仅作为首批迁移池；核心追踪不设人数配额，只有七项证据门全部通过才可进入。综合证据分只决定核验顺序，不决定核心资格。",
+    "migration": [
+      "高证据 6 人进入观察层的核心优先核验队列，达标后升入核心追踪",
+      "中证据 15 人进入观察层，执行后续内容跟踪",
+      "有限证据 29 人进入扩展候选，只做轻量历史筛选"
+    ],
+    "coreTrackingGate": [
+      "当前个人身份与主页已核验",
+      "最近不少于 15 条有效内容",
+      "垂直相关率不低于 70%",
+      "原创/实用内容不低于 50%",
+      "近 30 天不少于 4 条相关发布",
+      "同赛道、粉丝量级和内容龄期比较达到 P60",
+      "无明确风险"
+    ],
+    "twoStageValidation": {
+      "lightScreening": "全部候选先做历史身份、内容与风险轻筛",
+      "followupScope": "只跟踪轻筛后的约 20-30 人",
+      "checkpoints": [
+        "T+24 用于观察增速",
+        "T+72 作为稳定比较主口径",
+        "T0 仅在接近发布时间取得时使用，缺失不补造"
+      ]
+    },
     "hardExclusions": [
       "机构、商业主体或身份待核",
       "历史明确降级或仅作机构参考",
       "重复、泛化、无证据身份或已知风险事项",
       "缺少稳定账号 ID 或主页链接"
     ],
-    "boundary": "这是运营推荐名单，不代表付费合作背书；缺失字段保持 null，涉及平台规则、收益或履约建议仍需逐条人工终审。"
+    "boundary": "核心追踪只表示适合纳入日常内容监测，不代表正式白名单或商业合作背书；缺失字段保持 null，单条爆款不替代稳定证据。"
   },
   "creators": [
     {
+      "poolPosition": 1,
       "rank": 1,
-      "tier": "CORE_10",
+      "tier": "OBSERVATION",
+      "reviewPriority": "CORE_PRIORITY_REVIEW",
       "candidateId": "CR-136",
       "stableProfileId": "MS4wLjABAAAAtaFNmFxzvNVWRw0ltTJEqPChCho-FdqjApYf4c0wfMk",
       "nickname": "绽放唠电商运营",
@@ -56,7 +86,9 @@
         "relevanceRatio": 1,
         "corePracticeLowerBound": 0.7963,
         "relatedVideos60d": 54,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 0.82,
+        "cohortPercentile": null,
         "historicalDecisionScore": 80,
         "qualityProxyScore": null,
         "historicalAction": "EXECUTE_PRIORITY",
@@ -83,11 +115,75 @@
         "reviewLane": 0,
         "laterEvidence": 0
       },
-      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+      "coreTrackingGate": {
+        "result": "UNKNOWN",
+        "passCount": 5,
+        "failCount": 0,
+        "unknownCount": 2,
+        "failed": [],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "PASS",
+            "value": 54,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "PASS",
+            "value": 1,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "PASS",
+            "value": 0.7963,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "优先补齐近 30 天活跃和同龄 P60 证据，达标后升入核心"
     },
     {
+      "poolPosition": 2,
       "rank": 2,
-      "tier": "CORE_10",
+      "tier": "OBSERVATION",
+      "reviewPriority": "CORE_PRIORITY_REVIEW",
       "candidateId": "CR-051",
       "stableProfileId": "MS4wLjABAAAAxkqwjpqCtOKE2teMgB20p5gH2qPctLVgtqUCZOmpLZs",
       "nickname": "羽川（直播电商全域经营）",
@@ -103,7 +199,9 @@
         "relevanceRatio": 1,
         "corePracticeLowerBound": 0.5,
         "relatedVideos60d": 19,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 5.59,
+        "cohortPercentile": null,
         "historicalDecisionScore": 57,
         "qualityProxyScore": null,
         "historicalAction": "KEEP_WATCH",
@@ -131,11 +229,75 @@
         "reviewLane": 0,
         "laterEvidence": 16
       },
-      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+      "coreTrackingGate": {
+        "result": "UNKNOWN",
+        "passCount": 5,
+        "failCount": 0,
+        "unknownCount": 2,
+        "failed": [],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "PASS",
+            "value": 21,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "PASS",
+            "value": 1,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "PASS",
+            "value": 0.5,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "优先补齐近 30 天活跃和同龄 P60 证据，达标后升入核心"
     },
     {
+      "poolPosition": 3,
       "rank": 3,
-      "tier": "CORE_10",
+      "tier": "OBSERVATION",
+      "reviewPriority": "CORE_PRIORITY_REVIEW",
       "candidateId": "CR-052",
       "stableProfileId": "MS4wLjABAAAAVlyj84QI5fjAzO1aiKa3pfGdaVFNE_9vzZqxxyPOmGM",
       "nickname": "阿妍抖店日记",
@@ -151,7 +313,9 @@
         "relevanceRatio": 1,
         "corePracticeLowerBound": 0.1667,
         "relatedVideos60d": 18,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 3.62,
+        "cohortPercentile": null,
         "historicalDecisionScore": 57.4,
         "qualityProxyScore": null,
         "historicalAction": "KEEP_WATCH",
@@ -179,11 +343,77 @@
         "reviewLane": 0,
         "laterEvidence": 16
       },
-      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 4,
+        "failCount": 1,
+        "unknownCount": 2,
+        "failed": [
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "PASS",
+            "value": 18,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "PASS",
+            "value": 1,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0.1667,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "优先补齐近 30 天活跃和同龄 P60 证据，达标后升入核心"
     },
     {
+      "poolPosition": 4,
       "rank": 4,
-      "tier": "CORE_10",
+      "tier": "OBSERVATION",
+      "reviewPriority": "FOLLOWUP_TRACKING",
       "candidateId": "CR-128",
       "stableProfileId": "MS4wLjABAAAA2B7x-jZeecMcsua5y5XQyC9ICJVKEV1of_4yId1Pxe8",
       "nickname": "做京东的盈盈",
@@ -199,7 +429,9 @@
         "relevanceRatio": 1,
         "corePracticeLowerBound": 0.9167,
         "relatedVideos60d": 9,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 1,
+        "cohortPercentile": null,
         "historicalDecisionScore": 63.4,
         "qualityProxyScore": 64.2,
         "historicalAction": "BACKFILL_PRIORITY",
@@ -226,11 +458,77 @@
         "reviewLane": 8,
         "laterEvidence": 0
       },
-      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 4,
+        "failCount": 1,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 12,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "PASS",
+            "value": 1,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "PASS",
+            "value": 0.9167,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "纳入 T+24 增速观察与 T+72 稳定比较"
     },
     {
+      "poolPosition": 5,
       "rank": 5,
-      "tier": "CORE_10",
+      "tier": "OBSERVATION",
+      "reviewPriority": "CORE_PRIORITY_REVIEW",
       "candidateId": "CR-103",
       "stableProfileId": "MS4wLjABAAAA3T4T3eNwPxb6hXcpaTswTZbEIfzXAd2b6NtEzgTrDaezGAHgq_tfHPQp_qOEu0Lg",
       "nickname": "时来",
@@ -246,7 +544,9 @@
         "relevanceRatio": 0.8837,
         "corePracticeLowerBound": 0.1395,
         "relatedVideos60d": 32,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 0.74,
+        "cohortPercentile": null,
         "historicalDecisionScore": 49.3,
         "qualityProxyScore": null,
         "historicalAction": "TOPIC_SCOUT",
@@ -273,11 +573,77 @@
         "reviewLane": 0,
         "laterEvidence": 0
       },
-      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 4,
+        "failCount": 1,
+        "unknownCount": 2,
+        "failed": [
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "PASS",
+            "value": 43,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "PASS",
+            "value": 0.8837,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0.1395,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "优先补齐近 30 天活跃和同龄 P60 证据，达标后升入核心"
     },
     {
+      "poolPosition": 6,
       "rank": 6,
-      "tier": "CORE_10",
+      "tier": "OBSERVATION",
+      "reviewPriority": "CORE_PRIORITY_REVIEW",
       "candidateId": "CR-122",
       "stableProfileId": "MS4wLjABAAAAKo2XqwGfJ35ccbSdPBrqDB188wMCOMG-enaWAo9cFosAPLPRsejiWShhD2OOLOuh",
       "nickname": "靳兴的运营速成指南",
@@ -293,7 +659,9 @@
         "relevanceRatio": 0.8472,
         "corePracticeLowerBound": 0.0556,
         "relatedVideos60d": 42,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 1.55,
+        "cohortPercentile": null,
         "historicalDecisionScore": 39,
         "qualityProxyScore": null,
         "historicalAction": "TOPIC_SCOUT",
@@ -320,11 +688,77 @@
         "reviewLane": 0,
         "laterEvidence": 0
       },
-      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 4,
+        "failCount": 1,
+        "unknownCount": 2,
+        "failed": [
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "PASS",
+            "value": 72,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "PASS",
+            "value": 0.8472,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0.0556,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "优先补齐近 30 天活跃和同龄 P60 证据，达标后升入核心"
     },
     {
+      "poolPosition": 7,
       "rank": 7,
-      "tier": "CORE_10",
+      "tier": "OBSERVATION",
+      "reviewPriority": "FOLLOWUP_TRACKING",
       "candidateId": "CR-027",
       "stableProfileId": "MS4wLjABAAAAUwEU02SdwqMzkRUPp6W1CYr16Nlm7Y6z_lFgvz5xW5d1pG54IXHZBPlisOqRqTvH",
       "nickname": "抖音广告投放-大東",
@@ -340,7 +774,9 @@
         "relevanceRatio": 0.6364,
         "corePracticeLowerBound": 0.5455,
         "relatedVideos60d": 3,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 27.66,
+        "cohortPercentile": null,
         "historicalDecisionScore": 56.4,
         "qualityProxyScore": 58,
         "historicalAction": "POOL_ONLY",
@@ -367,11 +803,78 @@
         "reviewLane": 5,
         "laterEvidence": 0
       },
-      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 3,
+        "failCount": 2,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容",
+          "垂直相关率不低于 70%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 11,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0.6364,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "PASS",
+            "value": 0.5455,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "纳入 T+24 增速观察与 T+72 稳定比较"
     },
     {
+      "poolPosition": 8,
       "rank": 8,
-      "tier": "CORE_10",
+      "tier": "OBSERVATION",
+      "reviewPriority": "FOLLOWUP_TRACKING",
       "candidateId": "CR-092",
       "stableProfileId": "MS4wLjABAAAARUSjNmfcXZEETzO6xqL_PN_uQj0ANNaAJPeFTKL9NYFn0OtRNEVI6amBz_X30CfI",
       "nickname": "昂哥抖店运营",
@@ -387,7 +890,9 @@
         "relevanceRatio": 1,
         "corePracticeLowerBound": 0.0909,
         "relatedVideos60d": 6,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 20.81,
+        "cohortPercentile": null,
         "historicalDecisionScore": 56.2,
         "qualityProxyScore": 49.2,
         "historicalAction": "POOL_ONLY",
@@ -414,105 +919,78 @@
         "reviewLane": 1,
         "laterEvidence": 0
       },
-      "recommendation": "优先用于内容研究、选题和人工合作初筛"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 3,
+        "failCount": 2,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 11,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "PASS",
+            "value": 1,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0.0909,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "纳入 T+24 增速观察与 T+72 稳定比较"
     },
     {
+      "poolPosition": 9,
       "rank": 9,
-      "tier": "CORE_10",
-      "candidateId": "CR-039",
-      "stableProfileId": "MS4wLjABAAAA1qisFWbEO5208EScYB1IN1gXXd4kUt5W2vWID4Usn7eCcyL66ixbWt3Mo4ae6m8b",
-      "nickname": "ai电商运营",
-      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA1qisFWbEO5208EScYB1IN1gXXd4kUt5W2vWID4Usn7eCcyL66ixbWt3Mo4ae6m8b",
-      "followers": 1173,
-      "tracks": [
-        "电商AI与运营工具"
-      ],
-      "evidenceScore": 43.9,
-      "confidence": "MEDIUM",
-      "evidence": {
-        "validSamples90d": 12,
-        "relevanceRatio": 0.5,
-        "corePracticeLowerBound": 0.1667,
-        "relatedVideos60d": 6,
-        "latestRelatedAgeDays": 1.93,
-        "historicalDecisionScore": 51.4,
-        "qualityProxyScore": 53.8,
-        "historicalAction": "POOL_ONLY",
-        "autoDisposition": "WATCH_SAMPLE_LT15",
-        "qualityLane": "Q3_HOLD"
-      },
-      "evidenceSummary": [
-        "90 天有效样本 12 条",
-        "垂直相关率 50%",
-        "60 天相关内容 6 条"
-      ],
-      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
-      "scoreParts": {
-        "sample": 8.8,
-        "relevance": 10,
-        "practice": 2.3,
-        "activity": 4,
-        "recency": 6.5,
-        "decision": 9.3,
-        "quality": 5.4,
-        "audience": 1.5,
-        "disposition": 4,
-        "historicalAction": 0,
-        "reviewLane": -8,
-        "laterEvidence": 0
-      },
-      "recommendation": "优先用于内容研究、选题和人工合作初筛"
-    },
-    {
-      "rank": 10,
-      "tier": "CORE_10",
-      "candidateId": "CR-127",
-      "stableProfileId": "MS4wLjABAAAAb86lQj9OhrZrNjP5qutCvC3Bhsau9rRxSYljVpQClfM",
-      "nickname": "刘小刘—一位温度的 AI 电商讲师",
-      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAb86lQj9OhrZrNjP5qutCvC3Bhsau9rRxSYljVpQClfM",
-      "followers": 510000,
-      "tracks": [
-        "电商AI与运营工具"
-      ],
-      "evidenceScore": 39.4,
-      "confidence": "MEDIUM",
-      "evidence": {
-        "validSamples90d": 23,
-        "relevanceRatio": 0.4783,
-        "corePracticeLowerBound": 0.1739,
-        "relatedVideos60d": 6,
-        "latestRelatedAgeDays": 2.7,
-        "historicalDecisionScore": 29.4,
-        "qualityProxyScore": 49.7,
-        "historicalAction": "POOL_ONLY",
-        "autoDisposition": "FAIL_AUTOMATED_GATE",
-        "qualityLane": "Q3_HOLD"
-      },
-      "evidenceSummary": [
-        "90 天有效样本 23 条",
-        "垂直相关率 48%",
-        "60 天相关内容 6 条"
-      ],
-      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
-      "scoreParts": {
-        "sample": 16.9,
-        "relevance": 9.6,
-        "practice": 2.4,
-        "activity": 4,
-        "recency": 6.4,
-        "decision": 5.3,
-        "quality": 5,
-        "audience": 2.9,
-        "disposition": -5,
-        "historicalAction": 0,
-        "reviewLane": -8,
-        "laterEvidence": 0
-      },
-      "recommendation": "优先用于内容研究、选题和人工合作初筛"
-    },
-    {
-      "rank": 11,
-      "tier": "RECOMMENDED_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-147",
       "stableProfileId": "MS4wLjABAAAATl2gPRGBq3ixq3SSTQvTSSem_CBQvwmxF1pomKE0ALz7TDafbMgqNTXOO5z_wbco",
       "nickname": "千川优化师-北晚.【接代投】",
@@ -528,7 +1006,9 @@
         "relevanceRatio": 1,
         "corePracticeLowerBound": 1,
         "relatedVideos60d": 3,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 13.89,
+        "cohortPercentile": null,
         "historicalDecisionScore": 44,
         "qualityProxyScore": 45.6,
         "historicalAction": "POOL_ONLY",
@@ -555,11 +1035,77 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 4,
+        "failCount": 1,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 3,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "PASS",
+            "value": 1,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "PASS",
+            "value": 1,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
-      "rank": 12,
-      "tier": "RECOMMENDED_20",
+      "poolPosition": 10,
+      "rank": 10,
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-008",
       "stableProfileId": "MS4wLjABAAAA4_zh4Bb0VrH419Ur0sKUoTUbtllA1yFswZqm074Ty_En01eGzihOHbDiKtkNxYTG",
       "nickname": "海贼王的男人",
@@ -578,7 +1124,9 @@
         "relevanceRatio": 1,
         "corePracticeLowerBound": 1,
         "relatedVideos60d": 1,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 49.58,
+        "cohortPercentile": null,
         "historicalDecisionScore": 79,
         "qualityProxyScore": 41.6,
         "historicalAction": "POOL_ONLY",
@@ -605,11 +1153,77 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 4,
+        "failCount": 1,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 1,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "PASS",
+            "value": 1,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "PASS",
+            "value": 1,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
-      "rank": 13,
-      "tier": "RECOMMENDED_20",
+      "poolPosition": 11,
+      "rank": 11,
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-026",
       "stableProfileId": "MS4wLjABAAAATvJaZ0aXEd6tq0Z8KAyHfOoDth5874PJqjEALi4PuR4",
       "nickname": "那村儿风起",
@@ -627,7 +1241,9 @@
         "relevanceRatio": 1,
         "corePracticeLowerBound": 1,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 82.57,
+        "cohortPercentile": null,
         "historicalDecisionScore": 68.4,
         "qualityProxyScore": 37.6,
         "historicalAction": "POOL_ONLY",
@@ -654,11 +1270,194 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 4,
+        "failCount": 1,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 1,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "PASS",
+            "value": 1,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "PASS",
+            "value": 1,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
-      "rank": 14,
-      "tier": "RECOMMENDED_20",
+      "poolPosition": 12,
+      "rank": 12,
+      "tier": "OBSERVATION",
+      "reviewPriority": "FOLLOWUP_TRACKING",
+      "candidateId": "CR-039",
+      "stableProfileId": "MS4wLjABAAAA1qisFWbEO5208EScYB1IN1gXXd4kUt5W2vWID4Usn7eCcyL66ixbWt3Mo4ae6m8b",
+      "nickname": "ai电商运营",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAA1qisFWbEO5208EScYB1IN1gXXd4kUt5W2vWID4Usn7eCcyL66ixbWt3Mo4ae6m8b",
+      "followers": 1173,
+      "tracks": [
+        "电商AI与运营工具"
+      ],
+      "evidenceScore": 43.9,
+      "confidence": "MEDIUM",
+      "evidence": {
+        "validSamples90d": 12,
+        "relevanceRatio": 0.5,
+        "corePracticeLowerBound": 0.1667,
+        "relatedVideos60d": 6,
+        "relatedVideos30d": null,
+        "latestRelatedAgeDays": 1.93,
+        "cohortPercentile": null,
+        "historicalDecisionScore": 51.4,
+        "qualityProxyScore": 53.8,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "WATCH_SAMPLE_LT15",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 12 条",
+        "垂直相关率 50%",
+        "60 天相关内容 6 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 8.8,
+        "relevance": 10,
+        "practice": 2.3,
+        "activity": 4,
+        "recency": 6.5,
+        "decision": 9.3,
+        "quality": 5.4,
+        "audience": 1.5,
+        "disposition": 4,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 3,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容",
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 12,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0.5,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0.1667,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "纳入 T+24 增速观察与 T+72 稳定比较"
+    },
+    {
+      "poolPosition": 13,
+      "rank": 13,
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-056",
       "stableProfileId": "MS4wLjABAAAAKUXfN9dB7GexirQaCV2S8pMPcuOYBCb94oFqKYPLmN9pBql9itbRfGaWEXlIYo26",
       "nickname": "电商数据分析",
@@ -674,7 +1473,9 @@
         "relevanceRatio": 1,
         "corePracticeLowerBound": 0.5,
         "relatedVideos60d": 4,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 54.66,
+        "cohortPercentile": null,
         "historicalDecisionScore": 54.7,
         "qualityProxyScore": 41.1,
         "historicalAction": "POOL_ONLY",
@@ -701,11 +1502,77 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 4,
+        "failCount": 1,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 4,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "PASS",
+            "value": 1,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "PASS",
+            "value": 0.5,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
-      "rank": 15,
-      "tier": "RECOMMENDED_20",
+      "poolPosition": 14,
+      "rank": 14,
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-072",
       "stableProfileId": "MS4wLjABAAAAz0F5Wpevvtwz24vMBUp4827W6QI8VLWGPDHCxpKMdY3FNL0pFHiL8_Oc3S56Uq6c",
       "nickname": "不是小肖",
@@ -721,7 +1588,9 @@
         "relevanceRatio": 0.8571,
         "corePracticeLowerBound": 0.2857,
         "relatedVideos60d": 4,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 15.62,
+        "cohortPercentile": null,
         "historicalDecisionScore": 37.8,
         "qualityProxyScore": 44.7,
         "historicalAction": "POOL_ONLY",
@@ -748,11 +1617,78 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 3,
+        "failCount": 2,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 7,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "PASS",
+            "value": 0.8571,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0.2857,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
-      "rank": 16,
-      "tier": "RECOMMENDED_20",
+      "poolPosition": 15,
+      "rank": 15,
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-139",
       "stableProfileId": "MS4wLjABAAAA4cifHe2Ruw7vdSY4vHXYxFMbxb-FhdauEkWeZ15umF0",
       "nickname": "小胡（千川）",
@@ -768,7 +1704,9 @@
         "relevanceRatio": 1,
         "corePracticeLowerBound": 1,
         "relatedVideos60d": 1,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 21.5,
+        "cohortPercentile": null,
         "historicalDecisionScore": 12.1,
         "qualityProxyScore": 33.9,
         "historicalAction": "POOL_ONLY",
@@ -795,11 +1733,193 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 4,
+        "failCount": 1,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 1,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "PASS",
+            "value": 1,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "PASS",
+            "value": 1,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 16,
+      "rank": 16,
+      "tier": "OBSERVATION",
+      "reviewPriority": "FOLLOWUP_TRACKING",
+      "candidateId": "CR-127",
+      "stableProfileId": "MS4wLjABAAAAb86lQj9OhrZrNjP5qutCvC3Bhsau9rRxSYljVpQClfM",
+      "nickname": "刘小刘—一位温度的 AI 电商讲师",
+      "profileUrl": "https://www.douyin.com/user/MS4wLjABAAAAb86lQj9OhrZrNjP5qutCvC3Bhsau9rRxSYljVpQClfM",
+      "followers": 510000,
+      "tracks": [
+        "电商AI与运营工具"
+      ],
+      "evidenceScore": 39.4,
+      "confidence": "MEDIUM",
+      "evidence": {
+        "validSamples90d": 23,
+        "relevanceRatio": 0.4783,
+        "corePracticeLowerBound": 0.1739,
+        "relatedVideos60d": 6,
+        "relatedVideos30d": null,
+        "latestRelatedAgeDays": 2.7,
+        "cohortPercentile": null,
+        "historicalDecisionScore": 29.4,
+        "qualityProxyScore": 49.7,
+        "historicalAction": "POOL_ONLY",
+        "autoDisposition": "FAIL_AUTOMATED_GATE",
+        "qualityLane": "Q3_HOLD"
+      },
+      "evidenceSummary": [
+        "90 天有效样本 23 条",
+        "垂直相关率 48%",
+        "60 天相关内容 6 条"
+      ],
+      "knownRiskStatus": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+      "scoreParts": {
+        "sample": 16.9,
+        "relevance": 9.6,
+        "practice": 2.4,
+        "activity": 4,
+        "recency": 6.4,
+        "decision": 5.3,
+        "quality": 5,
+        "audience": 2.9,
+        "disposition": -5,
+        "historicalAction": 0,
+        "reviewLane": -8,
+        "laterEvidence": 0
+      },
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 3,
+        "failCount": 2,
+        "unknownCount": 2,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "PASS",
+            "value": 23,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0.4783,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0.1739,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "纳入 T+24 增速观察与 T+72 稳定比较"
+    },
+    {
+      "poolPosition": 17,
       "rank": 17,
-      "tier": "RECOMMENDED_20",
+      "tier": "OBSERVATION",
+      "reviewPriority": "CORE_PRIORITY_REVIEW",
       "candidateId": "CR-010",
       "stableProfileId": "MS4wLjABAAAAQeFnf2lgAvKCyW9HVrNKoY5kboRVNfTVdw3hMDLAfHA",
       "nickname": "隔壁小王",
@@ -813,7 +1933,9 @@
         "relevanceRatio": 1,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 3,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 46.7,
+        "cohortPercentile": null,
         "historicalDecisionScore": 34,
         "qualityProxyScore": 40.5,
         "historicalAction": "POOL_ONLY",
@@ -840,11 +1962,77 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 4,
+        "failCount": 1,
+        "unknownCount": 2,
+        "failed": [
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "PASS",
+            "value": 18,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "PASS",
+            "value": 1,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "优先补齐近 30 天活跃和同龄 P60 证据，达标后升入核心"
     },
     {
+      "poolPosition": 18,
       "rank": 18,
-      "tier": "RECOMMENDED_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-140",
       "stableProfileId": "MS4wLjABAAAAHOe7il1XPWnNrynk6KHuGBF8gqu6C4EX5WK51g7TFyqOiU18bKpY7_qsOG0YFahD",
       "nickname": "李哥抖店",
@@ -860,7 +2048,9 @@
         "relevanceRatio": 1,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 61.58,
+        "cohortPercentile": null,
         "historicalDecisionScore": 62.4,
         "qualityProxyScore": 26.1,
         "historicalAction": "POOL_ONLY",
@@ -887,11 +2077,78 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 3,
+        "failCount": 2,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 1,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "PASS",
+            "value": 1,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 19,
       "rank": 19,
-      "tier": "RECOMMENDED_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-123",
       "stableProfileId": "MS4wLjABAAAAHd0KQ3yVws_VFljJur6H5VZCFryjT5iew2bl7WwZDf1tGYLWzNmYs9mUfprsEtOm",
       "nickname": "巨量本地推，千川投放",
@@ -907,7 +2164,9 @@
         "relevanceRatio": 0.6667,
         "corePracticeLowerBound": 0.6667,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 72.93,
+        "cohortPercentile": null,
         "historicalDecisionScore": 24.2,
         "qualityProxyScore": 29.2,
         "historicalAction": "POOL_ONLY",
@@ -934,11 +2193,78 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 3,
+        "failCount": 2,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容",
+          "垂直相关率不低于 70%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 6,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0.6667,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "PASS",
+            "value": 0.6667,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 20,
       "rank": 20,
-      "tier": "RECOMMENDED_20",
+      "tier": "OBSERVATION",
+      "reviewPriority": "FOLLOWUP_TRACKING",
       "candidateId": "CR-003",
       "stableProfileId": "MS4wLjABAAAAT0kVFmAtmcx84Iv_yBH4zkhwJnEF1bXAuvMd3GXojI0",
       "nickname": "张振有点料",
@@ -955,7 +2281,9 @@
         "relevanceRatio": 0.3889,
         "corePracticeLowerBound": 0.0556,
         "relatedVideos60d": 7,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 3.54,
+        "cohortPercentile": null,
         "historicalDecisionScore": 26.6,
         "qualityProxyScore": 44.5,
         "historicalAction": "POOL_ONLY",
@@ -982,11 +2310,78 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 3,
+        "failCount": 2,
+        "unknownCount": 2,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "PASS",
+            "value": 18,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0.3889,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0.0556,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "纳入 T+24 增速观察与 T+72 稳定比较"
     },
     {
+      "poolPosition": 21,
       "rank": 21,
-      "tier": "RECOMMENDED_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-099",
       "stableProfileId": "MS4wLjABAAAAT90Vzhr8BRFQIoG1aS8tsct6TuKTFMawhuzYNMtIkvxNd5x_23_gPZzmTeDD3c6i",
       "nickname": "巨量广告",
@@ -1002,7 +2397,9 @@
         "relevanceRatio": 0.6,
         "corePracticeLowerBound": 0.6,
         "relatedVideos60d": 3,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 26.98,
+        "cohortPercentile": null,
         "historicalDecisionScore": 16.3,
         "qualityProxyScore": 19.7,
         "historicalAction": "POOL_ONLY",
@@ -1029,11 +2426,78 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 3,
+        "failCount": 2,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容",
+          "垂直相关率不低于 70%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 5,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0.6,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "PASS",
+            "value": 0.6,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 22,
       "rank": 22,
-      "tier": "RECOMMENDED_20",
+      "tier": "OBSERVATION",
+      "reviewPriority": "FOLLOWUP_TRACKING",
       "candidateId": "CR-095",
       "stableProfileId": "MS4wLjABAAAAllGUDX6LsDVc1CL-IlW3QvGceVbaJ1kamv1GMrL3HEJSigMblPx77Pgg_kRGYY31",
       "nickname": "小汉哥ai视频实操",
@@ -1049,7 +2513,9 @@
         "relevanceRatio": 0.2778,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 5,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 3.61,
+        "cohortPercentile": null,
         "historicalDecisionScore": 33.8,
         "qualityProxyScore": 36.7,
         "historicalAction": "POOL_ONLY",
@@ -1076,11 +2542,78 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 3,
+        "failCount": 2,
+        "unknownCount": 2,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "PASS",
+            "value": 18,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0.2778,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "纳入 T+24 增速观察与 T+72 稳定比较"
     },
     {
+      "poolPosition": 23,
       "rank": 23,
-      "tier": "RECOMMENDED_20",
+      "tier": "OBSERVATION",
+      "reviewPriority": "FOLLOWUP_TRACKING",
       "candidateId": "CR-101",
       "stableProfileId": "MS4wLjABAAAAqyJXGCLVphm2_WHmjPnWVToKL_g7xIguZT4WuTtTM7s",
       "nickname": "阿飞（短视频直播带货）",
@@ -1096,7 +2629,9 @@
         "relevanceRatio": 0.2857,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 4,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 15.82,
+        "cohortPercentile": null,
         "historicalDecisionScore": 14.2,
         "qualityProxyScore": 30.1,
         "historicalAction": "POOL_ONLY",
@@ -1123,11 +2658,79 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 3,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容",
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 14,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0.2857,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "纳入 T+24 增速观察与 T+72 稳定比较"
     },
     {
+      "poolPosition": 24,
       "rank": 24,
-      "tier": "RECOMMENDED_20",
+      "tier": "OBSERVATION",
+      "reviewPriority": "FOLLOWUP_TRACKING",
       "candidateId": "CR-075",
       "stableProfileId": "MS4wLjABAAAAnoesjssyFzkJJsvCoicigQ0uJeIGBoMOpgHEtcH05no",
       "nickname": "实体店引流老宋",
@@ -1143,7 +2746,9 @@
         "relevanceRatio": 0.5,
         "corePracticeLowerBound": 0.3,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 82.72,
+        "cohortPercentile": null,
         "historicalDecisionScore": 20.5,
         "qualityProxyScore": 25.2,
         "historicalAction": "POOL_ONLY",
@@ -1170,11 +2775,79 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 3,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容",
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 10,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0.5,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0.3,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "纳入 T+24 增速观察与 T+72 稳定比较"
     },
     {
+      "poolPosition": 25,
       "rank": 25,
-      "tier": "RECOMMENDED_20",
+      "tier": "OBSERVATION",
+      "reviewPriority": "FOLLOWUP_TRACKING",
       "candidateId": "CR-019",
       "stableProfileId": "MS4wLjABAAAA7Q-sDM_EXyjma7je--CfV5TovAaP2Mt3-ul6I9Y5GJQ",
       "nickname": "Hello_程颖",
@@ -1191,7 +2864,9 @@
         "relevanceRatio": 0.5,
         "corePracticeLowerBound": 0.125,
         "relatedVideos60d": 1,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 39.45,
+        "cohortPercentile": null,
         "historicalDecisionScore": 27.3,
         "qualityProxyScore": 28.9,
         "historicalAction": "POOL_ONLY",
@@ -1218,11 +2893,79 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 3,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容",
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 8,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0.5,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0.125,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "纳入 T+24 增速观察与 T+72 稳定比较"
     },
     {
+      "poolPosition": 26,
       "rank": 26,
-      "tier": "RECOMMENDED_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-035",
       "stableProfileId": "MS4wLjABAAAAsIswjGhmTpdzJxGcAt5euIF4I_JN9ERt_F8Yhk1wpt62kO5uUxkIBpWMC98in-nj",
       "nickname": "小马哥(擎动未来)",
@@ -1236,7 +2979,9 @@
         "relevanceRatio": 0.6667,
         "corePracticeLowerBound": 0.3333,
         "relatedVideos60d": 1,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 48.73,
+        "cohortPercentile": null,
         "historicalDecisionScore": 17.9,
         "qualityProxyScore": 19.1,
         "historicalAction": "POOL_ONLY",
@@ -1263,11 +3008,79 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 3,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容",
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 3,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0.6667,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0.3333,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 27,
       "rank": 27,
-      "tier": "RECOMMENDED_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-029",
       "stableProfileId": "MS4wLjABAAAAaT_yDiWkqjfM1BHqFg2O4daNAOULan44NoVgMDuO4uo",
       "nickname": "🔥杨老师",
@@ -1285,7 +3098,9 @@
         "relevanceRatio": 1,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 1,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 53.95,
+        "cohortPercentile": null,
         "historicalDecisionScore": 6.9,
         "qualityProxyScore": 18.6,
         "historicalAction": "POOL_ONLY",
@@ -1312,11 +3127,78 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 3,
+        "failCount": 2,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 1,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "PASS",
+            "value": 1,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 28,
       "rank": 28,
-      "tier": "RECOMMENDED_20",
+      "tier": "OBSERVATION",
+      "reviewPriority": "FOLLOWUP_TRACKING",
       "candidateId": "CR-089",
       "stableProfileId": "MS4wLjABAAAACey9xtoVkvMGUTyDO_aAY9ThUzdhdZ37h4G1I3ud_lU",
       "nickname": "大春说",
@@ -1332,7 +3214,9 @@
         "relevanceRatio": 0.1667,
         "corePracticeLowerBound": 0.1111,
         "relatedVideos60d": 3,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 17.81,
+        "cohortPercentile": null,
         "historicalDecisionScore": 26.1,
         "qualityProxyScore": 38.1,
         "historicalAction": "POOL_ONLY",
@@ -1359,11 +3243,78 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 3,
+        "failCount": 2,
+        "unknownCount": 2,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "PASS",
+            "value": 18,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0.1667,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0.1111,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "纳入 T+24 增速观察与 T+72 稳定比较"
     },
     {
+      "poolPosition": 29,
       "rank": 29,
-      "tier": "RECOMMENDED_20",
+      "tier": "OBSERVATION",
+      "reviewPriority": "FOLLOWUP_TRACKING",
       "candidateId": "CR-071",
       "stableProfileId": "MS4wLjABAAAAc35FjvjLZkW50veq4ff47JpvPCHw9zrmwXs3X1KLFc8",
       "nickname": "iTLine电商AI运营",
@@ -1379,7 +3330,9 @@
         "relevanceRatio": 0,
         "corePracticeLowerBound": 0.4444,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": null,
+        "cohortPercentile": null,
         "historicalDecisionScore": 28.8,
         "qualityProxyScore": 35.2,
         "historicalAction": "POOL_ONLY",
@@ -1406,11 +3359,78 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 3,
+        "failCount": 2,
+        "unknownCount": 2,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "PASS",
+            "value": 18,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0.4444,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "纳入 T+24 增速观察与 T+72 稳定比较"
     },
     {
+      "poolPosition": 30,
       "rank": 30,
-      "tier": "RECOMMENDED_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-107",
       "stableProfileId": "MS4wLjABAAAAvv7QFuc-bdtxMyDumlCTPNtkKG-xyJlZCP4jZNWUUCaMUqQKG_jlhdvHzv21kIta",
       "nickname": "抖音广告投放_老马",
@@ -1426,7 +3446,9 @@
         "relevanceRatio": 0.4,
         "corePracticeLowerBound": 0.2,
         "relatedVideos60d": 2,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 53.01,
+        "cohortPercentile": null,
         "historicalDecisionScore": 7.1,
         "qualityProxyScore": 23.8,
         "historicalAction": "POOL_ONLY",
@@ -1453,11 +3475,79 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "用于垂直内容研究与稳定观察"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 3,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容",
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 5,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0.4,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0.2,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 31,
       "rank": 31,
-      "tier": "EXPANSION_20",
+      "tier": "OBSERVATION",
+      "reviewPriority": "FOLLOWUP_TRACKING",
       "candidateId": "CR-018",
       "stableProfileId": "MS4wLjABAAAA4DUkPF9UWFfvVmOwkY-LL9r9jiCGn6NT9UHKkaO-eD-D95DCo6wKsaRQOMGEsDN_",
       "nickname": "周拾陆",
@@ -1475,7 +3565,9 @@
         "relevanceRatio": 0.1667,
         "corePracticeLowerBound": 0.0556,
         "relatedVideos60d": 3,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 41.65,
+        "cohortPercentile": null,
         "historicalDecisionScore": 25.9,
         "qualityProxyScore": 32.6,
         "historicalAction": "POOL_ONLY",
@@ -1502,11 +3594,78 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 3,
+        "failCount": 2,
+        "unknownCount": 2,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "PASS",
+            "value": 18,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0.1667,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0.0556,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "纳入 T+24 增速观察与 T+72 稳定比较"
     },
     {
+      "poolPosition": 32,
       "rank": 32,
-      "tier": "EXPANSION_20",
+      "tier": "OBSERVATION",
+      "reviewPriority": "FOLLOWUP_TRACKING",
       "candidateId": "CR-009",
       "stableProfileId": "MS4wLjABAAAA9kg9vhIeXjKegcQP7RFEaioPq-h3W5JYfjl7zUZi2mM",
       "nickname": "丰年Ai编导",
@@ -1522,7 +3681,9 @@
         "relevanceRatio": 0.125,
         "corePracticeLowerBound": 0.1875,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 71.67,
+        "cohortPercentile": null,
         "historicalDecisionScore": 30.3,
         "qualityProxyScore": 32.3,
         "historicalAction": "POOL_ONLY",
@@ -1549,11 +3710,78 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 3,
+        "failCount": 2,
+        "unknownCount": 2,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "PASS",
+            "value": 16,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0.125,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0.1875,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "纳入 T+24 增速观察与 T+72 稳定比较"
     },
     {
+      "poolPosition": 33,
       "rank": 33,
-      "tier": "EXPANSION_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-121",
       "stableProfileId": "MS4wLjABAAAAjnNJJ2eqMQtvJ7X2wt5P-akApjr-taL5eYp5obhQDTA",
       "nickname": "布鲁斯电商版",
@@ -1569,7 +3797,9 @@
         "relevanceRatio": 0.5,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 84.67,
+        "cohortPercentile": null,
         "historicalDecisionScore": 16.4,
         "qualityProxyScore": 13.5,
         "historicalAction": "POOL_ONLY",
@@ -1596,11 +3826,79 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 3,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容",
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 2,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0.5,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 34,
       "rank": 34,
-      "tier": "EXPANSION_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-015",
       "stableProfileId": "MS4wLjABAAAAewiMNGy5sSg6SCLqWPP4BC9a3D3Ql5BxP1xq1RDZq-s",
       "nickname": "无忌",
@@ -1614,7 +3912,9 @@
         "relevanceRatio": 0.3333,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 1,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": 35.94,
+        "cohortPercentile": null,
         "historicalDecisionScore": 21.8,
         "qualityProxyScore": 13.9,
         "historicalAction": "POOL_ONLY",
@@ -1641,11 +3941,79 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 3,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容",
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 3,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0.3333,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 35,
       "rank": 35,
-      "tier": "EXPANSION_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-023",
       "stableProfileId": "MS4wLjABAAAAHdLS-2AW2epjzC_KsxD8016rEQLuIkNskVags9Oj6MQ",
       "nickname": "商业小巨蛋",
@@ -1659,7 +4027,9 @@
         "relevanceRatio": 0,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": null,
+        "cohortPercentile": null,
         "historicalDecisionScore": 25,
         "qualityProxyScore": 13.9,
         "historicalAction": "POOL_ONLY",
@@ -1686,11 +4056,79 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 3,
+        "unknownCount": 2,
+        "failed": [
+          "不少于 15 条有效内容",
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "FAIL",
+            "value": 5,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 36,
       "rank": 36,
-      "tier": "EXPANSION_20",
+      "tier": "OBSERVATION",
+      "reviewPriority": "FOLLOWUP_TRACKING",
       "candidateId": "CR-032",
       "stableProfileId": "MS4wLjABAAAAnQ5jSkrbANCG1ZS4mVwtmseFhV5qBT5oTBBbXi4wy_4",
       "nickname": "沙师兄Ai知识付费",
@@ -1706,7 +4144,9 @@
         "relevanceRatio": 0,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": null,
+        "cohortPercentile": null,
         "historicalDecisionScore": 19.6,
         "qualityProxyScore": 22.9,
         "historicalAction": "POOL_ONLY",
@@ -1733,11 +4173,78 @@
         "reviewLane": -8,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 3,
+        "failCount": 2,
+        "unknownCount": 2,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "PASS",
+            "value": 18,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "纳入 T+24 增速观察与 T+72 稳定比较"
     },
     {
+      "poolPosition": 37,
       "rank": 37,
-      "tier": "EXPANSION_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-036",
       "stableProfileId": "MS4wLjABAAAAvOCCqDymP8jly9fFlFFDf4kQRb9hlhOJjGWyWs2JCRs",
       "nickname": "短视频小班班长",
@@ -1753,7 +4260,9 @@
         "relevanceRatio": 0,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": null,
+        "cohortPercentile": null,
         "historicalDecisionScore": null,
         "qualityProxyScore": null,
         "historicalAction": "POOL_ONLY",
@@ -1780,11 +4289,79 @@
         "reviewLane": 1,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 2,
+        "unknownCount": 3,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "不少于 15 条有效内容",
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 38,
       "rank": 38,
-      "tier": "EXPANSION_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-070",
       "stableProfileId": "MS4wLjABAAAAvcYN5xC74crBEiu5zTUfD3jpn_CGaJ7FO3XelBlgHjg2aW3e5bTydDOVY1j3oOD3",
       "nickname": "李元宝200°C（选品心法）",
@@ -1800,7 +4377,9 @@
         "relevanceRatio": 0,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": null,
+        "cohortPercentile": null,
         "historicalDecisionScore": null,
         "qualityProxyScore": null,
         "historicalAction": "POOL_ONLY",
@@ -1827,11 +4406,79 @@
         "reviewLane": 1,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 2,
+        "unknownCount": 3,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "不少于 15 条有效内容",
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 39,
       "rank": 39,
-      "tier": "EXPANSION_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-061",
       "stableProfileId": "MS4wLjABAAAANcFvQ8uQsZZNW_RVTPj6EhVBQeDTH957pvrX2Vr3YAaMlg30Y3cKHEs8yzNTESy4",
       "nickname": "张小伟（半无人带货）",
@@ -1847,7 +4494,9 @@
         "relevanceRatio": 0,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": null,
+        "cohortPercentile": null,
         "historicalDecisionScore": null,
         "qualityProxyScore": null,
         "historicalAction": "POOL_ONLY",
@@ -1874,11 +4523,79 @@
         "reviewLane": 1,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 2,
+        "unknownCount": 3,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "不少于 15 条有效内容",
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 40,
       "rank": 40,
-      "tier": "EXPANSION_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-079",
       "stableProfileId": "MS4wLjABAAAAKqL4bqVnRjoj2EXukujJlJw9Moz98JFXegUqAnuzXkbwcNMCoCDW5ZMbisNFdo3s",
       "nickname": "王总Ai实体运营",
@@ -1894,7 +4611,9 @@
         "relevanceRatio": 0,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": null,
+        "cohortPercentile": null,
         "historicalDecisionScore": null,
         "qualityProxyScore": null,
         "historicalAction": "POOL_ONLY",
@@ -1921,11 +4640,79 @@
         "reviewLane": 1,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 2,
+        "unknownCount": 3,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "不少于 15 条有效内容",
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 41,
       "rank": 41,
-      "tier": "EXPANSION_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-016",
       "stableProfileId": "MS4wLjABAAAAi5hBT7-KG6oYmzRoRcZg6IVY-_n3j4Hb_Laeo28wpWsZJO9_4Uh56RryprKeCTuZ",
       "nickname": "卡思运营",
@@ -1942,7 +4729,9 @@
         "relevanceRatio": 0,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": null,
+        "cohortPercentile": null,
         "historicalDecisionScore": null,
         "qualityProxyScore": null,
         "historicalAction": "POOL_ONLY",
@@ -1969,11 +4758,79 @@
         "reviewLane": 1,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 2,
+        "unknownCount": 3,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "不少于 15 条有效内容",
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 42,
       "rank": 42,
-      "tier": "EXPANSION_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-038",
       "stableProfileId": "MS4wLjABAAAAwDnkAb9OajdLf8KM8jHEyB3Xtg0kHEEgOic_BRttOQ0",
       "nickname": "米叔电商问答",
@@ -1987,7 +4844,9 @@
         "relevanceRatio": 0,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": null,
+        "cohortPercentile": null,
         "historicalDecisionScore": null,
         "qualityProxyScore": null,
         "historicalAction": "POOL_ONLY",
@@ -2014,11 +4873,79 @@
         "reviewLane": 1,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 2,
+        "unknownCount": 3,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "不少于 15 条有效内容",
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 43,
       "rank": 43,
-      "tier": "EXPANSION_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-040",
       "stableProfileId": "MS4wLjABAAAAOuBtbyLvEf4clLAX9m35HPXPRINCSEWoLHblgdJq9Jg",
       "nickname": "飞瓜数据",
@@ -2034,7 +4961,9 @@
         "relevanceRatio": 0,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": null,
+        "cohortPercentile": null,
         "historicalDecisionScore": null,
         "qualityProxyScore": null,
         "historicalAction": "POOL_ONLY",
@@ -2061,11 +4990,79 @@
         "reviewLane": 1,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 2,
+        "unknownCount": 3,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "不少于 15 条有效内容",
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 44,
       "rank": 44,
-      "tier": "EXPANSION_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-068",
       "stableProfileId": "MS4wLjABAAAAgcI6ichFCa6vA-21Ch8bE1xdliri7qurh0ubxdWtILs",
       "nickname": "抖店运营笔记 (南音)",
@@ -2081,7 +5078,9 @@
         "relevanceRatio": 0,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": null,
+        "cohortPercentile": null,
         "historicalDecisionScore": null,
         "qualityProxyScore": null,
         "historicalAction": "POOL_ONLY",
@@ -2108,11 +5107,79 @@
         "reviewLane": 1,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 2,
+        "unknownCount": 3,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "不少于 15 条有效内容",
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 45,
       "rank": 45,
-      "tier": "EXPANSION_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-069",
       "stableProfileId": "MS4wLjABAAAAFsbaX8f-1bBcS6u3srfqFIMrhAS0MhZLpOWdqLoH2pM",
       "nickname": "张小伟（视频号带货）",
@@ -2128,7 +5195,9 @@
         "relevanceRatio": 0,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": null,
+        "cohortPercentile": null,
         "historicalDecisionScore": null,
         "qualityProxyScore": null,
         "historicalAction": "POOL_ONLY",
@@ -2155,11 +5224,79 @@
         "reviewLane": 1,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 2,
+        "unknownCount": 3,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "不少于 15 条有效内容",
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 46,
       "rank": 46,
-      "tier": "EXPANSION_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-085",
       "stableProfileId": "MS4wLjABAAAAF2FR0mvEVYbLL3lXaLtBFMm_sWegwcZSOpI0gDc4krc",
       "nickname": "随心短视频运营（干货分享）",
@@ -2175,7 +5312,9 @@
         "relevanceRatio": 0,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": null,
+        "cohortPercentile": null,
         "historicalDecisionScore": null,
         "qualityProxyScore": null,
         "historicalAction": "POOL_ONLY",
@@ -2202,11 +5341,79 @@
         "reviewLane": 1,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 2,
+        "unknownCount": 3,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "不少于 15 条有效内容",
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 47,
       "rank": 47,
-      "tier": "EXPANSION_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-021",
       "stableProfileId": "MS4wLjABAAAABuEWnU-fcMIIhd3s6Ij2mceXRunyChVP-auWCkaJR5o",
       "nickname": "电商工辑",
@@ -2222,7 +5429,9 @@
         "relevanceRatio": 0,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": null,
+        "cohortPercentile": null,
         "historicalDecisionScore": null,
         "qualityProxyScore": null,
         "historicalAction": "POOL_ONLY",
@@ -2249,11 +5458,79 @@
         "reviewLane": 1,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 2,
+        "unknownCount": 3,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "不少于 15 条有效内容",
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 48,
       "rank": 48,
-      "tier": "EXPANSION_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-030",
       "stableProfileId": "MS4wLjABAAAAc9VOLiCAPbSCWLURcOBqv5AFyT8yh1lHE5MVXXsZ0oNuG24DpDRfPVvoE-oBk7ls",
       "nickname": "森桢出海电商",
@@ -2267,7 +5544,9 @@
         "relevanceRatio": 0,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": null,
+        "cohortPercentile": null,
         "historicalDecisionScore": null,
         "qualityProxyScore": null,
         "historicalAction": "POOL_ONLY",
@@ -2294,11 +5573,79 @@
         "reviewLane": 1,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 2,
+        "unknownCount": 3,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "不少于 15 条有效内容",
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 49,
       "rank": 49,
-      "tier": "EXPANSION_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-034",
       "stableProfileId": "MS4wLjABAAAArM--lON69HgwzA3FmLp4eR1F5-qWwOHWr0tZSPSbc7rimK-DUKKL5OIu0JgGcK16",
       "nickname": "魔鬼陈-默尘直播电商（专注精细化运营）",
@@ -2318,7 +5665,9 @@
         "relevanceRatio": 0,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": null,
+        "cohortPercentile": null,
         "historicalDecisionScore": null,
         "qualityProxyScore": null,
         "historicalAction": "POOL_ONLY",
@@ -2345,11 +5694,79 @@
         "reviewLane": 1,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 2,
+        "unknownCount": 3,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "不少于 15 条有效内容",
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     },
     {
+      "poolPosition": 50,
       "rank": 50,
-      "tier": "EXPANSION_20",
+      "tier": "EXPANSION_CANDIDATE",
+      "reviewPriority": "LIGHT_SCREEN_ONLY",
       "candidateId": "CR-043",
       "stableProfileId": "MS4wLjABAAAAPxLbAxOtN-ndNQxFxSX6ijSm7zOlXFW0yIh93t5Oksg",
       "nickname": "千川应用@卓卓说",
@@ -2365,7 +5782,9 @@
         "relevanceRatio": 0,
         "corePracticeLowerBound": 0,
         "relatedVideos60d": 0,
+        "relatedVideos30d": null,
         "latestRelatedAgeDays": null,
+        "cohortPercentile": null,
         "historicalDecisionScore": null,
         "qualityProxyScore": null,
         "historicalAction": "POOL_ONLY",
@@ -2392,7 +5811,73 @@
         "reviewLane": 1,
         "laterEvidence": 0
       },
-      "recommendation": "作为赛道补充源，使用前人工确认近期内容"
+      "coreTrackingGate": {
+        "result": "FAIL",
+        "passCount": 2,
+        "failCount": 2,
+        "unknownCount": 3,
+        "failed": [
+          "垂直相关率不低于 70%",
+          "原创/实用内容不低于 50%"
+        ],
+        "missing": [
+          "不少于 15 条有效内容",
+          "近 30 天不少于 4 条相关发布",
+          "同赛道同量级同龄内容达到 P60"
+        ],
+        "gates": [
+          {
+            "key": "identity",
+            "label": "当前个人身份与主页",
+            "status": "PASS",
+            "value": true,
+            "threshold": true
+          },
+          {
+            "key": "samples",
+            "label": "不少于 15 条有效内容",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 15
+          },
+          {
+            "key": "relevance",
+            "label": "垂直相关率不低于 70%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.7
+          },
+          {
+            "key": "practice",
+            "label": "原创/实用内容不低于 50%",
+            "status": "FAIL",
+            "value": 0,
+            "threshold": 0.5
+          },
+          {
+            "key": "activity",
+            "label": "近 30 天不少于 4 条相关发布",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 4
+          },
+          {
+            "key": "cohort",
+            "label": "同赛道同量级同龄内容达到 P60",
+            "status": "UNKNOWN",
+            "value": null,
+            "threshold": 0.6
+          },
+          {
+            "key": "risk",
+            "label": "无明确风险",
+            "status": "PASS",
+            "value": "NO_EXPLICIT_RISK_IN_REVIEWED_RECORDS",
+            "threshold": "NO_EXPLICIT_RISK"
+          }
+        ]
+      },
+      "recommendation": "仅作扩展研究候选，通过轻筛后再进入持续跟踪"
     }
   ],
   "excludedSummary": {

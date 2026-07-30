@@ -15,7 +15,7 @@ import {
   creatorViews,
   renderCreatorDetail,
   renderCreatorPage,
-} from "./creators.js?v=20260730top50";
+} from "./creators.js?v=20260730tiered1";
 import { applyCreatorIdentityCorrection } from "./creator-data.js";
 import { escapeHtml, icon, renderError } from "./ui.js";
 
