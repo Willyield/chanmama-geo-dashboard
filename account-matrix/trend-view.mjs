@@ -85,6 +85,41 @@ export const buildClassificationComparison = (records, dateKeys, categoryIds) =>
   };
 };
 
+export const buildClassificationDelta = (comparison) => {
+  const latest = comparison.latest7;
+  const previous = comparison.previous7;
+  const previousCategories = new Map(previous.categories.map((category) => [category.categoryId, category]));
+  const rows = latest.categories.map((category) => {
+    const previousCategory = previousCategories.get(category.categoryId) || { count: 0, share: null };
+    return {
+      categoryId: category.categoryId,
+      latestCount: category.count,
+      latestShare: category.share,
+      previousCount: previousCategory.count,
+      previousShare: previousCategory.share,
+      countDelta: category.count - previousCategory.count,
+      shareDelta: Number.isFinite(category.share) && Number.isFinite(previousCategory.share)
+        ? round(category.share - previousCategory.share)
+        : null,
+    };
+  });
+  const leadingGrowth = [...rows].sort((left, right) =>
+    right.countDelta - left.countDelta || right.latestCount - left.latestCount,
+  )[0] || null;
+  const leadingCategory = [...rows].sort((left, right) =>
+    right.latestCount - left.latestCount || right.countDelta - left.countDelta,
+  )[0] || null;
+  const contentDelta = latest.contentCount - previous.contentCount;
+  return {
+    rows,
+    contentDelta,
+    contentChange: previous.contentCount ? round(contentDelta / previous.contentCount) : null,
+    activeSourceDelta: latest.activeSourceCount - previous.activeSourceCount,
+    leadingGrowth,
+    leadingCategory,
+  };
+};
+
 export const buildLineGeometry = (points, valueOf, {
   width,
   height,

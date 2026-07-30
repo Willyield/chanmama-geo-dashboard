@@ -1,4 +1,5 @@
 import {
+  buildClassificationDelta,
   buildClassificationComparison,
   buildFilteredPublishCohort,
   buildLineGeometry,
@@ -43,6 +44,13 @@ const formatNumber = (value) => Number.isFinite(value)
   : "暂无";
 const formatExact = (value) => Number.isFinite(value) ? new Intl.NumberFormat("zh-CN").format(value) : "暂无";
 const formatPercent = (value) => Number.isFinite(value) ? `${(value * 100).toFixed(value < 0.01 ? 2 : 1)}%` : "暂无";
+const formatSignedExact = (value, unit = "") => Number.isFinite(value)
+  ? `${value > 0 ? "+" : ""}${formatExact(value)}${unit}`
+  : "暂无";
+const formatSignedPercent = (value, unit = "%") => Number.isFinite(value)
+  ? `${value > 0 ? "+" : ""}${(value * 100).toFixed(1)}${unit}`
+  : "暂无";
+const changeClass = (value) => value > 0 ? "is-increase" : value < 0 ? "is-decrease" : "is-flat";
 const formatDateTime = (value) => value ? new Intl.DateTimeFormat("zh-CN", {
   timeZone: "Asia/Shanghai", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false,
 }).format(new Date(value)) : "暂无";
@@ -346,6 +354,9 @@ const renderPublishTrendPlot = (points, query, days) => {
     bottom: 24,
   });
   const maximumCount = Math.max(1, ...points.map((point) => point.contentCount));
+  const peakContent = [...points].sort((left, right) => right.contentCount - left.contentCount)[0];
+  const peakViews = [...points].filter((point) => Number.isFinite(point.views.total)).sort((left, right) => right.views.total - left.views.total)[0];
+  const peakMedian = [...points].filter((point) => Number.isFinite(point.views.median)).sort((left, right) => right.views.median - left.views.median)[0];
   const step = points.length > 1 ? innerWidth / (points.length - 1) : innerWidth;
   const barWidth = Math.max(5, Math.min(18, step * 0.4));
   const bars = points.map((point, index) => {
@@ -381,18 +392,23 @@ const renderPublishTrendPlot = (points, query, days) => {
   }).join("");
   const medianPoints = medianGeometry.points.map((point) => point.y === null ? "" : `<circle class="trend-median-point" cx="${(point.x + 22).toFixed(2)}" cy="${point.y.toFixed(2)}" r="3"></circle>`).join("");
   return `<div class="trend-scroll" tabindex="0" aria-label="趋势图，可横向滚动"><div class="trend-stage" style="width:${width}px">
-    <div class="trend-panel-label"><strong>当前累计播放/阅读</strong><span>柱形为当日发布量 · 折线缺口表示指标未知</span></div>
+    <div class="trend-panel-label"><div><strong>当前可见播放/阅读</strong><span>按发布日期汇总截至采样时的累计值</span></div><span class="trend-panel-stat">峰值 ${formatExact(peakViews?.views.total)} · ${escapeHtml(peakViews?.date?.slice(5) || "暂无")}</span></div>
     <svg class="trend-svg trend-svg-primary" viewBox="0 0 ${width} ${totalHeight}" role="img" aria-label="按发布日期分组的当前累计播放阅读趋势">
+      <text class="trend-scale-label" x="22" y="12">${formatExact(totalGeometry.maximum)}</text>
+      <line class="trend-grid-line trend-grid-line-muted" x1="22" y1="78" x2="${width - 22}" y2="78"></line>
       <line class="trend-grid-line" x1="22" y1="${totalHeight - 16}" x2="${width - 22}" y2="${totalHeight - 16}"></line>
       ${paths}${links}
     </svg>
-    <div class="trend-panel-label trend-panel-label-secondary"><strong>单篇常规阅读</strong><span>青绿虚线 · 仅使用播放/阅读已知的内容</span></div>
+    <div class="trend-panel-label trend-panel-label-secondary"><div><strong>单篇常规阅读</strong><span>只统计播放/阅读已知的内容</span></div><span class="trend-panel-stat">峰值 ${formatExact(peakMedian?.views.median)} · ${escapeHtml(peakMedian?.date?.slice(5) || "暂无")}</span></div>
     <svg class="trend-svg trend-svg-secondary" viewBox="0 0 ${width} ${medianHeight}" role="img" aria-label="按发布日期分组的单篇常规阅读趋势">
+      <text class="trend-scale-label" x="22" y="11">${formatExact(medianGeometry.maximum)}</text>
+      <line class="trend-grid-line trend-grid-line-muted" x1="22" y1="51" x2="${width - 22}" y2="51"></line>
       <line class="trend-grid-line" x1="22" y1="${medianHeight - 24}" x2="${width - 22}" y2="${medianHeight - 24}"></line>
       ${medianPaths}${medianPoints}
     </svg>
-    <div class="trend-panel-label trend-panel-label-secondary"><strong>发布量</strong><span>每日发布内容篇数</span></div>
+    <div class="trend-panel-label trend-panel-label-secondary"><div><strong>每日发布量</strong><span>每根柱代表当天发布篇数</span></div><span class="trend-panel-stat">最高 ${formatExact(peakContent?.contentCount)}篇 · ${escapeHtml(peakContent?.date?.slice(5) || "暂无")}</span></div>
     <svg class="trend-svg trend-svg-volume" viewBox="0 0 ${width} ${volumeHeight}" role="img" aria-label="按发布日期分组的内容发布量">
+      <text class="trend-scale-label" x="22" y="12">${formatExact(maximumCount)}篇</text>
       <line class="trend-grid-line" x1="22" y1="${volumeHeight - 25}" x2="${width - 22}" y2="${volumeHeight - 25}"></line>
       ${bars}${dateLabels}
     </svg>
@@ -409,18 +425,37 @@ const categoryComposition = (query) => {
   const records = filterRecords(state.records, comparisonQuery);
   const categoryIds = Object.keys(CATEGORY_LABELS);
   const comparison = buildClassificationComparison(records, dateKeys, categoryIds);
+  const delta = buildClassificationDelta(comparison);
   const activeCategory = query.get("category") || "";
-  const renderPeriod = (period, label) => {
-    const coverage = `${period.views.knownCount}篇 / ${period.views.totalCount}篇`;
-    const segments = period.categories.map((category) => {
-      if (!category.count) return "";
-      const routeLabel = `${label}${CATEGORY_LABELS[category.categoryId]}${category.count}篇，占${formatPercent(category.share)}`;
-      return `<button type="button" class="composition-segment category-${CATEGORY_COLOR_SLOTS[category.categoryId]}" style="width:${(category.share * 100).toFixed(4)}%" data-category-trend="${escapeHtml(category.categoryId)}" aria-pressed="${activeCategory === category.categoryId}" aria-label="${escapeHtml(routeLabel)}" title="${escapeHtml(routeLabel)}">${category.share >= 0.12 ? escapeHtml(`${category.count}篇`) : ""}</button>`;
-    }).join("");
-    const legend = period.categories.map((category) => `<button type="button" class="composition-legend-item" data-category-trend="${escapeHtml(category.categoryId)}" aria-pressed="${activeCategory === category.categoryId}"><span class="composition-swatch category-${CATEGORY_COLOR_SLOTS[category.categoryId]}"></span><strong>${escapeHtml(CATEGORY_LABELS[category.categoryId])}</strong><span>${formatExact(category.count)}篇 · ${formatPercent(category.share)}</span></button>`).join("");
-    return `<div class="composition-period"><div class="composition-period-heading"><div><strong>${escapeHtml(label)}</strong><span>${escapeHtml(period.from)} 至 ${escapeHtml(period.to)}</span></div><div><strong>${formatExact(period.contentCount)}篇</strong><span>活跃${formatExact(period.activeSourceCount)}个账号 · 阅读已知${escapeHtml(coverage)}</span></div></div><div class="composition-bar" aria-label="${escapeHtml(`${label}分类构成，共${period.contentCount}篇`)}">${segments || `<span class="composition-empty">暂无发布</span>`}</div><div class="composition-legend">${legend}</div></div>`;
-  };
-  return `<section class="section composition-section"><div class="section-header"><div><h2>两期分类构成</h2><span>点击分类筛选同一趋势与内容明细</span></div><span>绝对篇数与占比同时展示</span></div>${renderPeriod(comparison.latest7, "最近7日")}${renderPeriod(comparison.previous7, "此前7日")}<div class="trend-disclosure">两期账号构成、内容发布时间与指标覆盖不同；当前累计数据只反映采样时可见值，不代表内容效果升降，也不用于因果判断。</div></section>`;
+  const maximum = Math.max(1, ...delta.rows.flatMap((row) => [row.latestCount, row.previousCount]));
+  const growth = delta.leadingGrowth;
+  const leader = delta.leadingCategory;
+  const growthCopy = growth?.countDelta > 0
+    ? `<strong>${escapeHtml(CATEGORY_LABELS[growth.categoryId])}</strong><small><span class="${changeClass(growth.countDelta)}">${formatSignedExact(growth.countDelta, "篇")}</span>，是本期主要增量</small>`
+    : `<strong>分类结构平稳</strong><small>本期没有明显增长分类</small>`;
+  const rows = delta.rows.map((row) => {
+    const categoryLabel = CATEGORY_LABELS[row.categoryId];
+    const colorSlot = CATEGORY_COLOR_SLOTS[row.categoryId];
+    const latestWidth = row.latestCount / maximum * 100;
+    const previousWidth = row.previousCount / maximum * 100;
+    const label = `${categoryLabel}，最近7日${row.latestCount}篇，此前7日${row.previousCount}篇，变化${formatSignedExact(row.countDelta, "篇")}`;
+    return `<button type="button" class="comparison-row" data-category-trend="${escapeHtml(row.categoryId)}" aria-pressed="${activeCategory === row.categoryId}" aria-label="${escapeHtml(label)}" style="--comparison-color:var(--category-${colorSlot})">
+      <span class="comparison-category"><span class="composition-swatch category-${colorSlot}"></span><strong>${escapeHtml(categoryLabel)}</strong>${activeCategory === row.categoryId ? "<small>当前已筛选</small>" : ""}</span>
+      <span class="comparison-period"><span class="comparison-number"><strong>${formatExact(row.latestCount)}篇</strong><small>${formatPercent(row.latestShare)}</small></span><span class="comparison-track"><span class="comparison-fill is-current" style="width:${latestWidth.toFixed(1)}%"></span></span></span>
+      <span class="comparison-period"><span class="comparison-number"><strong>${formatExact(row.previousCount)}篇</strong><small>${formatPercent(row.previousShare)}</small></span><span class="comparison-track"><span class="comparison-fill is-previous" style="width:${previousWidth.toFixed(1)}%"></span></span></span>
+      <span class="comparison-delta"><strong class="${changeClass(row.countDelta)}">${formatSignedExact(row.countDelta, "篇")}</strong><small class="${changeClass(row.shareDelta)}">${formatSignedPercent(row.shareDelta, "个百分点")}</small></span>
+    </button>`;
+  }).join("");
+  return `<section class="section composition-section"><div class="section-header"><div><h2>最近7日 vs 此前7日</h2><span>分类发布结构对比</span></div><span>${escapeHtml(comparison.latest7.from)} 至 ${escapeHtml(comparison.latest7.to)}</span></div>
+    <div class="comparison-insights" aria-label="两期对比结论">
+      <div><span>最近7日发布</span><strong>${formatExact(comparison.latest7.contentCount)}篇</strong><small>较此前7日 <span class="${changeClass(delta.contentDelta)}">${formatSignedExact(delta.contentDelta, "篇")} / ${formatSignedPercent(delta.contentChange)}</span></small></div>
+      <div><span>活跃账号</span><strong>${formatExact(comparison.latest7.activeSourceCount)}个</strong><small>此前${formatExact(comparison.previous7.activeSourceCount)}个 · <span class="${changeClass(delta.activeSourceDelta)}">${formatSignedExact(delta.activeSourceDelta, "个")}</span></small></div>
+      <div><span>增长最多</span>${growthCopy}</div>
+      <div><span>本期主要分类</span><strong>${escapeHtml(CATEGORY_LABELS[leader?.categoryId] || "暂无")}</strong><small>${formatExact(leader?.latestCount)}篇 · 占${formatPercent(leader?.latestShare)}</small></div>
+    </div>
+    <div class="comparison-matrix"><div class="comparison-head" aria-hidden="true"><span>分类</span><span>最近7日</span><span>此前7日</span><span>增减</span></div>${rows}</div>
+    <div class="comparison-period-meta"><span>最近7日：${escapeHtml(comparison.latest7.from)} 至 ${escapeHtml(comparison.latest7.to)} · 阅读已知${formatExact(comparison.latest7.views.knownCount)} / ${formatExact(comparison.latest7.views.totalCount)}篇</span><span>此前7日：${escapeHtml(comparison.previous7.from)} 至 ${escapeHtml(comparison.previous7.to)} · 阅读已知${formatExact(comparison.previous7.views.knownCount)} / ${formatExact(comparison.previous7.views.totalCount)}篇</span></div>
+    <div class="trend-disclosure">两期账号构成、内容发布时间与指标覆盖不同；当前累计数据只反映采样时可见值，不代表内容效果升降，也不用于因果判断。</div></section>`;
 };
 
 const renderIncrementTrend = (query, days, dateKeys) => {
@@ -449,6 +484,9 @@ const trendChart = (query) => {
   const knownViewTotal = points.reduce((sum, point) => sum + (point.views.total || 0), 0);
   const totalViews = knownViews ? knownViewTotal : contentCount ? null : 0;
   const coverage = contentCount ? knownViews / contentCount : null;
+  const unknownViews = Math.max(0, contentCount - knownViews);
+  const peakContent = [...points].sort((left, right) => right.contentCount - left.contentCount)[0];
+  const rangeLabel = points.length ? `${points[0].date} 至 ${points.at(-1).date}` : "暂无日期";
   const collectionCoverage = state.summary.rolling30Days?.collectionCoverage;
   const collectionNote = collectionCoverage?.status === "COMPLETE"
     ? `${collectionCoverage.completeSources}个来源均已覆盖到窗口起点或平台末尾`
@@ -457,8 +495,13 @@ const trendChart = (query) => {
   const body = mode === "cohort"
     ? `${contractPoints.length ? renderPublishTrendPlot(points, query, days) : `<div class="empty-state">暂无发布日期趋势契约</div>`}<div class="trend-footnote">按发布日期分组，展示截至本次采样的当前累计表现，不代表历史日新增。末日数据截至${formatFullDateTime(state.summary.period.observedTo)}。${escapeHtml(collectionNote)}。</div>`
     : renderIncrementTrend(query, days, dateKeys);
-  return `<section class="section trend-workbench"><div class="section-header"><div><h2>内容与播放趋势</h2><span>${mode === "cohort" ? "发布同期当前表现" : "相邻完整快照真实新增"}</span></div>${rangeControls}</div>
-    <div class="trend-summary" aria-label="趋势摘要"><div><span>发布内容</span><strong>${formatExact(contentCount)}篇</strong></div><div><span>已知播放/阅读</span><strong>${formatExact(totalViews)}</strong></div><div><span>指标覆盖</span><strong>${Number.isFinite(coverage) ? formatPercent(coverage) : "暂无"}</strong><small>已知${knownViews}篇 / 共${contentCount}篇</small></div></div>
+  return `<section class="section trend-workbench"><div class="section-header"><div><h2>发布与阅读表现</h2><span>${mode === "cohort" ? rangeLabel : "相邻完整快照真实新增"}</span></div>${rangeControls}</div>
+    <div class="trend-summary" aria-label="当前筛选的数据摘要">
+      <div class="trend-kpi is-primary"><span>发布内容</span><strong>${formatExact(contentCount)}篇</strong><small>${days}日范围内的发布总量</small></div>
+      <div class="trend-kpi"><span>当前可见播放/阅读</span><strong>${formatExact(totalViews)}</strong><small>来自${formatExact(knownViews)}篇已知内容</small></div>
+      <div class="trend-kpi"><span>数据完整度</span><strong>${Number.isFinite(coverage) ? formatPercent(coverage) : "暂无"}</strong><small>${formatExact(knownViews)}篇已知 · ${formatExact(unknownViews)}篇未显示</small><span class="coverage-meter" aria-hidden="true"><span style="width:${Number.isFinite(coverage) ? Math.max(0, Math.min(100, coverage * 100)).toFixed(1) : 0}%"></span></span></div>
+      <div class="trend-kpi"><span>发布高峰</span><strong>${formatExact(peakContent?.contentCount)}篇</strong><small>${escapeHtml(peakContent?.date || "暂无日期")}</small></div>
+    </div>
     ${body}
   </section>`;
 };
