@@ -3,6 +3,7 @@ import {
   buildClassificationComparison,
   buildFilteredPublishCohort,
   buildLineGeometry,
+  classifyTrendPoint,
   matchesPublishedDate,
   metricCoverageLabel,
   selectTrendPoints,
@@ -337,81 +338,149 @@ const trendRoute = (query, publishedDate) => {
 
 const renderPublishTrendPlot = (points, query, days) => {
   const width = days === 7 ? 720 : 1320;
-  const innerWidth = width - 44;
-  const totalHeight = 156;
-  const medianHeight = 112;
-  const volumeHeight = 92;
-  const totalGeometry = buildLineGeometry(points, (point) => point.views.total, {
-    width: innerWidth,
-    height: totalHeight,
-    top: 18,
-    bottom: 16,
-  });
-  const medianGeometry = buildLineGeometry(points, (point) => point.views.median, {
+  const plotLeft = 62;
+  const plotRight = 24;
+  const innerWidth = width - plotLeft - plotRight;
+  const medianHeight = 190;
+  const totalHeight = 136;
+  const volumeHeight = 98;
+  const medianTop = 22;
+  const medianBottom = 24;
+  const totalTop = 18;
+  const totalBottom = 18;
+  const volumeTop = 12;
+  const volumeBottom = 28;
+  const medianGeometry = buildLineGeometry(points, (point) =>
+    classifyTrendPoint(point) === "known" ? point.views.median : null, {
     width: innerWidth,
     height: medianHeight,
-    top: 14,
-    bottom: 24,
+    top: medianTop,
+    bottom: medianBottom,
   });
-  const maximumCount = Math.max(1, ...points.map((point) => point.contentCount));
+  const totalMaximum = Math.max(1, ...points
+    .filter((point) => classifyTrendPoint(point) === "known")
+    .map((point) => point.views.total));
+  const volumeMaximum = Math.max(1, ...points.map((point) => point.contentCount));
   const peakContent = [...points].sort((left, right) => right.contentCount - left.contentCount)[0];
-  const peakViews = [...points].filter((point) => Number.isFinite(point.views.total)).sort((left, right) => right.views.total - left.views.total)[0];
-  const peakMedian = [...points].filter((point) => Number.isFinite(point.views.median)).sort((left, right) => right.views.median - left.views.median)[0];
   const step = points.length > 1 ? innerWidth / (points.length - 1) : innerWidth;
-  const barWidth = Math.max(5, Math.min(18, step * 0.4));
-  const bars = points.map((point, index) => {
-    const height = point.contentCount ? Math.max(3, point.contentCount / maximumCount * 48) : 0;
-    const x = 22 + index * step - barWidth / 2;
-    return `<rect class="trend-volume-bar" x="${x.toFixed(2)}" y="${(volumeHeight - 25 - height).toFixed(2)}" width="${barWidth.toFixed(2)}" height="${height.toFixed(2)}"></rect>`;
+  const totalBarWidth = Math.max(7, Math.min(22, step * 0.56));
+  const volumeBarWidth = Math.max(7, Math.min(20, step * 0.48));
+  const dateIndexes = points.map((_, index) => index)
+    .filter((index) => days === 7 || index % 5 === 0 || index === points.length - 1);
+  const xAt = (index) => plotLeft + index * step;
+  const plotGrid = (maximum, height, top, bottom, suffix = "") => {
+    const usableHeight = height - top - bottom;
+    const ticks = [
+      { value: maximum, ratio: 1 },
+      { value: maximum / 2, ratio: 0.5 },
+      { value: 0, ratio: 0 },
+    ];
+    const horizontal = ticks.map(({ value, ratio }) => {
+      const y = top + usableHeight * (1 - ratio);
+      return `<line class="trend-grid-line${ratio === 0 ? " trend-grid-line-base" : ""}" x1="${plotLeft}" y1="${y.toFixed(2)}" x2="${width - plotRight}" y2="${y.toFixed(2)}"></line>
+        <text class="trend-scale-label" x="${plotLeft - 10}" y="${(y + 3).toFixed(2)}" text-anchor="end">${escapeHtml(`${formatExact(value)}${suffix}`)}</text>`;
+    }).join("");
+    const vertical = dateIndexes.map((index) => `<line class="trend-grid-line trend-grid-line-vertical" x1="${xAt(index).toFixed(2)}" y1="${top}" x2="${xAt(index).toFixed(2)}" y2="${height - bottom}"></line>`).join("");
+    return `${horizontal}${vertical}`;
+  };
+  const medianPaths = medianGeometry.paths
+    .map((path) => `<path class="trend-line trend-line-primary" d="${pathData(path, plotLeft)}"></path>`)
+    .join("");
+  const missingMark = (point, index, baseline, variant) => {
+    const x = xAt(index);
+    return `<g class="trend-mark trend-missing-mark trend-missing-${variant}" data-trend-date="${escapeHtml(point.date)}" transform="translate(${x.toFixed(2)} ${(baseline - 7).toFixed(2)})">
+      <line x1="-5" y1="-5" x2="5" y2="5"></line><line x1="5" y1="-5" x2="-5" y2="5"></line>
+    </g>`;
+  };
+  const medianMarks = points.map((point, index) => {
+    const state = classifyTrendPoint(point);
+    if (state === "empty") return "";
+    if (state === "unknown") return missingMark(point, index, medianHeight - medianBottom, "median");
+    const geometry = medianGeometry.points[index];
+    const partial = point.views.knownCount < point.views.totalCount;
+    const zero = point.views.median === 0;
+    return `<circle class="trend-mark trend-primary-point${partial ? " is-partial" : ""}${zero ? " is-zero" : ""}" data-trend-date="${escapeHtml(point.date)}" cx="${(geometry.x + plotLeft).toFixed(2)}" cy="${geometry.y.toFixed(2)}" r="4"></circle>`;
   }).join("");
-  const paths = totalGeometry.paths.map((path) => `<path class="trend-line trend-line-total" d="${pathData(path)}"></path>`).join("");
-  const medianPaths = medianGeometry.paths.map((path) => `<path class="trend-line trend-line-median" d="${pathData(path)}"></path>`).join("");
-  const dateLabels = points.map((point, index) => {
-    if (days === 30 && index % 5 !== 0 && index !== points.length - 1) return "";
-    return `<text class="trend-axis-label" x="${(22 + index * step).toFixed(2)}" y="${volumeHeight - 6}" text-anchor="middle">${escapeHtml(point.date.slice(5))}</text>`;
+  const totalMarks = points.map((point, index) => {
+    const state = classifyTrendPoint(point);
+    if (state === "empty") return "";
+    if (state === "unknown") return missingMark(point, index, totalHeight - totalBottom, "total");
+    const available = totalHeight - totalTop - totalBottom;
+    const rawHeight = point.views.total / totalMaximum * available;
+    const barHeight = point.views.total === 0 ? 2 : Math.max(3, rawHeight);
+    const partial = point.views.knownCount < point.views.totalCount;
+    return `<rect class="trend-mark trend-total-bar${partial ? " is-partial" : ""}${point.views.total === 0 ? " is-zero" : ""}" data-trend-date="${escapeHtml(point.date)}" x="${(xAt(index) - totalBarWidth / 2).toFixed(2)}" y="${(totalHeight - totalBottom - barHeight).toFixed(2)}" width="${totalBarWidth.toFixed(2)}" height="${barHeight.toFixed(2)}"></rect>`;
   }).join("");
-  const links = points.map((point, index) => {
-    const geometry = totalGeometry.points[index];
-    const x = geometry.x + 22;
-    const y = geometry.y ?? totalHeight - 16;
-    const route = trendRoute(query, point.date);
+  const volumeMarks = points.map((point, index) => {
+    if (!point.contentCount) return "";
+    const available = volumeHeight - volumeTop - volumeBottom;
+    const barHeight = Math.max(3, point.contentCount / volumeMaximum * available);
+    return `<rect class="trend-mark trend-volume-bar" data-trend-date="${escapeHtml(point.date)}" x="${(xAt(index) - volumeBarWidth / 2).toFixed(2)}" y="${(volumeHeight - volumeBottom - barHeight).toFixed(2)}" width="${volumeBarWidth.toFixed(2)}" height="${barHeight.toFixed(2)}"></rect>`;
+  }).join("");
+  const dateLabels = dateIndexes.map((index) => `<text class="trend-axis-label" x="${xAt(index).toFixed(2)}" y="${volumeHeight - 7}" text-anchor="middle">${escapeHtml(points[index].date.slice(5))}</text>`).join("");
+  const completePoints = points.map((point, index) => ({ point, index }))
+    .filter(({ point }) => classifyTrendPoint(point) === "known"
+      && point.views.knownCount === point.views.totalCount);
+  const peakMedian = [...completePoints].sort((left, right) => right.point.views.median - left.point.views.median)[0];
+  const peakTotal = [...completePoints].sort((left, right) => right.point.views.total - left.point.views.total)[0];
+  let latestKnownIndex = -1;
+  for (let index = points.length - 1; index >= 0; index -= 1) {
+    if (classifyTrendPoint(points[index]) === "known") {
+      latestKnownIndex = index;
+      break;
+    }
+  }
+  const latestKnown = latestKnownIndex >= 0 ? points[latestKnownIndex] : null;
+  const latestGeometry = latestKnownIndex >= 0 ? medianGeometry.points[latestKnownIndex] : null;
+  const latestLabel = latestKnown && latestGeometry?.y !== null ? (() => {
+    const x = latestGeometry.x + plotLeft;
+    const rightAligned = x > width - 130;
+    const partial = latestKnown.views.knownCount < latestKnown.views.totalCount;
+    return `<text class="trend-latest-label${partial ? " is-partial" : ""}" x="${(x + (rightAligned ? -9 : 9)).toFixed(2)}" y="${Math.max(14, latestGeometry.y - 10).toFixed(2)}" text-anchor="${rightAligned ? "end" : "start"}">最新 ${escapeHtml(formatExact(latestKnown.views.median))}</text>`;
+  })() : "";
+  const focusTargets = points.map((point, index) => {
+    const state = classifyTrendPoint(point);
+    const slotWidth = Math.max(28, step);
+    const x = xAt(index);
+    const left = x - slotWidth / 2;
+    const tooltipAbsolute = Math.max(8, Math.min(width - 246, x - 119));
+    const tooltipLeft = tooltipAbsolute - left;
     const coverage = metricCoverageLabel(point.views);
-    const label = `${point.date}，发布${point.contentCount}篇，当前累计播放阅读${formatExact(point.views.total)}，单篇常规阅读${formatExact(point.views.median)}，${coverage}`;
-    const tooltipX = Math.max(4, Math.min(width - 224, x - 106));
-    const tooltipY = y < 54 ? y + 16 : y - 50;
-    return `<a class="trend-point-link${geometry.y === null ? " is-unknown" : ""}" href="${escapeHtml(route)}" data-route="${escapeHtml(route)}" aria-label="${escapeHtml(label)}">
-      <title>${escapeHtml(label)}</title>
-      <circle class="trend-hit-area" cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="22"></circle>
-      <circle class="trend-point" cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="4"></circle>
-      <g class="trend-point-tooltip" transform="translate(${tooltipX.toFixed(2)} ${tooltipY.toFixed(2)})">
-        <rect width="220" height="42"></rect>
-        <text x="10" y="16">${escapeHtml(`${point.date.slice(5)} · ${point.contentCount}篇 · 阅读${formatExact(point.views.total)}`)}</text>
-        <text x="10" y="32">${escapeHtml(`常规${formatExact(point.views.median)} · ${coverage}`)}</text>
-      </g>
-    </a>`;
+    const detail = state === "empty"
+      ? "当日无发布"
+      : state === "unknown"
+        ? `发布${point.contentCount}篇 · 阅读数据未知`
+        : `累计${formatExact(point.views.total)} · 常规${formatExact(point.views.median)}`;
+    const route = trendRoute(query, point.date);
+    const aria = `${point.date}，${detail}，${coverage}，查看当天内容`;
+    return `<button type="button" class="trend-point-link trend-date-focus" style="left:${left.toFixed(2)}px;width:${slotWidth.toFixed(2)}px;--trend-tooltip-left:${tooltipLeft.toFixed(2)}px" data-trend-focus data-trend-date="${escapeHtml(point.date)}" data-trend-route="${escapeHtml(route)}" data-route="${escapeHtml(route)}" aria-label="${escapeHtml(aria)}">
+      <span class="trend-date-tooltip"><strong>${escapeHtml(`${point.date.slice(5)} · 发布${point.contentCount}篇`)}</strong><span>${escapeHtml(detail)}</span><small>${escapeHtml(coverage)}</small></span>
+    </button>`;
   }).join("");
-  const medianPoints = medianGeometry.points.map((point) => point.y === null ? "" : `<circle class="trend-median-point" cx="${(point.x + 22).toFixed(2)}" cy="${point.y.toFixed(2)}" r="3"></circle>`).join("");
+  const peakMedianText = peakMedian
+    ? `完整峰值 ${formatExact(peakMedian.point.views.median)} · ${peakMedian.point.date.slice(5)}`
+    : "完整数据不足，暂不标峰值";
+  const peakTotalText = peakTotal
+    ? `完整峰值 ${formatExact(peakTotal.point.views.total)} · ${peakTotal.point.date.slice(5)}`
+    : "完整数据不足，暂不标峰值";
   return `<div class="trend-scroll" tabindex="0" aria-label="趋势图，可横向滚动"><div class="trend-stage" style="width:${width}px">
-    <div class="trend-panel-label"><div><strong>当前可见播放/阅读</strong><span>按发布日期汇总截至采样时的累计值</span></div><span class="trend-panel-stat">峰值 ${formatExact(peakViews?.views.total)} · ${escapeHtml(peakViews?.date?.slice(5) || "暂无")}</span></div>
-    <svg class="trend-svg trend-svg-primary" viewBox="0 0 ${width} ${totalHeight}" role="img" aria-label="按发布日期分组的当前累计播放阅读趋势">
-      <text class="trend-scale-label" x="22" y="12">${formatExact(totalGeometry.maximum)}</text>
-      <line class="trend-grid-line trend-grid-line-muted" x1="22" y1="78" x2="${width - 22}" y2="78"></line>
-      <line class="trend-grid-line" x1="22" y1="${totalHeight - 16}" x2="${width - 22}" y2="${totalHeight - 16}"></line>
-      ${paths}${links}
+    <div class="trend-legend" aria-label="图例"><span><i class="legend-line"></i>单篇常规阅读</span><span><i class="legend-total"></i>当前累计阅读</span><span><i class="legend-volume"></i>发布量</span><span><i class="legend-missing"></i>缺失或部分覆盖</span></div>
+    <div class="trend-panel-label"><div><strong>单篇常规阅读</strong><span>按发布日期分组，截至本次采样</span></div><div class="trend-panel-stats"><span>${latestKnown ? `最新 ${formatExact(latestKnown.views.median)} · ${latestKnown.date.slice(5)}` : "暂无已知值"}</span><span>${escapeHtml(peakMedianText)}</span></div></div>
+    <svg class="trend-svg trend-svg-primary" viewBox="0 0 ${width} ${medianHeight}" role="img" aria-label="按发布日期分组、截至本次采样的单篇常规阅读">
+      ${plotGrid(medianGeometry.maximum, medianHeight, medianTop, medianBottom)}
+      ${medianPaths}${medianMarks}${latestLabel}
     </svg>
-    <div class="trend-panel-label trend-panel-label-secondary"><div><strong>单篇常规阅读</strong><span>只统计播放/阅读已知的内容</span></div><span class="trend-panel-stat">峰值 ${formatExact(peakMedian?.views.median)} · ${escapeHtml(peakMedian?.date?.slice(5) || "暂无")}</span></div>
-    <svg class="trend-svg trend-svg-secondary" viewBox="0 0 ${width} ${medianHeight}" role="img" aria-label="按发布日期分组的单篇常规阅读趋势">
-      <text class="trend-scale-label" x="22" y="11">${formatExact(medianGeometry.maximum)}</text>
-      <line class="trend-grid-line trend-grid-line-muted" x1="22" y1="51" x2="${width - 22}" y2="51"></line>
-      <line class="trend-grid-line" x1="22" y1="${medianHeight - 24}" x2="${width - 22}" y2="${medianHeight - 24}"></line>
-      ${medianPaths}${medianPoints}
+    <div class="trend-panel-label trend-panel-label-secondary"><div><strong>当前累计播放/阅读</strong><span>按发布日期分组，不代表历史每日新增</span></div><div class="trend-panel-stats"><span>${escapeHtml(peakTotalText)}</span><span>橙色表示部分覆盖或未知</span></div></div>
+    <svg class="trend-svg trend-svg-total" viewBox="0 0 ${width} ${totalHeight}" role="img" aria-label="按发布日期分组、截至本次采样的当前累计播放阅读柱状图">
+      ${plotGrid(totalMaximum, totalHeight, totalTop, totalBottom)}
+      ${totalMarks}
     </svg>
-    <div class="trend-panel-label trend-panel-label-secondary"><div><strong>每日发布量</strong><span>每根柱代表当天发布篇数</span></div><span class="trend-panel-stat">最高 ${formatExact(peakContent?.contentCount)}篇 · ${escapeHtml(peakContent?.date?.slice(5) || "暂无")}</span></div>
+    <div class="trend-panel-label trend-panel-label-secondary"><div><strong>发布量</strong><span>与上方视图共享同一发布日期位置</span></div><div class="trend-panel-stats"><span>最高 ${formatExact(peakContent?.contentCount)}篇 · ${escapeHtml(peakContent?.date?.slice(5) || "暂无")}</span></div></div>
     <svg class="trend-svg trend-svg-volume" viewBox="0 0 ${width} ${volumeHeight}" role="img" aria-label="按发布日期分组的内容发布量">
-      <text class="trend-scale-label" x="22" y="12">${formatExact(maximumCount)}篇</text>
-      <line class="trend-grid-line" x1="22" y1="${volumeHeight - 25}" x2="${width - 22}" y2="${volumeHeight - 25}"></line>
-      ${bars}${dateLabels}
+      ${plotGrid(volumeMaximum, volumeHeight, volumeTop, volumeBottom, "篇")}
+      ${volumeMarks}${dateLabels}
     </svg>
+    ${focusTargets}
   </div></div>`;
 };
 
@@ -673,7 +742,57 @@ const render = async () => {
   }
 };
 
+const setTrendDateFocus = (target, persist = false) => {
+  const stage = target?.closest(".trend-stage");
+  if (!stage) return;
+  const date = target.dataset.trendDate;
+  stage.classList.add("has-active-date");
+  stage.querySelectorAll("[data-trend-date]").forEach((element) => {
+    element.classList.toggle("is-active", element.dataset.trendDate === date);
+    if (element.matches("[data-trend-focus]")) {
+      element.classList.toggle("is-selected", persist && element === target);
+    }
+  });
+};
+
+const clearTrendDateFocus = (stage) => {
+  if (!stage || stage.querySelector(".trend-date-focus.is-selected")) return;
+  stage.classList.remove("has-active-date");
+  stage.querySelectorAll("[data-trend-date]").forEach((element) => element.classList.remove("is-active"));
+};
+
+app.addEventListener("pointerover", (event) => {
+  const target = event.target.closest("[data-trend-focus]");
+  if (target && !target.contains(event.relatedTarget)) setTrendDateFocus(target);
+});
+
+app.addEventListener("pointerout", (event) => {
+  const target = event.target.closest("[data-trend-focus]");
+  if (target && !target.contains(event.relatedTarget)) clearTrendDateFocus(target.closest(".trend-stage"));
+});
+
+app.addEventListener("focusin", (event) => {
+  const target = event.target.closest("[data-trend-focus]");
+  if (target) setTrendDateFocus(target);
+});
+
+app.addEventListener("focusout", (event) => {
+  const target = event.target.closest("[data-trend-focus]");
+  if (target && !target.contains(event.relatedTarget)) clearTrendDateFocus(target.closest(".trend-stage"));
+});
+
 app.addEventListener("click", (event) => {
+  const trendFocusTarget = event.target.closest("[data-trend-focus]");
+  if (trendFocusTarget) {
+    event.preventDefault();
+    const touchLike = window.matchMedia("(hover: none)").matches;
+    if (touchLike && !trendFocusTarget.classList.contains("is-selected")) {
+      setTrendDateFocus(trendFocusTarget, true);
+      return;
+    }
+    location.hash = trendFocusTarget.dataset.trendRoute;
+    return;
+  }
   const routeTarget = event.target.closest("[data-route]");
   if (routeTarget) {
     event.preventDefault();
@@ -694,6 +813,14 @@ app.addEventListener("click", (event) => {
 });
 
 app.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    const stage = event.target.closest(".trend-stage");
+    if (stage) {
+      stage.querySelectorAll(".is-selected").forEach((element) => element.classList.remove("is-selected"));
+      clearTrendDateFocus(stage);
+    }
+    return;
+  }
   if (event.key !== " ") return;
   const routeTarget = event.target.closest("a[data-route]");
   if (!routeTarget) return;

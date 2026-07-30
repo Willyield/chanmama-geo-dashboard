@@ -56,6 +56,12 @@ export const selectTrendPoints = (points, days) => {
   return points.slice(-safeDays);
 };
 
+export const classifyTrendPoint = (point) => {
+  if (!point || point.contentCount === 0) return "empty";
+  if (!point.views || point.views.knownCount === 0) return "unknown";
+  return "known";
+};
+
 const summarizePeriod = (records, dateKeys, categoryIds) => {
   const allowedDates = new Set(dateKeys);
   const rows = records.filter((record) => allowedDates.has(shanghaiDateKey(record.publishedAt)));
