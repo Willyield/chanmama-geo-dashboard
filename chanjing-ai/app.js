@@ -15,7 +15,7 @@ const dataUrl = new URL('./dashboard-data.json', window.location.href);
 dataUrl.searchParams.set('v', assetVersion);
 const DATA_URL = dataUrl.toString();
 const LOAD_ATTEMPTS = 3;
-const LOAD_TIMEOUT_MS = 25000;
+const LOAD_TIMEOUT_MS = 90000;
 
 const colors = {
   blue: '#1e40af',
