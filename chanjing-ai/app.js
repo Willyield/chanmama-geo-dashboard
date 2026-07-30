@@ -106,6 +106,8 @@ function renderExecutive() {
   const mobile = data.terminal_summary.mobile;
   const planned = data.planned_slots || 520;
   const coverageRate = data.collected * 100 / planned;
+  const unresolved = Number(data.unresolved_count || 0);
+  const isFinalWithGaps = data.status === 'FINAL_WITH_GAPS';
   const mentionCount = web.mention_count + mobile.mention_count;
   const firstCount = web.first_count + mobile.first_count;
   const uniqueQuestions = new Set(data.samples.map((row) => row.question_id)).size;
@@ -116,23 +118,23 @@ function renderExecutive() {
 
   document.querySelector('#executive-brief').innerHTML = `<div>
     <div class="brief-kicker">总结 / 第一轮问题批次 · ${batch}</div>
-    <div class="brief-title">阶段判断：蝉镜已有初步可见度，但样本覆盖仍少；${pairs.count} 组同题对比中，${mentionSummary}。</div>
-    <div class="brief-note">当前结果来自 ${data.collected} 条有效样本，只用于识别早期方向。双端差异统一按同一问题的网页端与手机端配对计算，避免把未配对样本混入比较。</div>
+    <div class="brief-title">${isFinalWithGaps ? '最终口径：全部 520 个样本位已处理' : '阶段判断：蝉镜已有初步可见度'}；${pairs.count} 组同题对比中，${mentionSummary}。</div>
+    <div class="brief-note">当前结果包含 ${data.collected} 条有效样本${unresolved ? `，另有 ${unresolved} 条标记为平台结果未完成` : ''}。双端差异只使用同一问题的有效网页端与手机端配对，未完成样本不进入指标。</div>
   </div>
   <div class="brief-status">
     <span>GEO 健康度</span>
-    <strong>早期观察</strong>
-    <span>${data.collected}/${planned}，完成率 ${coverageRate.toFixed(1)}%</span>
+    <strong>${isFinalWithGaps ? '最终交付' : '早期观察'}</strong>
+    <span>${data.collected} 有效 / ${planned} 槽位${unresolved ? `，${unresolved} 条未完成` : ''}</span>
     <span class="stage-badge">${escapeHtml(data.status)}</span>
   </div>`;
 
   document.querySelector('#diagnostic-cards').innerHTML = [
-    executiveCard('样本可信度', 'warn', '样本不足', `${data.collected}/${planned}`, `完成率 ${coverageRate.toFixed(1)}%，仅作阶段判断`, [
+    executiveCard('样本可信度', unresolved ? 'warn' : 'ok', isFinalWithGaps ? '最终口径' : '样本不足', `${data.collected}/${planned}`, `有效覆盖率 ${coverageRate.toFixed(1)}%${unresolved ? `，${unresolved} 条已明确标注` : ''}`, [
       ['已覆盖问题', `${uniqueQuestions} / ${data.question_count || 260}`],
       ['主题数', `${data.sections.length} 个`],
       ['网页 / 手机样本', `${web.collected} / ${mobile.collected}`],
       ['有效双端配对', `${data.paired_count} 组`],
-    ], '下一步：继续成对采样，覆盖不足前不形成稳定趋势结论。'),
+    ], unresolved ? '未完成样本不进入提及率、首推率和双端差异计算。' : '全部样本已形成有效双端配对。'),
     executiveCard('品牌可见度', 'ok', '已有基础', `${(mentionCount * 100 / data.collected).toFixed(1)}%`, `${mentionCount} 条回答提及蝉镜`, [
       ['网页端提及', `${web.mention_count}/${web.collected}，${percent(web.mention_count, web.collected)}`],
       ['手机端提及', `${mobile.mention_count}/${mobile.collected}，${percent(mobile.mention_count, mobile.collected)}`],
@@ -173,6 +175,16 @@ function pairMatches(row) {
 
 function filteredSamples() {
   return state.data.samples.filter(sampleMatches);
+}
+
+function filteredUnresolved() {
+  return (state.data.unresolved_samples || []).filter((row) => {
+    if (state.terminal !== 'all' && row.target_terminal !== state.terminal) return false;
+    if (state.section !== 'all' && row.section_name !== state.section) return false;
+    if (state.mention !== 'all' || state.first !== 'all') return false;
+    if (!state.search) return true;
+    return `${row.sample_id} ${row.section_name} ${row.question_text}`.toLowerCase().includes(state.search);
+  });
 }
 
 function filteredPairs() {
@@ -361,17 +373,21 @@ function sourceLinks(value) {
   return `<details class="source-details"><summary>${urls.length} 个来源</summary><div class="source-list">${urls.map((url, index) => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">来源 ${index + 1}</a>`).join('')}</div></details>`;
 }
 
-function renderSampleTable(samples) {
-  document.querySelector('#sample-count').textContent = `${samples.length} 条记录`;
+function renderSampleTable(samples, unresolved) {
+  document.querySelector('#sample-count').textContent = `${samples.length + unresolved.length} 个样本位`;
   const rows = samples.map((row) => `<tr><td class="sample-id">${escapeHtml(row.sample_id)}</td><td>${row.target_terminal === 'web' ? '网页端' : '手机端'}</td>
     <td class="question-cell"><strong>${escapeHtml(row.section_name)}</strong><br>${escapeHtml(row.question_text)}</td><td>${tag(row.mentioned_chanjing)}</td>
     <td>${escapeHtml(row.first_recommendation || '未识别明确首位')}</td><td>${sourceLinks(row.source_urls)}</td>
     <td class="answer-cell"><details class="answer-details"><summary>查看回答</summary><div class="answer-text">${escapeHtml(row.answer_text)}</div></details></td></tr>`);
+  unresolved.forEach((row) => rows.push(`<tr><td class="sample-id">${escapeHtml(row.sample_id)}</td><td>${row.target_terminal === 'web' ? '网页端' : '手机端'}</td>
+    <td class="question-cell"><strong>${escapeHtml(row.section_name)}</strong><br>${escapeHtml(row.question_text)}</td><td><span class="tag">未完成</span></td>
+    <td>不计入</td><td>未记录来源</td><td class="answer-cell">${escapeHtml(row.status_label || '平台结果未完成')}</td></tr>`));
   document.querySelector('#sample-table').innerHTML = tableHtml(['采样ID', '终端', '主题 / 问题', '蝉镜提及', '第一推荐', '引用来源', '回答'], rows.length ? rows : ['<tr><td colspan="7" class="empty">当前筛选下没有样本</td></tr>']);
 }
 
 function renderAll() {
   const samples = filteredSamples();
+  const unresolved = filteredUnresolved();
   const pairs = filteredPairs();
   renderCharts(samples, pairs);
   renderFirstRecommendations(samples);
@@ -379,7 +395,7 @@ function renderAll() {
   renderPairedInsights(pairs);
   renderSectionTable();
   renderPairedTable(pairs);
-  renderSampleTable(samples);
+  renderSampleTable(samples, unresolved);
 }
 
 function bindFilters() {
