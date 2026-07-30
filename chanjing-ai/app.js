@@ -7,7 +7,15 @@ const state = {
   mention: 'all',
   first: 'all',
   search: '',
+  filtersBound: false,
 };
+
+const assetVersion = document.currentScript?.dataset.version || 'latest';
+const dataUrl = new URL('./dashboard-data.json', window.location.href);
+dataUrl.searchParams.set('v', assetVersion);
+const DATA_URL = dataUrl.toString();
+const LOAD_ATTEMPTS = 3;
+const LOAD_TIMEOUT_MS = 25000;
 
 const colors = {
   blue: '#1e40af',
@@ -41,6 +49,66 @@ function tag(value) {
 
 function renderTicks() {
   document.querySelector('.tick-rule').innerHTML = '<i></i>'.repeat(84);
+}
+
+function setControlsDisabled(disabled) {
+  document.querySelectorAll('.filters select, .filters input').forEach((control) => {
+    control.disabled = disabled;
+  });
+}
+
+function renderLoadState(attempt) {
+  const retrying = attempt > 1;
+  document.querySelector('#batch-meta').textContent = retrying ? `正在重新连接 ${attempt}/${LOAD_ATTEMPTS}` : '正在读取批次';
+  document.querySelector('#run-meta').textContent = '正在加载公开数据';
+  document.querySelector('#snapshot-meta').textContent = '正在读取冻结快照';
+  document.querySelector('#executive-brief').innerHTML = `<div class="load-state" role="status" aria-live="polite">
+    <span class="load-spinner" aria-hidden="true"></span>
+    <div><strong>${retrying ? '正在重新连接数据' : '正在加载仪表盘数据'}</strong><span>数据量较大，请稍候。页面会在连接中断时自动重试。</span></div>
+  </div>`;
+  setControlsDisabled(true);
+}
+
+function renderLoadFailure() {
+  document.querySelector('#batch-meta').textContent = '数据暂未加载';
+  document.querySelector('#run-meta').textContent = '请重新连接';
+  document.querySelector('#snapshot-meta').textContent = '冻结快照未载入';
+  document.querySelector('#executive-brief').innerHTML = `<div class="load-state load-failed" role="alert">
+    <div><strong>数据连接暂时中断</strong><span>已自动尝试 ${LOAD_ATTEMPTS} 次。请检查网络后重新加载，不会影响冻结数据。</span></div>
+    <button id="retry-load" class="load-retry" type="button">重新加载数据</button>
+  </div>`;
+  document.querySelector('#retry-load').addEventListener('click', () => boot(), { once: true });
+}
+
+function delay(milliseconds) {
+  return new Promise((resolve) => window.setTimeout(resolve, milliseconds));
+}
+
+async function loadDashboardData() {
+  let lastError;
+  for (let attempt = 1; attempt <= LOAD_ATTEMPTS; attempt += 1) {
+    renderLoadState(attempt);
+    const controller = new AbortController();
+    let timedOut = false;
+    const timeout = window.setTimeout(() => {
+      timedOut = true;
+      controller.abort();
+    }, LOAD_TIMEOUT_MS);
+    try {
+      const response = await fetch(DATA_URL, {
+        cache: attempt === 1 ? 'default' : 'reload',
+        signal: controller.signal,
+      });
+      if (!response.ok) throw new Error(`数据请求返回 ${response.status}`);
+      return await response.json();
+    } catch (error) {
+      lastError = timedOut ? new Error('数据请求超时') : error;
+    } finally {
+      window.clearTimeout(timeout);
+    }
+    if (attempt < LOAD_ATTEMPTS) await delay(attempt * 800);
+  }
+  throw lastError || new Error('数据加载失败');
 }
 
 function pairedStats(rows) {
@@ -399,6 +467,7 @@ function renderAll() {
 }
 
 function bindFilters() {
+  if (state.filtersBound) return;
   const sectionSelect = document.querySelector('#section-filter');
   sectionSelect.innerHTML = `<option value="all">全部主题</option>${state.data.sections.map((row) => `<option value="${escapeHtml(row.section_name)}">${escapeHtml(row.section_name)}</option>`).join('')}`;
   const bindings = [
@@ -415,13 +484,12 @@ function bindFilters() {
     state.search = event.target.value.trim().toLowerCase();
     renderAll();
   });
+  state.filtersBound = true;
 }
 
 async function boot() {
   renderTicks();
-  const response = await fetch('./dashboard-data.json', { cache: 'no-store' });
-  if (!response.ok) throw new Error(`数据加载失败: ${response.status}`);
-  state.data = await response.json();
+  state.data = await loadDashboardData();
   const batchDate = formatTime(state.data.observed_range?.first, true);
   const batch = thresholdLabel(state.data);
   document.querySelector('#page-title').textContent = `蝉镜AI GEO ${batchDate} 第一轮问题批次`;
@@ -430,10 +498,8 @@ async function boot() {
   document.querySelector('#run-meta').textContent = `更新：${formatTime(state.data.generated_at)}`;
   renderExecutive();
   bindFilters();
+  setControlsDisabled(false);
   renderAll();
 }
 
-boot().catch((error) => {
-  document.querySelector('main').insertAdjacentHTML('beforeend', `<div class="empty">${escapeHtml(error.message)}</div>`);
-  throw error;
-});
+boot().catch(renderLoadFailure);

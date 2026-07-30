@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex, nofollow">
   <title>蝉镜AI GEO 双端采样仪表盘</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=dfe23cc59e51">
 </head>
 <body>
   <div class="app">
@@ -65,28 +65,28 @@
 
       <div class="filters" aria-label="数据筛选">
         <label>终端
-          <select id="terminal-filter">
+          <select id="terminal-filter" disabled>
             <option value="all">全部终端</option>
             <option value="web">网页端</option>
             <option value="mobile">手机端</option>
           </select>
         </label>
-        <label>主题<select id="section-filter"></select></label>
+        <label>主题<select id="section-filter" disabled></select></label>
         <label>提及状态
-          <select id="mention-filter">
+          <select id="mention-filter" disabled>
             <option value="all">全部</option>
             <option value="yes">已提及蝉镜</option>
             <option value="no">未提及蝉镜</option>
           </select>
         </label>
         <label>首位状态
-          <select id="first-filter">
+          <select id="first-filter" disabled>
             <option value="all">全部</option>
             <option value="yes">蝉镜首位</option>
             <option value="no">蝉镜非首位</option>
           </select>
         </label>
-        <label>搜索<input id="search" type="search" placeholder="问题或主题" autocomplete="off"></label>
+        <label>搜索<input id="search" type="search" placeholder="问题或主题" autocomplete="off" disabled></label>
       </div>
 
       <div id="chart-grid" class="chart-grid" aria-label="核心图表"></div>
@@ -123,6 +123,6 @@
     </main>
   </div>
 
-  <script src="./app.js"></script>
+  <script src="./app.js?v=dfe23cc59e51" data-version="dfe23cc59e51"></script>
 </body>
 </html>
