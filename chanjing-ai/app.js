@@ -73,6 +73,17 @@ function countDifferenceLabel(webCount, mobileCount, unit) {
   return `两端${unit}数量相同`;
 }
 
+function mentionDifferenceSummary(webCount, mobileCount) {
+  const difference = mobileCount - webCount;
+  if (difference > 0) return `手机端多 ${difference} 个问题提及蝉镜`;
+  if (difference < 0) return `网页端多 ${Math.abs(difference)} 个问题提及蝉镜`;
+  return '两端提及蝉镜的问题数相同';
+}
+
+function thresholdLabel(data) {
+  return `T${String(Number(data.threshold || data.collected || 0)).padStart(4, '0')}`;
+}
+
 function pointDifferenceLabel(webRate, mobileRate) {
   const difference = mobileRate - webRate;
   if (Math.abs(difference) < 0.05) return '两端比例相同';
@@ -100,10 +111,12 @@ function renderExecutive() {
   const uniqueQuestions = new Set(data.samples.map((row) => row.question_id)).size;
   const pairs = pairedStats(data.paired);
   const pairedMentionGap = Math.abs(pairs.mobileMentionRate - pairs.webMentionRate);
+  const batch = thresholdLabel(data);
+  const mentionSummary = mentionDifferenceSummary(pairs.webMentions, pairs.mobileMentions);
 
   document.querySelector('#executive-brief').innerHTML = `<div>
-    <div class="brief-kicker">总结 / 第一轮问题批次 · T0100</div>
-    <div class="brief-title">阶段判断：蝉镜已有初步可见度，但样本覆盖仍少；49 组同题对比中，手机端多提及蝉镜 3 个问题。</div>
+    <div class="brief-kicker">总结 / 第一轮问题批次 · ${batch}</div>
+    <div class="brief-title">阶段判断：蝉镜已有初步可见度，但样本覆盖仍少；${pairs.count} 组同题对比中，${mentionSummary}。</div>
     <div class="brief-note">当前结果来自 ${data.collected} 条有效样本，只用于识别早期方向。双端差异统一按同一问题的网页端与手机端配对计算，避免把未配对样本混入比较。</div>
   </div>
   <div class="brief-status">
@@ -394,7 +407,10 @@ async function boot() {
   if (!response.ok) throw new Error(`数据加载失败: ${response.status}`);
   state.data = await response.json();
   const batchDate = formatTime(state.data.observed_range?.first, true);
+  const batch = thresholdLabel(state.data);
   document.querySelector('#page-title').textContent = `蝉镜AI GEO ${batchDate} 第一轮问题批次`;
+  document.querySelector('#batch-meta').textContent = `批次：${batch}`;
+  document.querySelector('#snapshot-meta').textContent = `口径随 ${batch} 冻结快照`;
   document.querySelector('#run-meta').textContent = `更新：${formatTime(state.data.generated_at)}`;
   renderExecutive();
   bindFilters();
