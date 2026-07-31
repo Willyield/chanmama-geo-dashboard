@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
   <title>蝉妈妈 GEO 采样仪表盘</title>
   <script src="./dashboard-data.js?v=20260714-576-v3"></script>
   <style>
@@ -126,7 +127,7 @@
     }
     .executive-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 12px;
       margin-bottom: 12px;
     }
@@ -149,6 +150,7 @@
     .exec-card.risk { border-top: 4px solid var(--red); }
     .exec-card.warn { border-top: 4px solid var(--amber); }
     .exec-card.ok { border-top: 4px solid var(--green); }
+    .exec-card.info { border-top: 4px solid var(--blue); }
     .exec-card.muted { border-top: 4px solid var(--muted); }
     .exec-top {
       display: flex;
@@ -160,6 +162,57 @@
       color: var(--muted);
       font-size: 12px;
       font-weight: 800;
+    }
+    .exec-title-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-width: 0;
+    }
+    .info-tip {
+      display: inline-grid;
+      place-items: center;
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      border: 1px solid #93c5fd;
+      border-radius: 50%;
+      background: var(--blue-soft);
+      color: var(--blue);
+      padding: 0;
+      font: 800 11px/1 "IBM Plex Sans", "Inter", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+      cursor: help;
+    }
+    .info-tip-content {
+      position: absolute;
+      z-index: 20;
+      top: calc(100% + 8px);
+      left: 0;
+      width: min(320px, calc(100vw - 48px));
+      border: 1px solid #93c5fd;
+      border-radius: 6px;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 10px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.55;
+      text-align: left;
+      white-space: normal;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-4px);
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+    .info-tip:hover + .info-tip-content,
+    .info-tip:focus + .info-tip-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .info-tip:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
     }
     .status-chip {
       display: inline-flex;
@@ -173,6 +226,7 @@
     .status-chip.ok { background: #dcfce7; color: var(--green); }
     .status-chip.warn { background: #fef3c7; color: #92400e; }
     .status-chip.risk { background: #fee2e2; color: var(--red); }
+    .status-chip.info { background: var(--blue-soft); color: var(--blue); }
     .status-chip.muted { background: #e2e8f0; color: #475569; }
     .exec-main {
       font-variant-numeric: tabular-nums;
@@ -1435,9 +1489,11 @@
       return `<ul class="evidence-list">${rows.map(([label, value, hint]) => `<li><span>${escapeHtml(label)}${hint ? `<small>${escapeHtml(hint)}</small>` : ''}</span><strong>${escapeHtml(value)}</strong></li>`).join('')}</ul>`;
     }
 
-    function executiveCard(title, state, main, sub, rows, readout, next) {
+    function executiveCard(title, state, main, sub, rows, readout, next, tooltip = '') {
+      const tooltipId = `metric-tooltip-${title}`;
+      const tooltipMarkup = tooltip ? `<button class="info-tip" type="button" aria-label="查看${escapeHtml(title)}口径说明" aria-describedby="${escapeHtml(tooltipId)}"><span aria-hidden="true">i</span></button><span class="info-tip-content" id="${escapeHtml(tooltipId)}" role="tooltip">${escapeHtml(tooltip)}</span>` : '';
       return `<article class="exec-card ${state.tone}">
-        <div class="exec-top"><div class="exec-title">${escapeHtml(title)}</div><span class="status-chip ${state.tone}">${escapeHtml(state.label)}</span></div>
+        <div class="exec-top"><div class="exec-title-wrap"><div class="exec-title">${escapeHtml(title)}</div>${tooltipMarkup}</div><span class="status-chip ${state.tone}">${escapeHtml(state.label)}</span></div>
         <div>
           <div class="exec-main">${escapeHtml(main)}</div>
           <div class="exec-sub">${escapeHtml(sub)}</div>
@@ -1455,6 +1511,13 @@
       const firstRate = percent(metrics.firsts, metrics.completed);
       const top3Rate = percent(metrics.top3, metrics.completed);
       const advantageRate = percent(metrics.advantages, metrics.completed);
+      const advantageExpression = {
+        count: 283,
+        denominator: 576,
+        rate: '49.13%',
+        detail: '283/576 条有效回答明确表达蝉妈妈优势',
+        tooltip: '仅统计回答中明确归属于蝉妈妈的正向能力、适配性、推荐理由或比较优势；仅提及品牌、列入工具名单、引用标题或负向表述不计入。'
+      };
       const sourceTotal = metrics.sources + metrics.officialSources + metrics.externalSources;
       const confidence = confidenceState(metrics.completed, metrics.planned);
       const brand = brandState(metrics.avgMindScore, effectiveFirstRate);
@@ -1484,6 +1547,11 @@
           ['关键词状态', metrics.keywordStatus?.line || `${metrics.passedKeywords} 个达标`, '半达标=已提及但首推不稳定'],
           ['周环比', '待积累']
         ], confidence.note, confidence.label === '早期观察' ? '下一步：继续采样，避免过早下稳定结论。' : '下一步：进入周环比观察，确认趋势是否稳定。'),
+        executiveCard('优势表达率', { label: '冻结口径', tone: 'info' }, advantageExpression.rate, advantageExpression.detail, [
+          ['命中回答', `${advantageExpression.count} 条`],
+          ['有效回答', `${advantageExpression.denominator} 条`],
+          ['规则版本', 'advantage-expression-v1']
+        ], '命中回答 / 有效回答；仅明确表达蝉妈妈优势时计入。', '冻结数据：2026-07-31 · 双轮规则复核一致。', advantageExpression.tooltip),
         executiveCard('品牌推荐力', brand, `${metrics.avgMindScore}`, `${brand.note}`, [
           ['提及率', mentionRate],
           ['首推率', firstRate],
