@@ -51,6 +51,17 @@ function createIcons() {
   window.lucide?.createIcons?.({ attrs: { "aria-hidden": "true" } });
 }
 
+function revealActiveModule(button) {
+  const nav = button?.closest(".module-nav");
+  if (!nav || nav.scrollWidth <= nav.clientWidth) return;
+  requestAnimationFrame(() => {
+    const navRect = nav.getBoundingClientRect();
+    const buttonRect = button.getBoundingClientRect();
+    if (buttonRect.left < navRect.left) nav.scrollLeft -= navRect.left - buttonRect.left + 8;
+    else if (buttonRect.right > navRect.right) nav.scrollLeft += buttonRect.right - navRect.right + 8;
+  });
+}
+
 async function fetchJson(url) {
   if (!cache.has(url)) {
     cache.set(url, fetch(url, { cache: "no-store" }).then(async (response) => {
@@ -91,9 +102,13 @@ function resetFilters(module) {
 }
 
 function renderHeader() {
+  let activeModuleButton = null;
   document.querySelectorAll("[data-module]").forEach((button) => {
-    button.classList.toggle("is-active", button.dataset.module === state.module);
+    const isActive = button.dataset.module === state.module;
+    button.classList.toggle("is-active", isActive);
+    if (isActive) activeModuleButton = button;
   });
+  revealActiveModule(activeModuleButton);
   const dates = state.index.dates;
   dateSelect.innerHTML = dates.map((item) => `<option value="${escapeHtml(item.date)}" ${item.date === state.date ? "selected" : ""}>${escapeHtml(item.date)}</option>`).join("");
   const position = dates.findIndex((item) => item.date === state.date);
