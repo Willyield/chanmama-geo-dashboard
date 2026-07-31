@@ -7,7 +7,21 @@
       "status": "PARTIAL",
       "accountCount": 11,
       "contentCount": 405,
-      "generatedAt": "2026-07-31T07:34:05.919Z"
+      "generatedAt": "2026-07-31T08:23:50.499Z"
+    },
+    {
+      "reportDate": "2026-07-30",
+      "status": "PARTIAL",
+      "accountCount": 11,
+      "contentCount": 395,
+      "generatedAt": "2026-07-30T05:55:47.233Z"
+    },
+    {
+      "reportDate": "2026-07-28",
+      "status": "PARTIAL",
+      "accountCount": 11,
+      "contentCount": 111,
+      "generatedAt": "2026-07-29T02:10:13.071Z"
     }
   ]
 }

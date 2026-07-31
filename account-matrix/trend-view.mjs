@@ -12,6 +12,21 @@ export const shanghaiDateKey = (value) => {
   }).format(date);
 };
 
+export const reportHistory = (index) => {
+  const reports = Array.isArray(index?.reports) ? index.reports : [];
+  return [...new Map(reports
+    .filter((report) => /^\d{4}-\d{2}-\d{2}$/.test(report?.reportDate || ""))
+    .map((report) => [report.reportDate, report])).values()]
+    .sort((left, right) => right.reportDate.localeCompare(left.reportDate));
+};
+
+export const resolveReportDate = (index, requestedDate) => {
+  const dates = reportHistory(index).map((report) => report.reportDate);
+  if (dates.includes(requestedDate)) return requestedDate;
+  if (dates.includes(index?.latest)) return index.latest;
+  return dates[0] || null;
+};
+
 const round = (value, digits = 4) => Number.isFinite(value) ? Number(value.toFixed(digits)) : null;
 
 const median = (values) => {

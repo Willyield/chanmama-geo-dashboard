@@ -6,6 +6,8 @@ import {
   classifyTrendPoint,
   matchesPublishedDate,
   metricCoverageLabel,
+  reportHistory,
+  resolveReportDate,
   selectTrendPoints,
 } from "./trend-view.mjs";
 
@@ -240,10 +242,8 @@ const renderFilters = (query, { hidePlatform = false, hideCategory = false, resu
   const sources = [...new Map(state.records.map((record) => [record.sourceId, `${record.platformLabel} / ${record.accountName}`])).entries()]
     .map(([value, label]) => ({ value, label })).sort((a, b) => a.label.localeCompare(b.label, "zh-CN"));
   const categories = Object.entries(CATEGORY_LABELS).map(([value, label]) => ({ value, label }));
-  const dates = (state.index?.reports || []).map((report) => ({ value: report.reportDate, label: `${report.reportDate} / ${statusLabel(report.status)}` }));
   const publishedDate = query.get("publishedDate") || "";
   return `<div class="filter-bar" aria-label="日报筛选">
-    <div class="filter-field"><label for="filter-date">日报日期</label><select id="filter-date" data-filter="date">${optionList(dates, state.reportDate, "选择日期")}</select></div>
     ${hidePlatform ? "" : `<div class="filter-field"><label for="filter-platform">平台</label><select id="filter-platform" data-filter="platform">${optionList(platforms, query.get("platform") || "", "全部平台")}</select></div>`}
     <div class="filter-field"><label for="filter-source">账号</label><select id="filter-source" data-filter="source">${optionList(sources, query.get("source") || "", "全部账号")}</select></div>
     ${hideCategory ? "" : `<div class="filter-field"><label for="filter-category">分类</label><select id="filter-category" data-filter="category">${optionList(categories, query.get("category") || "", "全部分类")}</select></div>`}
@@ -748,7 +748,13 @@ const renderTable = (records, query) => {
   </table></div>`;
 };
 
-const heading = (title, description) => `<div class="page-heading"><div><h1>${escapeHtml(title)}</h1><p>${escapeHtml(description)}</p></div><div class="heading-actions"><span class="status-chip ${statusClass(state.summary.status)}">${statusLabel(state.summary.status)}</span></div></div>`;
+const reportDateSwitcher = () => {
+  const reports = reportHistory(state.index);
+  const options = reports.map((report) => `<option value="${escapeHtml(report.reportDate)}"${report.reportDate === state.reportDate ? " selected" : ""}>${escapeHtml(report.reportDate)}</option>`).join("");
+  return `<label class="report-switcher" for="report-date-switcher"><span>日报日期</span><select id="report-date-switcher" data-report-date>${options}</select><small>${reports.length}期日报</small></label>`;
+};
+
+const heading = (title, description) => `<div class="page-heading"><div><h1>${escapeHtml(title)}</h1><p>${escapeHtml(description)}</p></div><div class="heading-actions">${reportDateSwitcher()}<span class="status-chip ${statusClass(state.summary.status)}">${statusLabel(state.summary.status)}</span></div></div>`;
 
 const renderOverview = (route) => {
   const filtered = filterRecords(state.records, route.query);
@@ -843,9 +849,14 @@ const render = async () => {
   const normalized = normalizeLegacyRoute(routeState());
   const route = normalized.route;
   if (normalized.changed) history.replaceState(null, "", makeRoute(route.view, route.id, route.query));
-  const requestedDate = route.query.get("date") || state.index?.latest;
+  const requestedDate = route.query.get("date");
+  const resolvedDate = resolveReportDate(state.index, requestedDate);
   try {
-    if (requestedDate && requestedDate !== state.reportDate) await loadReport(requestedDate);
+    if (resolvedDate && requestedDate !== resolvedDate) {
+      route.query.set("date", resolvedDate);
+      history.replaceState(null, "", makeRoute(route.view, route.id, route.query));
+    }
+    if (resolvedDate && resolvedDate !== state.reportDate) await loadReport(resolvedDate);
     syncHeader();
     if (!state.summary) return renderEmpty("暂无日报数据");
     if (route.view === "platform") renderPlatform(route);
@@ -949,13 +960,16 @@ app.addEventListener("keydown", (event) => {
 });
 
 app.addEventListener("change", async (event) => {
+  const reportDateTarget = event.target.closest("[data-report-date]");
+  if (reportDateTarget) {
+    const route = routeState();
+    route.query.set("date", reportDateTarget.value);
+    location.hash = makeRoute(route.view, route.id, route.query);
+    return;
+  }
   const target = event.target.closest("[data-filter]");
   if (!target) return;
-  if (target.dataset.filter === "date") {
-    const route = routeState();
-    route.query.set("date", target.value);
-    location.hash = makeRoute(route.view, route.id, route.query);
-  } else setQuery(target.dataset.filter, target.value);
+  setQuery(target.dataset.filter, target.value);
 });
 
 let searchTimer;
