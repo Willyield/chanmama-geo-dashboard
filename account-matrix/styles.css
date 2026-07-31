@@ -311,6 +311,58 @@ a { color: inherit; }
 .account-trend-table td > strong,
 .account-trend-table td > small { display: block; }
 .account-trend-table td > small { margin-top: 5px; color: var(--muted); font-size: 10px; }
+.account-trends .section-header > div:first-child { min-width: 0; }
+.account-trends .section-header h2 + span { display: block; margin-top: 5px; }
+.account-trend-list { border-bottom: 1px solid var(--rule-strong); background: var(--surface); }
+.account-trend-row { border-bottom: 1px solid var(--rule); }
+.account-trend-row:last-child { border-bottom: 0; }
+.account-trend-row.is-expanded { background: #f8f9f7; }
+.account-trend-summary {
+  width: 100%;
+  min-height: 92px;
+  display: grid;
+  grid-template-columns: minmax(180px, 0.8fr) 92px 160px minmax(360px, 1.8fr) 44px;
+  align-items: center;
+  gap: 14px;
+  padding: 7px 10px 7px 16px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+.account-trend-summary:hover { background: #f1f4f8; }
+.account-trend-summary:focus-visible { outline: 2px solid var(--signal); outline-offset: -2px; }
+.account-trend-identity,
+.account-trend-stat { min-width: 0; }
+.account-trend-identity strong,
+.account-trend-identity small,
+.account-trend-stat strong,
+.account-trend-stat small { display: block; }
+.account-trend-identity strong { font-size: 13px; }
+.account-trend-identity small,
+.account-trend-stat small { margin-top: 5px; color: var(--muted); font-size: 10px; line-height: 1.35; }
+.account-trend-stat strong { overflow: hidden; font-size: 15px; text-overflow: ellipsis; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.account-mini-scroll { min-width: 0; display: block; overflow-x: auto; overflow-y: hidden; }
+.account-mini-chart { width: 100%; min-width: 420px; height: 78px; display: block; }
+.account-mini-grid { stroke: #e1e5e1; stroke-width: 1; }
+.account-mini-line { fill: none; stroke: var(--signal); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.account-mini-line.is-increment { stroke: var(--median-series); }
+.account-mini-point { fill: var(--surface); stroke: var(--signal); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.account-mini-volume { fill: #d7e2f2; }
+.account-trend-expand {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--rule-strong);
+  color: var(--signal);
+  font: 18px/1 var(--mono);
+}
+.account-trend-expanded { border-top: 1px solid var(--rule-strong); background: var(--surface); }
+.account-trend-expanded-head { min-height: 42px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 16px; border-bottom: 1px solid var(--rule); }
+.account-trend-expanded-head strong { font-size: 12px; }
+.account-trend-expanded-head span { color: var(--muted); font-size: 10px; }
 .trend-chart { height: 178px; display: flex; align-items: end; gap: 7px; padding: 16px 4px 2px; overflow-x: auto; border-bottom: 1px solid var(--rule); }
 .trend-column { flex: 1 0 30px; min-width: 30px; height: 145px; display: grid; grid-template-rows: 1fr 24px; gap: 6px; align-items: end; }
 .trend-bar { width: 100%; height: 100%; display: flex; align-items: end; background: #e1e4e0; }
@@ -457,6 +509,20 @@ a { color: inherit; }
   .bar-head, .bar-row { grid-template-columns: minmax(72px, 0.9fr) minmax(74px, 1.1fr) 42px minmax(74px, 0.9fr); gap: 7px; }
   .section-header { align-items: end; }
   .trend-workbench .section-header { align-items: stretch; flex-direction: column; }
+  .account-trends .section-header { align-items: stretch; flex-direction: column; }
+  .account-trends .segmented { align-self: flex-start; }
+  .account-trend-summary {
+    grid-template-columns: minmax(120px, 1fr) minmax(96px, auto) 44px;
+    gap: 8px 10px;
+    padding: 10px 8px 8px 12px;
+  }
+  .account-trend-identity { grid-column: 1 / 3; grid-row: 1; }
+  .account-trend-expand { grid-column: 3; grid-row: 1; }
+  .account-trend-summary > .account-trend-stat:nth-of-type(2) { grid-column: 1; grid-row: 2; }
+  .account-trend-summary > .account-trend-stat:nth-of-type(3) { grid-column: 2 / 4; grid-row: 2; }
+  .account-mini-scroll { grid-column: 1 / -1; grid-row: 3; }
+  .account-mini-chart { width: 560px; }
+  .account-trend-expanded-head { align-items: flex-start; flex-direction: column; padding: 9px 12px; }
   .trend-controls { justify-content: space-between; }
   .trend-summary { grid-template-columns: 1fr 1fr; }
   .trend-kpi { border-top: 1px solid var(--rule); }

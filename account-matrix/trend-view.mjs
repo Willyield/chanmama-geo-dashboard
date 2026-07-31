@@ -156,6 +156,7 @@ export const buildLineGeometry = (points, valueOf, {
 
 export const metricCoverageLabel = (metric) => {
   if (!metric || metric.totalCount === 0) return "当日无发布";
+  if (metric.knownCount === 0) return `平台未提供 · 共${metric.totalCount}篇`;
   if (metric.knownCount === metric.totalCount) return `数据完整 · ${metric.knownCount}篇`;
   return `已知${metric.knownCount}篇 / 共${metric.totalCount}篇`;
 };

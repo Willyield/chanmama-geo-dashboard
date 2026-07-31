@@ -23,6 +23,14 @@ const CATEGORY_COLOR_SLOTS = {
   current_hotspot: 4,
 };
 
+const METRIC_FIELD_LABELS = {
+  views: "阅读",
+  likes: "点赞",
+  comments: "评论",
+  favorites: "收藏",
+  shares: "分享",
+};
+
 const BASIS_LABELS = {
   PLATFORM_CATEGORY_AGE: "同平台、同分类、发布时间相近",
   PLATFORM_AGE_FALLBACK: "同平台、发布时间相近",
@@ -45,6 +53,21 @@ const formatNumber = (value) => Number.isFinite(value)
   : "暂无";
 const formatExact = (value) => Number.isFinite(value) ? new Intl.NumberFormat("zh-CN").format(value) : "暂无";
 const formatPercent = (value) => Number.isFinite(value) ? `${(value * 100).toFixed(value < 0.01 ? 2 : 1)}%` : "暂无";
+const formatMetricValue = (value, metric) => Number.isFinite(value)
+  ? formatExact(value)
+  : metric?.totalCount > 0 && metric.knownCount === 0 ? "平台未提供" : "暂无";
+const formatInteractionValue = (interaction) => Number.isFinite(interaction?.rate)
+  ? formatPercent(interaction.rate)
+  : interaction?.totalCount > 0 && interaction.knownCount === 0 ? "平台未提供" : "暂无";
+const metricAvailabilityNote = (evidence) => {
+  if (!evidence) return "";
+  if (evidence.coverageStatus !== "COMPLETE") {
+    return `补数待完成：${formatExact(evidence.unmatchedContentCount)}篇未匹配`;
+  }
+  const missing = (evidence.unavailableFields || [])
+    .map((field) => METRIC_FIELD_LABELS[field] || field);
+  return missing.length ? `批量列表未提供${missing.join("、")}` : "批量指标已匹配";
+};
 const formatSignedExact = (value, unit = "") => Number.isFinite(value)
   ? `${value > 0 ? "+" : ""}${formatExact(value)}${unit}`
   : "暂无";
@@ -527,8 +550,14 @@ const categoryComposition = (query) => {
     <div class="trend-disclosure">两期账号构成、内容发布时间与指标覆盖不同；当前累计数据只反映采样时可见值，不代表内容效果升降，也不用于因果判断。</div></section>`;
 };
 
-const renderIncrementTrend = (query, days, dateKeys) => {
-  const byDate = new Map((state.summary.trends?.snapshotIncrement || []).map((point) => [point.date, point]));
+const renderIncrementTrend = (query, days, dateKeys, sourceId = null) => {
+  const sourceSeries = sourceId
+    ? (state.summary.trends?.accountSnapshotIncrement || []).map((point) => {
+      const account = point.accounts?.find((candidate) => candidate.sourceId === sourceId);
+      return account ? { ...account, date: point.date, periodKind: point.periodKind } : null;
+    }).filter(Boolean)
+    : state.summary.trends?.snapshotIncrement || [];
+  const byDate = new Map(sourceSeries.map((point) => [point.date, point]));
   const points = dateKeys.map((date) => byDate.get(date) || { date, views: null, status: "NO_SNAPSHOT" });
   const available = points.filter((point) => Number.isFinite(point.views));
   if (!available.length) {
@@ -537,7 +566,10 @@ const renderIncrementTrend = (query, days, dateKeys) => {
   const width = days === 7 ? 720 : 1320;
   const geometry = buildLineGeometry(points, (point) => point.views, { width: width - 44, height: 220, top: 18, bottom: 30 });
   const paths = geometry.paths.map((path) => `<path class="trend-line trend-line-total" d="${pathData(path)}"></path>`).join("");
-  return `<div class="trend-scroll" tabindex="0" aria-label="真实新增趋势图，可横向滚动"><div class="trend-stage" style="width:${width}px"><svg class="trend-svg" viewBox="0 0 ${width} 220" role="img" aria-label="相邻完整快照之间的真实新增播放阅读">${paths}</svg></div></div>`;
+  const labels = points.map((point, index) => index % 5 === 0 || index === points.length - 1
+    ? `<text class="trend-axis-label" x="${(22 + index * (width - 44) / Math.max(1, points.length - 1)).toFixed(2)}" y="210" text-anchor="middle">${escapeHtml(point.date.slice(5))}</text>`
+    : "").join("");
+  return `<div class="trend-scroll" tabindex="0" aria-label="真实新增趋势图，可横向滚动"><div class="trend-stage" style="width:${width}px"><svg class="trend-svg" viewBox="0 0 ${width} 220" role="img" aria-label="相邻完整快照之间的真实新增播放阅读">${paths}${labels}</svg></div></div>`;
 };
 
 const trendChart = (query) => {
@@ -575,6 +607,91 @@ const trendChart = (query) => {
   </section>`;
 };
 
+const accountIncrementPoints = (sourceId, dateKeys) => {
+  const byDate = new Map((state.summary.trends?.accountSnapshotIncrement || []).map((point) => {
+    const account = point.accounts?.find((candidate) => candidate.sourceId === sourceId);
+    return [point.date, account ? { ...account, date: point.date, periodKind: point.periodKind } : null];
+  }));
+  return dateKeys.map((date) => byDate.get(date) || { date, views: null, status: "NO_SNAPSHOT" });
+};
+
+const renderAccountMiniTrend = (points, mode) => {
+  const width = 560;
+  const height = 78;
+  const left = 8;
+  const right = 8;
+  const innerWidth = width - left - right;
+  const valueOf = mode === "increment"
+    ? (point) => point.views
+    : (point) => classifyTrendPoint(point) === "known" ? point.views.median : null;
+  const geometry = buildLineGeometry(points, valueOf, {
+    width: innerWidth,
+    height,
+    top: 9,
+    bottom: 18,
+  });
+  const paths = geometry.paths.map((path) => `<path class="account-mini-line${mode === "increment" ? " is-increment" : ""}" d="${pathData(path, left)}"></path>`).join("");
+  const dots = geometry.points.map((point) => Number.isFinite(point.y)
+    ? `<circle class="account-mini-point" cx="${(point.x + left).toFixed(2)}" cy="${point.y.toFixed(2)}" r="2.25"></circle>`
+    : "").join("");
+  const step = points.length > 1 ? innerWidth / (points.length - 1) : innerWidth;
+  const maximumVolume = Math.max(1, ...points.map((point) => point.contentCount || 0));
+  const bars = mode === "cohort" ? points.map((point, index) => {
+    if (!point.contentCount) return "";
+    const barHeight = Math.max(2, point.contentCount / maximumVolume * 14);
+    return `<rect class="account-mini-volume" x="${(left + index * step - 2).toFixed(2)}" y="${(height - 3 - barHeight).toFixed(2)}" width="4" height="${barHeight.toFixed(2)}"></rect>`;
+  }).join("") : "";
+  const grid = points.map((_, index) => index % 5 === 0 || index === points.length - 1
+    ? `<line class="account-mini-grid" x1="${(left + index * step).toFixed(2)}" y1="5" x2="${(left + index * step).toFixed(2)}" y2="${height - 3}"></line>`
+    : "").join("");
+  const knownCount = geometry.points.filter((point) => Number.isFinite(point.y)).length;
+  const aria = mode === "increment"
+    ? `近30日真实新增，${knownCount}个日期有连续快照数据`
+    : `近30日按发布日期当前表现，${knownCount}个日期有已知阅读数据`;
+  return `<span class="account-mini-scroll"><svg class="account-mini-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHtml(aria)}">${grid}${bars}${paths}${dots}</svg></span>`;
+};
+
+const accountTrendBoard = (query) => {
+  const contract = state.summary.trends?.accountPublishCohortCurrent;
+  if (!contract?.accounts?.length) return "";
+  const dateKeys = contract.accounts[0].points.map((point) => point.date);
+  const mode = query.get("accountTrendMode") === "increment" ? "increment" : "cohort";
+  const activeSourceId = query.get("accountTrend") || "";
+  const rollingBySource = new Map((state.summary.rolling30Days?.accounts || []).map((account) => [account.sourceId, account]));
+  const platformLabels = new Map(state.summary.platforms.map((platform) => [platform.platformId, platform.platformLabel]));
+  const modeControls = `<div class="segmented" aria-label="账号月度趋势口径"><button type="button" data-account-trend-mode="cohort" aria-pressed="${mode === "cohort"}">按发布日期</button><button type="button" data-account-trend-mode="increment" aria-pressed="${mode === "increment"}">真实新增</button></div>`;
+  const rows = contract.accounts.map((account) => {
+    const summary = rollingBySource.get(account.sourceId);
+    const availability = metricAvailabilityNote(summary?.metricAvailability);
+    const points = mode === "cohort" ? account.points : accountIncrementPoints(account.sourceId, dateKeys);
+    const expanded = account.sourceId === activeSourceId;
+    const routeQuery = new URLSearchParams(query);
+    if (expanded) routeQuery.delete("accountTrend");
+    else routeQuery.set("accountTrend", account.sourceId);
+    routeQuery.set("accountTrendMode", mode);
+    const detailQuery = new URLSearchParams(query);
+    detailQuery.set("source", account.sourceId);
+    ["platform", "category", "comparison", "publishedDate", "search"].forEach((key) => detailQuery.delete(key));
+    const expandedPlot = mode === "cohort"
+      ? renderPublishTrendPlot(account.points, detailQuery, 30)
+      : renderIncrementTrend(detailQuery, 30, dateKeys, account.sourceId);
+    return `<article class="account-trend-row${expanded ? " is-expanded" : ""}">
+      <button type="button" class="account-trend-summary" data-route="${escapeHtml(makeRoute("overview", null, routeQuery))}" aria-expanded="${expanded}" aria-label="${escapeHtml(`${expanded ? "收起" : "展开"}${platformLabels.get(account.platformId) || account.platformId}${account.accountName}30日趋势`)}">
+        <span class="account-trend-identity"><strong>${escapeHtml(platformLabels.get(account.platformId) || account.platformId)}</strong><small>${escapeHtml(account.accountName)}</small></span>
+        <span class="account-trend-stat"><strong>${formatExact(summary?.contentCount)}篇</strong><small>30日发布</small></span>
+        <span class="account-trend-stat"><strong>${formatMetricValue(summary?.views?.total, summary?.views)}</strong><small>${summary?.views ? metricCoverageLabel(summary.views) : "阅读覆盖未知"}${availability ? ` · ${escapeHtml(availability)}` : ""}</small></span>
+        ${renderAccountMiniTrend(points, mode)}
+        <span class="account-trend-expand" aria-hidden="true">${expanded ? "-" : "+"}</span>
+      </button>
+      ${expanded ? `<div class="account-trend-expanded"><div class="account-trend-expanded-head"><strong>展开30日三轨图</strong><span>${mode === "cohort" ? "当前累计阅读、单篇常规阅读与发布量" : "仅展示相邻完整快照的真实新增"}</span></div>${expandedPlot}</div>` : ""}
+    </article>`;
+  }).join("");
+  return `<section class="section account-trends"><div class="section-header"><div><h2>账号月度走势</h2><span>${escapeHtml(contract.window.from)} 至 ${escapeHtml(contract.window.to)} · 11个账号共享日期轴</span></div>${modeControls}</div>
+    <div class="account-trend-list">${rows}</div>
+    <div class="trend-footnote">按发布日期展示截至本次采样的当前表现；真实新增仅来自相邻两次11账号完整快照，缺失日期不补0。</div>
+  </section>`;
+};
+
 const rollingAccountTable = () => {
   const rolling = state.summary.rolling30Days;
   if (!rolling) return "";
@@ -585,7 +702,7 @@ const rollingAccountTable = () => {
     : `窗口待补采 · 已证明${rolling.collectionCoverage?.completeSources ?? 0}个 / 共${rolling.collectionCoverage?.expectedSources ?? rolling.accounts.length}个来源`;
   return `<section class="section"><div class="section-header"><div><h2>${complete ? "近30日账号汇总" : "近30日可见内容汇总"}</h2><span>${escapeHtml(rolling.window.from)} 至 ${escapeHtml(rolling.window.to)} · 末日截至采样时刻</span></div><span>${escapeHtml(coverageText)}</span></div>${complete ? "" : `<div class="trend-coverage-warning">当前快照未证明全部账号已翻页到窗口起点或平台末尾，本表仅用于调查，不作为完整30日结论或部署依据。</div>`}<div class="table-scroll"><table class="data-table account-trend-table">
     <thead><tr><th>平台 / 账号</th><th class="number">发布内容</th><th class="number">累计播放/阅读</th><th class="number">单篇平均</th><th class="number">单篇常规阅读</th><th>阅读指标覆盖</th><th class="number">共同互动率</th><th>采集窗口</th><th class="number">数据优秀</th></tr></thead>
-    <tbody>${rolling.accounts.map((account) => `<tr><td><strong>${escapeHtml(platformLabels.get(account.platformId) || account.platformId)}</strong><small>${escapeHtml(account.accountName)}</small></td><td class="number">${formatExact(account.contentCount)}</td><td class="number">${formatExact(account.views.total)}</td><td class="number">${formatExact(account.views.average)}</td><td class="number">${formatExact(account.views.median)}</td><td><strong>${escapeHtml(metricCoverageLabel(account.views))}</strong><small>${Number.isFinite(account.views.coverage) ? formatPercent(account.views.coverage) : "暂无"}</small></td><td class="number">${formatPercent(account.interaction.rate)}<small>已知${account.interaction.knownCount}篇 / 共${account.interaction.totalCount}篇</small></td><td><strong>${account.collectionCoverage?.status === "COMPLETE" ? "完整" : "待补采"}</strong><small>${Number.isInteger(account.collectionCoverage?.pagesFetched) ? `${account.collectionCoverage.pagesFetched}页` : "暂无翻页证据"}</small></td><td class="number">${formatExact(account.highPerformanceCount)}</td></tr>`).join("")}</tbody>
+    <tbody>${rolling.accounts.map((account) => `<tr><td><strong>${escapeHtml(platformLabels.get(account.platformId) || account.platformId)}</strong><small>${escapeHtml(account.accountName)}</small></td><td class="number">${formatExact(account.contentCount)}</td><td class="number">${formatMetricValue(account.views.total, account.views)}</td><td class="number">${formatMetricValue(account.views.average, account.views)}</td><td class="number">${formatMetricValue(account.views.median, account.views)}</td><td><strong>${escapeHtml(metricCoverageLabel(account.views))}</strong><small>${Number.isFinite(account.views.coverage) ? formatPercent(account.views.coverage) : "暂无"}${account.metricAvailability ? ` · ${escapeHtml(metricAvailabilityNote(account.metricAvailability))}` : ""}</small></td><td class="number">${formatInteractionValue(account.interaction)}<small>${account.interaction.knownCount === 0 && account.interaction.totalCount > 0 ? "阅读、点赞或评论字段未完整提供" : `已知${account.interaction.knownCount}篇 / 共${account.interaction.totalCount}篇`}</small></td><td><strong>${account.collectionCoverage?.status === "COMPLETE" ? "完整" : "待补采"}</strong><small>${Number.isInteger(account.collectionCoverage?.pagesFetched) ? `${account.collectionCoverage.pagesFetched}页` : "暂无翻页证据"}</small></td><td class="number">${formatExact(account.highPerformanceCount)}</td></tr>`).join("")}</tbody>
   </table></div></section>`;
 };
 
@@ -648,6 +765,7 @@ const renderOverview = (route) => {
     <section class="section operation-section"><div class="section-header"><h2>运营筛选</h2><span>平台、账号、分类、发布日期与比较质量</span></div>${renderFilters(route.query, { resultCount: filtered.length })}</section>
     ${trendChart(route.query)}
     ${categoryComposition(route.query)}
+    ${accountTrendBoard(route.query)}
     ${rollingAccountTable()}
     <section class="section"><div class="section-header"><h2>内容明细</h2><span>${filtered.length} 篇</span></div>${renderTable(filtered.slice(0, 20), route.query)}</section>`;
 };
@@ -805,6 +923,8 @@ app.addEventListener("click", (event) => {
   if (trendTarget) setQuery("trend", trendTarget.dataset.trend);
   const trendModeTarget = event.target.closest("[data-trend-mode]");
   if (trendModeTarget) setQuery("trendMode", trendModeTarget.dataset.trendMode);
+  const accountTrendModeTarget = event.target.closest("[data-account-trend-mode]");
+  if (accountTrendModeTarget) setQuery("accountTrendMode", accountTrendModeTarget.dataset.accountTrendMode);
   const categoryTarget = event.target.closest("[data-category-trend]");
   if (categoryTarget) {
     const selected = routeState().query.get("category");
