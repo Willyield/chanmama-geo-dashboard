@@ -5,18 +5,18 @@
   "dates": [
     {
       "date": "2026-07-31",
-      "observedAt": "2026-07-31T09:43:00+08:00",
-      "total": 4,
+      "observedAt": "2026-07-31T10:54:00+08:00",
+      "total": 5,
       "priority": 4,
       "gradeCounts": {
         "S": 1,
         "A": 3,
-        "B": 0,
+        "B": 1,
         "C": 0,
         "D": 0
       },
       "domainCounts": {
-        "commerce": 1,
+        "commerce": 2,
         "technology": 3
       },
       "sourceType": "structured-data",

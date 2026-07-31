@@ -2,13 +2,13 @@
   "schemaVersion": 2,
   "module": "hotspots",
   "date": "2026-07-31",
-  "observedAt": "2026-07-31T09:43:00+08:00",
-  "revision": 1,
-  "updatedAt": "2026-07-31T01:51:01.639Z",
+  "observedAt": "2026-07-31T10:54:00+08:00",
+  "revision": 3,
+  "updatedAt": "2026-07-31T03:09:35.132Z",
   "sourceType": "structured-data",
   "sourceArtifact": "incoming/hotspots/2026-07-31.json",
   "sourceWorkbook": null,
-  "inputStatus": "incomplete",
+  "inputStatus": "complete",
   "scoringModels": [
     "commerce_v1",
     "tech_v1"
@@ -17,29 +17,29 @@
     "gradeCounts": {
       "S": 1,
       "A": 3,
-      "B": 0,
+      "B": 1,
       "C": 0,
       "D": 0
     },
     "domainCounts": {
-      "commerce": 1,
+      "commerce": 2,
       "technology": 3
     },
     "candidateKindCounts": {
-      "event": 3,
+      "event": 4,
       "potential_topic": 1
     },
     "contentPotentialCounts": {
       "S": 0,
       "A": 2,
-      "B": 2,
+      "B": 3,
       "C": 0,
       "D": 0
     },
     "topicValueCounts": {
       "S": 2,
       "A": 2,
-      "B": 0,
+      "B": 1,
       "C": 0,
       "D": 0
     },
@@ -47,16 +47,16 @@
       "priority_production": 2,
       "early_test": 1,
       "targeted_publish": 1,
-      "small_test": 0,
+      "small_test": 1,
       "observe": 0,
       "do_not_publish": 0
     },
     "priorityCount": 4,
-    "lowCostCount": 0,
+    "lowCostCount": 1,
     "observeCount": 0,
-    "evidenceE3Count": 4,
-    "publishNowCount": 4,
-    "webSummary": "今日纳入4条候选：抖音电商三项治理细则合并为业务重点响应；Kimi K3采用继续增长与GPT-5.6官方降价优先制作；豆包企业版进入飞书后的安全、权限与价格作为较高潜力话题抢先试发。DeepSeek V4回源后确认是04/24旧发布，不作为今日新事件；抖音单日美食与穿搭榜因缺多周期基线和第二变化信号未提升为趋势。AIDSO在固定9233会话内两种读取方式均超时，未取得07/31数据，因此快照标记incomplete。",
+    "evidenceE3Count": 5,
+    "publishNowCount": 5,
+    "webSummary": "5 条候选入库，其中事件热点 4 条、潜力话题 1 条。重点业务 4 条，当前可制作或试发 5 条，高潜力抢先试发 1 条。\n今日优先：抖音电商集中更新质检、定准定邀与即时零售治理细则、GPT-5.6正式降价：Luna降80%、Terra降20%，Sol新增Fast模式、潜力话题：豆包企业版进入飞书后，企业最关心的数据安全、权限与价格。",
     "topContentActions": [
       {
         "id": "HT-20260731-002",
@@ -200,6 +200,7 @@
       "owner": "内容/GEO",
       "monitor": "官方类目清单、后台准入提示、违规咨询量、规则词搜索展现和清单下载。",
       "candidate_kind": "event",
+      "hotspot_category": "经营与规则",
       "signal_type": "official_rule",
       "baseline_evidence": {
         "signal_type": "official_rule",
@@ -576,6 +577,7 @@
       "owner": "内容/GEO",
       "monitor": "HF趋势、下载和转换；GitHub仓库；三项任务质量、耗时、成本和人工修订。",
       "candidate_kind": "event",
+      "hotspot_category": "科技与工具",
       "signal_type": "official_model_release_adoption",
       "baseline_evidence": null,
       "topic_resonance": null,
@@ -1051,6 +1053,7 @@
       "owner": "内容/GEO",
       "monitor": "OpenAI价格页、AWS滚动、三模型同任务质量、token、时延、成本和人工修订。",
       "candidate_kind": "event",
+      "hotspot_category": "科技与工具",
       "signal_type": "official_pricing_release",
       "baseline_evidence": null,
       "topic_resonance": null,
@@ -1537,6 +1540,7 @@
       "owner": "内容/GEO",
       "monitor": "飞书官方更新、百度/AIDSO搜索需求、官网搜索展现、咨询问题、试发点击与收藏。",
       "candidate_kind": "potential_topic",
+      "hotspot_category": "潜力搜索话题",
       "signal_type": "official_product_content_cluster",
       "baseline_evidence": null,
       "topic_resonance": null,
@@ -1955,6 +1959,358 @@
       ],
       "confirmed_trigger": true,
       "publishable_channel": true
+    },
+    {
+      "id": "HT-20260731-005",
+      "event_key": "douyin-army-day-content-node-20260801",
+      "foundAt": "2026-07-31 10:50",
+      "name": "八一建军节内容节点：抖音热榜与蝉妈妈营销日历同时触发",
+      "type": "季节与营销节点｜节日内容合规",
+      "sourceLevel": "E3",
+      "publishedAt": "2026-07-31 10:50",
+      "signal": "07/31 10:50，抖音创作者指数实时热点中“八一建军节之际致敬中国军人”位列第9，热点指数917.3万；蝉妈妈营销日历显示建军节距今1天，平台热点同步出现该话题。指数不是人数或播放量。",
+      "uncertainty": "当前只能确认节日临近和平台当日热榜信号，不证明热度持续上涨；爱国与军人主题存在较高内容合规和商业化表达风险。",
+      "recommended": "小范围试发一篇品牌八一内容合规清单，帮助商家区分致敬表达、公益表达与不当借势，不直接做促销导购。",
+      "actionReason": "节日时间确定且已出现真实平台需求信号，品牌内容团队有即时准备需求；但与交易转化的自然关联有限，需以合规和内容方法为主。",
+      "actionDetail": "公众号或短视频单渠道发布《八一节点品牌内容怎么做：可写、慎写与不应商业化的边界》。只使用公开节日信息和平台指数快照，不使用未经授权的军徽、军装或官方素材。",
+      "evidence": "抖音创作者指数实时热点与蝉妈妈营销日历/平台热点在07/31 10:50同时可见。",
+      "departments": "内容/GEO、品牌、公关",
+      "deadline": "2026-08-01",
+      "notRecommended": "不把热点指数写成人数或播放量；不将军人、军徽和国防事件商品化；不承诺借势带来销量；不发布未经授权的官方素材。",
+      "sourceLinks": [
+        {
+          "label": "抖音创作者指数实时热点",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
+          "domain": "creator.douyin.com"
+        },
+        {
+          "label": "蝉妈妈营销日历与平台热点",
+          "url": "https://www.chanmama.com/douyin/",
+          "domain": "chanmama.com"
+        }
+      ],
+      "source_links": [
+        {
+          "label": "抖音创作者指数实时热点",
+          "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
+          "domain": "creator.douyin.com"
+        },
+        {
+          "label": "蝉妈妈营销日历与平台热点",
+          "url": "https://www.chanmama.com/douyin/",
+          "domain": "chanmama.com"
+        }
+      ],
+      "status": "常规跟进",
+      "risk": "中风险-已通过",
+      "owner": "内容/GEO",
+      "monitor": "07/31至08/01榜位、相关内容新增量、评论情绪、品牌合规反馈和单渠道互动。",
+      "candidate_kind": "event",
+      "hotspot_category": "季节与营销节点",
+      "signal_type": "calendar_event",
+      "baseline_evidence": {
+        "signal_type": "calendar_event",
+        "baseline_verified": true,
+        "freshness_verified": true,
+        "normalization_flags": [],
+        "fact_boundary": "只确认节日日期和当日热榜，不声称季节性上涨。"
+      },
+      "topic_resonance": null,
+      "official_rule": null,
+      "technology_change": "07/31 10:50，抖音创作者指数实时热点中“八一建军节之际致敬中国军人”位列第9，热点指数917.3万；蝉妈妈营销日历显示建军节距今1天，平台热点同步出现该话题。指数不是人数或播放量。",
+      "chanmama_relevance": "节日时间确定且已出现真实平台需求信号，品牌内容团队有即时准备需求；但与交易转化的自然关联有限，需以合规和内容方法为主。",
+      "next_step": "小范围试发一篇品牌八一内容合规清单，帮助商家区分致敬表达、公益表达与不当借势，不直接做促销导购。",
+      "explicitly_not_doing": "不把热点指数写成人数或播放量；不将军人、军徽和国防事件商品化；不承诺借势带来销量；不发布未经授权的官方素材。",
+      "official_evidence": [],
+      "circle_evidence": [],
+      "business_response_code": "B",
+      "business_response_label": "常规跟进",
+      "business_response_score": 65,
+      "business_response_basis": "综合评分与封顶规则决定。",
+      "actions": [
+        {
+          "hotspotId": "HT-20260731-005",
+          "actionType": "小范围试发",
+          "task": "制作八一节点品牌内容合规清单并单渠道测试。",
+          "owner": "内容/GEO",
+          "collaborators": "品牌、公关",
+          "deadline": "2026-08-01",
+          "deliverable": "八一节点品牌内容可写、慎写与不应商业化清单",
+          "acceptance": "节日事实、平台指数、素材授权和商业化边界分栏，不把指数写成人数。",
+          "stopCondition": "窗口结束、榜位回落、负面舆情或素材授权不清时停止。",
+          "status": "待执行"
+        }
+      ],
+      "domain": "commerce",
+      "scoring_model": "commerce_v1",
+      "totalScore": 65,
+      "initialValue": 3,
+      "finalValue": 3,
+      "grade": "L-B｜常规跟进",
+      "gradeCode": "B",
+      "followDecision": "常规跟进",
+      "downgradeReason": "分数决定",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 3,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 3,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 3,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 2,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 3,
+        "evidence": 5,
+        "type": 5,
+        "core": 3,
+        "baseline": 5,
+        "risk": 4,
+        "window": 5,
+        "preparation": 5,
+        "official_rule_floor": 0
+      },
+      "baseline_assessment": {
+        "signal_type": "calendar_event",
+        "requires_baseline": false,
+        "comparison_baseline_verified": true,
+        "baseline_type": "不适用",
+        "normalization_flags": [],
+        "multi_period_growth_verified": true,
+        "independent_change_signals": 0,
+        "is_verified": true
+      },
+      "business_priority_basis": "综合评分与封顶规则决定。",
+      "hotness_scoring_model": "hotness_v1",
+      "hotness_score": 54,
+      "raw_hotness_level": "H-C",
+      "hotness_level": "H-C",
+      "hotness_final_value": 2,
+      "hotness_score_details": [
+        {
+          "key": "absolute_demand",
+          "name": "需求规模",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "baseline_deviation",
+          "name": "相对基线变化",
+          "score": 2,
+          "weight": 25,
+          "weighted_score": 10
+        },
+        {
+          "key": "growth_velocity",
+          "name": "上升速度",
+          "score": 2,
+          "weight": 20,
+          "weighted_score": 8
+        },
+        {
+          "key": "persistence",
+          "name": "持续时间",
+          "score": 2,
+          "weight": 15,
+          "weighted_score": 6
+        },
+        {
+          "key": "cross_platform_spread",
+          "name": "跨平台扩散",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "freshness",
+          "name": "数据新鲜度",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "hotness_caps": [],
+      "hotness_signal_type": "calendar_event",
+      "hotness_independent_platform_count": 2,
+      "hotness_baseline_verified": true,
+      "hotness_freshness_verified": true,
+      "hotness_change_signals": [
+        "建军节距观察日1天",
+        "抖音创作者指数实时热点第9",
+        "蝉妈妈营销日历与平台热点同步出现"
+      ],
+      "hotness_requires_baseline": false,
+      "hotness_comparison_baseline_verified": true,
+      "hotness_baseline_type": "不适用",
+      "hotness_normalization_flags": [],
+      "hotness_multi_period_growth_verified": true,
+      "hotness_independent_change_signals": 3,
+      "content_scoring_model": "content_potential_v1",
+      "content_potential_score": 68,
+      "raw_content_potential_level": "P-B",
+      "content_potential_level": "P-B",
+      "content_final_value": 3,
+      "content_score_details": [
+        {
+          "key": "audience_demand",
+          "name": "受众需求规模",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "demand_velocity",
+          "name": "需求上涨速度",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "content_supply_gap",
+          "name": "内容供给缺口",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "target_user_fit",
+          "name": "目标用户匹配",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "data_content_advantage",
+          "name": "蝉妈妈数据优势",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "discussion_shareability",
+          "name": "讨论与传播性",
+          "score": 4,
+          "weight": 10,
+          "weighted_score": 8
+        },
+        {
+          "key": "content_lifecycle",
+          "name": "内容生命周期",
+          "score": 3,
+          "weight": 5,
+          "weighted_score": 3
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "content_caps": [],
+      "content_source_tier": "E3",
+      "traffic_route": "social",
+      "independent_platform_count": 2,
+      "demand_signals": [
+        "平台：抖音创作者指数｜页面：抖音实时热点｜观察：2026-07-31 10:50｜数值：八一建军节之际致敬中国军人第9、热点指数917.3万｜https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
+        "平台：蝉妈妈｜页面：营销日历与平台热点｜观察：2026-07-31 10:50｜变化：营销日历显示建军节1天后，平台热点同步出现八一主题｜https://www.chanmama.com/douyin/"
+      ],
+      "content_baseline_verified": true,
+      "content_requires_baseline": false,
+      "content_comparison_baseline_verified": true,
+      "content_baseline_type": "不适用",
+      "content_normalization_flags": [],
+      "content_multi_period_growth_verified": true,
+      "content_independent_change_signals": 0,
+      "supply_gap_verified": false,
+      "content_freshness_verified": true,
+      "chanmama_answerable": true,
+      "query_cluster": [
+        "八一建军节品牌内容怎么写",
+        "建军节营销有哪些合规边界",
+        "军人主题短视频能不能带商品",
+        "八一热点适合哪些品牌跟进"
+      ],
+      "channel_scores": {
+        "website": 64,
+        "wechat": 78,
+        "short_video": 82,
+        "xiaohongshu": 68,
+        "private_domain": 72
+      },
+      "channel_reasons": {
+        "primary": "节日节点与短视频热榜共同提供即时需求，但商业化风险较高，适合公众号或短视频单渠道做合规清单。"
+      },
+      "recommended_channels": [
+        "wechat",
+        "short_video"
+      ],
+      "primary_topic": "八一节点品牌内容怎么做：可写、慎写与不应商业化的边界",
+      "early_publish_title": "八一节点品牌内容怎么做：可写、慎写与不应商业化的边界",
+      "content_angle": "以品牌内容合规清单切入，不做促销借势，把平台指数、适合表达和禁止表达分栏说明。",
+      "measurement_plan": "单渠道阅读或完播、收藏、负面评论率、品牌咨询和合规反馈。",
+      "stop_condition": "08/01窗口结束、榜位明显回落或出现负面舆情时停止分发；素材授权不清时不发布。",
+      "content_score_reasons": {},
+      "topic_value_score": 68,
+      "topic_value_code": "B",
+      "topic_value_label": "中等潜力",
+      "publication_status_code": "small_test",
+      "publication_status": "小范围试发",
+      "publication_priority": 3,
+      "publication_mode": "单渠道轻量内容",
+      "publication_basis": "选题价值与渠道适配达到轻量测试要求，先用单渠道验证反馈。",
+      "fact_boundary": "只确认节日日期和07/31平台指数快照；指数不是人数或播放量，不外推为持续趋势或交易增长。",
+      "pending_confirmation": [
+        "跨平台持续时长",
+        "品牌素材与表述合规复核"
+      ],
+      "confirmed_trigger": true,
+      "publishable_channel": true
     }
   ],
   "actions": [
@@ -2005,6 +2361,18 @@
       "acceptance": "适用对象、经营动作、违规后果和申诉路径回到官方正文。",
       "stopCondition": "官方清单或后台口径变化时立即修订。",
       "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260731-005",
+      "actionType": "小范围试发",
+      "task": "制作八一节点品牌内容合规清单并单渠道测试。",
+      "owner": "内容/GEO",
+      "collaborators": "品牌、公关",
+      "deadline": "2026-08-01",
+      "deliverable": "八一节点品牌内容可写、慎写与不应商业化清单",
+      "acceptance": "节日事实、平台指数、素材授权和商业化边界分栏，不把指数写成人数。",
+      "stopCondition": "窗口结束、榜位回落、负面舆情或素材授权不清时停止。",
+      "status": "待执行"
     }
   ],
   "scanLogs": [
@@ -2014,11 +2382,11 @@
       "status": "已读取",
       "evidenceLevel": "E3",
       "page": "近期选品参考",
-      "observedAt": "2026-07-31 09:31-09:43",
-      "signal": "已登录且近期选品参考页面可读，当前选择运动休闲用品，但页面未返回明确周期截止日且表格为空。",
+      "observedAt": "2026-07-31 10:50",
+      "signal": "近期选品参考页可读，运动休闲用品下健身器械、游泳、球迷用品为销售额指数TOP3，爬楼机标杆商品GMV指数3000万+；页面仍未返回明确周期截止日。",
       "relatedIds": [],
       "limitation": "只显示最近30天，不自行推算截止日；GMV指数不等于真实成交额。",
-      "nextAction": "取得自身历史和第二变化信号后再判类目趋势。",
+      "nextAction": "爬楼机与家用健身器械进入内部观察池，取得明确周期、自身历史和第二变化信号后再升级。",
       "loginStatus": "authenticated",
       "dataDate": "页面未返回明确截止日",
       "queryTerms": [],
@@ -2073,23 +2441,27 @@
     {
       "platform": "蝉妈妈",
       "url": "https://www.chanmama.com/douyin/",
-      "status": "已读取",
+      "status": "已读取并完成类型补扫",
       "evidenceLevel": "E3",
       "page": "种草热点、平台热点、直播与销量榜",
-      "observedAt": "2026-07-31 09:31-09:43",
-      "signal": "种草热点与平台热点更新于07/31 09:30，直播榜为07/31 08:00，昨日销量榜为07/30。",
-      "relatedIds": [],
+      "observedAt": "2026-07-31 10:50",
+      "signal": "营销日历显示建军节1天后；种草热点与平台热点更新于07/31 10:50。八一主题进入正式季节节点候选，暑期旅行、美食与穿搭只进入内部观察池。",
+      "relatedIds": [
+        "HT-20260731-005"
+      ],
       "limitation": "销售额、观看人次和销量均为平台区间或估算；单日榜不判趋势。",
       "nextAction": "跟踪话题榜位与试发效果。",
       "loginStatus": "authenticated",
-      "dataDate": "2026-07-31 09:30；销量榜2026-07-30",
+      "dataDate": "2026-07-31 10:50",
       "queryTerms": [
+        "八一建军节之际致敬中国军人",
+        "我的暑期限定solotrip",
         "洛阳的大盘鸡把我香迷糊了",
         "当彝族元素走进日常穿搭"
       ],
       "missingData": [
-        "热点多周期基线",
-        "第二独立变化信号"
+        "日常榜单多周期基线",
+        "观察项第二独立变化信号"
       ],
       "loginAction": null
     },
@@ -2115,44 +2487,45 @@
     {
       "platform": "抖音创作者指数",
       "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
-      "status": "已读取",
+      "status": "已读取并完成类型补扫",
       "evidenceLevel": "E3",
       "page": "实时热点与飙升热点",
-      "observedAt": "2026-07-31 09:31-09:43",
-      "signal": "实时榜显示洛阳大盘鸡第7、919.0万，当彝族元素穿搭第8、918.3万；指数不是人数或播放量。",
-      "relatedIds": [],
+      "observedAt": "2026-07-31 10:50",
+      "signal": "实时榜可读：暑期限定solotrip第2、1108.4万；洛阳大盘鸡第5、1028.5万；彝族元素穿搭第6、1026.8万；八一建军节第9、917.3万。指数不是人数或播放量。",
+      "relatedIds": [
+        "HT-20260731-005"
+      ],
       "limitation": "指数不是人数、播放量或成交额。",
       "nextAction": "跟踪榜位与内容供给。",
       "loginStatus": "authenticated",
-      "dataDate": "2026-07-31",
+      "dataDate": "2026-07-31 10:50",
       "queryTerms": [
+        "我的暑期限定solotrip",
         "洛阳的大盘鸡把我香迷糊了",
-        "当彝族元素走进日常穿搭"
+        "当彝族元素走进日常穿搭",
+        "八一建军节之际致敬中国军人"
       ],
       "missingData": [
-        "多周期持续性",
-        "第二独立变化信号"
+        "观察项多周期持续性",
+        "观察项独立平台扩散"
       ],
       "loginAction": null
     },
     {
       "platform": "AIDSO",
       "url": "https://geo.aidso.com/question",
-      "status": "读取失败",
+      "status": "已读取",
       "evidenceLevel": "E3",
       "page": "实时搜索与历史记录",
-      "observedAt": "2026-07-31 09:31-09:43",
-      "signal": "在固定9233会话复用页和同会话新页各重试，均发生CDP Runtime超时；未取得当天页面数据，且没有可见登录页或验证码证据。",
+      "observedAt": "2026-07-31 10:54",
+      "signal": "固定9233会话中的实时搜索与历史记录已可读取；当前页最新可见记录为07/30，07/31暂无新记录。未把07/30记录复用为今日热点证据。",
       "relatedIds": [],
-      "limitation": "不能据此判定登录失效或复用07/30数据。",
-      "nextAction": "后续在同一9233会话恢复后重新读取当天数据。",
+      "limitation": "页面内存在非可见验证相关组件，但正文和历史记录可正常读取，不构成当前阻塞。",
+      "nextAction": "后续有07/31新记录时再纳入需求验证。",
       "loginStatus": "authenticated",
-      "dataDate": null,
+      "dataDate": "当前页面快照2026-07-31；最新可见记录2026-07-30",
       "queryTerms": [],
-      "missingData": [
-        "2026-07-31页面数据",
-        "候选对应GEO查询"
-      ],
+      "missingData": [],
       "loginAction": null
     },
     {
@@ -2430,6 +2803,6 @@
       "loginAction": null
     }
   ],
-  "boundaryText": "本日结论截至2026-07-31 09:43（北京时间）。百度指数、抖音创作者指数和蝉妈妈均为authenticated；AIDSO沿用同一已登录9233会话，但页面读取连续发生CDP Runtime超时，未取得当天数据，没有把旧记录复用为今日证据，因此快照为incomplete。巨量云图页面显示最近30天但未返回明确截止日，不能自行推算。抖店三项细则均为07/30 22:59官方正文，适用类目、金额、品牌和后台判断以最新清单为准。Kimi K3的下载、喜欢、stars与forks均为平台观察快照，不等于独立用户、精确人数或单日新增。GPT-5.6的80%只指Luna、20%只指Terra，Sol价格不变；蝉妈妈实际成本必须独立测量。飞书官方确认产品、权限和数据边界，媒体所称组织调整未找到官方公告，不写成官宣。DeepSeek V4详情原始发布于04/24，不作为今日新事件。抖音美食与穿搭榜只有单日指数，缺自身/同类基线、多周期增长和第二独立变化信号，不判趋势或公开外推。",
-  "sourceBrief": "今日纳入4条候选：抖音电商三项治理细则合并为业务重点响应；Kimi K3采用继续增长与GPT-5.6官方降价优先制作；豆包企业版进入飞书后的安全、权限与价格作为较高潜力话题抢先试发。DeepSeek V4回源后确认是04/24旧发布，不作为今日新事件；抖音单日美食与穿搭榜因缺多周期基线和第二变化信号未提升为趋势。AIDSO在固定9233会话内两种读取方式均超时，未取得07/31数据，因此快照标记incomplete。"
+  "boundaryText": "本次补跑截至2026-07-31 10:54（北京时间）。七类热点均参与扫描与内部观察，但公开网页只展示通过事实、时效、业务关联和发布门槛的正式candidates。日常热榜、平台指数、GMV指数和类目绝对规模在缺少可比基线、多周期变化或独立验证时只进入observation_pool；指数不是人数、播放量或真实成交额。八一节点只确认节日临近和07/31平台快照，不声称持续上涨，不将军人或官方标识商业化。AIDSO正文与历史记录已恢复读取，当前页最新可见记录为07/30，未复用为07/31热点证据。",
+  "sourceBrief": "今日正式热点5条：经营与规则1条、科技与工具2条、季节与营销节点1条、潜力搜索话题1条。七类均参与观察筛选；暑期旅行、美食、穿搭、爬楼机与文旅话题因缺少多周期或独立信号只保留在内部观察池，不进入公开网页。AIDSO已在固定9233会话补读成功，当前页最新可见记录为07/30且07/31暂无新记录。"
 }

@@ -142,6 +142,17 @@ const CHANNEL_LABELS = {
   private_domain: "私域",
 };
 
+const HOTSPOT_CATEGORY_CLASSES = Object.freeze({
+  "经营与规则": "status-s",
+  "类目与消费": "status-a",
+  "达人与内容案例": "status-b",
+  "平台日常热榜": "status-c",
+  "科技与工具": "status-b",
+  "季节与营销节点": "status-a",
+  "潜力搜索话题": "status-c",
+});
+const HOTSPOT_CATEGORIES = Object.freeze(Object.keys(HOTSPOT_CATEGORY_CLASSES));
+
 function gradeClass(grade) {
   return `status-${String(grade || "d").toLowerCase()}`;
 }
@@ -160,6 +171,19 @@ function displayName(candidate) {
 
 function candidateDomain(candidate) {
   return isTechnology(candidate) ? "technology" : "commerce";
+}
+
+function hotspotCategory(candidate) {
+  const explicit = candidate.hotspot_category || candidate.hotspotCategory;
+  if (explicit) return explicit;
+  if (isPotentialTopic(candidate)) return "潜力搜索话题";
+  if (isTechnology(candidate)) return "科技与工具";
+  const value = String(candidate.type || "");
+  if (/类目|消费|商品|选品/.test(value)) return "类目与消费";
+  if (/达人|直播|案例|爆款/.test(value)) return "达人与内容案例";
+  if (/热榜|平台热点|日常热点/.test(value)) return "平台日常热榜";
+  if (/季节|节日|营销|节点/.test(value)) return "季节与营销节点";
+  return "经营与规则";
 }
 
 function typeLabel(value) {
@@ -328,11 +352,11 @@ function renderCreatorObservations(candidate) {
 }
 
 function mainDecisionLabel(candidate) {
-  return isPotentialTopic(candidate) ? publicationStatus(candidate) : businessResponseLabel(candidate);
+  return hotspotCategory(candidate);
 }
 
 function mainDecisionClass(candidate) {
-  return isPotentialTopic(candidate) ? publicationClass(candidate) : gradeClass(actionCode(candidate));
+  return HOTSPOT_CATEGORY_CLASSES[hotspotCategory(candidate)] || "status-c";
 }
 
 function recommendedChannelLabels(candidate) {
@@ -450,20 +474,20 @@ function filterCandidates(candidates, filters) {
   const search = String(filters.search || "").trim().toLowerCase();
   return candidates.filter((candidate) => {
     const matchesSearch = !search || [candidate.name, candidate.signal, candidate.actionReason, candidate.recommended, candidate.evidence,
-      techChange(candidate), chanmamaRelevance(candidate), nextStep(candidate), publicationStatus(candidate), factBoundary(candidate),
+      techChange(candidate), chanmamaRelevance(candidate), nextStep(candidate), publicationStatus(candidate), hotspotCategory(candidate), factBoundary(candidate),
       pendingConfirmation(candidate).join(" "), evidenceText(circleEvidence(candidate))]
       .some((value) => String(value || "").toLowerCase().includes(search));
     const matchesDomain = (filters.domain || "all") === "all" || candidateDomain(candidate) === filters.domain;
     const matchesKind = (filters.kind || "all") === "all"
       || (filters.kind === "potential_topic" ? isPotentialTopic(candidate) : !isPotentialTopic(candidate));
     const matchesGrade = filters.grade === "all" || actionCode(candidate) === filters.grade;
-    const matchesType = filters.type === "all" || candidate.type === filters.type;
+    const matchesType = filters.type === "all" || hotspotCategory(candidate) === filters.type;
     return matchesSearch && matchesDomain && matchesKind && matchesGrade && matchesType;
   });
 }
 
 function renderToolbar(data, filters, count) {
-  const types = uniqueOptions(data.candidates.map((candidate) => candidate.type));
+  const types = HOTSPOT_CATEGORIES;
   const domainCounts = data.candidates.reduce((counts, candidate) => {
     counts[candidateDomain(candidate)] += 1;
     return counts;
@@ -499,7 +523,7 @@ function renderToolbar(data, filters, count) {
       </select></label>
       <label class="filter-select">${icon("layers-3")}<select data-filter="type" aria-label="筛选热点类型">
         <option value="all">全部类型</option>
-        ${types.map((type) => `<option value="${escapeHtml(type)}" ${filters.type === type ? "selected" : ""}>${escapeHtml(typeLabel(type))}</option>`).join("")}
+        ${types.map((type) => `<option value="${escapeHtml(type)}" ${filters.type === type ? "selected" : ""}>${escapeHtml(type)}</option>`).join("")}
       </select></label>
     </div>
     <span class="result-count">${count} / ${data.candidates.length} 条</span>
@@ -509,7 +533,7 @@ function renderToolbar(data, filters, count) {
 function renderOverviewTable(candidates) {
   if (!candidates.length) return `<div class="data-region">${renderEmpty("当前筛选条件下没有热点")}</div>`;
   const rows = candidates.map((candidate) => `<tr data-open-id="${escapeHtml(candidate.id)}" data-domain="${candidateDomain(candidate)}">
-    <td>${statusChip(mainDecisionLabel(candidate), mainDecisionClass(candidate))}<span class="cell-secondary">${isPotentialTopic(candidate) ? `选题价值：${escapeHtml(topicValueLabel(candidate))} ${escapeHtml(topicValueScore(candidate) ?? "待核")}分` : `内容动作：${escapeHtml(publicationStatus(candidate))}`}</span></td>
+    <td>${statusChip(mainDecisionLabel(candidate), mainDecisionClass(candidate))}<span class="cell-secondary">业务响应：${escapeHtml(businessResponseLabel(candidate))}</span><span class="cell-secondary">内容动作：${escapeHtml(publicationStatus(candidate))}</span></td>
     <td><span class="cell-primary">${escapeHtml(displayName(candidate))}</span><span class="cell-secondary">${isPotentialTopic(candidate) ? "潜力话题" : "事件热点"}｜${escapeHtml(typeLabel(candidate.type))}</span></td>
     <td>${statusChip(sourceTier(candidate), sourceTierCode(candidate) === "E3" ? "status-pass" : "")}${sourceLinksHtml(candidate.sourceLinks || normalizeEvidenceLinks(officialEvidence(candidate)), 1)}</td>
     <td>${renderCandidateScore(candidate)}${renderResonanceInline(candidate)}</td>
@@ -522,7 +546,9 @@ function renderOverviewTable(candidates) {
     <h3>${escapeHtml(displayName(candidate))}</h3>
     <div class="mobile-facts">
       <div class="mobile-fact"><span>来源</span><strong>${escapeHtml(sourceTier(candidate))}</strong></div>
-      <div class="mobile-fact"><span>类型</span><strong>${isPotentialTopic(candidate) ? "潜力话题" : "事件热点"}</strong></div>
+      <div class="mobile-fact"><span>类型</span><strong>${escapeHtml(hotspotCategory(candidate))}</strong></div>
+      <div class="mobile-fact"><span>业务响应</span><strong>${escapeHtml(businessResponseLabel(candidate))}</strong></div>
+      <div class="mobile-fact"><span>内容动作</span><strong>${escapeHtml(publicationStatus(candidate))}</strong></div>
     </div>
     ${renderResonanceInline(candidate)}
   </article>`).join("");
