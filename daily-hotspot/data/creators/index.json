@@ -1,8 +1,19 @@
 {
   "schemaVersion": 2,
   "module": "creators",
-  "latest": "2026-07-30",
+  "latest": "2026-07-31",
   "dates": [
+    {
+      "date": "2026-07-31",
+      "observedAt": "2026-07-31T10:02:45.1532798+08:00",
+      "candidateCreators": null,
+      "manualRound1Queue": null,
+      "formalWhitelist": 0,
+      "successfulVideos": null,
+      "qualifiedTopics": 0,
+      "publicationStatus": "DEGRADED_REPORT",
+      "dataMode": "DAILY_AUDIT_ONLY"
+    },
     {
       "date": "2026-07-30",
       "observedAt": "2026-07-30T10:07:55.375+08:00",
