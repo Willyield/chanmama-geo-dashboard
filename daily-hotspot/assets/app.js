@@ -15,7 +15,7 @@ import {
   creatorViews,
   renderCreatorDetail,
   renderCreatorPage,
-} from "./creators.js?v=20260731roster1";
+} from "./creators.js?v=20260731capture1";
 import { applyCreatorIdentityCorrection } from "./creator-data.js";
 import { escapeHtml, icon, renderError } from "./ui.js";
 

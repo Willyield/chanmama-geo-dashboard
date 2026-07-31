@@ -1310,6 +1310,33 @@ function operationalConfidenceMeta(value) {
   })[value] || { label: "未知", className: "status-d" };
 }
 
+function renderCreatorCaptureStatus(data) {
+  const capture = data?.creatorCaptureStatus;
+  if (!capture) return "";
+  const summary = capture.summary || {};
+  const poolMatch = capture.poolMatch || {};
+  const externalSources = asArray(capture.externalVisibleSources);
+  const unknownEvidence = asArray(capture.unknownEvidence);
+  const tier = operationalTierMeta(poolMatch.tier);
+  const observedAt = firstValue(capture.displayTime, formatDateTime(capture.observedAt));
+  const plannedAt = formatDateTime(capture.plannedAt);
+  return `<section class="creator-capture-status" aria-label="最新达人采集状态">
+    <div class="creator-capture-heading"><div><span class="model-code">CAPTURE STATUS / LATE MAIN</span><h2>${escapeHtml(observedAt)} 补执行</h2><p>计划 ${escapeHtml(plannedAt)} · <strong>schedule.onTime=false</strong></p></div>${statusChip("证据降级", "status-watch")}</div>
+    <div class="creator-capture-kpis" aria-label="采集完成情况">
+      <div><strong>${formatMetric(summary.pagesLoaded)} / ${formatMetric(summary.pagesTotal)}</strong><span>主页成功</span></div>
+      <div><strong>${formatMetric(summary.pagesTimedOut)} / ${formatMetric(summary.pagesTotal)}</strong><span>运行超时</span></div>
+      <div><strong>DEGRADED</strong><span>证据降级</span></div>
+      <div><strong>未变</strong><span>名单层级未变</span></div>
+    </div>
+    <div class="creator-capture-boundary">${icon("shield-alert")}<span><strong>只读边界：</strong>4 个成功主页仅作可见性观察；${escapeHtml(capture.timeoutPolicy)}。</span></div>
+    <div class="creator-capture-observations">
+      <div class="creator-capture-row is-pool"><div><span class="model-code">池内观察 · ${escapeHtml(firstValue(poolMatch.candidateId, "ID 待核"))}</span><strong>${escapeHtml(firstValue(poolMatch.nickname, "账号待核"))}</strong></div><div><p>${escapeHtml(firstValue(poolMatch.note, "本轮主页可见 / 待补双源与 P60"))}</p><small>保持 ${escapeHtml(tier.label)} · 不提升层级</small></div>${statusChip("本轮主页可见", "status-watch")}</div>
+      ${externalSources.map((item) => `<div class="creator-capture-row"><div><span class="model-code">池外可见来源</span><strong>${escapeHtml(item.nickname)}</strong></div><div><p>${escapeHtml(firstValue(item.label, "新增可见来源待轻筛"))}</p><small>不进入 50 人池</small></div>${statusChip("待轻筛", "status-d")}</div>`).join("")}
+    </div>
+    <div class="creator-capture-unknowns"><strong>仍为 UNKNOWN</strong><span>${unknownEvidence.map((item) => escapeHtml(item)).join(" / ")}</span></div>
+  </section>`;
+}
+
 function renderOperationalWhitelistPage({ data, view, filters }) {
   const whitelist = data.operationalWhitelist;
   const summary = whitelist.summary || {};
@@ -1385,6 +1412,7 @@ function renderOperationalWhitelistPage({ data, view, filters }) {
       <div class="creator-pool-summary-copy"><span class="model-code">EVIDENCE GATED / NO FIXED QUOTA</span><strong>名单快照 ${escapeHtml(whitelist.date)}</strong><small>综合分仅决定核验顺序，不决定核心资格</small></div>
       <div class="operational-whitelist-kpis"><span><strong>${formatMetric(summary.poolCount ?? summary.selectedCount)}</strong><small>追踪池</small></span><span><strong>${formatMetric(summary.corePriorityReviewCount)}</strong><small>优先核验</small></span><span><strong>${formatMetric((summary.observationCount || 0) - (summary.corePriorityReviewCount || 0))}</strong><small>常规观察</small></span><span><strong>${formatMetric(summary.expansionCount)}</strong><small>扩展</small></span></div>
     </section>
+    ${renderCreatorCaptureStatus(data)}
     <div class="creator-core-status">${icon("shield-check")}<span><strong>${formatMetric(summary.coreTrackingCount)} 位核心追踪。</strong> 当前无人通过全部七项门槛；优先核验仍属于观察层。核心追踪只表示适合日常内容监测，不等于正式白名单或商业合作背书。</span></div>
     <div class="creator-pool-toolbar"><div><strong>名单分层</strong><span>当前显示 ${creators.filter(isVisible).length} / ${creators.length} 位</span></div><div class="creator-pool-filters" role="group" aria-label="名单分层筛选">${filterOptions.map((option) => `<button type="button" data-pool-filter="${option.id}" class="${option.id === activeFilter ? "is-active" : ""}" aria-pressed="${option.id === activeFilter}"><span>${option.label}</span><strong>${formatMetric(option.count)}</strong></button>`).join("")}</div></div>
     ${tierRegisters}
@@ -1449,12 +1477,13 @@ function renderCreatorDailyAudit({ data, index, view }) {
       <div class="decision-boundary">${icon("shield-alert")}<span><strong>结论边界：</strong>${escapeHtml(data.statusMessage)} 候选发现只作触发器，不代表达人审核通过。</span></div>
     </section>
     ${operationalCallout}
+    ${renderCreatorCaptureStatus(data)}
     <section class="section-band"><div class="section-title"><h2>本日达人结论</h2><span>${statusChip(auditCreatorDecisionLabel(firstValue(creatorDecision.result, "NO_CREATOR_ADMISSION")), formalCount || temporaryCount ? "status-pass" : "status-watch")}</span></div>
       ${factGrid([
         ["日报类型", statusChip(reportLabel, ["ON_TIME_FULL", "LATE_FULL"].includes(data.publicationStatus) ? "status-pass" : "status-watch")],
         ["实际观察时间", escapeHtml(formatDateTime(data.observedAt))],
         ["计划窗口", escapeHtml(firstValue(schedule.slot, data.scheduledFor, "未记录"))],
-        ["是否准时", schedule.on_time == null ? "未记录" : statusChip(schedule.on_time ? "是" : "否", schedule.on_time ? "status-pass" : "status-watch")],
+        ["原日报是否准时", schedule.on_time == null ? "未记录" : statusChip(schedule.on_time ? "是" : "否", schedule.on_time ? "status-pass" : "status-watch")],
         ["缺失值策略", "null / UNKNOWN，不估填"],
         ["原始审计哈希", audit.sourceSha256 ? statusChip("已记录 SHA-256", "status-pass") : statusChip("缺失", "status-watch")],
       ])}
