@@ -172,6 +172,7 @@ function renderExecutive() {
   const isFinalWithGaps = data.status === 'FINAL_WITH_GAPS';
   const mentionCount = web.mention_count + mobile.mention_count;
   const firstCount = web.first_count + mobile.first_count;
+  const advantage = data.advantage_expression;
   const uniqueQuestions = new Set(data.samples.map((row) => row.question_id)).size;
   const pairs = pairedStats(data.paired);
   const pairedMentionGap = Math.abs(pairs.mobileMentionRate - pairs.webMentionRate);
@@ -203,6 +204,12 @@ function renderExecutive() {
       ['综合首推', `${firstCount}/${data.collected}，${percent(firstCount, data.collected)}`],
       ['网页 / 手机首推', `${web.first_count} / ${mobile.first_count}`],
     ], '下一步：优先补“为什么选择蝉镜”的场景证据和可引用内容。'),
+    executiveCard('优势表达率', 'info', '冻结口径', `${advantage.rate.toFixed(2)}%`, `${advantage.count}/${advantage.denominator} 条有效回答明确表达优势`, [
+      ['网页端', `${advantage.terminal_summary.web.count}/${advantage.terminal_summary.web.denominator}，${advantage.terminal_summary.web.rate.toFixed(2)}%`],
+      ['手机端', `${advantage.terminal_summary.mobile.count}/${advantage.terminal_summary.mobile.denominator}，${advantage.terminal_summary.mobile.rate.toFixed(2)}%`],
+      ['双端均表达', `${advantage.paired_summary.both}/${advantage.paired_summary.paired} 组`],
+      ['仅单端表达', `网页 ${advantage.paired_summary.web_only} / 手机 ${advantage.paired_summary.mobile_only}`],
+    ], '明确说明至少一项优势、正向能力或比较优势才计入；未完成样本不进入分母。'),
     executiveCard('双端差异', 'info', '手机端暂高', countDifferenceLabel(pairs.webMentions, pairs.mobileMentions, '个提及问题'), `同题配对提及率相差 ${pairedMentionGap.toFixed(1)} 个百分点`, [
       ['提及问题', `手机 ${pairs.mobileMentions} 个，网页 ${pairs.webMentions} 个`],
       ['提及率', `手机 ${pairs.mobileMentionRate.toFixed(1)}%，网页 ${pairs.webMentionRate.toFixed(1)}%`],
