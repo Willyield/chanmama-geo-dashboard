@@ -15,7 +15,7 @@ import {
   creatorViews,
   renderCreatorDetail,
   renderCreatorPage,
-} from "./creators.js?v=20260730tiered1";
+} from "./creators.js?v=20260731roster1";
 import { applyCreatorIdentityCorrection } from "./creator-data.js";
 import { escapeHtml, icon, renderError } from "./ui.js";
 
@@ -64,10 +64,14 @@ async function fetchJson(url) {
 function parseRoute() {
   const parts = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
   const module = ["hotspots", "events", "creators"].includes(parts[0]) ? parts[0] : "hotspots";
-  return { module, requestedDate: parts[1] || "latest", view: parts[2] || "overview" };
+  return { module, requestedDate: parts[1] || "latest", view: parts[2] || defaultView(module) };
 }
 
-function navigate(module, date = "latest", view = "overview") {
+function defaultView(module) {
+  return module === "creators" ? "resonance" : "overview";
+}
+
+function navigate(module, date = "latest", view = defaultView(module)) {
   const target = `#/${module}/${date}/${view}`;
   if (location.hash === target) loadRoute();
   else location.hash = target;
@@ -75,7 +79,7 @@ function navigate(module, date = "latest", view = "overview") {
 
 function validView(module, view) {
   const views = module === "hotspots" ? hotspotViews : module === "events" ? eventViews : creatorViews;
-  return views.some((item) => item.id === view) ? view : "overview";
+  return views.some((item) => item.id === view) ? view : defaultView(module);
 }
 
 function resetFilters(module) {
@@ -102,7 +106,9 @@ function renderHeader() {
     : state.module === "events"
       ? `复核 ${state.data.verifiedAt}`
       : state.data.dataMode === "DAILY_AUDIT_ONLY"
-        ? `审计 ${state.data.observedAt}`
+        ? state.view === "resonance" && state.data.operationalWhitelist
+          ? `名单 ${state.data.operationalWhitelist.date}`
+          : `审计 ${state.data.observedAt}`
       : state.data.decision
         ? `决策 ${state.data.decision.decisionAsOf}`
         : `试运行 ${state.data.observedAt}`;
@@ -156,7 +162,9 @@ async function loadRoute() {
           return null;
         }
       };
-      data.operationalWhitelist = await fetchOptional(`./data/creators/operational-whitelist/${date}.json`);
+      data.operationalWhitelist = await fetchOptional(date === index.latest
+        ? "./data/creators/operational-whitelist/latest.json"
+        : `./data/creators/operational-whitelist/${date}.json`);
       if (data.dataMode !== "DAILY_AUDIT_ONLY") {
         [data.decision, data.qualityReview, data.topicWhitelist, data.identityCorrection] = await Promise.all([
           fetchOptional(`./data/creators/decisions/${date}.json`),
@@ -240,7 +248,7 @@ function showToast(message) {
 
 document.querySelector(".module-nav").addEventListener("click", (event) => {
   const button = event.target.closest("[data-module]");
-  if (button) navigate(button.dataset.module, "latest", "overview");
+  if (button) navigate(button.dataset.module);
 });
 
 dateSelect.addEventListener("change", () => navigate(state.module, dateSelect.value, state.view));
@@ -252,6 +260,13 @@ nextDate.addEventListener("click", () => {
 });
 
 app.addEventListener("click", (event) => {
+  const poolFilterButton = event.target.closest("[data-pool-filter]");
+  if (poolFilterButton) {
+    state.filters.poolTier = poolFilterButton.dataset.poolFilter;
+    renderCurrent();
+    app.querySelector(`[data-pool-filter="${CSS.escape(state.filters.poolTier)}"]`)?.focus({ preventScroll: true });
+    return;
+  }
   const viewButton = event.target.closest("[data-view]");
   if (viewButton) {
     navigate(state.module, state.date, viewButton.dataset.view);
@@ -259,7 +274,7 @@ app.addEventListener("click", (event) => {
   }
   const archiveButton = event.target.closest("[data-route-date]");
   if (archiveButton) {
-    navigate(state.module, archiveButton.dataset.routeDate, "overview");
+    navigate(state.module, archiveButton.dataset.routeDate, state.view);
     return;
   }
   if (event.target.closest("a")) return;

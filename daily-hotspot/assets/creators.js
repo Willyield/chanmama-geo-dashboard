@@ -15,7 +15,7 @@ import { normalizeTopicWhitelistPayload } from "./topic-whitelist.js";
 
 export const creatorViews = [
   { id: "overview", label: "今日决策" },
-  { id: "resonance", label: "达人追踪池" },
+  { id: "resonance", label: "达人名单" },
   { id: "quality", label: "达人审核" },
   { id: "topics", label: "热点雷达" },
   { id: "candidates", label: "全部候选" },
@@ -28,6 +28,7 @@ export const creatorFilterDefaults = {
   disposition: "all",
   track: "all",
   refetch: "all",
+  poolTier: "priority",
 };
 
 const DISPOSITION_CLASS = {
@@ -1309,14 +1310,27 @@ function operationalConfidenceMeta(value) {
   })[value] || { label: "未知", className: "status-d" };
 }
 
-function renderOperationalWhitelistPage({ data, view }) {
+function renderOperationalWhitelistPage({ data, view, filters }) {
   const whitelist = data.operationalWhitelist;
   const summary = whitelist.summary || {};
   const creators = asArray(whitelist.creators);
+  const filterOptions = [
+    { id: "priority", label: "优先核验", count: summary.corePriorityReviewCount },
+    { id: "observation", label: "常规观察", count: (summary.observationCount || 0) - (summary.corePriorityReviewCount || 0) },
+    { id: "expansion", label: "扩展", count: summary.expansionCount },
+    { id: "all", label: "全部", count: summary.poolCount ?? summary.selectedCount },
+  ];
+  const activeFilter = filterOptions.some((option) => option.id === filters.poolTier) ? filters.poolTier : "priority";
+  const isVisible = (creator) => {
+    if (activeFilter === "all") return true;
+    if (activeFilter === "priority") return creator.reviewPriority === "CORE_PRIORITY_REVIEW";
+    if (activeFilter === "observation") return creator.tier === "OBSERVATION" && creator.reviewPriority !== "CORE_PRIORITY_REVIEW";
+    return creator.tier === "EXPANSION_CANDIDATE";
+  };
   const heading = renderPageHeading({
-    eyebrow: `CREATOR TRACKING POOL / ${whitelist.date} / THREE TIERS`,
-    title: "抖音电商达人滚动追踪池",
-    subtitle: "核心追踪、观察名单与扩展候选分层管理；人数不是质量目标，缺少关键证据时不进入核心",
+    eyebrow: `CREATOR ROSTER / ${whitelist.date} / ROLLING POOL`,
+    title: "达人名单 / 滚动追踪池",
+    subtitle: "优先核验队列在前，完整 50 人按观察与扩展分层浏览",
     views: creatorViews,
     activeView: view,
   });
@@ -1338,7 +1352,7 @@ function renderOperationalWhitelistPage({ data, view }) {
       coreGate.unknownCount ? `${formatMetric(coreGate.unknownCount)} 项待补` : null,
     ].filter(Boolean).join(" · ");
     const gateReasons = [...asArray(coreGate.failed), ...asArray(coreGate.missing)].join("；");
-    return `<div class="operational-whitelist-row" data-tier="${escapeHtml(creator.tier)}" data-review-priority="${escapeHtml(creator.reviewPriority)}">
+    return `<div class="operational-whitelist-row" data-tier="${escapeHtml(creator.tier)}" data-review-priority="${escapeHtml(creator.reviewPriority)}"${isVisible(creator) ? "" : " hidden"}>
       <div class="operational-rank" data-label="序号"><strong>${String(creator.poolPosition || creator.rank).padStart(2, "0")}</strong></div>
       <div class="operational-creator" data-label="达人"><a href="${escapeHtml(safeUrl(creator.profileUrl))}" target="_blank" rel="noopener noreferrer"><strong>${escapeHtml(creator.nickname)}</strong>${icon("external-link")}</a><small class="mono">${escapeHtml(creator.candidateId)}</small></div>
       <div data-label="层级">${statusChip(tier.label, tier.className)}<small>${statusChip(priority.label, priority.className)}</small></div>
@@ -1349,23 +1363,30 @@ function renderOperationalWhitelistPage({ data, view }) {
     </div>`;
   };
   const tierGroups = [
-    { key: "CORE_TRACKING", label: "核心追踪", description: "七项门槛全部通过后进入，用于日常内容监测；不代表商业合作背书。" },
-    { key: "OBSERVATION", label: "观察名单", description: "高证据账号优先补门，中证据账号执行 T+24 增速观察与 T+72 稳定比较。" },
+    {
+      key: "OBSERVATION",
+      label: activeFilter === "priority" ? "优先核验工作队列" : activeFilter === "observation" ? "常规观察" : "观察名单",
+      description: activeFilter === "priority"
+        ? "6 位均属于观察层的核心优先核验子集，按证据分排序；不是核心追踪。"
+        : "高证据账号优先补门，中证据账号执行 T+24 增速观察与 T+72 稳定比较。",
+    },
     { key: "EXPANSION_CANDIDATE", label: "扩展候选", description: "仅作赛道覆盖与历史轻筛，不进入高成本持续跟踪。" },
   ];
   const tierRegisters = tierGroups.map((group) => {
     const rows = creators.filter((creator) => creator.tier === group.key);
-    return `<section class="operational-whitelist-register operational-tier-register tier-${group.key.toLowerCase()}" data-tier-group="${group.key}">
-      <div class="section-title"><div><h2>${group.label}</h2><p>${group.description}</p></div><span>${rows.length} 位</span></div>
-      ${rows.length ? `<div class="operational-whitelist-head"><span>序号</span><span>达人</span><span>层级 / 动作</span><span>综合分</span><span>体量 / 赛道</span><span>现有证据</span><span>核心门</span></div>${rows.map(renderRow).join("")}` : `<div class="operational-tier-empty">当前没有达人通过全部七项核心门；缺失证据不估填，也不为满足人数配额降门槛。</div>`}
+    const visibleRows = rows.filter(isVisible);
+    return `<section class="operational-whitelist-register operational-tier-register tier-${group.key.toLowerCase()}" data-tier-group="${group.key}"${visibleRows.length ? "" : " hidden"}>
+      <div class="section-title"><div><h2>${group.label}</h2><p>${group.description}</p></div><span>${visibleRows.length} 位</span></div>
+      <div class="operational-whitelist-head"><span>序号</span><span>达人</span><span>层级 / 动作</span><span>证据分</span><span>粉丝 / 赛道</span><span>现有证据</span><span>核心门 / 缺口</span></div>${rows.map(renderRow).join("")}
     </section>`;
   }).join("");
   return `${heading}<section class="operational-whitelist-console">
-    <section class="operational-whitelist-lead">
-      <div><span class="model-code">ROLLING POOL / EVIDENCE GATED / NO FIXED QUOTA</span><h2>三层滚动名单</h2><p>现有 50 人作为首批迁移池。核心追踪不设人数目标，观察层只跟踪约 20–30 人，扩展候选保持低成本轻筛；综合分只决定核验顺序，不决定核心资格。</p></div>
-      <div class="operational-whitelist-kpis"><span><strong>${formatMetric(summary.poolCount ?? summary.selectedCount)}</strong><small>首批池</small></span><span><strong>${formatMetric(summary.coreTrackingCount)}</strong><small>核心追踪</small></span><span><strong>${formatMetric(summary.corePriorityReviewCount)}</strong><small>核心优先核验</small></span><span><strong>${formatMetric(summary.observationCount)}</strong><small>观察</small></span><span><strong>${formatMetric(summary.expansionCount)}</strong><small>扩展</small></span></div>
-      <div class="decision-boundary">${icon("shield-check")}<span><strong>使用边界：</strong>核心追踪仅表示适合纳入日常内容监测，不等于正式白名单或商业合作背书。缺失字段保持 null，单条爆款不能替代多条内容的稳定证据。</span></div>
+    <section class="creator-pool-summary" aria-label="滚动追踪池摘要">
+      <div class="creator-pool-summary-copy"><span class="model-code">EVIDENCE GATED / NO FIXED QUOTA</span><strong>名单快照 ${escapeHtml(whitelist.date)}</strong><small>综合分仅决定核验顺序，不决定核心资格</small></div>
+      <div class="operational-whitelist-kpis"><span><strong>${formatMetric(summary.poolCount ?? summary.selectedCount)}</strong><small>追踪池</small></span><span><strong>${formatMetric(summary.corePriorityReviewCount)}</strong><small>优先核验</small></span><span><strong>${formatMetric((summary.observationCount || 0) - (summary.corePriorityReviewCount || 0))}</strong><small>常规观察</small></span><span><strong>${formatMetric(summary.expansionCount)}</strong><small>扩展</small></span></div>
     </section>
+    <div class="creator-core-status">${icon("shield-check")}<span><strong>${formatMetric(summary.coreTrackingCount)} 位核心追踪。</strong> 当前无人通过全部七项门槛；优先核验仍属于观察层。核心追踪只表示适合日常内容监测，不等于正式白名单或商业合作背书。</span></div>
+    <div class="creator-pool-toolbar"><div><strong>名单分层</strong><span>当前显示 ${creators.filter(isVisible).length} / ${creators.length} 位</span></div><div class="creator-pool-filters" role="group" aria-label="名单分层筛选">${filterOptions.map((option) => `<button type="button" data-pool-filter="${option.id}" class="${option.id === activeFilter ? "is-active" : ""}" aria-pressed="${option.id === activeFilter}"><span>${option.label}</span><strong>${formatMetric(option.count)}</strong></button>`).join("")}</div></div>
     ${tierRegisters}
     <details class="resonance-methodology operational-methodology"><summary><span>查看准入与追踪规则</span><small>七项核心门 · 两阶段验证</small></summary><div class="resonance-methodology-body"><section class="resonance-gates"><div class="section-title"><h2>核心追踪七项门</h2><span>任一失败或未知均不进入核心</span></div><div class="resonance-gate-rail is-policy"><div class="resonance-gate"><span class="gate-index">01</span><div><strong>身份 + 样本</strong><p>当前个人身份与主页已核验，最近不少于 15 条有效内容。</p></div></div><div class="resonance-gate"><span class="gate-index">02</span><div><strong>垂直 + 原创实用</strong><p>垂直相关率不低于 70%，原创/实用内容不低于 50%。</p></div></div><div class="resonance-gate"><span class="gate-index">03</span><div><strong>活跃 + 同龄表现</strong><p>近 30 天不少于 4 条相关发布，同赛道同量级同龄比较达到 P60。</p></div></div><div class="resonance-gate"><span class="gate-index">04</span><div><strong>风险否决</strong><p>身份、商业导流或其他明确风险出现时立即移出核心。</p></div></div></div></section><section class="resonance-gates"><div class="section-title"><h2>两阶段验证</h2><span>控制采集成本</span></div><div class="resonance-gate-rail is-policy"><div class="resonance-gate"><span class="gate-index">A</span><div><strong>全池轻筛</strong><p>候选池目标容量 100–150 人，不要求凑满，只做身份、内容和风险历史筛选。</p></div></div><div class="resonance-gate"><span class="gate-index">B</span><div><strong>重点跟踪</strong><p>只对筛出的约 20–30 人跟踪后续内容。</p></div></div><div class="resonance-gate"><span class="gate-index">24</span><div><strong>T+24</strong><p>观察增速；指标定义、窗口和单位必须一致。</p></div></div><div class="resonance-gate"><span class="gate-index">72</span><div><strong>T+72</strong><p>作为稳定比较主口径；T0 仅在接近发布时间取得时使用。</p></div></div></div></section></div></details>
   </section>`;
@@ -1452,7 +1473,7 @@ function renderCreatorDailyAudit({ data, index, view }) {
 }
 
 export function renderCreatorPage({ data, index, view, filters }) {
-  if (data.dataMode === "DAILY_AUDIT_ONLY" && data.operationalWhitelist && view === "resonance") return renderOperationalWhitelistPage({ data, view });
+  if (data.dataMode === "DAILY_AUDIT_ONLY" && data.operationalWhitelist && view === "resonance") return renderOperationalWhitelistPage({ data, view, filters });
   if (data.dataMode === "DAILY_AUDIT_ONLY") return renderCreatorDailyAudit({ data, index, view });
   const decision = normalizeDecision(data);
   const decisionMap = decisionByCreator(decision);
