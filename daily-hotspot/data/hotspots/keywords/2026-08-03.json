@@ -1,0 +1,666 @@
+{
+  "schemaVersion": 1,
+  "module": "hotspot-keywords",
+  "date": "2026-08-03",
+  "revision": 3,
+  "itemCount": 21,
+  "items": [
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260803-001",
+      "hotspot_name": "抖音新增类目错放、异常发品与消极服务三项商家治理细则",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:merchant-governance-20260731",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:douyin-governance:category-mismatch",
+      "keyword": "抖音类目错放怎么处罚",
+      "intent": "规则问题",
+      "applicable_modes": [
+        "search"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-09-30",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:douyin-governance:rule-release-count"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260803-001",
+      "hotspot_name": "抖音新增类目错放、异常发品与消极服务三项商家治理细则",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:merchant-governance-20260731",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:douyin-governance:abnormal-listing",
+      "keyword": "抖音异常发品包括哪些行为",
+      "intent": "规则问题",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-09-30",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:douyin-governance:rule-release-count"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260803-001",
+      "hotspot_name": "抖音新增类目错放、异常发品与消极服务三项商家治理细则",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:merchant-governance-20260731",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:douyin-governance:negative-service",
+      "keyword": "抖音消极服务怎么处罚",
+      "intent": "规则问题",
+      "applicable_modes": [
+        "search"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-09-30",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:douyin-governance:rule-release-count"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260803-001",
+      "hotspot_name": "抖音新增类目错放、异常发品与消极服务三项商家治理细则",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:merchant-governance-20260731",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:douyin-governance:appeal",
+      "keyword": "抖店违规如何申诉",
+      "intent": "经营问题",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-09-30",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:douyin-governance:rule-release-count"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260731-002",
+      "hotspot_name": "Kimi K3继续位列HF趋势第1，喜欢数升至9.03k",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:moonshotai:kimi-k3",
+      "subject_kind": "technology",
+      "industry": "人工智能/电商运营工具",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:kimi-k3:name",
+      "keyword": "Kimi K3",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-08-24",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:kimi-k3:hf-trending-20260803"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260731-002",
+      "hotspot_name": "Kimi K3继续位列HF趋势第1，喜欢数升至9.03k",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:moonshotai:kimi-k3",
+      "subject_kind": "technology",
+      "industry": "人工智能/电商运营工具",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:kimi-k3:downloads",
+      "keyword": "Kimi K3下载量",
+      "intent": "数据词",
+      "applicable_modes": [
+        "search"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-08-24",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "下载量不等于独立用户或单日新增"
+      ],
+      "evidence_refs": [
+        "metric:kimi-k3:hf-trending-20260803"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260731-002",
+      "hotspot_name": "Kimi K3继续位列HF趋势第1，喜欢数升至9.03k",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:moonshotai:kimi-k3",
+      "subject_kind": "technology",
+      "industry": "人工智能/电商运营工具",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:kimi-k3:ecommerce",
+      "keyword": "Kimi K3电商运营",
+      "intent": "应用问题",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-08-24",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:kimi-k3:hf-trending-20260803"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260731-002",
+      "hotspot_name": "Kimi K3继续位列HF趋势第1，喜欢数升至9.03k",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:moonshotai:kimi-k3",
+      "subject_kind": "technology",
+      "industry": "人工智能/电商运营工具",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:kimi-k3:api",
+      "keyword": "Kimi K3 API",
+      "intent": "产品能力",
+      "applicable_modes": [
+        "search"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-08-24",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:kimi-k3:hf-trending-20260803"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260731-003",
+      "hotspot_name": "GPT-5.6降价进入首个工作日验证窗口",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:openai:gpt-5.6",
+      "subject_kind": "technology",
+      "industry": "人工智能/模型服务",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:gpt-5.6:price-cut",
+      "keyword": "GPT-5.6降价",
+      "intent": "事件词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-09-15",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:gpt-5.6:official-price-change"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260731-003",
+      "hotspot_name": "GPT-5.6降价进入首个工作日验证窗口",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:openai:gpt-5.6",
+      "subject_kind": "technology",
+      "industry": "人工智能/模型服务",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:gpt-5.6:api-price",
+      "keyword": "GPT-5.6 API价格",
+      "intent": "价格词",
+      "applicable_modes": [
+        "search"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-09-15",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:gpt-5.6:official-price-change"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260731-003",
+      "hotspot_name": "GPT-5.6降价进入首个工作日验证窗口",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:openai:gpt-5.6",
+      "subject_kind": "technology",
+      "industry": "人工智能/模型服务",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:gpt-5.6:model-choice",
+      "keyword": "Luna Terra Sol怎么选",
+      "intent": "对比问题",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-09-15",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:gpt-5.6:official-price-change"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260731-003",
+      "hotspot_name": "GPT-5.6降价进入首个工作日验证窗口",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:openai:gpt-5.6",
+      "subject_kind": "technology",
+      "industry": "人工智能/模型服务",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:gpt-5.6:ecommerce-cost",
+      "keyword": "电商AI模型成本",
+      "intent": "业务问题",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-09-15",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:gpt-5.6:official-price-change"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260803-002",
+      "hotspot_name": "百度Unlimited-OCR升至HF趋势前列，显示2.6M下载与3.59k喜欢",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:baidu:unlimited-ocr",
+      "subject_kind": "technology",
+      "industry": "人工智能/文档识别",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:unlimited-ocr:name",
+      "keyword": "Unlimited-OCR",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-08-17",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:unlimited-ocr:hf-snapshot-20260803"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260803-002",
+      "hotspot_name": "百度Unlimited-OCR升至HF趋势前列，显示2.6M下载与3.59k喜欢",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:baidu:unlimited-ocr",
+      "subject_kind": "technology",
+      "industry": "人工智能/文档识别",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:unlimited-ocr:downloads",
+      "keyword": "Unlimited-OCR下载量",
+      "intent": "数据词",
+      "applicable_modes": [
+        "search"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-08-17",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台下载量不等于独立用户或市场份额"
+      ],
+      "evidence_refs": [
+        "metric:unlimited-ocr:hf-snapshot-20260803"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260803-002",
+      "hotspot_name": "百度Unlimited-OCR升至HF趋势前列，显示2.6M下载与3.59k喜欢",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:baidu:unlimited-ocr",
+      "subject_kind": "technology",
+      "industry": "人工智能/文档识别",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:unlimited-ocr:product-image",
+      "keyword": "Unlimited-OCR商品图识别",
+      "intent": "应用问题",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-08-17",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:unlimited-ocr:hf-snapshot-20260803"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260803-002",
+      "hotspot_name": "百度Unlimited-OCR升至HF趋势前列，显示2.6M下载与3.59k喜欢",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:baidu:unlimited-ocr",
+      "subject_kind": "technology",
+      "industry": "人工智能/文档识别",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:unlimited-ocr:ecommerce",
+      "keyword": "OCR模型电商数据处理",
+      "intent": "业务问题",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-08-17",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:unlimited-ocr:hf-snapshot-20260803"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260803-003",
+      "hotspot_name": "潜力话题：健身器械类目未普涨，但两款爬楼机商品相对走强",
+      "hotspot_category": "类目与消费",
+      "subject_id": "category:douyin:climbing-machine",
+      "subject_kind": "category",
+      "industry": "运动户外/健身器械",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:climbing-machine:name",
+      "keyword": "爬楼机",
+      "intent": "品类词",
+      "applicable_modes": [
+        "search",
+        "interest",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-08-24",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:climbing-machine:head-gmv-band"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260803-003",
+      "hotspot_name": "潜力话题：健身器械类目未普涨，但两款爬楼机商品相对走强",
+      "hotspot_category": "类目与消费",
+      "subject_id": "category:douyin:climbing-machine",
+      "subject_kind": "category",
+      "industry": "运动户外/健身器械",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:climbing-machine:sales",
+      "keyword": "爬楼机销量",
+      "intent": "数据词",
+      "applicable_modes": [
+        "search",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-08-24",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台提供指数与区间，不得写成精确销量"
+      ],
+      "evidence_refs": [
+        "metric:climbing-machine:comparison-growth"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260803-003",
+      "hotspot_name": "潜力话题：健身器械类目未普涨，但两款爬楼机商品相对走强",
+      "hotspot_category": "类目与消费",
+      "subject_id": "category:douyin:climbing-machine",
+      "subject_kind": "category",
+      "industry": "运动户外/健身器械",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:climbing-machine:creator-data",
+      "keyword": "爬楼机带货数据",
+      "intent": "数据词",
+      "applicable_modes": [
+        "search",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-08-24",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "当前没有具体达人或账号身份"
+      ],
+      "evidence_refs": [
+        "metric:climbing-machine:head-gmv-band"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260803-003",
+      "hotspot_name": "潜力话题：健身器械类目未普涨，但两款爬楼机商品相对走强",
+      "hotspot_category": "类目与消费",
+      "subject_id": "category:douyin:climbing-machine",
+      "subject_kind": "category",
+      "industry": "运动户外/健身器械",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:climbing-machine:why-hot",
+      "keyword": "爬楼机最近为什么火",
+      "intent": "问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-08-24",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "类目整体未普涨，只能解释商品分化"
+      ],
+      "evidence_refs": [
+        "metric:climbing-machine:head-gmv-band",
+        "metric:climbing-machine:comparison-growth"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "revision": 3,
+      "hotspot_id": "HT-20260803-003",
+      "hotspot_name": "潜力话题：健身器械类目未普涨，但两款爬楼机商品相对走强",
+      "hotspot_category": "类目与消费",
+      "subject_id": "category:douyin:climbing-machine",
+      "subject_kind": "category",
+      "industry": "运动户外/健身器械",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:climbing-machine:category-data",
+      "keyword": "健身器械类目数据",
+      "intent": "类目数据词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-03",
+      "valid_until": "2026-08-24",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:climbing-machine:comparison-growth"
+      ]
+    }
+  ]
+}

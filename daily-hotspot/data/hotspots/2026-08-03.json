@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "module": "hotspots",
   "date": "2026-08-03",
-  "observedAt": "2026-08-03T10:00:17+08:00",
-  "revision": 2,
-  "updatedAt": "2026-08-03T02:00:17.922Z",
+  "observedAt": "2026-08-03T11:35:00+08:00",
+  "revision": 3,
+  "updatedAt": "2026-08-03T09:54:05.764Z",
   "sourceType": "structured-data",
   "sourceArtifact": "incoming/hotspots/2026-08-03.json",
   "sourceWorkbook": null,
@@ -51,12 +51,25 @@
       "observe": 0,
       "do_not_publish": 0
     },
+    "breakoutCounts": {
+      "confirmed_breakout": 1,
+      "fast_rising": 0,
+      "observation_only": 4,
+      "rejected": 0
+    },
+    "adModeEligibleCounts": {
+      "search": 0,
+      "interest": 0,
+      "commerce": 0
+    },
+    "adOpportunityCount": 0,
+    "adOpportunityQueue": [],
     "priorityCount": 4,
     "lowCostCount": 0,
     "observeCount": 1,
     "evidenceE3Count": 5,
     "publishNowCount": 5,
-    "webSummary": "今日正式热点5条：经营与规则1条、类目与消费1条、科技与工具3条。七类均参与内部观察筛选；日常热榜、达人榜、立秋和仅媒体线索未达到正式准入，不进入公开网页。AIDSO页面卡顿，OpenAI与GitHub连接受限，快照据实标记incomplete。",
+    "webSummary": "5条正式热点已完成稳定对象、爆款状态、三类广告机会和关键词假设包升级；爬楼机为已确认爆款品类，但当前没有任何热点通过广告落地页与监测双门槛，因此可投放队列为0。观察池继续内部滚动，不进入公开正式数量。",
     "topContentActions": [
       {
         "id": "HT-20260731-002",
@@ -211,6 +224,159 @@
       "explicitly_not_doing": "不把动态表格未返回的扣分档位补写成确定规则，不做大众泛流量投放，不将三项规则扩写成平台全面收紧。",
       "official_evidence": [],
       "circle_evidence": [],
+      "subject": {
+        "subject_id": "rule:douyin:merchant-governance-20260731",
+        "kind": "rule",
+        "canonical_name": "抖音商家治理细则（2026-07-31）",
+        "aliases": [
+          "类目错放细则",
+          "异常发品行为处置细则",
+          "商家消极服务处置细则"
+        ],
+        "industry": "抖音电商经营",
+        "identity_status": "verified",
+        "identities": [
+          {
+            "platform": "抖音电商学习中心",
+            "platform_entity_id": "article:aJXc175NM2Zm",
+            "url": "https://school.jinritemai.com/doudian/web/article/aJXc175NM2Zm",
+            "verification_status": "verified",
+            "verified_at": "2026-08-03T11:35:00+08:00"
+          },
+          {
+            "platform": "抖音电商学习中心",
+            "platform_entity_id": "article:aJDAzMzrobSy",
+            "url": "https://school.jinritemai.com/doudian/web/article/aJDAzMzrobSy",
+            "verification_status": "verified",
+            "verified_at": "2026-08-03T11:35:00+08:00"
+          },
+          {
+            "platform": "抖音电商学习中心",
+            "platform_entity_id": "article:113278",
+            "url": "https://school.jinritemai.com/doudian/web/article/113278",
+            "verification_status": "verified",
+            "verified_at": "2026-08-03T11:35:00+08:00"
+          }
+        ]
+      },
+      "subject_kind": "rule",
+      "trend_metrics": [
+        {
+          "metric_id": "metric:douyin-governance:rule-release-count",
+          "metric_name": "同日正式发布细则数",
+          "metric_value": "3",
+          "unit": "项官方细则",
+          "period": "2026-07-31",
+          "observed_at": "2026-08-03T11:35:00+08:00",
+          "source_url": "https://school.jinritemai.com/doudian/web/article/aJXc175NM2Zm",
+          "evidence_group": "rule",
+          "underlying_signal_id": "douyin-governance-rules-20260731"
+        }
+      ],
+      "expected_duration": {
+        "min_days": 30,
+        "max_days": 90,
+        "rationale": "规则持续影响商家发品、客服售后与申诉流程，直至官方正文修订。",
+        "review_at": "2026-08-10"
+      },
+      "target_audience": [
+        "抖音电商商家",
+        "店铺运营",
+        "商品发布与客服负责人"
+      ],
+      "active_search": {
+        "status": "hypothesis",
+        "evidence": [],
+        "boundary": "规则问题词来自官方正文和运营需求假设；本轮没有真实搜索曲线或搜索量。"
+      },
+      "keyword_hypotheses": [
+        {
+          "keyword_id": "kw:douyin-governance:category-mismatch",
+          "text": "抖音类目错放怎么处罚",
+          "intent": "规则问题",
+          "evidence_refs": [
+            "metric:douyin-governance:rule-release-count"
+          ],
+          "applicable_modes": [
+            "search"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-09-30",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        },
+        {
+          "keyword_id": "kw:douyin-governance:abnormal-listing",
+          "text": "抖音异常发品包括哪些行为",
+          "intent": "规则问题",
+          "evidence_refs": [
+            "metric:douyin-governance:rule-release-count"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-09-30",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        },
+        {
+          "keyword_id": "kw:douyin-governance:negative-service",
+          "text": "抖音消极服务怎么处罚",
+          "intent": "规则问题",
+          "evidence_refs": [
+            "metric:douyin-governance:rule-release-count"
+          ],
+          "applicable_modes": [
+            "search"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-09-30",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        },
+        {
+          "keyword_id": "kw:douyin-governance:appeal",
+          "text": "抖店违规如何申诉",
+          "intent": "经营问题",
+          "evidence_refs": [
+            "metric:douyin-governance:rule-release-count"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-09-30",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        }
+      ],
       "business_response_code": "A",
       "business_response_label": "业务重点响应",
       "business_response_score": 82,
@@ -516,7 +682,275 @@
       "fact_boundary": "只解释07/31官方正文；动态表格未返回的处置档位、系统识别与后台实际判罚以最新规则页和商家后台为准。",
       "pending_confirmation": [],
       "confirmed_trigger": true,
-      "publishable_channel": true
+      "publishable_channel": true,
+      "ad_opportunity_scoring_model": "ad_opportunity_v1",
+      "ad_modes": {
+        "search": {
+          "activation_mode": "search",
+          "raw_score": 55,
+          "score": 55,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "active_search_evidence",
+              "name": "主动搜索证据",
+              "score": 1,
+              "weight": 30,
+              "weighted_score": 6
+            },
+            {
+              "key": "keyword_clarity",
+              "name": "关键词明确度",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "landing_fit",
+              "name": "落地承接",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 10,
+              "weighted_score": 10
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 2,
+              "weight": 5,
+              "weighted_score": 2
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "没有真实主动搜索证据",
+            "搜索转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:douyin-governance:rule-release-count"
+          ],
+          "reasons": {
+            "summary": "问题词明确，但没有主动搜索证据和广告落地页。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": true,
+          "compliance_ready": true,
+          "prerequisites": {
+            "active_search_confirmed": false,
+            "keyword_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "interest": {
+          "activation_mode": "interest",
+          "raw_score": 79,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "content_diffusion",
+              "name": "内容扩散",
+              "score": 3,
+              "weight": 25,
+              "weighted_score": 15
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "creative_fit",
+              "name": "素材适配",
+              "score": 4,
+              "weight": 15,
+              "weighted_score": 12
+            },
+            {
+              "key": "product_fit",
+              "name": "产品承接",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": true,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "兴趣流量转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:douyin-governance:rule-release-count"
+          ],
+          "reasons": {
+            "summary": "适合文章与GEO解释，不等于可直接投广告。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": true,
+          "compliance_ready": true,
+          "prerequisites": {
+            "content_signal_confirmed": true,
+            "creative_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "commerce": {
+          "activation_mode": "commerce",
+          "raw_score": 25,
+          "score": 25,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "transaction_trend",
+              "name": "交易趋势",
+              "score": 0,
+              "weight": 25,
+              "weighted_score": 0
+            },
+            {
+              "key": "product_path",
+              "name": "商品链路",
+              "score": 0,
+              "weight": 20,
+              "weighted_score": 0
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "shop_product_fit",
+              "name": "商品或店铺承接",
+              "score": 0,
+              "weight": 20,
+              "weighted_score": 0
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "conversion_value",
+              "name": "转化价值",
+              "score": 1,
+              "weight": 5,
+              "weighted_score": 1
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "商品或店铺身份未核",
+            "没有可核交易变化信号",
+            "电商转化链路未准备"
+          ],
+          "evidence_refs": [
+            "metric:douyin-governance:rule-release-count"
+          ],
+          "reasons": {
+            "summary": "规则事件没有可核商品和店铺转化链路。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": true,
+          "compliance_ready": true,
+          "prerequisites": {
+            "verified_offer": false,
+            "transaction_signal_confirmed": false,
+            "conversion_path_ready": false
+          }
+        }
+      },
+      "ad_eligible": false,
+      "ad_eligible_modes": [],
+      "ad_best_mode": "interest",
+      "ad_global_blockers": [],
+      "breakout_scoring_model": "breakout_v1",
+      "breakout_status": "observation_only",
+      "breakout_signal_count": 1,
+      "breakout_gates_passed": false,
+      "breakout_blockers": [
+        "对象不是商品、品类、达人、店铺、账号、品牌或技术产品",
+        "多周期变化未核",
+        "独立变化信号不足2项"
+      ]
     },
     {
       "id": "HT-20260731-002",
@@ -598,6 +1032,152 @@
           "label": "Hugging Face Trending",
           "url": "https://huggingface.co/models?sort=trending",
           "fact": "08/03第1，388k下载、9.03k喜欢"
+        }
+      ],
+      "subject": {
+        "subject_id": "technology:moonshotai:kimi-k3",
+        "kind": "technology",
+        "canonical_name": "Kimi K3",
+        "aliases": [
+          "Kimi-K3"
+        ],
+        "industry": "人工智能/电商运营工具",
+        "identity_status": "verified",
+        "identities": [
+          {
+            "platform": "GitHub",
+            "platform_entity_id": "MoonshotAI/Kimi-K3",
+            "url": "https://github.com/MoonshotAI/Kimi-K3",
+            "verification_status": "verified",
+            "verified_at": "2026-08-03T11:35:00+08:00"
+          },
+          {
+            "platform": "Hugging Face",
+            "platform_entity_id": "moonshotai/Kimi-K3",
+            "url": "https://huggingface.co/moonshotai/Kimi-K3",
+            "verification_status": "verified",
+            "verified_at": "2026-08-03T11:35:00+08:00"
+          }
+        ]
+      },
+      "subject_kind": "technology",
+      "trend_metrics": [
+        {
+          "metric_id": "metric:kimi-k3:hf-trending-20260803",
+          "metric_name": "Hugging Face趋势与喜欢数快照",
+          "metric_value": "趋势第1；喜欢数由9.01k升至9.03k",
+          "unit": "平台显示值",
+          "period": "2026-07-31至2026-08-03",
+          "observed_at": "2026-08-03T11:35:00+08:00",
+          "source_url": "https://huggingface.co/models?sort=trending",
+          "evidence_group": "adoption",
+          "underlying_signal_id": "hf:kimi-k3:trending-and-likes-20260803"
+        }
+      ],
+      "expected_duration": {
+        "min_days": 7,
+        "max_days": 21,
+        "rationale": "趋势位置与采用信号可短期持续，但需随开发生态和同类模型竞争复核。",
+        "review_at": "2026-08-05"
+      },
+      "target_audience": [
+        "电商数据团队",
+        "AI产品经理",
+        "内容与运营自动化团队"
+      ],
+      "active_search": {
+        "status": "hypothesis",
+        "evidence": [],
+        "boundary": "关键词来自模型名称和电商应用问题；未取得百度指数或广告平台搜索量。"
+      },
+      "keyword_hypotheses": [
+        {
+          "keyword_id": "kw:kimi-k3:name",
+          "text": "Kimi K3",
+          "intent": "对象词",
+          "evidence_refs": [
+            "metric:kimi-k3:hf-trending-20260803"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-08-24",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        },
+        {
+          "keyword_id": "kw:kimi-k3:downloads",
+          "text": "Kimi K3下载量",
+          "intent": "数据词",
+          "evidence_refs": [
+            "metric:kimi-k3:hf-trending-20260803"
+          ],
+          "applicable_modes": [
+            "search"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-08-24",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "下载量不等于独立用户或单日新增"
+          ]
+        },
+        {
+          "keyword_id": "kw:kimi-k3:ecommerce",
+          "text": "Kimi K3电商运营",
+          "intent": "应用问题",
+          "evidence_refs": [
+            "metric:kimi-k3:hf-trending-20260803"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-08-24",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        },
+        {
+          "keyword_id": "kw:kimi-k3:api",
+          "text": "Kimi K3 API",
+          "intent": "产品能力",
+          "evidence_refs": [
+            "metric:kimi-k3:hf-trending-20260803"
+          ],
+          "applicable_modes": [
+            "search"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-08-24",
+          "validation_status": "hypothesis",
+          "risk_flags": []
         }
       ],
       "business_response_code": "A",
@@ -976,7 +1556,273 @@
         "第二个独立需求信号待确认"
       ],
       "confirmed_trigger": true,
-      "publishable_channel": true
+      "publishable_channel": true,
+      "ad_opportunity_scoring_model": "ad_opportunity_v1",
+      "ad_modes": {
+        "search": {
+          "activation_mode": "search",
+          "raw_score": 53,
+          "score": 53,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "active_search_evidence",
+              "name": "主动搜索证据",
+              "score": 1,
+              "weight": 30,
+              "weighted_score": 6
+            },
+            {
+              "key": "keyword_clarity",
+              "name": "关键词明确度",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "landing_fit",
+              "name": "落地承接",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 2,
+              "weight": 5,
+              "weighted_score": 2
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "没有真实主动搜索证据",
+            "搜索转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:kimi-k3:hf-trending-20260803"
+          ],
+          "reasons": {
+            "summary": "对象词明确，缺真实搜索证据和匹配转化页。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": true,
+          "compliance_ready": true,
+          "prerequisites": {
+            "active_search_confirmed": false,
+            "keyword_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "interest": {
+          "activation_mode": "interest",
+          "raw_score": 84,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "content_diffusion",
+              "name": "内容扩散",
+              "score": 4,
+              "weight": 25,
+              "weighted_score": 20
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "creative_fit",
+              "name": "素材适配",
+              "score": 4,
+              "weight": 15,
+              "weighted_score": 12
+            },
+            {
+              "key": "product_fit",
+              "name": "产品承接",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": true,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "兴趣流量转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:kimi-k3:hf-trending-20260803"
+          ],
+          "reasons": {
+            "summary": "采用信号适合技术内容，广告承接尚未准备。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": true,
+          "compliance_ready": true,
+          "prerequisites": {
+            "content_signal_confirmed": true,
+            "creative_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "commerce": {
+          "activation_mode": "commerce",
+          "raw_score": 39,
+          "score": 39,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "transaction_trend",
+              "name": "交易趋势",
+              "score": 1,
+              "weight": 25,
+              "weighted_score": 5
+            },
+            {
+              "key": "product_path",
+              "name": "商品链路",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "shop_product_fit",
+              "name": "商品或店铺承接",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "conversion_value",
+              "name": "转化价值",
+              "score": 2,
+              "weight": 5,
+              "weighted_score": 2
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "商品或店铺身份未核",
+            "没有可核交易变化信号",
+            "电商转化链路未准备"
+          ],
+          "evidence_refs": [
+            "metric:kimi-k3:hf-trending-20260803"
+          ],
+          "reasons": {
+            "summary": "没有商品或店铺交易链路。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": true,
+          "compliance_ready": true,
+          "prerequisites": {
+            "verified_offer": false,
+            "transaction_signal_confirmed": false,
+            "conversion_path_ready": false
+          }
+        }
+      },
+      "ad_eligible": false,
+      "ad_eligible_modes": [],
+      "ad_best_mode": "interest",
+      "ad_global_blockers": [],
+      "breakout_scoring_model": "breakout_v1",
+      "breakout_status": "observation_only",
+      "breakout_signal_count": 1,
+      "breakout_gates_passed": false,
+      "breakout_blockers": [
+        "独立变化信号不足2项"
+      ]
     },
     {
       "id": "HT-20260731-003",
@@ -1068,6 +1914,147 @@
           "label": "AITNT固定发现源",
           "url": "https://www.aitntnews.com/newDetail.html?newId=27780",
           "fact": "出现GPT-5.6效率讨论，仅作E1圈层线索"
+        }
+      ],
+      "subject": {
+        "subject_id": "technology:openai:gpt-5.6",
+        "kind": "technology",
+        "canonical_name": "GPT-5.6",
+        "aliases": [
+          "GPT 5.6",
+          "GPT-5.6 Luna",
+          "GPT-5.6 Terra",
+          "GPT-5.6 Sol"
+        ],
+        "industry": "人工智能/模型服务",
+        "identity_status": "verified",
+        "identities": [
+          {
+            "platform": "OpenAI",
+            "platform_entity_id": "news:advancing-the-price-performance-frontier-with-gpt-5-6",
+            "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/",
+            "verification_status": "verified",
+            "verified_at": "2026-08-03T11:35:00+08:00"
+          }
+        ]
+      },
+      "subject_kind": "technology",
+      "trend_metrics": [
+        {
+          "metric_id": "metric:gpt-5.6:official-price-change",
+          "metric_name": "官方价格变化",
+          "metric_value": "Luna降80%；Terra降20%；Sol新增Fast模式",
+          "unit": "官方公告口径",
+          "period": "2026-07-30",
+          "observed_at": "2026-08-03T11:35:00+08:00",
+          "source_url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/",
+          "evidence_group": "pricing",
+          "underlying_signal_id": "openai:gpt-5.6:price-change-20260730"
+        }
+      ],
+      "expected_duration": {
+        "min_days": 14,
+        "max_days": 45,
+        "rationale": "价格调整将持续影响模型选型，直至官方再次调价或业务实测结论变化。",
+        "review_at": "2026-08-10"
+      },
+      "target_audience": [
+        "使用模型API的电商团队",
+        "AI产品负责人",
+        "成本与采购负责人"
+      ],
+      "active_search": {
+        "status": "hypothesis",
+        "evidence": [],
+        "boundary": "价格和模型对比词来自官方公告及内容问题；未取得搜索趋势曲线。"
+      },
+      "keyword_hypotheses": [
+        {
+          "keyword_id": "kw:gpt-5.6:price-cut",
+          "text": "GPT-5.6降价",
+          "intent": "事件词",
+          "evidence_refs": [
+            "metric:gpt-5.6:official-price-change"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-09-15",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        },
+        {
+          "keyword_id": "kw:gpt-5.6:api-price",
+          "text": "GPT-5.6 API价格",
+          "intent": "价格词",
+          "evidence_refs": [
+            "metric:gpt-5.6:official-price-change"
+          ],
+          "applicable_modes": [
+            "search"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-09-15",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        },
+        {
+          "keyword_id": "kw:gpt-5.6:model-choice",
+          "text": "Luna Terra Sol怎么选",
+          "intent": "对比问题",
+          "evidence_refs": [
+            "metric:gpt-5.6:official-price-change"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-09-15",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        },
+        {
+          "keyword_id": "kw:gpt-5.6:ecommerce-cost",
+          "text": "电商AI模型成本",
+          "intent": "业务问题",
+          "evidence_refs": [
+            "metric:gpt-5.6:official-price-change"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-09-15",
+          "validation_status": "hypothesis",
+          "risk_flags": []
         }
       ],
       "business_response_code": "A",
@@ -1453,7 +2440,274 @@
         "第二个独立需求信号待确认"
       ],
       "confirmed_trigger": true,
-      "publishable_channel": true
+      "publishable_channel": true,
+      "ad_opportunity_scoring_model": "ad_opportunity_v1",
+      "ad_modes": {
+        "search": {
+          "activation_mode": "search",
+          "raw_score": 54,
+          "score": 54,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "active_search_evidence",
+              "name": "主动搜索证据",
+              "score": 1,
+              "weight": 30,
+              "weighted_score": 6
+            },
+            {
+              "key": "keyword_clarity",
+              "name": "关键词明确度",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "landing_fit",
+              "name": "落地承接",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "没有真实主动搜索证据",
+            "搜索转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:gpt-5.6:official-price-change"
+          ],
+          "reasons": {
+            "summary": "价格问题词清晰，缺真实搜索证据与承接页。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": true,
+          "compliance_ready": true,
+          "prerequisites": {
+            "active_search_confirmed": false,
+            "keyword_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "interest": {
+          "activation_mode": "interest",
+          "raw_score": 84,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "content_diffusion",
+              "name": "内容扩散",
+              "score": 4,
+              "weight": 25,
+              "weighted_score": 20
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "creative_fit",
+              "name": "素材适配",
+              "score": 4,
+              "weight": 15,
+              "weighted_score": 12
+            },
+            {
+              "key": "product_fit",
+              "name": "产品承接",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": true,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "兴趣流量转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:gpt-5.6:official-price-change"
+          ],
+          "reasons": {
+            "summary": "适合成本测算内容，尚未具备广告转化链路。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": true,
+          "compliance_ready": true,
+          "prerequisites": {
+            "content_signal_confirmed": true,
+            "creative_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "commerce": {
+          "activation_mode": "commerce",
+          "raw_score": 32,
+          "score": 32,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "transaction_trend",
+              "name": "交易趋势",
+              "score": 0,
+              "weight": 25,
+              "weighted_score": 0
+            },
+            {
+              "key": "product_path",
+              "name": "商品链路",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 3,
+              "weight": 20,
+              "weighted_score": 12
+            },
+            {
+              "key": "shop_product_fit",
+              "name": "商品或店铺承接",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 5,
+              "weighted_score": 4
+            },
+            {
+              "key": "conversion_value",
+              "name": "转化价值",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "商品或店铺身份未核",
+            "没有可核交易变化信号",
+            "电商转化链路未准备"
+          ],
+          "evidence_refs": [
+            "metric:gpt-5.6:official-price-change"
+          ],
+          "reasons": {
+            "summary": "不是商品或店铺交易机会。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": true,
+          "compliance_ready": true,
+          "prerequisites": {
+            "verified_offer": false,
+            "transaction_signal_confirmed": false,
+            "conversion_path_ready": false
+          }
+        }
+      },
+      "ad_eligible": false,
+      "ad_eligible_modes": [],
+      "ad_best_mode": "interest",
+      "ad_global_blockers": [],
+      "breakout_scoring_model": "breakout_v1",
+      "breakout_status": "observation_only",
+      "breakout_signal_count": 1,
+      "breakout_gates_passed": false,
+      "breakout_blockers": [
+        "多周期变化未核",
+        "独立变化信号不足2项"
+      ]
     },
     {
       "id": "HT-20260803-002",
@@ -1520,6 +2774,146 @@
           "label": "Hugging Face Trending",
           "url": "https://huggingface.co/models?sort=trending",
           "fact": "08/03显示2.6M下载、3.59k喜欢，更新于2天前"
+        }
+      ],
+      "subject": {
+        "subject_id": "technology:baidu:unlimited-ocr",
+        "kind": "technology",
+        "canonical_name": "Unlimited-OCR",
+        "aliases": [
+          "baidu/Unlimited-OCR"
+        ],
+        "industry": "人工智能/文档识别",
+        "identity_status": "verified",
+        "identities": [
+          {
+            "platform": "Hugging Face",
+            "platform_entity_id": "baidu/Unlimited-OCR",
+            "url": "https://huggingface.co/baidu/Unlimited-OCR",
+            "verification_status": "verified",
+            "verified_at": "2026-08-03T11:35:00+08:00"
+          }
+        ]
+      },
+      "subject_kind": "technology",
+      "trend_metrics": [
+        {
+          "metric_id": "metric:unlimited-ocr:hf-snapshot-20260803",
+          "metric_name": "Hugging Face趋势快照",
+          "metric_value": "趋势前列；2.6M下载；3.59k喜欢；显示2天前更新",
+          "unit": "平台显示值",
+          "period": "2026-08-03",
+          "observed_at": "2026-08-03T11:35:00+08:00",
+          "source_url": "https://huggingface.co/models?sort=trending",
+          "evidence_group": "adoption",
+          "underlying_signal_id": "hf:unlimited-ocr:trending-downloads-likes-20260803"
+        }
+      ],
+      "expected_duration": {
+        "min_days": 7,
+        "max_days": 14,
+        "rationale": "新模型趋势通常变化快，需随模型卡、许可与真实任务结果复核。",
+        "review_at": "2026-08-05"
+      },
+      "target_audience": [
+        "电商数据运营",
+        "票据与文档处理团队",
+        "AI工具选型人员"
+      ],
+      "active_search": {
+        "status": "not_observed",
+        "evidence": [],
+        "boundary": "本轮没有搜索平台数据；只保留模型对象词和任务词假设。"
+      },
+      "keyword_hypotheses": [
+        {
+          "keyword_id": "kw:unlimited-ocr:name",
+          "text": "Unlimited-OCR",
+          "intent": "对象词",
+          "evidence_refs": [
+            "metric:unlimited-ocr:hf-snapshot-20260803"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-08-17",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        },
+        {
+          "keyword_id": "kw:unlimited-ocr:downloads",
+          "text": "Unlimited-OCR下载量",
+          "intent": "数据词",
+          "evidence_refs": [
+            "metric:unlimited-ocr:hf-snapshot-20260803"
+          ],
+          "applicable_modes": [
+            "search"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-08-17",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台下载量不等于独立用户或市场份额"
+          ]
+        },
+        {
+          "keyword_id": "kw:unlimited-ocr:product-image",
+          "text": "Unlimited-OCR商品图识别",
+          "intent": "应用问题",
+          "evidence_refs": [
+            "metric:unlimited-ocr:hf-snapshot-20260803"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-08-17",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        },
+        {
+          "keyword_id": "kw:unlimited-ocr:ecommerce",
+          "text": "OCR模型电商数据处理",
+          "intent": "业务问题",
+          "evidence_refs": [
+            "metric:unlimited-ocr:hf-snapshot-20260803"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-08-17",
+          "validation_status": "hypothesis",
+          "risk_flags": []
         }
       ],
       "business_response_code": "A",
@@ -1902,7 +3296,275 @@
         "三类真实任务结果"
       ],
       "confirmed_trigger": true,
-      "publishable_channel": true
+      "publishable_channel": true,
+      "ad_opportunity_scoring_model": "ad_opportunity_v1",
+      "ad_modes": {
+        "search": {
+          "activation_mode": "search",
+          "raw_score": 40,
+          "score": 40,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "active_search_evidence",
+              "name": "主动搜索证据",
+              "score": 0,
+              "weight": 30,
+              "weighted_score": 0
+            },
+            {
+              "key": "keyword_clarity",
+              "name": "关键词明确度",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "landing_fit",
+              "name": "落地承接",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 3,
+              "weight": 10,
+              "weighted_score": 6
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 2,
+              "weight": 5,
+              "weighted_score": 2
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 4,
+              "weight": 5,
+              "weighted_score": 4
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "没有真实主动搜索证据",
+            "搜索转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:unlimited-ocr:hf-snapshot-20260803"
+          ],
+          "reasons": {
+            "summary": "没有主动搜索证据。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": true,
+          "compliance_ready": true,
+          "prerequisites": {
+            "active_search_confirmed": false,
+            "keyword_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "interest": {
+          "activation_mode": "interest",
+          "raw_score": 76,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "content_diffusion",
+              "name": "内容扩散",
+              "score": 4,
+              "weight": 25,
+              "weighted_score": 20
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "creative_fit",
+              "name": "素材适配",
+              "score": 4,
+              "weight": 15,
+              "weighted_score": 12
+            },
+            {
+              "key": "product_fit",
+              "name": "产品承接",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 3,
+              "weight": 10,
+              "weighted_score": 6
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 2,
+              "weight": 5,
+              "weighted_score": 2
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 4,
+              "weight": 5,
+              "weighted_score": 4
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": true,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "兴趣流量转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:unlimited-ocr:hf-snapshot-20260803"
+          ],
+          "reasons": {
+            "summary": "适合真实任务测试内容，转化页未准备。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": true,
+          "compliance_ready": true,
+          "prerequisites": {
+            "content_signal_confirmed": true,
+            "creative_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "commerce": {
+          "activation_mode": "commerce",
+          "raw_score": 32,
+          "score": 32,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "transaction_trend",
+              "name": "交易趋势",
+              "score": 0,
+              "weight": 25,
+              "weighted_score": 0
+            },
+            {
+              "key": "product_path",
+              "name": "商品链路",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "shop_product_fit",
+              "name": "商品或店铺承接",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 2,
+              "weight": 5,
+              "weighted_score": 2
+            },
+            {
+              "key": "conversion_value",
+              "name": "转化价值",
+              "score": 2,
+              "weight": 5,
+              "weighted_score": 2
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 4,
+              "weight": 5,
+              "weighted_score": 4
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "商品或店铺身份未核",
+            "没有可核交易变化信号",
+            "电商转化链路未准备"
+          ],
+          "evidence_refs": [
+            "metric:unlimited-ocr:hf-snapshot-20260803"
+          ],
+          "reasons": {
+            "summary": "没有商品或店铺交易信号。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": true,
+          "compliance_ready": true,
+          "prerequisites": {
+            "verified_offer": false,
+            "transaction_signal_confirmed": false,
+            "conversion_path_ready": false
+          }
+        }
+      },
+      "ad_eligible": false,
+      "ad_eligible_modes": [],
+      "ad_best_mode": "interest",
+      "ad_global_blockers": [],
+      "breakout_scoring_model": "breakout_v1",
+      "breakout_status": "observation_only",
+      "breakout_signal_count": 1,
+      "breakout_gates_passed": false,
+      "breakout_blockers": [
+        "跨日或可比基线未核",
+        "多周期变化未核",
+        "独立变化信号不足2项"
+      ]
     },
     {
       "id": "HT-20260803-003",
@@ -1961,6 +3623,196 @@
       "explicitly_not_doing": "不写‘爬楼机爆发’或‘健身器械全面上涨’，不把GMV指数写成成交额，不使用明星同款作为独立趋势证据。",
       "official_evidence": [],
       "circle_evidence": [],
+      "subject": {
+        "subject_id": "category:douyin:climbing-machine",
+        "kind": "category",
+        "canonical_name": "爬楼机",
+        "aliases": [
+          "登山机",
+          "家用爬楼机"
+        ],
+        "industry": "运动户外/健身器械",
+        "identity_status": "partial",
+        "identities": [
+          {
+            "platform": "巨量云图",
+            "platform_entity_id": "yuntu-lite:fitness-equipment:climbing-machine",
+            "url": "https://yuntu.oceanengine.com/yuntu_lite/commodity/trend/short/v2?aadvid=1794665196703756",
+            "verification_status": "partial",
+            "verified_at": "2026-08-03T11:35:00+08:00"
+          }
+        ]
+      },
+      "subject_kind": "category",
+      "trend_metrics": [
+        {
+          "metric_id": "metric:climbing-machine:head-gmv-band",
+          "metric_name": "头部爬楼机商品GMV指数档位",
+          "metric_value": "3000万+升至4000万+",
+          "unit": "平台指数档位",
+          "period": "2026-07-31至2026-08-03",
+          "observed_at": "2026-08-03T11:35:00+08:00",
+          "source_url": "https://yuntu.oceanengine.com/yuntu_lite/commodity/trend/short/v2?aadvid=1794665196703756",
+          "evidence_group": "transaction",
+          "underlying_signal_id": "yuntu:climbing-machine:head-product-gmv-band"
+        },
+        {
+          "metric_id": "metric:climbing-machine:comparison-growth",
+          "metric_name": "两款对照商品GMV/订单增长率指数",
+          "metric_value": "0.95/0.95；0.58/0.57",
+          "unit": "平台增长率指数",
+          "period": "最近30天（2026-08-03观察）",
+          "observed_at": "2026-08-03T11:35:00+08:00",
+          "source_url": "https://yuntu.oceanengine.com/yuntu_lite/commodity/trend/short/v2?aadvid=1794665196703756",
+          "evidence_group": "transaction",
+          "underlying_signal_id": "yuntu:climbing-machine:comparison-product-growth"
+        }
+      ],
+      "expected_duration": {
+        "min_days": 7,
+        "max_days": 21,
+        "rationale": "商品相对走强可能延续一至三个复核周期，但类目整体未普涨。",
+        "review_at": "2026-08-05"
+      },
+      "target_audience": [
+        "运动户外商家",
+        "健身器械品牌",
+        "选品与投放团队"
+      ],
+      "active_search": {
+        "status": "hypothesis",
+        "evidence": [
+          {
+            "evidence_id": "search:baidu:climbing-machine-visible-20260803",
+            "platform": "百度指数",
+            "metric": "关键词可见",
+            "value": "爬楼机可见；未取得趋势曲线",
+            "observed_at": "2026-08-03T11:35:00+08:00",
+            "source_url": "https://index.baidu.com/v2/index.html#/"
+          }
+        ],
+        "boundary": "百度指数只确认关键词可见，未取得曲线、数值或涨幅，不能写成搜索上涨。"
+      },
+      "keyword_hypotheses": [
+        {
+          "keyword_id": "kw:climbing-machine:name",
+          "text": "爬楼机",
+          "intent": "品类词",
+          "evidence_refs": [
+            "metric:climbing-machine:head-gmv-band"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-08-24",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        },
+        {
+          "keyword_id": "kw:climbing-machine:sales",
+          "text": "爬楼机销量",
+          "intent": "数据词",
+          "evidence_refs": [
+            "metric:climbing-machine:comparison-growth"
+          ],
+          "applicable_modes": [
+            "search",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-08-24",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台提供指数与区间，不得写成精确销量"
+          ]
+        },
+        {
+          "keyword_id": "kw:climbing-machine:creator-data",
+          "text": "爬楼机带货数据",
+          "intent": "数据词",
+          "evidence_refs": [
+            "metric:climbing-machine:head-gmv-band"
+          ],
+          "applicable_modes": [
+            "search",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-08-24",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "当前没有具体达人或账号身份"
+          ]
+        },
+        {
+          "keyword_id": "kw:climbing-machine:why-hot",
+          "text": "爬楼机最近为什么火",
+          "intent": "问题词",
+          "evidence_refs": [
+            "metric:climbing-machine:head-gmv-band",
+            "metric:climbing-machine:comparison-growth"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-08-24",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "类目整体未普涨，只能解释商品分化"
+          ]
+        },
+        {
+          "keyword_id": "kw:climbing-machine:category-data",
+          "text": "健身器械类目数据",
+          "intent": "类目数据词",
+          "evidence_refs": [
+            "metric:climbing-machine:comparison-growth"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段按真实搜索词报告增加精确匹配与否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-03",
+          "valid_until": "2026-08-24",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        }
+      ],
       "business_response_code": "C",
       "business_response_label": "继续观察",
       "business_response_score": 68,
@@ -2262,7 +4114,273 @@
         "内容供给缺口待确认"
       ],
       "confirmed_trigger": true,
-      "publishable_channel": true
+      "publishable_channel": true,
+      "ad_opportunity_scoring_model": "ad_opportunity_v1",
+      "ad_modes": {
+        "search": {
+          "activation_mode": "search",
+          "raw_score": 59,
+          "score": 59,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "active_search_evidence",
+              "name": "主动搜索证据",
+              "score": 2,
+              "weight": 30,
+              "weighted_score": 12
+            },
+            {
+              "key": "keyword_clarity",
+              "name": "关键词明确度",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "landing_fit",
+              "name": "落地承接",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 10,
+              "weighted_score": 10
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 3,
+              "weight": 10,
+              "weighted_score": 6
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 4,
+              "weight": 5,
+              "weighted_score": 4
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "没有真实主动搜索证据",
+            "搜索转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:climbing-machine:head-gmv-band",
+            "search:baidu:climbing-machine-visible-20260803"
+          ],
+          "reasons": {
+            "summary": "商品词明确，但百度仅关键词可见，不能视为搜索增长。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "active_search_confirmed": false,
+            "keyword_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "interest": {
+          "activation_mode": "interest",
+          "raw_score": 88,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "content_diffusion",
+              "name": "内容扩散",
+              "score": 4,
+              "weight": 25,
+              "weighted_score": 20
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "creative_fit",
+              "name": "素材适配",
+              "score": 5,
+              "weight": 15,
+              "weighted_score": 15
+            },
+            {
+              "key": "product_fit",
+              "name": "产品承接",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 3,
+              "weight": 10,
+              "weighted_score": 6
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 4,
+              "weight": 5,
+              "weighted_score": 4
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": true,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "兴趣流量转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:climbing-machine:head-gmv-band",
+            "metric:climbing-machine:comparison-growth"
+          ],
+          "reasons": {
+            "summary": "商品分化适合内容吸引测试，缺自有广告落地与监测。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "content_signal_confirmed": true,
+            "creative_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "commerce": {
+          "activation_mode": "commerce",
+          "raw_score": 63,
+          "score": 63,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "transaction_trend",
+              "name": "交易趋势",
+              "score": 4,
+              "weight": 25,
+              "weighted_score": 20
+            },
+            {
+              "key": "product_path",
+              "name": "商品链路",
+              "score": 2,
+              "weight": 20,
+              "weighted_score": 8
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "shop_product_fit",
+              "name": "商品或店铺承接",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "conversion_value",
+              "name": "转化价值",
+              "score": 4,
+              "weight": 5,
+              "weighted_score": 4
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 4,
+              "weight": 5,
+              "weighted_score": 4
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "商品或店铺身份未核",
+            "电商转化链路未准备"
+          ],
+          "evidence_refs": [
+            "metric:climbing-machine:head-gmv-band",
+            "metric:climbing-machine:comparison-growth"
+          ],
+          "reasons": {
+            "summary": "交易指数成立，但具体商品身份和自有商品承接链路未核。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "verified_offer": false,
+            "transaction_signal_confirmed": true,
+            "conversion_path_ready": false
+          }
+        }
+      },
+      "ad_eligible": false,
+      "ad_eligible_modes": [],
+      "ad_best_mode": "interest",
+      "ad_global_blockers": [],
+      "breakout_scoring_model": "breakout_v1",
+      "breakout_status": "confirmed_breakout",
+      "breakout_signal_count": 2,
+      "breakout_gates_passed": true,
+      "breakout_blockers": []
     }
   ],
   "actions": [
@@ -2707,6 +4825,53 @@
       "loginAction": null
     }
   ],
-  "boundaryText": "网页只展示candidates中的正式热点；observation_pool仅用于内部筛选。平台GMV、销量、观看人次、热点指数、下载、喜欢、stars等均按平台口径或区间记录，不转换为精确人数、实际成交额或市场份额。媒体只作线索，找不到官方依据时降级。",
-  "sourceBrief": "今日正式热点5条：经营与规则1条、类目与消费1条、科技与工具3条。七类均参与内部观察筛选；日常热榜、达人榜、立秋和仅媒体线索未达到正式准入，不进入公开网页。AIDSO页面卡顿，OpenAI与GitHub连接受限，快照据实标记incomplete。"
+  "boundaryText": "网页只展示candidates中的正式热点；observation_pool仅用于内部筛选。平台GMV、销量、观看人次、热点指数、下载、喜欢、stars等均按平台口径或区间记录，不转换为精确人数、实际成交额或市场份额。媒体只作线索，找不到官方依据时降级。 广告关键词均为待验证假设；无真实搜索证据时不展示搜索量或宣称搜索上涨。只有至少一种广告模式通过落地页、监测、证据与转化链路门槛时才进入广告机会队列。",
+  "sourceBrief": "5条正式热点已完成稳定对象、爆款状态、三类广告机会和关键词假设包升级；爬楼机为已确认爆款品类，但当前没有任何热点通过广告落地页与监测双门槛，因此可投放队列为0。观察池继续内部滚动，不进入公开正式数量。",
+  "adOpportunitySchemaVersion": 1,
+  "adExperimentContract": {
+    "contract_version": "ad_experiment_v1",
+    "platform_dimensions": [
+      "experiment_id",
+      "hotspot_id",
+      "keyword_id",
+      "platform",
+      "account_id",
+      "campaign_id",
+      "ad_group_id",
+      "creative_id",
+      "landing_page_version"
+    ],
+    "site_event_dimensions": [
+      "event_id",
+      "event_name",
+      "anonymous_user_id",
+      "session_id",
+      "occurred_at",
+      "touchpoint_level"
+    ],
+    "metrics": [
+      "spend",
+      "impressions",
+      "clicks",
+      "unique_visits",
+      "registrations",
+      "conversions",
+      "conversion_value"
+    ],
+    "currency": "CNY",
+    "conversion_definition": "注册成功为基础转化；业务有效线索和付费价值另行分层记录。",
+    "attribution_windows": {
+      "click_days": 7,
+      "view_days": 1
+    },
+    "attribution_model": "last_touch_click_primary; view_through_reported_separately",
+    "event_deduplication_key": "platform+experiment_id+event_name+event_id",
+    "derived_metrics": [
+      "CTR=clicks/impressions",
+      "CVR=conversions/unique_visits",
+      "CPA=spend/conversions",
+      "ROAS=conversion_value/spend（仅价值可靠时）"
+    ],
+    "phase_one_boundary": "本阶段只生成假设与数据契约，不登录广告账户、不创建计划、不消耗预算。"
+  }
 }

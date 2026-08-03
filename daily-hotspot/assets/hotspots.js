@@ -18,6 +18,7 @@ import {
 
 export const hotspotViews = [
   { id: "overview", label: "热点总览" },
+  { id: "opportunity", label: "爆款与广告机会" },
   { id: "meeting", label: "热点视图" },
   { id: "execution", label: "执行清单" },
   { id: "scan", label: "平台扫描" },
@@ -152,6 +153,51 @@ const HOTSPOT_CATEGORY_CLASSES = Object.freeze({
   "潜力搜索话题": "status-c",
 });
 const HOTSPOT_CATEGORIES = Object.freeze(Object.keys(HOTSPOT_CATEGORY_CLASSES));
+
+const BREAKOUT_STATUS = Object.freeze({
+  confirmed_breakout: ["已确认爆款", "status-s"],
+  fast_rising: ["快速上升", "status-a"],
+  observation_only: ["仅观察", "status-c"],
+  rejected: ["不成立", "status-d"],
+});
+
+const AD_MODE_META = Object.freeze({
+  search: { label: "搜索", icon: "search" },
+  interest: { label: "信息流 / 兴趣", icon: "radio" },
+  commerce: { label: "电商承接", icon: "shopping-bag" },
+});
+
+const AD_ACTION_LABELS = Object.freeze({
+  priority_test: "优先测试",
+  controlled_test: "受控测试",
+  small_test: "小额测试",
+  observe: "继续观察",
+  not_eligible: "暂不可投",
+});
+
+if (typeof document !== "undefined") {
+  document.addEventListener("click", async (event) => {
+    const button = event.target.closest("[data-copy-keywords]");
+    if (!button) return;
+    const text = button.dataset.copyKeywords || "";
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.append(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      textarea.remove();
+    }
+    const label = button.querySelector("[data-copy-label]");
+    if (!label) return;
+    label.textContent = "已复制";
+    setTimeout(() => { label.textContent = "复制"; }, 1600);
+  });
+}
 
 function gradeClass(grade) {
   return `status-${String(grade || "d").toLowerCase()}`;
@@ -475,7 +521,10 @@ function filterCandidates(candidates, filters) {
   return candidates.filter((candidate) => {
     const matchesSearch = !search || [candidate.name, candidate.signal, candidate.actionReason, candidate.recommended, candidate.evidence,
       techChange(candidate), chanmamaRelevance(candidate), nextStep(candidate), publicationStatus(candidate), hotspotCategory(candidate), factBoundary(candidate),
-      pendingConfirmation(candidate).join(" "), evidenceText(circleEvidence(candidate))]
+      pendingConfirmation(candidate).join(" "), evidenceText(circleEvidence(candidate)), candidate.subject?.canonical_name,
+      candidate.subject?.industry, candidate.subject_kind,
+      candidate.trend_metrics?.map((metric) => `${metric.metric_name} ${metric.metric_value}`).join(" "),
+      candidate.keyword_hypotheses?.map((keyword) => keyword.text).join(" ")]
       .some((value) => String(value || "").toLowerCase().includes(search));
     const matchesDomain = (filters.domain || "all") === "all" || candidateDomain(candidate) === filters.domain;
     const matchesKind = (filters.kind || "all") === "all"
@@ -560,6 +609,106 @@ function renderOverviewTable(candidates) {
     </table></div>
     <div class="mobile-list">${mobile}</div>
   </div>`;
+}
+
+function breakoutStatus(candidate) {
+  return BREAKOUT_STATUS[candidate.breakout_status] || ["待判定", "status-d"];
+}
+
+function subjectKindLabel(value) {
+  return ({ rule: "规则", technology: "技术", category: "类目", product: "商品", shop: "店铺", creator: "达人" })[value] || value || "待确认";
+}
+
+function renderActiveSearch(candidate) {
+  const search = candidate.active_search || {};
+  const confirmed = search.status === "confirmed";
+  const label = confirmed ? "主动搜索已确认" : search.status === "not_observed" ? "未观察到主动搜索" : "主动搜索假设";
+  const boundary = confirmed
+    ? search.boundary
+    : "仅保留关键词假设，未取得可验证的主动搜索趋势证据。";
+  return `<div class="opportunity-search-state ${confirmed ? "is-confirmed" : ""}">
+    <div>${icon(confirmed ? "circle-check" : "circle-alert")}<strong>${escapeHtml(label)}</strong></div>
+    <p>${escapeHtml(boundary || "当前没有可验证的主动搜索证据。")}</p>
+  </div>`;
+}
+
+function renderTrendMetrics(candidate) {
+  const metrics = candidate.trend_metrics || [];
+  if (!metrics.length) return `<p class="opportunity-muted">趋势指标待补</p>`;
+  return `<div class="opportunity-metrics">${metrics.map((metric) => `<div>
+    <span>${escapeHtml(metric.metric_name)}</span>
+    <strong>${escapeHtml(metric.metric_value)}</strong>
+    <small>${escapeHtml(metric.unit)} · ${escapeHtml(metric.period)}</small>
+    ${metric.source_url ? sourceLinksHtml([{ url: metric.source_url, domain: "原始来源", label: "查看来源" }], 1) : ""}
+  </div>`).join("")}</div>`;
+}
+
+function renderAdMode(modeId, mode) {
+  const meta = AD_MODE_META[modeId];
+  const blockers = mode?.blockers || [];
+  const evidence = mode?.evidence_refs || [];
+  return `<section class="ad-mode ${mode?.eligible ? "is-eligible" : "is-blocked"}" aria-label="${escapeHtml(meta.label)}广告模式">
+    <header><span>${icon(meta.icon)}${escapeHtml(meta.label)}</span><strong class="mono">${escapeHtml(mode?.score ?? "-")}<small>/100</small></strong></header>
+    <div class="ad-mode-action">${statusChip(AD_ACTION_LABELS[mode?.action] || mode?.action || "待判定", mode?.eligible ? "status-pass" : "status-conflict")}</div>
+    <p>${escapeHtml(mode?.reasons?.summary || "当前数据版本未提供该模式判断。")}</p>
+    <dl><dt>阻断项</dt><dd>${blockers.length ? escapeHtml(blockers.join("；")) : "无"}</dd><dt>证据</dt><dd>${evidence.length ? escapeHtml(evidence.join("；")) : "待补"}</dd></dl>
+  </section>`;
+}
+
+function keywordCopyButton(keywords, label = "复制") {
+  return `<button type="button" class="opportunity-copy" data-copy-keywords="${escapeHtml(keywords.join("\n"))}" title="复制关键词清单">${icon("copy")}<span data-copy-label>${escapeHtml(label)}</span></button>`;
+}
+
+function renderKeywordDownloads(date) {
+  const encodedDate = encodeURIComponent(date);
+  const base = `./data/hotspots/keywords/${encodedDate}`;
+  return `<div class="opportunity-downloads" aria-label="关键词文件下载">
+    <a href="${base}.json" download="hotspot-keywords-${encodedDate}.json">${icon("braces")}<span>${escapeHtml(date)} JSON</span></a>
+    <a href="${base}.csv" download="hotspot-keywords-${encodedDate}.csv">${icon("table-2")}<span>${escapeHtml(date)} CSV</span></a>
+    <a href="./data/hotspots/keywords/latest.json" download="hotspot-keywords-latest.json">${icon("download")}<span>最新 JSON</span></a>
+    <a href="./data/hotspots/keywords/latest.csv" download="hotspot-keywords-latest.csv">${icon("download")}<span>最新 CSV</span></a>
+  </div>`;
+}
+
+function renderOpportunityCandidate(candidate) {
+  const [breakoutLabel, breakoutClass] = breakoutStatus(candidate);
+  const subject = candidate.subject || {};
+  const duration = candidate.expected_duration || {};
+  const keywords = (candidate.keyword_hypotheses || []).map((item) => item.text).filter(Boolean);
+  return `<article class="opportunity-candidate" data-domain="${candidateDomain(candidate)}">
+    <header class="opportunity-candidate-head">
+      <div><div class="opportunity-status-line">${statusChip(breakoutLabel, breakoutClass)}${statusChip(hotspotCategory(candidate), mainDecisionClass(candidate))}${candidate.ad_eligible ? statusChip("可投放", "status-pass") : statusChip("未过广告门槛", "status-conflict")}</div><h3>${escapeHtml(displayName(candidate))}</h3></div>
+      <dl><div><dt>对象</dt><dd>${escapeHtml(subject.canonical_name || displayName(candidate))}</dd></div><div><dt>subject_kind</dt><dd>${escapeHtml(subjectKindLabel(candidate.subject_kind))}</dd></div><div><dt>行业</dt><dd>${escapeHtml(subject.industry || candidate.industry || "待确认")}</dd></div><div><dt>预计周期</dt><dd>${duration.min_days != null ? `${escapeHtml(duration.min_days)}-${escapeHtml(duration.max_days)} 天` : "待确认"}</dd></div></dl>
+    </header>
+    <div class="opportunity-evidence-grid">
+      <section><div class="opportunity-subhead"><strong>趋势指标原值</strong><span>${candidate.trend_metrics?.length || 0} 项</span></div>${renderTrendMetrics(candidate)}</section>
+      <section><div class="opportunity-subhead"><strong>目标人群与搜索</strong><span>${candidate.target_audience?.length || 0} 组</span></div><p class="opportunity-audience">${escapeHtml((candidate.target_audience || []).join(" · ") || "待确认")}</p>${renderActiveSearch(candidate)}</section>
+    </div>
+    <div class="ad-mode-grid">${Object.entries(AD_MODE_META).map(([modeId]) => renderAdMode(modeId, candidate.ad_modes?.[modeId])).join("")}</div>
+    <footer class="opportunity-keywords"><div><span class="field-kicker">关键词假设 · ${keywords.length}</span><p>${keywords.map((keyword) => `<code>${escapeHtml(keyword)}</code>`).join("") || "暂无关键词"}</p></div>${keywordCopyButton(keywords)}</footer>
+  </article>`;
+}
+
+function renderOpportunity(data, candidates, filters) {
+  const hasContract = data.candidates.some((candidate) => candidate.ad_modes || candidate.keyword_hypotheses);
+  if (!hasContract) return `${renderToolbar(data, filters, candidates.length)}<section class="opportunity-empty">${icon("archive")}<div><h2>该历史快照尚未使用爆款与广告机会模型</h2><p>历史正式热点保持原口径，不回填或重算广告机会。</p></div></section>`;
+  const statuses = data.summary.breakoutCounts || {};
+  const eligible = data.candidates.filter((candidate) => candidate.ad_eligible === true);
+  const allKeywords = data.candidates.flatMap((candidate) => (candidate.keyword_hypotheses || []).map((item) => item.text)).filter(Boolean);
+  const blockerCounts = new Map();
+  for (const candidate of data.candidates) {
+    for (const mode of Object.values(candidate.ad_modes || {})) {
+      for (const blocker of mode.blockers || []) blockerCounts.set(blocker, (blockerCounts.get(blocker) || 0) + 1);
+    }
+  }
+  const commonBlockers = [...blockerCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4);
+  return `<section class="opportunity-console">
+    <div class="opportunity-lead"><div><span class="field-kicker">BREAKOUT / AD GATE</span><h2>爆款与广告机会</h2><p>爆款成立不等于可以投放；搜索、信息流兴趣与电商承接分别过门，不生成混合广告总分。</p></div><div class="opportunity-kpis"><span><strong>${statuses.confirmed_breakout || 0}</strong><small>确认爆款</small></span><span><strong>${statuses.fast_rising || 0}</strong><small>快速上升</small></span><span><strong>${eligible.length}</strong><small>广告机会</small></span><span><strong>${allKeywords.length}</strong><small>关键词假设</small></span></div></div>
+    <div class="ad-queue-empty ${eligible.length ? "has-items" : ""}">${icon(eligible.length ? "badge-check" : "shield-x")}<div><strong>${eligible.length ? `${eligible.length} 条对象通过广告门槛` : "当前无可投放对象"}</strong><p>广告机会队列只接收 <code>ad_eligible=true</code>；关键词假设不会自动进入投放。</p>${!eligible.length && commonBlockers.length ? `<ul>${commonBlockers.map(([label, count]) => `<li>${escapeHtml(label)} <span>${count} 次</span></li>`).join("")}</ul>` : ""}</div></div>
+    <div class="opportunity-filebar"><div><strong>正式热点关键词包</strong><span>${allKeywords.length} 条 · UTF-8 · ${escapeHtml(data.date)}</span></div>${keywordCopyButton(allKeywords, "复制全部")}${renderKeywordDownloads(data.date)}</div>
+    ${renderToolbar(data, filters, candidates.length)}
+    <div class="opportunity-register">${candidates.length ? candidates.map(renderOpportunityCandidate).join("") : renderEmpty("当前筛选条件下没有正式热点")}</div>
+  </section>`;
 }
 
 function renderMeeting(data) {
@@ -715,7 +864,8 @@ export function renderHotspotPage({ data, index, view, filters }) {
     ${data.summary.topRollingUpdates?.length ? `<section><div class="priority-lane-title"><strong>滚动确认与更新</strong><span>试发不等于下结论，同一网址持续更新</span></div>${renderDecisionStrip(data.summary.topRollingUpdates, "id")}</section>` : ""}
   </div>`;
   let content;
-  if (view === "meeting") content = renderMeeting(data);
+  if (view === "opportunity") content = renderOpportunity(data, filtered, filters);
+  else if (view === "meeting") content = renderMeeting(data);
   else if (view === "execution") content = renderExecution(data);
   else if (view === "scan") content = renderScan(data);
   else if (view === "archive") content = renderArchive(index);

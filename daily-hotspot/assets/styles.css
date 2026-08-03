@@ -1842,6 +1842,540 @@ p {
   }
 }
 
+/* Hotspot breakout and advertising gate: flat industrial decision register. */
+.opportunity-console,
+.opportunity-register {
+  display: grid;
+  min-width: 0;
+  gap: 12px;
+}
+
+.opportunity-lead {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.85fr) minmax(560px, 1.15fr);
+  border: 1px solid var(--border-strong);
+  border-top: 4px solid var(--primary);
+  background: var(--paper);
+}
+
+.opportunity-lead > div:first-child {
+  min-width: 0;
+  padding: 17px 20px;
+}
+
+.opportunity-lead h2 {
+  margin: 4px 0 3px;
+  font-size: 22px;
+}
+
+.opportunity-lead p,
+.ad-queue-empty p,
+.opportunity-filebar span,
+.opportunity-muted {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.opportunity-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-left: 1px solid var(--border);
+}
+
+.opportunity-kpis > span {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid var(--border);
+  padding: 12px 14px;
+}
+
+.opportunity-kpis > span:first-child {
+  border-left: 0;
+}
+
+.opportunity-kpis strong {
+  font-family: var(--mono);
+  font-size: 24px;
+  font-variant-numeric: tabular-nums;
+}
+
+.opportunity-kpis small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.ad-queue-empty {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 11px;
+  border: 1px solid var(--border-strong);
+  border-left: 4px solid var(--warning);
+  background: var(--warning-soft);
+  padding: 12px 14px;
+}
+
+.ad-queue-empty.has-items {
+  border-left-color: var(--success);
+  background: var(--success-soft);
+}
+
+.ad-queue-empty > svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  color: var(--warning);
+}
+
+.ad-queue-empty ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 14px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--ink);
+  font-size: 10px;
+}
+
+.ad-queue-empty li span {
+  color: var(--muted);
+}
+
+.opportunity-filebar {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border);
+  background: var(--paper);
+  padding: 9px 10px 9px 14px;
+}
+
+.opportunity-filebar > div:first-child {
+  display: flex;
+  min-width: 180px;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.opportunity-downloads {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.opportunity-downloads a,
+.opportunity-copy {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--paper);
+  padding: 6px 9px;
+  color: var(--ink);
+  font: inherit;
+  font-size: 9px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.opportunity-downloads a:hover,
+.opportunity-copy:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.opportunity-downloads svg,
+.opportunity-copy svg {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+}
+
+.opportunity-candidate {
+  min-width: 0;
+  border: 1px solid var(--border-strong);
+  background: var(--paper);
+}
+
+.opportunity-candidate-head {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(580px, 1.1fr);
+  min-width: 0;
+}
+
+.opportunity-candidate-head > div:first-child {
+  min-width: 0;
+  border-right: 1px solid var(--border);
+  padding: 13px 15px;
+}
+
+.opportunity-candidate-head h3 {
+  margin: 7px 0 0;
+  overflow-wrap: anywhere;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.opportunity-status-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.opportunity-candidate-head dl {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+}
+
+.opportunity-candidate-head dl > div {
+  min-width: 0;
+  border-left: 1px solid var(--border);
+  padding: 11px 12px;
+}
+
+.opportunity-candidate-head dl > div:first-child {
+  border-left: 0;
+}
+
+.opportunity-candidate-head dt,
+.ad-mode dt {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.opportunity-candidate-head dd,
+.ad-mode dd {
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.opportunity-evidence-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  border-top: 1px solid var(--border);
+}
+
+.opportunity-evidence-grid > section {
+  min-width: 0;
+  padding: 11px 14px;
+}
+
+.opportunity-evidence-grid > section + section {
+  border-left: 1px solid var(--border);
+}
+
+.opportunity-subhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 10px;
+}
+
+.opportunity-subhead span {
+  color: var(--muted);
+  font-family: var(--mono);
+}
+
+.opportunity-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.opportunity-metrics > div {
+  min-width: 0;
+  border-left: 2px solid var(--primary);
+  padding-left: 9px;
+}
+
+.opportunity-metrics span,
+.opportunity-metrics strong,
+.opportunity-metrics small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.opportunity-metrics span,
+.opportunity-metrics small {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.opportunity-metrics strong {
+  margin: 3px 0;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.opportunity-audience {
+  margin: 0 0 9px;
+  overflow-wrap: anywhere;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.opportunity-search-state {
+  border-left: 3px solid var(--warning);
+  background: var(--warning-soft);
+  padding: 8px 10px;
+}
+
+.opportunity-search-state.is-confirmed {
+  border-left-color: var(--success);
+  background: var(--success-soft);
+}
+
+.opportunity-search-state > div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+}
+
+.opportunity-search-state svg {
+  width: 14px;
+  height: 14px;
+}
+
+.opportunity-search-state p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.ad-mode-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--border);
+}
+
+.ad-mode {
+  min-width: 0;
+  padding: 11px 13px 12px;
+}
+
+.ad-mode + .ad-mode {
+  border-left: 1px solid var(--border);
+}
+
+.ad-mode header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.ad-mode header > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.ad-mode header svg {
+  width: 14px;
+  height: 14px;
+  color: var(--primary);
+}
+
+.ad-mode header strong {
+  font-size: 18px;
+}
+
+.ad-mode header small {
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 500;
+}
+
+.ad-mode-action {
+  margin-top: 7px;
+}
+
+.ad-mode > p {
+  min-height: 30px;
+  margin: 7px 0;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.ad-mode dl {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 4px 7px;
+  margin: 0;
+}
+
+.ad-mode dd {
+  margin: 0;
+  font-weight: 500;
+}
+
+.opportunity-keywords {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  padding: 9px 12px;
+}
+
+.opportunity-keywords > div {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.opportunity-keywords p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 5px 0 0;
+}
+
+.opportunity-keywords code,
+.ad-queue-empty code {
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--paper);
+  padding: 2px 5px;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0;
+}
+
+.opportunity-empty {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid var(--border-strong);
+  background: var(--paper);
+  padding: 18px;
+}
+
+.opportunity-empty svg {
+  width: 18px;
+  height: 18px;
+  color: var(--muted);
+}
+
+.opportunity-empty h2 {
+  margin: 0 0 3px;
+  font-size: 15px;
+}
+
+.opportunity-empty p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+@media (max-width: 1080px) {
+  .opportunity-lead,
+  .opportunity-candidate-head,
+  .opportunity-evidence-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .opportunity-kpis,
+  .opportunity-candidate-head dl,
+  .opportunity-evidence-grid {
+    border-top: 1px solid var(--border);
+    border-left: 0;
+  }
+
+  .opportunity-candidate-head > div:first-child,
+  .opportunity-evidence-grid > section + section {
+    border-right: 0;
+    border-left: 0;
+  }
+
+  .opportunity-evidence-grid > section + section {
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 760px) {
+  .opportunity-filebar {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .opportunity-filebar > div:first-child {
+    flex-basis: 100%;
+  }
+
+  .ad-mode-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ad-mode + .ad-mode {
+    border-top: 1px solid var(--border);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .opportunity-lead > div:first-child,
+  .opportunity-candidate-head > div:first-child,
+  .opportunity-evidence-grid > section,
+  .ad-mode {
+    padding: 11px;
+  }
+
+  .opportunity-kpis,
+  .opportunity-candidate-head dl,
+  .opportunity-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .opportunity-kpis > span:nth-child(3),
+  .opportunity-kpis > span:nth-child(4),
+  .opportunity-candidate-head dl > div:nth-child(3),
+  .opportunity-candidate-head dl > div:nth-child(4) {
+    border-top: 1px solid var(--border);
+  }
+
+  .opportunity-kpis > span:nth-child(3),
+  .opportunity-candidate-head dl > div:nth-child(3) {
+    border-left: 0;
+  }
+
+  .opportunity-downloads {
+    width: 100%;
+  }
+
+  .opportunity-downloads a {
+    flex: 1 1 calc(50% - 3px);
+  }
+
+  .opportunity-keywords {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 .traffic-score-pair {
   display: grid;
   width: 172px;
