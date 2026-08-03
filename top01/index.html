@@ -1216,7 +1216,6 @@
       return `<div class="signal-cell">
         ${signalRow('竞品', row.mentioned_competitors, '无', 4)}
         ${signalRow('官方', row.mentioned_official_tools, '无', 4)}
-        ${signalRow('命中词', row.target_advantages_hit, '待补', 5)}
       </div>`;
     }
 
@@ -1333,7 +1332,6 @@
         item.content_gap_types = [...new Set([...splitTerms(item.content_gap_types || item.content_gap_type), ...splitTerms(row.content_gap_types || row.content_gap_type)])].join('、');
         item.mentioned_competitors = [...new Set([...splitTerms(item.mentioned_competitors), ...splitTerms(row.mentioned_competitors)])].join('、');
         item.mentioned_official_tools = [...new Set([...splitTerms(item.mentioned_official_tools), ...splitTerms(row.mentioned_official_tools)])].join('、');
-        item.target_advantages_hit = [...new Set([...splitTerms(item.target_advantages_hit), ...splitTerms(row.target_advantages_hit)])].join('、');
         map.set(key, item);
       });
       return [...map.values()]
@@ -1364,8 +1362,8 @@
       if (hasGap(row, '竞品压制')) focus.push(`对比 ${shortList(row.mentioned_competitors, '飞瓜/抖查查/新抖', 3)}`);
       if (hasGap(row, '未提及蝉妈妈')) focus.push(`围绕「${row.keyword || '核心场景'}」补工具推荐入口`);
       if (hasGap(row, '引用来源不足') || hasGap(row, '引用源缺失')) focus.push('补官网、运营圈、外站可引用证据');
-      const title = focus[0] || `围绕 ${shortList(row.target_advantages_hit, '数据覆盖/场景适配', 3)} 补强`;
-      const note = focus.slice(1, 3).join('；') || `命中词：${shortList(row.target_advantages_hit, '数据覆盖/场景适配', 3)}`;
+      const title = focus[0] || `围绕「${row.keyword || '核心场景'}」补强`;
+      const note = focus.slice(1, 3).join('；') || '补充可验证的品牌能力、适配性和推荐理由';
       return actionCell(title, note);
     }
 
@@ -1403,7 +1401,7 @@
           name, questions: 0, planned: 0, completed: 0, mentions: 0, firsts: 0, top3: 0,
           effectiveFirsts: 0, effectiveFirstDenominator: 0, officialFirstExcluded: 0,
           rankSum: 0, rankCount: 0, mindScoreSum: 0, mindScoreCount: 0,
-          advantages: 0, competitors: 0, officialTools: 0,
+          competitors: 0, officialTools: 0,
           sources: 0, officialSources: 0, externalSources: 0
         };
         item.questions += 1;
@@ -1423,7 +1421,6 @@
         }
         item.mindScoreSum += asNum(row.mind_influence_score_sum);
         item.mindScoreCount += asNum(row.completed_sample_count);
-        item.advantages += asNum(row.advantage_hit_count);
         item.competitors += asNum(row.competitor_mention_count);
         item.officialTools += asNum(row.official_tool_mention_count);
         item.sources += asNum(row.yunyingquan_source_count);
@@ -1457,7 +1454,7 @@
           ['关键词判定', '达标=蝉妈妈首推稳定且稳定出现；半达标=已提到蝉妈妈但未形成稳定首推；不达标=当前样本未提到蝉妈妈。页面按当前样本首推是否达到半数以上判断稳定首推。'],
           ['提及率', '已采样回答里出现“蝉妈妈”的比例，代表品牌是否被 AI 看见。'],
           ['首推率', '已采样回答里把蝉妈妈放在第一推荐的比例，代表推荐优先级。'],
-          ['有效首推率', '按回答推荐顺序移除抖音官方工具后重新排序；没有可识别非官方候选的回答不进入分母。'],
+          ['去官方后第三方首位率', '按回答推荐顺序移除抖音官方工具后重新排序；没有可识别第三方候选的回答不进入分母。'],
           ['得分', '单次样本仍按首推 5 分、第 2 名 4 分、第 3 名 3 分、提及但非前三 2 分、未提及 0 分记录；每题 6 次后统一换算为 10 分制，7.3 分视为达标。'],
           ['均排', '蝉妈妈进入推荐排名时的平均名次，数字越小越好；未进入排名的样本不参与均排计算。'],
           ['心智分', '首推 100，第二 85，第三 70，提及但非前三 50，未提及 0，用来衡量 AI 对品牌推荐强度。'],
@@ -1620,21 +1617,18 @@
 
     function renderExecutiveOverview(metrics) {
       const completeRate = percent(metrics.completed, metrics.planned);
-      const effectiveFirstRate = pctNumber(metrics.effectiveFirsts, metrics.effectiveFirstDenominator);
-      const mentionRate = percent(metrics.mentions, metrics.completed);
-      const firstRate = percent(metrics.firsts, metrics.completed);
+      const authoritative = window.GEO_DASHBOARD.authoritative_metrics;
+      const baselineMetrics = authoritative.baseline;
+      const mentionRate = `${baselineMetrics.mention.ratePct.toFixed(2)}%`;
+      const firstRate = `${baselineMetrics.ordinaryFirst.ratePct.toFixed(2)}%`;
+      const effectiveFirstRate = `${baselineMetrics.effectiveFirst.ratePct.toFixed(2)}%`;
       const top3Rate = percent(metrics.top3, metrics.completed);
-      const advantageRate = percent(metrics.advantages, metrics.completed);
-      const advantageExpression = {
-        count: 283,
-        denominator: 576,
-        rate: '49.13%',
-        detail: '283/576 条有效回答明确表达蝉妈妈优势',
-        tooltip: '仅统计回答中明确归属于蝉妈妈的正向能力、适配性、推荐理由或比较优势；仅提及品牌、列入工具名单、引用标题或负向表述不计入。'
-      };
+      const advantageExpression = baselineMetrics.advantageExpression;
+      const advantageExpressionRate = `${advantageExpression.ratePct.toFixed(2)}%`;
+      const advantageExpressionDetail = `${advantageExpression.count}/${advantageExpression.denominator} 条有效回答明确表达蝉妈妈优势`;
       const sourceTotal = metrics.sources + metrics.officialSources + metrics.externalSources;
       const confidence = confidenceState(metrics.completed, metrics.planned);
-      const brand = brandState(metrics.avgMindScore, effectiveFirstRate);
+      const brand = brandState(metrics.avgMindScore, baselineMetrics.effectiveFirst.ratePct);
       const risk = riskState(metrics.officialTools, metrics.competitors, metrics.completed);
       const summaryPrefix = confidence.label === '早期观察' ? '早期信号' : '阶段判断';
       const sourceProblem = sourceTotal === 0 ? '引用源缺失' : '引用源不足';
@@ -1661,18 +1655,17 @@
           ['关键词状态', metrics.keywordStatus?.line || `${metrics.passedKeywords} 个达标`, '半达标=已提及但首推不稳定'],
           ['周环比', '待积累']
         ], confidence.note, confidence.label === '早期观察' ? '下一步：继续采样，避免过早下稳定结论。' : '下一步：进入周环比观察，确认趋势是否稳定。'),
-        executiveCard('优势表达率', { label: '冻结口径', tone: 'info' }, advantageExpression.rate, advantageExpression.detail, [
+        executiveCard('优势表达率', { label: '冻结口径', tone: 'info' }, advantageExpressionRate, advantageExpressionDetail, [
           ['命中回答', `${advantageExpression.count} 条`],
           ['有效回答', `${advantageExpression.denominator} 条`],
-          ['规则版本', 'advantage-expression-v1']
-        ], '命中回答 / 有效回答；仅明确表达蝉妈妈优势时计入。', '冻结数据：2026-07-31 · 双轮规则复核一致。', advantageExpression.tooltip),
+          ['规则版本', advantageExpression.ruleVersion]
+        ], '命中回答 / 有效回答；仅明确归属于蝉妈妈的正向能力、适配性、推荐理由或比较优势计入。', '规则：advantage-expression-v2 · 双轮证据复核一致。', advantageExpression.definition),
         executiveCard('品牌推荐力', brand, `${metrics.avgMindScore}`, `${brand.note}`, [
-          ['提及率', mentionRate],
-          ['首推率', firstRate],
-          ['有效首推率', `${effectiveFirstRate}%（去官方后重排）`],
-          ['前 3 率 / 均排', `${top3Rate} / ${rankText(metrics.rankSum, metrics.rankCount)}`],
-          ['优势表达', `${metrics.advantages} 次，${advantageRate}`]
-        ], `蝉妈妈已被看见，但首推、稳定排序和优势表达仍需继续拉升；均排越低代表推荐位置越靠前。`, '下一步：补“为什么选蝉妈妈”的对比型内容、优势 FAQ 和可引用证据。'),
+          ['提及率', `${mentionRate} · ${baselineMetrics.mention.count}/${baselineMetrics.mention.denominator}`],
+          ['首推率', `${firstRate} · ${baselineMetrics.ordinaryFirst.count}/${baselineMetrics.ordinaryFirst.denominator}`],
+          ['去官方后第三方首位率', `${effectiveFirstRate} · ${baselineMetrics.effectiveFirst.count}/${baselineMetrics.effectiveFirst.denominator}`],
+          ['前 3 率 / 均排', `${top3Rate} / ${rankText(metrics.rankSum, metrics.rankCount)}`]
+        ], `蝉妈妈已被看见，但首推和稳定排序仍需继续拉升；均排越低代表推荐位置越靠前。`, '下一步：补“为什么选蝉妈妈”的对比型内容、优势 FAQ 和可引用证据。'),
         executiveCard('压制风险', risk, risk.label, risk.note, [
           ['官方工具', `${metrics.officialTools} 次，${percent(metrics.officialTools, metrics.completed)}`],
           ['官方首推排除', `${metrics.officialFirstExcluded} 次`],
@@ -1734,7 +1727,6 @@
           { name: '蝉妈妈首推', value: pctNumber(metrics.firsts, metrics.completed), label: percent(metrics.firsts, metrics.completed), color: '#047857' },
           { name: '有效首推', value: pctNumber(metrics.effectiveFirsts, metrics.effectiveFirstDenominator), label: percent(metrics.effectiveFirsts, metrics.effectiveFirstDenominator), color: '#16a34a' },
           { name: '前 3 推荐', value: pctNumber(metrics.top3, metrics.completed), label: percent(metrics.top3, metrics.completed), color: '#0ea5e9' },
-          { name: '优势表达', value: pctNumber(metrics.advantages, metrics.completed), label: percent(metrics.advantages, metrics.completed), color: '#d97706' },
           { name: '竞品提及', value: pctNumber(metrics.competitors, metrics.completed), label: percent(metrics.competitors, metrics.completed), color: '#b91c1c' },
           { name: '官方工具', value: pctNumber(metrics.officialTools, metrics.completed), label: percent(metrics.officialTools, metrics.completed), color: '#7c3aed' },
           { name: '运营圈引用', value: pctNumber(metrics.sources, metrics.completed), label: percent(metrics.sources, metrics.completed), color: '#0f766e' }
@@ -1945,7 +1937,6 @@
       const rankCount = rankPairs.reduce((sum, [, count]) => sum + count, 0);
       const mindScoreSum = data.reduce((sum, row) => sum + asNum(row.mind_influence_score_sum), 0);
       const avgMindScore = completed > 0 ? (mindScoreSum / completed).toFixed(1).replace(/\.0$/, '') : '暂无';
-      const advantages = data.reduce((sum, row) => sum + asNum(row.advantage_hit_count), 0);
       const competitors = data.reduce((sum, row) => sum + asNum(row.competitor_mention_count), 0);
       const officialTools = data.reduce((sum, row) => sum + asNum(row.official_tool_mention_count), 0);
       const sources = data.reduce((sum, row) => sum + asNum(row.yunyingquan_source_count), 0);
@@ -1983,7 +1974,6 @@
         rankCount,
         avgMindScore,
         mindScoreSum,
-        advantages,
         competitors,
         officialTools,
         sources,
@@ -2020,7 +2010,6 @@
         { label: '采样<span class="help">已采样 / 计划</span>', render: r => `${r.completed}/${r.planned}`, class: 'num' },
         { label: '提及 / 首推', render: r => `${percent(r.mentions, r.completed)} / ${percent(r.firsts, r.completed)}`, class: 'num' },
         { label: '前3 / 均排', render: r => `${percent(r.top3, r.completed)} / ${rankText(r.rankSum, r.rankCount)}`, class: 'num' },
-        { label: '优势表达', render: r => percent(r.advantages, r.completed), class: 'num' },
         { label: '风险<span class="help">竞品 / 官方工具</span>', render: r => `${percent(r.competitors, r.completed)} / ${percent(r.officialTools, r.completed)}`, class: 'num' }
       ], keywordRows);
 
@@ -2064,7 +2053,6 @@
         { label: '官方工具', render: r => escapeHtml(r.mentioned_official_tools || '') },
         { label: '明确蝉妈妈优势<span class="help">严格优势表达口径：只统计与蝉妈妈绑定的明确优势、偏好、适用对象或比较表达</span>', render: r => pill(r.chanmama_advantage_explicit || '否') },
         { label: '优势证据', render: r => escapeHtml(r.chanmama_advantage_evidence || '未明确说明'), class: 'question' },
-        { label: '命中词<span class="help">关键词/场景词命中，不等于首页“优势表达”计数</span>', render: r => escapeHtml(r.target_advantages_hit || '') },
         { label: '缺口', render: r => escapeHtml(r.content_gap_type || '') },
         { label: '优化动作', render: r => escapeHtml(r.suggested_action || '') },
         { label: '运营圈引用', render: r => pill(r.mentioned_yunyingquan_source) },
@@ -2100,7 +2088,6 @@
         { label: '有效首推<span class="help">去官方后重新排序</span>', render: r => `${r.effectiveFirsts}/${r.effectiveFirstDenominator}<br>${percent(r.effectiveFirsts, r.effectiveFirstDenominator)}`, class: 'num' },
         { label: '前3 / 均排', render: r => `${percent(r.top3, r.completed)} / ${rankText(r.rankSum, r.rankCount)}`, class: 'num' },
         { label: '心智分', render: r => r.mindScoreCount ? (r.mindScoreSum / r.mindScoreCount).toFixed(1).replace(/\.0$/, '') : '暂无', class: 'num' },
-        { label: '优势表达', render: r => percent(r.advantages, r.completed), class: 'num' },
         { label: '风险<span class="help">竞品 / 官方工具</span>', render: r => `${percent(r.competitors, r.completed)} / ${percent(r.officialTools, r.completed)}`, class: 'num' }
       ];
     }
