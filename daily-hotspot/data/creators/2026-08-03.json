@@ -3,8 +3,8 @@
   "module": "creators",
   "dataMode": "DAILY_AUDIT_ONLY",
   "date": "2026-08-03",
-  "observedAt": "2026-08-03T08:04:36.270Z",
-  "scheduledFor": "2026-08-03T16:00:00+08:00",
+  "observedAt": "2026-08-03T09:02:32.273Z",
+  "scheduledFor": "2026-08-03T18:00:00+08:00",
   "publicationStatus": "DEGRADED_REPORT",
   "title": "抖音达人白名单库及热点判断",
   "summary": {
@@ -38,43 +38,43 @@
       {
         "platform": "chanmama",
         "status": "UNKNOWN",
-        "observedAt": "2026-08-03T08:04:36.270Z",
+        "observedAt": "2026-08-03T09:02:32.273Z",
         "evidence": "CDP target list unavailable: ECONNREFUSED"
       },
       {
         "platform": "ocean_engine_yuntu",
         "status": "UNKNOWN",
-        "observedAt": "2026-08-03T08:04:36.270Z",
+        "observedAt": "2026-08-03T09:02:32.273Z",
         "evidence": "CDP target list unavailable: ECONNREFUSED"
       },
       {
         "platform": "ocean_engine_xingtu",
         "status": "UNKNOWN",
-        "observedAt": "2026-08-03T08:04:36.270Z",
+        "observedAt": "2026-08-03T09:02:32.273Z",
         "evidence": "CDP target list unavailable: ECONNREFUSED"
       },
       {
         "platform": "douyin",
         "status": "UNKNOWN",
-        "observedAt": "2026-08-03T08:04:36.270Z",
+        "observedAt": "2026-08-03T09:02:32.273Z",
         "evidence": "CDP target list unavailable: ECONNREFUSED"
       },
       {
         "platform": "douyin_creator_center",
         "status": "UNKNOWN",
-        "observedAt": "2026-08-03T08:04:36.270Z",
+        "observedAt": "2026-08-03T09:02:32.273Z",
         "evidence": "CDP target list unavailable: ECONNREFUSED"
       }
     ]
   },
   "creatorCaptureStatus": {
-    "captureType": "LATE_MAIN_CAPTURE",
-    "observedAt": "2026-08-03T08:04:36.270Z",
-    "displayTime": "2026-08-03 16:04",
-    "plannedAt": "2026-08-03T16:00:00+08:00",
+    "captureType": "SUPPLEMENT_CAPTURE",
+    "observedAt": "2026-08-03T09:02:32.273Z",
+    "displayTime": "2026-08-03 17:02",
+    "plannedAt": "2026-08-03T17:00:00+08:00",
     "schedule": {
       "onTime": false,
-      "supplement": false
+      "supplement": true
     },
     "summary": {
       "pagesTotal": null,
@@ -97,13 +97,14 @@
     "timeoutPolicy": "未知数量 个失败页保持缺失，不估填、不替代、不晋级"
   },
   "audit": {
-    "sourcePath": "runs/douyin-creator-20260803-1600/audit.json",
-    "sourceSha256": "b17bff74117f4d2799275627b9e817070845ce487f61bba871d27b164116135c",
+    "sourcePath": "runs/douyin-creator-20260803-1700-supplement/audit.json",
+    "sourceSha256": "c0bf87e4c9b90f0ab55099141c126aa58c83c55a00b50417ac5d0a4097de8a78",
     "reportType": "DEGRADED_REPORT",
     "schedule": {
       "onTime": false,
-      "supplement": false,
-      "lateReason": "The read-only preflight was observed at 16:04:36.270 Asia/Shanghai, after the 16:00 schedule boundary. The original schedule result remains false."
+      "supplement": true,
+      "finalObservationIsSupplement": true,
+      "lateReason": "The read-only supplement preflight was observed at 17:02:32.273 Asia/Shanghai, after the 17:00 schedule boundary. The original schedule result remains false."
     },
     "creatorDecision": {
       "result": "NO_CREATOR_ADMISSION",
@@ -122,7 +123,10 @@
     ],
     "evidenceRefs": [],
     "constraints": null,
-    "nextCapture": null
+    "nextCapture": {
+      "slot": "2026-08-03T18:00:00+08:00",
+      "scope": "Read-only publication guard only. Do not repeat platform collection at 18:00."
+    }
   },
   "candidates": [],
   "videoSignals": [],
