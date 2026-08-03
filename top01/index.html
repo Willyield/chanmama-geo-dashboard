@@ -6,7 +6,7 @@
   <link rel="icon" href="data:,">
   <title>蝉妈妈 GEO 采样仪表盘</title>
   <link rel="stylesheet" href="../assets/platform-shell.css">
-  <script src="./dashboard-data.js?v=20260714-576-v3"></script>
+  <link rel="preload" href="./dashboard-core-data.js?v=20260714-576-v3-perf1" as="script">
   <style>
     :root {
       --surface: #f8fafc;
@@ -855,6 +855,92 @@
       background: #eef2f7;
     }
     .empty { color: var(--muted); }
+    body[data-dashboard-state="loading"] main > :not(.data-load-status),
+    body[data-dashboard-state="error"] main > :not(.data-load-status) {
+      display: none;
+    }
+    .data-load-status {
+      min-height: min(520px, calc(100vh - 210px));
+      display: grid;
+      align-content: center;
+      max-width: none;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      padding: 56px 0;
+    }
+    .data-load-status > * { max-width: 760px; }
+    .data-load-status[hidden] { display: none; }
+    .data-load-kicker {
+      color: var(--blue);
+      font-family: "IBM Plex Mono", Consolas, monospace;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .data-load-title {
+      margin: 10px 0 6px;
+      font-size: 24px;
+      line-height: 1.3;
+    }
+    .data-load-message {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .data-load-track {
+      width: min(480px, 100%);
+      height: 4px;
+      margin-top: 24px;
+      overflow: hidden;
+      background: var(--line-soft);
+    }
+    .data-load-track span {
+      display: block;
+      width: 42%;
+      height: 100%;
+      background: var(--blue);
+      animation: data-load-progress 1.1s ease-in-out infinite alternate;
+      transform-origin: left center;
+    }
+    .data-load-actions { margin-top: 20px; }
+    .data-load-actions button,
+    .detail-load-status button {
+      border: 1px solid var(--blue);
+      border-radius: 4px;
+      background: var(--blue);
+      color: #fff;
+      min-height: 36px;
+      padding: 7px 14px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .data-load-actions button:focus-visible,
+    .detail-load-status button:focus-visible {
+      outline: 3px solid #93c5fd;
+      outline-offset: 2px;
+    }
+    .detail-load-status {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 58px;
+      border-top: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
+      color: var(--muted);
+      padding: 12px 0;
+    }
+    .detail-load-status[hidden] { display: none; }
+    #sampleSection:not([data-detail-state="ready"]) .table-wrap { display: none; }
+    @keyframes data-load-progress {
+      from { transform: translateX(0) scaleX(.55); }
+      to { transform: translateX(138%) scaleX(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .data-load-track span { animation: none; transform: none; }
+    }
     @media (max-width: 1280px) {
       .executive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
@@ -875,7 +961,7 @@
     }
   </style>
 </head>
-<body>
+<body data-dashboard-state="loading">
   <div class="app">
     <header>
       <div class="tick-rule"></div>
@@ -887,6 +973,13 @@
       </div>
     </header>
     <main>
+      <section class="data-load-status" id="dataLoadStatus" role="status" aria-live="polite">
+        <div class="data-load-kicker">TOP01 / DATASET</div>
+        <h2 class="data-load-title" id="dataLoadTitle">正在加载第一轮核心问题数据</h2>
+        <p class="data-load-message" id="dataLoadMessage">正在读取指标、问题与优化任务。</p>
+        <div class="data-load-track" aria-hidden="true"><span></span></div>
+        <div class="data-load-actions"><button id="dataLoadRetry" type="button" hidden>重新加载</button></div>
+      </section>
       <div class="executive-brief" id="executiveBrief"></div>
       <div class="executive-grid" id="kpis"></div>
       <section class="action-panel" id="actionPanel"></section>
@@ -943,8 +1036,12 @@
           <div class="section-head"><h2>问题维度</h2><span class="pill" id="questionCount"></span></div>
           <div class="table-wrap"><table id="questionTable"></table></div>
         </section>
-        <section>
+        <section id="sampleSection" data-detail-state="pending">
           <div class="section-head"><h2>单次采样记录</h2><span class="pill" id="sampleCount"></span></div>
+          <div class="detail-load-status" id="detailLoadStatus" role="status" aria-live="polite">
+            <span id="detailLoadMessage">样本明细将在核心指标呈现后继续加载。</span>
+            <button id="detailLoadRetry" type="button" hidden>重试</button>
+          </div>
           <div class="table-wrap"><table id="sampleTable"></table></div>
         </section>
         <section>
@@ -955,10 +1052,24 @@
     </main>
   </div>
 
+  <script src="./dashboard-core-data.js?v=20260714-576-v3-perf1"></script>
   <script>
+    const dataLoadStatus = document.getElementById('dataLoadStatus');
+    const dataLoadTitle = document.getElementById('dataLoadTitle');
+    const dataLoadMessage = document.getElementById('dataLoadMessage');
+    const dataLoadRetry = document.getElementById('dataLoadRetry');
+    if (!window.GEO_DASHBOARD) {
+      document.body.dataset.dashboardState = 'error';
+      dataLoadTitle.textContent = '核心数据加载失败';
+      dataLoadMessage.textContent = '网络连接中断，请重新加载。';
+      dataLoadRetry.hidden = false;
+      dataLoadRetry.addEventListener('click', () => window.location.reload());
+      throw new Error('GEO_DASHBOARD core payload is unavailable');
+    }
+
     const state = { priority: 'all', category: 'all', keyword: 'all', mention: 'all', search: '' };
     const rows = window.GEO_DASHBOARD.summary;
-    const samples = window.GEO_DASHBOARD.samples;
+    let samples = window.GEO_DASHBOARD.samples || [];
     const questions = window.GEO_DASHBOARD.questions;
     const tasks = window.GEO_DASHBOARD.content_tasks || [];
     const repairList = window.GEO_DASHBOARD.content_repair_list || tasks;
@@ -968,8 +1079,8 @@
     const sourceEvidenceSummary = window.GEO_DASHBOARD.source_evidence_summary || [];
     const brandGroupComparison = window.GEO_DASHBOARD.brand_group_comparison || [];
     const brandComparison = window.GEO_DASHBOARD.brand_comparison || [];
-    const geoShortfallSamples = window.GEO_DASHBOARD.geo_shortfall_samples || [];
-    const shortfallBySampleId = new Map(geoShortfallSamples.map(row => [row.sample_id, row]));
+    let shortfallBySampleId = new Map();
+    let detailLoadState = samples.length ? 'ready' : 'pending';
 
     const $ = (id) => document.getElementById(id);
     const uniq = (items) => [...new Set(items.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'zh-CN'));
@@ -1110,11 +1221,12 @@
     }
 
     function sampleCompleted(row) {
-      return Boolean(row.sample_date || row.answer_text);
+      return row.sample_completed ?? Boolean(row.sample_date || row.answer_text);
     }
 
     function sampleMentionsChanmama(row) {
-      return row.mentioned_chanmama === '是' || String(row.answer_text || '').includes('蝉妈妈');
+      return row.sample_mentions_chanmama ??
+        (row.mentioned_chanmama === '是' || String(row.answer_text || '').includes('蝉妈妈'));
     }
 
     function sampleIsChanmamaFirst(row) {
@@ -1129,6 +1241,7 @@
     }
 
     function buildFirstLossReasonRows(visibleQuestionIds) {
+      if (!samples.length) return nonChanmamaReasons;
       const baseSamples = samples.filter(row => sampleCompleted(row) && visibleQuestionIds.has(row.question_id) && !sampleIsChanmamaFirst(row));
       const buckets = [
         {
@@ -1930,7 +2043,7 @@
       const sampleRows = samples
         .filter(s => visibleQuestionIds.has(s.question_id))
         .map(s => ({...s, ...(questionById.get(s.question_id) || {}), ...(shortfallBySampleId.get(s.sample_id) || {})}));
-      $('sampleCount').textContent = `${sampleRows.length} 条记录`;
+      $('sampleCount').textContent = detailLoadState === 'ready' ? `${sampleRows.length} 条记录` : '明细加载中';
       renderTable('sampleTable', [
         { label: '采样ID', key: 'sample_id' },
         { label: '问题ID', key: 'question_id' },
@@ -2011,11 +2124,47 @@
       $('searchInput').addEventListener('input', e => { state.search = e.target.value; render(); });
     }
 
+    function setDetailLoadStatus(message, state) {
+      detailLoadState = state;
+      $('sampleSection').dataset.detailState = state;
+      $('detailLoadMessage').textContent = message;
+      $('detailLoadStatus').hidden = state === 'ready';
+      $('detailLoadRetry').hidden = state !== 'error';
+    }
+
+    function loadDetailData() {
+      if (detailLoadState === 'loading' || detailLoadState === 'ready') return;
+      const expectedCount = rows.reduce((sum, row) => sum + asNum(row.completed_sample_count), 0);
+      setDetailLoadStatus(`正在后台加载 ${expectedCount.toLocaleString('zh-CN')} 条样本明细。`, 'loading');
+      const script = document.createElement('script');
+      script.src = './dashboard-detail-data.js?v=20260714-576-v3-perf1';
+      script.async = true;
+      script.onload = () => {
+        const detail = window.GEO_DASHBOARD_DETAIL;
+        if (!detail || !Array.isArray(detail.samples)) {
+          setDetailLoadStatus('样本明细格式异常，请重试。', 'error');
+          return;
+        }
+        samples = detail.samples;
+        shortfallBySampleId = new Map();
+        setDetailLoadStatus('', 'ready');
+        render();
+      };
+      script.onerror = () => setDetailLoadStatus('样本明细加载失败，请重试。', 'error');
+      document.head.appendChild(script);
+    }
+
+    $('detailLoadRetry').addEventListener('click', loadDetailData);
+
     $('scopeTitle').textContent = window.GEO_DASHBOARD.meta.scope_label || '仪表盘';
     $('sourceUrl').textContent = window.GEO_DASHBOARD.meta.yunyingquan_url;
     $('updatedAt').textContent = window.GEO_DASHBOARD.meta.generated_at;
     bindFilters();
     render();
+    document.body.dataset.dashboardState = 'ready';
+    dataLoadStatus.hidden = true;
+    if ('requestIdleCallback' in window) requestIdleCallback(loadDetailData, { timeout: 1200 });
+    else window.setTimeout(loadDetailData, 250);
   </script>
   <script defer src="../assets/platform-shell.js" data-root="../" data-section="sampling" data-label="第一轮核心问题"></script>
 </body>
