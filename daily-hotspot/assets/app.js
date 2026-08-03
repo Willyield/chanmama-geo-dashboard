@@ -9,7 +9,7 @@ import {
   eventViews,
   renderEventDetail,
   renderEventPage,
-} from "./events.js";
+} from "./events.js?v=20260803events1";
 import {
   creatorFilterDefaults,
   creatorViews,

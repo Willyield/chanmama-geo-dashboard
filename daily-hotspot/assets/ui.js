@@ -83,8 +83,8 @@ export function renderPageHeading({ eyebrow, title, subtitle, views, activeView 
   </div>`;
 }
 
-export function renderSummaryBand({ summary, metrics, observedAt, sourceWorkbook, verifiedAt = null }) {
-  return `<section class="summary-band" aria-label="今日摘要">
+export function renderSummaryBand({ summary, metrics, observedAt, sourceWorkbook, verifiedAt = null, className = "" }) {
+  return `<section class="summary-band ${escapeHtml(className)}" aria-label="今日摘要">
     <div class="summary-copy">
       <h2>${escapeHtml(summary)}</h2>
       <div class="summary-meta">

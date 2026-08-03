@@ -7,14 +7,13 @@ import {
   formatEventRange,
   icon,
   listHtml,
-  renderDecisionStrip,
   renderEmpty,
   renderPageHeading,
   renderSummaryBand,
   sourceLinksHtml,
   statusChip,
   uniqueOptions,
-} from "./ui.js";
+} from "./ui.js?v=20260803events1";
 
 export const eventViews = [
   { id: "overview", label: "活动总览" },
@@ -77,6 +76,28 @@ function renderToolbar(data, filters, count) {
   </div><span class="result-count">${count} / ${data.events.length} 场</span></div>`;
 }
 
+function renderEventBriefing(data) {
+  const relationshipVisible = ["EVT-018", "EVT-020"]
+    .every((eventId) => data.events.some((event) => event.eventId === eventId));
+  const items = data.events.map((event, index) => `<article class="event-briefing-item">
+    <button class="event-briefing-open" type="button" data-open-id="${escapeHtml(event.eventId)}">
+      <span class="event-briefing-line"><span class="event-briefing-id">0${index + 1} / ${escapeHtml(event.eventId)}</span><span class="event-briefing-badges">${event.changeStatus === "new" ? statusChip("首次入库", "status-prepare") : ""}${statusChip(event.priority, priorityClass(event.priority))}${statusChip(event.evidenceLevel, "status-pass")}</span></span>
+      <strong class="event-briefing-name">${escapeHtml(event.name)}</strong>
+      <span class="event-briefing-facts"><span>${icon("calendar-days")}${escapeHtml(formatDateTime(event.startAt))}</span><span>${icon("map-pin")}${escapeHtml(event.city)}</span></span>
+      <span class="event-briefing-copy"><small>活动重点</small>${escapeHtml(event.focusTopics.join("；") || "待补议程")}</span>
+      <span class="event-briefing-copy"><small>为什么关注</small>${escapeHtml(event.attentionReason)}</span>
+    </button>
+    <div class="event-briefing-source"><span>原始来源</span>${sourceLinksHtml(event.sourceLinks, 1)}</div>
+  </article>`).join("");
+  return `<section class="event-briefing" aria-label="本次长线候选">
+    <header class="event-briefing-head">
+      <div><span class="event-briefing-kicker">QUALIFIED EVENT SET / ${escapeHtml(data.date)}</span><h2>本次准入 · ${data.events.length} 场长线候选</h2><p>开场日不早于 ${escapeHtml(data.thresholdDate)}；点击任一活动查看完整证据、缺失字段与复核时间线。</p></div>
+      ${relationshipVisible ? `<p class="event-briefing-relation">${icon("waypoints")}<span><strong>独立追踪边界</strong>EVT-018 与 EVT-020 同期同址，存在联展可能，但公开证据不足以合并，当前仍按两场独立活动追踪。</span></p>` : ""}
+    </header>
+    <div class="event-briefing-grid">${items}</div>
+  </section>`;
+}
+
 function renderOverviewTable(events, data) {
   if (!events.length) {
     const message = data.events.length
@@ -95,11 +116,14 @@ function renderOverviewTable(events, data) {
     <td>${statusChip(event.evidenceLevel, "status-pass")}<span class="cell-secondary">${escapeHtml(event.verificationResult)}<br>缺失 ${event.missingFields.length}｜冲突 ${event.conflicts.length}</span></td>
   </tr>`).join("");
   const mobile = events.map((event) => `<article class="mobile-item" data-open-id="${escapeHtml(event.eventId)}">
-    <div class="mobile-item-header">${statusChip(event.priority, priorityClass(event.priority))}${statusChip(event.evidenceLevel, "status-pass")}</div>
+    <div class="mobile-item-header"><span>${event.changeStatus === "new" ? statusChip("首次入库", "status-prepare") : ""}${statusChip(event.priority, priorityClass(event.priority))}</span>${statusChip(event.evidenceLevel, "status-pass")}</div>
     <h3>${escapeHtml(event.name)}</h3>
     <div class="mobile-facts"><div class="mobile-fact"><span>举办时间</span><strong>${escapeHtml(formatDateTime(event.startAt))}</strong></div><div class="mobile-fact"><span>城市</span><strong>${escapeHtml(event.city)}</strong></div></div>
     ${sourceLinksHtml(event.sourceLinks, 1)}
     <p><strong>活动重点：</strong>${escapeHtml(event.focusTopics.join("；") || "待补议程")}</p>
+    <p><strong>为什么关注：</strong>${escapeHtml(event.attentionReason)}</p>
+    <p><strong>真实性：</strong>${escapeHtml(event.verificationResult)}</p>
+    <p class="mobile-evidence-note">缺失 ${event.missingFields.length} 项｜冲突 ${event.conflicts.length} 项</p>
     <p><strong>建议动作：</strong>${escapeHtml(event.recommendedAction)}</p>
   </article>`).join("");
   return `<div class="data-region"><div class="data-table-wrap"><table class="data-table" style="min-width:1280px">
@@ -176,6 +200,7 @@ export function renderEventPage({ data, index, view, filters }) {
     activeView: view,
   });
   const summary = renderSummaryBand({
+    className: "event-summary-band",
     summary: data.summary.webSummary,
     metrics: [
       { value: counts.total, label: "长线候选" },
@@ -188,14 +213,14 @@ export function renderEventPage({ data, index, view, filters }) {
     verifiedAt: data.verifiedAt,
     sourceWorkbook: data.sourceLabel ?? data.sourceWorkbook,
   });
-  const decisions = renderDecisionStrip(data.summary.topActions, "eventId");
+  const briefing = renderEventBriefing(data);
   let content;
   if (view === "meeting") content = renderMeeting(data);
   else if (view === "archive") content = renderArchive(index);
   else if (view === "keywords") content = renderKeywords(data, filters);
   else if (view === "verification") content = renderVerification(data);
   else content = `${renderToolbar(data, filters, filtered.length)}${renderOverviewTable(filtered, data)}`;
-  return `${heading}${summary}${decisions}${content}`;
+  return `${heading}${summary}${briefing}${content}`;
 }
 
 export function renderEventDetail(event) {

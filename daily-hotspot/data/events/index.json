@@ -1,8 +1,35 @@
 {
   "schemaVersion": 1,
   "module": "events",
-  "latest": "2026-07-28",
+  "latest": "2026-08-03",
   "dates": [
+    {
+      "date": "2026-08-03",
+      "observedAt": "2026-08-03 09:42",
+      "verifiedAt": "2026-08-03",
+      "total": 3,
+      "prepare": 2,
+      "excludedRecent": 17,
+      "revision": 4
+    },
+    {
+      "date": "2026-07-31",
+      "observedAt": "2026-07-23 09:50",
+      "verifiedAt": "2026-07-31",
+      "total": 2,
+      "prepare": 1,
+      "excludedRecent": 17,
+      "revision": 4
+    },
+    {
+      "date": "2026-07-29",
+      "observedAt": "2026-07-23 09:50",
+      "verifiedAt": "2026-07-29",
+      "total": 3,
+      "prepare": 2,
+      "excludedRecent": 16,
+      "revision": 1
+    },
     {
       "date": "2026-07-28",
       "observedAt": "2026-07-23 09:50",
