@@ -1315,6 +1315,7 @@ function renderCreatorCaptureStatus(data) {
   if (!capture) return "";
   const summary = capture.summary || {};
   const poolMatch = capture.poolMatch || {};
+  const poolVisible = poolMatch.visible === true || Boolean(poolMatch.candidateId);
   const externalSources = asArray(capture.externalVisibleSources);
   const unknownEvidence = asArray(capture.unknownEvidence);
   const tier = operationalTierMeta(poolMatch.tier);
@@ -1337,7 +1338,9 @@ function renderCreatorCaptureStatus(data) {
     </div>
     <div class="creator-capture-boundary">${icon("shield-alert")}<span><strong>只读边界：</strong>${formatMetric(summary.pagesLoaded)} 个成功主页仅作可见性观察；${escapeHtml(capture.timeoutPolicy)}。</span></div>
     <div class="creator-capture-observations">
-      <div class="creator-capture-row is-pool"><div><span class="model-code">池内观察 · ${escapeHtml(firstValue(poolMatch.candidateId, "ID 待核"))}</span><strong>${escapeHtml(firstValue(poolMatch.nickname, "账号待核"))}</strong></div><div><p>${escapeHtml(firstValue(poolMatch.note, "本轮主页可见 / 待补双源与 P60"))}</p><small>保持 ${escapeHtml(tier.label)} · 不提升层级</small></div>${statusChip("本轮主页可见", "status-watch")}</div>
+      ${poolVisible
+        ? `<div class="creator-capture-row is-pool"><div><span class="model-code">池内观察 · ${escapeHtml(poolMatch.candidateId)}</span><strong>${escapeHtml(firstValue(poolMatch.nickname, "账号待核"))}</strong></div><div><p>${escapeHtml(firstValue(poolMatch.note, "本轮主页可见 / 待补双源与 P60"))}</p><small>保持 ${escapeHtml(tier.label)} · 不提升层级</small></div>${statusChip("本轮主页可见", "status-watch")}</div>`
+        : `<div class="creator-capture-row is-pool"><div><span class="model-code">池内观察 · 未采到</span><strong>本轮主页不可用</strong></div><div><p>未取得当前主页证据，不作层级判断</p><small>保持原层级 · 不提升、不移除</small></div>${statusChip("本轮未采到", "status-watch")}</div>`}
       ${externalSources.map((item) => `<div class="creator-capture-row"><div><span class="model-code">池外可见来源</span><strong>${escapeHtml(item.nickname)}</strong></div><div><p>${escapeHtml(firstValue(item.label, "新增可见来源待轻筛"))}</p><small>不进入 50 人池</small></div>${statusChip("待轻筛", "status-d")}</div>`).join("")}
     </div>
     <div class="creator-capture-unknowns"><strong>仍为 UNKNOWN</strong><span>${unknownEvidence.map((item) => escapeHtml(item)).join(" / ")}</span></div>

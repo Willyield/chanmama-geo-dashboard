@@ -3,8 +3,8 @@
   "module": "creators",
   "dataMode": "DAILY_AUDIT_ONLY",
   "date": "2026-08-03",
-  "observedAt": "2026-08-03T02:04:47.613Z",
-  "scheduledFor": "2026-08-03T10:00:00+08:00",
+  "observedAt": "2026-08-03T08:04:36.270Z",
+  "scheduledFor": "2026-08-03T16:00:00+08:00",
   "publicationStatus": "DEGRADED_REPORT",
   "title": "抖音达人白名单库及热点判断",
   "summary": {
@@ -20,8 +20,9 @@
     "confirmedHotspots": 0,
     "contentActions": 0
   },
-  "statusMessage": "本日审计未新增达人白名单；7 项关键输入仍未闭环。",
+  "statusMessage": "本日审计未新增达人白名单；8 项关键输入仍未闭环。",
   "limitations": [
+    "CDP target list: UNKNOWN",
     "同指标前后增长快照：UNKNOWN",
     "话题人口：UNKNOWN",
     "同龄 P60 队列：UNKNOWN",
@@ -33,49 +34,58 @@
   "sourceStatus": {
     "valuesImputed": false,
     "candidatesPromotedToWhitelist": false,
-    "platforms": []
+    "platforms": [
+      {
+        "platform": "chanmama",
+        "status": "UNKNOWN",
+        "observedAt": "2026-08-03T08:04:36.270Z",
+        "evidence": "CDP target list unavailable: ECONNREFUSED"
+      },
+      {
+        "platform": "ocean_engine_yuntu",
+        "status": "UNKNOWN",
+        "observedAt": "2026-08-03T08:04:36.270Z",
+        "evidence": "CDP target list unavailable: ECONNREFUSED"
+      },
+      {
+        "platform": "ocean_engine_xingtu",
+        "status": "UNKNOWN",
+        "observedAt": "2026-08-03T08:04:36.270Z",
+        "evidence": "CDP target list unavailable: ECONNREFUSED"
+      },
+      {
+        "platform": "douyin",
+        "status": "UNKNOWN",
+        "observedAt": "2026-08-03T08:04:36.270Z",
+        "evidence": "CDP target list unavailable: ECONNREFUSED"
+      },
+      {
+        "platform": "douyin_creator_center",
+        "status": "UNKNOWN",
+        "observedAt": "2026-08-03T08:04:36.270Z",
+        "evidence": "CDP target list unavailable: ECONNREFUSED"
+      }
+    ]
   },
   "creatorCaptureStatus": {
     "captureType": "LATE_MAIN_CAPTURE",
-    "observedAt": "2026-08-03T02:04:47.613Z",
-    "displayTime": "2026-08-03 10:04",
-    "plannedAt": "2026-08-03T10:00:00+08:00",
+    "observedAt": "2026-08-03T08:04:36.270Z",
+    "displayTime": "2026-08-03 16:04",
+    "plannedAt": "2026-08-03T16:00:00+08:00",
     "schedule": {
       "onTime": false,
       "supplement": false
     },
     "summary": {
-      "pagesTotal": 19,
-      "pagesLoaded": 4,
-      "pagesTimedOut": 15,
+      "pagesTotal": null,
+      "pagesLoaded": 0,
+      "pagesTimedOut": null,
       "evidenceStatus": "DEGRADED",
       "poolChanged": false,
       "tierChanged": false
     },
-    "poolMatch": {
-      "candidateId": "CR-092",
-      "nickname": "昂哥抖店运营",
-      "tier": "OBSERVATION",
-      "reviewPriority": "FOLLOWUP_TRACKING",
-      "note": "本轮主页可见 / 待补双源与 P60"
-    },
-    "externalVisibleSources": [
-      {
-        "nickname": "三农策划师-老孟（7月武汉课）",
-        "status": "PENDING_LIGHT_SCREEN",
-        "label": "新增可见来源待轻筛"
-      },
-      {
-        "nickname": "抖店阿伟实战分享",
-        "status": "PENDING_LIGHT_SCREEN",
-        "label": "新增可见来源待轻筛"
-      },
-      {
-        "nickname": "木子运营",
-        "status": "PENDING_LIGHT_SCREEN",
-        "label": "新增可见来源待轻筛"
-      }
-    ],
+    "poolMatch": null,
+    "externalVisibleSources": [],
     "unknownEvidence": [
       "双源",
       "30天活跃度",
@@ -84,23 +94,24 @@
       "原创贡献",
       "风险门"
     ],
-    "timeoutPolicy": "15 个失败页保持缺失，不估填、不替代、不晋级"
+    "timeoutPolicy": "未知数量 个失败页保持缺失，不估填、不替代、不晋级"
   },
   "audit": {
-    "sourcePath": "runs/douyin-creator-20260803-1000/audit.json",
-    "sourceSha256": "bcddfc81bd3897738ca0fa40698d78f4d0d13c791b4066292fb4bddc4c569f98",
+    "sourcePath": "runs/douyin-creator-20260803-1600/audit.json",
+    "sourceSha256": "b17bff74117f4d2799275627b9e817070845ce487f61bba871d27b164116135c",
     "reportType": "DEGRADED_REPORT",
     "schedule": {
       "onTime": false,
       "supplement": false,
-      "lateReason": "The read-only snapshot was observed at 10:04:47.613 Asia/Shanghai, after the 10:00 schedule boundary. The original schedule result remains false."
+      "lateReason": "The read-only preflight was observed at 16:04:36.270 Asia/Shanghai, after the 16:00 schedule boundary. The original schedule result remains false."
     },
     "creatorDecision": {
-      "result": "KEEP_OBSERVATION_FOLLOWUP_TRACKING",
-      "reason": "The profile is visible and stable, but dual-source, 30-day activity, age-matched P60 and same-metric growth evidence are still missing.",
+      "result": "NO_CREATOR_ADMISSION",
+      "reason": "原始审计未记录满足独立共振、同龄增速、内容价值和风险门的达人，因此本日未新增达人白名单。",
       "priorityObservationAccounts": []
     },
     "missingInputs": [
+      "CDP target list: UNKNOWN",
       "同指标前后增长快照：UNKNOWN",
       "话题人口：UNKNOWN",
       "同龄 P60 队列：UNKNOWN",
