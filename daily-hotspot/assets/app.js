@@ -15,7 +15,7 @@ import {
   creatorViews,
   renderCreatorDetail,
   renderCreatorPage,
-} from "./creators.js?v=20260731capture1";
+} from "./creators.js?v=20260803audit1";
 import { applyCreatorIdentityCorrection } from "./creator-data.js";
 import { escapeHtml, icon, renderError } from "./ui.js";
 
@@ -177,9 +177,14 @@ async function loadRoute() {
           return null;
         }
       };
-      data.operationalWhitelist = await fetchOptional(date === index.latest
+      const operationalWhitelistUrl = date === index.latest
         ? "./data/creators/operational-whitelist/latest.json"
-        : `./data/creators/operational-whitelist/${date}.json`);
+        : data.dataMode === "DAILY_AUDIT_ONLY"
+          ? null
+          : `./data/creators/operational-whitelist/${date}.json`;
+      data.operationalWhitelist = operationalWhitelistUrl
+        ? await fetchOptional(operationalWhitelistUrl)
+        : null;
       if (data.dataMode !== "DAILY_AUDIT_ONLY") {
         [data.decision, data.qualityReview, data.topicWhitelist, data.identityCorrection] = await Promise.all([
           fetchOptional(`./data/creators/decisions/${date}.json`),

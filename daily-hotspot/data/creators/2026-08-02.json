@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "module": "creators",
   "dataMode": "DAILY_AUDIT_ONLY",
-  "date": "2026-08-03",
-  "observedAt": "2026-08-03T02:04:47.613Z",
-  "scheduledFor": "2026-08-03T10:00:00+08:00",
+  "date": "2026-08-02",
+  "observedAt": "2026-08-02T09:03:41.698Z",
+  "scheduledFor": "2026-08-02T17:00:00+08:00",
   "publicationStatus": "DEGRADED_REPORT",
   "title": "抖音达人白名单库及热点判断",
   "summary": {
@@ -20,8 +20,15 @@
     "confirmedHotspots": 0,
     "contentActions": 0
   },
-  "statusMessage": "本日审计未新增达人白名单；7 项关键输入仍未闭环。",
+  "statusMessage": "本日审计未新增达人白名单；14 项关键输入仍未闭环。",
   "limitations": [
+    "15 of 19 existing pages remained unavailable after both targeted supplement rounds",
+    "same-metric numeric before/after performance values unavailable",
+    "topic population and effective independent-source clusters unavailable",
+    "dual-source values unavailable",
+    "30-day creator activity unavailable",
+    "age-matched P60 cohort unavailable",
+    "originality and risk gates unavailable",
     "同指标前后增长快照：UNKNOWN",
     "话题人口：UNKNOWN",
     "同龄 P60 队列：UNKNOWN",
@@ -36,13 +43,13 @@
     "platforms": []
   },
   "creatorCaptureStatus": {
-    "captureType": "LATE_MAIN_CAPTURE",
-    "observedAt": "2026-08-03T02:04:47.613Z",
-    "displayTime": "2026-08-03 10:04",
-    "plannedAt": "2026-08-03T10:00:00+08:00",
+    "captureType": "SUPPLEMENT_CAPTURE",
+    "observedAt": "2026-08-02T09:03:41.698Z",
+    "displayTime": "2026-08-02 17:03",
+    "plannedAt": "2026-08-02T17:00:00+08:00",
     "schedule": {
       "onTime": false,
-      "supplement": false
+      "supplement": true
     },
     "summary": {
       "pagesTotal": 19,
@@ -87,20 +94,37 @@
     "timeoutPolicy": "15 个失败页保持缺失，不估填、不替代、不晋级"
   },
   "audit": {
-    "sourcePath": "runs/douyin-creator-20260803-1000/audit.json",
-    "sourceSha256": "bcddfc81bd3897738ca0fa40698d78f4d0d13c791b4066292fb4bddc4c569f98",
+    "sourcePath": "runs/douyin-creator-20260802-1700-supplement/audit.json",
+    "sourceSha256": "898d76a4414883c1d2a79bc5110bd15bf316005e8f1ca118ddc306bb971cf298",
     "reportType": "DEGRADED_REPORT",
     "schedule": {
-      "onTime": false,
-      "supplement": false,
-      "lateReason": "The read-only snapshot was observed at 10:04:47.613 Asia/Shanghai, after the 10:00 schedule boundary. The original schedule result remains false."
+      "t0PlannedAt": "2026-08-02T10:00:00+08:00",
+      "t0ObservedAt": "2026-08-02T02:05:36.355Z",
+      "t0OnTime": false,
+      "t0SupplementPlannedAt": "2026-08-02T11:00:00+08:00",
+      "t0SupplementObservedAt": "2026-08-02T03:03:09.373Z",
+      "t0SupplementOnTime": false,
+      "t1PlannedAt": "2026-08-02T16:00:00+08:00",
+      "t1ObservedAt": "2026-08-02T08:04:20.798Z",
+      "t1OnTime": false,
+      "t1SupplementPlannedAt": "2026-08-02T17:00:00+08:00",
+      "t1SupplementObservedAt": "2026-08-02T09:03:41.698Z",
+      "t1SupplementOnTime": false,
+      "finalObservationIsSupplement": true
     },
     "creatorDecision": {
       "result": "KEEP_OBSERVATION_FOLLOWUP_TRACKING",
-      "reason": "The profile is visible and stable, but dual-source, 30-day activity, age-matched P60 and same-metric growth evidence are still missing.",
+      "reason": "The profile remains visible and stable, but dual-source, 30-day activity, age-matched P60 and same-metric growth evidence are still missing.",
       "priorityObservationAccounts": []
     },
     "missingInputs": [
+      "15 of 19 existing pages remained unavailable after both targeted supplement rounds",
+      "same-metric numeric before/after performance values unavailable",
+      "topic population and effective independent-source clusters unavailable",
+      "dual-source values unavailable",
+      "30-day creator activity unavailable",
+      "age-matched P60 cohort unavailable",
+      "originality and risk gates unavailable",
       "同指标前后增长快照：UNKNOWN",
       "话题人口：UNKNOWN",
       "同龄 P60 队列：UNKNOWN",

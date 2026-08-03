@@ -1,11 +1,44 @@
 {
   "schemaVersion": 2,
   "module": "creators",
-  "latest": "2026-07-31",
+  "latest": "2026-08-03",
   "dates": [
     {
+      "date": "2026-08-03",
+      "observedAt": "2026-08-03T02:04:47.613Z",
+      "candidateCreators": null,
+      "manualRound1Queue": null,
+      "formalWhitelist": 0,
+      "successfulVideos": null,
+      "qualifiedTopics": 0,
+      "publicationStatus": "DEGRADED_REPORT",
+      "dataMode": "DAILY_AUDIT_ONLY"
+    },
+    {
+      "date": "2026-08-02",
+      "observedAt": "2026-08-02T09:03:41.698Z",
+      "candidateCreators": null,
+      "manualRound1Queue": null,
+      "formalWhitelist": 0,
+      "successfulVideos": null,
+      "qualifiedTopics": 0,
+      "publicationStatus": "DEGRADED_REPORT",
+      "dataMode": "DAILY_AUDIT_ONLY"
+    },
+    {
+      "date": "2026-08-01",
+      "observedAt": "2026-08-01T09:03:35.202Z",
+      "candidateCreators": null,
+      "manualRound1Queue": null,
+      "formalWhitelist": 0,
+      "successfulVideos": null,
+      "qualifiedTopics": 0,
+      "publicationStatus": "DEGRADED_REPORT",
+      "dataMode": "DAILY_AUDIT_ONLY"
+    },
+    {
       "date": "2026-07-31",
-      "observedAt": "2026-07-31T10:02:45.1532798+08:00",
+      "observedAt": "2026-07-31T08:11:26.869Z",
       "candidateCreators": null,
       "manualRound1Queue": null,
       "formalWhitelist": 0,

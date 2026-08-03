@@ -1320,15 +1320,22 @@ function renderCreatorCaptureStatus(data) {
   const tier = operationalTierMeta(poolMatch.tier);
   const observedAt = firstValue(capture.displayTime, formatDateTime(capture.observedAt));
   const plannedAt = formatDateTime(capture.plannedAt);
+  const supplement = capture.schedule?.supplement === true;
+  const onTime = capture.schedule?.onTime === true;
+  const captureLabel = supplement ? "SUPPLEMENT" : onTime ? "MAIN" : "LATE MAIN";
+  const executionLabel = supplement ? "补采" : onTime ? "准时主采" : "补执行";
+  const evidenceComplete = summary.evidenceStatus === "COMPLETE";
+  const evidenceLabel = evidenceComplete ? "证据完整" : "证据降级";
+  const tierLabel = summary.tierChanged ? "名单层级有变化" : "名单层级未变";
   return `<section class="creator-capture-status" aria-label="最新达人采集状态">
-    <div class="creator-capture-heading"><div><span class="model-code">CAPTURE STATUS / LATE MAIN</span><h2>${escapeHtml(observedAt)} 补执行</h2><p>计划 ${escapeHtml(plannedAt)} · <strong>schedule.onTime=false</strong></p></div>${statusChip("证据降级", "status-watch")}</div>
+    <div class="creator-capture-heading"><div><span class="model-code">CAPTURE STATUS / ${captureLabel}</span><h2>${escapeHtml(observedAt)} ${executionLabel}</h2><p>计划 ${escapeHtml(plannedAt)} · <strong>schedule.onTime=${onTime}</strong></p></div>${statusChip(evidenceLabel, evidenceComplete ? "status-pass" : "status-watch")}</div>
     <div class="creator-capture-kpis" aria-label="采集完成情况">
       <div><strong>${formatMetric(summary.pagesLoaded)} / ${formatMetric(summary.pagesTotal)}</strong><span>主页成功</span></div>
       <div><strong>${formatMetric(summary.pagesTimedOut)} / ${formatMetric(summary.pagesTotal)}</strong><span>运行超时</span></div>
-      <div><strong>DEGRADED</strong><span>证据降级</span></div>
-      <div><strong>未变</strong><span>名单层级未变</span></div>
+      <div><strong>${escapeHtml(firstValue(summary.evidenceStatus, "UNKNOWN"))}</strong><span>${evidenceLabel}</span></div>
+      <div><strong>${summary.tierChanged ? "有变化" : "未变"}</strong><span>${tierLabel}</span></div>
     </div>
-    <div class="creator-capture-boundary">${icon("shield-alert")}<span><strong>只读边界：</strong>4 个成功主页仅作可见性观察；${escapeHtml(capture.timeoutPolicy)}。</span></div>
+    <div class="creator-capture-boundary">${icon("shield-alert")}<span><strong>只读边界：</strong>${formatMetric(summary.pagesLoaded)} 个成功主页仅作可见性观察；${escapeHtml(capture.timeoutPolicy)}。</span></div>
     <div class="creator-capture-observations">
       <div class="creator-capture-row is-pool"><div><span class="model-code">池内观察 · ${escapeHtml(firstValue(poolMatch.candidateId, "ID 待核"))}</span><strong>${escapeHtml(firstValue(poolMatch.nickname, "账号待核"))}</strong></div><div><p>${escapeHtml(firstValue(poolMatch.note, "本轮主页可见 / 待补双源与 P60"))}</p><small>保持 ${escapeHtml(tier.label)} · 不提升层级</small></div>${statusChip("本轮主页可见", "status-watch")}</div>
       ${externalSources.map((item) => `<div class="creator-capture-row"><div><span class="model-code">池外可见来源</span><strong>${escapeHtml(item.nickname)}</strong></div><div><p>${escapeHtml(firstValue(item.label, "新增可见来源待轻筛"))}</p><small>不进入 50 人池</small></div>${statusChip("待轻筛", "status-d")}</div>`).join("")}
