@@ -6,7 +6,7 @@
   <link rel="icon" href="data:,">
   <title>蝉妈妈 GEO TOP0/TOP1 第二轮复测</title>
   <link rel="stylesheet" href="../assets/platform-shell.css">
-  <script src="./dashboard-data.js"></script>
+  <script defer src="./dashboard-data.js"></script>
   <style>
     :root {
       --canvas: #f8fafc;
@@ -489,6 +489,7 @@
   </main>
 
   <script>
+    document.addEventListener('DOMContentLoaded', () => {
     (() => {
       const data = window.GEO_ROUND2_DASHBOARD;
       if (!data) {
@@ -686,6 +687,7 @@
       document.getElementById('sampleNext').addEventListener('click', () => { samplePageIndex += 1; renderSamples(); });
       renderSamples();
     })();
+    });
   </script>
   <script defer src="../assets/platform-shell.js" data-root="../" data-section="sampling" data-label="第二轮复测"></script>
 </body>
