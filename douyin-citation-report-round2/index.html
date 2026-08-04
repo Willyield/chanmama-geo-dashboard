@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:,">
+  <title>豆包第二轮引用源分析 | 阶段性 300/576</title>
+  <link rel="stylesheet" href="../assets/platform-shell.css">
+  <style>
+    :root {
+      --ink: #151f2a;
+      --muted: #64748b;
+      --line: #cbd5e1;
+      --line-soft: #dbe3ec;
+      --paper: #ffffff;
+      --surface: #f4f7fa;
+      --surface-strong: #eaf0f5;
+      --blue: #1e5fb8;
+      --blue-soft: #dce9f8;
+      --teal: #16857a;
+      --amber: #9a6700;
+      --red: #b84a42;
+      --sans: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+      --mono: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--surface); font-family: var(--sans); line-height: 1.6; }
+    button, input, select { font: inherit; }
+    a { color: var(--blue); }
+    .page-bar { background: var(--paper); border-bottom: 1px solid var(--line); }
+    .page-bar-inner { width: min(1900px, calc(100% - 64px)); margin: auto; padding: 14px 0; color: var(--muted); font-size: 14px; }
+    .page-bar a { text-decoration: none; }
+    .hero { background: var(--paper); border-bottom: 1px solid var(--line); }
+    .hero-inner { width: min(1500px, calc(100% - 64px)); margin: auto; padding: 54px 0 38px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
+    .eyebrow, .nav-label, .section-number { color: var(--blue); font: 700 13px/1.3 var(--mono); text-transform: uppercase; }
+    h1 { max-width: 1100px; margin: 12px 0 8px; font-size: clamp(34px, 4vw, 62px); line-height: 1.12; letter-spacing: 0; }
+    .hero-meta { margin: 0; color: var(--muted); font-size: 17px; }
+    .stage-badge { display: inline-flex; align-items: center; min-height: 38px; padding: 7px 12px; border: 1px solid #8daed1; color: #174b86; background: #edf5ff; font-weight: 700; }
+    .hero-actions { display: flex; gap: 10px; }
+    .button { min-height: 44px; padding: 9px 15px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); cursor: pointer; font-weight: 700; text-decoration: none; }
+    .button.primary { border-color: var(--ink); background: var(--ink); color: #fff; }
+    .status-band { border-bottom: 1px solid var(--line); background: var(--surface-strong); }
+    .status-inner { width: min(1500px, calc(100% - 64px)); margin: auto; min-height: 54px; display: flex; align-items: center; gap: 24px; color: var(--muted); font: 13px/1.4 var(--mono); flex-wrap: wrap; }
+    .status-item::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 9px; background: var(--teal); }
+    .layout { width: min(1500px, calc(100% - 64px)); margin: 0 auto; display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 46px; padding: 38px 0 72px; }
+    .layout > * { min-width: 0; }
+    .side-nav { position: sticky; top: 18px; align-self: start; }
+    .side-nav .nav-label { margin: 0 0 10px; color: var(--muted); }
+    .side-nav a { display: block; min-height: 42px; padding: 9px 12px; border-left: 2px solid var(--line); color: var(--muted); text-decoration: none; }
+    .side-nav a:hover, .side-nav a.active { border-left-color: var(--blue); color: var(--ink); background: var(--blue-soft); font-weight: 700; }
+    .report-section { scroll-margin-top: 20px; padding: 0 0 52px; margin: 0 0 50px; border-bottom: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 460px); gap: 36px; align-items: end; margin-bottom: 24px; }
+    .section-head h2 { margin: 8px 0 0; font-size: 30px; line-height: 1.2; }
+    .section-note { margin: 0; color: var(--muted); }
+    .evidence-strip { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); background: var(--paper); }
+    .evidence-cell { min-height: 94px; padding: 18px; border-top: 4px solid var(--teal); }
+    .evidence-cell + .evidence-cell { border-left: 1px solid var(--line); }
+    .evidence-cell.medium { border-top-color: var(--amber); }
+    .evidence-cell.low { border-top-color: var(--red); }
+    .evidence-cell strong { display: block; margin-bottom: 4px; }
+    .evidence-cell span { color: var(--muted); font-size: 14px; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+    .kpi { min-height: 154px; padding: 20px; border: 1px solid var(--line-soft); background: var(--paper); }
+    .kpi-label { min-height: 44px; color: var(--muted); font-weight: 700; }
+    .kpi-value { display: block; margin: 2px 0; font: 700 38px/1.1 var(--sans); font-variant-numeric: tabular-nums; }
+    .kpi-value.blue { color: var(--blue); }
+    .kpi-meta { color: var(--muted); font-size: 14px; }
+    .progress { height: 4px; margin-top: 12px; background: #e5ebf1; }
+    .progress span { display: block; height: 100%; background: var(--blue); }
+    .conclusion { display: grid; grid-template-columns: 210px 1fr; margin-top: 18px; border: 1px solid #9db0c3; background: var(--paper); }
+    .conclusion-label { padding: 20px; background: var(--ink); color: white; font-weight: 700; }
+    .conclusion-text { margin: 0; padding: 20px 24px; font-size: 18px; font-weight: 700; }
+    .coverage-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); background: var(--paper); }
+    .coverage-cell { min-height: 110px; padding: 18px; }
+    .coverage-cell + .coverage-cell { border-left: 1px solid var(--line); }
+    .coverage-cell span { display: block; color: var(--muted); font-size: 13px; }
+    .coverage-cell strong { display: block; margin-top: 8px; font-size: 24px; }
+    .notice { margin-top: 18px; padding: 18px 20px; border-left: 4px solid var(--amber); background: #fffaf0; color: #624717; }
+    .panel { padding: 20px; border: 1px solid var(--line); background: var(--paper); }
+    .panel h3 { margin: 0 0 14px; font-size: 18px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .bar-list { display: grid; gap: 13px; }
+    .bar-row { display: grid; grid-template-columns: 150px minmax(120px, 1fr) 72px; gap: 12px; align-items: center; }
+    .bar-track { height: 12px; background: #e6ebf0; }
+    .bar-fill { height: 100%; background: var(--blue); }
+    .bar-value, .numeric { text-align: right; font-variant-numeric: tabular-nums; }
+    main, .report-section, .panel, .table-wrap { min-width: 0; }
+    .table-wrap { width: 100%; max-width: 100%; overflow-x: auto; border: 1px solid var(--line); background: var(--paper); }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { padding: 12px 13px; border-bottom: 1px solid var(--line-soft); text-align: left; vertical-align: top; }
+    th { background: var(--surface-strong); color: #475569; white-space: nowrap; }
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: #f8fbff; }
+    .source-link { display: inline-block; max-width: 560px; overflow-wrap: anywhere; }
+    .source-url-cell { min-width: 360px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin: 0 0 14px; }
+    .filter { display: grid; gap: 5px; min-width: 140px; }
+    .filter.grow { flex: 1 1 320px; }
+    .filter label { color: var(--muted); font-size: 13px; }
+    .filter input, .filter select { min-height: 40px; padding: 8px 10px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); }
+    .table-summary { display: flex; justify-content: space-between; gap: 18px; margin: 10px 0; color: var(--muted); font-size: 14px; }
+    .pagination { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-top: 12px; }
+    .pagination button { min-width: 40px; min-height: 38px; border: 1px solid var(--line); background: var(--paper); cursor: pointer; }
+    .pagination button:disabled { opacity: .45; cursor: default; }
+    .answer-list { border-top: 1px solid var(--line); }
+    .answer-item { display: grid; grid-template-columns: 46px minmax(0, 1fr) 96px; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .answer-index { font: 700 14px/1.5 var(--mono); color: var(--blue); }
+    .answer-item h3 { margin: 0 0 5px; font-size: 17px; }
+    .answer-item p { margin: 0; color: #475569; }
+    .grade { align-self: start; padding: 5px 8px; border: 1px solid currentColor; text-align: center; font-size: 12px; font-weight: 700; }
+    .grade.high { color: var(--teal); }
+    .grade.medium { color: var(--amber); }
+    .grade.low { color: var(--red); }
+    .quality-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); background: var(--paper); }
+    .quality-cell { min-height: 98px; padding: 18px; }
+    .quality-cell + .quality-cell { border-left: 1px solid var(--line); }
+    .quality-cell span { display: block; color: var(--muted); font-size: 13px; }
+    .quality-cell strong { display: block; margin-top: 7px; color: var(--teal); font: 700 18px/1.4 var(--mono); }
+    .limits { margin: 0; padding-left: 20px; }
+    .limits li + li { margin-top: 8px; }
+    .download-list { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); }
+    .download-item { display: flex; justify-content: space-between; gap: 16px; padding: 17px 0; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+    .download-item:nth-child(odd) { padding-right: 24px; }
+    .download-item:nth-child(even) { padding-left: 24px; border-left: 1px solid var(--line); }
+    .download-name { display: block; font-weight: 700; }
+    .download-meta { display: block; color: var(--muted); font-size: 13px; }
+    .download-ext { font: 700 12px/1.5 var(--mono); color: var(--blue); }
+    footer { padding: 24px 32px; border-top: 1px solid var(--line); background: var(--paper); color: var(--muted); text-align: center; font-size: 13px; }
+    .back-top { position: fixed; right: 22px; bottom: 22px; width: 42px; height: 42px; border: 1px solid var(--ink); background: var(--ink); color: white; cursor: pointer; opacity: 0; pointer-events: none; }
+    .back-top.visible { opacity: 1; pointer-events: auto; }
+    .empty-row { padding: 24px; color: var(--muted); text-align: center; }
+    @media (max-width: 980px) {
+      .hero-inner, .section-head { grid-template-columns: 1fr; }
+      .layout { grid-template-columns: 1fr; }
+      .side-nav { position: static; display: flex; width: 100%; max-width: 100%; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+      .side-nav::-webkit-scrollbar { display: none; }
+      .side-nav .nav-label { display: none; }
+      .side-nav a { flex: 0 0 auto; border-left: 0; border-bottom: 2px solid var(--line); }
+      .kpi-grid, .coverage-grid { grid-template-columns: repeat(2, 1fr); }
+      .evidence-strip, .quality-grid { grid-template-columns: 1fr; }
+      .evidence-cell + .evidence-cell, .quality-cell + .quality-cell { border-left: 0; border-top: 1px solid var(--line); }
+      .two-col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 1200px) and (min-width: 981px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .page-bar-inner, .hero-inner, .status-inner, .layout { width: min(100% - 28px, 1500px); }
+      .hero-inner { padding: 34px 0 28px; }
+      h1 { font-size: 34px; }
+      .hero-actions { width: 100%; }
+      .hero-actions .button { flex: 1; text-align: center; }
+      .kpi-grid, .coverage-grid { grid-template-columns: 1fr; }
+      .coverage-cell + .coverage-cell { border-left: 0; border-top: 1px solid var(--line); }
+      .conclusion { grid-template-columns: 1fr; }
+      .bar-row { grid-template-columns: 110px minmax(80px, 1fr) 64px; }
+      .answer-item { grid-template-columns: 34px minmax(0, 1fr); }
+      .answer-item .grade { grid-column: 2; justify-self: start; }
+      .download-list { grid-template-columns: 1fr; }
+      .download-item:nth-child(odd), .download-item:nth-child(even) { padding-left: 0; padding-right: 0; border-left: 0; }
+    }
+    @media print {
+      .page-bar, .hero-actions, .side-nav, .filters, .pagination, .back-top { display: none !important; }
+      .layout { display: block; width: 100%; padding: 20px; }
+      .report-section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-bar"><div class="page-bar-inner"><a href="../">综合总览</a>　/　<a href="../douyin-citation-report/">第一轮引用源</a>　/　第二轮引用源</div></div>
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="stage-badge" id="stage-label">阶段性 300/576</span>
+        <div class="eyebrow" style="margin-top:18px">AIDSO / DOUBAO CITATION STUDY / ROUND 2</div>
+        <h1>豆包第二轮引用源分析：抖音视频与全部来源</h1>
+        <p class="hero-meta" id="hero-meta">96 个问题 · 288 个有效回答 · 引用数据加载中</p>
+      </div>
+      <div class="hero-actions">
+        <a class="button" href="analysis_summary.json">分析数据</a>
+        <button class="button primary" id="print-report" type="button">打印 / PDF</button>
+      </div>
+    </div>
+  </header>
+  <div class="status-band"><div class="status-inner">
+    <span class="status-item">数据映射 PASS</span>
+    <span class="status-item">独立复核 PASS</span>
+    <span>来源完整 <strong id="source-complete">300/300</strong></span>
+    <span>生成于 <strong id="generated-at">-</strong></span>
+  </div></div>
+
+  <div class="layout">
+    <nav class="side-nav" aria-label="报告目录">
+      <p class="nav-label">Report Index</p>
+      <a href="#overview" class="active">核心结论</a>
+      <a href="#comparison">两轮对比</a>
+      <a href="#freshness">内容新旧</a>
+      <a href="#question-types">问题类型</a>
+      <a href="#sources">来源结构</a>
+      <a href="#source-urls">网址与合作</a>
+      <a href="#accounts">自有账号</a>
+      <a href="#answers">最终回答</a>
+      <a href="#quality">质量与限制</a>
+      <a href="#downloads">数据文件</a>
+    </nav>
+
+    <main>
+      <section class="report-section" id="overview">
+        <div class="section-head">
+          <div><span class="section-number">01</span><h2>核心结论</h2></div>
+          <p class="section-note">“抖音视频”只统计能定位到具体视频 ID 的页面；同一回答内相同规范 URL 只计一次。</p>
+        </div>
+        <div class="evidence-strip">
+          <div class="evidence-cell"><strong>高证据</strong><span>引用次数、回答覆盖、问题覆盖、域名与具体视频 ID</span></div>
+          <div class="evidence-cell medium"><strong>中证据</strong><span>标题推断的内容主题与结构、自有账号严格归属</span></div>
+          <div class="evidence-cell low"><strong>未采集</strong><span>发布时间、粉丝、播放、点赞、搜索排名和未引用候选</span></div>
+        </div>
+        <div class="kpi-grid">
+          <article class="kpi"><div class="kpi-label">抖音视频占全部去重引用</div><strong class="kpi-value blue" id="kpi-event-share">-</strong><div class="kpi-meta" id="kpi-event-count">-</div><div class="progress"><span id="kpi-event-progress"></span></div></article>
+          <article class="kpi"><div class="kpi-label">含抖音视频的回答</div><strong class="kpi-value" id="kpi-answer-rate">-</strong><div class="kpi-meta" id="kpi-answer-count">-</div><div class="progress"><span id="kpi-answer-progress"></span></div></article>
+          <article class="kpi"><div class="kpi-label">含抖音视频的问题</div><strong class="kpi-value" id="kpi-question-rate">-</strong><div class="kpi-meta" id="kpi-question-count">-</div><div class="progress"><span id="kpi-question-progress"></span></div></article>
+          <article class="kpi"><div class="kpi-label">唯一抖音视频</div><strong class="kpi-value" id="kpi-unique-videos">-</strong><div class="kpi-meta">按具体视频 ID 去重</div></article>
+        </div>
+        <div class="conclusion"><div class="conclusion-label">一句话结论</div><p class="conclusion-text" id="one-line">数据加载中。</p></div>
+      </section>
+
+      <section class="report-section" id="comparison">
+        <div class="section-head"><div><span class="section-number">02</span><h2>第一轮 vs 第二轮引用源</h2></div><p class="section-note">第一轮使用完整 576 个样本；第二轮当前仅为阶段性 300/576。绝对量与各自样本率并列展示，不混用分母。</p></div>
+        <div class="panel"><h3>自有账号总览</h3><div class="table-wrap"><table><thead><tr><th>轮次</th><th class="numeric">引用</th><th class="numeric">文章</th><th class="numeric">命中样本</th><th class="numeric">样本率</th><th class="numeric">高置信</th><th class="numeric">中置信</th><th class="numeric">未解决</th></tr></thead><tbody id="comparison-owned-total-body"></tbody></table></div></div>
+        <div class="panel" style="margin-top:16px">
+          <h3>官网引用对比</h3>
+          <div class="kpi-grid" id="comparison-official-cards"></div>
+          <div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>来源</th><th class="numeric">第一轮引用</th><th class="numeric">第一轮页面</th><th class="numeric">第一轮样本</th><th class="numeric">第一轮样本率</th><th class="numeric">第一轮问题</th><th class="numeric">第二轮引用</th><th class="numeric">第二轮页面</th><th class="numeric">第二轮样本</th><th class="numeric">第二轮样本率</th><th class="numeric">第二轮问题</th></tr></thead><tbody id="comparison-official-body"></tbody></table></div>
+          <div class="notice"><strong>互斥与并集：</strong>Open、运营圈、蝉妈妈官网按路径互斥；“蝉妈妈官方域合计”按引用 ID、规范 URL、样本 ID、问题 ID 分别取并集，不能直接相加样本数或百分比。</div>
+        </div>
+        <div class="panel" style="margin-top:16px"><h3>来源域名变化</h3><div class="table-wrap"><table><thead><tr><th>域名</th><th class="numeric">第一轮引用</th><th class="numeric">第一轮占比</th><th class="numeric">第二轮引用</th><th class="numeric">第二轮占比</th><th class="numeric">变化</th></tr></thead><tbody id="comparison-domain-body"></tbody></table></div></div>
+        <div class="two-col" style="margin-top:16px">
+          <div class="panel"><h3>来源类型变化</h3><div class="table-wrap"><table><thead><tr><th>类型</th><th class="numeric">第一轮</th><th class="numeric">第二轮</th><th class="numeric">变化</th></tr></thead><tbody id="comparison-platform-body"></tbody></table></div></div>
+          <div class="panel"><h3>四类问题变化</h3><div class="table-wrap"><table><thead><tr><th>问题类型</th><th class="numeric">第一轮回答覆盖</th><th class="numeric">第二轮回答覆盖</th><th class="numeric">变化</th></tr></thead><tbody id="comparison-question-body"></tbody></table></div></div>
+        </div>
+        <div class="panel" style="margin-top:16px"><h3>11 个自有账号同口径对比</h3><div class="table-wrap"><table><thead><tr><th>账号</th><th>平台</th><th class="numeric">第一轮引用</th><th class="numeric">第一轮文章</th><th class="numeric">第一轮样本率</th><th class="numeric">第二轮引用</th><th class="numeric">第二轮文章</th><th class="numeric">第二轮样本率</th></tr></thead><tbody id="comparison-account-body"></tbody></table></div></div>
+        <div class="notice" id="comparison-freshness-note"><strong>内容新旧度：</strong>加载中。</div>
+      </section>
+
+      <section class="report-section" id="freshness">
+        <div class="section-head"><div><span class="section-number">02</span><h2>内容新旧与引用周期</h2></div><p class="section-note">当前冻结包只含标题和网址，不含页面发布时间。</p></div>
+        <div class="coverage-grid">
+          <div class="coverage-cell"><span>唯一来源发布时间</span><strong id="publish-coverage">0 / -</strong></div>
+          <div class="coverage-cell"><span>抖音视频发布时间</span><strong id="video-publish-coverage">0 / -</strong></div>
+          <div class="coverage-cell"><span>6 月、7 月变化</span><strong>暂不可计算</strong></div>
+          <div class="coverage-cell"><span>收录或引用周期</span><strong>暂不可计算</strong></div>
+        </div>
+        <div class="notice"><strong>为什么不显示月份图：</strong>没有发布时间时，按标题年份或 URL 路径猜日期会制造错误。取得可验证的页面发布时间后，本节再按第一轮相同口径补齐。</div>
+      </section>
+
+      <section class="report-section" id="question-types">
+        <div class="section-head"><div><span class="section-number">03</span><h2>不同问题类型的抖音视频引用</h2></div><p class="section-note">沿用第一轮对同一 96 个问题的四类人工复核映射，保证前后可比。</p></div>
+        <div class="table-wrap"><table><thead><tr><th>问题类型</th><th class="numeric">问题</th><th class="numeric">回答</th><th class="numeric">全部引用</th><th class="numeric">抖音视频引用</th><th class="numeric">引用占比</th><th class="numeric">回答覆盖率</th><th class="numeric">问题覆盖率</th></tr></thead><tbody id="question-type-body"></tbody></table></div>
+      </section>
+
+      <section class="report-section" id="sources">
+        <div class="section-head"><div><span class="section-number">04</span><h2>全部来源结构</h2></div><p class="section-note">这里描述已经被豆包引用的来源分布，不等于算法权重或选择概率。</p></div>
+        <div class="two-col">
+          <div class="panel"><h3>平台类型</h3><div class="bar-list" id="platform-bars"></div></div>
+          <div class="panel"><h3>内容形式</h3><div class="bar-list" id="format-bars"></div></div>
+        </div>
+        <div class="two-col" style="margin-top:16px">
+          <div class="panel"><h3>内容结构</h3><div class="bar-list" id="structure-bars"></div></div>
+          <div class="panel"><h3>内容主题</h3><div class="bar-list" id="topic-bars"></div></div>
+        </div>
+        <div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>域名</th><th>类型</th><th class="numeric">引用</th><th class="numeric">占比</th><th class="numeric">页面</th><th class="numeric">回答</th><th class="numeric">问题</th></tr></thead><tbody id="top-domain-body"></tbody></table></div>
+      </section>
+
+      <section class="report-section" id="source-urls">
+        <div class="section-head"><div><span class="section-number">05</span><h2>全部网址与合作候选</h2></div><p class="section-note">默认合作候选：外部平台、至少 10 次引用且至少 3 个不同页面。阈值可调整。</p></div>
+        <div class="panel">
+          <h3>合作候选平台</h3>
+          <div class="filters">
+            <div class="filter"><label for="partner-min-citations">最少引用次数</label><input id="partner-min-citations" type="number" min="1" value="10"></div>
+            <div class="filter"><label for="partner-min-urls">最少不同页面</label><input id="partner-min-urls" type="number" min="1" value="3"></div>
+            <div class="filter"><label for="partner-system-filter">平台范围</label><select id="partner-system-filter"><option value="external">外部平台</option><option value="bytedance">字节/头条系</option><option value="all">全部</option></select></div>
+          </div>
+          <div class="table-summary"><span id="partner-count">-</span><span>体量标准透明可改</span></div>
+          <div class="table-wrap"><table><thead><tr><th>平台域名</th><th>类型</th><th class="numeric">引用</th><th class="numeric">页面</th><th class="numeric">回答</th><th class="numeric">问题</th><th>归属</th></tr></thead><tbody id="partner-table-body"></tbody></table></div>
+        </div>
+        <div class="panel" style="margin-top:16px">
+          <h3>完整网址清单</h3>
+          <div class="filters">
+            <div class="filter grow"><label for="source-url-search">搜索网址、域名或标题</label><input id="source-url-search" type="search" placeholder="输入关键词"></div>
+            <div class="filter"><label for="source-type-filter">来源类型</label><select id="source-type-filter"><option value="all">全部类型</option></select></div>
+            <div class="filter"><label for="source-page-size">每页</label><select id="source-page-size"><option value="25">25</option><option value="50" selected>50</option><option value="100">100</option><option value="all">全部</option></select></div>
+          </div>
+          <div class="table-summary"><span id="source-url-count">-</span><span id="source-url-range">-</span></div>
+          <div class="table-wrap"><table><thead><tr><th>网址</th><th>标题</th><th>类型</th><th class="numeric">引用</th><th class="numeric">回答</th><th class="numeric">问题</th></tr></thead><tbody id="source-url-table-body"></tbody></table></div>
+          <div class="pagination"><button id="source-page-prev" type="button" aria-label="上一页">←</button><span id="source-page-label">-</span><button id="source-page-next" type="button" aria-label="下一页">→</button></div>
+        </div>
+      </section>
+
+      <section class="report-section" id="accounts">
+        <div class="section-head"><div><span class="section-number">06</span><h2>自有账号归属与账号证据</h2></div><p class="section-note">只使用作者 ID、内容 ID、公开元数据和账号快照等严格证据；品牌词命中不算归属。</p></div>
+        <div class="kpi-grid">
+          <article class="kpi"><div class="kpi-label">自有账号引用</div><strong class="kpi-value" id="owned-events">-</strong><div class="kpi-meta">引用次数</div></article>
+          <article class="kpi"><div class="kpi-label">自有账号唯一文章</div><strong class="kpi-value" id="owned-articles">-</strong><div class="kpi-meta">严格文章键去重</div></article>
+          <article class="kpi"><div class="kpi-label">命中回答</div><strong class="kpi-value" id="owned-answers">-</strong><div class="kpi-meta" id="owned-answer-rate">-</div></article>
+          <article class="kpi"><div class="kpi-label">未决引用</div><strong class="kpi-value" id="owned-unresolved">-</strong><div class="kpi-meta">保留为未决，不强判</div></article>
+        </div>
+        <div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>账号</th><th>平台</th><th>账号类型</th><th class="numeric">引用</th><th class="numeric">文章</th><th class="numeric">回答</th><th class="numeric">样本率</th><th>置信度</th></tr></thead><tbody id="owned-account-body"></tbody></table></div>
+        <div class="notice"><strong>当前不能回答账号权重：</strong>冻结引用包没有全部抖音作者的认证、粉丝、活跃度和未引用候选，因此不能比较企业号、员工号与普通个人号的被选中概率。</div>
+      </section>
+
+      <section class="report-section" id="answers">
+        <div class="section-head"><div><span class="section-number">07</span><h2>当前能回答的五个问题</h2></div><p class="section-note">“偏好”严格区分为已引用来源分布与算法选择权重，后者没有候选对照时不可识别。</p></div>
+        <div class="answer-list">
+          <article class="answer-item"><span class="answer-index">01</span><div><h3>豆包更常引用什么平台？</h3><p id="answer-platform">加载中。</p></div><span class="grade high">分布 高</span></article>
+          <article class="answer-item"><span class="answer-index">02</span><div><h3>更偏好什么类型的账号？</h3><p>当前无法判断。只有 11 个自有账号的严格归属数据，没有全部来源账号类型和未引用候选。</p></div><span class="grade low">证据不足</span></article>
+          <article class="answer-item"><span class="answer-index">03</span><div><h3>更偏好新内容还是历史内容？</h3><p>当前无法判断。第二轮冻结引用包没有内容发布时间，不能沿用第一轮的发布时间结论替代第二轮。</p></div><span class="grade low">未采集</span></article>
+          <article class="answer-item"><span class="answer-index">04</span><div><h3>企业号、员工号是否比普通个人号权重高？</h3><p>不能证明。自有账号文章频繁被引用说明它们在已引用集合中有覆盖，但缺少同场未引用个人号对照，不能转化为算法权重结论。</p></div><span class="grade low">不可识别</span></article>
+          <article class="answer-item"><span class="answer-index">05</span><div><h3>播放、点赞、搜索排名与引用有关吗？</h3><p>当前无法计算。冻结引用包没有这些字段，也没有引用发生时的历史互动快照。</p></div><span class="grade low">未采集</span></article>
+        </div>
+      </section>
+
+      <section class="report-section" id="quality">
+        <div class="section-head"><div><span class="section-number">08</span><h2>质量、边界与可复核性</h2></div><p class="section-note">所有百分比均可从导出的事件、来源和汇总 CSV 重算。</p></div>
+        <div class="quality-grid">
+          <div class="quality-cell"><span>来源完整</span><strong>300 / 300 PASS</strong></div>
+          <div class="quality-cell"><span>数据构建校验</span><strong>PASS</strong></div>
+          <div class="quality-cell"><span>独立复算与敏感扫描</span><strong>PASS</strong></div>
+        </div>
+        <div class="panel" style="margin-top:16px"><h3>必须保留的限制</h3><ul class="limits" id="limitations"></ul></div>
+      </section>
+
+      <section class="report-section" id="downloads">
+        <div class="section-head"><div><span class="section-number">09</span><h2>数据与明细文件</h2></div><p class="section-note">阶段性文件只对应当前 300 个有效样本；最终 576 会整包替换。</p></div>
+        <div class="download-list">
+          <a class="download-item" href="citation_events.csv"><span><span class="download-name">去重引用事件</span><span class="download-meta">逐条保留 citation_id、公开脱敏 URL 和样本映射</span></span><span class="download-ext">CSV</span></a>
+          <a class="download-item" href="source_features.csv"><span><span class="download-name">唯一来源特征</span><span class="download-meta">按规范 URL 聚合引用、回答与问题</span></span><span class="download-ext">CSV</span></a>
+          <a class="download-item" href="domain_summary.csv"><span><span class="download-name">域名与合作候选</span><span class="download-meta">平台体量、页面数与归属</span></span><span class="download-ext">CSV</span></a>
+          <a class="download-item" href="question_type_summary.csv"><span><span class="download-name">问题类型汇总</span><span class="download-meta">四类问题的抖音引用占比和覆盖率</span></span><span class="download-ext">CSV</span></a>
+          <a class="download-item" href="owned_account_summary.csv"><span><span class="download-name">自有账号汇总</span><span class="download-meta">严格归属的账号、文章和回答</span></span><span class="download-ext">CSV</span></a>
+          <a class="download-item" href="analysis_summary.json"><span><span class="download-name">机器可读分析汇总</span><span class="download-meta">核心指标、限制、输入哈希</span></span><span class="download-ext">JSON</span></a>
+          <a class="download-item" href="validation_pass1.json"><span><span class="download-name">第一轮校验</span><span class="download-meta">输入、映射、导出完整性</span></span><span class="download-ext">JSON</span></a>
+          <a class="download-item" href="validation_pass2.json"><span><span class="download-name">第二轮独立复算</span><span class="download-meta">从导出 CSV 重算核心统计</span></span><span class="download-ext">JSON</span></a>
+          <a class="download-item" href="sensitive_scan.json"><span><span class="download-name">敏感信息扫描</span><span class="download-meta">公开文本产物凭据形式内容 0 命中</span></span><span class="download-ext">JSON</span></a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>爱搜 × 豆包第二轮引用源研究 · 当前为阶段性 300/576 · 最终 576 必须全量重算</footer>
+  <button class="back-top" id="back-top" type="button" title="回到顶部" aria-label="回到顶部">↑</button>
+  <script src="report-data.js"></script>
+  <script src="source-urls-data.js"></script>
+  <script>
+    const report = window.ROUND2_CITATION_REPORT || {};
+    const core = report.core || {};
+    const coverage = report.coverage || {};
+    const sourceUrls = Array.isArray(window.ROUND2_SOURCE_URLS) ? window.ROUND2_SOURCE_URLS : [];
+    const sourceDomains = Array.isArray(window.ROUND2_SOURCE_DOMAINS) ? window.ROUND2_SOURCE_DOMAINS : [];
+    const nf = new Intl.NumberFormat('zh-CN');
+    const $ = id => document.getElementById(id);
+    const number = value => nf.format(Number(value || 0));
+    const pct = value => `${Number(value || 0).toFixed(2)}%`;
+
+    function setText(id, value) { const node = $(id); if (node) node.textContent = value; }
+    function setProgress(id, value) { const node = $(id); if (node) node.style.width = `${Math.min(100, Number(value || 0))}%`; }
+    function appendCell(row, value, className = '') { const cell = document.createElement('td'); cell.textContent = value; if (className) cell.className = className; row.appendChild(cell); return cell; }
+    function appendLinkCell(row, href, label, className = '') { const cell = document.createElement('td'); if (className) cell.className = className; const link = document.createElement('a'); link.className = 'source-link'; link.href = href; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = label; cell.appendChild(link); row.appendChild(cell); }
+    function emptyRow(body, columns, message) { const row = document.createElement('tr'); const cell = appendCell(row, message, 'empty-row'); cell.colSpan = columns; body.appendChild(row); }
+
+    setText('stage-label', report.meta?.stage_label || '阶段性 300/576');
+    setText('hero-meta', `${number(core.questions_total)} 个问题 · ${number(core.answers_total)} 个有效回答 · ${number(core.deduplicated_citation_events)} 次去重引用`);
+    setText('source-complete', `${number(coverage.source_complete_samples)}/${number(coverage.valid_samples)}`);
+    setText('generated-at', String(report.meta?.generated_at || '').replace('T', ' ').slice(0, 19));
+    setText('kpi-event-share', pct(core.douyin_video_event_share_pct));
+    setText('kpi-event-count', `${number(core.douyin_video_events)} / ${number(core.deduplicated_citation_events)}`);
+    setProgress('kpi-event-progress', core.douyin_video_event_share_pct);
+    setText('kpi-answer-rate', pct(core.answer_douyin_video_rate_pct));
+    setText('kpi-answer-count', `${number(core.answers_with_douyin_video)} / ${number(core.answers_total)}`);
+    setProgress('kpi-answer-progress', core.answer_douyin_video_rate_pct);
+    setText('kpi-question-rate', pct(core.question_douyin_video_rate_pct));
+    setText('kpi-question-count', `${number(core.questions_with_douyin_video)} / ${number(core.questions_total)}`);
+    setProgress('kpi-question-progress', core.question_douyin_video_rate_pct);
+    setText('kpi-unique-videos', number(core.unique_douyin_videos));
+    setText('one-line', `阶段性结果：具体抖音视频占全部去重引用的 ${pct(core.douyin_video_event_share_pct)}，覆盖 ${number(core.answers_with_douyin_video)}/${number(core.answers_total)} 个回答；发布时间与账号互动尚未采集，不能判断新旧偏好或算法权重。`);
+    setText('publish-coverage', `${number(coverage.publish_time_known)} / ${number(coverage.publish_time_total)}`);
+    setText('video-publish-coverage', `${number(coverage.account_metadata_known)} / ${number(coverage.douyin_unique_videos)}`);
+
+    const comparison = report.comparison || {};
+    const delta = value => `${Number(value || 0) > 0 ? '+' : ''}${Number(value || 0).toFixed(2)} pp`;
+    const comparisonOwnedTotalBody = $('comparison-owned-total-body');
+    [['第一轮 576/576', comparison.owned_totals?.round1], ['第二轮阶段性 300/576', comparison.owned_totals?.round2]].forEach(([label, item]) => {
+      if (!item) return; const row = document.createElement('tr'); appendCell(row, label); appendCell(row, number(item.citation_events), 'numeric'); appendCell(row, number(item.unique_articles), 'numeric'); appendCell(row, number(item.answers), 'numeric'); appendCell(row, pct(item.sample_rate_pct), 'numeric'); appendCell(row, number(item.high_confidence_events), 'numeric'); appendCell(row, number(item.medium_confidence_events), 'numeric'); appendCell(row, number(item.unresolved_events), 'numeric'); comparisonOwnedTotalBody.appendChild(row);
+    });
+    const comparisonOfficialBody = $('comparison-official-body');
+    const officialItems = comparison.official_sources || [];
+    const officialCards = $('comparison-official-cards');
+    officialItems.filter(item => item.key !== 'feigua_official').forEach(item => {
+      const card = document.createElement('article'); card.className = 'kpi';
+      const label = document.createElement('div'); label.className = 'kpi-label'; label.textContent = item.label;
+      const value = document.createElement('strong'); value.className = 'kpi-value'; value.textContent = number(item.round2.citation_events);
+      const meta = document.createElement('div'); meta.className = 'kpi-meta'; meta.textContent = `第一轮 ${number(item.round1.citation_events)} → 第二轮 ${number(item.round2.citation_events)} · 样本率 ${pct(item.round2.sample_rate_pct)}`;
+      card.append(label, value, meta); officialCards.appendChild(card);
+    });
+    officialItems.forEach(item => { const row = document.createElement('tr'); appendCell(row, item.label); appendCell(row, number(item.round1.citation_events), 'numeric'); appendCell(row, number(item.round1.unique_pages), 'numeric'); appendCell(row, number(item.round1.answers), 'numeric'); appendCell(row, pct(item.round1.sample_rate_pct), 'numeric'); appendCell(row, number(item.round1.questions), 'numeric'); appendCell(row, number(item.round2.citation_events), 'numeric'); appendCell(row, number(item.round2.unique_pages), 'numeric'); appendCell(row, number(item.round2.answers), 'numeric'); appendCell(row, pct(item.round2.sample_rate_pct), 'numeric'); appendCell(row, number(item.round2.questions), 'numeric'); comparisonOfficialBody.appendChild(row); });
+    const comparisonDomainBody = $('comparison-domain-body');
+    (comparison.domains || []).forEach(item => { const row = document.createElement('tr'); appendCell(row, item.label); appendCell(row, number(item.round1_events), 'numeric'); appendCell(row, pct(item.round1_share_pct), 'numeric'); appendCell(row, number(item.round2_events), 'numeric'); appendCell(row, pct(item.round2_share_pct), 'numeric'); appendCell(row, delta(item.delta_pp), 'numeric'); comparisonDomainBody.appendChild(row); });
+    const comparisonPlatformBody = $('comparison-platform-body');
+    (comparison.platforms || []).forEach(item => { const row = document.createElement('tr'); appendCell(row, item.label); appendCell(row, pct(item.round1_share_pct), 'numeric'); appendCell(row, pct(item.round2_share_pct), 'numeric'); appendCell(row, delta(item.delta_pp), 'numeric'); comparisonPlatformBody.appendChild(row); });
+    const comparisonQuestionBody = $('comparison-question-body');
+    (comparison.question_types || []).forEach(item => { const row = document.createElement('tr'); appendCell(row, item.label); appendCell(row, pct(item.round1_answer_rate_pct), 'numeric'); appendCell(row, pct(item.round2_answer_rate_pct), 'numeric'); appendCell(row, delta(item.delta_pp), 'numeric'); comparisonQuestionBody.appendChild(row); });
+    const comparisonAccountBody = $('comparison-account-body');
+    (comparison.owned_accounts || []).forEach(item => { const row = document.createElement('tr'); appendCell(row, item.label); appendCell(row, item.platform); appendCell(row, number(item.round1_events), 'numeric'); appendCell(row, number(item.round1_articles), 'numeric'); appendCell(row, pct(item.round1_sample_rate_pct), 'numeric'); appendCell(row, number(item.round2_events), 'numeric'); appendCell(row, number(item.round2_articles), 'numeric'); appendCell(row, pct(item.round2_sample_rate_pct), 'numeric'); comparisonAccountBody.appendChild(row); });
+    const freshness = comparison.freshness || {};
+    setText('comparison-freshness-note', `内容新旧度：第一轮发布时间覆盖 ${number(freshness.round1_publish_time_known)}/${number(freshness.round1_publish_time_total)}（${pct(freshness.round1_publish_time_coverage_pct)}），内容年龄中位数 ${number(freshness.round1_median_age_days)} 天；第二轮发布时间覆盖 ${number(freshness.round2_publish_time_known)}/${number(freshness.round2_publish_time_total)}，未采集，不能比较新旧变化。`);
+
+    const questionBody = $('question-type-body');
+    (report.question_types || []).forEach(item => {
+      const row = document.createElement('tr');
+      appendCell(row, item.question_type); appendCell(row, number(item.questions), 'numeric'); appendCell(row, number(item.answers), 'numeric'); appendCell(row, number(item.citation_events), 'numeric'); appendCell(row, number(item.douyin_video_events), 'numeric'); appendCell(row, pct(item.douyin_event_share_pct), 'numeric'); appendCell(row, pct(item.answer_penetration_pct), 'numeric'); appendCell(row, pct(item.question_penetration_pct), 'numeric'); questionBody.appendChild(row);
+    });
+
+    function renderBars(id, rows, labelKey) {
+      const root = $(id); const max = Math.max(...rows.map(row => Number(row.event_share_pct || 0)), 1);
+      rows.forEach(item => { const row = document.createElement('div'); row.className = 'bar-row'; const label = document.createElement('span'); label.textContent = item[labelKey]; const track = document.createElement('div'); track.className = 'bar-track'; const fill = document.createElement('div'); fill.className = 'bar-fill'; fill.style.width = `${Number(item.event_share_pct || 0) / max * 100}%`; track.appendChild(fill); const value = document.createElement('span'); value.className = 'bar-value'; value.textContent = pct(item.event_share_pct); row.append(label, track, value); root.appendChild(row); });
+    }
+    renderBars('platform-bars', report.platforms || [], 'platform');
+    renderBars('format-bars', report.content_formats || [], 'format');
+    renderBars('structure-bars', report.content_structures || [], 'structure');
+    renderBars('topic-bars', report.content_topics || [], 'topic');
+
+    const domainBody = $('top-domain-body');
+    (report.top_domains || []).slice(0, 15).forEach(item => { const row = document.createElement('tr'); appendLinkCell(row, `https://${item.domain}/`, item.domain); appendCell(row, item.type); appendCell(row, number(item.citations), 'numeric'); appendCell(row, pct(item.event_share_pct), 'numeric'); appendCell(row, number(item.urls), 'numeric'); appendCell(row, number(item.answers), 'numeric'); appendCell(row, number(item.questions), 'numeric'); domainBody.appendChild(row); });
+
+    const owned = report.owned_accounts || {};
+    setText('owned-events', number(owned.citation_events)); setText('owned-articles', number(owned.unique_articles)); setText('owned-answers', number(owned.answers)); setText('owned-answer-rate', `${pct(owned.sample_rate_pct)} 的有效回答`); setText('owned-unresolved', number(owned.unresolved_events));
+    const ownedBody = $('owned-account-body');
+    (owned.accounts || []).forEach(item => { const row = document.createElement('tr'); appendCell(row, item.account); appendCell(row, item.platform); appendCell(row, item.account_type); appendCell(row, number(item.citation_events), 'numeric'); appendCell(row, number(item.unique_articles), 'numeric'); appendCell(row, number(item.answers), 'numeric'); appendCell(row, pct(item.sample_rate_pct), 'numeric'); appendCell(row, item.confidence); ownedBody.appendChild(row); });
+
+    const topPlatform = (report.platforms || [])[0];
+    setText('answer-platform', topPlatform ? `在已引用分布中，“${topPlatform.platform}”为最大平台类型，占 ${pct(topPlatform.event_share_pct)}；具体抖音视频单独占 ${pct(core.douyin_video_event_share_pct)}。这描述已引用来源，不代表算法权重。` : '暂无数据。');
+    const limitations = $('limitations');
+    (report.limitations || []).forEach(text => { const item = document.createElement('li'); item.textContent = text; limitations.appendChild(item); });
+
+    const partnerMinCitations = $('partner-min-citations');
+    const partnerMinUrls = $('partner-min-urls');
+    const partnerSystemFilter = $('partner-system-filter');
+    function renderPartners() {
+      const minCitations = Math.max(1, Number(partnerMinCitations.value) || 1); const minUrls = Math.max(1, Number(partnerMinUrls.value) || 1); const mode = partnerSystemFilter.value;
+      const candidates = sourceDomains.filter(item => item.citations >= minCitations && item.urls >= minUrls && (mode === 'all' || (mode === 'bytedance' ? item.bytedance : !item.bytedance)));
+      setText('partner-count', `筛选出 ${number(candidates.length)} 个候选平台`); const body = $('partner-table-body'); body.replaceChildren(); if (!candidates.length) return emptyRow(body, 7, '当前条件下没有符合的平台');
+      candidates.forEach(item => { const row = document.createElement('tr'); appendLinkCell(row, `https://${item.domain}/`, item.domain); appendCell(row, item.type); appendCell(row, number(item.citations), 'numeric'); appendCell(row, number(item.urls), 'numeric'); appendCell(row, number(item.answers), 'numeric'); appendCell(row, number(item.questions), 'numeric'); appendCell(row, item.owner); body.appendChild(row); });
+    }
+    partnerMinCitations.addEventListener('input', renderPartners); partnerMinUrls.addEventListener('input', renderPartners); partnerSystemFilter.addEventListener('change', renderPartners);
+
+    const typeFilter = $('source-type-filter');
+    [...new Set(sourceUrls.map(item => item.type))].sort((a, b) => a.localeCompare(b, 'zh-CN')).forEach(type => typeFilter.add(new Option(type, type)));
+    let sourcePage = 1;
+    function renderSourceUrls() {
+      const keyword = $('source-url-search').value.trim().toLowerCase(); const selectedType = typeFilter.value;
+      const rows = sourceUrls.filter(item => (selectedType === 'all' || item.type === selectedType) && (!keyword || `${item.url} ${item.domain} ${item.title}`.toLowerCase().includes(keyword)));
+      const showAll = $('source-page-size').value === 'all'; const pageSize = showAll ? Math.max(rows.length, 1) : Number($('source-page-size').value); const pages = Math.max(1, Math.ceil(rows.length / pageSize)); sourcePage = Math.min(sourcePage, pages); const start = (sourcePage - 1) * pageSize; const end = Math.min(start + pageSize, rows.length);
+      setText('source-url-count', `找到 ${number(rows.length)} 条网址`); setText('source-url-range', rows.length ? `显示第 ${number(start + 1)}-${number(end)} 条` : '没有匹配结果'); setText('source-page-label', `第 ${number(sourcePage)} / ${number(pages)} 页`); $('source-page-prev').disabled = sourcePage <= 1; $('source-page-next').disabled = sourcePage >= pages;
+      const body = $('source-url-table-body'); body.replaceChildren(); if (!rows.length) return emptyRow(body, 6, '没有匹配的网址');
+      rows.slice(start, end).forEach(item => { const row = document.createElement('tr'); appendLinkCell(row, item.url, item.url, 'source-url-cell'); appendCell(row, item.title || '未提供标题'); appendCell(row, item.type); appendCell(row, number(item.citations), 'numeric'); appendCell(row, number(item.answers), 'numeric'); appendCell(row, number(item.questions), 'numeric'); body.appendChild(row); });
+    }
+    $('source-url-search').addEventListener('input', () => { sourcePage = 1; renderSourceUrls(); }); typeFilter.addEventListener('change', () => { sourcePage = 1; renderSourceUrls(); }); $('source-page-size').addEventListener('change', () => { sourcePage = 1; renderSourceUrls(); }); $('source-page-prev').addEventListener('click', () => { if (sourcePage > 1) { sourcePage -= 1; renderSourceUrls(); } }); $('source-page-next').addEventListener('click', () => { sourcePage += 1; renderSourceUrls(); });
+
+    const navLinks = [...document.querySelectorAll('.side-nav a')]; const sections = [...document.querySelectorAll('.report-section')]; const observer = new IntersectionObserver(entries => { const visible = entries.filter(item => item.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]; if (!visible) return; navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${visible.target.id}`)); }, { rootMargin: '-20% 0px -65% 0px', threshold: [0, .25, .5] }); sections.forEach(section => observer.observe(section));
+    $('print-report').addEventListener('click', () => window.print()); const backTop = $('back-top'); window.addEventListener('scroll', () => backTop.classList.toggle('visible', window.scrollY > 700), { passive: true }); backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    renderPartners(); renderSourceUrls();
+  </script>
+  <script defer src="../assets/platform-shell.js" data-root="../" data-section="citation" data-label="第二轮引用源"></script>
+</body>
+</html>

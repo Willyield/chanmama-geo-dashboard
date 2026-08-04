@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "checks": {
+    "event_rows": true,
+    "unique_urls": true,
+    "source_event_sum": true,
+    "domain_event_sum": true,
+    "video_events": true,
+    "unique_video_ids": true,
+    "video_answers": true,
+    "video_questions": true,
+    "broad_douyin": true,
+    "bytedance": true,
+    "question_type_partition": true,
+    "question_type_names": true,
+    "owned_account_events": true,
+    "public_event_rows": true,
+    "public_urls_sanitized": true,
+    "sensitive_scan": true,
+    "comparison_accounts": true,
+    "comparison_official_sources": true,
+    "official_source_metrics_complete": true,
+    "chanmama_official_rows_mutually_exclusive": true,
+    "public_report_data": true,
+    "public_url_data": true,
+    "stage_not_final": true,
+    "question_type_方法论问题": true,
+    "question_type_工具推荐问题": true,
+    "question_type_操作教程问题": true,
+    "question_type_行业知识问题": true
+  },
+  "recomputed": {
+    "events": 6117,
+    "unique_urls": 1829,
+    "video_events": 1013,
+    "unique_videos": 418,
+    "owned_events": 443
+  }
+}

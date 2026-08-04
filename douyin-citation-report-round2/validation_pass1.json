@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "checks": {
+    "input_hashes_match": true,
+    "manifest_checkpoint": true,
+    "valid_samples": true,
+    "source_complete_samples": true,
+    "failed_samples": true,
+    "citation_rows": true,
+    "citation_ids_unique": true,
+    "question_mapping": true,
+    "owned_attribution": true,
+    "event_export_rows": true,
+    "source_export_rows": true,
+    "public_event_export_rows": true,
+    "official_source_partition": true,
+    "chanmama_official_categories_mutually_exclusive": true,
+    "comparison_has_all_11_accounts": true,
+    "public_sensitive_findings_zero": true
+  },
+  "generated_at": "2026-08-04T10:15:57+08:00"
+}
