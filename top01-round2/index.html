@@ -9,28 +9,28 @@
   <script src="./dashboard-data.js"></script>
   <style>
     :root {
-      --canvas: #f4f6f8;
+      --canvas: #f8fafc;
       --surface: #ffffff;
-      --ink: #18212b;
-      --muted: #64707d;
-      --line: #d7dde3;
-      --line-strong: #aeb8c2;
-      --nav: #17212b;
-      --blue: #2457a7;
-      --blue-soft: #e8f0fb;
-      --green: #16734a;
-      --green-soft: #e5f5ec;
-      --amber: #a75b10;
-      --amber-soft: #fff0dc;
-      --red: #ad3030;
-      --red-soft: #fbe8e8;
+      --ink: #0f172a;
+      --muted: #64748b;
+      --line: #cbd5e1;
+      --line-strong: #94a3b8;
+      --nav: #0f172a;
+      --blue: #1e40af;
+      --blue-soft: #dbeafe;
+      --green: #047857;
+      --green-soft: #d1fae5;
+      --amber: #d97706;
+      --amber-soft: #fef3c7;
+      --red: #b91c1c;
+      --red-soft: #fee2e2;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       background: var(--canvas);
       color: var(--ink);
-      font-family: "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+      font-family: "IBM Plex Sans", "Inter", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
       font-size: 14px;
       letter-spacing: 0;
     }
@@ -38,22 +38,30 @@
     header {
       background: var(--nav);
       color: #f8fafc;
-      border-bottom: 4px solid #d59a27;
+      border-bottom: 1px solid var(--line);
     }
     .header-inner, .content {
       width: min(1600px, calc(100% - 40px));
       margin: 0 auto;
     }
-    .header-inner { padding: 22px 0 0; }
+    .header-inner { padding: 20px 0 0; }
+    .tick-rule {
+      height: 12px;
+      margin-bottom: 18px;
+      background: repeating-linear-gradient(90deg, rgba(248,250,252,.75) 0 1px, transparent 1px 24px);
+      opacity: .6;
+    }
     .header-kicker {
       color: #9fb4c8;
       font-size: 12px;
       font-weight: 700;
     }
     h1 {
-      margin: 7px 0 8px;
-      font-size: 32px;
-      line-height: 1.2;
+      margin: 8px 0 10px;
+      max-width: 1200px;
+      font-size: 48px;
+      line-height: 1.08;
+      font-weight: 850;
       letter-spacing: 0;
     }
     .meta {
@@ -67,7 +75,7 @@
     .tabs {
       display: flex;
       gap: 2px;
-      margin-top: 18px;
+      margin-top: 20px;
     }
     .tab {
       display: inline-flex;
@@ -85,47 +93,60 @@
       color: var(--ink);
       border-color: #4b5967;
     }
-    .content { padding: 22px 0 48px; }
+    .content { padding: 24px 0 48px; }
     .stage-banner {
-      border: 1px solid #b7791f;
-      background: #fff8e7;
-      color: #6b4608;
-      padding: 10px 14px;
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      border: 1px solid #f59e0b;
+      border-radius: 4px;
+      background: #fffbeb;
+      color: #92400e;
+      padding: 7px 11px;
       font-weight: 800;
       line-height: 1.5;
     }
     .brief {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
-      gap: 24px;
+      gap: 20px;
       align-items: center;
-      padding: 18px 0 22px;
-      border-bottom: 1px solid var(--line-strong);
+      margin-top: 12px;
+      padding: 18px 20px;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      background: #111827;
+      color: #f8fafc;
     }
-    .brief-label { color: var(--blue); font-size: 12px; font-weight: 800; }
-    .brief-title { margin: 6px 0; font-size: 22px; line-height: 1.35; font-weight: 800; }
-    .brief-note { color: var(--muted); line-height: 1.6; }
+    .brief-label { color: #93c5fd; font-size: 12px; font-weight: 850; }
+    .brief-title { margin: 7px 0; font-size: 30px; line-height: 1.2; font-weight: 900; }
+    .brief-note { color: #cbd5e1; line-height: 1.55; }
     .brief-total { text-align: right; font-variant-numeric: tabular-nums; }
-    .brief-total strong { display: block; font-size: 34px; }
-    .brief-total span { color: var(--muted); font-size: 12px; }
+    .brief-total strong { display: block; font-size: 32px; line-height: 1; }
+    .brief-total span { display: block; margin-top: 8px; color: #cbd5e1; font-size: 12px; font-weight: 700; }
     .kpi-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      margin: 18px 0 4px;
+      gap: 12px;
+      margin: 12px 0 4px;
     }
     .kpi {
-      min-height: 112px;
+      min-height: 124px;
       padding: 14px;
       background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 6px;
+      border-top: 4px solid var(--blue);
+      border-radius: 8px;
     }
-    .kpi-label { color: var(--muted); font-size: 12px; font-weight: 700; }
-    .kpi-value { margin-top: 10px; font-size: 27px; font-weight: 800; font-variant-numeric: tabular-nums; }
+    .kpi:nth-child(4n + 1) { border-top-color: var(--green); }
+    .kpi:nth-child(4n + 2) { border-top-color: var(--blue); }
+    .kpi:nth-child(4n + 3) { border-top-color: var(--amber); }
+    .kpi:nth-child(4n) { border-top-color: var(--red); }
+    .kpi-label { color: var(--muted); font-size: 12px; font-weight: 800; }
+    .kpi-value { margin-top: 10px; font-size: 28px; line-height: 1.1; font-weight: 900; font-variant-numeric: tabular-nums; }
     .kpi-sub { margin-top: 7px; color: var(--muted); font-size: 12px; line-height: 1.45; }
     section {
-      padding: 24px 0;
+      padding: 28px 0;
       border-bottom: 1px solid var(--line-strong);
     }
     .section-head {
@@ -135,14 +156,14 @@
       gap: 14px;
       margin-bottom: 14px;
     }
-    h2 { margin: 0; font-size: 19px; letter-spacing: 0; }
+    h2 { margin: 0; font-size: 20px; letter-spacing: 0; }
     .section-note { color: var(--muted); font-size: 12px; text-align: right; }
     .progress-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
     .progress-item { min-width: 0; }
     .progress-top { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
     .progress-name { font-weight: 750; }
     .progress-number { color: var(--muted); font-variant-numeric: tabular-nums; }
-    .track { height: 12px; background: #dfe4e9; border: 1px solid #c8d0d8; overflow: hidden; }
+    .track { height: 11px; background: #e2e8f0; border: 1px solid var(--line); overflow: hidden; }
     .fill { height: 100%; background: var(--blue); }
     .fill.green { background: var(--green); }
     .fill.amber { background: var(--amber); }
@@ -150,8 +171,8 @@
     .source-item {
       background: var(--surface);
       border: 1px solid var(--line);
-      border-left: 4px solid var(--green);
-      border-radius: 6px;
+      border-top: 4px solid var(--green);
+      border-radius: 8px;
       padding: 15px;
     }
     .source-title { font-size: 16px; font-weight: 800; }
@@ -163,7 +184,7 @@
     .bar-list { display: grid; gap: 10px; }
     .bar-row { display: grid; grid-template-columns: minmax(120px, 180px) minmax(100px, 1fr) 72px; gap: 10px; align-items: center; }
     .bar-label { overflow-wrap: anywhere; }
-    .bar-track { height: 14px; background: #e1e6eb; border: 1px solid #ccd4dc; }
+    .bar-track { height: 13px; background: #e2e8f0; border: 1px solid var(--line); }
     .bar-value { height: 100%; background: var(--blue); }
     .bar-value.green { background: var(--green); }
     .bar-value.amber { background: var(--amber); }
@@ -179,13 +200,13 @@
       width: 100%;
       min-height: 38px;
       border: 1px solid var(--line-strong);
-      border-radius: 5px;
+      border-radius: 6px;
       background: var(--surface);
       color: var(--ink);
       padding: 8px 10px;
       font: inherit;
     }
-    .table-wrap { width: 100%; overflow-x: auto; border: 1px solid var(--line); background: var(--surface); }
+    .table-wrap { width: 100%; overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
     table { width: 100%; border-collapse: collapse; table-layout: auto; }
     th, td {
       border-bottom: 1px solid var(--line);
@@ -198,7 +219,8 @@
       word-break: break-word;
       line-height: 1.55;
     }
-    th { background: #edf1f4; color: #3b4651; font-size: 12px; position: sticky; top: 0; z-index: 1; }
+    th { background: #e2e8f0; color: #334155; font-size: 12px; font-weight: 800; position: sticky; top: 0; z-index: 1; }
+    tbody tr:nth-child(even) { background: #f8fafc; }
     tr:last-child td { border-bottom: 0; }
     .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
     .question-cell { min-width: 310px; }
@@ -242,18 +264,31 @@
       cursor: pointer;
     }
     .icon-button:disabled { cursor: default; opacity: .4; }
+    select:focus-visible, input:focus-visible, .icon-button:focus-visible, .tab:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
+    }
     [hidden] { display: none !important; }
     @media (max-width: 980px) {
       .header-inner, .content { width: min(100% - 24px, 1600px); }
-      h1 { font-size: 25px; }
+      h1 { font-size: 36px; }
       .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .progress-grid, .source-grid, .split-grid { grid-template-columns: 1fr; }
       .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .source-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 620px) {
+      .header-inner { padding-top: 16px; }
+      .tick-rule { margin-bottom: 13px; }
+      .header-kicker { font-size: 11px; }
+      h1 { font-size: 34px; }
+      .meta { gap: 5px 12px; }
+      .content { padding-top: 16px; }
+      .stage-banner { width: 100%; }
       .brief { grid-template-columns: 1fr; }
       .brief-total { text-align: left; }
+      .brief-title { font-size: 22px; }
+      .brief-total strong { font-size: 28px; }
       .kpi-grid, .filters { grid-template-columns: 1fr; }
       .tabs { overflow-x: auto; }
       .tab { white-space: nowrap; }
@@ -264,6 +299,7 @@
 <body data-mode="round2">
   <header>
     <div class="header-inner">
+      <div class="tick-rule" aria-hidden="true"></div>
       <div class="header-kicker">GEO / TOP0 + TOP1 / 豆包网页版快速模式</div>
       <h1 id="pageTitle">蝉妈妈 GEO TOP0/TOP1 第二轮复测</h1>
       <div class="meta" id="metaLine"></div>
