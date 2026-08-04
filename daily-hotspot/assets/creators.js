@@ -1326,17 +1326,35 @@ function renderCreatorCaptureStatus(data) {
   const captureLabel = supplement ? "SUPPLEMENT" : onTime ? "MAIN" : "LATE MAIN";
   const executionLabel = supplement ? "补采" : onTime ? "准时主采" : "补执行";
   const evidenceComplete = summary.evidenceStatus === "COMPLETE";
-  const evidenceLabel = evidenceComplete ? "证据完整" : "证据降级";
+  const evidenceLabel = evidenceComplete ? "页面采集完整" : "证据降级";
   const tierLabel = summary.tierChanged ? "名单层级有变化" : "名单层级未变";
+  const pagesLoaded = numberOrNull(summary.pagesLoaded);
+  const pagesTotal = numberOrNull(summary.pagesTotal);
+  const hasPageBreakdown = evidenceComplete
+    && capture.captureType === "SUPPLEMENT_CAPTURE"
+    && !capture.poolMatch
+    && externalSources.length > 0
+    && pagesLoaded === pagesTotal
+    && pagesLoaded >= externalSources.length;
+  const creatorProfilePages = hasPageBreakdown ? externalSources.length : null;
+  const platformBasePages = hasPageBreakdown ? pagesLoaded - creatorProfilePages : null;
+  const captureKpis = hasPageBreakdown
+    ? `<div><strong>${formatMetric(platformBasePages)} / ${formatMetric(platformBasePages)}</strong><span>平台基础页</span></div>
+      <div><strong>${formatMetric(creatorProfilePages)} / ${formatMetric(creatorProfilePages)}</strong><span>达人主页</span></div>
+      <div><strong>${formatMetric(pagesLoaded)} / ${formatMetric(pagesTotal)}</strong><span>采集页面</span></div>`
+    : `<div><strong>${formatMetric(summary.pagesLoaded)} / ${formatMetric(summary.pagesTotal)}</strong><span>主页成功</span></div>
+      <div><strong>${formatMetric(summary.pagesTimedOut)} / ${formatMetric(summary.pagesTotal)}</strong><span>运行超时</span></div>`;
+  const captureBoundary = hasPageBreakdown
+    ? `平台基础页 ${formatMetric(platformBasePages)}/${formatMetric(platformBasePages)}、达人主页 ${formatMetric(creatorProfilePages)}/${formatMetric(creatorProfilePages)}，合计采集页面 ${formatMetric(pagesLoaded)}/${formatMetric(pagesTotal)}。页面采集 COMPLETE 只表示只读可见性完整，不代表结论证据完整；publicationStatus=${escapeHtml(data.publicationStatus)}，${unknownEvidence.length === 6 ? "六项" : `${formatMetric(unknownEvidence.length)} 项`}证据保持 UNKNOWN，${tierLabel}。`
+    : `${formatMetric(summary.pagesLoaded)} 个成功页面仅作可见性观察；${escapeHtml(capture.timeoutPolicy)}。`;
   return `<section class="creator-capture-status" aria-label="最新达人采集状态">
     <div class="creator-capture-heading"><div><span class="model-code">CAPTURE STATUS / ${captureLabel}</span><h2>${escapeHtml(observedAt)} ${executionLabel}</h2><p>计划 ${escapeHtml(plannedAt)} · <strong>schedule.onTime=${onTime}</strong></p></div>${statusChip(evidenceLabel, evidenceComplete ? "status-pass" : "status-watch")}</div>
     <div class="creator-capture-kpis" aria-label="采集完成情况">
-      <div><strong>${formatMetric(summary.pagesLoaded)} / ${formatMetric(summary.pagesTotal)}</strong><span>主页成功</span></div>
-      <div><strong>${formatMetric(summary.pagesTimedOut)} / ${formatMetric(summary.pagesTotal)}</strong><span>运行超时</span></div>
-      <div><strong>${escapeHtml(firstValue(summary.evidenceStatus, "UNKNOWN"))}</strong><span>${evidenceLabel}</span></div>
-      <div><strong>${summary.tierChanged ? "有变化" : "未变"}</strong><span>${tierLabel}</span></div>
+      ${captureKpis}
+      <div><strong>${escapeHtml(firstValue(summary.evidenceStatus, "UNKNOWN"))}</strong><span>页面采集状态</span></div>
+      ${hasPageBreakdown ? "" : `<div><strong>${summary.tierChanged ? "有变化" : "未变"}</strong><span>${tierLabel}</span></div>`}
     </div>
-    <div class="creator-capture-boundary">${icon("shield-alert")}<span><strong>只读边界：</strong>${formatMetric(summary.pagesLoaded)} 个成功主页仅作可见性观察；${escapeHtml(capture.timeoutPolicy)}。</span></div>
+    <div class="creator-capture-boundary">${icon("shield-alert")}<span><strong>页面采集边界：</strong>${captureBoundary}</span></div>
     <div class="creator-capture-observations">
       ${poolVisible
         ? `<div class="creator-capture-row is-pool"><div><span class="model-code">池内观察 · ${escapeHtml(poolMatch.candidateId)}</span><strong>${escapeHtml(firstValue(poolMatch.nickname, "账号待核"))}</strong></div><div><p>${escapeHtml(firstValue(poolMatch.note, "本轮主页可见 / 待补双源与 P60"))}</p><small>保持 ${escapeHtml(tier.label)} · 不提升层级</small></div>${statusChip("本轮主页可见", "status-watch")}</div>`

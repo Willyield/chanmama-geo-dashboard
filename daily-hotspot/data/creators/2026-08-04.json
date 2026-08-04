@@ -3,8 +3,8 @@
   "module": "creators",
   "dataMode": "DAILY_AUDIT_ONLY",
   "date": "2026-08-04",
-  "observedAt": "2026-08-04T08:06:59.571Z",
-  "scheduledFor": "2026-08-04T16:00:00+08:00",
+  "observedAt": "2026-08-04T09:11:35.953Z",
+  "scheduledFor": "2026-08-04T17:00:00+08:00",
   "publicationStatus": "DEGRADED_REPORT",
   "title": "抖音达人白名单库及热点判断",
   "summary": {
@@ -36,24 +36,90 @@
     "platforms": []
   },
   "creatorCaptureStatus": {
-    "captureType": "LATE_MAIN_CAPTURE",
-    "observedAt": "2026-08-04T08:06:59.571Z",
-    "displayTime": "2026-08-04 16:06",
-    "plannedAt": "2026-08-04T16:00:00+08:00",
+    "captureType": "SUPPLEMENT_CAPTURE",
+    "observedAt": "2026-08-04T09:11:35.953Z",
+    "displayTime": "2026-08-04 17:11",
+    "plannedAt": "2026-08-04T17:00:00+08:00",
     "schedule": {
       "onTime": false,
-      "supplement": false
+      "supplement": true
     },
     "summary": {
-      "pagesTotal": 19,
-      "pagesLoaded": 5,
-      "pagesTimedOut": 14,
-      "evidenceStatus": "DEGRADED",
+      "pagesTotal": 18,
+      "pagesLoaded": 18,
+      "pagesTimedOut": 0,
+      "evidenceStatus": "COMPLETE",
       "poolChanged": false,
       "tierChanged": false
     },
     "poolMatch": null,
-    "externalVisibleSources": [],
+    "externalVisibleSources": [
+      {
+        "nickname": "三农策划师-老孟（8月昆明课）",
+        "status": "PENDING_LIGHT_SCREEN",
+        "label": "新增可见来源待轻筛"
+      },
+      {
+        "nickname": "阿豪抖店交流板",
+        "status": "PENDING_LIGHT_SCREEN",
+        "label": "新增可见来源待轻筛"
+      },
+      {
+        "nickname": "绽放唠电商运营",
+        "status": "PENDING_LIGHT_SCREEN",
+        "label": "新增可见来源待轻筛"
+      },
+      {
+        "nickname": "阿妍抖店日记",
+        "status": "PENDING_LIGHT_SCREEN",
+        "label": "新增可见来源待轻筛"
+      },
+      {
+        "nickname": "羽川「抖音电商全域经营」",
+        "status": "PENDING_LIGHT_SCREEN",
+        "label": "新增可见来源待轻筛"
+      },
+      {
+        "nickname": "魏哥抖店",
+        "status": "PENDING_LIGHT_SCREEN",
+        "label": "新增可见来源待轻筛"
+      },
+      {
+        "nickname": "昂哥抖店运营",
+        "status": "PENDING_LIGHT_SCREEN",
+        "label": "新增可见来源待轻筛"
+      },
+      {
+        "nickname": "抖店阿伟实战分享",
+        "status": "PENDING_LIGHT_SCREEN",
+        "label": "新增可见来源待轻筛"
+      },
+      {
+        "nickname": "木子运营",
+        "status": "PENDING_LIGHT_SCREEN",
+        "label": "新增可见来源待轻筛"
+      },
+      {
+        "nickname": "俊哥抖店日记",
+        "status": "PENDING_LIGHT_SCREEN",
+        "label": "新增可见来源待轻筛"
+      },
+      {
+        "nickname": "晓梦电商日记🌱",
+        "status": "PENDING_LIGHT_SCREEN",
+        "label": "新增可见来源待轻筛"
+      },
+      {
+        "nickname": "鸭子运营分析",
+        "status": "PENDING_LIGHT_SCREEN",
+        "label": "新增可见来源待轻筛"
+      },
+      {
+        "nickname": "思行AI电商",
+        "status": "PENDING_LIGHT_SCREEN",
+        "label": "新增可见来源待轻筛"
+      }
+    ],
     "unknownEvidence": [
       "双源",
       "30天活跃度",
@@ -62,20 +128,20 @@
       "原创贡献",
       "风险门"
     ],
-    "timeoutPolicy": "14 个失败页保持缺失，不估填、不替代、不晋级"
+    "timeoutPolicy": "0 个失败页保持缺失，不估填、不替代、不晋级"
   },
   "audit": {
-    "sourcePath": "runs/douyin-creator-20260804-1600-r2/audit.json",
-    "sourceSha256": "711aab734cae69dac3038431bce83951e97e8afe48a7eb9e06b6298df3e775ae",
+    "sourcePath": "runs/douyin-creator-20260804-1700-r1/audit.json",
+    "sourceSha256": "877497344b849b9241e583f12f7c975149635d8557ad74bbacc771ccb00fecb3",
     "reportType": "DEGRADED_REPORT",
     "schedule": {
       "onTime": false,
-      "supplement": false,
-      "lateReason": "The recovered read-only snapshot was observed at 16:06:59.571 Asia/Shanghai, after the 16:00 schedule boundary. The original schedule result remains false."
+      "supplement": true,
+      "lateReason": "The repaired supplement snapshot was observed at 17:11:35.953 Asia/Shanghai, after the 17:00 supplement boundary. The original schedule result remains false."
     },
     "creatorDecision": {
-      "result": "UNCHANGED_NO_CURRENT_PROFILE_EVIDENCE",
-      "reason": "Five base pages loaded after the dedicated browser recovery, but none of the 13 roster profiles produced usable current evidence. The existing observation tier remains unchanged.",
+      "result": "UNCHANGED_IDENTITY_PAGES_VISIBLE_METRICS_INCOMPLETE",
+      "reason": "All 13 roster identity pages loaded, but comparable performance, dual-source, cohort, originality and risk inputs remain unavailable. Existing observation tiers remain unchanged.",
       "priorityObservationAccounts": []
     },
     "missingInputs": [
