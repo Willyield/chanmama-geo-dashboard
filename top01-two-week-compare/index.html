@@ -399,7 +399,7 @@
       };
       const metricPct = metric => `${Number(metric.ratePct).toFixed(2)}%`;
       const metricCount = metric => `${number(metric.count)}/${number(metric.denominator)}`;
-      const metricDelta = value => `${Number(value) > 0 ? '+' : ''}${Number(value).toFixed(2)} 个百分点`;
+      const metricDelta = value => `${Number(value) > 0 ? '+' : ''}${Number(value).toFixed(2)}%`;
       const makeSiblingHref = target => {
         const path = window.location.pathname;
         if (path.includes('top01-round2') || path.includes('top01-two-week-compare')) {

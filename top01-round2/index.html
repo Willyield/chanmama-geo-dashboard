@@ -40,11 +40,8 @@
       color: #f8fafc;
       border-bottom: 1px solid var(--line);
     }
-    .header-inner, .content {
-      width: min(1600px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-    .header-inner { padding: 20px 0 0; }
+    .header-inner { padding: 22px 28px 0; }
+    .content { padding: 24px 28px 48px; }
     .tick-rule {
       height: 12px;
       margin-bottom: 18px;
@@ -58,10 +55,9 @@
     }
     h1 {
       margin: 8px 0 10px;
-      max-width: 1200px;
-      font-size: 48px;
-      line-height: 1.08;
-      font-weight: 850;
+      font-size: clamp(28px, 4vw, 56px);
+      line-height: 1.05;
+      font-weight: 800;
       letter-spacing: 0;
     }
     .meta {
@@ -93,7 +89,6 @@
       color: var(--ink);
       border-color: #4b5967;
     }
-    .content { padding: 24px 0 48px; }
     .stage-banner {
       display: inline-flex;
       align-items: center;
@@ -106,10 +101,10 @@
       font-weight: 800;
       line-height: 1.5;
     }
-    .brief {
+    .executive-brief {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
-      gap: 20px;
+      gap: 16px;
       align-items: center;
       margin-top: 12px;
       padding: 18px 20px;
@@ -121,30 +116,69 @@
     .brief-label { color: #93c5fd; font-size: 12px; font-weight: 850; }
     .brief-title { margin: 7px 0; font-size: 30px; line-height: 1.2; font-weight: 900; }
     .brief-note { color: #cbd5e1; line-height: 1.55; }
-    .brief-total { text-align: right; font-variant-numeric: tabular-nums; }
-    .brief-total strong { display: block; font-size: 32px; line-height: 1; }
-    .brief-total span { display: block; margin-top: 8px; color: #cbd5e1; font-size: 12px; font-weight: 700; }
-    .kpi-grid {
+    .brief-status {
+      display: grid;
+      justify-items: end;
+      gap: 8px;
+      min-width: 190px;
+      font-variant-numeric: tabular-nums;
+    }
+    .brief-status strong { font-size: 30px; line-height: 1; }
+    .brief-status span { color: #cbd5e1; font-size: 12px; font-weight: 750; }
+    .executive-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 12px;
-      margin: 12px 0 4px;
+      margin: 12px 0;
     }
-    .kpi {
-      min-height: 124px;
-      padding: 14px;
-      background: var(--surface);
+    .exec-card {
+      display: grid;
+      align-content: start;
+      gap: 10px;
       border: 1px solid var(--line);
-      border-top: 4px solid var(--blue);
       border-radius: 8px;
+      background: var(--surface);
+      padding: 14px;
     }
-    .kpi:nth-child(4n + 1) { border-top-color: var(--green); }
-    .kpi:nth-child(4n + 2) { border-top-color: var(--blue); }
-    .kpi:nth-child(4n + 3) { border-top-color: var(--amber); }
-    .kpi:nth-child(4n) { border-top-color: var(--red); }
-    .kpi-label { color: var(--muted); font-size: 12px; font-weight: 800; }
-    .kpi-value { margin-top: 10px; font-size: 28px; line-height: 1.1; font-weight: 900; font-variant-numeric: tabular-nums; }
-    .kpi-sub { margin-top: 7px; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .exec-card.ok { border-top: 4px solid var(--green); }
+    .exec-card.info { border-top: 4px solid var(--blue); }
+    .exec-card.warn { border-top: 4px solid var(--amber); }
+    .exec-card.risk { border-top: 4px solid var(--red); }
+    .exec-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+    .exec-title { color: var(--muted); font-size: 12px; font-weight: 800; }
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 12px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+    .status-chip.ok { background: var(--green-soft); color: var(--green); }
+    .status-chip.info { background: var(--blue-soft); color: var(--blue); }
+    .status-chip.warn { background: var(--amber-soft); color: #92400e; }
+    .status-chip.risk { background: var(--red-soft); color: var(--red); }
+    .exec-main { font-size: 28px; line-height: 1.05; font-weight: 850; font-variant-numeric: tabular-nums; }
+    .exec-sub { color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .evidence-list { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; color: #334155; font-size: 11px; }
+    .evidence-list li { display: flex; justify-content: space-between; gap: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; }
+    .evidence-list li span:last-child { text-align: right; font-weight: 750; font-variant-numeric: tabular-nums; }
+    .exec-bottom { margin-top: auto; border-top: 1px solid #e2e8f0; padding-top: 8px; color: var(--muted); font-size: 11px; line-height: 1.45; }
+    .action-panel {
+      display: grid;
+      grid-template-columns: minmax(240px, .8fr) minmax(0, 1.8fr);
+      gap: 20px;
+      align-items: start;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      padding: 16px;
+    }
+    .action-panel h2 { margin: 0 0 7px; font-size: 17px; }
+    .action-note { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .action-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 18px; }
+    .action-item { border-bottom: 1px solid #e2e8f0; padding: 8px 0; font-size: 12px; font-weight: 750; }
     section {
       padding: 28px 0;
       border-bottom: 1px solid var(--line-strong);
@@ -270,9 +304,10 @@
     }
     [hidden] { display: none !important; }
     @media (max-width: 980px) {
-      .header-inner, .content { width: min(100% - 24px, 1600px); }
+      .header-inner, .content { padding-left: 16px; padding-right: 16px; }
       h1 { font-size: 36px; }
-      .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .executive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .action-panel { grid-template-columns: 1fr; }
       .progress-grid, .source-grid, .split-grid { grid-template-columns: 1fr; }
       .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .source-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -285,11 +320,11 @@
       .meta { gap: 5px 12px; }
       .content { padding-top: 16px; }
       .stage-banner { width: 100%; }
-      .brief { grid-template-columns: 1fr; }
-      .brief-total { text-align: left; }
+      .executive-brief { grid-template-columns: 1fr; }
+      .brief-status { justify-items: start; }
       .brief-title { font-size: 22px; }
-      .brief-total strong { font-size: 28px; }
-      .kpi-grid, .filters { grid-template-columns: 1fr; }
+      .brief-status strong { font-size: 28px; }
+      .executive-grid, .filters, .action-list { grid-template-columns: 1fr; }
       .tabs { overflow-x: auto; }
       .tab { white-space: nowrap; }
       .bar-row { grid-template-columns: 110px minmax(80px, 1fr) 62px; }
@@ -312,16 +347,24 @@
 
   <main class="content">
     <div class="stage-banner" id="stageBanner" role="status"></div>
-    <div class="brief">
+    <div class="executive-brief" id="executiveBrief">
       <div>
         <div class="brief-label" id="briefLabel"></div>
         <div class="brief-title" id="briefTitle"></div>
         <div class="brief-note" id="briefNote"></div>
       </div>
-      <div class="brief-total"><strong id="briefTotal">0/282</strong><span>有效样本 / 计划样本</span></div>
+      <div class="brief-status"><span>GEO 健康度</span><strong id="briefTotal">阶段观察</strong><span id="briefStatusNote">阶段性数据，非最终结果</span></div>
     </div>
 
-    <div class="kpi-grid" id="kpiGrid"></div>
+    <div class="executive-grid" id="kpiGrid"></div>
+
+    <section class="action-panel" id="actionPanel">
+      <div>
+        <h2>下一步行动</h2>
+        <p class="action-note" id="actionNote"></p>
+      </div>
+      <div class="action-list" id="actionList"></div>
+    </section>
 
     <section>
       <div class="section-head">
@@ -435,7 +478,7 @@
       };
       const metricPct = metric => `${Number(metric.ratePct).toFixed(2)}%`;
       const metricCount = metric => `${number(metric.count)}/${number(metric.denominator)}`;
-      const metricDelta = value => `${Number(value) > 0 ? '+' : ''}${Number(value).toFixed(2)} 个百分点`;
+      const metricDelta = value => `${Number(value) > 0 ? '+' : ''}${Number(value).toFixed(2)}%`;
       const makeSiblingHref = target => {
         const path = window.location.pathname;
         if (path.includes('top01-round2') || path.includes('top01-two-week-compare')) {
@@ -455,36 +498,58 @@
         `平台：${esc(summary.platform)}`
       ].map(item => `<span>${item}</span>`).join('');
 
-      document.getElementById('briefLabel').textContent = mode === 'compare' ? '两周状态验证' : '第二轮独立批次';
-      document.getElementById('briefTitle').textContent = mode === 'compare'
-        ? `${summary.converted_question_count || 0} 个半达标问题已转为达标`
-        : `${summary.valid_sample_count || 0} 条有效样本已写入第二轮数据`;
-      document.getElementById('briefNote').textContent = mode === 'compare'
-        ? `仅比较冻结的 ${summary.target_question_count || 0} 个原问题，问题文本保持不变。`
-        : `计划 ${summary.planned_sample_count || 0} 条，Day 1 和 Day 2 各 ${Math.floor((summary.planned_sample_count || 0) / 2)} 条。`;
+      document.getElementById('briefLabel').textContent = '阶段判断 / 第二轮采样';
+      document.getElementById('briefTitle').textContent = `${summary.valid_sample_count || 0} 条有效样本已完成，四项核心指标可用于阶段判断。`;
+      document.getElementById('briefNote').textContent = `当前为 ${authoritative.stage.day}，计划共 ${summary.planned_sample_count || 0} 条；第二轮尚未完成，以下结果不代表最终结论。`;
       document.getElementById('briefTotal').textContent = `${summary.valid_sample_count || 0}/${summary.planned_sample_count || 0}`;
+      document.getElementById('briefStatusNote').textContent = `${authoritative.stage.day} · 非最终结果`;
 
-      const kpis = mode === 'compare' ? [
-        ['转为达标', number(summary.converted_question_count), `完成六次复测 ${number(summary.completed_question_count)} 个问题`],
-        ['两周转达标率', pct(summary.conversion_rate_pct), '分母仅含完成六次有效复测的问题'],
-        ['仍半达标', number(summary.still_half_pass_count), '蝉妈妈有提及但稳定门槛未全部达到'],
-        ['退化为不达标', number(summary.failed_question_count), '六次复测中提及少于 3 次'],
-        ['提及率', `${metricPct(baselineMetrics.mention)} → ${metricPct(round2Metrics.mention)}`, `${metricCount(baselineMetrics.mention)} → ${metricCount(round2Metrics.mention)} · ${metricDelta(metricDeltas.mention)}`],
-        ['首推率', `${metricPct(baselineMetrics.ordinaryFirst)} → ${metricPct(round2Metrics.ordinaryFirst)}`, `${metricCount(baselineMetrics.ordinaryFirst)} → ${metricCount(round2Metrics.ordinaryFirst)} · ${metricDelta(metricDeltas.ordinaryFirst)}`],
-        ['去官方后第三方首位率', `${metricPct(baselineMetrics.effectiveFirst)} → ${metricPct(round2Metrics.effectiveFirst)}`, `${metricCount(baselineMetrics.effectiveFirst)} → ${metricCount(round2Metrics.effectiveFirst)} · ${metricDelta(metricDeltas.effectiveFirst)}`],
-        ['优势表达率', `${metricPct(baselineMetrics.advantageExpression)} → ${metricPct(round2Metrics.advantageExpression)}`, `${metricCount(baselineMetrics.advantageExpression)} → ${metricCount(round2Metrics.advantageExpression)} · ${metricDelta(metricDeltas.advantageExpression)}`]
-      ] : [
-        ['有效样本', `${number(summary.valid_sample_count)}/${number(summary.planned_sample_count)}`, pct(summary.completion_rate_pct)],
-        ['Day 1', `${number(summary.day1_valid_count)}/${number((summary.planned_sample_count || 0) / 2)}`, '每题第 1—3 遍'],
-        ['Day 2', `${number(summary.day2_valid_count)}/${number((summary.planned_sample_count || 0) / 2)}`, '下一自然日完成第 4—6 遍'],
-        ['来源采集覆盖率', pct(summary.source_coverage_rate_pct), `失败 ${number(summary.source_failed_count)}，待采集 ${number(summary.source_pending_count)}`],
-        ['提及率', metricPct(round2Metrics.mention), `${metricCount(round2Metrics.mention)} 条有效回答`],
-        ['首推率', metricPct(round2Metrics.ordinaryFirst), `${metricCount(round2Metrics.ordinaryFirst)} 条有效回答`],
-        ['去官方后第三方首位率', metricPct(round2Metrics.effectiveFirst), `${metricCount(round2Metrics.effectiveFirst)} · effective-first-non-official-v2`],
-        ['前 3 推荐率', pct(summary.chanmama_top3_rate_pct), `${number(summary.chanmama_top3_count)} 次进入前 3`],
-        ['优势表达率', metricPct(round2Metrics.advantageExpression), `${metricCount(round2Metrics.advantageExpression)} · advantage-expression-v2`]
+      const evidenceRows = rows => `<ul class="evidence-list">${rows.map(([label, value]) => `<li><span>${esc(label)}</span><span>${esc(value)}</span></li>`).join('')}</ul>`;
+      const executiveCard = ({ title, tone, badge, metric, count, baseline, change, rule, readout }) => `<article class="exec-card ${tone}">
+        <div class="exec-top"><div class="exec-title">${esc(title)}</div><span class="status-chip ${tone}">${esc(badge)}</span></div>
+        <div><div class="exec-main">${esc(metric)}</div><div class="exec-sub">${esc(count)}</div></div>
+        ${evidenceRows([['第一轮基线', baseline], ['变化', change], ['统计口径', rule]])}
+        <div class="exec-bottom">${esc(readout)}</div>
+      </article>`;
+
+      const cards = [
+        {
+          title: '提及率', tone: 'info', badge: '阶段结果',
+          metric: metricPct(round2Metrics.mention), count: `${metricCount(round2Metrics.mention)} 条有效回答`,
+          baseline: `${metricPct(baselineMetrics.mention)} · ${metricCount(baselineMetrics.mention)}`,
+          change: metricDelta(metricDeltas.mention), rule: '正文明确提到蝉妈妈 / 有效样本',
+          readout: '当前样本中，蝉妈妈已获得较高品牌可见度。'
+        },
+        {
+          title: '首推率', tone: 'warn', badge: '继续提升',
+          metric: metricPct(round2Metrics.ordinaryFirst), count: `${metricCount(round2Metrics.ordinaryFirst)} 条有效回答`,
+          baseline: `${metricPct(baselineMetrics.ordinaryFirst)} · ${metricCount(baselineMetrics.ordinaryFirst)}`,
+          change: metricDelta(metricDeltas.ordinaryFirst), rule: '原始工具推荐顺序第 1 / 有效样本',
+          readout: '品牌被提及后，成为第一推荐仍有提升空间。'
+        },
+        {
+          title: '去官方后第三方首位率', tone: 'ok', badge: '第三方首位',
+          metric: metricPct(round2Metrics.effectiveFirst), count: `${metricCount(round2Metrics.effectiveFirst)} 条存在第三方候选的回答`,
+          baseline: `${metricPct(baselineMetrics.effectiveFirst)} · ${metricCount(baselineMetrics.effectiveFirst)}`,
+          change: metricDelta(metricDeltas.effectiveFirst), rule: 'effective-first-non-official-v2',
+          readout: '移除抖音官方工具后，蝉妈妈在第三方候选中保持领先。'
+        },
+        {
+          title: '优势表达率', tone: 'info', badge: '冻结口径',
+          metric: metricPct(round2Metrics.advantageExpression), count: `${metricCount(round2Metrics.advantageExpression)} 条有效回答`,
+          baseline: `${metricPct(baselineMetrics.advantageExpression)} · ${metricCount(baselineMetrics.advantageExpression)}`,
+          change: metricDelta(metricDeltas.advantageExpression), rule: 'advantage-expression-v2',
+          readout: '仅统计明确归属于蝉妈妈的正向能力、适配性、推荐理由或比较优势。'
+        }
       ];
-      document.getElementById('kpiGrid').innerHTML = kpis.map(([label, value, sub]) => `<div class="kpi"><div class="kpi-label">${esc(label)}</div><div class="kpi-value">${esc(value)}</div><div class="kpi-sub">${esc(sub)}</div></div>`).join('');
+      document.getElementById('kpiGrid').innerHTML = cards.map(executiveCard).join('');
+      document.getElementById('actionNote').textContent = `先完成剩余 ${number(summary.pending_sample_count)} 条采样，再判断第二轮最终变化；现阶段不把 ${number(summary.valid_sample_count)} 条结果外推为完整两轮结论。`;
+      document.getElementById('actionList').innerHTML = [
+        `完成 ${authoritative.stage.day} 与剩余 ${number(summary.pending_sample_count)} 条采样`,
+        '补强“为什么首推蝉妈妈”的推荐理由',
+        '保持第三方首位优势并复核引用来源',
+        '继续沿用 advantage-expression-v2 统一口径'
+      ].map(item => `<div class="action-item">${esc(item)}</div>`).join('');
 
       const progressRows = [
         ['Day 1', summary.day1_valid_count || 0, (summary.planned_sample_count || 0) / 2, 'blue'],
