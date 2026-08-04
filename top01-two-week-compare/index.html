@@ -6,6 +6,7 @@
   <link rel="icon" href="data:,">
   <title>蝉妈妈 GEO TOP0/TOP1 两周复测对比</title>
   <link rel="stylesheet" href="../assets/platform-shell.css">
+  <script src="./dashboard-data.js"></script>
   <style>
     :root {
       --canvas: #f4f6f8;
@@ -86,9 +87,9 @@
     }
     .content { padding: 22px 0 48px; }
     .stage-banner {
-      border: 1px solid #b7791f;
-      background: #fff8e7;
-      color: #6b4608;
+      border: 1px solid #10b981;
+      background: #ecfdf5;
+      color: #065f46;
       padding: 10px 14px;
       font-weight: 800;
       line-height: 1.5;
@@ -114,13 +115,50 @@
       margin: 18px 0 4px;
     }
     .kpi {
+      position: relative;
       min-height: 112px;
       padding: 14px;
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 6px;
     }
+    .kpi-head { display: flex; align-items: center; gap: 7px; }
     .kpi-label { color: var(--muted); font-size: 12px; font-weight: 700; }
+    .metric-help-wrap { display: inline-flex; }
+    .metric-help {
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      background: var(--surface);
+      color: var(--muted);
+      font: 800 12px/1 inherit;
+      cursor: help;
+    }
+    .metric-tooltip {
+      position: absolute;
+      z-index: 20;
+      top: 42px;
+      right: 14px;
+      left: 14px;
+      border: 1px solid #334155;
+      border-radius: 5px;
+      background: #17212b;
+      color: #f8fafc;
+      padding: 9px 10px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, .18);
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.5;
+      text-align: left;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .metric-help:hover + .metric-tooltip, .metric-help:focus + .metric-tooltip { visibility: visible; opacity: 1; }
     .kpi-value { margin-top: 10px; font-size: 27px; font-weight: 800; font-variant-numeric: tabular-nums; }
     .kpi-sub { margin-top: 7px; color: var(--muted); font-size: 12px; line-height: 1.45; }
     section {
@@ -241,6 +279,10 @@
       cursor: pointer;
     }
     .icon-button:disabled { cursor: default; opacity: .4; }
+    select:focus-visible, input:focus-visible, .icon-button:focus-visible, .tab:focus-visible, .metric-help:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
+    }
     [hidden] { display: none !important; }
     @media (max-width: 980px) {
       .header-inner, .content { width: min(100% - 24px, 1600px); }
@@ -260,7 +302,7 @@
     }
   </style>
 </head>
-<body class="geo-data-loading" data-mode="compare">
+<body data-mode="compare">
   <header>
     <div class="header-inner">
       <div class="header-kicker">GEO / TOP0 + TOP1 / 豆包网页版快速模式</div>
@@ -346,7 +388,7 @@
       </div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>问题</th><th>关键词</th><th>状态变化</th><th class="num">提及</th><th class="num">首推</th><th class="num">前 3</th><th class="num">优势表达</th><th class="num">平均排名</th><th>当前缺口</th></tr></thead>
+          <thead><tr><th>问题</th><th>关键词</th><th>状态变化</th><th class="num">提及</th><th class="num">普通首推</th><th class="num">前 3</th><th class="num">严格优势表达</th><th class="num">平均排名</th><th>当前缺口</th></tr></thead>
           <tbody id="questionTable"></tbody>
         </table>
       </div>
@@ -372,15 +414,12 @@
   </main>
 
   <script>
-    (async () => {
-      const manifestUrl = new URL('../top01-round2-shared/manifest.json', window.location.href);
-      const loadJson = async url => {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error(`数据请求失败：${response.status} ${url}`);
-        return response.json();
-      };
-      const manifest = await loadJson(manifestUrl);
-      const data = await loadJson(new URL(manifest.core.file, manifestUrl));
+    (() => {
+      const data = window.GEO_ROUND2_DASHBOARD;
+      if (!data) {
+        document.body.innerHTML = '<div class="empty">仪表盘数据未加载</div>';
+        return;
+      }
       const mode = data.mode || document.body.dataset.mode;
       const summary = data.summary || {};
       const authoritative = data.authoritative_metrics;
@@ -391,6 +430,7 @@
       const pct = value => value === null || value === undefined || value === '' ? '待完成' : `${Number(value).toFixed(1)}%`;
       const number = value => value === null || value === undefined || value === '' ? '—' : Number(value).toLocaleString('zh-CN');
       const rank = value => value === null || value === undefined || value === '' ? '—' : Number(value).toFixed(2);
+      const preciseRank = value => value === null || value === undefined || value === '' ? '—' : Number(value).toFixed(4);
       const statusClass = value => value === '达标' || value === '通过' ? 'ok' : value === '不达标' || value === '采样失败' || value === '不合格' ? 'bad' : value === '数据不足' || value === '待采样' ? 'muted' : 'warn';
       const status = value => `<span class="status ${statusClass(value)}">${esc(value)}</span>`;
       const delta = value => {
@@ -402,6 +442,11 @@
       const metricPct = metric => `${Number(metric.ratePct).toFixed(2)}%`;
       const metricCount = metric => `${number(metric.count)}/${number(metric.denominator)}`;
       const metricDelta = value => `${Number(value) > 0 ? '+' : ''}${Number(value).toFixed(2)}%`;
+      const metricHelp = metric => {
+        if (!metric) return '';
+        const tooltipId = `metric-tip-${metric.ruleVersion}`;
+        return `<span class="metric-help-wrap"><button class="metric-help" type="button" aria-label="${esc(metric.label)}口径说明" aria-describedby="${esc(tooltipId)}">i</button><span class="metric-tooltip" id="${esc(tooltipId)}" role="tooltip">${esc(metric.definition)}</span></span>`;
+      };
       const makeSiblingHref = target => {
         const path = window.location.pathname;
         if (path.includes('top01-round2') || path.includes('top01-two-week-compare')) {
@@ -421,24 +466,22 @@
         `平台：${esc(summary.platform)}`
       ].map(item => `<span>${item}</span>`).join('');
 
-      document.getElementById('briefLabel').textContent = mode === 'compare' ? '两周状态验证' : '第二轮独立批次';
-      document.getElementById('briefTitle').textContent = mode === 'compare'
-        ? `${summary.converted_question_count || 0} 个半达标问题已转为达标`
-        : `${summary.valid_sample_count || 0} 条有效样本已写入第二轮数据`;
-      document.getElementById('briefNote').textContent = mode === 'compare'
-        ? `仅比较冻结的 ${summary.target_question_count || 0} 个原问题，问题文本保持不变。`
-        : `计划 ${summary.planned_sample_count || 0} 条，Day 1 和 Day 2 各 ${Math.floor((summary.planned_sample_count || 0) / 2)} 条。`;
+      document.getElementById('briefLabel').textContent = '第一轮与第二轮 / 最终对比';
+      document.getElementById('briefTitle').textContent = '六项核心指标中，五项改善、一项持平。';
+      document.getElementById('briefNote').textContent = `第一轮与第二轮均为 ${summary.planned_sample_count || 0} 条有效样本；变化统一使用 % 展示，平均排名单独显示改善值。`;
       document.getElementById('briefTotal').textContent = `${summary.valid_sample_count || 0}/${summary.planned_sample_count || 0}`;
 
       const kpis = mode === 'compare' ? [
+        ['提及率', `${metricPct(baselineMetrics.mention)} → ${metricPct(round2Metrics.mention)}`, `${metricCount(baselineMetrics.mention)} → ${metricCount(round2Metrics.mention)} · ${metricDelta(metricDeltas.mention)}`, round2Metrics.mention],
+        ['普通首推率', `${metricPct(baselineMetrics.ordinaryFirst)} → ${metricPct(round2Metrics.ordinaryFirst)}`, `${metricCount(baselineMetrics.ordinaryFirst)} → ${metricCount(round2Metrics.ordinaryFirst)} · ${metricDelta(metricDeltas.ordinaryFirst)}`, round2Metrics.ordinaryFirst],
+        ['有效首推率', `${metricPct(baselineMetrics.effectiveFirst)} → ${metricPct(round2Metrics.effectiveFirst)}`, `${metricCount(baselineMetrics.effectiveFirst)} → ${metricCount(round2Metrics.effectiveFirst)} · ${metricDelta(metricDeltas.effectiveFirst)} · effective-first-non-official-v2`, round2Metrics.effectiveFirst],
+        ['严格优势表达率', `${metricPct(baselineMetrics.advantageExpression)} → ${metricPct(round2Metrics.advantageExpression)}`, `${metricCount(baselineMetrics.advantageExpression)} → ${metricCount(round2Metrics.advantageExpression)} · ${metricDelta(metricDeltas.advantageExpression)} · advantage-expression-v2`, round2Metrics.advantageExpression],
+        ['前三率', `${metricPct(baselineMetrics.top3)} → ${metricPct(round2Metrics.top3)}`, `${metricCount(baselineMetrics.top3)} → ${metricCount(round2Metrics.top3)} · ${metricDelta(metricDeltas.top3)}`, round2Metrics.top3],
+        ['平均排名', `${preciseRank(baselineMetrics.averageRank.value)} → ${preciseRank(round2Metrics.averageRank.value)}`, `${number(baselineMetrics.averageRank.denominator)} → ${number(round2Metrics.averageRank.denominator)} 条提及样本 · 改善 ${preciseRank(authoritative.averageRankImprovement)}`, round2Metrics.averageRank],
         ['转为达标', number(summary.converted_question_count), `完成六次复测 ${number(summary.completed_question_count)} 个问题`],
         ['两周转达标率', pct(summary.conversion_rate_pct), '分母仅含完成六次有效复测的问题'],
         ['仍半达标', number(summary.still_half_pass_count), '蝉妈妈有提及但稳定门槛未全部达到'],
-        ['退化为不达标', number(summary.failed_question_count), '六次复测中提及少于 3 次'],
-        ['提及率', `${metricPct(baselineMetrics.mention)} → ${metricPct(round2Metrics.mention)}`, `${metricCount(baselineMetrics.mention)} → ${metricCount(round2Metrics.mention)} · ${metricDelta(metricDeltas.mention)}`],
-        ['首推率', `${metricPct(baselineMetrics.ordinaryFirst)} → ${metricPct(round2Metrics.ordinaryFirst)}`, `${metricCount(baselineMetrics.ordinaryFirst)} → ${metricCount(round2Metrics.ordinaryFirst)} · ${metricDelta(metricDeltas.ordinaryFirst)}`],
-        ['去官方后第三方首位率', `${metricPct(baselineMetrics.effectiveFirst)} → ${metricPct(round2Metrics.effectiveFirst)}`, `${metricCount(baselineMetrics.effectiveFirst)} → ${metricCount(round2Metrics.effectiveFirst)} · ${metricDelta(metricDeltas.effectiveFirst)}`],
-        ['优势表达率', `${metricPct(baselineMetrics.advantageExpression)} → ${metricPct(round2Metrics.advantageExpression)}`, `${metricCount(baselineMetrics.advantageExpression)} → ${metricCount(round2Metrics.advantageExpression)} · ${metricDelta(metricDeltas.advantageExpression)}`]
+        ['退化为不达标', number(summary.failed_question_count), '六次复测中提及少于 3 次']
       ] : [
         ['有效样本', `${number(summary.valid_sample_count)}/${number(summary.planned_sample_count)}`, pct(summary.completion_rate_pct)],
         ['Day 1', `${number(summary.day1_valid_count)}/${number((summary.planned_sample_count || 0) / 2)}`, '每题第 1—3 遍'],
@@ -450,7 +493,7 @@
         ['前 3 推荐率', pct(summary.chanmama_top3_rate_pct), `${number(summary.chanmama_top3_count)} 次进入前 3`],
         ['优势表达率', metricPct(round2Metrics.advantageExpression), `${metricCount(round2Metrics.advantageExpression)} · advantage-expression-v2`]
       ];
-      document.getElementById('kpiGrid').innerHTML = kpis.map(([label, value, sub]) => `<div class="kpi"><div class="kpi-label">${esc(label)}</div><div class="kpi-value">${esc(value)}</div><div class="kpi-sub">${esc(sub)}</div></div>`).join('');
+      document.getElementById('kpiGrid').innerHTML = kpis.map(([label, value, sub, contract]) => `<div class="kpi"><div class="kpi-head"><div class="kpi-label">${esc(label)}</div>${metricHelp(contract)}</div><div class="kpi-value">${esc(value)}</div><div class="kpi-sub">${esc(sub)}</div></div>`).join('');
 
       const progressRows = [
         ['Day 1', summary.day1_valid_count || 0, (summary.planned_sample_count || 0) / 2, 'blue'],
@@ -478,7 +521,7 @@
       const aggregate = name => {
         const baselineCount = comparisons.reduce((sum, row) => sum + Number(row[`baseline_${name}_count`] || 0), 0);
         const currentCount = comparisons.reduce((sum, row) => sum + Number(row[`round2_${name}_count`] || 0), 0);
-        return { label: ({mention:'提及次数',first:'首推次数',top3:'前 3 次数',advantage:'优势表达次数'})[name], value: currentCount, baseline: baselineCount };
+        return { label: ({mention:'提及次数',first:'普通首推次数',top3:'前 3 次数',advantage:'严格优势表达次数'})[name], value: currentCount, baseline: baselineCount };
       };
       const aggregates = ['mention','first','top3','advantage'].map(aggregate);
       const maxAggregate = Math.max(1, ...aggregates.flatMap(row => [row.value, row.baseline]));
@@ -508,58 +551,29 @@
       };
       ['questionSearch','priorityFilter','categoryFilter','statusFilter'].forEach(id => document.getElementById(id).addEventListener(id === 'questionSearch' ? 'input' : 'change', renderQuestions));
       renderQuestions();
-      document.body.classList.remove('geo-data-loading');
 
-      const sampleManifest = manifest.samples;
-      const sampleCache = new Map();
-      const sampleSection = document.getElementById('sampleTable').closest('section');
+      const samples = (data.samples || []).filter(row => row.answer_text);
+      const samplePageSize = 10;
       let samplePageIndex = 0;
-      let samplesStarted = false;
-      document.getElementById('sampleCount').textContent = `${sampleManifest.count} 条已写入记录`;
-      document.getElementById('samplePage').textContent = `0/${sampleManifest.pages.length}`;
-      document.getElementById('samplePrev').disabled = true;
-      document.getElementById('sampleNext').disabled = true;
-
-      const loadSamplePage = pageIndex => {
-        if (!sampleCache.has(pageIndex)) {
-          const page = sampleManifest.pages[pageIndex];
-          sampleCache.set(pageIndex, loadJson(new URL(page.file, manifestUrl)).then(payload => payload.rows || []));
-        }
-        return sampleCache.get(pageIndex);
-      };
-
-      const renderSamples = async () => {
-        samplesStarted = true;
-        const totalPages = sampleManifest.pages.length;
+      document.getElementById('sampleCount').textContent = `${samples.length} 条已写入记录`;
+      const renderSamples = () => {
+        const totalPages = Math.max(1, Math.ceil(samples.length / samplePageSize));
         samplePageIndex = Math.min(samplePageIndex, totalPages - 1);
-        document.getElementById('sampleTable').innerHTML = '<tr><td colspan="7" class="empty">加载中</td></tr>';
-        const pageRows = await loadSamplePage(samplePageIndex);
+        const pageRows = samples.slice(samplePageIndex * samplePageSize, (samplePageIndex + 1) * samplePageSize);
         document.getElementById('sampleTable').innerHTML = pageRows.length ? pageRows.map(row => {
           const capture = row.source_capture_status || '待采集';
-          const performance = `提及：${row.mentioned_chanmama || '—'}\n首推：${row.chanmama_is_first || '—'}\n排名：${row.chanmama_rank || '—'}\n优势：${row.chanmama_advantage_explicit || '—'}`;
+          const performance = `提及：${row.mentioned_chanmama || '—'}\n普通首推：${row.chanmama_is_first || '—'}\n排名：${row.chanmama_rank || '—'}\n严格优势表达：${row.chanmama_advantage_explicit || '—'}`;
           const sourceCounts = `Open ${row.open_source_count || 0} / 运营圈 ${row.yunyingquan_source_count || 0} / 飞瓜官网 ${row.feigua_source_count || 0}`;
           return `<tr><td>${esc(row.sample_id)}<br>${esc(row.sample_date)}</td><td>${esc(row.sampling_cadence)}</td><td class="question-cell">${esc(row.question_text)}</td><td>${status(capture === 'captured' || capture === 'no_references' ? '通过' : capture === 'failed' ? '采样失败' : '待采样')}</td><td style="white-space:pre-wrap">${esc(performance)}</td><td class="url-cell">${esc(sourceCounts)}<br>${esc(row.source_urls || '无匹配引用')}<br>状态：${esc(capture)}</td><td class="answer-cell">${esc(row.answer_text)}</td></tr>`;
         }).join('') : '<tr><td colspan="7" class="empty">第二轮尚未开始采样</td></tr>';
-        document.getElementById('samplePage').textContent = `${totalPages ? samplePageIndex + 1 : 0}/${totalPages}`;
+        document.getElementById('samplePage').textContent = `${samples.length ? samplePageIndex + 1 : 0}/${samples.length ? totalPages : 0}`;
         document.getElementById('samplePrev').disabled = samplePageIndex === 0;
-        document.getElementById('sampleNext').disabled = samplePageIndex >= totalPages - 1 || !totalPages;
+        document.getElementById('sampleNext').disabled = samplePageIndex >= totalPages - 1 || !samples.length;
       };
-      document.getElementById('samplePrev').addEventListener('click', async () => { samplePageIndex -= 1; await renderSamples(); });
-      document.getElementById('sampleNext').addEventListener('click', async () => { samplePageIndex += 1; await renderSamples(); });
-
-      const sampleObserver = new IntersectionObserver(entries => {
-        if (!samplesStarted && entries.some(entry => entry.isIntersecting)) {
-          sampleObserver.disconnect();
-          renderSamples().catch(error => console.error(error));
-        }
-      });
-      sampleObserver.observe(sampleSection);
-    })().catch(error => {
-      console.error(error);
-      document.body.classList.remove('geo-data-loading');
-      const banner = document.getElementById('stageBanner');
-      if (banner) banner.textContent = '数据读取失败';
-    });
+      document.getElementById('samplePrev').addEventListener('click', () => { samplePageIndex -= 1; renderSamples(); });
+      document.getElementById('sampleNext').addEventListener('click', () => { samplePageIndex += 1; renderSamples(); });
+      renderSamples();
+    })();
   </script>
   <script defer src="../assets/platform-shell.js" data-root="../" data-section="sampling" data-label="两周趋势对比"></script>
 </body>
