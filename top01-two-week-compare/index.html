@@ -6,7 +6,6 @@
   <link rel="icon" href="data:,">
   <title>蝉妈妈 GEO TOP0/TOP1 两周复测对比</title>
   <link rel="stylesheet" href="../assets/platform-shell.css">
-  <script src="./dashboard-data.js"></script>
   <style>
     :root {
       --canvas: #f4f6f8;
@@ -261,7 +260,7 @@
     }
   </style>
 </head>
-<body data-mode="compare">
+<body class="geo-data-loading" data-mode="compare">
   <header>
     <div class="header-inner">
       <div class="header-kicker">GEO / TOP0 + TOP1 / 豆包网页版快速模式</div>
@@ -373,12 +372,15 @@
   </main>
 
   <script>
-    (() => {
-      const data = window.GEO_ROUND2_DASHBOARD;
-      if (!data) {
-        document.body.innerHTML = '<div class="empty">仪表盘数据未加载</div>';
-        return;
-      }
+    (async () => {
+      const manifestUrl = new URL('../top01-round2-shared/manifest.json', window.location.href);
+      const loadJson = async url => {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`数据请求失败：${response.status} ${url}`);
+        return response.json();
+      };
+      const manifest = await loadJson(manifestUrl);
+      const data = await loadJson(new URL(manifest.core.file, manifestUrl));
       const mode = data.mode || document.body.dataset.mode;
       const summary = data.summary || {};
       const authoritative = data.authoritative_metrics;
@@ -506,29 +508,58 @@
       };
       ['questionSearch','priorityFilter','categoryFilter','statusFilter'].forEach(id => document.getElementById(id).addEventListener(id === 'questionSearch' ? 'input' : 'change', renderQuestions));
       renderQuestions();
+      document.body.classList.remove('geo-data-loading');
 
-      const samples = (data.samples || []).filter(row => row.answer_text);
-      const samplePageSize = 10;
+      const sampleManifest = manifest.samples;
+      const sampleCache = new Map();
+      const sampleSection = document.getElementById('sampleTable').closest('section');
       let samplePageIndex = 0;
-      document.getElementById('sampleCount').textContent = `${samples.length} 条已写入记录`;
-      const renderSamples = () => {
-        const totalPages = Math.max(1, Math.ceil(samples.length / samplePageSize));
+      let samplesStarted = false;
+      document.getElementById('sampleCount').textContent = `${sampleManifest.count} 条已写入记录`;
+      document.getElementById('samplePage').textContent = `0/${sampleManifest.pages.length}`;
+      document.getElementById('samplePrev').disabled = true;
+      document.getElementById('sampleNext').disabled = true;
+
+      const loadSamplePage = pageIndex => {
+        if (!sampleCache.has(pageIndex)) {
+          const page = sampleManifest.pages[pageIndex];
+          sampleCache.set(pageIndex, loadJson(new URL(page.file, manifestUrl)).then(payload => payload.rows || []));
+        }
+        return sampleCache.get(pageIndex);
+      };
+
+      const renderSamples = async () => {
+        samplesStarted = true;
+        const totalPages = sampleManifest.pages.length;
         samplePageIndex = Math.min(samplePageIndex, totalPages - 1);
-        const pageRows = samples.slice(samplePageIndex * samplePageSize, (samplePageIndex + 1) * samplePageSize);
+        document.getElementById('sampleTable').innerHTML = '<tr><td colspan="7" class="empty">加载中</td></tr>';
+        const pageRows = await loadSamplePage(samplePageIndex);
         document.getElementById('sampleTable').innerHTML = pageRows.length ? pageRows.map(row => {
           const capture = row.source_capture_status || '待采集';
           const performance = `提及：${row.mentioned_chanmama || '—'}\n首推：${row.chanmama_is_first || '—'}\n排名：${row.chanmama_rank || '—'}\n优势：${row.chanmama_advantage_explicit || '—'}`;
           const sourceCounts = `Open ${row.open_source_count || 0} / 运营圈 ${row.yunyingquan_source_count || 0} / 飞瓜官网 ${row.feigua_source_count || 0}`;
           return `<tr><td>${esc(row.sample_id)}<br>${esc(row.sample_date)}</td><td>${esc(row.sampling_cadence)}</td><td class="question-cell">${esc(row.question_text)}</td><td>${status(capture === 'captured' || capture === 'no_references' ? '通过' : capture === 'failed' ? '采样失败' : '待采样')}</td><td style="white-space:pre-wrap">${esc(performance)}</td><td class="url-cell">${esc(sourceCounts)}<br>${esc(row.source_urls || '无匹配引用')}<br>状态：${esc(capture)}</td><td class="answer-cell">${esc(row.answer_text)}</td></tr>`;
         }).join('') : '<tr><td colspan="7" class="empty">第二轮尚未开始采样</td></tr>';
-        document.getElementById('samplePage').textContent = `${samples.length ? samplePageIndex + 1 : 0}/${samples.length ? totalPages : 0}`;
+        document.getElementById('samplePage').textContent = `${totalPages ? samplePageIndex + 1 : 0}/${totalPages}`;
         document.getElementById('samplePrev').disabled = samplePageIndex === 0;
-        document.getElementById('sampleNext').disabled = samplePageIndex >= totalPages - 1 || !samples.length;
+        document.getElementById('sampleNext').disabled = samplePageIndex >= totalPages - 1 || !totalPages;
       };
-      document.getElementById('samplePrev').addEventListener('click', () => { samplePageIndex -= 1; renderSamples(); });
-      document.getElementById('sampleNext').addEventListener('click', () => { samplePageIndex += 1; renderSamples(); });
-      renderSamples();
-    })();
+      document.getElementById('samplePrev').addEventListener('click', async () => { samplePageIndex -= 1; await renderSamples(); });
+      document.getElementById('sampleNext').addEventListener('click', async () => { samplePageIndex += 1; await renderSamples(); });
+
+      const sampleObserver = new IntersectionObserver(entries => {
+        if (!samplesStarted && entries.some(entry => entry.isIntersecting)) {
+          sampleObserver.disconnect();
+          renderSamples().catch(error => console.error(error));
+        }
+      });
+      sampleObserver.observe(sampleSection);
+    })().catch(error => {
+      console.error(error);
+      document.body.classList.remove('geo-data-loading');
+      const banner = document.getElementById('stageBanner');
+      if (banner) banner.textContent = '数据读取失败';
+    });
   </script>
   <script defer src="../assets/platform-shell.js" data-root="../" data-section="sampling" data-label="两周趋势对比"></script>
 </body>

@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
   <title>蝉妈妈 GEO 采样仪表盘</title>
   <link rel="stylesheet" href="../assets/platform-shell.css">
-  <script src="./dashboard-data.js"></script>
+  <script defer src="./dashboard-core-data.js?v=navperf-r1"></script>
   <style>
     :root {
       --surface: #f8fafc;
@@ -595,7 +596,7 @@
     }
   </style>
 </head>
-<body>
+<body class="geo-data-loading">
   <div class="app">
     <header>
       <div class="tick-rule"></div>
@@ -658,9 +659,11 @@
   </div>
 
   <script>
+    document.addEventListener('DOMContentLoaded', () => {
     const state = { priority: 'all', category: 'all', keyword: 'all', mention: 'all', search: '' };
     const rows = window.GEO_DASHBOARD.summary;
-    const samples = window.GEO_DASHBOARD.samples;
+    let samples = [];
+    const sampleManifest = window.GEO_DASHBOARD.detail_manifest || { sample_count: 0 };
     const questions = window.GEO_DASHBOARD.questions;
     const tasks = window.GEO_DASHBOARD.content_tasks || [];
     const repairList = window.GEO_DASHBOARD.content_repair_list || tasks;
@@ -732,11 +735,39 @@
       return [...map.values()].sort((a, b) => b.planned - a.planned || a.name.localeCompare(b.name, 'zh-CN'));
     }
 
+    const tablePageState = Object.create(null);
+
+    function renderPager(anchor, id, totalRows, pageSize, rerender) {
+      const totalPages = Math.max(1, Math.ceil(totalRows / pageSize));
+      let pager = anchor.nextElementSibling;
+      if (!pager || !pager.classList.contains('geo-table-pager')) {
+        pager = document.createElement('div');
+        pager.className = 'geo-table-pager';
+        anchor.insertAdjacentElement('afterend', pager);
+      }
+      if (totalPages <= 1) {
+        pager.hidden = true;
+        return;
+      }
+      pager.hidden = false;
+      const page = tablePageState[id] || 0;
+      pager.innerHTML = `<button type="button" aria-label="上一页" ${page === 0 ? 'disabled' : ''}>‹</button><span>${page + 1}/${totalPages}</span><button type="button" aria-label="下一页" ${page >= totalPages - 1 ? 'disabled' : ''}>›</button>`;
+      const buttons = pager.querySelectorAll('button');
+      buttons[0].addEventListener('click', () => { tablePageState[id] -= 1; rerender(); });
+      buttons[1].addEventListener('click', () => { tablePageState[id] += 1; rerender(); });
+    }
+
     function renderTable(id, headers, bodyRows) {
       const table = $(id);
+      const pageSize = id === 'sampleTable' ? 20 : id === 'questionTable' ? 25 : 50;
+      const totalPages = Math.max(1, Math.ceil(bodyRows.length / pageSize));
+      tablePageState[id] = Math.min(tablePageState[id] || 0, totalPages - 1);
+      const page = tablePageState[id];
+      const visibleRows = bodyRows.slice(page * pageSize, (page + 1) * pageSize);
       table.innerHTML = `<thead><tr>${headers.map(h => `<th>${h.label}</th>`).join('')}</tr></thead><tbody>${
-        bodyRows.map(row => `<tr>${headers.map(h => `<td class="${h.class || ''}">${h.render ? h.render(row) : escapeHtml(row[h.key])}</td>`).join('')}</tr>`).join('')
+        visibleRows.map(row => `<tr>${headers.map(h => `<td class="${h.class || ''}">${h.render ? h.render(row) : escapeHtml(row[h.key])}</td>`).join('')}</tr>`).join('')
       }</tbody>`;
+      renderPager(table.closest('.table-wrap'), id, bodyRows.length, pageSize, () => renderTable(id, headers, bodyRows));
     }
 
     function metricGuideItem(name, desc) {
@@ -781,7 +812,11 @@
 
     function renderDecisionCards(id, bodyRows) {
       const target = $(id);
-      target.innerHTML = bodyRows.map(row => {
+      const pageSize = 12;
+      const totalPages = Math.max(1, Math.ceil(bodyRows.length / pageSize));
+      tablePageState[id] = Math.min(tablePageState[id] || 0, totalPages - 1);
+      const page = tablePageState[id];
+      target.innerHTML = bodyRows.slice(page * pageSize, (page + 1) * pageSize).map(row => {
         const score = row.batch_score || row.weekly_score || '0';
         const maxScore = row.batch_max_score || row.weekly_max_score || '30';
         const scoreRate = row.batch_score_rate || row.weekly_score_rate || '0%';
@@ -822,6 +857,7 @@
           </div>
         </article>`;
       }).join('');
+      renderPager(target, id, bodyRows.length, pageSize, () => renderDecisionCards(id, bodyRows));
     }
 
     const chartColors = ['#1e40af', '#d97706', '#047857', '#7c3aed', '#0f766e', '#b91c1c', '#64748b', '#0ea5e9'];
@@ -1108,7 +1144,7 @@
 
       const questionById = new Map(questions.map(q => [q.question_id, q]));
       const sampleRows = samples.filter(s => visibleQuestionIds.has(s.question_id)).map(s => ({...s, ...(questionById.get(s.question_id) || {})}));
-      $('sampleCount').textContent = `${sampleRows.length} 条记录`;
+      $('sampleCount').textContent = `${samples.length ? sampleRows.length : sampleManifest.sample_count} 条记录`;
       renderTable('sampleTable', [
         { label: '采样ID', key: 'sample_id' },
         { label: '问题ID', key: 'question_id' },
@@ -1182,8 +1218,16 @@
         ['categoryFilter', 'category'],
         ['keywordFilter', 'keyword'],
         ['mentionFilter', 'mention']
-      ].forEach(([id, key]) => $(id).addEventListener('change', e => { state[key] = e.target.value; render(); }));
-      $('searchInput').addEventListener('input', e => { state.search = e.target.value; render(); });
+      ].forEach(([id, key]) => $(id).addEventListener('change', e => {
+        state[key] = e.target.value;
+        Object.keys(tablePageState).forEach(tableId => { tablePageState[tableId] = 0; });
+        render();
+      }));
+      $('searchInput').addEventListener('input', e => {
+        state.search = e.target.value;
+        Object.keys(tablePageState).forEach(tableId => { tablePageState[tableId] = 0; });
+        render();
+      });
     }
 
     $('scopeTitle').textContent = window.GEO_DASHBOARD.meta.scope_label || '仪表盘';
@@ -1191,6 +1235,28 @@
     $('updatedAt').textContent = window.GEO_DASHBOARD.meta.generated_at;
     bindFilters();
     render();
+    document.body.classList.remove('geo-data-loading');
+
+    let sampleDataStarted = false;
+    const sampleSection = $('sampleTable').closest('section');
+    const sampleObserver = new IntersectionObserver(entries => {
+      if (sampleDataStarted || !entries.some(entry => entry.isIntersecting)) return;
+      sampleDataStarted = true;
+      sampleObserver.disconnect();
+      const detailScript = document.createElement('script');
+      detailScript.src = './dashboard-samples-data.js?v=navperf-r1';
+      detailScript.onload = () => {
+        samples = window.GEO_DASHBOARD_SAMPLES || [];
+        render();
+      };
+      detailScript.onerror = () => {
+        sampleDataStarted = false;
+        $('sampleCount').textContent = '数据读取失败';
+      };
+      document.head.appendChild(detailScript);
+    });
+    sampleObserver.observe(sampleSection);
+    });
   </script>
   <script defer src="../assets/platform-shell.js" data-root="../" data-section="sampling" data-label="扩展问题"></script>
 </body>

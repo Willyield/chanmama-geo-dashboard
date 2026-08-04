@@ -64,6 +64,42 @@
 
   var toggle = host.querySelector(".geo-shell-mobile-toggle");
   var nav = host.querySelector(".geo-shell-nav");
+  var prefetchTimer = 0;
+  var prefetched = new Set();
+  var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  var canPrefetch = !(connection && (connection.saveData || /(^|-)2g$/.test(connection.effectiveType || "")));
+  var coreTargets = {};
+  coreTargets[new URL(href("./top01/")).pathname] = [href("./top01/dashboard-core-data.js?v=20260714-576-v3-perf1")];
+  coreTargets[new URL(href("./top01-round2/")).pathname] = [href("./top01-round2-shared/manifest.json")];
+  coreTargets[new URL(href("./top01-two-week-compare/")).pathname] = [href("./top01-round2-shared/manifest.json")];
+  coreTargets[new URL(href("./top2-top3/")).pathname] = [href("./top2-top3/dashboard-core-data.js?v=navperf-r1")];
+  coreTargets[new URL(href("./total/")).pathname] = [href("./total/dashboard-core-data.js?v=navperf-r1")];
+  coreTargets[new URL(href("./chanjing-ai/")).pathname] = [href("./chanjing-ai/dashboard-summary.json")];
+
+  function addPrefetch(url, as) {
+    if (prefetched.has(url)) return;
+    prefetched.add(url);
+    var link = document.createElement("link");
+    link.rel = "prefetch";
+    link.href = url;
+    if (as) link.as = as;
+    document.head.appendChild(link);
+  }
+
+  function schedulePrefetch(anchor) {
+    if (!canPrefetch || !anchor) return;
+    window.clearTimeout(prefetchTimer);
+    prefetchTimer = window.setTimeout(function () {
+      var target = new URL(anchor.href, window.location.href);
+      if (target.origin !== window.location.origin || target.pathname === window.location.pathname) return;
+      addPrefetch(target.href, "document");
+      (coreTargets[target.pathname] || []).forEach(function (url) { addPrefetch(url, "fetch"); });
+    }, 100);
+  }
+
+  function cancelPrefetch() {
+    window.clearTimeout(prefetchTimer);
+  }
 
   function closeMenu() {
     host.classList.remove("is-open");
@@ -81,8 +117,21 @@
   });
 
   nav.addEventListener("click", function (event) {
-    if (event.target.closest("a") && window.matchMedia("(max-width: 900px)").matches) closeMenu();
+    var anchor = event.target.closest("a");
+    if (!anchor) return;
+    var target = new URL(anchor.href, window.location.href);
+    if (target.origin === window.location.origin && (target.pathname !== window.location.pathname || target.search !== window.location.search)) {
+      host.classList.add("is-navigating");
+    }
+    if (window.matchMedia("(max-width: 900px)").matches) closeMenu();
   });
+
+  nav.addEventListener("pointerover", function (event) { schedulePrefetch(event.target.closest("a")); });
+  nav.addEventListener("pointerout", cancelPrefetch);
+  nav.addEventListener("focusin", function (event) { schedulePrefetch(event.target.closest("a")); });
+  nav.addEventListener("focusout", cancelPrefetch);
+
+  window.addEventListener("pageshow", function () { host.classList.remove("is-navigating"); });
 
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") closeMenu();
