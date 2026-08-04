@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "module": "hotspot-keywords",
   "date": "2026-08-04",
-  "revision": 2,
-  "itemCount": 20,
+  "revision": 4,
+  "itemCount": 44,
   "items": [
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-001",
       "hotspot_name": "抖音《商家-欺诈发货》实施细则明确赔付、冻结与禁止投流措施",
       "hotspot_category": "经营与规则",
@@ -38,7 +38,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-001",
       "hotspot_name": "抖音《商家-欺诈发货》实施细则明确赔付、冻结与禁止投流措施",
       "hotspot_category": "经营与规则",
@@ -68,7 +68,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-001",
       "hotspot_name": "抖音《商家-欺诈发货》实施细则明确赔付、冻结与禁止投流措施",
       "hotspot_category": "经营与规则",
@@ -99,7 +99,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-001",
       "hotspot_name": "抖音《商家-欺诈发货》实施细则明确赔付、冻结与禁止投流措施",
       "hotspot_category": "经营与规则",
@@ -129,7 +129,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-002",
       "hotspot_name": "曼迪卡威爬楼机连续走强，最近30天GMV指数档位达4000万+",
       "hotspot_category": "类目与消费",
@@ -161,7 +161,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-002",
       "hotspot_name": "曼迪卡威爬楼机连续走强，最近30天GMV指数档位达4000万+",
       "hotspot_category": "类目与消费",
@@ -194,7 +194,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-002",
       "hotspot_name": "曼迪卡威爬楼机连续走强，最近30天GMV指数档位达4000万+",
       "hotspot_category": "类目与消费",
@@ -225,7 +225,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-002",
       "hotspot_name": "曼迪卡威爬楼机连续走强，最近30天GMV指数档位达4000万+",
       "hotspot_category": "类目与消费",
@@ -258,7 +258,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-002",
       "hotspot_name": "曼迪卡威爬楼机连续走强，最近30天GMV指数档位达4000万+",
       "hotspot_category": "类目与消费",
@@ -289,7 +289,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-003",
       "hotspot_name": "抖音合养精灵官方账号“小火人和ta的朋友们”连续两日高速涨粉",
       "hotspot_category": "达人与内容案例",
@@ -320,7 +320,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-003",
       "hotspot_name": "抖音合养精灵官方账号“小火人和ta的朋友们”连续两日高速涨粉",
       "hotspot_category": "达人与内容案例",
@@ -350,7 +350,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-003",
       "hotspot_name": "抖音合养精灵官方账号“小火人和ta的朋友们”连续两日高速涨粉",
       "hotspot_category": "达人与内容案例",
@@ -382,7 +382,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-003",
       "hotspot_name": "抖音合养精灵官方账号“小火人和ta的朋友们”连续两日高速涨粉",
       "hotspot_category": "达人与内容案例",
@@ -413,7 +413,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-003",
       "hotspot_name": "抖音合养精灵官方账号“小火人和ta的朋友们”连续两日高速涨粉",
       "hotspot_category": "达人与内容案例",
@@ -444,7 +444,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-004",
       "hotspot_name": "洽洽、思念、七匹狼进入美国UFLPA实体清单，引发抖音品牌热点",
       "hotspot_category": "平台日常热榜",
@@ -478,7 +478,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-004",
       "hotspot_name": "洽洽、思念、七匹狼进入美国UFLPA实体清单，引发抖音品牌热点",
       "hotspot_category": "平台日常热榜",
@@ -509,7 +509,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-004",
       "hotspot_name": "洽洽、思念、七匹狼进入美国UFLPA实体清单，引发抖音品牌热点",
       "hotspot_category": "平台日常热榜",
@@ -541,7 +541,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-004",
       "hotspot_name": "洽洽、思念、七匹狼进入美国UFLPA实体清单，引发抖音品牌热点",
       "hotspot_category": "平台日常热榜",
@@ -572,7 +572,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-004",
       "hotspot_name": "洽洽、思念、七匹狼进入美国UFLPA实体清单，引发抖音品牌热点",
       "hotspot_category": "平台日常热榜",
@@ -602,7 +602,7 @@
     },
     {
       "date": "2026-08-04",
-      "revision": 2,
+      "revision": 4,
       "hotspot_id": "HT-20260804-004",
       "hotspot_name": "洽洽、思念、七匹狼进入美国UFLPA实体清单，引发抖音品牌热点",
       "hotspot_category": "平台日常热榜",
@@ -631,6 +631,826 @@
       ],
       "evidence_refs": [
         "metric:uflpa:douyin-heat"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-005",
+      "hotspot_name": "黄糯玉米商品两日爆发后回落，仍保留短周期爆款观察价值",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:frhfeevl6ws7uz4hoo6ed60cze6s74-g",
+      "subject_kind": "product",
+      "industry": "食品饮料/生鲜玉米",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:yellow-corn:01",
+      "keyword": "黄糯玉米",
+      "intent": "具体商品词",
+      "applicable_modes": [
+        "search",
+        "interest",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-11",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台预估不是精确销量",
+        "已出现峰值后回落"
+      ],
+      "evidence_refs": [
+        "metric:corn:daily-sales",
+        "metric:corn:ranking-change"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-005",
+      "hotspot_name": "黄糯玉米商品两日爆发后回落，仍保留短周期爆款观察价值",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:frhfeevl6ws7uz4hoo6ed60cze6s74-g",
+      "subject_kind": "product",
+      "industry": "食品饮料/生鲜玉米",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:yellow-corn:02",
+      "keyword": "黄糯玉米销量",
+      "intent": "销量数据词",
+      "applicable_modes": [
+        "search",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-11",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台预估不是精确销量",
+        "已出现峰值后回落"
+      ],
+      "evidence_refs": [
+        "metric:corn:daily-sales",
+        "metric:corn:ranking-change"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-005",
+      "hotspot_name": "黄糯玉米商品两日爆发后回落，仍保留短周期爆款观察价值",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:frhfeevl6ws7uz4hoo6ed60cze6s74-g",
+      "subject_kind": "product",
+      "industry": "食品饮料/生鲜玉米",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:yellow-corn:03",
+      "keyword": "黄糯玉米带货数据",
+      "intent": "问题/数据词",
+      "applicable_modes": [
+        "search",
+        "interest",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-11",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台预估不是精确销量",
+        "已出现峰值后回落"
+      ],
+      "evidence_refs": [
+        "metric:corn:daily-sales",
+        "metric:corn:ranking-change"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-005",
+      "hotspot_name": "黄糯玉米商品两日爆发后回落，仍保留短周期爆款观察价值",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:frhfeevl6ws7uz4hoo6ed60cze6s74-g",
+      "subject_kind": "product",
+      "industry": "食品饮料/生鲜玉米",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:yellow-corn:04",
+      "keyword": "黄糯玉米最近为什么火",
+      "intent": "问题/数据词",
+      "applicable_modes": [
+        "search",
+        "interest",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-11",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台预估不是精确销量",
+        "已出现峰值后回落"
+      ],
+      "evidence_refs": [
+        "metric:corn:daily-sales",
+        "metric:corn:ranking-change"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-006",
+      "hotspot_name": "公仔牌顽渍净洗衣粉连续五日高位，销售榜与热推榜同步居前",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:oifq5-ibxnjas6ywtmxo9u2tveaeur-op",
+      "subject_kind": "product",
+      "industry": "家居日用/衣物清洁",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:gongzai-detergent:01",
+      "keyword": "公仔牌顽渍净洗衣粉",
+      "intent": "具体商品词",
+      "applicable_modes": [
+        "search",
+        "interest",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台预估不是精确销量"
+      ],
+      "evidence_refs": [
+        "metric:detergent:five-day-sales",
+        "metric:detergent:dual-rank"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-006",
+      "hotspot_name": "公仔牌顽渍净洗衣粉连续五日高位，销售榜与热推榜同步居前",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:oifq5-ibxnjas6ywtmxo9u2tveaeur-op",
+      "subject_kind": "product",
+      "industry": "家居日用/衣物清洁",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:gongzai-detergent:02",
+      "keyword": "公仔牌洗衣粉销量",
+      "intent": "销量数据词",
+      "applicable_modes": [
+        "search",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台预估不是精确销量"
+      ],
+      "evidence_refs": [
+        "metric:detergent:five-day-sales",
+        "metric:detergent:dual-rank"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-006",
+      "hotspot_name": "公仔牌顽渍净洗衣粉连续五日高位，销售榜与热推榜同步居前",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:oifq5-ibxnjas6ywtmxo9u2tveaeur-op",
+      "subject_kind": "product",
+      "industry": "家居日用/衣物清洁",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:gongzai-detergent:03",
+      "keyword": "公仔牌洗衣粉带货数据",
+      "intent": "问题/数据词",
+      "applicable_modes": [
+        "search",
+        "interest",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台预估不是精确销量"
+      ],
+      "evidence_refs": [
+        "metric:detergent:five-day-sales",
+        "metric:detergent:dual-rank"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-006",
+      "hotspot_name": "公仔牌顽渍净洗衣粉连续五日高位，销售榜与热推榜同步居前",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:oifq5-ibxnjas6ywtmxo9u2tveaeur-op",
+      "subject_kind": "product",
+      "industry": "家居日用/衣物清洁",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:gongzai-detergent:04",
+      "keyword": "公仔牌洗衣粉为什么火",
+      "intent": "问题/数据词",
+      "applicable_modes": [
+        "search",
+        "interest",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台预估不是精确销量"
+      ],
+      "evidence_refs": [
+        "metric:detergent:five-day-sales",
+        "metric:detergent:dual-rank"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-007",
+      "hotspot_name": "免抽气真空压缩袋连续三日放量，浏览与销量同步但达人集中",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:grppy9ctooj-cupzyn5rmatiqxjsi9qy",
+      "subject_kind": "product",
+      "industry": "家居日用/收纳用品",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:compression-bag:01",
+      "keyword": "免抽气真空压缩袋",
+      "intent": "具体商品词",
+      "applicable_modes": [
+        "search",
+        "interest",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-18",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台估算不是精确销量",
+        "主要销量集中在单一达人"
+      ],
+      "evidence_refs": [
+        "metric:compression-bag:daily-sales",
+        "metric:compression-bag:views"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-007",
+      "hotspot_name": "免抽气真空压缩袋连续三日放量，浏览与销量同步但达人集中",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:grppy9ctooj-cupzyn5rmatiqxjsi9qy",
+      "subject_kind": "product",
+      "industry": "家居日用/收纳用品",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:compression-bag:02",
+      "keyword": "免抽气压缩袋销量",
+      "intent": "销量数据词",
+      "applicable_modes": [
+        "search",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-18",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台估算不是精确销量",
+        "主要销量集中在单一达人"
+      ],
+      "evidence_refs": [
+        "metric:compression-bag:daily-sales",
+        "metric:compression-bag:views"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-007",
+      "hotspot_name": "免抽气真空压缩袋连续三日放量，浏览与销量同步但达人集中",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:grppy9ctooj-cupzyn5rmatiqxjsi9qy",
+      "subject_kind": "product",
+      "industry": "家居日用/收纳用品",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:compression-bag:03",
+      "keyword": "免抽气压缩袋带货数据",
+      "intent": "问题/数据词",
+      "applicable_modes": [
+        "search",
+        "interest",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-18",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台估算不是精确销量",
+        "主要销量集中在单一达人"
+      ],
+      "evidence_refs": [
+        "metric:compression-bag:daily-sales",
+        "metric:compression-bag:views"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-007",
+      "hotspot_name": "免抽气真空压缩袋连续三日放量，浏览与销量同步但达人集中",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:grppy9ctooj-cupzyn5rmatiqxjsi9qy",
+      "subject_kind": "product",
+      "industry": "家居日用/收纳用品",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:compression-bag:04",
+      "keyword": "免抽气压缩袋为什么火",
+      "intent": "问题/数据词",
+      "applicable_modes": [
+        "search",
+        "interest",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-18",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台估算不是精确销量",
+        "主要销量集中在单一达人"
+      ],
+      "evidence_refs": [
+        "metric:compression-bag:daily-sales",
+        "metric:compression-bag:views"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-008",
+      "hotspot_name": "瑞幸即享唤醒系列黑咖啡销量与浏览同步跃升，多达人直播承接",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:pfikftsq-pit-rgljorccf-qcf4u0s2vm",
+      "subject_kind": "product",
+      "industry": "食品饮料/咖啡",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:luckin-instant-coffee:01",
+      "keyword": "瑞幸即享唤醒系列黑咖啡",
+      "intent": "具体商品词",
+      "applicable_modes": [
+        "search",
+        "interest",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台预估不是精确销量或独立访客",
+        "活动因素尚未拆分"
+      ],
+      "evidence_refs": [
+        "metric:luckin-coffee:daily-sales",
+        "metric:luckin-coffee:views-live"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-008",
+      "hotspot_name": "瑞幸即享唤醒系列黑咖啡销量与浏览同步跃升，多达人直播承接",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:pfikftsq-pit-rgljorccf-qcf4u0s2vm",
+      "subject_kind": "product",
+      "industry": "食品饮料/咖啡",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:luckin-instant-coffee:02",
+      "keyword": "瑞幸即享黑咖啡销量",
+      "intent": "销量数据词",
+      "applicable_modes": [
+        "search",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台预估不是精确销量或独立访客",
+        "活动因素尚未拆分"
+      ],
+      "evidence_refs": [
+        "metric:luckin-coffee:daily-sales",
+        "metric:luckin-coffee:views-live"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-008",
+      "hotspot_name": "瑞幸即享唤醒系列黑咖啡销量与浏览同步跃升，多达人直播承接",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:pfikftsq-pit-rgljorccf-qcf4u0s2vm",
+      "subject_kind": "product",
+      "industry": "食品饮料/咖啡",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:luckin-instant-coffee:03",
+      "keyword": "瑞幸即享咖啡带货数据",
+      "intent": "问题/数据词",
+      "applicable_modes": [
+        "search",
+        "interest",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台预估不是精确销量或独立访客",
+        "活动因素尚未拆分"
+      ],
+      "evidence_refs": [
+        "metric:luckin-coffee:daily-sales",
+        "metric:luckin-coffee:views-live"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-008",
+      "hotspot_name": "瑞幸即享唤醒系列黑咖啡销量与浏览同步跃升，多达人直播承接",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:pfikftsq-pit-rgljorccf-qcf4u0s2vm",
+      "subject_kind": "product",
+      "industry": "食品饮料/咖啡",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:luckin-instant-coffee:04",
+      "keyword": "瑞幸即享咖啡为什么火",
+      "intent": "问题/数据词",
+      "applicable_modes": [
+        "search",
+        "interest",
+        "commerce"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "平台预估不是精确销量或独立访客",
+        "活动因素尚未拆分"
+      ],
+      "evidence_refs": [
+        "metric:luckin-coffee:daily-sales",
+        "metric:luckin-coffee:views-live"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-009",
+      "hotspot_name": "和平精英官方账号涨粉约12w，地铁逃生二周年热点连续发酵",
+      "hotspot_category": "平台日常热榜",
+      "subject_id": "account:chanmama:dfwmdjw-kred-o-dr950nuvoeedqshseb",
+      "subject_kind": "account",
+      "industry": "游戏/内容账号",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:peace-elite:01",
+      "keyword": "和平精英账号数据",
+      "intent": "账号数据词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-18",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:peace-elite:follower-growth"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-009",
+      "hotspot_name": "和平精英官方账号涨粉约12w，地铁逃生二周年热点连续发酵",
+      "hotspot_category": "平台日常热榜",
+      "subject_id": "account:chanmama:dfwmdjw-kred-o-dr950nuvoeedqshseb",
+      "subject_kind": "account",
+      "industry": "游戏/内容账号",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:peace-elite:02",
+      "keyword": "和平精英涨粉数据",
+      "intent": "账号数据词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-18",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "涨粉为平台展示值，不等于自然新增"
+      ],
+      "evidence_refs": [
+        "metric:peace-elite:follower-growth"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-009",
+      "hotspot_name": "和平精英官方账号涨粉约12w，地铁逃生二周年热点连续发酵",
+      "hotspot_category": "平台日常热榜",
+      "subject_id": "account:chanmama:dfwmdjw-kred-o-dr950nuvoeedqshseb",
+      "subject_kind": "account",
+      "industry": "游戏/内容账号",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:peace-elite:03",
+      "keyword": "地铁逃生二周年热度",
+      "intent": "热点数据词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-18",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "热点指数不是人数或搜索量"
+      ],
+      "evidence_refs": [
+        "metric:peace-elite:metro-heat"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-009",
+      "hotspot_name": "和平精英官方账号涨粉约12w，地铁逃生二周年热点连续发酵",
+      "hotspot_category": "平台日常热榜",
+      "subject_id": "account:chanmama:dfwmdjw-kred-o-dr950nuvoeedqshseb",
+      "subject_kind": "account",
+      "industry": "游戏/内容账号",
+      "breakout_status": "confirmed_breakout",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:peace-elite:04",
+      "keyword": "和平精英官方账号为什么涨粉",
+      "intent": "问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-08-18",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:peace-elite:follower-growth",
+        "metric:peace-elite:metro-heat"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-010",
+      "hotspot_name": "DeepSeek V4-Flash API上线公测，官方强调Agent能力增强",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:deepseek:v4-flash-api",
+      "subject_kind": "technology",
+      "industry": "人工智能/模型API",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:deepseek-v4-flash:01",
+      "keyword": "DeepSeek V4-Flash API",
+      "intent": "技术对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-09-03",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:deepseek-v4-flash:official-beta"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-010",
+      "hotspot_name": "DeepSeek V4-Flash API上线公测，官方强调Agent能力增强",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:deepseek:v4-flash-api",
+      "subject_kind": "technology",
+      "industry": "人工智能/模型API",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:deepseek-v4-flash:02",
+      "keyword": "DeepSeek V4-Flash Agent能力",
+      "intent": "能力问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-09-03",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:deepseek-v4-flash:official-beta"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-010",
+      "hotspot_name": "DeepSeek V4-Flash API上线公测，官方强调Agent能力增强",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:deepseek:v4-flash-api",
+      "subject_kind": "technology",
+      "industry": "人工智能/模型API",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:deepseek-v4-flash:03",
+      "keyword": "DeepSeek V4-Flash电商运营",
+      "intent": "应用问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-09-03",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:deepseek-v4-flash:official-beta"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "revision": 4,
+      "hotspot_id": "HT-20260804-010",
+      "hotspot_name": "DeepSeek V4-Flash API上线公测，官方强调Agent能力增强",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:deepseek:v4-flash-api",
+      "subject_kind": "technology",
+      "industry": "人工智能/模型API",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:deepseek-v4-flash:04",
+      "keyword": "DeepSeek V4-Flash怎么用",
+      "intent": "使用问题词",
+      "applicable_modes": [
+        "search"
+      ],
+      "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-04",
+      "valid_until": "2026-09-03",
+      "validation_status": "hypothesis",
+      "risk_flags": [],
+      "evidence_refs": [
+        "metric:deepseek-v4-flash:official-beta"
       ]
     }
   ]

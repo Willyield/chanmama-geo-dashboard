@@ -2,58 +2,59 @@
   "schemaVersion": 2,
   "module": "hotspots",
   "date": "2026-08-04",
-  "observedAt": "2026-08-04T10:28:38.329+08:00",
-  "revision": 2,
-  "updatedAt": "2026-08-04T02:28:53.321Z",
+  "observedAt": "2026-08-04T11:44:20.589+08:00",
+  "revision": 4,
+  "updatedAt": "2026-08-04T03:44:26.824Z",
   "sourceType": "structured-data",
   "sourceArtifact": "incoming/hotspots/2026-08-04.json",
   "sourceWorkbook": null,
   "inputStatus": "incomplete",
   "scoringModels": [
-    "commerce_v1"
+    "commerce_v1",
+    "tech_v1"
   ],
   "summary": {
     "gradeCounts": {
       "S": 0,
-      "A": 4,
-      "B": 0,
-      "C": 0,
+      "A": 8,
+      "B": 1,
+      "C": 1,
       "D": 0
     },
     "domainCounts": {
-      "commerce": 4,
-      "technology": 0
+      "commerce": 9,
+      "technology": 1
     },
     "candidateKindCounts": {
-      "event": 2,
-      "potential_topic": 2
+      "event": 3,
+      "potential_topic": 7
     },
     "contentPotentialCounts": {
       "S": 0,
       "A": 2,
-      "B": 2,
-      "C": 0,
+      "B": 6,
+      "C": 2,
       "D": 0
     },
     "topicValueCounts": {
-      "S": 4,
+      "S": 9,
       "A": 0,
-      "B": 0,
+      "B": 1,
       "C": 0,
       "D": 0
     },
     "publicationStatusCounts": {
       "priority_production": 2,
-      "early_test": 1,
+      "early_test": 5,
       "targeted_publish": 1,
       "small_test": 0,
-      "observe": 0,
+      "observe": 2,
       "do_not_publish": 0
     },
     "breakoutCounts": {
-      "confirmed_breakout": 2,
+      "confirmed_breakout": 6,
       "fast_rising": 0,
-      "observation_only": 2,
+      "observation_only": 4,
       "rejected": 0
     },
     "adModeEligibleCounts": {
@@ -63,12 +64,12 @@
     },
     "adOpportunityCount": 0,
     "adOpportunityQueue": [],
-    "priorityCount": 4,
-    "lowCostCount": 0,
-    "observeCount": 0,
-    "evidenceE3Count": 4,
-    "publishNowCount": 4,
-    "webSummary": "今日4条正式热点全部来自大众消费、爆款账号、品牌热榜或经营规则；纯科技线索保留在内部观察池，不挤占内容前排。曼迪卡威爬楼机与小火人官方账号通过跨日基线和双信号门；4条共20个关键词假设，但百度未返回搜索趋势、广告落地与监测未就绪，因此可投放队列仍为0。",
+    "priorityCount": 8,
+    "lowCostCount": 1,
+    "observeCount": 1,
+    "evidenceE3Count": 10,
+    "publishNowCount": 8,
+    "webSummary": "按每日10条正式热点规则完成同日补跑：消费/商品5条、达人与平台热点3条、经营规则1条、科技1条，共44个关键词假设。公仔牌洗衣粉、瑞幸即享黑咖啡、和平精英账号等获得前排优先级；DeepSeek V4-Flash按官方证据客观入选但不挤占大众内容前排。AIDSO未登录且百度无有效趋势，广告落地与监测也未就绪，因此主动搜索保持假设、广告队列保持关闭。",
     "topContentActions": [
       {
         "id": "HT-20260804-003",
@@ -84,27 +85,27 @@
         "publicationStatusCode": "priority_production"
       },
       {
-        "id": "HT-20260804-004",
+        "id": "HT-20260804-008",
         "grade": "S",
-        "name": "洽洽、思念、七匹狼进入美国UFLPA实体清单，引发抖音品牌热点",
-        "reason": "品牌名具体、讨论面广且有官方原始文件，适合大众事实核查与问题词承接。",
-        "action": "优先制作｜洽洽、思念、七匹狼进入美国清单：官方文件写了什么？",
+        "name": "瑞幸即享唤醒系列黑咖啡销量与浏览同步跃升，多达人直播承接",
+        "reason": "具体品牌商品、跨日跃升和多达人直播均清晰，是本轮更接近大众消费与投放验证的对象。",
+        "action": "抢先试发｜瑞幸即享黑咖啡为什么突然放量？销量、浏览与直播承接拆解",
         "domain": "commerce",
-        "contentPotentialScore": 98,
-        "topicValueScore": 98,
+        "contentPotentialScore": 99,
+        "topicValueScore": 99,
         "topicValueLabel": "高潜力",
-        "publicationStatus": "优先制作",
-        "publicationStatusCode": "priority_production"
+        "publicationStatus": "抢先试发",
+        "publicationStatusCode": "early_test"
       },
       {
-        "id": "HT-20260804-002",
+        "id": "HT-20260804-009",
         "grade": "S",
-        "name": "曼迪卡威爬楼机连续走强，最近30天GMV指数档位达4000万+",
-        "reason": "具体商品、跨日走势和同类分化都清晰，优先于泛科技选题；搜索供给缺口仍待验证。",
-        "action": "抢先试发｜曼迪卡威爬楼机为什么连续走强？商品指数、卖点和同类对照",
+        "name": "和平精英官方账号涨粉约12w，地铁逃生二周年热点连续发酵",
+        "reason": "官方账号、周年节点与高互动视频形成完整内容案例，适合大众案例而不是科技产品稿。",
+        "action": "抢先试发｜和平精英官方账号为什么涨粉？地铁逃生二周年联动拆解",
         "domain": "commerce",
-        "contentPotentialScore": 94,
-        "topicValueScore": 94,
+        "contentPotentialScore": 99,
+        "topicValueScore": 99,
         "topicValueLabel": "高潜力",
         "publicationStatus": "抢先试发",
         "publicationStatusCode": "early_test"
@@ -112,44 +113,58 @@
     ],
     "topRollingUpdates": [
       {
-        "id": "HT-20260804-002",
-        "name": "曼迪卡威爬楼机连续走强，最近30天GMV指数档位达4000万+",
-        "action": "试发后滚动确认：百度搜索趋势与内容供给缺口；下一周期商品指数；第二个独立需求信号待确认；内容供给缺口待确认",
-        "topicValueScore": 94,
+        "id": "HT-20260804-008",
+        "name": "瑞幸即享唤醒系列黑咖啡销量与浏览同步跃升，多达人直播承接",
+        "action": "试发后滚动确认：活动与投流因素；下一周期销量和浏览；真实搜索趋势；第二个独立需求信号待确认；内容供给缺口待确认",
+        "topicValueScore": 99,
+        "publicationStatus": "抢先试发"
+      },
+      {
+        "id": "HT-20260804-009",
+        "name": "和平精英官方账号涨粉约12w，地铁逃生二周年热点连续发酵",
+        "action": "试发后滚动确认：真实搜索趋势；活动结束后的粉丝留存；第二个独立需求信号待确认；内容供给缺口待确认",
+        "topicValueScore": 99,
+        "publicationStatus": "抢先试发"
+      },
+      {
+        "id": "HT-20260804-006",
+        "name": "公仔牌顽渍净洗衣粉连续五日高位，销售榜与热推榜同步居前",
+        "action": "试发后滚动确认：下一周期销量；达人与价格结构；真实搜索趋势；第二个独立需求信号待确认；内容供给缺口待确认",
+        "topicValueScore": 95,
         "publicationStatus": "抢先试发"
       }
     ],
     "topActions": [
       {
-        "id": "HT-20260804-001",
+        "id": "HT-20260804-008",
         "grade": "L-A｜业务重点响应",
-        "name": "抖音《商家-欺诈发货》实施细则明确赔付、冻结与禁止投流措施",
-        "reason": "规则直接影响履约、货款、投流和店铺经营，属于商家必须处理的高意图信息。",
-        "action": "当天制作商家发货自查表，并向店铺运营、仓储和客服负责人定向发布。",
+        "name": "瑞幸即享唤醒系列黑咖啡销量与浏览同步跃升，多达人直播承接",
+        "reason": "交易、浏览和多达人直播三个信号同时变化，对大众消费内容和商品承接都有价值。",
+        "action": "优先制作品牌即饮/速溶咖啡新品爆发拆解，比较直播排期与人群场景。",
         "domain": "commerce",
-        "totalScore": 89,
+        "totalScore": 94,
         "techImpactScore": null,
         "businessFitScore": null
       },
       {
-        "id": "HT-20260804-002",
+        "id": "HT-20260804-009",
         "grade": "L-A｜业务重点响应",
-        "name": "曼迪卡威爬楼机连续走强，最近30天GMV指数档位达4000万+",
-        "reason": "对象身份稳定，存在跨日基线、连续增长和同类对照，符合爆款商品正式准入。",
-        "action": "优先制作商品拆解与类目对照内容，关键词包先作为假设，广告需等搜索或落地页验证。",
+        "name": "和平精英官方账号涨粉约12w，地铁逃生二周年热点连续发酵",
+        "reason": "稳定官方账号身份、涨粉信号与持续热点内容形成可区分双信号，适合大众内容案例。",
+        "action": "优先制作官方账号如何借周年节点联动涨粉的案例拆解，并保留账号词与问题词假设。",
         "domain": "commerce",
-        "totalScore": 87,
+        "totalScore": 93,
         "techImpactScore": null,
         "businessFitScore": null
       },
       {
-        "id": "HT-20260804-003",
+        "id": "HT-20260804-006",
         "grade": "L-A｜业务重点响应",
-        "name": "抖音合养精灵官方账号“小火人和ta的朋友们”连续两日高速涨粉",
-        "reason": "账号身份稳定，具备跨日基线、连续增长和内容热点两个可区分信号，符合爆款账号准入。",
-        "action": "优先制作新账号增长案例，拆解官方身份、两日涨粉节奏、联动内容和可复用选题结构。",
+        "name": "公仔牌顽渍净洗衣粉连续五日高位，销售榜与热推榜同步居前",
+        "reason": "同一商品连续五日保持高位，交易序列与双榜热推信号可区分，持续性强于单日爆发。",
+        "action": "优先制作洗衣粉爆款结构拆解，比较价格带、规格、卖点和达人覆盖。",
         "domain": "commerce",
-        "totalScore": 86,
+        "totalScore": 91,
         "techImpactScore": null,
         "businessFitScore": null
       }
@@ -3474,6 +3489,5268 @@
         "对象不是商品、品类、达人、店铺、账号、品牌或技术产品",
         "多周期变化未核"
       ]
+    },
+    {
+      "id": "HT-20260804-005",
+      "event_key": "yumeitianxia-yellow-waxy-corn-spike-20260804",
+      "foundAt": "2026-08-04 11:00-12:00",
+      "name": "黄糯玉米商品两日爆发后回落，仍保留短周期爆款观察价值",
+      "type": "爆款商品｜爆发后回落",
+      "sourceLevel": "E3",
+      "publishedAt": "2026-08-04补充扫描",
+      "signal": "同一商品08/02平台预估销量展示20,176，08/03回落至4,674；最近30日平台预估24,165，首次扫描位于榜单前排，刷新后榜位下降。",
+      "uncertainty": "页面销量、销售额和转化均为蝉妈妈预估或区间；08/02单日贡献集中，当前已出现明显回落，不能外推为持续增长。",
+      "recommended": "制作‘爆发后为什么回落’的商品复盘，突出达人集中、节点和持续性判断。",
+      "actionReason": "对象身份明确，销量和榜位变化足以形成短周期复盘，但不作为持续趋势结论。",
+      "actionDetail": "展示08/02峰值、08/03回落和30日累计的相对关系，标注首次扫描与刷新后的榜位变化。",
+      "evidence": "https://www.chanmama.com/promotionRank/fRHfeEVl6wS7Uz4HOo6Ed60CZe6s74_g.html\nhttps://index.baidu.com/v2/index.html#/",
+      "departments": "类目研究、内容、广告增长",
+      "deadline": "2026-08-05T18:00:00+08:00",
+      "notRecommended": "不宣称黄糯玉米类目普涨，不把平台预估写成真实销量，不按峰值预测后续。",
+      "sourceLinks": [
+        {
+          "label": "Core source",
+          "domain": "chanmama.com",
+          "url": "https://www.chanmama.com/promotionRank/fRHfeEVl6wS7Uz4HOo6Ed60CZe6s74_g.html"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "index.baidu.com",
+          "url": "https://index.baidu.com/v2/index.html#/"
+        }
+      ],
+      "source_links": [
+        {
+          "label": "Core source",
+          "domain": "chanmama.com",
+          "url": "https://www.chanmama.com/promotionRank/fRHfeEVl6wS7Uz4HOo6Ed60CZe6s74_g.html"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "index.baidu.com",
+          "url": "https://index.baidu.com/v2/index.html#/"
+        }
+      ],
+      "status": "正式热点",
+      "risk": "中风险-已通过",
+      "owner": "类目研究/内容运营",
+      "monitor": "未来两日销量区间、榜位、关联直播和达人集中度",
+      "candidate_kind": "potential_topic",
+      "hotspot_category": "类目与消费",
+      "signal_type": "single_product_growth",
+      "baseline_evidence": {
+        "description": "08/02与08/03同一商品销量快照、30日累计和榜位刷新变化。",
+        "requires_baseline": true,
+        "comparison_baseline_verified": true,
+        "multi_period_growth_verified": false,
+        "independent_change_signals": 2,
+        "baseline_type": "同一商品多日趋势与第二项可区分指标",
+        "normalization_flags": [
+          "platform_estimate",
+          "single_day_snapshot"
+        ]
+      },
+      "topic_resonance": null,
+      "official_rule": null,
+      "technology_change": "同一商品08/02平台预估销量展示20,176，08/03回落至4,674；最近30日平台预估24,165，首次扫描位于榜单前排，刷新后榜位下降。",
+      "chanmama_relevance": "对象身份明确，销量和榜位变化足以形成短周期复盘，但不作为持续趋势结论。",
+      "next_step": "制作‘爆发后为什么回落’的商品复盘，突出达人集中、节点和持续性判断。",
+      "explicitly_not_doing": "不宣称黄糯玉米类目普涨，不把平台预估写成真实销量，不按峰值预测后续。",
+      "official_evidence": [],
+      "circle_evidence": [],
+      "subject": {
+        "subject_id": "product:chanmama:frhfeevl6ws7uz4hoo6ed60cze6s74-g",
+        "kind": "product",
+        "canonical_name": "玉美天下26年头茬黄糯玉米",
+        "aliases": [
+          "黄糯玉米8支",
+          "26年头茬新玉米"
+        ],
+        "industry": "食品饮料/生鲜玉米",
+        "identity_status": "verified",
+        "identities": [
+          {
+            "platform": "蝉妈妈商品详情",
+            "platform_entity_id": "promotion:fRHfeEVl6wS7Uz4HOo6Ed60CZe6s74_g",
+            "url": "https://www.chanmama.com/promotionRank/fRHfeEVl6wS7Uz4HOo6Ed60CZe6s74_g.html",
+            "verification_status": "verified",
+            "verified_at": "2026-08-04T11:44:20.589+08:00"
+          }
+        ]
+      },
+      "subject_kind": "product",
+      "trend_metrics": [
+        {
+          "metric_id": "metric:corn:daily-sales",
+          "metric_name": "两日平台预估销量",
+          "metric_value": "08/02 20,176；08/03 4,674",
+          "unit": "蝉妈妈平台预估展示值",
+          "period": "2026-08-02至2026-08-03",
+          "observed_at": "2026-08-04T11:44:20.589+08:00",
+          "source_url": "https://www.chanmama.com/promotionRank/fRHfeEVl6wS7Uz4HOo6Ed60CZe6s74_g.html",
+          "evidence_group": "transaction",
+          "underlying_signal_id": "chanmama:corn:daily-sales"
+        },
+        {
+          "metric_id": "metric:corn:ranking-change",
+          "metric_name": "榜位变化",
+          "metric_value": "首次扫描靠前；刷新后下降",
+          "unit": "平台榜位变化",
+          "period": "2026-08-04两次扫描",
+          "observed_at": "2026-08-04T11:44:20.589+08:00",
+          "source_url": "https://www.chanmama.com/promotionRank/fRHfeEVl6wS7Uz4HOo6Ed60CZe6s74_g.html",
+          "evidence_group": "attention",
+          "underlying_signal_id": "chanmama:corn:ranking-refresh"
+        }
+      ],
+      "expected_duration": {
+        "min_days": 2,
+        "max_days": 7,
+        "rationale": "单日爆发后已回落，只保留短周期复盘窗口。",
+        "review_at": "2026-08-05"
+      },
+      "target_audience": [
+        "生鲜食品商家",
+        "农产品带货团队",
+        "类目与内容运营"
+      ],
+      "active_search": {
+        "status": "hypothesis",
+        "evidence": [],
+        "boundary": "商品词来自已核对象与交易/内容信号；AIDSO显示登录页，百度未返回搜索趋势或搜索量。"
+      },
+      "keyword_hypotheses": [
+        {
+          "keyword_id": "kw:yellow-corn:01",
+          "text": "黄糯玉米",
+          "intent": "具体商品词",
+          "evidence_refs": [
+            "metric:corn:daily-sales",
+            "metric:corn:ranking-change"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-11",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台预估不是精确销量",
+            "已出现峰值后回落"
+          ]
+        },
+        {
+          "keyword_id": "kw:yellow-corn:02",
+          "text": "黄糯玉米销量",
+          "intent": "销量数据词",
+          "evidence_refs": [
+            "metric:corn:daily-sales",
+            "metric:corn:ranking-change"
+          ],
+          "applicable_modes": [
+            "search",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-11",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台预估不是精确销量",
+            "已出现峰值后回落"
+          ]
+        },
+        {
+          "keyword_id": "kw:yellow-corn:03",
+          "text": "黄糯玉米带货数据",
+          "intent": "问题/数据词",
+          "evidence_refs": [
+            "metric:corn:daily-sales",
+            "metric:corn:ranking-change"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-11",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台预估不是精确销量",
+            "已出现峰值后回落"
+          ]
+        },
+        {
+          "keyword_id": "kw:yellow-corn:04",
+          "text": "黄糯玉米最近为什么火",
+          "intent": "问题/数据词",
+          "evidence_refs": [
+            "metric:corn:daily-sales",
+            "metric:corn:ranking-change"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-11",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台预估不是精确销量",
+            "已出现峰值后回落"
+          ]
+        }
+      ],
+      "business_response_code": "C",
+      "business_response_label": "继续观察",
+      "business_response_score": 86,
+      "business_response_basis": "综合评分与封顶规则决定。",
+      "actions": [
+        {
+          "hotspotId": "HT-20260804-005",
+          "actionType": "小范围试发",
+          "task": "制作黄糯玉米爆发后回落复盘。",
+          "owner": "类目研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "连续两日退出榜单或平台预估销量归零时停止追踪。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-005",
+          "actionType": "小范围试发",
+          "task": "制作黄糯玉米爆发后回落复盘。",
+          "owner": "类目研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "连续两日退出榜单或平台预估销量归零时停止追踪。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-005",
+          "actionType": "小范围试发",
+          "task": "制作黄糯玉米爆发后回落复盘。",
+          "owner": "类目研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "连续两日退出榜单或平台预估销量归零时停止追踪。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-005",
+          "actionType": "小范围试发",
+          "task": "制作黄糯玉米爆发后回落复盘。",
+          "owner": "类目研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "连续两日退出榜单或平台预估销量归零时停止追踪。",
+          "status": "待执行"
+        }
+      ],
+      "domain": "commerce",
+      "scoring_model": "commerce_v1",
+      "totalScore": 86,
+      "initialValue": 5,
+      "finalValue": 2,
+      "grade": "L-C｜继续观察",
+      "gradeCode": "C",
+      "followDecision": "继续观察",
+      "downgradeReason": "基线校正封顶",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 4,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 5,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 5,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 3,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 4,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 5,
+        "evidence": 5,
+        "type": 5,
+        "core": 5,
+        "baseline": 2,
+        "risk": 4,
+        "window": 5,
+        "preparation": 5,
+        "official_rule_floor": 0
+      },
+      "baseline_assessment": {
+        "signal_type": "single_product_growth",
+        "requires_baseline": true,
+        "comparison_baseline_verified": true,
+        "baseline_type": "同一商品多日趋势与第二项可区分指标",
+        "normalization_flags": [
+          "platform_estimate",
+          "single_day_snapshot"
+        ],
+        "multi_period_growth_verified": false,
+        "independent_change_signals": 2,
+        "is_verified": false
+      },
+      "business_priority_basis": "综合评分与封顶规则决定。",
+      "hotness_scoring_model": "hotness_v1",
+      "hotness_score": 85,
+      "raw_hotness_level": "H-S",
+      "hotness_level": "H-C",
+      "hotness_final_value": 2,
+      "hotness_score_details": [
+        {
+          "key": "absolute_demand",
+          "name": "需求规模",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "baseline_deviation",
+          "name": "相对基线变化",
+          "score": 5,
+          "weight": 25,
+          "weighted_score": 25
+        },
+        {
+          "key": "growth_velocity",
+          "name": "上升速度",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "persistence",
+          "name": "持续时间",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "cross_platform_spread",
+          "name": "跨平台扩散",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "freshness",
+          "name": "数据新鲜度",
+          "score": 4,
+          "weight": 5,
+          "weighted_score": 4
+        }
+      ],
+      "hotness_caps": [
+        {
+          "rule": "single_platform_cap",
+          "hotness_cap": "H-C",
+          "changed": true,
+          "reason": "只有单平台信号，热点成立度最高H-C。"
+        },
+        {
+          "rule": "baseline_normalization_cap",
+          "hotness_cap": "H-C",
+          "changed": false,
+          "reason": "该信号容易受客单价、销量规模、季节、活动、单场爆发、小基数或平台估算影响；缺少可比基线、多周期增长和两项独立变化信号时，不能判定为趋势热点。"
+        }
+      ],
+      "hotness_signal_type": "single_product_growth",
+      "hotness_independent_platform_count": 1,
+      "hotness_baseline_verified": true,
+      "hotness_freshness_verified": true,
+      "hotness_change_signals": [
+        "08/02预估销量展示20,176，08/03为4,674",
+        "首次扫描靠前，刷新后榜位下降"
+      ],
+      "hotness_requires_baseline": true,
+      "hotness_comparison_baseline_verified": true,
+      "hotness_baseline_type": "同一商品多日趋势与第二项可区分指标",
+      "hotness_normalization_flags": [
+        "platform_estimate",
+        "single_day_snapshot"
+      ],
+      "hotness_multi_period_growth_verified": false,
+      "hotness_independent_change_signals": 2,
+      "content_scoring_model": "content_potential_v1",
+      "content_potential_score": 92,
+      "raw_content_potential_level": "P-S",
+      "content_potential_level": "P-C",
+      "content_final_value": 2,
+      "content_score_details": [
+        {
+          "key": "audience_demand",
+          "name": "受众需求规模",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "demand_velocity",
+          "name": "需求上涨速度",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "content_supply_gap",
+          "name": "内容供给缺口",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "target_user_fit",
+          "name": "目标用户匹配",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "data_content_advantage",
+          "name": "蝉妈妈数据优势",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "discussion_shareability",
+          "name": "讨论与传播性",
+          "score": 4,
+          "weight": 10,
+          "weighted_score": 8
+        },
+        {
+          "key": "content_lifecycle",
+          "name": "内容生命周期",
+          "score": 3,
+          "weight": 5,
+          "weighted_score": 3
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 4,
+          "weight": 5,
+          "weighted_score": 4
+        }
+      ],
+      "content_caps": [
+        {
+          "rule": "baseline_normalization_unverified",
+          "potential_cap": "P-C",
+          "changed": true,
+          "reason": "选题结论依赖规模或增长信号，但尚未排除客单价、销量规模、季节、活动、单场爆发、小基数或平台估算偏差，补齐基线前不公开发布。"
+        },
+        {
+          "rule": "search_gap_unverified",
+          "potential_cap": "P-B",
+          "changed": false,
+          "reason": "搜索路线尚未验证内容供给缺口，内容潜力最高P-B。"
+        },
+        {
+          "rule": "potential_s_gate",
+          "potential_cap": "P-A",
+          "changed": false,
+          "reason": "P-S需要E3、至少3个平台、有效基线、最新数据和85分以上渠道适配。"
+        }
+      ],
+      "content_source_tier": "E3",
+      "traffic_route": "mixed",
+      "independent_platform_count": 1,
+      "demand_signals": [
+        "平台：蝉妈妈｜页面：黄糯玉米商品详情｜观察日期：2026-08-04｜变化：08/02预估20,176，08/03预估4,674，峰值后回落｜https://www.chanmama.com/promotionRank/fRHfeEVl6wS7Uz4HOo6Ed60CZe6s74_g.html"
+      ],
+      "content_baseline_verified": true,
+      "content_requires_baseline": true,
+      "content_comparison_baseline_verified": true,
+      "content_baseline_type": "同一对象多周期指标与可区分变化信号",
+      "content_normalization_flags": [
+        "platform_estimate",
+        "single_day_snapshot"
+      ],
+      "content_multi_period_growth_verified": false,
+      "content_independent_change_signals": 2,
+      "supply_gap_verified": false,
+      "content_freshness_verified": true,
+      "chanmama_answerable": true,
+      "query_cluster": [
+        "黄糯玉米",
+        "黄糯玉米销量",
+        "黄糯玉米带货数据",
+        "黄糯玉米最近为什么火"
+      ],
+      "channel_scores": {
+        "website": 86,
+        "wechat": 78,
+        "short_video": 88,
+        "xiaohongshu": 82,
+        "private_domain": 66
+      },
+      "channel_reasons": {
+        "primary": "把峰值和回落放在一起，避免只截取爆发日制造持续上涨印象。"
+      },
+      "recommended_channels": [
+        "website",
+        "wechat",
+        "short_video",
+        "xiaohongshu"
+      ],
+      "primary_topic": "黄糯玉米为什么突然爆发又回落？两日销量与榜位复盘",
+      "early_publish_title": "黄糯玉米为什么突然爆发又回落？两日销量与榜位复盘",
+      "content_angle": "把峰值和回落放在一起，避免只截取爆发日制造持续上涨印象。",
+      "measurement_plan": "商品词曝光、复盘页点击、后续两日榜位和平台预估销量。",
+      "stop_condition": "连续两日退出榜单或平台预估销量归零时停止追踪。",
+      "content_score_reasons": {},
+      "topic_value_score": 92,
+      "topic_value_code": "S",
+      "topic_value_label": "高潜力",
+      "publication_status_code": "observe",
+      "publication_status": "继续观察",
+      "publication_priority": 2,
+      "publication_mode": "只记录信号",
+      "publication_basis": "已有真实信号，但选题价值或内容承接尚不足，继续观察变化。",
+      "fact_boundary": "只确认平台预估销量和榜位变化；该商品已经从峰值回落，最高用于短周期复盘和兴趣验证。",
+      "pending_confirmation": [
+        "未来两日销量区间",
+        "达人集中度复核",
+        "真实搜索趋势",
+        "第二个独立需求信号待确认",
+        "内容供给缺口待确认",
+        "可比基线与多周期变化待确认"
+      ],
+      "confirmed_trigger": true,
+      "publishable_channel": true,
+      "ad_opportunity_scoring_model": "ad_opportunity_v1",
+      "ad_modes": {
+        "search": {
+          "activation_mode": "search",
+          "raw_score": 55,
+          "score": 55,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "active_search_evidence",
+              "name": "主动搜索证据",
+              "score": 1,
+              "weight": 30,
+              "weighted_score": 6
+            },
+            {
+              "key": "keyword_clarity",
+              "name": "关键词明确度",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "landing_fit",
+              "name": "落地承接",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 10,
+              "weighted_score": 10
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 2,
+              "weight": 5,
+              "weighted_score": 2
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "没有真实主动搜索证据",
+            "搜索转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:corn:daily-sales",
+            "metric:corn:ranking-change"
+          ],
+          "reasons": {
+            "summary": "具体商品词和复盘素材明确，但走势已回落；没有真实搜索趋势和匹配转化页，暂不进入搜索广告队列。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "active_search_confirmed": false,
+            "keyword_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "interest": {
+          "activation_mode": "interest",
+          "raw_score": 89,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "content_diffusion",
+              "name": "内容扩散",
+              "score": 5,
+              "weight": 25,
+              "weighted_score": 25
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "creative_fit",
+              "name": "素材适配",
+              "score": 4,
+              "weight": 15,
+              "weighted_score": 12
+            },
+            {
+              "key": "product_fit",
+              "name": "产品承接",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": true,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "兴趣流量转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:corn:daily-sales",
+            "metric:corn:ranking-change"
+          ],
+          "reasons": {
+            "summary": "具体商品词和复盘素材明确，但走势已回落；可做内容验证，但缺少广告落地与监测。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "content_signal_confirmed": true,
+            "creative_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "commerce": {
+          "activation_mode": "commerce",
+          "raw_score": 81,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "transaction_trend",
+              "name": "交易趋势",
+              "score": 5,
+              "weight": 25,
+              "weighted_score": 25
+            },
+            {
+              "key": "product_path",
+              "name": "商品链路",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "shop_product_fit",
+              "name": "商品或店铺承接",
+              "score": 3,
+              "weight": 20,
+              "weighted_score": 12
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 5,
+              "weighted_score": 4
+            },
+            {
+              "key": "conversion_value",
+              "name": "转化价值",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": true,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "电商转化链路未准备"
+          ],
+          "evidence_refs": [
+            "metric:corn:daily-sales",
+            "metric:corn:ranking-change"
+          ],
+          "reasons": {
+            "summary": "具体商品词和复盘素材明确，但走势已回落；商品与交易信号已核，但转化链路未准备。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "verified_offer": true,
+            "transaction_signal_confirmed": true,
+            "conversion_path_ready": false
+          }
+        }
+      },
+      "ad_eligible": false,
+      "ad_eligible_modes": [],
+      "ad_best_mode": "interest",
+      "ad_global_blockers": [
+        "广告落地页未完成",
+        "曝光、点击、访问与注册监测未接通"
+      ],
+      "breakout_scoring_model": "breakout_v1",
+      "breakout_status": "observation_only",
+      "breakout_signal_count": 2,
+      "breakout_gates_passed": false,
+      "breakout_blockers": [
+        "多周期变化未核"
+      ]
+    },
+    {
+      "id": "HT-20260804-006",
+      "event_key": "gongzai-stain-clean-detergent-multiday-20260804",
+      "foundAt": "2026-08-04 11:00-12:00",
+      "name": "公仔牌顽渍净洗衣粉连续五日高位，销售榜与热推榜同步居前",
+      "type": "爆款商品｜多日稳定",
+      "sourceLevel": "E3",
+      "publishedAt": "2026-08-04补充扫描",
+      "signal": "07/30至08/03平台预估销量依次为15,582、17,830、16,982、17,605、13,897；最近30日平台预估314,252，销售榜和热推榜均显示第1。",
+      "uncertainty": "销量和榜位均来自蝉妈妈平台估算/榜单，不代表真实成交量、独立买家数或全网排名。",
+      "recommended": "优先制作洗衣粉爆款结构拆解，比较价格带、规格、卖点和达人覆盖。",
+      "actionReason": "同一商品连续五日保持高位，交易序列与双榜热推信号可区分，持续性强于单日爆发。",
+      "actionDetail": "分开展示多日预估销量和销售/热推榜位，补充适用人群与规格差异。",
+      "evidence": "https://www.chanmama.com/promotionRank/Oifq5_IBXNJaS6yWtMXo9U2tveAEURop.html\nhttps://index.baidu.com/v2/index.html#/",
+      "departments": "类目研究、内容、广告增长",
+      "deadline": "2026-08-05T18:00:00+08:00",
+      "notRecommended": "不把314,252写成真实成交量，不宣称洗衣粉全类目增长，不替代产品功效验证。",
+      "sourceLinks": [
+        {
+          "label": "Core source",
+          "domain": "chanmama.com",
+          "url": "https://www.chanmama.com/promotionRank/Oifq5_IBXNJaS6yWtMXo9U2tveAEURop.html"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "index.baidu.com",
+          "url": "https://index.baidu.com/v2/index.html#/"
+        }
+      ],
+      "source_links": [
+        {
+          "label": "Core source",
+          "domain": "chanmama.com",
+          "url": "https://www.chanmama.com/promotionRank/Oifq5_IBXNJaS6yWtMXo9U2tveAEURop.html"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "index.baidu.com",
+          "url": "https://index.baidu.com/v2/index.html#/"
+        }
+      ],
+      "status": "正式热点",
+      "risk": "中风险-已通过",
+      "owner": "类目研究/内容运营",
+      "monitor": "日销量区间、双榜榜位、达人数量、价格与库存变化",
+      "candidate_kind": "potential_topic",
+      "hotspot_category": "类目与消费",
+      "signal_type": "single_product_growth",
+      "baseline_evidence": {
+        "description": "07/30至08/03五日序列与销售榜、热推榜两个榜单信号。",
+        "requires_baseline": true,
+        "comparison_baseline_verified": true,
+        "multi_period_growth_verified": true,
+        "independent_change_signals": 2,
+        "baseline_type": "同一商品多日趋势与第二项可区分指标",
+        "normalization_flags": [
+          "platform_estimate"
+        ]
+      },
+      "topic_resonance": null,
+      "official_rule": null,
+      "technology_change": "07/30至08/03平台预估销量依次为15,582、17,830、16,982、17,605、13,897；最近30日平台预估314,252，销售榜和热推榜均显示第1。",
+      "chanmama_relevance": "同一商品连续五日保持高位，交易序列与双榜热推信号可区分，持续性强于单日爆发。",
+      "next_step": "优先制作洗衣粉爆款结构拆解，比较价格带、规格、卖点和达人覆盖。",
+      "explicitly_not_doing": "不把314,252写成真实成交量，不宣称洗衣粉全类目增长，不替代产品功效验证。",
+      "official_evidence": [],
+      "circle_evidence": [],
+      "subject": {
+        "subject_id": "product:chanmama:oifq5-ibxnjas6ywtmxo9u2tveaeur-op",
+        "kind": "product",
+        "canonical_name": "公仔牌顽渍净洗衣粉",
+        "aliases": [
+          "公仔牌洗衣粉",
+          "公仔牌顽渍净"
+        ],
+        "industry": "家居日用/衣物清洁",
+        "identity_status": "verified",
+        "identities": [
+          {
+            "platform": "蝉妈妈商品详情",
+            "platform_entity_id": "promotion:Oifq5_IBXNJaS6yWtMXo9U2tveAEURop",
+            "url": "https://www.chanmama.com/promotionRank/Oifq5_IBXNJaS6yWtMXo9U2tveAEURop.html",
+            "verification_status": "verified",
+            "verified_at": "2026-08-04T11:44:20.589+08:00"
+          }
+        ]
+      },
+      "subject_kind": "product",
+      "trend_metrics": [
+        {
+          "metric_id": "metric:detergent:five-day-sales",
+          "metric_name": "五日平台预估销量",
+          "metric_value": "15,582/17,830/16,982/17,605/13,897",
+          "unit": "蝉妈妈平台预估展示值",
+          "period": "2026-07-30至2026-08-03",
+          "observed_at": "2026-08-04T11:44:20.589+08:00",
+          "source_url": "https://www.chanmama.com/promotionRank/Oifq5_IBXNJaS6yWtMXo9U2tveAEURop.html",
+          "evidence_group": "transaction",
+          "underlying_signal_id": "chanmama:detergent:daily-sales"
+        },
+        {
+          "metric_id": "metric:detergent:dual-rank",
+          "metric_name": "销售榜与热推榜",
+          "metric_value": "均显示第1",
+          "unit": "平台榜位",
+          "period": "2026-08-04观察",
+          "observed_at": "2026-08-04T11:44:20.589+08:00",
+          "source_url": "https://www.chanmama.com/promotionRank/Oifq5_IBXNJaS6yWtMXo9U2tveAEURop.html",
+          "evidence_group": "promotion",
+          "underlying_signal_id": "chanmama:detergent:dual-ranking"
+        }
+      ],
+      "expected_duration": {
+        "min_days": 7,
+        "max_days": 21,
+        "rationale": "已形成五日稳定序列，仍需监测价格、库存与榜位。",
+        "review_at": "2026-08-06"
+      },
+      "target_audience": [
+        "家居日用商家",
+        "衣物清洁品牌",
+        "选品、内容与投放团队"
+      ],
+      "active_search": {
+        "status": "hypothesis",
+        "evidence": [],
+        "boundary": "商品词来自已核对象与交易/内容信号；AIDSO显示登录页，百度未返回搜索趋势或搜索量。"
+      },
+      "keyword_hypotheses": [
+        {
+          "keyword_id": "kw:gongzai-detergent:01",
+          "text": "公仔牌顽渍净洗衣粉",
+          "intent": "具体商品词",
+          "evidence_refs": [
+            "metric:detergent:five-day-sales",
+            "metric:detergent:dual-rank"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-25",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台预估不是精确销量"
+          ]
+        },
+        {
+          "keyword_id": "kw:gongzai-detergent:02",
+          "text": "公仔牌洗衣粉销量",
+          "intent": "销量数据词",
+          "evidence_refs": [
+            "metric:detergent:five-day-sales",
+            "metric:detergent:dual-rank"
+          ],
+          "applicable_modes": [
+            "search",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-25",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台预估不是精确销量"
+          ]
+        },
+        {
+          "keyword_id": "kw:gongzai-detergent:03",
+          "text": "公仔牌洗衣粉带货数据",
+          "intent": "问题/数据词",
+          "evidence_refs": [
+            "metric:detergent:five-day-sales",
+            "metric:detergent:dual-rank"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-25",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台预估不是精确销量"
+          ]
+        },
+        {
+          "keyword_id": "kw:gongzai-detergent:04",
+          "text": "公仔牌洗衣粉为什么火",
+          "intent": "问题/数据词",
+          "evidence_refs": [
+            "metric:detergent:five-day-sales",
+            "metric:detergent:dual-rank"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-25",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台预估不是精确销量"
+          ]
+        }
+      ],
+      "business_response_code": "A",
+      "business_response_label": "业务重点响应",
+      "business_response_score": 91,
+      "business_response_basis": "综合评分与封顶规则决定。",
+      "actions": [
+        {
+          "hotspotId": "HT-20260804-006",
+          "actionType": "优先制作",
+          "task": "制作公仔牌洗衣粉五日销量与双榜拆解。",
+          "owner": "类目研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "连续两日预估销量跌破当前区间下沿并退出双榜时停止滚动。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-006",
+          "actionType": "优先制作",
+          "task": "制作公仔牌洗衣粉五日销量与双榜拆解。",
+          "owner": "类目研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "连续两日预估销量跌破当前区间下沿并退出双榜时停止滚动。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-006",
+          "actionType": "优先制作",
+          "task": "制作公仔牌洗衣粉五日销量与双榜拆解。",
+          "owner": "类目研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "连续两日预估销量跌破当前区间下沿并退出双榜时停止滚动。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-006",
+          "actionType": "优先制作",
+          "task": "制作公仔牌洗衣粉五日销量与双榜拆解。",
+          "owner": "类目研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "连续两日预估销量跌破当前区间下沿并退出双榜时停止滚动。",
+          "status": "待执行"
+        }
+      ],
+      "domain": "commerce",
+      "scoring_model": "commerce_v1",
+      "totalScore": 91,
+      "initialValue": 5,
+      "finalValue": 4,
+      "grade": "L-A｜业务重点响应",
+      "gradeCode": "A",
+      "followDecision": "业务重点响应",
+      "downgradeReason": "风险封顶",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 4,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 5,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 5,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 5,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 5,
+        "evidence": 5,
+        "type": 5,
+        "core": 5,
+        "baseline": 5,
+        "risk": 4,
+        "window": 5,
+        "preparation": 5,
+        "official_rule_floor": 0
+      },
+      "baseline_assessment": {
+        "signal_type": "single_product_growth",
+        "requires_baseline": true,
+        "comparison_baseline_verified": true,
+        "baseline_type": "同一商品多日趋势与第二项可区分指标",
+        "normalization_flags": [
+          "platform_estimate"
+        ],
+        "multi_period_growth_verified": true,
+        "independent_change_signals": 2,
+        "is_verified": true
+      },
+      "business_priority_basis": "综合评分与封顶规则决定。",
+      "hotness_scoring_model": "hotness_v1",
+      "hotness_score": 95,
+      "raw_hotness_level": "H-S",
+      "hotness_level": "H-C",
+      "hotness_final_value": 2,
+      "hotness_score_details": [
+        {
+          "key": "absolute_demand",
+          "name": "需求规模",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "baseline_deviation",
+          "name": "相对基线变化",
+          "score": 4,
+          "weight": 25,
+          "weighted_score": 20
+        },
+        {
+          "key": "growth_velocity",
+          "name": "上升速度",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "persistence",
+          "name": "持续时间",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "cross_platform_spread",
+          "name": "跨平台扩散",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "freshness",
+          "name": "数据新鲜度",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "hotness_caps": [
+        {
+          "rule": "single_platform_cap",
+          "hotness_cap": "H-C",
+          "changed": true,
+          "reason": "只有单平台信号，热点成立度最高H-C。"
+        }
+      ],
+      "hotness_signal_type": "single_product_growth",
+      "hotness_independent_platform_count": 1,
+      "hotness_baseline_verified": true,
+      "hotness_freshness_verified": true,
+      "hotness_change_signals": [
+        "五日预估销量保持13,897至17,830区间",
+        "销售榜与热推榜均显示第1"
+      ],
+      "hotness_requires_baseline": true,
+      "hotness_comparison_baseline_verified": true,
+      "hotness_baseline_type": "同一商品多日趋势与第二项可区分指标",
+      "hotness_normalization_flags": [
+        "platform_estimate"
+      ],
+      "hotness_multi_period_growth_verified": true,
+      "hotness_independent_change_signals": 2,
+      "content_scoring_model": "content_potential_v1",
+      "content_potential_score": 95,
+      "raw_content_potential_level": "P-S",
+      "content_potential_level": "P-B",
+      "content_final_value": 3,
+      "content_score_details": [
+        {
+          "key": "audience_demand",
+          "name": "受众需求规模",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "demand_velocity",
+          "name": "需求上涨速度",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "content_supply_gap",
+          "name": "内容供给缺口",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "target_user_fit",
+          "name": "目标用户匹配",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "data_content_advantage",
+          "name": "蝉妈妈数据优势",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "discussion_shareability",
+          "name": "讨论与传播性",
+          "score": 4,
+          "weight": 10,
+          "weighted_score": 8
+        },
+        {
+          "key": "content_lifecycle",
+          "name": "内容生命周期",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "content_caps": [
+        {
+          "rule": "search_gap_unverified",
+          "potential_cap": "P-B",
+          "changed": true,
+          "reason": "搜索路线尚未验证内容供给缺口，内容潜力最高P-B。"
+        },
+        {
+          "rule": "potential_s_gate",
+          "potential_cap": "P-A",
+          "changed": false,
+          "reason": "P-S需要E3、至少3个平台、有效基线、最新数据和85分以上渠道适配。"
+        }
+      ],
+      "content_source_tier": "E3",
+      "traffic_route": "mixed",
+      "independent_platform_count": 1,
+      "demand_signals": [
+        "平台：蝉妈妈｜页面：公仔牌顽渍净洗衣粉商品详情｜观察日期：2026-08-04｜数值：07/30至08/03预估15,582/17,830/16,982/17,605/13,897；销售榜与热推榜第1｜https://www.chanmama.com/promotionRank/Oifq5_IBXNJaS6yWtMXo9U2tveAEURop.html"
+      ],
+      "content_baseline_verified": true,
+      "content_requires_baseline": true,
+      "content_comparison_baseline_verified": true,
+      "content_baseline_type": "同一对象多周期指标与可区分变化信号",
+      "content_normalization_flags": [
+        "platform_estimate"
+      ],
+      "content_multi_period_growth_verified": true,
+      "content_independent_change_signals": 2,
+      "supply_gap_verified": false,
+      "content_freshness_verified": true,
+      "chanmama_answerable": true,
+      "query_cluster": [
+        "公仔牌顽渍净洗衣粉",
+        "公仔牌洗衣粉销量",
+        "公仔牌洗衣粉带货数据",
+        "公仔牌洗衣粉为什么火"
+      ],
+      "channel_scores": {
+        "website": 92,
+        "wechat": 84,
+        "short_video": 90,
+        "xiaohongshu": 86,
+        "private_domain": 76
+      },
+      "channel_reasons": {
+        "primary": "连续五日数据比单日榜首更能支持爆款判断，适合做具体商品与类目对照。"
+      },
+      "recommended_channels": [
+        "website",
+        "wechat",
+        "short_video",
+        "xiaohongshu",
+        "private_domain"
+      ],
+      "primary_topic": "公仔牌洗衣粉为什么连续高位？五日销量与双榜信号拆解",
+      "early_publish_title": "公仔牌洗衣粉为什么连续高位？五日销量与双榜信号拆解",
+      "content_angle": "连续五日数据比单日榜首更能支持爆款判断，适合做具体商品与类目对照。",
+      "measurement_plan": "商品词曝光、内容点击、专题页访问、注册和后续榜位。",
+      "stop_condition": "连续两日预估销量跌破当前区间下沿并退出双榜时停止滚动。",
+      "content_score_reasons": {},
+      "topic_value_score": 95,
+      "topic_value_code": "S",
+      "topic_value_label": "高潜力",
+      "publication_status_code": "early_test",
+      "publication_status": "抢先试发",
+      "publication_priority": 5,
+      "publication_mode": "观察型或问题型内容",
+      "publication_basis": "选题价值高且真实平台信号已确认；未确认信息只限制结论强度，不阻止用观察型内容抢占窗口。",
+      "fact_boundary": "所有销量保留蝉妈妈平台预估口径；双榜居前只说明该平台样本中的持续热度。",
+      "pending_confirmation": [
+        "下一周期销量",
+        "达人与价格结构",
+        "真实搜索趋势",
+        "第二个独立需求信号待确认",
+        "内容供给缺口待确认"
+      ],
+      "confirmed_trigger": true,
+      "publishable_channel": true,
+      "ad_opportunity_scoring_model": "ad_opportunity_v1",
+      "ad_modes": {
+        "search": {
+          "activation_mode": "search",
+          "raw_score": 55,
+          "score": 55,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "active_search_evidence",
+              "name": "主动搜索证据",
+              "score": 1,
+              "weight": 30,
+              "weighted_score": 6
+            },
+            {
+              "key": "keyword_clarity",
+              "name": "关键词明确度",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "landing_fit",
+              "name": "落地承接",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 10,
+              "weighted_score": 10
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 2,
+              "weight": 5,
+              "weighted_score": 2
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "没有真实主动搜索证据",
+            "搜索转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:detergent:five-day-sales",
+            "metric:detergent:dual-rank"
+          ],
+          "reasons": {
+            "summary": "具体商品、多日交易与热推素材均明确；没有真实搜索趋势和匹配转化页，暂不进入搜索广告队列。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "active_search_confirmed": false,
+            "keyword_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "interest": {
+          "activation_mode": "interest",
+          "raw_score": 89,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "content_diffusion",
+              "name": "内容扩散",
+              "score": 5,
+              "weight": 25,
+              "weighted_score": 25
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "creative_fit",
+              "name": "素材适配",
+              "score": 4,
+              "weight": 15,
+              "weighted_score": 12
+            },
+            {
+              "key": "product_fit",
+              "name": "产品承接",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": true,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "兴趣流量转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:detergent:five-day-sales",
+            "metric:detergent:dual-rank"
+          ],
+          "reasons": {
+            "summary": "具体商品、多日交易与热推素材均明确；可做内容验证，但缺少广告落地与监测。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "content_signal_confirmed": true,
+            "creative_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "commerce": {
+          "activation_mode": "commerce",
+          "raw_score": 81,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "transaction_trend",
+              "name": "交易趋势",
+              "score": 5,
+              "weight": 25,
+              "weighted_score": 25
+            },
+            {
+              "key": "product_path",
+              "name": "商品链路",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "shop_product_fit",
+              "name": "商品或店铺承接",
+              "score": 3,
+              "weight": 20,
+              "weighted_score": 12
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 5,
+              "weighted_score": 4
+            },
+            {
+              "key": "conversion_value",
+              "name": "转化价值",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": true,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "电商转化链路未准备"
+          ],
+          "evidence_refs": [
+            "metric:detergent:five-day-sales",
+            "metric:detergent:dual-rank"
+          ],
+          "reasons": {
+            "summary": "具体商品、多日交易与热推素材均明确；商品与交易信号已核，但转化链路未准备。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "verified_offer": true,
+            "transaction_signal_confirmed": true,
+            "conversion_path_ready": false
+          }
+        }
+      },
+      "ad_eligible": false,
+      "ad_eligible_modes": [],
+      "ad_best_mode": "interest",
+      "ad_global_blockers": [
+        "广告落地页未完成",
+        "曝光、点击、访问与注册监测未接通"
+      ],
+      "breakout_scoring_model": "breakout_v1",
+      "breakout_status": "confirmed_breakout",
+      "breakout_signal_count": 2,
+      "breakout_gates_passed": true,
+      "breakout_blockers": []
+    },
+    {
+      "id": "HT-20260804-007",
+      "event_key": "no-pump-vacuum-bag-growth-20260804",
+      "foundAt": "2026-08-04 11:00-12:00",
+      "name": "免抽气真空压缩袋连续三日放量，浏览与销量同步但达人集中",
+      "type": "爆款商品｜快速上升",
+      "sourceLevel": "E3",
+      "publishedAt": "2026-08-04补充扫描",
+      "signal": "07/31至08/03平台预估销量展示11.2、4,051、11,856、6,225，浏览量同步变化；主要销量集中在一个达人渠道。",
+      "uncertainty": "07/31的11.2按页面展示记录，不擅自解释单位；销量和浏览量均为平台估算，达人集中会放大波动。",
+      "recommended": "制作收纳场景与商品结构稿，同时把达人集中度作为风险栏。",
+      "actionReason": "销量与浏览为可区分变化信号且跨多日，但集中度风险要求降低持续性预期。",
+      "actionDetail": "展示销量与浏览同步关系、免抽气使用场景和达人集中风险，不预测全类目增长。",
+      "evidence": "https://www.chanmama.com/promotionRank/GRPPY9CTOOJ-CupZYn5rMATIqXJSI9Qy.html\nhttps://index.baidu.com/v2/index.html#/",
+      "departments": "类目研究、内容、广告增长",
+      "deadline": "2026-08-05T18:00:00+08:00",
+      "notRecommended": "不把平台估算写成真实销量，不把单达人驱动写成自然增长，不承诺压缩效果。",
+      "sourceLinks": [
+        {
+          "label": "Core source",
+          "domain": "chanmama.com",
+          "url": "https://www.chanmama.com/promotionRank/GRPPY9CTOOJ-CupZYn5rMATIqXJSI9Qy.html"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "index.baidu.com",
+          "url": "https://index.baidu.com/v2/index.html#/"
+        }
+      ],
+      "source_links": [
+        {
+          "label": "Core source",
+          "domain": "chanmama.com",
+          "url": "https://www.chanmama.com/promotionRank/GRPPY9CTOOJ-CupZYn5rMATIqXJSI9Qy.html"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "index.baidu.com",
+          "url": "https://index.baidu.com/v2/index.html#/"
+        }
+      ],
+      "status": "正式热点",
+      "risk": "中风险-已通过",
+      "owner": "类目研究/内容运营",
+      "monitor": "销量、浏览量、达人数量、主要达人占比和退货评价",
+      "candidate_kind": "potential_topic",
+      "hotspot_category": "类目与消费",
+      "signal_type": "single_product_growth",
+      "baseline_evidence": {
+        "description": "07/31至08/03销量序列与浏览量同步变化，另记录达人集中度。",
+        "requires_baseline": true,
+        "comparison_baseline_verified": true,
+        "multi_period_growth_verified": true,
+        "independent_change_signals": 2,
+        "baseline_type": "同一商品多日趋势与第二项可区分指标",
+        "normalization_flags": [
+          "platform_estimate"
+        ]
+      },
+      "topic_resonance": null,
+      "official_rule": null,
+      "technology_change": "07/31至08/03平台预估销量展示11.2、4,051、11,856、6,225，浏览量同步变化；主要销量集中在一个达人渠道。",
+      "chanmama_relevance": "销量与浏览为可区分变化信号且跨多日，但集中度风险要求降低持续性预期。",
+      "next_step": "制作收纳场景与商品结构稿，同时把达人集中度作为风险栏。",
+      "explicitly_not_doing": "不把平台估算写成真实销量，不把单达人驱动写成自然增长，不承诺压缩效果。",
+      "official_evidence": [],
+      "circle_evidence": [],
+      "subject": {
+        "subject_id": "product:chanmama:grppy9ctooj-cupzyn5rmatiqxjsi9qy",
+        "kind": "product",
+        "canonical_name": "免抽气真空压缩袋",
+        "aliases": [
+          "免抽气压缩袋",
+          "真空压缩袋"
+        ],
+        "industry": "家居日用/收纳用品",
+        "identity_status": "verified",
+        "identities": [
+          {
+            "platform": "蝉妈妈商品详情",
+            "platform_entity_id": "promotion:GRPPY9CTOOJ-CupZYn5rMATIqXJSI9Qy",
+            "url": "https://www.chanmama.com/promotionRank/GRPPY9CTOOJ-CupZYn5rMATIqXJSI9Qy.html",
+            "verification_status": "verified",
+            "verified_at": "2026-08-04T11:44:20.589+08:00"
+          }
+        ]
+      },
+      "subject_kind": "product",
+      "trend_metrics": [
+        {
+          "metric_id": "metric:compression-bag:daily-sales",
+          "metric_name": "多日平台预估销量",
+          "metric_value": "11.2/4,051/11,856/6,225",
+          "unit": "蝉妈妈页面展示值",
+          "period": "2026-07-31至2026-08-03",
+          "observed_at": "2026-08-04T11:44:20.589+08:00",
+          "source_url": "https://www.chanmama.com/promotionRank/GRPPY9CTOOJ-CupZYn5rMATIqXJSI9Qy.html",
+          "evidence_group": "transaction",
+          "underlying_signal_id": "chanmama:compression-bag:daily-sales"
+        },
+        {
+          "metric_id": "metric:compression-bag:views",
+          "metric_name": "浏览量变化",
+          "metric_value": "与销量同步上升后回落",
+          "unit": "平台浏览量趋势",
+          "period": "2026-07-31至2026-08-03",
+          "observed_at": "2026-08-04T11:44:20.589+08:00",
+          "source_url": "https://www.chanmama.com/promotionRank/GRPPY9CTOOJ-CupZYn5rMATIqXJSI9Qy.html",
+          "evidence_group": "attention",
+          "underlying_signal_id": "chanmama:compression-bag:views"
+        }
+      ],
+      "expected_duration": {
+        "min_days": 3,
+        "max_days": 14,
+        "rationale": "场景性需求可延续，但单达人集中使持续周期不确定。",
+        "review_at": "2026-08-05"
+      },
+      "target_audience": [
+        "收纳用品商家",
+        "家居内容创作者",
+        "选品与短视频投放团队"
+      ],
+      "active_search": {
+        "status": "hypothesis",
+        "evidence": [],
+        "boundary": "商品词来自已核对象与交易/内容信号；AIDSO显示登录页，百度未返回搜索趋势或搜索量。"
+      },
+      "keyword_hypotheses": [
+        {
+          "keyword_id": "kw:compression-bag:01",
+          "text": "免抽气真空压缩袋",
+          "intent": "具体商品词",
+          "evidence_refs": [
+            "metric:compression-bag:daily-sales",
+            "metric:compression-bag:views"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-18",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台估算不是精确销量",
+            "主要销量集中在单一达人"
+          ]
+        },
+        {
+          "keyword_id": "kw:compression-bag:02",
+          "text": "免抽气压缩袋销量",
+          "intent": "销量数据词",
+          "evidence_refs": [
+            "metric:compression-bag:daily-sales",
+            "metric:compression-bag:views"
+          ],
+          "applicable_modes": [
+            "search",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-18",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台估算不是精确销量",
+            "主要销量集中在单一达人"
+          ]
+        },
+        {
+          "keyword_id": "kw:compression-bag:03",
+          "text": "免抽气压缩袋带货数据",
+          "intent": "问题/数据词",
+          "evidence_refs": [
+            "metric:compression-bag:daily-sales",
+            "metric:compression-bag:views"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-18",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台估算不是精确销量",
+            "主要销量集中在单一达人"
+          ]
+        },
+        {
+          "keyword_id": "kw:compression-bag:04",
+          "text": "免抽气压缩袋为什么火",
+          "intent": "问题/数据词",
+          "evidence_refs": [
+            "metric:compression-bag:daily-sales",
+            "metric:compression-bag:views"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-18",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台估算不是精确销量",
+            "主要销量集中在单一达人"
+          ]
+        }
+      ],
+      "business_response_code": "A",
+      "business_response_label": "业务重点响应",
+      "business_response_score": 88,
+      "business_response_basis": "综合评分与封顶规则决定。",
+      "actions": [
+        {
+          "hotspotId": "HT-20260804-007",
+          "actionType": "抢先试发",
+          "task": "制作免抽气压缩袋销量、浏览与达人集中度观察。",
+          "owner": "类目研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "主要达人停播或连续两日销量、浏览同步回落时停止滚动。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-007",
+          "actionType": "抢先试发",
+          "task": "制作免抽气压缩袋销量、浏览与达人集中度观察。",
+          "owner": "类目研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "主要达人停播或连续两日销量、浏览同步回落时停止滚动。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-007",
+          "actionType": "抢先试发",
+          "task": "制作免抽气压缩袋销量、浏览与达人集中度观察。",
+          "owner": "类目研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "主要达人停播或连续两日销量、浏览同步回落时停止滚动。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-007",
+          "actionType": "抢先试发",
+          "task": "制作免抽气压缩袋销量、浏览与达人集中度观察。",
+          "owner": "类目研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "主要达人停播或连续两日销量、浏览同步回落时停止滚动。",
+          "status": "待执行"
+        }
+      ],
+      "domain": "commerce",
+      "scoring_model": "commerce_v1",
+      "totalScore": 88,
+      "initialValue": 5,
+      "finalValue": 4,
+      "grade": "L-A｜业务重点响应",
+      "gradeCode": "A",
+      "followDecision": "业务重点响应",
+      "downgradeReason": "风险封顶",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 4,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 5,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 5,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 5,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 4,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 5,
+        "evidence": 5,
+        "type": 5,
+        "core": 5,
+        "baseline": 5,
+        "risk": 4,
+        "window": 5,
+        "preparation": 5,
+        "official_rule_floor": 0
+      },
+      "baseline_assessment": {
+        "signal_type": "single_product_growth",
+        "requires_baseline": true,
+        "comparison_baseline_verified": true,
+        "baseline_type": "同一商品多日趋势与第二项可区分指标",
+        "normalization_flags": [
+          "platform_estimate"
+        ],
+        "multi_period_growth_verified": true,
+        "independent_change_signals": 2,
+        "is_verified": true
+      },
+      "business_priority_basis": "综合评分与封顶规则决定。",
+      "hotness_scoring_model": "hotness_v1",
+      "hotness_score": 88,
+      "raw_hotness_level": "H-S",
+      "hotness_level": "H-C",
+      "hotness_final_value": 2,
+      "hotness_score_details": [
+        {
+          "key": "absolute_demand",
+          "name": "需求规模",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "baseline_deviation",
+          "name": "相对基线变化",
+          "score": 5,
+          "weight": 25,
+          "weighted_score": 25
+        },
+        {
+          "key": "growth_velocity",
+          "name": "上升速度",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "persistence",
+          "name": "持续时间",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "cross_platform_spread",
+          "name": "跨平台扩散",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "freshness",
+          "name": "数据新鲜度",
+          "score": 4,
+          "weight": 5,
+          "weighted_score": 4
+        }
+      ],
+      "hotness_caps": [
+        {
+          "rule": "single_platform_cap",
+          "hotness_cap": "H-C",
+          "changed": true,
+          "reason": "只有单平台信号，热点成立度最高H-C。"
+        }
+      ],
+      "hotness_signal_type": "single_product_growth",
+      "hotness_independent_platform_count": 1,
+      "hotness_baseline_verified": true,
+      "hotness_freshness_verified": true,
+      "hotness_change_signals": [
+        "08/01至08/03预估销量明显高于07/31",
+        "浏览量与销量同步变化"
+      ],
+      "hotness_requires_baseline": true,
+      "hotness_comparison_baseline_verified": true,
+      "hotness_baseline_type": "同一商品多日趋势与第二项可区分指标",
+      "hotness_normalization_flags": [
+        "platform_estimate"
+      ],
+      "hotness_multi_period_growth_verified": true,
+      "hotness_independent_change_signals": 2,
+      "content_scoring_model": "content_potential_v1",
+      "content_potential_score": 94,
+      "raw_content_potential_level": "P-S",
+      "content_potential_level": "P-B",
+      "content_final_value": 3,
+      "content_score_details": [
+        {
+          "key": "audience_demand",
+          "name": "受众需求规模",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "demand_velocity",
+          "name": "需求上涨速度",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "content_supply_gap",
+          "name": "内容供给缺口",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "target_user_fit",
+          "name": "目标用户匹配",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "data_content_advantage",
+          "name": "蝉妈妈数据优势",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "discussion_shareability",
+          "name": "讨论与传播性",
+          "score": 4,
+          "weight": 10,
+          "weighted_score": 8
+        },
+        {
+          "key": "content_lifecycle",
+          "name": "内容生命周期",
+          "score": 4,
+          "weight": 5,
+          "weighted_score": 4
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "content_caps": [
+        {
+          "rule": "search_gap_unverified",
+          "potential_cap": "P-B",
+          "changed": true,
+          "reason": "搜索路线尚未验证内容供给缺口，内容潜力最高P-B。"
+        },
+        {
+          "rule": "potential_s_gate",
+          "potential_cap": "P-A",
+          "changed": false,
+          "reason": "P-S需要E3、至少3个平台、有效基线、最新数据和85分以上渠道适配。"
+        }
+      ],
+      "content_source_tier": "E3",
+      "traffic_route": "mixed",
+      "independent_platform_count": 1,
+      "demand_signals": [
+        "平台：蝉妈妈｜页面：免抽气真空压缩袋商品详情｜观察日期：2026-08-04｜数值：07/31至08/03预估销量11.2/4,051/11,856/6,225；浏览量同步变化｜https://www.chanmama.com/promotionRank/GRPPY9CTOOJ-CupZYn5rMATIqXJSI9Qy.html"
+      ],
+      "content_baseline_verified": true,
+      "content_requires_baseline": true,
+      "content_comparison_baseline_verified": true,
+      "content_baseline_type": "同一对象多周期指标与可区分变化信号",
+      "content_normalization_flags": [
+        "platform_estimate"
+      ],
+      "content_multi_period_growth_verified": true,
+      "content_independent_change_signals": 2,
+      "supply_gap_verified": false,
+      "content_freshness_verified": true,
+      "chanmama_answerable": true,
+      "query_cluster": [
+        "免抽气真空压缩袋",
+        "免抽气压缩袋销量",
+        "免抽气压缩袋带货数据",
+        "免抽气压缩袋为什么火"
+      ],
+      "channel_scores": {
+        "website": 88,
+        "wechat": 76,
+        "short_video": 92,
+        "xiaohongshu": 90,
+        "private_domain": 70
+      },
+      "channel_reasons": {
+        "primary": "场景明确且适合短视频演示，但必须同时展示单达人集中带来的持续性风险。"
+      },
+      "recommended_channels": [
+        "website",
+        "wechat",
+        "short_video",
+        "xiaohongshu",
+        "private_domain"
+      ],
+      "primary_topic": "免抽气压缩袋为什么放量？销量、浏览与达人集中度拆解",
+      "early_publish_title": "免抽气压缩袋为什么放量？销量、浏览与达人集中度拆解",
+      "content_angle": "场景明确且适合短视频演示，但必须同时展示单达人集中带来的持续性风险。",
+      "measurement_plan": "商品词曝光、短视频完播、专题页访问、注册与达人集中度。",
+      "stop_condition": "主要达人停播或连续两日销量、浏览同步回落时停止滚动。",
+      "content_score_reasons": {},
+      "topic_value_score": 94,
+      "topic_value_code": "S",
+      "topic_value_label": "高潜力",
+      "publication_status_code": "early_test",
+      "publication_status": "抢先试发",
+      "publication_priority": 5,
+      "publication_mode": "观察型或问题型内容",
+      "publication_basis": "选题价值高且真实平台信号已确认；未确认信息只限制结论强度，不阻止用观察型内容抢占窗口。",
+      "fact_boundary": "只确认平台页面展示的多日销量与浏览变化；单达人集中意味着趋势可能快速反转。",
+      "pending_confirmation": [
+        "达人集中度后续变化",
+        "退货与评价信号",
+        "真实搜索趋势",
+        "第二个独立需求信号待确认",
+        "内容供给缺口待确认"
+      ],
+      "confirmed_trigger": true,
+      "publishable_channel": true,
+      "ad_opportunity_scoring_model": "ad_opportunity_v1",
+      "ad_modes": {
+        "search": {
+          "activation_mode": "search",
+          "raw_score": 55,
+          "score": 55,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "active_search_evidence",
+              "name": "主动搜索证据",
+              "score": 1,
+              "weight": 30,
+              "weighted_score": 6
+            },
+            {
+              "key": "keyword_clarity",
+              "name": "关键词明确度",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "landing_fit",
+              "name": "落地承接",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 10,
+              "weighted_score": 10
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 2,
+              "weight": 5,
+              "weighted_score": 2
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "没有真实主动搜索证据",
+            "搜索转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:compression-bag:daily-sales",
+            "metric:compression-bag:views"
+          ],
+          "reasons": {
+            "summary": "具体商品和演示素材清晰，但达人集中风险较高；没有真实搜索趋势和匹配转化页，暂不进入搜索广告队列。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "active_search_confirmed": false,
+            "keyword_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "interest": {
+          "activation_mode": "interest",
+          "raw_score": 89,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "content_diffusion",
+              "name": "内容扩散",
+              "score": 5,
+              "weight": 25,
+              "weighted_score": 25
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "creative_fit",
+              "name": "素材适配",
+              "score": 4,
+              "weight": 15,
+              "weighted_score": 12
+            },
+            {
+              "key": "product_fit",
+              "name": "产品承接",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": true,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "兴趣流量转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:compression-bag:daily-sales",
+            "metric:compression-bag:views"
+          ],
+          "reasons": {
+            "summary": "具体商品和演示素材清晰，但达人集中风险较高；可做内容验证，但缺少广告落地与监测。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "content_signal_confirmed": true,
+            "creative_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "commerce": {
+          "activation_mode": "commerce",
+          "raw_score": 81,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "transaction_trend",
+              "name": "交易趋势",
+              "score": 5,
+              "weight": 25,
+              "weighted_score": 25
+            },
+            {
+              "key": "product_path",
+              "name": "商品链路",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "shop_product_fit",
+              "name": "商品或店铺承接",
+              "score": 3,
+              "weight": 20,
+              "weighted_score": 12
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 5,
+              "weighted_score": 4
+            },
+            {
+              "key": "conversion_value",
+              "name": "转化价值",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": true,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "电商转化链路未准备"
+          ],
+          "evidence_refs": [
+            "metric:compression-bag:daily-sales",
+            "metric:compression-bag:views"
+          ],
+          "reasons": {
+            "summary": "具体商品和演示素材清晰，但达人集中风险较高；商品与交易信号已核，但转化链路未准备。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "verified_offer": true,
+            "transaction_signal_confirmed": true,
+            "conversion_path_ready": false
+          }
+        }
+      },
+      "ad_eligible": false,
+      "ad_eligible_modes": [],
+      "ad_best_mode": "interest",
+      "ad_global_blockers": [
+        "广告落地页未完成",
+        "曝光、点击、访问与注册监测未接通"
+      ],
+      "breakout_scoring_model": "breakout_v1",
+      "breakout_status": "confirmed_breakout",
+      "breakout_signal_count": 2,
+      "breakout_gates_passed": true,
+      "breakout_blockers": []
+    },
+    {
+      "id": "HT-20260804-008",
+      "event_key": "luckin-instant-wakeup-coffee-spike-20260804",
+      "foundAt": "2026-08-04 11:00-12:00",
+      "name": "瑞幸即享唤醒系列黑咖啡销量与浏览同步跃升，多达人直播承接",
+      "type": "爆款商品｜快速上升",
+      "sourceLevel": "E3",
+      "publishedAt": "2026-08-04补充扫描",
+      "signal": "08/02至08/03平台预估销量展示由68.2升至11,714，浏览量由6,553升至约76.8w；页面同时显示6个关联达人和11场直播。",
+      "uncertainty": "销量、浏览量和场次均为平台页面展示口径；短期跃升可能受新品、活动或直播排期影响，不能直接外推自然需求。",
+      "recommended": "优先制作品牌即饮/速溶咖啡新品爆发拆解，比较直播排期与人群场景。",
+      "actionReason": "交易、浏览和多达人直播三个信号同时变化，对大众消费内容和商品承接都有价值。",
+      "actionDetail": "分开呈现销量、浏览和直播覆盖，围绕通勤、提神和便携场景制作内容。",
+      "evidence": "https://www.chanmama.com/promotionRank/pFIkFtSQ_PITrgLjOrCCF_QCF4u0s2VM.html\nhttps://index.baidu.com/v2/index.html#/",
+      "departments": "类目研究、内容、广告增长",
+      "deadline": "2026-08-05T18:00:00+08:00",
+      "notRecommended": "不把平台预估写成真实销量或独立访客，不宣称咖啡全类目普涨，不做功效承诺。",
+      "sourceLinks": [
+        {
+          "label": "Core source",
+          "domain": "chanmama.com",
+          "url": "https://www.chanmama.com/promotionRank/pFIkFtSQ_PITrgLjOrCCF_QCF4u0s2VM.html"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "index.baidu.com",
+          "url": "https://index.baidu.com/v2/index.html#/"
+        }
+      ],
+      "source_links": [
+        {
+          "label": "Core source",
+          "domain": "chanmama.com",
+          "url": "https://www.chanmama.com/promotionRank/pFIkFtSQ_PITrgLjOrCCF_QCF4u0s2VM.html"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "index.baidu.com",
+          "url": "https://index.baidu.com/v2/index.html#/"
+        }
+      ],
+      "status": "正式热点",
+      "risk": "中风险-已通过",
+      "owner": "类目研究/内容运营",
+      "monitor": "日销量、浏览、达人/直播场次、活动价格和真实搜索趋势",
+      "candidate_kind": "potential_topic",
+      "hotspot_category": "类目与消费",
+      "signal_type": "single_product_growth",
+      "baseline_evidence": {
+        "description": "08/02至08/03销量与浏览跨日变化，并有多达人和直播场次承接。",
+        "requires_baseline": true,
+        "comparison_baseline_verified": true,
+        "multi_period_growth_verified": true,
+        "independent_change_signals": 2,
+        "baseline_type": "同一商品多日趋势与第二项可区分指标",
+        "normalization_flags": [
+          "platform_estimate",
+          "campaign_event"
+        ]
+      },
+      "topic_resonance": null,
+      "official_rule": null,
+      "technology_change": "08/02至08/03平台预估销量展示由68.2升至11,714，浏览量由6,553升至约76.8w；页面同时显示6个关联达人和11场直播。",
+      "chanmama_relevance": "交易、浏览和多达人直播三个信号同时变化，对大众消费内容和商品承接都有价值。",
+      "next_step": "优先制作品牌即饮/速溶咖啡新品爆发拆解，比较直播排期与人群场景。",
+      "explicitly_not_doing": "不把平台预估写成真实销量或独立访客，不宣称咖啡全类目普涨，不做功效承诺。",
+      "official_evidence": [],
+      "circle_evidence": [],
+      "subject": {
+        "subject_id": "product:chanmama:pfikftsq-pit-rgljorccf-qcf4u0s2vm",
+        "kind": "product",
+        "canonical_name": "瑞幸即享唤醒系列黑咖啡",
+        "aliases": [
+          "瑞幸即享黑咖啡",
+          "瑞幸唤醒系列咖啡"
+        ],
+        "industry": "食品饮料/咖啡",
+        "identity_status": "verified",
+        "identities": [
+          {
+            "platform": "蝉妈妈商品详情",
+            "platform_entity_id": "promotion:pFIkFtSQ_PITrgLjOrCCF_QCF4u0s2VM",
+            "url": "https://www.chanmama.com/promotionRank/pFIkFtSQ_PITrgLjOrCCF_QCF4u0s2VM.html",
+            "verification_status": "verified",
+            "verified_at": "2026-08-04T11:44:20.589+08:00"
+          }
+        ]
+      },
+      "subject_kind": "product",
+      "trend_metrics": [
+        {
+          "metric_id": "metric:luckin-coffee:daily-sales",
+          "metric_name": "两日平台预估销量",
+          "metric_value": "68.2→11,714",
+          "unit": "蝉妈妈页面展示值",
+          "period": "2026-08-02至2026-08-03",
+          "observed_at": "2026-08-04T11:44:20.589+08:00",
+          "source_url": "https://www.chanmama.com/promotionRank/pFIkFtSQ_PITrgLjOrCCF_QCF4u0s2VM.html",
+          "evidence_group": "transaction",
+          "underlying_signal_id": "chanmama:luckin-coffee:daily-sales"
+        },
+        {
+          "metric_id": "metric:luckin-coffee:views-live",
+          "metric_name": "浏览与直播覆盖",
+          "metric_value": "6,553→约76.8w；6达人、11场直播",
+          "unit": "平台展示值",
+          "period": "2026-08-02至2026-08-03",
+          "observed_at": "2026-08-04T11:44:20.589+08:00",
+          "source_url": "https://www.chanmama.com/promotionRank/pFIkFtSQ_PITrgLjOrCCF_QCF4u0s2VM.html",
+          "evidence_group": "attention",
+          "underlying_signal_id": "chanmama:luckin-coffee:views-live"
+        }
+      ],
+      "expected_duration": {
+        "min_days": 5,
+        "max_days": 21,
+        "rationale": "品牌与多达人承接可延续，但短期跃升可能含活动因素。",
+        "review_at": "2026-08-06"
+      },
+      "target_audience": [
+        "咖啡与食品饮料商家",
+        "通勤和提神需求人群",
+        "内容与投放团队"
+      ],
+      "active_search": {
+        "status": "hypothesis",
+        "evidence": [],
+        "boundary": "商品词来自已核对象与交易/内容信号；AIDSO显示登录页，百度未返回搜索趋势或搜索量。"
+      },
+      "keyword_hypotheses": [
+        {
+          "keyword_id": "kw:luckin-instant-coffee:01",
+          "text": "瑞幸即享唤醒系列黑咖啡",
+          "intent": "具体商品词",
+          "evidence_refs": [
+            "metric:luckin-coffee:daily-sales",
+            "metric:luckin-coffee:views-live"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-25",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台预估不是精确销量或独立访客",
+            "活动因素尚未拆分"
+          ]
+        },
+        {
+          "keyword_id": "kw:luckin-instant-coffee:02",
+          "text": "瑞幸即享黑咖啡销量",
+          "intent": "销量数据词",
+          "evidence_refs": [
+            "metric:luckin-coffee:daily-sales",
+            "metric:luckin-coffee:views-live"
+          ],
+          "applicable_modes": [
+            "search",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-25",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台预估不是精确销量或独立访客",
+            "活动因素尚未拆分"
+          ]
+        },
+        {
+          "keyword_id": "kw:luckin-instant-coffee:03",
+          "text": "瑞幸即享咖啡带货数据",
+          "intent": "问题/数据词",
+          "evidence_refs": [
+            "metric:luckin-coffee:daily-sales",
+            "metric:luckin-coffee:views-live"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-25",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台预估不是精确销量或独立访客",
+            "活动因素尚未拆分"
+          ]
+        },
+        {
+          "keyword_id": "kw:luckin-instant-coffee:04",
+          "text": "瑞幸即享咖啡为什么火",
+          "intent": "问题/数据词",
+          "evidence_refs": [
+            "metric:luckin-coffee:daily-sales",
+            "metric:luckin-coffee:views-live"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest",
+            "commerce"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-25",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "平台预估不是精确销量或独立访客",
+            "活动因素尚未拆分"
+          ]
+        }
+      ],
+      "business_response_code": "A",
+      "business_response_label": "业务重点响应",
+      "business_response_score": 94,
+      "business_response_basis": "综合评分与封顶规则决定。",
+      "actions": [
+        {
+          "hotspotId": "HT-20260804-008",
+          "actionType": "优先制作",
+          "task": "制作瑞幸即享黑咖啡销量、浏览与直播承接拆解。",
+          "owner": "类目研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "连续两日销量和浏览回落，或确认主要由一次性活动驱动时停止追热。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-008",
+          "actionType": "优先制作",
+          "task": "制作瑞幸即享黑咖啡销量、浏览与直播承接拆解。",
+          "owner": "类目研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "连续两日销量和浏览回落，或确认主要由一次性活动驱动时停止追热。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-008",
+          "actionType": "优先制作",
+          "task": "制作瑞幸即享黑咖啡销量、浏览与直播承接拆解。",
+          "owner": "类目研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "连续两日销量和浏览回落，或确认主要由一次性活动驱动时停止追热。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-008",
+          "actionType": "优先制作",
+          "task": "制作瑞幸即享黑咖啡销量、浏览与直播承接拆解。",
+          "owner": "类目研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "连续两日销量和浏览回落，或确认主要由一次性活动驱动时停止追热。",
+          "status": "待执行"
+        }
+      ],
+      "domain": "commerce",
+      "scoring_model": "commerce_v1",
+      "totalScore": 94,
+      "initialValue": 5,
+      "finalValue": 4,
+      "grade": "L-A｜业务重点响应",
+      "gradeCode": "A",
+      "followDecision": "业务重点响应",
+      "downgradeReason": "风险封顶",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 4,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 5,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 5,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 5,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 5,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 5,
+        "evidence": 5,
+        "type": 5,
+        "core": 5,
+        "baseline": 5,
+        "risk": 4,
+        "window": 5,
+        "preparation": 5,
+        "official_rule_floor": 0
+      },
+      "baseline_assessment": {
+        "signal_type": "single_product_growth",
+        "requires_baseline": true,
+        "comparison_baseline_verified": true,
+        "baseline_type": "同一商品多日趋势与第二项可区分指标",
+        "normalization_flags": [
+          "platform_estimate",
+          "campaign_event"
+        ],
+        "multi_period_growth_verified": true,
+        "independent_change_signals": 2,
+        "is_verified": true
+      },
+      "business_priority_basis": "综合评分与封顶规则决定。",
+      "hotness_scoring_model": "hotness_v1",
+      "hotness_score": 100,
+      "raw_hotness_level": "H-S",
+      "hotness_level": "H-C",
+      "hotness_final_value": 2,
+      "hotness_score_details": [
+        {
+          "key": "absolute_demand",
+          "name": "需求规模",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "baseline_deviation",
+          "name": "相对基线变化",
+          "score": 5,
+          "weight": 25,
+          "weighted_score": 25
+        },
+        {
+          "key": "growth_velocity",
+          "name": "上升速度",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "persistence",
+          "name": "持续时间",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "cross_platform_spread",
+          "name": "跨平台扩散",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "freshness",
+          "name": "数据新鲜度",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "hotness_caps": [
+        {
+          "rule": "single_platform_cap",
+          "hotness_cap": "H-C",
+          "changed": true,
+          "reason": "只有单平台信号，热点成立度最高H-C。"
+        }
+      ],
+      "hotness_signal_type": "single_product_growth",
+      "hotness_independent_platform_count": 1,
+      "hotness_baseline_verified": true,
+      "hotness_freshness_verified": true,
+      "hotness_change_signals": [
+        "08/02至08/03预估销量由68.2升至11,714",
+        "浏览量由6,553升至约76.8w，关联6个达人和11场直播"
+      ],
+      "hotness_requires_baseline": true,
+      "hotness_comparison_baseline_verified": true,
+      "hotness_baseline_type": "同一商品多日趋势与第二项可区分指标",
+      "hotness_normalization_flags": [
+        "platform_estimate",
+        "campaign_event"
+      ],
+      "hotness_multi_period_growth_verified": true,
+      "hotness_independent_change_signals": 2,
+      "content_scoring_model": "content_potential_v1",
+      "content_potential_score": 99,
+      "raw_content_potential_level": "P-S",
+      "content_potential_level": "P-B",
+      "content_final_value": 3,
+      "content_score_details": [
+        {
+          "key": "audience_demand",
+          "name": "受众需求规模",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "demand_velocity",
+          "name": "需求上涨速度",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "content_supply_gap",
+          "name": "内容供给缺口",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "target_user_fit",
+          "name": "目标用户匹配",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "data_content_advantage",
+          "name": "蝉妈妈数据优势",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "discussion_shareability",
+          "name": "讨论与传播性",
+          "score": 5,
+          "weight": 10,
+          "weighted_score": 10
+        },
+        {
+          "key": "content_lifecycle",
+          "name": "内容生命周期",
+          "score": 4,
+          "weight": 5,
+          "weighted_score": 4
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "content_caps": [
+        {
+          "rule": "search_gap_unverified",
+          "potential_cap": "P-B",
+          "changed": true,
+          "reason": "搜索路线尚未验证内容供给缺口，内容潜力最高P-B。"
+        },
+        {
+          "rule": "potential_s_gate",
+          "potential_cap": "P-A",
+          "changed": false,
+          "reason": "P-S需要E3、至少3个平台、有效基线、最新数据和85分以上渠道适配。"
+        }
+      ],
+      "content_source_tier": "E3",
+      "traffic_route": "mixed",
+      "independent_platform_count": 1,
+      "demand_signals": [
+        "平台：蝉妈妈｜页面：瑞幸即享唤醒系列黑咖啡商品详情｜观察日期：2026-08-04｜数值：08/02至08/03预估销量68.2→11,714，浏览6,553→约76.8w；6达人、11场直播｜https://www.chanmama.com/promotionRank/pFIkFtSQ_PITrgLjOrCCF_QCF4u0s2VM.html"
+      ],
+      "content_baseline_verified": true,
+      "content_requires_baseline": true,
+      "content_comparison_baseline_verified": true,
+      "content_baseline_type": "同一对象多周期指标与可区分变化信号",
+      "content_normalization_flags": [
+        "platform_estimate",
+        "campaign_event"
+      ],
+      "content_multi_period_growth_verified": true,
+      "content_independent_change_signals": 2,
+      "supply_gap_verified": false,
+      "content_freshness_verified": true,
+      "chanmama_answerable": true,
+      "query_cluster": [
+        "瑞幸即享唤醒系列黑咖啡",
+        "瑞幸即享黑咖啡销量",
+        "瑞幸即享咖啡带货数据",
+        "瑞幸即享咖啡为什么火"
+      ],
+      "channel_scores": {
+        "website": 94,
+        "wechat": 88,
+        "short_video": 94,
+        "xiaohongshu": 92,
+        "private_domain": 80
+      },
+      "channel_reasons": {
+        "primary": "具体品牌商品、跨日跃升和多达人直播均清晰，是本轮更接近大众消费与投放验证的对象。"
+      },
+      "recommended_channels": [
+        "website",
+        "wechat",
+        "short_video",
+        "xiaohongshu",
+        "private_domain"
+      ],
+      "primary_topic": "瑞幸即享黑咖啡为什么突然放量？销量、浏览与直播承接拆解",
+      "early_publish_title": "瑞幸即享黑咖啡为什么突然放量？销量、浏览与直播承接拆解",
+      "content_angle": "具体品牌商品、跨日跃升和多达人直播均清晰，是本轮更接近大众消费与投放验证的对象。",
+      "measurement_plan": "商品词曝光、点击率、专题页访问、注册及下一周期销量与浏览。",
+      "stop_condition": "连续两日销量和浏览回落，或确认主要由一次性活动驱动时停止追热。",
+      "content_score_reasons": {},
+      "topic_value_score": 99,
+      "topic_value_code": "S",
+      "topic_value_label": "高潜力",
+      "publication_status_code": "early_test",
+      "publication_status": "抢先试发",
+      "publication_priority": 5,
+      "publication_mode": "观察型或问题型内容",
+      "publication_basis": "选题价值高且真实平台信号已确认；未确认信息只限制结论强度，不阻止用观察型内容抢占窗口。",
+      "fact_boundary": "只确认平台估算的跨日跃升与多达人直播覆盖；活动、投流或新品效应尚未拆分。",
+      "pending_confirmation": [
+        "活动与投流因素",
+        "下一周期销量和浏览",
+        "真实搜索趋势",
+        "第二个独立需求信号待确认",
+        "内容供给缺口待确认"
+      ],
+      "confirmed_trigger": true,
+      "publishable_channel": true,
+      "ad_opportunity_scoring_model": "ad_opportunity_v1",
+      "ad_modes": {
+        "search": {
+          "activation_mode": "search",
+          "raw_score": 55,
+          "score": 55,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "active_search_evidence",
+              "name": "主动搜索证据",
+              "score": 1,
+              "weight": 30,
+              "weighted_score": 6
+            },
+            {
+              "key": "keyword_clarity",
+              "name": "关键词明确度",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "landing_fit",
+              "name": "落地承接",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 10,
+              "weighted_score": 10
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 2,
+              "weight": 5,
+              "weighted_score": 2
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "没有真实主动搜索证据",
+            "搜索转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:luckin-coffee:daily-sales",
+            "metric:luckin-coffee:views-live"
+          ],
+          "reasons": {
+            "summary": "具体品牌商品、跨日跃升和多达人直播均明确；没有真实搜索趋势和匹配转化页，暂不进入搜索广告队列。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "active_search_confirmed": false,
+            "keyword_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "interest": {
+          "activation_mode": "interest",
+          "raw_score": 89,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "content_diffusion",
+              "name": "内容扩散",
+              "score": 5,
+              "weight": 25,
+              "weighted_score": 25
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "creative_fit",
+              "name": "素材适配",
+              "score": 4,
+              "weight": 15,
+              "weighted_score": 12
+            },
+            {
+              "key": "product_fit",
+              "name": "产品承接",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": true,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "兴趣流量转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:luckin-coffee:daily-sales",
+            "metric:luckin-coffee:views-live"
+          ],
+          "reasons": {
+            "summary": "具体品牌商品、跨日跃升和多达人直播均明确；可做内容验证，但缺少广告落地与监测。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "content_signal_confirmed": true,
+            "creative_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "commerce": {
+          "activation_mode": "commerce",
+          "raw_score": 81,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "transaction_trend",
+              "name": "交易趋势",
+              "score": 5,
+              "weight": 25,
+              "weighted_score": 25
+            },
+            {
+              "key": "product_path",
+              "name": "商品链路",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "shop_product_fit",
+              "name": "商品或店铺承接",
+              "score": 3,
+              "weight": 20,
+              "weighted_score": 12
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 5,
+              "weighted_score": 4
+            },
+            {
+              "key": "conversion_value",
+              "name": "转化价值",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": true,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "电商转化链路未准备"
+          ],
+          "evidence_refs": [
+            "metric:luckin-coffee:daily-sales",
+            "metric:luckin-coffee:views-live"
+          ],
+          "reasons": {
+            "summary": "具体品牌商品、跨日跃升和多达人直播均明确；商品与交易信号已核，但转化链路未准备。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "verified_offer": true,
+            "transaction_signal_confirmed": true,
+            "conversion_path_ready": false
+          }
+        }
+      },
+      "ad_eligible": false,
+      "ad_eligible_modes": [],
+      "ad_best_mode": "interest",
+      "ad_global_blockers": [
+        "广告落地页未完成",
+        "曝光、点击、访问与注册监测未接通"
+      ],
+      "breakout_scoring_model": "breakout_v1",
+      "breakout_status": "confirmed_breakout",
+      "breakout_signal_count": 2,
+      "breakout_gates_passed": true,
+      "breakout_blockers": []
+    },
+    {
+      "id": "HT-20260804-009",
+      "event_key": "peace-elite-account-metro-anniversary-20260804",
+      "foundAt": "2026-08-04 11:00-12:00",
+      "name": "和平精英官方账号涨粉约12w，地铁逃生二周年热点连续发酵",
+      "type": "爆款账号｜官方账号与内容事件联动",
+      "sourceLevel": "E3",
+      "publishedAt": "2026-08-02起持续",
+      "signal": "达人涨粉榜展示和平精英官方账号增量约12w；地铁逃生二周年热点自08/02持续，热度指数约491.2w，相关视频点赞约1.4w至4.9w。",
+      "uncertainty": "涨粉、热度和点赞均按平台展示口径记录，不代表独立人数、自然增长或主动搜索；账号与周年活动存在强事件驱动。",
+      "recommended": "优先制作官方账号如何借周年节点联动涨粉的案例拆解，并保留账号词与问题词假设。",
+      "actionReason": "稳定官方账号身份、涨粉信号与持续热点内容形成可区分双信号，适合大众内容案例。",
+      "actionDetail": "拆解账号内容节奏、周年节点和高互动视频，不把粉丝增量归因于单一内容。",
+      "evidence": "https://www.chanmama.com/bloggerRank/DfWmDJWKrED-o_Dr950nUvoeEdqSHsEB.html\nhttps://www.chanmama.com/hotspotDetail/%E5%9C%B0%E9%93%81%E9%80%83%E7%94%9F%E4%BA%8C%E5%91%A8%E5%B9%B4?hot_type=1&hot_inner_type=1&index=12&rk=2026080409",
+      "departments": "达人研究、内容、广告增长",
+      "deadline": "2026-08-05T18:00:00+08:00",
+      "notRecommended": "不把约12w写成精确自然新增，不把热点指数写成人数或搜索量，不投未成年人定向广告。",
+      "sourceLinks": [
+        {
+          "label": "Core source",
+          "domain": "chanmama.com",
+          "url": "https://www.chanmama.com/bloggerRank/DfWmDJWKrED-o_Dr950nUvoeEdqSHsEB.html"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "chanmama.com",
+          "url": "https://www.chanmama.com/hotspotDetail/%E5%9C%B0%E9%93%81%E9%80%83%E7%94%9F%E4%BA%8C%E5%91%A8%E5%B9%B4?hot_type=1&hot_inner_type=1&index=12&rk=2026080409"
+        }
+      ],
+      "source_links": [
+        {
+          "label": "Core source",
+          "domain": "chanmama.com",
+          "url": "https://www.chanmama.com/bloggerRank/DfWmDJWKrED-o_Dr950nUvoeEdqSHsEB.html"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "chanmama.com",
+          "url": "https://www.chanmama.com/hotspotDetail/%E5%9C%B0%E9%93%81%E9%80%83%E7%94%9F%E4%BA%8C%E5%91%A8%E5%B9%B4?hot_type=1&hot_inner_type=1&index=12&rk=2026080409"
+        }
+      ],
+      "status": "正式热点",
+      "risk": "中风险-已通过",
+      "owner": "达人研究/内容运营",
+      "monitor": "账号涨粉榜、热点指数、相关视频互动、活动周期和搜索验证",
+      "candidate_kind": "potential_topic",
+      "hotspot_category": "平台日常热榜",
+      "signal_type": "verified_account_platform_heat",
+      "baseline_evidence": {
+        "description": "账号涨粉榜与08/02起持续的周年热点、相关视频互动形成双信号。",
+        "requires_baseline": true,
+        "comparison_baseline_verified": true,
+        "multi_period_growth_verified": true,
+        "independent_change_signals": 2,
+        "baseline_type": "官方账号涨粉与跨日内容热点",
+        "normalization_flags": [
+          "platform_estimate",
+          "campaign_event"
+        ]
+      },
+      "topic_resonance": null,
+      "official_rule": null,
+      "technology_change": "达人涨粉榜展示和平精英官方账号增量约12w；地铁逃生二周年热点自08/02持续，热度指数约491.2w，相关视频点赞约1.4w至4.9w。",
+      "chanmama_relevance": "稳定官方账号身份、涨粉信号与持续热点内容形成可区分双信号，适合大众内容案例。",
+      "next_step": "优先制作官方账号如何借周年节点联动涨粉的案例拆解，并保留账号词与问题词假设。",
+      "explicitly_not_doing": "不把约12w写成精确自然新增，不把热点指数写成人数或搜索量，不投未成年人定向广告。",
+      "official_evidence": [],
+      "circle_evidence": [],
+      "subject": {
+        "subject_id": "account:chanmama:dfwmdjw-kred-o-dr950nuvoeedqshseb",
+        "kind": "account",
+        "canonical_name": "和平精英官方账号",
+        "aliases": [
+          "和平精英",
+          "和平精英地铁逃生"
+        ],
+        "industry": "游戏/内容账号",
+        "identity_status": "verified",
+        "identities": [
+          {
+            "platform": "蝉妈妈达人详情",
+            "platform_entity_id": "blogger:DfWmDJWKrED-o_Dr950nUvoeEdqSHsEB",
+            "url": "https://www.chanmama.com/bloggerRank/DfWmDJWKrED-o_Dr950nUvoeEdqSHsEB.html",
+            "verification_status": "verified",
+            "verified_at": "2026-08-04T11:44:20.589+08:00"
+          }
+        ]
+      },
+      "subject_kind": "account",
+      "trend_metrics": [
+        {
+          "metric_id": "metric:peace-elite:follower-growth",
+          "metric_name": "官方账号涨粉榜增量",
+          "metric_value": "约12w",
+          "unit": "平台展示值",
+          "period": "2026-08-04观察",
+          "observed_at": "2026-08-04T11:44:20.589+08:00",
+          "source_url": "https://www.chanmama.com/bloggerRank/DfWmDJWKrED-o_Dr950nUvoeEdqSHsEB.html",
+          "evidence_group": "account",
+          "underlying_signal_id": "chanmama:peace-elite:follower-growth"
+        },
+        {
+          "metric_id": "metric:peace-elite:metro-heat",
+          "metric_name": "地铁逃生二周年热点与视频互动",
+          "metric_value": "热度约491.2w；点赞约1.4w至4.9w",
+          "unit": "平台指数/展示值",
+          "period": "2026-08-02至2026-08-04",
+          "observed_at": "2026-08-04T11:44:20.589+08:00",
+          "source_url": "https://www.chanmama.com/hotspotDetail/%E5%9C%B0%E9%93%81%E9%80%83%E7%94%9F%E4%BA%8C%E5%91%A8%E5%B9%B4?hot_type=1&hot_inner_type=1&index=12&rk=2026080409",
+          "evidence_group": "attention",
+          "underlying_signal_id": "chanmama:peace-elite:metro-anniversary"
+        }
+      ],
+      "expected_duration": {
+        "min_days": 5,
+        "max_days": 14,
+        "rationale": "周年活动和内容更新仍在窗口，结束后热度可能快速回落。",
+        "review_at": "2026-08-06"
+      },
+      "target_audience": [
+        "游戏与内容运营",
+        "大众热点读者",
+        "达人和品牌账号团队"
+      ],
+      "active_search": {
+        "status": "hypothesis",
+        "evidence": [],
+        "boundary": "账号与活动词可见不等于搜索上涨；AIDSO未登录，百度未返回趋势或搜索量。"
+      },
+      "keyword_hypotheses": [
+        {
+          "keyword_id": "kw:peace-elite:01",
+          "text": "和平精英账号数据",
+          "intent": "账号数据词",
+          "evidence_refs": [
+            "metric:peace-elite:follower-growth"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-18",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        },
+        {
+          "keyword_id": "kw:peace-elite:02",
+          "text": "和平精英涨粉数据",
+          "intent": "账号数据词",
+          "evidence_refs": [
+            "metric:peace-elite:follower-growth"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-18",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "涨粉为平台展示值，不等于自然新增"
+          ]
+        },
+        {
+          "keyword_id": "kw:peace-elite:03",
+          "text": "地铁逃生二周年热度",
+          "intent": "热点数据词",
+          "evidence_refs": [
+            "metric:peace-elite:metro-heat"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-18",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "热点指数不是人数或搜索量"
+          ]
+        },
+        {
+          "keyword_id": "kw:peace-elite:04",
+          "text": "和平精英官方账号为什么涨粉",
+          "intent": "问题词",
+          "evidence_refs": [
+            "metric:peace-elite:follower-growth",
+            "metric:peace-elite:metro-heat"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-08-18",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        }
+      ],
+      "business_response_code": "A",
+      "business_response_label": "业务重点响应",
+      "business_response_score": 93,
+      "business_response_basis": "综合评分与封顶规则决定。",
+      "actions": [
+        {
+          "hotspotId": "HT-20260804-009",
+          "actionType": "优先制作",
+          "task": "制作和平精英官方账号与周年热点联动案例。",
+          "owner": "达人研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "活动结束且连续两日退出涨粉榜、热点明显回落时停止滚动。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-009",
+          "actionType": "优先制作",
+          "task": "制作和平精英官方账号与周年热点联动案例。",
+          "owner": "达人研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "活动结束且连续两日退出涨粉榜、热点明显回落时停止滚动。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-009",
+          "actionType": "优先制作",
+          "task": "制作和平精英官方账号与周年热点联动案例。",
+          "owner": "达人研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "活动结束且连续两日退出涨粉榜、热点明显回落时停止滚动。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-009",
+          "actionType": "优先制作",
+          "task": "制作和平精英官方账号与周年热点联动案例。",
+          "owner": "达人研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "活动结束且连续两日退出涨粉榜、热点明显回落时停止滚动。",
+          "status": "待执行"
+        }
+      ],
+      "domain": "commerce",
+      "scoring_model": "commerce_v1",
+      "totalScore": 93,
+      "initialValue": 5,
+      "finalValue": 4,
+      "grade": "L-A｜业务重点响应",
+      "gradeCode": "A",
+      "followDecision": "业务重点响应",
+      "downgradeReason": "风险封顶",
+      "scoreDetails": [
+        {
+          "name": "流量热度",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "上升与持续",
+          "score": 5,
+          "weight": 10
+        },
+        {
+          "name": "目标人群",
+          "score": 4,
+          "weight": 15
+        },
+        {
+          "name": "业务关联",
+          "score": 5,
+          "weight": 20
+        },
+        {
+          "name": "转化价值",
+          "score": 5,
+          "weight": 15
+        },
+        {
+          "name": "品牌价值",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "GEO价值",
+          "score": 4,
+          "weight": 10
+        },
+        {
+          "name": "产品承接",
+          "score": 5,
+          "weight": 5
+        },
+        {
+          "name": "执行成本",
+          "score": 4,
+          "weight": 5
+        },
+        {
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5
+        }
+      ],
+      "caps": {
+        "score": 5,
+        "evidence": 5,
+        "type": 5,
+        "core": 5,
+        "baseline": 5,
+        "risk": 4,
+        "window": 5,
+        "preparation": 5,
+        "official_rule_floor": 0
+      },
+      "baseline_assessment": {
+        "signal_type": "verified_account_platform_heat",
+        "requires_baseline": true,
+        "comparison_baseline_verified": true,
+        "baseline_type": "官方账号涨粉与跨日内容热点",
+        "normalization_flags": [
+          "platform_estimate",
+          "campaign_event"
+        ],
+        "multi_period_growth_verified": true,
+        "independent_change_signals": 2,
+        "is_verified": true
+      },
+      "business_priority_basis": "综合评分与封顶规则决定。",
+      "hotness_scoring_model": "hotness_v1",
+      "hotness_score": 100,
+      "raw_hotness_level": "H-S",
+      "hotness_level": "H-C",
+      "hotness_final_value": 2,
+      "hotness_score_details": [
+        {
+          "key": "absolute_demand",
+          "name": "需求规模",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "baseline_deviation",
+          "name": "相对基线变化",
+          "score": 5,
+          "weight": 25,
+          "weighted_score": 25
+        },
+        {
+          "key": "growth_velocity",
+          "name": "上升速度",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "persistence",
+          "name": "持续时间",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "cross_platform_spread",
+          "name": "跨平台扩散",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "freshness",
+          "name": "数据新鲜度",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "hotness_caps": [
+        {
+          "rule": "single_platform_cap",
+          "hotness_cap": "H-C",
+          "changed": true,
+          "reason": "只有单平台信号，热点成立度最高H-C。"
+        }
+      ],
+      "hotness_signal_type": "verified_account_platform_heat",
+      "hotness_independent_platform_count": 1,
+      "hotness_baseline_verified": true,
+      "hotness_freshness_verified": true,
+      "hotness_change_signals": [
+        "涨粉榜展示增量约12w",
+        "08/02起周年热点约491.2w，相关视频点赞约1.4w至4.9w"
+      ],
+      "hotness_requires_baseline": true,
+      "hotness_comparison_baseline_verified": true,
+      "hotness_baseline_type": "官方账号涨粉与跨日内容热点",
+      "hotness_normalization_flags": [
+        "platform_estimate",
+        "campaign_event"
+      ],
+      "hotness_multi_period_growth_verified": true,
+      "hotness_independent_change_signals": 2,
+      "content_scoring_model": "content_potential_v1",
+      "content_potential_score": 99,
+      "raw_content_potential_level": "P-S",
+      "content_potential_level": "P-B",
+      "content_final_value": 3,
+      "content_score_details": [
+        {
+          "key": "audience_demand",
+          "name": "受众需求规模",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "demand_velocity",
+          "name": "需求上涨速度",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "content_supply_gap",
+          "name": "内容供给缺口",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "target_user_fit",
+          "name": "目标用户匹配",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "data_content_advantage",
+          "name": "蝉妈妈数据优势",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "discussion_shareability",
+          "name": "讨论与传播性",
+          "score": 5,
+          "weight": 10,
+          "weighted_score": 10
+        },
+        {
+          "key": "content_lifecycle",
+          "name": "内容生命周期",
+          "score": 4,
+          "weight": 5,
+          "weighted_score": 4
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "content_caps": [
+        {
+          "rule": "search_gap_unverified",
+          "potential_cap": "P-B",
+          "changed": true,
+          "reason": "搜索路线尚未验证内容供给缺口，内容潜力最高P-B。"
+        },
+        {
+          "rule": "potential_s_gate",
+          "potential_cap": "P-A",
+          "changed": false,
+          "reason": "P-S需要E3、至少3个平台、有效基线、最新数据和85分以上渠道适配。"
+        }
+      ],
+      "content_source_tier": "E3",
+      "traffic_route": "mixed",
+      "independent_platform_count": 1,
+      "demand_signals": [
+        "平台：蝉妈妈｜页面：和平精英账号详情｜观察日期：2026-08-04｜数值：涨粉榜展示增量约12w｜https://www.chanmama.com/bloggerRank/DfWmDJWKrED-o_Dr950nUvoeEdqSHsEB.html",
+        "平台：蝉妈妈｜页面：地铁逃生二周年热点｜观察日期：2026-08-04｜变化：08/02起持续，热度约491.2w，相关视频点赞约1.4w至4.9w｜https://www.chanmama.com/hotspotDetail/%E5%9C%B0%E9%93%81%E9%80%83%E7%94%9F%E4%BA%8C%E5%91%A8%E5%B9%B4?hot_type=1&hot_inner_type=1&index=12&rk=2026080409"
+      ],
+      "content_baseline_verified": true,
+      "content_requires_baseline": true,
+      "content_comparison_baseline_verified": true,
+      "content_baseline_type": "同一对象多周期指标与可区分变化信号",
+      "content_normalization_flags": [
+        "platform_estimate",
+        "campaign_event"
+      ],
+      "content_multi_period_growth_verified": true,
+      "content_independent_change_signals": 2,
+      "supply_gap_verified": false,
+      "content_freshness_verified": true,
+      "chanmama_answerable": true,
+      "query_cluster": [
+        "和平精英账号数据",
+        "和平精英涨粉数据",
+        "地铁逃生二周年热度",
+        "和平精英官方账号为什么涨粉"
+      ],
+      "channel_scores": {
+        "website": 92,
+        "wechat": 86,
+        "short_video": 96,
+        "xiaohongshu": 84,
+        "private_domain": 72
+      },
+      "channel_reasons": {
+        "primary": "官方账号、周年节点与高互动视频形成完整内容案例，适合大众案例而不是科技产品稿。"
+      },
+      "recommended_channels": [
+        "website",
+        "wechat",
+        "short_video",
+        "xiaohongshu",
+        "private_domain"
+      ],
+      "primary_topic": "和平精英官方账号为什么涨粉？地铁逃生二周年联动拆解",
+      "early_publish_title": "和平精英官方账号为什么涨粉？地铁逃生二周年联动拆解",
+      "content_angle": "官方账号、周年节点与高互动视频形成完整内容案例，适合大众案例而不是科技产品稿。",
+      "measurement_plan": "账号词曝光、内容点击、专题页访问、注册与后续涨粉榜位置。",
+      "stop_condition": "活动结束且连续两日退出涨粉榜、热点明显回落时停止滚动。",
+      "content_score_reasons": {},
+      "topic_value_score": 99,
+      "topic_value_code": "S",
+      "topic_value_label": "高潜力",
+      "publication_status_code": "early_test",
+      "publication_status": "抢先试发",
+      "publication_priority": 5,
+      "publication_mode": "观察型或问题型内容",
+      "publication_basis": "选题价值高且真实平台信号已确认；未确认信息只限制结论强度，不阻止用观察型内容抢占窗口。",
+      "fact_boundary": "不把平台展示值当精确人数，不把事件联动等同自然增长。",
+      "pending_confirmation": [
+        "真实搜索趋势",
+        "活动结束后的粉丝留存",
+        "第二个独立需求信号待确认",
+        "内容供给缺口待确认"
+      ],
+      "confirmed_trigger": true,
+      "publishable_channel": true,
+      "ad_opportunity_scoring_model": "ad_opportunity_v1",
+      "ad_modes": {
+        "search": {
+          "activation_mode": "search",
+          "raw_score": 55,
+          "score": 55,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "active_search_evidence",
+              "name": "主动搜索证据",
+              "score": 1,
+              "weight": 30,
+              "weighted_score": 6
+            },
+            {
+              "key": "keyword_clarity",
+              "name": "关键词明确度",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "landing_fit",
+              "name": "落地承接",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 10,
+              "weighted_score": 10
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 2,
+              "weight": 5,
+              "weighted_score": 2
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "没有真实主动搜索证据",
+            "搜索转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:peace-elite:follower-growth",
+            "metric:peace-elite:metro-heat"
+          ],
+          "reasons": {
+            "summary": "官方账号和周年内容具备兴趣素材；没有真实搜索趋势和匹配转化页，暂不进入搜索广告队列。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "active_search_confirmed": false,
+            "keyword_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "interest": {
+          "activation_mode": "interest",
+          "raw_score": 89,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "content_diffusion",
+              "name": "内容扩散",
+              "score": 5,
+              "weight": 25,
+              "weighted_score": 25
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "creative_fit",
+              "name": "素材适配",
+              "score": 4,
+              "weight": 15,
+              "weighted_score": 12
+            },
+            {
+              "key": "product_fit",
+              "name": "产品承接",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": true,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "兴趣流量转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:peace-elite:follower-growth",
+            "metric:peace-elite:metro-heat"
+          ],
+          "reasons": {
+            "summary": "官方账号和周年内容具备兴趣素材；可做内容验证，但缺少广告落地与监测。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "content_signal_confirmed": true,
+            "creative_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "commerce": {
+          "activation_mode": "commerce",
+          "raw_score": 81,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "transaction_trend",
+              "name": "交易趋势",
+              "score": 5,
+              "weight": 25,
+              "weighted_score": 25
+            },
+            {
+              "key": "product_path",
+              "name": "商品链路",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "shop_product_fit",
+              "name": "商品或店铺承接",
+              "score": 3,
+              "weight": 20,
+              "weighted_score": 12
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 5,
+              "weighted_score": 4
+            },
+            {
+              "key": "conversion_value",
+              "name": "转化价值",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": true,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "商品或店铺身份未核",
+            "没有可核交易变化信号",
+            "电商转化链路未准备"
+          ],
+          "evidence_refs": [
+            "metric:peace-elite:follower-growth",
+            "metric:peace-elite:metro-heat"
+          ],
+          "reasons": {
+            "summary": "官方账号和周年内容具备兴趣素材；商品与交易信号已核，但转化链路未准备。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "verified_offer": false,
+            "transaction_signal_confirmed": false,
+            "conversion_path_ready": false
+          }
+        }
+      },
+      "ad_eligible": false,
+      "ad_eligible_modes": [],
+      "ad_best_mode": "interest",
+      "ad_global_blockers": [
+        "广告落地页未完成",
+        "曝光、点击、访问与注册监测未接通"
+      ],
+      "breakout_scoring_model": "breakout_v1",
+      "breakout_status": "confirmed_breakout",
+      "breakout_signal_count": 2,
+      "breakout_gates_passed": true,
+      "breakout_blockers": []
+    },
+    {
+      "id": "HT-20260804-010",
+      "event_key": "deepseek-v4-flash-api-public-beta-20260804",
+      "foundAt": "2026-08-04 11:00-12:00",
+      "name": "DeepSeek V4-Flash API上线公测，官方强调Agent能力增强",
+      "type": "科技圈｜模型API与Agent",
+      "sourceLevel": "E3",
+      "publishedAt": "2026-08-04观察",
+      "signal": "DeepSeek官方首页宣布V4-Flash正式版API上线公测，并明确Agent能力增强；V4-Pro暂未变化。",
+      "uncertainty": "只有官方发布与文档证据，缺少独立开发者采用、效果基准和大众搜索数据，不判断为广泛采用。",
+      "recommended": "制作官方能力边界和电商工作流测试清单，待开发者站点恢复后补充采用信号。",
+      "actionReason": "可用于跟踪AI工具对电商数据处理、Agent工作流和GEO内容生产的迁移价值，但暂不直接承接电商交易。",
+      "actionDetail": "仅基于官方公告制作能力边界稿，并设计可复现实测；采用与投放结论保持关闭。",
+      "deadline": "2026-08-06T18:00:00+08:00",
+      "notRecommended": "不宣称性能全面领先，不虚构GitHub/Hugging Face采用量，不投广告、不全量召回。",
+      "sourceLinks": [
+        {
+          "label": "Core source",
+          "domain": "deepseek.com",
+          "url": "https://www.deepseek.com/"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "api-docs.deepseek.com",
+          "url": "https://api-docs.deepseek.com/zh-cn/guides/responses_api"
+        },
+        {
+          "label": "Supporting source 2",
+          "domain": "github.com",
+          "url": "https://github.com/trending"
+        }
+      ],
+      "source_links": [
+        {
+          "label": "Core source",
+          "domain": "deepseek.com",
+          "url": "https://www.deepseek.com/"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "api-docs.deepseek.com",
+          "url": "https://api-docs.deepseek.com/zh-cn/guides/responses_api"
+        },
+        {
+          "label": "Supporting source 2",
+          "domain": "github.com",
+          "url": "https://github.com/trending"
+        }
+      ],
+      "status": "正式热点｜官方发布",
+      "risk": "中风险-已通过",
+      "owner": "科技研究/内容运营",
+      "monitor": "官方文档、API稳定性、GitHub/Hugging Face采用和真实搜索趋势",
+      "candidate_kind": "event",
+      "hotspot_category": "科技与工具",
+      "signal_type": "official_product_release",
+      "baseline_evidence": null,
+      "topic_resonance": null,
+      "official_rule": null,
+      "technology_change": "DeepSeek官方首页宣布V4-Flash正式版API上线公测，并明确Agent能力增强；V4-Pro暂未变化。",
+      "chanmama_relevance": "可用于跟踪AI工具对电商数据处理、Agent工作流和GEO内容生产的迁移价值，但暂不直接承接电商交易。",
+      "next_step": "制作官方能力边界和电商工作流测试清单，待开发者站点恢复后补充采用信号。",
+      "explicitly_not_doing": "不宣称性能全面领先，不虚构GitHub/Hugging Face采用量，不投广告、不全量召回。",
+      "official_evidence": [
+        {
+          "label": "DeepSeek官方首页",
+          "url": "https://www.deepseek.com/",
+          "fact": "V4-Flash正式版API上线公测，Agent能力增强；V4-Pro暂未变化。"
+        },
+        {
+          "label": "DeepSeek Responses API文档",
+          "url": "https://api-docs.deepseek.com/zh-cn/guides/responses_api",
+          "fact": "官方API接入文档可读。"
+        }
+      ],
+      "circle_evidence": {
+        "label": "开发者采用核验",
+        "url": "https://github.com/trending",
+        "fact": "本轮GitHub Trending与Hugging Face均ERR_CONNECTION_CLOSED，未计采用数据。"
+      },
+      "subject": {
+        "subject_id": "technology:deepseek:v4-flash-api",
+        "kind": "technology",
+        "canonical_name": "DeepSeek V4-Flash API",
+        "aliases": [
+          "DeepSeek-V4-Flash",
+          "DeepSeek V4 Flash"
+        ],
+        "industry": "人工智能/模型API",
+        "identity_status": "verified",
+        "identities": [
+          {
+            "platform": "DeepSeek官方",
+            "platform_entity_id": "deepseek:v4-flash-api",
+            "url": "https://api-docs.deepseek.com/zh-cn/guides/responses_api",
+            "verification_status": "verified",
+            "verified_at": "2026-08-04T11:44:20.589+08:00"
+          }
+        ]
+      },
+      "subject_kind": "technology",
+      "trend_metrics": [
+        {
+          "metric_id": "metric:deepseek-v4-flash:official-beta",
+          "metric_name": "V4-Flash API公测",
+          "metric_value": "正式版API上线公测；Agent能力增强",
+          "unit": "官方发布",
+          "period": "2026-08-04观察",
+          "observed_at": "2026-08-04T11:44:20.589+08:00",
+          "source_url": "https://www.deepseek.com/",
+          "evidence_group": "official",
+          "underlying_signal_id": "deepseek:v4-flash:official-beta"
+        }
+      ],
+      "expected_duration": {
+        "min_days": 7,
+        "max_days": 30,
+        "rationale": "API公测和Agent实测会形成短中期窗口，但采用仍待验证。",
+        "review_at": "2026-08-07"
+      },
+      "target_audience": [
+        "AI产品与开发团队",
+        "电商数据团队",
+        "GEO与内容自动化团队"
+      ],
+      "active_search": {
+        "status": "hypothesis",
+        "evidence": [],
+        "boundary": "模型词来自官方发布；AIDSO未登录，百度未返回搜索趋势或搜索量。"
+      },
+      "keyword_hypotheses": [
+        {
+          "keyword_id": "kw:deepseek-v4-flash:01",
+          "text": "DeepSeek V4-Flash API",
+          "intent": "技术对象词",
+          "evidence_refs": [
+            "metric:deepseek-v4-flash:official-beta"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-09-03",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        },
+        {
+          "keyword_id": "kw:deepseek-v4-flash:02",
+          "text": "DeepSeek V4-Flash Agent能力",
+          "intent": "能力问题词",
+          "evidence_refs": [
+            "metric:deepseek-v4-flash:official-beta"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-09-03",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        },
+        {
+          "keyword_id": "kw:deepseek-v4-flash:03",
+          "text": "DeepSeek V4-Flash电商运营",
+          "intent": "应用问题词",
+          "evidence_refs": [
+            "metric:deepseek-v4-flash:official-beta"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-09-03",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        },
+        {
+          "keyword_id": "kw:deepseek-v4-flash:04",
+          "text": "DeepSeek V4-Flash怎么用",
+          "intent": "使用问题词",
+          "evidence_refs": [
+            "metric:deepseek-v4-flash:official-beta"
+          ],
+          "applicable_modes": [
+            "search"
+          ],
+          "match_suggestion": "短语匹配；第二阶段根据真实搜索词报告补充精确匹配和否定词",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-04",
+          "valid_until": "2026-09-03",
+          "validation_status": "hypothesis",
+          "risk_flags": []
+        }
+      ],
+      "business_response_code": "B",
+      "business_response_label": "常规跟进",
+      "business_response_score": 63,
+      "business_response_basis": "双轨分数矩阵决定",
+      "actions": [
+        {
+          "hotspotId": "HT-20260804-010",
+          "actionType": "定向发布",
+          "task": "制作DeepSeek V4-Flash官方能力边界与实测清单。",
+          "owner": "科技研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "官方更改型号/公测状态或实测无迁移价值时停止滚动。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-010",
+          "actionType": "定向发布",
+          "task": "制作DeepSeek V4-Flash官方能力边界与实测清单。",
+          "owner": "科技研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "官方更改型号/公测状态或实测无迁移价值时停止滚动。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-010",
+          "actionType": "定向发布",
+          "task": "制作DeepSeek V4-Flash官方能力边界与实测清单。",
+          "owner": "科技研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "官方更改型号/公测状态或实测无迁移价值时停止滚动。",
+          "status": "待执行"
+        },
+        {
+          "hotspotId": "HT-20260804-010",
+          "actionType": "定向发布",
+          "task": "制作DeepSeek V4-Flash官方能力边界与实测清单。",
+          "owner": "科技研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-05",
+          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+          "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+          "stopCondition": "官方更改型号/公测状态或实测无迁移价值时停止滚动。",
+          "status": "待执行"
+        }
+      ],
+      "domain": "technology",
+      "scoring_model": "tech_v1",
+      "canonical_event_key": "deepseek-v4-flash-api-public-beta-20260804",
+      "tech_topic": "frontier_model_api_agent",
+      "tech_scores": {
+        "technical_breakthrough": 4,
+        "circle_heat_velocity": 3,
+        "authority_cross_validation": 4,
+        "developer_market_adoption": 1,
+        "industry_competition_impact": 3,
+        "duration_diffusion_cycle": 2,
+        "application_transfer_value": 4,
+        "response_window": 5
+      },
+      "business_scores": {
+        "target_user_fit": 3,
+        "ecommerce_workflow_relevance": 3,
+        "product_data_fit": 3,
+        "geo_question_value": 4,
+        "conversion_brand_value": 3,
+        "execution_readiness_cost": 3
+      },
+      "tech_impact_score": 63,
+      "raw_tech_level": "T-B",
+      "tech_level": "T-B",
+      "business_fit_score": 63,
+      "action_level": "L-B",
+      "source_tier": "E3",
+      "independent_verification_count": 1,
+      "adoption_signals": [
+        "官方API公测入口与Responses API文档可读",
+        "GitHub Trending与Hugging Face连接关闭，未取得采用增量"
+      ],
+      "score_reasons": {
+        "technical_breakthrough": "正式版API与Agent能力更新具有明确产品变化。",
+        "circle_heat_velocity": "只有官方发布，科技圈相对热度尚缺独立量化。",
+        "authority_cross_validation": "官方首页与官方文档一致，但同属一个主体。",
+        "developer_market_adoption": "开发者站点连接受限，不得计入采用增量。",
+        "business_fit": "与电商Agent和GEO工作流有自然联系，但承接页和实测尚未准备。"
+      },
+      "score_caps": [
+        {
+          "rule": "high_cost_action_block",
+          "tech_cap": null,
+          "action_cap": null,
+          "changed": false,
+          "reason": "缺少执行准备、成熟承接页或监测，禁止广告投流和全量召回。"
+        }
+      ],
+      "tech_score_details": [
+        {
+          "key": "technical_breakthrough",
+          "name": "技术突破强度",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "circle_heat_velocity",
+          "name": "圈层热度与涨速",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "authority_cross_validation",
+          "name": "权威与交叉验证",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "developer_market_adoption",
+          "name": "开发者与市场采用",
+          "score": 1,
+          "weight": 15,
+          "weighted_score": 3
+        },
+        {
+          "key": "industry_competition_impact",
+          "name": "行业竞争影响",
+          "score": 3,
+          "weight": 10,
+          "weighted_score": 6
+        },
+        {
+          "key": "duration_diffusion_cycle",
+          "name": "持续与扩散周期",
+          "score": 2,
+          "weight": 10,
+          "weighted_score": 4
+        },
+        {
+          "key": "application_transfer_value",
+          "name": "应用迁移价值",
+          "score": 4,
+          "weight": 10,
+          "weighted_score": 8
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "business_score_details": [
+        {
+          "key": "target_user_fit",
+          "name": "蝉妈妈目标用户匹配",
+          "score": 3,
+          "weight": 20,
+          "weighted_score": 12
+        },
+        {
+          "key": "ecommerce_workflow_relevance",
+          "name": "电商工作流关联",
+          "score": 3,
+          "weight": 20,
+          "weighted_score": 12
+        },
+        {
+          "key": "product_data_fit",
+          "name": "产品与数据承接",
+          "score": 3,
+          "weight": 20,
+          "weighted_score": 12
+        },
+        {
+          "key": "geo_question_value",
+          "name": "GEO问题价值",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "conversion_brand_value",
+          "name": "转化与品牌价值",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "execution_readiness_cost",
+          "name": "执行准备与成本",
+          "score": 3,
+          "weight": 10,
+          "weighted_score": 6
+        }
+      ],
+      "prohibited_actions": [
+        "广告投流",
+        "全量召回"
+      ],
+      "natural_business_link": true,
+      "execution_ready": false,
+      "mature_landing_page": false,
+      "measurement_ready": false,
+      "totalScore": null,
+      "grade": "L-B｜常规跟进",
+      "gradeCode": "B",
+      "finalValue": 3,
+      "followDecision": "常规跟进",
+      "downgradeReason": "双轨分数矩阵决定",
+      "hotness_scoring_model": "hotness_v1",
+      "hotness_score": 70,
+      "raw_hotness_level": "H-A",
+      "hotness_level": "H-C",
+      "hotness_final_value": 2,
+      "hotness_score_details": [
+        {
+          "key": "absolute_demand",
+          "name": "需求规模",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "baseline_deviation",
+          "name": "相对基线变化",
+          "score": 3,
+          "weight": 25,
+          "weighted_score": 15
+        },
+        {
+          "key": "growth_velocity",
+          "name": "上升速度",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "persistence",
+          "name": "持续时间",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "cross_platform_spread",
+          "name": "跨平台扩散",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "freshness",
+          "name": "数据新鲜度",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "hotness_caps": [
+        {
+          "rule": "single_platform_cap",
+          "hotness_cap": "H-C",
+          "changed": true,
+          "reason": "只有单平台信号，热点成立度最高H-C。"
+        }
+      ],
+      "hotness_signal_type": "official_product_release",
+      "hotness_independent_platform_count": 1,
+      "hotness_baseline_verified": true,
+      "hotness_freshness_verified": true,
+      "hotness_change_signals": [
+        "官方宣布V4-Flash正式版API上线公测",
+        "官方明确Agent能力增强且V4-Pro暂未变化"
+      ],
+      "hotness_requires_baseline": false,
+      "hotness_comparison_baseline_verified": true,
+      "hotness_baseline_type": "官方新品发布",
+      "hotness_normalization_flags": [],
+      "hotness_multi_period_growth_verified": false,
+      "hotness_independent_change_signals": 1,
+      "content_scoring_model": "content_potential_v1",
+      "content_potential_score": 68,
+      "raw_content_potential_level": "P-B",
+      "content_potential_level": "P-C",
+      "content_final_value": 2,
+      "content_score_details": [
+        {
+          "key": "audience_demand",
+          "name": "受众需求规模",
+          "score": 3,
+          "weight": 20,
+          "weighted_score": 12
+        },
+        {
+          "key": "demand_velocity",
+          "name": "需求上涨速度",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "content_supply_gap",
+          "name": "内容供给缺口",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "target_user_fit",
+          "name": "目标用户匹配",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "data_content_advantage",
+          "name": "蝉妈妈数据优势",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "discussion_shareability",
+          "name": "讨论与传播性",
+          "score": 3,
+          "weight": 10,
+          "weighted_score": 6
+        },
+        {
+          "key": "content_lifecycle",
+          "name": "内容生命周期",
+          "score": 3,
+          "weight": 5,
+          "weighted_score": 3
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "content_caps": [
+        {
+          "rule": "targeted_audience_cap",
+          "potential_cap": "P-B",
+          "changed": false,
+          "reason": "定向专业内容可以高业务优先，但不按大众高流量话题评为P-A。"
+        },
+        {
+          "rule": "no_qualified_traffic_route",
+          "potential_cap": "P-C",
+          "changed": true,
+          "reason": "搜索、社媒或定向路线均未达到最低成立条件，内容潜力最高P-C。"
+        }
+      ],
+      "content_source_tier": "E3",
+      "traffic_route": "targeted",
+      "independent_platform_count": 1,
+      "demand_signals": [
+        "平台：DeepSeek官方｜页面：首页与Responses API文档｜观察日期：2026-08-04｜变化：V4-Flash正式版API上线公测，Agent能力增强｜https://www.deepseek.com/"
+      ],
+      "content_baseline_verified": true,
+      "content_requires_baseline": false,
+      "content_comparison_baseline_verified": true,
+      "content_baseline_type": "官方新品发布",
+      "content_normalization_flags": [],
+      "content_multi_period_growth_verified": false,
+      "content_independent_change_signals": 1,
+      "supply_gap_verified": false,
+      "content_freshness_verified": true,
+      "chanmama_answerable": true,
+      "query_cluster": [
+        "DeepSeek V4-Flash API",
+        "DeepSeek V4-Flash Agent能力",
+        "DeepSeek V4-Flash电商运营",
+        "DeepSeek V4-Flash怎么用"
+      ],
+      "channel_scores": {
+        "website": 84,
+        "wechat": 78,
+        "short_video": 62,
+        "xiaohongshu": 54,
+        "private_domain": 70
+      },
+      "channel_reasons": {
+        "primary": "适合官方能力边界和电商工作流测试，不作为今日大众内容前排。"
+      },
+      "recommended_channels": [
+        "website",
+        "wechat",
+        "private_domain"
+      ],
+      "primary_topic": "DeepSeek V4-Flash API公测：Agent能力更新了什么？",
+      "early_publish_title": "DeepSeek V4-Flash API公测：Agent能力更新了什么？",
+      "content_angle": "只写官方确认的API与Agent变化，把采用缺口和实测计划单列。",
+      "measurement_plan": "模型词曝光、技术稿点击、测试页访问与实测完成率。",
+      "stop_condition": "官方更改型号/公测状态或实测无迁移价值时停止滚动。",
+      "content_score_reasons": {},
+      "topic_value_score": 68,
+      "topic_value_code": "B",
+      "topic_value_label": "中等潜力",
+      "publication_status_code": "observe",
+      "publication_status": "继续观察",
+      "publication_priority": 2,
+      "publication_mode": "只记录信号",
+      "publication_basis": "已有真实信号，但选题价值或内容承接尚不足，继续观察变化。",
+      "fact_boundary": "官方发布成立不等于开发者广泛采用或性能全面领先。",
+      "pending_confirmation": [
+        "GitHub/Hugging Face采用信号",
+        "电商工作流实测",
+        "真实搜索趋势"
+      ],
+      "confirmed_trigger": true,
+      "publishable_channel": true,
+      "ad_opportunity_scoring_model": "ad_opportunity_v1",
+      "ad_modes": {
+        "search": {
+          "activation_mode": "search",
+          "raw_score": 55,
+          "score": 55,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "active_search_evidence",
+              "name": "主动搜索证据",
+              "score": 1,
+              "weight": 30,
+              "weighted_score": 6
+            },
+            {
+              "key": "keyword_clarity",
+              "name": "关键词明确度",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "landing_fit",
+              "name": "落地承接",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 10,
+              "weighted_score": 10
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 2,
+              "weight": 5,
+              "weighted_score": 2
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "没有真实主动搜索证据",
+            "搜索转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:deepseek-v4-flash:official-beta"
+          ],
+          "reasons": {
+            "summary": "模型对象词明确但只取得官方发布；没有真实搜索趋势和匹配转化页，暂不进入搜索广告队列。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "active_search_confirmed": false,
+            "keyword_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "interest": {
+          "activation_mode": "interest",
+          "raw_score": 89,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "content_diffusion",
+              "name": "内容扩散",
+              "score": 5,
+              "weight": 25,
+              "weighted_score": 25
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "creative_fit",
+              "name": "素材适配",
+              "score": 4,
+              "weight": 15,
+              "weighted_score": 12
+            },
+            {
+              "key": "product_fit",
+              "name": "产品承接",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": true,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "兴趣流量转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:deepseek-v4-flash:official-beta"
+          ],
+          "reasons": {
+            "summary": "模型对象词明确但只取得官方发布；可做内容验证，但缺少广告落地与监测。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "content_signal_confirmed": true,
+            "creative_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "commerce": {
+          "activation_mode": "commerce",
+          "raw_score": 81,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "transaction_trend",
+              "name": "交易趋势",
+              "score": 5,
+              "weight": 25,
+              "weighted_score": 25
+            },
+            {
+              "key": "product_path",
+              "name": "商品链路",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "shop_product_fit",
+              "name": "商品或店铺承接",
+              "score": 3,
+              "weight": 20,
+              "weighted_score": 12
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 5,
+              "weighted_score": 4
+            },
+            {
+              "key": "conversion_value",
+              "name": "转化价值",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": true,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "商品或店铺身份未核",
+            "没有可核交易变化信号",
+            "电商转化链路未准备"
+          ],
+          "evidence_refs": [
+            "metric:deepseek-v4-flash:official-beta"
+          ],
+          "reasons": {
+            "summary": "模型对象词明确但只取得官方发布；商品与交易信号已核，但转化链路未准备。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "verified_offer": false,
+            "transaction_signal_confirmed": false,
+            "conversion_path_ready": false
+          }
+        }
+      },
+      "ad_eligible": false,
+      "ad_eligible_modes": [],
+      "ad_best_mode": "interest",
+      "ad_global_blockers": [
+        "广告落地页未完成",
+        "曝光、点击、访问与注册监测未接通"
+      ],
+      "breakout_scoring_model": "breakout_v1",
+      "breakout_status": "observation_only",
+      "breakout_signal_count": 1,
+      "breakout_gates_passed": false,
+      "breakout_blockers": [
+        "多周期变化未核",
+        "独立变化信号不足2项"
+      ]
     }
   ],
   "actions": [
@@ -3524,6 +8801,294 @@
       "acceptance": "只引用官方正文，不代替平台作违规认定。",
       "stopCondition": "官方正文或后台口径变化时修订。",
       "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-008",
+      "actionType": "优先制作",
+      "task": "制作瑞幸即享黑咖啡销量、浏览与直播承接拆解。",
+      "owner": "类目研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "连续两日销量和浏览回落，或确认主要由一次性活动驱动时停止追热。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-006",
+      "actionType": "优先制作",
+      "task": "制作公仔牌洗衣粉五日销量与双榜拆解。",
+      "owner": "类目研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "连续两日预估销量跌破当前区间下沿并退出双榜时停止滚动。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-009",
+      "actionType": "优先制作",
+      "task": "制作和平精英官方账号与周年热点联动案例。",
+      "owner": "达人研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "活动结束且连续两日退出涨粉榜、热点明显回落时停止滚动。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-007",
+      "actionType": "抢先试发",
+      "task": "制作免抽气压缩袋销量、浏览与达人集中度观察。",
+      "owner": "类目研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "主要达人停播或连续两日销量、浏览同步回落时停止滚动。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-005",
+      "actionType": "小范围试发",
+      "task": "制作黄糯玉米爆发后回落复盘。",
+      "owner": "类目研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "连续两日退出榜单或平台预估销量归零时停止追踪。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-010",
+      "actionType": "定向发布",
+      "task": "制作DeepSeek V4-Flash官方能力边界与实测清单。",
+      "owner": "科技研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "官方更改型号/公测状态或实测无迁移价值时停止滚动。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-008",
+      "actionType": "优先制作",
+      "task": "制作瑞幸即享黑咖啡销量、浏览与直播承接拆解。",
+      "owner": "类目研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "连续两日销量和浏览回落，或确认主要由一次性活动驱动时停止追热。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-006",
+      "actionType": "优先制作",
+      "task": "制作公仔牌洗衣粉五日销量与双榜拆解。",
+      "owner": "类目研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "连续两日预估销量跌破当前区间下沿并退出双榜时停止滚动。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-009",
+      "actionType": "优先制作",
+      "task": "制作和平精英官方账号与周年热点联动案例。",
+      "owner": "达人研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "活动结束且连续两日退出涨粉榜、热点明显回落时停止滚动。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-007",
+      "actionType": "抢先试发",
+      "task": "制作免抽气压缩袋销量、浏览与达人集中度观察。",
+      "owner": "类目研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "主要达人停播或连续两日销量、浏览同步回落时停止滚动。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-005",
+      "actionType": "小范围试发",
+      "task": "制作黄糯玉米爆发后回落复盘。",
+      "owner": "类目研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "连续两日退出榜单或平台预估销量归零时停止追踪。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-010",
+      "actionType": "定向发布",
+      "task": "制作DeepSeek V4-Flash官方能力边界与实测清单。",
+      "owner": "科技研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "官方更改型号/公测状态或实测无迁移价值时停止滚动。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-008",
+      "actionType": "优先制作",
+      "task": "制作瑞幸即享黑咖啡销量、浏览与直播承接拆解。",
+      "owner": "类目研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "连续两日销量和浏览回落，或确认主要由一次性活动驱动时停止追热。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-006",
+      "actionType": "优先制作",
+      "task": "制作公仔牌洗衣粉五日销量与双榜拆解。",
+      "owner": "类目研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "连续两日预估销量跌破当前区间下沿并退出双榜时停止滚动。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-009",
+      "actionType": "优先制作",
+      "task": "制作和平精英官方账号与周年热点联动案例。",
+      "owner": "达人研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "活动结束且连续两日退出涨粉榜、热点明显回落时停止滚动。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-007",
+      "actionType": "抢先试发",
+      "task": "制作免抽气压缩袋销量、浏览与达人集中度观察。",
+      "owner": "类目研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "主要达人停播或连续两日销量、浏览同步回落时停止滚动。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-005",
+      "actionType": "小范围试发",
+      "task": "制作黄糯玉米爆发后回落复盘。",
+      "owner": "类目研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "连续两日退出榜单或平台预估销量归零时停止追踪。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-010",
+      "actionType": "定向发布",
+      "task": "制作DeepSeek V4-Flash官方能力边界与实测清单。",
+      "owner": "科技研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "官方更改型号/公测状态或实测无迁移价值时停止滚动。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-008",
+      "actionType": "优先制作",
+      "task": "制作瑞幸即享黑咖啡销量、浏览与直播承接拆解。",
+      "owner": "类目研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "连续两日销量和浏览回落，或确认主要由一次性活动驱动时停止追热。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-006",
+      "actionType": "优先制作",
+      "task": "制作公仔牌洗衣粉五日销量与双榜拆解。",
+      "owner": "类目研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "连续两日预估销量跌破当前区间下沿并退出双榜时停止滚动。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-009",
+      "actionType": "优先制作",
+      "task": "制作和平精英官方账号与周年热点联动案例。",
+      "owner": "达人研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "活动结束且连续两日退出涨粉榜、热点明显回落时停止滚动。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-007",
+      "actionType": "抢先试发",
+      "task": "制作免抽气压缩袋销量、浏览与达人集中度观察。",
+      "owner": "类目研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "主要达人停播或连续两日销量、浏览同步回落时停止滚动。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-005",
+      "actionType": "小范围试发",
+      "task": "制作黄糯玉米爆发后回落复盘。",
+      "owner": "类目研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "连续两日退出榜单或平台预估销量归零时停止追踪。",
+      "status": "待执行"
+    },
+    {
+      "hotspotId": "HT-20260804-010",
+      "actionType": "定向发布",
+      "task": "制作DeepSeek V4-Flash官方能力边界与实测清单。",
+      "owner": "科技研究/内容运营",
+      "collaborators": "数据研究、内容运营",
+      "deadline": "2026-08-05",
+      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
+      "acceptance": "平台估算保留原口径，主动搜索未验证项保持hypothesis。",
+      "stopCondition": "官方更改型号/公测状态或实测无迁移价值时停止滚动。",
+      "status": "待执行"
     }
   ],
   "scanLogs": [
@@ -3533,7 +9098,7 @@
       "status": "已读取",
       "evidenceLevel": "E3",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
       "signal": "健身器械类目与商品指数可读，曼迪卡威商品ID稳定。",
       "limitation": "平台指数与区间不是实际成交额或精确销量。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
@@ -3551,7 +9116,7 @@
       "status": "已读取并回源",
       "evidenceLevel": "E3",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
       "signal": "欺诈发货实施细则正文已核。",
       "limitation": "具体案件与后台档位以平台执行为准。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
@@ -3569,7 +9134,7 @@
       "status": "已读取",
       "evidenceLevel": "E1",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
       "signal": "入口可读。",
       "limitation": "正式经营规则以抖店官方学习中心正文为准。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
@@ -3584,36 +9149,36 @@
     {
       "platform": "蝉妈妈",
       "url": "https://www.chanmama.com/douyin/",
-      "status": "已读取",
+      "status": "已补充读取",
       "evidenceLevel": "E3",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
-      "signal": "达人涨粉、商品/品牌榜和平台热点可读。",
-      "limitation": "粉丝、销量、GMV与热度按页面展示值或区间理解。",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
+      "signal": "新增读取4个商品详情、和平精英账号与地铁逃生二周年热点。",
+      "limitation": "销量、GMV、粉丝、浏览、点赞和热度均按平台展示值或估算口径。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
       "loginStatus": "authenticated",
-      "dataDate": "热点2026-08-04；榜单2026-08-03",
+      "dataDate": "热点2026-08-04；商品/涨粉明细截至2026-08-03",
       "queryTerms": [],
       "missingData": [
-        "粉丝、销量、GMV与热度按页面展示值或区间理解。"
+        "销量、GMV、粉丝、浏览、点赞和热度均按平台展示值或估算口径。"
       ],
       "loginAction": null
     },
     {
       "platform": "AIDSO",
       "url": "https://geo.aidso.com/question",
-      "status": "页面卡顿，未取得今日数据",
+      "status": "实际显示登录页",
       "evidenceLevel": "E1",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
-      "signal": "固定9233标签恢复后可打开，无可见登录或验证码。",
-      "limitation": "Runtime.evaluate超时，不复用历史记录为今日需求证据。",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
+      "signal": "固定9233页面显示登录入口，本轮未取得搜索需求数据。",
+      "limitation": "未登录前所有active_search保持hypothesis。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
-      "loginStatus": "authenticated",
+      "loginStatus": "login_required",
       "dataDate": null,
       "queryTerms": [],
       "missingData": [
-        "Runtime.evaluate超时，不复用历史记录为今日需求证据。"
+        "未登录前所有active_search保持hypothesis。"
       ],
       "loginAction": null
     },
@@ -3623,7 +9188,7 @@
       "status": "已读取",
       "evidenceLevel": "E1",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
       "signal": "发现页可读。",
       "limitation": "未取得候选量化趋势。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
@@ -3641,7 +9206,7 @@
       "status": "部分读取",
       "evidenceLevel": "E1",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
       "signal": "热榜入口可读。",
       "limitation": "页面正文有限，同一抖音生态不重复计独立平台。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
@@ -3659,17 +9224,18 @@
       "status": "已读取",
       "evidenceLevel": "E3",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
-      "signal": "四个关键词已输入查询，页面未返回趋势曲线或数值。",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
+      "signal": "已登录且首页可读，但本轮未取得有效搜索趋势曲线或搜索量。",
       "limitation": "active_search保持hypothesis。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
       "loginStatus": "authenticated",
       "dataDate": "2026-08-04",
       "queryTerms": [
-        "爬楼机",
-        "小火人和ta的朋友们",
-        "洽洽瓜子",
-        "欺诈发货"
+        "公仔牌洗衣粉",
+        "瑞幸即享黑咖啡",
+        "免抽气压缩袋",
+        "和平精英",
+        "DeepSeek V4-Flash"
       ],
       "missingData": [
         "active_search保持hypothesis。"
@@ -3682,7 +9248,7 @@
       "status": "已读取",
       "evidenceLevel": "E3",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
       "signal": "实时热点与热点指数可读。",
       "limitation": "热点指数不是人数、播放量或搜索量。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
@@ -3700,7 +9266,7 @@
       "status": "已读取",
       "evidenceLevel": "E1",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
       "signal": "消费、商业与科技线索可读。",
       "limitation": "媒体只作发现。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
@@ -3718,7 +9284,7 @@
       "status": "已读取",
       "evidenceLevel": "E1",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
       "signal": "产品与内容案例可读。",
       "limitation": "文章阅读和标题不作采用证据。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
@@ -3736,7 +9302,7 @@
       "status": "已扫描",
       "evidenceLevel": "E3",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
       "signal": "固定官方入口已扫。",
       "limitation": "无达到大众正式准入的新事件。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
@@ -3754,15 +9320,15 @@
       "status": "已读取并回源文档",
       "evidenceLevel": "E3",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
-      "signal": "V4-Flash公测入口与Responses API文档可读。",
-      "limitation": "保留内部科技观察，不因技术热度自动前排。",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
+      "signal": "V4-Flash正式版API公测与Responses API文档可读。",
+      "limitation": "未取得独立开发者采用增量。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
       "loginStatus": "public_only",
       "dataDate": "2026-08-04观察",
       "queryTerms": [],
       "missingData": [
-        "保留内部科技观察，不因技术热度自动前排。"
+        "未取得独立开发者采用增量。"
       ],
       "loginAction": null
     },
@@ -3772,7 +9338,7 @@
       "status": "页面受限",
       "evidenceLevel": "E3",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
       "signal": "本轮未取得清晰当日新发布。",
       "limitation": "不新增官方结论。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
@@ -3787,36 +9353,36 @@
     {
       "platform": "Hugging Face模型趋势",
       "url": "https://huggingface.co/models?sort=trending",
-      "status": "已扫描",
+      "status": "连接受限",
       "evidenceLevel": "E3",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
-      "signal": "模型趋势用于采用核验。",
-      "limitation": "下载和喜欢不是独立用户。",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
+      "signal": "固定9233显示ERR_CONNECTION_CLOSED。",
+      "limitation": "不得虚构趋势位置、stars、下载或喜欢增量。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "2026-08-04",
+      "dataDate": null,
       "queryTerms": [],
       "missingData": [
-        "下载和喜欢不是独立用户。"
+        "不得虚构趋势位置、stars、下载或喜欢增量。"
       ],
       "loginAction": null
     },
     {
       "platform": "GitHub Trending",
       "url": "https://github.com/trending",
-      "status": "已扫描并核对项目页",
+      "status": "连接受限",
       "evidenceLevel": "E3",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
-      "signal": "GenOffice约679 stars且创建于07/31，采用基线仍短。",
-      "limitation": "累计stars不是单日新增或独立采用。",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
+      "signal": "固定9233显示ERR_CONNECTION_CLOSED。",
+      "limitation": "不得虚构趋势位置、stars、下载或喜欢增量。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "2026-08-04",
+      "dataDate": null,
       "queryTerms": [],
       "missingData": [
-        "累计stars不是单日新增或独立采用。"
+        "不得虚构趋势位置、stars、下载或喜欢增量。"
       ],
       "loginAction": null
     },
@@ -3826,7 +9392,7 @@
       "status": "已读取",
       "evidenceLevel": "E1",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
       "signal": "Qwen3.8线索可读。",
       "limitation": "媒体单源只作E1线索；新智元保持固定日扫。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
@@ -3844,7 +9410,7 @@
       "status": "已扫描",
       "evidenceLevel": "E1",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
       "signal": "频道入口已扫。",
       "limitation": "未发现高于一手源的独立采用验证。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
@@ -3862,7 +9428,7 @@
       "status": "已读取",
       "evidenceLevel": "E1",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
       "signal": "DeepSeek等线索可读。",
       "limitation": "媒体转载不计独立验证。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
@@ -3880,7 +9446,7 @@
       "status": "已读取",
       "evidenceLevel": "E1",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
       "signal": "DeepSeek V4线索可读。",
       "limitation": "媒体只作发现。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
@@ -3898,7 +9464,7 @@
       "status": "已读取",
       "evidenceLevel": "E1",
       "page": "固定日扫入口",
-      "observedAt": "2026-08-04T10:28:38.329+08:00",
+      "observedAt": "2026-08-04T11:44:20.589+08:00",
       "signal": "DeepSeek、Qwen、GenOffice与Milvus线索可读。",
       "limitation": "点击量和转载不计独立验证。",
       "nextAction": "按正式准入、内容偏好与停止条件继续滚动观察。",
@@ -3911,8 +9477,8 @@
       "loginAction": null
     }
   ],
-  "boundaryText": "网页只展示正式candidates，内部observation_pool不进入公开数据。科技T-score仍按客观影响判断，但内容排序优先大众需求、爆款商品/账号、平台热榜、季节节点和主动搜索。平台GMV、销量、粉丝、热度指数、下载与stars均按平台口径记录，不转换为精确人数、实际成交额或市场份额。所有广告关键词当前均为假设；第一阶段不登录广告账户、不创建计划、不消耗预算。",
-  "sourceBrief": "今日4条正式热点全部来自大众消费、爆款账号、品牌热榜或经营规则；纯科技线索保留在内部观察池，不挤占内容前排。曼迪卡威爬楼机与小火人官方账号通过跨日基线和双信号门；4条共20个关键词假设，但百度未返回搜索趋势、广告落地与监测未就绪，因此可投放队列仍为0。",
+  "boundaryText": "网页恰好展示10条正式candidates，内部observation_pool不进入公开数据。科技可入选，但内容排序优先大众消费、爆款商品/账号、平台热点、季节节点和真实主动搜索。平台GMV、销量、粉丝、浏览、点赞、热度指数、下载与stars均按平台口径记录，不转换为精确人数、实际成交额或市场份额。所有广告关键词当前均为假设；第一阶段不登录广告账户、不创建计划、不消耗预算。",
+  "sourceBrief": "按每日10条正式热点规则完成同日补跑：消费/商品5条、达人与平台热点3条、经营规则1条、科技1条，共44个关键词假设。公仔牌洗衣粉、瑞幸即享黑咖啡、和平精英账号等获得前排优先级；DeepSeek V4-Flash按官方证据客观入选但不挤占大众内容前排。AIDSO未登录且百度无有效趋势，广告落地与监测也未就绪，因此主动搜索保持假设、广告队列保持关闭。",
   "adOpportunitySchemaVersion": 1,
   "adExperimentContract": {
     "contract_version": "ad_experiment_v1",
