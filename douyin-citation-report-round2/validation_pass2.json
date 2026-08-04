@@ -21,19 +21,21 @@
     "comparison_official_sources": true,
     "official_source_metrics_complete": true,
     "chanmama_official_rows_mutually_exclusive": true,
+    "official_metrics_independently_recomputed": true,
+    "official_citation_ids_mutually_exclusive": true,
     "public_report_data": true,
     "public_url_data": true,
-    "stage_not_final": true,
+    "stage_final": true,
     "question_type_方法论问题": true,
     "question_type_工具推荐问题": true,
     "question_type_操作教程问题": true,
     "question_type_行业知识问题": true
   },
   "recomputed": {
-    "events": 6117,
-    "unique_urls": 1829,
-    "video_events": 1013,
-    "unique_videos": 418,
-    "owned_events": 443
+    "events": 11934,
+    "unique_urls": 2662,
+    "video_events": 2082,
+    "unique_videos": 602,
+    "owned_events": 866
   }
 }

@@ -1,4 +1,4 @@
-﻿account,platform,account_type,citation_events,unique_articles,answers,sample_rate_pct,confidence
-蝉妈妈,Sohu,企业号,330,44,192,64.0,high 330
-蝉妈妈电商增长,Toutiao,企业号,68,5,64,21.33,"high 64, medium 4"
-电商数据观察员,Toutiao,员工号,45,2,45,15.0,high 45
+﻿account,platform,account_type,citation_events,unique_articles,answers,sample_rate_pct,questions,question_rate_pct,confidence
+蝉妈妈,Sohu,企业号,638,51,369,64.06,90,93.75,high 638
+蝉妈妈电商增长,Toutiao,企业号,131,5,122,21.18,64,66.67,"high 125, medium 6"
+电商数据观察员,Toutiao,员工号,97,2,96,16.67,51,53.12,high 97
