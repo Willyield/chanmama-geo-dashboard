@@ -388,7 +388,7 @@
     setText('video-publish-coverage', `${number(coverage.account_metadata_known)} / ${number(coverage.douyin_unique_videos)}`);
 
     const comparison = report.comparison || {};
-    const delta = value => `${Number(value || 0) > 0 ? '+' : ''}${Number(value || 0).toFixed(2)} pp`;
+    const delta = value => `${Number(value || 0) > 0 ? '+' : ''}${Number(value || 0).toFixed(2)} 个百分点`;
     const comparisonOwnedTotalBody = $('comparison-owned-total-body');
     [['第一轮 576/576', comparison.owned_totals?.round1], ['第二轮阶段性 300/576', comparison.owned_totals?.round2]].forEach(([label, item]) => {
       if (!item) return; const row = document.createElement('tr'); appendCell(row, label); appendCell(row, number(item.citation_events), 'numeric'); appendCell(row, number(item.unique_articles), 'numeric'); appendCell(row, number(item.answers), 'numeric'); appendCell(row, pct(item.sample_rate_pct), 'numeric'); appendCell(row, number(item.high_confidence_events), 'numeric'); appendCell(row, number(item.medium_confidence_events), 'numeric'); appendCell(row, number(item.unresolved_events), 'numeric'); comparisonOwnedTotalBody.appendChild(row);

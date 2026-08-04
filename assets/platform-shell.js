@@ -41,7 +41,10 @@
           submenuLink("./top2-top3/", "扩展问题", "TOP2+TOP3") +
           submenuLink("./total/", "全部问题总览", "TOP0-TOP3") +
         '</div></details>' +
-        '<a href="' + href("./douyin-citation-report/") + '"' + current("citation") + '>引用源</a>' +
+        '<details data-active="' + (section === "citation") + '"><summary>引用源</summary><div class="geo-shell-submenu">' +
+          submenuLink("./douyin-citation-report/", "第一轮引用源", "基线") +
+          submenuLink("./douyin-citation-report-round2/", "第二轮引用源", "阶段性 300/576") +
+        '</div></details>' +
         '<a href="' + href("./#roadmap") + '">研究路线</a>' +
         '<a href="' + href("./#method") + '">方法与口径</a>' +
         '<details data-active="' + (section === "more") + '"><summary>更多</summary><div class="geo-shell-submenu">' +
