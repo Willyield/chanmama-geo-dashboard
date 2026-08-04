@@ -3,8 +3,8 @@
   "module": "creators",
   "dataMode": "DAILY_AUDIT_ONLY",
   "date": "2026-08-04",
-  "observedAt": "2026-08-04T02:27:04.558Z",
-  "scheduledFor": "2026-08-04T10:00:00+08:00",
+  "observedAt": "2026-08-04T08:06:59.571Z",
+  "scheduledFor": "2026-08-04T16:00:00+08:00",
   "publicationStatus": "DEGRADED_REPORT",
   "title": "抖音达人白名单库及热点判断",
   "summary": {
@@ -37,17 +37,17 @@
   },
   "creatorCaptureStatus": {
     "captureType": "LATE_MAIN_CAPTURE",
-    "observedAt": "2026-08-04T02:27:04.558Z",
-    "displayTime": "2026-08-04 10:27",
-    "plannedAt": "2026-08-04T10:00:00+08:00",
+    "observedAt": "2026-08-04T08:06:59.571Z",
+    "displayTime": "2026-08-04 16:06",
+    "plannedAt": "2026-08-04T16:00:00+08:00",
     "schedule": {
       "onTime": false,
       "supplement": false
     },
     "summary": {
       "pagesTotal": 19,
-      "pagesLoaded": 1,
-      "pagesTimedOut": 18,
+      "pagesLoaded": 5,
+      "pagesTimedOut": 14,
       "evidenceStatus": "DEGRADED",
       "poolChanged": false,
       "tierChanged": false
@@ -62,20 +62,20 @@
       "原创贡献",
       "风险门"
     ],
-    "timeoutPolicy": "18 个失败页保持缺失，不估填、不替代、不晋级"
+    "timeoutPolicy": "14 个失败页保持缺失，不估填、不替代、不晋级"
   },
   "audit": {
-    "sourcePath": "runs/douyin-creator-20260804-1000-r2/audit.json",
-    "sourceSha256": "3d51df51b061343028006d45567e0460434d10a35bab2bc022c6b84d44d1e895",
+    "sourcePath": "runs/douyin-creator-20260804-1600-r2/audit.json",
+    "sourceSha256": "711aab734cae69dac3038431bce83951e97e8afe48a7eb9e06b6298df3e775ae",
     "reportType": "DEGRADED_REPORT",
     "schedule": {
       "onTime": false,
       "supplement": false,
-      "lateReason": "The read-only snapshot was observed at 10:27:04.558 Asia/Shanghai, after the 10:00 schedule boundary. The original schedule result remains false."
+      "lateReason": "The recovered read-only snapshot was observed at 16:06:59.571 Asia/Shanghai, after the 16:00 schedule boundary. The original schedule result remains false."
     },
     "creatorDecision": {
       "result": "UNCHANGED_NO_CURRENT_PROFILE_EVIDENCE",
-      "reason": "The profile batch was not opened after the existing Douyin base tab timed out. No current profile evidence is available, so the existing observation tier remains unchanged.",
+      "reason": "Five base pages loaded after the dedicated browser recovery, but none of the 13 roster profiles produced usable current evidence. The existing observation tier remains unchanged.",
       "priorityObservationAccounts": []
     },
     "missingInputs": [
