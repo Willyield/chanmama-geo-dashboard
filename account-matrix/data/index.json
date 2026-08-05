@@ -1,7 +1,28 @@
 {
   "schemaVersion": 1,
-  "latest": "2026-07-31",
+  "latest": "2026-08-05",
   "reports": [
+    {
+      "reportDate": "2026-08-05",
+      "status": "PARTIAL",
+      "accountCount": 11,
+      "contentCount": 465,
+      "generatedAt": "2026-08-05T07:45:00.400Z"
+    },
+    {
+      "reportDate": "2026-08-04",
+      "status": "PARTIAL",
+      "accountCount": 11,
+      "contentCount": 439,
+      "generatedAt": "2026-08-04T07:36:52.371Z"
+    },
+    {
+      "reportDate": "2026-08-03",
+      "status": "PARTIAL",
+      "accountCount": 11,
+      "contentCount": 417,
+      "generatedAt": "2026-08-04T03:52:27.075Z"
+    },
     {
       "reportDate": "2026-07-31",
       "status": "PARTIAL",
@@ -23,5 +44,10 @@
       "contentCount": 111,
       "generatedAt": "2026-07-29T02:10:13.071Z"
     }
-  ]
+  ],
+  "douyinRetrospective": {
+    "status": "AWAITING_COMPLETE_HANDOFF",
+    "sourceReportDate": null,
+    "path": "./2026-08-05/douyin-retrospective.json"
+  }
 }

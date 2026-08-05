@@ -33,6 +33,12 @@ const METRIC_FIELD_LABELS = {
   shares: "分享",
 };
 
+const OBSERVATION_SCOPE_LABELS = {
+  CONTENT_11: "内容平台 11",
+  DOUYIN_14: "抖音 14",
+  UNIFIED_25: "全部 25",
+};
+
 const BASIS_LABELS = {
   PLATFORM_CATEGORY_AGE: "同平台、同分类、发布时间相近",
   PLATFORM_AGE_FALLBACK: "同平台、发布时间相近",
@@ -41,7 +47,14 @@ const BASIS_LABELS = {
 const app = document.querySelector("#app");
 const reportMeta = document.querySelector("#report-meta");
 const headerStatus = document.querySelector("#header-status");
-const state = { index: null, reportDate: null, summary: null, records: [], error: null };
+const state = {
+  index: null,
+  reportDate: null,
+  summary: null,
+  records: [],
+  douyinRetrospective: null,
+  error: null,
+};
 
 const escapeHtml = (value) => String(value ?? "")
   .replaceAll("&", "&amp;")
@@ -156,6 +169,14 @@ const normalizeLegacyRoute = (route) => {
     query.delete("publishedDate");
     changed = true;
   }
+  if (query.has("douyinDate") && !/^\d{4}-\d{2}-\d{2}$/.test(query.get("douyinDate"))) {
+    query.delete("douyinDate");
+    changed = true;
+  }
+  if (query.has("accountTrendScope") && !OBSERVATION_SCOPE_LABELS[query.get("accountTrendScope")]) {
+    query.delete("accountTrendScope");
+    changed = true;
+  }
   const queryCategory = query.get("category");
   if (queryCategory && !CATEGORY_LABELS[queryCategory]) {
     query.delete("category");
@@ -176,7 +197,7 @@ const setQuery = (name, value) => {
 };
 
 const statusClass = (status) => status === "FULL" ? "status-full" : status === "PARTIAL" ? "status-partial" : "status-incident";
-const statusLabel = (status) => status === "FULL" ? "完整" : status === "PARTIAL" ? "部分受限" : "采集故障";
+const statusLabel = (status) => status === "FULL" ? "完整" : status === "PARTIAL" ? "PARTIAL · 部分受限" : "采集故障";
 
 const fetchJson = async (url) => {
   const response = await fetch(url, { cache: "no-store" });
@@ -185,13 +206,18 @@ const fetchJson = async (url) => {
 };
 
 const loadReport = async (reportDate) => {
-  const [summary, contents] = await Promise.all([
+  const retrospectivePath = state.index?.douyinRetrospective?.path;
+  const [summary, contents, retrospective] = await Promise.all([
     fetchJson(`./data/${reportDate}/summary.json`),
     fetchJson(`./data/${reportDate}/contents.json`),
+    retrospectivePath
+      ? fetchJson(`./data/${retrospectivePath.replace(/^\.\//, "")}`)
+      : Promise.resolve(null),
   ]);
   state.reportDate = reportDate;
   state.summary = summary;
   state.records = contents.records || [];
+  state.douyinRetrospective = retrospective;
   state.error = null;
 };
 
@@ -277,6 +303,52 @@ const qualityBand = () => {
   return `<details class="quality-panel ${state.summary.status === "INCIDENT" ? "danger" : state.summary.status === "PARTIAL" ? "warning" : ""}"><summary><span>${escapeHtml(summary)}</span><span>查看详情</span></summary><div class="quality-detail">${escapeHtml(detail)}。缺失来源不参与确定比较；受限来源仅展示可验证字段。</div></details>`;
 };
 
+const observationScopeBand = () => {
+  const observation = state.summary.observationScope;
+  if (!observation) return "";
+  const scopes = new Map((observation.scopes || []).map((scope) => [scope.scopeId, scope]));
+  const contentScope = scopes.get("CONTENT_11");
+  const douyinScope = scopes.get("DOUYIN_14");
+  const unifiedScope = scopes.get("UNIFIED_25");
+  const rollingViews = state.summary.rolling30Days?.totals?.views;
+  const viewCoverage = rollingViews?.totalCount === 0
+    ? "30日无发布"
+    : Number.isInteger(rollingViews?.totalCount)
+      ? `播放/阅读已知 ${rollingViews.knownCount} / ${rollingViews.totalCount}篇`
+      : "播放/阅读覆盖待补";
+  const scopeCell = (scopeId, scope, note) => `<div data-observation-scope="${scopeId}" data-collected="${scope?.collectedAccounts ?? ""}" data-expected="${scope?.expectedAccounts ?? ""}" data-partial="${scope?.partialAccounts ?? ""}" data-coverage="${scope?.coverage ?? ""}">
+    <span>${escapeHtml(OBSERVATION_SCOPE_LABELS[scopeId])}</span>
+    <strong>${formatExact(scope?.collectedAccounts)} / ${formatExact(scope?.expectedAccounts)}</strong>
+    <small>${escapeHtml(note)}</small>
+  </div>`;
+  const unifiedCoverage = Number.isFinite(unifiedScope?.coverage)
+    ? `${(unifiedScope.coverage * 100).toFixed(0)}% 覆盖`
+    : "覆盖待确认";
+  return `<section class="observation-band" aria-label="三类账号观察范围">
+    ${scopeCell("CONTENT_11", contentScope, `${formatExact(contentScope?.partialAccounts)}个账号部分字段受限`)}
+    ${scopeCell("DOUYIN_14", douyinScope, douyinScope?.collectedAccounts === 0 ? "抖音今日未检测，缺失指标保持空值" : "按可用快照披露")}
+    ${scopeCell("UNIFIED_25", unifiedScope, unifiedCoverage)}
+    <div class="observation-metric"><span>指标覆盖</span><strong>${escapeHtml(viewCoverage)}</strong><small>缺失字段保持空值</small></div>
+  </section>`;
+};
+
+const dailyChangeBand = () => {
+  const points = state.summary.trends?.snapshotIncrementByScope?.CONTENT_11 || [];
+  const point = points.find((candidate) => candidate.date === state.reportDate);
+  if (!point || point.status === "BASELINE") return "";
+  return `<section class="daily-change-band" data-daily-change-scope="CONTENT_11" data-daily-change-date="${escapeHtml(point.date)}" aria-label="内容平台11当日变化">
+    <div class="daily-change-heading"><div><span>内容平台 11</span><strong>当日变化</strong></div><small>部分覆盖，仅描述已采集范围</small></div>
+    <div class="daily-change-grid">
+      <div data-daily-metric="views"><span>阅读新增</span><strong>${formatSignedExact(point.views)}</strong></div>
+      <div data-daily-metric="comparable"><span>可比较内容</span><strong>${formatExact(point.comparableCount)}篇</strong></div>
+      <div data-daily-metric="new"><span>新内容</span><strong>${formatExact(point.newContentCount)}篇</strong></div>
+      <div data-daily-metric="unknown"><span>未知</span><strong>${formatExact(point.unknownCount)}篇</strong></div>
+      <div data-daily-metric="coverage"><span>覆盖</span><strong>${Number.isFinite(point.coverage) ? `${(point.coverage * 100).toFixed(2)}%` : "暂无"}</strong></div>
+    </div>
+    <p>不代表全部25个账号的效果升降，也不用于因果判断。</p>
+  </section>`;
+};
+
 const executiveSummary = () => {
   const summary = state.summary;
   const totals = summary.totals;
@@ -290,7 +362,8 @@ const executiveSummary = () => {
   const opportunityText = best
     ? `${best.contentCount}篇内容中有${best.credibleScorableCount}篇可比较，${formatPerformance(best.trustedRelativeIndex)}。`
     : "尚无分类达到至少5篇可比较内容，暂不输出最佳分类。";
-  const riskTitle = `${summary.coverage.partialAccounts.length}个来源部分受限`;
+  const constrainedSources = summary.coverage.partialAccounts.length + summary.coverage.missingAccounts.length;
+  const riskTitle = constrainedSources ? `${constrainedSources}个来源待补或受限` : "当前范围来源完整";
   const riskText = `可比较内容${totals.credibleScorableCount}篇，共${totals.contentCount}篇；${totals.lowBaseCount}篇常规阅读量过小，${totals.fallbackCount}篇采用同平台同期参考。`;
   return `<section class="executive-summary" aria-label="管理摘要"><div class="executive-heading"><h2>今日结论</h2><span>${baseline ? "首次基线" : "连续快照"}</span></div><div class="executive-grid">
     <div><span>整体状态</span><strong>${escapeHtml(overallTitle)}</strong><p>${escapeHtml(overallText)}</p></div>
@@ -468,16 +541,25 @@ const renderPublishTrendPlot = (points, query, days) => {
     const left = x - slotWidth / 2;
     const tooltipAbsolute = Math.max(8, Math.min(width - 246, x - 119));
     const tooltipLeft = tooltipAbsolute - left;
-    const coverage = metricCoverageLabel(point.views);
+    const observationGap = point.status === "NOT_COLLECTED_AT_THAT_DATE"
+      ? "当日未采集"
+      : point.status === "NO_USABLE_SNAPSHOT" ? "等待完整交接" : null;
+    const coverage = observationGap || metricCoverageLabel(point.views);
     const detail = state === "empty"
       ? "当日无发布"
       : state === "unknown"
-        ? `发布${point.contentCount}篇 · 阅读数据未知`
+        ? observationGap || `发布${point.contentCount}篇 · 阅读数据未知`
         : `累计${formatExact(point.views.total)} · 常规${formatExact(point.views.median)}`;
+    const heading = observationGap || `${point.date.slice(5)} · 发布${point.contentCount}篇`;
+    if (observationGap) {
+      return `<span tabindex="0" class="trend-date-focus trend-gap-focus" style="left:${left.toFixed(2)}px;width:${slotWidth.toFixed(2)}px;--trend-tooltip-left:${tooltipLeft.toFixed(2)}px" data-trend-focus data-trend-gap="true" data-trend-date="${escapeHtml(point.date)}" aria-label="${escapeHtml(`${point.date}，${detail}`)}">
+        <span class="trend-date-tooltip"><strong>${escapeHtml(heading)}</strong><span>${escapeHtml(detail)}</span><small>历史空档不按零值绘制</small></span>
+      </span>`;
+    }
     const route = trendRoute(query, point.date);
     const aria = `${point.date}，${detail}，${coverage}，查看当天内容`;
     return `<button type="button" class="trend-point-link trend-date-focus" style="left:${left.toFixed(2)}px;width:${slotWidth.toFixed(2)}px;--trend-tooltip-left:${tooltipLeft.toFixed(2)}px" data-trend-focus data-trend-date="${escapeHtml(point.date)}" data-trend-route="${escapeHtml(route)}" data-route="${escapeHtml(route)}" aria-label="${escapeHtml(aria)}">
-      <span class="trend-date-tooltip"><strong>${escapeHtml(`${point.date.slice(5)} · 发布${point.contentCount}篇`)}</strong><span>${escapeHtml(detail)}</span><small>${escapeHtml(coverage)}</small></span>
+      <span class="trend-date-tooltip"><strong>${escapeHtml(heading)}</strong><span>${escapeHtml(detail)}</span><small>${escapeHtml(coverage)}</small></span>
     </button>`;
   }).join("");
   const peakMedianText = peakMedian
@@ -550,9 +632,12 @@ const categoryComposition = (query) => {
     <div class="trend-disclosure">两期账号构成、内容发布时间与指标覆盖不同；当前累计数据只反映采样时可见值，不代表内容效果升降，也不用于因果判断。</div></section>`;
 };
 
-const renderIncrementTrend = (query, days, dateKeys, sourceId = null) => {
+const renderIncrementTrend = (query, days, dateKeys, sourceId = null, scopeId = null) => {
+  const accountSeries = scopeId
+    ? state.summary.trends?.accountSnapshotIncrementByScope?.[scopeId]
+    : state.summary.trends?.accountSnapshotIncrement;
   const sourceSeries = sourceId
-    ? (state.summary.trends?.accountSnapshotIncrement || []).map((point) => {
+    ? (accountSeries || []).map((point) => {
       const account = point.accounts?.find((candidate) => candidate.sourceId === sourceId);
       return account ? { ...account, date: point.date, periodKind: point.periodKind } : null;
     }).filter(Boolean)
@@ -607,8 +692,11 @@ const trendChart = (query) => {
   </section>`;
 };
 
-const accountIncrementPoints = (sourceId, dateKeys) => {
-  const byDate = new Map((state.summary.trends?.accountSnapshotIncrement || []).map((point) => {
+const accountIncrementPoints = (sourceId, dateKeys, scopeId) => {
+  const scopeSeries = state.summary.trends?.accountSnapshotIncrementByScope?.[scopeId]
+    || state.summary.trends?.accountSnapshotIncrement
+    || [];
+  const byDate = new Map(scopeSeries.map((point) => {
     const account = point.accounts?.find((candidate) => candidate.sourceId === sourceId);
     return [point.date, account ? { ...account, date: point.date, periodKind: point.periodKind } : null];
   }));
@@ -656,25 +744,35 @@ const accountTrendBoard = (query) => {
   if (!contract?.accounts?.length) return "";
   const dateKeys = contract.accounts[0].points.map((point) => point.date);
   const mode = query.get("accountTrendMode") === "increment" ? "increment" : "cohort";
+  const observation = state.summary.observationScope;
+  const requestedScope = query.get("accountTrendScope");
+  const scopeId = OBSERVATION_SCOPE_LABELS[requestedScope]
+    ? requestedScope
+    : observation?.activeScopeId || "CONTENT_11";
+  const scope = observation?.scopes?.find((candidate) => candidate.scopeId === scopeId);
+  const scopeSourceIds = new Set(scope?.sourceIds || contract.accounts.map((account) => account.sourceId));
   const activeSourceId = query.get("accountTrend") || "";
   const rollingBySource = new Map((state.summary.rolling30Days?.accounts || []).map((account) => [account.sourceId, account]));
   const platformLabels = new Map(state.summary.platforms.map((platform) => [platform.platformId, platform.platformLabel]));
-  const modeControls = `<div class="segmented" aria-label="账号月度趋势口径"><button type="button" data-account-trend-mode="cohort" aria-pressed="${mode === "cohort"}">按发布日期</button><button type="button" data-account-trend-mode="increment" aria-pressed="${mode === "increment"}">真实新增</button></div>`;
-  const rows = contract.accounts.map((account) => {
+  const modeControls = `<div class="trend-controls"><div class="segmented" aria-label="账号观察范围">${Object.entries(OBSERVATION_SCOPE_LABELS).map(([value, label]) => `<button type="button" data-account-trend-scope="${value}" aria-pressed="${scopeId === value}">${label}</button>`).join("")}</div><div class="segmented" aria-label="账号月度趋势口径"><button type="button" data-account-trend-mode="cohort" aria-pressed="${mode === "cohort"}">按发布日期</button><button type="button" data-account-trend-mode="increment" aria-pressed="${mode === "increment"}">真实新增</button></div></div>`;
+  const scopedAccounts = contract.accounts.filter((account) => scopeSourceIds.has(account.sourceId));
+  const rows = scopedAccounts.map((account) => {
     const summary = rollingBySource.get(account.sourceId);
     const availability = metricAvailabilityNote(summary?.metricAvailability);
-    const points = mode === "cohort" ? account.points : accountIncrementPoints(account.sourceId, dateKeys);
+    const points = mode === "cohort" ? account.points : accountIncrementPoints(account.sourceId, dateKeys, scopeId);
     const expanded = account.sourceId === activeSourceId;
     const routeQuery = new URLSearchParams(query);
     if (expanded) routeQuery.delete("accountTrend");
     else routeQuery.set("accountTrend", account.sourceId);
     routeQuery.set("accountTrendMode", mode);
+    routeQuery.set("accountTrendScope", scopeId);
     const detailQuery = new URLSearchParams(query);
     detailQuery.set("source", account.sourceId);
+    detailQuery.set("accountTrendScope", scopeId);
     ["platform", "category", "comparison", "publishedDate", "search"].forEach((key) => detailQuery.delete(key));
     const expandedPlot = mode === "cohort"
       ? renderPublishTrendPlot(account.points, detailQuery, 30)
-      : renderIncrementTrend(detailQuery, 30, dateKeys, account.sourceId);
+      : renderIncrementTrend(detailQuery, 30, dateKeys, account.sourceId, scopeId);
     return `<article class="account-trend-row${expanded ? " is-expanded" : ""}">
       <button type="button" class="account-trend-summary" data-route="${escapeHtml(makeRoute("overview", null, routeQuery))}" aria-expanded="${expanded}" aria-label="${escapeHtml(`${expanded ? "收起" : "展开"}${platformLabels.get(account.platformId) || account.platformId}${account.accountName}30日趋势`)}">
         <span class="account-trend-identity"><strong>${escapeHtml(platformLabels.get(account.platformId) || account.platformId)}</strong><small>${escapeHtml(account.accountName)}</small></span>
@@ -686,10 +784,144 @@ const accountTrendBoard = (query) => {
       ${expanded ? `<div class="account-trend-expanded"><div class="account-trend-expanded-head"><strong>展开30日三轨图</strong><span>${mode === "cohort" ? "当前累计阅读、单篇常规阅读与发布量" : "仅展示相邻完整快照的真实新增"}</span></div>${expandedPlot}</div>` : ""}
     </article>`;
   }).join("");
-  return `<section class="section account-trends"><div class="section-header"><div><h2>账号月度走势</h2><span>${escapeHtml(contract.window.from)} 至 ${escapeHtml(contract.window.to)} · 11个账号共享日期轴</span></div>${modeControls}</div>
+  return `<section class="section account-trends" data-current-account-trend-scope="${scopeId}" data-account-trend-count="${scopedAccounts.length}"><div class="section-header"><div><h2>账号月度走势</h2><span>${escapeHtml(contract.window.from)} 至 ${escapeHtml(contract.window.to)} · ${scopedAccounts.length}个账号共享日期轴 · ${escapeHtml(OBSERVATION_SCOPE_LABELS[scopeId])}</span></div>${modeControls}</div>
     <div class="account-trend-list">${rows}</div>
-    <div class="trend-footnote">按发布日期展示截至本次采样的当前表现；真实新增仅来自相邻两次11账号完整快照，缺失日期不补0。</div>
+    <div class="trend-footnote">按发布日期展示截至本次采样的当前表现；真实新增只比较同一观察范围的相邻完整快照。首个范围快照为基线，历史未采集日期保持空档，不补0也不跨范围连线。</div>
   </section>`;
+};
+
+const monitoredMetricCell = (metric, observationStatus) => {
+  if (observationStatus === "NOT_COLLECTED_AT_THAT_DATE") {
+    return "<strong>当日未采集</strong><small>历史不回填</small>";
+  }
+  if (observationStatus !== "COLLECTED") {
+    return "<strong>当日无可用快照</strong><small>未补0</small>";
+  }
+  if (metric?.totalCount === 0) return "<strong>0</strong><small>30日无发布</small>";
+  const coverage = Number.isInteger(metric?.totalCount)
+    ? `已知${metric.knownCount} / ${metric.totalCount}篇`
+    : "覆盖待确认";
+  return `<strong>${formatMetricValue(metric?.total, metric)}</strong><small>${escapeHtml(coverage)}</small>`;
+};
+
+const douyinMonitoringBoard = () => {
+  const monitoring = state.summary.douyinMonitoring;
+  if (!monitoring?.accounts?.length) return "";
+  const statusLabel = monitoring.status === "COMPLETE"
+    ? "14/14 完整"
+    : monitoring.status === "NOT_COLLECTED_AT_THAT_DATE"
+      ? "当日未采集"
+      : `${monitoring.accounts.filter((account) => account.observationStatus === "COLLECTED").length}/14 有可用快照`;
+  const rows = monitoring.accounts.map((account) => `<tr>
+    <td><strong>抖音</strong><small>${escapeHtml(account.accountName)}</small><small>抖音号 ${escapeHtml(account.accountId)}</small></td>
+    <td class="number"><strong>${formatExact(account.contentCount)}</strong><small>${account.observationStatus === "COLLECTED" ? "近30日" : account.observationStatus === "NOT_COLLECTED_AT_THAT_DATE" ? "当日未采集" : "当日无可用快照"}</small></td>
+    <td class="number">${monitoredMetricCell(account.views, account.observationStatus)}</td>
+    <td class="number">${monitoredMetricCell(account.likes, account.observationStatus)}</td>
+    <td class="number">${monitoredMetricCell(account.comments, account.observationStatus)}</td>
+    <td class="number">${monitoredMetricCell(account.collects, account.observationStatus)}</td>
+    <td class="number">${monitoredMetricCell(account.shares, account.observationStatus)}</td>
+    <td><strong>${account.observationStatus === "COLLECTED" ? "已采集" : account.observationStatus === "NOT_COLLECTED_AT_THAT_DATE" ? "当日未采集" : "无可用快照"}</strong><small>${account.observationStatus === "COLLECTED" ? "结构化公开元数据" : "不作为零值"}</small></td>
+  </tr>`).join("");
+  return `<section class="section douyin-monitoring"><div class="section-header"><div><h2>抖音账号监测</h2><span>14个账号 · 播放、点赞、评论、收藏、分享分别披露覆盖</span></div><span>${escapeHtml(statusLabel)}</span></div>
+    <div class="table-scroll"><table class="data-table douyin-monitoring-table"><thead><tr><th>平台 / 账号</th><th class="number">30日发布</th><th class="number">播放</th><th class="number">点赞</th><th class="number">评论</th><th class="number">收藏</th><th class="number">分享</th><th>采集状态</th></tr></thead><tbody>${rows}</tbody></table></div>
+    <div class="trend-footnote">收藏与分享仅属于抖音范围，不混入其他平台总量；平台未提供或尚未采集的字段保持空档。</div>
+  </section>`;
+};
+
+const retrospectiveMetric = (account, metricName) => {
+  const metrics = account.points.map((point) => point[metricName]).filter(Boolean);
+  const knownCount = metrics.reduce((sum, metric) => sum + metric.knownCount, 0);
+  const totalCount = metrics.reduce((sum, metric) => sum + metric.totalCount, 0);
+  return {
+    total: knownCount ? metrics.reduce((sum, metric) => sum + (Number.isFinite(metric.total) ? metric.total : 0), 0)
+      : totalCount === 0 ? 0 : null,
+    knownCount,
+    totalCount,
+  };
+};
+
+const retrospectiveRoute = (query, sourceId, date) => {
+  const next = new URLSearchParams(query);
+  next.set("date", state.reportDate);
+  next.set("douyinRetrospective", sourceId);
+  next.set("douyinDate", date);
+  return makeRoute("overview", null, next);
+};
+
+const renderDouyinRetrospectiveMiniTrend = (account, query) => {
+  const width = 720;
+  const height = 92;
+  const left = 10;
+  const right = 10;
+  const top = 10;
+  const bottom = 16;
+  const plotWidth = width - left - right;
+  const plotHeight = height - top - bottom;
+  const x = (index) => left + (plotWidth * index) / Math.max(1, account.points.length - 1);
+  const viewValues = account.points.map((point) => point.views.total);
+  const maxViews = Math.max(1, ...viewValues.filter(Number.isFinite));
+  const maxVolume = Math.max(1, ...account.points.map((point) => point.contentCount));
+  let line = "";
+  let open = false;
+  account.points.forEach((point, index) => {
+    if (!Number.isFinite(point.views.total)) {
+      open = false;
+      return;
+    }
+    const y = top + plotHeight - (point.views.total / maxViews) * plotHeight;
+    line += `${open ? " L" : " M"}${x(index).toFixed(2)} ${y.toFixed(2)}`;
+    open = true;
+  });
+  const selectedSourceId = query.get("douyinRetrospective");
+  const selectedDate = query.get("douyinDate");
+  const marks = account.points.map((point, index) => {
+    const pointX = x(index);
+    const barHeight = (point.contentCount / maxVolume) * 22;
+    const pointY = Number.isFinite(point.views.total)
+      ? top + plotHeight - (point.views.total / maxViews) * plotHeight
+      : null;
+    const selected = selectedSourceId === account.sourceId && selectedDate === point.date;
+    const label = `${point.date}，发布 ${point.contentCount} 条，播放 ${formatMetricValue(point.views.total, point.views)}，已知 ${point.views.knownCount}/${point.views.totalCount}`;
+    return `<a href="${escapeHtml(retrospectiveRoute(query, account.sourceId, point.date))}" aria-label="${escapeHtml(label)}">
+      <rect class="douyin-retro-volume${selected ? " is-selected" : ""}" x="${(pointX - 4).toFixed(2)}" y="${(height - bottom - barHeight).toFixed(2)}" width="8" height="${Math.max(1, barHeight).toFixed(2)}"><title>${escapeHtml(label)}</title></rect>
+      ${pointY === null ? `<path class="douyin-retro-missing" d="M${(pointX - 3).toFixed(2)} ${(top + plotHeight / 2 - 3).toFixed(2)}l6 6m0-6l-6 6" />` : `<circle class="douyin-retro-point${selected ? " is-selected" : ""}" cx="${pointX.toFixed(2)}" cy="${pointY.toFixed(2)}" r="${selected ? 4 : 2.5}"><title>${escapeHtml(label)}</title></circle>`}
+    </a>`;
+  }).join("");
+  return `<div class="douyin-retro-scroll" tabindex="0" aria-label="${escapeHtml(account.accountName)} 30日发布与播放回溯图"><svg class="douyin-retro-chart" viewBox="0 0 ${width} ${height}" role="img">
+    <line class="douyin-retro-grid" x1="${left}" y1="${height - bottom}" x2="${width - right}" y2="${height - bottom}" />
+    <path class="douyin-retro-line" d="${line.trim()}" />${marks}
+  </svg></div>`;
+};
+
+const retrospectiveSelection = (artifact, query) => {
+  const account = artifact.accounts.find((item) => item.sourceId === query.get("douyinRetrospective"));
+  const point = account?.points.find((item) => item.date === query.get("douyinDate"));
+  if (!account || !point) return "";
+  const metricCell = (label, metric) => `<div><span>${label}</span><strong>${formatMetricValue(metric.total, metric)}</strong><small>已知 ${metric.knownCount}/${metric.totalCount}</small></div>`;
+  return `<div class="douyin-retro-selection" aria-live="polite"><div><span>账号 / 发布日</span><strong>${escapeHtml(account.accountName)}</strong><small>${escapeHtml(point.date)} · 发布 ${formatExact(point.contentCount)} 条</small></div>
+    ${metricCell("播放", point.views)}${metricCell("点赞", point.likes)}${metricCell("评论", point.comments)}${metricCell("收藏", point.collects)}${metricCell("分享", point.shares)}</div>`;
+};
+
+const douyinRetrospectiveBoard = (query) => {
+  const artifact = state.douyinRetrospective;
+  if (!artifact || artifact.contract !== "douyinHistoricalRetrospective") return "";
+  if (artifact.status !== "COMPLETE") {
+    return `<section class="section douyin-retrospective" data-retrospective-status="AWAITING_COMPLETE_HANDOFF" data-retrospective-count="0"><div class="section-header"><div><h2>抖音历史发布回溯</h2><span>14 个账号 · 最近 30 个北京时间自然日</span></div><span>等待 14/14 完整交接</span></div>
+      <div class="trend-coverage-warning">当前没有可验证的 14 账号完整快照。历史日报继续显示“当日未采集”，不会把缺失值补成 0，也不会用当前累计值反推过去每日表现。</div></section>`;
+  }
+  const rows = artifact.accounts.map((account) => {
+    const views = retrospectiveMetric(account, "views");
+    const published = account.points.reduce((sum, point) => sum + point.contentCount, 0);
+    const selected = query.get("douyinRetrospective") === account.sourceId;
+    return `<article class="douyin-retro-row${selected ? " is-selected" : ""}"><div class="douyin-retro-identity"><strong>${escapeHtml(account.accountName)}</strong><small>抖音号 ${escapeHtml(account.accountId)}</small></div>
+      <div class="douyin-retro-stat"><strong>${formatExact(published)}</strong><small>30 日发布</small></div>
+      <div class="douyin-retro-stat"><strong>${formatMetricValue(views.total, views)}</strong><small>当前可见播放 · ${views.knownCount}/${views.totalCount}</small></div>
+      ${renderDouyinRetrospectiveMiniTrend(account, query)}</article>`;
+  }).join("");
+  return `<section class="section douyin-retrospective" data-retrospective-status="COMPLETE" data-retrospective-count="${artifact.accounts.length}"><div class="section-header"><div><h2>抖音历史发布回溯</h2><span>${escapeHtml(artifact.window.from)} 至 ${escapeHtml(artifact.window.to)} · 14 个账号</span></div><span>观察截至 ${escapeHtml(formatFullDateTime(artifact.observedTo))}</span></div>
+    <div class="trend-disclosure">横轴按视频真实发布时间分桶；播放、点赞、评论、收藏和分享均为后续 ${escapeHtml(formatFullDateTime(artifact.observedTo))} 可见的累计值，不代表历史当天采样值，不参与旧日报总量、分类、覆盖率、高表现或真实新增计算。</div>
+    ${retrospectiveSelection(artifact, query)}<div class="douyin-retro-list">${rows}</div>
+    <div class="trend-footnote">蓝线为按发布日期分组的当前可见播放，浅色柱为发布量。空日只有在 14/14 身份、分页和日期覆盖完整后才记为 0；字段缺失仍保持空值。</div></section>`;
 };
 
 const rollingAccountTable = () => {
@@ -754,7 +986,7 @@ const reportDateSwitcher = () => {
   return `<label class="report-switcher" for="report-date-switcher"><span>日报日期</span><select id="report-date-switcher" data-report-date>${options}</select><small>${reports.length}期日报</small></label>`;
 };
 
-const heading = (title, description) => `<div class="page-heading"><div><h1>${escapeHtml(title)}</h1><p>${escapeHtml(description)}</p></div><div class="heading-actions">${reportDateSwitcher()}<span class="status-chip ${statusClass(state.summary.status)}">${statusLabel(state.summary.status)}</span></div></div>`;
+const heading = (title, description) => `<div class="page-heading"><div><h1>${escapeHtml(title)}</h1><p>${escapeHtml(description)}</p></div><div class="heading-actions">${reportDateSwitcher()}<span class="status-chip ${statusClass(state.summary.status)}">${statusLabel(state.summary.status)}</span></div></div>${observationScopeBand()}`;
 
 const renderOverview = (route) => {
   const filtered = filterRecords(state.records, route.query);
@@ -762,7 +994,7 @@ const renderOverview = (route) => {
     ? "首次累计基线"
     : state.summary.period.kind === "WEEKEND_72H" ? "周五至周日合并" : "连续快照区间";
   app.innerHTML = `${heading("经营数据总览", `${state.summary.reportDate} / ${periodLabel}`)}
-    ${executiveSummary()}${metricStrip()}
+    ${dailyChangeBand()}${executiveSummary()}${metricStrip()}
     <div class="dashboard-grid">
       <section class="section"><div class="section-header"><h2>分类表现与发布量</h2><span>同类表现仅使用可比较样本</span></div>${barList(state.summary.categories, { labelKey: "categoryLabel", valueKey: "trustedRelativeIndex", colorKey: "categoryId", routeView: "category", routeIdKey: "categoryId" })}</section>
       <section class="section"><div class="section-header"><h2>数据表现优秀内容</h2><span>实际数据优先 · 点击查看依据</span></div>${topSignals(filtered)}</section>
@@ -771,6 +1003,8 @@ const renderOverview = (route) => {
     <section class="section operation-section"><div class="section-header"><h2>运营筛选</h2><span>平台、账号、分类、发布日期与比较质量</span></div>${renderFilters(route.query, { resultCount: filtered.length })}</section>
     ${trendChart(route.query)}
     ${categoryComposition(route.query)}
+    ${douyinRetrospectiveBoard(route.query)}
+    ${douyinMonitoringBoard()}
     ${accountTrendBoard(route.query)}
     ${rollingAccountTable()}
     <section class="section"><div class="section-header"><h2>内容明细</h2><span>${filtered.length} 篇</span></div>${renderTable(filtered.slice(0, 20), route.query)}</section>`;
@@ -820,6 +1054,7 @@ const renderContent = (route) => {
   const backQuery = new URLSearchParams(route.query);
   backQuery.set("date", state.reportDate);
   app.innerHTML = `<div class="detail-title"><div class="detail-meta"><span>${escapeHtml(record.platformLabel)}</span><span>${escapeHtml(record.accountName)}</span><span>${escapeHtml(CATEGORY_LABELS[record.categoryId] || record.categoryId)}</span></div><h1>${escapeHtml(record.title)}</h1><div class="row-actions">${record.publicUrl ? `<a class="text-action" href="${escapeHtml(record.publicUrl)}" target="_blank" rel="noopener noreferrer">打开原文</a>` : ""}${record.adminUrl ? `<a class="text-action" href="${escapeHtml(record.adminUrl)}" target="_blank" rel="noopener noreferrer" title="需要平台登录">打开后台</a>` : ""}<button class="button-action" data-route="${escapeHtml(makeRoute("contents", null, backQuery))}">返回明细</button></div></div>
+    ${observationScopeBand()}
     <div class="detail-grid">
       <section class="section"><div class="section-header"><h2>数据表现</h2><span>${escapeHtml(performanceLabel)}</span></div><dl class="definition-list">
         <div class="definition-row"><dt>累计播放/阅读</dt><dd>${formatExact(record.metrics.views)}</dd></div>
@@ -914,6 +1149,10 @@ app.addEventListener("click", (event) => {
   const trendFocusTarget = event.target.closest("[data-trend-focus]");
   if (trendFocusTarget) {
     event.preventDefault();
+    if (trendFocusTarget.dataset.trendGap === "true") {
+      setTrendDateFocus(trendFocusTarget, true);
+      return;
+    }
     const touchLike = window.matchMedia("(hover: none)").matches;
     if (touchLike && !trendFocusTarget.classList.contains("is-selected")) {
       setTrendDateFocus(trendFocusTarget, true);
@@ -936,6 +1175,13 @@ app.addEventListener("click", (event) => {
   if (trendModeTarget) setQuery("trendMode", trendModeTarget.dataset.trendMode);
   const accountTrendModeTarget = event.target.closest("[data-account-trend-mode]");
   if (accountTrendModeTarget) setQuery("accountTrendMode", accountTrendModeTarget.dataset.accountTrendMode);
+  const accountTrendScopeTarget = event.target.closest("button[data-account-trend-scope]");
+  if (accountTrendScopeTarget) {
+    const route = routeState();
+    route.query.set("accountTrendScope", accountTrendScopeTarget.dataset.accountTrendScope);
+    route.query.delete("accountTrend");
+    location.hash = makeRoute(route.view, route.id, route.query);
+  }
   const categoryTarget = event.target.closest("[data-category-trend]");
   if (categoryTarget) {
     const selected = routeState().query.get("category");
