@@ -131,6 +131,19 @@
       gap: 12px;
       margin: 12px 0;
     }
+    .brand-metrics-section { padding-top: 24px; padding-bottom: 28px; }
+    .brand-metrics-section .executive-grid { margin-bottom: 0; }
+    .brand-metrics-kicker {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      border-left: 4px solid var(--red);
+      padding-left: 9px;
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 850;
+    }
+    .brand-metrics-title { margin-top: 7px; }
     .exec-card {
       position: relative;
       display: grid;
@@ -395,6 +408,17 @@
 
     <div class="executive-grid" id="kpiGrid"></div>
 
+    <section class="brand-metrics-section" id="feiguaMetricsSection" aria-labelledby="feiguaMetricsTitle">
+      <div class="section-head">
+        <div>
+          <div class="brand-metrics-kicker">FEIGUA DATA</div>
+          <h2 class="brand-metrics-title" id="feiguaMetricsTitle">飞瓜数据表现</h2>
+        </div>
+        <div class="section-note">同口径两轮对比 · 第二轮冻结终版</div>
+      </div>
+      <div class="executive-grid" id="feiguaGrid"></div>
+    </section>
+
     <section class="action-panel" id="actionPanel">
       <div>
         <h2>后续优化建议</h2>
@@ -502,6 +526,8 @@
       const baselineMetrics = authoritative.baseline;
       const round2Metrics = authoritative.round2;
       const metricDeltas = authoritative.deltaPctPoints;
+      const feiguaMetrics = window.GEO_ROUND2_FEIGUA_METRICS;
+      if (!feiguaMetrics) throw new Error('飞瓜数据指标未加载');
       const esc = value => String(value ?? '').replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
       const pct = value => value === null || value === undefined || value === '' ? '待完成' : `${Number(value).toFixed(1)}%`;
       const number = value => value === null || value === undefined || value === '' ? '—' : Number(value).toLocaleString('zh-CN');
@@ -518,9 +544,10 @@
       const metricPct = metric => `${Number(metric.ratePct).toFixed(2)}%`;
       const metricCount = metric => `${number(metric.count)}/${number(metric.denominator)}`;
       const metricDelta = value => `${Number(value) > 0 ? '+' : ''}${Number(value).toFixed(2)}%`;
-      const metricHelp = metric => {
-        const tooltipId = `metric-tip-${metric.ruleVersion}`;
-        return `<span class="metric-help-wrap"><button class="metric-help" type="button" aria-label="${esc(metric.label)}口径说明" aria-describedby="${esc(tooltipId)}">i</button><span class="metric-tooltip" id="${esc(tooltipId)}" role="tooltip">${esc(metric.definition)}</span></span>`;
+      const metricHelp = (metric, tooltipKey = '') => {
+        const tooltipId = tooltipKey ? `metric-tip-${tooltipKey}` : `metric-tip-${metric.ruleVersion}`;
+        const tooltipText = `${metric.definition}；分母：${number(metric.denominator)}；规则版本：${metric.ruleVersion}`;
+        return `<span class="metric-help-wrap"><button class="metric-help" type="button" aria-label="${esc(metric.label)}口径说明" aria-describedby="${esc(tooltipId)}">i</button><span class="metric-tooltip" id="${esc(tooltipId)}" role="tooltip">${esc(tooltipText)}</span></span>`;
       };
       const makeSiblingHref = target => {
         const path = window.location.pathname;
@@ -548,8 +575,8 @@
       document.getElementById('briefStatusNote').textContent = '全量复测 · 最终结果';
 
       const evidenceRows = rows => `<ul class="evidence-list">${rows.map(([label, value]) => `<li><span>${esc(label)}</span><span>${esc(value)}</span></li>`).join('')}</ul>`;
-      const executiveCard = ({ title, tone, badge, metric, count, baseline, change, rule, readout, contract }) => `<article class="exec-card ${tone}">
-        <div class="exec-top"><div class="exec-heading"><div class="exec-title">${esc(title)}</div>${metricHelp(contract)}</div><span class="status-chip ${tone}">${esc(badge)}</span></div>
+      const executiveCard = ({ title, tone, badge, metric, count, baseline, change, rule, readout, contract, tooltipKey }) => `<article class="exec-card ${tone}">
+        <div class="exec-top"><div class="exec-heading"><div class="exec-title">${esc(title)}</div>${metricHelp(contract, tooltipKey)}</div><span class="status-chip ${tone}">${esc(badge)}</span></div>
         <div><div class="exec-main">${esc(metric)}</div><div class="exec-sub">${esc(count)}</div></div>
         ${evidenceRows([['第一轮基线', baseline], ['变化', change], ['统计口径', rule]])}
         <div class="exec-bottom">${esc(readout)}</div>
@@ -600,6 +627,68 @@
         }
       ];
       document.getElementById('kpiGrid').innerHTML = cards.map(executiveCard).join('');
+
+      const feiguaBaseline = feiguaMetrics.baseline;
+      const feiguaRound2 = feiguaMetrics.round2;
+      const feiguaDeltas = feiguaMetrics.deltaPctPoints;
+      const feiguaContract = (key, label, definition) => ({
+        ...feiguaRound2[key],
+        label,
+        denominator: key === 'rank' ? feiguaRound2.rank.count : feiguaRound2[key].denominator,
+        definition,
+      });
+      const pointDelta = value => `${Number(value) > 0 ? '+' : ''}${Number(value).toFixed(2)} 个百分点`;
+      const feiguaCards = [
+        {
+          title: '提及率', tone: 'info', badge: '可见度提升',
+          metric: metricPct(feiguaRound2.mention), count: `${metricCount(feiguaRound2.mention)} 条有效样本`,
+          baseline: `${metricPct(feiguaBaseline.mention)} · ${metricCount(feiguaBaseline.mention)}`,
+          change: pointDelta(feiguaDeltas.mention), rule: feiguaRound2.mention.ruleVersion,
+          readout: '第二轮飞瓜数据品牌可见度较第一轮提升。',
+          contract: feiguaContract('mention', '提及率', '有效回答的工具推荐顺序中出现飞瓜数据的样本数 / 全部有效样本数'), tooltipKey: 'feigua-mention',
+        },
+        {
+          title: '普通首推率', tone: 'risk', badge: '首推下降',
+          metric: metricPct(feiguaRound2.ordinaryFirst), count: `${metricCount(feiguaRound2.ordinaryFirst)} 条有效样本`,
+          baseline: `${metricPct(feiguaBaseline.ordinaryFirst)} · ${metricCount(feiguaBaseline.ordinaryFirst)}`,
+          change: pointDelta(feiguaDeltas.ordinaryFirst), rule: feiguaRound2.ordinaryFirst.ruleVersion,
+          readout: '原始推荐顺序中的第一推荐占比较第一轮下降。',
+          contract: feiguaContract('ordinaryFirst', '普通首推率', '原始工具推荐顺序中飞瓜数据位于第一位的样本数 / 全部有效样本数'), tooltipKey: 'feigua-ordinary-first',
+        },
+        {
+          title: '有效首推率', tone: 'risk', badge: '第三方首位下降',
+          metric: metricPct(feiguaRound2.effectiveFirst), count: `${metricCount(feiguaRound2.effectiveFirst)} 条存在第三方候选的回答`,
+          baseline: `${metricPct(feiguaBaseline.effectiveFirst)} · ${metricCount(feiguaBaseline.effectiveFirst)}`,
+          change: pointDelta(feiguaDeltas.effectiveFirst), rule: feiguaRound2.effectiveFirst.ruleVersion,
+          readout: '移除抖音官方工具后，飞瓜数据在第三方候选中的首位占比下降。',
+          contract: feiguaContract('effectiveFirst', '有效首推率', '移除抖音官方工具后，飞瓜数据位于剩余第三方候选第一位的样本数 / 存在可识别第三方候选的样本数'), tooltipKey: 'feigua-effective-first',
+        },
+        {
+          title: '严格优势表达率', tone: 'info', badge: '优势表达提升',
+          metric: metricPct(feiguaRound2.advantageExpression), count: `${metricCount(feiguaRound2.advantageExpression)} 条有效样本`,
+          baseline: `${metricPct(feiguaBaseline.advantageExpression)} · ${metricCount(feiguaBaseline.advantageExpression)}`,
+          change: pointDelta(feiguaDeltas.advantageExpression), rule: feiguaRound2.advantageExpression.ruleVersion,
+          readout: '明确归属于飞瓜数据的正向能力、适配性、推荐理由或比较优势表达增加。',
+          contract: feiguaContract('advantageExpression', '严格优势表达率', '回答把正向能力、适配性、推荐理由或比较优势明确归属于飞瓜数据的样本数 / 全部有效样本数；仅品牌提及、并列推荐、其他品牌优势或负向表述不计'), tooltipKey: 'feigua-advantage-expression',
+        },
+        {
+          title: '前三率', tone: 'risk', badge: '前三占比下降',
+          metric: metricPct(feiguaRound2.top3), count: `${metricCount(feiguaRound2.top3)} 条有效样本`,
+          baseline: `${metricPct(feiguaBaseline.top3)} · ${metricCount(feiguaBaseline.top3)}`,
+          change: pointDelta(feiguaDeltas.top3), rule: feiguaRound2.top3.ruleVersion,
+          readout: '飞瓜数据进入原始推荐顺序前三的占比较第一轮下降。',
+          contract: feiguaContract('top3', '前三率', '飞瓜数据在原始工具推荐顺序中进入前三的样本数 / 全部有效样本数'), tooltipKey: 'feigua-top3',
+        },
+        {
+          title: '平均排名', tone: 'risk', badge: '数值越低越好',
+          metric: preciseRank(feiguaRound2.rank.average), count: `${number(feiguaRound2.rank.count)} 条提及样本`,
+          baseline: `${preciseRank(feiguaBaseline.rank.average)} · ${number(feiguaBaseline.rank.count)} 条`,
+          change: `+${preciseRank(feiguaDeltas.rank)} · 变差`, rule: feiguaRound2.rank.ruleVersion,
+          readout: '平均排名数值上升，推荐位置较第一轮后移。',
+          contract: feiguaContract('rank', '平均排名', '仅在提到飞瓜数据的样本中计算其平均工具顺序排名，数值越低越好'), tooltipKey: 'feigua-average-rank',
+        },
+      ];
+      document.getElementById('feiguaGrid').innerHTML = feiguaCards.map(executiveCard).join('');
       document.getElementById('actionNote').textContent = `第二轮 ${number(summary.valid_sample_count)}/${number(summary.planned_sample_count)} 条已完成，六项指标均使用冻结终版口径。`;
       document.getElementById('actionList').innerHTML = [
         '补强“为什么首推蝉妈妈”的推荐理由',
