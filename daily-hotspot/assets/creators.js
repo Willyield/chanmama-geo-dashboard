@@ -1331,7 +1331,7 @@ function renderCreatorCaptureStatus(data) {
   const pagesLoaded = numberOrNull(summary.pagesLoaded);
   const pagesTotal = numberOrNull(summary.pagesTotal);
   const hasPageBreakdown = evidenceComplete
-    && capture.captureType === "SUPPLEMENT_CAPTURE"
+    && ["LATE_MAIN_CAPTURE", "SUPPLEMENT_CAPTURE"].includes(capture.captureType)
     && !capture.poolMatch
     && externalSources.length > 0
     && pagesLoaded === pagesTotal
