@@ -49,7 +49,7 @@
         '<a href="' + href("./#method") + '">方法与口径</a>' +
         '<details data-active="' + (section === "more") + '"><summary>更多</summary><div class="geo-shell-submenu">' +
           submenuLink("./chanjing-ai/", "蝉镜 AI", "双端观察") +
-          submenuLink("./chanquanquan-geo/", "蝉圈圈 GEO", "阶段检查点") +
+          submenuLink("./chanquanquan-geo/", "蝉圈圈 GEO", "365/730 · 非最终 FULL") +
         '</div></details>' +
       '</nav>' +
     '</div>';
