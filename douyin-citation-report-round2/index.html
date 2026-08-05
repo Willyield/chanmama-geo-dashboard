@@ -80,6 +80,15 @@
     .notice { margin-top: 18px; padding: 18px 20px; border-left: 4px solid var(--amber); background: #fffaf0; color: #624717; }
     .panel { padding: 20px; border: 1px solid var(--line); background: var(--paper); }
     .panel h3 { margin: 0 0 14px; font-size: 18px; }
+    .method-note { margin: 0 0 14px; padding: 14px 16px; border-left: 4px solid var(--blue); background: #f2f7fd; }
+    .method-note > strong { display: block; margin-bottom: 8px; color: #174b86; }
+    .method-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 24px; color: #475569; font-size: 13px; }
+    .method-grid p { margin: 0; }
+    .method-grid b { color: var(--ink); }
+    .comparison-overview-table { min-width: 1120px; }
+    .metric-stack { display: grid; justify-items: end; gap: 2px; min-width: 112px; }
+    .metric-primary { color: var(--ink); font: 700 14px/1.35 var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .metric-secondary { color: var(--muted); font-size: 12px; white-space: nowrap; }
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .bar-list { display: grid; gap: 13px; }
     .bar-row { display: grid; grid-template-columns: 150px minmax(120px, 1fr) 72px; gap: 12px; align-items: center; }
@@ -160,6 +169,7 @@
       .answer-item .grade { grid-column: 2; justify-self: start; }
       .download-list { grid-template-columns: 1fr; }
       .download-item:nth-child(odd), .download-item:nth-child(even) { padding-left: 0; padding-right: 0; border-left: 0; }
+      .method-grid { grid-template-columns: 1fr; }
     }
     @media print {
       .page-bar, .hero-actions, .side-nav, .filters, .pagination, .back-top { display: none !important; }
@@ -228,7 +238,7 @@
 
       <section class="report-section" id="comparison">
         <div class="section-head"><div><span class="section-number">02</span><h2>第一轮 vs 第二轮引用源</h2></div><p class="section-note">两轮均使用完整 576 个样本。绝对量、样本率和问题率按各自冻结包独立重算，不累计检查点。</p></div>
-        <div class="panel"><h3>自有账号总览</h3><div class="table-wrap"><table><thead><tr><th>轮次</th><th class="numeric">引用</th><th class="numeric">文章</th><th class="numeric">命中样本</th><th class="numeric">样本率</th><th class="numeric">高置信</th><th class="numeric">中置信</th><th class="numeric">未解决</th></tr></thead><tbody id="comparison-owned-total-body"></tbody></table></div></div>
+        <div class="panel"><h3>自有账号总览</h3><div class="method-note" id="owned-method-note"><strong>口径说明</strong><div class="method-grid"><p><b>自有账号引用</b> = 高置信归属 + 中置信归属；分母“全部引用”是各轮冻结引用记录总量。</p><p><b>样本引用率</b> = 命中样本 ÷ 576 个完整有效样本。</p><p><b>归属置信度不是回答可信度</b>，也不评价文章质量或事实准确性。</p><p><b>高置信归属</b>使用账号/作者 ID 或 contentId 的确定性匹配；<b>中置信归属</b>仅有标题尾部账号名精确匹配，仍缺账号快照或作者页确认；<b>归属未解决</b>不计入自有账号引用。</p></div></div><div class="table-wrap"><table class="comparison-overview-table" aria-describedby="owned-method-note"><thead><tr><th>轮次</th><th class="numeric">自有账号引用 / 全部引用</th><th class="numeric">唯一自有文章</th><th class="numeric">命中样本 / 全部样本</th><th class="numeric">样本引用率</th><th class="numeric">高置信归属</th><th class="numeric">中置信归属</th><th class="numeric">归属未解决</th></tr></thead><tbody id="comparison-owned-total-body"></tbody></table></div></div>
         <div class="panel" style="margin-top:16px">
           <h3>官网引用对比</h3>
           <div class="kpi-grid" id="comparison-official-cards"></div>
@@ -366,6 +376,7 @@
     function setText(id, value) { const node = $(id); if (node) node.textContent = value; }
     function setProgress(id, value) { const node = $(id); if (node) node.style.width = `${Math.min(100, Number(value || 0))}%`; }
     function appendCell(row, value, className = '') { const cell = document.createElement('td'); cell.textContent = value; if (className) cell.className = className; row.appendChild(cell); return cell; }
+    function appendMetricCell(row, primaryText, secondaryText = '') { const cell = document.createElement('td'); cell.className = 'numeric'; const stack = document.createElement('div'); stack.className = 'metric-stack'; const primary = document.createElement('span'); primary.className = 'metric-primary'; primary.textContent = primaryText; stack.appendChild(primary); if (secondaryText) { const secondary = document.createElement('span'); secondary.className = 'metric-secondary'; secondary.textContent = secondaryText; stack.appendChild(secondary); } cell.appendChild(stack); row.appendChild(cell); return cell; }
     function appendLinkCell(row, href, label, className = '') { const cell = document.createElement('td'); if (className) cell.className = className; const link = document.createElement('a'); link.className = 'source-link'; link.href = href; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = label; cell.appendChild(link); row.appendChild(cell); }
     function emptyRow(body, columns, message) { const row = document.createElement('tr'); const cell = appendCell(row, message, 'empty-row'); cell.colSpan = columns; body.appendChild(row); }
 
@@ -390,8 +401,8 @@
     const comparison = report.comparison || {};
     const delta = value => `${Number(value || 0) > 0 ? '+' : ''}${Number(value || 0).toFixed(2)}%`;
     const comparisonOwnedTotalBody = $('comparison-owned-total-body');
-    [['第一轮 576/576', comparison.owned_totals?.round1], ['第二轮最终 576/576', comparison.owned_totals?.round2]].forEach(([label, item]) => {
-      if (!item) return; const row = document.createElement('tr'); appendCell(row, label); appendCell(row, number(item.citation_events), 'numeric'); appendCell(row, number(item.unique_articles), 'numeric'); appendCell(row, number(item.answers), 'numeric'); appendCell(row, pct(item.sample_rate_pct), 'numeric'); appendCell(row, number(item.high_confidence_events), 'numeric'); appendCell(row, number(item.medium_confidence_events), 'numeric'); appendCell(row, number(item.unresolved_events), 'numeric'); comparisonOwnedTotalBody.appendChild(row);
+    [['第一轮 576/576', comparison.owned_totals?.round1, 9936], ['第二轮最终 576/576', comparison.owned_totals?.round2, 11943]].forEach(([label, item, allCitations]) => {
+      if (!item) return; const row = document.createElement('tr'); appendCell(row, label); appendMetricCell(row, `${number(item.citation_events)} / ${number(allCitations)}`, `占全部引用 ${pct(item.citation_events / allCitations * 100)}`); appendMetricCell(row, `${number(item.unique_articles)} 篇`); appendMetricCell(row, `${number(item.answers)} / 576`); appendMetricCell(row, pct(item.sample_rate_pct), '命中样本 ÷ 576'); appendMetricCell(row, number(item.high_confidence_events)); appendMetricCell(row, number(item.medium_confidence_events)); appendMetricCell(row, number(item.unresolved_events), '不计入自有账号引用'); comparisonOwnedTotalBody.appendChild(row);
     });
     const comparisonOfficialBody = $('comparison-official-body');
     const officialItems = comparison.official_sources || [];
