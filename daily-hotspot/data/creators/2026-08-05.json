@@ -3,8 +3,8 @@
   "module": "creators",
   "dataMode": "DAILY_AUDIT_ONLY",
   "date": "2026-08-05",
-  "observedAt": "2026-08-05T02:50:28.930Z",
-  "scheduledFor": "2026-08-05T11:00:00+08:00",
+  "observedAt": "2026-08-05T13:37:15.863Z",
+  "scheduledFor": "2026-08-06T11:00:00+08:00",
   "publicationStatus": "DEGRADED_REPORT",
   "title": "抖音达人白名单库及热点判断",
   "summary": {
@@ -20,8 +20,9 @@
     "confirmedHotspots": 0,
     "contentActions": 0
   },
-  "statusMessage": "本日审计未新增达人白名单；8 项关键输入仍未闭环。",
+  "statusMessage": "本日审计未新增达人白名单；9 项关键输入仍未闭环。",
   "limitations": [
+    "当前下午达人主页：6/13 缺失",
     "同指标前后增长快照：UNKNOWN",
     "话题人口：UNKNOWN",
     "有效独立来源 N_eff：UNKNOWN",
@@ -38,43 +39,44 @@
       {
         "platform": "CHANMAMA",
         "status": "LOADED",
-        "observedAt": "2026-08-05T02:50:28.930Z"
+        "observedAt": "2026-08-05T13:37:15.863Z"
       },
       {
         "platform": "OCEAN_ENGINE_CLOUD_ATLAS",
         "status": "LOADED",
-        "observedAt": "2026-08-05T02:50:28.930Z"
+        "observedAt": "2026-08-05T13:37:15.863Z"
       },
       {
         "platform": "OCEAN_ENGINE_STAR_MAP",
         "status": "LOADED",
-        "observedAt": "2026-08-05T02:50:28.930Z"
+        "observedAt": "2026-08-05T13:37:15.863Z"
       },
       {
         "platform": "DOUYIN",
         "status": "LOADED",
-        "observedAt": "2026-08-05T02:50:28.930Z"
+        "observedAt": "2026-08-05T13:37:15.863Z"
       },
       {
         "platform": "CREATOR_CENTER",
         "status": "LOADED",
-        "observedAt": "2026-08-05T02:50:28.930Z"
+        "observedAt": "2026-08-05T13:37:15.863Z"
       }
     ]
   },
   "creatorCaptureStatus": {
     "captureType": "LATE_MAIN_CAPTURE",
-    "observedAt": "2026-08-05T02:50:28.930Z",
-    "displayTime": "2026-08-05 10:50",
+    "observedAt": "2026-08-05T13:37:15.863Z",
+    "displayTime": "2026-08-05 21:37",
+    "plannedAt": "2026-08-05T21:34:00+08:00",
     "schedule": {
       "onTime": false,
       "supplement": false
     },
     "summary": {
       "pagesTotal": 18,
-      "pagesLoaded": 18,
-      "pagesTimedOut": 0,
-      "evidenceStatus": "COMPLETE",
+      "pagesLoaded": 12,
+      "pagesTimedOut": 6,
+      "evidenceStatus": "DEGRADED",
       "poolChanged": false,
       "tierChanged": false
     },
@@ -111,37 +113,7 @@
         "label": "新增可见来源待轻筛"
       },
       {
-        "nickname": "昂哥抖店运营",
-        "status": "PENDING_LIGHT_SCREEN",
-        "label": "新增可见来源待轻筛"
-      },
-      {
-        "nickname": "抖店阿伟实战分享",
-        "status": "PENDING_LIGHT_SCREEN",
-        "label": "新增可见来源待轻筛"
-      },
-      {
         "nickname": "木子运营",
-        "status": "PENDING_LIGHT_SCREEN",
-        "label": "新增可见来源待轻筛"
-      },
-      {
-        "nickname": "俊哥抖店日记",
-        "status": "PENDING_LIGHT_SCREEN",
-        "label": "新增可见来源待轻筛"
-      },
-      {
-        "nickname": "晓梦电商日记",
-        "status": "PENDING_LIGHT_SCREEN",
-        "label": "新增可见来源待轻筛"
-      },
-      {
-        "nickname": "鸭子运营分析",
-        "status": "PENDING_LIGHT_SCREEN",
-        "label": "新增可见来源待轻筛"
-      },
-      {
-        "nickname": "思行AI电商",
         "status": "PENDING_LIGHT_SCREEN",
         "label": "新增可见来源待轻筛"
       }
@@ -154,23 +126,24 @@
       "原创贡献",
       "风险门"
     ],
-    "timeoutPolicy": "0 个失败页保持缺失，不估填、不替代、不晋级"
+    "timeoutPolicy": "6 个失败页保持缺失，不估填、不替代、不晋级"
   },
   "audit": {
-    "sourcePath": "runs/douyin-creator-20260805-manual-complete-final-r2/audit.json",
-    "sourceSha256": "b5b98b3cba20f5e09064d95d1037b770b92508fc884b81e1e38d7867a7b47f22",
+    "sourcePath": "runs/douyin-creator-20260805-2134-afternoon-fresh-r1/audit.json",
+    "sourceSha256": "5d57985e69a33ad0c45a935a65a39e4f500d6f20bcc089f31629a7459a28ace1",
     "reportType": "DEGRADED_REPORT",
     "schedule": {
       "onTime": false,
       "supplement": false,
-      "lateReason": "The user-authorized complete recovery finished at 10:50:28.930 Asia/Shanghai, after the 10:00 main-capture boundary. The original schedule result remains false."
+      "lateReason": "The coordinating gate was released after all 2026-08-05 dashboard tasks reached terminal state. The fresh afternoon capture began afterward, so the original 16:00 schedule remains late without reclassification."
     },
     "creatorDecision": {
-      "result": "UNCHANGED_IDENTITY_PAGES_VISIBLE_METRICS_INCOMPLETE",
-      "reason": "All 13 roster identity pages loaded, but comparable performance, dual-source, cohort, originality and risk inputs remain unavailable. Existing observation tiers remain unchanged.",
+      "result": "UNCHANGED_FRESH_AFTERNOON_CAPTURE_INCOMPLETE",
+      "reason": "Seven roster identity pages loaded, but six current profile pages and all strict qualification inputs remain unavailable. No admission, removal, or tier change is supported.",
       "priorityObservationAccounts": []
     },
     "missingInputs": [
+      "当前下午达人主页：6/13 缺失",
       "同指标前后增长快照：UNKNOWN",
       "话题人口：UNKNOWN",
       "有效独立来源 N_eff：UNKNOWN",
@@ -183,9 +156,9 @@
     "evidenceRefs": [],
     "constraints": null,
     "nextCapture": {
-      "slot": "2026-08-05T11:00:00+08:00",
-      "mode": "VERIFY_AND_PUBLISH_ONLY",
-      "browserRule": "The complete main-capture evidence already exists. Do not repeat collection at the supplement slot."
+      "slot": "2026-08-06T11:00:00+08:00",
+      "mode": "NEXT_SCHEDULED_MAIN",
+      "browserRule": "Use a new run and the registered 9235 session. Do not retry this stopped capture."
     }
   },
   "candidates": [],
