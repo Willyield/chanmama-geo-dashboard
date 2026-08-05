@@ -49,6 +49,7 @@
         '<a href="' + href("./#method") + '">方法与口径</a>' +
         '<details data-active="' + (section === "more") + '"><summary>更多</summary><div class="geo-shell-submenu">' +
           submenuLink("./chanjing-ai/", "蝉镜 AI", "双端观察") +
+          submenuLink("./chanquanquan-geo/", "蝉圈圈 GEO", "阶段检查点") +
         '</div></details>' +
       '</nav>' +
     '</div>';
@@ -101,12 +102,27 @@
     window.clearTimeout(prefetchTimer);
   }
 
+  var dropdowns = Array.prototype.slice.call(host.querySelectorAll("details"));
+
+  function closeDropdowns(keepOpen) {
+    dropdowns.forEach(function (dropdown) {
+      if (dropdown !== keepOpen) dropdown.removeAttribute("open");
+    });
+  }
+
   function closeMenu() {
     host.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-label", "打开导航");
     toggle.textContent = "☰";
+    closeDropdowns();
   }
+
+  dropdowns.forEach(function (dropdown) {
+    dropdown.addEventListener("toggle", function () {
+      if (dropdown.open) closeDropdowns(dropdown);
+    });
+  });
 
   toggle.addEventListener("click", function () {
     var open = !host.classList.contains("is-open");
@@ -133,7 +149,20 @@
 
   window.addEventListener("pageshow", function () { host.classList.remove("is-navigating"); });
 
+  document.addEventListener("pointerdown", function (event) {
+    if (!host.contains(event.target)) closeDropdowns();
+  });
+
+  document.addEventListener("focusin", function (event) {
+    if (!host.contains(event.target)) closeDropdowns();
+  });
+
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") closeMenu();
+    if (event.key !== "Escape") return;
+    var openDropdown = host.querySelector("details[open]");
+    var mobileMenuOpen = host.classList.contains("is-open");
+    closeMenu();
+    if (mobileMenuOpen) toggle.focus();
+    else if (openDropdown) openDropdown.querySelector("summary").focus();
   });
 }());

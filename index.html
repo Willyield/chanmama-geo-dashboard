@@ -3,68 +3,161 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>蝉妈妈 GEO 仪表盘公开入口</title>
-  <style>
-    :root {
-      color-scheme: light;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f6f7f9;
-      color: #20242a;
-    }
-    body {
-      margin: 0;
-      padding: 40px;
-    }
-    main {
-      max-width: 880px;
-      margin: 0 auto;
-    }
-    h1 {
-      margin: 0 0 8px;
-      font-size: 28px;
-      font-weight: 700;
-    }
-    p {
-      margin: 0 0 24px;
-      color: #5a6472;
-      line-height: 1.6;
-    }
-    .links {
-      display: grid;
-      gap: 12px;
-    }
-    a {
-      display: block;
-      padding: 18px 20px;
-      border: 1px solid #d9dee7;
-      border-radius: 8px;
-      background: #fff;
-      color: #1f5eff;
-      font-size: 17px;
-      font-weight: 650;
-      text-decoration: none;
-    }
-    a span {
-      display: block;
-      margin-top: 6px;
-      color: #667085;
-      font-size: 13px;
-      font-weight: 400;
-    }
-  </style>
+  <meta name="description" content="蝉妈妈 GEO 综合分析平台，汇总 GEO 问题采样、引用来源与竞品研究。">
+  <meta name="theme-color" content="#f4f6f8">
+  <link rel="icon" href="data:,">
+  <title>蝉妈妈 GEO 综合分析平台</title>
+  <link rel="stylesheet" href="./assets/platform-shell.css">
+  <link rel="stylesheet" href="./assets/portal.css">
+  <script src="./portal-summary.js"></script>
+  <script defer src="./assets/platform-shell.js" data-root="./" data-section="overview" data-label="综合总览"></script>
+  <script defer src="./assets/portal.js"></script>
 </head>
-<body>
-  <main>
-    <h1>蝉妈妈 GEO 仪表盘</h1>
-    <p>公开访问入口。四个页面分别对应 TOP0+TOP1、TOP2+TOP3、TOP0~TOP3 总览与蝉镜 AI 双端观察。</p>
-    <div class="links">
-      <a href="./top01/">TOP0+TOP1 仪表盘<span>核心优先级问题与采样表现</span></a>
-      <a href="./top2-top3/">TOP2+TOP3 仪表盘<span>次优先级问题与采样表现</span></a>
-      <a href="./total/">TOP0~TOP3 总仪表盘<span>对应 geo-dashboard/web_total/index.html</span></a>
-      <a href="./chanquanquan-geo/">蝉圈圈 GEO 仪表盘<span>已采集 150/730，阶段检查点，非最终 FULL</span></a>
-      <a href="./chanquanquan-citation-report/">蝉圈圈引用源分析<span>150/730 阶段检查点，非最终 FULL</span></a>
-      <a href="./chanjing-ai/">蝉镜AI仪表盘<span>豆包网页端与移动端 GEO 对比</span></a>
-    </div>
+<body class="portal-page">
+  <a class="portal-skip-link" href="#main">跳到主要内容</a>
+  <div id="geo-shell-root" aria-label="全局导航"></div>
+
+  <main id="main">
+    <section class="portal-hero" aria-labelledby="portal-title">
+      <div class="portal-container portal-hero-grid">
+        <div class="portal-hero-copy">
+          <p class="portal-kicker">品牌 GEO 研究与决策</p>
+          <h1 id="portal-title">蝉妈妈 GEO<br>综合分析平台</h1>
+          <p class="portal-lead">用真实采样连接品牌可见性、引用来源与飞瓜实时监控。</p>
+          <div class="portal-actions" aria-label="主要入口">
+            <a class="portal-button portal-button-primary" href="./top01/">查看 GEO 样本</a>
+            <a class="portal-button portal-button-secondary" href="./douyin-citation-report/">查看引用源</a>
+          </div>
+        </div>
+
+        <figure class="portal-hero-figure">
+          <a href="./top01/" aria-label="打开 GEO 样本仪表盘">
+            <img src="./assets/module-sampling-preview.png" alt="GEO 样本仪表盘真实页面预览" width="1600" height="1000">
+          </a>
+          <figcaption>核心问题第一轮采样仪表盘</figcaption>
+        </figure>
+      </div>
+
+      <div class="portal-container portal-metric-strip" id="hero-metrics" aria-label="核心数据摘要">
+        <div class="portal-metric-skeleton" aria-hidden="true"></div>
+        <div class="portal-metric-skeleton" aria-hidden="true"></div>
+        <div class="portal-metric-skeleton" aria-hidden="true"></div>
+        <div class="portal-metric-skeleton" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="portal-section portal-roadmap" id="roadmap" aria-labelledby="roadmap-title">
+      <div class="portal-container">
+        <div class="portal-section-heading">
+          <h2 id="roadmap-title">一条研究链路，三个分析层次</h2>
+          <p>先观察品牌是否被提及，再追踪回答引用了什么，最后进入飞瓜实时监控。</p>
+        </div>
+
+        <div class="portal-research-rail">
+          <article class="portal-stage portal-stage-primary">
+            <span class="portal-status portal-status-active">持续监测</span>
+            <h3>GEO 样本监测</h3>
+            <p>观察蝉妈妈在业务问题中的出现、排序和优势表达。</p>
+            <a href="./top01/">进入样本仪表盘</a>
+          </article>
+          <article class="portal-stage">
+            <span class="portal-status portal-status-active">已完成</span>
+            <h3>引用源分析</h3>
+            <p>拆解豆包回答引用的页面、账号与内容类型。</p>
+            <a href="./douyin-citation-report/">进入引用源仪表盘</a>
+          </article>
+          <article class="portal-stage portal-stage-planned">
+            <span class="portal-status portal-status-planned">下一阶段</span>
+            <h3>实时监控飞瓜</h3>
+            <p>每日实时监控飞瓜的数据、改动、优势等全方面</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="portal-section portal-insights" aria-labelledby="insights-title">
+      <div class="portal-container portal-insights-layout">
+        <div class="portal-insights-intro">
+          <h2 id="insights-title">当前可验证结论</h2>
+          <p>每条结论都保留数据日期和原始仪表盘入口。</p>
+        </div>
+        <div id="insight-list" class="portal-insight-list" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="portal-section portal-module portal-module-sampling" id="sampling" aria-labelledby="sampling-title">
+      <div class="portal-container">
+        <div class="portal-module-heading">
+          <div>
+            <p class="portal-module-index">GEO 样本监测</p>
+            <h2 id="sampling-title">从基线到复测，保留每一次变化</h2>
+          </div>
+          <a class="portal-text-link" href="./top01/">打开核心问题仪表盘</a>
+        </div>
+
+        <div class="portal-module-metrics" id="sampling-metrics"></div>
+
+        <figure class="portal-wide-preview">
+          <a href="./top01/" aria-label="打开第一轮核心问题仪表盘">
+            <img src="./assets/module-sampling-preview.png" alt="第一轮核心问题仪表盘完整页面预览" width="1600" height="1000" loading="lazy">
+          </a>
+        </figure>
+
+        <nav class="portal-view-list" id="sampling-views" aria-label="GEO 样本视图"></nav>
+      </div>
+    </section>
+
+    <section class="portal-section portal-module portal-module-citation" id="citation" aria-labelledby="citation-title">
+      <div class="portal-container portal-citation-layout">
+        <div class="portal-citation-copy">
+          <p class="portal-module-index">引用源分析</p>
+          <h2 id="citation-title">看见回答背后的内容供给</h2>
+          <p>从引用事件、唯一 URL、抖音来源占比和问题覆盖率，判断哪些内容真正进入模型回答。</p>
+          <div class="portal-module-metrics portal-module-metrics-compact" id="citation-metrics"></div>
+          <a class="portal-button portal-button-primary" href="./douyin-citation-report/">打开引用源仪表盘</a>
+        </div>
+        <figure class="portal-citation-preview">
+          <a href="./douyin-citation-report/" aria-label="打开引用源分析仪表盘">
+            <img src="./assets/module-citation-preview.png" alt="引用源分析仪表盘真实页面预览" width="1200" height="1200" loading="lazy">
+          </a>
+          <figcaption>豆包引用源分析报告</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="portal-section portal-method" id="method" aria-labelledby="method-title">
+      <div class="portal-container portal-method-layout">
+        <div>
+          <h2 id="method-title">方法与口径</h2>
+          <p>平台展示的是特定问题、平台和时间窗口下的采样结果，用于内容与品牌 GEO 决策，不代表全网绝对份额。</p>
+        </div>
+        <dl class="portal-method-list">
+          <div>
+            <dt>采样范围</dt>
+            <dd>抖音电商业务问题，豆包网页端快速模式。</dd>
+          </div>
+          <div>
+            <dt>时间周期</dt>
+            <dd id="data-period">以各模块标注日期为准。</dd>
+          </div>
+          <div>
+            <dt>引用口径</dt>
+            <dd>按回答中可核验的引用事件、规范化 URL 和来源类型统计。</dd>
+          </div>
+          <div>
+            <dt>使用边界</dt>
+            <dd>第三方工具数据和模型回答会随时间变化，经营结果仍以官方后台为准。</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
   </main>
+
+  <footer class="portal-footer">
+    <div class="portal-container">
+      <strong>蝉妈妈 GEO 综合分析平台</strong>
+      <span id="footer-updated">数据摘要加载中</span>
+    </div>
+  </footer>
 </body>
 </html>
