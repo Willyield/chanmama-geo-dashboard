@@ -44,6 +44,7 @@
         '<details data-active="' + (section === "citation") + '"><summary>引用源</summary><div class="geo-shell-submenu">' +
           submenuLink("./douyin-citation-report/", "第一轮引用源", "基线") +
           submenuLink("./douyin-citation-report-round2/", "第二轮引用源", "阶段性 300/576") +
+          submenuLink("./chanquanquan-citation-report/", "蝉圈圈引用源", "阶段性 365/730") +
         '</div></details>' +
         '<a href="' + href("./#roadmap") + '">研究路线</a>' +
         '<a href="' + href("./#method") + '">方法与口径</a>' +
