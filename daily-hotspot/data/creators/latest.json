@@ -3,7 +3,7 @@
   "module": "creators",
   "dataMode": "DAILY_AUDIT_ONLY",
   "date": "2026-08-06",
-  "observedAt": "2026-08-06T04:16:52.697Z",
+  "observedAt": "2026-08-06T08:04:59.767Z",
   "scheduledFor": "2026-08-06T16:00:00+08:00",
   "publicationStatus": "DEGRADED_REPORT",
   "title": "抖音达人白名单库及热点判断",
@@ -38,37 +38,37 @@
       {
         "platform": "CHANMAMA",
         "status": "LOADED",
-        "observedAt": "2026-08-06T04:16:52.697Z"
+        "observedAt": "2026-08-06T08:04:59.767Z"
       },
       {
         "platform": "OCEAN_ENGINE_CLOUD_ATLAS",
         "status": "LOADED",
-        "observedAt": "2026-08-06T04:16:52.697Z"
+        "observedAt": "2026-08-06T08:04:59.767Z"
       },
       {
         "platform": "OCEAN_ENGINE_STAR_MAP",
         "status": "LOADED",
-        "observedAt": "2026-08-06T04:16:52.697Z"
+        "observedAt": "2026-08-06T08:04:59.767Z"
       },
       {
         "platform": "DOUYIN",
         "status": "LOADED",
-        "observedAt": "2026-08-06T04:16:52.697Z"
+        "observedAt": "2026-08-06T08:04:59.767Z"
       },
       {
         "platform": "CREATOR_CENTER",
         "status": "LOADED",
-        "observedAt": "2026-08-06T04:16:52.697Z"
+        "observedAt": "2026-08-06T08:04:59.767Z"
       }
     ]
   },
   "creatorCaptureStatus": {
-    "captureType": "LATE_MAIN_CAPTURE",
-    "observedAt": "2026-08-06T04:16:52.697Z",
-    "displayTime": "2026-08-06 12:16",
-    "plannedAt": "2026-08-06T11:00:00+08:00",
+    "captureType": "MAIN_CAPTURE",
+    "observedAt": "2026-08-06T08:04:59.767Z",
+    "displayTime": "2026-08-06 16:04",
+    "plannedAt": "2026-08-06T16:00:00+08:00",
     "schedule": {
-      "onTime": false,
+      "onTime": true,
       "supplement": false
     },
     "summary": {
@@ -87,22 +87,22 @@
         "label": "新增可见来源待轻筛"
       },
       {
-        "nickname": "三农策划师-老孟（8月昆明课）",
+        "nickname": "三农策划师（老宋，月月讲）",
         "status": "PENDING_LIGHT_SCREEN",
         "label": "新增可见来源待轻筛"
       },
       {
-        "nickname": "阿豪抖店交流板",
+        "nickname": "阿豪抖店交流村",
         "status": "PENDING_LIGHT_SCREEN",
         "label": "新增可见来源待轻筛"
       },
       {
-        "nickname": "绽放唠电商运营",
+        "nickname": "绽放电商运营",
         "status": "PENDING_LIGHT_SCREEN",
         "label": "新增可见来源待轻筛"
       },
       {
-        "nickname": "阿妍抖店日记",
+        "nickname": "阿姗抖店日记",
         "status": "PENDING_LIGHT_SCREEN",
         "label": "新增可见来源待轻筛"
       },
@@ -132,7 +132,7 @@
         "label": "新增可见来源待轻筛"
       },
       {
-        "nickname": "晓梦电商日记🌱",
+        "nickname": "晓梦电商日记",
         "status": "PENDING_LIGHT_SCREEN",
         "label": "新增可见来源待轻筛"
       },
@@ -158,17 +158,18 @@
     "timeoutPolicy": "0 个失败页保持缺失，不估填、不替代、不晋级"
   },
   "audit": {
-    "sourcePath": "runs/douyin-creator-20260806-1100-post-verification-repair-r1/audit.json",
-    "sourceSha256": "f482016f2e95390a6237484660e8fcc6a7a9eeaf4a54c093b3d87769789f0eaa",
+    "sourcePath": "runs/douyin-creator-20260806-1600-afternoon-r1/audit.json",
+    "sourceSha256": "bc6776349e473569119f20f4a42bdebb53b5170b08debfce65553348fa5b3240",
     "reportType": "DEGRADED_REPORT",
     "schedule": {
-      "onTime": false,
+      "onTime": true,
       "supplement": false,
-      "lateReason": "The user-authorized post-verification repair completed at 12:16:52 Asia/Shanghai, after the 11:00 main-capture boundary. The original schedule remains late without reclassification."
+      "plannedAt": "2026-08-06T16:00:00+08:00",
+      "slot": "2026-08-06T16:00:00+08:00"
     },
     "creatorDecision": {
       "result": "UNCHANGED_IDENTITY_PAGES_VISIBLE_METRICS_INCOMPLETE",
-      "reason": "All 13 roster identity pages loaded, but comparable performance, dual-source, cohort, originality and risk inputs remain unavailable. Existing observation tiers remain unchanged.",
+      "reason": "All 13 roster identity pages loaded, but the actual interval is below four hours and comparable performance, dual-source, cohort, originality and risk inputs remain unavailable. Existing observation tiers remain unchanged.",
       "priorityObservationAccounts": []
     },
     "missingInputs": [
@@ -184,9 +185,9 @@
     "evidenceRefs": [],
     "constraints": null,
     "nextCapture": {
-      "slot": "2026-08-06T16:00:00+08:00",
-      "mode": "NEXT_SCHEDULED_AFTERNOON_MAIN",
-      "browserRule": "Reuse the registered 9235 session. The complete morning identity capture must not be repeated."
+      "slot": "2026-08-07T11:00:00+08:00",
+      "mode": "NEXT_SCHEDULED_MORNING_MAIN",
+      "browserRule": "Reuse the registered 9235 session. Do not repeat the completed afternoon identity capture."
     }
   },
   "candidates": [],
