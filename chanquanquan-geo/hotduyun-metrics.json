@@ -1,0 +1,59 @@
+{
+  "targetBrand": "热度云",
+  "ruleVersion": "HOTDUYUN-PERFORMANCE-V1-20260806",
+  "sampleCount": 730,
+  "recommendationApplicableSamples": 180,
+  "metrics": {
+    "mention_rate": {
+      "label": "提及率",
+      "numerator": 67,
+      "denominator": 730,
+      "percentage": 9.18,
+      "unknown": 0,
+      "rule": "回答正文提及热度云的有效样本数 / 全部有效样本数；同一样本最多计一次。"
+    },
+    "ordinary_top1_rate": {
+      "label": "普通首推率",
+      "numerator": 1,
+      "denominator": 180,
+      "percentage": 0.56,
+      "unknown": 34,
+      "rule": "热度云在冻结推荐顺序中位于第 1 的样本数 / 推荐类适用样本数；顺序含糊保留在分母并单列未知。"
+    },
+    "effective_top1_rate": {
+      "label": "有效首推率",
+      "numerator": 1,
+      "denominator": 92,
+      "percentage": 1.09,
+      "unknown": 34,
+      "rule": "热度云在第三方工具候选中位于第 1 的样本数 / 至少出现一个第三方工具候选的推荐类样本数。"
+    },
+    "strict_advantage_rate": {
+      "label": "严格优势表达率",
+      "numerator": 33,
+      "denominator": 730,
+      "percentage": 4.52,
+      "unknown": 32,
+      "rule": "回答明确把适配性、强项、优势或优先推荐归属于热度云的样本数 / 全部有效样本数。"
+    },
+    "top3_rate": {
+      "label": "前三率",
+      "numerator": 8,
+      "denominator": 180,
+      "percentage": 4.44,
+      "unknown": 34,
+      "rule": "热度云在冻结推荐顺序中位于前 3 的样本数 / 推荐类适用样本数；顺序含糊保留在分母并单列未知。"
+    },
+    "average_rank": {
+      "label": "平均排名",
+      "value": 2.375,
+      "ranked_samples": 8,
+      "unknown": 34,
+      "rule": "仅对推荐顺序明确且包含热度云的样本计算算术平均排名；数值越低越靠前。"
+    }
+  },
+  "status": "HOTDUYUN_SUPPLEMENT_READY",
+  "sampleSetSha256": "D23026631DFB37B71E9B207977157AC4EFAB58063BDFF2A40D22C96AFA60E4BD",
+  "sourceCheckpointManifestSha256": "0D2DEB4D0E75C436F1FE07C29D57600A653027CB711C4A18307A38EE37FA53AF",
+  "sourcePackageSha256": "AD91FC0B71A5BC8B03FF418DAB1D4EF877BA6E7A1C2AA34CB210638FAC224ED7"
+}
