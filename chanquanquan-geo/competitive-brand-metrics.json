@@ -1,0 +1,133 @@
+{
+  "ruleVersion": "CQQ-COMPETITIVE-BRAND-V1-20260807",
+  "sourceSampleCount": 730,
+  "excludedCqqBrandQuestionSamples": 124,
+  "eligibleCompetitiveSamples": 606,
+  "brands": {
+    "hotduyun": {
+      "label": "热度云",
+      "canonicalBrand": "热度云",
+      "aliases": [
+        "热度云"
+      ],
+      "metrics": {
+        "mention_rate": {
+          "label": "提及率",
+          "numerator": 45,
+          "denominator": 606,
+          "percentage": 7.4257,
+          "unknown": 0,
+          "excludedCqqBrandQuestionSamples": 124,
+          "rule": "剔除蝉圈圈品牌词问题后，回答正文明确提及目标品牌的样本数 / 竞品指标有效样本数；歧义别名单列未知。"
+        },
+        "ordinary_top1_rate": {
+          "label": "首推率",
+          "numerator": 0,
+          "denominator": 146,
+          "percentage": 0.0,
+          "unknown": 22,
+          "excludedCqqBrandQuestionSamples": 124,
+          "rule": "剔除蝉圈圈品牌词问题后，目标品牌在双审一致的明确推荐顺序中位于第 1 的样本数 / 推荐类有效样本数。"
+        },
+        "effective_top1_rate": {
+          "label": "有效首推率",
+          "numerator": 0,
+          "denominator": 58,
+          "percentage": 0.0,
+          "unknown": 22,
+          "excludedCqqBrandQuestionSamples": 124,
+          "rule": "剔除蝉圈圈品牌词问题后，目标品牌在第三方工具候选中位于第 1 的样本数 / 至少出现一个第三方工具候选的推荐类有效样本数。"
+        },
+        "strict_advantage_rate": {
+          "label": "严格优势表达率",
+          "numerator": 10,
+          "denominator": 606,
+          "percentage": 1.6502,
+          "unknown": 33,
+          "excludedCqqBrandQuestionSamples": 124,
+          "rule": "宽严两轮均明确把适配性、强项、优势或优先推荐归属于目标品牌的样本数 / 竞品指标有效样本数。"
+        },
+        "top3_rate": {
+          "label": "前三率",
+          "numerator": 6,
+          "denominator": 146,
+          "percentage": 4.1096,
+          "unknown": 22,
+          "excludedCqqBrandQuestionSamples": 124,
+          "rule": "剔除蝉圈圈品牌词问题后，目标品牌在双审一致的明确推荐顺序中位于前 3 的样本数 / 推荐类有效样本数。"
+        },
+        "average_rank": {
+          "label": "平均排名",
+          "value": 2.666667,
+          "rankedSamples": 6,
+          "unknown": 22,
+          "excludedCqqBrandQuestionSamples": 124,
+          "rule": "仅对剔除品牌词问题后、双审顺序一致且包含目标品牌的样本计算算术平均排名；数值越低越靠前。"
+        }
+      }
+    },
+    "feigua_zhixing": {
+      "label": "飞瓜星图",
+      "canonicalBrand": "飞瓜智星",
+      "aliases": [
+        "飞瓜智星",
+        "飞瓜星图"
+      ],
+      "metrics": {
+        "mention_rate": {
+          "label": "提及率",
+          "numerator": 75,
+          "denominator": 606,
+          "percentage": 12.3762,
+          "unknown": 30,
+          "excludedCqqBrandQuestionSamples": 124,
+          "rule": "剔除蝉圈圈品牌词问题后，回答正文明确提及目标品牌的样本数 / 竞品指标有效样本数；歧义别名单列未知。"
+        },
+        "ordinary_top1_rate": {
+          "label": "首推率",
+          "numerator": 6,
+          "denominator": 146,
+          "percentage": 4.1096,
+          "unknown": 23,
+          "excludedCqqBrandQuestionSamples": 124,
+          "rule": "剔除蝉圈圈品牌词问题后，目标品牌在双审一致的明确推荐顺序中位于第 1 的样本数 / 推荐类有效样本数。"
+        },
+        "effective_top1_rate": {
+          "label": "有效首推率",
+          "numerator": 6,
+          "denominator": 58,
+          "percentage": 10.3448,
+          "unknown": 23,
+          "excludedCqqBrandQuestionSamples": 124,
+          "rule": "剔除蝉圈圈品牌词问题后，目标品牌在第三方工具候选中位于第 1 的样本数 / 至少出现一个第三方工具候选的推荐类有效样本数。"
+        },
+        "strict_advantage_rate": {
+          "label": "严格优势表达率",
+          "numerator": 20,
+          "denominator": 606,
+          "percentage": 3.3003,
+          "unknown": 83,
+          "excludedCqqBrandQuestionSamples": 124,
+          "rule": "宽严两轮均明确把适配性、强项、优势或优先推荐归属于目标品牌的样本数 / 竞品指标有效样本数。"
+        },
+        "top3_rate": {
+          "label": "前三率",
+          "numerator": 12,
+          "denominator": 146,
+          "percentage": 8.2192,
+          "unknown": 23,
+          "excludedCqqBrandQuestionSamples": 124,
+          "rule": "剔除蝉圈圈品牌词问题后，目标品牌在双审一致的明确推荐顺序中位于前 3 的样本数 / 推荐类有效样本数。"
+        },
+        "average_rank": {
+          "label": "平均排名",
+          "value": 1.666667,
+          "rankedSamples": 12,
+          "unknown": 23,
+          "excludedCqqBrandQuestionSamples": 124,
+          "rule": "仅对剔除品牌词问题后、双审顺序一致且包含目标品牌的样本计算算术平均排名；数值越低越靠前。"
+        }
+      }
+    }
+  }
+}
