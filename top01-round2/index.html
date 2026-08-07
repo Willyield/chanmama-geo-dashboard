@@ -348,6 +348,19 @@
       cursor: pointer;
     }
     .icon-button:disabled { cursor: default; opacity: .4; }
+    .sample-retry {
+      margin-top: 10px;
+      padding: 7px 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: 5px;
+      background: var(--surface);
+      color: var(--ink);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .sample-retry:hover { border-color: var(--blue); }
+    .sample-retry:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
     select:focus-visible, input:focus-visible, .icon-button:focus-visible, .tab:focus-visible, .metric-help:focus-visible {
       outline: 2px solid var(--blue);
       outline-offset: 2px;
@@ -754,10 +767,10 @@
       ['questionSearch','priorityFilter','categoryFilter','statusFilter'].forEach(id => document.getElementById(id).addEventListener(id === 'questionSearch' ? 'input' : 'change', renderQuestions));
       renderQuestions();
 
-      const samples = (data.samples || []).filter(row => row.answer_text);
+      const expectedSampleCount = Number(data.detail_meta?.sample_count || summary.valid_sample_count || 0);
       const samplePageSize = 10;
+      let samples = [];
       let samplePageIndex = 0;
-      document.getElementById('sampleCount').textContent = `${samples.length} 条已写入记录`;
       const renderSamples = () => {
         const totalPages = Math.max(1, Math.ceil(samples.length / samplePageSize));
         samplePageIndex = Math.min(samplePageIndex, totalPages - 1);
@@ -772,9 +785,53 @@
         document.getElementById('samplePrev').disabled = samplePageIndex === 0;
         document.getElementById('sampleNext').disabled = samplePageIndex >= totalPages - 1 || !samples.length;
       };
+      const setSamplePagerIdle = () => {
+        document.getElementById('samplePage').textContent = '';
+        document.getElementById('samplePrev').disabled = true;
+        document.getElementById('sampleNext').disabled = true;
+      };
+      const renderSampleLoading = () => {
+        document.getElementById('sampleCount').textContent = `正在加载 ${expectedSampleCount} 条采样记录`;
+        document.getElementById('sampleTable').innerHTML = `<tr><td colspan='7' class='empty'>样本详情加载中…</td></tr>`;
+        setSamplePagerIdle();
+      };
+      const renderSampleError = error => {
+        console.error('样本详情加载失败', error);
+        document.getElementById('sampleCount').textContent = '样本详情加载失败';
+        document.getElementById('sampleTable').innerHTML = `<tr><td colspan='7' class='empty'>未能加载样本详情<br><button class='sample-retry' id='sampleRetry' type='button'>重新加载</button></td></tr>`;
+        setSamplePagerIdle();
+        document.getElementById('sampleRetry').addEventListener('click', loadSampleDetails);
+      };
+      function loadSampleDetails() {
+        renderSampleLoading();
+        document.querySelector('script[data-dashboard-detail]')?.remove();
+        const script = document.createElement('script');
+        script.src = './dashboard-detail-data.js';
+        script.async = true;
+        script.dataset.dashboardDetail = 'true';
+        script.onload = () => {
+          try {
+            const detail = window.GEO_ROUND2_DASHBOARD_DETAIL;
+            if (!detail || !Array.isArray(detail.samples)) throw new Error('样本详情数据格式无效');
+            samples = detail.samples.filter(row => row.answer_text);
+            if (samples.length !== expectedSampleCount) throw new Error(`样本数量不匹配：${samples.length}/${expectedSampleCount}`);
+            document.getElementById('sampleCount').textContent = `${samples.length} 条已写入记录`;
+            samplePageIndex = 0;
+            renderSamples();
+          } catch (error) {
+            renderSampleError(error);
+          }
+        };
+        script.onerror = () => renderSampleError(new Error('样本详情请求失败'));
+        document.head.appendChild(script);
+      }
       document.getElementById('samplePrev').addEventListener('click', () => { samplePageIndex -= 1; renderSamples(); });
       document.getElementById('sampleNext').addEventListener('click', () => { samplePageIndex += 1; renderSamples(); });
-      renderSamples();
+      renderSampleLoading();
+      const scheduleSampleLoad = window.requestIdleCallback
+        ? callback => window.requestIdleCallback(callback, { timeout: 1200 })
+        : callback => window.setTimeout(callback, 0);
+      scheduleSampleLoad(loadSampleDetails);
     })();
     });
   </script>
