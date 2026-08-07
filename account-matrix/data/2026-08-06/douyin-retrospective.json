@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "contract": "douyinHistoricalRetrospective",
+  "status": "AWAITING_COMPLETE_HANDOFF",
+  "sourceReportDate": null,
+  "observedFrom": null,
+  "observedTo": null,
+  "metricSemantics": "CURRENT_AS_OF_OBSERVED_AT",
+  "window": {
+    "from": "2026-07-08",
+    "to": "2026-08-06",
+    "days": 30
+  },
+  "missingReason": "COMPLETE_14_ACCOUNT_HANDOFF_REQUIRED",
+  "availableSnapshotDates": [],
+  "accounts": [
+    {
+      "sourceId": "douyin-85606425230",
+      "accountId": "85606425230",
+      "accountName": "蝉妈妈数据顾问王王",
+      "status": "NOT_COLLECTED_AT_THAT_DATE",
+      "points": []
+    },
+    {
+      "sourceId": "douyin-72989782987",
+      "accountId": "72989782987",
+      "accountName": "蝉妈妈直播运营津津",
+      "status": "NOT_COLLECTED_AT_THAT_DATE",
+      "points": []
+    },
+    {
+      "sourceId": "douyin-62571922952",
+      "accountId": "62571922952",
+      "accountName": "蝉妈妈达人顾问安乐",
+      "status": "NOT_COLLECTED_AT_THAT_DATE",
+      "points": []
+    },
+    {
+      "sourceId": "douyin-37700000417",
+      "accountId": "37700000417",
+      "accountName": "蝉妈妈商务顾问",
+      "status": "NOT_COLLECTED_AT_THAT_DATE",
+      "points": []
+    },
+    {
+      "sourceId": "douyin-94390160864",
+      "accountId": "94390160864",
+      "accountName": "蝉妈妈运营顾问慧慧",
+      "status": "NOT_COLLECTED_AT_THAT_DATE",
+      "points": []
+    },
+    {
+      "sourceId": "douyin-52977841677",
+      "accountId": "52977841677",
+      "accountName": "蝉妈妈投流顾问薇薇",
+      "status": "NOT_COLLECTED_AT_THAT_DATE",
+      "points": []
+    },
+    {
+      "sourceId": "douyin-68638800039",
+      "accountId": "68638800039",
+      "accountName": "蝉妈妈选品顾问玲玲",
+      "status": "NOT_COLLECTED_AT_THAT_DATE",
+      "points": []
+    },
+    {
+      "sourceId": "douyin-60765252928",
+      "accountId": "60765252928",
+      "accountName": "蝉妈妈内容顾问兰兰",
+      "status": "NOT_COLLECTED_AT_THAT_DATE",
+      "points": []
+    },
+    {
+      "sourceId": "douyin-45133156889",
+      "accountId": "45133156889",
+      "accountName": "蝉妈妈竞品顾问秋秋",
+      "status": "NOT_COLLECTED_AT_THAT_DATE",
+      "points": []
+    },
+    {
+      "sourceId": "douyin-33081499021",
+      "accountId": "33081499021",
+      "accountName": "喜柿多多数据顾问琪琪",
+      "status": "NOT_COLLECTED_AT_THAT_DATE",
+      "points": []
+    },
+    {
+      "sourceId": "douyin-26789409602",
+      "accountId": "26789409602",
+      "accountName": "喜柿多多直播顾问强强",
+      "status": "NOT_COLLECTED_AT_THAT_DATE",
+      "points": []
+    },
+    {
+      "sourceId": "douyin-66476028197",
+      "accountId": "66476028197",
+      "accountName": "喜柿多多电商顾问琳琳",
+      "status": "NOT_COLLECTED_AT_THAT_DATE",
+      "points": []
+    },
+    {
+      "sourceId": "douyin-54350615153",
+      "accountId": "54350615153",
+      "accountName": "喜柿多多营销顾问可可",
+      "status": "NOT_COLLECTED_AT_THAT_DATE",
+      "points": []
+    },
+    {
+      "sourceId": "douyin-80976156179",
+      "accountId": "80976156179",
+      "accountName": "喜柿多多运营顾问静静",
+      "status": "NOT_COLLECTED_AT_THAT_DATE",
+      "points": []
+    }
+  ]
+}

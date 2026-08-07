@@ -477,7 +477,7 @@ a { color: inherit; }
 .signal-index { color: var(--rule-strong); font: 11px/1 var(--mono); }
 .signal-title { min-width: 0; }
 .signal-title button { width: 100%; padding: 0; border: 0; background: transparent; text-align: left; cursor: pointer; }
-.signal-title strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; }
+.signal-title strong { display: block; overflow-wrap: anywhere; white-space: normal; font-size: 12px; line-height: 1.35; }
 .signal-title small { display: block; margin-top: 6px; color: var(--muted); font: 10px/1.2 var(--mono); }
 .signal-title .signal-explanation { white-space: normal; line-height: 1.45; }
 .signal-score { text-align: right; font-family: var(--mono); }

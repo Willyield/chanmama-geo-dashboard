@@ -324,9 +324,14 @@ const observationScopeBand = () => {
   const unifiedCoverage = Number.isFinite(unifiedScope?.coverage)
     ? `${(unifiedScope.coverage * 100).toFixed(0)}% 覆盖`
     : "覆盖待确认";
+  const douyinNote = douyinScope?.collectedAccounts === 0
+    ? state.reportDate === "2026-08-06"
+      ? "抖音今日按用户要求排除监测（EXCLUDED_BY_USER），缺失指标保持空值"
+      : "抖音今日未检测，缺失指标保持空值"
+    : "按可用快照披露";
   return `<section class="observation-band" aria-label="三类账号观察范围">
     ${scopeCell("CONTENT_11", contentScope, `${formatExact(contentScope?.partialAccounts)}个账号部分字段受限`)}
-    ${scopeCell("DOUYIN_14", douyinScope, douyinScope?.collectedAccounts === 0 ? "抖音今日未检测，缺失指标保持空值" : "按可用快照披露")}
+    ${scopeCell("DOUYIN_14", douyinScope, douyinNote)}
     ${scopeCell("UNIFIED_25", unifiedScope, unifiedCoverage)}
     <div class="observation-metric"><span>指标覆盖</span><strong>${escapeHtml(viewCoverage)}</strong><small>缺失字段保持空值</small></div>
   </section>`;

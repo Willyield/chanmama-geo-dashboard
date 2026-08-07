@@ -1,7 +1,14 @@
 {
   "schemaVersion": 1,
-  "latest": "2026-08-05",
+  "latest": "2026-08-06",
   "reports": [
+    {
+      "reportDate": "2026-08-06",
+      "status": "PARTIAL",
+      "accountCount": 11,
+      "contentCount": 463,
+      "generatedAt": "2026-08-06T09:44:34.032Z"
+    },
     {
       "reportDate": "2026-08-05",
       "status": "PARTIAL",
@@ -48,6 +55,6 @@
   "douyinRetrospective": {
     "status": "AWAITING_COMPLETE_HANDOFF",
     "sourceReportDate": null,
-    "path": "./2026-08-05/douyin-retrospective.json"
+    "path": "./2026-08-06/douyin-retrospective.json"
   }
 }
