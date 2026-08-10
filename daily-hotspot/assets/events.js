@@ -13,7 +13,7 @@ import {
   sourceLinksHtml,
   statusChip,
   uniqueOptions,
-} from "./ui.js?v=20260803events1";
+} from "./ui.js";
 
 export const eventViews = [
   { id: "overview", label: "活动总览" },
@@ -44,6 +44,10 @@ function verificationClass(result) {
   return text.includes("冲突") || text.includes("失败") ? "status-conflict" : "status-pass";
 }
 
+function sourceAccessBlocked(data) {
+  return data.sourceVerification?.status === "BLOCKED";
+}
+
 function filterEvents(events, filters) {
   const search = String(filters.search || "").trim().toLowerCase();
   return events.filter((event) => {
@@ -60,6 +64,7 @@ function filterEvents(events, filters) {
 }
 
 function renderToolbar(data, filters, count) {
+  const historicalPrefix = sourceAccessBlocked(data) ? "历史" : "";
   const cities = uniqueOptions([
     ...(data.monitoringPolicy?.monitoredCities ?? []),
     ...data.events.map((event) => event.city),
@@ -71,7 +76,7 @@ function renderToolbar(data, filters, count) {
       <option value="all">全部级别</option>${["优先准备", "重点观察", "待补议程", "已取消"].map((priority) => `<option value="${priority}" ${filters.priority === priority ? "selected" : ""}>${priority}</option>`).join("")}
     </select></label>
     <label class="filter-select">${icon("shield-check")}<select data-filter="verification" aria-label="筛选核验状态">
-      <option value="all">全部核验</option><option value="pass" ${filters.verification === "pass" ? "selected" : ""}>核验通过</option><option value="conflict" ${filters.verification === "conflict" ? "selected" : ""}>存在冲突</option><option value="gaps" ${filters.verification === "gaps" ? "selected" : ""}>存在缺失</option>
+      <option value="all">全部核验</option><option value="pass" ${filters.verification === "pass" ? "selected" : ""}>${historicalPrefix}核验通过</option><option value="conflict" ${filters.verification === "conflict" ? "selected" : ""}>${historicalPrefix}存在冲突</option><option value="gaps" ${filters.verification === "gaps" ? "selected" : ""}>存在缺失</option>
     </select></label>
   </div><span class="result-count">${count} / ${data.events.length} 场</span></div>`;
 }
@@ -81,7 +86,7 @@ function renderEventBriefing(data) {
     .every((eventId) => data.events.some((event) => event.eventId === eventId));
   const items = data.events.map((event, index) => `<article class="event-briefing-item">
     <button class="event-briefing-open" type="button" data-open-id="${escapeHtml(event.eventId)}">
-      <span class="event-briefing-line"><span class="event-briefing-id">0${index + 1} / ${escapeHtml(event.eventId)}</span><span class="event-briefing-badges">${event.changeStatus === "new" ? statusChip("首次入库", "status-prepare") : ""}${statusChip(event.priority, priorityClass(event.priority))}${statusChip(event.evidenceLevel, "status-pass")}</span></span>
+      <span class="event-briefing-line"><span class="event-briefing-id">0${index + 1} / ${escapeHtml(event.eventId)}</span><span class="event-briefing-badges">${event.changeStatus === "new" ? statusChip("首次入库", "status-prepare") : ""}${statusChip(event.priority, priorityClass(event.priority))}${sourceAccessBlocked(data) ? statusChip("本轮来源受限", "status-watch") : statusChip(event.evidenceLevel, "status-pass")}</span></span>
       <strong class="event-briefing-name">${escapeHtml(event.name)}</strong>
       <span class="event-briefing-facts"><span>${icon("calendar-days")}${escapeHtml(formatDateTime(event.startAt))}</span><span>${icon("map-pin")}${escapeHtml(event.city)}</span></span>
       <span class="event-briefing-copy"><small>活动重点</small>${escapeHtml(event.focusTopics.join("；") || "待补议程")}</span>
@@ -99,6 +104,7 @@ function renderEventBriefing(data) {
 }
 
 function renderOverviewTable(events, data) {
+  const verificationLabel = sourceAccessBlocked(data) ? "历史真实性" : "真实性";
   if (!events.length) {
     const message = data.events.length
       ? "当前筛选条件下没有活动"
@@ -113,7 +119,7 @@ function renderOverviewTable(events, data) {
     <td><span class="cell-primary">${escapeHtml(event.focusTopics.join("；") || "待补议程")}</span></td>
     <td><span class="cell-primary">${escapeHtml(event.attentionReason)}</span></td>
     <td><span class="cell-primary">${escapeHtml(event.chanmamaRelevance)}</span><span class="cell-secondary">动作：${escapeHtml(event.recommendedAction)}</span></td>
-    <td>${statusChip(event.evidenceLevel, "status-pass")}<span class="cell-secondary">${escapeHtml(event.verificationResult)}<br>缺失 ${event.missingFields.length}｜冲突 ${event.conflicts.length}</span></td>
+    <td>${statusChip(event.evidenceLevel, "status-pass")}<span class="cell-secondary">${sourceAccessBlocked(data) ? "历史：" : ""}${escapeHtml(event.verificationResult)}<br>缺失 ${event.missingFields.length}｜冲突 ${event.conflicts.length}</span></td>
   </tr>`).join("");
   const mobile = events.map((event) => `<article class="mobile-item" data-open-id="${escapeHtml(event.eventId)}">
     <div class="mobile-item-header"><span>${event.changeStatus === "new" ? statusChip("首次入库", "status-prepare") : ""}${statusChip(event.priority, priorityClass(event.priority))}</span>${statusChip(event.evidenceLevel, "status-pass")}</div>
@@ -122,13 +128,13 @@ function renderOverviewTable(events, data) {
     ${sourceLinksHtml(event.sourceLinks, 1)}
     <p><strong>活动重点：</strong>${escapeHtml(event.focusTopics.join("；") || "待补议程")}</p>
     <p><strong>为什么关注：</strong>${escapeHtml(event.attentionReason)}</p>
-    <p><strong>真实性：</strong>${escapeHtml(event.verificationResult)}</p>
+    <p><strong>${verificationLabel}：</strong>${escapeHtml(event.verificationResult)}</p>
     <p class="mobile-evidence-note">缺失 ${event.missingFields.length} 项｜冲突 ${event.conflicts.length} 项</p>
     <p><strong>建议动作：</strong>${escapeHtml(event.recommendedAction)}</p>
   </article>`).join("");
   return `<div class="data-region"><div class="data-table-wrap"><table class="data-table" style="min-width:1280px">
     <colgroup><col style="width:7%"><col style="width:14%"><col style="width:9%"><col style="width:12%"><col style="width:13%"><col style="width:14%"><col style="width:21%"><col style="width:10%"></colgroup>
-    <thead><tr><th>关注级别</th><th>活动名称</th><th>原始来源</th><th>时间 / 介入窗口</th><th>活动重点</th><th>为什么关注</th><th>蝉妈妈关联 / 建议动作</th><th>证据 / 真实性</th></tr></thead><tbody>${rows}</tbody>
+    <thead><tr><th>关注级别</th><th>活动名称</th><th>原始来源</th><th>时间 / 介入窗口</th><th>活动重点</th><th>为什么关注</th><th>蝉妈妈关联 / 建议动作</th><th>证据 / ${verificationLabel}</th></tr></thead><tbody>${rows}</tbody>
   </table></div><div class="mobile-list">${mobile}</div></div>`;
 }
 
@@ -189,6 +195,11 @@ function renderVerification(data) {
   </section>`;
 }
 
+function renderSourceVerification(data) {
+  if (!sourceAccessBlocked(data)) return "";
+  return `<section class="section-band" aria-label="本轮来源复核状态"><div class="section-title"><h2>本轮官方来源复核受限</h2><span>未标记通过</span></div><p class="drawer-prose">${escapeHtml(data.sourceVerification.notice)}</p></section>`;
+}
+
 export function renderEventPage({ data, index, view, filters }) {
   const filtered = filterEvents(data.events, filters);
   const counts = data.summary.counts;
@@ -210,7 +221,7 @@ export function renderEventPage({ data, index, view, filters }) {
       { value: counts.conflicts, label: "存在字段冲突" },
     ],
     observedAt: data.observedAt,
-    verifiedAt: data.verifiedAt,
+    verifiedAt: sourceAccessBlocked(data) ? "本轮受限" : data.verifiedAt,
     sourceWorkbook: data.sourceLabel ?? data.sourceWorkbook,
   });
   const briefing = renderEventBriefing(data);
@@ -220,10 +231,11 @@ export function renderEventPage({ data, index, view, filters }) {
   else if (view === "keywords") content = renderKeywords(data, filters);
   else if (view === "verification") content = renderVerification(data);
   else content = `${renderToolbar(data, filters, filtered.length)}${renderOverviewTable(filtered, data)}`;
-  return `${heading}${summary}${briefing}${content}`;
+  return `${heading}${renderSourceVerification(data)}${summary}${briefing}${content}`;
 }
 
 export function renderEventDetail(event) {
+  const currentRoundBlocked = event.verificationLogs.some((row) => row.status === "SOURCE_ACCESS_BLOCKED");
   const sourceContent = event.sourceLinks.length
     ? `<div class="source-stack">${event.sourceLinks.map((link) => sourceLinksHtml([link], 1)).join("")}</div>`
     : `<p class="drawer-prose">来源暂缺</p>`;
@@ -231,7 +243,7 @@ export function renderEventDetail(event) {
     ? event.agendaTopics.map((topic) => `<div class="drawer-section" style="padding:12px 0;border-bottom:1px solid var(--border)"><strong>${escapeHtml(topic.topic)}</strong><p class="drawer-prose">${escapeHtml(topic.shareability)}</p><p class="cell-secondary">搜索词：${escapeHtml(topic.search_keywords.join("、"))}</p>${listHtml(topic.user_questions, "用户问题暂缺")}</div>`).join("")
     : `<p class="drawer-prose">详细议程暂缺，不生成具体爆点判断。</p>`;
   const verificationTimeline = `<ul class="timeline">${event.verificationLogs.map((row) => `<li><time>${escapeHtml(row.checked_at)} · ${escapeHtml(row.status)}</time><strong>${escapeHtml(row.check_type)}</strong><div class="cell-secondary">${escapeHtml(row.evidence)}｜${escapeHtml(row.issue)}</div></li>`).join("")}</ul>`;
-  const html = `<div class="drawer-actions">
+  const html = `${currentRoundBlocked ? detailSection("本轮复核状态", "shield-alert", `<p class="drawer-prose">官方来源访问受限，本轮未标记真实性复核通过；以下为历史事实与历史证据状态。</p>`) : ""}<div class="drawer-actions">
       ${event.sourceLinks[0] ? `<a class="command-button primary" href="${escapeHtml(event.sourceLinks[0].url)}" target="_blank" rel="noopener noreferrer">${icon("external-link")}打开原始来源</a>` : ""}
       <button class="command-button" type="button" data-drawer-command="copy">${icon("copy")}复制活动摘要</button>
     </div>
@@ -252,6 +264,6 @@ export function renderEventDetail(event) {
     ${detailSection("缺失与冲突", "triangle-alert", `<strong>缺失字段</strong>${listHtml(event.missingFields, "无")}<br><strong>冲突记录</strong>${listHtml(event.conflicts, "无")}`)}
     ${detailSection("复核时间线", "route", verificationTimeline)}
   `;
-  const copyText = `【${event.priority}｜${event.name}】\n时间：${formatDateTime(event.startAt)}\n城市：${event.city}\n活动重点：${event.focusTopics.join("；") || "待补议程"}\n为什么关注：${event.attentionReason}\n建议动作：${event.recommendedAction}\n真实性：${event.evidenceLevel}，${event.verificationResult}\n原始来源：${event.sourceLinks[0]?.url || "暂缺"}`;
+  const copyText = `【${event.priority}｜${event.name}】\n时间：${formatDateTime(event.startAt)}\n城市：${event.city}\n活动重点：${event.focusTopics.join("；") || "待补议程"}\n为什么关注：${event.attentionReason}\n建议动作：${event.recommendedAction}\n${currentRoundBlocked ? "历史真实性" : "真实性"}：${event.evidenceLevel}，${event.verificationResult}${currentRoundBlocked ? "（本轮官方来源复核受限，未标记通过）" : ""}\n原始来源：${event.sourceLinks[0]?.url || "暂缺"}`;
   return { eyebrow: `${event.eventId} · ${event.priority}`, title: event.name, html, copyText };
 }

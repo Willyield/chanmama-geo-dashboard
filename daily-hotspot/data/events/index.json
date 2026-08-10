@@ -1,8 +1,17 @@
 {
   "schemaVersion": 1,
   "module": "events",
-  "latest": "2026-08-03",
+  "latest": "2026-08-10",
   "dates": [
+    {
+      "date": "2026-08-10",
+      "observedAt": "2026-08-03 09:42",
+      "verifiedAt": "2026-08-10",
+      "total": 3,
+      "prepare": 2,
+      "excludedRecent": 17,
+      "revision": 1
+    },
     {
       "date": "2026-08-03",
       "observedAt": "2026-08-03 09:42",
