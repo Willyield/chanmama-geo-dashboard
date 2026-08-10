@@ -53,6 +53,9 @@ const state = {
   summary: null,
   records: [],
   douyinRetrospective: null,
+  ready: false,
+  loadingReportDate: null,
+  loadingPromise: null,
   error: null,
 };
 
@@ -205,20 +208,73 @@ const fetchJson = async (url) => {
   return response.json();
 };
 
-const loadReport = async (reportDate) => {
+const fetchOptionalJson = async (url) => {
+  const response = await fetch(url, { cache: "no-store" });
+  if (response.status === 404) return null;
+  if (!response.ok) throw new Error(`${response.status} ${url}`);
+  return response.json();
+};
+
+const afterNextPaint = () => new Promise((resolve) => {
+  requestAnimationFrame(() => requestAnimationFrame(resolve));
+});
+
+const fetchSummaryCore = async (reportDate) => {
+  const core = await fetchOptionalJson(`./data/${reportDate}/summary-core.json`);
+  if (core) return { core, split: true };
+  return { core: await fetchJson(`./data/${reportDate}/summary.json`), split: false };
+};
+
+const fetchCompactContents = async (reportDate) => {
+  const compact = await fetchOptionalJson(`./data/${reportDate}/contents-compact.json`);
+  return compact || fetchJson(`./data/${reportDate}/contents.json`);
+};
+
+const loadReport = async (reportDate, { progressive = false, route = null } = {}) => {
   const retrospectivePath = state.index?.douyinRetrospective?.path;
-  const [summary, contents, retrospective] = await Promise.all([
-    fetchJson(`./data/${reportDate}/summary.json`),
-    fetchJson(`./data/${reportDate}/contents.json`),
+  const { core, split } = await fetchSummaryCore(reportDate);
+
+  if (progressive) {
+    state.reportDate = reportDate;
+    state.summary = core;
+    state.records = [];
+    state.douyinRetrospective = null;
+    state.ready = false;
+    state.error = null;
+    syncHeader();
+    renderProgressiveOverview(route);
+    await afterNextPaint();
+  }
+
+  const [detail, contents, retrospective] = await Promise.all([
+    split
+      ? fetchJson(`./data/${reportDate}/summary-detail.json`)
+      : Promise.resolve({}),
+    fetchCompactContents(reportDate),
     retrospectivePath
       ? fetchJson(`./data/${retrospectivePath.replace(/^\.\//, "")}`)
       : Promise.resolve(null),
   ]);
   state.reportDate = reportDate;
-  state.summary = summary;
+  state.summary = { ...core, ...detail };
   state.records = contents.records || [];
   state.douyinRetrospective = retrospective;
+  state.ready = true;
   state.error = null;
+};
+
+const ensureReport = (reportDate, options) => {
+  if (state.reportDate === reportDate && state.ready) return Promise.resolve();
+  if (state.loadingReportDate === reportDate && state.loadingPromise) return state.loadingPromise;
+  const promise = loadReport(reportDate, options).finally(() => {
+    if (state.loadingPromise === promise) {
+      state.loadingReportDate = null;
+      state.loadingPromise = null;
+    }
+  });
+  state.loadingReportDate = reportDate;
+  state.loadingPromise = promise;
+  return promise;
 };
 
 const syncHeader = () => {
@@ -1012,7 +1068,17 @@ const renderOverview = (route) => {
     ${douyinMonitoringBoard()}
     ${accountTrendBoard(route.query)}
     ${rollingAccountTable()}
-    <section class="section"><div class="section-header"><h2>内容明细</h2><span>${filtered.length} 篇</span></div>${renderTable(filtered.slice(0, 20), route.query)}</section>`;
+     <section class="section"><div class="section-header"><h2>内容明细</h2><span>${filtered.length} 篇</span></div>${renderTable(filtered.slice(0, 20), route.query)}</section>`;
+};
+
+const renderProgressiveOverview = (route) => {
+  app.innerHTML = `${heading("经营数据总览", `${state.summary.reportDate} / 正在载入完整日报`)}
+    ${executiveSummary()}${metricStrip()}
+    <section class="section" aria-busy="true">
+      <div class="section-header"><h2>趋势与内容明细</h2><span>后台载入</span></div>
+      <div class="loading-state" role="status">核心指标已就绪，正在载入趋势与内容明细</div>
+    </section>`;
+  app.focus({ preventScroll: true });
 };
 
 const renderPlatform = (route) => {
@@ -1085,7 +1151,9 @@ const renderContent = (route) => {
 
 const renderEmpty = (message) => { app.innerHTML = `<div class="empty-state">${escapeHtml(message)}</div>`; };
 
+let renderSequence = 0;
 const render = async () => {
+  const sequence = ++renderSequence;
   const normalized = normalizeLegacyRoute(routeState());
   const route = normalized.route;
   if (normalized.changed) history.replaceState(null, "", makeRoute(route.view, route.id, route.query));
@@ -1096,7 +1164,10 @@ const render = async () => {
       route.query.set("date", resolvedDate);
       history.replaceState(null, "", makeRoute(route.view, route.id, route.query));
     }
-    if (resolvedDate && resolvedDate !== state.reportDate) await loadReport(resolvedDate);
+    if (resolvedDate && (resolvedDate !== state.reportDate || !state.ready)) {
+      await ensureReport(resolvedDate, { progressive: route.view === "overview", route });
+    }
+    if (sequence !== renderSequence) return;
     syncHeader();
     if (!state.summary) return renderEmpty("暂无日报数据");
     if (route.view === "platform") renderPlatform(route);
