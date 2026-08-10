@@ -3,9 +3,9 @@
   "module": "creators",
   "dataMode": "DAILY_AUDIT_ONLY",
   "date": "2026-08-10",
-  "observedAt": "2026-08-10T03:27:34.067Z",
-  "scheduledFor": "2026-08-10T11:00:00+08:00",
-  "publicationStatus": "DEGRADED_REPORT",
+  "observedAt": "2026-08-10T08:32:45.840Z",
+  "scheduledFor": "2026-08-10T16:00:00+08:00",
+  "publicationStatus": "LATE_FULL",
   "title": "抖音达人白名单库及热点判断",
   "summary": {
     "candidateCreators": null,
@@ -38,35 +38,35 @@
       {
         "platform": "CHANMAMA",
         "status": "LOADED",
-        "observedAt": "2026-08-10T03:27:34.067Z"
+        "observedAt": "2026-08-10T08:32:45.840Z"
       },
       {
         "platform": "OCEAN_ENGINE_CLOUD_ATLAS",
         "status": "LOADED",
-        "observedAt": "2026-08-10T03:27:34.067Z"
+        "observedAt": "2026-08-10T08:32:45.840Z"
       },
       {
         "platform": "OCEAN_ENGINE_STAR_MAP",
         "status": "LOADED",
-        "observedAt": "2026-08-10T03:27:34.067Z"
+        "observedAt": "2026-08-10T08:32:45.840Z"
       },
       {
         "platform": "DOUYIN",
         "status": "LOADED",
-        "observedAt": "2026-08-10T03:27:34.067Z"
+        "observedAt": "2026-08-10T08:32:45.840Z"
       },
       {
         "platform": "CREATOR_CENTER",
         "status": "LOADED",
-        "observedAt": "2026-08-10T03:27:34.067Z"
+        "observedAt": "2026-08-10T08:32:45.840Z"
       }
     ]
   },
   "creatorCaptureStatus": {
     "captureType": "LATE_MAIN_CAPTURE",
-    "observedAt": "2026-08-10T03:27:34.067Z",
-    "displayTime": "2026-08-10 11:27",
-    "plannedAt": "2026-08-10T11:00:00+08:00",
+    "observedAt": "2026-08-10T08:32:45.840Z",
+    "displayTime": "2026-08-10 16:32",
+    "plannedAt": "2026-08-10T16:00:00+08:00",
     "schedule": {
       "onTime": false,
       "supplement": false
@@ -158,19 +158,19 @@
     "timeoutPolicy": "0 个失败页保持缺失，不估填、不替代、不晋级"
   },
   "audit": {
-    "sourcePath": "runs/douyin-creator-20260810-1100-complete-repair-r2/audit.json",
-    "sourceSha256": "14dc7287ea181d0016b3e4b2589368fd19fb223a1e692a6477da9a26b7d78554",
-    "reportType": "DEGRADED_REPORT",
+    "sourcePath": "runs/douyin-creator-20260810-1600-completeness-repair-r5/audit.json",
+    "sourceSha256": "55955d3ffb69295d9f427b2d58f4e3e876ee39748b47f7065eb318f4f1d1f34e",
+    "reportType": "LATE_FULL",
     "schedule": {
       "onTime": false,
       "supplement": false,
-      "plannedAt": "2026-08-10T11:00:00+08:00",
-      "slot": "2026-08-10T11:00:00+08:00",
-      "lateReason": "The fresh replacement capture completed after the exact 11:00 schedule boundary; lateness is not reclassified."
+      "plannedAt": "2026-08-10T16:00:00+08:00",
+      "slot": "2026-08-10T16:00:00+08:00",
+      "lateReason": "The fresh complete replacement finished after the exact 16:00 boundary; lateness is not reclassified."
     },
     "creatorDecision": {
       "result": "UNCHANGED_IDENTITY_PAGES_VISIBLE_METRICS_INCOMPLETE",
-      "reason": "All 13 roster identity pages loaded in the fresh replacement capture, but the cross-weekend interval is outside T+48 and comparable performance, dual-source, cohort, originality and risk inputs remain unavailable. Existing observation tiers remain unchanged.",
+      "reason": "All 13 roster identity pages loaded and the intraday interval is valid, but comparable performance, dual-source, cohort, originality and risk inputs remain unavailable. Existing observation tiers remain unchanged.",
       "priorityObservationAccounts": []
     },
     "missingInputs": [
@@ -186,8 +186,8 @@
     "evidenceRefs": [],
     "constraints": null,
     "nextCapture": {
-      "slot": "2026-08-10T16:00:00+08:00",
-      "mode": "NEXT_SCHEDULED_AFTERNOON_MAIN",
+      "slot": "2026-08-11T11:00:00+08:00",
+      "mode": "NEXT_SCHEDULED_MORNING_MAIN",
       "browserRule": "Reuse the registered 9235 session. Keep the five base tabs open and process exactly one temporary monitoring page at a time."
     }
   },

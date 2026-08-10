@@ -49,7 +49,7 @@ function loadModuleApi(module) {
             findRecord: (data, id) => data.events.find((event) => event.eventId === id),
           }))
         : Promise.all([
-            import("./creators.js?v=20260810morning1127completer1"),
+            import("./creators.js?v=20260810afternoon1632completer1"),
             import("./creator-data.js"),
           ]).then(([api, creatorData]) => ({
             views: api.creatorViews,

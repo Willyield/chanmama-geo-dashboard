@@ -5,13 +5,13 @@
   "dates": [
     {
       "date": "2026-08-10",
-      "observedAt": "2026-08-10T03:27:34.067Z",
+      "observedAt": "2026-08-10T08:32:45.840Z",
       "candidateCreators": null,
       "manualRound1Queue": null,
       "formalWhitelist": 0,
       "successfulVideos": null,
       "qualifiedTopics": 0,
-      "publicationStatus": "DEGRADED_REPORT",
+      "publicationStatus": "LATE_FULL",
       "dataMode": "DAILY_AUDIT_ONLY"
     },
     {
