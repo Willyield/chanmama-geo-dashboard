@@ -43,14 +43,14 @@
         '</div></details>' +
         '<details data-active="' + (section === "citation") + '"><summary>引用源</summary><div class="geo-shell-submenu">' +
           submenuLink("./douyin-citation-report/", "第一轮引用源", "基线") +
-          submenuLink("./douyin-citation-report-round2/", "第二轮引用源", "阶段性 300/576") +
-          submenuLink("./chanquanquan-citation-report/", "蝉圈圈引用源", "最终 FULL 730/730") +
+          submenuLink("./douyin-citation-report-round2/", "第二轮引用源", "最终 576/576") +
+          submenuLink("./chanquanquan-citation-report/", "蝉圈圈引用源", "最终 730/730") +
         '</div></details>' +
-        '<a href="' + href("./#roadmap") + '">研究路线</a>' +
+        '<a href="' + href("./feigua-competitor-monitor/") + '"' + current("competitor") + '>飞瓜监控</a>' +
         '<a href="' + href("./#method") + '">方法与口径</a>' +
         '<details data-active="' + (section === "more") + '"><summary>更多</summary><div class="geo-shell-submenu">' +
           submenuLink("./chanjing-ai/", "蝉镜 AI", "双端观察") +
-          submenuLink("./chanquanquan-geo/", "蝉圈圈 GEO", "365/730 · 非最终 FULL") +
+          submenuLink("./chanquanquan-geo/", "蝉圈圈 GEO", "最终 730/730") +
         '</div></details>' +
       '</nav>' +
     '</div>';
@@ -77,6 +77,7 @@
   coreTargets[new URL(href("./top2-top3/")).pathname] = [href("./top2-top3/dashboard-core-data.js?v=navperf-r1")];
   coreTargets[new URL(href("./total/")).pathname] = [href("./total/dashboard-core-data.js?v=navperf-r1")];
   coreTargets[new URL(href("./chanjing-ai/")).pathname] = [href("./chanjing-ai/dashboard-summary.json")];
+  coreTargets[new URL(href("./feigua-competitor-monitor/")).pathname] = [href("./feigua-competitor-monitor/public-data.js")];
 
   function addPrefetch(url, as) {
     if (prefetched.has(url)) return;

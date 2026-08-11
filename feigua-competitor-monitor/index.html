@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="飞瓜竞品监控公开白名单仪表盘">
+  <title>飞瓜竞品监控 | GEO 综合分析平台</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../assets/platform-shell.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="../assets/platform-shell.js" data-root="../" data-section="competitor" data-label="飞瓜监控"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <div id="geo-shell-root" aria-label="全局导航"></div>
+
+  <main id="main-content">
+    <section class="overview-band" aria-labelledby="page-title">
+      <div class="overview-copy">
+        <p class="eyebrow">COMPETITOR MONITOR / PUBLIC</p>
+        <h1 id="page-title">飞瓜竞品监控</h1>
+        <p class="lede">只呈现可由公开来源独立复核的信息。登录态监测、内部判断和受限来源数据与本页面物理隔离。</p>
+      </div>
+      <div class="as-of" aria-label="数据状态">
+        <span>公开数据截至</span>
+        <strong id="data-date">--</strong>
+        <small id="edition-label">--</small>
+      </div>
+    </section>
+
+    <section class="status-track" aria-label="公开信息处理状态">
+      <div class="track-step is-complete">
+        <span class="track-index">01</span>
+        <strong>公开来源</strong>
+        <small>入口已登记</small>
+      </div>
+      <div class="track-step is-complete">
+        <span class="track-index">02</span>
+        <strong>独立复核</strong>
+        <small>边界已校验</small>
+      </div>
+      <div class="track-step is-current">
+        <span class="track-index">03</span>
+        <strong>公开动态</strong>
+        <small>当前无记录</small>
+      </div>
+      <div class="track-step">
+        <span class="track-index">04</span>
+        <strong>持续观察</strong>
+        <small>等待新证据</small>
+      </div>
+    </section>
+
+    <section class="metric-strip" id="metric-strip" aria-label="公开版指标"></section>
+
+    <nav class="view-tabs" role="tablist" aria-label="飞瓜竞品监控视图">
+      <button class="tab is-active" id="tab-overview" role="tab" aria-selected="true" aria-controls="view-overview" data-view="overview">概览</button>
+      <button class="tab" id="tab-sources" role="tab" aria-selected="false" aria-controls="view-sources" data-view="sources" tabindex="-1">公开来源</button>
+      <button class="tab" id="tab-boundary" role="tab" aria-selected="false" aria-controls="view-boundary" data-view="boundary" tabindex="-1">披露边界</button>
+    </nav>
+
+    <section class="view is-active" id="view-overview" role="tabpanel" aria-labelledby="tab-overview" data-panel="overview">
+      <div class="decision-layout">
+        <div class="decision-copy">
+          <p class="section-kicker">PUBLIC FINDING</p>
+          <h2>当前没有可独立公开复核的飞瓜产品动态</h2>
+          <p>本版不使用登录态公告推断产品更新。新的动态只有在飞瓜官方公开页面可访问、内容可复核且日期明确时，才会进入列表。</p>
+        </div>
+        <div class="decision-count" aria-label="已核验公开动态数量">
+          <span class="status-label status-neutral">无新增记录</span>
+          <strong id="verified-update-count">0</strong>
+          <small>已核验公开动态</small>
+        </div>
+      </div>
+
+      <section class="section-block" aria-labelledby="updates-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">VERIFIED UPDATES</p>
+            <h2 id="updates-title">公开动态</h2>
+          </div>
+          <span class="status-label status-neutral">官方公开来源限定</span>
+        </div>
+        <div id="update-list" class="update-list"></div>
+      </section>
+    </section>
+
+    <section class="view" id="view-sources" role="tabpanel" aria-labelledby="tab-sources" data-panel="sources" hidden>
+      <div class="section-heading view-heading">
+        <div>
+          <p class="section-kicker">SOURCE REGISTER</p>
+          <h2>公开来源登记</h2>
+        </div>
+        <span class="status-label status-verified">可独立访问</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">来源</th>
+              <th scope="col">来源类型</th>
+              <th scope="col">核验状态</th>
+              <th scope="col">核验日期</th>
+              <th scope="col"><span class="visually-hidden">操作</span></th>
+            </tr>
+          </thead>
+          <tbody id="source-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="view" id="view-boundary" role="tabpanel" aria-labelledby="tab-boundary" data-panel="boundary" hidden>
+      <div class="section-heading view-heading">
+        <div>
+          <p class="section-kicker">DISCLOSURE CONTROL</p>
+          <h2>公开披露边界</h2>
+        </div>
+        <span class="status-label status-verified">隔离通过</span>
+      </div>
+      <p class="boundary-intro">以下受限信息均未进入公开数据文件、页面脚本或展示结果。</p>
+      <div class="boundary-grid" id="boundary-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>飞瓜竞品监控 · 公开白名单版</p>
+    <p>信息状态以页面标注的数据日期与公开来源为准。</p>
+  </footer>
+
+  <script src="./public-data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
