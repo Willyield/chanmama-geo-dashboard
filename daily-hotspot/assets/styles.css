@@ -1130,7 +1130,7 @@ p {
   color: #fff;
 }
 
-.method-menu { position: relative; }
+.method-menu { position: relative; flex: 0 0 auto; }
 .method-menu summary {
   display: inline-flex;
   min-height: 32px;
@@ -1143,6 +1143,7 @@ p {
   color: var(--muted);
   font-size: 12px;
   font-weight: 600;
+  white-space: nowrap;
 }
 .method-menu summary::-webkit-details-marker { display: none; }
 .method-menu summary.is-active { background: var(--ink); color: #fff; }
