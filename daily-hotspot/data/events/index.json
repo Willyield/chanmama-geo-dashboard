@@ -1,8 +1,62 @@
 {
   "schemaVersion": 1,
   "module": "events",
-  "latest": "2026-08-10",
+  "latest": "2026-08-18",
   "dates": [
+    {
+      "date": "2026-08-18",
+      "observedAt": "2026-08-17 09:58",
+      "verifiedAt": "2026-08-18",
+      "total": 6,
+      "prepare": 4,
+      "excludedRecent": 17,
+      "revision": 4
+    },
+    {
+      "date": "2026-08-17",
+      "observedAt": "2026-08-17 09:58",
+      "verifiedAt": "2026-08-17",
+      "total": 6,
+      "prepare": 4,
+      "excludedRecent": 17,
+      "revision": 3
+    },
+    {
+      "date": "2026-08-14",
+      "observedAt": "2026-08-03 09:42",
+      "verifiedAt": "2026-08-14",
+      "total": 3,
+      "prepare": 2,
+      "excludedRecent": 17,
+      "revision": 1
+    },
+    {
+      "date": "2026-08-13",
+      "observedAt": "2026-08-03 09:42",
+      "verifiedAt": "2026-08-13",
+      "total": 3,
+      "prepare": 2,
+      "excludedRecent": 17,
+      "revision": 4
+    },
+    {
+      "date": "2026-08-12",
+      "observedAt": "2026-08-03 09:42",
+      "verifiedAt": "2026-08-12",
+      "total": 3,
+      "prepare": 2,
+      "excludedRecent": 17,
+      "revision": 6
+    },
+    {
+      "date": "2026-08-11",
+      "observedAt": "2026-08-03 09:42",
+      "verifiedAt": "2026-08-11",
+      "total": 3,
+      "prepare": 2,
+      "excludedRecent": 17,
+      "revision": 1
+    },
     {
       "date": "2026-08-10",
       "observedAt": "2026-08-03 09:42",
@@ -10,7 +64,34 @@
       "total": 3,
       "prepare": 2,
       "excludedRecent": 17,
+      "revision": 2
+    },
+    {
+      "date": "2026-08-07",
+      "observedAt": "2026-08-03 09:42",
+      "verifiedAt": "2026-08-07",
+      "total": 3,
+      "prepare": 2,
+      "excludedRecent": 17,
       "revision": 1
+    },
+    {
+      "date": "2026-08-06",
+      "observedAt": "2026-08-03 09:42",
+      "verifiedAt": "2026-08-06",
+      "total": 3,
+      "prepare": 2,
+      "excludedRecent": 17,
+      "revision": 3
+    },
+    {
+      "date": "2026-08-05",
+      "observedAt": "2026-08-03 09:42",
+      "verifiedAt": "2026-08-05",
+      "total": 3,
+      "prepare": 2,
+      "excludedRecent": 17,
+      "revision": 2
     },
     {
       "date": "2026-08-03",

@@ -21,9 +21,9 @@ export const hotspotViews = [
   { id: "opportunity", label: "爆款与广告机会" },
   { id: "meeting", label: "热点视图" },
   { id: "execution", label: "执行清单" },
-  { id: "scan", label: "平台扫描", secondary: true },
-  { id: "archive", label: "每日归档", secondary: true },
-  { id: "rules", label: "评分说明", secondary: true },
+  { id: "scan", label: "平台扫描" },
+  { id: "archive", label: "每日归档" },
+  { id: "rules", label: "评分说明" },
 ];
 
 export const hotspotFilterDefaults = { search: "", domain: "all", kind: "all", grade: "all", type: "all" };
@@ -582,11 +582,13 @@ function renderToolbar(data, filters, count) {
 function renderOverviewTable(candidates) {
   if (!candidates.length) return `<div class="data-region">${renderEmpty("当前筛选条件下没有热点")}</div>`;
   const rows = candidates.map((candidate) => `<tr data-open-id="${escapeHtml(candidate.id)}" data-domain="${candidateDomain(candidate)}">
-    <td>${statusChip(mainDecisionLabel(candidate), mainDecisionClass(candidate))}<span class="cell-secondary">${escapeHtml(businessResponseLabel(candidate))}</span></td>
-    <td><span class="cell-primary">${escapeHtml(displayName(candidate))}</span><span class="cell-secondary">${isPotentialTopic(candidate) ? "潜力话题" : "事件热点"}｜${escapeHtml(typeLabel(candidate.type))}</span>${isTechnology(candidate) ? renderTechnologyScores(candidate) : ""}${renderResonanceInline(candidate)}</td>
-    <td><span class="cell-primary">${escapeHtml(isTechnology(candidate) ? techChange(candidate) : candidate.actionReason)}</span><span class="cell-secondary">${escapeHtml(firstLine(factBoundary(candidate)))}</span></td>
-    <td><span class="cell-primary">${escapeHtml(isTechnology(candidate) ? nextStep(candidate) : candidate.recommended)}</span>${candidate.primary_topic ? `<span class="cell-secondary"><strong>内容方向：</strong>${escapeHtml(candidate.early_publish_title || candidate.primary_topic)}</span>` : ""}</td>
-    <td>${statusChip(sourceTier(candidate), sourceTierCode(candidate) === "E3" ? "status-pass" : "status-watch")}${sourceLinksHtml(candidate.sourceLinks || normalizeEvidenceLinks(officialEvidence(candidate)), 1)}<span class="cell-secondary">${escapeHtml(candidate.risk || "风险状态 UNKNOWN")}</span>${pendingConfirmation(candidate).length ? `<span class="cell-secondary"><strong>待确认：</strong>${escapeHtml(pendingConfirmation(candidate).join("；"))}</span>` : ""}</td>
+    <td>${statusChip(mainDecisionLabel(candidate), mainDecisionClass(candidate))}<span class="cell-secondary">业务响应：${escapeHtml(businessResponseLabel(candidate))}</span><span class="cell-secondary">内容动作：${escapeHtml(publicationStatus(candidate))}</span></td>
+    <td><span class="cell-primary">${escapeHtml(displayName(candidate))}</span><span class="cell-secondary">${isPotentialTopic(candidate) ? "潜力话题" : "事件热点"}｜${escapeHtml(typeLabel(candidate.type))}</span></td>
+    <td>${statusChip(sourceTier(candidate), sourceTierCode(candidate) === "E3" ? "status-pass" : "")}${sourceLinksHtml(candidate.sourceLinks || normalizeEvidenceLinks(officialEvidence(candidate)), 1)}</td>
+    <td>${renderCandidateScore(candidate)}${renderResonanceInline(candidate)}</td>
+    <td>${isTechnology(candidate) ? `<span class="field-kicker">技术变化</span><span class="cell-primary">${escapeHtml(techChange(candidate))}</span><span class="cell-secondary"><strong>与蝉妈妈有关：</strong>${escapeHtml(chanmamaRelevance(candidate))}</span>` : `<span class="cell-primary">${escapeHtml(candidate.actionReason)}</span>`}</td>
+    <td><span class="cell-primary">${escapeHtml(isTechnology(candidate) ? nextStep(candidate) : candidate.recommended)}</span>${candidate.primary_topic ? `<span class="cell-secondary"><strong>内容题目：</strong>${escapeHtml(candidate.early_publish_title || candidate.primary_topic)}</span>` : ""}<span class="cell-secondary"><strong>事实边界：</strong>${escapeHtml(firstLine(factBoundary(candidate)))}</span></td>
+    <td>${isTechnology(candidate) ? `<div class="evidence-pair">${renderEvidencePreview("官方", officialEvidence(candidate), "官方信息待确认")}${renderEvidencePreview("圈层", circleEvidence(candidate), "圈层信号待确认")}</div>` : `<span class="cell-primary">${escapeHtml(firstLine(candidate.evidence))}</span><span class="cell-secondary">${escapeHtml(candidate.risk)}｜${escapeHtml(candidate.publishedAt)}</span>`}${pendingConfirmation(candidate).length ? `<span class="cell-secondary"><strong>待确认：</strong>${escapeHtml(pendingConfirmation(candidate).join("；"))}</span>` : ""}${recommendedChannelLabels(candidate).length ? `<span class="cell-secondary"><strong>建议渠道：</strong>${escapeHtml(recommendedChannelLabels(candidate).join("、"))}</span>` : ""}</td>
   </tr>`).join("");
   const mobile = candidates.map((candidate) => `<article class="mobile-item" data-open-id="${escapeHtml(candidate.id)}" data-domain="${candidateDomain(candidate)}">
     <div class="mobile-item-header">${statusChip(mainDecisionLabel(candidate), mainDecisionClass(candidate))}${isTechnology(candidate) ? `<div class="score-stack">${renderTechnologyScores(candidate, true)}${hotnessScore(candidate) != null || contentPotentialScore(candidate) != null ? renderTrafficScores(candidate, true) : ""}</div>` : hotnessScore(candidate) != null || contentPotentialScore(candidate) != null ? renderTrafficScores(candidate, true) : `<span class="mono">${escapeHtml(candidate.totalScore)}</span>`}</div>
@@ -600,9 +602,9 @@ function renderOverviewTable(candidates) {
     ${renderResonanceInline(candidate)}
   </article>`).join("");
   return `<div class="data-region">
-    <div class="data-table-wrap"><table class="data-table decision-table">
-      <colgroup><col style="width:11%"><col style="width:24%"><col style="width:24%"><col style="width:24%"><col style="width:17%"></colgroup>
-      <thead><tr><th>优先级</th><th>主题与信号</th><th>判断理由</th><th>建议动作</th><th>证据状态</th></tr></thead>
+    <div class="data-table-wrap"><table class="data-table">
+      <colgroup><col style="width:10%"><col style="width:16%"><col style="width:11%"><col style="width:13%"><col style="width:20%"><col style="width:18%"><col style="width:12%"></colgroup>
+      <thead><tr><th>核心决策</th><th>事件 / 潜力话题</th><th>来源</th><th>热度信号 / 选题价值</th><th>关键变化 / 为什么做</th><th>内容动作 / 事实边界</th><th>来源 / 待确认信息</th></tr></thead>
       <tbody>${rows}</tbody>
     </table></div>
     <div class="mobile-list">${mobile}</div>
@@ -843,7 +845,7 @@ export function renderHotspotPage({ data, index, view, filters }) {
     activeView: view,
   });
   const summary = renderSummaryBand({
-    summary: `今天先做什么：${(data.summary.topActions || []).slice(0, 3).map((item) => item.name).join("；") || "本期没有优先动作"}\n输入完整性：${data.inputStatus ?? "UNKNOWN"}。完整扫描过程、评分规则和历史说明保留在“证据与方法”。`,
+    summary: data.summary.webSummary,
     metrics: [
       { value: data.candidates.length, label: "本期入库" },
       { value: `${kindCounts.event}/${kindCounts.potential_topic}`, label: "事件 / 潜力" },

@@ -3,8 +3,8 @@
   "module": "creators",
   "dataMode": "DAILY_AUDIT_ONLY",
   "date": "2026-07-31",
-  "observedAt": "2026-07-31T10:02:45.1532798+08:00",
-  "scheduledFor": "T0_1000",
+  "observedAt": "2026-07-31T08:11:26.869Z",
+  "scheduledFor": "2026-07-31T16:00:00+08:00",
   "publicationStatus": "DEGRADED_REPORT",
   "title": "抖音达人白名单库及热点判断",
   "summary": {
@@ -20,107 +20,28 @@
     "confirmedHotspots": 0,
     "contentActions": 0
   },
-  "statusMessage": "本日审计未新增达人白名单；8 项关键输入仍未闭环。",
+  "statusMessage": "本日审计未新增达人白名单；5 项关键输入仍未闭环。",
   "limitations": [
-    "platform session target list",
-    "T0 creator snapshots",
-    "T0 video snapshots",
-    "T0 topic populations",
-    "source-cluster assessment",
-    "same-age cohort",
-    "independent dual-source values",
-    "creator identity and risk review"
+    "同指标前后增长快照：UNKNOWN",
+    "话题人口：UNKNOWN",
+    "同龄 P60 队列：UNKNOWN",
+    "双源复核：UNKNOWN",
+    "30 天活跃度：UNKNOWN"
   ],
   "sourceStatus": {
     "valuesImputed": false,
     "candidatesPromotedToWhitelist": false,
-    "platforms": [
-      {
-        "platform": "chanmama",
-        "status": "UNKNOWN_DEDICATED_SESSION_UNAVAILABLE",
-        "observedAt": "2026-07-31T10:02:45.1532798+08:00",
-        "evidence": null
-      },
-      {
-        "platform": "yuntu",
-        "status": "UNKNOWN_DEDICATED_SESSION_UNAVAILABLE",
-        "observedAt": "2026-07-31T10:02:45.1532798+08:00",
-        "evidence": null
-      },
-      {
-        "platform": "xingtu",
-        "status": "UNKNOWN_DEDICATED_SESSION_UNAVAILABLE",
-        "observedAt": "2026-07-31T10:02:45.1532798+08:00",
-        "evidence": null
-      },
-      {
-        "platform": "douyin",
-        "status": "UNKNOWN_DEDICATED_SESSION_UNAVAILABLE",
-        "observedAt": "2026-07-31T10:02:45.1532798+08:00",
-        "evidence": null
-      },
-      {
-        "platform": "creatorCenter",
-        "status": "UNKNOWN_DEDICATED_SESSION_UNAVAILABLE",
-        "observedAt": "2026-07-31T10:02:45.1532798+08:00",
-        "evidence": null
-      }
-    ]
-  },
-  "audit": {
-    "sourcePath": "data/audits/2026-07-31-1002-t0-degraded-hotspot-and-creator-decision-v1.json",
-    "sourceSha256": "bff88a899c6ff042c6717cbf4fd0d5ecf06cd66b836dcdcb9fb19dca7417fc21",
-    "reportType": "DEGRADED_REPORT",
-    "schedule": {
-      "slot": "T0_1000",
-      "on_time": true,
-      "supplementalRefresh": false,
-      "window": "10:00 +/- 15 minutes",
-      "originalTriggerAt": "2026-07-31T10:01:57.283+08:00",
-      "lateSnapshotBackfilledAsOnTime": false
-    },
-    "creatorDecision": {
-      "result": "NO_CREATOR_ADMISSION",
-      "reason": "原始审计未记录满足独立共振、同龄增速、内容价值和风险门的达人，因此本日未新增达人白名单。",
-      "priorityObservationAccounts": []
-    },
-    "missingInputs": [
-      "platform session target list",
-      "T0 creator snapshots",
-      "T0 video snapshots",
-      "T0 topic populations",
-      "source-cluster assessment",
-      "same-age cohort",
-      "independent dual-source values",
-      "creator identity and risk review"
-    ],
-    "evidenceRefs": [
-      "evidence/2026-07-31T02-02-45-153Z-platform-session-preflight-v3.json"
-    ],
-    "constraints": {
-      "cookiesReadOrExported": false,
-      "verificationBypassed": false,
-      "missingValuesEstimated": false,
-      "candidatePromotedToWhitelist": false,
-      "existingTrackingPoolReusedAsFresh": false,
-      "staleEvidenceReusedAsFresh": false,
-      "sealedV6ManifestModified": false,
-      "deploymentPerformed": false
-    },
-    "nextCapture": {
-      "slot": "T0_SUPPLEMENT_1100",
-      "condition": "READ_ONLY_PREFLIGHT;CAPTURE_ONLY_IF_THE_EXISTING_9235_SESSION_IS_AVAILABLE",
-      "followingMainSlot": "T1_1600",
-      "doNotBackfillOnTime": true
-    }
+    "platforms": []
   },
   "creatorCaptureStatus": {
-    "schemaVersion": 1,
     "captureType": "LATE_MAIN_CAPTURE",
-    "plannedAt": "2026-07-31T16:00:00+08:00",
     "observedAt": "2026-07-31T08:11:26.869Z",
     "displayTime": "2026-07-31 16:11",
-    "schedule": { "onTime": false },
+    "plannedAt": "2026-07-31T16:00:00+08:00",
+    "schedule": {
+      "onTime": false,
+      "supplement": false
+    },
     "summary": {
       "pagesTotal": 19,
       "pagesLoaded": 4,
@@ -134,16 +55,58 @@
       "nickname": "昂哥抖店运营",
       "tier": "OBSERVATION",
       "reviewPriority": "FOLLOWUP_TRACKING",
-      "status": "PROFILE_VISIBLE",
-      "note": "本轮主页可见 / 待补双源与 P60"
+      "note": "本轮主页可见 / 待补双源与 P60",
+      "visible": true
     },
     "externalVisibleSources": [
-      { "nickname": "三农策划师-老孟（7月武汉课）", "status": "PENDING_LIGHT_SCREEN", "label": "新增可见来源待轻筛" },
-      { "nickname": "抖店阿伟实战分享", "status": "PENDING_LIGHT_SCREEN", "label": "新增可见来源待轻筛" },
-      { "nickname": "木子运营", "status": "PENDING_LIGHT_SCREEN", "label": "新增可见来源待轻筛" }
+      {
+        "nickname": "三农策划师-老孟（7月武汉课）",
+        "status": "PENDING_LIGHT_SCREEN",
+        "label": "新增可见来源待轻筛"
+      },
+      {
+        "nickname": "抖店阿伟实战分享",
+        "status": "PENDING_LIGHT_SCREEN",
+        "label": "新增可见来源待轻筛"
+      },
+      {
+        "nickname": "木子运营",
+        "status": "PENDING_LIGHT_SCREEN",
+        "label": "新增可见来源待轻筛"
+      }
     ],
-    "unknownEvidence": ["双源", "30天活跃度", "同龄P60", "增长快照"],
-    "timeoutPolicy": "15 个超时页保持缺失，不做登录、验证码、权限、风险、表现或淘汰推断"
+    "unknownEvidence": [
+      "双源",
+      "30天活跃度",
+      "同龄P60",
+      "增长快照"
+    ],
+    "timeoutPolicy": "15 个失败页保持缺失，不估填、不替代、不晋级"
+  },
+  "audit": {
+    "sourcePath": "runs/douyin-creator-20260731-1600-late/audit.json",
+    "sourceSha256": "9c8eb82c7da95f594894a65f40749c8b39c1f67ccf1f180939025ffecad18d36",
+    "reportType": "DEGRADED_REPORT",
+    "schedule": {
+      "onTime": false,
+      "supplement": false,
+      "lateReason": "The 16:00 heartbeat was incorrectly treated as notification-only before the user redirected execution."
+    },
+    "creatorDecision": {
+      "result": "NO_CREATOR_ADMISSION",
+      "reason": "原始审计未记录满足独立共振、同龄增速、内容价值和风险门的达人，因此本日未新增达人白名单。",
+      "priorityObservationAccounts": []
+    },
+    "missingInputs": [
+      "同指标前后增长快照：UNKNOWN",
+      "话题人口：UNKNOWN",
+      "同龄 P60 队列：UNKNOWN",
+      "双源复核：UNKNOWN",
+      "30 天活跃度：UNKNOWN"
+    ],
+    "evidenceRefs": [],
+    "constraints": null,
+    "nextCapture": null
   },
   "candidates": [],
   "videoSignals": [],

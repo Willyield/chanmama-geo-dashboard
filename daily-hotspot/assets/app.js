@@ -1,3 +1,22 @@
+import {
+  hotspotFilterDefaults,
+  hotspotViews,
+  renderHotspotDetail,
+  renderHotspotPage,
+} from "./hotspots.js";
+import {
+  eventFilterDefaults,
+  eventViews,
+  renderEventDetail,
+  renderEventPage,
+} from "./events.js?v=20260803events1";
+import {
+  creatorFilterDefaults,
+  creatorViews,
+  renderCreatorDetail,
+  renderCreatorPage,
+} from "./creators.js?v=20260804capture1711r2";
+import { applyCreatorIdentityCorrection } from "./creator-data.js";
 import { escapeHtml, icon, renderError } from "./ui.js";
 
 const app = document.querySelector("#app");
@@ -19,50 +38,14 @@ const state = {
   view: "overview",
   index: null,
   data: null,
-  filters: {},
-  moduleApi: null,
+  filters: { ...hotspotFilterDefaults },
   drawerDetail: null,
   requestId: 0,
 };
 
 const cache = new Map();
-const moduleCache = new Map();
 let filterTimer = null;
 let toastTimer = null;
-
-function loadModuleApi(module) {
-  if (!moduleCache.has(module)) {
-    const loader = module === "hotspots"
-      ? import("./hotspots.js").then((api) => ({
-          views: api.hotspotViews,
-          filterDefaults: api.hotspotFilterDefaults,
-          renderPage: api.renderHotspotPage,
-          renderDetail: api.renderHotspotDetail,
-          findRecord: (data, id) => data.candidates.find((candidate) => candidate.id === id),
-        }))
-      : module === "events"
-        ? import("./events.js?v=20260810eventsopt1").then((api) => ({
-            views: api.eventViews,
-            filterDefaults: api.eventFilterDefaults,
-            renderPage: api.renderEventPage,
-            renderDetail: api.renderEventDetail,
-            findRecord: (data, id) => data.events.find((event) => event.eventId === id),
-          }))
-        : Promise.all([
-            import("./creators.js?v=20260810afternoon1632completer1"),
-            import("./creator-data.js"),
-          ]).then(([api, creatorData]) => ({
-            views: api.creatorViews,
-            filterDefaults: api.creatorFilterDefaults,
-            renderPage: api.renderCreatorPage,
-            renderDetail: api.renderCreatorDetail,
-            findRecord: (data, id) => data.candidates.find((candidate) => candidate.id === id),
-            applyIdentityCorrection: creatorData.applyCreatorIdentityCorrection,
-          }));
-    moduleCache.set(module, loader);
-  }
-  return moduleCache.get(module);
-}
 
 function createIcons() {
   window.lucide?.createIcons?.({ attrs: { "aria-hidden": "true" } });
@@ -105,12 +88,17 @@ function navigate(module, date = "latest", view = defaultView(module)) {
   else location.hash = target;
 }
 
-function validView(module, moduleApi, view) {
-  return moduleApi.views.some((item) => item.id === view) ? view : defaultView(module);
+function validView(module, view) {
+  const views = module === "hotspots" ? hotspotViews : module === "events" ? eventViews : creatorViews;
+  return views.some((item) => item.id === view) ? view : defaultView(module);
 }
 
-function resetFilters(moduleApi) {
-  state.filters = { ...moduleApi.filterDefaults };
+function resetFilters(module) {
+  state.filters = module === "hotspots"
+    ? { ...hotspotFilterDefaults }
+    : module === "events"
+      ? { ...eventFilterDefaults }
+      : { ...creatorFilterDefaults };
 }
 
 function renderHeader() {
@@ -131,9 +119,7 @@ function renderHeader() {
   updateStamp.textContent = state.module === "hotspots"
     ? `观察 ${state.data.observedAt}`
     : state.module === "events"
-      ? state.data.sourceVerification?.status === "BLOCKED"
-        ? "来源复核受限"
-        : `复核 ${state.data.verifiedAt}`
+      ? `复核 ${state.data.verifiedAt}`
       : state.data.dataMode === "DAILY_AUDIT_ONLY"
         ? state.view === "resonance" && state.data.operationalWhitelist
           ? `名单 ${state.data.operationalWhitelist.date}`
@@ -150,8 +136,12 @@ function renderHeader() {
 }
 
 function renderCurrent({ restoreFilter = null, selectionStart = null } = {}) {
-  if (!state.data || !state.index || !state.moduleApi) return;
-  app.innerHTML = state.moduleApi.renderPage({ data: state.data, index: state.index, view: state.view, filters: state.filters });
+  if (!state.data || !state.index) return;
+  app.innerHTML = state.module === "hotspots"
+    ? renderHotspotPage({ data: state.data, index: state.index, view: state.view, filters: state.filters })
+    : state.module === "events"
+      ? renderEventPage({ data: state.data, index: state.index, view: state.view, filters: state.filters })
+      : renderCreatorPage({ data: state.data, index: state.index, view: state.view, filters: state.filters });
   createIcons();
   if (restoreFilter) {
     const input = app.querySelector(`[data-filter="${CSS.escape(restoreFilter)}"]`);
@@ -165,15 +155,15 @@ function renderCurrent({ restoreFilter = null, selectionStart = null } = {}) {
 async function loadRoute() {
   const requestId = ++state.requestId;
   const route = parseRoute();
-  const previousModule = state.module;
   closeDrawer();
+  if (route.module !== state.module) resetFilters(route.module);
+  state.module = route.module;
+  state.view = validView(route.module, route.view);
   const loadingLabel = route.module === "hotspots" ? "热点历史" : route.module === "events" ? "活动快照" : "达人试运行快照";
   app.innerHTML = `<div class="loading-state"><span class="loading-line"></span><span>正在读取${loadingLabel}</span></div>`;
   createIcons();
 
   try {
-    const moduleApi = await loadModuleApi(route.module);
-    if (requestId !== state.requestId) return;
     const index = await fetchJson(`./data/${route.module}/index.json`);
     const requestedDate = route.requestedDate === "latest" ? index.latest : route.requestedDate;
     const date = index.dates.some((item) => item.date === requestedDate) ? requestedDate : index.latest;
@@ -202,14 +192,10 @@ async function loadRoute() {
           fetchOptional(`./data/creators/topic-whitelist/${date}.json`),
           fetchOptional(`./data/creators/identity-correction/${date}.json`),
         ]);
-        moduleApi.applyIdentityCorrection(data);
+        applyCreatorIdentityCorrection(data);
       }
     }
     if (requestId !== state.requestId) return;
-    if (route.module !== previousModule || !state.moduleApi) resetFilters(moduleApi);
-    state.module = route.module;
-    state.moduleApi = moduleApi;
-    state.view = validView(route.module, moduleApi, route.view);
     state.index = index;
     state.date = date;
     state.data = data;
@@ -223,13 +209,19 @@ async function loadRoute() {
 }
 
 function findRecord(id) {
-  return state.moduleApi.findRecord(state.data, id);
+  if (state.module === "hotspots") return state.data.candidates.find((candidate) => candidate.id === id);
+  if (state.module === "events") return state.data.events.find((event) => event.eventId === id);
+  return state.data.candidates.find((candidate) => candidate.id === id);
 }
 
 function openDrawer(id) {
   const record = findRecord(id);
   if (!record) return;
-  const detail = state.moduleApi.renderDetail(record, state.data);
+  const detail = state.module === "hotspots"
+    ? renderHotspotDetail(record)
+    : state.module === "events"
+      ? renderEventDetail(record)
+      : renderCreatorDetail(record, state.data);
   state.drawerDetail = detail;
   drawerEyebrow.textContent = detail.eyebrow;
   drawerTitle.textContent = detail.title;

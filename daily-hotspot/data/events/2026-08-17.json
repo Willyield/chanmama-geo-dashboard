@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "module": "events",
-  "date": "2026-08-10",
-  "observedAt": "2026-08-03 09:42",
-  "verifiedAt": "2026-08-10",
-  "revision": 2,
-  "updatedAt": "2026-08-10T02:00:03.553Z",
+  "date": "2026-08-17",
+  "observedAt": "2026-08-17 09:58",
+  "verifiedAt": "2026-08-17",
+  "revision": 3,
+  "updatedAt": "2026-08-17T02:08:53.998Z",
   "sourceType": "structured-data",
   "sourceLabel": "活动数据与核验记录",
   "sourceFiles": [
@@ -18,16 +18,16 @@
   "sourceWorkbook": null,
   "summary": {
     "counts": {
-      "total": 3,
-      "prepare": 2,
-      "watch": 1,
+      "total": 6,
+      "prepare": 4,
+      "watch": 2,
       "agendaMissing": 0,
       "urgent": 0,
-      "conflicts": 1,
-      "verified": 3,
+      "conflicts": 3,
+      "verified": 6,
       "excludedRecent": 17
     },
-    "webSummary": "执行摘要：已核验 3 场活动满足至少提前 3 个自然月的准备门槛（最早准入日 2026-11-10），优先准备 2 场、重点观察 1 场、待补议程 0 场；17 场近期活动已排除并保留历史证据。\n今日优先：2026第七届杭州国际跨境电商博览会、2026第十二届杭州国际网红品牌博览会暨视频号+私域·多渠联动大会。",
+    "webSummary": "执行摘要：已核验 6 场活动满足至少提前 3 个自然月的准备门槛（最早准入日 2026-11-17），优先准备 4 场、重点观察 2 场、待补议程 0 场；17 场近期活动已排除并保留历史证据。\n今日优先：2026第七届杭州国际跨境电商博览会、2026第十二届杭州国际网红品牌博览会暨视频号+私域·多渠联动大会、2027第八届CHWE出海网全球跨境电商展（深圳）春季。",
     "topActions": [
       {
         "eventId": "EVT-018",
@@ -40,6 +40,12 @@
         "name": "2026第十二届杭州国际网红品牌博览会暨视频号+私域·多渠联动大会",
         "action": "优先准备视频号与抖音达人带货对比、私域多渠道选品评分卡和榜单口径核验清单；每周复扫嘉宾及分论坛议程",
         "reason": "高：视频号全域增长、私域直播、达人分销、抖音带货榜单、网红选品和行业报告均可形成明确搜索词、团队转发和数据验证需求"
+      },
+      {
+        "eventId": "EVT-022",
+        "name": "2027第八届CHWE出海网全球跨境电商展（深圳）春季",
+        "action": "按月复扫同期会议；准备选品评分卡、平台招商对照表和案例口径核验清单",
+        "reason": "高：选品采购、平台招商、运营赋能、趋势发布和多元跨境交易模式可直接形成搜索、复盘与验证任务"
       }
     ]
   },
@@ -64,12 +70,12 @@
       "苏州"
     ]
   },
-  "thresholdDate": "2026-11-10",
+  "thresholdDate": "2026-11-17",
   "events": [
     {
       "eventId": "EVT-018",
       "seriesId": "ECE杭州跨博会",
-      "changeStatus": "unchanged",
+      "changeStatus": "updated",
       "priority": "优先准备",
       "name": "2026第七届杭州国际跨境电商博览会",
       "startAt": "2026-11-27T00:00:00+08:00",
@@ -107,16 +113,16 @@
           "label": "报名及原始来源",
           "domain": "mp.weixin.qq.com",
           "url": "https://mp.weixin.qq.com/s?__biz=MzA5NjQ0MzczOA==&mid=2652028935&idx=3&sn=2d0beabf405cdc5660f80c43e5d9710a",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
       "sourcePublishedAt": "2026-07-19",
-      "observedAt": "2026-07-23T09:40:00+08:00",
-      "daysToStart": 127,
-      "interventionWindow": "有，距开场127天；适合提前占位平台招商、流量补贴、产业带选品和大卖案例验证内容",
+      "observedAt": "2026-08-17T09:58:00+08:00",
+      "daysToStart": 102,
+      "interventionWindow": "有，距开场102天；适合提前占位平台招商、流量补贴、产业带选品和大卖案例验证内容",
       "evidenceLevel": "E3｜已核实（官方/双重来源）",
-      "verificationResult": "通过；举办时间、城市和场馆已确认，主办方及报名表单暂缺",
+      "verificationResult": "历史官方归档已确认举办时间、城市和场馆；2026-08-17微信原文进入平台验证码页，本轮不得标记通过",
       "conflicts": [],
       "missingFields": [
         "主办方完整名单",
@@ -299,13 +305,24 @@
           "scope_or_field": "名称/日期/城市/场馆/取消或改期",
           "issue": "本轮无法重新打开官方来源，不能确认自2026-08-03后是否有变化",
           "action": "保留历史事实与缺失字段；本轮不得标记通过"
+        },
+        {
+          "verification_id": "VER-082",
+          "event_id": "EVT-018",
+          "check_type": "真实性复核",
+          "checked_at": "2026-08-17 09:52",
+          "status": "SOURCE_ACCESS_BLOCKED",
+          "evidence": "官方微信历史归档+本轮HTTP验证码页",
+          "scope_or_field": "名称/日期/城市/场馆/取消或改期",
+          "issue": "微信原文当前进入平台验证码页，不能确认自上次归档后是否变化",
+          "action": "保留历史事实与缺失字段；本轮不得标记通过"
         }
       ]
     },
     {
       "eventId": "EVT-020",
       "seriesId": "杭州国际网红品牌博览会暨杭州私域电商大会",
-      "changeStatus": "unchanged",
+      "changeStatus": "updated",
       "priority": "优先准备",
       "name": "2026第十二届杭州国际网红品牌博览会暨视频号+私域·多渠联动大会",
       "startAt": "2026-11-27T09:00:00+08:00",
@@ -341,51 +358,51 @@
           "label": "报名及原始来源",
           "domain": "mspeexpo.com",
           "url": "http://www.mspeexpo.com/about_13/",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "mspeexpo.com",
           "url": "http://www.mspeexpo.com/",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 2",
           "domain": "mspeexpo.com",
           "url": "http://www.mspeexpo.com/about_17/",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 3",
           "domain": "mspeexpo.com",
           "url": "http://www.mspeexpo.com/about_19/",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 4",
           "domain": "mspeexpo.com",
           "url": "http://www.mspeexpo.com/about_22/",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 5",
           "domain": "mspeexpo.com",
           "url": "http://www.mspeexpo.com/about_24/",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
       "sourcePublishedAt": null,
-      "observedAt": "2026-08-03T09:42:00+08:00",
-      "daysToStart": 116,
-      "interventionWindow": "有，距开场116天；官网写展前预登记截至11月10日，适合提前准备视频号、私域、达人分销和选品验证内容",
+      "observedAt": "2026-08-17T09:58:00+08:00",
+      "daysToStart": 102,
+      "interventionWindow": "有，距开场102天；官网写展前预登记截至11月10日，适合提前准备视频号、私域、达人分销和选品验证内容",
       "evidenceLevel": "E3｜已核实（官方/双重来源）",
-      "verificationResult": "通过但有冲突；官网首页、介绍、日程和参观页共同确认日期与场馆，届次和规模口径需保留差异",
+      "verificationResult": "通过但有冲突；2026-08-17官网首页、介绍、日程、观众和参观页均返回200且与历史归档SHA-256一致，原届次与规模冲突继续保留",
       "conflicts": [
         "主办官网当前页面统一写第十二届，部分搜索索引仍显示第十一届；正式入库采用官网当前第十二届并保留旧索引冲突",
         "官网介绍页写2000+品牌、10W+观众、3W+达人MCN和近800+渠道；首页另写1000+品牌、10000+渠道、600+千万粉丝达人和20+论坛"
@@ -518,13 +535,24 @@
           "scope_or_field": "名称/日期/城市/场馆/取消或改期",
           "issue": "本轮无法重新打开官方来源，不能确认自2026-08-03后是否有变化",
           "action": "保留历史事实、届次及规模冲突；本轮不得标记通过"
+        },
+        {
+          "verification_id": "VER-084",
+          "event_id": "EVT-020",
+          "check_type": "真实性复核",
+          "checked_at": "2026-08-17 09:54",
+          "status": "PASS_WITH_CONFLICT",
+          "evidence": "主办官网首页+介绍+日程+观众+参观+报名页重开及历史归档SHA-256对比",
+          "scope_or_field": "名称/日期/城市/场馆/届次/规模",
+          "issue": "六个页面与历史归档一致；原届次和两组宣传规模冲突仍存在",
+          "action": "保留全部冲突并继续每周复扫"
         }
       ]
     },
     {
       "eventId": "EVT-019",
       "seriesId": "中国跨境电商交易会（福州跨交会）",
-      "changeStatus": "unchanged",
+      "changeStatus": "updated",
       "priority": "重点观察",
       "name": "2027第七届中国跨境电商交易会",
       "startAt": "2027-03-18T00:00:00+08:00",
@@ -562,30 +590,30 @@
           "label": "报名及原始来源",
           "domain": "pepc-expo.com",
           "url": "http://www.pepc-expo.com/about_13/",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "pepc-expo.com",
           "url": "http://www.pepc-expo.com/",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 2",
           "domain": "pepc-expo.com",
           "url": "http://www.pepc-expo.com/aboutus/",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
       "sourcePublishedAt": null,
-      "observedAt": "2026-07-23T09:48:00+08:00",
-      "daysToStart": 238,
-      "interventionWindow": "有，距开场238天；适合长线追踪年度大会、行业指数、平台招商和品牌出海议题",
+      "observedAt": "2026-08-17T09:58:00+08:00",
+      "daysToStart": 213,
+      "interventionWindow": "有，距开场213天；适合长线追踪年度大会、行业指数、平台招商和品牌出海议题",
       "evidenceLevel": "E3｜已核实（官方/双重来源）",
-      "verificationResult": "通过；官网标题、首页和关于页共同确认第七届、2027年3月18-20日及福州场馆",
+      "verificationResult": "通过；2026-08-17官网首页、关于页和预约页均返回200，关于页与历史归档SHA-256一致",
       "conflicts": [],
       "missingFields": [
         "2027详细议程",
@@ -746,6 +774,604 @@
           "scope_or_field": "名称/日期/城市/场馆/取消或改期",
           "issue": "本轮无法重新打开官方来源，不能确认自2026-08-03后是否有变化",
           "action": "保留历史事实与缺失字段；本轮不得标记通过"
+        },
+        {
+          "verification_id": "VER-083",
+          "event_id": "EVT-019",
+          "check_type": "真实性复核",
+          "checked_at": "2026-08-17 09:53",
+          "status": "PASS",
+          "evidence": "中国跨交会品牌官网首页+关于页+预约页重开+历史归档SHA-256对比",
+          "scope_or_field": "名称/届次/日期/城市/场馆/主办",
+          "issue": "无",
+          "action": "关于页与历史归档SHA-256一致，继续在库"
+        }
+      ]
+    },
+    {
+      "eventId": "EVT-022",
+      "seriesId": "CHWE出海网全球跨境电商展",
+      "changeStatus": "new",
+      "priority": "优先准备",
+      "name": "2027第八届CHWE出海网全球跨境电商展（深圳）春季",
+      "startAt": "2027-03-30T09:00:00+08:00",
+      "endAt": "2027-04-02T15:00:00+08:00",
+      "city": "深圳",
+      "venue": "深圳会展中心（福田）",
+      "eventType": "跨境电商选品展及生态对接会",
+      "primaryCategory": "T-A｜业务强相关",
+      "tags": [
+        "圈层活动",
+        "CHWE",
+        "跨境电商",
+        "选品采购",
+        "平台招商",
+        "运营",
+        "趋势发布",
+        "深圳"
+      ],
+      "organizers": [
+        "出海网（CHWANG）"
+      ],
+      "partners": [
+        "潮域展览（承办单位）"
+      ],
+      "audience": "跨境专业买家、卖家、品牌与源头工厂、平台及跨境综合服务商",
+      "attendance": {
+        "reported": "官网宣传口径：1500+参展品牌、50+亿级大卖、80000+展会面积（首页未明确单位）、10000+专业观众",
+        "interpretation": "均为主办方预计或宣传规模，不是当前报名数、场馆容量或实际到场人数",
+        "confidence": "中，活动尚未举行"
+      },
+      "agendaSummary": "官网确认展览、开幕式、媒体采访和洽谈时段；同期会议页仍写“信息稍后公布”，具体论坛、嘉宾和案例暂缺。",
+      "guests": "暂缺",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "areshow.com",
+          "url": "http://www.areshow.com/about_13/",
+          "verifiedAt": "2026-08-17",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 1",
+          "domain": "areshow.com",
+          "url": "http://www.areshow.com/",
+          "verifiedAt": "2026-08-17",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 2",
+          "domain": "areshow.com",
+          "url": "http://www.areshow.com/about_17/",
+          "verifiedAt": "2026-08-17",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 3",
+          "domain": "areshow.com",
+          "url": "http://www.areshow.com/about_19/",
+          "verifiedAt": "2026-08-17",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 4",
+          "domain": "areshow.com",
+          "url": "http://www.areshow.com/about_14/",
+          "verifiedAt": "2026-08-17",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 5",
+          "domain": "areshow.com",
+          "url": "http://www.areshow.com/about_24/",
+          "verifiedAt": "2026-08-17",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": null,
+      "observedAt": "2026-08-17T09:58:00+08:00",
+      "daysToStart": 225,
+      "interventionWindow": "有，距开场225天；适合追踪选品采购、平台招商、运营赋能和趋势发布议题",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过但有冲突；官网介绍、日程和参观时间页共同确认日期、城市、场馆、主办与承办，日程表存在单行日期疑似错位",
+      "conflicts": [
+        "日程页在3月30日开幕与洽谈条目后又写“03月30日 9:00—17:00 展览结束闭馆”，但参观时间页明确3月31日仍开放；两种原文同时保留"
+      ],
+      "missingFields": [
+        "同期会议议题",
+        "嘉宾名单",
+        "当前报名人数",
+        "宣传规模统计口径",
+        "来源发布日期"
+      ],
+      "attentionReason": "高：选品采购、平台招商、运营赋能、趋势发布和多元跨境交易模式可直接形成搜索、复盘与验证任务",
+      "chanmamaRelevance": "可用商品趋势、达人内容、直播和店铺表现验证选品与运营案例；跨境履约、支付和B2B成交数据不应由公开内容电商数据替代",
+      "recommendedAction": "按月复扫同期会议；准备选品评分卡、平台招商对照表和案例口径核验清单",
+      "formalScoreStatus": "定性优先准备：官方日期和主办明确，会议与嘉宾待补，日程冲突已保留",
+      "focusTopics": [
+        "B2C+B2小B+DTC+DTB多元跨境生态",
+        "选品采购、平台招商与运营赋能"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-055",
+          "event_id": "EVT-022",
+          "topic": "B2C+B2小B+DTC+DTB多元跨境生态",
+          "evidence": "CHWE官网展会介绍明确提出B2C+B2小B+DTC+DTB多元生态定位",
+          "shareability": "多种交易和渠道模型并列，容易引发模式选择、渠道成本和适用品类讨论",
+          "priority": "优先准备",
+          "search_keywords": [
+            "B2小B跨境电商",
+            "DTC与DTB",
+            "CHWE跨境模式"
+          ],
+          "user_questions": [
+            "不同跨境模式分别适合哪些品类和团队？",
+            "内容与商品数据能验证哪些渠道差异？"
+          ],
+          "chanmama_scenario": "用公开商品与内容趋势比较品类、达人和内容传播差异；B2B成交需结合企业自有数据",
+          "content_to_prepare": "跨境模式对照表、品类适配卡和数据边界说明",
+          "risk_or_gap": "官网只披露定位，未发布具体案例、方法、成本和转化数据",
+          "score_status": "定性高潜"
+        },
+        {
+          "topic_id": "TOP-056",
+          "event_id": "EVT-022",
+          "topic": "选品采购、平台招商与运营赋能",
+          "evidence": "CHWE官网介绍明确列出选品采购、平台对接、运营赋能、商贸洽谈和趋势发布",
+          "shareability": "直接对应卖家的选品、入驻、运营和增长任务，便于形成方法清单和会后验证",
+          "priority": "优先准备",
+          "search_keywords": [
+            "CHWE选品采购",
+            "跨境平台招商深圳",
+            "跨境运营赋能案例"
+          ],
+          "user_questions": [
+            "哪些选品方法能被公开数据验证？",
+            "平台和运营案例的增长口径是否可复现？"
+          ],
+          "chanmama_scenario": "用商品、达人、短视频和直播趋势验证公开的选品与运营结论",
+          "content_to_prepare": "选品评分卡、平台招商问题清单和增长案例核验模板",
+          "risk_or_gap": "同期会议仍未公布，嘉宾、案例、平台名单和增长口径均暂缺",
+          "score_status": "定性高潜"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-088",
+          "event_id": "EVT-022",
+          "check_type": "真实性复核",
+          "checked_at": "2026-08-17 09:56",
+          "status": "PASS_WITH_CONFLICT",
+          "evidence": "CHWE主办方官网首页+介绍+日程+参观时间+报名页",
+          "scope_or_field": "名称/日期/城市/场馆/主办/承办",
+          "issue": "日程页在3月30日条目后出现同日闭馆文本，与参观时间页3月31日仍开放不一致",
+          "action": "采用多个页面一致的3月30日至4月2日并保留日程单行冲突"
+        },
+        {
+          "verification_id": "VER-089",
+          "event_id": "EVT-022",
+          "check_type": "字段复核",
+          "checked_at": "2026-08-17 09:56",
+          "status": "PASS_WITH_GAPS",
+          "evidence": "CHWE官网多页面逐字段核对",
+          "scope_or_field": "人数/议程/嘉宾/报名",
+          "issue": "1500+品牌、50+大卖、10000+观众为宣传口径；同期会议和嘉宾暂缺",
+          "action": "不写成报名或实际到场；会议页维持暂缺"
+        },
+        {
+          "verification_id": "VER-090",
+          "event_id": "EVT-022",
+          "check_type": "准入门槛复核",
+          "checked_at": "2026-08-17 09:56",
+          "status": "PASS",
+          "evidence": "自然月门槛重算",
+          "scope_or_field": "开始日期/最早准入日",
+          "issue": "2027-03-30不早于2026-11-17",
+          "action": "进入长线候选"
+        },
+        {
+          "verification_id": "VER-095",
+          "event_id": "EVT-022",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-08-17 10:00",
+          "status": "PASS",
+          "evidence": "JSON/CSV解析+ID唯一+跨文件关联+门槛聚合检查",
+          "scope_or_field": "events/agenda_topics/keywords/scan/verification",
+          "issue": "无",
+          "action": "日程冲突和人数口径已跨文件保留"
+        }
+      ]
+    },
+    {
+      "eventId": "EVT-021",
+      "seriesId": "CCEF中国（广州）跨境电商交易会",
+      "changeStatus": "new",
+      "priority": "重点观察",
+      "name": "2027中国（广州）跨境电商交易会",
+      "startAt": "2027-06-16T09:00:00+08:00",
+      "endAt": "2027-06-18T17:30:00+08:00",
+      "city": "广州",
+      "venue": "中国进出口商品交易会展馆A区",
+      "eventType": "跨境电商交易会",
+      "primaryCategory": "T-A｜业务强相关",
+      "tags": [
+        "圈层活动",
+        "CCEF广州跨交会",
+        "跨境电商",
+        "外贸数字化",
+        "平台招商",
+        "供应链",
+        "广州"
+      ],
+      "organizers": [
+        "中国对外贸易中心集团有限公司"
+      ],
+      "partners": [
+        "广东省商务厅（指导单位）",
+        "广州市人民政府（指导单位）"
+      ],
+      "audience": "跨境电商企业、外贸企业、供应链企业及专业买家；更细分观众口径暂缺",
+      "attendance": {
+        "reported": "暂缺；官网未披露2027预计人数、场馆容量、报名人数、限额或实际到场人数",
+        "interpretation": "观众预登记表单可访问不代表已有报名规模",
+        "confidence": "缺失"
+      },
+      "agendaSummary": "官网确认主题为“外贸新动能·数字新未来”，但同期活动、分日议程、论坛主题和嘉宾暂未披露。",
+      "guests": "暂缺",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "spz.ecf-gov.com",
+          "url": "http://spz.ecf-gov.com/about_19/",
+          "verifiedAt": "2026-08-17",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 1",
+          "domain": "spz.ecf-gov.com",
+          "url": "http://spz.ecf-gov.com/",
+          "verifiedAt": "2026-08-17",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 2",
+          "domain": "spz.ecf-gov.com",
+          "url": "http://spz.ecf-gov.com/about_9/",
+          "verifiedAt": "2026-08-17",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 3",
+          "domain": "spz.ecf-gov.com",
+          "url": "http://spz.ecf-gov.com/about_10/",
+          "verifiedAt": "2026-08-17",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 4",
+          "domain": "spz.ecf-gov.com",
+          "url": "http://spz.ecf-gov.com/about_17/",
+          "verifiedAt": "2026-08-17",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": null,
+      "observedAt": "2026-08-17T09:58:00+08:00",
+      "daysToStart": 303,
+      "interventionWindow": "有，距开场303天；适合长线追踪跨境平台、外贸数字化、供应链和专业买家议题",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过但有缺失；官网首页、组织机构、开放时间和预登记页共同确认日期、城市、场馆及主办单位",
+      "conflicts": [],
+      "missingFields": [
+        "预计参与人数",
+        "当前报名人数",
+        "同期活动",
+        "详细议程",
+        "嘉宾名单",
+        "来源发布日期"
+      ],
+      "attentionReason": "中高：外贸数字化与跨境电商国家级平台定位具有政策和平台招商传播潜力，但具体议程尚未发布",
+      "chanmamaRelevance": "可用商品、达人、短视频和直播趋势数据辅助验证平台招商、选品及内容增长观点；外贸交易与跨境履约能力边界需单独说明",
+      "recommendedAction": "按月复扫同期活动和论坛议程；准备平台招商政策、跨境选品和外贸数字化口径核验模板",
+      "formalScoreStatus": "定性重点观察：官方日期、场馆和主办明确，议程与人数暂缺",
+      "focusTopics": [
+        "外贸新动能与数字新未来",
+        "跨境平台招商与专业买家对接"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-053",
+          "event_id": "EVT-021",
+          "topic": "外贸新动能与数字新未来",
+          "evidence": "广州跨交会组织机构页明确披露展会主题为“外贸新动能·数字新未来”",
+          "shareability": "政策、外贸数字化与跨境电商结合，容易形成企业转型和平台机会类搜索",
+          "priority": "重点观察",
+          "search_keywords": [
+            "外贸新动能数字新未来",
+            "广州跨交会数字外贸",
+            "跨境电商外贸数字化"
+          ],
+          "user_questions": [
+            "数字外贸具体覆盖哪些业务环节？",
+            "哪些平台和数据方法能验证外贸增长机会？"
+          ],
+          "chanmama_scenario": "用商品、达人、短视频与直播趋势验证内容电商相关的选品和传播机会",
+          "content_to_prepare": "数字外贸概念口径表、平台政策追踪表和内容电商数据验证清单",
+          "risk_or_gap": "目前只有展会主题，具体论坛、案例、工具和数据口径均未发布",
+          "score_status": "定性中高潜"
+        },
+        {
+          "topic_id": "TOP-054",
+          "event_id": "EVT-021",
+          "topic": "跨境平台招商与专业买家对接",
+          "evidence": "官网将活动定位为跨境电商国家级品牌和平台，并开放展商及专业观众登记；具体平台和买家名单暂缺",
+          "shareability": "平台招商条件和买家需求会直接触发商家选品、入驻和渠道评估",
+          "priority": "重点观察",
+          "search_keywords": [
+            "CCEF广州跨交会平台招商",
+            "广州跨境电商专业买家",
+            "跨境平台招商政策"
+          ],
+          "user_questions": [
+            "哪些平台和专业买家将参加？",
+            "平台招商与选品需求如何用数据提前验证？"
+          ],
+          "chanmama_scenario": "用商品趋势、达人和直播表现筛选可能适配的平台与品类",
+          "content_to_prepare": "平台招商对照表、买家需求记录表和选品验证卡",
+          "risk_or_gap": "具体平台、买家、议程和扶持政策均未公布，不能提前作合作或收益承诺",
+          "score_status": "定性中潜"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-085",
+          "event_id": "EVT-021",
+          "check_type": "真实性复核",
+          "checked_at": "2026-08-17 09:55",
+          "status": "PASS",
+          "evidence": "广州跨交会官网首页+组织机构+开放时间+预登记页",
+          "scope_or_field": "名称/日期/城市/场馆/主办",
+          "issue": "无",
+          "action": "新增正式候选；保留原始页面与哈希"
+        },
+        {
+          "verification_id": "VER-086",
+          "event_id": "EVT-021",
+          "check_type": "字段复核",
+          "checked_at": "2026-08-17 09:55",
+          "status": "PASS_WITH_GAPS",
+          "evidence": "广州跨交会官网多页面逐字段核对",
+          "scope_or_field": "主办/合作/人数/议程/嘉宾/报名",
+          "issue": "预计人数、报名人数、详细议程、嘉宾和发布日期暂缺",
+          "action": "缺失写暂缺；预登记表单不等于已有报名人数"
+        },
+        {
+          "verification_id": "VER-087",
+          "event_id": "EVT-021",
+          "check_type": "准入门槛复核",
+          "checked_at": "2026-08-17 09:55",
+          "status": "PASS",
+          "evidence": "自然月门槛重算",
+          "scope_or_field": "开始日期/最早准入日",
+          "issue": "2027-06-16不早于2026-11-17",
+          "action": "进入长线候选"
+        },
+        {
+          "verification_id": "VER-094",
+          "event_id": "EVT-021",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-08-17 10:00",
+          "status": "PASS",
+          "evidence": "JSON/CSV解析+ID唯一+跨文件关联+门槛聚合检查",
+          "scope_or_field": "events/agenda_topics/keywords/scan/verification",
+          "issue": "无",
+          "action": "活动、议题、关键词、扫描与核验记录一致"
+        }
+      ]
+    },
+    {
+      "eventId": "EVT-023",
+      "seriesId": "中国（厦门）国际跨境电商展览会（中跨展）",
+      "changeStatus": "new",
+      "priority": "优先准备",
+      "name": "2027第七届中国（厦门）国际跨境电商展览会",
+      "startAt": "2027-06-29T09:00:00+08:00",
+      "endAt": "2027-07-01T15:00:00+08:00",
+      "city": "厦门",
+      "venue": "厦门国际会展中心",
+      "eventType": "跨境电商展览会及产业会议",
+      "primaryCategory": "T-A｜业务强相关",
+      "tags": [
+        "圈层活动",
+        "中跨展",
+        "跨境电商",
+        "产业带",
+        "平台招商",
+        "选品",
+        "AI",
+        "厦门"
+      ],
+      "organizers": [
+        "厦门国际商会"
+      ],
+      "partners": [
+        "欧盟中国委员会（支持单位）",
+        "RCEP产业合作委员会（支持单位）",
+        "中国（福建）自由贸易试验区厦门片区管理委员会（支持单位）",
+        "中国出入境检验检疫协会（支持单位）",
+        "福建亚太经济贸易合作促进会（支持单位）",
+        "世界贸易中心协会（支持单位）",
+        "励展华博展览（深圳）有限公司（支持单位）",
+        "雨果跨境（战略合作伙伴）"
+      ],
+      "audience": "跨境卖家、品牌工厂、跨境平台、综合服务商、产业带及境内外专业买家",
+      "attendance": {
+        "reported": "官网2027介绍页：展会规模50000+平方米、1500+展位；官网亮点写“观众过万”，未披露具体预计值；近20万名境内外客商为历届累计口径",
+        "interpretation": "展位数不是人数，“观众过万”为预计宣传口径，历届累计客商不是本届报名或实际到场人数",
+        "confidence": "中，活动尚未举行且人数口径不完整"
+      },
+      "agendaSummary": "2027参展日程确认开幕式、媒体采访、展出洽谈和晚宴；同期活动页仍展示2026年亚马逊AI选品、SHEIN招商、NGS-AI跨境大会等旧议程，不能视为2027已确认议程。",
+      "guests": "暂缺；官网未公布2027嘉宾名单",
+      "sourceLinks": [
+        {
+          "label": "报名及原始来源",
+          "domain": "chinaple.com",
+          "url": "http://www.chinaple.com/about_26/",
+          "verifiedAt": "2026-08-17",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 1",
+          "domain": "chinaple.com",
+          "url": "http://www.chinaple.com/",
+          "verifiedAt": "2026-08-17",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 2",
+          "domain": "chinaple.com",
+          "url": "http://www.chinaple.com/about_31/",
+          "verifiedAt": "2026-08-17",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 3",
+          "domain": "chinaple.com",
+          "url": "http://www.chinaple.com/about_27/",
+          "verifiedAt": "2026-08-17",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 4",
+          "domain": "chinaple.com",
+          "url": "http://www.chinaple.com/about_12/",
+          "verifiedAt": "2026-08-17",
+          "accessStatus": "已核验"
+        },
+        {
+          "label": "补充来源 5",
+          "domain": "chinaple.com",
+          "url": "http://www.chinaple.com/about_32/",
+          "verifiedAt": "2026-08-17",
+          "accessStatus": "已核验"
+        }
+      ],
+      "sourcePublishedAt": null,
+      "observedAt": "2026-08-17T09:58:00+08:00",
+      "daysToStart": 316,
+      "interventionWindow": "有，距官网日程页开场316天；适合长线追踪平台招商、产业带选品、AI方法和跨境增长议题",
+      "evidenceLevel": "E3｜已核实（官方/双重来源）",
+      "verificationResult": "通过但有冲突；官网首页、介绍、组织、日程和报名页共同确认2027厦门活动，日期、届次和旧议程残留均已保留",
+      "conflicts": [
+        "官网首页和参展日程页写2027年6月29日至7月1日，展会介绍页写2027年6月30日至7月1日；建档采用首页与详细日程共同支持的6月29日并保留冲突",
+        "页面标题写第七届，首页正文局部仍写第六届且英文年份残留2026",
+        "同期活动页列出的论坛全部标为2026，不能当作2027议程"
+      ],
+      "missingFields": [
+        "2027同期会议议题",
+        "2027嘉宾名单",
+        "当前报名人数",
+        "具体预计观众数",
+        "来源发布日期",
+        "可验证提交结果的在线报名表单"
+      ],
+      "attentionReason": "高：平台招商、产业带选品、AI选品和跨境增长具备传播与验证价值，但2027具体议程尚未确认",
+      "chanmamaRelevance": "可用商品、达人、短视频和直播数据验证选品、平台招商与内容增长观点；跨境成交与履约能力需明确边界",
+      "recommendedAction": "优先追踪日期纠正和2027同期活动更新；准备AI选品、平台招商和产业带数据验证模板",
+      "formalScoreStatus": "定性优先准备：官方日期、场馆和主办明确，但日期与届次冲突、2027议程缺失",
+      "focusTopics": [
+        "产业带、跨境平台与全品类选品",
+        "AI选品与跨境增长方法"
+      ],
+      "agendaTopics": [
+        {
+          "topic_id": "TOP-057",
+          "event_id": "EVT-023",
+          "topic": "产业带、跨境平台与全品类选品",
+          "evidence": "厦门中跨展介绍页明确覆盖品牌工厂、跨境平台、服务商、综合试验区和跨境专供产业带",
+          "shareability": "产业带和平台选品可以直接转成品类观察、供应链筛选和平台适配问题",
+          "priority": "优先准备",
+          "search_keywords": [
+            "厦门中跨展产业带",
+            "跨境平台选品",
+            "跨境专供产业带"
+          ],
+          "user_questions": [
+            "哪些产业带和品类值得提前观察？",
+            "平台选品需求能否通过内容和商品趋势验证？"
+          ],
+          "chanmama_scenario": "用商品趋势、达人带货和直播表现筛选品类，并对公开平台招商口径做交叉验证",
+          "content_to_prepare": "产业带观察池、平台与品类对照表和会后选品复核流程",
+          "risk_or_gap": "2027展商、平台和产业带名单尚未公布",
+          "score_status": "定性高潜"
+        },
+        {
+          "topic_id": "TOP-058",
+          "event_id": "EVT-023",
+          "topic": "AI选品与跨境增长方法",
+          "evidence": "官网同期活动页仍展示2026年亚马逊AI选品与增长实战分享会及NGS-AI跨境电商大会，只能作为2027追踪线索",
+          "shareability": "AI选品、平台招商和增长实操容易被团队转发并要求验证具体工具和案例",
+          "priority": "重点观察",
+          "search_keywords": [
+            "厦门跨境AI选品",
+            "亚马逊AI选品",
+            "NGS AI跨境电商"
+          ],
+          "user_questions": [
+            "2027是否继续设置AI选品议程？",
+            "AI选品方法如何用商品与内容数据复核？"
+          ],
+          "chanmama_scenario": "用商品趋势、达人内容和直播数据复核公开的AI选品建议",
+          "content_to_prepare": "AI选品方法核验表、工具输入输出记录和案例复现清单",
+          "risk_or_gap": "当前页面列的是2026旧议程，不能写成2027已确认议题或嘉宾",
+          "score_status": "定性中高潜"
+        }
+      ],
+      "verificationLogs": [
+        {
+          "verification_id": "VER-091",
+          "event_id": "EVT-023",
+          "check_type": "真实性复核",
+          "checked_at": "2026-08-17 09:57",
+          "status": "PASS_WITH_CONFLICT",
+          "evidence": "厦门中跨展官网首页+介绍+组织+日程+同期活动+报名页",
+          "scope_or_field": "名称/日期/城市/场馆/主办",
+          "issue": "首页与日程写6月29日开始，介绍页写6月30日；第七/第六届及英文2026残留并存",
+          "action": "采用首页与详细日程共同支持的6月29日并保留全部冲突"
+        },
+        {
+          "verification_id": "VER-092",
+          "event_id": "EVT-023",
+          "check_type": "字段复核",
+          "checked_at": "2026-08-17 09:57",
+          "status": "PASS_WITH_GAPS",
+          "evidence": "厦门中跨展官网多页面逐字段核对",
+          "scope_or_field": "人数/议程/嘉宾/报名",
+          "issue": "观众过万未给具体值；近20万为历届累计；同期活动仍为2026旧议程；2027嘉宾暂缺",
+          "action": "口径分开保存；旧议程只作线索"
+        },
+        {
+          "verification_id": "VER-093",
+          "event_id": "EVT-023",
+          "check_type": "准入门槛复核",
+          "checked_at": "2026-08-17 09:57",
+          "status": "PASS",
+          "evidence": "自然月门槛重算",
+          "scope_or_field": "开始日期/最早准入日",
+          "issue": "2027-06-29不早于2026-11-17；冲突日期2027-06-30也满足门槛",
+          "action": "进入长线候选并保留日期冲突"
+        },
+        {
+          "verification_id": "VER-096",
+          "event_id": "EVT-023",
+          "check_type": "输出一致性复核",
+          "checked_at": "2026-08-17 10:00",
+          "status": "PASS",
+          "evidence": "JSON/CSV解析+ID唯一+跨文件关联+门槛聚合检查",
+          "scope_or_field": "events/agenda_topics/keywords/scan/verification",
+          "issue": "无",
+          "action": "日期届次旧议程冲突和人数口径已跨文件保留"
         }
       ]
     }
@@ -789,7 +1415,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3079",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
@@ -915,7 +1541,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-22 早于最早准入日 2026-11-10"
+      "exclusionReason": "开场日 2026-07-22 早于最早准入日 2026-11-17"
     },
     {
       "eventId": "EVT-006",
@@ -955,7 +1581,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3065",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
@@ -1082,7 +1708,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-11-10"
+      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-11-17"
     },
     {
       "eventId": "EVT-007",
@@ -1120,7 +1746,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3049",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
@@ -1224,7 +1850,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-11-10"
+      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-11-17"
     },
     {
       "eventId": "EVT-009",
@@ -1263,7 +1889,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3095",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
@@ -1366,7 +1992,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-11-10"
+      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-11-17"
     },
     {
       "eventId": "EVT-003",
@@ -1403,7 +2029,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3056",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
@@ -1531,7 +2157,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-11-10"
+      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-11-17"
     },
     {
       "eventId": "EVT-013",
@@ -1571,14 +2197,14 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3076",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "img.cifnews.com",
           "url": "https://img.cifnews.com/dev/20260720/6a50687efa264a009c965e0c8abc3af4.jpg",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
@@ -1704,7 +2330,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-24 早于最早准入日 2026-11-10"
+      "exclusionReason": "开场日 2026-07-24 早于最早准入日 2026-11-17"
     },
     {
       "eventId": "EVT-015",
@@ -1744,7 +2370,7 @@
           "label": "报名及原始来源",
           "domain": "mp.weixin.qq.com",
           "url": "https://mp.weixin.qq.com/s?__biz=MzcwOTM1NDQ3NA%3D%3D&mid=2247483674&idx=1",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
@@ -1873,7 +2499,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-26 早于最早准入日 2026-11-10"
+      "exclusionReason": "开场日 2026-07-26 早于最早准入日 2026-11-17"
     },
     {
       "eventId": "EVT-011",
@@ -1912,7 +2538,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/2951",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
@@ -1994,7 +2620,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-30 早于最早准入日 2026-11-10"
+      "exclusionReason": "开场日 2026-07-30 早于最早准入日 2026-11-17"
     },
     {
       "eventId": "EVT-004",
@@ -2033,7 +2659,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3083",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
@@ -2182,7 +2808,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-31 早于最早准入日 2026-11-10"
+      "exclusionReason": "开场日 2026-07-31 早于最早准入日 2026-11-17"
     },
     {
       "eventId": "EVT-002",
@@ -2222,14 +2848,14 @@
           "label": "报名及原始来源",
           "domain": "huodongxing.com",
           "url": "https://www.huodongxing.com/event/4863525375500",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3082",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
@@ -2360,7 +2986,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-08-04 早于最早准入日 2026-11-10"
+      "exclusionReason": "开场日 2026-08-04 早于最早准入日 2026-11-17"
     },
     {
       "eventId": "EVT-008",
@@ -2399,7 +3025,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3106",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
@@ -2547,7 +3173,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-08-11 早于最早准入日 2026-11-10"
+      "exclusionReason": "开场日 2026-08-11 早于最早准入日 2026-11-17"
     },
     {
       "eventId": "EVT-010",
@@ -2586,7 +3212,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3143",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
@@ -2690,7 +3316,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-08-13 早于最早准入日 2026-11-10"
+      "exclusionReason": "开场日 2026-08-13 早于最早准入日 2026-11-17"
     },
     {
       "eventId": "EVT-001",
@@ -2729,14 +3355,14 @@
           "label": "报名及原始来源",
           "domain": "huodongxing.com",
           "url": "https://www.huodongxing.com/event/6869719596400",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "cn.chinadaily.com.cn",
           "url": "https://cn.chinadaily.com.cn/a/202607/14/WS6a55f89aa310d709c2fbd787.html",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
@@ -2820,7 +3446,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-08-14 早于最早准入日 2026-11-10"
+      "exclusionReason": "开场日 2026-08-14 早于最早准入日 2026-11-17"
     },
     {
       "eventId": "EVT-014",
@@ -2868,7 +3494,7 @@
           "label": "报名及原始来源",
           "domain": "mp.weixin.qq.com",
           "url": "https://mp.weixin.qq.com/s?__biz=Mzg4NTUxMTUzMw%3D%3D&mid=2247499670&idx=1",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
@@ -2995,7 +3621,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-08-19 早于最早准入日 2026-11-10"
+      "exclusionReason": "开场日 2026-08-19 早于最早准入日 2026-11-17"
     },
     {
       "eventId": "EVT-012",
@@ -3037,14 +3663,14 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3027",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "img.cifnews.com",
           "url": "https://img.cifnews.com/dev/20260630/2bf2efc407934f96990d23853dcdb92c.png",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
@@ -3170,7 +3796,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-08-20 早于最早准入日 2026-11-10"
+      "exclusionReason": "开场日 2026-08-20 早于最早准入日 2026-11-17"
     },
     {
       "eventId": "EVT-017",
@@ -3215,21 +3841,21 @@
           "label": "报名及原始来源",
           "domain": "szicbe.com",
           "url": "http://www.szicbe.com/article/detail/id/615.html",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "szicbe.com",
           "url": "http://www.szicbe.com/",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 2",
           "domain": "szicbe.com",
           "url": "http://www.szicbe.com/article/detail/id/403.html",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
@@ -3381,7 +4007,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-10-28 早于最早准入日 2026-11-10"
+      "exclusionReason": "开场日 2026-10-28 早于最早准入日 2026-11-17"
     },
     {
       "eventId": "EVT-016",
@@ -3436,28 +4062,28 @@
           "label": "报名及原始来源",
           "domain": "icbeshow.com",
           "url": "http://www.icbeshow.com/about_23/",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "icbeshow.com",
           "url": "http://www.icbeshow.com/aboutexpo/",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 2",
           "domain": "icbeshow.com",
           "url": "http://www.icbeshow.com/activity/",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 3",
           "domain": "icbeshow.com",
           "url": "http://www.icbeshow.com/audience/",
-          "verifiedAt": "2026-08-10",
+          "verifiedAt": "2026-08-17",
           "accessStatus": "已核验"
         }
       ],
@@ -3611,7 +4237,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-10-30 早于最早准入日 2026-11-10"
+      "exclusionReason": "开场日 2026-10-30 早于最早准入日 2026-11-17"
     }
   ],
   "keywords": [
@@ -6848,6 +7474,179 @@
       "verificationStatus": "已确认",
       "priority": "P1",
       "notes": "官网使用NET展播节表述；监测时与活动品牌共同出现"
+    },
+    {
+      "id": "KW-161",
+      "category": "活动品牌",
+      "keyword": "CCEF广州跨交会",
+      "aliases": [
+        "中国广州跨境电商交易会",
+        "广州跨交会"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "广州",
+        "跨境",
+        "展会"
+      ],
+      "excludeContext": [],
+      "source": "2026-08-17活动品牌官网",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": "官网确认2027年6月16-18日"
+    },
+    {
+      "id": "KW-162",
+      "category": "专业表达",
+      "keyword": "外贸新动能数字新未来",
+      "aliases": [
+        "外贸新动能",
+        "数字新未来",
+        "数字外贸"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "跨境",
+        "外贸",
+        "数字化",
+        "电商"
+      ],
+      "excludeContext": [],
+      "source": "2026-08-17广州官方主题",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-163",
+      "category": "活动品牌",
+      "keyword": "CHWE出海网全球跨境电商展",
+      "aliases": [
+        "CHWE深圳春季展",
+        "出海网跨境电商展"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "深圳",
+        "跨境",
+        "选品",
+        "展会"
+      ],
+      "excludeContext": [],
+      "source": "2026-08-17主办方品牌官网",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": "官网确认2027年3月30日至4月2日"
+    },
+    {
+      "id": "KW-164",
+      "category": "专业表达",
+      "keyword": "B2C+B2小B+DTC+DTB",
+      "aliases": [
+        "B2小B",
+        "DTC",
+        "DTB",
+        "多元跨境生态"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "跨境",
+        "模式",
+        "渠道",
+        "交易"
+      ],
+      "excludeContext": [],
+      "source": "2026-08-17深圳官方介绍",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": "需与跨境活动或案例同时出现"
+    },
+    {
+      "id": "KW-165",
+      "category": "专业表达",
+      "keyword": "全域跨境生态对接",
+      "aliases": [
+        "选品采购",
+        "平台对接",
+        "运营赋能",
+        "趋势发布"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "跨境",
+        "选品",
+        "平台",
+        "运营"
+      ],
+      "excludeContext": [],
+      "source": "2026-08-17深圳官方介绍",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "KW-166",
+      "category": "活动品牌",
+      "keyword": "中国厦门国际跨境电商展览会",
+      "aliases": [
+        "中跨展",
+        "厦门跨境展",
+        "ICEIE厦门"
+      ],
+      "matchType": "模糊",
+      "contextRequired": [
+        "厦门",
+        "跨境",
+        "展会"
+      ],
+      "excludeContext": [],
+      "source": "2026-08-17活动品牌官网",
+      "verificationStatus": "已确认",
+      "priority": "P0",
+      "notes": "官网存在2027日期和届次冲突"
+    },
+    {
+      "id": "KW-167",
+      "category": "行业组织",
+      "keyword": "厦门国际商会",
+      "aliases": [
+        "厦门贸促",
+        "厦门国际商会跨境展"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "厦门",
+        "跨境",
+        "展会",
+        "产业带"
+      ],
+      "excludeContext": [],
+      "source": "2026-08-17厦门组织单位页",
+      "verificationStatus": "已确认",
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "KW-168",
+      "category": "专业表达",
+      "keyword": "跨境AI选品与增长",
+      "aliases": [
+        "亚马逊AI选品",
+        "AI跨境增长",
+        "NGS-AI跨境电商"
+      ],
+      "matchType": "组合",
+      "contextRequired": [
+        "AI",
+        "选品",
+        "跨境",
+        "增长"
+      ],
+      "excludeContext": [],
+      "source": "2026-08-17厦门旧议程线索",
+      "verificationStatus": "待持续验证",
+      "priority": "P1",
+      "notes": "当前仅为2026旧议程；2027需重新确认"
     }
   ],
   "verificationLogs": [
@@ -7092,6 +7891,171 @@
       "scope_or_field": "名称/日期/城市/场馆/取消或改期",
       "issue": "本轮无法重新打开官方来源，不能确认自2026-08-03后是否有变化",
       "action": "保留历史事实、届次及规模冲突；本轮不得标记通过"
+    },
+    {
+      "verification_id": "VER-082",
+      "event_id": "EVT-018",
+      "check_type": "真实性复核",
+      "checked_at": "2026-08-17 09:52",
+      "status": "SOURCE_ACCESS_BLOCKED",
+      "evidence": "官方微信历史归档+本轮HTTP验证码页",
+      "scope_or_field": "名称/日期/城市/场馆/取消或改期",
+      "issue": "微信原文当前进入平台验证码页，不能确认自上次归档后是否变化",
+      "action": "保留历史事实与缺失字段；本轮不得标记通过"
+    },
+    {
+      "verification_id": "VER-083",
+      "event_id": "EVT-019",
+      "check_type": "真实性复核",
+      "checked_at": "2026-08-17 09:53",
+      "status": "PASS",
+      "evidence": "中国跨交会品牌官网首页+关于页+预约页重开+历史归档SHA-256对比",
+      "scope_or_field": "名称/届次/日期/城市/场馆/主办",
+      "issue": "无",
+      "action": "关于页与历史归档SHA-256一致，继续在库"
+    },
+    {
+      "verification_id": "VER-084",
+      "event_id": "EVT-020",
+      "check_type": "真实性复核",
+      "checked_at": "2026-08-17 09:54",
+      "status": "PASS_WITH_CONFLICT",
+      "evidence": "主办官网首页+介绍+日程+观众+参观+报名页重开及历史归档SHA-256对比",
+      "scope_or_field": "名称/日期/城市/场馆/届次/规模",
+      "issue": "六个页面与历史归档一致；原届次和两组宣传规模冲突仍存在",
+      "action": "保留全部冲突并继续每周复扫"
+    },
+    {
+      "verification_id": "VER-085",
+      "event_id": "EVT-021",
+      "check_type": "真实性复核",
+      "checked_at": "2026-08-17 09:55",
+      "status": "PASS",
+      "evidence": "广州跨交会官网首页+组织机构+开放时间+预登记页",
+      "scope_or_field": "名称/日期/城市/场馆/主办",
+      "issue": "无",
+      "action": "新增正式候选；保留原始页面与哈希"
+    },
+    {
+      "verification_id": "VER-086",
+      "event_id": "EVT-021",
+      "check_type": "字段复核",
+      "checked_at": "2026-08-17 09:55",
+      "status": "PASS_WITH_GAPS",
+      "evidence": "广州跨交会官网多页面逐字段核对",
+      "scope_or_field": "主办/合作/人数/议程/嘉宾/报名",
+      "issue": "预计人数、报名人数、详细议程、嘉宾和发布日期暂缺",
+      "action": "缺失写暂缺；预登记表单不等于已有报名人数"
+    },
+    {
+      "verification_id": "VER-087",
+      "event_id": "EVT-021",
+      "check_type": "准入门槛复核",
+      "checked_at": "2026-08-17 09:55",
+      "status": "PASS",
+      "evidence": "自然月门槛重算",
+      "scope_or_field": "开始日期/最早准入日",
+      "issue": "2027-06-16不早于2026-11-17",
+      "action": "进入长线候选"
+    },
+    {
+      "verification_id": "VER-088",
+      "event_id": "EVT-022",
+      "check_type": "真实性复核",
+      "checked_at": "2026-08-17 09:56",
+      "status": "PASS_WITH_CONFLICT",
+      "evidence": "CHWE主办方官网首页+介绍+日程+参观时间+报名页",
+      "scope_or_field": "名称/日期/城市/场馆/主办/承办",
+      "issue": "日程页在3月30日条目后出现同日闭馆文本，与参观时间页3月31日仍开放不一致",
+      "action": "采用多个页面一致的3月30日至4月2日并保留日程单行冲突"
+    },
+    {
+      "verification_id": "VER-089",
+      "event_id": "EVT-022",
+      "check_type": "字段复核",
+      "checked_at": "2026-08-17 09:56",
+      "status": "PASS_WITH_GAPS",
+      "evidence": "CHWE官网多页面逐字段核对",
+      "scope_or_field": "人数/议程/嘉宾/报名",
+      "issue": "1500+品牌、50+大卖、10000+观众为宣传口径；同期会议和嘉宾暂缺",
+      "action": "不写成报名或实际到场；会议页维持暂缺"
+    },
+    {
+      "verification_id": "VER-090",
+      "event_id": "EVT-022",
+      "check_type": "准入门槛复核",
+      "checked_at": "2026-08-17 09:56",
+      "status": "PASS",
+      "evidence": "自然月门槛重算",
+      "scope_or_field": "开始日期/最早准入日",
+      "issue": "2027-03-30不早于2026-11-17",
+      "action": "进入长线候选"
+    },
+    {
+      "verification_id": "VER-091",
+      "event_id": "EVT-023",
+      "check_type": "真实性复核",
+      "checked_at": "2026-08-17 09:57",
+      "status": "PASS_WITH_CONFLICT",
+      "evidence": "厦门中跨展官网首页+介绍+组织+日程+同期活动+报名页",
+      "scope_or_field": "名称/日期/城市/场馆/主办",
+      "issue": "首页与日程写6月29日开始，介绍页写6月30日；第七/第六届及英文2026残留并存",
+      "action": "采用首页与详细日程共同支持的6月29日并保留全部冲突"
+    },
+    {
+      "verification_id": "VER-092",
+      "event_id": "EVT-023",
+      "check_type": "字段复核",
+      "checked_at": "2026-08-17 09:57",
+      "status": "PASS_WITH_GAPS",
+      "evidence": "厦门中跨展官网多页面逐字段核对",
+      "scope_or_field": "人数/议程/嘉宾/报名",
+      "issue": "观众过万未给具体值；近20万为历届累计；同期活动仍为2026旧议程；2027嘉宾暂缺",
+      "action": "口径分开保存；旧议程只作线索"
+    },
+    {
+      "verification_id": "VER-093",
+      "event_id": "EVT-023",
+      "check_type": "准入门槛复核",
+      "checked_at": "2026-08-17 09:57",
+      "status": "PASS",
+      "evidence": "自然月门槛重算",
+      "scope_or_field": "开始日期/最早准入日",
+      "issue": "2027-06-29不早于2026-11-17；冲突日期2027-06-30也满足门槛",
+      "action": "进入长线候选并保留日期冲突"
+    },
+    {
+      "verification_id": "VER-094",
+      "event_id": "EVT-021",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-08-17 10:00",
+      "status": "PASS",
+      "evidence": "JSON/CSV解析+ID唯一+跨文件关联+门槛聚合检查",
+      "scope_or_field": "events/agenda_topics/keywords/scan/verification",
+      "issue": "无",
+      "action": "活动、议题、关键词、扫描与核验记录一致"
+    },
+    {
+      "verification_id": "VER-095",
+      "event_id": "EVT-022",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-08-17 10:00",
+      "status": "PASS",
+      "evidence": "JSON/CSV解析+ID唯一+跨文件关联+门槛聚合检查",
+      "scope_or_field": "events/agenda_topics/keywords/scan/verification",
+      "issue": "无",
+      "action": "日程冲突和人数口径已跨文件保留"
+    },
+    {
+      "verification_id": "VER-096",
+      "event_id": "EVT-023",
+      "check_type": "输出一致性复核",
+      "checked_at": "2026-08-17 10:00",
+      "status": "PASS",
+      "evidence": "JSON/CSV解析+ID唯一+跨文件关联+门槛聚合检查",
+      "scope_or_field": "events/agenda_topics/keywords/scan/verification",
+      "issue": "无",
+      "action": "日期届次旧议程冲突和人数口径已跨文件保留"
     }
   ]
 }

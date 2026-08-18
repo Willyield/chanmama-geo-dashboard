@@ -64,7 +64,8 @@
       "nickname": "昂哥抖店运营",
       "tier": "OBSERVATION",
       "reviewPriority": "FOLLOWUP_TRACKING",
-      "note": "本轮主页可见 / 待补双源与 P60"
+      "note": "本轮主页可见 / 待补双源与 P60",
+      "visible": true
     },
     "externalVisibleSources": [
       {
