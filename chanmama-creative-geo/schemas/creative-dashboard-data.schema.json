@@ -1,0 +1,113 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "creative-dashboard-data.schema.json",
+  "title": "Chanmama Creative GEO dashboard data",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "dashboardVersion",
+    "status",
+    "final",
+    "runId",
+    "rawManifest",
+    "progress",
+    "questionPool",
+    "productTruth",
+    "management",
+    "metrics",
+    "rounds",
+    "citations",
+    "details",
+    "blocker",
+    "externalWrites"
+  ],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "dashboardVersion": {"const": "CMCR_DASHBOARD_LOCAL_20260818_R5"},
+    "status": {"const": "DAY_ONE_PARTIAL_READY"},
+    "final": {"const": false},
+    "runId": {"const": "cmcr-20260818-19-r1"},
+    "rawManifest": {
+      "type": "object",
+      "required": ["frozen", "status", "path", "sha256", "sampleCount"],
+      "properties": {
+        "frozen": {"const": false},
+        "status": {"const": "INCREMENTAL"},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9A-F]{64}$"},
+        "sampleCount": {"const": 270}
+      },
+      "additionalProperties": false
+    },
+    "progress": {
+      "type": "object",
+      "required": ["currentDay", "currentDayAuthorizedSlots", "originalSubmissions", "recoverySubmissions", "externalSubmissions", "plannedSlots", "percentage", "pointsConsumed", "rawResponses", "rawExpected", "submittedResultsPending", "invalidatedRawResponses", "readbackSupplements", "recoveryResponses", "citationPending", "pageStates", "failed", "uncertain", "nextDayAuthorized", "dayOneComplete", "progressOnly"],
+      "properties": {
+        "currentDay": {"const": "2026-08-18"},
+        "currentDayAuthorizedSlots": {"const": 270},
+        "originalSubmissions": {"const": 270},
+        "recoverySubmissions": {"const": 62},
+        "externalSubmissions": {"const": 332},
+        "plannedSlots": {"const": 540},
+        "percentage": {"const": 50.0},
+        "pointsConsumed": {"const": 265.6},
+        "rawResponses": {"const": 270},
+        "rawExpected": {"const": 270},
+        "submittedResultsPending": {"const": 0},
+        "invalidatedRawResponses": {"const": 30},
+        "readbackSupplements": {"const": 117},
+        "recoveryResponses": {"const": 62},
+        "citationPending": {"const": 6},
+        "pageStates": {
+          "type": "object",
+          "required": ["RESULT_PENDING", "INVALID_RAW_CURRENT_RECORD_PENDING", "RESULT_ANSWER_NOT_FOUND"],
+          "properties": {
+            "RESULT_PENDING": {"const": 0},
+            "INVALID_RAW_CURRENT_RECORD_PENDING": {"const": 0},
+            "RESULT_ANSWER_NOT_FOUND": {"const": 0}
+          },
+          "additionalProperties": false
+        },
+        "failed": {"const": 0},
+        "uncertain": {"const": 0},
+        "nextDayAuthorized": {"const": false},
+        "dayOneComplete": {"const": true},
+        "progressOnly": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "questionPool": {
+      "type": "object",
+      "required": ["total", "core", "extended", "sha256"],
+      "properties": {
+        "total": {"const": 100},
+        "core": {"const": 85},
+        "extended": {"const": 15},
+        "sha256": {"const": "553C387B149AC60AAA644F1D7030C8A3D21460273A78B7A7EA354C7EC8648131"}
+      },
+      "additionalProperties": false
+    },
+    "productTruth": {
+      "type": "object",
+      "required": ["status", "factCount", "documented", "unknown", "sha256", "unknownFactIds", "coverage"],
+      "properties": {
+        "status": {"const": "FROZEN_WITH_UNKNOWNS"},
+        "factCount": {"const": 20},
+        "documented": {"const": 19},
+        "unknown": {"const": 1},
+        "sha256": {"const": "29D8802FACA0B9AB10AC6528B32A851617EA9479F840FCB82803C7A09E0CD714"},
+        "unknownFactIds": {"type": "array", "items": {"const": "CMCR-F015"}, "minItems": 1, "maxItems": 1},
+        "coverage": {"type": "array", "minItems": 5}
+      },
+      "additionalProperties": false
+    },
+    "management": {"type": "array", "minItems": 3, "maxItems": 3},
+    "metrics": {"type": "array", "minItems": 11, "maxItems": 11},
+    "rounds": {"type": "array", "minItems": 4, "maxItems": 4},
+    "citations": {"type": "object"},
+    "details": {"type": "array", "maxItems": 0},
+    "blocker": {"const": "DAY_TWO_NOT_AUTHORIZED"},
+    "externalWrites": {"const": 0}
+  },
+  "additionalProperties": false
+}

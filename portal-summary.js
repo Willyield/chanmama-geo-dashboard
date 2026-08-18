@@ -1,126 +1,303 @@
 window.GEO_PORTAL_SUMMARY = {
-  schema_version: 2,
-  generated_at: "2026-08-11T13:52:14+08:00",
-  latest_data_as_of: "2026-08-07",
-  hero_metrics: [
+  "schema_version": 1,
+  "generated_at": "2026-08-18",
+  "period": {
+    "start": "2026-07-09",
+    "end": "2026-08-04"
+  },
+  "hero_metrics": [
     {
-      key: "round2_final_samples",
-      label: "第二轮最终样本",
-      value: 576,
-      unit: "",
-      numerator: 576,
-      denominator: 576,
-      scope: "GEO 第二轮最终样本",
-      as_of: "2026-08-04",
-      source_href: "./top01-round2/"
+      "key": "data_date",
+      "label": "最新模块更新",
+      "value": "2026-08-18",
+      "unit": "",
+      "source": "多模块摘要",
+      "context": "跨模块摘要；各指标按自身截至日标注"
     },
     {
-      key: "round2_mention_rate",
-      label: "蝉妈妈提及率",
-      value: 96.70,
-      unit: "%",
-      numerator: 557,
-      denominator: 576,
-      scope: "GEO 第二轮回答正文",
-      as_of: "2026-08-04",
-      source_href: "./top01-round2/"
+      "key": "valid_samples",
+      "label": "累计有效样本",
+      "value": 1152,
+      "unit": "",
+      "source": "GEO 样本监测",
+      "context": "第一轮 576 + 第二轮 576，为跨轮次累计 · 样本截至 2026-08-04"
     },
     {
-      key: "round2_unique_urls",
-      label: "唯一引用 URL",
-      value: 2662,
-      unit: "",
-      numerator: 2662,
-      denominator: null,
-      scope: "第二轮规范化唯一 URL",
-      as_of: "2026-08-04",
-      source_href: "./douyin-citation-report-round2/"
+      "key": "round2_mention_rate",
+      "label": "第二轮提及率",
+      "value": 96.7,
+      "unit": "%",
+      "source": "第二轮复测",
+      "context": "第二轮 · 557/576 条有效样本 · 截至 2026-08-04"
     },
     {
-      key: "round2_feigua_coverage",
-      label: "飞瓜官网回答覆盖",
-      value: 33.68,
-      unit: "%",
-      numerator: 194,
-      denominator: 576,
-      scope: "GEO 第二轮回答",
-      as_of: "2026-08-04",
-      source_href: "./top01-two-week-compare/"
+      "key": "unique_citation_urls",
+      "label": "唯一引用来源",
+      "value": 2662,
+      "unit": "",
+      "source": "引用源分析",
+      "context": "第二轮引用源报告 · 唯一规范化 URL · 截至 2026-08-04"
     }
   ],
-  changes: [
+  "modules": [
     {
-      key: "mention_rate_change",
-      label: "蝉妈妈提及率",
-      value: 2.08,
-      unit: "pp",
-      numerator: 557,
-      denominator: 576,
-      scope: "第二轮 96.70% vs 第一轮 94.62%",
-      as_of: "2026-08-04",
-      source_href: "./top01-two-week-compare/",
-      direction: "up"
-    },
-    {
-      key: "unique_urls_change",
-      label: "唯一规范化 URL",
-      value: 307,
-      unit: "",
-      numerator: 2662,
-      denominator: 2355,
-      scope: "第二轮 2,662 vs 第一轮 2,355",
-      as_of: "2026-08-04",
-      source_href: "./douyin-citation-report-round2/",
-      direction: "up"
-    },
-    {
-      key: "feigua_coverage_change",
-      label: "飞瓜官网回答覆盖",
-      value: -20.66,
-      unit: "pp",
-      numerator: 194,
-      denominator: 576,
-      scope: "第二轮 33.68% vs 第一轮 54.34%",
-      as_of: "2026-08-04",
-      source_href: "./top01-two-week-compare/",
-      direction: "down"
-    }
-  ],
-  module_groups: [
-    {
-      id: "geo",
-      label: "GEO 样本",
-      items: [
-        { label: "第一轮核心问题", href: "./top01/", note: "基线 576", status: "可用" },
-        { label: "第二轮最终结果", href: "./top01-round2/", note: "576/576", status: "最终" },
-        { label: "两轮趋势对比", href: "./top01-two-week-compare/", note: "可比变化", status: "可用" },
-        { label: "扩展问题", href: "./top2-top3/", note: "TOP2 + TOP3", status: "可用" },
-        { label: "全部问题总览", href: "./total/", note: "TOP0 - TOP3", status: "可用" }
+      "id": "sampling",
+      "label": "GEO 样本监测",
+      "status": "complete",
+      "updated_at": "2026-08-04",
+      "href": "./top01/",
+      "description": "持续观察蝉妈妈在核心业务问题中的出现、排序与优势表达。",
+      "metrics": [
+        {
+          "key": "baseline_samples",
+          "label": "第一轮样本",
+          "value": 576,
+          "unit": "",
+          "source": "./top01/"
+        },
+        {
+          "key": "baseline_mention_rate",
+          "label": "第一轮提及率",
+          "value": 94.6,
+          "unit": "%",
+          "source": "./top01/"
+        },
+        {
+          "key": "baseline_top3_rate",
+          "label": "第一轮 TOP3 率",
+          "value": 46.0,
+          "unit": "%",
+          "source": "./top01/"
+        },
+        {
+          "key": "round2_progress",
+          "label": "第二轮有效样本",
+          "value": 576,
+          "unit": "/576",
+          "source": "./top01-round2/"
+        }
+      ],
+      "insights": [
+        {
+          "text": "第一轮完成 576 个有效样本，蝉妈妈提及率为 94.6%，TOP3 率为 46%。",
+          "source_href": "./top01/",
+          "as_of": "2026-07-14"
+        },
+        {
+          "text": "第二轮完成 576/576 个有效样本，提及率为 96.7%，两轮全量复测已完成。",
+          "source_href": "./top01-round2/",
+          "as_of": "2026-08-04"
+        }
+      ],
+      "views": [
+        {
+          "label": "第一轮核心问题",
+          "href": "./top01/",
+          "kind": "baseline",
+          "status": "complete"
+        },
+        {
+          "label": "第二轮复测",
+          "href": "./top01-round2/",
+          "kind": "round",
+          "status": "complete"
+        },
+        {
+          "label": "两周趋势对比",
+          "href": "./top01-two-week-compare/",
+          "kind": "comparison",
+          "status": "complete"
+        },
+        {
+          "label": "扩展问题",
+          "href": "./top2-top3/",
+          "kind": "scope",
+          "status": "complete"
+        },
+        {
+          "label": "全部问题总览",
+          "href": "./total/",
+          "kind": "scope",
+          "status": "complete"
+        }
       ]
     },
     {
-      id: "citation",
-      label: "引用源",
-      items: [
-        { label: "第一轮引用源", href: "./douyin-citation-report/", note: "2,355 URL", status: "基线" },
-        { label: "第二轮引用源", href: "./douyin-citation-report-round2/", note: "2,662 URL", status: "最终" },
-        { label: "蝉圈圈引用源", href: "./chanquanquan-citation-report/", note: "7,161 行", status: "最终" }
+      "id": "citation",
+      "label": "引用源分析",
+      "status": "complete",
+      "updated_at": "2026-08-04",
+      "href": "./douyin-citation-report-round2/",
+      "description": "拆解两轮豆包回答引用了哪些页面、账号与内容类型。",
+      "metrics": [
+        {
+          "key": "citation_events",
+          "label": "去重引用事件",
+          "value": 11934,
+          "unit": "",
+          "source": "./douyin-citation-report-round2/"
+        },
+        {
+          "key": "unique_urls",
+          "label": "唯一 URL",
+          "value": 2662,
+          "unit": "",
+          "source": "./douyin-citation-report-round2/"
+        },
+        {
+          "key": "douyin_event_share",
+          "label": "抖音视频事件占比",
+          "value": 17.45,
+          "unit": "%",
+          "source": "./douyin-citation-report-round2/"
+        },
+        {
+          "key": "douyin_question_share",
+          "label": "抖音视频问题覆盖",
+          "value": 96.88,
+          "unit": "%",
+          "source": "./douyin-citation-report-round2/"
+        }
+      ],
+      "insights": [
+        {
+          "text": "共识别 11934 次去重引用事件和 2662 个唯一 URL，抖音来源覆盖 96.88% 的问题。",
+          "source_href": "./douyin-citation-report-round2/",
+          "as_of": "2026-08-04"
+        }
+      ],
+      "views": [
+        {
+          "label": "第一轮引用源",
+          "href": "./douyin-citation-report/",
+          "kind": "report",
+          "status": "complete"
+        },
+        {
+          "label": "第二轮引用源",
+          "href": "./douyin-citation-report-round2/",
+          "kind": "report",
+          "status": "complete"
+        },
+        {
+          "label": "蝉圈圈引用源",
+          "href": "./chanquanquan-citation-report/",
+          "kind": "report",
+          "status": "complete"
+        }
       ]
     },
     {
-      id: "monitoring",
-      label: "公开监控",
-      items: [
-        { label: "飞瓜每日监控", href: "./feigua-competitor-monitor/", note: "公开入口 1", status: "可用" }
+      "id": "product_geo",
+      "label": "产品 GEO",
+      "status": "active",
+      "updated_at": "2026-08-18",
+      "href": "./chanmama-creative-geo/",
+      "description": "集中查看蝉镜、蝉圈圈与蝉妈妈创意的 GEO 状态。",
+      "metrics": [
+        {
+          "key": "chanjing_progress",
+          "label": "蝉镜采样",
+          "value": 519,
+          "unit": "/520",
+          "source": "./chanjing-ai/"
+        },
+        {
+          "key": "chanjing_unresolved",
+          "label": "蝉镜未决",
+          "value": 1,
+          "unit": "",
+          "source": "./chanjing-ai/"
+        },
+        {
+          "key": "cqq_progress",
+          "label": "蝉圈圈采样",
+          "value": 730,
+          "unit": "/730",
+          "source": "./chanquanquan-geo/"
+        },
+        {
+          "key": "cqq_citations",
+          "label": "蝉圈圈引用",
+          "value": 7161,
+          "unit": "",
+          "source": "./chanquanquan-citation-report/"
+        },
+        {
+          "key": "creative_progress",
+          "label": "创意 GEO 提交",
+          "value": 270,
+          "unit": "/540",
+          "source": "./chanmama-creative-geo/"
+        }
+      ],
+      "insights": [
+        {
+          "text": "蝉圈圈已完成 730/730 个冻结样本，GEO 与引用源仪表盘均为最终 FULL。",
+          "source_href": "./chanquanquan-geo/",
+          "as_of": "2026-08-07"
+        },
+        {
+          "text": "蝉妈妈创意 GEO 首日有效回答 270/270；两日 FULL 仍为 270/540，明日批次尚未授权。",
+          "source_href": "./chanmama-creative-geo/",
+          "as_of": "2026-08-18"
+        }
+      ],
+      "views": [
+        {
+          "label": "蝉镜 AI",
+          "href": "./chanjing-ai/",
+          "kind": "research",
+          "status": "complete_with_gaps"
+        },
+        {
+          "label": "蝉圈圈 GEO",
+          "href": "./chanquanquan-geo/",
+          "kind": "research",
+          "status": "complete"
+        },
+        {
+          "label": "蝉妈妈创意 GEO",
+          "href": "./chanmama-creative-geo/",
+          "kind": "research",
+          "status": "progress_only"
+        }
       ]
     },
     {
-      id: "more",
-      label: "更多研究",
-      items: [
-        { label: "蝉镜 AI", href: "./chanjing-ai/", note: "双端观察", status: "可用" },
-        { label: "蝉圈圈 GEO", href: "./chanquanquan-geo/", note: "730 样本", status: "最终" }
+      "id": "operations",
+      "label": "运营工作台",
+      "status": "active",
+      "updated_at": "2026-08-10",
+      "href": "./daily-hotspot/",
+      "description": "查看账号矩阵、热点、行业活动与达人追踪。",
+      "metrics": [],
+      "insights": [],
+      "views": [
+        {
+          "label": "账号矩阵日报",
+          "href": "./account-matrix/",
+          "kind": "operations",
+          "status": "active"
+        },
+        {
+          "label": "热点与行业活动",
+          "href": "./daily-hotspot/",
+          "kind": "operations",
+          "status": "active"
+        }
       ]
+    },
+    {
+      "id": "competitor",
+      "label": "实时监控飞瓜",
+      "status": "planned",
+      "updated_at": null,
+      "href": null,
+      "description": "每日实时监控飞瓜的数据、改动、优势等全方面",
+      "metrics": [],
+      "insights": [],
+      "views": []
     }
   ]
 };

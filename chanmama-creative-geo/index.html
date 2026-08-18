@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <meta name="color-scheme" content="light">
+  <title>蝉妈妈创意 GEO</title>
+  <link rel="stylesheet" href="../assets/platform-shell.css?v=20260818-workbench2">
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="../assets/platform-shell.js?v=20260818-creative1" data-root="../" data-section="more" data-label="蝉妈妈创意 GEO"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="brand-block">
+      <span class="brand-mark" aria-hidden="true">CM</span>
+      <div>
+        <p class="eyebrow">CHANMAMA CREATIVE INTELLIGENCE</p>
+        <h1>蝉妈妈创意 GEO</h1>
+      </div>
+    </div>
+    <div class="header-status" aria-live="polite">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span id="header-status">正在核验本地数据</span>
+    </div>
+  </header>
+
+  <nav class="filter-bar" aria-label="仪表盘筛选">
+    <div class="filter-group">
+      <label for="date-filter">日期</label>
+      <select id="date-filter">
+        <option value="all">全部日期</option>
+        <option value="2026-08-18">08 月 18 日</option>
+        <option value="2026-08-19">08 月 19 日（未授权）</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="pool-filter">问题池</label>
+      <select id="pool-filter">
+        <option value="all">全部问题</option>
+        <option value="core">核心池</option>
+        <option value="extended">扩展池</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="view-filter">视图</label>
+      <select id="view-filter">
+        <option value="management">管理视图</option>
+        <option value="evidence">证据视图</option>
+      </select>
+    </div>
+    <div class="run-reference">
+      <span>RUN</span>
+      <strong id="run-id">--</strong>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="status-band" aria-labelledby="status-heading">
+      <div class="status-copy">
+        <p class="section-index">01 / RUN STATUS</p>
+        <h2 id="status-heading">正在载入首日结果</h2>
+        <p id="status-note">首日数据按原始结果与恢复结果的不可变关联进行核验。</p>
+      </div>
+      <div class="progress-panel">
+        <div class="progress-head">
+          <span>全量采样进度</span>
+          <strong id="progress-percent">--</strong>
+        </div>
+        <div class="progress-track" aria-hidden="true">
+          <span id="progress-fill"></span>
+        </div>
+        <div class="progress-facts">
+          <span><strong id="progress-submissions">--</strong> 原提交 + 恢复</span>
+          <span><strong id="progress-raw">--</strong> raw 回收</span>
+          <span><strong id="progress-points">--</strong> 点数</span>
+        </div>
+        <div class="result-state-facts" aria-label="待回收页面状态">
+          <span><strong id="result-pending">--</strong><small>回答待回收</small></span>
+          <span><strong id="result-answer-not-found">--</strong><small>回答异常</small></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="management-heading">
+      <div class="section-heading">
+        <div>
+          <p class="section-index">02 / MANAGEMENT SIGNALS</p>
+          <h2 id="management-heading">管理信号</h2>
+        </div>
+        <p>首日可核验指标先行展示</p>
+      </div>
+      <div class="management-grid" id="management-grid"></div>
+    </section>
+
+    <section class="section metrics-section" aria-labelledby="metrics-heading">
+      <div class="section-heading">
+        <div>
+          <p class="section-index">03 / CORE METRICS</p>
+          <h2 id="metrics-heading">核心指标</h2>
+        </div>
+        <p>2 项自动核验，9 项等待语义复审</p>
+      </div>
+      <div class="metrics-grid" id="metrics-grid"></div>
+    </section>
+
+    <section class="section split-section" aria-label="轮次与产品真值">
+      <div class="track-panel">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-index">04 / SAMPLE TRACK</p>
+            <h2>采样轮次</h2>
+          </div>
+        </div>
+        <div class="round-track" id="round-track"></div>
+      </div>
+      <div class="truth-panel">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-index">05 / PRODUCT TRUTH</p>
+            <h2>产品真值覆盖</h2>
+          </div>
+          <strong id="truth-total">--</strong>
+        </div>
+        <div class="truth-summary" id="truth-summary"></div>
+        <div class="truth-list" id="truth-list"></div>
+      </div>
+    </section>
+
+    <section class="section insight-section" aria-labelledby="insight-heading">
+      <div class="section-heading">
+        <div>
+          <p class="section-index">06 / DECISION SPACE</p>
+          <h2 id="insight-heading">竞争与内容机会</h2>
+        </div>
+        <p>等待两日完整样本与语义复审</p>
+      </div>
+      <div class="insight-grid">
+        <article class="insight-panel risk-panel">
+          <div class="panel-kicker"><span>COMPETITION</span><b>竞争态势</b></div>
+          <div class="blocked-visual" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <p>首日回答已完整；竞品份额、对比胜率与压制关系等待语义复审。</p>
+        </article>
+        <article class="insight-panel opportunity-panel">
+          <div class="panel-kicker"><span>CONTENT</span><b>内容机会</b></div>
+          <div class="opportunity-lines" aria-hidden="true"><i></i><i></i><i></i></div>
+          <p>待语义审计完成后生成问题缺口与内容优先级；明日批次尚未授权。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section citation-section" id="citation-section" aria-labelledby="citation-heading">
+      <div class="section-heading">
+        <div>
+          <p class="section-index">07 / CITATION EVIDENCE</p>
+          <h2 id="citation-heading">引用证据</h2>
+        </div>
+        <span class="module-state" id="citation-state">增量核验</span>
+      </div>
+      <div class="citation-layout">
+        <div class="citation-counters" id="citation-counters"></div>
+        <div class="citation-empty"><strong>正在载入增量引用</strong></div>
+      </div>
+    </section>
+
+    <section class="section detail-section" aria-labelledby="detail-heading">
+      <div class="section-heading">
+        <div>
+          <p class="section-index">08 / SAMPLE DETAIL</p>
+          <h2 id="detail-heading">样本明细</h2>
+        </div>
+        <span id="detail-count">0 条</span>
+      </div>
+      <div class="table-shell">
+        <table>
+          <thead>
+            <tr><th>样本 ID</th><th>问题</th><th>日期</th><th>轮次</th><th>引用状态</th></tr>
+          </thead>
+          <tbody id="detail-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>DAY_ONE_PARTIAL · 270/540</span>
+    <span id="footer-version">--</span>
+    <span>DAY_TWO_NOT_AUTHORIZED · 采样 332 次</span>
+  </footer>
+
+  <noscript>此仪表盘需要 JavaScript 读取本地冻结合同数据。</noscript>
+  <script type="module" src="./app.js?v=20260818-creative2"></script>
+</body>
+</html>

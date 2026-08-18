@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "dashboardVersion": "CMCR_DASHBOARD_LOCAL_20260818_R5",
+  "runId": "cmcr-20260818-19-r1",
+  "status": "LOCAL_DAY_ONE_PARTIAL_RELEASE",
+  "route": "/chanmama-creative-geo/",
+  "packageSha256": "E2C7F31D5FE9A8E7323631CFC9CC9B14C4713BCC33DD6EFBED8BCA5D6EF82E1E",
+  "packageHashBasis": "canonical sorted path/bytes/sha256 list excluding build-manifest.json",
+  "idempotency": {
+    "strategy": "CONTENT_ADDRESSED",
+    "rawMutation": false,
+    "externalWrites": 0
+  },
+  "inputGate": {
+    "requiredRunId": "cmcr-20260818-19-r1",
+    "requiredStatus": "FROZEN",
+    "requiredSampleCount": 540,
+    "currentBlocker": "DAY_TWO_NOT_AUTHORIZED"
+  },
+  "files": [
+    {
+      "path": "app.js",
+      "bytes": 10799,
+      "sha256": "87EBCA3E2F52CF55DDAC1E8321982AC14A5E4AFC3DC4D317381A7AF216B176AC"
+    },
+    {
+      "path": "dashboard-progress.json",
+      "bytes": 4847,
+      "sha256": "79B5F436A79CEC88886FE9694A3EF96B580EDE4BF3E89C845F83D6460BD29E18"
+    },
+    {
+      "path": "index.html",
+      "bytes": 7249,
+      "sha256": "16A198A57AEB086F60799057BC5CBD562A655672DBF1391836068046DCEB5EC4"
+    },
+    {
+      "path": "schemas/creative-dashboard-data.schema.json",
+      "bytes": 4397,
+      "sha256": "0117ACA92F3E5A6CCD183386DF6176BF85405615430D13C3D28ECB0F412C8488"
+    },
+    {
+      "path": "schemas/creative-raw-manifest.interface.schema.json",
+      "bytes": 2147,
+      "sha256": "89D09EB81BAD5959B067601E912A7DAE4EA12DAA32589B4399C3234F15A9B8F6"
+    },
+    {
+      "path": "sensitive-scan.json",
+      "bytes": 504,
+      "sha256": "C5908655FBF511380D082E2FA587E1DBDC0FA604E7E58263A89711D81094CD0F"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 14102,
+      "sha256": "AEBCDDBF77C9B4F631C874F6C77758F30080EB65D2BE5F8E6249AB308F1A3EB5"
+    }
+  ]
+}
