@@ -51,7 +51,7 @@
           submenuLink("./douyin-citation-report/", "第一轮引用源", "基线") +
           submenuLink("./douyin-citation-report-round2/", "第二轮引用源", "最终 576/576") +
           submenuLink("./chanquanquan-citation-report/", "蝉圈圈引用源", "最终 730/730") +
-          submenuLink("./chanmama-creative-geo/#citation-section", "创意引用源", "首日 270/270") +
+          submenuLink("./chanmama-creative-citation-report/", "创意引用源", "270 样本 · 1 待回答恢复") +
         '</div></details>' +
         '<details data-active="' + (section === "product") + '"><summary>产品 GEO</summary><div class="geo-shell-submenu">' +
           submenuLink("./chanjing-ai/", "蝉镜 AI", "双端观察") +

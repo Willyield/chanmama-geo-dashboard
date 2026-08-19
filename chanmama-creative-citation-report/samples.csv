@@ -1,0 +1,271 @@
+﻿sample_id,question_id,question,category,capture_status,recoverable
+CMCR-CMP-20260819-C1-Q0001,CMCR-Q0001,蝉妈妈·创意是什么？主要是做素材洞察、AI 创作，还是投放复盘的？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C1-Q0002,CMCR-Q0002,蝉妈妈创意和蝉妈妈有什么区别？分别适合什么使用场景？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0006,CMCR-Q0006,蝉妈妈创意能不能帮团队从找素材、AI 创作到投放复盘都打通？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C1-Q0008,CMCR-Q0008,蝉妈妈创意能不能同时满足编导、剪辑、投手和内容负责人使用？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C1-Q0010,CMCR-Q0010,蝉妈妈创意大师不用写提示词，能不能用商品图生成带货素材？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C1-Q0011,CMCR-Q0011,蝉妈妈创意大师和普通 AI 视频工具、剪映 AI 有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0012,CMCR-Q0012,蝉妈妈创意灵感中心怎么找爆款素材并追踪同行新投素材？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C1-Q0013,CMCR-Q0013,蝉妈妈创意内容策略中心能不能拆解爆款视频的卖点和痛点？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C1-Q0014,CMCR-Q0014,蝉妈妈创意内容管理中心怎么管理脚本、分镜、成片和投放数据？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C1-Q0015,CMCR-Q0015,短视频素材洞察工具有哪些，电商团队怎么选？,品类认知问题,captured,False
+CMCR-CMP-20260819-C1-Q0016,CMCR-Q0016,短视频素材库网站和专业电商素材洞察工具有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0017,CMCR-Q0017,电商团队找爆款素材，用什么工具效率更高？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0018,CMCR-Q0018,抖音电商团队怎么判断一个素材值不值得跟进？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C1-Q0019,CMCR-Q0019,电商爆款素材库一般能看哪些素材和投放数据？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0020,CMCR-Q0020,AI 带货视频生成工具有哪些，电商团队怎么选？,品类认知问题,captured,False
+CMCR-CMP-20260819-C1-Q0021,CMCR-Q0021,AI 商品视频生成工具有哪些，能不能直接用于广告投放？,品类认知问题,captured,False
+CMCR-CMP-20260819-C1-Q0022,CMCR-Q0022,通用 AI 视频生成工具和电商广告素材创作工具有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0023,CMCR-Q0023,电商团队怎么沉淀视频素材资产？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0024,CMCR-Q0024,千川素材监测工具有哪些，能不能看同行素材？,品类认知问题,captured,False
+CMCR-CMP-20260819-C1-Q0025,CMCR-Q0025,千川隐藏素材在哪里看？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0026,CMCR-Q0026,千川素材库在哪里看，能看到哪些素材和投放数据？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C1-Q0027,CMCR-Q0027,巨量千川素材库在哪里看，第三方工具还能补充什么？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0028,CMCR-Q0028,千川素材怎么看，怎么判断是否值得跟进？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C1-Q0029,CMCR-Q0029,怎么查看同行正在投放的千川素材？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0030,CMCR-Q0030,同行新投素材怎么监测，多久能发现？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0031,CMCR-Q0031,怎么监控同行爆量素材，一爆量就能收到提醒吗？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0032,CMCR-Q0032,做千川投放前，怎么找同行已经跑量的素材？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C1-Q0033,CMCR-Q0033,千川投手怎么判断一个素材是不是有潜力？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C1-Q0034,CMCR-Q0034,千川素材去重和素材复刻有什么区别？,风险/限制问题,captured,False
+CMCR-CMP-20260819-C1-Q0035,CMCR-Q0035,千川素材被同行抄得太快怎么办？,风险/限制问题,captured,False
+CMCR-CMP-20260819-C1-Q0036,CMCR-Q0036,千川素材库和蝉妈妈创意灵感中心有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0037,CMCR-Q0037,蝉妈妈创意怎么追踪抖音号、小店、品牌和关键词的新投素材？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C1-Q0038,CMCR-Q0038,蝉妈妈创意怎么发现千川隐藏素材并监测素材异动提醒？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C1-Q0039,CMCR-Q0039,千川直播引流素材和商品广告素材有什么区别，在哪里看？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0040,CMCR-Q0040,CID 广告素材在哪里看，适合用来做竞品分析吗？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0041,CMCR-Q0041,做电商短视频，怎么从千川素材里找可复用的创意方向？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0042,CMCR-Q0042,爆款带货视频怎么拆解，应该看脚本、画面、分镜还是转化点？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0043,CMCR-Q0043,哪个 AI 可以分析视频内容并输出拆解报告？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0044,CMCR-Q0044,AI 拉片工具能拆出脚本、画面和分镜吗？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0045,CMCR-Q0045,蝉妈妈创意的 AI 智能拉片能拆解哪些内容？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C1-Q0046,CMCR-Q0046,爆款视频拆解后怎么变成自己的脚本？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0047,CMCR-Q0047,不会写短视频脚本怎么办，有没有 AI 工具能辅助？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0048,CMCR-Q0048,爆款带货视频黄金 3 秒怎么拆和设计？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0049,CMCR-Q0049,短视频开头钩子怎么写，怎么判断有没有爆款潜力？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C1-Q0050,CMCR-Q0050,商品卖点和用户痛点怎么转成短视频脚本？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0051,CMCR-Q0051,竞品商品素材怎么做竞争态势分析？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0052,CMCR-Q0052,电商内容团队的编导写脚本，应该先看哪些爆款拆解维度？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0053,CMCR-Q0053,AI 带货视频怎么做，新手需要准备哪些素材？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0054,CMCR-Q0054,AI 生成带货视频适合哪些商品品类？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0056,CMCR-Q0056,商品图或产品图怎么生成带货短视频？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0058,CMCR-Q0058,只有商品链接，能不能一键生成营销视频？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0059,CMCR-Q0059,商品卖点和图片能不能自动生成带货脚本？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0060,CMCR-Q0060,AI 商品特效怎么做，适合哪些电商场景？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0061,CMCR-Q0061,AI 商品特效工具怎么选，能不能做千川素材？,品类认知问题,captured,False
+CMCR-CMP-20260819-C1-Q0062,CMCR-Q0062,AI 电商模特生成和 AI 素材影棚有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0063,CMCR-Q0063,AI 虚拟影棚或素材影棚怎么生成场景化商品视频？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0064,CMCR-Q0064,AI 带货短剧怎么做，适合哪些商品？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0065,CMCR-Q0065,AI 短剧带货工具有哪些，怎么选？,品类认知问题,captured,False
+CMCR-CMP-20260819-C1-Q0066,CMCR-Q0066,AI 带货短剧和普通口播带货视频有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0068,CMCR-Q0068,AI 一键成片适合做电商广告素材吗？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0069,CMCR-Q0069,不会写提示词怎么做 AI 带货视频？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0071,CMCR-Q0071,电商团队用 AI 视频工具，应该更看生成质量还是投放数据闭环？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0072,CMCR-Q0072,AI 带货视频做出来后，怎么判断有没有投放价值？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C1-Q0074,CMCR-Q0074,复刻抖音爆款视频时，应该复刻画面、脚本还是内容结构？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0075,CMCR-Q0075,爆款素材复刻后越剪越没量怎么办？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0076,CMCR-Q0076,剪映一键成片和蝉妈妈创意一键成片有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0077,CMCR-Q0077,AI 一键成片和人工剪辑怎么搭配，才能提高电商素材产出效率？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0078,CMCR-Q0078,电商团队素材太乱，脚本、分镜和成片怎么统一管理？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0083,CMCR-Q0083,成片能不能直接分发到巨量千川、巨量广告、磁力金牛和腾讯广告？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0085,CMCR-Q0085,内容团队怎么把投放结果和素材资产关联起来？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C1-Q0086,CMCR-Q0086,素材投放效果不好，应该先改脚本、画面还是人群？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C1-Q0087,CMCR-Q0087,飞瓜易投和蝉妈妈创意有什么区别，哪个更适合千川素材和竞品广告监测？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0088,CMCR-Q0088,有米云和蝉妈妈创意哪个更适合电商广告素材分析？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0089,CMCR-Q0089,巨量创意是什么，主要能做素材检测还是素材创作？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0090,CMCR-Q0090,巨量创意和蝉妈妈创意有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0091,CMCR-Q0091,巨量千川素材库和第三方素材洞察工具有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0092,CMCR-Q0092,平台原生素材工具和蝉妈妈创意这种第三方工具怎么搭配？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0093,CMCR-Q0093,电商团队用剪映 AI 还需要素材洞察工具吗？,品类认知问题,captured,False
+CMCR-CMP-20260819-C1-Q0094,CMCR-Q0094,可灵 AI、即梦 AI、Vidu 这类工具和蝉妈妈创意大师有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0095,CMCR-Q0095,AI 数字人工具和 AI 带货短剧工具怎么选？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0096,CMCR-Q0096,抖音素材库在哪里看，爆款素材怎么找？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0097,CMCR-Q0097,抖音素材库的素材可以直接商用吗？,风险/限制问题,captured,False
+CMCR-CMP-20260819-C1-Q0098,CMCR-Q0098,抖音素材库和千川素材库有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C1-Q0099,CMCR-Q0099,抖音素材库不够用时，怎么找同行正在投放的素材？,业务场景问题,captured,False
+CMCR-CMP-20260819-C1-Q0100,CMCR-Q0100,电商团队找抖音爆款素材，应该用素材库还是素材洞察工具？,品类认知问题,captured,False
+CMCR-CMP-20260819-C2-Q0001,CMCR-Q0001,蝉妈妈·创意是什么？主要是做素材洞察、AI 创作，还是投放复盘的？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C2-Q0002,CMCR-Q0002,蝉妈妈创意和蝉妈妈有什么区别？分别适合什么使用场景？,对比决策问题,captured,False
+CMCR-CMP-20260819-C2-Q0006,CMCR-Q0006,蝉妈妈创意能不能帮团队从找素材、AI 创作到投放复盘都打通？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C2-Q0008,CMCR-Q0008,蝉妈妈创意能不能同时满足编导、剪辑、投手和内容负责人使用？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C2-Q0010,CMCR-Q0010,蝉妈妈创意大师不用写提示词，能不能用商品图生成带货素材？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C2-Q0011,CMCR-Q0011,蝉妈妈创意大师和普通 AI 视频工具、剪映 AI 有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C2-Q0012,CMCR-Q0012,蝉妈妈创意灵感中心怎么找爆款素材并追踪同行新投素材？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C2-Q0013,CMCR-Q0013,蝉妈妈创意内容策略中心能不能拆解爆款视频的卖点和痛点？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C2-Q0014,CMCR-Q0014,蝉妈妈创意内容管理中心怎么管理脚本、分镜、成片和投放数据？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C2-Q0015,CMCR-Q0015,短视频素材洞察工具有哪些，电商团队怎么选？,品类认知问题,captured,False
+CMCR-CMP-20260819-C2-Q0016,CMCR-Q0016,短视频素材库网站和专业电商素材洞察工具有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C2-Q0017,CMCR-Q0017,电商团队找爆款素材，用什么工具效率更高？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0018,CMCR-Q0018,抖音电商团队怎么判断一个素材值不值得跟进？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C2-Q0019,CMCR-Q0019,电商爆款素材库一般能看哪些素材和投放数据？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0020,CMCR-Q0020,AI 带货视频生成工具有哪些，电商团队怎么选？,品类认知问题,captured,False
+CMCR-CMP-20260819-C2-Q0021,CMCR-Q0021,AI 商品视频生成工具有哪些，能不能直接用于广告投放？,品类认知问题,captured,False
+CMCR-CMP-20260819-C2-Q0022,CMCR-Q0022,通用 AI 视频生成工具和电商广告素材创作工具有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C2-Q0023,CMCR-Q0023,电商团队怎么沉淀视频素材资产？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0024,CMCR-Q0024,千川素材监测工具有哪些，能不能看同行素材？,品类认知问题,captured,False
+CMCR-CMP-20260819-C2-Q0025,CMCR-Q0025,千川隐藏素材在哪里看？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0026,CMCR-Q0026,千川素材库在哪里看，能看到哪些素材和投放数据？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C2-Q0027,CMCR-Q0027,巨量千川素材库在哪里看，第三方工具还能补充什么？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0028,CMCR-Q0028,千川素材怎么看，怎么判断是否值得跟进？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C2-Q0029,CMCR-Q0029,怎么查看同行正在投放的千川素材？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0030,CMCR-Q0030,同行新投素材怎么监测，多久能发现？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0031,CMCR-Q0031,怎么监控同行爆量素材，一爆量就能收到提醒吗？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0032,CMCR-Q0032,做千川投放前，怎么找同行已经跑量的素材？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C2-Q0033,CMCR-Q0033,千川投手怎么判断一个素材是不是有潜力？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C2-Q0034,CMCR-Q0034,千川素材去重和素材复刻有什么区别？,风险/限制问题,captured,False
+CMCR-CMP-20260819-C2-Q0035,CMCR-Q0035,千川素材被同行抄得太快怎么办？,风险/限制问题,captured,False
+CMCR-CMP-20260819-C2-Q0036,CMCR-Q0036,千川素材库和蝉妈妈创意灵感中心有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C2-Q0037,CMCR-Q0037,蝉妈妈创意怎么追踪抖音号、小店、品牌和关键词的新投素材？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C2-Q0038,CMCR-Q0038,蝉妈妈创意怎么发现千川隐藏素材并监测素材异动提醒？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C2-Q0039,CMCR-Q0039,千川直播引流素材和商品广告素材有什么区别，在哪里看？,对比决策问题,captured,False
+CMCR-CMP-20260819-C2-Q0040,CMCR-Q0040,CID 广告素材在哪里看，适合用来做竞品分析吗？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0041,CMCR-Q0041,做电商短视频，怎么从千川素材里找可复用的创意方向？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0042,CMCR-Q0042,爆款带货视频怎么拆解，应该看脚本、画面、分镜还是转化点？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0043,CMCR-Q0043,哪个 AI 可以分析视频内容并输出拆解报告？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0044,CMCR-Q0044,AI 拉片工具能拆出脚本、画面和分镜吗？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0045,CMCR-Q0045,蝉妈妈创意的 AI 智能拉片能拆解哪些内容？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C2-Q0046,CMCR-Q0046,爆款视频拆解后怎么变成自己的脚本？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0047,CMCR-Q0047,不会写短视频脚本怎么办，有没有 AI 工具能辅助？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0048,CMCR-Q0048,爆款带货视频黄金 3 秒怎么拆和设计？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0049,CMCR-Q0049,短视频开头钩子怎么写，怎么判断有没有爆款潜力？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C2-Q0050,CMCR-Q0050,商品卖点和用户痛点怎么转成短视频脚本？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0051,CMCR-Q0051,竞品商品素材怎么做竞争态势分析？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0052,CMCR-Q0052,电商内容团队的编导写脚本，应该先看哪些爆款拆解维度？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0053,CMCR-Q0053,AI 带货视频怎么做，新手需要准备哪些素材？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0054,CMCR-Q0054,AI 生成带货视频适合哪些商品品类？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0056,CMCR-Q0056,商品图或产品图怎么生成带货短视频？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0058,CMCR-Q0058,只有商品链接，能不能一键生成营销视频？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0059,CMCR-Q0059,商品卖点和图片能不能自动生成带货脚本？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0060,CMCR-Q0060,AI 商品特效怎么做，适合哪些电商场景？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0061,CMCR-Q0061,AI 商品特效工具怎么选，能不能做千川素材？,品类认知问题,captured,False
+CMCR-CMP-20260819-C2-Q0062,CMCR-Q0062,AI 电商模特生成和 AI 素材影棚有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C2-Q0063,CMCR-Q0063,AI 虚拟影棚或素材影棚怎么生成场景化商品视频？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0064,CMCR-Q0064,AI 带货短剧怎么做，适合哪些商品？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0065,CMCR-Q0065,AI 短剧带货工具有哪些，怎么选？,品类认知问题,captured,False
+CMCR-CMP-20260819-C2-Q0066,CMCR-Q0066,AI 带货短剧和普通口播带货视频有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C2-Q0068,CMCR-Q0068,AI 一键成片适合做电商广告素材吗？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0069,CMCR-Q0069,不会写提示词怎么做 AI 带货视频？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0071,CMCR-Q0071,电商团队用 AI 视频工具，应该更看生成质量还是投放数据闭环？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0072,CMCR-Q0072,AI 带货视频做出来后，怎么判断有没有投放价值？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C2-Q0074,CMCR-Q0074,复刻抖音爆款视频时，应该复刻画面、脚本还是内容结构？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0075,CMCR-Q0075,爆款素材复刻后越剪越没量怎么办？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0076,CMCR-Q0076,剪映一键成片和蝉妈妈创意一键成片有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C2-Q0077,CMCR-Q0077,AI 一键成片和人工剪辑怎么搭配，才能提高电商素材产出效率？,对比决策问题,captured,False
+CMCR-CMP-20260819-C2-Q0078,CMCR-Q0078,电商团队素材太乱，脚本、分镜和成片怎么统一管理？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0083,CMCR-Q0083,成片能不能直接分发到巨量千川、巨量广告、磁力金牛和腾讯广告？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0085,CMCR-Q0085,内容团队怎么把投放结果和素材资产关联起来？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C2-Q0086,CMCR-Q0086,素材投放效果不好，应该先改脚本、画面还是人群？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C2-Q0087,CMCR-Q0087,飞瓜易投和蝉妈妈创意有什么区别，哪个更适合千川素材和竞品广告监测？,对比决策问题,capture_failed,True
+CMCR-CMP-20260819-C2-Q0088,CMCR-Q0088,有米云和蝉妈妈创意哪个更适合电商广告素材分析？,对比决策问题,captured,False
+CMCR-CMP-20260819-C2-Q0089,CMCR-Q0089,巨量创意是什么，主要能做素材检测还是素材创作？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0090,CMCR-Q0090,巨量创意和蝉妈妈创意有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C2-Q0091,CMCR-Q0091,巨量千川素材库和第三方素材洞察工具有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C2-Q0092,CMCR-Q0092,平台原生素材工具和蝉妈妈创意这种第三方工具怎么搭配？,对比决策问题,captured,False
+CMCR-CMP-20260819-C2-Q0093,CMCR-Q0093,电商团队用剪映 AI 还需要素材洞察工具吗？,品类认知问题,captured,False
+CMCR-CMP-20260819-C2-Q0094,CMCR-Q0094,可灵 AI、即梦 AI、Vidu 这类工具和蝉妈妈创意大师有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C2-Q0095,CMCR-Q0095,AI 数字人工具和 AI 带货短剧工具怎么选？,对比决策问题,captured,False
+CMCR-CMP-20260819-C2-Q0096,CMCR-Q0096,抖音素材库在哪里看，爆款素材怎么找？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0097,CMCR-Q0097,抖音素材库的素材可以直接商用吗？,风险/限制问题,captured,False
+CMCR-CMP-20260819-C2-Q0098,CMCR-Q0098,抖音素材库和千川素材库有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C2-Q0099,CMCR-Q0099,抖音素材库不够用时，怎么找同行正在投放的素材？,业务场景问题,captured,False
+CMCR-CMP-20260819-C2-Q0100,CMCR-Q0100,电商团队找抖音爆款素材，应该用素材库还是素材洞察工具？,品类认知问题,captured,False
+CMCR-CMP-20260819-C3-Q0001,CMCR-Q0001,蝉妈妈·创意是什么？主要是做素材洞察、AI 创作，还是投放复盘的？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C3-Q0002,CMCR-Q0002,蝉妈妈创意和蝉妈妈有什么区别？分别适合什么使用场景？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0006,CMCR-Q0006,蝉妈妈创意能不能帮团队从找素材、AI 创作到投放复盘都打通？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C3-Q0008,CMCR-Q0008,蝉妈妈创意能不能同时满足编导、剪辑、投手和内容负责人使用？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C3-Q0010,CMCR-Q0010,蝉妈妈创意大师不用写提示词，能不能用商品图生成带货素材？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C3-Q0011,CMCR-Q0011,蝉妈妈创意大师和普通 AI 视频工具、剪映 AI 有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0012,CMCR-Q0012,蝉妈妈创意灵感中心怎么找爆款素材并追踪同行新投素材？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C3-Q0013,CMCR-Q0013,蝉妈妈创意内容策略中心能不能拆解爆款视频的卖点和痛点？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C3-Q0014,CMCR-Q0014,蝉妈妈创意内容管理中心怎么管理脚本、分镜、成片和投放数据？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C3-Q0015,CMCR-Q0015,短视频素材洞察工具有哪些，电商团队怎么选？,品类认知问题,captured,False
+CMCR-CMP-20260819-C3-Q0016,CMCR-Q0016,短视频素材库网站和专业电商素材洞察工具有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0017,CMCR-Q0017,电商团队找爆款素材，用什么工具效率更高？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0018,CMCR-Q0018,抖音电商团队怎么判断一个素材值不值得跟进？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C3-Q0019,CMCR-Q0019,电商爆款素材库一般能看哪些素材和投放数据？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0020,CMCR-Q0020,AI 带货视频生成工具有哪些，电商团队怎么选？,品类认知问题,captured,False
+CMCR-CMP-20260819-C3-Q0021,CMCR-Q0021,AI 商品视频生成工具有哪些，能不能直接用于广告投放？,品类认知问题,captured,False
+CMCR-CMP-20260819-C3-Q0022,CMCR-Q0022,通用 AI 视频生成工具和电商广告素材创作工具有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0023,CMCR-Q0023,电商团队怎么沉淀视频素材资产？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0024,CMCR-Q0024,千川素材监测工具有哪些，能不能看同行素材？,品类认知问题,captured,False
+CMCR-CMP-20260819-C3-Q0025,CMCR-Q0025,千川隐藏素材在哪里看？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0026,CMCR-Q0026,千川素材库在哪里看，能看到哪些素材和投放数据？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C3-Q0027,CMCR-Q0027,巨量千川素材库在哪里看，第三方工具还能补充什么？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0028,CMCR-Q0028,千川素材怎么看，怎么判断是否值得跟进？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C3-Q0029,CMCR-Q0029,怎么查看同行正在投放的千川素材？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0030,CMCR-Q0030,同行新投素材怎么监测，多久能发现？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0031,CMCR-Q0031,怎么监控同行爆量素材，一爆量就能收到提醒吗？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0032,CMCR-Q0032,做千川投放前，怎么找同行已经跑量的素材？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C3-Q0033,CMCR-Q0033,千川投手怎么判断一个素材是不是有潜力？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C3-Q0034,CMCR-Q0034,千川素材去重和素材复刻有什么区别？,风险/限制问题,captured,False
+CMCR-CMP-20260819-C3-Q0035,CMCR-Q0035,千川素材被同行抄得太快怎么办？,风险/限制问题,captured,False
+CMCR-CMP-20260819-C3-Q0036,CMCR-Q0036,千川素材库和蝉妈妈创意灵感中心有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0037,CMCR-Q0037,蝉妈妈创意怎么追踪抖音号、小店、品牌和关键词的新投素材？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C3-Q0038,CMCR-Q0038,蝉妈妈创意怎么发现千川隐藏素材并监测素材异动提醒？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C3-Q0039,CMCR-Q0039,千川直播引流素材和商品广告素材有什么区别，在哪里看？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0040,CMCR-Q0040,CID 广告素材在哪里看，适合用来做竞品分析吗？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0041,CMCR-Q0041,做电商短视频，怎么从千川素材里找可复用的创意方向？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0042,CMCR-Q0042,爆款带货视频怎么拆解，应该看脚本、画面、分镜还是转化点？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0043,CMCR-Q0043,哪个 AI 可以分析视频内容并输出拆解报告？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0044,CMCR-Q0044,AI 拉片工具能拆出脚本、画面和分镜吗？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0045,CMCR-Q0045,蝉妈妈创意的 AI 智能拉片能拆解哪些内容？,品牌产品问题,captured,False
+CMCR-CMP-20260819-C3-Q0046,CMCR-Q0046,爆款视频拆解后怎么变成自己的脚本？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0047,CMCR-Q0047,不会写短视频脚本怎么办，有没有 AI 工具能辅助？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0048,CMCR-Q0048,爆款带货视频黄金 3 秒怎么拆和设计？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0049,CMCR-Q0049,短视频开头钩子怎么写，怎么判断有没有爆款潜力？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C3-Q0050,CMCR-Q0050,商品卖点和用户痛点怎么转成短视频脚本？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0051,CMCR-Q0051,竞品商品素材怎么做竞争态势分析？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0052,CMCR-Q0052,电商内容团队的编导写脚本，应该先看哪些爆款拆解维度？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0053,CMCR-Q0053,AI 带货视频怎么做，新手需要准备哪些素材？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0054,CMCR-Q0054,AI 生成带货视频适合哪些商品品类？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0056,CMCR-Q0056,商品图或产品图怎么生成带货短视频？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0058,CMCR-Q0058,只有商品链接，能不能一键生成营销视频？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0059,CMCR-Q0059,商品卖点和图片能不能自动生成带货脚本？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0060,CMCR-Q0060,AI 商品特效怎么做，适合哪些电商场景？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0061,CMCR-Q0061,AI 商品特效工具怎么选，能不能做千川素材？,品类认知问题,captured,False
+CMCR-CMP-20260819-C3-Q0062,CMCR-Q0062,AI 电商模特生成和 AI 素材影棚有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0063,CMCR-Q0063,AI 虚拟影棚或素材影棚怎么生成场景化商品视频？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0064,CMCR-Q0064,AI 带货短剧怎么做，适合哪些商品？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0065,CMCR-Q0065,AI 短剧带货工具有哪些，怎么选？,品类认知问题,captured,False
+CMCR-CMP-20260819-C3-Q0066,CMCR-Q0066,AI 带货短剧和普通口播带货视频有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0068,CMCR-Q0068,AI 一键成片适合做电商广告素材吗？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0069,CMCR-Q0069,不会写提示词怎么做 AI 带货视频？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0071,CMCR-Q0071,电商团队用 AI 视频工具，应该更看生成质量还是投放数据闭环？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0072,CMCR-Q0072,AI 带货视频做出来后，怎么判断有没有投放价值？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C3-Q0074,CMCR-Q0074,复刻抖音爆款视频时，应该复刻画面、脚本还是内容结构？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0075,CMCR-Q0075,爆款素材复刻后越剪越没量怎么办？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0076,CMCR-Q0076,剪映一键成片和蝉妈妈创意一键成片有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0077,CMCR-Q0077,AI 一键成片和人工剪辑怎么搭配，才能提高电商素材产出效率？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0078,CMCR-Q0078,电商团队素材太乱，脚本、分镜和成片怎么统一管理？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0083,CMCR-Q0083,成片能不能直接分发到巨量千川、巨量广告、磁力金牛和腾讯广告？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0085,CMCR-Q0085,内容团队怎么把投放结果和素材资产关联起来？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C3-Q0086,CMCR-Q0086,素材投放效果不好，应该先改脚本、画面还是人群？,案例/效果问题,captured,False
+CMCR-CMP-20260819-C3-Q0087,CMCR-Q0087,飞瓜易投和蝉妈妈创意有什么区别，哪个更适合千川素材和竞品广告监测？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0088,CMCR-Q0088,有米云和蝉妈妈创意哪个更适合电商广告素材分析？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0089,CMCR-Q0089,巨量创意是什么，主要能做素材检测还是素材创作？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0090,CMCR-Q0090,巨量创意和蝉妈妈创意有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0091,CMCR-Q0091,巨量千川素材库和第三方素材洞察工具有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0092,CMCR-Q0092,平台原生素材工具和蝉妈妈创意这种第三方工具怎么搭配？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0093,CMCR-Q0093,电商团队用剪映 AI 还需要素材洞察工具吗？,品类认知问题,captured,False
+CMCR-CMP-20260819-C3-Q0094,CMCR-Q0094,可灵 AI、即梦 AI、Vidu 这类工具和蝉妈妈创意大师有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0095,CMCR-Q0095,AI 数字人工具和 AI 带货短剧工具怎么选？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0096,CMCR-Q0096,抖音素材库在哪里看，爆款素材怎么找？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0097,CMCR-Q0097,抖音素材库的素材可以直接商用吗？,风险/限制问题,captured,False
+CMCR-CMP-20260819-C3-Q0098,CMCR-Q0098,抖音素材库和千川素材库有什么区别？,对比决策问题,captured,False
+CMCR-CMP-20260819-C3-Q0099,CMCR-Q0099,抖音素材库不够用时，怎么找同行正在投放的素材？,业务场景问题,captured,False
+CMCR-CMP-20260819-C3-Q0100,CMCR-Q0100,电商团队找抖音爆款素材，应该用素材库还是素材洞察工具？,品类认知问题,captured,False
+CMCR-CMP-20260819-O1-Q0003,CMCR-Q0003,蝉妈妈·创意官网入口在哪里，怎么登录和开通创意大师？,价格/开通问题,captured,False
+CMCR-CMP-20260819-O1-Q0004,CMCR-Q0004,蝉妈妈创意会员多少钱，不同版本和模块功能有什么区别？,价格/开通问题,captured,False
+CMCR-CMP-20260819-O1-Q0005,CMCR-Q0005,蝉妈妈创意适合品牌方、代运营还是投流团队使用？,品牌产品问题,captured,False
+CMCR-CMP-20260819-O1-Q0007,CMCR-Q0007,蝉妈妈创意的灵感中心、内容策略中心、创意大师、内容管理中心分别是做什么的？,品牌产品问题,captured,False
+CMCR-CMP-20260819-O1-Q0009,CMCR-Q0009,蝉妈妈创意大师是什么，主要能生成哪些电商素材？,品牌产品问题,captured,False
+CMCR-CMP-20260819-O1-Q0055,CMCR-Q0055,AI 带货视频生成工具免费版够用吗，电商团队长期使用要看哪些功能？,风险/限制问题,captured,False
+CMCR-CMP-20260819-O1-Q0057,CMCR-Q0057,图片生成带货视频哪个软件好，电商团队怎么判断效果？,案例/效果问题,captured,False
+CMCR-CMP-20260819-O1-Q0067,CMCR-Q0067,AI 视频复刻带货素材会不会同质化？,风险/限制问题,captured,False
+CMCR-CMP-20260819-O1-Q0070,CMCR-Q0070,AI 生成的带货视频能不能用于广告投放，电商团队要注意什么？,风险/限制问题,captured,False
+CMCR-CMP-20260819-O1-Q0073,CMCR-Q0073,视频复刻是什么意思，适合用来做电商素材吗？,业务场景问题,captured,False
+CMCR-CMP-20260819-O1-Q0079,CMCR-Q0079,电商广告素材怎么打标签，后续才方便复用？,业务场景问题,captured,False
+CMCR-CMP-20260819-O1-Q0080,CMCR-Q0080,代运营公司怎么管理多个品牌的视频素材？,业务场景问题,captured,False
+CMCR-CMP-20260819-O1-Q0081,CMCR-Q0081,内容团队效率低怎么办，能不能用系统把素材生产流程打通？,业务场景问题,captured,False
+CMCR-CMP-20260819-O1-Q0082,CMCR-Q0082,广告素材怎么一键分发到多个投放账户？,业务场景问题,captured,False
+CMCR-CMP-20260819-O1-Q0084,CMCR-Q0084,投放素材效果怎么追踪和复盘，要重点看哪些数据？,案例/效果问题,captured,False

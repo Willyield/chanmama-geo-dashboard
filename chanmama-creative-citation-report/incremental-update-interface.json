@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "run_id": "cmcr-20260818-recapture-20260819-r1",
+  "required_current_status": "RECOVERY_V1_FROZEN_PARTIAL_WITH_1_PENDING_ANSWER",
+  "expected_delta_samples": 1,
+  "accepted_input": "same-run frozen sample delta",
+  "allowed_current_status": "capture_failed",
+  "allowed_final_statuses": [
+    "captured",
+    "confirmed_none"
+  ],
+  "raw_mutation_allowed": false,
+  "questions_mutation_allowed": false,
+  "rebuild_required": [
+    "sample statuses",
+    "citation inventory",
+    "domain summary",
+    "all metrics"
+  ],
+  "deployment_authorized": false
+}

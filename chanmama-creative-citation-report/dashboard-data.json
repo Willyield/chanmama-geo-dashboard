@@ -1,0 +1,3655 @@
+{
+  "schema_version": 1,
+  "run_id": "cmcr-20260818-recapture-20260819-r1",
+  "source_run_id": "cmcr-20260818-19-r1",
+  "as_of": "2026-08-19",
+  "status": "RECOVERY_V1_FROZEN_PARTIAL_WITH_1_PENDING_ANSWER",
+  "frozen_partial": true,
+  "raw_manifest_sha256": "E9503B8F53FDE87305DE6C7D75E29E32EBCBFAB9664251E74B24FE68986534B4",
+  "pending_sample": {
+    "sample_id": "CMCR-CMP-20260819-C2-Q0087",
+    "failure_code": "ANSWER_RECOVERY_PENDING",
+    "capture_status": "capture_failed",
+    "recoverable": true
+  },
+  "summary": {
+    "samples": 270,
+    "captured": 269,
+    "confirmed_none": 0,
+    "recoverable_unknown": 1,
+    "formal_answer_coverage_pct": 100.0,
+    "all_sample_known_pct": 99.63,
+    "deduplicated_citations": 3928,
+    "unique_urls": 2008,
+    "unique_domains": 585,
+    "raw_mentions": 4705
+  },
+  "source_types": [
+    {
+      "type": "other",
+      "count": 3171
+    },
+    {
+      "type": "media",
+      "count": 288
+    },
+    {
+      "type": "platform_official",
+      "count": 235
+    },
+    {
+      "type": "official_direct",
+      "count": 154
+    },
+    {
+      "type": "associated_product",
+      "count": 34
+    },
+    {
+      "type": "competitor",
+      "count": 33
+    },
+    {
+      "type": "community",
+      "count": 13
+    }
+  ],
+  "categories": [
+    {
+      "category": "业务场景问题",
+      "samples": 116,
+      "captured": 116,
+      "confirmed_none": 0,
+      "unknown": 0,
+      "formal_coverage": 100.0
+    },
+    {
+      "category": "价格/开通问题",
+      "samples": 2,
+      "captured": 2,
+      "confirmed_none": 0,
+      "unknown": 0,
+      "formal_coverage": 100.0
+    },
+    {
+      "category": "品牌产品问题",
+      "samples": 27,
+      "captured": 27,
+      "confirmed_none": 0,
+      "unknown": 0,
+      "formal_coverage": 100.0
+    },
+    {
+      "category": "品类认知问题",
+      "samples": 24,
+      "captured": 24,
+      "confirmed_none": 0,
+      "unknown": 0,
+      "formal_coverage": 100.0
+    },
+    {
+      "category": "对比决策问题",
+      "samples": 54,
+      "captured": 53,
+      "confirmed_none": 0,
+      "unknown": 1,
+      "formal_coverage": 100.0
+    },
+    {
+      "category": "案例/效果问题",
+      "samples": 35,
+      "captured": 35,
+      "confirmed_none": 0,
+      "unknown": 0,
+      "formal_coverage": 100.0
+    },
+    {
+      "category": "风险/限制问题",
+      "samples": 12,
+      "captured": 12,
+      "confirmed_none": 0,
+      "unknown": 0,
+      "formal_coverage": 100.0
+    }
+  ],
+  "domains": [
+    {
+      "domain": "iesdouyin.com",
+      "sample_citations": 1238,
+      "raw_mentions": 1672,
+      "unique_urls": 649
+    },
+    {
+      "domain": "blog.csdn.net",
+      "sample_citations": 212,
+      "raw_mentions": 243,
+      "unique_urls": 108
+    },
+    {
+      "domain": "m.sohu.com",
+      "sample_citations": 201,
+      "raw_mentions": 213,
+      "unique_urls": 80
+    },
+    {
+      "domain": "cy.chanmama.com",
+      "sample_citations": 146,
+      "raw_mentions": 207,
+      "unique_urls": 19
+    },
+    {
+      "domain": "school.jinritemai.com",
+      "sample_citations": 122,
+      "raw_mentions": 135,
+      "unique_urls": 45
+    },
+    {
+      "domain": "post.m.smzdm.com",
+      "sample_citations": 111,
+      "raw_mentions": 135,
+      "unique_urls": 56
+    },
+    {
+      "domain": "m.toutiao.com",
+      "sample_citations": 89,
+      "raw_mentions": 97,
+      "unique_urls": 43
+    },
+    {
+      "domain": "resources.youcloud.com",
+      "sample_citations": 73,
+      "raw_mentions": 92,
+      "unique_urls": 20
+    },
+    {
+      "domain": "open.oceanengine.com",
+      "sample_citations": 61,
+      "raw_mentions": 70,
+      "unique_urls": 21
+    },
+    {
+      "domain": "cc.oceanengine.com",
+      "sample_citations": 32,
+      "raw_mentions": 32,
+      "unique_urls": 12
+    },
+    {
+      "domain": "juejin.cn",
+      "sample_citations": 30,
+      "raw_mentions": 33,
+      "unique_urls": 12
+    },
+    {
+      "domain": "woshipm.com",
+      "sample_citations": 29,
+      "raw_mentions": 31,
+      "unique_urls": 19
+    },
+    {
+      "domain": "volcengine.com",
+      "sample_citations": 28,
+      "raw_mentions": 30,
+      "unique_urls": 12
+    },
+    {
+      "domain": "segmentfault.com",
+      "sample_citations": 27,
+      "raw_mentions": 32,
+      "unique_urls": 15
+    },
+    {
+      "domain": "163.com",
+      "sample_citations": 23,
+      "raw_mentions": 24,
+      "unique_urls": 7
+    },
+    {
+      "domain": "ai.chanmama.com",
+      "sample_citations": 22,
+      "raw_mentions": 25,
+      "unique_urls": 6
+    },
+    {
+      "domain": "iqinghu.com",
+      "sample_citations": 22,
+      "raw_mentions": 26,
+      "unique_urls": 11
+    },
+    {
+      "domain": "apps.apple.com",
+      "sample_citations": 21,
+      "raw_mentions": 22,
+      "unique_urls": 7
+    },
+    {
+      "domain": "t.cj.sina.cn",
+      "sample_citations": 21,
+      "raw_mentions": 29,
+      "unique_urls": 1
+    },
+    {
+      "domain": "github.com",
+      "sample_citations": 20,
+      "raw_mentions": 23,
+      "unique_urls": 14
+    },
+    {
+      "domain": "help.superdir.cn",
+      "sample_citations": 20,
+      "raw_mentions": 29,
+      "unique_urls": 4
+    },
+    {
+      "domain": "m.163.com",
+      "sample_citations": 20,
+      "raw_mentions": 24,
+      "unique_urls": 4
+    },
+    {
+      "domain": "c.m.163.com",
+      "sample_citations": 18,
+      "raw_mentions": 18,
+      "unique_urls": 5
+    },
+    {
+      "domain": "qianchuan.jinritemai.com",
+      "sample_citations": 18,
+      "raw_mentions": 19,
+      "unique_urls": 10
+    },
+    {
+      "domain": "csdn.net",
+      "sample_citations": 16,
+      "raw_mentions": 16,
+      "unique_urls": 9
+    },
+    {
+      "domain": "party.hudongba.com",
+      "sample_citations": 16,
+      "raw_mentions": 16,
+      "unique_urls": 9
+    },
+    {
+      "domain": "wenku.csdn.net",
+      "sample_citations": 16,
+      "raw_mentions": 18,
+      "unique_urls": 12
+    },
+    {
+      "domain": "xie.infoq.cn",
+      "sample_citations": 15,
+      "raw_mentions": 17,
+      "unique_urls": 4
+    },
+    {
+      "domain": "xingtu.cn",
+      "sample_citations": 15,
+      "raw_mentions": 16,
+      "unique_urls": 6
+    },
+    {
+      "domain": "m.10100.com",
+      "sample_citations": 14,
+      "raw_mentions": 15,
+      "unique_urls": 8
+    },
+    {
+      "domain": "bbs.huochengrm.cn",
+      "sample_citations": 13,
+      "raw_mentions": 19,
+      "unique_urls": 5
+    },
+    {
+      "domain": "cxgn.cn",
+      "sample_citations": 13,
+      "raw_mentions": 16,
+      "unique_urls": 3
+    },
+    {
+      "domain": "deepnavi.cn",
+      "sample_citations": 13,
+      "raw_mentions": 16,
+      "unique_urls": 2
+    },
+    {
+      "domain": "htys123.com",
+      "sample_citations": 13,
+      "raw_mentions": 18,
+      "unique_urls": 1
+    },
+    {
+      "domain": "bilibili.com",
+      "sample_citations": 12,
+      "raw_mentions": 12,
+      "unique_urls": 7
+    },
+    {
+      "domain": "m.11467.com",
+      "sample_citations": 11,
+      "raw_mentions": 11,
+      "unique_urls": 9
+    },
+    {
+      "domain": "tools.chanmama.com",
+      "sample_citations": 11,
+      "raw_mentions": 11,
+      "unique_urls": 2
+    },
+    {
+      "domain": "yun88.com",
+      "sample_citations": 11,
+      "raw_mentions": 11,
+      "unique_urls": 3
+    },
+    {
+      "domain": "aiproducthub.cn",
+      "sample_citations": 10,
+      "raw_mentions": 12,
+      "unique_urls": 4
+    },
+    {
+      "domain": "hailuoshe.com",
+      "sample_citations": 10,
+      "raw_mentions": 14,
+      "unique_urls": 5
+    },
+    {
+      "domain": "m.tech.china.com",
+      "sample_citations": 10,
+      "raw_mentions": 10,
+      "unique_urls": 8
+    },
+    {
+      "domain": "segwise.ai",
+      "sample_citations": 10,
+      "raw_mentions": 10,
+      "unique_urls": 6
+    },
+    {
+      "domain": "ad.chanmama.com",
+      "sample_citations": 8,
+      "raw_mentions": 11,
+      "unique_urls": 4
+    },
+    {
+      "domain": "adg.csdn.net",
+      "sample_citations": 8,
+      "raw_mentions": 8,
+      "unique_urls": 2
+    },
+    {
+      "domain": "aidiscover.cn",
+      "sample_citations": 8,
+      "raw_mentions": 10,
+      "unique_urls": 1
+    },
+    {
+      "domain": "docin.com",
+      "sample_citations": 8,
+      "raw_mentions": 8,
+      "unique_urls": 5
+    },
+    {
+      "domain": "goods.taobao.com",
+      "sample_citations": 8,
+      "raw_mentions": 9,
+      "unique_urls": 5
+    },
+    {
+      "domain": "80tg.com",
+      "sample_citations": 7,
+      "raw_mentions": 7,
+      "unique_urls": 3
+    },
+    {
+      "domain": "ai-indeed.com",
+      "sample_citations": 7,
+      "raw_mentions": 10,
+      "unique_urls": 5
+    },
+    {
+      "domain": "blog.51cto.com",
+      "sample_citations": 7,
+      "raw_mentions": 10,
+      "unique_urls": 1
+    },
+    {
+      "domain": "chanmamagroup.feishu.cn",
+      "sample_citations": 7,
+      "raw_mentions": 9,
+      "unique_urls": 3
+    },
+    {
+      "domain": "help.aliyun.com",
+      "sample_citations": 7,
+      "raw_mentions": 8,
+      "unique_urls": 3
+    },
+    {
+      "domain": "heooo.com",
+      "sample_citations": 7,
+      "raw_mentions": 7,
+      "unique_urls": 1
+    },
+    {
+      "domain": "news.sina.cn",
+      "sample_citations": 7,
+      "raw_mentions": 9,
+      "unique_urls": 1
+    },
+    {
+      "domain": "shankongmao.com",
+      "sample_citations": 7,
+      "raw_mentions": 7,
+      "unique_urls": 6
+    },
+    {
+      "domain": "bnc.dianzilajihs.com",
+      "sample_citations": 6,
+      "raw_mentions": 6,
+      "unique_urls": 4
+    },
+    {
+      "domain": "caifuhao.eastmoney.com",
+      "sample_citations": 6,
+      "raw_mentions": 6,
+      "unique_urls": 3
+    },
+    {
+      "domain": "cloud.tencent.com",
+      "sample_citations": 6,
+      "raw_mentions": 6,
+      "unique_urls": 6
+    },
+    {
+      "domain": "d.newrank.cn",
+      "sample_citations": 6,
+      "raw_mentions": 6,
+      "unique_urls": 2
+    },
+    {
+      "domain": "developer.cloud.tencent.com",
+      "sample_citations": 6,
+      "raw_mentions": 9,
+      "unique_urls": 3
+    },
+    {
+      "domain": "instavar.com",
+      "sample_citations": 6,
+      "raw_mentions": 6,
+      "unique_urls": 2
+    },
+    {
+      "domain": "kdniao.csdn.net",
+      "sample_citations": 6,
+      "raw_mentions": 6,
+      "unique_urls": 4
+    },
+    {
+      "domain": "m.epwk.com",
+      "sample_citations": 6,
+      "raw_mentions": 6,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.php.cn",
+      "sample_citations": 6,
+      "raw_mentions": 6,
+      "unique_urls": 5
+    },
+    {
+      "domain": "m.tui39.com",
+      "sample_citations": 6,
+      "raw_mentions": 6,
+      "unique_urls": 4
+    },
+    {
+      "domain": "mcn123.com",
+      "sample_citations": 6,
+      "raw_mentions": 9,
+      "unique_urls": 1
+    },
+    {
+      "domain": "pagecrawl.io",
+      "sample_citations": 6,
+      "raw_mentions": 9,
+      "unique_urls": 1
+    },
+    {
+      "domain": "tt123.com",
+      "sample_citations": 6,
+      "raw_mentions": 6,
+      "unique_urls": 2
+    },
+    {
+      "domain": "yt.feigua.cn",
+      "sample_citations": 6,
+      "raw_mentions": 6,
+      "unique_urls": 3
+    },
+    {
+      "domain": "zhanid.com",
+      "sample_citations": 6,
+      "raw_mentions": 8,
+      "unique_urls": 1
+    },
+    {
+      "domain": "zhwjw.net",
+      "sample_citations": 6,
+      "raw_mentions": 9,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ai-bio.cn",
+      "sample_citations": 5,
+      "raw_mentions": 5,
+      "unique_urls": 4
+    },
+    {
+      "domain": "ai-tab.cn",
+      "sample_citations": 5,
+      "raw_mentions": 5,
+      "unique_urls": 4
+    },
+    {
+      "domain": "aiww.com",
+      "sample_citations": 5,
+      "raw_mentions": 5,
+      "unique_urls": 2
+    },
+    {
+      "domain": "avocadoai.co",
+      "sample_citations": 5,
+      "raw_mentions": 5,
+      "unique_urls": 4
+    },
+    {
+      "domain": "byerisk.com",
+      "sample_citations": 5,
+      "raw_mentions": 9,
+      "unique_urls": 3
+    },
+    {
+      "domain": "chwang.com",
+      "sample_citations": 5,
+      "raw_mentions": 6,
+      "unique_urls": 2
+    },
+    {
+      "domain": "cnblogs.com",
+      "sample_citations": 5,
+      "raw_mentions": 5,
+      "unique_urls": 4
+    },
+    {
+      "domain": "dy.feigua.cn",
+      "sample_citations": 5,
+      "raw_mentions": 5,
+      "unique_urls": 2
+    },
+    {
+      "domain": "finance.sina.com.cn",
+      "sample_citations": 5,
+      "raw_mentions": 6,
+      "unique_urls": 2
+    },
+    {
+      "domain": "m.book118.com",
+      "sample_citations": 5,
+      "raw_mentions": 5,
+      "unique_urls": 3
+    },
+    {
+      "domain": "m.onesmovies.com",
+      "sample_citations": 5,
+      "raw_mentions": 7,
+      "unique_urls": 1
+    },
+    {
+      "domain": "miao333.com",
+      "sample_citations": 5,
+      "raw_mentions": 5,
+      "unique_urls": 5
+    },
+    {
+      "domain": "novatools.cn",
+      "sample_citations": 5,
+      "raw_mentions": 5,
+      "unique_urls": 3
+    },
+    {
+      "domain": "product.11467.com",
+      "sample_citations": 5,
+      "raw_mentions": 5,
+      "unique_urls": 2
+    },
+    {
+      "domain": "psaiplugin.com",
+      "sample_citations": 5,
+      "raw_mentions": 5,
+      "unique_urls": 3
+    },
+    {
+      "domain": "shangyexinzhi.com",
+      "sample_citations": 5,
+      "raw_mentions": 5,
+      "unique_urls": 3
+    },
+    {
+      "domain": "sohu.com",
+      "sample_citations": 5,
+      "raw_mentions": 5,
+      "unique_urls": 4
+    },
+    {
+      "domain": "tixiaolu.com",
+      "sample_citations": 5,
+      "raw_mentions": 5,
+      "unique_urls": 3
+    },
+    {
+      "domain": "videowise.com",
+      "sample_citations": 5,
+      "raw_mentions": 5,
+      "unique_urls": 2
+    },
+    {
+      "domain": "vientianeark.cn",
+      "sample_citations": 5,
+      "raw_mentions": 6,
+      "unique_urls": 4
+    },
+    {
+      "domain": "wireflow.ai",
+      "sample_citations": 5,
+      "raw_mentions": 5,
+      "unique_urls": 1
+    },
+    {
+      "domain": "36kr.com",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aitop100.cn",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 2
+    },
+    {
+      "domain": "b.kujiale.com",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 2
+    },
+    {
+      "domain": "biznews.sohu.com",
+      "sample_citations": 4,
+      "raw_mentions": 5,
+      "unique_urls": 2
+    },
+    {
+      "domain": "capcut.cn",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 4
+    },
+    {
+      "domain": "chanjing.cc",
+      "sample_citations": 4,
+      "raw_mentions": 5,
+      "unique_urls": 3
+    },
+    {
+      "domain": "cj.sina.cn",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 2
+    },
+    {
+      "domain": "developer.volcengine.com",
+      "sample_citations": 4,
+      "raw_mentions": 5,
+      "unique_urls": 3
+    },
+    {
+      "domain": "developers.e.qq.com",
+      "sample_citations": 4,
+      "raw_mentions": 6,
+      "unique_urls": 2
+    },
+    {
+      "domain": "dolabai.com",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 1
+    },
+    {
+      "domain": "douchacha.com",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 3
+    },
+    {
+      "domain": "feigua.cn",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 2
+    },
+    {
+      "domain": "fxbaogao.com",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 2
+    },
+    {
+      "domain": "hailuoai.video",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 2
+    },
+    {
+      "domain": "hanyuai.com",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 2
+    },
+    {
+      "domain": "hudongba.com",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 2
+    },
+    {
+      "domain": "insight.xiaoduoai.com",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 1
+    },
+    {
+      "domain": "listicler.com",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.weibo.cn",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 4
+    },
+    {
+      "domain": "m.xda.cn",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 2
+    },
+    {
+      "domain": "maomu.com",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 4
+    },
+    {
+      "domain": "miaozhen.com",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 2
+    },
+    {
+      "domain": "musedam.cc",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 2
+    },
+    {
+      "domain": "pexo.ai",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 2
+    },
+    {
+      "domain": "tapflare.com",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 1
+    },
+    {
+      "domain": "tgsem.com",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 4
+    },
+    {
+      "domain": "wap.hxsd.com",
+      "sample_citations": 4,
+      "raw_mentions": 5,
+      "unique_urls": 1
+    },
+    {
+      "domain": "weitoutiao.zjurl.cn",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 2
+    },
+    {
+      "domain": "xiexiuai.2weima.com",
+      "sample_citations": 4,
+      "raw_mentions": 4,
+      "unique_urls": 2
+    },
+    {
+      "domain": "488100.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "52pay.com",
+      "sample_citations": 3,
+      "raw_mentions": 4,
+      "unique_urls": 1
+    },
+    {
+      "domain": "a.jzl.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "adlibrary.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 3
+    },
+    {
+      "domain": "ads.shopee.cn",
+      "sample_citations": 3,
+      "raw_mentions": 4,
+      "unique_urls": 1
+    },
+    {
+      "domain": "adsroid.com",
+      "sample_citations": 3,
+      "raw_mentions": 4,
+      "unique_urls": 3
+    },
+    {
+      "domain": "advertcn.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "afyds.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 2
+    },
+    {
+      "domain": "ai3dcamera.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aihowhub.com",
+      "sample_citations": 3,
+      "raw_mentions": 4,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aijourn.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aitoollab.cn",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "amr.hainan.gov.cn",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "asincrate.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "baike.tielingcn.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "big5.cctv.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "castar.world",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 2
+    },
+    {
+      "domain": "designkit.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "dh.cgtimo.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "download.s21i.co99.net",
+      "sample_citations": 3,
+      "raw_mentions": 6,
+      "unique_urls": 1
+    },
+    {
+      "domain": "edu.51cto.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 2
+    },
+    {
+      "domain": "genfuseai.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "guangtao.taobao.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 3
+    },
+    {
+      "domain": "hao.aizhaozi.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "hezidesign.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "hundun.cn",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "jamecling.com",
+      "sample_citations": 3,
+      "raw_mentions": 6,
+      "unique_urls": 1
+    },
+    {
+      "domain": "jiangtour.com",
+      "sample_citations": 3,
+      "raw_mentions": 5,
+      "unique_urls": 1
+    },
+    {
+      "domain": "jianying.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "jichuang.ai-tab.cn",
+      "sample_citations": 3,
+      "raw_mentions": 5,
+      "unique_urls": 2
+    },
+    {
+      "domain": "laodad.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 2
+    },
+    {
+      "domain": "linkpix.iqinghu.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 2
+    },
+    {
+      "domain": "liuguangai.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.chuanboyi.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 2
+    },
+    {
+      "domain": "m.cifnews.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 3
+    },
+    {
+      "domain": "m.kuai-ad.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 3
+    },
+    {
+      "domain": "marteker.com",
+      "sample_citations": 3,
+      "raw_mentions": 7,
+      "unique_urls": 1
+    },
+    {
+      "domain": "morphic.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 2
+    },
+    {
+      "domain": "opp2.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "own-jarvis.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "pixflux.ai",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "pixverse.ai",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 3
+    },
+    {
+      "domain": "pzw520.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "searchthetrend.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "shanjian.tv",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 2
+    },
+    {
+      "domain": "sietoo.net",
+      "sample_citations": 3,
+      "raw_mentions": 5,
+      "unique_urls": 1
+    },
+    {
+      "domain": "smallfighter.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 2
+    },
+    {
+      "domain": "style3d.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "sup.co",
+      "sample_citations": 3,
+      "raw_mentions": 4,
+      "unique_urls": 1
+    },
+    {
+      "domain": "superscale.ai",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "troubleshooting.api.aliyun.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "tubeanalytics.net",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "vo3ai.com",
+      "sample_citations": 3,
+      "raw_mentions": 4,
+      "unique_urls": 1
+    },
+    {
+      "domain": "xiaoduoai.com",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "xtrb.cn",
+      "sample_citations": 3,
+      "raw_mentions": 3,
+      "unique_urls": 2
+    },
+    {
+      "domain": "58pic.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "666spy.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "9200.cn",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ad.kaogujia.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "admove.ai",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "adspyder.io",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ai-kit.cn",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aipgo.cn",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aipuzi.cn",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "airmie.cn",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "aitoolsnav.cn",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "anstrex.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "api.zhibuzhidao.cc",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ask.kuyin.cn",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "askneedle.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "atl.dianzilajihs.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "bba.ttads.net",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "bbs.csdn.net",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "beijing.11467.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "bibigpt.co",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "biz.ifeng.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "brandsearch.co",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "capcut.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "chanxuan.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ciuic.cn",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "clipcat.ai",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "cnr.cn",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "creativemanager.youcloud.com",
+      "sample_citations": 2,
+      "raw_mentions": 6,
+      "unique_urls": 1
+    },
+    {
+      "domain": "cutfa.st",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "datakoc.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "designkit.cn",
+      "sample_citations": 2,
+      "raw_mentions": 3,
+      "unique_urls": 2
+    },
+    {
+      "domain": "developer.aliyun.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "dge.dianzilajihs.com",
+      "sample_citations": 2,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "docs.feishu.cn",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "docs.volcengine.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "ecommercefastlane.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "efz.dianzilajihs.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "faxianai.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "flux-art.ai",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "frontiersinretail.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "fuwu.11467.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "gainforge.ai",
+      "sample_citations": 2,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "genape.ai",
+      "sample_citations": 2,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "glosellers.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "gz.lieju.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "hbzgn.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "i.chandashi.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "influencermarketinghub.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "insideaimedia.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ippro.bytedance.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "jingzhunhuoke.net",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "jzl.com",
+      "sample_citations": 2,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "kaogujia.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "kdjingpai.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "kensa.cc",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "kufanyun.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "lf9-cdn-tos.draftstatic.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.amz123.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "m.baike.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.lawtime.cn",
+      "sample_citations": 2,
+      "raw_mentions": 3,
+      "unique_urls": 2
+    },
+    {
+      "domain": "m.zcool.com.cn",
+      "sample_citations": 2,
+      "raw_mentions": 4,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.zhipin.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "magicnetworld.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "maimai.cn",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "manus.im",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "mixpeek.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "mogoec.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "mysemlife.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "news.qq.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "nlp.hinui.com.cn",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "oceanengine.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "oumomo.ai",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "patentimages.storage.googleapis.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "pcdetail.taobao.com",
+      "sample_citations": 2,
+      "raw_mentions": 3,
+      "unique_urls": 2
+    },
+    {
+      "domain": "prompt.cn",
+      "sample_citations": 2,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "qc.uliangtech.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "qituowang.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "qiuguojihua.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "qizansea.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "rawshot.ai",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "reloop.so",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "researchsnipers.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "runmie.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "sast.gov.cn",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "sf3-cdn-tos.douyinstatic.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "skillhub.cloud.tencent.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "softomatesolutions.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "sovran.ai",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "starti.ai",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "static.699pic.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "tahou.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "tencentads.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "tidesight.com",
+      "sample_citations": 2,
+      "raw_mentions": 4,
+      "unique_urls": 1
+    },
+    {
+      "domain": "tokcount.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "tuokeba.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "umaax.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "viralpulse.net",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "vivideo.ai",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "xhby.net",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "xit.edu.cn",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "xiuxiu.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "xiyuchuanmei.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "xmsumi.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "yaosanwang.com",
+      "sample_citations": 2,
+      "raw_mentions": 3,
+      "unique_urls": 1
+    },
+    {
+      "domain": "yiketu.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "zboec.cn",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 2
+    },
+    {
+      "domain": "zhixingjidian.cn",
+      "sample_citations": 2,
+      "raw_mentions": 3,
+      "unique_urls": 2
+    },
+    {
+      "domain": "zonflip.com",
+      "sample_citations": 2,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "022999.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "110.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "27252439.s21d.faiusrd.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "95360154.b2b.11467.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "activity.youcloud.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ad.vivo.com.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "adamenfroy.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "adrow.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "adstellar.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "advertising.amazon.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "adyntel.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ai.boce.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ai.fly63.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ai.ipkd.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ai.openi.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ai.pjm8.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aiavatar.tech.blog",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aibi.red",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aidemos.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aididai.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aifun.cc",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aig123.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aimojo.io",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aiportalx.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aiqianji.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "airukou.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aisystemscommerce.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aitodo.co",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aitoolnet.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aitools.fyi",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aitoolsguidebook.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aivideopicks.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "aliyun.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "allcut.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "api.dianzilajihs.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "apify.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "app.modaiyun.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "app.myzaker.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "app.so.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "applion.jp",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "assets.ctfassets.net",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "async.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "attnagency.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "bebolddigital.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "beefed.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "befun.ink",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "bestchoiceco.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "beta-youshu.youcloud.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "bgblur.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "biaojixia.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "bigbigads.io",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "bjayyg.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "blend-api.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "blog.baiwanlian.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "blog.easystore.co",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "business.adobe.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "business.china.com.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "bvs.dianzilajihs.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "bwc.dianzilajihs.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "caodui.com.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ccn.com.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "cdn2.hubspot.net",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ce.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "chinacourt.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "chinanews.com.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "cioclub.net",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ciyuanerhao.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "claraverse.store",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "clip-forge.io",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "clipo.cc",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "clipspeed.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "clipworks.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "cloud.mobgi.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "cloud.tencent.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "cometly.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "competitoranalyzer.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "coonav.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "corp.kaltura.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "creaa.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "creatify.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "cropink.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "dailyintelservice.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "datanexus.qq.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "datavoyage.cn",
+      "sample_citations": 1,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "deaitinh.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "delv.tools",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "designlumo.com",
+      "sample_citations": 1,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "developer.cloud.tencent.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "developer.jdcloud.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "devpress.csdn.net",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "diact.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "digitalad.china-caa.org",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "dl.lieju.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "doverank.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "dzwww.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "e.qq.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "easyclaw.ijinshan.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "egeiy.dianzilajihs.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ehi.dianzilajihs.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "elysiate.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "energent.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ex.chinadaily.com.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "extuitive.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "eyingbao.net",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "feature-youshu-data-2916.youshu-test.umlife.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "finance.people.com.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "finance.sina.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "findlaw.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "flowvideo.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "fluxnote.io",
+      "sample_citations": 1,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "forum.mirrorship.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "fractalapps.dev",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "fromgeek.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ftt.dianzilajihs.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "g.pconline.com.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "gaiyiguo.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ganhuoku.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "geomiao.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "get-ryze.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "getkoro.app",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "getsortio.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ghp666.blog.csdn.net",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "gliacloud.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "gocrazyai.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "gov.sohu.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "gqv.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "guangzhou0469444.11467.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "h5.baiwanlian.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "hb.dzwww.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "hbqnbnews.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "hello123.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "help.adspolar.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "higgsfield.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "hmwww.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "hoozi.com.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "houdao.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "huitun.aiproducthub.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "huzhan.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "hyperfx.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "icviews.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ideaequity.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ideaplan.io",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "imagin.feichuangtech.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "improvado.io",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "itopmarketing.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "itutool.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "jeda.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "jfdc.cnic.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "jiexijun.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "joy-pup.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "justailab.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "kalodata.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "key-g.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "kompozy.io",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "kuajing168.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "kuchuangai.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "kujiale.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "kuse.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "lawtime.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "learn.microsoft.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "lf26-cdn-tos.draftstatic.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "lf3-cdn-tos.draftstatic.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "litcommerce.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "logclub.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "longstories.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "lpnh.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.36dianping.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.36kr.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.adhuiyuan.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.adquan.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.aitntnews.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.app.so.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.bilibili.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.chanmama.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.down10s.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.ebrun.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.ftxia.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.huke88.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.oppo-ad.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.oppozhijia.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.soquanmao.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.teng-ad.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.thepaper.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.wandoujia.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.xiayx.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.xnnews.com.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "m.zhiding.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "marketing-news.uk",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "matrix.newrank.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "meipian.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "mgoods.taobao.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "miao.wondershare.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "milguo.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "mindstudio.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "momentummediaadvertising.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "motionvid.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "mx.sfwz.cc",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "nanakia.fr",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "nav.newrank.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "news.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "news.jinxun.cc",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "next.api.aliyun.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "niguangts.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "omniart.studio",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "opinion-app.people.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "optifeed.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "opus.pro",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "otechworld.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "outfy.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "pangjing.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "panla.com.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "pdf.dfcfw.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "pdf.hanspub.org",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "pgy.sinobasedm.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "photomaxi.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "pixelbyhand.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "pixo.video",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "pixtura.app",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "podvector.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "project.feishu.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "publora.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "pulserevops.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "punx.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "qiliangfu.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "reccloud.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "recharm.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "refund.zhipin.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "reportify-1252068037.cos.ap-beijing.myqcloud.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "riffkit.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "rpm.hinui.com.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "sc.fkw.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "scalemate.co",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "scriptstorm.ai",
+      "sample_citations": 1,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    },
+    {
+      "domain": "sellercenter.io",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "sh.lieju.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "shopee.mobduos.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "shotova.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "sipsip.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "sj.qq.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "smallfighter.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "socialecho.net",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "socialync.io",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "soft.china.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "sozee.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "spaceads.agency",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "stockpage.10jqka.com.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "sunra.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "superdir.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "superdirector.app",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "sxn.dianzilajihs.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "sz.lieju.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "szdamai.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "szhometop.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "tags.top",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "taobao.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "tbadc.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "tech.sina.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "technologyreview.es",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "thedamrepublic.io",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "thepaper.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "tiktube.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "tojoyun.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "toolify.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "touliang.net",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "trustradius.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "tugan.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "tuplestrategy.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "ugcmaker.io",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "useclip.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "uziai.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "vbaoke.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "venngage.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "videoadsstudio.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "videoai.me",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "wap.shuaishou.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "wap.yesky.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "wap.youcloud.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "wap.zol.com.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "waytoagi.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "weikawang.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "wen.woshipm.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "weshop.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "winwinchina.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "worktile.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "woshizmt.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "wxb.xzdw.gov.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "xhpfmapi.xinhuaxmt.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "xiaohuanxiong.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "xiaoyun.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "xjishu.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "xjstoryboard.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "xorder.com.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "xueyuan.yixiaoer.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "yecaoai.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "yihook.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "yonghong.cloud",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "zcool.com.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "zeely.ai",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "zhejianglawyer.com",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "zhitou.feigua.cn",
+      "sample_citations": 1,
+      "raw_mentions": 1,
+      "unique_urls": 1
+    },
+    {
+      "domain": "zsscw.net",
+      "sample_citations": 1,
+      "raw_mentions": 2,
+      "unique_urls": 1
+    }
+  ],
+  "method": {
+    "url_normalization": true,
+    "within_sample_deduplication": true,
+    "unknown_is_not_zero": true,
+    "execution_surface": "AIDSO",
+    "entry_authority": "https://www.aidso.com/"
+  },
+  "incremental_update_contract": {
+    "schema_version": 1,
+    "run_id": "cmcr-20260818-recapture-20260819-r1",
+    "required_current_status": "RECOVERY_V1_FROZEN_PARTIAL_WITH_1_PENDING_ANSWER",
+    "expected_delta_samples": 1,
+    "accepted_input": "same-run frozen sample delta",
+    "allowed_current_status": "capture_failed",
+    "allowed_final_statuses": [
+      "captured",
+      "confirmed_none"
+    ],
+    "raw_mutation_allowed": false,
+    "questions_mutation_allowed": false,
+    "rebuild_required": [
+      "sample statuses",
+      "citation inventory",
+      "domain summary",
+      "all metrics"
+    ],
+    "deployment_authorized": false
+  }
+}
