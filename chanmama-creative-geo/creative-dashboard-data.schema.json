@@ -6,7 +6,7 @@
   "required": ["schemaVersion", "dashboardVersion", "status", "final", "runId", "route", "summary", "metricGroups", "competition", "diagnostics", "traceability", "samples"],
   "properties": {
     "schemaVersion": {"const": 2},
-    "dashboardVersion": {"const": "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260819_R3"},
+    "dashboardVersion": {"const": "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260819_R4"},
     "status": {"const": "FINAL_FROZEN_PARTIAL_WITH_RECOVERABLE_UNKNOWNS"},
     "final": {"const": true},
     "runId": {"const": "cmcr-20260818-recapture-20260819-r1"},

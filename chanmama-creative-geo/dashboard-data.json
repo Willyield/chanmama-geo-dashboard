@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "dashboardVersion": "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260819_R3",
+  "dashboardVersion": "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260819_R4",
   "status": "FINAL_FROZEN_PARTIAL_WITH_RECOVERABLE_UNKNOWNS",
   "final": true,
   "runId": "cmcr-20260818-recapture-20260819-r1",
@@ -24,11 +24,11 @@
         {
           "id": "ai_mention_rate",
           "label": "AI 提及率",
-          "numerator": 84,
-          "denominator": 269,
-          "percentage": 31.23,
-          "unknown": 1,
-          "scope": "269 个正式回答"
+          "numerator": 23,
+          "denominator": 208,
+          "percentage": 11.06,
+          "unknown": 0,
+          "scope": "208 个中立正式回答（已剔除 61 个品牌定向回答）"
         }
       ]
     },
@@ -222,10 +222,10 @@
   },
   "traceability": {
     "rawManifestSha256": "E9503B8F53FDE87305DE6C7D75E29E32EBCBFAB9664251E74B24FE68986534B4",
-    "metricsSha256": "A7127A582C2C99DA0B0A18935AF71EE5E5431EC0BAB55DEADB81AE345DC9B309",
+    "metricsSha256": "3C71F78EF272FFC308977251F4BE4AF021D7FAA70F9AFFD94BD41283D8A97592",
     "semanticAuditSha256": "4158AEED5C9FC46452347EBE3C6895D5D3EE1F7A5AB562B9CF4170F61A5042C3",
     "sampleDetailsSha256": "F04B0BE44F836CB5D686F9116332E4C955C4AF075CB3063AB247D0F9AAF6509A",
-    "validationSha256": "2F0506EB66C278D87910E242800CFC748DD13AC147397A39D730F02761DFA7E4",
+    "validationSha256": "A9640965A3EAD3E23B996BAB1039AF08043E1397E5FC7F598870698F94BDA33B",
     "auditRows": 510,
     "detailRows": 270
   },

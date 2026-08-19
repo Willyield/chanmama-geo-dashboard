@@ -3,6 +3,7 @@
   "status": "PASS",
   "scannedFiles": [
     "app.js",
+    "audit/mention-rate-scope.csv",
     "audit/semantic_audit.csv",
     "audit/validation.json",
     "creative-dashboard-data.schema.json",
