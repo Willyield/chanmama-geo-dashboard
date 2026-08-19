@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "module": "hotspots",
   "date": "2026-08-19",
-  "observedAt": "2026-08-19T09:43:53+08:00",
-  "revision": 1,
-  "updatedAt": "2026-08-19T01:44:02.549Z",
+  "observedAt": "2026-08-19T10:51:40+08:00",
+  "revision": 3,
+  "updatedAt": "2026-08-19T02:52:53.312Z",
   "sourceType": "structured-data",
   "sourceArtifact": "incoming/hotspots/2026-08-19.json",
   "sourceWorkbook": null,
@@ -16,14 +16,14 @@
   "summary": {
     "gradeCounts": {
       "S": 0,
-      "A": 8,
-      "B": 2,
-      "C": 0,
+      "A": 9,
+      "B": 0,
+      "C": 1,
       "D": 0
     },
     "domainCounts": {
-      "commerce": 6,
-      "technology": 4
+      "commerce": 4,
+      "technology": 6
     },
     "candidateKindCounts": {
       "event": 10,
@@ -32,13 +32,13 @@
     "contentPotentialCounts": {
       "S": 0,
       "A": 0,
-      "B": 10,
-      "C": 0,
+      "B": 9,
+      "C": 1,
       "D": 0
     },
     "topicValueCounts": {
-      "S": 8,
-      "A": 2,
+      "S": 6,
+      "A": 4,
       "B": 0,
       "C": 0,
       "D": 0
@@ -46,15 +46,15 @@
     "publicationStatusCounts": {
       "priority_production": 0,
       "early_test": 0,
-      "targeted_publish": 8,
-      "small_test": 2,
-      "observe": 0,
+      "targeted_publish": 9,
+      "small_test": 0,
+      "observe": 1,
       "do_not_publish": 0
     },
     "breakoutCounts": {
-      "confirmed_breakout": 2,
+      "confirmed_breakout": 0,
       "fast_rising": 0,
-      "observation_only": 8,
+      "observation_only": 10,
       "rejected": 0
     },
     "adModeEligibleCounts": {
@@ -64,12 +64,12 @@
     },
     "adOpportunityCount": 0,
     "adOpportunityQueue": [],
-    "priorityCount": 8,
-    "lowCostCount": 2,
-    "observeCount": 0,
-    "evidenceE3Count": 8,
-    "publishNowCount": 10,
-    "webSummary": "今日严格保留10条正式热点：平台规则3条、官方创作者活动1条、跨日商品2条、科技与工具4条。20个规定来源和七类观察池均已扫描，正式对象已回原始页复核；小红书未取得当日内容，百度指数未取得候选曲线，部分平台只提供单日榜或较晚数据，因此inputStatus保持incomplete，广告队列关闭。",
+    "priorityCount": 9,
+    "lowCostCount": 0,
+    "observeCount": 1,
+    "evidenceE3Count": 10,
+    "publishNowCount": 9,
+    "webSummary": "2026-08-19二次执行已重新筛选10条正式热点：今日新增2条、重新核实后回榜1条、持续跟踪7条。持续项均在当前规则、活动或趋势窗口内完成二次复核；两条没有新增跨日序列的商品已退出正式榜。小红书与百度指数关键输入仍不完整。",
     "topContentActions": [
       {
         "id": "HT-20260819-001",
@@ -152,12 +152,12 @@
     {
       "id": "HT-20260819-001",
       "event_key": "douyin-custom-jewelry-rule-published-20260818",
-      "foundAt": "2026-08-19 09:30-10:20",
+      "foundAt": "2026-08-19 10:19-10:45 revision 2",
       "name": "抖音电商发布定制珠宝商品细则，确认书、收费、售后与自然光留证成为经营硬要求",
       "type": "平台经营规则/珠宝定制",
       "sourceLevel": "E3",
-      "publishedAt": "2026-08-18发布，2026-08-19复核",
-      "signal": "8月19日抖店学习中心首页仍将8月18日定制珠宝商品发布细则列为最新规则；正文中的确认书、收费、售后、飞鸽沟通和自然光留证要求可核。",
+      "publishedAt": "2026-08-18发布，2026-08-19二次复核",
+      "signal": "8月19日二次复核确认官方正文仍有效，定制范围、确认书、收费、售后、飞鸽沟通和自然光留证要求可核；这是持续执行规则，不是今日新发布。",
       "uncertainty": "具体可定制类目与售后边界可能后续调整，以平台实时规则和订单页面为准。",
       "recommended": "业务重点响应｜优先制作",
       "actionReason": "规则当日发布且直接改变珠宝定制商品发布、推广、交付和售后流程。",
@@ -185,6 +185,8 @@
       "owner": "内容运营/客户成功/客服/合规",
       "monitor": "类目清单、确认书模板、订金模式与售后规则后续修订。",
       "candidate_kind": "event",
+      "daily_status": "CONTINUING",
+      "previous_day_event_key_matched": true,
       "hotspot_category": "经营与规则",
       "signal_type": "official_rule",
       "baseline_evidence": {
@@ -204,7 +206,7 @@
         "active_window": true,
         "business_priority_floor": "A"
       },
-      "technology_change": "8月19日抖店学习中心首页仍将8月18日定制珠宝商品发布细则列为最新规则；正文中的确认书、收费、售后、飞鸽沟通和自然光留证要求可核。",
+      "technology_change": "8月19日二次复核确认官方正文仍有效，定制范围、确认书、收费、售后、飞鸽沟通和自然光留证要求可核；这是持续执行规则，不是今日新发布。",
       "chanmama_relevance": "规则当日发布且直接改变珠宝定制商品发布、推广、交付和售后流程。",
       "next_step": "业务重点响应｜优先制作",
       "explicitly_not_doing": "不概括为所有珠宝均不可退，不替商家判断个案争议结果。",
@@ -226,7 +228,7 @@
             "platform_entity_id": "article:aHHeZG7rQEcX",
             "url": "https://school.jinritemai.com/doudian/web/article/aHHeZG7rQEcX",
             "verification_status": "verified",
-            "verified_at": "2026-08-19T09:43:53+08:00"
+            "verified_at": "2026-08-19T10:51:40+08:00"
           }
         ]
       },
@@ -238,7 +240,7 @@
           "metric_value": "确认书、收费、售后、飞鸽与自然光留证要求进入官方细则",
           "unit": "官方正文",
           "period": "2026-08-19",
-          "observed_at": "2026-08-19T09:43:53+08:00",
+          "observed_at": "2026-08-19T10:51:40+08:00",
           "source_url": "https://school.jinritemai.com/doudian/web/article/aHHeZG7rQEcX",
           "evidence_group": "rule",
           "underlying_signal_id": "douyin:rule:aHHeZG7rQEcX"
@@ -279,7 +281,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2027-02-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -304,7 +306,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2027-02-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -329,7 +331,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2027-02-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -354,7 +356,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2027-02-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -379,7 +381,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2027-02-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -399,9 +401,9 @@
           "owner": "内容运营/客户成功/客服/合规",
           "collaborators": "数据研究、内容运营",
           "deadline": "2026-08-19",
-          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-          "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-          "stopCondition": "官方撤回或修订定制范围、确认与售后要求时立即更新。",
+          "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+          "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+          "stopCondition": "官方撤回、修订或证据失效时立即更新。",
           "status": "待执行"
         }
       ],
@@ -976,12 +978,12 @@
     {
       "id": "HT-20260819-002",
       "event_key": "douyin-platform-subsidy-exclusions-published-20260816",
-      "foundAt": "2026-08-19 09:30-10:20",
+      "foundAt": "2026-08-19 10:19-10:45 revision 2",
       "name": "抖音电商发布平台补贴禁用范围，自提、特定店型与类目进入明确排除清单",
       "type": "平台经营规则/补贴适用边界",
       "sourceLevel": "E3",
-      "publishedAt": "2026-08-16发布，2026-08-19复核",
-      "signal": "8月19日抖店学习中心首页仍列出8月16日平台补贴禁用范围，官方正文中的自提、特定店型与类目排除清单继续有效。",
+      "publishedAt": "2026-08-16发布，2026-08-19二次复核",
+      "signal": "8月19日二次复核确认平台补贴禁用范围官方正文仍有效；这是持续执行规则，不是今日新发布。",
       "uncertainty": "禁用范围可能随监管、类目和活动规则调整，实际补贴资格以活动页、商品页及订单结算页为准。",
       "recommended": "业务重点响应｜定向发布",
       "actionReason": "补贴禁用范围直接影响商品定价、活动报名和消费者优惠承诺，且官方规则刚发布。",
@@ -1009,6 +1011,8 @@
       "owner": "内容运营/客户成功/客服/物流/合规",
       "monitor": "官方清单修订、活动页补贴资格、商品结算页优惠与退款规则。",
       "candidate_kind": "event",
+      "daily_status": "CONTINUING",
+      "previous_day_event_key_matched": true,
       "hotspot_category": "经营与规则",
       "signal_type": "official_rule",
       "baseline_evidence": {
@@ -1028,7 +1032,7 @@
         "active_window": true,
         "business_priority_floor": "A"
       },
-      "technology_change": "8月19日抖店学习中心首页仍列出8月16日平台补贴禁用范围，官方正文中的自提、特定店型与类目排除清单继续有效。",
+      "technology_change": "8月19日二次复核确认平台补贴禁用范围官方正文仍有效；这是持续执行规则，不是今日新发布。",
       "chanmama_relevance": "补贴禁用范围直接影响商品定价、活动报名和消费者优惠承诺，且官方规则刚发布。",
       "next_step": "业务重点响应｜定向发布",
       "explicitly_not_doing": "不把平台补贴写成全量可用，不承诺具体券额、补贴比例或成交收益。",
@@ -1050,7 +1054,7 @@
             "platform_entity_id": "article:aJoPTsTo7ZPQ",
             "url": "https://school.jinritemai.com/doudian/web/article/aJoPTsTo7ZPQ",
             "verification_status": "verified",
-            "verified_at": "2026-08-19T09:43:53+08:00"
+            "verified_at": "2026-08-19T10:51:40+08:00"
           }
         ]
       },
@@ -1062,7 +1066,7 @@
           "metric_value": "官方正文明确平台优惠券、红包、直降、满减等补贴的定义，并列出自提履约、拍卖店及酒类、家具、大家电、苹果手机、足金等禁用范围。",
           "unit": "北京时间/官方正文",
           "period": "2026-08-16发布，2026-08-17复核",
-          "observed_at": "2026-08-19T09:43:53+08:00",
+          "observed_at": "2026-08-19T10:51:40+08:00",
           "source_url": "https://school.jinritemai.com/doudian/web/article/aJoPTsTo7ZPQ",
           "evidence_group": "rule",
           "underlying_signal_id": "douyin:rule:aJoPTsTo7ZPQ"
@@ -1103,7 +1107,7 @@
             "route": "每日热点对应规则专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-17",
-          "valid_until": "2027-02-17",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": []
         },
@@ -1125,7 +1129,7 @@
             "route": "每日热点对应规则专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-17",
-          "valid_until": "2027-02-17",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": []
         },
@@ -1147,7 +1151,7 @@
             "route": "每日热点对应规则专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-17",
-          "valid_until": "2027-02-17",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": []
         },
@@ -1169,7 +1173,7 @@
             "route": "每日热点对应规则专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-17",
-          "valid_until": "2027-02-17",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": []
         },
@@ -1191,7 +1195,7 @@
             "route": "每日热点对应规则专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-17",
-          "valid_until": "2027-02-17",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": []
         }
@@ -1203,14 +1207,14 @@
       "actions": [
         {
           "hotspotId": "HT-20260819-002",
-          "actionType": "定向发布",
+          "actionType": "优先制作",
           "task": "制作“抖音电商发布平台补贴禁用范围，自提、特定店型与类目进入明确排除清单”事实与数据拆解。",
           "owner": "内容运营/客户成功/客服/物流/合规",
           "collaborators": "数据研究、内容运营",
           "deadline": "2026-08-19",
-          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-          "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-          "stopCondition": "官方撤回、修订禁用清单或活动页规则冲突时立即更新。",
+          "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+          "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+          "stopCondition": "官方撤回、修订或证据失效时立即更新。",
           "status": "待执行"
         }
       ],
@@ -1784,12 +1788,12 @@
     {
       "id": "HT-20260819-003",
       "event_key": "douyin-qixi-2026-creator-faq-active-20260815",
-      "foundAt": "2026-08-19 09:30-10:20",
+      "foundAt": "2026-08-19 10:19-10:45 revision 2",
       "name": "抖音商城七夕好礼季进入8月15至19日执行期，多端消费券与直播玩法边界明确",
       "type": "季节营销节点/官方大促FAQ",
       "sourceLevel": "E3",
-      "publishedAt": "2026-08-15发布，2026-08-19复核",
-      "signal": "官方FAQ确认七夕好礼季多端消费券、直播间指示器、翻卡与短视频玩法；8月19日处于已披露活动窗口的最后一天。",
+      "publishedAt": "2026-08-15发布，2026-08-19活动最后一日复核",
+      "signal": "官方FAQ确认的活动窗口截至8月19日，二次复核时仍处最后执行日；这是持续活动，不是今日新发布。",
       "uncertainty": "券面、发放批次、可用商品、叠加关系、平台补贴和玩法资格均以各端活动页面实时展示为准。",
       "recommended": "业务重点响应｜定向发布",
       "actionReason": "七夕执行窗口正在进行，官方FAQ直接影响达人挂载、商品报名、直播玩法和消费者解释。",
@@ -1817,6 +1821,8 @@
       "owner": "内容运营/客户成功/客服/物流/合规",
       "monitor": "8月19日前各端发券批次、商品生效、直播挂载、叠加和退款结算变化。",
       "candidate_kind": "event",
+      "daily_status": "CONTINUING",
+      "previous_day_event_key_matched": true,
       "hotspot_category": "季节与营销节点",
       "signal_type": "official_rule",
       "baseline_evidence": {
@@ -1836,7 +1842,7 @@
         "active_window": true,
         "business_priority_floor": "A"
       },
-      "technology_change": "官方FAQ确认七夕好礼季多端消费券、直播间指示器、翻卡与短视频玩法；8月19日处于已披露活动窗口的最后一天。",
+      "technology_change": "官方FAQ确认的活动窗口截至8月19日，二次复核时仍处最后执行日；这是持续活动，不是今日新发布。",
       "chanmama_relevance": "七夕执行窗口正在进行，官方FAQ直接影响达人挂载、商品报名、直播玩法和消费者解释。",
       "next_step": "业务重点响应｜定向发布",
       "explicitly_not_doing": "不承诺所有用户可领券，不把平台出资写成所有商品自动享受，不外推具体GMV。",
@@ -1858,7 +1864,7 @@
             "platform_entity_id": "article:aJp39wx6Y89s",
             "url": "https://school.jinritemai.com/doudian/web/article/aJp39wx6Y89s",
             "verification_status": "verified",
-            "verified_at": "2026-08-19T09:43:53+08:00"
+            "verified_at": "2026-08-19T10:51:40+08:00"
           }
         ]
       },
@@ -1870,7 +1876,7 @@
           "metric_value": "官方FAQ确认多端消费券、直播间指示器、翻卡和短视频玩法；红果七夕活动期为8月15日至19日，消费券对满足体验分及大促报名条件的商品动态生效。",
           "unit": "北京时间/官方正文",
           "period": "2026-08-15发布，活动期2026-08-15至2026-08-19",
-          "observed_at": "2026-08-19T09:43:53+08:00",
+          "observed_at": "2026-08-19T10:51:40+08:00",
           "source_url": "https://school.jinritemai.com/doudian/web/article/aJp39wx6Y89s",
           "evidence_group": "rule",
           "underlying_signal_id": "douyin:rule:aJp39wx6Y89s"
@@ -1911,7 +1917,7 @@
             "route": "每日热点对应规则专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-17",
-          "valid_until": "2026-08-20",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": []
         },
@@ -1933,7 +1939,7 @@
             "route": "每日热点对应规则专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-17",
-          "valid_until": "2026-08-20",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": []
         },
@@ -1955,7 +1961,7 @@
             "route": "每日热点对应规则专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-17",
-          "valid_until": "2026-08-20",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": []
         },
@@ -1977,7 +1983,7 @@
             "route": "每日热点对应规则专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-17",
-          "valid_until": "2026-08-20",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": []
         },
@@ -1999,7 +2005,7 @@
             "route": "每日热点对应规则专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-17",
-          "valid_until": "2026-08-20",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": []
         }
@@ -2011,14 +2017,14 @@
       "actions": [
         {
           "hotspotId": "HT-20260819-003",
-          "actionType": "定向发布",
+          "actionType": "优先制作",
           "task": "制作“抖音商城七夕好礼季进入8月15至19日执行期，多端消费券与直播玩法边界明确”事实与数据拆解。",
           "owner": "内容运营/客户成功/客服/物流/合规",
           "collaborators": "数据研究、内容运营",
           "deadline": "2026-08-19",
-          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-          "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-          "stopCondition": "活动结束、官方FAQ更新或玩法页面关闭时停止滚动。",
+          "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+          "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+          "stopCondition": "官方撤回、修订或证据失效时立即更新。",
           "status": "待执行"
         }
       ],
@@ -2592,12 +2598,12 @@
     {
       "id": "HT-20260819-004",
       "event_key": "douyin-creator-conference-active-20260818",
-      "foundAt": "2026-08-19 09:30-10:20",
+      "foundAt": "2026-08-19 10:19-10:45 revision 2",
       "name": "2026抖音创作者大会进入8月5日至9月1日活动期，创作者中心官方入口持续展示",
       "type": "平台官方创作者活动",
       "sourceLevel": "E3",
-      "publishedAt": "2026-08-18发布，2026-08-19复核",
-      "signal": "登录态创作者中心8月活动总览仍显示2026抖音创作者大会进行中，周期为8月5日至9月1日。",
+      "publishedAt": "2026-08-18首次核实，2026-08-19二次复核",
+      "signal": "创作者中心活动周期仍为8月5日至9月1日；本轮仅确认持续有效，不把登录入口状态写成新热点。",
       "uncertainty": "首页未展示全部活动议程和参与门槛，具体权益以活动详情页为准。",
       "recommended": "常规跟进｜定向发布",
       "actionReason": "官方活动仍在执行窗口，直接关联达人与内容经营，但未取得完整议程。",
@@ -2625,6 +2631,8 @@
       "owner": "达人运营/内容运营",
       "monitor": "活动详情、议程、参与门槛与平台公告。",
       "candidate_kind": "event",
+      "daily_status": "CONTINUING",
+      "previous_day_event_key_matched": true,
       "hotspot_category": "达人与内容案例",
       "signal_type": "official_event",
       "baseline_evidence": {
@@ -2638,7 +2646,7 @@
       },
       "topic_resonance": null,
       "official_rule": null,
-      "technology_change": "登录态创作者中心8月活动总览仍显示2026抖音创作者大会进行中，周期为8月5日至9月1日。",
+      "technology_change": "创作者中心活动周期仍为8月5日至9月1日；本轮仅确认持续有效，不把登录入口状态写成新热点。",
       "chanmama_relevance": "官方活动仍在执行窗口，直接关联达人与内容经营，但未取得完整议程。",
       "next_step": "常规跟进｜定向发布",
       "explicitly_not_doing": "不推断未展示的权益、流量扶持或报名资格。",
@@ -2659,7 +2667,7 @@
             "platform_entity_id": "activity:2026-creator-conference",
             "url": "https://creator.douyin.com/creator-micro/home",
             "verification_status": "verified",
-            "verified_at": "2026-08-19T09:43:53+08:00"
+            "verified_at": "2026-08-19T10:51:40+08:00"
           }
         ]
       },
@@ -2671,7 +2679,7 @@
           "metric_value": "进行中，2026-08-05至2026-09-01",
           "unit": "官方页面",
           "period": "2026-08-05至2026-09-01",
-          "observed_at": "2026-08-19T09:43:53+08:00",
+          "observed_at": "2026-08-19T10:51:40+08:00",
           "source_url": "https://creator.douyin.com/creator-micro/home",
           "evidence_group": "official_event",
           "underlying_signal_id": "douyin:creator:conference-2026"
@@ -2712,7 +2720,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-09-01",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -2737,7 +2745,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-09-01",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -2762,7 +2770,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-09-01",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -2787,7 +2795,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-09-01",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -2812,7 +2820,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-09-01",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -2827,14 +2835,14 @@
       "actions": [
         {
           "hotspotId": "HT-20260819-004",
-          "actionType": "定向发布",
+          "actionType": "优先制作",
           "task": "制作“2026抖音创作者大会进入8月5日至9月1日活动期，创作者中心官方入口持续展示”事实与数据拆解。",
           "owner": "达人运营/内容运营",
           "collaborators": "数据研究、内容运营",
           "deadline": "2026-08-19",
-          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-          "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-          "stopCondition": "活动结束、入口撤下或官方更新周期时停止滚动。",
+          "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+          "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+          "stopCondition": "官方撤回、修订或证据失效时立即更新。",
           "status": "待执行"
         }
       ],
@@ -3401,412 +3409,457 @@
     },
     {
       "id": "HT-20260819-005",
-      "event_key": "deli-segmented-book-cover-five-day-rise-20260813",
-      "foundAt": "2026-08-19 09:30-10:20",
-      "name": "得力分段式包书皮跨周平台预估销量继续抬升，开学季品牌自营承接增强",
-      "type": "具体商品/开学文具",
-      "sourceLevel": "E2",
-      "publishedAt": "跨日基线至2026-08-18发布，2026-08-19复核",
-      "signal": "同一商品既有8月13日至17日平台预估日销量由4,581升至10,819的跨日序列；8月19日蝉妈妈首页已更新至当日，但详情页未新增可核的跨日序列点。",
-      "uncertainty": "平台展示值可能回算，销量、销售额、浏览和转化均按蝉妈妈预估/展示口径。",
-      "recommended": "常规跟进｜优先制作",
-      "actionReason": "同一商品多日序列与分发覆盖同时成立，适合做具体商品和内容承接拆解。",
-      "actionDetail": "拆解商品的多日区间变化、直播/达人/视频覆盖和品类内容角度，继续观察下一周期是否回落。",
-      "evidence": "https://www.chanmama.com/promotionRank/eLTQMLy2akl7u7dpAdbFI5u-SFC3xLWp.html",
-      "departments": "品牌、商品、选品、内容与直播团队",
+      "event_key": "deepseek-v4-pro-official-release-20260813",
+      "foundAt": "2026-08-19 10:19-10:45 revision 2",
+      "name": "DeepSeek V4-Pro正式版持续上线，Responses API、Codex适配与峰谷定价进入验证期",
+      "type": "旗舰模型/Coding与Agent",
+      "sourceLevel": "E3",
+      "publishedAt": "2026-08-13发布，2026-08-19官方复核",
+      "signal": "官方更新日志确认V4-Pro已同步上线APP、网页端和API，原生支持Responses API并适配Codex，支持low/high/max思考强度，峰谷定价已于8月17日生效。",
+      "uncertainty": "官方基准与能力声明未做独立复测，开发者采用和电商业务效果未知。",
+      "recommended": "建立电商数据Agent回归集，验证结构化输出、工具调用、长上下文、成本和失败恢复。",
+      "actionReason": "可用于电商数据Agent、代码生成、长上下文和现有Codex工作流的低改造验证。",
+      "actionDetail": "建立电商数据Agent回归集，验证结构化输出、工具调用、长上下文、成本和失败恢复。",
+      "evidence": "https://api-docs.deepseek.com/zh-cn/updates/\nhttps://www.deepseek.com/news/v4-preview/",
       "deadline": "2026-08-19T18:00:00+08:00",
-      "notRecommended": "不写真实成交额、真实销量或市场份额；不把关键词假设写成搜索上涨或投放结论。",
+      "notRecommended": "不投广告、不全量召回、不把官方声明写成真实业务效果。",
       "sourceLinks": [
         {
           "label": "Core source",
-          "domain": "chanmama.com",
-          "url": "https://www.chanmama.com/promotionRank/eLTQMLy2akl7u7dpAdbFI5u-SFC3xLWp.html"
+          "domain": "api-docs.deepseek.com",
+          "url": "https://api-docs.deepseek.com/zh-cn/updates/"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "deepseek.com",
+          "url": "https://www.deepseek.com/news/v4-preview/"
         }
       ],
       "source_links": [
         {
           "label": "Core source",
-          "domain": "chanmama.com",
-          "url": "https://www.chanmama.com/promotionRank/eLTQMLy2akl7u7dpAdbFI5u-SFC3xLWp.html"
+          "domain": "api-docs.deepseek.com",
+          "url": "https://api-docs.deepseek.com/zh-cn/updates/"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "deepseek.com",
+          "url": "https://www.deepseek.com/news/v4-preview/"
         }
       ],
       "status": "正式热点",
-      "risk": "中风险-已通过",
-      "owner": "类目研究/内容运营",
-      "monitor": "后续销量区间、浏览/转化、达人/直播/视频覆盖和榜位。",
+      "risk": "中风险：官方对象与正文可核，业务效果及采用规模未独立验证",
+      "owner": "科技研究/内容运营",
+      "monitor": "官方更新、API稳定性、独立复测和真实工作流效果。",
       "candidate_kind": "event",
-      "hotspot_category": "季节与营销节点",
-      "signal_type": "single_product_growth",
-      "baseline_evidence": {
-        "description": "同一商品五日平台预估序列与内容分发覆盖变化。",
-        "requires_baseline": true,
-        "comparison_baseline_verified": true,
-        "multi_period_growth_verified": true,
-        "independent_change_signals": 2,
-        "baseline_type": "同一商品多日趋势与第二项可区分指标",
-        "normalization_flags": [
-          "platform_estimate"
-        ]
-      },
+      "daily_status": "RETURNED_AFTER_REVALIDATION",
+      "previous_day_event_key_matched": false,
+      "hotspot_category": "科技与工具",
+      "signal_type": "technology_release",
+      "baseline_evidence": null,
       "topic_resonance": null,
       "official_rule": null,
-      "technology_change": "同一商品既有8月13日至17日平台预估日销量由4,581升至10,819的跨日序列；8月19日蝉妈妈首页已更新至当日，但详情页未新增可核的跨日序列点。",
-      "chanmama_relevance": "同一商品多日序列与分发覆盖同时成立，适合做具体商品和内容承接拆解。",
-      "next_step": "常规跟进｜优先制作",
-      "explicitly_not_doing": "不写真实成交额、真实销量或市场份额；不把关键词假设写成搜索上涨或投放结论。",
-      "official_evidence": [],
-      "circle_evidence": [],
+      "technology_change": "官方更新日志确认V4-Pro已同步上线APP、网页端和API，原生支持Responses API并适配Codex，支持low/high/max思考强度，峰谷定价已于8月17日生效。",
+      "chanmama_relevance": "可用于电商数据Agent、代码生成、长上下文和现有Codex工作流的低改造验证。",
+      "next_step": "建立电商数据Agent回归集，验证结构化输出、工具调用、长上下文、成本和失败恢复。",
+      "explicitly_not_doing": "不投广告、不全量召回、不把官方声明写成真实业务效果。",
+      "official_evidence": [
+        {
+          "label": "DeepSeek更新日志",
+          "url": "https://api-docs.deepseek.com/zh-cn/updates/",
+          "fact": "确认正式版、Responses API、Codex适配与峰谷定价。"
+        },
+        {
+          "label": "DeepSeek V4说明",
+          "url": "https://www.deepseek.com/news/v4-preview/",
+          "fact": "确认V4系列、1M上下文与Agent适配。"
+        }
+      ],
+      "circle_evidence": {
+        "label": "官方更新日志",
+        "url": "https://api-docs.deepseek.com/zh-cn/updates/",
+        "fact": "只计官方事实，不当作独立采用信号。"
+      },
       "subject": {
-        "subject_id": "product:chanmama:eltqmly2akl7u7dpadbfi5u-sfc3xlwp",
-        "kind": "product",
-        "canonical_name": "得力透明分段式包书皮",
+        "subject_id": "technology:deepseek:v4-pro-0813",
+        "kind": "technology",
+        "canonical_name": "DeepSeek V4 Pro正式上线，Responses API与Codex接入进入验证窗口",
         "aliases": [
-          "得力包书皮",
-          "得力分段式书套"
+          "DeepSeek V4 Pro",
+          "DeepSeek-V4-Pro-0813"
         ],
-        "industry": "文具教育/开学用品",
+        "industry": "基础模型/Coding与Agent",
         "identity_status": "verified",
         "identities": [
           {
-            "platform": "蝉妈妈商品详情",
-            "platform_entity_id": "promotion:eLTQMLy2akl7u7dpAdbFI5u-SFC3xLWp",
-            "url": "https://www.chanmama.com/promotionRank/eLTQMLy2akl7u7dpAdbFI5u-SFC3xLWp.html",
+            "platform": "DeepSeek官方",
+            "platform_entity_id": "model:DeepSeek-V4-Pro-0813",
+            "url": "https://www.deepseek.com/",
             "verification_status": "verified",
-            "verified_at": "2026-08-19T09:43:53+08:00"
+            "verified_at": "2026-08-19T10:51:40+08:00"
           }
         ]
       },
-      "subject_kind": "product",
+      "subject_kind": "technology",
       "trend_metrics": [
         {
-          "metric_id": "metric:deli-segmented-book-cover:series",
-          "metric_name": "五日平台预估序列",
-          "metric_value": "8月8日至11日平台预估销量维持同一区间，8月12日抬升一档",
-          "unit": "蝉妈妈平台预估展示口径",
-          "period": "2026-08-08至2026-08-12",
-          "observed_at": "2026-08-19T09:43:53+08:00",
-          "source_url": "https://www.chanmama.com/promotionRank/eLTQMLy2akl7u7dpAdbFI5u-SFC3xLWp.html",
-          "evidence_group": "transaction",
-          "underlying_signal_id": "chanmama:deli-segmented-book-cover:daily-series"
-        },
-        {
-          "metric_id": "metric:deli-segmented-book-cover:distribution",
-          "metric_name": "分发与承接覆盖",
-          "metric_value": "品牌自营占主要渠道，达人、直播与视频覆盖同步存在",
-          "unit": "平台展示值",
-          "period": "2026-08-08至2026-08-12",
-          "observed_at": "2026-08-19T09:43:53+08:00",
-          "source_url": "https://www.chanmama.com/promotionRank/eLTQMLy2akl7u7dpAdbFI5u-SFC3xLWp.html",
-          "evidence_group": "promotion",
-          "underlying_signal_id": "chanmama:deli-segmented-book-cover:distribution"
-        },
-        {
-          "metric_id": "metric:deli-segmented-book-cover:30d-0814",
-          "metric_name": "近30日平台预估销量快照",
-          "metric_value": "10万+（页面展示值105,527）",
-          "unit": "蝉妈妈平台预估展示口径",
-          "period": "近30日，2026-08-14观察",
-          "observed_at": "2026-08-19T09:43:53+08:00",
-          "source_url": "https://www.chanmama.com/promotionRank/eLTQMLy2akl7u7dpAdbFI5u-SFC3xLWp.html",
-          "evidence_group": "snapshot",
-          "underlying_signal_id": "chanmama:deli-segmented-book-cover:30d-0814"
-        },
-        {
-          "metric_id": "metric:deli-segmented-book-cover:30d-0817",
-          "metric_name": "近30日平台预估销量与内容承接快照",
-          "metric_value": "销量展示119,925；浏览160w；关联达人1,045、直播466、视频1,928",
-          "unit": "蝉妈妈平台预估/展示口径",
-          "period": "近30日，2026-08-17观察",
-          "observed_at": "2026-08-19T09:43:53+08:00",
-          "source_url": "https://www.chanmama.com/promotionRank/eLTQMLy2akl7u7dpAdbFI5u-SFC3xLWp.html",
-          "evidence_group": "snapshot",
-          "underlying_signal_id": "chanmama:deli-segmented-book-cover:30d-0817"
-        },
-        {
-          "metric_id": "metric:deli-segmented-book-cover:30d-0818",
-          "metric_name": "近30日平台预估销量与分发覆盖快照",
-          "metric_value": "销量展示127,583；关联达人1,093、直播489、视频1,991",
-          "unit": "蝉妈妈平台预估/展示口径",
-          "period": "近30日，2026-08-18观察",
-          "observed_at": "2026-08-19T09:43:53+08:00",
-          "source_url": "https://www.chanmama.com/promotionRank/eLTQMLy2akl7u7dpAdbFI5u-SFC3xLWp.html",
-          "evidence_group": "snapshot",
-          "underlying_signal_id": "chanmama:deli-segmented-book-cover:30d-0818"
+          "metric_id": "metric:deepseek-v4-pro:0819-update",
+          "metric_name": "正式版与接口状态",
+          "metric_value": "APP、网页端和API上线；Responses API与Codex适配",
+          "unit": "官方更新",
+          "period": "2026-08-19复核",
+          "observed_at": "2026-08-19T10:51:40+08:00",
+          "source_url": "https://api-docs.deepseek.com/zh-cn/updates/",
+          "evidence_group": "official",
+          "underlying_signal_id": "deepseek:v4-pro:official-update"
         }
       ],
       "expected_duration": {
-        "min_days": 3,
-        "max_days": 10,
-        "rationale": "多日预估交易与分发信号成立，但需关注平台回算。",
-        "review_at": "2026-08-15"
+        "min_days": 7,
+        "max_days": 30,
+        "rationale": "正式版处于采用验证期。",
+        "review_at": "2026-08-26"
       },
       "target_audience": [
-        "对应品类商家",
-        "选品、内容与直播团队",
-        "电商数据研究人员"
+        "电商数据与Agent研发团队",
+        "内容、GEO与产品团队",
+        "平台工程人员"
       ],
       "active_search": {
         "status": "hypothesis",
         "evidence": [],
-        "boundary": "商品词来自可核商品对象；百度指数未返回候选搜索趋势或搜索量。"
+        "boundary": "百度指数未取得候选曲线、数值或明确变化。"
       },
       "keyword_hypotheses": [
         {
-          "keyword_id": "kw:deli-segmented-book-cover:01",
-          "text": "得力包书皮",
-          "intent": "商品对象词",
+          "keyword_id": "kw:deepseek:v4-pro-r2:01",
+          "text": "DeepSeek V4 Pro",
+          "intent": "对象词",
           "evidence_refs": [
-            "metric:deli-segmented-book-cover:series",
-            "metric:deli-segmented-book-cover:distribution"
-          ],
-          "applicable_modes": [
-            "search",
-            "interest",
-            "commerce"
-          ],
-          "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-          "landing_page": {
-            "status": "planned",
-            "url": null,
-            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
-          },
-          "valid_from": "2026-08-13",
-          "valid_until": "2026-09-13",
-          "validation_status": "hypothesis",
-          "risk_flags": [
-            "平台销量与销售额为预估/展示口径",
-            "主动搜索未验证"
-          ]
-        },
-        {
-          "keyword_id": "kw:deli-segmented-book-cover:02",
-          "text": "分段式包书皮",
-          "intent": "品类与运营问题词",
-          "evidence_refs": [
-            "metric:deli-segmented-book-cover:series",
-            "metric:deli-segmented-book-cover:distribution"
-          ],
-          "applicable_modes": [
-            "search",
-            "interest",
-            "commerce"
-          ],
-          "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-          "landing_page": {
-            "status": "planned",
-            "url": null,
-            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
-          },
-          "valid_from": "2026-08-13",
-          "valid_until": "2026-09-13",
-          "validation_status": "hypothesis",
-          "risk_flags": [
-            "平台销量与销售额为预估/展示口径",
-            "主动搜索未验证"
-          ]
-        },
-        {
-          "keyword_id": "kw:deli-segmented-book-cover:03",
-          "text": "开学包书皮",
-          "intent": "品类与运营问题词",
-          "evidence_refs": [
-            "metric:deli-segmented-book-cover:series",
-            "metric:deli-segmented-book-cover:distribution"
-          ],
-          "applicable_modes": [
-            "search",
-            "interest",
-            "commerce"
-          ],
-          "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-          "landing_page": {
-            "status": "planned",
-            "url": null,
-            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
-          },
-          "valid_from": "2026-08-13",
-          "valid_until": "2026-09-13",
-          "validation_status": "hypothesis",
-          "risk_flags": [
-            "平台销量与销售额为预估/展示口径",
-            "主动搜索未验证"
-          ]
-        },
-        {
-          "keyword_id": "kw:deli-segmented-book-cover:04",
-          "text": "书皮直播带货",
-          "intent": "品类与运营问题词",
-          "evidence_refs": [
-            "metric:deli-segmented-book-cover:series",
-            "metric:deli-segmented-book-cover:distribution"
+            "metric:deepseek-v4-pro:0819-update"
           ],
           "applicable_modes": [
             "search",
             "interest"
           ],
-          "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
+          "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
           "landing_page": {
             "status": "planned",
             "url": null,
-            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+            "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-13",
-          "valid_until": "2026-09-13",
+          "valid_from": "2026-08-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
-            "平台销量与销售额为预估/展示口径",
-            "主动搜索未验证"
+            "主动搜索未验证",
+            "落地页与监测未就绪"
           ]
         },
         {
-          "keyword_id": "kw:deli-segmented-book-cover:05",
-          "text": "文具开学季选品",
-          "intent": "品类与运营问题词",
+          "keyword_id": "kw:deepseek:v4-pro-r2:02",
+          "text": "DeepSeek Responses API",
+          "intent": "问题词",
           "evidence_refs": [
-            "metric:deli-segmented-book-cover:series",
-            "metric:deli-segmented-book-cover:distribution"
+            "metric:deepseek-v4-pro:0819-update"
           ],
           "applicable_modes": [
             "search",
             "interest"
           ],
-          "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
+          "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
           "landing_page": {
             "status": "planned",
             "url": null,
-            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+            "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-13",
-          "valid_until": "2026-09-13",
+          "valid_from": "2026-08-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
-            "平台销量与销售额为预估/展示口径",
-            "主动搜索未验证"
+            "主动搜索未验证",
+            "落地页与监测未就绪"
+          ]
+        },
+        {
+          "keyword_id": "kw:deepseek:v4-pro-r2:03",
+          "text": "DeepSeek Codex接入",
+          "intent": "问题词",
+          "evidence_refs": [
+            "metric:deepseek-v4-pro:0819-update"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-18",
+          "valid_until": "2026-09-19",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "主动搜索未验证",
+            "落地页与监测未就绪"
+          ]
+        },
+        {
+          "keyword_id": "kw:deepseek:v4-pro-r2:04",
+          "text": "DeepSeek峰谷定价",
+          "intent": "问题词",
+          "evidence_refs": [
+            "metric:deepseek-v4-pro:0819-update"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-18",
+          "valid_until": "2026-09-19",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "主动搜索未验证",
+            "落地页与监测未就绪"
+          ]
+        },
+        {
+          "keyword_id": "kw:deepseek:v4-pro-r2:05",
+          "text": "电商数据Agent模型",
+          "intent": "问题词",
+          "evidence_refs": [
+            "metric:deepseek-v4-pro:0819-update"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-18",
+          "valid_until": "2026-09-19",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "主动搜索未验证",
+            "落地页与监测未就绪"
           ]
         }
       ],
-      "business_response_code": "B",
-      "business_response_label": "常规跟进",
-      "business_response_score": 90,
-      "business_response_basis": "综合评分与封顶规则决定。",
+      "business_response_code": "A",
+      "business_response_label": "业务重点响应",
+      "business_response_score": 93,
+      "business_response_basis": "双轨分数矩阵决定",
       "actions": [
         {
           "hotspotId": "HT-20260819-005",
-          "actionType": "优先制作",
-          "task": "制作“得力分段式包书皮跨周平台预估销量继续抬升，开学季品牌自营承接增强”事实与数据拆解。",
-          "owner": "类目研究/内容运营",
+          "actionType": "定向发布",
+          "task": "制作“DeepSeek V4-Pro正式版持续上线，Responses API、Codex适配与峰谷定价进入验证期”事实与数据拆解。",
+          "owner": "科技研究/内容运营",
           "collaborators": "数据研究、内容运营",
           "deadline": "2026-08-19",
-          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-          "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-          "stopCondition": "连续两日平台预估销量回落且分发覆盖同步走弱时停止滚动。",
+          "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+          "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+          "stopCondition": "官方撤回、修订或证据失效时立即更新。",
           "status": "待执行"
         }
       ],
-      "domain": "commerce",
-      "scoring_model": "commerce_v1",
-      "totalScore": 90,
-      "initialValue": 5,
-      "finalValue": 3,
-      "grade": "L-B｜常规跟进",
-      "gradeCode": "B",
-      "followDecision": "常规跟进",
-      "downgradeReason": "信源封顶",
-      "scoreDetails": [
+      "domain": "technology",
+      "scoring_model": "tech_v1",
+      "canonical_event_key": "deepseek-v4-pro-official-release-20260813",
+      "tech_topic": "coding_agent_responses_api",
+      "tech_scores": {
+        "technical_breakthrough": 4,
+        "circle_heat_velocity": 3,
+        "authority_cross_validation": 5,
+        "developer_market_adoption": 3,
+        "industry_competition_impact": 5,
+        "duration_diffusion_cycle": 5,
+        "application_transfer_value": 5,
+        "response_window": 4
+      },
+      "business_scores": {
+        "target_user_fit": 5,
+        "ecommerce_workflow_relevance": 5,
+        "product_data_fit": 5,
+        "geo_question_value": 5,
+        "conversion_brand_value": 4,
+        "execution_readiness_cost": 3
+      },
+      "tech_impact_score": 83,
+      "raw_tech_level": "T-A",
+      "tech_level": "T-A",
+      "business_fit_score": 93,
+      "action_level": "L-A",
+      "source_tier": "E3",
+      "independent_verification_count": 1,
+      "adoption_signals": [
+        "官方更新日志确认正式版全面上线",
+        "Responses API与Codex适配可核",
+        "峰谷定价已于8月17日生效"
+      ],
+      "score_reasons": {
+        "technical_breakthrough": "接口与Agent能力正式化。",
+        "circle_heat_velocity": "缺独立量化热度。",
+        "authority_cross_validation": "两处官方页面相互印证。",
+        "developer_market_adoption": "真实采用未取得。",
+        "business_fit": "与数据Agent和Codex工作流直接相关。"
+      },
+      "score_caps": [
         {
-          "name": "流量热度",
-          "score": 5,
-          "weight": 10
-        },
-        {
-          "name": "上升与持续",
-          "score": 4,
-          "weight": 10
-        },
-        {
-          "name": "目标人群",
-          "score": 4,
-          "weight": 15
-        },
-        {
-          "name": "业务关联",
-          "score": 5,
-          "weight": 20
-        },
-        {
-          "name": "转化价值",
-          "score": 5,
-          "weight": 15
-        },
-        {
-          "name": "品牌价值",
-          "score": 4,
-          "weight": 5
-        },
-        {
-          "name": "GEO价值",
-          "score": 4,
-          "weight": 10
-        },
-        {
-          "name": "产品承接",
-          "score": 4,
-          "weight": 5
-        },
-        {
-          "name": "执行成本",
-          "score": 4,
-          "weight": 5
-        },
-        {
-          "name": "响应窗口",
-          "score": 5,
-          "weight": 5
+          "rule": "high_cost_action_block",
+          "tech_cap": null,
+          "action_cap": null,
+          "changed": false,
+          "reason": "缺少执行准备、成熟承接页或监测，禁止广告投流和全量召回。"
         }
       ],
-      "caps": {
-        "score": 5,
-        "evidence": 3,
-        "type": 5,
-        "core": 5,
-        "baseline": 5,
-        "risk": 4,
-        "window": 5,
-        "preparation": 5,
-        "official_rule_floor": 0
-      },
-      "baseline_assessment": {
-        "signal_type": "single_product_growth",
-        "requires_baseline": true,
-        "comparison_baseline_verified": true,
-        "baseline_type": "同一商品多日趋势与第二项可区分指标",
-        "normalization_flags": [
-          "platform_estimate"
-        ],
-        "multi_period_growth_verified": true,
-        "independent_change_signals": 2,
-        "is_verified": true
-      },
-      "business_priority_basis": "综合评分与封顶规则决定。",
+      "tech_score_details": [
+        {
+          "key": "technical_breakthrough",
+          "name": "技术突破强度",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "circle_heat_velocity",
+          "name": "圈层热度与涨速",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "authority_cross_validation",
+          "name": "权威与交叉验证",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "developer_market_adoption",
+          "name": "开发者与市场采用",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "industry_competition_impact",
+          "name": "行业竞争影响",
+          "score": 5,
+          "weight": 10,
+          "weighted_score": 10
+        },
+        {
+          "key": "duration_diffusion_cycle",
+          "name": "持续与扩散周期",
+          "score": 5,
+          "weight": 10,
+          "weighted_score": 10
+        },
+        {
+          "key": "application_transfer_value",
+          "name": "应用迁移价值",
+          "score": 5,
+          "weight": 10,
+          "weighted_score": 10
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 4,
+          "weight": 5,
+          "weighted_score": 4
+        }
+      ],
+      "business_score_details": [
+        {
+          "key": "target_user_fit",
+          "name": "蝉妈妈目标用户匹配",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "ecommerce_workflow_relevance",
+          "name": "电商工作流关联",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "product_data_fit",
+          "name": "产品与数据承接",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "geo_question_value",
+          "name": "GEO问题价值",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "conversion_brand_value",
+          "name": "转化与品牌价值",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "execution_readiness_cost",
+          "name": "执行准备与成本",
+          "score": 3,
+          "weight": 10,
+          "weighted_score": 6
+        }
+      ],
+      "prohibited_actions": [
+        "广告投流",
+        "全量召回"
+      ],
+      "natural_business_link": true,
+      "execution_ready": false,
+      "mature_landing_page": false,
+      "measurement_ready": false,
+      "totalScore": null,
+      "grade": "L-A｜业务重点响应",
+      "gradeCode": "A",
+      "finalValue": 4,
+      "followDecision": "业务重点响应",
+      "downgradeReason": "双轨分数矩阵决定",
       "hotness_scoring_model": "hotness_v1",
-      "hotness_score": 92,
-      "raw_hotness_level": "H-S",
+      "hotness_score": 76,
+      "raw_hotness_level": "H-A",
       "hotness_level": "H-C",
       "hotness_final_value": 2,
       "hotness_score_details": [
         {
           "key": "absolute_demand",
           "name": "需求规模",
-          "score": 5,
+          "score": 4,
           "weight": 20,
-          "weighted_score": 20
+          "weighted_score": 16
         },
         {
           "key": "baseline_deviation",
           "name": "相对基线变化",
-          "score": 4,
+          "score": 3,
           "weight": 25,
-          "weighted_score": 20
+          "weighted_score": 15
         },
         {
           "key": "growth_velocity",
@@ -3818,9 +3871,9 @@
         {
           "key": "persistence",
           "name": "持续时间",
-          "score": 5,
+          "score": 3,
           "weight": 15,
-          "weighted_score": 15
+          "weighted_score": 9
         },
         {
           "key": "cross_platform_spread",
@@ -3832,9 +3885,9 @@
         {
           "key": "freshness",
           "name": "数据新鲜度",
-          "score": 5,
+          "score": 4,
           "weight": 5,
-          "weighted_score": 5
+          "weighted_score": 4
         }
       ],
       "hotness_caps": [
@@ -3845,69 +3898,68 @@
           "reason": "只有单平台信号，热点成立度最高H-C。"
         }
       ],
-      "hotness_signal_type": "single_product_growth",
+      "hotness_signal_type": "technology_release",
       "hotness_independent_platform_count": 1,
       "hotness_baseline_verified": true,
       "hotness_freshness_verified": true,
       "hotness_change_signals": [
-        "8月8日至11日平台预估销量维持同一区间，8月12日抬升一档",
-        "品牌自营占主要渠道，达人、直播与视频覆盖同步存在"
+        "官方更新日志确认正式版全面上线",
+        "Responses API与Codex适配可核",
+        "峰谷定价已于8月17日生效"
       ],
-      "hotness_requires_baseline": true,
+      "hotness_requires_baseline": false,
       "hotness_comparison_baseline_verified": true,
-      "hotness_baseline_type": "同一商品多日趋势与第二项可区分指标",
-      "hotness_normalization_flags": [
-        "platform_estimate"
-      ],
-      "hotness_multi_period_growth_verified": true,
-      "hotness_independent_change_signals": 2,
+      "hotness_baseline_type": "官方发布或当日官方复核",
+      "hotness_normalization_flags": [],
+      "hotness_multi_period_growth_verified": false,
+      "hotness_independent_change_signals": 1,
       "content_scoring_model": "content_potential_v1",
-      "content_potential_score": 94,
-      "raw_content_potential_level": "P-S",
+      "content_potential_score": 75,
+      "raw_content_potential_level": "P-A",
       "content_potential_level": "P-B",
       "content_final_value": 3,
       "content_score_details": [
         {
           "key": "audience_demand",
           "name": "受众需求规模",
-          "score": 5,
+          "score": 4,
           "weight": 20,
-          "weighted_score": 20
+          "weighted_score": 16
         },
         {
           "key": "demand_velocity",
           "name": "需求上涨速度",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "content_supply_gap",
+          "name": "内容供给缺口",
           "score": 4,
           "weight": 15,
           "weighted_score": 12
         },
         {
-          "key": "content_supply_gap",
-          "name": "内容供给缺口",
-          "score": 5,
-          "weight": 15,
-          "weighted_score": 15
-        },
-        {
           "key": "target_user_fit",
           "name": "目标用户匹配",
-          "score": 5,
+          "score": 4,
           "weight": 15,
-          "weighted_score": 15
+          "weighted_score": 12
         },
         {
           "key": "data_content_advantage",
           "name": "蝉妈妈数据优势",
-          "score": 5,
+          "score": 4,
           "weight": 15,
-          "weighted_score": 15
+          "weighted_score": 12
         },
         {
           "key": "discussion_shareability",
           "name": "讨论与传播性",
-          "score": 4,
+          "score": 3,
           "weight": 10,
-          "weighted_score": 8
+          "weighted_score": 6
         },
         {
           "key": "content_lifecycle",
@@ -3919,93 +3971,76 @@
         {
           "key": "response_window",
           "name": "响应窗口",
-          "score": 5,
+          "score": 4,
           "weight": 5,
-          "weighted_score": 5
+          "weighted_score": 4
         }
       ],
       "content_caps": [
         {
-          "rule": "e2_evidence_cap",
+          "rule": "targeted_audience_cap",
           "potential_cap": "P-B",
           "changed": true,
-          "reason": "只有专业平台单源或非官方证据，内容潜力最高P-B。"
-        },
-        {
-          "rule": "search_gap_unverified",
-          "potential_cap": "P-B",
-          "changed": false,
-          "reason": "搜索路线尚未验证内容供给缺口，内容潜力最高P-B。"
-        },
-        {
-          "rule": "potential_s_gate",
-          "potential_cap": "P-A",
-          "changed": false,
-          "reason": "P-S需要E3、至少3个平台、有效基线、最新数据和85分以上渠道适配。"
+          "reason": "定向专业内容可以高业务优先，但不按大众高流量话题评为P-A。"
         }
       ],
-      "content_source_tier": "E2",
-      "traffic_route": "mixed",
+      "content_source_tier": "E3",
+      "traffic_route": "targeted",
       "independent_platform_count": 1,
       "demand_signals": [
-        "平台：蝉妈妈｜页面：得力分段式包书皮跨周平台预估销量继续抬升，开学季品牌自营承接增强｜观察日期：2026-08-18｜变化：同一商品8月13日至17日平台预估日销量由4,581升至10,819；近30日平台预估销量127,583，关联达人1,093、直播489、视频1,991。｜https://www.chanmama.com/promotionRank/eLTQMLy2akl7u7dpAdbFI5u-SFC3xLWp.html"
+        "平台：官方来源｜页面：DeepSeek V4-Pro正式版持续上线，Responses API、Codex适配与峰谷定价进入验证期｜观察日期：2026-08-19｜变化：8月19日官方更新日志和V4说明页均可读，确认正式版、接口、思考强度和定价生效时间。｜https://api-docs.deepseek.com/zh-cn/updates/"
       ],
       "content_baseline_verified": true,
-      "content_requires_baseline": true,
+      "content_requires_baseline": false,
       "content_comparison_baseline_verified": true,
-      "content_baseline_type": "同一对象多周期指标与可区分变化信号",
-      "content_normalization_flags": [
-        "platform_estimate"
-      ],
-      "content_multi_period_growth_verified": true,
-      "content_independent_change_signals": 2,
+      "content_baseline_type": "官方发布或当日官方复核",
+      "content_normalization_flags": [],
+      "content_multi_period_growth_verified": false,
+      "content_independent_change_signals": 1,
       "supply_gap_verified": false,
       "content_freshness_verified": true,
       "chanmama_answerable": true,
       "query_cluster": [
-        "得力包书皮",
-        "分段式包书皮",
-        "开学包书皮",
-        "书皮直播带货",
-        "文具开学季选品"
+        "DeepSeek V4 Pro",
+        "DeepSeek Responses API",
+        "DeepSeek Codex接入",
+        "DeepSeek峰谷定价",
+        "电商数据Agent模型"
       ],
       "channel_scores": {
-        "website": 90,
-        "wechat": 82,
-        "short_video": 90,
-        "xiaohongshu": 86,
-        "private_domain": 78
+        "website": 84,
+        "wechat": 80,
+        "short_video": 58,
+        "xiaohongshu": 46,
+        "private_domain": 76
       },
       "channel_reasons": {
-        "primary": "具体商品和连续数据成立，适合做商品、达人和直播承接拆解。"
+        "primary": "可用于电商数据Agent、代码生成、长上下文和现有Codex工作流的低改造验证。"
       },
       "recommended_channels": [
         "website",
-        "short_video",
-        "xiaohongshu",
-        "wechat"
+        "wechat",
+        "private_domain"
       ],
-      "primary_topic": "得力分段式包书皮五日平台预估序列抬升，开学季品牌自营与内容覆盖同步承接",
-      "early_publish_title": "得力分段式包书皮五日平台预估序列抬升，开学季品牌自营与内容覆盖同步承接",
-      "content_angle": "拆解商品的多日区间变化、直播/达人/视频覆盖和品类内容角度。",
-      "measurement_plan": "商品词曝光、内容点击、专题访问和后续榜位。",
-      "stop_condition": "连续两日平台预估销量回落且分发覆盖同步走弱时停止滚动。",
+      "primary_topic": "DeepSeek V4-Pro正式版持续上线，Responses API、Codex适配与峰谷定价进入验证期",
+      "early_publish_title": "DeepSeek V4-Pro正式版持续上线，Responses API、Codex适配与峰谷定价进入验证期",
+      "content_angle": "建立电商数据Agent回归集，验证结构化输出、工具调用、长上下文、成本和失败恢复。",
+      "measurement_plan": "对象词曝光、内容点击、专题访问与验证完成率。",
+      "stop_condition": "官方撤回、修订或后续验证证伪时立即更新。",
       "content_score_reasons": {},
-      "topic_value_score": 94,
-      "topic_value_code": "S",
-      "topic_value_label": "高潜力",
-      "publication_status_code": "small_test",
-      "publication_status": "小范围试发",
-      "publication_priority": 3,
-      "publication_mode": "单渠道轻量内容",
-      "publication_basis": "选题价值与渠道适配达到轻量测试要求，先用单渠道验证反馈。",
-      "fact_boundary": "只描述蝉妈妈页面的多日平台预估区间、浏览、转化与分发覆盖；不表述为真实成交量、真实成交额、真实人数或市场份额。",
+      "topic_value_score": 75,
+      "topic_value_code": "A",
+      "topic_value_label": "较高潜力",
+      "publication_status_code": "targeted_publish",
+      "publication_status": "定向发布",
+      "publication_priority": 4,
+      "publication_mode": "专业人群定向解读",
+      "publication_basis": "官方事实明确但受众较窄，面向受影响人群定向发布。",
+      "fact_boundary": "只确认官方发布、接口和价格信息；不把官方基准写成独立性能结论。",
       "pending_confirmation": [
-        "下一周期销量与分发覆盖",
-        "真实搜索趋势",
-        "官方或原始信息待确认",
-        "第二个独立需求信号待确认",
-        "内容供给缺口待确认"
+        "真实开发者或用户采用",
+        "电商工作流实测",
+        "真实搜索趋势"
       ],
       "confirmed_trigger": true,
       "publishable_channel": true,
@@ -4083,11 +4118,10 @@
             "搜索转化路径未准备"
           ],
           "evidence_refs": [
-            "metric:deli-segmented-book-cover:series",
-            "metric:deli-segmented-book-cover:distribution"
+            "metric:deepseek-v4-pro:0819-update"
           ],
           "reasons": {
-            "summary": "具体商品、多日平台预估与分发覆盖变化成立；缺匹配落地页、监测和真实搜索趋势，第一阶段只保留关键词假设。"
+            "summary": "对象可核，但主动搜索、落地页、监测和转化链路未就绪，第一阶段不投广告。"
           },
           "landing_page_ready": false,
           "measurement_ready": false,
@@ -4100,7 +4134,7 @@
         },
         "interest": {
           "activation_mode": "interest",
-          "raw_score": 89,
+          "raw_score": 84,
           "score": 64,
           "action": "not_eligible",
           "eligible": false,
@@ -4108,9 +4142,9 @@
             {
               "key": "content_diffusion",
               "name": "内容扩散",
-              "score": 5,
+              "score": 4,
               "weight": 25,
-              "weighted_score": 25
+              "weighted_score": 20
             },
             {
               "key": "audience_fit",
@@ -4169,11 +4203,10 @@
             "兴趣流量转化路径未准备"
           ],
           "evidence_refs": [
-            "metric:deli-segmented-book-cover:series",
-            "metric:deli-segmented-book-cover:distribution"
+            "metric:deepseek-v4-pro:0819-update"
           ],
           "reasons": {
-            "summary": "具体商品、多日平台预估与分发覆盖变化成立；缺匹配落地页、监测和真实搜索趋势，第一阶段只保留关键词假设。"
+            "summary": "对象可核，但主动搜索、落地页、监测和转化链路未就绪，第一阶段不投广告。"
           },
           "landing_page_ready": false,
           "measurement_ready": false,
@@ -4186,52 +4219,52 @@
         },
         "commerce": {
           "activation_mode": "commerce",
-          "raw_score": 81,
-          "score": 64,
+          "raw_score": 57,
+          "score": 57,
           "action": "not_eligible",
           "eligible": false,
           "score_details": [
             {
               "key": "transaction_trend",
               "name": "交易趋势",
-              "score": 5,
+              "score": 3,
               "weight": 25,
-              "weighted_score": 25
+              "weighted_score": 15
             },
             {
               "key": "product_path",
               "name": "商品链路",
-              "score": 4,
-              "weight": 20,
-              "weighted_score": 16
-            },
-            {
-              "key": "audience_fit",
-              "name": "目标人群",
-              "score": 4,
-              "weight": 20,
-              "weighted_score": 16
-            },
-            {
-              "key": "shop_product_fit",
-              "name": "商品或店铺承接",
               "score": 3,
               "weight": 20,
               "weighted_score": 12
             },
             {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 3,
+              "weight": 20,
+              "weighted_score": 12
+            },
+            {
+              "key": "shop_product_fit",
+              "name": "商品或店铺承接",
+              "score": 2,
+              "weight": 20,
+              "weighted_score": 8
+            },
+            {
               "key": "duration",
               "name": "持续周期",
-              "score": 4,
+              "score": 3,
               "weight": 5,
-              "weighted_score": 4
+              "weighted_score": 3
             },
             {
               "key": "conversion_value",
               "name": "转化价值",
-              "score": 3,
+              "score": 2,
               "weight": 5,
-              "weighted_score": 3
+              "weighted_score": 2
             },
             {
               "key": "compliance",
@@ -4245,28 +4278,29 @@
             {
               "rule": "landing_or_measurement_not_ready",
               "score_cap": 64,
-              "changed": true,
+              "changed": false,
               "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
             }
           ],
           "blockers": [
             "广告落地页未完成",
             "曝光、点击、访问与注册监测未接通",
+            "商品或店铺身份未核",
+            "没有可核交易变化信号",
             "电商转化链路未准备"
           ],
           "evidence_refs": [
-            "metric:deli-segmented-book-cover:series",
-            "metric:deli-segmented-book-cover:distribution"
+            "metric:deepseek-v4-pro:0819-update"
           ],
           "reasons": {
-            "summary": "具体商品、多日平台预估与分发覆盖变化成立；缺匹配落地页、监测和真实搜索趋势，第一阶段只保留关键词假设。"
+            "summary": "对象可核，但主动搜索、落地页、监测和转化链路未就绪，第一阶段不投广告。"
           },
           "landing_page_ready": false,
           "measurement_ready": false,
           "compliance_ready": true,
           "prerequisites": {
-            "verified_offer": true,
-            "transaction_signal_confirmed": true,
+            "verified_offer": false,
+            "transaction_signal_confirmed": false,
             "conversion_path_ready": false
           }
         }
@@ -4279,402 +4313,435 @@
         "曝光、点击、访问与注册监测未接通"
       ],
       "breakout_scoring_model": "breakout_v1",
-      "breakout_status": "confirmed_breakout",
-      "breakout_signal_count": 2,
-      "breakout_gates_passed": true,
-      "breakout_blockers": []
+      "breakout_status": "observation_only",
+      "breakout_signal_count": 1,
+      "breakout_gates_passed": false,
+      "breakout_blockers": [
+        "多周期变化未核",
+        "独立变化信号不足2项"
+      ]
     },
     {
       "id": "HT-20260819-006",
-      "event_key": "longjiasheng-kale-toast-five-day-sustained-20260813",
-      "foundAt": "2026-08-19 09:30-10:20",
-      "name": "隆嘉盛羽衣甘蓝吐司跨周平台预估销量继续增长，早餐代餐内容承接延续",
-      "type": "具体商品/早餐代餐",
-      "sourceLevel": "E2",
-      "publishedAt": "跨日基线至2026-08-18发布，2026-08-19复核",
-      "signal": "同一商品既有8月13日至17日平台预估日销量由4,581升至8,600的跨日序列；8月19日详情页仍可读，但未新增可核的跨日序列点。",
-      "uncertainty": "平台展示值可能回算，销量、销售额、浏览和转化均按蝉妈妈预估/展示口径。",
-      "recommended": "常规跟进｜优先制作",
-      "actionReason": "同一商品多日序列与分发覆盖同时成立，适合做具体商品和内容承接拆解。",
-      "actionDetail": "拆解商品的多日区间变化、直播/达人/视频覆盖和品类内容角度，继续观察下一周期是否回落。",
-      "evidence": "https://www.chanmama.com/promotionRank/rLEHArEbTc6So4Cz-1KIksmSFfkdcz1E.html",
-      "departments": "品牌、商品、选品、内容与直播团队",
+      "event_key": "openai-cyber-capability-pacing-20260818",
+      "foundAt": "2026-08-19 10:19-10:45 revision 2",
+      "name": "OpenAI因网络安全关键能力风险放缓前沿模型训练，强化监控、对齐与隔离",
+      "type": "前沿模型/网络安全治理",
+      "sourceLevel": "E3",
+      "publishedAt": "2026-08-18发布，2026-08-19复核",
+      "signal": "OpenAI披露因网络安全关键能力风险，最新拟部署模型的强化学习训练曾暂停两周，最大规模前沿RL运行仍保持暂停，并强化研究环境、思维链监控和对齐证据。",
+      "uncertainty": "只确认OpenAI自身披露，不推断未公开模型能力、发布时间或行业普遍风险。",
+      "recommended": "更新AI工具安全接入清单，增加模型能力变化、供应商训练暂停、权限隔离和事件响应条目。",
+      "actionReason": "直接影响企业接入前沿模型时的供应商评估、最小权限、审计和应急预案。",
+      "actionDetail": "更新AI工具安全接入清单，增加模型能力变化、供应商训练暂停、权限隔离和事件响应条目。",
+      "evidence": "https://openai.com/index/pacing-model-development-cyber-capabilities/",
       "deadline": "2026-08-19T18:00:00+08:00",
-      "notRecommended": "不写真实成交额、真实销量或市场份额；不把关键词假设写成搜索上涨或投放结论。",
+      "notRecommended": "不投广告、不全量召回、不把官方声明写成真实业务效果。",
       "sourceLinks": [
         {
           "label": "Core source",
-          "domain": "chanmama.com",
-          "url": "https://www.chanmama.com/promotionRank/rLEHArEbTc6So4Cz-1KIksmSFfkdcz1E.html"
+          "domain": "openai.com",
+          "url": "https://openai.com/index/pacing-model-development-cyber-capabilities/"
         }
       ],
       "source_links": [
         {
           "label": "Core source",
-          "domain": "chanmama.com",
-          "url": "https://www.chanmama.com/promotionRank/rLEHArEbTc6So4Cz-1KIksmSFfkdcz1E.html"
+          "domain": "openai.com",
+          "url": "https://openai.com/index/pacing-model-development-cyber-capabilities/"
         }
       ],
       "status": "正式热点",
-      "risk": "中风险-已通过",
-      "owner": "类目研究/内容运营",
-      "monitor": "后续销量区间、浏览/转化、达人/直播/视频覆盖和榜位。",
+      "risk": "中风险：官方对象与正文可核，业务效果及采用规模未独立验证",
+      "owner": "科技研究/内容运营",
+      "monitor": "OpenAI后续训练恢复条件、Preparedness Framework更新和产品发布节奏。",
       "candidate_kind": "event",
-      "hotspot_category": "类目与消费",
-      "signal_type": "single_product_growth",
-      "baseline_evidence": {
-        "description": "同一商品五日平台预估序列与内容分发覆盖变化。",
-        "requires_baseline": true,
-        "comparison_baseline_verified": true,
-        "multi_period_growth_verified": true,
-        "independent_change_signals": 2,
-        "baseline_type": "同一商品多日趋势与第二项可区分指标",
-        "normalization_flags": [
-          "platform_estimate"
-        ]
-      },
+      "daily_status": "NEW",
+      "previous_day_event_key_matched": false,
+      "hotspot_category": "科技与工具",
+      "signal_type": "technology_release",
+      "baseline_evidence": null,
       "topic_resonance": null,
       "official_rule": null,
-      "technology_change": "同一商品既有8月13日至17日平台预估日销量由4,581升至8,600的跨日序列；8月19日详情页仍可读，但未新增可核的跨日序列点。",
-      "chanmama_relevance": "同一商品多日序列与分发覆盖同时成立，适合做具体商品和内容承接拆解。",
-      "next_step": "常规跟进｜优先制作",
-      "explicitly_not_doing": "不写真实成交额、真实销量或市场份额；不把关键词假设写成搜索上涨或投放结论。",
-      "official_evidence": [],
-      "circle_evidence": [],
+      "technology_change": "OpenAI披露因网络安全关键能力风险，最新拟部署模型的强化学习训练曾暂停两周，最大规模前沿RL运行仍保持暂停，并强化研究环境、思维链监控和对齐证据。",
+      "chanmama_relevance": "直接影响企业接入前沿模型时的供应商评估、最小权限、审计和应急预案。",
+      "next_step": "更新AI工具安全接入清单，增加模型能力变化、供应商训练暂停、权限隔离和事件响应条目。",
+      "explicitly_not_doing": "不投广告、不全量召回、不把官方声明写成真实业务效果。",
+      "official_evidence": [
+        {
+          "label": "OpenAI官方说明",
+          "url": "https://openai.com/index/pacing-model-development-cyber-capabilities/",
+          "fact": "披露训练节奏调整与安全措施。"
+        }
+      ],
+      "circle_evidence": {
+        "label": "OpenAI官方说明",
+        "url": "https://openai.com/index/pacing-model-development-cyber-capabilities/",
+        "fact": "只作官方事实，不计独立采用。"
+      },
       "subject": {
-        "subject_id": "product:chanmama:rleharebtc6so4cz-1kiksmsffkdcz1e",
-        "kind": "product",
-        "canonical_name": "隆嘉盛羽衣甘蓝全麦厚切吐司",
+        "subject_id": "technology:openai:cyber-capability-pacing-20260818",
+        "kind": "technology",
+        "canonical_name": "OpenAI网络安全关键能力训练节奏与防护升级",
         "aliases": [
-          "隆嘉盛羽衣甘蓝吐司",
-          "羽衣甘蓝全麦吐司"
+          "Pacing model development in an era of cyber-critical capabilities",
+          "OpenAI网络安全关键能力治理"
         ],
-        "industry": "食品/面包与代餐",
+        "industry": "人工智能/网络安全治理",
         "identity_status": "verified",
         "identities": [
           {
-            "platform": "蝉妈妈商品详情",
-            "platform_entity_id": "promotion:rLEHArEbTc6So4Cz-1KIksmSFfkdcz1E",
-            "url": "https://www.chanmama.com/promotionRank/rLEHArEbTc6So4Cz-1KIksmSFfkdcz1E.html",
+            "platform": "OpenAI",
+            "platform_entity_id": "index:pacing-model-development-cyber-capabilities",
+            "url": "https://openai.com/index/pacing-model-development-cyber-capabilities/",
             "verification_status": "verified",
-            "verified_at": "2026-08-19T09:43:53+08:00"
+            "verified_at": "2026-08-19T10:51:40+08:00"
           }
         ]
       },
-      "subject_kind": "product",
+      "subject_kind": "technology",
       "trend_metrics": [
         {
-          "metric_id": "metric:longjiasheng-kale-toast:series",
-          "metric_name": "五日平台预估序列",
-          "metric_value": "8月8日至12日平台预估销量连续五日处于同一较高区间",
-          "unit": "蝉妈妈平台预估展示口径",
-          "period": "2026-08-08至2026-08-12",
-          "observed_at": "2026-08-19T09:43:53+08:00",
-          "source_url": "https://www.chanmama.com/promotionRank/rLEHArEbTc6So4Cz-1KIksmSFfkdcz1E.html",
-          "evidence_group": "transaction",
-          "underlying_signal_id": "chanmama:longjiasheng-kale-toast:daily-series"
-        },
-        {
-          "metric_id": "metric:longjiasheng-kale-toast:distribution",
-          "metric_name": "分发与承接覆盖",
-          "metric_value": "直播与视频共同承接，达人、直播场次和视频覆盖连续存在",
-          "unit": "平台展示值",
-          "period": "2026-08-08至2026-08-12",
-          "observed_at": "2026-08-19T09:43:53+08:00",
-          "source_url": "https://www.chanmama.com/promotionRank/rLEHArEbTc6So4Cz-1KIksmSFfkdcz1E.html",
-          "evidence_group": "promotion",
-          "underlying_signal_id": "chanmama:longjiasheng-kale-toast:distribution"
-        },
-        {
-          "metric_id": "metric:longjiasheng-kale-toast:30d-0814",
-          "metric_name": "近30日平台预估销量快照",
-          "metric_value": "10万+（页面展示值58,880）",
-          "unit": "蝉妈妈平台预估展示口径",
-          "period": "近30日，2026-08-14观察",
-          "observed_at": "2026-08-19T09:43:53+08:00",
-          "source_url": "https://www.chanmama.com/promotionRank/rLEHArEbTc6So4Cz-1KIksmSFfkdcz1E.html",
-          "evidence_group": "snapshot",
-          "underlying_signal_id": "chanmama:longjiasheng-kale-toast:30d-0814"
-        },
-        {
-          "metric_id": "metric:longjiasheng-kale-toast:30d-0817",
-          "metric_name": "近30日平台预估销量与浏览快照",
-          "metric_value": "销量展示75,218；浏览98.6w",
-          "unit": "蝉妈妈平台预估/展示口径",
-          "period": "近30日，2026-08-17观察",
-          "observed_at": "2026-08-19T09:43:53+08:00",
-          "source_url": "https://www.chanmama.com/promotionRank/rLEHArEbTc6So4Cz-1KIksmSFfkdcz1E.html",
-          "evidence_group": "snapshot",
-          "underlying_signal_id": "chanmama:longjiasheng-kale-toast:30d-0817"
-        },
-        {
-          "metric_id": "metric:longjiasheng-kale-toast:30d-0818",
-          "metric_name": "近30日平台预估销量与分发覆盖快照",
-          "metric_value": "销量展示77,761；关联达人350、直播239、视频727",
-          "unit": "蝉妈妈平台预估/展示口径",
-          "period": "近30日，2026-08-18观察",
-          "observed_at": "2026-08-19T09:43:53+08:00",
-          "source_url": "https://www.chanmama.com/promotionRank/rLEHArEbTc6So4Cz-1KIksmSFfkdcz1E.html",
-          "evidence_group": "snapshot",
-          "underlying_signal_id": "chanmama:longjiasheng-kale-toast:30d-0818"
+          "metric_id": "metric:openai:cyber-pacing",
+          "metric_name": "训练节奏与安全措施",
+          "metric_value": "拟部署模型RL训练曾暂停两周；最大规模前沿RL运行仍暂停",
+          "unit": "官方披露",
+          "period": "2026-08-18",
+          "observed_at": "2026-08-19T10:51:40+08:00",
+          "source_url": "https://openai.com/index/pacing-model-development-cyber-capabilities/",
+          "evidence_group": "official",
+          "underlying_signal_id": "openai:cyber:pacing"
         }
       ],
       "expected_duration": {
-        "min_days": 3,
-        "max_days": 10,
-        "rationale": "多日预估交易与分发信号成立，但需关注平台回算。",
-        "review_at": "2026-08-15"
+        "min_days": 14,
+        "max_days": 90,
+        "rationale": "治理变化将持续影响模型发布与企业风险评估。",
+        "review_at": "2026-08-26"
       },
       "target_audience": [
-        "对应品类商家",
-        "选品、内容与直播团队",
-        "电商数据研究人员"
+        "企业安全与合规团队",
+        "AI平台与研发团队",
+        "技术决策人员"
       ],
       "active_search": {
         "status": "hypothesis",
         "evidence": [],
-        "boundary": "商品词来自可核商品对象；百度指数未返回候选搜索趋势或搜索量。"
+        "boundary": "百度指数未取得候选曲线、数值或明确变化。"
       },
       "keyword_hypotheses": [
         {
-          "keyword_id": "kw:longjiasheng-kale-toast:01",
-          "text": "隆嘉盛羽衣甘蓝吐司",
-          "intent": "商品对象词",
+          "keyword_id": "kw:openai:cyber-pacing:01",
+          "text": "OpenAI网络安全关键能力",
+          "intent": "对象词",
           "evidence_refs": [
-            "metric:longjiasheng-kale-toast:series",
-            "metric:longjiasheng-kale-toast:distribution"
-          ],
-          "applicable_modes": [
-            "search",
-            "interest",
-            "commerce"
-          ],
-          "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-          "landing_page": {
-            "status": "planned",
-            "url": null,
-            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
-          },
-          "valid_from": "2026-08-13",
-          "valid_until": "2026-09-13",
-          "validation_status": "hypothesis",
-          "risk_flags": [
-            "平台销量与销售额为预估/展示口径",
-            "主动搜索未验证"
-          ]
-        },
-        {
-          "keyword_id": "kw:longjiasheng-kale-toast:02",
-          "text": "羽衣甘蓝吐司",
-          "intent": "品类与运营问题词",
-          "evidence_refs": [
-            "metric:longjiasheng-kale-toast:series",
-            "metric:longjiasheng-kale-toast:distribution"
-          ],
-          "applicable_modes": [
-            "search",
-            "interest",
-            "commerce"
-          ],
-          "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-          "landing_page": {
-            "status": "planned",
-            "url": null,
-            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
-          },
-          "valid_from": "2026-08-13",
-          "valid_until": "2026-09-13",
-          "validation_status": "hypothesis",
-          "risk_flags": [
-            "平台销量与销售额为预估/展示口径",
-            "主动搜索未验证"
-          ]
-        },
-        {
-          "keyword_id": "kw:longjiasheng-kale-toast:03",
-          "text": "全麦厚切吐司",
-          "intent": "品类与运营问题词",
-          "evidence_refs": [
-            "metric:longjiasheng-kale-toast:series",
-            "metric:longjiasheng-kale-toast:distribution"
-          ],
-          "applicable_modes": [
-            "search",
-            "interest",
-            "commerce"
-          ],
-          "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-          "landing_page": {
-            "status": "planned",
-            "url": null,
-            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
-          },
-          "valid_from": "2026-08-13",
-          "valid_until": "2026-09-13",
-          "validation_status": "hypothesis",
-          "risk_flags": [
-            "平台销量与销售额为预估/展示口径",
-            "主动搜索未验证"
-          ]
-        },
-        {
-          "keyword_id": "kw:longjiasheng-kale-toast:04",
-          "text": "早餐代餐面包",
-          "intent": "品类与运营问题词",
-          "evidence_refs": [
-            "metric:longjiasheng-kale-toast:series",
-            "metric:longjiasheng-kale-toast:distribution"
+            "metric:openai:cyber-pacing"
           ],
           "applicable_modes": [
             "search",
             "interest"
           ],
-          "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
+          "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
           "landing_page": {
             "status": "planned",
             "url": null,
-            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+            "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-13",
-          "valid_until": "2026-09-13",
+          "valid_from": "2026-08-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
-            "平台销量与销售额为预估/展示口径",
-            "主动搜索未验证"
+            "主动搜索未验证",
+            "落地页与监测未就绪"
           ]
         },
         {
-          "keyword_id": "kw:longjiasheng-kale-toast:05",
-          "text": "吐司直播带货案例",
-          "intent": "品类与运营问题词",
+          "keyword_id": "kw:openai:cyber-pacing:02",
+          "text": "OpenAI训练暂停",
+          "intent": "问题词",
           "evidence_refs": [
-            "metric:longjiasheng-kale-toast:series",
-            "metric:longjiasheng-kale-toast:distribution"
+            "metric:openai:cyber-pacing"
           ],
           "applicable_modes": [
             "search",
             "interest"
           ],
-          "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
+          "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
           "landing_page": {
             "status": "planned",
             "url": null,
-            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
+            "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-13",
-          "valid_until": "2026-09-13",
+          "valid_from": "2026-08-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
-            "平台销量与销售额为预估/展示口径",
-            "主动搜索未验证"
+            "主动搜索未验证",
+            "落地页与监测未就绪"
+          ]
+        },
+        {
+          "keyword_id": "kw:openai:cyber-pacing:03",
+          "text": "前沿模型安全治理",
+          "intent": "问题词",
+          "evidence_refs": [
+            "metric:openai:cyber-pacing"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-18",
+          "valid_until": "2026-09-19",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "主动搜索未验证",
+            "落地页与监测未就绪"
+          ]
+        },
+        {
+          "keyword_id": "kw:openai:cyber-pacing:04",
+          "text": "AI模型最小权限",
+          "intent": "问题词",
+          "evidence_refs": [
+            "metric:openai:cyber-pacing"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-18",
+          "valid_until": "2026-09-19",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "主动搜索未验证",
+            "落地页与监测未就绪"
+          ]
+        },
+        {
+          "keyword_id": "kw:openai:cyber-pacing:05",
+          "text": "AI供应商风险评估",
+          "intent": "问题词",
+          "evidence_refs": [
+            "metric:openai:cyber-pacing"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-18",
+          "valid_until": "2026-09-19",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "主动搜索未验证",
+            "落地页与监测未就绪"
           ]
         }
       ],
-      "business_response_code": "B",
-      "business_response_label": "常规跟进",
-      "business_response_score": 90,
-      "business_response_basis": "综合评分与封顶规则决定。",
+      "business_response_code": "A",
+      "business_response_label": "业务重点响应",
+      "business_response_score": 83,
+      "business_response_basis": "双轨分数矩阵决定",
       "actions": [
         {
           "hotspotId": "HT-20260819-006",
-          "actionType": "优先制作",
-          "task": "制作“隆嘉盛羽衣甘蓝吐司跨周平台预估销量继续增长，早餐代餐内容承接延续”事实与数据拆解。",
-          "owner": "类目研究/内容运营",
+          "actionType": "定向发布",
+          "task": "制作“OpenAI因网络安全关键能力风险放缓前沿模型训练，强化监控、对齐与隔离”事实与数据拆解。",
+          "owner": "科技研究/内容运营",
           "collaborators": "数据研究、内容运营",
           "deadline": "2026-08-19",
-          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-          "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-          "stopCondition": "连续两日平台预估销量回落且分发覆盖同步走弱时停止滚动。",
+          "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+          "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+          "stopCondition": "官方撤回、修订或证据失效时立即更新。",
           "status": "待执行"
         }
       ],
-      "domain": "commerce",
-      "scoring_model": "commerce_v1",
-      "totalScore": 90,
-      "initialValue": 5,
-      "finalValue": 3,
-      "grade": "L-B｜常规跟进",
-      "gradeCode": "B",
-      "followDecision": "常规跟进",
-      "downgradeReason": "信源封顶",
-      "scoreDetails": [
+      "domain": "technology",
+      "scoring_model": "tech_v1",
+      "canonical_event_key": "openai-cyber-capability-pacing-20260818",
+      "tech_topic": "frontier_model_security_governance",
+      "tech_scores": {
+        "technical_breakthrough": 3,
+        "circle_heat_velocity": 4,
+        "authority_cross_validation": 5,
+        "developer_market_adoption": 3,
+        "industry_competition_impact": 5,
+        "duration_diffusion_cycle": 5,
+        "application_transfer_value": 5,
+        "response_window": 5
+      },
+      "business_scores": {
+        "target_user_fit": 4,
+        "ecommerce_workflow_relevance": 4,
+        "product_data_fit": 4,
+        "geo_question_value": 5,
+        "conversion_brand_value": 4,
+        "execution_readiness_cost": 4
+      },
+      "tech_impact_score": 83,
+      "raw_tech_level": "T-A",
+      "tech_level": "T-A",
+      "business_fit_score": 83,
+      "action_level": "L-A",
+      "source_tier": "E3",
+      "independent_verification_count": 1,
+      "adoption_signals": [
+        "官方披露两周RL训练暂停",
+        "最大规模前沿RL运行仍暂停",
+        "监控、对齐与研究环境防护同步加强"
+      ],
+      "score_reasons": {
+        "technical_breakthrough": "治理变化而非模型发布。",
+        "circle_heat_velocity": "官方新披露，外部热度不计入。",
+        "authority_cross_validation": "官方正文可核。",
+        "developer_market_adoption": "不适用采用量。",
+        "business_fit": "与企业AI安全治理直接相关。"
+      },
+      "score_caps": [
         {
-          "name": "流量热度",
-          "score": 5,
-          "weight": 10
-        },
-        {
-          "name": "上升与持续",
-          "score": 4,
-          "weight": 10
-        },
-        {
-          "name": "目标人群",
-          "score": 4,
-          "weight": 15
-        },
-        {
-          "name": "业务关联",
-          "score": 5,
-          "weight": 20
-        },
-        {
-          "name": "转化价值",
-          "score": 5,
-          "weight": 15
-        },
-        {
-          "name": "品牌价值",
-          "score": 4,
-          "weight": 5
-        },
-        {
-          "name": "GEO价值",
-          "score": 4,
-          "weight": 10
-        },
-        {
-          "name": "产品承接",
-          "score": 4,
-          "weight": 5
-        },
-        {
-          "name": "执行成本",
-          "score": 4,
-          "weight": 5
-        },
-        {
-          "name": "响应窗口",
-          "score": 5,
-          "weight": 5
+          "rule": "high_cost_action_block",
+          "tech_cap": null,
+          "action_cap": null,
+          "changed": false,
+          "reason": "缺少执行准备、成熟承接页或监测，禁止广告投流和全量召回。"
         }
       ],
-      "caps": {
-        "score": 5,
-        "evidence": 3,
-        "type": 5,
-        "core": 5,
-        "baseline": 5,
-        "risk": 4,
-        "window": 5,
-        "preparation": 5,
-        "official_rule_floor": 0
-      },
-      "baseline_assessment": {
-        "signal_type": "single_product_growth",
-        "requires_baseline": true,
-        "comparison_baseline_verified": true,
-        "baseline_type": "同一商品多日趋势与第二项可区分指标",
-        "normalization_flags": [
-          "platform_estimate"
-        ],
-        "multi_period_growth_verified": true,
-        "independent_change_signals": 2,
-        "is_verified": true
-      },
-      "business_priority_basis": "综合评分与封顶规则决定。",
+      "tech_score_details": [
+        {
+          "key": "technical_breakthrough",
+          "name": "技术突破强度",
+          "score": 3,
+          "weight": 20,
+          "weighted_score": 12
+        },
+        {
+          "key": "circle_heat_velocity",
+          "name": "圈层热度与涨速",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "authority_cross_validation",
+          "name": "权威与交叉验证",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "developer_market_adoption",
+          "name": "开发者与市场采用",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "industry_competition_impact",
+          "name": "行业竞争影响",
+          "score": 5,
+          "weight": 10,
+          "weighted_score": 10
+        },
+        {
+          "key": "duration_diffusion_cycle",
+          "name": "持续与扩散周期",
+          "score": 5,
+          "weight": 10,
+          "weighted_score": 10
+        },
+        {
+          "key": "application_transfer_value",
+          "name": "应用迁移价值",
+          "score": 5,
+          "weight": 10,
+          "weighted_score": 10
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "business_score_details": [
+        {
+          "key": "target_user_fit",
+          "name": "蝉妈妈目标用户匹配",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "ecommerce_workflow_relevance",
+          "name": "电商工作流关联",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "product_data_fit",
+          "name": "产品与数据承接",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "geo_question_value",
+          "name": "GEO问题价值",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "conversion_brand_value",
+          "name": "转化与品牌价值",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "execution_readiness_cost",
+          "name": "执行准备与成本",
+          "score": 4,
+          "weight": 10,
+          "weighted_score": 8
+        }
+      ],
+      "prohibited_actions": [
+        "广告投流",
+        "全量召回"
+      ],
+      "natural_business_link": true,
+      "execution_ready": false,
+      "mature_landing_page": false,
+      "measurement_ready": false,
+      "totalScore": null,
+      "grade": "L-A｜业务重点响应",
+      "gradeCode": "A",
+      "finalValue": 4,
+      "followDecision": "业务重点响应",
+      "downgradeReason": "双轨分数矩阵决定",
       "hotness_scoring_model": "hotness_v1",
-      "hotness_score": 92,
+      "hotness_score": 85,
       "raw_hotness_level": "H-S",
       "hotness_level": "H-C",
       "hotness_final_value": 2,
@@ -4682,9 +4749,9 @@
         {
           "key": "absolute_demand",
           "name": "需求规模",
-          "score": 5,
+          "score": 4,
           "weight": 20,
-          "weighted_score": 20
+          "weighted_score": 16
         },
         {
           "key": "baseline_deviation",
@@ -4703,16 +4770,16 @@
         {
           "key": "persistence",
           "name": "持续时间",
-          "score": 5,
+          "score": 3,
           "weight": 15,
-          "weighted_score": 15
+          "weighted_score": 9
         },
         {
           "key": "cross_platform_spread",
           "name": "跨平台扩散",
-          "score": 4,
+          "score": 5,
           "weight": 15,
-          "weighted_score": 12
+          "weighted_score": 15
         },
         {
           "key": "freshness",
@@ -4730,34 +4797,33 @@
           "reason": "只有单平台信号，热点成立度最高H-C。"
         }
       ],
-      "hotness_signal_type": "single_product_growth",
+      "hotness_signal_type": "technology_release",
       "hotness_independent_platform_count": 1,
       "hotness_baseline_verified": true,
       "hotness_freshness_verified": true,
       "hotness_change_signals": [
-        "8月8日至12日平台预估销量连续五日处于同一较高区间",
-        "直播与视频共同承接，达人、直播场次和视频覆盖连续存在"
+        "官方披露两周RL训练暂停",
+        "最大规模前沿RL运行仍暂停",
+        "监控、对齐与研究环境防护同步加强"
       ],
-      "hotness_requires_baseline": true,
+      "hotness_requires_baseline": false,
       "hotness_comparison_baseline_verified": true,
-      "hotness_baseline_type": "同一商品多日趋势与第二项可区分指标",
-      "hotness_normalization_flags": [
-        "platform_estimate"
-      ],
-      "hotness_multi_period_growth_verified": true,
-      "hotness_independent_change_signals": 2,
+      "hotness_baseline_type": "官方发布或当日官方复核",
+      "hotness_normalization_flags": [],
+      "hotness_multi_period_growth_verified": false,
+      "hotness_independent_change_signals": 1,
       "content_scoring_model": "content_potential_v1",
-      "content_potential_score": 94,
-      "raw_content_potential_level": "P-S",
+      "content_potential_score": 82,
+      "raw_content_potential_level": "P-A",
       "content_potential_level": "P-B",
       "content_final_value": 3,
       "content_score_details": [
         {
           "key": "audience_demand",
           "name": "受众需求规模",
-          "score": 5,
+          "score": 4,
           "weight": 20,
-          "weighted_score": 20
+          "weighted_score": 16
         },
         {
           "key": "demand_velocity",
@@ -4769,23 +4835,23 @@
         {
           "key": "content_supply_gap",
           "name": "内容供给缺口",
-          "score": 5,
+          "score": 4,
           "weight": 15,
-          "weighted_score": 15
+          "weighted_score": 12
         },
         {
           "key": "target_user_fit",
           "name": "目标用户匹配",
-          "score": 5,
+          "score": 4,
           "weight": 15,
-          "weighted_score": 15
+          "weighted_score": 12
         },
         {
           "key": "data_content_advantage",
           "name": "蝉妈妈数据优势",
-          "score": 5,
+          "score": 4,
           "weight": 15,
-          "weighted_score": 15
+          "weighted_score": 12
         },
         {
           "key": "discussion_shareability",
@@ -4797,9 +4863,9 @@
         {
           "key": "content_lifecycle",
           "name": "内容生命周期",
-          "score": 4,
+          "score": 5,
           "weight": 5,
-          "weighted_score": 4
+          "weighted_score": 5
         },
         {
           "key": "response_window",
@@ -4811,86 +4877,69 @@
       ],
       "content_caps": [
         {
-          "rule": "e2_evidence_cap",
+          "rule": "targeted_audience_cap",
           "potential_cap": "P-B",
           "changed": true,
-          "reason": "只有专业平台单源或非官方证据，内容潜力最高P-B。"
-        },
-        {
-          "rule": "search_gap_unverified",
-          "potential_cap": "P-B",
-          "changed": false,
-          "reason": "搜索路线尚未验证内容供给缺口，内容潜力最高P-B。"
-        },
-        {
-          "rule": "potential_s_gate",
-          "potential_cap": "P-A",
-          "changed": false,
-          "reason": "P-S需要E3、至少3个平台、有效基线、最新数据和85分以上渠道适配。"
+          "reason": "定向专业内容可以高业务优先，但不按大众高流量话题评为P-A。"
         }
       ],
-      "content_source_tier": "E2",
-      "traffic_route": "mixed",
+      "content_source_tier": "E3",
+      "traffic_route": "targeted",
       "independent_platform_count": 1,
       "demand_signals": [
-        "平台：蝉妈妈｜页面：隆嘉盛羽衣甘蓝吐司跨周平台预估销量继续增长，早餐代餐内容承接延续｜观察日期：2026-08-18｜变化：同一商品8月13日至17日平台预估日销量由4,581升至8,600；近30日平台预估销量77,761，关联达人350、直播239、视频727。｜https://www.chanmama.com/promotionRank/rLEHArEbTc6So4Cz-1KIksmSFfkdcz1E.html"
+        "平台：官方来源｜页面：OpenAI因网络安全关键能力风险放缓前沿模型训练，强化监控、对齐与隔离｜观察日期：2026-08-19｜变化：8月18日官方正文首次披露具体训练节奏调整与安全门槛，8月19日完整正文可核。｜https://openai.com/index/pacing-model-development-cyber-capabilities/"
       ],
       "content_baseline_verified": true,
-      "content_requires_baseline": true,
+      "content_requires_baseline": false,
       "content_comparison_baseline_verified": true,
-      "content_baseline_type": "同一对象多周期指标与可区分变化信号",
-      "content_normalization_flags": [
-        "platform_estimate"
-      ],
-      "content_multi_period_growth_verified": true,
-      "content_independent_change_signals": 2,
+      "content_baseline_type": "官方发布或当日官方复核",
+      "content_normalization_flags": [],
+      "content_multi_period_growth_verified": false,
+      "content_independent_change_signals": 1,
       "supply_gap_verified": false,
       "content_freshness_verified": true,
       "chanmama_answerable": true,
       "query_cluster": [
-        "隆嘉盛羽衣甘蓝吐司",
-        "羽衣甘蓝吐司",
-        "全麦厚切吐司",
-        "早餐代餐面包",
-        "吐司直播带货案例"
+        "OpenAI网络安全关键能力",
+        "OpenAI训练暂停",
+        "前沿模型安全治理",
+        "AI模型最小权限",
+        "AI供应商风险评估"
       ],
       "channel_scores": {
-        "website": 90,
-        "wechat": 82,
-        "short_video": 90,
-        "xiaohongshu": 86,
-        "private_domain": 78
+        "website": 88,
+        "wechat": 86,
+        "short_video": 68,
+        "xiaohongshu": 54,
+        "private_domain": 84
       },
       "channel_reasons": {
-        "primary": "具体商品和连续数据成立，适合做商品、达人和直播承接拆解。"
+        "primary": "直接影响企业接入前沿模型时的供应商评估、最小权限、审计和应急预案。"
       },
       "recommended_channels": [
         "website",
-        "short_video",
-        "xiaohongshu",
-        "wechat"
+        "wechat",
+        "private_domain"
       ],
-      "primary_topic": "隆嘉盛羽衣甘蓝吐司五日平台预估持续热销，直播、视频与达人覆盖共同承接",
-      "early_publish_title": "隆嘉盛羽衣甘蓝吐司五日平台预估持续热销，直播、视频与达人覆盖共同承接",
-      "content_angle": "拆解商品的多日区间变化、直播/达人/视频覆盖和品类内容角度。",
-      "measurement_plan": "商品词曝光、内容点击、专题访问和后续榜位。",
-      "stop_condition": "连续两日平台预估销量回落且分发覆盖同步走弱时停止滚动。",
+      "primary_topic": "OpenAI因网络安全关键能力风险放缓前沿模型训练，强化监控、对齐与隔离",
+      "early_publish_title": "OpenAI因网络安全关键能力风险放缓前沿模型训练，强化监控、对齐与隔离",
+      "content_angle": "更新AI工具安全接入清单，增加模型能力变化、供应商训练暂停、权限隔离和事件响应条目。",
+      "measurement_plan": "对象词曝光、内容点击、专题访问与验证完成率。",
+      "stop_condition": "官方撤回、修订或后续验证证伪时立即更新。",
       "content_score_reasons": {},
-      "topic_value_score": 94,
-      "topic_value_code": "S",
-      "topic_value_label": "高潜力",
-      "publication_status_code": "small_test",
-      "publication_status": "小范围试发",
-      "publication_priority": 3,
-      "publication_mode": "单渠道轻量内容",
-      "publication_basis": "选题价值与渠道适配达到轻量测试要求，先用单渠道验证反馈。",
-      "fact_boundary": "只描述蝉妈妈页面的多日平台预估区间、浏览、转化与分发覆盖；不表述为真实成交量、真实成交额、真实人数或市场份额。",
+      "topic_value_score": 82,
+      "topic_value_code": "A",
+      "topic_value_label": "较高潜力",
+      "publication_status_code": "targeted_publish",
+      "publication_status": "定向发布",
+      "publication_priority": 4,
+      "publication_mode": "专业人群定向解读",
+      "publication_basis": "官方事实明确但受众较窄，面向受影响人群定向发布。",
+      "fact_boundary": "不推断未公开模型能力、发布时间或已经普遍发生的网络攻击。",
       "pending_confirmation": [
-        "下一周期销量与分发覆盖",
-        "真实搜索趋势",
-        "官方或原始信息待确认",
-        "第二个独立需求信号待确认",
-        "内容供给缺口待确认"
+        "真实开发者或用户采用",
+        "电商工作流实测",
+        "真实搜索趋势"
       ],
       "confirmed_trigger": true,
       "publishable_channel": true,
@@ -4968,11 +5017,10 @@
             "搜索转化路径未准备"
           ],
           "evidence_refs": [
-            "metric:longjiasheng-kale-toast:series",
-            "metric:longjiasheng-kale-toast:distribution"
+            "metric:openai:cyber-pacing"
           ],
           "reasons": {
-            "summary": "具体商品、多日平台预估与分发覆盖变化成立；缺匹配落地页、监测和真实搜索趋势，第一阶段只保留关键词假设。"
+            "summary": "对象可核，但主动搜索、落地页、监测和转化链路未就绪，第一阶段不投广告。"
           },
           "landing_page_ready": false,
           "measurement_ready": false,
@@ -4985,7 +5033,7 @@
         },
         "interest": {
           "activation_mode": "interest",
-          "raw_score": 89,
+          "raw_score": 84,
           "score": 64,
           "action": "not_eligible",
           "eligible": false,
@@ -4993,9 +5041,9 @@
             {
               "key": "content_diffusion",
               "name": "内容扩散",
-              "score": 5,
+              "score": 4,
               "weight": 25,
-              "weighted_score": 25
+              "weighted_score": 20
             },
             {
               "key": "audience_fit",
@@ -5054,11 +5102,10 @@
             "兴趣流量转化路径未准备"
           ],
           "evidence_refs": [
-            "metric:longjiasheng-kale-toast:series",
-            "metric:longjiasheng-kale-toast:distribution"
+            "metric:openai:cyber-pacing"
           ],
           "reasons": {
-            "summary": "具体商品、多日平台预估与分发覆盖变化成立；缺匹配落地页、监测和真实搜索趋势，第一阶段只保留关键词假设。"
+            "summary": "对象可核，但主动搜索、落地页、监测和转化链路未就绪，第一阶段不投广告。"
           },
           "landing_page_ready": false,
           "measurement_ready": false,
@@ -5071,49 +5118,915 @@
         },
         "commerce": {
           "activation_mode": "commerce",
-          "raw_score": 81,
-          "score": 64,
+          "raw_score": 57,
+          "score": 57,
           "action": "not_eligible",
           "eligible": false,
           "score_details": [
             {
               "key": "transaction_trend",
               "name": "交易趋势",
-              "score": 5,
+              "score": 3,
               "weight": 25,
-              "weighted_score": 25
+              "weighted_score": 15
             },
             {
               "key": "product_path",
               "name": "商品链路",
-              "score": 4,
-              "weight": 20,
-              "weighted_score": 16
-            },
-            {
-              "key": "audience_fit",
-              "name": "目标人群",
-              "score": 4,
-              "weight": 20,
-              "weighted_score": 16
-            },
-            {
-              "key": "shop_product_fit",
-              "name": "商品或店铺承接",
               "score": 3,
               "weight": 20,
               "weighted_score": 12
             },
             {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 3,
+              "weight": 20,
+              "weighted_score": 12
+            },
+            {
+              "key": "shop_product_fit",
+              "name": "商品或店铺承接",
+              "score": 2,
+              "weight": 20,
+              "weighted_score": 8
+            },
+            {
               "key": "duration",
               "name": "持续周期",
-              "score": 4,
+              "score": 3,
               "weight": 5,
-              "weighted_score": 4
+              "weighted_score": 3
             },
             {
               "key": "conversion_value",
               "name": "转化价值",
+              "score": 2,
+              "weight": 5,
+              "weighted_score": 2
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "商品或店铺身份未核",
+            "没有可核交易变化信号",
+            "电商转化链路未准备"
+          ],
+          "evidence_refs": [
+            "metric:openai:cyber-pacing"
+          ],
+          "reasons": {
+            "summary": "对象可核，但主动搜索、落地页、监测和转化链路未就绪，第一阶段不投广告。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "verified_offer": false,
+            "transaction_signal_confirmed": false,
+            "conversion_path_ready": false
+          }
+        }
+      },
+      "ad_eligible": false,
+      "ad_eligible_modes": [],
+      "ad_best_mode": "interest",
+      "ad_global_blockers": [
+        "广告落地页未完成",
+        "曝光、点击、访问与注册监测未接通"
+      ],
+      "breakout_scoring_model": "breakout_v1",
+      "breakout_status": "observation_only",
+      "breakout_signal_count": 1,
+      "breakout_gates_passed": false,
+      "breakout_blockers": [
+        "多周期变化未核",
+        "独立变化信号不足2项"
+      ]
+    },
+    {
+      "id": "HT-20260819-007",
+      "event_key": "openai-chatgpt-for-teens-launch-20260818",
+      "foundAt": "2026-08-19 10:19-10:45 revision 2",
+      "name": "OpenAI推出ChatGPT for Teens并与CodeAI合作，青少年安全与AI素养进入产品化阶段",
+      "type": "AI产品/教育与青少年安全",
+      "sourceLevel": "E3",
+      "publishedAt": "2026-08-18发布，2026-08-19复核",
+      "signal": "OpenAI推出面向13至17岁用户的ChatGPT for Teens，包含更强内置保护、家长控制、学习模式与年龄识别，并与CodeAI合作提供AI素养资源。",
+      "uncertainty": "适用地区、上线节奏和实际保护效果需以后续产品状态与独立评估为准。",
+      "recommended": "制作青少年AI产品安全功能与教育使用边界清单，不做效果保证。",
+      "actionReason": "适合青少年内容安全、教育客户和AI产品治理选题，但与电商转化承接较弱。",
+      "actionDetail": "制作青少年AI产品安全功能与教育使用边界清单，不做效果保证。",
+      "evidence": "https://openai.com/index/chatgpt-for-teens/\nhttps://openai.com/index/partnering-with-codeai/",
+      "deadline": "2026-08-19T18:00:00+08:00",
+      "notRecommended": "不投广告、不全量召回、不把官方声明写成真实业务效果。",
+      "sourceLinks": [
+        {
+          "label": "Core source",
+          "domain": "openai.com",
+          "url": "https://openai.com/index/chatgpt-for-teens/"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "openai.com",
+          "url": "https://openai.com/index/partnering-with-codeai/"
+        }
+      ],
+      "source_links": [
+        {
+          "label": "Core source",
+          "domain": "openai.com",
+          "url": "https://openai.com/index/chatgpt-for-teens/"
+        },
+        {
+          "label": "Supporting source 1",
+          "domain": "openai.com",
+          "url": "https://openai.com/index/partnering-with-codeai/"
+        }
+      ],
+      "status": "正式热点",
+      "risk": "中风险：官方对象与正文可核，业务效果及采用规模未独立验证",
+      "owner": "科技研究/内容运营",
+      "monitor": "地区可用性、家长控制细节、年龄识别与独立安全评估。",
+      "candidate_kind": "event",
+      "daily_status": "NEW",
+      "previous_day_event_key_matched": false,
+      "hotspot_category": "科技与工具",
+      "signal_type": "technology_release",
+      "baseline_evidence": null,
+      "topic_resonance": null,
+      "official_rule": null,
+      "technology_change": "OpenAI推出面向13至17岁用户的ChatGPT for Teens，包含更强内置保护、家长控制、学习模式与年龄识别，并与CodeAI合作提供AI素养资源。",
+      "chanmama_relevance": "适合青少年内容安全、教育客户和AI产品治理选题，但与电商转化承接较弱。",
+      "next_step": "制作青少年AI产品安全功能与教育使用边界清单，不做效果保证。",
+      "explicitly_not_doing": "不投广告、不全量召回、不把官方声明写成真实业务效果。",
+      "official_evidence": [
+        {
+          "label": "ChatGPT for Teens",
+          "url": "https://openai.com/index/chatgpt-for-teens/",
+          "fact": "确认产品、保护与家长控制。"
+        },
+        {
+          "label": "CodeAI合作",
+          "url": "https://openai.com/index/partnering-with-codeai/",
+          "fact": "确认AI素养合作与教育资源。"
+        }
+      ],
+      "circle_evidence": {
+        "label": "OpenAI产品发布",
+        "url": "https://openai.com/index/chatgpt-for-teens/",
+        "fact": "只计官方事实，不计独立采用。"
+      },
+      "subject": {
+        "subject_id": "technology:openai:chatgpt-for-teens-20260818",
+        "kind": "technology",
+        "canonical_name": "ChatGPT for Teens",
+        "aliases": [
+          "青少年版 ChatGPT",
+          "OpenAI CodeAI青少年AI教育合作"
+        ],
+        "industry": "人工智能/教育与青少年安全",
+        "identity_status": "verified",
+        "identities": [
+          {
+            "platform": "OpenAI",
+            "platform_entity_id": "index:chatgpt-for-teens",
+            "url": "https://openai.com/index/chatgpt-for-teens/",
+            "verification_status": "verified",
+            "verified_at": "2026-08-19T10:51:40+08:00"
+          },
+          {
+            "platform": "OpenAI",
+            "platform_entity_id": "index:partnering-with-codeai",
+            "url": "https://openai.com/index/partnering-with-codeai/",
+            "verification_status": "verified",
+            "verified_at": "2026-08-19T10:51:40+08:00"
+          }
+        ]
+      },
+      "subject_kind": "technology",
+      "trend_metrics": [
+        {
+          "metric_id": "metric:openai:teens-launch",
+          "metric_name": "产品与保护功能发布",
+          "metric_value": "13至17岁体验、学习模式、家长控制与更强内置保护",
+          "unit": "官方发布",
+          "period": "2026-08-18",
+          "observed_at": "2026-08-19T10:51:40+08:00",
+          "source_url": "https://openai.com/index/chatgpt-for-teens/",
+          "evidence_group": "official-product",
+          "underlying_signal_id": "openai:teens:launch"
+        },
+        {
+          "metric_id": "metric:openai:codeai-partnership",
+          "metric_name": "AI素养合作",
+          "metric_value": "面向学生与教育者提供AI素养工具和资源",
+          "unit": "官方合作",
+          "period": "2026-08-18",
+          "observed_at": "2026-08-19T10:51:40+08:00",
+          "source_url": "https://openai.com/index/partnering-with-codeai/",
+          "evidence_group": "official-partnership",
+          "underlying_signal_id": "openai:teens:codeai"
+        }
+      ],
+      "expected_duration": {
+        "min_days": 14,
+        "max_days": 90,
+        "rationale": "产品与教育合作处于上线观察期。",
+        "review_at": "2026-08-26"
+      },
+      "target_audience": [
+        "教育与青少年产品团队",
+        "内容安全与合规团队",
+        "家长与教师"
+      ],
+      "active_search": {
+        "status": "hypothesis",
+        "evidence": [],
+        "boundary": "百度指数未取得候选曲线、数值或明确变化。"
+      },
+      "keyword_hypotheses": [
+        {
+          "keyword_id": "kw:openai:teens:01",
+          "text": "ChatGPT for Teens",
+          "intent": "对象词",
+          "evidence_refs": [
+            "metric:openai:teens-launch",
+            "metric:openai:codeai-partnership"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-18",
+          "valid_until": "2026-09-19",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "主动搜索未验证",
+            "落地页与监测未就绪"
+          ]
+        },
+        {
+          "keyword_id": "kw:openai:teens:02",
+          "text": "青少年版ChatGPT",
+          "intent": "问题词",
+          "evidence_refs": [
+            "metric:openai:teens-launch",
+            "metric:openai:codeai-partnership"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-18",
+          "valid_until": "2026-09-19",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "主动搜索未验证",
+            "落地页与监测未就绪"
+          ]
+        },
+        {
+          "keyword_id": "kw:openai:teens:03",
+          "text": "ChatGPT家长控制",
+          "intent": "问题词",
+          "evidence_refs": [
+            "metric:openai:teens-launch",
+            "metric:openai:codeai-partnership"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-18",
+          "valid_until": "2026-09-19",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "主动搜索未验证",
+            "落地页与监测未就绪"
+          ]
+        },
+        {
+          "keyword_id": "kw:openai:teens:04",
+          "text": "青少年AI安全",
+          "intent": "问题词",
+          "evidence_refs": [
+            "metric:openai:teens-launch",
+            "metric:openai:codeai-partnership"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-18",
+          "valid_until": "2026-09-19",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "主动搜索未验证",
+            "落地页与监测未就绪"
+          ]
+        },
+        {
+          "keyword_id": "kw:openai:teens:05",
+          "text": "CodeAI AI素养",
+          "intent": "问题词",
+          "evidence_refs": [
+            "metric:openai:teens-launch",
+            "metric:openai:codeai-partnership"
+          ],
+          "applicable_modes": [
+            "search",
+            "interest"
+          ],
+          "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+          "landing_page": {
+            "status": "planned",
+            "url": null,
+            "route": "每日热点对象专题页（尚未达到广告承接就绪）"
+          },
+          "valid_from": "2026-08-18",
+          "valid_until": "2026-09-19",
+          "validation_status": "hypothesis",
+          "risk_flags": [
+            "主动搜索未验证",
+            "落地页与监测未就绪"
+          ]
+        }
+      ],
+      "business_response_code": "C",
+      "business_response_label": "继续观察",
+      "business_response_score": 55,
+      "business_response_basis": "没有自然业务关联，只保留科技影响判断，最终执行等级最高为L-C。",
+      "actions": [
+        {
+          "hotspotId": "HT-20260819-007",
+          "actionType": "定向发布",
+          "task": "制作“OpenAI推出ChatGPT for Teens并与CodeAI合作，青少年安全与AI素养进入产品化阶段”事实与数据拆解。",
+          "owner": "科技研究/内容运营",
+          "collaborators": "数据研究、内容运营",
+          "deadline": "2026-08-19",
+          "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+          "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+          "stopCondition": "官方撤回、修订或证据失效时立即更新。",
+          "status": "待执行"
+        }
+      ],
+      "domain": "technology",
+      "scoring_model": "tech_v1",
+      "canonical_event_key": "openai-chatgpt-for-teens-launch-20260818",
+      "tech_topic": "teen_ai_product_safety",
+      "tech_scores": {
+        "technical_breakthrough": 3,
+        "circle_heat_velocity": 4,
+        "authority_cross_validation": 5,
+        "developer_market_adoption": 3,
+        "industry_competition_impact": 4,
+        "duration_diffusion_cycle": 4,
+        "application_transfer_value": 3,
+        "response_window": 5
+      },
+      "business_scores": {
+        "target_user_fit": 3,
+        "ecommerce_workflow_relevance": 2,
+        "product_data_fit": 2,
+        "geo_question_value": 4,
+        "conversion_brand_value": 3,
+        "execution_readiness_cost": 3
+      },
+      "tech_impact_score": 75,
+      "raw_tech_level": "T-A",
+      "tech_level": "T-A",
+      "business_fit_score": 55,
+      "action_level": "L-C",
+      "source_tier": "E3",
+      "independent_verification_count": 1,
+      "adoption_signals": [
+        "官方产品发布正文",
+        "官方CodeAI合作正文",
+        "产品保护与教育资源范围可核"
+      ],
+      "score_reasons": {
+        "technical_breakthrough": "产品安全与教育组合上线。",
+        "circle_heat_velocity": "官方新发布，未取得独立量化热度。",
+        "authority_cross_validation": "两篇官方正文互证。",
+        "developer_market_adoption": "实际采用未取得。",
+        "business_fit": "内容治理价值高，电商承接较弱。"
+      },
+      "score_caps": [
+        {
+          "rule": "no_natural_business_link",
+          "tech_cap": null,
+          "action_cap": "L-C",
+          "changed": true,
+          "reason": "没有自然业务关联，只保留科技影响判断，最终执行等级最高为L-C。"
+        },
+        {
+          "rule": "high_cost_action_block",
+          "tech_cap": null,
+          "action_cap": null,
+          "changed": false,
+          "reason": "缺少执行准备、成熟承接页或监测，禁止广告投流和全量召回。"
+        }
+      ],
+      "tech_score_details": [
+        {
+          "key": "technical_breakthrough",
+          "name": "技术突破强度",
+          "score": 3,
+          "weight": 20,
+          "weighted_score": 12
+        },
+        {
+          "key": "circle_heat_velocity",
+          "name": "圈层热度与涨速",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "authority_cross_validation",
+          "name": "权威与交叉验证",
+          "score": 5,
+          "weight": 15,
+          "weighted_score": 15
+        },
+        {
+          "key": "developer_market_adoption",
+          "name": "开发者与市场采用",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "industry_competition_impact",
+          "name": "行业竞争影响",
+          "score": 4,
+          "weight": 10,
+          "weighted_score": 8
+        },
+        {
+          "key": "duration_diffusion_cycle",
+          "name": "持续与扩散周期",
+          "score": 4,
+          "weight": 10,
+          "weighted_score": 8
+        },
+        {
+          "key": "application_transfer_value",
+          "name": "应用迁移价值",
+          "score": 3,
+          "weight": 10,
+          "weighted_score": 6
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "business_score_details": [
+        {
+          "key": "target_user_fit",
+          "name": "蝉妈妈目标用户匹配",
+          "score": 3,
+          "weight": 20,
+          "weighted_score": 12
+        },
+        {
+          "key": "ecommerce_workflow_relevance",
+          "name": "电商工作流关联",
+          "score": 2,
+          "weight": 20,
+          "weighted_score": 8
+        },
+        {
+          "key": "product_data_fit",
+          "name": "产品与数据承接",
+          "score": 2,
+          "weight": 20,
+          "weighted_score": 8
+        },
+        {
+          "key": "geo_question_value",
+          "name": "GEO问题价值",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "conversion_brand_value",
+          "name": "转化与品牌价值",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "execution_readiness_cost",
+          "name": "执行准备与成本",
+          "score": 3,
+          "weight": 10,
+          "weighted_score": 6
+        }
+      ],
+      "prohibited_actions": [
+        "广告投流",
+        "全量召回"
+      ],
+      "natural_business_link": false,
+      "execution_ready": false,
+      "mature_landing_page": false,
+      "measurement_ready": false,
+      "totalScore": null,
+      "grade": "L-C｜继续观察",
+      "gradeCode": "C",
+      "finalValue": 2,
+      "followDecision": "继续观察",
+      "downgradeReason": "没有自然业务关联，只保留科技影响判断，最终执行等级最高为L-C。",
+      "hotness_scoring_model": "hotness_v1",
+      "hotness_score": 81,
+      "raw_hotness_level": "H-A",
+      "hotness_level": "H-C",
+      "hotness_final_value": 2,
+      "hotness_score_details": [
+        {
+          "key": "absolute_demand",
+          "name": "需求规模",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "baseline_deviation",
+          "name": "相对基线变化",
+          "score": 4,
+          "weight": 25,
+          "weighted_score": 20
+        },
+        {
+          "key": "growth_velocity",
+          "name": "上升速度",
+          "score": 5,
+          "weight": 20,
+          "weighted_score": 20
+        },
+        {
+          "key": "persistence",
+          "name": "持续时间",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "cross_platform_spread",
+          "name": "跨平台扩散",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "freshness",
+          "name": "数据新鲜度",
+          "score": 4,
+          "weight": 5,
+          "weighted_score": 4
+        }
+      ],
+      "hotness_caps": [
+        {
+          "rule": "single_platform_cap",
+          "hotness_cap": "H-C",
+          "changed": true,
+          "reason": "只有单平台信号，热点成立度最高H-C。"
+        }
+      ],
+      "hotness_signal_type": "technology_release",
+      "hotness_independent_platform_count": 1,
+      "hotness_baseline_verified": true,
+      "hotness_freshness_verified": true,
+      "hotness_change_signals": [
+        "官方产品发布正文",
+        "官方CodeAI合作正文",
+        "产品保护与教育资源范围可核"
+      ],
+      "hotness_requires_baseline": false,
+      "hotness_comparison_baseline_verified": true,
+      "hotness_baseline_type": "官方发布或当日官方复核",
+      "hotness_normalization_flags": [],
+      "hotness_multi_period_growth_verified": false,
+      "hotness_independent_change_signals": 2,
+      "content_scoring_model": "content_potential_v1",
+      "content_potential_score": 75,
+      "raw_content_potential_level": "P-A",
+      "content_potential_level": "P-C",
+      "content_final_value": 2,
+      "content_score_details": [
+        {
+          "key": "audience_demand",
+          "name": "受众需求规模",
+          "score": 4,
+          "weight": 20,
+          "weighted_score": 16
+        },
+        {
+          "key": "demand_velocity",
+          "name": "需求上涨速度",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "content_supply_gap",
+          "name": "内容供给缺口",
+          "score": 4,
+          "weight": 15,
+          "weighted_score": 12
+        },
+        {
+          "key": "target_user_fit",
+          "name": "目标用户匹配",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "data_content_advantage",
+          "name": "蝉妈妈数据优势",
+          "score": 3,
+          "weight": 15,
+          "weighted_score": 9
+        },
+        {
+          "key": "discussion_shareability",
+          "name": "讨论与传播性",
+          "score": 4,
+          "weight": 10,
+          "weighted_score": 8
+        },
+        {
+          "key": "content_lifecycle",
+          "name": "内容生命周期",
+          "score": 4,
+          "weight": 5,
+          "weighted_score": 4
+        },
+        {
+          "key": "response_window",
+          "name": "响应窗口",
+          "score": 5,
+          "weight": 5,
+          "weighted_score": 5
+        }
+      ],
+      "content_caps": [
+        {
+          "rule": "targeted_audience_cap",
+          "potential_cap": "P-B",
+          "changed": true,
+          "reason": "定向专业内容可以高业务优先，但不按大众高流量话题评为P-A。"
+        },
+        {
+          "rule": "no_qualified_traffic_route",
+          "potential_cap": "P-C",
+          "changed": true,
+          "reason": "搜索、社媒或定向路线均未达到最低成立条件，内容潜力最高P-C。"
+        }
+      ],
+      "content_source_tier": "E3",
+      "traffic_route": "targeted",
+      "independent_platform_count": 1,
+      "demand_signals": [
+        "平台：官方来源｜页面：OpenAI推出ChatGPT for Teens并与CodeAI合作，青少年安全与AI素养进入产品化阶段｜观察日期：2026-08-19｜变化：8月18日产品发布与CodeAI合作两篇官方正文同时上线，8月19日完整内容可核。｜https://openai.com/index/chatgpt-for-teens/"
+      ],
+      "content_baseline_verified": true,
+      "content_requires_baseline": false,
+      "content_comparison_baseline_verified": true,
+      "content_baseline_type": "官方发布或当日官方复核",
+      "content_normalization_flags": [],
+      "content_multi_period_growth_verified": false,
+      "content_independent_change_signals": 2,
+      "supply_gap_verified": false,
+      "content_freshness_verified": true,
+      "chanmama_answerable": true,
+      "query_cluster": [
+        "ChatGPT for Teens",
+        "青少年版ChatGPT",
+        "ChatGPT家长控制",
+        "青少年AI安全",
+        "CodeAI AI素养"
+      ],
+      "channel_scores": {
+        "website": 82,
+        "wechat": 84,
+        "short_video": 72,
+        "xiaohongshu": 70,
+        "private_domain": 74
+      },
+      "channel_reasons": {
+        "primary": "适合青少年内容安全、教育客户和AI产品治理选题，但与电商转化承接较弱。"
+      },
+      "recommended_channels": [
+        "website",
+        "wechat",
+        "private_domain"
+      ],
+      "primary_topic": "OpenAI推出ChatGPT for Teens并与CodeAI合作，青少年安全与AI素养进入产品化阶段",
+      "early_publish_title": "OpenAI推出ChatGPT for Teens并与CodeAI合作，青少年安全与AI素养进入产品化阶段",
+      "content_angle": "制作青少年AI产品安全功能与教育使用边界清单，不做效果保证。",
+      "measurement_plan": "对象词曝光、内容点击、专题访问与验证完成率。",
+      "stop_condition": "官方撤回、修订或后续验证证伪时立即更新。",
+      "content_score_reasons": {},
+      "topic_value_score": 75,
+      "topic_value_code": "A",
+      "topic_value_label": "较高潜力",
+      "publication_status_code": "observe",
+      "publication_status": "继续观察",
+      "publication_priority": 2,
+      "publication_mode": "只记录信号",
+      "publication_basis": "已有真实信号，但选题价值或内容承接尚不足，继续观察变化。",
+      "fact_boundary": "不保证安全功能效果，不推断所有地区已上线，不把合作调查写成总体人群结论。",
+      "pending_confirmation": [
+        "真实开发者或用户采用",
+        "电商工作流实测",
+        "真实搜索趋势"
+      ],
+      "confirmed_trigger": true,
+      "publishable_channel": true,
+      "ad_opportunity_scoring_model": "ad_opportunity_v1",
+      "ad_modes": {
+        "search": {
+          "activation_mode": "search",
+          "raw_score": 55,
+          "score": 55,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "active_search_evidence",
+              "name": "主动搜索证据",
+              "score": 1,
+              "weight": 30,
+              "weighted_score": 6
+            },
+            {
+              "key": "keyword_clarity",
+              "name": "关键词明确度",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "landing_fit",
+              "name": "落地承接",
+              "score": 1,
+              "weight": 20,
+              "weighted_score": 4
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 10,
+              "weighted_score": 10
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
+              "score": 2,
+              "weight": 5,
+              "weighted_score": 2
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "没有真实主动搜索证据",
+            "搜索转化路径未准备"
+          ],
+          "evidence_refs": [
+            "metric:openai:teens-launch",
+            "metric:openai:codeai-partnership"
+          ],
+          "reasons": {
+            "summary": "对象可核，但主动搜索、落地页、监测和转化链路未就绪，第一阶段不投广告。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "active_search_confirmed": false,
+            "keyword_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "interest": {
+          "activation_mode": "interest",
+          "raw_score": 84,
+          "score": 64,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "content_diffusion",
+              "name": "内容扩散",
+              "score": 4,
+              "weight": 25,
+              "weighted_score": 20
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 5,
+              "weight": 20,
+              "weighted_score": 20
+            },
+            {
+              "key": "creative_fit",
+              "name": "素材适配",
+              "score": 4,
+              "weight": 15,
+              "weighted_score": 12
+            },
+            {
+              "key": "product_fit",
+              "name": "产品承接",
+              "score": 4,
+              "weight": 20,
+              "weighted_score": 16
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 4,
+              "weight": 10,
+              "weighted_score": 8
+            },
+            {
+              "key": "conversion_path",
+              "name": "转化路径",
               "score": 3,
               "weight": 5,
               "weighted_score": 3
@@ -5137,21 +6050,109 @@
           "blockers": [
             "广告落地页未完成",
             "曝光、点击、访问与注册监测未接通",
-            "电商转化链路未准备"
+            "兴趣流量转化路径未准备"
           ],
           "evidence_refs": [
-            "metric:longjiasheng-kale-toast:series",
-            "metric:longjiasheng-kale-toast:distribution"
+            "metric:openai:teens-launch",
+            "metric:openai:codeai-partnership"
           ],
           "reasons": {
-            "summary": "具体商品、多日平台预估与分发覆盖变化成立；缺匹配落地页、监测和真实搜索趋势，第一阶段只保留关键词假设。"
+            "summary": "对象可核，但主动搜索、落地页、监测和转化链路未就绪，第一阶段不投广告。"
           },
           "landing_page_ready": false,
           "measurement_ready": false,
           "compliance_ready": true,
           "prerequisites": {
-            "verified_offer": true,
-            "transaction_signal_confirmed": true,
+            "content_signal_confirmed": true,
+            "creative_ready": true,
+            "conversion_path_ready": false
+          }
+        },
+        "commerce": {
+          "activation_mode": "commerce",
+          "raw_score": 57,
+          "score": 57,
+          "action": "not_eligible",
+          "eligible": false,
+          "score_details": [
+            {
+              "key": "transaction_trend",
+              "name": "交易趋势",
+              "score": 3,
+              "weight": 25,
+              "weighted_score": 15
+            },
+            {
+              "key": "product_path",
+              "name": "商品链路",
+              "score": 3,
+              "weight": 20,
+              "weighted_score": 12
+            },
+            {
+              "key": "audience_fit",
+              "name": "目标人群",
+              "score": 3,
+              "weight": 20,
+              "weighted_score": 12
+            },
+            {
+              "key": "shop_product_fit",
+              "name": "商品或店铺承接",
+              "score": 2,
+              "weight": 20,
+              "weighted_score": 8
+            },
+            {
+              "key": "duration",
+              "name": "持续周期",
+              "score": 3,
+              "weight": 5,
+              "weighted_score": 3
+            },
+            {
+              "key": "conversion_value",
+              "name": "转化价值",
+              "score": 2,
+              "weight": 5,
+              "weighted_score": 2
+            },
+            {
+              "key": "compliance",
+              "name": "合规性",
+              "score": 5,
+              "weight": 5,
+              "weighted_score": 5
+            }
+          ],
+          "caps": [
+            {
+              "rule": "landing_or_measurement_not_ready",
+              "score_cap": 64,
+              "changed": false,
+              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
+            }
+          ],
+          "blockers": [
+            "广告落地页未完成",
+            "曝光、点击、访问与注册监测未接通",
+            "商品或店铺身份未核",
+            "没有可核交易变化信号",
+            "电商转化链路未准备"
+          ],
+          "evidence_refs": [
+            "metric:openai:teens-launch",
+            "metric:openai:codeai-partnership"
+          ],
+          "reasons": {
+            "summary": "对象可核，但主动搜索、落地页、监测和转化链路未就绪，第一阶段不投广告。"
+          },
+          "landing_page_ready": false,
+          "measurement_ready": false,
+          "compliance_ready": true,
+          "prerequisites": {
+            "verified_offer": false,
+            "transaction_signal_confirmed": false,
             "conversion_path_ready": false
           }
         }
@@ -5164,19 +6165,21 @@
         "曝光、点击、访问与注册监测未接通"
       ],
       "breakout_scoring_model": "breakout_v1",
-      "breakout_status": "confirmed_breakout",
+      "breakout_status": "observation_only",
       "breakout_signal_count": 2,
-      "breakout_gates_passed": true,
-      "breakout_blockers": []
+      "breakout_gates_passed": false,
+      "breakout_blockers": [
+        "多周期变化未核"
+      ]
     },
     {
-      "id": "HT-20260819-007",
+      "id": "HT-20260819-008",
       "event_key": "qwen-3-8-27b-hf-trending-20260818",
-      "foundAt": "2026-08-19 09:30-10:20",
+      "foundAt": "2026-08-19 10:19-10:45 revision 2",
       "name": "Qwen3.8-27B连续位居Hugging Face趋势首位，多模态模型与开发者采用信号延续",
       "type": "多模态开源模型/开发者采用",
       "sourceLevel": "E3",
-      "publishedAt": "模型页2026-08-19复核",
+      "publishedAt": "模型页与趋势页2026-08-19二次复核",
       "signal": "Qwen官方模型页确认28B视觉语言模型、262k原生上下文及Transformers、vLLM、SGLang接入；8月19日Hugging Face趋势页仍列首位。",
       "uncertainty": "平台展示量和关注不等于生产采用人数，InfoQ报道只作圈层线索。",
       "recommended": "建立商品图文理解与结构化输出小样本回归集，验证成本、吞吐和中文电商语义。",
@@ -5224,6 +6227,8 @@
       "owner": "科技研究/内容运营",
       "monitor": "模型卡更新、趋势位置、下载/关注变化与推理框架兼容。",
       "candidate_kind": "event",
+      "daily_status": "CONTINUING",
+      "previous_day_event_key_matched": true,
       "hotspot_category": "科技与工具",
       "signal_type": "technology_release_and_adoption",
       "baseline_evidence": null,
@@ -5267,7 +6272,7 @@
             "platform_entity_id": "Qwen/Qwen3.8-27B",
             "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
             "verification_status": "verified",
-            "verified_at": "2026-08-19T09:43:53+08:00"
+            "verified_at": "2026-08-19T10:51:40+08:00"
           }
         ]
       },
@@ -5279,7 +6284,7 @@
           "metric_value": "28B视觉语言模型，262k原生上下文，支持Transformers/vLLM/SGLang",
           "unit": "平台展示",
           "period": "2026-08-19",
-          "observed_at": "2026-08-19T09:43:53+08:00",
+          "observed_at": "2026-08-19T10:51:40+08:00",
           "source_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
           "evidence_group": "official_model",
           "underlying_signal_id": "hf:Qwen/Qwen3.8-27B:model"
@@ -5290,7 +6295,7 @@
           "metric_value": "趋势首位，约666k平台展示量、11.1k关注",
           "unit": "平台展示",
           "period": "2026-08-19",
-          "observed_at": "2026-08-19T09:43:53+08:00",
+          "observed_at": "2026-08-19T10:51:40+08:00",
           "source_url": "https://huggingface.co/models?sort=trending",
           "evidence_group": "developer_adoption",
           "underlying_signal_id": "hf:Qwen/Qwen3.8-27B:trending"
@@ -5332,7 +6337,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-10-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -5358,7 +6363,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-10-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -5384,7 +6389,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-10-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -5410,7 +6415,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-10-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -5436,7 +6441,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-10-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -5450,15 +6455,15 @@
       "business_response_basis": "双轨分数矩阵决定",
       "actions": [
         {
-          "hotspotId": "HT-20260819-007",
+          "hotspotId": "HT-20260819-008",
           "actionType": "定向发布",
-          "task": "制作“Qwen3.8-27B登上Hugging Face趋势首位，官方模型页显示多模态能力与10.7k关注”事实与数据拆解。",
+          "task": "制作“Qwen3.8-27B连续位居Hugging Face趋势首位，多模态模型与开发者采用信号延续”事实与数据拆解。",
           "owner": "科技研究/内容运营",
           "collaborators": "数据研究、内容运营",
           "deadline": "2026-08-19",
-          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-          "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-          "stopCondition": "官方撤回、原始产物身份不符或采用信号连续回落时停止滚动。",
+          "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+          "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+          "stopCondition": "官方撤回、修订或证据失效时立即更新。",
           "status": "待执行"
         }
       ],
@@ -6109,13 +7114,13 @@
       ]
     },
     {
-      "id": "HT-20260819-008",
+      "id": "HT-20260819-009",
       "event_key": "ltx-2-5-hf-trending-20260818",
-      "foundAt": "2026-08-19 09:30-10:20",
+      "foundAt": "2026-08-19 10:19-10:45 revision 2",
       "name": "LTX-2.5保持Hugging Face趋势前列，多镜头同步音视频生成进入开发者验证期",
       "type": "音视频生成模型/内容工具",
       "sourceLevel": "E3",
-      "publishedAt": "模型页2026-08-19复核",
+      "publishedAt": "模型页与趋势页2026-08-19二次复核",
       "signal": "官方模型卡确认开放权重、本地执行、多镜头与同步音视频生成；8月19日趋势页显示约504k平台展示量和1.22k关注。",
       "uncertainty": "需要同意许可条款，商业使用受营收门槛和许可约束，平台展示量不等于实际采用。",
       "recommended": "先做许可审查，再以品牌短视频多镜头一致性和中文指令遵循进行小样本验证。",
@@ -6153,6 +7158,8 @@
       "owner": "科技研究/内容运营",
       "monitor": "模型卡、许可、趋势位置、生成稳定性和主流工作流接入。",
       "candidate_kind": "event",
+      "daily_status": "CONTINUING",
+      "previous_day_event_key_matched": true,
       "hotspot_category": "科技与工具",
       "signal_type": "technology_release_and_adoption",
       "baseline_evidence": null,
@@ -6191,7 +7198,7 @@
             "platform_entity_id": "Lightricks/LTX-2.5",
             "url": "https://huggingface.co/Lightricks/LTX-2.5",
             "verification_status": "verified",
-            "verified_at": "2026-08-19T09:43:53+08:00"
+            "verified_at": "2026-08-19T10:51:40+08:00"
           }
         ]
       },
@@ -6203,7 +7210,7 @@
           "metric_value": "开放权重，多镜头与同步音视频生成",
           "unit": "官方模型页",
           "period": "2026-08-19",
-          "observed_at": "2026-08-19T09:43:53+08:00",
+          "observed_at": "2026-08-19T10:51:40+08:00",
           "source_url": "https://huggingface.co/Lightricks/LTX-2.5",
           "evidence_group": "official_model",
           "underlying_signal_id": "hf:Lightricks/LTX-2.5:model"
@@ -6214,7 +7221,7 @@
           "metric_value": "约504k平台展示量、1.22k关注",
           "unit": "平台展示",
           "period": "2026-08-19",
-          "observed_at": "2026-08-19T09:43:53+08:00",
+          "observed_at": "2026-08-19T10:51:40+08:00",
           "source_url": "https://huggingface.co/models?sort=trending",
           "evidence_group": "developer_adoption",
           "underlying_signal_id": "hf:Lightricks/LTX-2.5:trending"
@@ -6256,7 +7263,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-10-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -6282,7 +7289,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-10-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -6308,7 +7315,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-10-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -6334,7 +7341,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-10-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -6360,7 +7367,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-10-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -6374,15 +7381,15 @@
       "business_response_basis": "双轨分数矩阵决定",
       "actions": [
         {
-          "hotspotId": "HT-20260819-008",
+          "hotspotId": "HT-20260819-009",
           "actionType": "定向发布",
-          "task": "制作“LTX-2.5进入Hugging Face趋势前列，开放权重支持多镜头同步音视频生成”事实与数据拆解。",
+          "task": "制作“LTX-2.5保持Hugging Face趋势前列，多镜头同步音视频生成进入开发者验证期”事实与数据拆解。",
           "owner": "科技研究/内容运营",
           "collaborators": "数据研究、内容运营",
           "deadline": "2026-08-19",
-          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-          "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-          "stopCondition": "官方撤回、原始产物身份不符或采用信号连续回落时停止滚动。",
+          "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+          "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+          "stopCondition": "官方撤回、修订或证据失效时立即更新。",
           "status": "待执行"
         }
       ],
@@ -7032,13 +8039,13 @@
       ]
     },
     {
-      "id": "HT-20260819-009",
+      "id": "HT-20260819-010",
       "event_key": "moneyprinterturbo-github-trending-20260818",
-      "foundAt": "2026-08-19 09:30-10:20",
+      "foundAt": "2026-08-19 10:19-10:45 revision 2",
       "name": "MoneyPrinterTurbo连续位居GitHub日趋势首位，短视频自动化工作流关注延续",
       "type": "开源短视频工作流/开发者采用",
       "sourceLevel": "E3",
-      "publishedAt": "2026-08-19复核",
+      "publishedAt": "GitHub趋势页2026-08-19二次复核",
       "signal": "原始代码仓提供从主题到脚本、素材、字幕、背景音乐和高清短视频合成的一站式工作流。",
       "uncertainty": "星标与fork是开发者关注信号，不等于商业使用、视频质量或转化效果。",
       "recommended": "在隔离环境以非商业素材做零发布测试，验证中文选题、素材版权、字幕、失败恢复和成片质量。",
@@ -7076,6 +8083,8 @@
       "owner": "科技研究/内容运营",
       "monitor": "趋势位置、版本、问题单、素材来源与许可风险。",
       "candidate_kind": "event",
+      "daily_status": "CONTINUING",
+      "previous_day_event_key_matched": true,
       "hotspot_category": "科技与工具",
       "signal_type": "technology_release_and_adoption",
       "baseline_evidence": null,
@@ -7114,7 +8123,7 @@
             "platform_entity_id": "harry0703/MoneyPrinterTurbo",
             "url": "https://github.com/harry0703/MoneyPrinterTurbo",
             "verification_status": "verified",
-            "verified_at": "2026-08-19T09:43:53+08:00"
+            "verified_at": "2026-08-19T10:51:40+08:00"
           }
         ]
       },
@@ -7126,7 +8135,7 @@
           "metric_value": "106,140星、16,129 fork，一站式短视频工作流",
           "unit": "GitHub页面展示",
           "period": "2026-08-19",
-          "observed_at": "2026-08-19T09:43:53+08:00",
+          "observed_at": "2026-08-19T10:51:40+08:00",
           "source_url": "https://github.com/harry0703/MoneyPrinterTurbo",
           "evidence_group": "official_repository",
           "underlying_signal_id": "github:harry0703/MoneyPrinterTurbo:repository"
@@ -7137,7 +8146,7 @@
           "metric_value": "日趋势首位，当日新增1,189星",
           "unit": "GitHub页面展示",
           "period": "2026-08-19",
-          "observed_at": "2026-08-19T09:43:53+08:00",
+          "observed_at": "2026-08-19T10:51:40+08:00",
           "source_url": "https://github.com/trending",
           "evidence_group": "developer_adoption",
           "underlying_signal_id": "github:harry0703/MoneyPrinterTurbo:trending"
@@ -7179,7 +8188,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-10-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -7205,7 +8214,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-10-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -7231,7 +8240,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-10-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -7257,7 +8266,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-10-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -7283,7 +8292,7 @@
             "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
           },
           "valid_from": "2026-08-18",
-          "valid_until": "2026-10-18",
+          "valid_until": "2026-09-19",
           "validation_status": "hypothesis",
           "risk_flags": [
             "主动搜索未验证",
@@ -7297,15 +8306,15 @@
       "business_response_basis": "双轨分数矩阵决定",
       "actions": [
         {
-          "hotspotId": "HT-20260819-009",
+          "hotspotId": "HT-20260819-010",
           "actionType": "定向发布",
-          "task": "制作“MoneyPrinterTurbo登上GitHub日趋势首位，AI短视频自动化工作流单日新增1,189星”事实与数据拆解。",
+          "task": "制作“MoneyPrinterTurbo连续位居GitHub日趋势首位，短视频自动化工作流关注延续”事实与数据拆解。",
           "owner": "科技研究/内容运营",
           "collaborators": "数据研究、内容运营",
           "deadline": "2026-08-19",
-          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-          "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-          "stopCondition": "官方撤回、原始产物身份不符或采用信号连续回落时停止滚动。",
+          "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+          "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+          "stopCondition": "官方撤回、修订或证据失效时立即更新。",
           "status": "待执行"
         }
       ],
@@ -7954,923 +8963,6 @@
       "breakout_blockers": [
         "多周期变化未核"
       ]
-    },
-    {
-      "id": "HT-20260819-010",
-      "event_key": "openai-defenders-window-published-20260817",
-      "foundAt": "2026-08-19 09:30-10:20",
-      "name": "OpenAI发布“防御者窗口”，提出用AI加速漏洞发现、修复与安全代码验证",
-      "type": "AI安全/企业治理",
-      "sourceLevel": "E3",
-      "publishedAt": "2026-08-17发布，2026-08-19官方正文复核",
-      "signal": "OpenAI官方文章总结AI攻击能力演进，并给出组织安全基础、AI辅助防御和安全代码训练方向。",
-      "uncertainty": "文章包含前瞻判断，不能外推为所有企业已具备自动化防御能力。",
-      "recommended": "形成AI工具接入安全清单，覆盖权限最小化、密钥、依赖、代码审计、事件响应和供应链隔离。",
-      "actionReason": "影响企业AI工具、代码供应链、账号权限与数据处理安全，可转化为电商数据团队治理清单。",
-      "actionDetail": "形成AI工具接入安全清单，覆盖权限最小化、密钥、依赖、代码审计、事件响应和供应链隔离。",
-      "evidence": "https://openai.com/index/the-defenders-window/",
-      "deadline": "2026-08-19T18:00:00+08:00",
-      "notRecommended": "不把榜单位置或平台互动值写成真实采用人数；不在第一阶段投广告或全量召回。",
-      "sourceLinks": [
-        {
-          "label": "Core source",
-          "domain": "openai.com",
-          "url": "https://openai.com/index/the-defenders-window/"
-        },
-        {
-          "label": "Supporting source 1",
-          "domain": "leiphone.com",
-          "url": "https://www.leiphone.com/category/ai"
-        }
-      ],
-      "source_links": [
-        {
-          "label": "Core source",
-          "domain": "openai.com",
-          "url": "https://openai.com/index/the-defenders-window/"
-        },
-        {
-          "label": "Supporting source 1",
-          "domain": "leiphone.com",
-          "url": "https://www.leiphone.com/category/ai"
-        }
-      ],
-      "status": "正式热点",
-      "risk": "中风险-已通过",
-      "owner": "科技研究/内容运营",
-      "monitor": "OpenAI后续安全模型、事件时间线、最佳实践与外部验证。",
-      "candidate_kind": "event",
-      "hotspot_category": "科技与工具",
-      "signal_type": "technology_release_and_adoption",
-      "baseline_evidence": null,
-      "topic_resonance": null,
-      "official_rule": null,
-      "technology_change": "OpenAI官方文章总结AI攻击能力演进，并给出组织安全基础、AI辅助防御和安全代码训练方向。",
-      "chanmama_relevance": "影响企业AI工具、代码供应链、账号权限与数据处理安全，可转化为电商数据团队治理清单。",
-      "next_step": "形成AI工具接入安全清单，覆盖权限最小化、密钥、依赖、代码审计、事件响应和供应链隔离。",
-      "explicitly_not_doing": "不把榜单位置或平台互动值写成真实采用人数；不在第一阶段投广告或全量召回。",
-      "official_evidence": [
-        {
-          "label": "OpenAI官方文章",
-          "url": "https://openai.com/index/the-defenders-window/",
-          "fact": "确认发布日、威胁判断和防御建议。"
-        }
-      ],
-      "circle_evidence": [
-        {
-          "label": "雷峰网AI",
-          "url": "https://www.leiphone.com/category/ai",
-          "fact": "提供当日科技圈关注线索，按E1处理。"
-        }
-      ],
-      "subject": {
-        "subject_id": "technology:openai:defenders-window",
-        "kind": "technology",
-        "canonical_name": "OpenAI防御者窗口",
-        "aliases": [
-          "The Defender's Window"
-        ],
-        "industry": "人工智能/网络安全治理",
-        "identity_status": "verified",
-        "identities": [
-          {
-            "platform": "OpenAI",
-            "platform_entity_id": "index:the-defenders-window",
-            "url": "https://openai.com/index/the-defenders-window/",
-            "verification_status": "verified",
-            "verified_at": "2026-08-19T09:43:53+08:00"
-          }
-        ]
-      },
-      "subject_kind": "technology",
-      "trend_metrics": [
-        {
-          "metric_id": "metric:openai-defenders-window:official",
-          "metric_name": "OpenAI官方发布",
-          "metric_value": "2026-08-17发布AI防御者窗口与组织安全建议",
-          "unit": "官方正文",
-          "period": "2026-08-17",
-          "observed_at": "2026-08-19T09:43:53+08:00",
-          "source_url": "https://openai.com/index/the-defenders-window/",
-          "evidence_group": "official_release",
-          "underlying_signal_id": "openai:index:the-defenders-window"
-        },
-        {
-          "metric_id": "metric:openai-defenders-window:circle",
-          "metric_name": "科技圈线索",
-          "metric_value": "雷峰网AI当日跟进OpenAI与Hugging Face安全事件",
-          "unit": "媒体线索",
-          "period": "2026-08-19",
-          "observed_at": "2026-08-19T09:43:53+08:00",
-          "source_url": "https://www.leiphone.com/category/ai",
-          "evidence_group": "media_clue",
-          "underlying_signal_id": "leiphone:ai:openai-hf-security"
-        }
-      ],
-      "expected_duration": {
-        "min_days": 14,
-        "max_days": 90,
-        "rationale": "企业AI安全治理持续影响。",
-        "review_at": "2026-08-25"
-      },
-      "target_audience": [
-        "企业技术与安全团队",
-        "电商数据产品团队",
-        "AI工具使用者"
-      ],
-      "active_search": {
-        "status": "hypothesis",
-        "evidence": [],
-        "boundary": "未取得真实搜索平台指标，不展示搜索量。"
-      },
-      "keyword_hypotheses": [
-        {
-          "keyword_id": "kw:openai-defenders-window:01",
-          "text": "OpenAI防御者窗口",
-          "intent": "对象词",
-          "evidence_refs": [
-            "metric:openai-defenders-window:official",
-            "metric:openai-defenders-window:circle"
-          ],
-          "applicable_modes": [
-            "search",
-            "interest"
-          ],
-          "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-          "landing_page": {
-            "status": "planned",
-            "url": null,
-            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
-          },
-          "valid_from": "2026-08-18",
-          "valid_until": "2026-11-18",
-          "validation_status": "hypothesis",
-          "risk_flags": [
-            "主动搜索未验证",
-            "落地页与监测未就绪"
-          ]
-        },
-        {
-          "keyword_id": "kw:openai-defenders-window:02",
-          "text": "AI安全防御",
-          "intent": "业务问题词",
-          "evidence_refs": [
-            "metric:openai-defenders-window:official",
-            "metric:openai-defenders-window:circle"
-          ],
-          "applicable_modes": [
-            "search",
-            "interest"
-          ],
-          "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-          "landing_page": {
-            "status": "planned",
-            "url": null,
-            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
-          },
-          "valid_from": "2026-08-18",
-          "valid_until": "2026-11-18",
-          "validation_status": "hypothesis",
-          "risk_flags": [
-            "主动搜索未验证",
-            "落地页与监测未就绪"
-          ]
-        },
-        {
-          "keyword_id": "kw:openai-defenders-window:03",
-          "text": "AI代码供应链安全",
-          "intent": "业务问题词",
-          "evidence_refs": [
-            "metric:openai-defenders-window:official",
-            "metric:openai-defenders-window:circle"
-          ],
-          "applicable_modes": [
-            "search",
-            "interest"
-          ],
-          "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-          "landing_page": {
-            "status": "planned",
-            "url": null,
-            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
-          },
-          "valid_from": "2026-08-18",
-          "valid_until": "2026-11-18",
-          "validation_status": "hypothesis",
-          "risk_flags": [
-            "主动搜索未验证",
-            "落地页与监测未就绪"
-          ]
-        },
-        {
-          "keyword_id": "kw:openai-defenders-window:04",
-          "text": "企业AI安全清单",
-          "intent": "业务问题词",
-          "evidence_refs": [
-            "metric:openai-defenders-window:official",
-            "metric:openai-defenders-window:circle"
-          ],
-          "applicable_modes": [
-            "search",
-            "interest"
-          ],
-          "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-          "landing_page": {
-            "status": "planned",
-            "url": null,
-            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
-          },
-          "valid_from": "2026-08-18",
-          "valid_until": "2026-11-18",
-          "validation_status": "hypothesis",
-          "risk_flags": [
-            "主动搜索未验证",
-            "落地页与监测未就绪"
-          ]
-        },
-        {
-          "keyword_id": "kw:openai-defenders-window:05",
-          "text": "AI漏洞修复",
-          "intent": "业务问题词",
-          "evidence_refs": [
-            "metric:openai-defenders-window:official",
-            "metric:openai-defenders-window:circle"
-          ],
-          "applicable_modes": [
-            "search",
-            "interest"
-          ],
-          "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-          "landing_page": {
-            "status": "planned",
-            "url": null,
-            "route": "每日热点对应对象专题页（尚未达到广告承接就绪）"
-          },
-          "valid_from": "2026-08-18",
-          "valid_until": "2026-11-18",
-          "validation_status": "hypothesis",
-          "risk_flags": [
-            "主动搜索未验证",
-            "落地页与监测未就绪"
-          ]
-        }
-      ],
-      "business_response_code": "A",
-      "business_response_label": "业务重点响应",
-      "business_response_score": 83,
-      "business_response_basis": "双轨分数矩阵决定",
-      "actions": [
-        {
-          "hotspotId": "HT-20260819-010",
-          "actionType": "定向发布",
-          "task": "制作“OpenAI发布“防御者窗口”，提出用AI加速漏洞发现、修复与安全代码验证”事实与数据拆解。",
-          "owner": "科技研究/内容运营",
-          "collaborators": "数据研究、内容运营",
-          "deadline": "2026-08-19",
-          "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-          "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-          "stopCondition": "官方撤回、原始产物身份不符或采用信号连续回落时停止滚动。",
-          "status": "待执行"
-        }
-      ],
-      "domain": "technology",
-      "scoring_model": "tech_v1",
-      "canonical_event_key": "openai-defenders-window-published-20260817",
-      "tech_topic": "openai_ai_cyber_defender_window",
-      "tech_scores": {
-        "technical_breakthrough": 3,
-        "circle_heat_velocity": 4,
-        "authority_cross_validation": 5,
-        "developer_market_adoption": 3,
-        "industry_competition_impact": 5,
-        "duration_diffusion_cycle": 5,
-        "application_transfer_value": 5,
-        "response_window": 5
-      },
-      "business_scores": {
-        "target_user_fit": 4,
-        "ecommerce_workflow_relevance": 4,
-        "product_data_fit": 4,
-        "geo_question_value": 5,
-        "conversion_brand_value": 4,
-        "execution_readiness_cost": 4
-      },
-      "tech_impact_score": 83,
-      "raw_tech_level": "T-A",
-      "tech_level": "T-A",
-      "business_fit_score": 83,
-      "action_level": "L-A",
-      "source_tier": "E3",
-      "independent_verification_count": 2,
-      "adoption_signals": [
-        "OpenAI官方发布",
-        "科技媒体当日跟进并指向同一事件"
-      ],
-      "score_reasons": {
-        "technical_breakthrough": "主要是治理与防御建议，不是单一新模型发布。",
-        "circle_heat_velocity": "官方发布后科技媒体当日跟进。",
-        "authority_cross_validation": "OpenAI官方正文可读，媒体只作圈层线索。",
-        "developer_market_adoption": "未取得独立部署数据，采用维度保守。",
-        "business_fit": "与企业AI工具、代码供应链和数据安全自然关联。"
-      },
-      "score_caps": [
-        {
-          "rule": "high_cost_action_block",
-          "tech_cap": null,
-          "action_cap": null,
-          "changed": false,
-          "reason": "缺少执行准备、成熟承接页或监测，禁止广告投流和全量召回。"
-        }
-      ],
-      "tech_score_details": [
-        {
-          "key": "technical_breakthrough",
-          "name": "技术突破强度",
-          "score": 3,
-          "weight": 20,
-          "weighted_score": 12
-        },
-        {
-          "key": "circle_heat_velocity",
-          "name": "圈层热度与涨速",
-          "score": 4,
-          "weight": 15,
-          "weighted_score": 12
-        },
-        {
-          "key": "authority_cross_validation",
-          "name": "权威与交叉验证",
-          "score": 5,
-          "weight": 15,
-          "weighted_score": 15
-        },
-        {
-          "key": "developer_market_adoption",
-          "name": "开发者与市场采用",
-          "score": 3,
-          "weight": 15,
-          "weighted_score": 9
-        },
-        {
-          "key": "industry_competition_impact",
-          "name": "行业竞争影响",
-          "score": 5,
-          "weight": 10,
-          "weighted_score": 10
-        },
-        {
-          "key": "duration_diffusion_cycle",
-          "name": "持续与扩散周期",
-          "score": 5,
-          "weight": 10,
-          "weighted_score": 10
-        },
-        {
-          "key": "application_transfer_value",
-          "name": "应用迁移价值",
-          "score": 5,
-          "weight": 10,
-          "weighted_score": 10
-        },
-        {
-          "key": "response_window",
-          "name": "响应窗口",
-          "score": 5,
-          "weight": 5,
-          "weighted_score": 5
-        }
-      ],
-      "business_score_details": [
-        {
-          "key": "target_user_fit",
-          "name": "蝉妈妈目标用户匹配",
-          "score": 4,
-          "weight": 20,
-          "weighted_score": 16
-        },
-        {
-          "key": "ecommerce_workflow_relevance",
-          "name": "电商工作流关联",
-          "score": 4,
-          "weight": 20,
-          "weighted_score": 16
-        },
-        {
-          "key": "product_data_fit",
-          "name": "产品与数据承接",
-          "score": 4,
-          "weight": 20,
-          "weighted_score": 16
-        },
-        {
-          "key": "geo_question_value",
-          "name": "GEO问题价值",
-          "score": 5,
-          "weight": 15,
-          "weighted_score": 15
-        },
-        {
-          "key": "conversion_brand_value",
-          "name": "转化与品牌价值",
-          "score": 4,
-          "weight": 15,
-          "weighted_score": 12
-        },
-        {
-          "key": "execution_readiness_cost",
-          "name": "执行准备与成本",
-          "score": 4,
-          "weight": 10,
-          "weighted_score": 8
-        }
-      ],
-      "prohibited_actions": [
-        "广告投流",
-        "全量召回"
-      ],
-      "natural_business_link": true,
-      "execution_ready": false,
-      "mature_landing_page": false,
-      "measurement_ready": false,
-      "totalScore": null,
-      "grade": "L-A｜业务重点响应",
-      "gradeCode": "A",
-      "finalValue": 4,
-      "followDecision": "业务重点响应",
-      "downgradeReason": "双轨分数矩阵决定",
-      "hotness_scoring_model": "hotness_v1",
-      "hotness_score": 78,
-      "raw_hotness_level": "H-A",
-      "hotness_level": "H-A",
-      "hotness_final_value": 4,
-      "hotness_score_details": [
-        {
-          "key": "absolute_demand",
-          "name": "需求规模",
-          "score": 3,
-          "weight": 20,
-          "weighted_score": 12
-        },
-        {
-          "key": "baseline_deviation",
-          "name": "相对基线变化",
-          "score": 3,
-          "weight": 25,
-          "weighted_score": 15
-        },
-        {
-          "key": "growth_velocity",
-          "name": "上升速度",
-          "score": 4,
-          "weight": 20,
-          "weighted_score": 16
-        },
-        {
-          "key": "persistence",
-          "name": "持续时间",
-          "score": 5,
-          "weight": 15,
-          "weighted_score": 15
-        },
-        {
-          "key": "cross_platform_spread",
-          "name": "跨平台扩散",
-          "score": 5,
-          "weight": 15,
-          "weighted_score": 15
-        },
-        {
-          "key": "freshness",
-          "name": "数据新鲜度",
-          "score": 5,
-          "weight": 5,
-          "weighted_score": 5
-        }
-      ],
-      "hotness_caps": [],
-      "hotness_signal_type": "technology_release_and_adoption",
-      "hotness_independent_platform_count": 2,
-      "hotness_baseline_verified": true,
-      "hotness_freshness_verified": true,
-      "hotness_change_signals": [
-        "OpenAI官方发布",
-        "科技媒体当日跟进并指向同一事件"
-      ],
-      "hotness_requires_baseline": false,
-      "hotness_comparison_baseline_verified": true,
-      "hotness_baseline_type": "官方发布或原始产物加开发者生态信号",
-      "hotness_normalization_flags": [],
-      "hotness_multi_period_growth_verified": false,
-      "hotness_independent_change_signals": 2,
-      "content_scoring_model": "content_potential_v1",
-      "content_potential_score": 81,
-      "raw_content_potential_level": "P-A",
-      "content_potential_level": "P-B",
-      "content_final_value": 3,
-      "content_score_details": [
-        {
-          "key": "audience_demand",
-          "name": "受众需求规模",
-          "score": 4,
-          "weight": 20,
-          "weighted_score": 16
-        },
-        {
-          "key": "demand_velocity",
-          "name": "需求上涨速度",
-          "score": 4,
-          "weight": 15,
-          "weighted_score": 12
-        },
-        {
-          "key": "content_supply_gap",
-          "name": "内容供给缺口",
-          "score": 3,
-          "weight": 15,
-          "weighted_score": 9
-        },
-        {
-          "key": "target_user_fit",
-          "name": "目标用户匹配",
-          "score": 4,
-          "weight": 15,
-          "weighted_score": 12
-        },
-        {
-          "key": "data_content_advantage",
-          "name": "蝉妈妈数据优势",
-          "score": 4,
-          "weight": 15,
-          "weighted_score": 12
-        },
-        {
-          "key": "discussion_shareability",
-          "name": "讨论与传播性",
-          "score": 5,
-          "weight": 10,
-          "weighted_score": 10
-        },
-        {
-          "key": "content_lifecycle",
-          "name": "内容生命周期",
-          "score": 5,
-          "weight": 5,
-          "weighted_score": 5
-        },
-        {
-          "key": "response_window",
-          "name": "响应窗口",
-          "score": 5,
-          "weight": 5,
-          "weighted_score": 5
-        }
-      ],
-      "content_caps": [
-        {
-          "rule": "targeted_audience_cap",
-          "potential_cap": "P-B",
-          "changed": true,
-          "reason": "定向专业内容可以高业务优先，但不按大众高流量话题评为P-A。"
-        }
-      ],
-      "content_source_tier": "E3",
-      "traffic_route": "targeted",
-      "independent_platform_count": 2,
-      "demand_signals": [
-        "平台：OpenAI官方发布｜观察日期：2026-08-18｜变化：2026-08-17发布AI防御者窗口与组织安全建议｜https://openai.com/index/the-defenders-window/",
-        "平台：科技圈线索｜观察日期：2026-08-18｜变化：雷峰网AI当日跟进OpenAI与Hugging Face安全事件｜https://www.leiphone.com/category/ai"
-      ],
-      "content_baseline_verified": true,
-      "content_requires_baseline": false,
-      "content_comparison_baseline_verified": true,
-      "content_baseline_type": "官方发布或原始产物加开发者生态信号",
-      "content_normalization_flags": [],
-      "content_multi_period_growth_verified": false,
-      "content_independent_change_signals": 2,
-      "supply_gap_verified": false,
-      "content_freshness_verified": true,
-      "chanmama_answerable": true,
-      "query_cluster": [
-        "OpenAI防御者窗口",
-        "AI安全防御",
-        "AI代码供应链安全",
-        "企业AI安全清单",
-        "AI漏洞修复"
-      ],
-      "channel_scores": {
-        "website": 88,
-        "wechat": 82,
-        "short_video": 76,
-        "xiaohongshu": 68,
-        "private_domain": 80
-      },
-      "channel_reasons": {
-        "primary": "影响企业AI工具、代码供应链、账号权限与数据处理安全，可转化为电商数据团队治理清单。"
-      },
-      "recommended_channels": [
-        "website",
-        "wechat",
-        "private_domain"
-      ],
-      "primary_topic": "OpenAI发布“防御者窗口”，提出用AI加速漏洞发现、修复与安全代码验证",
-      "early_publish_title": "OpenAI发布“防御者窗口”，提出用AI加速漏洞发现、修复与安全代码验证",
-      "content_angle": "把官方安全建议转译为电商数据与内容团队可执行检查项",
-      "measurement_plan": "对象词曝光、内容点击、专题访问与开发者生态后续变化。",
-      "stop_condition": "官方撤回、原始产物身份不符或采用信号连续回落时停止滚动。",
-      "content_score_reasons": {},
-      "topic_value_score": 81,
-      "topic_value_code": "A",
-      "topic_value_label": "较高潜力",
-      "publication_status_code": "targeted_publish",
-      "publication_status": "定向发布",
-      "publication_priority": 4,
-      "publication_mode": "专业人群定向解读",
-      "publication_basis": "官方事实明确但受众较窄，面向受影响人群定向发布。",
-      "fact_boundary": "只确认OpenAI官方文章的判断与建议；不将前瞻判断写成已发生的普遍攻击或防御效果。",
-      "pending_confirmation": [
-        "后续采用信号",
-        "真实搜索趋势"
-      ],
-      "confirmed_trigger": true,
-      "publishable_channel": true,
-      "ad_opportunity_scoring_model": "ad_opportunity_v1",
-      "ad_modes": {
-        "search": {
-          "activation_mode": "search",
-          "raw_score": 55,
-          "score": 55,
-          "action": "not_eligible",
-          "eligible": false,
-          "score_details": [
-            {
-              "key": "active_search_evidence",
-              "name": "主动搜索证据",
-              "score": 1,
-              "weight": 30,
-              "weighted_score": 6
-            },
-            {
-              "key": "keyword_clarity",
-              "name": "关键词明确度",
-              "score": 5,
-              "weight": 20,
-              "weighted_score": 20
-            },
-            {
-              "key": "landing_fit",
-              "name": "落地承接",
-              "score": 1,
-              "weight": 20,
-              "weighted_score": 4
-            },
-            {
-              "key": "audience_fit",
-              "name": "目标人群",
-              "score": 5,
-              "weight": 10,
-              "weighted_score": 10
-            },
-            {
-              "key": "duration",
-              "name": "持续周期",
-              "score": 4,
-              "weight": 10,
-              "weighted_score": 8
-            },
-            {
-              "key": "conversion_path",
-              "name": "转化路径",
-              "score": 2,
-              "weight": 5,
-              "weighted_score": 2
-            },
-            {
-              "key": "compliance",
-              "name": "合规性",
-              "score": 5,
-              "weight": 5,
-              "weighted_score": 5
-            }
-          ],
-          "caps": [
-            {
-              "rule": "landing_or_measurement_not_ready",
-              "score_cap": 64,
-              "changed": false,
-              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
-            }
-          ],
-          "blockers": [
-            "广告落地页未完成",
-            "曝光、点击、访问与注册监测未接通",
-            "没有真实主动搜索证据",
-            "搜索转化路径未准备"
-          ],
-          "evidence_refs": [
-            "metric:openai-defenders-window:official",
-            "metric:openai-defenders-window:circle"
-          ],
-          "reasons": {
-            "summary": "技术对象和采用信号可核，适合GEO、工具清单与定向内容；主动搜索、落地页和监测未就绪，第一阶段不投广告。"
-          },
-          "landing_page_ready": false,
-          "measurement_ready": false,
-          "compliance_ready": true,
-          "prerequisites": {
-            "active_search_confirmed": false,
-            "keyword_ready": true,
-            "conversion_path_ready": false
-          }
-        },
-        "interest": {
-          "activation_mode": "interest",
-          "raw_score": 84,
-          "score": 64,
-          "action": "not_eligible",
-          "eligible": false,
-          "score_details": [
-            {
-              "key": "content_diffusion",
-              "name": "内容扩散",
-              "score": 4,
-              "weight": 25,
-              "weighted_score": 20
-            },
-            {
-              "key": "audience_fit",
-              "name": "目标人群",
-              "score": 5,
-              "weight": 20,
-              "weighted_score": 20
-            },
-            {
-              "key": "creative_fit",
-              "name": "素材适配",
-              "score": 4,
-              "weight": 15,
-              "weighted_score": 12
-            },
-            {
-              "key": "product_fit",
-              "name": "产品承接",
-              "score": 4,
-              "weight": 20,
-              "weighted_score": 16
-            },
-            {
-              "key": "duration",
-              "name": "持续周期",
-              "score": 4,
-              "weight": 10,
-              "weighted_score": 8
-            },
-            {
-              "key": "conversion_path",
-              "name": "转化路径",
-              "score": 3,
-              "weight": 5,
-              "weighted_score": 3
-            },
-            {
-              "key": "compliance",
-              "name": "合规性",
-              "score": 5,
-              "weight": 5,
-              "weighted_score": 5
-            }
-          ],
-          "caps": [
-            {
-              "rule": "landing_or_measurement_not_ready",
-              "score_cap": 64,
-              "changed": true,
-              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
-            }
-          ],
-          "blockers": [
-            "广告落地页未完成",
-            "曝光、点击、访问与注册监测未接通",
-            "兴趣流量转化路径未准备"
-          ],
-          "evidence_refs": [
-            "metric:openai-defenders-window:official",
-            "metric:openai-defenders-window:circle"
-          ],
-          "reasons": {
-            "summary": "技术对象和采用信号可核，适合GEO、工具清单与定向内容；主动搜索、落地页和监测未就绪，第一阶段不投广告。"
-          },
-          "landing_page_ready": false,
-          "measurement_ready": false,
-          "compliance_ready": true,
-          "prerequisites": {
-            "content_signal_confirmed": true,
-            "creative_ready": true,
-            "conversion_path_ready": false
-          }
-        },
-        "commerce": {
-          "activation_mode": "commerce",
-          "raw_score": 52,
-          "score": 52,
-          "action": "not_eligible",
-          "eligible": false,
-          "score_details": [
-            {
-              "key": "transaction_trend",
-              "name": "交易趋势",
-              "score": 2,
-              "weight": 25,
-              "weighted_score": 10
-            },
-            {
-              "key": "product_path",
-              "name": "商品链路",
-              "score": 3,
-              "weight": 20,
-              "weighted_score": 12
-            },
-            {
-              "key": "audience_fit",
-              "name": "目标人群",
-              "score": 3,
-              "weight": 20,
-              "weighted_score": 12
-            },
-            {
-              "key": "shop_product_fit",
-              "name": "商品或店铺承接",
-              "score": 2,
-              "weight": 20,
-              "weighted_score": 8
-            },
-            {
-              "key": "duration",
-              "name": "持续周期",
-              "score": 3,
-              "weight": 5,
-              "weighted_score": 3
-            },
-            {
-              "key": "conversion_value",
-              "name": "转化价值",
-              "score": 2,
-              "weight": 5,
-              "weighted_score": 2
-            },
-            {
-              "key": "compliance",
-              "name": "合规性",
-              "score": 5,
-              "weight": 5,
-              "weighted_score": 5
-            }
-          ],
-          "caps": [
-            {
-              "rule": "landing_or_measurement_not_ready",
-              "score_cap": 64,
-              "changed": false,
-              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
-            }
-          ],
-          "blockers": [
-            "广告落地页未完成",
-            "曝光、点击、访问与注册监测未接通",
-            "商品或店铺身份未核",
-            "没有可核交易变化信号",
-            "电商转化链路未准备"
-          ],
-          "evidence_refs": [
-            "metric:openai-defenders-window:official",
-            "metric:openai-defenders-window:circle"
-          ],
-          "reasons": {
-            "summary": "技术对象和采用信号可核，适合GEO、工具清单与定向内容；主动搜索、落地页和监测未就绪，第一阶段不投广告。"
-          },
-          "landing_page_ready": false,
-          "measurement_ready": false,
-          "compliance_ready": true,
-          "prerequisites": {
-            "verified_offer": false,
-            "transaction_signal_confirmed": false,
-            "conversion_path_ready": false
-          }
-        }
-      },
-      "ad_eligible": false,
-      "ad_eligible_modes": [],
-      "ad_best_mode": "interest",
-      "ad_global_blockers": [
-        "广告落地页未完成",
-        "曝光、点击、访问与注册监测未接通"
-      ],
-      "breakout_scoring_model": "breakout_v1",
-      "breakout_status": "observation_only",
-      "breakout_signal_count": 2,
-      "breakout_gates_passed": false,
-      "breakout_blockers": [
-        "多周期变化未核"
-      ]
     }
   ],
   "actions": [
@@ -8881,117 +8973,117 @@
       "owner": "内容运营/客户成功/客服/合规",
       "collaborators": "数据研究、内容运营",
       "deadline": "2026-08-19",
-      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-      "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-      "stopCondition": "官方撤回或修订定制范围、确认与售后要求时立即更新。",
+      "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+      "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+      "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
       "hotspotId": "HT-20260819-002",
-      "actionType": "定向发布",
+      "actionType": "优先制作",
       "task": "制作“抖音电商发布平台补贴禁用范围，自提、特定店型与类目进入明确排除清单”事实与数据拆解。",
       "owner": "内容运营/客户成功/客服/物流/合规",
       "collaborators": "数据研究、内容运营",
       "deadline": "2026-08-19",
-      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-      "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-      "stopCondition": "官方撤回、修订禁用清单或活动页规则冲突时立即更新。",
+      "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+      "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+      "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
       "hotspotId": "HT-20260819-003",
-      "actionType": "定向发布",
+      "actionType": "优先制作",
       "task": "制作“抖音商城七夕好礼季进入8月15至19日执行期，多端消费券与直播玩法边界明确”事实与数据拆解。",
       "owner": "内容运营/客户成功/客服/物流/合规",
       "collaborators": "数据研究、内容运营",
       "deadline": "2026-08-19",
-      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-      "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-      "stopCondition": "活动结束、官方FAQ更新或玩法页面关闭时停止滚动。",
+      "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+      "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+      "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
       "hotspotId": "HT-20260819-004",
-      "actionType": "定向发布",
+      "actionType": "优先制作",
       "task": "制作“2026抖音创作者大会进入8月5日至9月1日活动期，创作者中心官方入口持续展示”事实与数据拆解。",
       "owner": "达人运营/内容运营",
       "collaborators": "数据研究、内容运营",
       "deadline": "2026-08-19",
-      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-      "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-      "stopCondition": "活动结束、入口撤下或官方更新周期时停止滚动。",
+      "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+      "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+      "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
       "hotspotId": "HT-20260819-005",
-      "actionType": "优先制作",
-      "task": "制作“得力分段式包书皮跨周平台预估销量继续抬升，开学季品牌自营承接增强”事实与数据拆解。",
-      "owner": "类目研究/内容运营",
+      "actionType": "定向发布",
+      "task": "制作“DeepSeek V4-Pro正式版持续上线，Responses API、Codex适配与峰谷定价进入验证期”事实与数据拆解。",
+      "owner": "科技研究/内容运营",
       "collaborators": "数据研究、内容运营",
       "deadline": "2026-08-19",
-      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-      "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-      "stopCondition": "连续两日平台预估销量回落且分发覆盖同步走弱时停止滚动。",
+      "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+      "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+      "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
       "hotspotId": "HT-20260819-006",
-      "actionType": "优先制作",
-      "task": "制作“隆嘉盛羽衣甘蓝吐司跨周平台预估销量继续增长，早餐代餐内容承接延续”事实与数据拆解。",
-      "owner": "类目研究/内容运营",
+      "actionType": "定向发布",
+      "task": "制作“OpenAI因网络安全关键能力风险放缓前沿模型训练，强化监控、对齐与隔离”事实与数据拆解。",
+      "owner": "科技研究/内容运营",
       "collaborators": "数据研究、内容运营",
       "deadline": "2026-08-19",
-      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-      "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-      "stopCondition": "连续两日平台预估销量回落且分发覆盖同步走弱时停止滚动。",
+      "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+      "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+      "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
       "hotspotId": "HT-20260819-007",
       "actionType": "定向发布",
-      "task": "制作“Qwen3.8-27B登上Hugging Face趋势首位，官方模型页显示多模态能力与10.7k关注”事实与数据拆解。",
+      "task": "制作“OpenAI推出ChatGPT for Teens并与CodeAI合作，青少年安全与AI素养进入产品化阶段”事实与数据拆解。",
       "owner": "科技研究/内容运营",
       "collaborators": "数据研究、内容运营",
       "deadline": "2026-08-19",
-      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-      "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-      "stopCondition": "官方撤回、原始产物身份不符或采用信号连续回落时停止滚动。",
+      "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+      "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+      "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
       "hotspotId": "HT-20260819-008",
       "actionType": "定向发布",
-      "task": "制作“LTX-2.5进入Hugging Face趋势前列，开放权重支持多镜头同步音视频生成”事实与数据拆解。",
+      "task": "制作“Qwen3.8-27B连续位居Hugging Face趋势首位，多模态模型与开发者采用信号延续”事实与数据拆解。",
       "owner": "科技研究/内容运营",
       "collaborators": "数据研究、内容运营",
       "deadline": "2026-08-19",
-      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-      "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-      "stopCondition": "官方撤回、原始产物身份不符或采用信号连续回落时停止滚动。",
+      "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+      "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+      "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
       "hotspotId": "HT-20260819-009",
       "actionType": "定向发布",
-      "task": "制作“MoneyPrinterTurbo登上GitHub日趋势首位，AI短视频自动化工作流单日新增1,189星”事实与数据拆解。",
+      "task": "制作“LTX-2.5保持Hugging Face趋势前列，多镜头同步音视频生成进入开发者验证期”事实与数据拆解。",
       "owner": "科技研究/内容运营",
       "collaborators": "数据研究、内容运营",
       "deadline": "2026-08-19",
-      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-      "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-      "stopCondition": "官方撤回、原始产物身份不符或采用信号连续回落时停止滚动。",
+      "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+      "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+      "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
       "hotspotId": "HT-20260819-010",
       "actionType": "定向发布",
-      "task": "制作“OpenAI发布“防御者窗口”，提出用AI加速漏洞发现、修复与安全代码验证”事实与数据拆解。",
+      "task": "制作“MoneyPrinterTurbo连续位居GitHub日趋势首位，短视频自动化工作流关注延续”事实与数据拆解。",
       "owner": "科技研究/内容运营",
       "collaborators": "数据研究、内容运营",
       "deadline": "2026-08-19",
-      "deliverable": "事实边界、趋势指标、目标人群与关键词假设包",
-      "acceptance": "平台展示值保留原口径，主动搜索未验证项保持hypothesis。",
-      "stopCondition": "官方撤回、原始产物身份不符或采用信号连续回落时停止滚动。",
+      "deliverable": "事实边界、证据日期、业务动作与关键词假设包",
+      "acceptance": "新增、持续与回榜状态明确；不把平台展示或官方声明写成真实业务效果。",
+      "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     }
   ],
@@ -9002,12 +9094,12 @@
       "status": "authenticated",
       "evidenceLevel": "E2-E3按平台身份分层",
       "page": "巨量云图",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度3045；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度3045；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "authenticated",
-      "dataDate": "2026-08-19观察，近30天类目页",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -9018,12 +9110,12 @@
       "status": "public_only",
       "evidenceLevel": "E2-E3按平台身份分层",
       "page": "学习中心首页-抖音电商官方学习平台",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度2801；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度2801；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "最新规则2026-08-18",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -9034,12 +9126,12 @@
       "status": "public_only",
       "evidenceLevel": "E2-E3按平台身份分层",
       "page": "抖音规则中心",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度4187；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度4187；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "页面可读，未发现当日新规",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -9050,12 +9142,12 @@
       "status": "authenticated",
       "evidenceLevel": "E2-E3按平台身份分层",
       "page": "抖音数据分析平台_抖音直播|短视频|电商数据查询 - 蝉妈妈数据",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度1894；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度1738；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "authenticated",
-      "dataDate": "首页2026-08-19 09:30；昨日榜2026-08-18",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -9066,12 +9158,12 @@
       "status": "public_only",
       "evidenceLevel": "E2-E3按平台身份分层",
       "page": "百度指数",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度62；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度61；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "未取得候选曲线、数值或明确变化。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "页面可读，候选曲线未取得",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [
         "未取得候选曲线、数值或明确变化。"
@@ -9081,15 +9173,15 @@
     {
       "platform": "抖音创作者指数",
       "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
-      "status": "authenticated",
+      "status": "login_required",
       "evidenceLevel": "E2-E3按平台身份分层",
       "page": "抖音创作者中心",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度943；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度522；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
-      "loginStatus": "authenticated",
-      "dataDate": "2026-08-19实时",
+      "loginStatus": "login_required",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -9100,15 +9192,15 @@
       "status": "login_required",
       "evidenceLevel": "E2-E3按平台身份分层",
       "page": "小红书 - 你的生活兴趣社区",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度1737；快照见incoming/audits/2026-08-19-evidence-pages.json。",
-      "limitation": "显示登录页，未取得当日内容。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度1737；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
+      "limitation": "页面未取得可用当日内容。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "login_required",
-      "dataDate": "未取得",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [
-        "固定9233会话未取得小红书当日内容。"
+        "未取得可用当日内容。"
       ],
       "loginAction": null
     },
@@ -9118,12 +9210,12 @@
       "status": "public_only",
       "evidenceLevel": "E2-E3按平台身份分层",
       "page": "抖音精选电脑版 - 抖音旗下优质视频平台",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度1420；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度366；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "2026-08-19实时页",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -9134,12 +9226,12 @@
       "status": "public_only",
       "evidenceLevel": "E2-E3按平台身份分层",
       "page": "36氪_让一部分人先看到未来",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度4990；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度5154；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "2026-08-19观察",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -9150,12 +9242,12 @@
       "status": "public_only",
       "evidenceLevel": "E2-E3按平台身份分层",
       "page": "人人都是产品经理 | 产品经理、产品爱好者学习交流平台",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度10184；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度10184；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "2026-08-19观察",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -9166,12 +9258,12 @@
       "status": "public_only",
       "evidenceLevel": "E1-E3按页面身份分层",
       "page": "豆包大模型-火山引擎",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度3626；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度3626；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "2026-08-19观察",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -9182,12 +9274,12 @@
       "status": "public_only",
       "evidenceLevel": "E1-E3按页面身份分层",
       "page": "DeepSeek | 深度求索",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度564；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度564；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "2026-08-19观察",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -9198,12 +9290,12 @@
       "status": "public_only",
       "evidenceLevel": "E1-E3按页面身份分层",
       "page": "OpenAI 新闻动态 | OpenAI",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度1196；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度1196；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "官方新闻页2026-08-19观察；入选正文2026-08-17",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -9214,12 +9306,12 @@
       "status": "public_only",
       "evidenceLevel": "E1-E3按页面身份分层",
       "page": "Models – Hugging Face",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度3483；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度3818；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "2026-08-19实时趋势",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -9230,12 +9322,12 @@
       "status": "public_only",
       "evidenceLevel": "E1-E3按页面身份分层",
       "page": "Trending repositories on GitHub today · GitHub",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度2584；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度2584；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "2026-08-19日榜",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -9246,12 +9338,12 @@
       "status": "public_only",
       "evidenceLevel": "E1-E3按页面身份分层",
       "page": "新智元 – 最具影响力的人工智能社交资讯+专家智库+产业生态三位一体平台",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度1883；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度1883；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "最新可见2026-08-18",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -9262,12 +9354,12 @@
       "status": "public_only",
       "evidenceLevel": "E1-E3按页面身份分层",
       "page": "AI&大模型 - InfoQ",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度4583；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度4583；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "2026-08-19观察",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -9278,12 +9370,12 @@
       "status": "public_only",
       "evidenceLevel": "E1-E3按页面身份分层",
       "page": "36氪_让一部分人先看到未来",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度2483；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度2492；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "2026-08-19观察",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -9294,12 +9386,12 @@
       "status": "public_only",
       "evidenceLevel": "E1-E3按页面身份分层",
       "page": "人工智能_人工智能技术_应用_AI人工智能_最新进展 | 雷锋网",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度3152；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度3152；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "2026-08-19观察",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -9310,19 +9402,19 @@
       "status": "public_only",
       "evidenceLevel": "E1-E3按页面身份分层",
       "page": "AITNT-让一部分人先用AI实现商业化",
-      "observedAt": "2026-08-19T09:43:53+08:00",
-      "signal": "规定入口已刷新并可读，正文长度3884；快照见incoming/audits/2026-08-19-evidence-pages.json。",
+      "observedAt": "2026-08-19T10:51:40+08:00",
+      "signal": "规定入口已重新刷新并读取，正文长度3884；快照见incoming/audits/2026-08-19-platform-audit-r2.json。",
       "limitation": "页面榜位或媒体标题只作线索，正式事实回原始页核对。",
       "nextAction": "按正式准入和停止条件滚动观察。",
       "loginStatus": "public_only",
-      "dataDate": "最新可见2026-08-17",
+      "dataDate": "2026-08-19二次复核",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
     }
   ],
-  "boundaryText": "网页只展示10条正式candidates，内部观察池不进入公开数据。七类均已扫描，AIDSO/爱搜不在采集范围和完整性判断中。小红书登录受限，百度指数未取得候选曲线；平台展示量、关注、销量、观看和交易相关数值均保留平台口径，关键词假设不等于搜索上涨或广告结论。",
-  "sourceBrief": "今日严格保留10条正式热点：平台规则3条、官方创作者活动1条、跨日商品2条、科技与工具4条。20个规定来源和七类观察池均已扫描，正式对象已回原始页复核；小红书未取得当日内容，百度指数未取得候选曲线，部分平台只提供单日榜或较晚数据，因此inputStatus保持incomplete，广告队列关闭。",
+  "boundaryText": "正式热点明确区分NEW、RETURNED_AFTER_REVALIDATION与CONTINUING；昨日对象只有在当前窗口仍有有效证据时才能续入。观察池不进入公开数据。",
+  "sourceBrief": "2026-08-19二次执行已重新筛选10条正式热点：今日新增2条、重新核实后回榜1条、持续跟踪7条。持续项均在当前规则、活动或趋势窗口内完成二次复核；两条没有新增跨日序列的商品已退出正式榜。小红书与百度指数关键输入仍不完整。",
   "adOpportunitySchemaVersion": 1,
   "adExperimentContract": {
     "contract_version": "ad_experiment_v1",

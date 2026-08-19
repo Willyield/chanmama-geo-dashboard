@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "module": "hotspot-keywords",
   "date": "2026-08-19",
-  "revision": 1,
+  "revision": 3,
   "itemCount": 50,
   "items": [
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-001",
       "hotspot_name": "抖音电商发布定制珠宝商品细则，确认书、收费、售后与自然光留证成为经营硬要求",
       "hotspot_category": "经营与规则",
@@ -29,7 +29,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2027-02-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -41,7 +41,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-001",
       "hotspot_name": "抖音电商发布定制珠宝商品细则，确认书、收费、售后与自然光留证成为经营硬要求",
       "hotspot_category": "经营与规则",
@@ -63,7 +63,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2027-02-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -75,7 +75,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-001",
       "hotspot_name": "抖音电商发布定制珠宝商品细则，确认书、收费、售后与自然光留证成为经营硬要求",
       "hotspot_category": "经营与规则",
@@ -97,7 +97,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2027-02-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -109,7 +109,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-001",
       "hotspot_name": "抖音电商发布定制珠宝商品细则，确认书、收费、售后与自然光留证成为经营硬要求",
       "hotspot_category": "经营与规则",
@@ -131,7 +131,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2027-02-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -143,7 +143,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-001",
       "hotspot_name": "抖音电商发布定制珠宝商品细则，确认书、收费、售后与自然光留证成为经营硬要求",
       "hotspot_category": "经营与规则",
@@ -165,7 +165,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2027-02-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -177,7 +177,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-002",
       "hotspot_name": "抖音电商发布平台补贴禁用范围，自提、特定店型与类目进入明确排除清单",
       "hotspot_category": "经营与规则",
@@ -199,7 +199,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应规则专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-17",
-      "valid_until": "2027-02-17",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [],
       "evidence_refs": [
@@ -208,7 +208,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-002",
       "hotspot_name": "抖音电商发布平台补贴禁用范围，自提、特定店型与类目进入明确排除清单",
       "hotspot_category": "经营与规则",
@@ -230,7 +230,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应规则专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-17",
-      "valid_until": "2027-02-17",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [],
       "evidence_refs": [
@@ -239,7 +239,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-002",
       "hotspot_name": "抖音电商发布平台补贴禁用范围，自提、特定店型与类目进入明确排除清单",
       "hotspot_category": "经营与规则",
@@ -261,7 +261,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应规则专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-17",
-      "valid_until": "2027-02-17",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [],
       "evidence_refs": [
@@ -270,7 +270,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-002",
       "hotspot_name": "抖音电商发布平台补贴禁用范围，自提、特定店型与类目进入明确排除清单",
       "hotspot_category": "经营与规则",
@@ -292,7 +292,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应规则专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-17",
-      "valid_until": "2027-02-17",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [],
       "evidence_refs": [
@@ -301,7 +301,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-002",
       "hotspot_name": "抖音电商发布平台补贴禁用范围，自提、特定店型与类目进入明确排除清单",
       "hotspot_category": "经营与规则",
@@ -323,7 +323,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应规则专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-17",
-      "valid_until": "2027-02-17",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [],
       "evidence_refs": [
@@ -332,7 +332,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-003",
       "hotspot_name": "抖音商城七夕好礼季进入8月15至19日执行期，多端消费券与直播玩法边界明确",
       "hotspot_category": "季节与营销节点",
@@ -354,7 +354,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应规则专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-17",
-      "valid_until": "2026-08-20",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [],
       "evidence_refs": [
@@ -363,7 +363,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-003",
       "hotspot_name": "抖音商城七夕好礼季进入8月15至19日执行期，多端消费券与直播玩法边界明确",
       "hotspot_category": "季节与营销节点",
@@ -385,7 +385,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应规则专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-17",
-      "valid_until": "2026-08-20",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [],
       "evidence_refs": [
@@ -394,7 +394,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-003",
       "hotspot_name": "抖音商城七夕好礼季进入8月15至19日执行期，多端消费券与直播玩法边界明确",
       "hotspot_category": "季节与营销节点",
@@ -416,7 +416,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应规则专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-17",
-      "valid_until": "2026-08-20",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [],
       "evidence_refs": [
@@ -425,7 +425,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-003",
       "hotspot_name": "抖音商城七夕好礼季进入8月15至19日执行期，多端消费券与直播玩法边界明确",
       "hotspot_category": "季节与营销节点",
@@ -447,7 +447,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应规则专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-17",
-      "valid_until": "2026-08-20",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [],
       "evidence_refs": [
@@ -456,7 +456,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-003",
       "hotspot_name": "抖音商城七夕好礼季进入8月15至19日执行期，多端消费券与直播玩法边界明确",
       "hotspot_category": "季节与营销节点",
@@ -478,7 +478,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应规则专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-17",
-      "valid_until": "2026-08-20",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [],
       "evidence_refs": [
@@ -487,7 +487,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-004",
       "hotspot_name": "2026抖音创作者大会进入8月5日至9月1日活动期，创作者中心官方入口持续展示",
       "hotspot_category": "达人与内容案例",
@@ -509,7 +509,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-09-01",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -521,7 +521,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-004",
       "hotspot_name": "2026抖音创作者大会进入8月5日至9月1日活动期，创作者中心官方入口持续展示",
       "hotspot_category": "达人与内容案例",
@@ -543,7 +543,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-09-01",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -555,7 +555,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-004",
       "hotspot_name": "2026抖音创作者大会进入8月5日至9月1日活动期，创作者中心官方入口持续展示",
       "hotspot_category": "达人与内容案例",
@@ -577,7 +577,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-09-01",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -589,7 +589,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-004",
       "hotspot_name": "2026抖音创作者大会进入8月5日至9月1日活动期，创作者中心官方入口持续展示",
       "hotspot_category": "达人与内容案例",
@@ -611,7 +611,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-09-01",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -623,7 +623,7 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-004",
       "hotspot_name": "2026抖音创作者大会进入8月5日至9月1日活动期，创作者中心官方入口持续展示",
       "hotspot_category": "达人与内容案例",
@@ -645,7 +645,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-09-01",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -657,364 +657,523 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-005",
-      "hotspot_name": "得力分段式包书皮跨周平台预估销量继续抬升，开学季品牌自营承接增强",
-      "hotspot_category": "季节与营销节点",
-      "subject_id": "product:chanmama:eltqmly2akl7u7dpadbfi5u-sfc3xlwp",
-      "subject_kind": "product",
-      "industry": "文具教育/开学用品",
-      "breakout_status": "confirmed_breakout",
+      "hotspot_name": "DeepSeek V4-Pro正式版持续上线，Responses API、Codex适配与峰谷定价进入验证期",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:deepseek:v4-pro-0813",
+      "subject_kind": "technology",
+      "industry": "基础模型/Coding与Agent",
+      "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:deli-segmented-book-cover:01",
-      "keyword": "得力包书皮",
-      "intent": "商品对象词",
-      "applicable_modes": [
-        "search",
-        "interest",
-        "commerce"
-      ],
-      "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-13",
-      "valid_until": "2026-09-13",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "平台销量与销售额为预估/展示口径",
-        "主动搜索未验证"
-      ],
-      "evidence_refs": [
-        "metric:deli-segmented-book-cover:series",
-        "metric:deli-segmented-book-cover:distribution"
-      ]
-    },
-    {
-      "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-005",
-      "hotspot_name": "得力分段式包书皮跨周平台预估销量继续抬升，开学季品牌自营承接增强",
-      "hotspot_category": "季节与营销节点",
-      "subject_id": "product:chanmama:eltqmly2akl7u7dpadbfi5u-sfc3xlwp",
-      "subject_kind": "product",
-      "industry": "文具教育/开学用品",
-      "breakout_status": "confirmed_breakout",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:deli-segmented-book-cover:02",
-      "keyword": "分段式包书皮",
-      "intent": "品类与运营问题词",
-      "applicable_modes": [
-        "search",
-        "interest",
-        "commerce"
-      ],
-      "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-13",
-      "valid_until": "2026-09-13",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "平台销量与销售额为预估/展示口径",
-        "主动搜索未验证"
-      ],
-      "evidence_refs": [
-        "metric:deli-segmented-book-cover:series",
-        "metric:deli-segmented-book-cover:distribution"
-      ]
-    },
-    {
-      "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-005",
-      "hotspot_name": "得力分段式包书皮跨周平台预估销量继续抬升，开学季品牌自营承接增强",
-      "hotspot_category": "季节与营销节点",
-      "subject_id": "product:chanmama:eltqmly2akl7u7dpadbfi5u-sfc3xlwp",
-      "subject_kind": "product",
-      "industry": "文具教育/开学用品",
-      "breakout_status": "confirmed_breakout",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:deli-segmented-book-cover:03",
-      "keyword": "开学包书皮",
-      "intent": "品类与运营问题词",
-      "applicable_modes": [
-        "search",
-        "interest",
-        "commerce"
-      ],
-      "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-13",
-      "valid_until": "2026-09-13",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "平台销量与销售额为预估/展示口径",
-        "主动搜索未验证"
-      ],
-      "evidence_refs": [
-        "metric:deli-segmented-book-cover:series",
-        "metric:deli-segmented-book-cover:distribution"
-      ]
-    },
-    {
-      "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-005",
-      "hotspot_name": "得力分段式包书皮跨周平台预估销量继续抬升，开学季品牌自营承接增强",
-      "hotspot_category": "季节与营销节点",
-      "subject_id": "product:chanmama:eltqmly2akl7u7dpadbfi5u-sfc3xlwp",
-      "subject_kind": "product",
-      "industry": "文具教育/开学用品",
-      "breakout_status": "confirmed_breakout",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:deli-segmented-book-cover:04",
-      "keyword": "书皮直播带货",
-      "intent": "品类与运营问题词",
+      "keyword_id": "kw:deepseek:v4-pro-r2:01",
+      "keyword": "DeepSeek V4 Pro",
+      "intent": "对象词",
       "applicable_modes": [
         "search",
         "interest"
       ],
-      "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
+      "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
       "landing_page_status": "planned",
       "landing_page_url": null,
-      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-13",
-      "valid_until": "2026-09-13",
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
-        "平台销量与销售额为预估/展示口径",
-        "主动搜索未验证"
+        "主动搜索未验证",
+        "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:deli-segmented-book-cover:series",
-        "metric:deli-segmented-book-cover:distribution"
+        "metric:deepseek-v4-pro:0819-update"
       ]
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
       "hotspot_id": "HT-20260819-005",
-      "hotspot_name": "得力分段式包书皮跨周平台预估销量继续抬升，开学季品牌自营承接增强",
-      "hotspot_category": "季节与营销节点",
-      "subject_id": "product:chanmama:eltqmly2akl7u7dpadbfi5u-sfc3xlwp",
-      "subject_kind": "product",
-      "industry": "文具教育/开学用品",
-      "breakout_status": "confirmed_breakout",
+      "hotspot_name": "DeepSeek V4-Pro正式版持续上线，Responses API、Codex适配与峰谷定价进入验证期",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:deepseek:v4-pro-0813",
+      "subject_kind": "technology",
+      "industry": "基础模型/Coding与Agent",
+      "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:deli-segmented-book-cover:05",
-      "keyword": "文具开学季选品",
-      "intent": "品类与运营问题词",
+      "keyword_id": "kw:deepseek:v4-pro-r2:02",
+      "keyword": "DeepSeek Responses API",
+      "intent": "问题词",
       "applicable_modes": [
         "search",
         "interest"
       ],
-      "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
+      "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
       "landing_page_status": "planned",
       "landing_page_url": null,
-      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-13",
-      "valid_until": "2026-09-13",
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
-        "平台销量与销售额为预估/展示口径",
-        "主动搜索未验证"
+        "主动搜索未验证",
+        "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:deli-segmented-book-cover:series",
-        "metric:deli-segmented-book-cover:distribution"
+        "metric:deepseek-v4-pro:0819-update"
       ]
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-006",
-      "hotspot_name": "隆嘉盛羽衣甘蓝吐司跨周平台预估销量继续增长，早餐代餐内容承接延续",
-      "hotspot_category": "类目与消费",
-      "subject_id": "product:chanmama:rleharebtc6so4cz-1kiksmsffkdcz1e",
-      "subject_kind": "product",
-      "industry": "食品/面包与代餐",
-      "breakout_status": "confirmed_breakout",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-005",
+      "hotspot_name": "DeepSeek V4-Pro正式版持续上线，Responses API、Codex适配与峰谷定价进入验证期",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:deepseek:v4-pro-0813",
+      "subject_kind": "technology",
+      "industry": "基础模型/Coding与Agent",
+      "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:longjiasheng-kale-toast:01",
-      "keyword": "隆嘉盛羽衣甘蓝吐司",
-      "intent": "商品对象词",
-      "applicable_modes": [
-        "search",
-        "interest",
-        "commerce"
-      ],
-      "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-13",
-      "valid_until": "2026-09-13",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "平台销量与销售额为预估/展示口径",
-        "主动搜索未验证"
-      ],
-      "evidence_refs": [
-        "metric:longjiasheng-kale-toast:series",
-        "metric:longjiasheng-kale-toast:distribution"
-      ]
-    },
-    {
-      "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-006",
-      "hotspot_name": "隆嘉盛羽衣甘蓝吐司跨周平台预估销量继续增长，早餐代餐内容承接延续",
-      "hotspot_category": "类目与消费",
-      "subject_id": "product:chanmama:rleharebtc6so4cz-1kiksmsffkdcz1e",
-      "subject_kind": "product",
-      "industry": "食品/面包与代餐",
-      "breakout_status": "confirmed_breakout",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:longjiasheng-kale-toast:02",
-      "keyword": "羽衣甘蓝吐司",
-      "intent": "品类与运营问题词",
-      "applicable_modes": [
-        "search",
-        "interest",
-        "commerce"
-      ],
-      "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-13",
-      "valid_until": "2026-09-13",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "平台销量与销售额为预估/展示口径",
-        "主动搜索未验证"
-      ],
-      "evidence_refs": [
-        "metric:longjiasheng-kale-toast:series",
-        "metric:longjiasheng-kale-toast:distribution"
-      ]
-    },
-    {
-      "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-006",
-      "hotspot_name": "隆嘉盛羽衣甘蓝吐司跨周平台预估销量继续增长，早餐代餐内容承接延续",
-      "hotspot_category": "类目与消费",
-      "subject_id": "product:chanmama:rleharebtc6so4cz-1kiksmsffkdcz1e",
-      "subject_kind": "product",
-      "industry": "食品/面包与代餐",
-      "breakout_status": "confirmed_breakout",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:longjiasheng-kale-toast:03",
-      "keyword": "全麦厚切吐司",
-      "intent": "品类与运营问题词",
-      "applicable_modes": [
-        "search",
-        "interest",
-        "commerce"
-      ],
-      "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-13",
-      "valid_until": "2026-09-13",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "平台销量与销售额为预估/展示口径",
-        "主动搜索未验证"
-      ],
-      "evidence_refs": [
-        "metric:longjiasheng-kale-toast:series",
-        "metric:longjiasheng-kale-toast:distribution"
-      ]
-    },
-    {
-      "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-006",
-      "hotspot_name": "隆嘉盛羽衣甘蓝吐司跨周平台预估销量继续增长，早餐代餐内容承接延续",
-      "hotspot_category": "类目与消费",
-      "subject_id": "product:chanmama:rleharebtc6so4cz-1kiksmsffkdcz1e",
-      "subject_kind": "product",
-      "industry": "食品/面包与代餐",
-      "breakout_status": "confirmed_breakout",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:longjiasheng-kale-toast:04",
-      "keyword": "早餐代餐面包",
-      "intent": "品类与运营问题词",
+      "keyword_id": "kw:deepseek:v4-pro-r2:03",
+      "keyword": "DeepSeek Codex接入",
+      "intent": "问题词",
       "applicable_modes": [
         "search",
         "interest"
       ],
-      "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
+      "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
       "landing_page_status": "planned",
       "landing_page_url": null,
-      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-13",
-      "valid_until": "2026-09-13",
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
-        "平台销量与销售额为预估/展示口径",
-        "主动搜索未验证"
+        "主动搜索未验证",
+        "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:longjiasheng-kale-toast:series",
-        "metric:longjiasheng-kale-toast:distribution"
+        "metric:deepseek-v4-pro:0819-update"
       ]
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-006",
-      "hotspot_name": "隆嘉盛羽衣甘蓝吐司跨周平台预估销量继续增长，早餐代餐内容承接延续",
-      "hotspot_category": "类目与消费",
-      "subject_id": "product:chanmama:rleharebtc6so4cz-1kiksmsffkdcz1e",
-      "subject_kind": "product",
-      "industry": "食品/面包与代餐",
-      "breakout_status": "confirmed_breakout",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-005",
+      "hotspot_name": "DeepSeek V4-Pro正式版持续上线，Responses API、Codex适配与峰谷定价进入验证期",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:deepseek:v4-pro-0813",
+      "subject_kind": "technology",
+      "industry": "基础模型/Coding与Agent",
+      "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:longjiasheng-kale-toast:05",
-      "keyword": "吐司直播带货案例",
-      "intent": "品类与运营问题词",
+      "keyword_id": "kw:deepseek:v4-pro-r2:04",
+      "keyword": "DeepSeek峰谷定价",
+      "intent": "问题词",
       "applicable_modes": [
         "search",
         "interest"
       ],
-      "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
+      "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
       "landing_page_status": "planned",
       "landing_page_url": null,
-      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-13",
-      "valid_until": "2026-09-13",
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
-        "平台销量与销售额为预估/展示口径",
-        "主动搜索未验证"
+        "主动搜索未验证",
+        "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:longjiasheng-kale-toast:series",
-        "metric:longjiasheng-kale-toast:distribution"
+        "metric:deepseek-v4-pro:0819-update"
       ]
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
+      "revision": 3,
+      "hotspot_id": "HT-20260819-005",
+      "hotspot_name": "DeepSeek V4-Pro正式版持续上线，Responses API、Codex适配与峰谷定价进入验证期",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:deepseek:v4-pro-0813",
+      "subject_kind": "technology",
+      "industry": "基础模型/Coding与Agent",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:deepseek:v4-pro-r2:05",
+      "keyword": "电商数据Agent模型",
+      "intent": "问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-18",
+      "valid_until": "2026-09-19",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:deepseek-v4-pro:0819-update"
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-006",
+      "hotspot_name": "OpenAI因网络安全关键能力风险放缓前沿模型训练，强化监控、对齐与隔离",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:openai:cyber-capability-pacing-20260818",
+      "subject_kind": "technology",
+      "industry": "人工智能/网络安全治理",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:openai:cyber-pacing:01",
+      "keyword": "OpenAI网络安全关键能力",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-18",
+      "valid_until": "2026-09-19",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:openai:cyber-pacing"
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-006",
+      "hotspot_name": "OpenAI因网络安全关键能力风险放缓前沿模型训练，强化监控、对齐与隔离",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:openai:cyber-capability-pacing-20260818",
+      "subject_kind": "technology",
+      "industry": "人工智能/网络安全治理",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:openai:cyber-pacing:02",
+      "keyword": "OpenAI训练暂停",
+      "intent": "问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-18",
+      "valid_until": "2026-09-19",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:openai:cyber-pacing"
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-006",
+      "hotspot_name": "OpenAI因网络安全关键能力风险放缓前沿模型训练，强化监控、对齐与隔离",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:openai:cyber-capability-pacing-20260818",
+      "subject_kind": "technology",
+      "industry": "人工智能/网络安全治理",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:openai:cyber-pacing:03",
+      "keyword": "前沿模型安全治理",
+      "intent": "问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-18",
+      "valid_until": "2026-09-19",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:openai:cyber-pacing"
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-006",
+      "hotspot_name": "OpenAI因网络安全关键能力风险放缓前沿模型训练，强化监控、对齐与隔离",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:openai:cyber-capability-pacing-20260818",
+      "subject_kind": "technology",
+      "industry": "人工智能/网络安全治理",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:openai:cyber-pacing:04",
+      "keyword": "AI模型最小权限",
+      "intent": "问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-18",
+      "valid_until": "2026-09-19",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:openai:cyber-pacing"
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-006",
+      "hotspot_name": "OpenAI因网络安全关键能力风险放缓前沿模型训练，强化监控、对齐与隔离",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:openai:cyber-capability-pacing-20260818",
+      "subject_kind": "technology",
+      "industry": "人工智能/网络安全治理",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:openai:cyber-pacing:05",
+      "keyword": "AI供应商风险评估",
+      "intent": "问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-18",
+      "valid_until": "2026-09-19",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:openai:cyber-pacing"
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "revision": 3,
       "hotspot_id": "HT-20260819-007",
+      "hotspot_name": "OpenAI推出ChatGPT for Teens并与CodeAI合作，青少年安全与AI素养进入产品化阶段",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:openai:chatgpt-for-teens-20260818",
+      "subject_kind": "technology",
+      "industry": "人工智能/教育与青少年安全",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:openai:teens:01",
+      "keyword": "ChatGPT for Teens",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-18",
+      "valid_until": "2026-09-19",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:openai:teens-launch",
+        "metric:openai:codeai-partnership"
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-007",
+      "hotspot_name": "OpenAI推出ChatGPT for Teens并与CodeAI合作，青少年安全与AI素养进入产品化阶段",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:openai:chatgpt-for-teens-20260818",
+      "subject_kind": "technology",
+      "industry": "人工智能/教育与青少年安全",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:openai:teens:02",
+      "keyword": "青少年版ChatGPT",
+      "intent": "问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-18",
+      "valid_until": "2026-09-19",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:openai:teens-launch",
+        "metric:openai:codeai-partnership"
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-007",
+      "hotspot_name": "OpenAI推出ChatGPT for Teens并与CodeAI合作，青少年安全与AI素养进入产品化阶段",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:openai:chatgpt-for-teens-20260818",
+      "subject_kind": "technology",
+      "industry": "人工智能/教育与青少年安全",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:openai:teens:03",
+      "keyword": "ChatGPT家长控制",
+      "intent": "问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-18",
+      "valid_until": "2026-09-19",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:openai:teens-launch",
+        "metric:openai:codeai-partnership"
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-007",
+      "hotspot_name": "OpenAI推出ChatGPT for Teens并与CodeAI合作，青少年安全与AI素养进入产品化阶段",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:openai:chatgpt-for-teens-20260818",
+      "subject_kind": "technology",
+      "industry": "人工智能/教育与青少年安全",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:openai:teens:04",
+      "keyword": "青少年AI安全",
+      "intent": "问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-18",
+      "valid_until": "2026-09-19",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:openai:teens-launch",
+        "metric:openai:codeai-partnership"
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-007",
+      "hotspot_name": "OpenAI推出ChatGPT for Teens并与CodeAI合作，青少年安全与AI素养进入产品化阶段",
+      "hotspot_category": "科技与工具",
+      "subject_id": "technology:openai:chatgpt-for-teens-20260818",
+      "subject_kind": "technology",
+      "industry": "人工智能/教育与青少年安全",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:openai:teens:05",
+      "keyword": "CodeAI AI素养",
+      "intent": "问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；第二阶段仅在取得真实搜索词报告后调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-08-18",
+      "valid_until": "2026-09-19",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:openai:teens-launch",
+        "metric:openai:codeai-partnership"
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-008",
       "hotspot_name": "Qwen3.8-27B连续位居Hugging Face趋势首位，多模态模型与开发者采用信号延续",
       "hotspot_category": "科技与工具",
       "subject_id": "technology:qwen:qwen3.8-27b",
@@ -1035,7 +1194,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-10-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -1048,8 +1207,8 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-007",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-008",
       "hotspot_name": "Qwen3.8-27B连续位居Hugging Face趋势首位，多模态模型与开发者采用信号延续",
       "hotspot_category": "科技与工具",
       "subject_id": "technology:qwen:qwen3.8-27b",
@@ -1070,7 +1229,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-10-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -1083,8 +1242,8 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-007",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-008",
       "hotspot_name": "Qwen3.8-27B连续位居Hugging Face趋势首位，多模态模型与开发者采用信号延续",
       "hotspot_category": "科技与工具",
       "subject_id": "technology:qwen:qwen3.8-27b",
@@ -1105,7 +1264,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-10-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -1118,8 +1277,8 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-007",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-008",
       "hotspot_name": "Qwen3.8-27B连续位居Hugging Face趋势首位，多模态模型与开发者采用信号延续",
       "hotspot_category": "科技与工具",
       "subject_id": "technology:qwen:qwen3.8-27b",
@@ -1140,7 +1299,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-10-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -1153,8 +1312,8 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-007",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-008",
       "hotspot_name": "Qwen3.8-27B连续位居Hugging Face趋势首位，多模态模型与开发者采用信号延续",
       "hotspot_category": "科技与工具",
       "subject_id": "technology:qwen:qwen3.8-27b",
@@ -1175,7 +1334,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-10-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -1188,8 +1347,8 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-008",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-009",
       "hotspot_name": "LTX-2.5保持Hugging Face趋势前列，多镜头同步音视频生成进入开发者验证期",
       "hotspot_category": "科技与工具",
       "subject_id": "technology:lightricks:ltx-2.5",
@@ -1210,7 +1369,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-10-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -1223,8 +1382,8 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-008",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-009",
       "hotspot_name": "LTX-2.5保持Hugging Face趋势前列，多镜头同步音视频生成进入开发者验证期",
       "hotspot_category": "科技与工具",
       "subject_id": "technology:lightricks:ltx-2.5",
@@ -1245,7 +1404,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-10-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -1258,8 +1417,8 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-008",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-009",
       "hotspot_name": "LTX-2.5保持Hugging Face趋势前列，多镜头同步音视频生成进入开发者验证期",
       "hotspot_category": "科技与工具",
       "subject_id": "technology:lightricks:ltx-2.5",
@@ -1280,7 +1439,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-10-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -1293,8 +1452,8 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-008",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-009",
       "hotspot_name": "LTX-2.5保持Hugging Face趋势前列，多镜头同步音视频生成进入开发者验证期",
       "hotspot_category": "科技与工具",
       "subject_id": "technology:lightricks:ltx-2.5",
@@ -1315,7 +1474,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-10-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -1328,8 +1487,8 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-008",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-009",
       "hotspot_name": "LTX-2.5保持Hugging Face趋势前列，多镜头同步音视频生成进入开发者验证期",
       "hotspot_category": "科技与工具",
       "subject_id": "technology:lightricks:ltx-2.5",
@@ -1350,7 +1509,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-10-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -1363,8 +1522,8 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-009",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-010",
       "hotspot_name": "MoneyPrinterTurbo连续位居GitHub日趋势首位，短视频自动化工作流关注延续",
       "hotspot_category": "科技与工具",
       "subject_id": "technology:github:moneyprinterturbo",
@@ -1385,7 +1544,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-10-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -1398,8 +1557,8 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-009",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-010",
       "hotspot_name": "MoneyPrinterTurbo连续位居GitHub日趋势首位，短视频自动化工作流关注延续",
       "hotspot_category": "科技与工具",
       "subject_id": "technology:github:moneyprinterturbo",
@@ -1420,7 +1579,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-10-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -1433,8 +1592,8 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-009",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-010",
       "hotspot_name": "MoneyPrinterTurbo连续位居GitHub日趋势首位，短视频自动化工作流关注延续",
       "hotspot_category": "科技与工具",
       "subject_id": "technology:github:moneyprinterturbo",
@@ -1455,7 +1614,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-10-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -1468,8 +1627,8 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-009",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-010",
       "hotspot_name": "MoneyPrinterTurbo连续位居GitHub日趋势首位，短视频自动化工作流关注延续",
       "hotspot_category": "科技与工具",
       "subject_id": "technology:github:moneyprinterturbo",
@@ -1490,7 +1649,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-10-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -1503,8 +1662,8 @@
     },
     {
       "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-009",
+      "revision": 3,
+      "hotspot_id": "HT-20260819-010",
       "hotspot_name": "MoneyPrinterTurbo连续位居GitHub日趋势首位，短视频自动化工作流关注延续",
       "hotspot_category": "科技与工具",
       "subject_id": "technology:github:moneyprinterturbo",
@@ -1525,7 +1684,7 @@
       "landing_page_url": null,
       "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
       "valid_from": "2026-08-18",
-      "valid_until": "2026-10-18",
+      "valid_until": "2026-09-19",
       "validation_status": "hypothesis",
       "risk_flags": [
         "主动搜索未验证",
@@ -1534,181 +1693,6 @@
       "evidence_refs": [
         "metric:moneyprinterturbo:repository",
         "metric:moneyprinterturbo:trending"
-      ]
-    },
-    {
-      "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-010",
-      "hotspot_name": "OpenAI发布“防御者窗口”，提出用AI加速漏洞发现、修复与安全代码验证",
-      "hotspot_category": "科技与工具",
-      "subject_id": "technology:openai:defenders-window",
-      "subject_kind": "technology",
-      "industry": "人工智能/网络安全治理",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:openai-defenders-window:01",
-      "keyword": "OpenAI防御者窗口",
-      "intent": "对象词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-18",
-      "valid_until": "2026-11-18",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:openai-defenders-window:official",
-        "metric:openai-defenders-window:circle"
-      ]
-    },
-    {
-      "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-010",
-      "hotspot_name": "OpenAI发布“防御者窗口”，提出用AI加速漏洞发现、修复与安全代码验证",
-      "hotspot_category": "科技与工具",
-      "subject_id": "technology:openai:defenders-window",
-      "subject_kind": "technology",
-      "industry": "人工智能/网络安全治理",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:openai-defenders-window:02",
-      "keyword": "AI安全防御",
-      "intent": "业务问题词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-18",
-      "valid_until": "2026-11-18",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:openai-defenders-window:official",
-        "metric:openai-defenders-window:circle"
-      ]
-    },
-    {
-      "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-010",
-      "hotspot_name": "OpenAI发布“防御者窗口”，提出用AI加速漏洞发现、修复与安全代码验证",
-      "hotspot_category": "科技与工具",
-      "subject_id": "technology:openai:defenders-window",
-      "subject_kind": "technology",
-      "industry": "人工智能/网络安全治理",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:openai-defenders-window:03",
-      "keyword": "AI代码供应链安全",
-      "intent": "业务问题词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-18",
-      "valid_until": "2026-11-18",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:openai-defenders-window:official",
-        "metric:openai-defenders-window:circle"
-      ]
-    },
-    {
-      "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-010",
-      "hotspot_name": "OpenAI发布“防御者窗口”，提出用AI加速漏洞发现、修复与安全代码验证",
-      "hotspot_category": "科技与工具",
-      "subject_id": "technology:openai:defenders-window",
-      "subject_kind": "technology",
-      "industry": "人工智能/网络安全治理",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:openai-defenders-window:04",
-      "keyword": "企业AI安全清单",
-      "intent": "业务问题词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-18",
-      "valid_until": "2026-11-18",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:openai-defenders-window:official",
-        "metric:openai-defenders-window:circle"
-      ]
-    },
-    {
-      "date": "2026-08-19",
-      "revision": 1,
-      "hotspot_id": "HT-20260819-010",
-      "hotspot_name": "OpenAI发布“防御者窗口”，提出用AI加速漏洞发现、修复与安全代码验证",
-      "hotspot_category": "科技与工具",
-      "subject_id": "technology:openai:defenders-window",
-      "subject_kind": "technology",
-      "industry": "人工智能/网络安全治理",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:openai-defenders-window:05",
-      "keyword": "AI漏洞修复",
-      "intent": "业务问题词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；第二阶段只在取得真实搜索词报告后补充精确匹配和否定词",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对应对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-18",
-      "valid_until": "2026-11-18",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:openai-defenders-window:official",
-        "metric:openai-defenders-window:circle"
       ]
     }
   ]

@@ -5,19 +5,19 @@
   "dates": [
     {
       "date": "2026-08-19",
-      "observedAt": "2026-08-19T09:43:53+08:00",
+      "observedAt": "2026-08-19T10:51:40+08:00",
       "total": 10,
-      "priority": 8,
+      "priority": 9,
       "gradeCounts": {
         "S": 0,
-        "A": 8,
-        "B": 2,
-        "C": 0,
+        "A": 9,
+        "B": 0,
+        "C": 1,
         "D": 0
       },
       "domainCounts": {
-        "commerce": 6,
-        "technology": 4
+        "commerce": 4,
+        "technology": 6
       },
       "sourceType": "structured-data",
       "sourceArtifact": "incoming/hotspots/2026-08-19.json",
