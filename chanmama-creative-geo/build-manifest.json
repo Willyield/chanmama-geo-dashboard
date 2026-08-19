@@ -1,57 +1,81 @@
 {
-  "schemaVersion": 1,
-  "dashboardVersion": "CMCR_DASHBOARD_LOCAL_20260818_R5",
-  "runId": "cmcr-20260818-19-r1",
-  "status": "LOCAL_DAY_ONE_PARTIAL_RELEASE",
+  "schemaVersion": 2,
+  "requestId": "cmcr-20260819-creative-sampling-dashboard-r1",
+  "requestRevision": 1,
+  "runId": "cmcr-20260818-recapture-20260819-r1",
+  "dashboardVersion": "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260819_R3",
+  "status": "READY_LOCAL_DEPLOYMENT_BLOCKED",
   "route": "/chanmama-creative-geo/",
-  "packageSha256": "E2C7F31D5FE9A8E7323631CFC9CC9B14C4713BCC33DD6EFBED8BCA5D6EF82E1E",
+  "projectKey": "chanmama-creative-geo-sampling",
+  "routePairId": "pair-3",
+  "optimizationCenter": "optimization-center-3",
+  "deploymentCenter": "deployment-center-3",
+  "allowedPaths": [
+    "chanmama-creative-geo/**"
+  ],
+  "packageSha256": "F3108EC7837524E189EB8F0A8C534605A24BAB89E04B0C57E58E9BAE66934782",
   "packageHashBasis": "canonical sorted path/bytes/sha256 list excluding build-manifest.json",
+  "sourceHashes": {
+    "rawManifestSha256": "E9503B8F53FDE87305DE6C7D75E29E32EBCBFAB9664251E74B24FE68986534B4",
+    "metricsSha256": "A7127A582C2C99DA0B0A18935AF71EE5E5431EC0BAB55DEADB81AE345DC9B309",
+    "semanticAuditSha256": "4158AEED5C9FC46452347EBE3C6895D5D3EE1F7A5AB562B9CF4170F61A5042C3",
+    "sampleDetailsSha256": "F04B0BE44F836CB5D686F9116332E4C955C4AF075CB3063AB247D0F9AAF6509A",
+    "validationSha256": "2F0506EB66C278D87910E242800CFC748DD13AC147397A39D730F02761DFA7E4",
+    "auditRows": 510,
+    "detailRows": 270
+  },
   "idempotency": {
     "strategy": "CONTENT_ADDRESSED",
+    "idempotencyKey": "cmcr-20260819-creative-sampling-dashboard-r1:rev1:F3108EC7837524E189EB8F0A8C534605A24BAB89E04B0C57E58E9BAE66934782",
     "rawMutation": false,
+    "correctionMutation": false,
     "externalWrites": 0
   },
-  "inputGate": {
-    "requiredRunId": "cmcr-20260818-19-r1",
-    "requiredStatus": "FROZEN",
-    "requiredSampleCount": 540,
-    "currentBlocker": "DAY_TWO_NOT_AUTHORIZED"
-  },
+  "qaRequired": [
+    "390x844",
+    "768x1024",
+    "1440x900"
+  ],
   "files": [
     {
       "path": "app.js",
-      "bytes": 10799,
-      "sha256": "87EBCA3E2F52CF55DDAC1E8321982AC14A5E4AFC3DC4D317381A7AF216B176AC"
+      "bytes": 10671,
+      "sha256": "A3297F86AD3DC295F4D95C5BA6742B73F070CC0C4B9DDE8C2115DC34E6222038"
     },
     {
-      "path": "dashboard-progress.json",
-      "bytes": 4847,
-      "sha256": "79B5F436A79CEC88886FE9694A3EF96B580EDE4BF3E89C845F83D6460BD29E18"
+      "path": "audit/semantic_audit.csv",
+      "bytes": 434643,
+      "sha256": "4158AEED5C9FC46452347EBE3C6895D5D3EE1F7A5AB562B9CF4170F61A5042C3"
+    },
+    {
+      "path": "audit/validation.json",
+      "bytes": 720,
+      "sha256": "2F0506EB66C278D87910E242800CFC748DD13AC147397A39D730F02761DFA7E4"
+    },
+    {
+      "path": "creative-dashboard-data.schema.json",
+      "bytes": 4596,
+      "sha256": "A464E1270198AF716AE3F446769DFA7338BCE77B15CE6DA519EED77E70A9D1FC"
+    },
+    {
+      "path": "dashboard-data.json",
+      "bytes": 379077,
+      "sha256": "1EA48CECC50BE4BFF68DE062E9DFDA85846E866FAA47EA19609B0D4EABA7B4DE"
     },
     {
       "path": "index.html",
-      "bytes": 7249,
-      "sha256": "16A198A57AEB086F60799057BC5CBD562A655672DBF1391836068046DCEB5EC4"
-    },
-    {
-      "path": "schemas/creative-dashboard-data.schema.json",
-      "bytes": 4397,
-      "sha256": "0117ACA92F3E5A6CCD183386DF6176BF85405615430D13C3D28ECB0F412C8488"
-    },
-    {
-      "path": "schemas/creative-raw-manifest.interface.schema.json",
-      "bytes": 2147,
-      "sha256": "89D09EB81BAD5959B067601E912A7DAE4EA12DAA32589B4399C3234F15A9B8F6"
+      "bytes": 6012,
+      "sha256": "4B46C4F50E9B06F94C04CA15354CC2A407F0582C695E48C7ECC8D0FEEABD491C"
     },
     {
       "path": "sensitive-scan.json",
-      "bytes": 504,
-      "sha256": "C5908655FBF511380D082E2FA587E1DBDC0FA604E7E58263A89711D81094CD0F"
+      "bytes": 467,
+      "sha256": "CF55F353D5364843A34209612F4199B1658F97948996C0ABF2AD831B93C1338C"
     },
     {
       "path": "styles.css",
-      "bytes": 14102,
-      "sha256": "AEBCDDBF77C9B4F631C874F6C77758F30080EB65D2BE5F8E6249AB308F1A3EB5"
+      "bytes": 13160,
+      "sha256": "2545A6C69BA1504314F650134DBF4BDCB2ED76A34866697F6508E136DF733343"
     }
   ]
 }
