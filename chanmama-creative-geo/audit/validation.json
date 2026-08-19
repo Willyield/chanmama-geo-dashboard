@@ -10,14 +10,14 @@
   "duplicateAuditIds": 0,
   "artifacts": {
     "semantic_audit.csv": "4158AEED5C9FC46452347EBE3C6895D5D3EE1F7A5AB562B9CF4170F61A5042C3",
-    "creative-metrics.json": "3C71F78EF272FFC308977251F4BE4AF021D7FAA70F9AFFD94BD41283D8A97592",
+    "creative-metrics.json": "6A7F436F585BBE35A6D8D441D31431D0ECCDE04FCF9A588D7F753C5520594AC6",
     "sample-details.json": "F04B0BE44F836CB5D686F9116332E4C955C4AF075CB3063AB247D0F9AAF6509A",
     "review-queue.csv": "B41A10F3B8C72F12D942E855B07E4A774883850C3CA18D2B7BECCD4D655CF01D",
-    "mention-rate-scope.csv": "9DBAA71684B9E4F5DCB501C1D5FD904B833F57D73B23C68C41850B8CFB45E368"
+    "mention-rate-scope.csv": "3B10D6C438A17AC5E627D9DDE97DF4EC2D6D3574BE5B97489A24DB221C308597"
   },
   "mentionRateScope": {
     "status": "PASS",
-    "ruleVersion": "CMCR-MENTION-RATE-NEUTRAL-QUESTIONS-V2-20260819",
+    "ruleVersion": "CMCR-NEUTRAL-QUESTION-METRICS-V3-20260819",
     "sourceMetricsSha256": "A7127A582C2C99DA0B0A18935AF71EE5E5431EC0BAB55DEADB81AE345DC9B309",
     "sourceDetailsSha256": "F04B0BE44F836CB5D686F9116332E4C955C4AF075CB3063AB247D0F9AAF6509A",
     "scopeRows": 270,
@@ -26,5 +26,17 @@
     "excludedBrandDirectedFormalAnswers": 61,
     "excludedBrandDirectedQuestionCount": 24,
     "excludedBrandDirectedUnknowns": 1
+  },
+  "neutralRecommendationScope": {
+    "status": "PASS",
+    "ruleVersion": "CMCR-NEUTRAL-QUESTION-METRICS-V3-20260819",
+    "sourceQuestionsSha256": "C94B15731B293D4F81D28955CFC56632112CFB04401D42FC125A5C8743BD99AA",
+    "includedRecommendationSamples": 51,
+    "excludedBrandDirectedRecommendationSamples": 26,
+    "top1TargetMentions": 7,
+    "top3TargetMentions": 12,
+    "rankingUnknowns": 11,
+    "targetBrandMentions": 12,
+    "allBrandMentions": 96
   }
 }

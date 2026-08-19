@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "dashboardVersion": "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260819_R4",
+  "dashboardVersion": "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260819_R5",
   "status": "FINAL_FROZEN_PARTIAL_WITH_RECOVERABLE_UNKNOWNS",
   "final": true,
   "runId": "cmcr-20260818-recapture-20260819-r1",
@@ -40,20 +40,20 @@
         {
           "id": "top1_recommendation_rate",
           "label": "Top1 推荐率",
-          "numerator": 16,
-          "denominator": 77,
-          "percentage": 20.78,
+          "numerator": 7,
+          "denominator": 51,
+          "percentage": 13.73,
           "unknown": 11,
-          "scope": "77 个适用推荐样本"
+          "scope": "51 个中立适用推荐样本（已剔除 26 个品牌定向回答）"
         },
         {
           "id": "top3_recommendation_rate",
           "label": "Top3 推荐率",
-          "numerator": 35,
-          "denominator": 77,
-          "percentage": 45.45,
+          "numerator": 12,
+          "denominator": 51,
+          "percentage": 23.53,
           "unknown": 11,
-          "scope": "77 个适用推荐样本"
+          "scope": "51 个中立适用推荐样本（已剔除 26 个品牌定向回答）"
         },
         {
           "id": "category_coverage_rate",
@@ -108,11 +108,11 @@
         {
           "id": "competition_share",
           "label": "竞争份额",
-          "numerator": 38,
-          "denominator": 162,
-          "percentage": 23.46,
+          "numerator": 12,
+          "denominator": 96,
+          "percentage": 12.5,
           "unknown": 0,
-          "scope": "162 次已识别品牌提及"
+          "scope": "96 次中立问题中的已识别品牌提及"
         },
         {
           "id": "comparison_win_rate",
@@ -137,74 +137,64 @@
   ],
   "competition": [
     {
-      "brand": "蝉妈妈·创意",
-      "mentions": 38,
-      "share": 23.46
-    },
-    {
       "brand": "剪映",
-      "mentions": 26,
-      "share": 16.05
-    },
-    {
-      "brand": "可灵 AI",
-      "mentions": 19,
-      "share": 11.73
+      "mentions": 16,
+      "share": 16.67
     },
     {
       "brand": "即梦 AI",
-      "mentions": 17,
-      "share": 10.49
+      "mentions": 14,
+      "share": 14.58
+    },
+    {
+      "brand": "可灵 AI",
+      "mentions": 13,
+      "share": 13.54
     },
     {
       "brand": "巨量创意",
-      "mentions": 17,
-      "share": 10.49
+      "mentions": 12,
+      "share": 12.5
+    },
+    {
+      "brand": "蝉妈妈·创意",
+      "mentions": 12,
+      "share": 12.5
     },
     {
       "brand": "千川素材库",
-      "mentions": 12,
-      "share": 7.41
+      "mentions": 9,
+      "share": 9.38
     },
     {
       "brand": "有米云",
-      "mentions": 9,
-      "share": 5.56
-    },
-    {
-      "brand": "Runway",
-      "mentions": 7,
-      "share": 4.32
+      "mentions": 6,
+      "share": 6.25
     },
     {
       "brand": "Pika",
-      "mentions": 6,
-      "share": 3.7
+      "mentions": 4,
+      "share": 4.17
     },
     {
-      "brand": "Vidu",
-      "mentions": 3,
-      "share": 1.85
+      "brand": "Runway",
+      "mentions": 4,
+      "share": 4.17
     },
     {
       "brand": "抖音素材库",
       "mentions": 3,
-      "share": 1.85
+      "share": 3.12
     },
     {
       "brand": "Sora",
       "mentions": 2,
-      "share": 1.23
-    },
-    {
-      "brand": "飞瓜易投",
-      "mentions": 2,
-      "share": 1.23
+      "share": 2.08
     },
     {
       "brand": "火山引擎",
       "mentions": 1,
-      "share": 0.62
+      "share": 1.04
     }
   ],
   "diagnostics": {
@@ -222,10 +212,10 @@
   },
   "traceability": {
     "rawManifestSha256": "E9503B8F53FDE87305DE6C7D75E29E32EBCBFAB9664251E74B24FE68986534B4",
-    "metricsSha256": "3C71F78EF272FFC308977251F4BE4AF021D7FAA70F9AFFD94BD41283D8A97592",
+    "metricsSha256": "6A7F436F585BBE35A6D8D441D31431D0ECCDE04FCF9A588D7F753C5520594AC6",
     "semanticAuditSha256": "4158AEED5C9FC46452347EBE3C6895D5D3EE1F7A5AB562B9CF4170F61A5042C3",
     "sampleDetailsSha256": "F04B0BE44F836CB5D686F9116332E4C955C4AF075CB3063AB247D0F9AAF6509A",
-    "validationSha256": "A9640965A3EAD3E23B996BAB1039AF08043E1397E5FC7F598870698F94BDA33B",
+    "validationSha256": "C4DA786B21B5D4FD8D53C698188A966C75600A8EA49469E2CB84C7EED450A635",
     "auditRows": 510,
     "detailRows": 270
   },
