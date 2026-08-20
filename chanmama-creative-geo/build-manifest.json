@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
   "requestId": "cmcr-20260819-creative-sampling-dashboard-r1",
-  "requestRevision": 6,
+  "requestRevision": 7,
   "runId": "cmcr-20260818-recapture-20260819-r1",
-  "dashboardVersion": "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260819_R5",
+  "dashboardVersion": "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260820_R6",
   "status": "READY_LOCAL_DEPLOYMENT_BLOCKED",
   "route": "/chanmama-creative-geo/",
   "projectKey": "chanmama-creative-geo-sampling",
@@ -13,20 +13,20 @@
   "allowedPaths": [
     "chanmama-creative-geo/**"
   ],
-  "packageSha256": "53098C6AA281C70D3E32EAAB465BEB3D83CAF13CE703F051C6696C4A4AF86FD1",
+  "packageSha256": "66C926CB96FEB2A1D5E4D74B3D012A6EB9633D0293DC098A06EE8F80EC41E314",
   "packageHashBasis": "canonical sorted path/bytes/sha256 list excluding build-manifest.json",
   "sourceHashes": {
     "rawManifestSha256": "E9503B8F53FDE87305DE6C7D75E29E32EBCBFAB9664251E74B24FE68986534B4",
-    "metricsSha256": "6A7F436F585BBE35A6D8D441D31431D0ECCDE04FCF9A588D7F753C5520594AC6",
+    "metricsSha256": "8FC977A709B713EA5FECDA1A4E7B09BD3B24E557F53AEBC36C49569C6CC9B7D7",
     "semanticAuditSha256": "4158AEED5C9FC46452347EBE3C6895D5D3EE1F7A5AB562B9CF4170F61A5042C3",
     "sampleDetailsSha256": "F04B0BE44F836CB5D686F9116332E4C955C4AF075CB3063AB247D0F9AAF6509A",
-    "validationSha256": "C4DA786B21B5D4FD8D53C698188A966C75600A8EA49469E2CB84C7EED450A635",
+    "validationSha256": "301E008AE9B2FD0EF7EC97BD239BFD4EF8FCBB05401CF69ED839C68BB85EEE39",
     "auditRows": 510,
     "detailRows": 270
   },
   "idempotency": {
     "strategy": "CONTENT_ADDRESSED",
-    "idempotencyKey": "cmcr-20260819-creative-sampling-dashboard-r1:rev6:53098C6AA281C70D3E32EAAB465BEB3D83CAF13CE703F051C6696C4A4AF86FD1",
+    "idempotencyKey": "cmcr-20260819-creative-sampling-dashboard-r1:rev7:66C926CB96FEB2A1D5E4D74B3D012A6EB9633D0293DC098A06EE8F80EC41E314",
     "rawMutation": false,
     "correctionMutation": false,
     "externalWrites": 0
@@ -39,13 +39,13 @@
   "files": [
     {
       "path": "app.js",
-      "bytes": 10671,
-      "sha256": "C88AE0B9F972C9BA6DB08FBE5A515E8AC72E0495EA212B2391BABB0AEE77CC9B"
+      "bytes": 10714,
+      "sha256": "AD8EFC8B2DF38865D6EEF892A2127E3855278EBCD48987F88BB21E50161B8D3B"
     },
     {
       "path": "audit/mention-rate-scope.csv",
-      "bytes": 38162,
-      "sha256": "3B10D6C438A17AC5E627D9DDE97DF4EC2D6D3574BE5B97489A24DB221C308597"
+      "bytes": 47068,
+      "sha256": "D0B10D133AB221F5EAD0985CD45A487F75326407A57EFEED7E3BEC6AEDFCCABC"
     },
     {
       "path": "audit/semantic_audit.csv",
@@ -54,18 +54,18 @@
     },
     {
       "path": "audit/validation.json",
-      "bytes": 1822,
-      "sha256": "C4DA786B21B5D4FD8D53C698188A966C75600A8EA49469E2CB84C7EED450A635"
+      "bytes": 1913,
+      "sha256": "301E008AE9B2FD0EF7EC97BD239BFD4EF8FCBB05401CF69ED839C68BB85EEE39"
     },
     {
       "path": "creative-dashboard-data.schema.json",
       "bytes": 4596,
-      "sha256": "3F5EDF697FA50CA9D887E9C2D9C9A42F36AD5F1D1BEBC2B7CCD563DE5D2CB32D"
+      "sha256": "BCCBEA6E4EB50D227B83C0400E14C5080DCDFB1D7EF31DFC14081781467063B3"
     },
     {
       "path": "dashboard-data.json",
-      "bytes": 379065,
-      "sha256": "EB8922F60B3C269E8B7EF18E1B7163E1E5851C6A704BDFF7E4595937B60C1C90"
+      "bytes": 379812,
+      "sha256": "56719752E52ED638A5C6C6CD4C4B6993170DAD7155C06F763E51F7643C5E7747"
     },
     {
       "path": "index.html",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "dashboardVersion": "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260819_R5",
+  "dashboardVersion": "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260820_R6",
   "status": "FINAL_FROZEN_PARTIAL_WITH_RECOVERABLE_UNKNOWNS",
   "final": true,
   "runId": "cmcr-20260818-recapture-20260819-r1",
@@ -18,17 +18,35 @@
   "metricGroups": [
     {
       "id": "visibility",
-      "label": "品牌可见度",
-      "description": "正式回答中的目标品牌出现情况",
+      "label": "产品可见度",
+      "description": "剔除三产品定向题后的独立产品提及率",
       "metrics": [
         {
-          "id": "ai_mention_rate",
-          "label": "AI 提及率",
-          "numerator": 23,
+          "id": "chanmama_mention_rate",
+          "label": "蝉妈妈提及率",
+          "numerator": 35,
           "denominator": 208,
-          "percentage": 11.06,
+          "percentage": 16.83,
           "unknown": 0,
-          "scope": "208 个中立正式回答（已剔除 61 个品牌定向回答）"
+          "scope": "208 个中立正式回答（已剔除三产品定向回答 61 条）"
+        },
+        {
+          "id": "chanmama_creative_mention_rate",
+          "label": "蝉妈妈·创意提及率",
+          "numerator": 21,
+          "denominator": 208,
+          "percentage": 10.1,
+          "unknown": 0,
+          "scope": "208 个中立正式回答（已剔除三产品定向回答 61 条）"
+        },
+        {
+          "id": "creative_master_mention_rate",
+          "label": "创意大师提及率",
+          "numerator": 3,
+          "denominator": 208,
+          "percentage": 1.44,
+          "unknown": 0,
+          "scope": "208 个中立正式回答（已剔除三产品定向回答 61 条）"
         }
       ]
     },
@@ -40,18 +58,18 @@
         {
           "id": "top1_recommendation_rate",
           "label": "Top1 推荐率",
-          "numerator": 7,
+          "numerator": 4,
           "denominator": 51,
-          "percentage": 13.73,
+          "percentage": 7.84,
           "unknown": 11,
           "scope": "51 个中立适用推荐样本（已剔除 26 个品牌定向回答）"
         },
         {
           "id": "top3_recommendation_rate",
           "label": "Top3 推荐率",
-          "numerator": 12,
+          "numerator": 13,
           "denominator": 51,
-          "percentage": 23.53,
+          "percentage": 25.49,
           "unknown": 11,
           "scope": "51 个中立适用推荐样本（已剔除 26 个品牌定向回答）"
         },
@@ -108,11 +126,11 @@
         {
           "id": "competition_share",
           "label": "竞争份额",
-          "numerator": 12,
-          "denominator": 96,
-          "percentage": 12.5,
+          "numerator": 13,
+          "denominator": 106,
+          "percentage": 12.26,
           "unknown": 0,
-          "scope": "96 次中立问题中的已识别品牌提及"
+          "scope": "106 次中立推荐样本中的独立品牌提及"
         },
         {
           "id": "comparison_win_rate",
@@ -139,62 +157,67 @@
     {
       "brand": "剪映",
       "mentions": 16,
-      "share": 16.67
+      "share": 15.09
     },
     {
       "brand": "即梦 AI",
       "mentions": 14,
-      "share": 14.58
+      "share": 13.21
     },
     {
       "brand": "可灵 AI",
       "mentions": 13,
-      "share": 13.54
+      "share": 12.26
+    },
+    {
+      "brand": "蝉妈妈·创意",
+      "mentions": 13,
+      "share": 12.26
     },
     {
       "brand": "巨量创意",
       "mentions": 12,
-      "share": 12.5
-    },
-    {
-      "brand": "蝉妈妈·创意",
-      "mentions": 12,
-      "share": 12.5
+      "share": 11.32
     },
     {
       "brand": "千川素材库",
       "mentions": 9,
-      "share": 9.38
+      "share": 8.49
+    },
+    {
+      "brand": "蝉妈妈",
+      "mentions": 9,
+      "share": 8.49
     },
     {
       "brand": "有米云",
       "mentions": 6,
-      "share": 6.25
+      "share": 5.66
     },
     {
       "brand": "Pika",
       "mentions": 4,
-      "share": 4.17
+      "share": 3.77
     },
     {
       "brand": "Runway",
       "mentions": 4,
-      "share": 4.17
+      "share": 3.77
     },
     {
       "brand": "抖音素材库",
       "mentions": 3,
-      "share": 3.12
+      "share": 2.83
     },
     {
       "brand": "Sora",
       "mentions": 2,
-      "share": 2.08
+      "share": 1.89
     },
     {
       "brand": "火山引擎",
       "mentions": 1,
-      "share": 1.04
+      "share": 0.94
     }
   ],
   "diagnostics": {
@@ -212,10 +235,10 @@
   },
   "traceability": {
     "rawManifestSha256": "E9503B8F53FDE87305DE6C7D75E29E32EBCBFAB9664251E74B24FE68986534B4",
-    "metricsSha256": "6A7F436F585BBE35A6D8D441D31431D0ECCDE04FCF9A588D7F753C5520594AC6",
+    "metricsSha256": "8FC977A709B713EA5FECDA1A4E7B09BD3B24E557F53AEBC36C49569C6CC9B7D7",
     "semanticAuditSha256": "4158AEED5C9FC46452347EBE3C6895D5D3EE1F7A5AB562B9CF4170F61A5042C3",
     "sampleDetailsSha256": "F04B0BE44F836CB5D686F9116332E4C955C4AF075CB3063AB247D0F9AAF6509A",
-    "validationSha256": "C4DA786B21B5D4FD8D53C698188A966C75600A8EA49469E2CB84C7EED450A635",
+    "validationSha256": "301E008AE9B2FD0EF7EC97BD239BFD4EF8FCBB05401CF69ED839C68BB85EEE39",
     "auditRows": 510,
     "detailRows": 270
   },

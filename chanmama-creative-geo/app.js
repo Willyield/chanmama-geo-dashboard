@@ -1,12 +1,12 @@
 const EXPECTED = Object.freeze({
-  dashboardVersion: "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260819_R5",
+  dashboardVersion: "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260820_R6",
   runId: "cmcr-20260818-recapture-20260819-r1",
   rawManifestSha256: "E9503B8F53FDE87305DE6C7D75E29E32EBCBFAB9664251E74B24FE68986534B4",
   sampleCount: 270,
   formalAnswerCount: 269,
   recoverableUnknown: 1,
   pendingSampleId: "CMCR-CMP-20260819-C2-Q0087",
-  businessMetricCount: 10,
+  businessMetricCount: 12,
 });
 
 let DATA;
@@ -48,10 +48,10 @@ function renderHeader(data) {
 
 function renderDecisions(data) {
   const target = data.competition.find((item) => item.brand === "蝉妈妈·创意");
-  const mention = data.metricGroups.flatMap((group) => group.metrics).find((item) => item.id === "ai_mention_rate");
+  const mention = data.metricGroups.flatMap((group) => group.metrics).find((item) => item.id === "chanmama_creative_mention_rate");
   const cards = [
     { tone: "good", label: "正式回答覆盖", value: `${data.summary.formalAnswerCount}/${data.summary.sampleCount}`, note: `${percent(data.summary.formalAnswerCount / data.summary.sampleCount * 100)}，剩余 1 条可恢复未知` },
-    { tone: "focus", label: "AI 提及率", value: percent(mention.percentage), note: `${mention.numerator}/${mention.denominator}，未知 ${mention.unknown}` },
+    { tone: "focus", label: "蝉妈妈·创意提及率", value: percent(mention.percentage), note: `${mention.numerator}/${mention.denominator}，与蝉妈妈、创意大师分开统计` },
     { tone: "risk", label: "目标缺席但竞品出现", value: data.diagnostics.targetAbsentCompetitorPresent, note: "优先补强品牌与场景关联表达" },
     { tone: "unknown", label: "竞争提及份额", value: percent(target.share), note: `${target.mentions} 次目标品牌提及，按适用推荐样本统计` },
   ];
