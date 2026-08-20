@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "dashboardVersion": "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260820_R6",
+  "dashboardVersion": "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260820_R7",
   "status": "FINAL_FROZEN_PARTIAL_WITH_RECOVERABLE_UNKNOWNS",
   "final": true,
   "runId": "cmcr-20260818-recapture-20260819-r1",

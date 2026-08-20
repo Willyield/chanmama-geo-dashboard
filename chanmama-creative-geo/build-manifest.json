@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
   "requestId": "cmcr-20260819-creative-sampling-dashboard-r1",
-  "requestRevision": 7,
+  "requestRevision": 8,
   "runId": "cmcr-20260818-recapture-20260819-r1",
-  "dashboardVersion": "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260820_R6",
+  "dashboardVersion": "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260820_R7",
   "status": "READY_LOCAL_DEPLOYMENT_BLOCKED",
   "route": "/chanmama-creative-geo/",
   "projectKey": "chanmama-creative-geo-sampling",
@@ -13,7 +13,7 @@
   "allowedPaths": [
     "chanmama-creative-geo/**"
   ],
-  "packageSha256": "66C926CB96FEB2A1D5E4D74B3D012A6EB9633D0293DC098A06EE8F80EC41E314",
+  "packageSha256": "734EC9C7B1CE4DAA766D6ED39C44E3873E412BEBA86DF28869BE34A065C76056",
   "packageHashBasis": "canonical sorted path/bytes/sha256 list excluding build-manifest.json",
   "sourceHashes": {
     "rawManifestSha256": "E9503B8F53FDE87305DE6C7D75E29E32EBCBFAB9664251E74B24FE68986534B4",
@@ -26,7 +26,7 @@
   },
   "idempotency": {
     "strategy": "CONTENT_ADDRESSED",
-    "idempotencyKey": "cmcr-20260819-creative-sampling-dashboard-r1:rev7:66C926CB96FEB2A1D5E4D74B3D012A6EB9633D0293DC098A06EE8F80EC41E314",
+    "idempotencyKey": "cmcr-20260819-creative-sampling-dashboard-r1:rev8:734EC9C7B1CE4DAA766D6ED39C44E3873E412BEBA86DF28869BE34A065C76056",
     "rawMutation": false,
     "correctionMutation": false,
     "externalWrites": 0
@@ -39,8 +39,8 @@
   "files": [
     {
       "path": "app.js",
-      "bytes": 10714,
-      "sha256": "AD8EFC8B2DF38865D6EEF892A2127E3855278EBCD48987F88BB21E50161B8D3B"
+      "bytes": 11971,
+      "sha256": "C5F514D81D061E9D9349D96E53B85BA1ED0862231065B036AC6089288240874A"
     },
     {
       "path": "audit/mention-rate-scope.csv",
@@ -65,12 +65,12 @@
     {
       "path": "dashboard-data.json",
       "bytes": 379812,
-      "sha256": "56719752E52ED638A5C6C6CD4C4B6993170DAD7155C06F763E51F7643C5E7747"
+      "sha256": "3B68A245F7D464BCA9581DA29C313207F16BD0FE01F618F85C2C8A6572A6D45D"
     },
     {
       "path": "index.html",
-      "bytes": 6026,
-      "sha256": "685698C99117A31548EF6E236F3104D4A673BACE046106CF3BB1ACEB8194D5CC"
+      "bytes": 6135,
+      "sha256": "3A2801529CFE284249C9600A7458BFD97F53C44888F17493401F3021F6E4C4E6"
     },
     {
       "path": "sensitive-scan.json",
@@ -79,8 +79,8 @@
     },
     {
       "path": "styles.css",
-      "bytes": 13160,
-      "sha256": "2545A6C69BA1504314F650134DBF4BDCB2ED76A34866697F6508E136DF733343"
+      "bytes": 14427,
+      "sha256": "99F5DB1A350D56B8896B327D51A656CD86C50689E72408158650C74C44682586"
     }
   ]
 }

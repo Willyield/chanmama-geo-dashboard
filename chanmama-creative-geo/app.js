@@ -1,5 +1,5 @@
 const EXPECTED = Object.freeze({
-  dashboardVersion: "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260820_R6",
+  dashboardVersion: "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260820_R7",
   runId: "cmcr-20260818-recapture-20260819-r1",
   rawManifestSha256: "E9503B8F53FDE87305DE6C7D75E29E32EBCBFAB9664251E74B24FE68986534B4",
   sampleCount: 270,
@@ -86,6 +86,26 @@ function renderCompetition(data) {
     <span><b>${totalMentions}</b>已识别品牌提及</span>
     <span><b>${data.competition.length}</b>竞争品牌</span>
     <span><b>${data.diagnostics.advantageExpressionCount}</b>优势表达样本</span>`;
+  const metrics = new Map(data.metricGroups.flatMap((group) => group.metrics).map((metric) => [metric.id, metric]));
+  const products = [
+    { brand: "蝉妈妈", metricId: "chanmama_mention_rate" },
+    { brand: "蝉妈妈·创意", metricId: "chanmama_creative_mention_rate" },
+    { brand: "创意大师", metricId: "creative_master_mention_rate" },
+  ];
+  document.getElementById("product-competition").innerHTML = `
+    <div class="product-competition-head">
+      <div><span>PRODUCT COMPARISON</span><h3>三款产品竞争对照</h3></div>
+      <p>51 条中立推荐样本 · 106 次独立品牌提及</p>
+    </div>
+    <div class="product-competition-grid">${products.map(({ brand, metricId }) => {
+      const competition = data.competition.find((item) => item.brand === brand) ?? { mentions: 0, share: 0 };
+      const mention = metrics.get(metricId);
+      return `<article class="product-competition-card${competition.mentions === 0 ? " zero" : ""}">
+        <div><strong>${brand}</strong><span>${competition.mentions} 次竞争提及</span></div>
+        <b>${percent(competition.share)}</b>
+        <p>自然提及 ${percent(mention.percentage)} · ${mention.numerator}/${mention.denominator}</p>
+      </article>`;
+    }).join("")}</div>`;
   document.getElementById("competition-grid").replaceChildren(...data.competition.map((item, index) => {
     const article = document.createElement("article");
     article.className = `competitor-card${item.brand === "蝉妈妈·创意" ? " target" : ""}`;
