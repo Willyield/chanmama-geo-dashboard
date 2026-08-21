@@ -3,8 +3,8 @@
   "messageType": "FROZEN_WEBSITE_RELEASE",
   "protocolVersion": 2,
   "requestId": "cmcr-20260819-sampling-mvp3a-715088E1D322",
-  "requestRevision": 6,
-  "supersedesRevision": 5,
+  "requestRevision": 7,
+  "supersedesRevision": 6,
   "sourceOptimizationRequestRevision": 5,
   "runId": "CREATIVE-FINAL_WITH_GAPS-540-538-R5",
   "projectKey": "chanmama-creative-geo-sampling",
@@ -17,7 +17,7 @@
   "allowedPaths": [
     "chanmama-creative-geo/**"
   ],
-  "contentPackageSha256": "0641AAA924B90893A191EDC96DB6D5319B9D36667E2E166A5D80B1A0233506C6",
+  "contentPackageSha256": "2CAED6B13CD9F182510519084DEFC52E73DE78E2671D541D928C080AC90034B3",
   "inputHashes": {
     "requestSha256": "D75F177ABE31ACE1B41CE1BA66E2DBB0B2A4EDDBA62FB09E8DFB7AB6418AEECA",
     "frozenDashboardPackageSha256": "9C6ADB3A34EA6674AC1AD771993468B16BDAA407FA1B456957F3D2F6E7E24DBF",
@@ -52,7 +52,7 @@
   },
   "idempotency": {
     "strategy": "CONTENT_ADDRESSED",
-    "idempotencyKey": "cmcr-20260819-sampling-mvp3a-715088E1D322:rev6:0641AAA924B90893A191EDC96DB6D5319B9D36667E2E166A5D80B1A0233506C6",
+    "idempotencyKey": "cmcr-20260819-sampling-mvp3a-715088E1D322:rev7:2CAED6B13CD9F182510519084DEFC52E73DE78E2671D541D928C080AC90034B3",
     "externalWrites": 0
   },
   "qaRequired": [
@@ -63,8 +63,8 @@
   "files": [
     {
       "path": "app.js",
-      "bytes": 12085,
-      "sha256": "5D13F522DBCCC6807AF24F8C1F030583D03E61163953C283E6363AA869556BD4"
+      "bytes": 13298,
+      "sha256": "E6F817657C08FAB2FF30BFB15F846DA2B86A691F1AFB619AD5C168468B3BA25D"
     },
     {
       "path": "audit/ARTIFACT_MANIFEST.json",
@@ -117,9 +117,14 @@
       "sha256": "4C43B301D09FA9EAA7B7DF09454C33F443C29B9F2A4F26D9E5777027D7483DA0"
     },
     {
+      "path": "dashboard-summary.json",
+      "bytes": 15606,
+      "sha256": "4DB9928A474EEDB4587CBB60E877F209FA8AFA4052F0A5A5919F0BE99409ECCA"
+    },
+    {
       "path": "index.html",
-      "bytes": 7052,
-      "sha256": "6B2F7DFEA595498B87FFF683DD162487172E990CE2D00C79E7FC24B447313AAE"
+      "bytes": 7079,
+      "sha256": "AADFA26A6417086416C070F9C7F95E3C923FBE6706140C0FB3012DE334D243A0"
     },
     {
       "path": "sensitive-scan.json",

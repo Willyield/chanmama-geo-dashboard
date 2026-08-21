@@ -19,43 +19,50 @@ const GROUPS = [
 ];
 
 let DATA;
+let SUMMARY;
 let ANALYSIS;
 let pageNumber = 1;
 
-function assertInputs(data, analysis) {
-  if (data.snapshotId !== CONTRACT.snapshotId || analysis.snapshotId !== CONTRACT.snapshotId) throw new Error("SNAPSHOT_IDENTITY_MISMATCH");
-  if (data.status !== "FINAL_WITH_GAPS" || analysis.resultStatus !== "FINAL_WITH_GAPS" || analysis.qualityGate !== "PASSED_COMBINED_540_SOURCE_RECALCULATION") throw new Error("FROZEN_STATUS_MISMATCH");
-  if (data.total !== CONTRACT.total || data.sampled !== CONTRACT.total || data.collected !== CONTRACT.collected || data.awaitingCollection !== CONTRACT.unknown) throw new Error("SUMMARY_COUNT_MISMATCH");
-  if (!Array.isArray(data.samples) || data.samples.length !== CONTRACT.total || new Set(data.samples.map((item) => item.sampleIdentity)).size !== CONTRACT.total) throw new Error("SAMPLE_IDENTITY_MISMATCH");
-  const unknowns = data.samples.filter((item) => !item.collected);
-  if (unknowns.length !== CONTRACT.unknown || unknowns.some((item) => item.answer !== "") || CONTRACT.unknownSampleIds.some((id) => !unknowns.some((item) => item.sampleId === id))) throw new Error("UNKNOWN_SAMPLE_MISMATCH");
-  if (!analysis.frozenInputs.sameFrozenData || analysis.frozenInputs.samplingDataSha256 !== analysis.frozenInputs.citationDataSha256) throw new Error("ANALYSIS_INPUT_MISMATCH");
+function assertSummary(summary, analysis) {
+  if (summary.snapshotId !== CONTRACT.snapshotId || analysis.snapshotId !== CONTRACT.snapshotId) throw new Error("SNAPSHOT_IDENTITY_MISMATCH");
+  if (summary.status !== "FINAL_WITH_GAPS" || analysis.resultStatus !== "FINAL_WITH_GAPS" || analysis.qualityGate !== "PASSED_COMBINED_540_SOURCE_RECALCULATION") throw new Error("FROZEN_STATUS_MISMATCH");
+  if (summary.total !== CONTRACT.total || summary.sampled !== CONTRACT.total || summary.collected !== CONTRACT.collected || summary.awaitingCollection !== CONTRACT.unknown) throw new Error("SUMMARY_COUNT_MISMATCH");
+  if (summary.citationCount !== CONTRACT.citationCount || summary.competitionMentions !== CONTRACT.competitionMentions || summary.competitionBrandCount !== CONTRACT.competitionBrandCount || summary.competition.length !== CONTRACT.competitionBrandCount) throw new Error("SUMMARY_RECONCILIATION_MISMATCH");
+  if (summary.unknowns.length !== CONTRACT.unknown || CONTRACT.unknownSampleIds.some((id) => !summary.unknowns.some((item) => item.sampleId === id))) throw new Error("SUMMARY_UNKNOWN_MISMATCH");
   const cards = analysis.dataCards.results;
   if (analysis.dataCards.catalogVersion !== CONTRACT.analysisCatalogVersion || cards.length !== CONTRACT.metricCount || analysis.dataCards.unresolvedMandatory.length) throw new Error("METRIC_CATALOG_MISMATCH");
   if (cards.some((card) => card.status !== "READY" || !Number.isFinite(card.numerator) || !Number.isFinite(card.denominator) || !Number.isFinite(card.percentage) || !Number.isFinite(card.unknown))) throw new Error("METRIC_VALUE_MISSING");
+}
+
+function assertFullData(data) {
+  if (data.snapshotId !== CONTRACT.snapshotId || data.status !== "FINAL_WITH_GAPS") throw new Error("FULL_DATA_IDENTITY_MISMATCH");
+  if (data.total !== CONTRACT.total || data.sampled !== CONTRACT.total || data.collected !== CONTRACT.collected || data.awaitingCollection !== CONTRACT.unknown) throw new Error("FULL_DATA_COUNT_MISMATCH");
+  if (!Array.isArray(data.samples) || data.samples.length !== CONTRACT.total || new Set(data.samples.map((item) => item.sampleIdentity)).size !== CONTRACT.total) throw new Error("SAMPLE_IDENTITY_MISMATCH");
+  const unknowns = data.samples.filter((item) => !item.collected);
+  if (unknowns.length !== CONTRACT.unknown || unknowns.some((item) => item.answer !== "") || CONTRACT.unknownSampleIds.some((id) => !unknowns.some((item) => item.sampleId === id))) throw new Error("UNKNOWN_SAMPLE_MISMATCH");
   if (data.citations.length !== CONTRACT.citationCount) throw new Error("CITATION_COUNT_MISMATCH");
   if (data.competitionMentions !== CONTRACT.competitionMentions || data.competitionBrandCount !== CONTRACT.competitionBrandCount || data.competition.length !== CONTRACT.competitionBrandCount) throw new Error("COMPETITION_SUMMARY_MISMATCH");
   if (data.competition.reduce((sum, item) => sum + item.mentions, 0) !== CONTRACT.competitionMentions) throw new Error("COMPETITION_TOTAL_MISMATCH");
 }
 
-const text = (id, value) => { document.getElementById(id).textContent = String(value); };
+const text = (id, value) => { const node = document.getElementById(id); if (node) node.textContent = String(value); };
 const percent = (value) => `${Number(value).toFixed(2)}%`;
 const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
 
 function renderHeader() {
-  text("sample-total", DATA.total);
-  text("collected-total", DATA.collected);
-  text("unknown-total", DATA.awaitingCollection);
-  text("citation-total", DATA.citations.length);
-  text("snapshot-id", DATA.snapshotId);
-  text("footer-version", `${DATA.rendererVersion} · ${DATA.snapshotId}`);
-  text("hero-note", `2026-08-18 与 2026-08-19 两日共 ${DATA.total} 个采样槽位，${DATA.collected} 条取得正式回答；两个缺口保持 unknown，不计为未提及或无引用。`);
+  text("sample-total", SUMMARY.total);
+  text("collected-total", SUMMARY.collected);
+  text("unknown-total", SUMMARY.awaitingCollection);
+  text("citation-total", SUMMARY.citationCount);
+  text("snapshot-id", SUMMARY.snapshotId);
+  text("footer-version", `${SUMMARY.rendererVersion} · ${SUMMARY.snapshotId}`);
+  text("hero-note", `2026-08-18 与 2026-08-19 两日共 ${SUMMARY.total} 个采样槽位，${SUMMARY.collected} 条取得正式回答；两个缺口保持 unknown，不计为未提及或无引用。`);
 }
 
 function renderCompetition() {
   const targets = new Set(["蝉妈妈", "蝉妈妈·创意", "创意大师"]);
-  const maxMentions = Math.max(...DATA.competition.map((item) => item.mentions), 1);
-  document.getElementById("competition-grid").innerHTML = DATA.competition.map((item) => `<div class="competition-row ${targets.has(item.brand) ? "target" : ""}" data-competition-brand="${escapeHtml(item.brand)}"><span class="brand" title="${escapeHtml(item.brand)}">${escapeHtml(item.brand)}</span><span class="track"><i class="fill" style="width:${item.mentions / maxMentions * 100}%"></i></span><span class="number">${item.mentions} · ${percent(item.share)}</span></div>`).join("");
+  const maxMentions = Math.max(...SUMMARY.competition.map((item) => item.mentions), 1);
+  document.getElementById("competition-grid").innerHTML = SUMMARY.competition.map((item) => `<div class="competition-row ${targets.has(item.brand) ? "target" : ""}" data-competition-brand="${escapeHtml(item.brand)}"><span class="brand" title="${escapeHtml(item.brand)}">${escapeHtml(item.brand)}</span><span class="track"><i class="fill" style="width:${item.mentions / maxMentions * 100}%"></i></span><span class="number">${item.mentions} · ${percent(item.share)}</span></div>`).join("");
 }
 
 function renderMetrics() {
@@ -71,18 +78,6 @@ function renderMetrics() {
     }).join("")}</div>`;
     return article;
   }));
-}
-
-function summarize(field) {
-  const grouped = new Map();
-  for (const sample of DATA.samples) {
-    const name = sample[field];
-    const row = grouped.get(name) ?? { name, collected: 0, mentioned: 0 };
-    if (sample.collected) row.collected += 1;
-    if (sample.collected && sample.mentioned) row.mentioned += 1;
-    grouped.set(name, row);
-  }
-  return [...grouped.values()].map((row) => ({ ...row, mentionRate: row.collected ? row.mentioned / row.collected * 100 : 0 })).sort((a, b) => b.collected - a.collected || a.name.localeCompare(b.name, "zh-CN"));
 }
 
 function renderBars(id, rows) {
@@ -128,8 +123,6 @@ function bindEvidence() {
   optionValues("date-filter", DATA.samplingDates);
   optionValues("category-filter", DATA.filters.categories);
   optionValues("round-filter", DATA.filters.modes);
-  const unknowns = DATA.samples.filter((item) => !item.collected);
-  document.getElementById("unknown-list").innerHTML = unknowns.map((item) => `<div class="unknown-item"><span>${escapeHtml(item.sampleDate)} · 保持 unknown</span><strong>${escapeHtml(item.sampleId)}</strong><p>${escapeHtml(item.question)}</p></div>`).join("");
   for (const id of ["date-filter", "category-filter", "round-filter", "status-filter", "search-filter"]) document.getElementById(id).addEventListener("input", () => { pageNumber = 1; renderSamples(); });
   document.getElementById("page-size").addEventListener("change", () => { pageNumber = 1; renderSamples(); });
   document.getElementById("page-prev").addEventListener("click", () => { pageNumber -= 1; renderSamples(); });
@@ -143,27 +136,53 @@ function bindEvidence() {
   renderSamples();
 }
 
+function renderUnknowns() {
+  document.getElementById("unknown-list").innerHTML = SUMMARY.unknowns.map((item) => `<div class="unknown-item"><span>${escapeHtml(item.sampleDate)} · 保持 unknown</span><strong>${escapeHtml(item.sampleId)}</strong><p>${escapeHtml(item.question)}</p></div>`).join("");
+}
+
+function setSampleControlsDisabled(disabled) {
+  for (const id of ["date-filter", "category-filter", "round-filter", "status-filter", "search-filter", "reset-filters", "page-prev", "page-next", "page-size"]) document.getElementById(id).disabled = disabled;
+}
+
+async function loadSamples() {
+  const response = await fetch("./dashboard-data.json", { cache: "no-store" });
+  if (!response.ok) throw new Error("FULL_DATA_HTTP_FAILURE");
+  DATA = await response.json();
+  assertFullData(DATA);
+  bindEvidence();
+  setSampleControlsDisabled(false);
+  document.body.classList.add("samples-ready");
+}
+
 async function start() {
-  const [dataResponse, analysisResponse] = await Promise.all([
-    fetch("./dashboard-data.json", { cache: "no-store" }),
+  const [summaryResponse, analysisResponse] = await Promise.all([
+    fetch("./dashboard-summary.json", { cache: "no-store" }),
     fetch("./audit/DATA_ANALYSIS_REPORT.json", { cache: "no-store" }),
   ]);
-  if (!dataResponse.ok || !analysisResponse.ok) throw new Error("FROZEN_INPUT_HTTP_FAILURE");
-  DATA = await dataResponse.json();
+  if (!summaryResponse.ok || !analysisResponse.ok) throw new Error("SUMMARY_INPUT_HTTP_FAILURE");
+  SUMMARY = await summaryResponse.json();
   ANALYSIS = await analysisResponse.json();
-  assertInputs(DATA, ANALYSIS);
+  assertSummary(SUMMARY, ANALYSIS);
   renderHeader();
   renderMetrics();
   renderCompetition();
-  renderBars("category-bars", summarize("category"));
-  renderBars("round-bars", summarize("mode"));
-  renderBars("date-bars", summarize("sampleDate"));
-  bindEvidence();
+  renderBars("category-bars", SUMMARY.distributions.category);
+  renderBars("round-bars", SUMMARY.distributions.mode);
+  renderBars("date-bars", SUMMARY.distributions.sampleDate);
+  renderUnknowns();
+  text("visible-count", `正在加载 ${SUMMARY.total} 条样本明细…`);
+  setSampleControlsDisabled(true);
+  requestAnimationFrame(() => loadSamples().catch((error) => {
+    console.error(error);
+    text("visible-count", "样本明细加载失败，请刷新重试");
+    document.body.classList.add("samples-load-error");
+  }));
 }
 
 start().catch((error) => {
-  document.body.classList.add("load-error");
-  document.querySelector(".checkpoint-badge").textContent = "FAIL CLOSED";
-  text("hero-note", `冻结输入校验失败：${error.message}`);
   console.error(error);
+  document.body.classList.add("load-error");
+  const badge = document.querySelector(".checkpoint-badge");
+  if (badge) badge.textContent = "FAIL CLOSED";
+  text("hero-note", `冻结输入校验失败：${error.message}`);
 });
