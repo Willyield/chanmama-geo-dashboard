@@ -1,393 +1,296 @@
 {
-  "schemaVersion": 1,
-  "reportType": "GEO_DASHBOARD_DATA_ANALYSIS",
-  "snapshotId": "CREATIVE-FINAL_WITH_GAPS-270-269-A394421A-7D90758D-MVP2_2",
-  "dataDate": "2026-08-19",
-  "generatedAt": "2026-08-20T09:47:18.268Z",
+  "schemaVersion": 2,
+  "reportType": "CREATIVE_CITATION_TWO_DAY_COMBINED_ANALYSIS",
+  "requestId": "cmcr-20260819-citation-mvp3a-BC3A96B7C996",
+  "requestRevision": 3,
+  "supersedesRevision": 2,
+  "snapshotId": "CREATIVE-FINAL_WITH_GAPS-540-538-R5",
+  "dataDate": "2026-08-18 - 2026-08-19",
+  "samplingDates": [
+    "2026-08-18",
+    "2026-08-19"
+  ],
+  "generatedAt": "2026-08-21T05:36:30.225Z",
   "resultStatus": "FINAL_WITH_GAPS",
-  "qualityGate": "PASSED",
-  "frozenInputs": {
-    "samplingDataSha256": "BA074D65E838AFDCFFFF0FCC28B67A3F88651998A838A795B3FE99D0D00829EF",
-    "citationDataSha256": "BA074D65E838AFDCFFFF0FCC28B67A3F88651998A838A795B3FE99D0D00829EF",
-    "sameFrozenData": true
+  "qualityGate": "PASSED_COMBINED_540_CITATION_ANALYSIS",
+  "boundary": {
+    "totalSlots": 540,
+    "uniqueSampleIdentities": 540,
+    "formalAnswers": 538,
+    "recoverableUnknown": 2,
+    "unknownSampleIds": [
+      "CMCR-CMP-20260819-C2-Q0087",
+      "CMCR-S-20260819-C2-Q0092"
+    ],
+    "citationRecords": 7042,
+    "uniqueSampleUrlCitations": 6537,
+    "uniqueUrls": 3392,
+    "uniqueDomains": 773,
+    "averageCitationsPerFormalAnswer": 13.09
   },
-  "dataCards": {
-    "schemaVersion": 1,
-    "catalogVersion": "GEO-DASHBOARD-CARDS-20260820-R1",
-    "productKey": "chanmama-creative",
-    "selected": [
-      "brand_mention_rate",
-      "top1_rate",
-      "top3_rate",
-      "advantage_expression_rate",
-      "citation_rate",
-      "category_coverage_rate",
-      "brand_explanation_accuracy",
-      "product_relationship_accuracy",
-      "scenario_match_rate",
-      "competition_share",
-      "comparison_win_rate",
-      "error_information_rate"
-    ],
-    "mandatory": [
-      "brand_mention_rate",
-      "top1_rate",
-      "top3_rate",
-      "advantage_expression_rate",
-      "citation_rate"
-    ],
-    "results": [
+  "daily": [
+    {
+      "sampleDate": "2026-08-18",
+      "totalSlots": 270,
+      "formalAnswers": 269,
+      "unknown": 1,
+      "unknownSampleIds": [
+        "CMCR-CMP-20260819-C2-Q0087"
+      ],
+      "citationRecords": 3928,
+      "uniqueSampleUrlCitations": 3928,
+      "uniqueUrls": 2008,
+      "uniqueDomains": 585,
+      "averageCitationsPerFormalAnswer": 14.6
+    },
+    {
+      "sampleDate": "2026-08-19",
+      "totalSlots": 270,
+      "formalAnswers": 269,
+      "unknown": 1,
+      "unknownSampleIds": [
+        "CMCR-S-20260819-C2-Q0092"
+      ],
+      "citationRecords": 3114,
+      "uniqueSampleUrlCitations": 2609,
+      "uniqueUrls": 1673,
+      "uniqueDomains": 504,
+      "averageCitationsPerFormalAnswer": 11.58
+    }
+  ],
+  "sourceTypes": {
+    "ruleVersion": "CREATIVE-SOURCE-TYPE-V1-EXACT-PORT",
+    "description": "按照既有创意引用源域名白名单规则声明式归类，不使用任意脚本或页面推断。",
+    "rows": [
       {
-        "id": "brand_mention_rate",
-        "label": "品牌提及率",
-        "description": "有效回答中明确提到目标品牌的比例。",
-        "mandatory": true,
-        "status": "READY",
-        "numerator": 79,
-        "denominator": 269,
-        "percentage": 29.37,
-        "unknown": 1,
-        "ruleVersion": "DASHBOARD-BRAND-MENTION-V1"
+        "sourceType": "other",
+        "count": 5574,
+        "share": 79.15,
+        "label": "其他"
       },
       {
-        "id": "top1_rate",
-        "label": "TOP1 率",
-        "description": "适用问题中，目标品牌排在推荐顺序第 1 位的比例。",
-        "mandatory": true,
-        "status": "READY",
-        "numerator": 10,
-        "denominator": 77,
-        "percentage": 12.99,
-        "unknown": 12,
-        "ruleVersion": "CMCR-SEMANTIC-DETERMINISTIC-V1-20260819"
+        "sourceType": "media",
+        "count": 551,
+        "share": 7.82,
+        "label": "媒体"
       },
       {
-        "id": "top3_rate",
-        "label": "TOP3 率",
-        "description": "适用问题中，目标品牌进入推荐顺序前 3 位的比例。",
-        "mandatory": true,
-        "status": "READY",
-        "numerator": 30,
-        "denominator": 77,
-        "percentage": 38.96,
-        "unknown": 12,
-        "ruleVersion": "CMCR-SEMANTIC-DETERMINISTIC-V1-20260819"
+        "sourceType": "platform_official",
+        "count": 443,
+        "share": 6.29,
+        "label": "平台官方"
       },
       {
-        "id": "advantage_expression_rate",
-        "label": "优势表达率",
-        "description": "有效回答中，明确把正向能力、适配性、推荐理由或比较优势归属于目标品牌的比例。",
-        "mandatory": true,
-        "status": "READY",
-        "numerator": 21,
-        "denominator": 269,
-        "percentage": 7.81,
-        "unknown": 1,
-        "ruleVersion": "CMCR-ADVANTAGE-EXPRESSION-V1-20260819"
+        "sourceType": "official_direct",
+        "count": 321,
+        "share": 4.56,
+        "label": "官网直引"
       },
       {
-        "id": "citation_rate",
-        "label": "引用来源覆盖率",
-        "description": "能够确认引用状态的回答中，至少取得 1 条引用来源的比例。",
-        "mandatory": true,
-        "status": "READY",
-        "numerator": 269,
-        "denominator": 269,
-        "percentage": 100,
-        "unknown": 1,
-        "ruleVersion": "SOURCE-CAPTURE-STATE-V1"
+        "sourceType": "competitor",
+        "count": 68,
+        "share": 0.97,
+        "label": "竞品"
       },
       {
-        "id": "category_coverage_rate",
-        "label": "品类覆盖率",
-        "description": "品类认知和对比问题中目标品牌进入候选集的比例。",
-        "mandatory": false,
-        "status": "READY",
-        "numerator": 34,
-        "denominator": 77,
-        "percentage": 44.16,
-        "unknown": 0,
-        "ruleVersion": "CMCR-SEMANTIC-DETERMINISTIC-V1-20260819"
+        "sourceType": "associated_product",
+        "count": 64,
+        "share": 0.91,
+        "label": "关联产品"
       },
       {
-        "id": "brand_explanation_accuracy",
-        "label": "品牌解释准确率",
-        "description": "适用问题中，品牌能力说明与冻结产品资料一致的比例。",
-        "mandatory": false,
-        "status": "READY",
-        "numerator": 26,
-        "denominator": 27,
-        "percentage": 96.3,
-        "unknown": 0,
-        "ruleVersion": "CMCR-SEMANTIC-DETERMINISTIC-V1-20260819"
-      },
-      {
-        "id": "product_relationship_accuracy",
-        "label": "产品关系识别率",
-        "description": "适用问题中，产品归属和关系说明准确的比例。",
-        "mandatory": false,
-        "status": "READY",
-        "numerator": 22,
-        "denominator": 46,
-        "percentage": 47.83,
-        "unknown": 23,
-        "ruleVersion": "CMCR-SEMANTIC-DETERMINISTIC-V1-20260819"
-      },
-      {
-        "id": "scenario_match_rate",
-        "label": "场景匹配率",
-        "description": "回答给出的能力与问题业务场景匹配的比例。",
-        "mandatory": false,
-        "status": "READY",
-        "numerator": 112,
-        "denominator": 116,
-        "percentage": 96.55,
-        "unknown": 4,
-        "ruleVersion": "CMCR-SEMANTIC-DETERMINISTIC-V1-20260819"
-      },
-      {
-        "id": "competition_share",
-        "label": "竞争份额",
-        "description": "蝉妈妈创意在全部被识别品牌提及中的份额。",
-        "mandatory": false,
-        "status": "READY",
-        "numerator": 34,
-        "denominator": 158,
-        "percentage": 21.52,
-        "unknown": 0,
-        "ruleVersion": "CMCR-SEMANTIC-DETERMINISTIC-V1-20260819"
-      },
-      {
-        "id": "comparison_win_rate",
-        "label": "对比胜率",
-        "description": "对比问题中明确给出蝉妈妈创意优势的比例。",
-        "mandatory": false,
-        "status": "READY",
-        "numerator": 16,
-        "denominator": 53,
-        "percentage": 30.19,
-        "unknown": 21,
-        "ruleVersion": "CMCR-SEMANTIC-DETERMINISTIC-V1-20260819"
-      },
-      {
-        "id": "error_information_rate",
-        "label": "错误信息率",
-        "description": "适用问题中出现冻结资料可核验错误的比例。",
-        "mandatory": false,
-        "status": "READY",
-        "numerator": 2,
-        "denominator": 269,
-        "percentage": 0.74,
-        "unknown": 0,
-        "ruleVersion": "CMCR-SEMANTIC-DETERMINISTIC-V1-20260819"
-      }
-    ],
-    "unresolvedMandatory": []
-  },
-  "sampling": {
-    "title": "创意采样仪表盘数据分析",
-    "planned": 270,
-    "sampled": 270,
-    "collected": 269,
-    "unresolved": 1,
-    "completenessRate": 99.63,
-    "mentioned": 79,
-    "mentionRate": 29.37,
-    "byCategory": [
-      {
-        "name": "品牌产品问题",
-        "collected": 27,
-        "mentioned": 27,
-        "mentionRate": 100
-      },
-      {
-        "name": "价格/开通问题",
-        "collected": 2,
-        "mentioned": 2,
-        "mentionRate": 100
-      },
-      {
-        "name": "对比决策问题",
-        "collected": 53,
-        "mentioned": 28,
-        "mentionRate": 52.83
-      },
-      {
-        "name": "品类认知问题",
-        "collected": 24,
-        "mentioned": 6,
-        "mentionRate": 25
-      },
-      {
-        "name": "案例/效果问题",
-        "collected": 35,
-        "mentioned": 8,
-        "mentionRate": 22.86
-      },
-      {
-        "name": "业务场景问题",
-        "collected": 116,
-        "mentioned": 8,
-        "mentionRate": 6.9
-      },
-      {
-        "name": "风险/限制问题",
-        "collected": 12,
-        "mentioned": 0,
-        "mentionRate": 0
-      }
-    ],
-    "byRound": [
-      {
-        "name": "O1",
-        "collected": 15,
-        "mentioned": 5,
-        "mentionRate": 33.33
-      },
-      {
-        "name": "C1",
-        "collected": 85,
-        "mentioned": 25,
-        "mentionRate": 29.41
-      },
-      {
-        "name": "C3",
-        "collected": 85,
-        "mentioned": 25,
-        "mentionRate": 29.41
-      },
-      {
-        "name": "C2",
-        "collected": 84,
-        "mentioned": 24,
-        "mentionRate": 28.57
-      }
-    ],
-    "unresolvedSamples": [
-      {
-        "sampleId": "CMCR-S-20260819-C2-Q0092",
-        "question": "平台原生素材工具和蝉妈妈创意这种第三方工具怎么搭配？",
-        "round": "C2",
-        "status": "unknown"
+        "sourceType": "community",
+        "count": 21,
+        "share": 0.3,
+        "label": "社区"
       }
     ]
   },
-  "citation": {
-    "title": "创意引用源仪表盘数据分析",
-    "citations": 3114,
-    "averageCitationsPerCollectedSample": 11.58,
-    "distinctDomains": 506,
-    "captured": 269,
-    "confirmedNone": 0,
-    "captureFailed": 0,
-    "ownedCitationCount": 197,
-    "ownedCitationShare": 6.33,
-    "topDomainShare": 27.97,
-    "topDomains": [
-      {
-        "domain": "www.iesdouyin.com",
-        "count": 871,
-        "share": 27.97
-      },
-      {
-        "domain": "m.sohu.com",
-        "count": 162,
-        "share": 5.2
-      },
+  "ownedSources": {
+    "citationRecords": 385,
+    "share": 5.47,
+    "domains": [
       {
         "domain": "cy.chanmama.com",
-        "count": 156,
-        "share": 5.01
+        "count": 302,
+        "share": 78.44
+      },
+      {
+        "domain": "ai.chanmama.com",
+        "count": 47,
+        "share": 12.21
+      },
+      {
+        "domain": "ad.chanmama.com",
+        "count": 19,
+        "share": 4.94
+      },
+      {
+        "domain": "tools.chanmama.com",
+        "count": 15,
+        "share": 3.9
+      },
+      {
+        "domain": "m.chanmama.com",
+        "count": 2,
+        "share": 0.52
+      }
+    ]
+  },
+  "domains": {
+    "total": 773,
+    "topDomainShare": 29.95,
+    "top20": [
+      {
+        "domain": "iesdouyin.com",
+        "count": 2109,
+        "share": 29.95
       },
       {
         "domain": "blog.csdn.net",
-        "count": 155,
-        "share": 4.98
+        "count": 367,
+        "share": 5.21
+      },
+      {
+        "domain": "m.sohu.com",
+        "count": 363,
+        "share": 5.15
+      },
+      {
+        "domain": "cy.chanmama.com",
+        "count": 302,
+        "share": 4.29
       },
       {
         "domain": "school.jinritemai.com",
-        "count": 87,
-        "share": 2.79
+        "count": 209,
+        "share": 2.97
       },
       {
         "domain": "post.m.smzdm.com",
-        "count": 74,
-        "share": 2.38
+        "count": 185,
+        "share": 2.63
       },
       {
         "domain": "resources.youcloud.com",
-        "count": 72,
-        "share": 2.31
-      },
-      {
-        "domain": "open.oceanengine.com",
-        "count": 54,
-        "share": 1.73
-      },
-      {
-        "domain": "cc.oceanengine.com",
-        "count": 46,
-        "share": 1.48
+        "count": 145,
+        "share": 2.06
       },
       {
         "domain": "m.toutiao.com",
-        "count": 40,
-        "share": 1.28
+        "count": 129,
+        "share": 1.83
+      },
+      {
+        "domain": "open.oceanengine.com",
+        "count": 115,
+        "share": 1.63
+      },
+      {
+        "domain": "cc.oceanengine.com",
+        "count": 78,
+        "share": 1.11
+      },
+      {
+        "domain": "segmentfault.com",
+        "count": 61,
+        "share": 0.87
+      },
+      {
+        "domain": "volcengine.com",
+        "count": 59,
+        "share": 0.84
+      },
+      {
+        "domain": "juejin.cn",
+        "count": 48,
+        "share": 0.68
+      },
+      {
+        "domain": "ai.chanmama.com",
+        "count": 47,
+        "share": 0.67
+      },
+      {
+        "domain": "163.com",
+        "count": 46,
+        "share": 0.65
+      },
+      {
+        "domain": "apps.apple.com",
+        "count": 41,
+        "share": 0.58
+      },
+      {
+        "domain": "iqinghu.com",
+        "count": 39,
+        "share": 0.55
+      },
+      {
+        "domain": "c.m.163.com",
+        "count": 38,
+        "share": 0.54
+      },
+      {
+        "domain": "help.superdir.cn",
+        "count": 38,
+        "share": 0.54
+      },
+      {
+        "domain": "woshipm.com",
+        "count": 37,
+        "share": 0.53
       }
     ]
   },
+  "captureStates": {
+    "captured": 538,
+    "confirmedNone": 0,
+    "captureFailed": 0,
+    "unknown": 2
+  },
   "qualityChecks": [
     {
-      "id": "same_snapshot",
-      "label": "双仪表盘使用同一快照",
-      "passed": true
-    },
-    {
-      "id": "same_data_hash",
-      "label": "双仪表盘使用同一数据文件",
+      "id": "same_540_snapshot",
+      "label": "与采样仪表盘使用同一 540 样本快照",
       "passed": true
     },
     {
       "id": "sample_identity_unique",
-      "label": "样本编号没有重复",
+      "label": "带日期的样本身份唯一",
       "passed": true
     },
     {
-      "id": "sample_total_balanced",
-      "label": "已回收与缺口合计等于计划样本",
+      "id": "formal_unknown_balanced",
+      "label": "正式回答与 unknown 合计等于 540",
       "passed": true
     },
     {
-      "id": "answers_present",
-      "label": "已回收样本均包含回答",
+      "id": "citation_rows_balanced",
+      "label": "引用明细与域名汇总数量一致",
       "passed": true
     },
     {
-      "id": "source_status_exclusive",
-      "label": "引用状态互斥且覆盖全部已回收样本",
+      "id": "daily_rows_balanced",
+      "label": "两日引用量合计等于总引用量",
       "passed": true
     },
     {
-      "id": "citation_count_balanced",
-      "label": "引用明细与汇总数量一致",
+      "id": "source_types_exclusive",
+      "label": "每条引用只归入一个来源类型",
       "passed": true
     },
     {
-      "id": "mandatory_cards_selected",
-      "label": "五项公共数据卡片全部保留",
-      "passed": true
-    },
-    {
-      "id": "mandatory_cards_resolved",
-      "label": "五项公共数据卡片均已按冻结口径完成分析",
+      "id": "unknown_preserved",
+      "label": "Q0087 与 Q0092 保持 unknown",
       "passed": true
     }
   ],
   "boundaries": [
-    "两条未生成回答的样本保留为 unknown，不计入品牌提及率分母和引用来源结论",
-    "本报告只描述冻结数据，不推断未经验证的业务效果",
-    "优化中心只能修改展示与页面体验，不得改变冻结数据、指标口径和样本身份",
-    "部署中心仍需等待独立的明确发布授权",
-    "优势表达率是公共必选数据卡片，按冻结规则单独给出分子、分母、比例和 unknown。"
+    "引用源仪表盘与采样仪表盘共用 revision 5 的 540 样本数据文件。",
+    "Q0087 与 Q0092 保持 unknown，不转换为无引用或零值。",
+    "7042 表示冻结引用记录总数；唯一 URL、唯一域名和按样本去重引用分别独立展示。",
+    "来源类型是引用集合的结构描述，不代表推荐权重或权威性评分。",
+    "本次只更新引用源同一路由，不修改采样仪表盘或其他项目。"
   ]
 }
