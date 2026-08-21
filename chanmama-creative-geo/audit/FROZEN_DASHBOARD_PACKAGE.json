@@ -1,69 +1,77 @@
 {
-  "schemaVersion": 3,
-  "packageType": "GEO_FROZEN_BUSINESS_DATA_CORRECTION_PACKAGE",
+  "schemaVersion": 4,
+  "packageType": "GEO_FROZEN_TWO_DAY_COMBINED_SCOPE_PACKAGE",
   "protocolVersion": 2,
   "requestId": "cmcr-20260819-sampling-mvp3a-715088E1D322",
-  "requestRevision": 4,
-  "supersedesRevision": 3,
+  "requestRevision": 5,
+  "supersedesRevision": 4,
   "taskId": "92f98cb5-4f74-4508-b22b-31d686aa3c0d",
-  "snapshotId": "CREATIVE-FINAL_WITH_GAPS-270-269-A394421A-7D90758D-MVP2_2",
+  "snapshotId": "CREATIVE-FINAL_WITH_GAPS-540-538-R5",
   "resultStatus": "FINAL_WITH_GAPS",
-  "dataDate": "2026-08-19",
+  "dataDate": "2026-08-18 - 2026-08-19",
   "dashboardType": "sampling",
   "dashboardLabel": "采样仪表盘",
   "targetPath": "chanmama-creative-geo/",
   "immutable": true,
-  "generatedAt": "2026-08-21T02:25:21.005Z",
-  "recordCount": 269,
-  "unresolvedCount": 1,
-  "scopeDecision": "PROPOSED_DISTINCT_PRODUCT_NEUTRAL_SCOPE",
+  "generatedAt": "2026-08-21T03:22:31.347Z",
+  "recordCount": 538,
+  "totalSlots": 540,
+  "unresolvedCount": 2,
+  "scopeDecision": "TWO_DAY_COMBINED_540_WITH_REVISION_4_RULES",
   "deploymentAuthorized": true,
   "deploymentAuthorizationScope": {
-    "requestRevision": 4,
+    "requestRevision": 5,
     "route": "/chanmama-creative-geo/",
     "correctionOnly": true
-  },
-  "sourcePage": {
-    "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\runs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\dashboards\\final_with_gaps-270-269-mvp3-1787219238039\\sampling\\index.html",
-    "sha256": "3D6CD60CB852B61E2345249E670CC98B20B85140451574E07C92D9A497237C1E"
   },
   "files": [
     {
       "role": "dashboard-data",
-      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-4-approved-20260821-r1\\dashboard-data.json",
-      "sha256": "C2D25D0CFA97C395E05161397DE64DAFF613194666B1EED733EA72E1C039B864",
-      "bytes": 2396642
+      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-5-combined-20260821-r1\\dashboard-data.json",
+      "sha256": "4C43B301D09FA9EAA7B7DF09454C33F443C29B9F2A4F26D9E5777027D7483DA0",
+      "bytes": 6124170
     },
     {
       "role": "data_analysis_report",
-      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-4-approved-20260821-r1\\DATA_ANALYSIS_REPORT.json",
-      "sha256": "22902B81106D66FE70476CC71038A6F724FA40B584557F69C015AFFAF577A271",
-      "bytes": 16906
+      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-5-combined-20260821-r1\\DATA_ANALYSIS_REPORT.json",
+      "sha256": "95227F794497358DFF3EF96D90D3D2FFFC1830A2A4F60A883F51FF04C11079A4",
+      "bytes": 15707
     },
     {
-      "role": "competition_103_mention_audit",
-      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-4-approved-20260821-r1\\COMPETITION_103_MENTION_AUDIT.json",
-      "sha256": "04F0C44C181A7049BEC4A8ACF5CE705E11BC42C9516F7F29C451414545B7025E",
-      "bytes": 180182
+      "role": "source_lineage_audit",
+      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-5-combined-20260821-r1\\SOURCE_LINEAGE_AUDIT.json",
+      "sha256": "34D84F4853D552D4A031C27226C7B8BDF0BCEFA781A65C81949AED179A1B2057",
+      "bytes": 352976
     },
     {
-      "role": "target_directed_question_audit",
-      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-4-approved-20260821-r1\\TARGET_DIRECTED_QUESTION_AUDIT.json",
-      "sha256": "B68B8E3A7DD9527584D1FA245084787AA9A4CB7E872ECA524A4A2E747FEBCCAD",
-      "bytes": 23027
+      "role": "metric_sample_audit",
+      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-5-combined-20260821-r1\\METRIC_SAMPLE_AUDIT.json",
+      "sha256": "B4A54A3459A6BCE4B77E99B22110DFAF46AF9E095A39E2873D294FA9F10F8C19",
+      "bytes": 555713
+    },
+    {
+      "role": "competition_mention_audit",
+      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-5-combined-20260821-r1\\COMPETITION_MENTION_AUDIT.json",
+      "sha256": "DEDFAE94E1B3741E254BA90EFAB66E89E09464F7ACF6E16A8AAD41830BF4958E",
+      "bytes": 132724
+    },
+    {
+      "role": "combined_citation_audit",
+      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-5-combined-20260821-r1\\COMBINED_CITATION_AUDIT.json",
+      "sha256": "01E09C01BBB276E78BC558E702033E2BDACC50319DE0586EF5E82A907434A803",
+      "bytes": 3639008
     },
     {
       "role": "immutability_validation",
-      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-4-approved-20260821-r1\\IMMUTABILITY_VALIDATION.json",
-      "sha256": "A92B4859084ED8AD6133A018D4F9070F5289C0355B2B4326C335735072CE280C",
-      "bytes": 5634
+      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-5-combined-20260821-r1\\IMMUTABILITY_VALIDATION.json",
+      "sha256": "2981F3491467BCB22306A3C9309E2B45667AC61B69EE50FD0BD699AD7858DEF1",
+      "bytes": 1823
     },
     {
       "role": "artifact_manifest",
-      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-4-approved-20260821-r1\\ARTIFACT_MANIFEST.json",
-      "sha256": "031CB884F147DE6A9C721998CAB40386A3473E536389C1477C959E0927F29CF3",
-      "bytes": 1793
+      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-5-combined-20260821-r1\\ARTIFACT_MANIFEST.json",
+      "sha256": "4226C0C8609E4307A4D2C1F10ACFD281FBBFFB23C317F2FE2703E97F071F537F",
+      "bytes": 1641
     }
-  ],
-  "protectedSourceSha256": "B08622367154A6DCCA4F6ED85273BB41337B0DCF8DCCD25213434558F2BADA26"
+  ]
 }

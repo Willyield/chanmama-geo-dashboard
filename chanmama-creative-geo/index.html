@@ -23,7 +23,7 @@
 
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-copy">
-      <p class="eyebrow">FROZEN SNAPSHOT · 2026-08-19</p>
+      <p class="eyebrow">FROZEN SNAPSHOT · 2026-08-18 + 2026-08-19</p>
       <h1 id="hero-title">蝉妈妈创意 GEO<br>采样决策仪表盘</h1>
       <p id="hero-note">冻结数据加载中。</p>
       <div class="hero-meta"><span id="snapshot-id">--</span><span>数据分析已批准</span></div>
@@ -57,8 +57,8 @@
     </section>
 
     <section class="section" id="competition" aria-labelledby="competition-title">
-      <div class="section-head"><div><p>03 / COMPETITION DETAIL</p><h2 id="competition-title">竞争品牌详细表现</h2></div><p>中立推荐样本 · 103 条品牌提及记录</p></div>
-      <div class="scope-note"><strong>口径分开显示</strong><span>自然提及率分母：208 个中立正式回答</span><span>推荐率分母：51 个中立推荐样本</span><span>竞争份额分母：103 条品牌提及记录</span></div>
+      <div class="section-head"><div><p>03 / COMPETITION DETAIL</p><h2 id="competition-title">竞争品牌详细表现</h2></div><p>两日中立推荐样本 · 209 条品牌提及记录</p></div>
+      <div class="scope-note"><strong>口径分开显示</strong><span>自然提及率分母：416 个中立正式回答</span><span>推荐率分母：102 个中立推荐样本</span><span>竞争份额分母：209 条品牌提及记录</span></div>
       <div class="competition-summary" id="competition-summary"></div>
       <div class="competition-grid" id="competition-grid"></div>
     </section>
@@ -68,13 +68,15 @@
       <div class="distribution-grid">
         <article><h3>问题分类</h3><div class="bar-list" id="category-bars"></div></article>
         <article><h3>采样轮次</h3><div class="bar-list" id="round-bars"></div></article>
+        <article><h3>采样日期</h3><div class="bar-list" id="date-bars"></div></article>
       </div>
     </section>
 
     <section class="section" id="evidence" aria-labelledby="evidence-title">
       <div class="section-head"><div><p>05 / SAMPLE EVIDENCE</p><h2 id="evidence-title">样本与缺口</h2></div><a class="audit-link" href="./audit/DATA_ANALYSIS_REPORT.json" download>下载分析报告</a></div>
-      <article class="unknown-callout"><div><span>EXPLICIT UNKNOWN</span><strong id="unknown-sample-id">--</strong></div><p id="unknown-question">--</p><b>未生成回答，保持 unknown，不转为未提及或零值。</b></article>
+      <article class="unknown-callout"><div><span>2 EXPLICIT UNKNOWNS</span><strong>两日各 1 条缺口</strong></div><div id="unknown-list"></div><b>均未生成正式回答，保持 unknown，不转为未提及或零值。</b></article>
       <div class="evidence-toolbar">
+        <label>采样日期<select id="date-filter"><option value="all">全部日期</option></select></label>
         <label>问题分类<select id="category-filter"><option value="all">全部分类</option></select></label>
         <label>采样轮次<select id="round-filter"><option value="all">全部轮次</option></select></label>
         <label>状态<select id="status-filter"><option value="all">全部状态</option><option value="collected">正式回答</option><option value="deferred">保持未知</option></select></label>
@@ -87,7 +89,7 @@
     </section>
   </main>
 
-  <footer><span id="footer-version">--</span><span>269 FORMAL + 1 UNKNOWN</span><span>ANALYSIS QUALITY GATE PASSED</span></footer>
-  <script type="module" src="./app.js?v=715088E1D322-r4"></script>
+  <footer><span id="footer-version">--</span><span>538 FORMAL + 2 UNKNOWN</span><span>ANALYSIS QUALITY GATE PASSED</span></footer>
+  <script type="module" src="./app.js?v=715088E1D322-r5"></script>
 </body>
 </html>

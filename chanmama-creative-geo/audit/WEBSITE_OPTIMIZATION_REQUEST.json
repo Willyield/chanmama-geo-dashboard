@@ -2,73 +2,84 @@
   "messageType": "WEBSITE_OPTIMIZATION_REQUEST",
   "protocolVersion": 2,
   "requestId": "cmcr-20260819-sampling-mvp3a-715088E1D322",
-  "requestRevision": 4,
-  "supersedesRevision": 3,
-  "runId": "CREATIVE-FINAL_WITH_GAPS-270-269-A394421A-7D90758D-MVP2_2",
+  "requestRevision": 5,
+  "supersedesRevision": 4,
+  "runId": "CREATIVE-FINAL_WITH_GAPS-540-538-R5",
   "projectKey": "chanmama-creative-geo-sampling",
   "routePairId": "pair-3",
-  "routePolicyVersion": "PROJECT_AFFINITY_ROUTING_V2_20260811",
   "sourceTaskId": "92f98cb5-4f74-4508-b22b-31d686aa3c0d",
-  "sourceTaskAlias": "GEO 高权限采样编排工作台 MVP3.0",
   "dashboardType": "sampling",
   "assignedCenter": "optimization-center-3",
   "assignedCenterName": "网址优化第三中心",
   "optimizationThreadId": "019ff98a-c403-71b2-a9cf-c87467ec62a4",
   "pairedDeploymentCenter": "deployment-center-3",
-  "pairedDeploymentCenterName": "网址部署第三中心",
   "validationStatus": "VERIFIED_LOCAL_FROZEN",
   "deploymentAuthorized": true,
   "deploymentAuthorizationScope": {
-    "requestRevision": 4,
+    "requestRevision": 5,
     "route": "/chanmama-creative-geo/",
     "correctionOnly": true
   },
   "dataPackage": {
-    "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-4-approved-20260821-r1\\FROZEN_DASHBOARD_PACKAGE.json",
-    "sha256": "3263948A5DA1933903A862024F808410B343CB5A5C6C7AA2162E23BA325480F6",
-    "recordCount": 269
+    "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-5-combined-20260821-r1\\FROZEN_DASHBOARD_PACKAGE.json",
+    "sha256": "9C6ADB3A34EA6674AC1AD771993468B16BDAA407FA1B456957F3D2F6E7E24DBF",
+    "recordCount": 538,
+    "totalSlots": 540
   },
   "contentManifest": {
-    "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-4-approved-20260821-r1\\ARTIFACT_MANIFEST.json",
-    "sha256": "031CB884F147DE6A9C721998CAB40386A3473E536389C1477C959E0927F29CF3"
+    "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-5-combined-20260821-r1\\ARTIFACT_MANIFEST.json",
+    "sha256": "4226C0C8609E4307A4D2C1F10ACFD281FBBFFB23C317F2FE2703E97F071F537F"
   },
   "correctedData": {
-    "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-4-approved-20260821-r1\\dashboard-data.json",
-    "sha256": "C2D25D0CFA97C395E05161397DE64DAFF613194666B1EED733EA72E1C039B864"
+    "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-5-combined-20260821-r1\\dashboard-data.json",
+    "sha256": "4C43B301D09FA9EAA7B7DF09454C33F443C29B9F2A4F26D9E5777027D7483DA0"
   },
   "dataAnalysis": {
     "status": "APPROVED",
-    "qualityGate": "PASSED_USER_APPROVED_SCOPE_CORRECTION",
-    "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-4-approved-20260821-r1\\DATA_ANALYSIS_REPORT.json",
-    "sha256": "22902B81106D66FE70476CC71038A6F724FA40B584557F69C015AFFAF577A271"
+    "qualityGate": "PASSED_COMBINED_540_SOURCE_RECALCULATION",
+    "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-5-combined-20260821-r1\\DATA_ANALYSIS_REPORT.json",
+    "sha256": "95227F794497358DFF3EF96D90D3D2FFFC1830A2A4F60A883F51FF04C11079A4"
+  },
+  "sourceAudit": {
+    "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-5-combined-20260821-r1\\SOURCE_LINEAGE_AUDIT.json",
+    "sha256": "34D84F4853D552D4A031C27226C7B8BDF0BCEFA781A65C81949AED179A1B2057"
+  },
+  "metricAudit": {
+    "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-5-combined-20260821-r1\\METRIC_SAMPLE_AUDIT.json",
+    "sha256": "B4A54A3459A6BCE4B77E99B22110DFAF46AF9E095A39E2873D294FA9F10F8C19"
+  },
+  "competitionAudit": {
+    "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\revision-5-combined-20260821-r1\\COMPETITION_MENTION_AUDIT.json",
+    "sha256": "DEDFAE94E1B3741E254BA90EFAB66E89E09464F7ACF6E16A8AAD41830BF4958E"
   },
   "idempotency": {
     "strategy": "CONTENT_ADDRESSED",
-    "idempotencyKey": "cmcr-20260819-sampling-mvp3a-715088E1D322:rev4:3263948A5DA1933903A862024F808410B343CB5A5C6C7AA2162E23BA325480F6"
+    "idempotencyKey": "cmcr-20260819-sampling-mvp3a-715088E1D322:rev5:9C6ADB3A34EA6674AC1AD771993468B16BDAA407FA1B456957F3D2F6E7E24DBF"
   },
   "allowedPaths": [
     "chanmama-creative-geo/"
   ],
   "forbiddenPaths": [
+    "chanmama-creative-citation-report/**",
     "sampling-workbench/**",
     "sampling/**",
     ".git/**",
     "其他仪表盘业务数据"
   ],
   "requiredCorrections": [
-    "恢复竞争品牌详细表现，完整显示 16 个品牌卡片且提及数合计 103",
-    "显示蝉妈妈、蝉妈妈·创意、创意大师三张独立自然提及率卡",
-    "使用中立口径的 TOP1 4/51、TOP3 8/51 和竞争份额 8/103",
-    "摘要显示竞争总提及 103、竞争品牌数 16、优势表达样本数 21",
-    "明确区分全体中立回答、中立推荐样本和品牌提及记录三个分母"
+    "页面展示 2026-08-18 与 2026-08-19 两日合并的 540 个采样槽位",
+    "使用 revision 4 已批准规则展示三产品独立自然提及率、TOP1、TOP3 和完整竞品明细",
+    "所有 14 张数据卡必须读取 revision 5 合并重算值，不得沿用任一单日数值",
+    "清晰区分自然回答、推荐样本和品牌提及记录三个分母",
+    "保留 Q0087 与 Q0092 两个 unknown，并显示两日来源与缺口"
   ],
   "acceptanceCriteria": [
-    "保持 270/269/1、Q0092 unknown、3114 条引用、506 个域名及原始回答不变",
-    "八项不相关指标与 revision 3 冻结值完全一致",
-    "竞争明细提及数严格合计为 103，三产品零值卡不得隐藏",
-    "完成 390x844、768x1024、1440x900 本地页面验收",
-    "优化完成后可按本次明确授权只交给配对部署中心处理同一路由"
+    "totalSlots=540、uniqueSampleIdentities=540、formalAnswers=538、unknown=2",
+    "两日来源哈希、问题池、原始记录与语义/引用验证链完整",
+    "竞品卡 mentions 合计严格等于竞争提及分母，三产品零值卡不得隐藏",
+    "引用导航目的地保持不变，不修改独立引用源页面",
+    "完成 390x844、768x1024、1440x900 本地页面验收后再按授权交给配对部署中心"
   ],
-  "authorizationBasis": "用户在获知精确新旧口径冲突后明确批准采用 PROPOSED_DISTINCT_PRODUCT_NEUTRAL_SCOPE，并批准修复后部署上线。",
-  "createdAt": "2026-08-21T02:25:21.005Z"
+  "authorizationBasis": "用户明确要求将该页面改为展示两日合并的 540 条总样本及重新计算后的指标，并授权同一路由修正后部署。",
+  "createdAt": "2026-08-21T03:22:31.347Z"
 }
