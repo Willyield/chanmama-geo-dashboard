@@ -6,13 +6,15 @@ const CONTRACT = Object.freeze({
   unknownSampleId: "CMCR-S-20260819-C2-Q0092",
   citationCount: 3114,
   analysisCatalogVersion: "GEO-DASHBOARD-CARDS-20260820-R1",
-  metricCount: 12,
+  metricCount: 14,
+  competitionMentions: 103,
+  competitionBrandCount: 16,
 });
 
 const GROUPS = [
-  { label: "品牌可见度", description: "提及、优势表达与引用覆盖", ids: ["brand_mention_rate", "advantage_expression_rate", "citation_rate"] },
-  { label: "推荐位置", description: "首位、前三与品类候选覆盖", ids: ["top1_rate", "top3_rate", "category_coverage_rate"] },
-  { label: "产品理解与场景", description: "品牌说明、产品关系与场景匹配", ids: ["brand_explanation_accuracy", "product_relationship_accuracy", "scenario_match_rate"] },
+  { label: "三产品自然可见度", description: "全体中立回答，三款产品分别计算", ids: ["chanmama_natural_mention_rate", "chanmama_creative_natural_mention_rate", "creative_master_natural_mention_rate"] },
+  { label: "推荐位置与证明", description: "中立推荐样本、优势表达与引用覆盖", ids: ["top1_rate", "top3_rate", "advantage_expression_rate", "citation_rate"] },
+  { label: "产品理解与场景", description: "候选覆盖、品牌说明、产品关系与场景匹配", ids: ["category_coverage_rate", "brand_explanation_accuracy", "product_relationship_accuracy", "scenario_match_rate"] },
   { label: "竞争与质量", description: "竞争份额、对比胜率与错误信息", ids: ["competition_share", "comparison_win_rate", "error_information_rate"] },
 ];
 
@@ -22,7 +24,7 @@ let pageNumber = 1;
 
 function assertInputs(data, analysis) {
   if (data.snapshotId !== CONTRACT.snapshotId || analysis.snapshotId !== CONTRACT.snapshotId) throw new Error("SNAPSHOT_IDENTITY_MISMATCH");
-  if (data.status !== "FINAL_WITH_GAPS" || analysis.resultStatus !== "FINAL_WITH_GAPS" || analysis.qualityGate !== "PASSED") throw new Error("FROZEN_STATUS_MISMATCH");
+  if (data.status !== "FINAL_WITH_GAPS" || analysis.resultStatus !== "FINAL_WITH_GAPS" || analysis.qualityGate !== "PASSED_USER_APPROVED_SCOPE_CORRECTION") throw new Error("FROZEN_STATUS_MISMATCH");
   if (data.total !== CONTRACT.total || data.sampled !== CONTRACT.total || data.collected !== CONTRACT.collected || data.awaitingCollection !== CONTRACT.unknown) throw new Error("SUMMARY_COUNT_MISMATCH");
   if (!Array.isArray(data.samples) || data.samples.length !== CONTRACT.total || new Set(data.samples.map((item) => item.sampleId)).size !== CONTRACT.total) throw new Error("SAMPLE_IDENTITY_MISMATCH");
   const unknowns = data.samples.filter((item) => !item.collected);
@@ -32,6 +34,8 @@ function assertInputs(data, analysis) {
   if (analysis.dataCards.catalogVersion !== CONTRACT.analysisCatalogVersion || cards.length !== CONTRACT.metricCount || analysis.dataCards.unresolvedMandatory.length) throw new Error("METRIC_CATALOG_MISMATCH");
   if (cards.some((card) => card.status !== "READY" || !Number.isFinite(card.numerator) || !Number.isFinite(card.denominator) || !Number.isFinite(card.percentage) || !Number.isFinite(card.unknown))) throw new Error("METRIC_VALUE_MISSING");
   if (data.citations.length !== CONTRACT.citationCount) throw new Error("CITATION_COUNT_MISMATCH");
+  if (data.competitionMentions !== CONTRACT.competitionMentions || data.competitionBrandCount !== CONTRACT.competitionBrandCount || data.competition.length !== CONTRACT.competitionBrandCount) throw new Error("COMPETITION_SUMMARY_MISMATCH");
+  if (data.competition.reduce((sum, item) => sum + item.mentions, 0) !== CONTRACT.competitionMentions) throw new Error("COMPETITION_TOTAL_MISMATCH");
 }
 
 const text = (id, value) => { document.getElementById(id).textContent = String(value); };
@@ -54,9 +58,9 @@ function renderDecisions() {
   const cards = new Map(ANALYSIS.dataCards.results.map((item) => [item.id, item]));
   const values = [
     { label: "回答完整度", value: percent(ANALYSIS.sampling.completenessRate), note: `${DATA.collected}/${DATA.total}，1 条保持 unknown` },
-    { label: "品牌提及率", value: percent(cards.get("brand_mention_rate").percentage), note: "79/269 个已回收回答" },
+    { label: "三产品合计自然提及", value: percent(DATA.aggregateTargetFamily.percentage), note: `${DATA.aggregateTargetFamily.numerator}/${DATA.aggregateTargetFamily.denominator} 个中立回答` },
+    { label: "蝉妈妈·创意竞争份额", value: percent(cards.get("competition_share").percentage), note: `${cards.get("competition_share").numerator}/${cards.get("competition_share").denominator} 条中立品牌提及` },
     { label: "优势表达率", value: percent(cards.get("advantage_expression_rate").percentage), note: "21/269，按冻结规则独立统计", tone: "warn" },
-    { label: "错误信息率", value: percent(cards.get("error_information_rate").percentage), note: "2/269 个正式回答", tone: "risk" },
   ];
   document.getElementById("decision-grid").replaceChildren(...values.map((card) => {
     const article = document.createElement("article");
@@ -64,6 +68,17 @@ function renderDecisions() {
     article.innerHTML = `<span>${card.label}</span><strong>${card.value}</strong><p>${card.note}</p>`;
     return article;
   }));
+}
+
+function renderCompetition() {
+  const summary = [
+    { label: "竞争品牌提及", value: DATA.competitionMentions, note: "中立推荐样本中的品牌提及记录" },
+    { label: "竞争品牌数", value: DATA.competitionBrandCount, note: "包含三款拆分产品，零值不隐藏" },
+    { label: "优势表达样本", value: DATA.advantageExpressionSampleCount, note: "21/269，独立口径，不作为竞争分母" },
+  ];
+  document.getElementById("competition-summary").innerHTML = summary.map((item) => `<article><span>${item.label}</span><strong>${item.value}</strong><p>${item.note}</p></article>`).join("");
+  const targets = new Set(["蝉妈妈", "蝉妈妈·创意", "创意大师"]);
+  document.getElementById("competition-grid").innerHTML = DATA.competition.map((item, index) => `<article class="competition-card ${targets.has(item.brand) ? "target-product" : ""}"><div><span class="competition-rank">${String(index + 1).padStart(2, "0")}</span><h3>${escapeHtml(item.brand)}</h3>${targets.has(item.brand) ? '<b>目标产品</b>' : ""}</div><strong>${percent(item.share)}</strong><p><b>${item.mentions}</b> / ${DATA.competitionMentions} 条品牌提及</p></article>`).join("");
 }
 
 function renderMetrics() {
@@ -148,6 +163,7 @@ async function start() {
   renderHeader();
   renderDecisions();
   renderMetrics();
+  renderCompetition();
   renderBars("category-bars", ANALYSIS.sampling.byCategory);
   renderBars("round-bars", ANALYSIS.sampling.byRound);
   bindEvidence();

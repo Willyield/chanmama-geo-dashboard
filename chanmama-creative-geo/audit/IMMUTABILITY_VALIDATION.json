@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "validationType": "APPROVED_REVISION_4_SOURCE_CORRECTION_VALIDATION",
+  "requestId": "cmcr-20260819-sampling-mvp3a-715088E1D322",
+  "requestRevision": 4,
+  "supersedesRevision": 3,
+  "status": "PASSED",
+  "generatedAt": "2026-08-21T02:25:21.005Z",
+  "userScopeDecision": "PROPOSED_DISTINCT_PRODUCT_NEUTRAL_SCOPE",
+  "sourceBoundary": {
+    "planned": 270,
+    "sampled": 270,
+    "collected": 269,
+    "unknown": 1,
+    "unknownSampleId": "CMCR-S-20260819-C2-Q0092",
+    "citations": 3114,
+    "uniqueDomains": 506
+  },
+  "protectedSourceSha256": {
+    "before": "B08622367154A6DCCA4F6ED85273BB41337B0DCF8DCCD25213434558F2BADA26",
+    "after": "B08622367154A6DCCA4F6ED85273BB41337B0DCF8DCCD25213434558F2BADA26",
+    "equal": true
+  },
+  "approvedMetrics": {
+    "naturalMention": [
+      {
+        "id": "chanmama_natural_mention_rate",
+        "numerator": 47,
+        "denominator": 208,
+        "percentage": 22.6,
+        "unknown": 0
+      },
+      {
+        "id": "chanmama_creative_natural_mention_rate",
+        "numerator": 17,
+        "denominator": 208,
+        "percentage": 8.17,
+        "unknown": 0
+      },
+      {
+        "id": "creative_master_natural_mention_rate",
+        "numerator": 1,
+        "denominator": 208,
+        "percentage": 0.48,
+        "unknown": 0
+      }
+    ],
+    "aggregateTargetFamily": {
+      "numerator": 56,
+      "denominator": 208,
+      "percentage": 26.92
+    },
+    "top1": {
+      "id": "top1_rate",
+      "label": "TOP1 率",
+      "description": "适用问题中，目标品牌排在推荐顺序第 1 位的比例。",
+      "mandatory": true,
+      "status": "READY",
+      "numerator": 4,
+      "denominator": 51,
+      "percentage": 7.84,
+      "unknown": 12,
+      "ruleVersion": "CMCR-DISTINCT-PRODUCT-NEUTRAL-SCOPE-R4-20260821",
+      "scope": "neutral_recommendation_samples"
+    },
+    "top3": {
+      "id": "top3_rate",
+      "label": "TOP3 率",
+      "description": "适用问题中，目标品牌进入推荐顺序前 3 位的比例。",
+      "mandatory": true,
+      "status": "READY",
+      "numerator": 8,
+      "denominator": 51,
+      "percentage": 15.69,
+      "unknown": 12,
+      "ruleVersion": "CMCR-DISTINCT-PRODUCT-NEUTRAL-SCOPE-R4-20260821",
+      "scope": "neutral_recommendation_samples"
+    },
+    "competitionShare": {
+      "id": "competition_share",
+      "label": "竞争份额",
+      "description": "蝉妈妈·创意在中立推荐样本全部被识别品牌提及中的份额。",
+      "mandatory": false,
+      "status": "READY",
+      "numerator": 8,
+      "denominator": 103,
+      "percentage": 7.77,
+      "unknown": 0,
+      "ruleVersion": "CMCR-DISTINCT-PRODUCT-NEUTRAL-SCOPE-R4-20260821",
+      "scope": "neutral_recommendation_brand_mentions"
+    },
+    "advantageExpression": {
+      "id": "advantage_expression_rate",
+      "label": "优势表达率",
+      "description": "有效回答中，明确把正向能力、适配性、推荐理由或比较优势归属于目标品牌的比例。",
+      "mandatory": true,
+      "status": "READY",
+      "numerator": 21,
+      "denominator": 269,
+      "percentage": 7.81,
+      "unknown": 1,
+      "ruleVersion": "CMCR-ADVANTAGE-EXPRESSION-V1-20260819"
+    }
+  },
+  "recommendation": {
+    "denominator": 51,
+    "noRecognizedBrandOrder": 12
+  },
+  "competition": {
+    "denominator": 103,
+    "reconciledSum": 103,
+    "competitionBrandCount": 16
+  },
+  "unchangedMetricIds": [
+    "advantage_expression_rate",
+    "citation_rate",
+    "category_coverage_rate",
+    "brand_explanation_accuracy",
+    "product_relationship_accuracy",
+    "scenario_match_rate",
+    "comparison_win_rate",
+    "error_information_rate"
+  ],
+  "checks": [
+    {
+      "id": "same_snapshot",
+      "label": "双仪表盘使用同一快照",
+      "passed": true
+    },
+    {
+      "id": "same_data_hash",
+      "label": "双仪表盘使用同一数据文件",
+      "passed": true
+    },
+    {
+      "id": "sample_identity_unique",
+      "label": "样本编号没有重复",
+      "passed": true
+    },
+    {
+      "id": "sample_total_balanced",
+      "label": "已回收与缺口合计等于计划样本",
+      "passed": true
+    },
+    {
+      "id": "answers_present",
+      "label": "已回收样本均包含回答",
+      "passed": true
+    },
+    {
+      "id": "source_status_exclusive",
+      "label": "引用状态互斥且覆盖全部已回收样本",
+      "passed": true
+    },
+    {
+      "id": "citation_count_balanced",
+      "label": "引用明细与汇总数量一致",
+      "passed": true
+    },
+    {
+      "id": "mandatory_cards_selected",
+      "label": "五项公共数据卡片全部保留",
+      "passed": true
+    },
+    {
+      "id": "mandatory_cards_resolved",
+      "label": "五项公共数据卡片均已按冻结口径完成分析",
+      "passed": true
+    },
+    {
+      "id": "user_scope_decision",
+      "label": "新口径已获用户明确批准",
+      "passed": true
+    },
+    {
+      "id": "distinct_products",
+      "label": "三款产品按最长名称优先独立识别",
+      "passed": true
+    },
+    {
+      "id": "directed_questions_excluded",
+      "label": "定向题已从自然提及、推荐和竞争口径剔除",
+      "passed": true
+    },
+    {
+      "id": "competition_reconciled",
+      "label": "竞争明细提及总数与竞争分母一致",
+      "passed": true
+    },
+    {
+      "id": "unrelated_metrics_unchanged",
+      "label": "八项不相关指标保持 revision 3 冻结值",
+      "passed": true
+    }
+  ],
+  "rawAnswersChanged": false,
+  "citationsChanged": false,
+  "sourceSampleIdentityChanged": false
+}

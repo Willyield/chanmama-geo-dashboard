@@ -75,6 +75,23 @@ main { width: min(1540px, 100%); margin: 0 auto; padding: 0 clamp(12px, 4vw, 64p
 .metric-facts span { padding: 7px; color: var(--muted); background: #f7f9fb; font-size: 9px; }
 .metric-facts b { display: block; color: var(--ink); font-size: 14px; }
 .metric-facts .unknown b { color: var(--amber); }
+.scope-note { margin-bottom: 12px; padding: 12px 14px; display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--muted); background: #eef6f7; border-left: 4px solid var(--cyan); font-size: 10px; }
+.scope-note strong { color: var(--ink); }
+.competition-summary { margin-bottom: 12px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.competition-summary article { min-width: 0; padding: 15px 17px; background: #fff; }
+.competition-summary span { color: var(--muted); font-size: 10px; }
+.competition-summary strong { display: block; margin: 8px 0 5px; font-size: 26px; }
+.competition-summary p { margin: 0; color: var(--muted); font-size: 9px; line-height: 1.5; }
+.competition-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.competition-card { min-width: 0; padding: 15px; background: #fff; border: 1px solid var(--line); border-top: 3px solid #8b98a8; }
+.competition-card.target-product { border-top-color: var(--cyan); background: #f7fcfc; }
+.competition-card > div { min-height: 28px; display: flex; align-items: center; gap: 7px; }
+.competition-card h3 { min-width: 0; margin: 0; overflow-wrap: anywhere; font-size: 13px; }
+.competition-card > div > b { margin-left: auto; padding: 3px 5px; color: var(--cyan); background: #dff3f1; white-space: nowrap; font-size: 8px; }
+.competition-rank { color: #7b899b; font: 9px var(--mono); }
+.competition-card > strong { display: block; margin: 18px 0 8px; font-size: 28px; }
+.competition-card > p { margin: 0; color: var(--muted); font-size: 9px; }
+.competition-card > p b { color: var(--ink); font-size: 12px; }
 .distribution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .distribution-grid > article { min-width: 0; padding: 18px; background: #fff; border: 1px solid var(--line); }
 .distribution-grid h3 { margin: 0 0 16px; font-size: 15px; }
@@ -119,6 +136,7 @@ footer { padding: 20px clamp(18px, 4vw, 64px); display: flex; justify-content: s
 @media (max-width: 980px) {
   .hero { grid-template-columns: 1fr; min-height: 0; }
   .decision-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .competition-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .distribution-grid { grid-template-columns: 1fr; }
   .evidence-toolbar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .search-control { grid-column: 1 / -1; }
@@ -137,10 +155,14 @@ footer { padding: 20px clamp(18px, 4vw, 64px); display: flex; justify-content: s
   .section-tabs .citation-destination { margin-left: 0; }
   .section { padding: 28px 0; }
   .section-head { align-items: start; flex-direction: column; gap: 8px; }
-  .decision-grid, .metric-card-grid { grid-template-columns: 1fr; }
+  .decision-grid, .metric-card-grid, .competition-summary { grid-template-columns: 1fr; }
+  .competition-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .metric-group-head { align-items: start; flex-direction: column; gap: 5px; }
   .unknown-callout, .evidence-toolbar { grid-template-columns: 1fr; }
   .unknown-callout b, .search-control { grid-column: auto; }
   .bar-row { grid-template-columns: minmax(82px, 1fr) 1.6fr 86px; }
   footer { flex-direction: column; }
+}
+@media (max-width: 420px) {
+  .competition-grid { grid-template-columns: 1fr; }
 }

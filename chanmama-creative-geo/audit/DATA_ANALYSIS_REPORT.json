@@ -1,22 +1,24 @@
 {
-  "schemaVersion": 1,
-  "reportType": "GEO_DASHBOARD_DATA_ANALYSIS",
+  "schemaVersion": 2,
+  "reportType": "GEO_DASHBOARD_DATA_ANALYSIS_REVISION_4",
   "snapshotId": "CREATIVE-FINAL_WITH_GAPS-270-269-A394421A-7D90758D-MVP2_2",
   "dataDate": "2026-08-19",
-  "generatedAt": "2026-08-20T09:47:18.268Z",
+  "generatedAt": "2026-08-21T02:25:20.959Z",
   "resultStatus": "FINAL_WITH_GAPS",
-  "qualityGate": "PASSED",
+  "qualityGate": "PASSED_USER_APPROVED_SCOPE_CORRECTION",
   "frozenInputs": {
     "samplingDataSha256": "BA074D65E838AFDCFFFF0FCC28B67A3F88651998A838A795B3FE99D0D00829EF",
     "citationDataSha256": "BA074D65E838AFDCFFFF0FCC28B67A3F88651998A838A795B3FE99D0D00829EF",
     "sameFrozenData": true
   },
   "dataCards": {
-    "schemaVersion": 1,
+    "schemaVersion": 2,
     "catalogVersion": "GEO-DASHBOARD-CARDS-20260820-R1",
     "productKey": "chanmama-creative",
     "selected": [
-      "brand_mention_rate",
+      "chanmama_natural_mention_rate",
+      "chanmama_creative_natural_mention_rate",
+      "creative_master_natural_mention_rate",
       "top1_rate",
       "top3_rate",
       "advantage_expression_rate",
@@ -30,7 +32,9 @@
       "error_information_rate"
     ],
     "mandatory": [
-      "brand_mention_rate",
+      "chanmama_natural_mention_rate",
+      "chanmama_creative_natural_mention_rate",
+      "creative_master_natural_mention_rate",
       "top1_rate",
       "top3_rate",
       "advantage_expression_rate",
@@ -38,16 +42,46 @@
     ],
     "results": [
       {
-        "id": "brand_mention_rate",
-        "label": "品牌提及率",
-        "description": "有效回答中明确提到目标品牌的比例。",
+        "id": "chanmama_natural_mention_rate",
+        "label": "蝉妈妈自然提及率",
+        "brand": "蝉妈妈",
+        "description": "剔除题干点名三款目标产品的问题后，蝉妈妈在中立有效回答中的自然提及比例。",
         "mandatory": true,
         "status": "READY",
-        "numerator": 79,
-        "denominator": 269,
-        "percentage": 29.37,
-        "unknown": 1,
-        "ruleVersion": "DASHBOARD-BRAND-MENTION-V1"
+        "numerator": 47,
+        "denominator": 208,
+        "percentage": 22.6,
+        "unknown": 0,
+        "scope": "all_neutral_collected_answers",
+        "ruleVersion": "CMCR-DISTINCT-PRODUCT-NEUTRAL-SCOPE-R4-20260821"
+      },
+      {
+        "id": "chanmama_creative_natural_mention_rate",
+        "label": "蝉妈妈·创意自然提及率",
+        "brand": "蝉妈妈·创意",
+        "description": "剔除题干点名三款目标产品的问题后，蝉妈妈·创意在中立有效回答中的自然提及比例。",
+        "mandatory": true,
+        "status": "READY",
+        "numerator": 17,
+        "denominator": 208,
+        "percentage": 8.17,
+        "unknown": 0,
+        "scope": "all_neutral_collected_answers",
+        "ruleVersion": "CMCR-DISTINCT-PRODUCT-NEUTRAL-SCOPE-R4-20260821"
+      },
+      {
+        "id": "creative_master_natural_mention_rate",
+        "label": "创意大师自然提及率",
+        "brand": "创意大师",
+        "description": "剔除题干点名三款目标产品的问题后，创意大师在中立有效回答中的自然提及比例。",
+        "mandatory": true,
+        "status": "READY",
+        "numerator": 1,
+        "denominator": 208,
+        "percentage": 0.48,
+        "unknown": 0,
+        "scope": "all_neutral_collected_answers",
+        "ruleVersion": "CMCR-DISTINCT-PRODUCT-NEUTRAL-SCOPE-R4-20260821"
       },
       {
         "id": "top1_rate",
@@ -55,11 +89,12 @@
         "description": "适用问题中，目标品牌排在推荐顺序第 1 位的比例。",
         "mandatory": true,
         "status": "READY",
-        "numerator": 10,
-        "denominator": 77,
-        "percentage": 12.99,
+        "numerator": 4,
+        "denominator": 51,
+        "percentage": 7.84,
         "unknown": 12,
-        "ruleVersion": "CMCR-SEMANTIC-DETERMINISTIC-V1-20260819"
+        "ruleVersion": "CMCR-DISTINCT-PRODUCT-NEUTRAL-SCOPE-R4-20260821",
+        "scope": "neutral_recommendation_samples"
       },
       {
         "id": "top3_rate",
@@ -67,11 +102,12 @@
         "description": "适用问题中，目标品牌进入推荐顺序前 3 位的比例。",
         "mandatory": true,
         "status": "READY",
-        "numerator": 30,
-        "denominator": 77,
-        "percentage": 38.96,
+        "numerator": 8,
+        "denominator": 51,
+        "percentage": 15.69,
         "unknown": 12,
-        "ruleVersion": "CMCR-SEMANTIC-DETERMINISTIC-V1-20260819"
+        "ruleVersion": "CMCR-DISTINCT-PRODUCT-NEUTRAL-SCOPE-R4-20260821",
+        "scope": "neutral_recommendation_samples"
       },
       {
         "id": "advantage_expression_rate",
@@ -148,14 +184,15 @@
       {
         "id": "competition_share",
         "label": "竞争份额",
-        "description": "蝉妈妈创意在全部被识别品牌提及中的份额。",
+        "description": "蝉妈妈·创意在中立推荐样本全部被识别品牌提及中的份额。",
         "mandatory": false,
         "status": "READY",
-        "numerator": 34,
-        "denominator": 158,
-        "percentage": 21.52,
+        "numerator": 8,
+        "denominator": 103,
+        "percentage": 7.77,
         "unknown": 0,
-        "ruleVersion": "CMCR-SEMANTIC-DETERMINISTIC-V1-20260819"
+        "ruleVersion": "CMCR-DISTINCT-PRODUCT-NEUTRAL-SCOPE-R4-20260821",
+        "scope": "neutral_recommendation_brand_mentions"
       },
       {
         "id": "comparison_win_rate",
@@ -182,7 +219,20 @@
         "ruleVersion": "CMCR-SEMANTIC-DETERMINISTIC-V1-20260819"
       }
     ],
-    "unresolvedMandatory": []
+    "unresolvedMandatory": [],
+    "superseded": [
+      "brand_mention_rate"
+    ],
+    "unchangedFromRevision3": [
+      "advantage_expression_rate",
+      "citation_rate",
+      "category_coverage_rate",
+      "brand_explanation_accuracy",
+      "product_relationship_accuracy",
+      "scenario_match_rate",
+      "comparison_win_rate",
+      "error_information_rate"
+    ]
   },
   "sampling": {
     "title": "创意采样仪表盘数据分析",
@@ -191,44 +241,32 @@
     "collected": 269,
     "unresolved": 1,
     "completenessRate": 99.63,
-    "mentioned": 79,
-    "mentionRate": 29.37,
+    "mentioned": 56,
+    "mentionRate": 26.92,
     "byCategory": [
-      {
-        "name": "品牌产品问题",
-        "collected": 27,
-        "mentioned": 27,
-        "mentionRate": 100
-      },
-      {
-        "name": "价格/开通问题",
-        "collected": 2,
-        "mentioned": 2,
-        "mentionRate": 100
-      },
-      {
-        "name": "对比决策问题",
-        "collected": 53,
-        "mentioned": 28,
-        "mentionRate": 52.83
-      },
       {
         "name": "品类认知问题",
         "collected": 24,
-        "mentioned": 6,
-        "mentionRate": 25
-      },
-      {
-        "name": "案例/效果问题",
-        "collected": 35,
-        "mentioned": 8,
-        "mentionRate": 22.86
+        "mentioned": 11,
+        "mentionRate": 45.83
       },
       {
         "name": "业务场景问题",
         "collected": 116,
-        "mentioned": 8,
-        "mentionRate": 6.9
+        "mentioned": 36,
+        "mentionRate": 31.03
+      },
+      {
+        "name": "对比决策问题",
+        "collected": 27,
+        "mentioned": 5,
+        "mentionRate": 18.52
+      },
+      {
+        "name": "案例/效果问题",
+        "collected": 29,
+        "mentioned": 4,
+        "mentionRate": 13.79
       },
       {
         "name": "风险/限制问题",
@@ -239,28 +277,28 @@
     ],
     "byRound": [
       {
-        "name": "O1",
-        "collected": 15,
-        "mentioned": 5,
-        "mentionRate": 33.33
-      },
-      {
         "name": "C1",
-        "collected": 85,
-        "mentioned": 25,
-        "mentionRate": 29.41
-      },
-      {
-        "name": "C3",
-        "collected": 85,
-        "mentioned": 25,
-        "mentionRate": 29.41
+        "collected": 66,
+        "mentioned": 19,
+        "mentionRate": 28.79
       },
       {
         "name": "C2",
-        "collected": 84,
-        "mentioned": 24,
-        "mentionRate": 28.57
+        "collected": 66,
+        "mentioned": 19,
+        "mentionRate": 28.79
+      },
+      {
+        "name": "C3",
+        "collected": 66,
+        "mentioned": 18,
+        "mentionRate": 27.27
+      },
+      {
+        "name": "O1",
+        "collected": 10,
+        "mentioned": 0,
+        "mentionRate": 0
       }
     ],
     "unresolvedSamples": [
@@ -270,7 +308,12 @@
         "round": "C2",
         "status": "unknown"
       }
-    ]
+    ],
+    "mentionDenominator": 208,
+    "mentionScope": "all_neutral_collected_answers_distinct_product_family",
+    "directedQuestionInstances": 62,
+    "directedCollected": 61,
+    "neutralCollected": 208
   },
   "citation": {
     "title": "创意引用源仪表盘数据分析",
@@ -381,13 +424,178 @@
       "id": "mandatory_cards_resolved",
       "label": "五项公共数据卡片均已按冻结口径完成分析",
       "passed": true
+    },
+    {
+      "id": "user_scope_decision",
+      "label": "新口径已获用户明确批准",
+      "passed": true
+    },
+    {
+      "id": "distinct_products",
+      "label": "三款产品按最长名称优先独立识别",
+      "passed": true
+    },
+    {
+      "id": "directed_questions_excluded",
+      "label": "定向题已从自然提及、推荐和竞争口径剔除",
+      "passed": true
+    },
+    {
+      "id": "competition_reconciled",
+      "label": "竞争明细提及总数与竞争分母一致",
+      "passed": true
+    },
+    {
+      "id": "unrelated_metrics_unchanged",
+      "label": "八项不相关指标保持 revision 3 冻结值",
+      "passed": true
     }
   ],
   "boundaries": [
-    "两条未生成回答的样本保留为 unknown，不计入品牌提及率分母和引用来源结论",
-    "本报告只描述冻结数据，不推断未经验证的业务效果",
-    "优化中心只能修改展示与页面体验，不得改变冻结数据、指标口径和样本身份",
-    "部署中心仍需等待独立的明确发布授权",
-    "优势表达率是公共必选数据卡片，按冻结规则单独给出分子、分母、比例和 unknown。"
-  ]
+    "唯一未取得回答的 CMCR-S-20260819-C2-Q0092 保持 unknown；该问题本身属于定向题，不进入中立口径分母。",
+    "自然提及率按 208 条中立正式回答计算；推荐位置按 51 条中立推荐样本计算；竞争份额按 103 条品牌提及记录计算。",
+    "优势表达样本数保持 21/269，不作为竞争品牌提及分母。",
+    "原始问题、回答、引用、样本身份和八项不相关指标均未改动。"
+  ],
+  "scopeDecision": {
+    "status": "USER_APPROVED",
+    "decision": "PROPOSED_DISTINCT_PRODUCT_NEUTRAL_SCOPE",
+    "approvedRevision": 4,
+    "ruleVersion": "CMCR-DISTINCT-PRODUCT-NEUTRAL-SCOPE-R4-20260821",
+    "supersededMetrics": {
+      "brand_mention_rate": {
+        "numerator": 79,
+        "denominator": 269,
+        "percentage": 29.37
+      },
+      "top1_rate": {
+        "numerator": 10,
+        "denominator": 77,
+        "percentage": 12.99
+      },
+      "top3_rate": {
+        "numerator": 30,
+        "denominator": 77,
+        "percentage": 38.96
+      },
+      "competition_share": {
+        "numerator": 34,
+        "denominator": 158,
+        "percentage": 21.52
+      }
+    }
+  },
+  "scopeDefinitions": {
+    "naturalMention": {
+      "label": "全体中立回答自然提及率",
+      "denominator": 208,
+      "excludedDirectedQuestionInstances": 62,
+      "unknown": 0
+    },
+    "recommendation": {
+      "label": "中立推荐样本推荐位置",
+      "denominator": 51,
+      "noRecognizedBrandOrder": 12
+    },
+    "competition": {
+      "label": "中立推荐样本竞争份额",
+      "denominatorType": "brand_mention_records",
+      "denominator": 103,
+      "competitionBrandCount": 16
+    },
+    "advantageExpression": {
+      "label": "全体正式回答优势表达",
+      "numerator": 21,
+      "denominator": 269,
+      "excludedFromCompetitionDenominator": true
+    }
+  },
+  "competition": {
+    "scope": "neutral_recommendation_brand_mentions",
+    "totalMentions": 103,
+    "competitionBrandCount": 16,
+    "advantageExpressionSampleCount": 21,
+    "brands": [
+      {
+        "brand": "剪映",
+        "mentions": 21,
+        "share": 20.39
+      },
+      {
+        "brand": "蝉妈妈",
+        "mentions": 12,
+        "share": 11.65
+      },
+      {
+        "brand": "即梦 AI",
+        "mentions": 12,
+        "share": 11.65
+      },
+      {
+        "brand": "巨量创意",
+        "mentions": 12,
+        "share": 11.65
+      },
+      {
+        "brand": "可灵 AI",
+        "mentions": 11,
+        "share": 10.68
+      },
+      {
+        "brand": "蝉妈妈·创意",
+        "mentions": 8,
+        "share": 7.77
+      },
+      {
+        "brand": "千川素材库",
+        "mentions": 7,
+        "share": 6.8
+      },
+      {
+        "brand": "Runway",
+        "mentions": 6,
+        "share": 5.83
+      },
+      {
+        "brand": "Pika",
+        "mentions": 4,
+        "share": 3.88
+      },
+      {
+        "brand": "抖音素材库",
+        "mentions": 3,
+        "share": 2.91
+      },
+      {
+        "brand": "有米云",
+        "mentions": 3,
+        "share": 2.91
+      },
+      {
+        "brand": "火山引擎",
+        "mentions": 1,
+        "share": 0.97
+      },
+      {
+        "brand": "Adobe",
+        "mentions": 1,
+        "share": 0.97
+      },
+      {
+        "brand": "Sora",
+        "mentions": 1,
+        "share": 0.97
+      },
+      {
+        "brand": "Vidu",
+        "mentions": 1,
+        "share": 0.97
+      },
+      {
+        "brand": "创意大师",
+        "mentions": 0,
+        "share": 0
+      }
+    ]
+  }
 }
