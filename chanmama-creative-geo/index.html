@@ -2,94 +2,104 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-  <meta name="description" content="蝉妈妈创意 GEO 冻结采样仪表盘">
-  <title>蝉妈妈创意 GEO 采样仪表盘</title>
+  <meta name="description" content="蝉妈妈创意 GEO 两日合并采样仪表盘">
+  <title>蝉妈妈创意 GEO 仪表盘 · 540 个采样槽位</title>
   <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../assets/platform-shell.css?v=20260819-workbench3">
+  <script defer src="../assets/platform-shell.js?v=20260819-workbench3" data-root="../" data-section="product" data-label="蝉妈妈创意 GEO"></script>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
-  <header class="product-nav">
-    <a class="product-brand" href="../" aria-label="返回数据平台首页"><span>CM</span><strong>蝉妈妈数据工作台</strong></a>
-    <nav aria-label="平台主导航">
-      <a href="../">总览</a>
-      <a href="./" aria-current="page">创意 GEO</a>
-      <a href="../chanmama-creative-citation-report/">引用源</a>
-    </nav>
-    <span class="nav-state" id="nav-state">FINAL WITH GAPS</span>
-  </header>
-
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-copy">
-      <p class="eyebrow">FROZEN SNAPSHOT · 2026-08-18 + 2026-08-19</p>
-      <h1 id="hero-title">蝉妈妈创意 GEO<br>采样决策仪表盘</h1>
-      <p id="hero-note">冻结数据加载中。</p>
-      <div class="hero-meta"><span id="snapshot-id">--</span><span>数据分析已批准</span></div>
-    </div>
-    <div class="hero-status" aria-label="冻结样本状态">
-      <div class="hero-total"><strong id="sample-total">--</strong><span>冻结样本</span></div>
-      <div class="hero-facts">
-        <span><b id="collected-total">--</b>正式回答</span>
-        <span class="unknown"><b id="unknown-total">--</b>保持未知</span>
-        <span><b id="citation-total">--</b>引用记录</span>
+  <div class="shell">
+    <header class="hero">
+      <div class="tick-rule" aria-hidden="true"></div>
+      <div class="eyebrow">GEO / 蝉妈妈创意 / FINAL WITH GAPS</div>
+      <h1>蝉妈妈创意 GEO 采样仪表盘</h1>
+      <div class="meta">
+        <span>范围：2026-08-18 + 2026-08-19</span>
+        <span>阶段：两日合并冻结</span>
+        <span>采样槽位：540</span>
+        <span>正式回答：538</span>
+        <span>引用记录：7,042</span>
+        <span id="snapshot-id">加载中</span>
       </div>
-      <div class="completion-track"><i id="completion-fill"></i></div>
-      <p id="completion-label">--</p>
-    </div>
-  </section>
+      <nav class="tabs" aria-label="页面导航">
+        <a href="../">总览</a>
+        <a href="./" aria-current="page">主仪表盘</a>
+        <a href="#competition">竞品数据</a>
+        <a href="#distribution">样本分布</a>
+        <a href="#samples">样本明细</a>
+        <a href="../chanmama-creative-citation-report/">引用源</a>
+      </nav>
+    </header>
 
-  <nav class="section-tabs" aria-label="页面区域导航">
-    <a href="#overview">决策总览</a><a href="#metrics">核心指标</a><a href="#competition">竞争品牌</a><a href="#distribution">样本分布</a><a href="#evidence">样本证据</a>
-    <a class="citation-destination" href="../chanmama-creative-citation-report/">引用源 →</a>
-  </nav>
+    <main id="main">
+      <div class="checkpoint-badge">FINAL WITH GAPS · TWO-DAY COMBINED · 540 SLOTS</div>
 
-  <main id="main">
-    <section class="section" id="overview" aria-labelledby="overview-title">
-      <div class="section-head"><div><p>01 / DECISION OVERVIEW</p><h2 id="overview-title">冻结结论</h2></div><p>结论直接来自已批准的数据分析报告</p></div>
-      <div class="decision-grid" id="decision-grid"></div>
-    </section>
+      <section class="executive-brief" aria-labelledby="brief-title">
+        <div>
+          <div class="brief-kicker">最终判断 / 两日冻结集</div>
+          <div class="brief-title" id="brief-title">540 个采样槽位合并分析，538 条正式回答进入最终指标。</div>
+          <div class="brief-note" id="hero-note">冻结数据加载中。</div>
+        </div>
+        <div class="brief-status"><strong><span id="collected-total">--</span>/<span id="sample-total">--</span></strong><span><b id="unknown-total">--</b> 条保持 unknown</span></div>
+      </section>
 
-    <section class="section" id="metrics" aria-labelledby="metrics-title">
-      <div class="section-head"><div><p>02 / CORE METRICS</p><h2 id="metrics-title">四组业务指标</h2></div><p>每张卡保留分子、分母、比例与 unknown</p></div>
-      <div class="metric-groups" id="metric-groups"></div>
-    </section>
+      <section class="section" id="metrics" aria-labelledby="metrics-title">
+        <div class="section-head"><h2 id="metrics-title">核心观察</h2><span>4 张决策卡 · 14 项冻结指标 · 分子 / 分母 / unknown</span></div>
+        <div class="decision-grid" id="metric-groups"></div>
+      </section>
 
-    <section class="section" id="competition" aria-labelledby="competition-title">
-      <div class="section-head"><div><p>03 / COMPETITION DETAIL</p><h2 id="competition-title">竞争品牌详细表现</h2></div><p>两日中立推荐样本 · 209 条品牌提及记录</p></div>
-      <div class="scope-note"><strong>口径分开显示</strong><span>自然提及率分母：416 个中立正式回答</span><span>推荐率分母：102 个中立推荐样本</span><span>竞争份额分母：209 条品牌提及记录</span></div>
-      <div class="competition-summary" id="competition-summary"></div>
-      <div class="competition-grid" id="competition-grid"></div>
-    </section>
+      <section class="section" id="competition" aria-labelledby="competition-title">
+        <div class="section-head"><h2 id="competition-title">竞品详细表现</h2><span>两日中立推荐样本 · 完整 16 品牌</span></div>
+        <p class="section-lead">题干明确点名蝉妈妈、蝉妈妈·创意或创意大师的问题均已剔除。自然回答、推荐样本与品牌提及记录采用不同分母。</p>
+        <div class="scope-band" aria-label="竞品指标统计口径">
+          <div class="scope-item"><strong>416</strong><span>中立正式回答</span></div>
+          <div class="scope-item"><strong>102</strong><span>中立推荐样本</span></div>
+          <div class="scope-item"><strong>209</strong><span>竞争品牌提及</span></div>
+          <div class="scope-item"><strong>16</strong><span>完整竞争品牌</span></div>
+        </div>
+        <div class="grid-2">
+          <article class="panel"><h3>竞争提及份额</h3><div class="competition-list" id="competition-grid"></div></article>
+          <article class="panel"><h3>证据与状态</h3><div class="source-grid">
+            <div class="source-stat"><b id="citation-total">--</b><span>引用记录</span></div>
+            <div class="source-stat"><b>773</b><span>唯一域名</span></div>
+            <div class="source-stat"><b>45</b><span>优势表达样本</span></div>
+            <div class="source-stat unknown-stat"><b>2</b><span>显式 unknown</span></div>
+          </div><div class="unknown-list" id="unknown-list"></div></article>
+        </div>
+      </section>
 
-    <section class="section" id="distribution" aria-labelledby="distribution-title">
-      <div class="section-head"><div><p>04 / SAMPLE DISTRIBUTION</p><h2 id="distribution-title">回答分布</h2></div><p>按问题分类和采样轮次回读</p></div>
-      <div class="distribution-grid">
-        <article><h3>问题分类</h3><div class="bar-list" id="category-bars"></div></article>
-        <article><h3>采样轮次</h3><div class="bar-list" id="round-bars"></div></article>
-        <article><h3>采样日期</h3><div class="bar-list" id="date-bars"></div></article>
-      </div>
-    </section>
+      <section class="section" id="distribution" aria-labelledby="distribution-title">
+        <div class="section-head"><h2 id="distribution-title">样本分布</h2><span>从 540 条冻结记录直接汇总</span></div>
+        <div class="distribution-grid">
+          <article class="panel"><h3>问题分类</h3><div class="bar-list" id="category-bars"></div></article>
+          <article class="panel"><h3>采样轮次</h3><div class="bar-list" id="round-bars"></div></article>
+          <article class="panel"><h3>采样日期</h3><div class="bar-list" id="date-bars"></div></article>
+        </div>
+      </section>
 
-    <section class="section" id="evidence" aria-labelledby="evidence-title">
-      <div class="section-head"><div><p>05 / SAMPLE EVIDENCE</p><h2 id="evidence-title">样本与缺口</h2></div><a class="audit-link" href="./audit/DATA_ANALYSIS_REPORT.json" download>下载分析报告</a></div>
-      <article class="unknown-callout"><div><span>2 EXPLICIT UNKNOWNS</span><strong>两日各 1 条缺口</strong></div><div id="unknown-list"></div><b>均未生成正式回答，保持 unknown，不转为未提及或零值。</b></article>
-      <div class="evidence-toolbar">
-        <label>采样日期<select id="date-filter"><option value="all">全部日期</option></select></label>
-        <label>问题分类<select id="category-filter"><option value="all">全部分类</option></select></label>
-        <label>采样轮次<select id="round-filter"><option value="all">全部轮次</option></select></label>
-        <label>状态<select id="status-filter"><option value="all">全部状态</option><option value="collected">正式回答</option><option value="deferred">保持未知</option></select></label>
-        <label class="search-control">搜索<input id="search-filter" type="search" placeholder="样本 ID、问题或回答"></label>
-        <button id="reset-filters" type="button">重置</button>
-      </div>
-      <div class="table-meta"><span id="visible-count">--</span><span id="row-range">--</span></div>
-      <div class="table-wrap"><table><thead><tr><th>样本</th><th>问题 / 回答</th><th>分类 / 轮次</th><th>状态</th><th>提及 / 引用</th></tr></thead><tbody id="sample-body"></tbody></table></div>
-      <div class="pagination"><button id="page-prev" type="button" aria-label="上一页">←</button><span id="page-label">--</span><button id="page-next" type="button" aria-label="下一页">→</button><label>每页<select id="page-size"><option value="25">25</option><option value="50" selected>50</option><option value="100">100</option></select></label></div>
-    </section>
-  </main>
+      <section class="section" id="samples" aria-labelledby="samples-title">
+        <div class="section-head"><h2 id="samples-title">样本明细</h2><span id="visible-count">加载中</span></div>
+        <div class="toolbar">
+          <label class="control">日期<select id="date-filter"><option value="all">全部日期</option></select></label>
+          <label class="control">轮次<select id="round-filter"><option value="all">全部轮次</option></select></label>
+          <label class="control">问题类别<select id="category-filter"><option value="all">全部类别</option></select></label>
+          <label class="control">状态<select id="status-filter"><option value="all">全部状态</option><option value="collected">正式回答</option><option value="unknown">保持未知</option></select></label>
+          <label class="control search-control">搜索<input id="search-filter" type="search" placeholder="样本、问题或回答"></label>
+          <div class="toolbar-actions"><button id="reset-filters" class="button" type="button">重置</button><a class="button primary" href="./audit/DATA_ANALYSIS_REPORT.json" download>下载分析</a></div>
+        </div>
+        <div class="table-meta"><span id="row-range">--</span></div>
+        <div class="table-wrap"><table><thead><tr><th>样本</th><th>问题 / 回答</th><th>类别 / 轮次</th><th>状态</th><th>提及 / 引用</th></tr></thead><tbody id="sample-body"><tr><td colspan="5" class="empty">正在加载 540 个采样槽位</td></tr></tbody></table></div>
+        <div class="pagination"><button id="page-prev" type="button" aria-label="上一页">←</button><span id="page-label">--</span><button id="page-next" type="button" aria-label="下一页">→</button><label>每页<select id="page-size"><option value="25">25</option><option value="50" selected>50</option><option value="100">100</option></select></label></div>
+      </section>
 
-  <footer><span id="footer-version">--</span><span>538 FORMAL + 2 UNKNOWN</span><span>ANALYSIS QUALITY GATE PASSED</span></footer>
-  <script type="module" src="./app.js?v=715088E1D322-r5"></script>
+      <footer class="footer"><span id="footer-version">--</span> · 538 FORMAL + 2 UNKNOWN · ANALYSIS QUALITY GATE PASSED</footer>
+    </main>
+  </div>
+  <script type="module" src="./app.js?v=715088E1D322-r6-ui"></script>
 </body>
 </html>

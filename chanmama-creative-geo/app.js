@@ -12,10 +12,10 @@ const CONTRACT = Object.freeze({
 });
 
 const GROUPS = [
-  { label: "三产品自然可见度", description: "两日全体中立回答，三款产品分别计算", ids: ["chanmama_natural_mention_rate", "chanmama_creative_natural_mention_rate", "creative_master_natural_mention_rate"] },
-  { label: "推荐位置与证明", description: "两日中立推荐样本、优势表达与引用覆盖", ids: ["top1_rate", "top3_rate", "advantage_expression_rate", "citation_rate"] },
-  { label: "产品理解与场景", description: "候选覆盖、品牌说明、产品关系与场景匹配", ids: ["category_coverage_rate", "brand_explanation_accuracy", "product_relationship_accuracy", "scenario_match_rate"] },
-  { label: "竞争与质量", description: "竞争份额、对比胜率与错误信息", ids: ["competition_share", "comparison_win_rate", "error_information_rate"] },
+  { label: "品牌表现", description: "三款产品独立计算自然提及率", ids: ["chanmama_natural_mention_rate", "chanmama_creative_natural_mention_rate", "creative_master_natural_mention_rate"] },
+  { label: "推荐与证据", description: "推荐位置、优势表达与引用覆盖", ids: ["top1_rate", "top3_rate", "advantage_expression_rate", "citation_rate"] },
+  { label: "认知质量", description: "解释、关系和业务场景是否准确", ids: ["category_coverage_rate", "brand_explanation_accuracy", "product_relationship_accuracy", "scenario_match_rate"] },
+  { label: "竞争与复核", description: "竞争份额、对比结论与错误信息", ids: ["competition_share", "comparison_win_rate", "error_information_rate"] },
 ];
 
 let DATA;
@@ -50,48 +50,26 @@ function renderHeader() {
   text("snapshot-id", DATA.snapshotId);
   text("footer-version", `${DATA.rendererVersion} · ${DATA.snapshotId}`);
   text("hero-note", `2026-08-18 与 2026-08-19 两日共 ${DATA.total} 个采样槽位，${DATA.collected} 条取得正式回答；两个缺口保持 unknown，不计为未提及或无引用。`);
-  document.getElementById("completion-fill").style.width = `${DATA.collected / DATA.total * 100}%`;
-  text("completion-label", `${DATA.collected} / ${DATA.total} 正式回答 · ${DATA.awaitingCollection} 条保持未知`);
-}
-
-function renderDecisions() {
-  const cards = new Map(ANALYSIS.dataCards.results.map((item) => [item.id, item]));
-  const advantage = cards.get("advantage_expression_rate");
-  const values = [
-    { label: "回答完整度", value: percent(ANALYSIS.sampling.collected / ANALYSIS.sampling.planned * 100), note: `${DATA.collected}/${DATA.total}，2 条保持 unknown` },
-    { label: "三产品合计自然提及", value: percent(DATA.aggregateTargetFamily.percentage), note: `${DATA.aggregateTargetFamily.numerator}/${DATA.aggregateTargetFamily.denominator} 个中立回答` },
-    { label: "蝉妈妈·创意竞争份额", value: percent(cards.get("competition_share").percentage), note: `${cards.get("competition_share").numerator}/${cards.get("competition_share").denominator} 条中立品牌提及` },
-    { label: "优势表达率", value: percent(advantage.percentage), note: `${advantage.numerator}/${advantage.denominator} 条正式回答`, tone: "warn" },
-  ];
-  document.getElementById("decision-grid").replaceChildren(...values.map((card) => {
-    const article = document.createElement("article");
-    article.className = `decision-card ${card.tone ?? ""}`;
-    article.innerHTML = `<span>${card.label}</span><strong>${card.value}</strong><p>${card.note}</p>`;
-    return article;
-  }));
 }
 
 function renderCompetition() {
-  const summary = [
-    { label: "竞争品牌提及", value: DATA.competitionMentions, note: "两日中立推荐样本中的品牌提及记录" },
-    { label: "竞争品牌数", value: DATA.competitionBrandCount, note: "包含三款拆分产品，零值不隐藏" },
-    { label: "优势表达样本", value: DATA.advantageExpressionSampleCount, note: `${DATA.advantageExpressionSampleCount}/${DATA.collected}，独立口径` },
-  ];
-  document.getElementById("competition-summary").innerHTML = summary.map((item) => `<article><span>${item.label}</span><strong>${item.value}</strong><p>${item.note}</p></article>`).join("");
   const targets = new Set(["蝉妈妈", "蝉妈妈·创意", "创意大师"]);
-  document.getElementById("competition-grid").innerHTML = DATA.competition.map((item, index) => `<article class="competition-card ${targets.has(item.brand) ? "target-product" : ""}"><div><span class="competition-rank">${String(index + 1).padStart(2, "0")}</span><h3>${escapeHtml(item.brand)}</h3>${targets.has(item.brand) ? '<b>目标产品</b>' : ""}</div><strong>${percent(item.share)}</strong><p><b>${item.mentions}</b> / ${DATA.competitionMentions} 条品牌提及</p></article>`).join("");
+  const maxMentions = Math.max(...DATA.competition.map((item) => item.mentions), 1);
+  document.getElementById("competition-grid").innerHTML = DATA.competition.map((item) => `<div class="competition-row ${targets.has(item.brand) ? "target" : ""}" data-competition-brand="${escapeHtml(item.brand)}"><span class="brand" title="${escapeHtml(item.brand)}">${escapeHtml(item.brand)}</span><span class="track"><i class="fill" style="width:${item.mentions / maxMentions * 100}%"></i></span><span class="number">${item.mentions} · ${percent(item.share)}</span></div>`).join("");
 }
 
 function renderMetrics() {
   const cards = new Map(ANALYSIS.dataCards.results.map((item) => [item.id, item]));
-  document.getElementById("metric-groups").replaceChildren(...GROUPS.map((group, groupIndex) => {
-    const section = document.createElement("section");
-    section.className = "metric-group";
-    section.innerHTML = `<div class="metric-group-head"><h3>${String(groupIndex + 1).padStart(2, "0")} · ${group.label}</h3><span>${group.description}</span></div><div class="metric-card-grid">${group.ids.map((id) => {
+  document.getElementById("metric-groups").replaceChildren(...GROUPS.map((group) => {
+    const [primaryId, ...rowIds] = group.ids;
+    const primary = cards.get(primaryId);
+    const article = document.createElement("article");
+    article.className = "decision-card";
+    article.innerHTML = `<div class="decision-head"><div class="decision-title"><strong>${group.label}</strong><span>${group.description}</span></div><span class="metric-state">冻结结果</span></div><div class="decision-primary" data-metric-id="${primary.id}"><span class="value">${percent(primary.percentage)}</span><span class="caption">${primary.label} · ${primary.numerator}/${primary.denominator} · unknown ${primary.unknown}</span></div><div class="decision-rows">${rowIds.map((id) => {
       const card = cards.get(id);
-      return `<article class="metric-card" data-metric-id="${card.id}"><div class="metric-card-head"><h3>${card.label}</h3><span class="metric-id">${card.id}</span></div><div class="metric-rate"><strong>${percent(card.percentage)}</strong><span>${card.description}</span></div><div class="metric-facts"><span><b>${card.numerator}</b>分子</span><span><b>${card.denominator}</b>分母</span><span class="unknown"><b>${card.unknown}</b>unknown</span></div></article>`;
+      return `<div class="decision-row" data-metric-id="${card.id}"><div><span>${card.label}</span><small>${card.numerator}/${card.denominator} · unknown ${card.unknown}</small></div><strong>${percent(card.percentage)}</strong></div>`;
     }).join("")}</div>`;
-    return section;
+    return article;
   }));
 }
 
@@ -151,7 +129,7 @@ function bindEvidence() {
   optionValues("category-filter", DATA.filters.categories);
   optionValues("round-filter", DATA.filters.modes);
   const unknowns = DATA.samples.filter((item) => !item.collected);
-  document.getElementById("unknown-list").innerHTML = unknowns.map((item) => `<div><span>${escapeHtml(item.sampleDate)}</span><strong>${escapeHtml(item.sampleId)}</strong><p>${escapeHtml(item.question)}</p></div>`).join("");
+  document.getElementById("unknown-list").innerHTML = unknowns.map((item) => `<div class="unknown-item"><span>${escapeHtml(item.sampleDate)} · 保持 unknown</span><strong>${escapeHtml(item.sampleId)}</strong><p>${escapeHtml(item.question)}</p></div>`).join("");
   for (const id of ["date-filter", "category-filter", "round-filter", "status-filter", "search-filter"]) document.getElementById(id).addEventListener("input", () => { pageNumber = 1; renderSamples(); });
   document.getElementById("page-size").addEventListener("change", () => { pageNumber = 1; renderSamples(); });
   document.getElementById("page-prev").addEventListener("click", () => { pageNumber -= 1; renderSamples(); });
@@ -175,7 +153,6 @@ async function start() {
   ANALYSIS = await analysisResponse.json();
   assertInputs(DATA, ANALYSIS);
   renderHeader();
-  renderDecisions();
   renderMetrics();
   renderCompetition();
   renderBars("category-bars", summarize("category"));
@@ -186,7 +163,7 @@ async function start() {
 
 start().catch((error) => {
   document.body.classList.add("load-error");
-  text("nav-state", "FAIL CLOSED");
+  document.querySelector(".checkpoint-badge").textContent = "FAIL CLOSED";
   text("hero-note", `冻结输入校验失败：${error.message}`);
   console.error(error);
 });
