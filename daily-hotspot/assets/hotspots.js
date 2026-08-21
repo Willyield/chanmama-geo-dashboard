@@ -858,6 +858,9 @@ export function renderHotspotPage({ data, index, view, filters }) {
     observedAt: data.observedAt,
     sourceWorkbook: data.sourceWorkbook,
   });
+  const incompleteNotice = data.inputStatus === "incomplete"
+    ? `<div class="decision-boundary">${icon("circle-alert")}<span><strong>输入不完整：</strong>${(data.incompleteReasons || []).map(escapeHtml).join("；") || "当前窗口仍有来源缺口，结论仅基于已核验输入。"}</span></div>`
+    : "";
   const decisions = `<div class="priority-lanes">
     <section><div class="priority-lane-title"><strong>今日业务响应</strong><span>只按经营影响与响应窗口排序</span></div>${renderDecisionStrip(data.summary.topActions, "id")}</section>
     <section><div class="priority-lane-title"><strong>今日内容制作</strong><span>按选题价值排序，抢先试发不等待完整材料</span></div>${renderDecisionStrip(data.summary.topContentActions, "id")}</section>
@@ -871,7 +874,7 @@ export function renderHotspotPage({ data, index, view, filters }) {
   else if (view === "archive") content = renderArchive(index);
   else if (view === "rules") content = renderRules();
   else content = `${renderToolbar(data, filters, filtered.length)}${renderOverviewTable(filtered)}`;
-  return `${heading}${summary}${decisions}${content}`;
+  return `${heading}${summary}${incompleteNotice}${decisions}${content}`;
 }
 
 export function renderHotspotDetail(candidate) {
