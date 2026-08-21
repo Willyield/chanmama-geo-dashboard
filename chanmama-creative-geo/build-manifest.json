@@ -1,34 +1,41 @@
 {
   "schemaVersion": 2,
-  "requestId": "cmcr-20260819-creative-sampling-dashboard-r1",
-  "requestRevision": 8,
-  "runId": "cmcr-20260818-recapture-20260819-r1",
-  "dashboardVersion": "CMCR_CREATIVE_SAMPLING_DASHBOARD_20260820_R7",
-  "status": "READY_LOCAL_DEPLOYMENT_BLOCKED",
-  "route": "/chanmama-creative-geo/",
+  "messageType": "FROZEN_WEBSITE_RELEASE",
+  "protocolVersion": 2,
+  "requestId": "cmcr-20260819-sampling-mvp3a-715088E1D322",
+  "requestRevision": 3,
+  "supersedesRevision": 2,
+  "sourceOptimizationRequestRevision": 2,
+  "runId": "CREATIVE-FINAL_WITH_GAPS-270-269-A394421A-7D90758D-MVP2_2",
   "projectKey": "chanmama-creative-geo-sampling",
   "routePairId": "pair-3",
   "optimizationCenter": "optimization-center-3",
-  "deploymentCenter": "deployment-center-3",
+  "requiredDeploymentCenter": "deployment-center-3",
+  "status": "READY_FOR_DEPLOYMENT_AUTHORIZATION_REQUIRED",
+  "route": "/chanmama-creative-geo/",
   "allowedPaths": [
     "chanmama-creative-geo/**"
   ],
-  "packageSha256": "734EC9C7B1CE4DAA766D6ED39C44E3873E412BEBA86DF28869BE34A065C76056",
-  "packageHashBasis": "canonical sorted path/bytes/sha256 list excluding build-manifest.json",
-  "sourceHashes": {
-    "rawManifestSha256": "E9503B8F53FDE87305DE6C7D75E29E32EBCBFAB9664251E74B24FE68986534B4",
-    "metricsSha256": "8FC977A709B713EA5FECDA1A4E7B09BD3B24E557F53AEBC36C49569C6CC9B7D7",
-    "semanticAuditSha256": "4158AEED5C9FC46452347EBE3C6895D5D3EE1F7A5AB562B9CF4170F61A5042C3",
-    "sampleDetailsSha256": "F04B0BE44F836CB5D686F9116332E4C955C4AF075CB3063AB247D0F9AAF6509A",
-    "validationSha256": "301E008AE9B2FD0EF7EC97BD239BFD4EF8FCBB05401CF69ED839C68BB85EEE39",
-    "auditRows": 510,
-    "detailRows": 270
+  "contentPackageSha256": "2319376B78BEE321771E270E793D0FE5B5EE1F6C0F24264AC5C2C8470CF4F1AE",
+  "inputHashes": {
+    "requestSha256": "D2CDA13CF5F2FAB5495F10770622E4EB8F8DCD640E02067AC4F90AC53E8AFBFD",
+    "frozenDashboardPackageSha256": "CB18A24E81B00B10AD97D8E546BA05EE7C621553633296967D31A928FE272557",
+    "sourcePageSha256": "3D6CD60CB852B61E2345249E670CC98B20B85140451574E07C92D9A497237C1E",
+    "dashboardDataSha256": "BA074D65E838AFDCFFFF0FCC28B67A3F88651998A838A795B3FE99D0D00829EF",
+    "sourceManifestSha256": "8DACC3C71740907559E5F34C6D11888C3836A26C28B901A1C8F2777A8EB46F81",
+    "dataAnalysisReportSha256": "0A8D6BA7D0B3E61AF4A7C08E06E407A9A58E4BE93432BACB22195B6FADC5D0AF"
+  },
+  "businessBoundary": {
+    "planned": 270,
+    "collected": 269,
+    "unknown": 1,
+    "unknownSampleId": "CMCR-S-20260819-C2-Q0092",
+    "metricCards": 12,
+    "businessDataChanged": false
   },
   "idempotency": {
     "strategy": "CONTENT_ADDRESSED",
-    "idempotencyKey": "cmcr-20260819-creative-sampling-dashboard-r1:rev8:734EC9C7B1CE4DAA766D6ED39C44E3873E412BEBA86DF28869BE34A065C76056",
-    "rawMutation": false,
-    "correctionMutation": false,
+    "idempotencyKey": "cmcr-20260819-sampling-mvp3a-715088E1D322:rev3:2319376B78BEE321771E270E793D0FE5B5EE1F6C0F24264AC5C2C8470CF4F1AE",
     "externalWrites": 0
   },
   "qaRequired": [
@@ -39,48 +46,43 @@
   "files": [
     {
       "path": "app.js",
-      "bytes": 11971,
-      "sha256": "C5F514D81D061E9D9349D96E53B85BA1ED0862231065B036AC6089288240874A"
+      "bytes": 10716,
+      "sha256": "322273CCC9B251FBAEB7807E8EA8B244C2B420C757EC8D923D32611236D8687C"
     },
     {
-      "path": "audit/mention-rate-scope.csv",
-      "bytes": 47068,
-      "sha256": "D0B10D133AB221F5EAD0985CD45A487F75326407A57EFEED7E3BEC6AEDFCCABC"
+      "path": "audit/DATA_ANALYSIS_REPORT.json",
+      "bytes": 11051,
+      "sha256": "0A8D6BA7D0B3E61AF4A7C08E06E407A9A58E4BE93432BACB22195B6FADC5D0AF"
     },
     {
-      "path": "audit/semantic_audit.csv",
-      "bytes": 434643,
-      "sha256": "4158AEED5C9FC46452347EBE3C6895D5D3EE1F7A5AB562B9CF4170F61A5042C3"
+      "path": "audit/FROZEN_DASHBOARD_PACKAGE.json",
+      "bytes": 1815,
+      "sha256": "CB18A24E81B00B10AD97D8E546BA05EE7C621553633296967D31A928FE272557"
     },
     {
-      "path": "audit/validation.json",
-      "bytes": 1913,
-      "sha256": "301E008AE9B2FD0EF7EC97BD239BFD4EF8FCBB05401CF69ED839C68BB85EEE39"
-    },
-    {
-      "path": "creative-dashboard-data.schema.json",
-      "bytes": 4596,
-      "sha256": "BCCBEA6E4EB50D227B83C0400E14C5080DCDFB1D7EF31DFC14081781467063B3"
+      "path": "audit/WEBSITE_OPTIMIZATION_REQUEST.json",
+      "bytes": 2318,
+      "sha256": "D2CDA13CF5F2FAB5495F10770622E4EB8F8DCD640E02067AC4F90AC53E8AFBFD"
     },
     {
       "path": "dashboard-data.json",
-      "bytes": 379812,
-      "sha256": "3B68A245F7D464BCA9581DA29C313207F16BD0FE01F618F85C2C8A6572A6D45D"
+      "bytes": 2339215,
+      "sha256": "BA074D65E838AFDCFFFF0FCC28B67A3F88651998A838A795B3FE99D0D00829EF"
     },
     {
       "path": "index.html",
-      "bytes": 6135,
-      "sha256": "3A2801529CFE284249C9600A7458BFD97F53C44888F17493401F3021F6E4C4E6"
+      "bytes": 5484,
+      "sha256": "867E33863CFD230AB77398720D2246699DB6FDC89B0150F7D666D5F2CFCBB846"
     },
     {
       "path": "sensitive-scan.json",
-      "bytes": 503,
-      "sha256": "320ADC18CA8617A05881E1FBC8FD8280EAAF1F52CA62BBC9436271D01A743EEA"
+      "bytes": 118,
+      "sha256": "6BE28C704A7CDF5853C922E1C973580C0B051F5EF237156C596956D6FEB5AC71"
     },
     {
       "path": "styles.css",
-      "bytes": 14427,
-      "sha256": "99F5DB1A350D56B8896B327D51A656CD86C50689E72408158650C74C44682586"
+      "bytes": 11309,
+      "sha256": "A4DB01EA013984CB5041860BB1B88F5738EA05033DF1498E336CE3651759080A"
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 2,
+  "packageType": "GEO_FINAL_DASHBOARD_PACKAGE",
+  "taskId": "92f98cb5-4f74-4508-b22b-31d686aa3c0d",
+  "taskName": "蝉妈妈创意 · 今日采样 270 条（安全恢复）",
+  "snapshotId": "CREATIVE-FINAL_WITH_GAPS-270-269-A394421A-7D90758D-MVP2_2",
+  "resultStatus": "FINAL_WITH_GAPS",
+  "dataDate": "2026-08-19",
+  "dashboardType": "sampling",
+  "dashboardLabel": "采样仪表盘",
+  "recordCount": 269,
+  "unresolvedCount": 1,
+  "files": [
+    {
+      "role": "page",
+      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\runs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\dashboards\\final_with_gaps-270-269-mvp3-1787219238039\\sampling\\index.html",
+      "sha256": "3D6CD60CB852B61E2345249E670CC98B20B85140451574E07C92D9A497237C1E"
+    },
+    {
+      "role": "data",
+      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\runs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\dashboards\\final_with_gaps-270-269-mvp3-1787219238039\\sampling\\dashboard-data.json",
+      "sha256": "BA074D65E838AFDCFFFF0FCC28B67A3F88651998A838A795B3FE99D0D00829EF"
+    },
+    {
+      "role": "manifest",
+      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\runs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\dashboards\\final_with_gaps-270-269-mvp3-1787219238039\\artifact-manifest.json",
+      "sha256": "8DACC3C71740907559E5F34C6D11888C3836A26C28B901A1C8F2777A8EB46F81"
+    },
+    {
+      "role": "data-analysis",
+      "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\analysis\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\CREATIVE-FINAL_WITH_GAPS-270-269-A394421A-7D90758D-MVP2_2\\DATA_ANALYSIS_REPORT.json",
+      "sha256": "0A8D6BA7D0B3E61AF4A7C08E06E407A9A58E4BE93432BACB22195B6FADC5D0AF"
+    }
+  ],
+  "targetPath": "chanmama-creative-geo/",
+  "immutable": true,
+  "generatedAt": "2026-08-20T09:47:18.080Z"
+}

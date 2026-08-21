@@ -1,0 +1,49 @@
+{
+  "messageType": "WEBSITE_OPTIMIZATION_REQUEST",
+  "protocolVersion": 2,
+  "requestId": "cmcr-20260819-sampling-mvp3a-715088E1D322",
+  "runId": "CREATIVE-FINAL_WITH_GAPS-270-269-A394421A-7D90758D-MVP2_2",
+  "requestRevision": 2,
+  "projectKey": "chanmama-creative-geo-sampling",
+  "routePairId": "pair-3",
+  "routePolicyVersion": "PROJECT_AFFINITY_ROUTING_V2_20260811",
+  "sourceTaskAlias": "GEO 高权限采样编排工作台 MVP3.0",
+  "dashboardType": "sampling",
+  "dataPackage": {
+    "path": "D:\\工作\\蝉妈妈\\geo-workbench-data\\handoffs\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\cmcr-20260819-sampling-mvp3a-715088E1D322\\FROZEN_DASHBOARD_PACKAGE.json",
+    "sha256": "CB18A24E81B00B10AD97D8E546BA05EE7C621553633296967D31A928FE272557",
+    "recordCount": 269
+  },
+  "dataAnalysis": {
+    "status": "APPROVED",
+    "qualityGate": "PASSED",
+    "reportPath": "D:\\工作\\蝉妈妈\\geo-workbench-data\\analysis\\92f98cb5-4f74-4508-b22b-31d686aa3c0d\\CREATIVE-FINAL_WITH_GAPS-270-269-A394421A-7D90758D-MVP2_2\\DATA_ANALYSIS_REPORT.json",
+    "reportSha256": "0A8D6BA7D0B3E61AF4A7C08E06E407A9A58E4BE93432BACB22195B6FADC5D0AF",
+    "approvedAt": "2026-08-20T09:47:44.782Z",
+    "approvedBy": "workbench-user"
+  },
+  "validationStatus": "VERIFIED_LOCAL_FROZEN",
+  "assignedCenter": "optimization-center-3",
+  "assignedCenterName": "网址优化第三中心",
+  "pairedDeploymentCenter": "deployment-center-3",
+  "pairedDeploymentCenterName": "网址部署第三中心",
+  "allowedPaths": [
+    "chanmama-creative-geo/"
+  ],
+  "forbiddenPaths": [
+    "sampling-workbench/**",
+    "sampling/**",
+    ".git/**",
+    "其他仪表盘业务数据"
+  ],
+  "acceptanceCriteria": [
+    "保持冻结业务数据、指标口径和样本身份不变",
+    "以已确认的数据分析报告为事实基线，不得通过页面优化改写分析结论",
+    "完成 390x844、768x1024、1440x900 本地页面验收",
+    "发布前生成新的冻结发布包并只交给配对部署中心一次",
+    "部署中心必须等待独立的明确发布授权，不得因本交接自动上线"
+  ],
+  "authorizationBasis": "用户在 GEO 工作台明确点击结束采样，并要求分别交给对应优化与部署中心",
+  "createdAt": "2026-08-20T09:47:18.080Z",
+  "sourceTaskId": "92f98cb5-4f74-4508-b22b-31d686aa3c0d"
+}
