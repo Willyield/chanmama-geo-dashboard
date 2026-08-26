@@ -1,12 +1,12 @@
 {
   "schemaVersion": 2,
   "module": "hotspots",
-  "date": "2026-08-26",
-  "observedAt": "2026-08-26T01:53:07.355Z",
-  "revision": 1,
-  "updatedAt": "2026-08-26T01:54:13.453Z",
+  "date": "2026-08-25",
+  "observedAt": "2026-08-25T12:19:55+08:00",
+  "revision": 5,
+  "updatedAt": "2026-08-25T04:28:14.507Z",
   "sourceType": "structured-data",
-  "sourceArtifact": "incoming/hotspots/2026-08-26.json",
+  "sourceArtifact": "incoming/hotspots/2026-08-25.json",
   "sourceWorkbook": null,
   "inputStatus": "incomplete",
   "incompleteReasons": [
@@ -14,7 +14,6 @@
     "抖音创作者指数：MISSING_ACTION_OPEN_METRIC_DASHBOARD",
     "抖音站内搜索：MISSING_ACTION_SUBMIT_DEMAND_QUERY",
     "AIDSO：LOGIN_AND_SECURITY_CHALLENGE",
-    "36氪综合站：MISSING_ACTION_OPEN_CURRENT_FEED",
     "人人都是产品经理：MISSING_ACTION_OPEN_CURRENT_FEED",
     "AITNT：BUSINESS_PAGE_TYPE_NOT_VERIFIED",
     "机器之心：PAGE_OR_NETWORK_FAILURE",
@@ -88,10 +87,10 @@
     "observeCount": 0,
     "evidenceE3Count": 10,
     "publishNowCount": 10,
-    "webSummary": "2026-08-26按R4/V4合同深采36来源并优先非科技六类，正式保留10条经营与规则、类目与消费及季节节点热点。国内仅9/27来源取得可接受终态，业务输入仍为incomplete。",
+    "webSummary": "R6按V4合同重采36来源并优先非科技六类，正式保留10条经营与规则、类目与消费及季节节点热点。国内仅10/27来源取得可接受终态，业务输入仍为incomplete。",
     "topContentActions": [
       {
-        "id": "HT-20260826-001",
+        "id": "HT-20260825-001",
         "grade": "S",
         "name": "抖音电商商家体验分规范升级，预计9月8日生效，商家需提前校准体验治理",
         "reason": "对照新版体验分口径检查商品、物流、服务和售后指标，形成9月8日前整改清单。",
@@ -104,7 +103,7 @@
         "publicationStatusCode": "targeted_publish"
       },
       {
-        "id": "HT-20260826-002",
+        "id": "HT-20260825-002",
         "grade": "S",
         "name": "抖音治理服饰类商品尺码信息不规范，服装商家需复核尺码表与详情表达",
         "reason": "抽查服饰商品尺码表、版型说明和详情页一致性，优先修复高退货SKU。",
@@ -117,7 +116,7 @@
         "publicationStatusCode": "targeted_publish"
       },
       {
-        "id": "HT-20260826-003",
+        "id": "HT-20260825-003",
         "grade": "S",
         "name": "抖音更新不可抗力场景发货及服务调整公告，自然灾害与会议赛事履约需动态核对",
         "reason": "按仓库、承运商和订单区域建立受影响清单，及时更新发货承诺与客服话术。",
@@ -133,7 +132,7 @@
     "topRollingUpdates": [],
     "topActions": [
       {
-        "id": "HT-20260826-001",
+        "id": "HT-20260825-001",
         "grade": "L-A｜业务重点响应",
         "name": "抖音电商商家体验分规范升级，预计9月8日生效，商家需提前校准体验治理",
         "reason": "官方正文可核且直接影响商家经营流程。",
@@ -144,7 +143,7 @@
         "businessFitScore": null
       },
       {
-        "id": "HT-20260826-002",
+        "id": "HT-20260825-002",
         "grade": "L-A｜业务重点响应",
         "name": "抖音治理服饰类商品尺码信息不规范，服装商家需复核尺码表与详情表达",
         "reason": "官方正文可核且直接影响商家经营流程。",
@@ -155,7 +154,7 @@
         "businessFitScore": null
       },
       {
-        "id": "HT-20260826-003",
+        "id": "HT-20260825-003",
         "grade": "L-A｜业务重点响应",
         "name": "抖音更新不可抗力场景发货及服务调整公告，自然灾害与会议赛事履约需动态核对",
         "reason": "官方正文可核且直接影响商家经营流程。",
@@ -169,14 +168,14 @@
   },
   "candidates": [
     {
-      "id": "HT-20260826-001",
-      "event_key": "douyin-merchant-experience-score-upgrade-20260826",
-      "foundAt": "2026-08-26 current window",
+      "id": "HT-20260825-001",
+      "event_key": "douyin-merchant-experience-score-upgrade-20260825",
+      "foundAt": "2026-08-25 R6 current window",
       "name": "抖音电商商家体验分规范升级，预计9月8日生效，商家需提前校准体验治理",
       "type": "平台经营规则/政策",
       "sourceLevel": "E3",
-      "publishedAt": "2026-08-26当前规则流",
-      "signal": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "publishedAt": "2026-08-25当前规则流",
+      "signal": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
       "uncertainty": "当前只确认官方当前流的升级公告及预计生效日，不推断店铺分数或处罚结果。",
       "recommended": "业务重点响应｜优先制作",
       "actionReason": "官方正文可核且直接影响商家经营流程。",
@@ -204,8 +203,8 @@
       "owner": "内容运营/客户成功/客服/合规",
       "monitor": "官方修订、适用范围和执行口径变化。",
       "candidate_kind": "event",
-      "daily_status": "CONTINUING",
-      "previous_day_event_key_matched": true,
+      "daily_status": "NEW",
+      "previous_day_event_key_matched": false,
       "hotspot_category": "经营与规则",
       "signal_type": "official_rule",
       "baseline_evidence": {
@@ -225,7 +224,7 @@
         "active_window": true,
         "business_priority_floor": "A"
       },
-      "technology_change": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "technology_change": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
       "chanmama_relevance": "官方正文可核且直接影响商家经营流程。",
       "next_step": "业务重点响应｜优先制作",
       "explicitly_not_doing": "不把规则发布写成真实经营效果，不替商家判断个案结果。",
@@ -247,7 +246,7 @@
             "platform_entity_id": "article:aJob8jgCuKaE",
             "url": "https://school.jinritemai.com/doudian/web/article/aJob8jgCuKaE",
             "verification_status": "verified",
-            "verified_at": "2026-08-26T01:53:07.355Z"
+            "verified_at": "2026-08-25T12:19:55+08:00"
           }
         ]
       },
@@ -258,8 +257,8 @@
           "metric_name": "官方规则或治理公告状态",
           "metric_value": "抖音电商商家体验分规范升级，预计9月8日生效，商家需提前校准体验治理",
           "unit": "官方业务记录",
-          "period": "2026-08-26复核",
-          "observed_at": "2026-08-26T01:53:07.355Z",
+          "period": "2026-08-25 R6",
+          "observed_at": "2026-08-25T12:19:55+08:00",
           "source_url": "https://school.jinritemai.com/doudian/web/article/aJob8jgCuKaE",
           "evidence_group": "rule",
           "underlying_signal_id": "douyin:rule:merchant-experience-score-upgrade"
@@ -300,7 +299,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -325,7 +324,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -350,7 +349,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -375,7 +374,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -400,7 +399,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -415,12 +414,12 @@
       "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
-          "hotspotId": "HT-20260826-001",
+          "hotspotId": "HT-20260825-001",
           "actionType": "优先制作",
           "task": "对照新版体验分口径检查商品、物流、服务和售后指标，形成9月8日前整改清单。",
           "owner": "内容运营/客户成功/客服/合规",
           "collaborators": "数据研究、内容运营、合规",
-          "deadline": "2026-08-26",
+          "deadline": "2026-08-25",
           "deliverable": "事实核验、业务清单与关键词假设包",
           "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
           "stopCondition": "官方撤回、修订或证据失效时立即更新。",
@@ -996,14 +995,14 @@
       ]
     },
     {
-      "id": "HT-20260826-002",
-      "event_key": "douyin-apparel-size-governance-20260826",
-      "foundAt": "2026-08-26 current window",
+      "id": "HT-20260825-002",
+      "event_key": "douyin-apparel-size-governance-20260825",
+      "foundAt": "2026-08-25 R6 current window",
       "name": "抖音治理服饰类商品尺码信息不规范，服装商家需复核尺码表与详情表达",
       "type": "平台经营规则/政策",
       "sourceLevel": "E3",
-      "publishedAt": "2026-08-26当前规则流",
-      "signal": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "publishedAt": "2026-08-25当前规则流",
+      "signal": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
       "uncertainty": "当前只确认官方治理公告进入规则流，不推断具体处罚批次或退货改善幅度。",
       "recommended": "业务重点响应｜优先制作",
       "actionReason": "官方正文可核且直接影响商家经营流程。",
@@ -1031,8 +1030,8 @@
       "owner": "内容运营/客户成功/客服/合规",
       "monitor": "官方修订、适用范围和执行口径变化。",
       "candidate_kind": "event",
-      "daily_status": "CONTINUING",
-      "previous_day_event_key_matched": true,
+      "daily_status": "NEW",
+      "previous_day_event_key_matched": false,
       "hotspot_category": "类目与消费",
       "signal_type": "official_rule",
       "baseline_evidence": {
@@ -1052,7 +1051,7 @@
         "active_window": true,
         "business_priority_floor": "A"
       },
-      "technology_change": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "technology_change": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
       "chanmama_relevance": "官方正文可核且直接影响商家经营流程。",
       "next_step": "业务重点响应｜优先制作",
       "explicitly_not_doing": "不把规则发布写成真实经营效果，不替商家判断个案结果。",
@@ -1074,7 +1073,7 @@
             "platform_entity_id": "article:aJp39wxpRGt6",
             "url": "https://school.jinritemai.com/doudian/web/article/aJp39wxpRGt6",
             "verification_status": "verified",
-            "verified_at": "2026-08-26T01:53:07.355Z"
+            "verified_at": "2026-08-25T12:19:55+08:00"
           }
         ]
       },
@@ -1085,8 +1084,8 @@
           "metric_name": "官方规则或治理公告状态",
           "metric_value": "抖音治理服饰类商品尺码信息不规范，服装商家需复核尺码表与详情表达",
           "unit": "官方业务记录",
-          "period": "2026-08-26复核",
-          "observed_at": "2026-08-26T01:53:07.355Z",
+          "period": "2026-08-25 R6",
+          "observed_at": "2026-08-25T12:19:55+08:00",
           "source_url": "https://school.jinritemai.com/doudian/web/article/aJp39wxpRGt6",
           "evidence_group": "rule",
           "underlying_signal_id": "douyin:rule:apparel-size-governance"
@@ -1127,7 +1126,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -1152,7 +1151,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -1177,7 +1176,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -1202,7 +1201,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -1227,7 +1226,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -1242,12 +1241,12 @@
       "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
-          "hotspotId": "HT-20260826-002",
+          "hotspotId": "HT-20260825-002",
           "actionType": "优先制作",
           "task": "抽查服饰商品尺码表、版型说明和详情页一致性，优先修复高退货SKU。",
           "owner": "内容运营/客户成功/客服/合规",
           "collaborators": "数据研究、内容运营、合规",
-          "deadline": "2026-08-26",
+          "deadline": "2026-08-25",
           "deliverable": "事实核验、业务清单与关键词假设包",
           "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
           "stopCondition": "官方撤回、修订或证据失效时立即更新。",
@@ -1823,15 +1822,15 @@
       ]
     },
     {
-      "id": "HT-20260826-003",
-      "event_key": "douyin-force-majeure-shipping-adjustment-20260826",
-      "foundAt": "2026-08-26 current window",
+      "id": "HT-20260825-003",
+      "event_key": "douyin-force-majeure-shipping-adjustment-20260825",
+      "foundAt": "2026-08-25 R6 current window",
       "name": "抖音更新不可抗力场景发货及服务调整公告，自然灾害与会议赛事履约需动态核对",
       "type": "平台经营规则/政策",
       "sourceLevel": "E3",
-      "publishedAt": "2026-08-26当前规则流",
-      "signal": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
-      "uncertainty": "公告标题明确为8月25日更新；适用区域、期限和豁免以官方正文及订单页为准。",
+      "publishedAt": "2026-08-25当前规则流",
+      "signal": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "uncertainty": "公告标题明确为8月24日更新；适用区域、期限和豁免以官方正文及订单页为准。",
       "recommended": "业务重点响应｜优先制作",
       "actionReason": "官方正文可核且直接影响商家经营流程。",
       "actionDetail": "按仓库、承运商和订单区域建立受影响清单，及时更新发货承诺与客服话术。",
@@ -1858,8 +1857,8 @@
       "owner": "内容运营/客户成功/客服/合规",
       "monitor": "官方修订、适用范围和执行口径变化。",
       "candidate_kind": "event",
-      "daily_status": "CONTINUING",
-      "previous_day_event_key_matched": true,
+      "daily_status": "NEW",
+      "previous_day_event_key_matched": false,
       "hotspot_category": "季节与营销节点",
       "signal_type": "official_rule",
       "baseline_evidence": {
@@ -1879,7 +1878,7 @@
         "active_window": true,
         "business_priority_floor": "A"
       },
-      "technology_change": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "technology_change": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
       "chanmama_relevance": "官方正文可核且直接影响商家经营流程。",
       "next_step": "业务重点响应｜优先制作",
       "explicitly_not_doing": "不把规则发布写成真实经营效果，不替商家判断个案结果。",
@@ -1901,7 +1900,7 @@
             "platform_entity_id": "article:aJ5uc2mq9Bw6",
             "url": "https://school.jinritemai.com/doudian/web/article/aJ5uc2mq9Bw6",
             "verification_status": "verified",
-            "verified_at": "2026-08-26T01:53:07.355Z"
+            "verified_at": "2026-08-25T12:19:55+08:00"
           }
         ]
       },
@@ -1912,8 +1911,8 @@
           "metric_name": "官方规则或治理公告状态",
           "metric_value": "抖音更新不可抗力场景发货及服务调整公告，自然灾害与会议赛事履约需动态核对",
           "unit": "官方业务记录",
-          "period": "2026-08-26复核",
-          "observed_at": "2026-08-26T01:53:07.355Z",
+          "period": "2026-08-25 R6",
+          "observed_at": "2026-08-25T12:19:55+08:00",
           "source_url": "https://school.jinritemai.com/doudian/web/article/aJ5uc2mq9Bw6",
           "evidence_group": "rule",
           "underlying_signal_id": "douyin:rule:force-majeure-shipping-adjustment"
@@ -1954,7 +1953,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -1979,7 +1978,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -2004,7 +2003,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -2029,7 +2028,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -2054,7 +2053,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -2069,12 +2068,12 @@
       "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
-          "hotspotId": "HT-20260826-003",
+          "hotspotId": "HT-20260825-003",
           "actionType": "优先制作",
           "task": "按仓库、承运商和订单区域建立受影响清单，及时更新发货承诺与客服话术。",
           "owner": "内容运营/客户成功/客服/合规",
           "collaborators": "数据研究、内容运营、合规",
-          "deadline": "2026-08-26",
+          "deadline": "2026-08-25",
           "deliverable": "事实核验、业务清单与关键词假设包",
           "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
           "stopCondition": "官方撤回、修订或证据失效时立即更新。",
@@ -2364,7 +2363,7 @@
       "publication_priority": 4,
       "publication_mode": "专业人群定向解读",
       "publication_basis": "官方事实明确但受众较窄，面向受影响人群定向发布。",
-      "fact_boundary": "公告标题明确为8月25日更新；适用区域、期限和豁免以官方正文及订单页为准。",
+      "fact_boundary": "公告标题明确为8月24日更新；适用区域、期限和豁免以官方正文及订单页为准。",
       "pending_confirmation": [
         "下一周期变化",
         "真实搜索趋势"
@@ -2650,14 +2649,14 @@
       ]
     },
     {
-      "id": "HT-20260826-004",
-      "event_key": "douyin-drone-real-name-governance-20260826",
-      "foundAt": "2026-08-26 current window",
+      "id": "HT-20260825-004",
+      "event_key": "douyin-drone-real-name-governance-20260825",
+      "foundAt": "2026-08-25 R6 current window",
       "name": "抖音开展网售无人机实名登记管理，无人机类目进入身份与合规核验窗口",
       "type": "平台经营规则/政策",
       "sourceLevel": "E3",
-      "publishedAt": "2026-08-26当前规则流",
-      "signal": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "publishedAt": "2026-08-25当前规则流",
+      "signal": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
       "uncertainty": "当前只确认官方管理公告，不替代监管文本，也不推断类目销量变化。",
       "recommended": "业务重点响应｜优先制作",
       "actionReason": "官方正文可核且直接影响商家经营流程。",
@@ -2685,8 +2684,8 @@
       "owner": "内容运营/客户成功/客服/合规",
       "monitor": "官方修订、适用范围和执行口径变化。",
       "candidate_kind": "event",
-      "daily_status": "CONTINUING",
-      "previous_day_event_key_matched": true,
+      "daily_status": "NEW",
+      "previous_day_event_key_matched": false,
       "hotspot_category": "类目与消费",
       "signal_type": "official_rule",
       "baseline_evidence": {
@@ -2706,7 +2705,7 @@
         "active_window": true,
         "business_priority_floor": "A"
       },
-      "technology_change": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "technology_change": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
       "chanmama_relevance": "官方正文可核且直接影响商家经营流程。",
       "next_step": "业务重点响应｜优先制作",
       "explicitly_not_doing": "不把规则发布写成真实经营效果，不替商家判断个案结果。",
@@ -2728,7 +2727,7 @@
             "platform_entity_id": "article:aJpEBza9xc1b",
             "url": "https://school.jinritemai.com/doudian/web/article/aJpEBza9xc1b",
             "verification_status": "verified",
-            "verified_at": "2026-08-26T01:53:07.355Z"
+            "verified_at": "2026-08-25T12:19:55+08:00"
           }
         ]
       },
@@ -2739,8 +2738,8 @@
           "metric_name": "官方规则或治理公告状态",
           "metric_value": "抖音开展网售无人机实名登记管理，无人机类目进入身份与合规核验窗口",
           "unit": "官方业务记录",
-          "period": "2026-08-26复核",
-          "observed_at": "2026-08-26T01:53:07.355Z",
+          "period": "2026-08-25 R6",
+          "observed_at": "2026-08-25T12:19:55+08:00",
           "source_url": "https://school.jinritemai.com/doudian/web/article/aJpEBza9xc1b",
           "evidence_group": "rule",
           "underlying_signal_id": "douyin:rule:drone-real-name-governance"
@@ -2781,7 +2780,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -2806,7 +2805,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -2831,7 +2830,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -2856,7 +2855,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -2881,7 +2880,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -2896,12 +2895,12 @@
       "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
-          "hotspotId": "HT-20260826-004",
+          "hotspotId": "HT-20260825-004",
           "actionType": "优先制作",
           "task": "核对无人机商品资质、实名登记提示、购买人信息链路和客服说明。",
           "owner": "内容运营/客户成功/客服/合规",
           "collaborators": "数据研究、内容运营、合规",
-          "deadline": "2026-08-26",
+          "deadline": "2026-08-25",
           "deliverable": "事实核验、业务清单与关键词假设包",
           "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
           "stopCondition": "官方撤回、修订或证据失效时立即更新。",
@@ -3477,14 +3476,14 @@
       ]
     },
     {
-      "id": "HT-20260826-005",
-      "event_key": "douyin-k12-course-governance-20260826",
-      "foundAt": "2026-08-26 current window",
+      "id": "HT-20260825-005",
+      "event_key": "douyin-k12-course-governance-20260825",
+      "foundAt": "2026-08-25 R6 current window",
       "name": "抖音开展K12培训课程专项治理，教育培训商品与内容合规需立即复核",
       "type": "平台经营规则/政策",
       "sourceLevel": "E3",
-      "publishedAt": "2026-08-26当前规则流",
-      "signal": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "publishedAt": "2026-08-25当前规则流",
+      "signal": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
       "uncertainty": "当前只确认官方专项治理公告，不推断具体机构处置结果。",
       "recommended": "业务重点响应｜优先制作",
       "actionReason": "官方正文可核且直接影响商家经营流程。",
@@ -3512,8 +3511,8 @@
       "owner": "内容运营/客户成功/客服/合规",
       "monitor": "官方修订、适用范围和执行口径变化。",
       "candidate_kind": "event",
-      "daily_status": "CONTINUING",
-      "previous_day_event_key_matched": true,
+      "daily_status": "NEW",
+      "previous_day_event_key_matched": false,
       "hotspot_category": "类目与消费",
       "signal_type": "official_rule",
       "baseline_evidence": {
@@ -3533,7 +3532,7 @@
         "active_window": true,
         "business_priority_floor": "A"
       },
-      "technology_change": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "technology_change": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
       "chanmama_relevance": "官方正文可核且直接影响商家经营流程。",
       "next_step": "业务重点响应｜优先制作",
       "explicitly_not_doing": "不把规则发布写成真实经营效果，不替商家判断个案结果。",
@@ -3555,7 +3554,7 @@
             "platform_entity_id": "article:aJp39wXU9ujG",
             "url": "https://school.jinritemai.com/doudian/web/article/aJp39wXU9ujG",
             "verification_status": "verified",
-            "verified_at": "2026-08-26T01:53:07.355Z"
+            "verified_at": "2026-08-25T12:19:55+08:00"
           }
         ]
       },
@@ -3566,8 +3565,8 @@
           "metric_name": "官方规则或治理公告状态",
           "metric_value": "抖音开展K12培训课程专项治理，教育培训商品与内容合规需立即复核",
           "unit": "官方业务记录",
-          "period": "2026-08-26复核",
-          "observed_at": "2026-08-26T01:53:07.355Z",
+          "period": "2026-08-25 R6",
+          "observed_at": "2026-08-25T12:19:55+08:00",
           "source_url": "https://school.jinritemai.com/doudian/web/article/aJp39wXU9ujG",
           "evidence_group": "rule",
           "underlying_signal_id": "douyin:rule:k12-course-governance"
@@ -3608,7 +3607,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -3633,7 +3632,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -3658,7 +3657,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -3683,7 +3682,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -3708,7 +3707,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -3723,12 +3722,12 @@
       "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
-          "hotspotId": "HT-20260826-005",
+          "hotspotId": "HT-20260825-005",
           "actionType": "优先制作",
           "task": "排查K12课程商品、宣传素材、达人口播和交付承诺，暂停无法证明资质的内容。",
           "owner": "内容运营/客户成功/客服/合规",
           "collaborators": "数据研究、内容运营、合规",
-          "deadline": "2026-08-26",
+          "deadline": "2026-08-25",
           "deliverable": "事实核验、业务清单与关键词假设包",
           "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
           "stopCondition": "官方撤回、修订或证据失效时立即更新。",
@@ -4304,14 +4303,14 @@
       ]
     },
     {
-      "id": "HT-20260826-006",
-      "event_key": "douyin-apparel-material-mismatch-governance-20260826",
-      "foundAt": "2026-08-26 current window",
+      "id": "HT-20260825-006",
+      "event_key": "douyin-apparel-material-mismatch-governance-20260825",
+      "foundAt": "2026-08-25 R6 current window",
       "name": "抖音治理服饰鞋包材质不符，材质标注、检测证明与详情一致性成为检查重点",
       "type": "平台经营规则/政策",
       "sourceLevel": "E3",
-      "publishedAt": "2026-08-26当前规则流",
-      "signal": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "publishedAt": "2026-08-25当前规则流",
+      "signal": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
       "uncertainty": "当前只确认官方治理公告，不将公告外推为全行业质量结论。",
       "recommended": "业务重点响应｜优先制作",
       "actionReason": "官方正文可核且直接影响商家经营流程。",
@@ -4339,8 +4338,8 @@
       "owner": "内容运营/客户成功/客服/合规",
       "monitor": "官方修订、适用范围和执行口径变化。",
       "candidate_kind": "event",
-      "daily_status": "CONTINUING",
-      "previous_day_event_key_matched": true,
+      "daily_status": "NEW",
+      "previous_day_event_key_matched": false,
       "hotspot_category": "类目与消费",
       "signal_type": "official_rule",
       "baseline_evidence": {
@@ -4360,7 +4359,7 @@
         "active_window": true,
         "business_priority_floor": "A"
       },
-      "technology_change": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "technology_change": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
       "chanmama_relevance": "官方正文可核且直接影响商家经营流程。",
       "next_step": "业务重点响应｜优先制作",
       "explicitly_not_doing": "不把规则发布写成真实经营效果，不替商家判断个案结果。",
@@ -4382,7 +4381,7 @@
             "platform_entity_id": "article:aJp3FWfjUrx5",
             "url": "https://school.jinritemai.com/doudian/web/article/aJp3FWfjUrx5",
             "verification_status": "verified",
-            "verified_at": "2026-08-26T01:53:07.355Z"
+            "verified_at": "2026-08-25T12:19:55+08:00"
           }
         ]
       },
@@ -4393,8 +4392,8 @@
           "metric_name": "官方规则或治理公告状态",
           "metric_value": "抖音治理服饰鞋包材质不符，材质标注、检测证明与详情一致性成为检查重点",
           "unit": "官方业务记录",
-          "period": "2026-08-26复核",
-          "observed_at": "2026-08-26T01:53:07.355Z",
+          "period": "2026-08-25 R6",
+          "observed_at": "2026-08-25T12:19:55+08:00",
           "source_url": "https://school.jinritemai.com/doudian/web/article/aJp3FWfjUrx5",
           "evidence_group": "rule",
           "underlying_signal_id": "douyin:rule:apparel-material-mismatch-governance"
@@ -4435,7 +4434,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -4460,7 +4459,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -4485,7 +4484,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -4510,7 +4509,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -4535,7 +4534,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -4550,12 +4549,12 @@
       "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
-          "hotspotId": "HT-20260826-006",
+          "hotspotId": "HT-20260825-006",
           "actionType": "优先制作",
           "task": "核对材质成分、检测报告、吊牌和详情页文案，优先处理销量高且投诉集中的SKU。",
           "owner": "内容运营/客户成功/客服/合规",
           "collaborators": "数据研究、内容运营、合规",
-          "deadline": "2026-08-26",
+          "deadline": "2026-08-25",
           "deliverable": "事实核验、业务清单与关键词假设包",
           "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
           "stopCondition": "官方撤回、修订或证据失效时立即更新。",
@@ -5131,19 +5130,19 @@
       ]
     },
     {
-      "id": "HT-20260826-007",
-      "event_key": "douyin-shipping-insurance-rule-demand-20260826",
-      "foundAt": "2026-08-26 current window",
-      "name": "抖店运费险服务规范持续可见，小红书退换货与客服话术需求同步出现",
+      "id": "HT-20260825-007",
+      "event_key": "douyin-shipping-insurance-rule-demand-20260825",
+      "foundAt": "2026-08-25 R6 current window",
+      "name": "抖店发布运费险服务规范，百度指数与小红书需求信号同步可见",
       "type": "平台经营规则/政策",
       "sourceLevel": "E3",
       "publishedAt": "当前执行窗口复核",
-      "signal": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；同时取得小红书结构化需求结果，百度指数本轮未取得该词曲线。",
-      "uncertainty": "本轮百度指数未取得运费险曲线或数值，不能写成搜索增长；小红书结果只证明相关内容存在。",
+      "signal": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；同时取得百度指数数值和小红书结构化需求结果。",
+      "uncertainty": "百度指数显示运费险近30天搜索日均169、移动日均103，但同比和环比下降；资讯日均16889、同比上升267%、环比下降26%，不能写成搜索爆发。",
       "recommended": "业务重点响应｜优先制作",
       "actionReason": "官方正文可核且直接影响商家经营流程。",
       "actionDetail": "同步核对运费险成本、拒赔场景、退货流程和客服话术，并监测规则落地后的咨询变化。",
-      "evidence": "https://school.jinritemai.com/doudian/web/home\nhttps://www.xiaohongshu.com/search_result?keyword=%E8%BF%90%E8%B4%B9%E9%99%A9&source=web_explore_feed&type=51",
+      "evidence": "https://school.jinritemai.com/doudian/web/home\nhttps://index.baidu.com/v2/main/index.html#/trend/%E8%BF%90%E8%B4%B9%E9%99%A9?words=%E8%BF%90%E8%B4%B9%E9%99%A9\nhttps://www.xiaohongshu.com/search_result?keyword=%E8%BF%90%E8%B4%B9%E9%99%A9&source=web_explore_feed&type=51",
       "departments": "抖音电商商家、运营、客服、合规",
       "deadline": "2026-08-25T18:00:00+08:00",
       "notRecommended": "不把规则发布写成真实经营效果，不替商家判断个案结果。",
@@ -5155,6 +5154,11 @@
         },
         {
           "label": "Supporting source 1",
+          "domain": "index.baidu.com",
+          "url": "https://index.baidu.com/v2/main/index.html#/trend/%E8%BF%90%E8%B4%B9%E9%99%A9?words=%E8%BF%90%E8%B4%B9%E9%99%A9"
+        },
+        {
+          "label": "Supporting source 2",
           "domain": "xiaohongshu.com",
           "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%BF%90%E8%B4%B9%E9%99%A9&source=web_explore_feed&type=51"
         }
@@ -5167,6 +5171,11 @@
         },
         {
           "label": "Supporting source 1",
+          "domain": "index.baidu.com",
+          "url": "https://index.baidu.com/v2/main/index.html#/trend/%E8%BF%90%E8%B4%B9%E9%99%A9?words=%E8%BF%90%E8%B4%B9%E9%99%A9"
+        },
+        {
+          "label": "Supporting source 2",
           "domain": "xiaohongshu.com",
           "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%BF%90%E8%B4%B9%E9%99%A9&source=web_explore_feed&type=51"
         }
@@ -5176,8 +5185,8 @@
       "owner": "内容运营/客户成功/客服/合规",
       "monitor": "官方修订、适用范围和执行口径变化。",
       "candidate_kind": "event",
-      "daily_status": "CONTINUING",
-      "previous_day_event_key_matched": true,
+      "daily_status": "NEW",
+      "previous_day_event_key_matched": false,
       "hotspot_category": "经营与规则",
       "signal_type": "official_rule",
       "baseline_evidence": {
@@ -5185,19 +5194,19 @@
         "requires_baseline": false,
         "comparison_baseline_verified": true,
         "multi_period_growth_verified": false,
-        "independent_change_signals": 2,
+        "independent_change_signals": 3,
         "baseline_type": "官方规则当日发布",
         "normalization_flags": []
       },
       "topic_resonance": null,
       "official_rule": {
-        "summary": "抖店运费险服务规范持续可见，小红书退换货与客服话术需求同步出现",
+        "summary": "抖店发布运费险服务规范，百度指数与小红书需求信号同步可见",
         "substantive_change": true,
         "direct_business_impact": true,
         "active_window": true,
         "business_priority_floor": "A"
       },
-      "technology_change": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；同时取得小红书结构化需求结果，百度指数本轮未取得该词曲线。",
+      "technology_change": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；同时取得百度指数数值和小红书结构化需求结果。",
       "chanmama_relevance": "官方正文可核且直接影响商家经营流程。",
       "next_step": "业务重点响应｜优先制作",
       "explicitly_not_doing": "不把规则发布写成真实经营效果，不替商家判断个案结果。",
@@ -5206,7 +5215,7 @@
       "subject": {
         "subject_id": "rule:douyin:shipping-insurance-rule-demand",
         "kind": "rule",
-        "canonical_name": "抖店运费险服务规范持续可见，小红书退换货与客服话术需求同步出现",
+        "canonical_name": "抖店发布运费险服务规范，百度指数与小红书需求信号同步可见",
         "aliases": [
           "运费险服务规范",
           "运费险拒赔场景"
@@ -5219,7 +5228,7 @@
             "platform_entity_id": "article:home",
             "url": "https://school.jinritemai.com/doudian/web/home",
             "verification_status": "verified",
-            "verified_at": "2026-08-26T01:53:07.355Z"
+            "verified_at": "2026-08-25T12:19:55+08:00"
           }
         ]
       },
@@ -5228,13 +5237,24 @@
         {
           "metric_id": "metric:douyin:shipping-insurance-rule-demand",
           "metric_name": "官方规则或治理公告状态",
-          "metric_value": "抖店运费险服务规范持续可见，小红书退换货与客服话术需求同步出现",
+          "metric_value": "抖店发布运费险服务规范，百度指数与小红书需求信号同步可见",
           "unit": "官方业务记录",
-          "period": "2026-08-26复核",
-          "observed_at": "2026-08-26T01:53:07.355Z",
+          "period": "2026-08-25 R6",
+          "observed_at": "2026-08-25T12:19:55+08:00",
           "source_url": "https://school.jinritemai.com/doudian/web/home",
           "evidence_group": "rule",
           "underlying_signal_id": "douyin:rule:shipping-insurance-rule-demand"
+        },
+        {
+          "metric_id": "metric:baidu:shipping-insurance-20260825",
+          "metric_name": "百度搜索指数近30天日均值",
+          "metric_value": "169",
+          "unit": "百度指数",
+          "period": "2026-07-26至2026-08-24",
+          "observed_at": "2026-08-25T12:19:55+08:00",
+          "source_url": "https://index.baidu.com/v2/main/index.html#/trend/%E8%BF%90%E8%B4%B9%E9%99%A9?words=%E8%BF%90%E8%B4%B9%E9%99%A9",
+          "evidence_group": "search",
+          "underlying_signal_id": "baidu:index:shipping-insurance"
         }
       ],
       "expected_duration": {
@@ -5250,9 +5270,18 @@
         "合规"
       ],
       "active_search": {
-        "status": "hypothesis",
-        "evidence": [],
-        "boundary": "未取得该对象词可核搜索曲线，不展示搜索量。"
+        "status": "confirmed",
+        "evidence": [
+          {
+            "evidence_id": "baidu-index-shipping-insurance-20260825",
+            "platform": "百度指数",
+            "metric": "近30天搜索指数日均值",
+            "value": "整体169、移动103；整体同比-39%、环比-10%",
+            "observed_at": "2026-08-25T12:19:55+08:00",
+            "source_url": "https://index.baidu.com/v2/main/index.html#/trend/%E8%BF%90%E8%B4%B9%E9%99%A9?words=%E8%BF%90%E8%B4%B9%E9%99%A9"
+          }
+        ],
+        "boundary": "百度指数显示运费险近30天搜索日均169、移动日均103，但同比和环比下降；资讯日均16889、同比上升267%、环比下降26%，不能写成搜索爆发。"
       },
       "keyword_hypotheses": [
         {
@@ -5260,7 +5289,8 @@
           "text": "运费险服务规范",
           "intent": "对象词",
           "evidence_refs": [
-            "metric:douyin:shipping-insurance-rule-demand"
+            "metric:douyin:shipping-insurance-rule-demand",
+            "metric:baidu:shipping-insurance-20260825"
           ],
           "applicable_modes": [
             "search",
@@ -5272,7 +5302,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -5285,7 +5315,8 @@
           "text": "运费险拒赔场景",
           "intent": "业务问题词",
           "evidence_refs": [
-            "metric:douyin:shipping-insurance-rule-demand"
+            "metric:douyin:shipping-insurance-rule-demand",
+            "metric:baidu:shipping-insurance-20260825"
           ],
           "applicable_modes": [
             "search",
@@ -5297,7 +5328,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -5310,7 +5341,8 @@
           "text": "运费险客服话术",
           "intent": "业务问题词",
           "evidence_refs": [
-            "metric:douyin:shipping-insurance-rule-demand"
+            "metric:douyin:shipping-insurance-rule-demand",
+            "metric:baidu:shipping-insurance-20260825"
           ],
           "applicable_modes": [
             "search",
@@ -5322,7 +5354,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -5335,7 +5367,8 @@
           "text": "退货运费规则",
           "intent": "业务问题词",
           "evidence_refs": [
-            "metric:douyin:shipping-insurance-rule-demand"
+            "metric:douyin:shipping-insurance-rule-demand",
+            "metric:baidu:shipping-insurance-20260825"
           ],
           "applicable_modes": [
             "search",
@@ -5347,7 +5380,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -5360,7 +5393,8 @@
           "text": "运费险黑产治理",
           "intent": "业务问题词",
           "evidence_refs": [
-            "metric:douyin:shipping-insurance-rule-demand"
+            "metric:douyin:shipping-insurance-rule-demand",
+            "metric:baidu:shipping-insurance-20260825"
           ],
           "applicable_modes": [
             "search",
@@ -5372,7 +5406,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -5387,12 +5421,12 @@
       "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
-          "hotspotId": "HT-20260826-007",
+          "hotspotId": "HT-20260825-007",
           "actionType": "优先制作",
           "task": "同步核对运费险成本、拒赔场景、退货流程和客服话术，并监测规则落地后的咨询变化。",
           "owner": "内容运营/客户成功/客服/合规",
           "collaborators": "数据研究、内容运营、合规",
-          "deadline": "2026-08-26",
+          "deadline": "2026-08-25",
           "deliverable": "事实核验、业务清单与关键词假设包",
           "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
           "stopCondition": "官方撤回、修订或证据失效时立即更新。",
@@ -5478,7 +5512,7 @@
         "baseline_type": "官方规则当日发布",
         "normalization_flags": [],
         "multi_period_growth_verified": false,
-        "independent_change_signals": 2,
+        "independent_change_signals": 3,
         "is_verified": true
       },
       "business_priority_basis": "综合评分与封顶规则决定。",
@@ -5533,18 +5567,18 @@
       ],
       "hotness_caps": [],
       "hotness_signal_type": "official_rule",
-      "hotness_independent_platform_count": 2,
+      "hotness_independent_platform_count": 3,
       "hotness_baseline_verified": true,
       "hotness_freshness_verified": true,
       "hotness_change_signals": [
-        "抖店运费险服务规范持续可见，小红书退换货与客服话术需求同步出现"
+        "抖店发布运费险服务规范，百度指数与小红书需求信号同步可见"
       ],
       "hotness_requires_baseline": false,
       "hotness_comparison_baseline_verified": true,
       "hotness_baseline_type": "官方规则当日发布",
       "hotness_normalization_flags": [],
       "hotness_multi_period_growth_verified": false,
-      "hotness_independent_change_signals": 2,
+      "hotness_independent_change_signals": 3,
       "content_scoring_model": "content_potential_v1",
       "content_potential_score": 100,
       "raw_content_potential_level": "P-S",
@@ -5614,19 +5648,14 @@
           "potential_cap": "P-B",
           "changed": true,
           "reason": "定向专业内容可以高业务优先，但不按大众高流量话题评为P-A。"
-        },
-        {
-          "rule": "potential_s_gate",
-          "potential_cap": "P-A",
-          "changed": false,
-          "reason": "P-S需要E3、至少3个平台、有效基线、最新数据和85分以上渠道适配。"
         }
       ],
       "content_source_tier": "E3",
       "traffic_route": "targeted",
-      "independent_platform_count": 2,
+      "independent_platform_count": 3,
       "demand_signals": [
         "抖音电商官方业务页｜https://school.jinritemai.com/doudian/web/home",
+        "百度指数运费险趋势｜https://index.baidu.com/v2/main/index.html#/trend/%E8%BF%90%E8%B4%B9%E9%99%A9?words=%E8%BF%90%E8%B4%B9%E9%99%A9",
         "小红书运费险搜索结果｜https://www.xiaohongshu.com/search_result?keyword=%E8%BF%90%E8%B4%B9%E9%99%A9&source=web_explore_feed&type=51"
       ],
       "content_baseline_verified": true,
@@ -5635,7 +5664,7 @@
       "content_baseline_type": "官方规则当日发布",
       "content_normalization_flags": [],
       "content_multi_period_growth_verified": false,
-      "content_independent_change_signals": 2,
+      "content_independent_change_signals": 3,
       "supply_gap_verified": false,
       "content_freshness_verified": true,
       "chanmama_answerable": true,
@@ -5662,8 +5691,8 @@
         "short_video",
         "private_domain"
       ],
-      "primary_topic": "抖店运费险服务规范持续可见，小红书退换货与客服话术需求同步出现",
-      "early_publish_title": "抖店运费险服务规范持续可见，小红书退换货与客服话术需求同步出现",
+      "primary_topic": "抖店发布运费险服务规范，百度指数与小红书需求信号同步可见",
+      "early_publish_title": "抖店发布运费险服务规范，百度指数与小红书需求信号同步可见",
       "content_angle": "同步核对运费险成本、拒赔场景、退货流程和客服话术，并监测规则落地后的咨询变化。",
       "measurement_plan": "对象词曝光、内容点击、专题访问与后续平台变化。",
       "stop_condition": "官方撤回或修订定制范围、确认与售后要求时立即更新。",
@@ -5676,7 +5705,7 @@
       "publication_priority": 4,
       "publication_mode": "专业人群定向解读",
       "publication_basis": "官方事实明确但受众较窄，面向受影响人群定向发布。",
-      "fact_boundary": "本轮百度指数未取得运费险曲线或数值，不能写成搜索增长；小红书结果只证明相关内容存在。",
+      "fact_boundary": "百度指数显示运费险近30天搜索日均169、移动日均103，但同比和环比下降；资讯日均16889、同比上升267%、环比下降26%，不能写成搜索爆发。",
       "pending_confirmation": [
         "下一周期变化",
         "真实搜索趋势"
@@ -5753,20 +5782,20 @@
           "blockers": [
             "广告落地页未完成",
             "曝光、点击、访问与注册监测未接通",
-            "没有真实主动搜索证据",
             "搜索转化路径未准备"
           ],
           "evidence_refs": [
-            "metric:douyin:shipping-insurance-rule-demand"
+            "metric:douyin:shipping-insurance-rule-demand",
+            "metric:baidu:shipping-insurance-20260825"
           ],
           "reasons": {
-            "summary": "抖店运费险服务规范持续可见，小红书退换货与客服话术需求同步出现具备内容价值，但落地页和监测未就绪，本阶段不投广告。"
+            "summary": "抖店发布运费险服务规范，百度指数与小红书需求信号同步可见具备内容价值，但落地页和监测未就绪，本阶段不投广告。"
           },
           "landing_page_ready": false,
           "measurement_ready": false,
           "compliance_ready": true,
           "prerequisites": {
-            "active_search_confirmed": false,
+            "active_search_confirmed": true,
             "keyword_ready": true,
             "conversion_path_ready": false
           }
@@ -5842,10 +5871,11 @@
             "兴趣流量转化路径未准备"
           ],
           "evidence_refs": [
-            "metric:douyin:shipping-insurance-rule-demand"
+            "metric:douyin:shipping-insurance-rule-demand",
+            "metric:baidu:shipping-insurance-20260825"
           ],
           "reasons": {
-            "summary": "抖店运费险服务规范持续可见，小红书退换货与客服话术需求同步出现具备内容价值，但落地页和监测未就绪，本阶段不投广告。"
+            "summary": "抖店发布运费险服务规范，百度指数与小红书需求信号同步可见具备内容价值，但落地页和监测未就绪，本阶段不投广告。"
           },
           "landing_page_ready": false,
           "measurement_ready": false,
@@ -5929,10 +5959,11 @@
             "电商转化链路未准备"
           ],
           "evidence_refs": [
-            "metric:douyin:shipping-insurance-rule-demand"
+            "metric:douyin:shipping-insurance-rule-demand",
+            "metric:baidu:shipping-insurance-20260825"
           ],
           "reasons": {
-            "summary": "抖店运费险服务规范持续可见，小红书退换货与客服话术需求同步出现具备内容价值，但落地页和监测未就绪，本阶段不投广告。"
+            "summary": "抖店发布运费险服务规范，百度指数与小红书需求信号同步可见具备内容价值，但落地页和监测未就绪，本阶段不投广告。"
           },
           "landing_page_ready": false,
           "measurement_ready": false,
@@ -5953,23 +5984,22 @@
       ],
       "breakout_scoring_model": "breakout_v1",
       "breakout_status": "observation_only",
-      "breakout_signal_count": 1,
+      "breakout_signal_count": 2,
       "breakout_gates_passed": false,
       "breakout_blockers": [
         "对象不是商品、品类、达人、店铺、账号、品牌或技术产品",
-        "多周期变化未核",
-        "独立变化信号不足2项"
+        "多周期变化未核"
       ]
     },
     {
-      "id": "HT-20260826-008",
-      "event_key": "douyin-instant-retail-shipping-20260826",
-      "foundAt": "2026-08-26 current window",
+      "id": "HT-20260825-008",
+      "event_key": "douyin-instant-retail-shipping-20260825",
+      "foundAt": "2026-08-25 R6 current window",
       "name": "抖音即时零售发货规范持续执行，配送超时、缺货和虚假送达仍需统一治理",
       "type": "平台经营规则/政策",
       "sourceLevel": "E3",
       "publishedAt": "当前执行窗口复核",
-      "signal": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "signal": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
       "uncertainty": "当前规则入口仍可读，但不推断具体门店处罚或履约效果。",
       "recommended": "业务重点响应｜优先制作",
       "actionReason": "官方正文可核且直接影响商家经营流程。",
@@ -6018,7 +6048,7 @@
         "active_window": true,
         "business_priority_floor": "A"
       },
-      "technology_change": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "technology_change": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
       "chanmama_relevance": "官方正文可核且直接影响商家经营流程。",
       "next_step": "业务重点响应｜优先制作",
       "explicitly_not_doing": "不把规则发布写成真实经营效果，不替商家判断个案结果。",
@@ -6040,7 +6070,7 @@
             "platform_entity_id": "instant-retail-shipping-ahuv4anyaewd",
             "url": "https://school.jinritemai.com/doudian/web/article/aHuV4AnyAEWD",
             "verification_status": "verified",
-            "verified_at": "2026-08-26T01:53:07.355Z"
+            "verified_at": "2026-08-25T12:19:55+08:00"
           }
         ]
       },
@@ -6051,8 +6081,8 @@
           "metric_name": "官方规则或治理公告状态",
           "metric_value": "抖音即时零售发货规范持续执行，配送超时、缺货和虚假送达仍需统一治理",
           "unit": "官方业务记录",
-          "period": "2026-08-26复核",
-          "observed_at": "2026-08-26T01:53:07.355Z",
+          "period": "2026-08-25 R6",
+          "observed_at": "2026-08-25T12:19:55+08:00",
           "source_url": "https://school.jinritemai.com/doudian/web/article/aHuV4AnyAEWD",
           "evidence_group": "rule",
           "underlying_signal_id": "douyin:rule:instant-retail-shipping"
@@ -6093,7 +6123,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -6118,7 +6148,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -6143,7 +6173,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -6168,7 +6198,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -6193,7 +6223,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -6208,12 +6238,12 @@
       "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
-          "hotspotId": "HT-20260826-008",
+          "hotspotId": "HT-20260825-008",
           "actionType": "优先制作",
           "task": "复核接单、库存、配送轨迹、送达确认、赔付和申诉流程。",
           "owner": "内容运营/客户成功/客服/合规",
           "collaborators": "数据研究、内容运营、合规",
-          "deadline": "2026-08-26",
+          "deadline": "2026-08-25",
           "deliverable": "事实核验、业务清单与关键词假设包",
           "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
           "stopCondition": "官方撤回、修订或证据失效时立即更新。",
@@ -6789,14 +6819,14 @@
       ]
     },
     {
-      "id": "HT-20260826-009",
-      "event_key": "douyin-invoice-obligation-20260826",
-      "foundAt": "2026-08-26 current window",
+      "id": "HT-20260825-009",
+      "event_key": "douyin-invoice-obligation-20260825",
+      "foundAt": "2026-08-25 R6 current window",
       "name": "抖音开票义务细则持续生效，拒绝或超时开票的时效、金额与申诉路径需复核",
       "type": "平台经营规则/政策",
       "sourceLevel": "E3",
       "publishedAt": "当前执行窗口复核",
-      "signal": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "signal": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
       "uncertainty": "当前只确认官方规则在业务流中仍可见，不替代税务或个案判断。",
       "recommended": "业务重点响应｜优先制作",
       "actionReason": "官方正文可核且直接影响商家经营流程。",
@@ -6845,7 +6875,7 @@
         "active_window": true,
         "business_priority_floor": "A"
       },
-      "technology_change": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "technology_change": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
       "chanmama_relevance": "官方正文可核且直接影响商家经营流程。",
       "next_step": "业务重点响应｜优先制作",
       "explicitly_not_doing": "不把规则发布写成真实经营效果，不替商家判断个案结果。",
@@ -6867,7 +6897,7 @@
             "platform_entity_id": "invoice-duty-ahmyswuskzxh",
             "url": "https://school.jinritemai.com/doudian/web/article/aHmySwUSKzXh",
             "verification_status": "verified",
-            "verified_at": "2026-08-26T01:53:07.355Z"
+            "verified_at": "2026-08-25T12:19:55+08:00"
           }
         ]
       },
@@ -6878,8 +6908,8 @@
           "metric_name": "官方规则或治理公告状态",
           "metric_value": "抖音开票义务细则持续生效，拒绝或超时开票的时效、金额与申诉路径需复核",
           "unit": "官方业务记录",
-          "period": "2026-08-26复核",
-          "observed_at": "2026-08-26T01:53:07.355Z",
+          "period": "2026-08-25 R6",
+          "observed_at": "2026-08-25T12:19:55+08:00",
           "source_url": "https://school.jinritemai.com/doudian/web/article/aHmySwUSKzXh",
           "evidence_group": "rule",
           "underlying_signal_id": "douyin:rule:invoice-obligation"
@@ -6920,7 +6950,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -6945,7 +6975,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -6970,7 +7000,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -6995,7 +7025,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -7020,7 +7050,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -7035,12 +7065,12 @@
       "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
-          "hotspotId": "HT-20260826-009",
+          "hotspotId": "HT-20260825-009",
           "actionType": "优先制作",
           "task": "核对开票入口、10日时效、客服升级、赔付金额和申诉材料。",
           "owner": "内容运营/客户成功/客服/合规",
           "collaborators": "数据研究、内容运营、合规",
-          "deadline": "2026-08-26",
+          "deadline": "2026-08-25",
           "deliverable": "事实核验、业务清单与关键词假设包",
           "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
           "stopCondition": "官方撤回、修订或证据失效时立即更新。",
@@ -7616,14 +7646,14 @@
       ]
     },
     {
-      "id": "HT-20260826-010",
-      "event_key": "douyin-custom-jewelry-governance-20260826",
-      "foundAt": "2026-08-26 current window",
+      "id": "HT-20260825-010",
+      "event_key": "douyin-custom-jewelry-governance-20260825",
+      "foundAt": "2026-08-25 R6 current window",
       "name": "抖音定制珠宝规则持续执行，确认书、收费、售后与自然光留证仍是经营重点",
       "type": "平台经营规则/政策",
       "sourceLevel": "E3",
       "publishedAt": "当前执行窗口复核",
-      "signal": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "signal": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
       "uncertainty": "当前只确认官方规则仍在业务流可见，不推断单店纠纷率或成交变化。",
       "recommended": "业务重点响应｜优先制作",
       "actionReason": "官方正文可核且直接影响商家经营流程。",
@@ -7672,7 +7702,7 @@
         "active_window": true,
         "business_priority_floor": "A"
       },
-      "technology_change": "2026-08-26T01:53:07.355Z在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
+      "technology_change": "2026-08-25T12:19:55+08:00在抖店学习中心真实业务流取得官方证据；不是首页、导航或媒体单线索。",
       "chanmama_relevance": "官方正文可核且直接影响商家经营流程。",
       "next_step": "业务重点响应｜优先制作",
       "explicitly_not_doing": "不把规则发布写成真实经营效果，不替商家判断个案结果。",
@@ -7694,7 +7724,7 @@
             "platform_entity_id": "article:aHHeZG7rQEcX",
             "url": "https://school.jinritemai.com/doudian/web/article/aHHeZG7rQEcX",
             "verification_status": "verified",
-            "verified_at": "2026-08-26T01:53:07.355Z"
+            "verified_at": "2026-08-25T12:19:55+08:00"
           }
         ]
       },
@@ -7705,8 +7735,8 @@
           "metric_name": "官方规则或治理公告状态",
           "metric_value": "抖音定制珠宝规则持续执行，确认书、收费、售后与自然光留证仍是经营重点",
           "unit": "官方业务记录",
-          "period": "2026-08-26复核",
-          "observed_at": "2026-08-26T01:53:07.355Z",
+          "period": "2026-08-25 R6",
+          "observed_at": "2026-08-25T12:19:55+08:00",
           "source_url": "https://school.jinritemai.com/doudian/web/article/aHHeZG7rQEcX",
           "evidence_group": "rule",
           "underlying_signal_id": "douyin:rule:custom-jewelry-governance"
@@ -7747,7 +7777,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -7772,7 +7802,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -7797,7 +7827,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -7822,7 +7852,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -7847,7 +7877,7 @@
             "url": null,
             "route": "每日热点对象专题页（尚未达到广告承接就绪）"
           },
-          "valid_from": "2026-08-26",
+          "valid_from": "2026-08-25",
           "valid_until": "2026-09-25",
           "validation_status": "hypothesis",
           "risk_flags": [
@@ -7862,12 +7892,12 @@
       "business_response_basis": "综合评分与封顶规则决定。",
       "actions": [
         {
-          "hotspotId": "HT-20260826-010",
+          "hotspotId": "HT-20260825-010",
           "actionType": "优先制作",
           "task": "检查定制确认书、费用说明、售后边界、飞鸽沟通和自然光留证。",
           "owner": "内容运营/客户成功/客服/合规",
           "collaborators": "数据研究、内容运营、合规",
-          "deadline": "2026-08-26",
+          "deadline": "2026-08-25",
           "deliverable": "事实核验、业务清单与关键词假设包",
           "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
           "stopCondition": "官方撤回、修订或证据失效时立即更新。",
@@ -8445,120 +8475,120 @@
   ],
   "actions": [
     {
-      "hotspotId": "HT-20260826-001",
+      "hotspotId": "HT-20260825-001",
       "actionType": "优先制作",
       "task": "对照新版体验分口径检查商品、物流、服务和售后指标，形成9月8日前整改清单。",
       "owner": "内容运营/客户成功/客服/合规",
       "collaborators": "数据研究、内容运营、合规",
-      "deadline": "2026-08-26",
+      "deadline": "2026-08-25",
       "deliverable": "事实核验、业务清单与关键词假设包",
       "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
       "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
-      "hotspotId": "HT-20260826-002",
+      "hotspotId": "HT-20260825-002",
       "actionType": "优先制作",
       "task": "抽查服饰商品尺码表、版型说明和详情页一致性，优先修复高退货SKU。",
       "owner": "内容运营/客户成功/客服/合规",
       "collaborators": "数据研究、内容运营、合规",
-      "deadline": "2026-08-26",
+      "deadline": "2026-08-25",
       "deliverable": "事实核验、业务清单与关键词假设包",
       "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
       "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
-      "hotspotId": "HT-20260826-003",
+      "hotspotId": "HT-20260825-003",
       "actionType": "优先制作",
       "task": "按仓库、承运商和订单区域建立受影响清单，及时更新发货承诺与客服话术。",
       "owner": "内容运营/客户成功/客服/合规",
       "collaborators": "数据研究、内容运营、合规",
-      "deadline": "2026-08-26",
+      "deadline": "2026-08-25",
       "deliverable": "事实核验、业务清单与关键词假设包",
       "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
       "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
-      "hotspotId": "HT-20260826-004",
+      "hotspotId": "HT-20260825-004",
       "actionType": "优先制作",
       "task": "核对无人机商品资质、实名登记提示、购买人信息链路和客服说明。",
       "owner": "内容运营/客户成功/客服/合规",
       "collaborators": "数据研究、内容运营、合规",
-      "deadline": "2026-08-26",
+      "deadline": "2026-08-25",
       "deliverable": "事实核验、业务清单与关键词假设包",
       "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
       "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
-      "hotspotId": "HT-20260826-005",
+      "hotspotId": "HT-20260825-005",
       "actionType": "优先制作",
       "task": "排查K12课程商品、宣传素材、达人口播和交付承诺，暂停无法证明资质的内容。",
       "owner": "内容运营/客户成功/客服/合规",
       "collaborators": "数据研究、内容运营、合规",
-      "deadline": "2026-08-26",
+      "deadline": "2026-08-25",
       "deliverable": "事实核验、业务清单与关键词假设包",
       "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
       "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
-      "hotspotId": "HT-20260826-006",
+      "hotspotId": "HT-20260825-006",
       "actionType": "优先制作",
       "task": "核对材质成分、检测报告、吊牌和详情页文案，优先处理销量高且投诉集中的SKU。",
       "owner": "内容运营/客户成功/客服/合规",
       "collaborators": "数据研究、内容运营、合规",
-      "deadline": "2026-08-26",
+      "deadline": "2026-08-25",
       "deliverable": "事实核验、业务清单与关键词假设包",
       "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
       "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
-      "hotspotId": "HT-20260826-007",
+      "hotspotId": "HT-20260825-007",
       "actionType": "优先制作",
       "task": "同步核对运费险成本、拒赔场景、退货流程和客服话术，并监测规则落地后的咨询变化。",
       "owner": "内容运营/客户成功/客服/合规",
       "collaborators": "数据研究、内容运营、合规",
-      "deadline": "2026-08-26",
+      "deadline": "2026-08-25",
       "deliverable": "事实核验、业务清单与关键词假设包",
       "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
       "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
-      "hotspotId": "HT-20260826-008",
+      "hotspotId": "HT-20260825-008",
       "actionType": "优先制作",
       "task": "复核接单、库存、配送轨迹、送达确认、赔付和申诉流程。",
       "owner": "内容运营/客户成功/客服/合规",
       "collaborators": "数据研究、内容运营、合规",
-      "deadline": "2026-08-26",
+      "deadline": "2026-08-25",
       "deliverable": "事实核验、业务清单与关键词假设包",
       "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
       "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
-      "hotspotId": "HT-20260826-009",
+      "hotspotId": "HT-20260825-009",
       "actionType": "优先制作",
       "task": "核对开票入口、10日时效、客服升级、赔付金额和申诉材料。",
       "owner": "内容运营/客户成功/客服/合规",
       "collaborators": "数据研究、内容运营、合规",
-      "deadline": "2026-08-26",
+      "deadline": "2026-08-25",
       "deliverable": "事实核验、业务清单与关键词假设包",
       "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
       "stopCondition": "官方撤回、修订或证据失效时立即更新。",
       "status": "待执行"
     },
     {
-      "hotspotId": "HT-20260826-010",
+      "hotspotId": "HT-20260825-010",
       "actionType": "优先制作",
       "task": "检查定制确认书、费用说明、售后边界、飞鸽沟通和自然光留证。",
       "owner": "内容运营/客户成功/客服/合规",
       "collaborators": "数据研究、内容运营、合规",
-      "deadline": "2026-08-26",
+      "deadline": "2026-08-25",
       "deliverable": "事实核验、业务清单与关键词假设包",
       "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
       "stopCondition": "官方撤回、修订或证据失效时立即更新。",
@@ -8572,28 +8602,28 @@
       "status": "NO_DATA_VERIFIED",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "巨量云图",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "METRIC_DASHBOARD_READ终态NO_DATA_VERIFIED；有效业务记录0条。",
       "limitation": "METRIC_DASHBOARD_EXPLICIT_EMPTY_RESULT",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
     },
     {
       "platform": "抖店学习中心",
-      "url": "https://school.jinritemai.com/doudian/web/rules/nJjbkoeug9aS?tabKey=rules&btm_ppre=a0.b0.c0.d0&btm_pre=a4977.b31122.c0.d0&btm_show_id=7eb585f1-71b3-4492-aca5-3560831e8851",
+      "url": "https://school.jinritemai.com/doudian/web/rules/nJjbkoeug9aS?tabKey=rules&btm_ppre=a0.b0.c0.d0&btm_pre=a4977.b31122.c0.d0&btm_show_id=113cb129-ebb7-4647-af58-84cf3a9ff816",
       "status": "COMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "抖店学习中心",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "CURRENT_FEED_READ终态COMPLETE；有效业务记录1条。",
       "limitation": "FRESH_CURRENT_FEED_ITEM_EXTRACTED_FROM_FROZEN_EVIDENCE",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -8604,12 +8634,12 @@
       "status": "INCOMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "抖音规则中心",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
       "limitation": "MISSING_ACTION_OPEN_CURRENT_FEED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "MISSING_ACTION_OPEN_CURRENT_FEED"
@@ -8622,28 +8652,28 @@
       "status": "COMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "蝉妈妈",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "LEADERBOARD_READ终态COMPLETE；有效业务记录50条。",
       "limitation": "BUSINESS_BRAND_LEADERBOARD_ROWS_REVALIDATED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
     },
     {
       "platform": "百度指数",
-      "url": "https://index.baidu.com/v2/main/index.html#/trend/%E7%83%AD%E9%94%80%E5%95%86%E5%93%81?words=%E7%83%AD%E9%94%80%E5%95%86%E5%93%81",
+      "url": "https://index.baidu.com/v2/main/index.html#/trend/%E8%BF%90%E8%B4%B9%E9%99%A9?words=%E8%BF%90%E8%B4%B9%E9%99%A9",
       "status": "COMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "百度指数",
-      "observedAt": "2026-08-26T01:46:32.375Z",
-      "signal": "KEYWORD_TREND_QUERY终态COMPLETE；有效业务记录2条。",
+      "observedAt": "2026-08-25T04:20:39.407Z",
+      "signal": "KEYWORD_TREND_QUERY终态COMPLETE；有效业务记录4条。",
       "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -8654,12 +8684,12 @@
       "status": "INCOMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "抖音创作者指数",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "METRIC_DASHBOARD_READ终态INCOMPLETE；有效业务记录0条。",
       "limitation": "MISSING_ACTION_OPEN_METRIC_DASHBOARD",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "MISSING_ACTION_OPEN_METRIC_DASHBOARD"
@@ -8668,32 +8698,32 @@
     },
     {
       "platform": "小红书发现页",
-      "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%B1%BB%E7%9B%AE%E8%B6%8B%E5%8A%BF&source=web_explore_feed&type=51",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%B9%B3%E5%8F%B0%E6%B2%BB%E7%90%86&source=web_explore_feed&type=51",
       "status": "COMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "小红书发现页",
-      "observedAt": "2026-08-26T01:46:32.375Z",
-      "signal": "DEMAND_QUERY终态COMPLETE；有效业务记录223条。",
+      "observedAt": "2026-08-25T04:20:39.407Z",
+      "signal": "DEMAND_QUERY终态COMPLETE；有效业务记录227条。",
       "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
     },
     {
       "platform": "抖音站内搜索",
-      "url": "https://www.douyin.com/search/%E8%BF%90%E8%B4%B9%E9%99%A9?aid=51f83fc1-5bc7-4fd8-a7a9-5e861a47fad0&type=general",
+      "url": "https://www.douyin.com/search/%E8%BF%90%E8%B4%B9%E9%99%A9?aid=4d0b1823-1cb6-43ce-9b7b-64413e54487a&type=general",
       "status": "INCOMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "抖音站内搜索",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "DEMAND_QUERY终态INCOMPLETE；有效业务记录0条。",
       "limitation": "MISSING_ACTION_SUBMIT_DEMAND_QUERY",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "MISSING_ACTION_SUBMIT_DEMAND_QUERY"
@@ -8706,12 +8736,12 @@
       "status": "BLOCKED",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "AIDSO",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "DEMAND_QUERY终态BLOCKED；有效业务记录0条。",
       "limitation": "LOGIN_AND_SECURITY_CHALLENGE",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "login_or_challenge_blocked",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "LOGIN_AND_SECURITY_CHALLENGE"
@@ -8721,19 +8751,17 @@
     {
       "platform": "36氪综合站",
       "url": "https://www.36kr.com/information/web_news/",
-      "status": "INCOMPLETE",
+      "status": "COMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "36氪综合站",
-      "observedAt": "2026-08-26T01:46:32.375Z",
-      "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
-      "limitation": "MISSING_ACTION_OPEN_CURRENT_FEED",
+      "observedAt": "2026-08-25T04:20:39.407Z",
+      "signal": "CURRENT_FEED_READ终态COMPLETE；有效业务记录1条。",
+      "limitation": "FRESH_CURRENT_FEED_ITEM_EXTRACTED_FROM_FROZEN_EVIDENCE",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
-      "missingData": [
-        "MISSING_ACTION_OPEN_CURRENT_FEED"
-      ],
+      "missingData": [],
       "loginAction": null
     },
     {
@@ -8742,12 +8770,12 @@
       "status": "INCOMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "人人都是产品经理",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
       "limitation": "MISSING_ACTION_OPEN_CURRENT_FEED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "MISSING_ACTION_OPEN_CURRENT_FEED"
@@ -8760,12 +8788,12 @@
       "status": "COMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "新智元",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "CURRENT_FEED_READ终态COMPLETE；有效业务记录10条。",
       "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -8776,12 +8804,12 @@
       "status": "INCOMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "AITNT",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
       "limitation": "BUSINESS_PAGE_TYPE_NOT_VERIFIED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "BUSINESS_PAGE_TYPE_NOT_VERIFIED"
@@ -8794,12 +8822,12 @@
       "status": "BLOCKED",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "机器之心",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "CURRENT_FEED_READ终态BLOCKED；有效业务记录0条。",
       "limitation": "PAGE_OR_NETWORK_FAILURE",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "PAGE_OR_NETWORK_FAILURE"
@@ -8812,12 +8840,12 @@
       "status": "BLOCKED",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "量子位",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "CURRENT_FEED_READ终态BLOCKED；有效业务记录0条。",
       "limitation": "PAGE_OR_NETWORK_FAILURE",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "PAGE_OR_NETWORK_FAILURE"
@@ -8830,12 +8858,12 @@
       "status": "INCOMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "36氪AI",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
       "limitation": "MISSING_ACTION_OPEN_CURRENT_FEED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "MISSING_ACTION_OPEN_CURRENT_FEED"
@@ -8848,12 +8876,12 @@
       "status": "INCOMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "InfoQ AI",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
       "limitation": "FOOTER_CONFERENCE_LINKS_REJECTED_AS_CURRENT_FEED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "FOOTER_CONFERENCE_LINKS_REJECTED_AS_CURRENT_FEED"
@@ -8866,12 +8894,12 @@
       "status": "COMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "雷峰网",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "CURRENT_FEED_READ终态COMPLETE；有效业务记录1条。",
       "limitation": "FRESH_CURRENT_FEED_ITEM_EXTRACTED_FROM_FROZEN_EVIDENCE",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -8882,12 +8910,12 @@
       "status": "COMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "DeepSeek官方",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "OFFICIAL_RELEASE_READ终态COMPLETE；有效业务记录3条。",
       "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -8898,12 +8926,12 @@
       "status": "BLOCKED",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "通义千问官方",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "OFFICIAL_RELEASE_READ终态BLOCKED；有效业务记录0条。",
       "limitation": "PAGE_OR_NETWORK_FAILURE",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "PAGE_OR_NETWORK_FAILURE"
@@ -8916,12 +8944,12 @@
       "status": "INCOMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "豆包与火山引擎官方",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
       "limitation": "MISSING_ACTION_OPEN_OFFICIAL_RELEASE_FEED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "MISSING_ACTION_OPEN_OFFICIAL_RELEASE_FEED"
@@ -8934,12 +8962,12 @@
       "status": "COMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "腾讯混元官方",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "OFFICIAL_RELEASE_READ终态COMPLETE；有效业务记录1条。",
       "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -8950,12 +8978,12 @@
       "status": "INCOMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "百度文心官方",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
       "limitation": "BUSINESS_PAGE_TYPE_NOT_VERIFIED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "BUSINESS_PAGE_TYPE_NOT_VERIFIED"
@@ -8968,12 +8996,12 @@
       "status": "INCOMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "智谱官方",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
       "limitation": "MISSING_ACTION_OPEN_OFFICIAL_RELEASE_FEED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "MISSING_ACTION_OPEN_OFFICIAL_RELEASE_FEED"
@@ -8986,12 +9014,12 @@
       "status": "INCOMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "Kimi与月之暗面官方",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
       "limitation": "MISSING_ACTION_OPEN_OFFICIAL_RELEASE_FEED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "MISSING_ACTION_OPEN_OFFICIAL_RELEASE_FEED"
@@ -9004,12 +9032,12 @@
       "status": "INCOMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "MiniMax官方",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
       "limitation": "MISSING_ACTION_OPEN_OFFICIAL_RELEASE_FEED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "MISSING_ACTION_OPEN_OFFICIAL_RELEASE_FEED"
@@ -9022,12 +9050,12 @@
       "status": "INCOMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "华为盘古官方",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
       "limitation": "MISSING_ACTION_OPEN_OFFICIAL_RELEASE_FEED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "MISSING_ACTION_OPEN_OFFICIAL_RELEASE_FEED"
@@ -9040,12 +9068,12 @@
       "status": "BLOCKED",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "OpenAI官方",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "OFFICIAL_RELEASE_READ终态BLOCKED；有效业务记录0条。",
       "limitation": "BLOCKED_EXTERNAL_CONNECTIVITY",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "BLOCKED_EXTERNAL_CONNECTIVITY"
@@ -9058,12 +9086,12 @@
       "status": "BLOCKED",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "Anthropic官方",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "OFFICIAL_RELEASE_READ终态BLOCKED；有效业务记录0条。",
       "limitation": "BLOCKED_EXTERNAL_CONNECTIVITY",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "BLOCKED_EXTERNAL_CONNECTIVITY"
@@ -9076,12 +9104,12 @@
       "status": "BLOCKED",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "Google DeepMind官方",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "OFFICIAL_RELEASE_READ终态BLOCKED；有效业务记录0条。",
       "limitation": "BLOCKED_EXTERNAL_CONNECTIVITY",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "BLOCKED_EXTERNAL_CONNECTIVITY"
@@ -9094,12 +9122,12 @@
       "status": "BLOCKED",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "Meta AI官方",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "OFFICIAL_RELEASE_READ终态BLOCKED；有效业务记录0条。",
       "limitation": "BLOCKED_EXTERNAL_CONNECTIVITY",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "BLOCKED_EXTERNAL_CONNECTIVITY"
@@ -9112,12 +9140,12 @@
       "status": "INCOMPLETE",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "Microsoft AI官方",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
       "limitation": "MISSING_ACTION_OPEN_OFFICIAL_RELEASE_FEED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "MISSING_ACTION_OPEN_OFFICIAL_RELEASE_FEED"
@@ -9130,12 +9158,12 @@
       "status": "BLOCKED",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "NVIDIA官方",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "OFFICIAL_RELEASE_READ终态BLOCKED；有效业务记录0条。",
       "limitation": "BLOCKED_EXTERNAL_CONNECTIVITY",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "BLOCKED_EXTERNAL_CONNECTIVITY"
@@ -9148,12 +9176,12 @@
       "status": "BLOCKED",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "GitHub Trending",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "TRENDING_LIST_READ终态BLOCKED；有效业务记录0条。",
       "limitation": "BLOCKED_EXTERNAL_CONNECTIVITY",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "BLOCKED_EXTERNAL_CONNECTIVITY"
@@ -9166,12 +9194,12 @@
       "status": "BLOCKED",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "Hugging Face模型趋势",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "TRENDING_LIST_READ终态BLOCKED；有效业务记录0条。",
       "limitation": "BLOCKED_EXTERNAL_CONNECTIVITY",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "BLOCKED_EXTERNAL_CONNECTIVITY"
@@ -9184,12 +9212,12 @@
       "status": "BLOCKED",
       "evidenceLevel": "V4深采集批末只读核验",
       "page": "Product Hunt AI",
-      "observedAt": "2026-08-26T01:46:32.375Z",
+      "observedAt": "2026-08-25T04:20:39.407Z",
       "signal": "TRENDING_LIST_READ终态BLOCKED；有效业务记录0条。",
       "limitation": "BLOCKED_EXTERNAL_CONNECTIVITY",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-08-26当前窗口",
+      "dataDate": "2026-08-25当前窗口",
       "queryTerms": [],
       "missingData": [
         "BLOCKED_EXTERNAL_CONNECTIVITY"
@@ -9197,8 +9225,8 @@
       "loginAction": null
     }
   ],
-  "boundaryText": "10条正式热点均在抖店学习中心真实业务流重新核验；运费险另有小红书需求结果，但百度指数本轮未取得该词曲线。蝉妈妈单日品牌榜、小红书其余单次搜索、科技媒体单线索及未通过业务页验证的来源只进入观察池。",
-  "sourceBrief": "2026-08-26按R4/V4合同深采36来源并优先非科技六类，正式保留10条经营与规则、类目与消费及季节节点热点。国内仅9/27来源取得可接受终态，业务输入仍为incomplete。",
+  "boundaryText": "10条正式热点均来自抖店学习中心真实业务流；运费险另有百度指数和小红书需求证据。蝉妈妈单日品牌榜、小红书其余单次搜索、科技媒体单线索及未通过业务页验证的来源只进入观察池。",
+  "sourceBrief": "R6按V4合同重采36来源并优先非科技六类，正式保留10条经营与规则、类目与消费及季节节点热点。国内仅10/27来源取得可接受终态，业务输入仍为incomplete。",
   "adOpportunitySchemaVersion": 1,
   "adExperimentContract": {
     "contract_version": "ad_experiment_v1",

@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "module": "hotspot-keywords",
-  "date": "2026-08-26",
-  "revision": 1,
+  "date": "2026-08-25",
+  "revision": 5,
   "itemCount": 50,
   "items": [
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-001",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-001",
       "hotspot_name": "抖音电商商家体验分规范升级，预计9月8日生效，商家需提前校准体验治理",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:merchant-experience-score-upgrade",
@@ -28,7 +28,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -40,9 +40,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-001",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-001",
       "hotspot_name": "抖音电商商家体验分规范升级，预计9月8日生效，商家需提前校准体验治理",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:merchant-experience-score-upgrade",
@@ -62,7 +62,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -74,9 +74,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-001",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-001",
       "hotspot_name": "抖音电商商家体验分规范升级，预计9月8日生效，商家需提前校准体验治理",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:merchant-experience-score-upgrade",
@@ -96,7 +96,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -108,9 +108,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-001",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-001",
       "hotspot_name": "抖音电商商家体验分规范升级，预计9月8日生效，商家需提前校准体验治理",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:merchant-experience-score-upgrade",
@@ -130,7 +130,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -142,9 +142,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-001",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-001",
       "hotspot_name": "抖音电商商家体验分规范升级，预计9月8日生效，商家需提前校准体验治理",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:merchant-experience-score-upgrade",
@@ -164,7 +164,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -176,9 +176,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-002",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-002",
       "hotspot_name": "抖音治理服饰类商品尺码信息不规范，服装商家需复核尺码表与详情表达",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:apparel-size-governance",
@@ -198,7 +198,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -210,9 +210,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-002",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-002",
       "hotspot_name": "抖音治理服饰类商品尺码信息不规范，服装商家需复核尺码表与详情表达",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:apparel-size-governance",
@@ -232,7 +232,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -244,9 +244,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-002",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-002",
       "hotspot_name": "抖音治理服饰类商品尺码信息不规范，服装商家需复核尺码表与详情表达",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:apparel-size-governance",
@@ -266,7 +266,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -278,9 +278,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-002",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-002",
       "hotspot_name": "抖音治理服饰类商品尺码信息不规范，服装商家需复核尺码表与详情表达",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:apparel-size-governance",
@@ -300,7 +300,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -312,9 +312,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-002",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-002",
       "hotspot_name": "抖音治理服饰类商品尺码信息不规范，服装商家需复核尺码表与详情表达",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:apparel-size-governance",
@@ -334,7 +334,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -346,9 +346,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-003",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-003",
       "hotspot_name": "抖音更新不可抗力场景发货及服务调整公告，自然灾害与会议赛事履约需动态核对",
       "hotspot_category": "季节与营销节点",
       "subject_id": "rule:douyin:force-majeure-shipping-adjustment",
@@ -368,7 +368,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -380,9 +380,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-003",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-003",
       "hotspot_name": "抖音更新不可抗力场景发货及服务调整公告，自然灾害与会议赛事履约需动态核对",
       "hotspot_category": "季节与营销节点",
       "subject_id": "rule:douyin:force-majeure-shipping-adjustment",
@@ -402,7 +402,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -414,9 +414,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-003",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-003",
       "hotspot_name": "抖音更新不可抗力场景发货及服务调整公告，自然灾害与会议赛事履约需动态核对",
       "hotspot_category": "季节与营销节点",
       "subject_id": "rule:douyin:force-majeure-shipping-adjustment",
@@ -436,7 +436,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -448,9 +448,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-003",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-003",
       "hotspot_name": "抖音更新不可抗力场景发货及服务调整公告，自然灾害与会议赛事履约需动态核对",
       "hotspot_category": "季节与营销节点",
       "subject_id": "rule:douyin:force-majeure-shipping-adjustment",
@@ -470,7 +470,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -482,9 +482,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-003",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-003",
       "hotspot_name": "抖音更新不可抗力场景发货及服务调整公告，自然灾害与会议赛事履约需动态核对",
       "hotspot_category": "季节与营销节点",
       "subject_id": "rule:douyin:force-majeure-shipping-adjustment",
@@ -504,7 +504,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -516,9 +516,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-004",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-004",
       "hotspot_name": "抖音开展网售无人机实名登记管理，无人机类目进入身份与合规核验窗口",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:drone-real-name-governance",
@@ -538,7 +538,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -550,9 +550,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-004",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-004",
       "hotspot_name": "抖音开展网售无人机实名登记管理，无人机类目进入身份与合规核验窗口",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:drone-real-name-governance",
@@ -572,7 +572,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -584,9 +584,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-004",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-004",
       "hotspot_name": "抖音开展网售无人机实名登记管理，无人机类目进入身份与合规核验窗口",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:drone-real-name-governance",
@@ -606,7 +606,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -618,9 +618,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-004",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-004",
       "hotspot_name": "抖音开展网售无人机实名登记管理，无人机类目进入身份与合规核验窗口",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:drone-real-name-governance",
@@ -640,7 +640,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -652,9 +652,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-004",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-004",
       "hotspot_name": "抖音开展网售无人机实名登记管理，无人机类目进入身份与合规核验窗口",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:drone-real-name-governance",
@@ -674,7 +674,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -686,9 +686,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-005",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-005",
       "hotspot_name": "抖音开展K12培训课程专项治理，教育培训商品与内容合规需立即复核",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:k12-course-governance",
@@ -708,7 +708,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -720,9 +720,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-005",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-005",
       "hotspot_name": "抖音开展K12培训课程专项治理，教育培训商品与内容合规需立即复核",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:k12-course-governance",
@@ -742,7 +742,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -754,9 +754,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-005",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-005",
       "hotspot_name": "抖音开展K12培训课程专项治理，教育培训商品与内容合规需立即复核",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:k12-course-governance",
@@ -776,7 +776,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -788,9 +788,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-005",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-005",
       "hotspot_name": "抖音开展K12培训课程专项治理，教育培训商品与内容合规需立即复核",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:k12-course-governance",
@@ -810,7 +810,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -822,9 +822,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-005",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-005",
       "hotspot_name": "抖音开展K12培训课程专项治理，教育培训商品与内容合规需立即复核",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:k12-course-governance",
@@ -844,7 +844,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -856,9 +856,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-006",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-006",
       "hotspot_name": "抖音治理服饰鞋包材质不符，材质标注、检测证明与详情一致性成为检查重点",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:apparel-material-mismatch-governance",
@@ -878,7 +878,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -890,9 +890,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-006",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-006",
       "hotspot_name": "抖音治理服饰鞋包材质不符，材质标注、检测证明与详情一致性成为检查重点",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:apparel-material-mismatch-governance",
@@ -912,7 +912,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -924,9 +924,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-006",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-006",
       "hotspot_name": "抖音治理服饰鞋包材质不符，材质标注、检测证明与详情一致性成为检查重点",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:apparel-material-mismatch-governance",
@@ -946,7 +946,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -958,9 +958,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-006",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-006",
       "hotspot_name": "抖音治理服饰鞋包材质不符，材质标注、检测证明与详情一致性成为检查重点",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:apparel-material-mismatch-governance",
@@ -980,7 +980,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -992,9 +992,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-006",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-006",
       "hotspot_name": "抖音治理服饰鞋包材质不符，材质标注、检测证明与详情一致性成为检查重点",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:apparel-material-mismatch-governance",
@@ -1014,7 +1014,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1026,10 +1026,10 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-007",
-      "hotspot_name": "抖店运费险服务规范持续可见，小红书退换货与客服话术需求同步出现",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-007",
+      "hotspot_name": "抖店发布运费险服务规范，百度指数与小红书需求信号同步可见",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:shipping-insurance-rule-demand",
       "subject_kind": "rule",
@@ -1048,7 +1048,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1056,14 +1056,15 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:shipping-insurance-rule-demand"
+        "metric:douyin:shipping-insurance-rule-demand",
+        "metric:baidu:shipping-insurance-20260825"
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-007",
-      "hotspot_name": "抖店运费险服务规范持续可见，小红书退换货与客服话术需求同步出现",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-007",
+      "hotspot_name": "抖店发布运费险服务规范，百度指数与小红书需求信号同步可见",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:shipping-insurance-rule-demand",
       "subject_kind": "rule",
@@ -1082,7 +1083,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1090,14 +1091,15 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:shipping-insurance-rule-demand"
+        "metric:douyin:shipping-insurance-rule-demand",
+        "metric:baidu:shipping-insurance-20260825"
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-007",
-      "hotspot_name": "抖店运费险服务规范持续可见，小红书退换货与客服话术需求同步出现",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-007",
+      "hotspot_name": "抖店发布运费险服务规范，百度指数与小红书需求信号同步可见",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:shipping-insurance-rule-demand",
       "subject_kind": "rule",
@@ -1116,7 +1118,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1124,14 +1126,15 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:shipping-insurance-rule-demand"
+        "metric:douyin:shipping-insurance-rule-demand",
+        "metric:baidu:shipping-insurance-20260825"
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-007",
-      "hotspot_name": "抖店运费险服务规范持续可见，小红书退换货与客服话术需求同步出现",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-007",
+      "hotspot_name": "抖店发布运费险服务规范，百度指数与小红书需求信号同步可见",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:shipping-insurance-rule-demand",
       "subject_kind": "rule",
@@ -1150,7 +1153,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1158,14 +1161,15 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:shipping-insurance-rule-demand"
+        "metric:douyin:shipping-insurance-rule-demand",
+        "metric:baidu:shipping-insurance-20260825"
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-007",
-      "hotspot_name": "抖店运费险服务规范持续可见，小红书退换货与客服话术需求同步出现",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-007",
+      "hotspot_name": "抖店发布运费险服务规范，百度指数与小红书需求信号同步可见",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:shipping-insurance-rule-demand",
       "subject_kind": "rule",
@@ -1184,7 +1188,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1192,13 +1196,14 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:shipping-insurance-rule-demand"
+        "metric:douyin:shipping-insurance-rule-demand",
+        "metric:baidu:shipping-insurance-20260825"
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-008",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-008",
       "hotspot_name": "抖音即时零售发货规范持续执行，配送超时、缺货和虚假送达仍需统一治理",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:instant-retail-shipping-ahuv4anyaewd",
@@ -1218,7 +1223,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1230,9 +1235,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-008",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-008",
       "hotspot_name": "抖音即时零售发货规范持续执行，配送超时、缺货和虚假送达仍需统一治理",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:instant-retail-shipping-ahuv4anyaewd",
@@ -1252,7 +1257,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1264,9 +1269,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-008",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-008",
       "hotspot_name": "抖音即时零售发货规范持续执行，配送超时、缺货和虚假送达仍需统一治理",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:instant-retail-shipping-ahuv4anyaewd",
@@ -1286,7 +1291,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1298,9 +1303,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-008",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-008",
       "hotspot_name": "抖音即时零售发货规范持续执行，配送超时、缺货和虚假送达仍需统一治理",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:instant-retail-shipping-ahuv4anyaewd",
@@ -1320,7 +1325,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1332,9 +1337,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-008",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-008",
       "hotspot_name": "抖音即时零售发货规范持续执行，配送超时、缺货和虚假送达仍需统一治理",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:instant-retail-shipping-ahuv4anyaewd",
@@ -1354,7 +1359,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1366,9 +1371,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-009",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-009",
       "hotspot_name": "抖音开票义务细则持续生效，拒绝或超时开票的时效、金额与申诉路径需复核",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:invoice-duty-ahmyswuskzxh",
@@ -1388,7 +1393,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1400,9 +1405,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-009",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-009",
       "hotspot_name": "抖音开票义务细则持续生效，拒绝或超时开票的时效、金额与申诉路径需复核",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:invoice-duty-ahmyswuskzxh",
@@ -1422,7 +1427,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1434,9 +1439,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-009",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-009",
       "hotspot_name": "抖音开票义务细则持续生效，拒绝或超时开票的时效、金额与申诉路径需复核",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:invoice-duty-ahmyswuskzxh",
@@ -1456,7 +1461,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1468,9 +1473,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-009",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-009",
       "hotspot_name": "抖音开票义务细则持续生效，拒绝或超时开票的时效、金额与申诉路径需复核",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:invoice-duty-ahmyswuskzxh",
@@ -1490,7 +1495,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1502,9 +1507,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-009",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-009",
       "hotspot_name": "抖音开票义务细则持续生效，拒绝或超时开票的时效、金额与申诉路径需复核",
       "hotspot_category": "经营与规则",
       "subject_id": "rule:douyin:invoice-duty-ahmyswuskzxh",
@@ -1524,7 +1529,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1536,9 +1541,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-010",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-010",
       "hotspot_name": "抖音定制珠宝规则持续执行，确认书、收费、售后与自然光留证仍是经营重点",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:custom-jewelry-ahhezg7rqecx",
@@ -1558,7 +1563,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1570,9 +1575,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-010",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-010",
       "hotspot_name": "抖音定制珠宝规则持续执行，确认书、收费、售后与自然光留证仍是经营重点",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:custom-jewelry-ahhezg7rqecx",
@@ -1592,7 +1597,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1604,9 +1609,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-010",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-010",
       "hotspot_name": "抖音定制珠宝规则持续执行，确认书、收费、售后与自然光留证仍是经营重点",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:custom-jewelry-ahhezg7rqecx",
@@ -1626,7 +1631,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1638,9 +1643,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-010",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-010",
       "hotspot_name": "抖音定制珠宝规则持续执行，确认书、收费、售后与自然光留证仍是经营重点",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:custom-jewelry-ahhezg7rqecx",
@@ -1660,7 +1665,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1672,9 +1677,9 @@
       ]
     },
     {
-      "date": "2026-08-26",
-      "revision": 1,
-      "hotspot_id": "HT-20260826-010",
+      "date": "2026-08-25",
+      "revision": 5,
+      "hotspot_id": "HT-20260825-010",
       "hotspot_name": "抖音定制珠宝规则持续执行，确认书、收费、售后与自然光留证仍是经营重点",
       "hotspot_category": "类目与消费",
       "subject_id": "rule:douyin:custom-jewelry-ahhezg7rqecx",
@@ -1694,7 +1699,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-08-26",
+      "valid_from": "2026-08-25",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
