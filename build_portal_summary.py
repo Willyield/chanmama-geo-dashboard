@@ -87,10 +87,14 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
     chanquanquan = read_json(root / "chanquanquan-geo" / "dashboard-data.json")
     chanquanquan_citation = read_json(root / "chanquanquan-citation-report" / "dashboard-data.json")
     account_latest = read_json(root / "account-matrix" / "data" / "latest.json")
+    account_summary = read_json(root / "account-matrix" / "data" / account_latest.get("path", "").removeprefix("./"))
     hotspot_index = read_json(root / "daily-hotspot" / "data" / "hotspots" / "index.json")
     event_index = read_json(root / "daily-hotspot" / "data" / "events" / "index.json")
     creator_index = read_json(root / "daily-hotspot" / "data" / "creators" / "index.json")
-    creative = read_json(root / "chanmama-creative-geo" / "dashboard-progress.json")
+    hotspot_latest = read_json(root / "daily-hotspot" / "data" / "hotspots" / "latest.json")
+    event_latest = read_json(root / "daily-hotspot" / "data" / "events" / "latest.json")
+    creative = read_json(root / "chanmama-creative-citation-report" / "dashboard-data.json")
+    chanmama_bi = read_json(root / "chanmama-bi" / "dashboard-data.json")
 
     baseline_rows = baseline.get("summary") or []
     baseline_samples = total(baseline_rows, "completed_sample_count")
@@ -120,9 +124,23 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
     cqq_planned = number(cqq_checkpoint.get("planned"))
     cqq_citation_summary = chanquanquan_citation.get("summary") or {}
     cqq_citation_inventory = cqq_citation_summary.get("citation_inventory") or {}
-    creative_progress = creative.get("progress") or {}
-    creative_current = number(creative_progress.get("externalSubmissions"))
-    creative_planned = number(creative_progress.get("plannedSlots"))
+    creative_current = number(creative.get("sampled"))
+    creative_planned = number(creative.get("total"))
+    creative_formal = number(creative.get("collected"))
+    creative_unknown = number(creative.get("awaitingCollection"))
+    chanmama_bi_total = number(chanmama_bi.get("total"))
+    chanmama_bi_collected = number(chanmama_bi.get("collected"))
+    chanmama_bi_citations = len(chanmama_bi.get("citations") or [])
+    account_coverage = account_summary.get("coverage") or {}
+    account_totals = account_summary.get("totals") or {}
+    hotspot_summary = hotspot_latest.get("summary") or {}
+    event_counts = (event_latest.get("summary") or {}).get("counts") or {}
+    account_count = number(account_coverage.get("collectedAccounts"))
+    account_content_count = number(account_totals.get("contentCount"))
+    hotspot_count = len(hotspot_latest.get("candidates") or [])
+    hotspot_priority_count = number(hotspot_summary.get("priorityCount"))
+    event_count = number(event_counts.get("total"))
+    event_prepare_count = number(event_counts.get("prepare"))
 
     baseline_date = data_date((baseline.get("meta") or {}).get("generated_at"))
     round2_date = data_date((round2.get("meta") or {}).get("generated_at"))
@@ -133,7 +151,8 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
     hotspot_date = data_date(hotspot_index.get("latest"))
     event_date = data_date(event_index.get("latest"))
     creator_date = data_date(creator_index.get("latest"))
-    creative_date = data_date(creative_progress.get("currentDay"))
+    creative_date = data_date(str(creative.get("dataDate") or "").split(" - ")[-1])
+    chanmama_bi_date = data_date(chanmama_bi.get("dataDate"))
     generated_at = max(
         date
         for date in (
@@ -147,6 +166,7 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
             event_date,
             creator_date,
             creative_date,
+            chanmama_bi_date,
         )
         if date
     )
@@ -166,7 +186,7 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
         "generated_at": generated_at,
         "period": {
             "start": data_date(((baseline_citation.get("core") or {}).get("sample_time_min"))) or baseline_date,
-            "end": round2_date or baseline_date,
+            "end": generated_at,
         },
         "hero_metrics": [
             metric(
@@ -218,6 +238,11 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
                 ],
                 "insights": [
                     {
+                        "text": f"蝉妈妈 BI 最新正式批次已完成 {display(chanmama_bi_collected)}/{display(chanmama_bi_total)} 条采样与回收，共保留 {display(chanmama_bi_citations)} 条引用证据。",
+                        "source_href": "./chanmama-bi/",
+                        "as_of": chanmama_bi_date,
+                    },
+                    {
                         "text": f"第一轮完成 {display(baseline_samples)} 个有效样本，蝉妈妈提及率为 {display(baseline_mention_rate, '%')}，TOP3 率为 {display(baseline_top3_rate, '%')}。",
                         "source_href": "./top01/",
                         "as_of": baseline_date,
@@ -254,6 +279,7 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
                     {"label": "第一轮引用源", "href": "./douyin-citation-report/", "kind": "report", "status": "complete"},
                     {"label": "第二轮引用源", "href": "./douyin-citation-report-round2/", "kind": "report", "status": "complete"},
                     {"label": "蝉圈圈引用源", "href": "./chanquanquan-citation-report/", "kind": "report", "status": "complete"},
+                    {"label": "创意引用源", "href": "./chanmama-creative-citation-report/", "kind": "report", "status": "complete_with_gaps"},
                 ],
             },
             {
@@ -269,6 +295,8 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
                     metric("cqq_progress", "蝉圈圈采样", cqq_collected, f"/{display(cqq_planned)}", "./chanquanquan-geo/"),
                     metric("cqq_citations", "蝉圈圈引用", number(cqq_citation_inventory.get("citation_rows")), "", "./chanquanquan-citation-report/"),
                     metric("creative_progress", "创意 GEO 提交", creative_current, f"/{display(creative_planned)}", "./chanmama-creative-geo/"),
+                    metric("creative_formal", "创意 GEO 正式回答", creative_formal, f"/{display(creative_planned)}", "./chanmama-creative-geo/"),
+                    metric("creative_unknown", "创意 GEO 待恢复", creative_unknown, "", "./chanmama-creative-geo/"),
                 ],
                 "insights": [
                     {
@@ -277,7 +305,7 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
                         "as_of": cqq_date,
                     },
                     {
-                        "text": f"蝉妈妈创意 GEO 当前提交 {display(creative_current)}/{display(creative_planned)}，冻结清单尚未到达，只展示进度，不形成结果结论。",
+                        "text": f"蝉妈妈创意 GEO 两日共 {display(creative_current)}/{display(creative_planned)} 个采样位置，{display(creative_formal)} 条正式回答，{display(creative_unknown)} 条待恢复，状态为 FINAL_WITH_GAPS。",
                         "source_href": "./chanmama-creative-geo/",
                         "as_of": creative_date,
                     },
@@ -285,7 +313,7 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
                 "views": [
                     {"label": "蝉镜 AI", "href": "./chanjing-ai/", "kind": "research", "status": "complete_with_gaps"},
                     {"label": "蝉圈圈 GEO", "href": "./chanquanquan-geo/", "kind": "research", "status": "complete"},
-                    {"label": "蝉妈妈创意 GEO", "href": "./chanmama-creative-geo/", "kind": "research", "status": "progress_only"},
+                    {"label": "蝉妈妈创意 GEO", "href": "./chanmama-creative-geo/", "kind": "research", "status": "complete_with_gaps"},
                 ],
             },
             {
@@ -295,8 +323,24 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
                 "updated_at": max(date for date in (account_date, hotspot_date, event_date, creator_date) if date),
                 "href": "./daily-hotspot/",
                 "description": "查看账号矩阵、热点、行业活动与达人追踪。",
-                "metrics": [],
-                "insights": [],
+                "metrics": [
+                    metric("account_count", "已采集账号", account_count, "", "./account-matrix/", f"{display(account_content_count)} 条内容 · {account_summary.get('status') or '状态待确认'}"),
+                    metric("account_content_count", "矩阵内容", account_content_count, "", "./account-matrix/", f"{display(account_count)} 个账号 · 截至 {account_date}"),
+                    metric("hotspot_count", "正式热点候选", hotspot_count, "", "./daily-hotspot/", f"{display(hotspot_priority_count)} 个优先 · 截至 {hotspot_date}"),
+                    metric("event_count", "跟踪活动", event_count, "", "./daily-hotspot/", f"{display(event_prepare_count)} 场优先准备 · 截至 {event_date}"),
+                ],
+                "insights": [
+                    {
+                        "text": f"账号矩阵已采集 {display(account_count)} 个账号、{display(account_content_count)} 条内容；当前状态为 {account_summary.get('status') or '待确认'}。",
+                        "source_href": "./account-matrix/",
+                        "as_of": account_date,
+                    },
+                    {
+                        "text": f"热点工作台收录 {display(hotspot_count)} 个正式候选，其中 {display(hotspot_priority_count)} 个优先；同步跟踪 {display(event_count)} 场活动，{display(event_prepare_count)} 场进入优先准备。",
+                        "source_href": "./daily-hotspot/",
+                        "as_of": hotspot_date,
+                    },
+                ],
                 "views": [
                     {"label": "账号矩阵日报", "href": "./account-matrix/", "kind": "operations", "status": "active"},
                     {"label": "热点与行业活动", "href": "./daily-hotspot/", "kind": "operations", "status": "active"},

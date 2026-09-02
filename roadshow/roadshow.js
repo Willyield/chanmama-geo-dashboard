@@ -13,6 +13,7 @@
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var numberFormatter = new Intl.NumberFormat("zh-CN", { maximumFractionDigits: 2 });
   var activeIndex = 0;
+  var initialHash = window.location.hash;
 
   function metricMap(items) {
     return Object.fromEntries((items || []).map(function (item) { return [item.key, item]; }));
@@ -117,19 +118,28 @@
       deck.scrollTop = scenes[target].offsetTop;
       requestAnimationFrame(function () { deck.style.scrollBehavior = previousBehavior; });
     } else {
-      scenes[target].scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+      deck.scrollTo({ top: scenes[target].offsetTop, behavior: reduceMotion ? "auto" : "smooth" });
     }
     setActive(target);
   }
 
   function initObserver() {
-    if (!("IntersectionObserver" in window)) return;
-    var observer = new IntersectionObserver(function (entries) {
-      var visible = entries.filter(function (entry) { return entry.isIntersecting; }).sort(function (a, b) { return b.intersectionRatio - a.intersectionRatio; });
-      if (!visible.length) return;
-      setActive(scenes.indexOf(visible[0].target));
-    }, { root: deck, threshold: [.55, .75] });
-    scenes.forEach(function (scene) { observer.observe(scene); });
+    var queued = false;
+    function syncActiveScene() {
+      queued = false;
+      var deckTop = deck.getBoundingClientRect().top;
+      var nearest = scenes.reduce(function (best, scene, index) {
+        var distance = Math.abs(scene.getBoundingClientRect().top - deckTop);
+        return distance < best.distance ? { index: index, distance: distance } : best;
+      }, { index: 0, distance: Number.POSITIVE_INFINITY });
+      setActive(nearest.index);
+    }
+    deck.addEventListener("scroll", function () {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(syncActiveScene);
+    }, { passive: true });
+    syncActiveScene();
   }
 
   function initKeyboard() {
@@ -178,9 +188,7 @@
   bindSummary();
   buildDots();
   document.documentElement.classList.add("deck-ready");
-  var hashMatch = window.location.hash.match(/^#scene-(\d+)$/);
-  var initialIndex = hashMatch ? Number(hashMatch[1]) - 1 : 0;
-  goTo(initialIndex, true);
+  setActive(0);
   initObserver();
   initKeyboard();
 
@@ -190,4 +198,6 @@
   document.addEventListener("fullscreenchange", updateFullscreenButton);
   window.addEventListener("beforeprint", finalizeForPrint);
 
+  var hashMatch = initialHash.match(/^#scene-(\d+)$/);
+  if (hashMatch) goTo(Number(hashMatch[1]) - 1);
 }());

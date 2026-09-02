@@ -1,15 +1,15 @@
 window.GEO_PORTAL_SUMMARY = {
   "schema_version": 1,
-  "generated_at": "2026-08-18",
+  "generated_at": "2026-08-31",
   "period": {
     "start": "2026-07-09",
-    "end": "2026-08-04"
+    "end": "2026-08-31"
   },
   "hero_metrics": [
     {
       "key": "data_date",
       "label": "最新模块更新",
-      "value": "2026-08-18",
+      "value": "2026-08-31",
       "unit": "",
       "source": "多模块摘要",
       "context": "跨模块摘要；各指标按自身截至日标注"
@@ -78,6 +78,11 @@ window.GEO_PORTAL_SUMMARY = {
         }
       ],
       "insights": [
+        {
+          "text": "蝉妈妈 BI 最新正式批次已完成 2/2 条采样与回收，共保留 33 条引用证据。",
+          "source_href": "./chanmama-bi/",
+          "as_of": "2026-08-31"
+        },
         {
           "text": "第一轮完成 576 个有效样本，蝉妈妈提及率为 94.6%，TOP3 率为 46%。",
           "source_href": "./top01/",
@@ -184,6 +189,12 @@ window.GEO_PORTAL_SUMMARY = {
           "href": "./chanquanquan-citation-report/",
           "kind": "report",
           "status": "complete"
+        },
+        {
+          "label": "创意引用源",
+          "href": "./chanmama-creative-citation-report/",
+          "kind": "report",
+          "status": "complete_with_gaps"
         }
       ]
     },
@@ -191,7 +202,7 @@ window.GEO_PORTAL_SUMMARY = {
       "id": "product_geo",
       "label": "产品 GEO",
       "status": "active",
-      "updated_at": "2026-08-18",
+      "updated_at": "2026-08-19",
       "href": "./chanmama-creative-geo/",
       "description": "集中查看蝉镜、蝉圈圈与蝉妈妈创意的 GEO 状态。",
       "metrics": [
@@ -226,8 +237,22 @@ window.GEO_PORTAL_SUMMARY = {
         {
           "key": "creative_progress",
           "label": "创意 GEO 提交",
-          "value": 270,
+          "value": 540,
           "unit": "/540",
+          "source": "./chanmama-creative-geo/"
+        },
+        {
+          "key": "creative_formal",
+          "label": "创意 GEO 正式回答",
+          "value": 538,
+          "unit": "/540",
+          "source": "./chanmama-creative-geo/"
+        },
+        {
+          "key": "creative_unknown",
+          "label": "创意 GEO 待恢复",
+          "value": 2,
+          "unit": "",
           "source": "./chanmama-creative-geo/"
         }
       ],
@@ -238,9 +263,9 @@ window.GEO_PORTAL_SUMMARY = {
           "as_of": "2026-08-07"
         },
         {
-          "text": "蝉妈妈创意 GEO 首日有效回答 270/270；两日 FULL 仍为 270/540，明日批次尚未授权。",
+          "text": "蝉妈妈创意 GEO 两日共 540/540 个采样位置，538 条正式回答，2 条待恢复，状态为 FINAL_WITH_GAPS。",
           "source_href": "./chanmama-creative-geo/",
-          "as_of": "2026-08-18"
+          "as_of": "2026-08-19"
         }
       ],
       "views": [
@@ -260,7 +285,7 @@ window.GEO_PORTAL_SUMMARY = {
           "label": "蝉妈妈创意 GEO",
           "href": "./chanmama-creative-geo/",
           "kind": "research",
-          "status": "progress_only"
+          "status": "complete_with_gaps"
         }
       ]
     },
@@ -271,8 +296,52 @@ window.GEO_PORTAL_SUMMARY = {
       "updated_at": "2026-08-10",
       "href": "./daily-hotspot/",
       "description": "查看账号矩阵、热点、行业活动与达人追踪。",
-      "metrics": [],
-      "insights": [],
+      "metrics": [
+        {
+          "key": "account_count",
+          "label": "已采集账号",
+          "value": 11,
+          "unit": "",
+          "source": "./account-matrix/",
+          "context": "463 条内容 · PARTIAL"
+        },
+        {
+          "key": "account_content_count",
+          "label": "矩阵内容",
+          "value": 463,
+          "unit": "",
+          "source": "./account-matrix/",
+          "context": "11 个账号 · 截至 2026-08-06"
+        },
+        {
+          "key": "hotspot_count",
+          "label": "正式热点候选",
+          "value": 10,
+          "unit": "",
+          "source": "./daily-hotspot/",
+          "context": "7 个优先 · 截至 2026-08-10"
+        },
+        {
+          "key": "event_count",
+          "label": "跟踪活动",
+          "value": 3,
+          "unit": "",
+          "source": "./daily-hotspot/",
+          "context": "2 场优先准备 · 截至 2026-08-10"
+        }
+      ],
+      "insights": [
+        {
+          "text": "账号矩阵已采集 11 个账号、463 条内容；当前状态为 PARTIAL。",
+          "source_href": "./account-matrix/",
+          "as_of": "2026-08-06"
+        },
+        {
+          "text": "热点工作台收录 10 个正式候选，其中 7 个优先；同步跟踪 3 场活动，2 场进入优先准备。",
+          "source_href": "./daily-hotspot/",
+          "as_of": "2026-08-10"
+        }
+      ],
       "views": [
         {
           "label": "账号矩阵日报",
