@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "reportType": "CHANMAMA_BI_FINAL_METRICS_V2_RELEASE",
+  "snapshotId": "AIDSO-CHANMAMA-BI-FULL-192-192-08A53573-00085FD5",
+  "taskId": "0ab1b3c4-16bd-4ba8-aaa7-847d81b87856",
+  "sourceDataSha256": "4696FFF579A86161DB181975F1096323A0050F728514D11660B6A10B230AB070",
+  "metricContractVersion": "final-metrics-v2",
+  "parser": "geo-dashboard-answer-body-and-tool-order-v2",
+  "semanticCards": [
+    {"id":"brand_mention_rate","label":"品牌提及率","value":"89.06%","detail":"171 / 192","rule":"brand-mention-from-answer-body-v2"},
+    {"id":"top1_rate","label":"TOP1 率","value":"13.54%","detail":"26 / 192","rule":"tool-order-first-v2"},
+    {"id":"top3_rate","label":"TOP3 率","value":"57.81%","detail":"111 / 192","rule":"tool-order-top3-v2"},
+    {"id":"advantage_expression_rate","label":"优势表达率","value":"15.63%","detail":"30 / 192","rule":"advantage-expression-v2"},
+    {"id":"effective_top1_rate","label":"去官方工具后 TOP1","value":"83.91%","detail":"146 / 174","rule":"effective-first-non-official-v2"},
+    {"id":"average_rank","label":"平均推荐排名","value":"3.08","detail":"171 条可识别推荐","rule":"tool-order-average-rank-v2"}
+  ],
+  "citation": {"captured":191,"confirmedNone":1,"coverageRate":"99.48%","citationRecords":3578,"sampleDeduplicatedUrls":3212,"uniqueNormalizedUrls":1127,"uniqueDomains":243,"duplicatesRemoved":366,"formalMainSiteCitations":0,"formalMainSiteRate":"0.00%","subdomainSamples":67,"subdomainRate":"34.90%","subdomainDeduplicatedCitations":98},
+  "boundaries": ["回答正文在“对话原文”后截取，并在“引用来源”或“推荐问题”等尾部前停止。","推荐排名按编号工具顺序计算；有效首推排除抖音电商罗盘、巨量千川、创作者服务中心、巨量算数、巨量百应、巨量引擎和抖音灵机。","正式官网引用仅指 chanmama.com 或 www.chanmama.com；子站仅作为辅助观察。","本文件为只读冻结数据的派生展示口径，不改写样本、回答或引用。"]
+}
