@@ -130,6 +130,8 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
     creative_unknown = number(creative.get("awaitingCollection"))
     chanmama_bi_total = number(chanmama_bi.get("total"))
     chanmama_bi_collected = number(chanmama_bi.get("collected"))
+    chanmama_bi_captured = number(chanmama_bi.get("captured"))
+    chanmama_bi_confirmed_none = number(chanmama_bi.get("confirmedNone"))
     chanmama_bi_citations = len(chanmama_bi.get("citations") or [])
     account_coverage = account_summary.get("coverage") or {}
     account_totals = account_summary.get("totals") or {}
@@ -152,7 +154,8 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
     event_date = data_date(event_index.get("latest"))
     creator_date = data_date(creator_index.get("latest"))
     creative_date = data_date(str(creative.get("dataDate") or "").split(" - ")[-1])
-    chanmama_bi_date = data_date(chanmama_bi.get("dataDate"))
+    chanmama_bi_dates = [data_date(row.get("date")) for row in (chanmama_bi.get("samples") or [])]
+    chanmama_bi_date = max(date for date in chanmama_bi_dates if date)
     generated_at = max(
         date
         for date in (
@@ -179,6 +182,7 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
         {"label": "两周趋势对比", "href": "./top01-two-week-compare/", "kind": "comparison", "status": "complete"},
         {"label": "扩展问题", "href": "./top2-top3/", "kind": "scope", "status": "complete"},
         {"label": "全部问题总览", "href": "./total/", "kind": "scope", "status": "complete"},
+        {"label": "第三轮采样", "href": "./chanmama-bi/", "kind": "round", "status": "complete"},
     ]
 
     return {
@@ -227,7 +231,7 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
                 "id": "sampling",
                 "label": "GEO 样本监测",
                 "status": "complete",
-                "updated_at": round2_date or baseline_date,
+                "updated_at": max(date for date in (round2_date, baseline_date, chanmama_bi_date) if date),
                 "href": "./top01/",
                 "description": "持续观察蝉妈妈在核心业务问题中的出现、排序与优势表达。",
                 "metrics": [
@@ -259,7 +263,7 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
                 "id": "citation",
                 "label": "引用源分析",
                 "status": "complete",
-                "updated_at": citation_date,
+                "updated_at": max(date for date in (citation_date, chanmama_bi_date) if date),
                 "href": "./douyin-citation-report-round2/",
                 "description": "拆解两轮豆包回答引用了哪些页面、账号与内容类型。",
                 "metrics": [
@@ -273,13 +277,19 @@ def build_summary(root: Path = ROOT) -> dict[str, Any]:
                         "text": f"共识别 {display(citation_events)} 次去重引用事件和 {display(unique_urls)} 个唯一 URL，抖音来源覆盖 {display(douyin_question_share, '%')} 的问题。",
                         "source_href": "./douyin-citation-report-round2/",
                         "as_of": citation_date,
-                    }
+                    },
+                    {
+                        "text": f"第三轮 {display(chanmama_bi_captured)}/{display(chanmama_bi_total)} 个样本含引用，{display(chanmama_bi_confirmed_none)} 个确认无引用，共 {display(chanmama_bi_citations)} 条引用明细。",
+                        "source_href": "./chanmama-bi-citation/",
+                        "as_of": chanmama_bi_date,
+                    },
                 ],
                 "views": [
                     {"label": "第一轮引用源", "href": "./douyin-citation-report/", "kind": "report", "status": "complete"},
                     {"label": "第二轮引用源", "href": "./douyin-citation-report-round2/", "kind": "report", "status": "complete"},
                     {"label": "蝉圈圈引用源", "href": "./chanquanquan-citation-report/", "kind": "report", "status": "complete"},
                     {"label": "创意引用源", "href": "./chanmama-creative-citation-report/", "kind": "report", "status": "complete_with_gaps"},
+                    {"label": "第三轮引用源", "href": "./chanmama-bi-citation/", "kind": "report", "status": "complete"},
                 ],
             },
             {

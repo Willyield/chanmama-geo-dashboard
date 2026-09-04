@@ -9,8 +9,8 @@
   <title>蝉妈妈 GEO 工作台</title>
   <link rel="stylesheet" href="./assets/platform-shell.css?v=20260818-workbench2">
   <link rel="stylesheet" href="./assets/portal.css">
-  <script src="./portal-summary.js?v=20260902-r8"></script>
-  <script defer src="./assets/platform-shell.js?v=20260818-creative1" data-root="./" data-section="overview" data-label="综合总览"></script>
+  <script src="./portal-summary.js?v=20260904-thirdround1"></script>
+  <script defer src="./assets/platform-shell.js?v=20260904-thirdround1" data-root="./" data-section="overview" data-label="综合总览"></script>
   <script defer src="./assets/portal.js?v=20260902-r8"></script>
 </head>
 <body class="portal-page">
@@ -53,12 +53,12 @@
         </div>
         <div class="workspace-updated">
           <span>摘要状态</span>
-          <strong id="summary-updated">数据更新至 2026-08-18</strong>
+          <strong id="summary-updated">数据更新至 2026-09-03</strong>
         </div>
       </div>
 
       <div class="portal-container portal-metric-strip" id="hero-metrics" aria-label="核心数据摘要">
-        <div class="portal-metric"><strong>2026-08-18</strong><span>最新模块更新</span><small>跨模块摘要；各指标按自身截至日标注</small></div>
+        <div class="portal-metric"><strong>2026-09-03</strong><span>最新模块更新</span><small>跨模块摘要；各指标按自身截至日标注</small></div>
         <div class="portal-metric"><strong>1,152</strong><span>累计有效样本</span><small>第一轮 576 + 第二轮 576，为跨轮次累计 · 样本截至 2026-08-04</small></div>
         <div class="portal-metric"><strong>96.7%</strong><span>第二轮提及率</span><small>最终轮 · 557/576 条有效样本 · 截至 2026-08-04</small></div>
         <div class="portal-metric"><strong>2,662</strong><span>唯一引用来源</span><small>第二轮引用源报告 · 唯一规范化 URL · 截至 2026-08-04</small></div>
@@ -201,23 +201,25 @@
 
         <div class="workspace-entry-groups">
           <section class="workspace-entry-group" aria-labelledby="sampling-entry-title">
-            <div class="workspace-entry-group-title"><span class="workspace-entry-color workspace-entry-color-cyan"></span><h3 id="sampling-entry-title">GEO 样本</h3><small>5 个视图</small></div>
+            <div class="workspace-entry-group-title"><span class="workspace-entry-color workspace-entry-color-cyan"></span><h3 id="sampling-entry-title">GEO 样本</h3><small>6 个视图</small></div>
             <nav class="workspace-entry-list" aria-label="GEO 样本入口">
               <a href="./top01/"><span><b>第一轮核心问题</b><small>576 个基线样本</small></span><i aria-hidden="true">→</i></a>
               <a href="./top01-round2/"><span><b>第二轮复测</b><small>最终 576/576</small></span><i aria-hidden="true">→</i></a>
               <a href="./top01-two-week-compare/"><span><b>两周趋势对比</b><small>观察跨轮变化</small></span><i aria-hidden="true">→</i></a>
               <a href="./top2-top3/"><span><b>扩展问题</b><small>TOP2 + TOP3</small></span><i aria-hidden="true">→</i></a>
               <a href="./total/"><span><b>全部问题总览</b><small>TOP0 - TOP3</small></span><i aria-hidden="true">→</i></a>
+              <a href="./chanmama-bi/"><span><b>第三轮采样</b><small>FULL · 192/192</small></span><i aria-hidden="true">→</i></a>
             </nav>
           </section>
 
           <section class="workspace-entry-group" aria-labelledby="citation-entry-title">
-            <div class="workspace-entry-group-title"><span class="workspace-entry-color workspace-entry-color-orange"></span><h3 id="citation-entry-title">引用源</h3><small>4 个报告</small></div>
+            <div class="workspace-entry-group-title"><span class="workspace-entry-color workspace-entry-color-orange"></span><h3 id="citation-entry-title">引用源</h3><small>5 个报告</small></div>
             <nav class="workspace-entry-list" aria-label="引用源报告入口">
               <a href="./douyin-citation-report/"><span><b>第一轮引用源</b><small>9,936 次去重事件</small></span><i aria-hidden="true">→</i></a>
               <a href="./douyin-citation-report-round2/"><span><b>第二轮引用源</b><small>最终 576/576 · 11,934 次</small></span><i aria-hidden="true">→</i></a>
               <a href="./chanquanquan-citation-report/"><span><b>蝉圈圈引用源</b><small>最终 730/730 · 7,161 条</small></span><i aria-hidden="true">→</i></a>
               <a href="./chanmama-creative-citation-report/"><span><b>创意引用源</b><small>270 个样本 · 1 条待回答恢复</small></span><i aria-hidden="true">→</i></a>
+              <a href="./chanmama-bi-citation/"><span><b>第三轮引用源</b><small>191/192 含引用 · 3578 条</small></span><i aria-hidden="true">→</i></a>
             </nav>
           </section>
 
@@ -288,7 +290,7 @@
         </div>
         <dl class="workspace-method-list">
           <div><dt>采样范围</dt><dd>覆盖蝉妈妈、蝉圈圈、蝉镜与创意产品问题池；平台与终端以各仪表盘标注为准。</dd></div>
-          <div><dt>时间周期</dt><dd id="data-period">2026-07-09 至 2026-08-18，各模块按标注日期更新。</dd></div>
+          <div><dt>时间周期</dt><dd id="data-period">2026-07-09 至 2026-09-03，各模块按标注日期更新。</dd></div>
           <div><dt>引用口径</dt><dd>按可核验引用事件、规范化 URL 和来源类型统计。</dd></div>
           <div><dt>使用边界</dt><dd>经营结果仍以官方后台为准；进度态、未决态与最终态严格分开。</dd></div>
         </dl>
@@ -299,7 +301,7 @@
   <footer class="portal-footer">
     <div class="portal-container">
       <div><strong>蝉妈妈 GEO 工作台</strong><span>内部研究与决策入口</span></div>
-      <span id="footer-updated">数据更新至 2026-08-18</span>
+      <span id="footer-updated">数据更新至 2026-09-03</span>
     </div>
   </footer>
 

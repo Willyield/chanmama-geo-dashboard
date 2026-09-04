@@ -1,15 +1,15 @@
 window.GEO_PORTAL_SUMMARY = {
   "schema_version": 1,
-  "generated_at": "2026-08-31",
+  "generated_at": "2026-09-03",
   "period": {
     "start": "2026-07-09",
-    "end": "2026-08-31"
+    "end": "2026-09-03"
   },
   "hero_metrics": [
     {
       "key": "data_date",
       "label": "最新模块更新",
-      "value": "2026-08-31",
+      "value": "2026-09-03",
       "unit": "",
       "source": "多模块摘要",
       "context": "跨模块摘要；各指标按自身截至日标注"
@@ -44,7 +44,7 @@ window.GEO_PORTAL_SUMMARY = {
       "id": "sampling",
       "label": "GEO 样本监测",
       "status": "complete",
-      "updated_at": "2026-08-04",
+      "updated_at": "2026-09-03",
       "href": "./top01/",
       "description": "持续观察蝉妈妈在核心业务问题中的出现、排序与优势表达。",
       "metrics": [
@@ -79,9 +79,9 @@ window.GEO_PORTAL_SUMMARY = {
       ],
       "insights": [
         {
-          "text": "蝉妈妈 BI 最新正式批次已完成 2/2 条采样与回收，共保留 33 条引用证据。",
+          "text": "蝉妈妈 BI 最新正式批次已完成 192/192 条采样与回收，共保留 3578 条引用证据。",
           "source_href": "./chanmama-bi/",
-          "as_of": "2026-08-31"
+          "as_of": "2026-09-03"
         },
         {
           "text": "第一轮完成 576 个有效样本，蝉妈妈提及率为 94.6%，TOP3 率为 46%。",
@@ -124,6 +124,12 @@ window.GEO_PORTAL_SUMMARY = {
           "href": "./total/",
           "kind": "scope",
           "status": "complete"
+        },
+        {
+          "label": "第三轮采样",
+          "href": "./chanmama-bi/",
+          "kind": "round",
+          "status": "complete"
         }
       ]
     },
@@ -131,7 +137,7 @@ window.GEO_PORTAL_SUMMARY = {
       "id": "citation",
       "label": "引用源分析",
       "status": "complete",
-      "updated_at": "2026-08-04",
+      "updated_at": "2026-09-03",
       "href": "./douyin-citation-report-round2/",
       "description": "拆解两轮豆包回答引用了哪些页面、账号与内容类型。",
       "metrics": [
@@ -169,6 +175,11 @@ window.GEO_PORTAL_SUMMARY = {
           "text": "共识别 11934 次去重引用事件和 2662 个唯一 URL，抖音来源覆盖 96.88% 的问题。",
           "source_href": "./douyin-citation-report-round2/",
           "as_of": "2026-08-04"
+        },
+        {
+          "text": "第三轮 191/192 个样本含引用，1 个确认无引用，共 3578 条引用明细。",
+          "source_href": "./chanmama-bi-citation/",
+          "as_of": "2026-09-03"
         }
       ],
       "views": [
@@ -195,6 +206,12 @@ window.GEO_PORTAL_SUMMARY = {
           "href": "./chanmama-creative-citation-report/",
           "kind": "report",
           "status": "complete_with_gaps"
+        },
+        {
+          "label": "第三轮引用源",
+          "href": "./chanmama-bi-citation/",
+          "kind": "report",
+          "status": "complete"
         }
       ]
     },
@@ -293,7 +310,7 @@ window.GEO_PORTAL_SUMMARY = {
       "id": "operations",
       "label": "运营工作台",
       "status": "active",
-      "updated_at": "2026-08-10",
+      "updated_at": "2026-09-03",
       "href": "./daily-hotspot/",
       "description": "查看账号矩阵、热点、行业活动与达人追踪。",
       "metrics": [
@@ -319,15 +336,15 @@ window.GEO_PORTAL_SUMMARY = {
           "value": 10,
           "unit": "",
           "source": "./daily-hotspot/",
-          "context": "7 个优先 · 截至 2026-08-10"
+          "context": "10 个优先 · 截至 2026-09-03"
         },
         {
           "key": "event_count",
           "label": "跟踪活动",
-          "value": 3,
+          "value": 4,
           "unit": "",
           "source": "./daily-hotspot/",
-          "context": "2 场优先准备 · 截至 2026-08-10"
+          "context": "2 场优先准备 · 截至 2026-09-03"
         }
       ],
       "insights": [
@@ -337,9 +354,9 @@ window.GEO_PORTAL_SUMMARY = {
           "as_of": "2026-08-06"
         },
         {
-          "text": "热点工作台收录 10 个正式候选，其中 7 个优先；同步跟踪 3 场活动，2 场进入优先准备。",
+          "text": "热点工作台收录 10 个正式候选，其中 10 个优先；同步跟踪 4 场活动，2 场进入优先准备。",
           "source_href": "./daily-hotspot/",
-          "as_of": "2026-08-10"
+          "as_of": "2026-09-03"
         }
       ],
       "views": [
