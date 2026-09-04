@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <title>玛卡星球 GEO 采样仪表盘</title>
+  <style>
+    :root {
+      --ink: #172126;
+      --ink-soft: #26353b;
+      --muted: #58676d;
+      --line: #d7dee0;
+      --line-dark: #46565c;
+      --surface: #ffffff;
+      --wash: #f2f5f5;
+      --accent: #d74832;
+      --accent-soft: #fbece9;
+      --blue: #176b87;
+      --danger: #b42318;
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background: var(--wash);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; min-width: 320px; background: var(--wash); }
+    button, select, input { font: inherit; }
+    button { touch-action: manipulation; }
+    .skip { position: absolute; left: -9999px; display: inline-flex; align-items: center; min-height: 44px; }
+    .skip:focus { left: 12px; top: 12px; z-index: 20; background: #fff; color: var(--ink); padding: 9px 12px; border: 3px solid var(--accent); }
+    header { color: #fff; background: var(--ink); border-bottom: 5px solid var(--accent); }
+    .signal { display: grid; grid-template-columns: repeat(4, 1fr); height: 5px; }
+    .signal span:nth-child(1) { background: var(--accent); }
+    .signal span:nth-child(2) { background: #f0a248; }
+    .signal span:nth-child(3) { background: #79a6b3; }
+    .signal span:nth-child(4) { background: #d8e3e5; }
+    .head { max-width: 1440px; margin: auto; padding: 22px 28px 20px; }
+    .head-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: end; }
+    .eyebrow { margin: 0 0 6px; color: #b9d2d8; font: 700 12px/1.2 Consolas, monospace; text-transform: uppercase; }
+    .head h1 { margin: 0; font-size: clamp(26px, 3vw, 40px); line-height: 1.1; letter-spacing: 0; }
+    .head-copy { margin: 9px 0 0; max-width: 720px; color: #d2dcdf; font-size: 14px; line-height: 1.6; }
+    .status { align-self: start; display: inline-flex; align-items: center; gap: 8px; min-height: 36px; border: 1px solid #708087; padding: 7px 11px; font: 700 12px/1.2 Consolas, monospace; }
+    .status::before { content: ""; width: 8px; height: 8px; background: #f0a248; }
+    .meta { display: grid; grid-template-columns: 1.3fr .75fr .75fr; gap: 1px; margin-top: 20px; background: var(--line-dark); border: 1px solid var(--line-dark); }
+    .meta-item { min-width: 0; padding: 11px 13px; background: var(--ink-soft); }
+    .meta-item span { display: block; margin-bottom: 4px; color: #aebcc0; font-size: 11px; }
+    .meta-item b { display: block; color: #fff; font: 700 13px/1.35 Consolas, monospace; overflow-wrap: anywhere; }
+    .completion-rail { margin-top: 14px; display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; color: #c5d1d4; font-size: 12px; }
+    .completion-rail strong { color: #fff; font-family: Consolas, monospace; }
+    .rail { height: 8px; border: 1px solid #65757b; background: #25353a; }
+    .rail > span { display: block; height: 100%; width: 0; background: var(--accent); transition: width 260ms ease-out; }
+    main { max-width: 1440px; margin: auto; padding: 22px 28px 48px; }
+    .boundary { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px; align-items: center; margin-bottom: 18px; padding: 13px 14px; background: var(--accent-soft); border: 1px solid #efc7c0; border-left: 5px solid var(--accent); color: #51231c; font-size: 13px; line-height: 1.5; }
+    .boundary b { font: 700 11px/1 Consolas, monospace; text-transform: uppercase; }
+    .tabs-wrap { position: sticky; top: 0; z-index: 5; margin: 0 -28px 22px; padding: 0 28px; background: rgba(242, 245, 245, .96); border-bottom: 1px solid var(--line); }
+    .tabs { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: thin; }
+    .tabs button { flex: 0 0 auto; min-height: 44px; border: 0; border-bottom: 4px solid transparent; background: transparent; color: var(--muted); font-weight: 700; padding: 10px 14px 8px; cursor: pointer; white-space: nowrap; }
+    .tabs button[aria-selected="true"] { color: var(--ink); border-color: var(--accent); background: #fff; }
+    .tabs button:focus-visible { outline: 3px solid #14708e; outline-offset: -3px; }
+    .tab-count { margin-left: 5px; color: inherit; font: 400 11px/1 Consolas, monospace; }
+    .view-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: end; margin: 0 0 18px; }
+    .view-head p { margin: 0 0 4px; color: var(--danger); font: 700 11px/1.2 Consolas, monospace; }
+    .view-head h2 { margin: 0; font-size: 22px; letter-spacing: 0; }
+    .view-head small { color: var(--muted); font-size: 12px; text-align: right; }
+    .section { margin: 0 0 28px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 10px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+    .section h3 { margin: 0; font-size: 16px; letter-spacing: 0; }
+    .section-head p { margin: 0; color: var(--muted); font-size: 12px; text-align: right; }
+    .kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); background: var(--surface); }
+    .kpi { min-width: 0; min-height: 126px; padding: 16px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .kpi small { display: block; min-height: 32px; color: var(--muted); font-size: 12px; font-weight: 700; line-height: 1.35; }
+    .kpi strong { display: block; margin: 8px 0 7px; color: var(--ink); font: 700 26px/1 Consolas, monospace; overflow-wrap: anywhere; }
+    .kpi span { display: block; color: var(--muted); font-size: 11px; line-height: 1.4; }
+    .kpi[data-status="UNRESOLVED"] strong, .kpi[data-status="NOT_APPLICABLE"] strong { font-family: Arial, "Microsoft YaHei", sans-serif; font-size: 15px; line-height: 1.35; color: var(--muted); }
+    .kpi[data-status="NOT_APPLICABLE"] { background: #f8f9f9; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .panel { min-width: 0; margin: 0; background: var(--surface); border: 1px solid var(--line); padding: 16px; }
+    .panel h4 { margin: 0 0 14px; font-size: 13px; }
+    .bar { display: grid; grid-template-columns: minmax(92px, 180px) 1fr 74px; gap: 10px; align-items: center; min-height: 32px; font-size: 12px; }
+    .bar > span { overflow-wrap: anywhere; }
+    .track { height: 9px; background: #e3e9eb; overflow: hidden; }
+    .fill { height: 100%; background: var(--blue); transform-origin: left; }
+    .bar:nth-child(even) .fill { background: #3e8196; }
+    .bar b { text-align: right; font: 700 12px/1 Consolas, monospace; }
+    .status-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .status-cell { min-width: 0; background: #fff; padding: 13px; }
+    .status-cell span { display: block; color: var(--muted); font-size: 11px; overflow-wrap: anywhere; }
+    .status-cell b { display: block; margin-top: 6px; font: 700 19px/1 Consolas, monospace; }
+    .empty { color: var(--muted); padding: 28px 12px; text-align: center; }
+    .hash { font-family: Consolas, monospace; overflow-wrap: anywhere; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .error { border: 1px solid #e2aaa4; border-left: 5px solid var(--danger); background: #fff; color: var(--danger); padding: 20px; }
+    @media (max-width: 920px) {
+      .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .split { grid-template-columns: 1fr; }
+      .head-grid { grid-template-columns: 1fr; gap: 14px; }
+      .status { justify-self: start; }
+    }
+    @media (max-width: 620px) {
+      .head, main { padding-left: 16px; padding-right: 16px; }
+      .head { padding-top: 18px; }
+      .head-copy { font-size: 13px; }
+      .meta { grid-template-columns: 1fr 1fr; }
+      .meta-item:first-child { grid-column: 1 / -1; }
+      .completion-rail { grid-template-columns: 1fr auto; }
+      .completion-rail .rail { grid-column: 1 / -1; grid-row: 2; }
+      .tabs-wrap { margin-left: -16px; margin-right: -16px; padding-left: 16px; padding-right: 16px; }
+      .view-head { grid-template-columns: 1fr; gap: 5px; }
+      .view-head small { text-align: left; }
+      .section-head { align-items: flex-start; flex-direction: column; }
+      .section-head p { text-align: left; }
+      .kpi { min-height: 120px; padding: 13px; }
+      .kpi strong { font-size: 22px; }
+      .status-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .bar { grid-template-columns: minmax(82px, 116px) 1fr 56px; gap: 8px; }
+      .boundary { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 390px) {
+      .kpis { grid-template-columns: 1fr; }
+      .kpi { min-height: 0; }
+      .kpi small { min-height: 0; }
+      .bar { grid-template-columns: minmax(78px, 106px) 1fr 52px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">跳到主要内容</a>
+  <header>
+    <div class="signal" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="head">
+      <div class="head-grid">
+        <div>
+          <p class="eyebrow">Makaplanet / AIDSO FAST_WEB</p>
+          <h1>玛卡星球 GEO 采样仪表盘</h1>
+          <p class="head-copy">第 1 天两轮采样结果，覆盖总问题池与 A-F 六个问题组。</p>
+        </div>
+        <span class="status" data-status role="status" aria-live="polite">读取中</span>
+      </div>
+      <div class="meta" aria-label="快照信息">
+        <div class="meta-item"><span>冻结快照</span><b data-snapshot>--</b></div>
+        <div class="meta-item"><span>计划槽位</span><b data-planned>--</b></div>
+        <div class="meta-item"><span>有效回答</span><b data-valid>--</b></div>
+      </div>
+      <div class="completion-rail" aria-label="采样完成进度">
+        <span>当日进度</span>
+        <div class="rail" aria-hidden="true"><span data-rail></span></div>
+        <strong data-progress>--</strong>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <div class="boundary" data-callout><b>Day 1 frozen</b><span>正在读取冻结数据。</span></div>
+    <div class="tabs-wrap">
+      <div class="tabs" role="tablist" aria-label="选择问题组">
+        <button id="tab-total" role="tab" aria-selected="true" aria-controls="dashboard-panel" tabindex="0" data-group="total">总览<span class="tab-count" data-tab-count="total"></span></button>
+        <button id="tab-A" role="tab" aria-selected="false" aria-controls="dashboard-panel" tabindex="-1" data-group="A">A 组<span class="tab-count" data-tab-count="A"></span></button>
+        <button id="tab-B" role="tab" aria-selected="false" aria-controls="dashboard-panel" tabindex="-1" data-group="B">B 组<span class="tab-count" data-tab-count="B"></span></button>
+        <button id="tab-C" role="tab" aria-selected="false" aria-controls="dashboard-panel" tabindex="-1" data-group="C">C 组<span class="tab-count" data-tab-count="C"></span></button>
+        <button id="tab-D" role="tab" aria-selected="false" aria-controls="dashboard-panel" tabindex="-1" data-group="D">D 组<span class="tab-count" data-tab-count="D"></span></button>
+        <button id="tab-E" role="tab" aria-selected="false" aria-controls="dashboard-panel" tabindex="-1" data-group="E">E 组<span class="tab-count" data-tab-count="E"></span></button>
+        <button id="tab-F" role="tab" aria-selected="false" aria-controls="dashboard-panel" tabindex="-1" data-group="F">F 组<span class="tab-count" data-tab-count="F"></span></button>
+      </div>
+    </div>
+    <section id="dashboard-panel" role="tabpanel" aria-labelledby="tab-total" tabindex="0">
+      <div class="view-head">
+        <div><p data-view-code>Total</p><h2 data-view-title>全部问题</h2></div>
+        <small data-view-scope>--</small>
+      </div>
+      <div data-view aria-live="polite" aria-busy="true"></div>
+    </section>
+    <p class="sr-only">数据哈希：<span data-hash>--</span></p>
+  </main>
+  <script>
+    const VIEW = "sampling";
+    const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+    const pct = value => value == null ? "数据不足" : Number(value).toFixed(2).replace(/\.00$/, "") + "%";
+    const number = value => Number(value || 0).toLocaleString("zh-CN");
+    const metric = (slice, id) => slice.metrics?.[id] || {};
+    const metricNote = item => item.reason || `${item.numerator ?? "--"} / ${item.denominator ?? "--"}`;
+    const card = (label, value, note, status = "READY") => `<article class="kpi" data-status="${escapeHtml(status)}"><small>${escapeHtml(label)}</small><strong>${escapeHtml(value)}</strong><span>${escapeHtml(note)}</span></article>`;
+    const bars = (rows, labelKey = "group", valueKey = "percentage") => rows.length
+      ? rows.map(row => {
+          const value = Math.max(0, Math.min(100, Number(row[valueKey] || 0)));
+          const label = escapeHtml(row[labelKey]);
+          return `<div class="bar" role="img" aria-label="${label}：${pct(value)}"><span>${label}</span><div class="track" aria-hidden="true"><div class="fill" style="width:${value}%"></div></div><b>${pct(value)}</b></div>`;
+        }).join("")
+      : '<div class="empty">暂无可比较数据</div>';
+    function sampling(slice, report) {
+      const observationLabel = report.observationStage === "PROVISIONAL_2_OF_2" ? "第 1 日阶段结果" : "四次观测终态";
+      const cards = [
+        card("完成率", pct(slice.completion.percentage), `${slice.completion.numerator} / ${slice.completion.denominator}`),
+        card("品牌提及率", pct(metric(slice, "brand_mention_rate").percentage), metricNote(metric(slice, "brand_mention_rate")), metric(slice, "brand_mention_rate").status),
+        card("原始 TOP1", pct(metric(slice, "top1_rate").percentage), metricNote(metric(slice, "top1_rate")), metric(slice, "top1_rate").status),
+        card("TOP3", pct(metric(slice, "top3_rate").percentage), metricNote(metric(slice, "top3_rate")), metric(slice, "top3_rate").status),
+        card("去官方候选后 TOP1", pct(metric(slice, "effective_top1_rate").percentage), metricNote(metric(slice, "effective_top1_rate")), metric(slice, "effective_top1_rate").status),
+        card("平均推荐排名", metric(slice, "average_rank").value == null ? "数据不足" : metric(slice, "average_rank").value, `${metric(slice, "average_rank").denominator || 0} 条命中回答`, metric(slice, "average_rank").status),
+        card("优势表达率", pct(metric(slice, "advantage_expression_rate").percentage), metricNote(metric(slice, "advantage_expression_rate")), metric(slice, "advantage_expression_rate").status),
+        card("竞品提及", number(slice.competitorMentions.total), `${slice.competitorMentions.brands.length} 个已登记候选`),
+        card("引用覆盖率", pct(slice.citation.coverage.percentage), `${slice.citation.coverage.numerator} / ${slice.citation.coverage.denominator}`),
+        card("官方来源覆盖率", pct(slice.citation.officialSourceCoverage.percentage), `${slice.citation.officialSourceCoverage.numerator} / ${slice.citation.officialSourceCoverage.denominator}`),
+        card("有效回答", number(slice.valid), `${slice.unknown} 个 unknown`),
+        card("结论阶段", observationLabel, report.observationStage === "PROVISIONAL_2_OF_2" ? "2 / 4 次观测" : "不足四次标记数据不足")
+      ];
+      const rounds = Object.entries(report.roundMetrics).map(([group, item]) => ({group, percentage: item.metrics.brand_mention_rate.percentage || 0}));
+      const days = Object.entries(report.dailyMetrics).map(([group, item]) => ({group, percentage: item.metrics.brand_mention_rate.percentage || 0}));
+      const statusCells = Object.entries(slice.questionStatus).map(([key, value]) => `<div class="status-cell"><span>${escapeHtml(key)}</span><b>${number(value)}</b></div>`).join("");
+      return `<section class="section" aria-labelledby="metrics-title"><div class="section-head"><h3 id="metrics-title">关键指标</h3><p>比例均保留分子、分母与 unknown</p></div><div class="kpis">${cards.join("")}</div></section>
+        <section class="section" aria-labelledby="trend-title"><div class="section-head"><h3 id="trend-title">轮次与日期变化</h3><p>品牌提及率</p></div><div class="split"><figure class="panel"><h4>按轮次</h4>${bars(rounds)}</figure><figure class="panel"><h4>按日期</h4>${bars(days)}</figure></div></section>
+        <section class="section" aria-labelledby="distribution-title"><div class="section-head"><h3 id="distribution-title">问题状态与竞品</h3><p>候选词表为当前冻结版本</p></div><div class="split"><section class="panel"><h4>状态分布</h4><div class="status-grid">${statusCells}</div></section><section class="panel"><h4>竞品提及份额</h4>${bars(slice.competitorMentions.brands, "name", "share")}</section></div></section>`;
+    }
+    function activateTab(button, report, moveFocus = false) {
+      document.querySelectorAll("[data-group]").forEach(item => {
+        const active = item === button;
+        item.setAttribute("aria-selected", String(active));
+        item.tabIndex = active ? 0 : -1;
+      });
+      const group = button.dataset.group;
+      const slice = group === "total" ? report.totals : report.groups[group];
+      const panel = document.querySelector("#dashboard-panel");
+      panel.setAttribute("aria-labelledby", button.id);
+      const questionCount = report.totals.planned / Math.max(1, Object.keys(report.roundMetrics).length);
+      document.querySelector("[data-view-code]").textContent = group === "total" ? `Total / ${questionCount} questions` : `${group} group`;
+      document.querySelector("[data-view-title]").textContent = group === "total" ? "全部问题" : slice.groupName;
+      document.querySelector("[data-view-scope]").textContent = `${slice.planned} 个槽位 · ${slice.valid} 条有效 · ${slice.unknown} 个 unknown`;
+      document.querySelector("[data-view]").innerHTML = sampling(slice, report);
+      if (moveFocus) button.focus();
+    }
+    Promise.all([
+      fetch("./data.json").then(response => { if (!response.ok) throw new Error(`data.json HTTP ${response.status}`); return response.json(); }),
+      fetch("./analysis.json").then(response => { if (!response.ok) throw new Error(`analysis.json HTTP ${response.status}`); return response.json(); })
+    ]).then(([data, report]) => {
+      const completion = report.totals.completion.percentage || 0;
+      document.querySelector("[data-snapshot]").textContent = report.snapshotId;
+      document.querySelector("[data-planned]").textContent = number(report.totals.planned);
+      document.querySelector("[data-valid]").textContent = number(report.totals.valid);
+      document.querySelector("[data-hash]").textContent = report.sourceDataHash;
+      document.querySelector("[data-status]").textContent = report.status;
+      document.querySelector("[data-progress]").textContent = `${report.totals.valid} / ${report.totals.planned}`;
+      document.querySelector("[data-rail]").style.width = `${Math.max(0, Math.min(100, completion))}%`;
+      const callout = document.querySelector("[data-callout] span");
+      callout.textContent = report.status === "FULL" ? "四轮数据已冻结。" : report.status === "DAY1_FROZEN" ? "第 1 天两轮 142 个槽位已冻结；当前指标为 2 / 4 次观测的阶段结果。" : "PARTIAL：缺口与 unknown 均保留，不按零计入有效分母。";
+      const roundCount = Math.max(1, Object.keys(report.roundMetrics).length);
+      document.querySelector("[data-tab-count='total']").textContent = `· ${report.totals.planned / roundCount}`;
+      Object.entries(report.groups).forEach(([group, slice]) => { document.querySelector(`[data-tab-count='${group}']`).textContent = `· ${slice.planned / roundCount}`; });
+      const tabs = Array.from(document.querySelectorAll("[data-group]"));
+      tabs.forEach((button, index) => {
+        button.addEventListener("click", () => activateTab(button, report));
+        button.addEventListener("keydown", event => {
+          let next = null;
+          if (event.key === "ArrowRight") next = tabs[(index + 1) % tabs.length];
+          if (event.key === "ArrowLeft") next = tabs[(index - 1 + tabs.length) % tabs.length];
+          if (event.key === "Home") next = tabs[0];
+          if (event.key === "End") next = tabs[tabs.length - 1];
+          if (next) { event.preventDefault(); activateTab(next, report, true); }
+        });
+      });
+      activateTab(tabs[0], report);
+      document.querySelector("[data-view]").setAttribute("aria-busy", "false");
+      window.__MAKAPLANET_DASHBOARD_READY__ = {view: VIEW, dataHash: report.sourceDataHash, planned: data.samples.length, status: report.status};
+    }).catch(error => {
+      document.querySelector("[data-status]").textContent = "数据加载失败";
+      document.querySelector("[data-view]").setAttribute("aria-busy", "false");
+      document.querySelector("[data-view]").innerHTML = `<div class="error" role="alert">${escapeHtml(error.message || error)}</div>`;
+      console.error(error);
+    });
+  </script>
+</body>
+</html>
