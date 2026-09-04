@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <title>玛卡星球引用源仪表盘</title>
+  <style>
+    :root{--ink:#172126;--muted:#657278;--line:#dce2e4;--surface:#fff;--wash:#f4f6f6;--accent:#087e8b;--blue:#2563a6;--amber:#a86100;--ok:#18794e;--danger:#b42318;font-family:Inter,"Microsoft YaHei",system-ui,sans-serif;color:var(--ink);background:var(--wash)}
+    *{box-sizing:border-box}body{margin:0;min-width:320px}button,select,input{font:inherit}.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;z-index:9;background:#fff;padding:8px;border:2px solid var(--accent)}
+    header{background:#172126;color:#fff;border-bottom:5px solid var(--accent)}.head{max-width:1440px;margin:auto;padding:22px 28px 14px}.eyebrow{margin:0 0 5px;color:#a7c7cc;font-size:12px;font-weight:700}.head h1{margin:0;font-size:clamp(24px,3vw,38px);line-height:1.15;letter-spacing:0}.head-row{display:flex;align-items:flex-end;justify-content:space-between;gap:20px}.head p{margin:8px 0 0;color:#c8d2d5;max-width:820px;font-size:14px}.status{font-size:13px;border:1px solid #627074;padding:7px 10px;border-radius:4px;white-space:nowrap}.meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;font-size:12px;color:#c8d2d5}.meta span{min-width:0}.meta b{color:#fff}.calibration{display:grid;grid-template-columns:repeat(12,1fr);height:9px;margin-top:14px;border-right:1px solid #627074}.calibration i{border-left:1px solid #627074}
+    main{max-width:1440px;margin:auto;padding:20px 28px 48px}.tabs{display:flex;gap:4px;overflow:auto;border-bottom:1px solid var(--line);margin-bottom:20px;scrollbar-width:thin}.tabs button{min-width:44px;min-height:44px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--muted);font-weight:700;padding:10px 15px;cursor:pointer;white-space:nowrap}.tabs button[aria-selected="true"]{color:var(--ink);border-color:var(--accent)}.tabs button:focus-visible,[role="tabpanel"]:focus-visible{outline:3px solid #8ab4d6;outline-offset:-3px}
+    .section{margin:0 0 26px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:10px}.section h2{margin:0;font-size:18px;letter-spacing:0}.section-head p{margin:0;color:var(--muted);font-size:12px;text-align:right}.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line);background:var(--surface)}.kpi{min-width:0;padding:16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.kpi small{display:block;color:var(--muted);font-weight:700;min-height:34px}.kpi strong{display:block;margin:7px 0 5px;font-size:25px;line-height:1;overflow-wrap:anywhere}.kpi span{font-size:12px;color:var(--muted)}.kpi[data-status="UNRESOLVED"] strong,.kpi[data-status="NOT_APPLICABLE"] strong{font-size:16px;color:var(--muted)}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px;min-width:0}.panel h3{font-size:14px;margin:0 0 13px}.bar{display:grid;grid-template-columns:minmax(90px,160px) 1fr minmax(76px,96px);gap:10px;align-items:center;margin:10px 0;font-size:12px}.bar>span{min-width:0;overflow-wrap:anywhere}.track{height:8px;background:#e8edef;border-radius:2px;overflow:hidden}.fill{height:100%;background:var(--blue)}.bar b{text-align:right;font-variant-numeric:tabular-nums}.bar b small{display:block;color:var(--muted);font-size:10px;font-weight:600}.status-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}.status-grid div{background:#fff;padding:13px}.status-grid span{display:block;color:var(--muted);font-size:12px}.status-grid b{display:block;margin-top:5px;font-size:18px}.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse;font-size:12px}.table th,.table td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}.table th{color:var(--muted);font-size:11px;text-transform:uppercase}.empty{color:var(--muted);padding:28px;text-align:center}
+    .callout{border-left:4px solid var(--accent);padding:11px 14px;background:#fff;margin-bottom:20px;font-size:13px}.callout b{display:block;margin-bottom:3px}.hash{font-family:ui-monospace,Consolas,monospace;overflow-wrap:anywhere;word-break:break-all}.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted)}.dot{display:inline-block;width:8px;height:8px;margin-right:5px;border-radius:50%;background:var(--blue)}.dot.amber{background:var(--amber)}.dot.red{background:var(--danger)}
+    @media(max-width:900px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.split{grid-template-columns:1fr}.status-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.head-row{align-items:flex-start;flex-direction:column}.status{white-space:normal}}
+    @media(max-width:520px){.head,main{padding-left:16px;padding-right:16px}.kpis{grid-template-columns:1fr 1fr}.kpi{padding:13px}.kpi strong{font-size:21px}.section-head{align-items:flex-start;flex-direction:column}.section-head p{text-align:left}.status-grid{grid-template-columns:1fr}.bar{grid-template-columns:minmax(72px,110px) 1fr 72px;gap:8px}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">跳到主要内容</a>
+  <header><div class="head"><div class="head-row"><div><p class="eyebrow">MAKAPLANET · AIDSO FAST_WEB</p><h1>玛卡星球引用源仪表盘</h1><p>同一冻结样本的引用覆盖、URL 去重、域名结构与官方来源分层。</p></div><span class="status" data-status role="status" aria-live="polite">读取中</span></div><div class="meta"><span>快照 <b data-snapshot>--</b></span><span>计划槽位 <b data-planned>--</b></span><span>有效回答 <b data-valid>--</b></span><span>数据哈希 <b class="hash" data-hash>--</b></span></div><div class="calibration" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></header>
+  <main id="main"><div class="callout" data-callout><b>数据边界</b><span>正在读取冻结数据。</span></div><div class="tabs" role="tablist" aria-label="问题组"><button id="tab-total" role="tab" aria-selected="true" aria-controls="group-panel" tabindex="0" data-group="total">总览</button><button id="tab-A" role="tab" aria-selected="false" aria-controls="group-panel" tabindex="-1" data-group="A">A 组</button><button id="tab-B" role="tab" aria-selected="false" aria-controls="group-panel" tabindex="-1" data-group="B">B 组</button><button id="tab-C" role="tab" aria-selected="false" aria-controls="group-panel" tabindex="-1" data-group="C">C 组</button><button id="tab-D" role="tab" aria-selected="false" aria-controls="group-panel" tabindex="-1" data-group="D">D 组</button><button id="tab-E" role="tab" aria-selected="false" aria-controls="group-panel" tabindex="-1" data-group="E">E 组</button><button id="tab-F" role="tab" aria-selected="false" aria-controls="group-panel" tabindex="-1" data-group="F">F 组</button></div><div id="group-panel" role="tabpanel" aria-labelledby="tab-total" aria-live="polite" tabindex="0" data-view></div></main>
+  <script>
+    const VIEW="citation";
+    const pct=value=>value==null?'数据不足':Number(value).toFixed(2).replace(/\.00$/,'')+'%';
+    const number=value=>Number(value||0).toLocaleString('zh-CN');
+    const metric=(slice,id)=>slice.metrics?.[id]||{};
+    const card=(label,value,note,status='READY')=>'<div class="kpi" data-status="'+status+'"><small>'+label+'</small><strong>'+value+'</strong><span>'+note+'</span></div>';
+    const bars=(rows,labelKey='group',valueKey='percentage')=>rows.length?rows.map(row=>{const percentage=pct(row[valueKey]);const count=Number.isFinite(Number(row.count))?number(row.count):null;const value=count==null?percentage:'<span>'+percentage+'</span><small>'+count+' 条</small>';const aria=count==null?percentage:'数量 '+count+'，占比 '+percentage;return '<div class="bar"><span>'+row[labelKey]+'</span><div class="track" role="img" aria-label="'+row[labelKey]+'：'+aria+'"><div class="fill" style="width:'+Math.max(0,Math.min(100,Number(row[valueKey]||0)))+'%"></div></div><b aria-label="数量 '+(count??'不适用')+'，占比 '+percentage+'">'+value+'</b></div>'}).join(''):'<div class="empty">暂无可比较数据</div>';
+    function sampling(slice,report){
+      const observationLabel=report.observationStage==='PROVISIONAL_2_OF_2'?'第 1 日临时结果':'四次观测终态';
+      const cards=[
+        card('完成率',pct(slice.completion.percentage),slice.completion.numerator+' / '+slice.completion.denominator),
+        card('品牌提及率',pct(metric(slice,'brand_mention_rate').percentage),metric(slice,'brand_mention_rate').numerator+' / '+metric(slice,'brand_mention_rate').denominator,metric(slice,'brand_mention_rate').status),
+        card('原始 TOP1',pct(metric(slice,'top1_rate').percentage),metric(slice,'top1_rate').numerator+' / '+metric(slice,'top1_rate').denominator,metric(slice,'top1_rate').status),
+        card('TOP3',pct(metric(slice,'top3_rate').percentage),metric(slice,'top3_rate').numerator+' / '+metric(slice,'top3_rate').denominator,metric(slice,'top3_rate').status),
+        card('去官方候选后 TOP1',pct(metric(slice,'effective_top1_rate').percentage),metric(slice,'effective_top1_rate').reason||'分子 / 有效候选分母',metric(slice,'effective_top1_rate').status),
+        card('平均推荐排名',metric(slice,'average_rank').value==null?'数据不足':metric(slice,'average_rank').value,metric(slice,'average_rank').denominator+' 条命中回答',metric(slice,'average_rank').status),
+        card('优势表达率',pct(metric(slice,'advantage_expression_rate').percentage),metric(slice,'advantage_expression_rate').numerator+' / '+metric(slice,'advantage_expression_rate').denominator,metric(slice,'advantage_expression_rate').status),
+        card('竞品提及',number(slice.competitorMentions.total),slice.competitorMentions.brands.length+' 个已登记候选'),
+        card('引用覆盖率',pct(slice.citation.coverage.percentage),slice.citation.coverage.numerator+' / '+slice.citation.coverage.denominator),
+        card('官方来源覆盖率',pct(slice.citation.officialSourceCoverage.percentage),slice.citation.officialSourceCoverage.numerator+' / '+slice.citation.officialSourceCoverage.denominator),
+        card('有效回答',number(slice.valid),slice.unknown+' 个 unknown'),
+        card('结论阶段',observationLabel,report.observationStage==='PROVISIONAL_2_OF_2'?'日 1 不应用四次门槛':'不足四次标记数据不足')
+      ];
+      const rounds=Object.entries(report.roundMetrics).map(([group,item])=>({group,percentage:item.metrics.brand_mention_rate.percentage||0}));
+      const days=Object.entries(report.dailyMetrics).map(([group,item])=>({group,percentage:item.metrics.brand_mention_rate.percentage||0}));
+      return '<section class="section"><div class="section-head"><h2>关键指标</h2><p>所有比例保留分子、分母和 unknown</p></div><div class="kpis">'+cards.join('')+'</div></section><section class="section"><div class="section-head"><h2>轮次与日期变化</h2><p>柱形长度表示品牌提及率</p></div><div class="split"><div class="panel"><h3>按轮次</h3>'+bars(rounds)+'</div><div class="panel"><h3>按日期</h3>'+bars(days)+'</div></div></section><section class="section"><div class="section-head"><h2>问题状态与竞品</h2><p>候选词表冻结，新品牌不进入当轮计算</p></div><div class="split"><div class="panel"><h3>状态分布</h3><div class="status-grid">'+Object.entries(slice.questionStatus).map(([key,value])=>'<div><span>'+key+'</span><b>'+number(value)+'</b></div>').join('')+'</div></div><div class="panel"><h3>竞品提及份额</h3>'+bars(slice.competitorMentions.brands,'name','share')+'</div></div></section>';
+    }
+    function citation(slice){
+      const c=slice.citation;const cards=[
+        card('计划槽位',number(slice.planned),'当前总览或问题组'),card('有效回答',number(slice.valid),slice.unknown+' 个 unknown'),
+        card('引用覆盖率',pct(c.coverage.percentage),c.coverage.numerator+' / '+c.coverage.denominator),card('原始引用数',number(c.rawCitationCount),'正文提及不计引用'),
+        card('样本内规范化去重',number(c.normalizedCitationCount),c.duplicateCount+' 条重复'),card('全局唯一 URL',number(c.globallyUniqueUrlCount),'跨样本去重'),
+        card('域名数',number(c.domainCount),'规范化主机名'),card('每样本均值',c.perSample.mean,'仅引用状态可判定样本'),
+        card('每样本中位数',c.perSample.median,'P50'),card('每样本 P90',c.perSample.p90,'nearest-rank'),
+        card('重复占比',pct(c.duplicateShare),c.duplicateCount+' / '+c.rawCitationCount),card('官方来源覆盖率',pct(c.officialSourceCoverage.percentage),c.officialSourceCoverage.numerator+' / '+c.officialSourceCoverage.denominator),
+        card('主站首页',number(c.officialLayers.homepage),'仅 /'),card('主站内页 / 子域',number(c.officialLayers.mainSitePage)+' / '+number(c.officialLayers.subdomain),'三层不得互相替代')
+      ];
+      const domains=c.topDomains.map(item=>({name:item.domain,share:c.normalizedCitationCount?item.count*100/c.normalizedCitationCount:0,count:item.count}));
+      const types=Object.entries(c.sourceTypes).map(([name,count])=>({name,count,share:c.normalizedCitationCount?count*100/c.normalizedCitationCount:0}));
+      return '<section class="section"><div class="section-head"><h2>引用指标</h2><p>URL 去跟踪参数后按样本去重</p></div><div class="kpis">'+cards.join('')+'</div></section><section class="section"><div class="section-head"><h2>来源结构</h2><p>域名和类型按规范化引用计数</p></div><div class="split"><div class="panel"><h3>Top 域名</h3>'+bars(domains,'name','share')+'</div><div class="panel"><h3>来源类型</h3>'+bars(types,'name','share')+'</div></div></section>';
+    }
+    const loadJson=async path=>{const response=await fetch(path);if(!response.ok)throw new Error(path+' 加载失败：HTTP '+response.status);return response.json()};
+    Promise.all([loadJson('./data.json'),loadJson('./analysis.json')]).then(([data,report])=>{
+      document.querySelector('[data-snapshot]').textContent=report.snapshotId;
+      document.querySelector('[data-planned]').textContent=number(report.totals.planned);
+      document.querySelector('[data-valid]').textContent=number(report.totals.valid);
+      document.querySelector('[data-hash]').textContent=report.sourceDataHash;
+      document.querySelector('[data-status]').textContent=report.status;
+      const callout=document.querySelector('[data-callout] span');callout.textContent=report.status==='FULL'?'四轮数据已冻结。':report.status==='DAY1_FROZEN'?'第 1 天两轮数据已冻结；当前指标为 2/4 观测的阶段结果。':'PARTIAL：缺口与 unknown 均保留，不按零计入有效分母。';
+      const mount=document.querySelector('[data-view]');
+      const buttons=[...document.querySelectorAll('[data-group]')];
+      const render=group=>{const slice=group==='total'?report.totals:report.groups[group];mount.innerHTML=VIEW==='citation'?citation(slice):sampling(slice,report)};
+      const activate=(button,focus=false)=>{buttons.forEach(item=>{const active=item===button;item.setAttribute('aria-selected',String(active));item.tabIndex=active?0:-1});mount.setAttribute('aria-labelledby',button.id);render(button.dataset.group);if(focus)button.focus()};
+      buttons.forEach((button,index)=>{button.addEventListener('click',()=>activate(button));button.addEventListener('keydown',event=>{let next=index;if(event.key==='ArrowRight')next=(index+1)%buttons.length;else if(event.key==='ArrowLeft')next=(index-1+buttons.length)%buttons.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=buttons.length-1;else return;event.preventDefault();activate(buttons[next],true)})});
+      render('total');
+      window.__MAKAPLANET_DASHBOARD_READY__={view:VIEW,dataHash:report.sourceDataHash,planned:data.samples.length};
+    }).catch(error=>{document.querySelector('[data-status]').textContent='数据加载失败';document.querySelector('[data-view]').innerHTML='<div class="panel empty">'+String(error.message||error)+'</div>';console.error(error)});
+  </script>
+</body></html>
