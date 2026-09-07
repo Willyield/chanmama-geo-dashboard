@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>蝉妈妈 GEO TOP0/TOP1 第三轮采样</title>
+  <link rel="stylesheet" href="../assets/platform-shell.css?v=20260819-workbench3">
+  <script defer src="./dashboard-data.js"></script>
+  <style>
+    :root {
+      --canvas: #f8fafc;
+      --surface: #ffffff;
+      --ink: #0f172a;
+      --muted: #64748b;
+      --line: #cbd5e1;
+      --line-strong: #94a3b8;
+      --nav: #0f172a;
+      --blue: #1e40af;
+      --blue-soft: #dbeafe;
+      --green: #047857;
+      --green-soft: #d1fae5;
+      --amber: #d97706;
+      --amber-soft: #fef3c7;
+      --red: #b91c1c;
+      --red-soft: #fee2e2;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: "IBM Plex Sans", "Inter", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 0;
+    }
+    a { color: inherit; }
+    header {
+      background: var(--nav);
+      color: #f8fafc;
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner { padding: 22px 28px 0; }
+    .content { padding: 24px 28px 48px; }
+    .tick-rule {
+      height: 12px;
+      margin-bottom: 18px;
+      background: repeating-linear-gradient(90deg, rgba(248,250,252,.75) 0 1px, transparent 1px 24px);
+      opacity: .6;
+    }
+    .header-kicker {
+      color: #9fb4c8;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    h1 {
+      margin: 8px 0 10px;
+      font-size: 56px;
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      color: #c8d2dc;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .tabs {
+      display: flex;
+      gap: 2px;
+      margin-top: 20px;
+    }
+    .tab {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      border: 1px solid transparent;
+      border-bottom: 0;
+      padding: 9px 14px;
+      color: #dce5ed;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .tab.active {
+      background: var(--canvas);
+      color: var(--ink);
+      border-color: #4b5967;
+    }
+    .stage-banner {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      border: 1px solid #10b981;
+      border-radius: 4px;
+      background: #ecfdf5;
+      color: #065f46;
+      padding: 7px 11px;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+    .executive-brief {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: center;
+      margin-top: 12px;
+      padding: 18px 20px;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      background: #111827;
+      color: #f8fafc;
+    }
+    .brief-label { color: #93c5fd; font-size: 12px; font-weight: 850; }
+    .brief-title { margin: 7px 0; font-size: 30px; line-height: 1.2; font-weight: 900; }
+    .brief-note { color: #cbd5e1; line-height: 1.55; }
+    .brief-status {
+      display: grid;
+      justify-items: end;
+      gap: 8px;
+      min-width: 190px;
+      font-variant-numeric: tabular-nums;
+    }
+    .brief-status strong { font-size: 30px; line-height: 1; }
+    .brief-status span { color: #cbd5e1; font-size: 12px; font-weight: 750; }
+    .executive-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 12px 0;
+    }
+    .brand-metrics-section { padding-top: 24px; padding-bottom: 28px; }
+    .brand-metrics-section .executive-grid { margin-bottom: 0; }
+    .brand-metrics-kicker {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      border-left: 4px solid var(--red);
+      padding-left: 9px;
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 850;
+    }
+    .brand-metrics-title { margin-top: 7px; }
+    .exec-card {
+      position: relative;
+      display: grid;
+      align-content: start;
+      gap: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      padding: 14px;
+    }
+    .exec-card.ok { border-top: 4px solid var(--green); }
+    .exec-card.info { border-top: 4px solid var(--blue); }
+    .exec-card.warn { border-top: 4px solid var(--amber); }
+    .exec-card.risk { border-top: 4px solid var(--red); }
+    .exec-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+    .exec-heading { display: flex; align-items: center; gap: 7px; min-width: 0; }
+    .exec-title { color: var(--muted); font-size: 12px; font-weight: 800; }
+    .metric-help-wrap { display: inline-flex; }
+    .metric-help {
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      background: var(--surface);
+      color: var(--muted);
+      font: 800 12px/1 inherit;
+      cursor: help;
+    }
+    .metric-tooltip {
+      position: absolute;
+      z-index: 20;
+      top: 42px;
+      right: 14px;
+      left: 14px;
+      border: 1px solid #334155;
+      border-radius: 5px;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 9px 10px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, .18);
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.5;
+      text-align: left;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .metric-help:hover + .metric-tooltip, .metric-help:focus + .metric-tooltip { visibility: visible; opacity: 1; }
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 12px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+    .status-chip.ok { background: var(--green-soft); color: var(--green); }
+    .status-chip.info { background: var(--blue-soft); color: var(--blue); }
+    .status-chip.warn { background: var(--amber-soft); color: #92400e; }
+    .status-chip.risk { background: var(--red-soft); color: var(--red); }
+    .exec-main { font-size: 28px; line-height: 1.05; font-weight: 850; font-variant-numeric: tabular-nums; }
+    .exec-sub { color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .evidence-list { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; color: #334155; font-size: 11px; }
+    .evidence-list li { display: flex; justify-content: space-between; gap: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; }
+    .evidence-list li span:last-child { text-align: right; font-weight: 750; font-variant-numeric: tabular-nums; }
+    .exec-bottom { margin-top: auto; border-top: 1px solid #e2e8f0; padding-top: 8px; color: var(--muted); font-size: 11px; line-height: 1.45; }
+    .action-panel {
+      display: grid;
+      grid-template-columns: minmax(240px, .8fr) minmax(0, 1.8fr);
+      gap: 20px;
+      align-items: start;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      padding: 16px;
+    }
+    .action-panel h2 { margin: 0 0 7px; font-size: 17px; }
+    .action-note { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .action-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 18px; }
+    .action-item { border-bottom: 1px solid #e2e8f0; padding: 8px 0; font-size: 12px; font-weight: 750; }
+    section {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    h2 { margin: 0; font-size: 20px; letter-spacing: 0; }
+    .section-note { color: var(--muted); font-size: 12px; text-align: right; }
+    .progress-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .progress-item { min-width: 0; }
+    .progress-top { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+    .progress-name { font-weight: 750; }
+    .progress-number { color: var(--muted); font-variant-numeric: tabular-nums; }
+    .track { height: 11px; background: #e2e8f0; border: 1px solid var(--line); overflow: hidden; }
+    .fill { height: 100%; background: var(--blue); }
+    .fill.green { background: var(--green); }
+    .fill.amber { background: var(--amber); }
+    .source-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .source-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--green);
+      border-radius: 8px;
+      padding: 15px;
+    }
+    .source-title { font-size: 16px; font-weight: 800; }
+    .source-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+    .source-metric strong { display: block; font-size: 20px; font-variant-numeric: tabular-nums; }
+    .source-metric span { color: var(--muted); font-size: 11px; line-height: 1.4; }
+    .split-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; }
+    .split-grid > * { min-width: 0; }
+    .bar-list { display: grid; gap: 10px; }
+    .bar-row { display: grid; grid-template-columns: minmax(120px, 180px) minmax(100px, 1fr) 72px; gap: 10px; align-items: center; }
+    .bar-label { overflow-wrap: anywhere; }
+    .bar-track { height: 13px; background: #e2e8f0; border: 1px solid var(--line); }
+    .bar-value { height: 100%; background: var(--blue); }
+    .bar-value.green { background: var(--green); }
+    .bar-value.amber { background: var(--amber); }
+    .bar-count { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+    .filters {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(150px, 1fr));
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    label { display: grid; gap: 5px; color: var(--muted); font-size: 12px; font-weight: 700; }
+    select, input {
+      width: 100%;
+      min-height: 38px;
+      border: 1px solid var(--line-strong);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--ink);
+      padding: 8px 10px;
+      font: inherit;
+    }
+    .table-wrap { width: 100%; overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+    table { width: 100%; border-collapse: collapse; table-layout: auto; }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid #e7ebef;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      line-height: 1.55;
+    }
+    th { background: #e2e8f0; color: #334155; font-size: 12px; font-weight: 800; position: sticky; top: 0; z-index: 1; }
+    tbody tr:nth-child(even) { background: #f8fafc; }
+    tr:last-child td { border-bottom: 0; }
+    .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .question-cell { min-width: 310px; }
+    .answer-cell { min-width: 440px; max-width: 760px; white-space: pre-wrap; }
+    .url-cell { min-width: 340px; white-space: pre-wrap; }
+    .status {
+      display: inline-block;
+      border-radius: 4px;
+      padding: 3px 7px;
+      font-size: 12px;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+    .status.ok { background: var(--green-soft); color: var(--green); }
+    .status.warn { background: var(--amber-soft); color: var(--amber); }
+    .status.bad { background: var(--red-soft); color: var(--red); }
+    .status.muted { background: #e8edf1; color: #52606d; }
+    .empty { padding: 28px 12px; color: var(--muted); text-align: center; }
+    .delta-up { color: var(--green); font-weight: 700; }
+    .delta-down { color: var(--red); font-weight: 700; }
+    .delta-flat { color: var(--muted); }
+    .footnote { margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .pager {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .icon-button {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--line-strong);
+      border-radius: 5px;
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .icon-button:disabled { cursor: default; opacity: .4; }
+    .sample-retry {
+      margin-top: 10px;
+      padding: 7px 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: 5px;
+      background: var(--surface);
+      color: var(--ink);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .sample-retry:hover { border-color: var(--blue); }
+    .sample-retry:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+    select:focus-visible, input:focus-visible, .icon-button:focus-visible, .tab:focus-visible, .metric-help:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
+    }
+    [hidden] { display: none !important; }
+    @media (max-width: 980px) {
+      .header-inner, .content { padding-left: 16px; padding-right: 16px; }
+      h1 { font-size: 36px; }
+      .executive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .action-panel { grid-template-columns: 1fr; }
+      .progress-grid, .source-grid, .split-grid { grid-template-columns: 1fr; }
+      .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .source-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 620px) {
+      .header-inner { padding-top: 16px; }
+      .tick-rule { margin-bottom: 13px; }
+      .header-kicker { font-size: 11px; }
+      h1 { font-size: 30px; }
+      .meta { gap: 5px 12px; }
+      .content { padding-top: 16px; }
+      .stage-banner { width: 100%; }
+      .executive-brief { grid-template-columns: 1fr; }
+      .brief-status { justify-items: start; }
+      .brief-title { font-size: 22px; }
+      .brief-status strong { font-size: 28px; }
+      .executive-grid, .filters, .action-list { grid-template-columns: 1fr; }
+      .tabs { overflow-x: auto; }
+      .tab { white-space: nowrap; }
+      .bar-row { grid-template-columns: 110px minmax(80px, 1fr) 62px; }
+    }
+  </style>
+</head>
+<body data-mode="round2">
+  <header>
+    <div class="header-inner">
+      <div class="tick-rule" aria-hidden="true"></div>
+      <div class="header-kicker">GEO / TOP0 + TOP1 / 豆包网页版快速模式</div>
+      <h1 id="pageTitle">蝉妈妈 GEO TOP0/TOP1 第三轮采样</h1>
+      <div class="meta" id="metaLine"></div>
+      <nav class="tabs" aria-label="仪表盘视图">
+        <a class="tab" id="round2Tab" href="#">第三轮采样</a>
+        <a class="tab" id="compareTab" href="#">两周对比</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="stage-banner" id="stageBanner" role="status"></div>
+    <div class="executive-brief" id="executiveBrief">
+      <div>
+        <div class="brief-label" id="briefLabel"></div>
+        <div class="brief-title" id="briefTitle"></div>
+        <div class="brief-note" id="briefNote"></div>
+      </div>
+      <div class="brief-status"><span>GEO 健康度</span><strong id="briefTotal">288/576</strong><span id="briefStatusNote">Day 1 阶段结果</span></div>
+    </div>
+
+    <div class="executive-grid" id="kpiGrid"></div>
+
+    <section class="brand-metrics-section" id="feiguaMetricsSection" aria-labelledby="feiguaMetricsTitle">
+      <div class="section-head">
+        <div>
+          <div class="brand-metrics-kicker">FEIGUA DATA</div>
+          <h2 class="brand-metrics-title" id="feiguaMetricsTitle">飞瓜数据表现</h2>
+        </div>
+        <div class="section-note">Day 1 阶段性 288/576 · 非正式检查点</div>
+      </div>
+      <div class="executive-grid" id="feiguaGrid"></div>
+    </section>
+
+    <section class="action-panel" id="actionPanel">
+      <div>
+        <h2>后续优化建议</h2>
+        <p class="action-note" id="actionNote"></p>
+      </div>
+      <div class="action-list" id="actionList"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>第三轮采样进度</h2>
+        <div class="section-note">Day 1 已完成 288 条；剩余 288 个计划位不进入指标分母</div>
+      </div>
+      <div class="progress-grid" id="progressGrid"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>引用分析边界</h2>
+        <div class="section-note">引用归因、官方来源、自有账号与跨轮引用由独立任务负责，本页不计算</div>
+      </div>
+      <div class="source-grid" id="sourceGrid"></div>
+      <div class="split-grid" style="margin-top:20px">
+        <div>
+          <h2 style="font-size:15px;margin-bottom:12px">引用组合</h2>
+          <div class="bar-list" id="sourceDistribution"></div>
+        </div>
+        <div>
+          <h2 style="font-size:15px;margin-bottom:12px">引用页面</h2>
+          <div class="table-wrap"><table><thead><tr><th>栏目</th><th>页面</th><th class="num">次数</th></tr></thead><tbody id="sourcePages"></tbody></table></div>
+        </div>
+      </div>
+      <div class="footnote">本页面不展示或计算引用来源，避免与独立引用分析任务混用。</div>
+    </section>
+
+    <section id="compareSection">
+      <div class="section-head">
+        <h2>Day 1 问题状态</h2>
+        <div class="section-note">阶段状态仅基于 Day 1 每题 3 条样本，不代表 576 条最终判断</div>
+      </div>
+      <div class="split-grid">
+        <div><div class="bar-list" id="statusBars"></div></div>
+        <div><div class="bar-list" id="aggregateBars"></div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>官方工具、蝉妈妈与第三方竞品</h2>
+        <div class="section-note">同一样本内按工具首次出现顺序计算排名</div>
+      </div>
+      <div class="table-wrap"><table><thead><tr><th>阵营</th><th class="num">提及次数</th><th class="num">首推次数</th><th class="num">前 3 次数</th><th class="num">平均排名</th></tr></thead><tbody id="groupTable"></tbody></table></div>
+      <div class="table-wrap" style="margin-top:12px"><table><thead><tr><th>品牌/工具</th><th>阵营</th><th class="num">提及次数</th><th class="num">提及率</th><th class="num">首推次数</th><th class="num">前 3 次数</th><th class="num">平均排名</th></tr></thead><tbody id="brandTable"></tbody></table></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Day 1 逐问题结果</h2>
+        <div class="section-note" id="questionCount"></div>
+      </div>
+      <div class="filters">
+        <label>关键词<input id="questionSearch" type="search" placeholder="搜索关键词或问题"></label>
+        <label>优先级<select id="priorityFilter"><option value="">全部</option></select></label>
+        <label>分类<select id="categoryFilter"><option value="">全部</option></select></label>
+        <label>Day 1 状态<select id="statusFilter"><option value="">全部</option></select></label>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>问题</th><th>关键词</th><th>阶段状态</th><th class="num">提及</th><th class="num">普通首推</th><th class="num">前 3</th><th class="num">严格优势表达</th><th class="num">平均排名</th><th>当前缺口</th></tr></thead>
+          <tbody id="questionTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>第三轮 Day 1 样本明细</h2>
+        <div class="section-note" id="sampleCount"></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>样本</th><th>采样节奏</th><th>问题</th><th>状态</th><th>蝉妈妈表现</th><th>数据范围</th><th>完整回答</th></tr></thead>
+          <tbody id="sampleTable"></tbody>
+        </table>
+      </div>
+      <div class="pager">
+        <button class="icon-button" id="samplePrev" type="button" title="上一页" aria-label="上一页">‹</button>
+        <span id="samplePage"></span>
+        <button class="icon-button" id="sampleNext" type="button" title="下一页" aria-label="下一页">›</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    (() => {
+      const data = window.GEO_ROUND2_DASHBOARD;
+      if (!data) {
+        document.body.innerHTML = '<div class="empty">仪表盘数据未加载</div>';
+        return;
+      }
+      const mode = data.mode || document.body.dataset.mode;
+      const summary = data.summary || {};
+      const authoritative = data.authoritative_metrics;
+      const baselineMetrics = authoritative.baseline;
+      const round2Metrics = authoritative.round2;
+      const metricDeltas = authoritative.deltaPctPoints;
+      const feiguaMetrics = window.GEO_ROUND2_FEIGUA_METRICS;
+      if (!feiguaMetrics) throw new Error('飞瓜数据指标未加载');
+      const esc = value => String(value ?? '').replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+      const pct = value => value === null || value === undefined || value === '' ? '待完成' : `${Number(value).toFixed(1)}%`;
+      const number = value => value === null || value === undefined || value === '' ? '—' : Number(value).toLocaleString('zh-CN');
+      const rank = value => value === null || value === undefined || value === '' ? '—' : Number(value).toFixed(2);
+      const preciseRank = value => value === null || value === undefined || value === '' ? '—' : Number(value).toFixed(4);
+      const statusClass = value => value === '达标' || value === '通过' ? 'ok' : value === '不达标' || value === '采样失败' || value === '不合格' ? 'bad' : value === '数据不足' || value === '待采样' ? 'muted' : 'warn';
+      const status = value => `<span class="status ${statusClass(value)}">${esc(value)}</span>`;
+      const delta = value => {
+        if (value === null || value === undefined || value === '') return '<span class="delta-flat">待完成</span>';
+        const numeric = Number(value);
+        const css = numeric > 0 ? 'delta-up' : numeric < 0 ? 'delta-down' : 'delta-flat';
+        return `<span class="${css}">${numeric > 0 ? '+' : ''}${numeric.toFixed(1)}</span>`;
+      };
+      const metricPct = metric => `${Number(metric.ratePct).toFixed(2)}%`;
+      const metricCount = metric => `${number(metric.count)}/${number(metric.denominator)}`;
+      const metricDelta = value => `${Number(value) > 0 ? '+' : ''}${Number(value).toFixed(2)}%`;
+      const metricHelp = (metric, tooltipKey = '') => {
+        const tooltipId = tooltipKey ? `metric-tip-${tooltipKey}` : `metric-tip-${metric.ruleVersion}`;
+        const tooltipText = `${metric.definition}；分母：${number(metric.denominator)}；规则版本：${metric.ruleVersion}`;
+        return `<span class="metric-help-wrap"><button class="metric-help" type="button" aria-label="${esc(metric.label)}口径说明" aria-describedby="${esc(tooltipId)}">i</button><span class="metric-tooltip" id="${esc(tooltipId)}" role="tooltip">${esc(tooltipText)}</span></span>`;
+      };
+      const makeSiblingHref = target => {
+        const path = window.location.pathname;
+        if (path.includes('top01-round2') || path.includes('top01-two-week-compare')) {
+          return target === 'round2' ? '../top01-round2/' : '../top01-two-week-compare/';
+        }
+        return target === 'round2' ? '../web/index.html' : '../compare/index.html';
+      };
+
+      document.getElementById('round2Tab').href = makeSiblingHref('round2');
+      document.getElementById('compareTab').href = makeSiblingHref('compare');
+      document.getElementById(mode === 'compare' ? 'compareTab' : 'round2Tab').classList.add('active');
+      document.getElementById('stageBanner').textContent = authoritative.stage.label;
+      document.getElementById('metaLine').innerHTML = [
+        `批次：${esc(summary.batch_id)}`,
+        `基线：${esc(summary.baseline_batch_id)}`,
+        `生成：${esc(data.meta.generated_at)}`,
+        `平台：${esc(summary.platform)}`
+      ].map(item => `<span>${item}</span>`).join('');
+
+      document.getElementById('briefLabel').textContent = '阶段判断 / 第三轮 Day 1';
+      document.getElementById('briefTitle').textContent = `Day 1 已完成 ${summary.valid_sample_count || 0} 条有效样本，仅用于阶段判断。`;
+      document.getElementById('briefNote').textContent = `Day 1 阶段性 288/576；非正式 300 检查点，非最终页。剩余 288 个计划位不进入指标分母。`;
+      document.getElementById('briefTotal').textContent = `${summary.valid_sample_count || 0}/${summary.planned_sample_count || 0}`;
+      document.getElementById('briefStatusNote').textContent = 'Day 1 阶段结果';
+
+      const evidenceRows = rows => `<ul class="evidence-list">${rows.map(([label, value]) => `<li><span>${esc(label)}</span><span>${esc(value)}</span></li>`).join('')}</ul>`;
+      const executiveCard = ({ title, tone, badge, metric, count, baseline, change, rule, readout, contract, tooltipKey }) => `<article class="exec-card ${tone}">
+        <div class="exec-top"><div class="exec-heading"><div class="exec-title">${esc(title)}</div>${metricHelp(contract, tooltipKey)}</div><span class="status-chip ${tone}">${esc(badge)}</span></div>
+        <div><div class="exec-main">${esc(metric)}</div><div class="exec-sub">${esc(count)}</div></div>
+        ${evidenceRows([['第一轮基线', baseline], ['变化', change], ['统计口径', rule]])}
+        <div class="exec-bottom">${esc(readout)}</div>
+      </article>`;
+
+      const cards = [
+        {
+          title: '提及率', tone: 'info', badge: '阶段结果',
+          metric: metricPct(round2Metrics.mention), count: `${metricCount(round2Metrics.mention)} 条有效回答`,
+          baseline: `${metricPct(baselineMetrics.mention)} · ${metricCount(baselineMetrics.mention)}`,
+          change: metricDelta(metricDeltas.mention), rule: round2Metrics.mention.ruleVersion,
+          readout: '蝉妈妈在 Day 1 有效回答中的品牌可见度。', contract: round2Metrics.mention
+        },
+        {
+          title: '普通首推率', tone: 'warn', badge: '继续提升',
+          metric: metricPct(round2Metrics.ordinaryFirst), count: `${metricCount(round2Metrics.ordinaryFirst)} 条有效回答`,
+          baseline: `${metricPct(baselineMetrics.ordinaryFirst)} · ${metricCount(baselineMetrics.ordinaryFirst)}`,
+          change: metricDelta(metricDeltas.ordinaryFirst), rule: round2Metrics.ordinaryFirst.ruleVersion,
+          readout: 'Day 1 原始推荐顺序中的第一推荐占比。', contract: round2Metrics.ordinaryFirst
+        },
+        {
+          title: '有效首推率', tone: 'ok', badge: '第三方首位',
+          metric: metricPct(round2Metrics.effectiveFirst), count: `${metricCount(round2Metrics.effectiveFirst)} 条存在第三方候选的回答`,
+          baseline: `${metricPct(baselineMetrics.effectiveFirst)} · ${metricCount(baselineMetrics.effectiveFirst)}`,
+          change: metricDelta(metricDeltas.effectiveFirst), rule: 'effective-first-non-official-v2',
+          readout: '移除抖音官方工具后，蝉妈妈在第三方候选中保持领先。', contract: round2Metrics.effectiveFirst
+        },
+        {
+          title: '严格优势表达率', tone: 'info', badge: 'v2 口径',
+          metric: metricPct(round2Metrics.advantageExpression), count: `${metricCount(round2Metrics.advantageExpression)} 条有效回答`,
+          baseline: `${metricPct(baselineMetrics.advantageExpression)} · ${metricCount(baselineMetrics.advantageExpression)}`,
+          change: metricDelta(metricDeltas.advantageExpression), rule: 'advantage-expression-v2',
+          readout: '仅统计明确归属于蝉妈妈的正向能力、适配性、推荐理由或比较优势。', contract: round2Metrics.advantageExpression
+        },
+        {
+          title: '前三率', tone: 'warn', badge: '保持稳定',
+          metric: metricPct(round2Metrics.top3), count: `${metricCount(round2Metrics.top3)} 条有效回答`,
+          baseline: `${metricPct(baselineMetrics.top3)} · ${metricCount(baselineMetrics.top3)}`,
+          change: metricDelta(metricDeltas.top3), rule: round2Metrics.top3.ruleVersion,
+          readout: 'Day 1 进入前三的阶段性表现。', contract: round2Metrics.top3
+        },
+        {
+          title: '平均排名', tone: 'ok', badge: '数值越低越好',
+          metric: preciseRank(round2Metrics.averageRank.value), count: `${number(round2Metrics.averageRank.denominator)} 条提及样本`,
+          baseline: `${preciseRank(baselineMetrics.averageRank.value)} · ${number(baselineMetrics.averageRank.denominator)} 条`,
+          change: `改善 ${preciseRank(authoritative.averageRankImprovement)}`, rule: round2Metrics.averageRank.ruleVersion,
+          readout: 'Day 1 平均排名；数值越低代表推荐位置越靠前。', contract: round2Metrics.averageRank
+        }
+      ];
+      document.getElementById('kpiGrid').innerHTML = cards.map(executiveCard).join('');
+
+      const feiguaBaseline = feiguaMetrics.baseline;
+      const feiguaRound2 = feiguaMetrics.round2;
+      const feiguaDeltas = feiguaMetrics.deltaPctPoints;
+      const feiguaContract = (key, label, definition) => ({
+        ...feiguaRound2[key],
+        label,
+        denominator: key === 'rank' ? feiguaRound2.rank.count : feiguaRound2[key].denominator,
+        definition,
+      });
+      const pointDelta = value => `${Number(value) > 0 ? '+' : ''}${Number(value).toFixed(2)} 个百分点`;
+      const feiguaCards = [
+        {
+          title: '提及率', tone: 'info', badge: '可见度提升',
+          metric: metricPct(feiguaRound2.mention), count: `${metricCount(feiguaRound2.mention)} 条有效样本`,
+          baseline: `${metricPct(feiguaBaseline.mention)} · ${metricCount(feiguaBaseline.mention)}`,
+          change: pointDelta(feiguaDeltas.mention), rule: feiguaRound2.mention.ruleVersion,
+          readout: '飞瓜数据在 Day 1 有效回答中的品牌可见度。',
+          contract: feiguaContract('mention', '提及率', '有效回答的工具推荐顺序中出现飞瓜数据的样本数 / 全部有效样本数'), tooltipKey: 'feigua-mention',
+        },
+        {
+          title: '普通首推率', tone: 'risk', badge: '首推下降',
+          metric: metricPct(feiguaRound2.ordinaryFirst), count: `${metricCount(feiguaRound2.ordinaryFirst)} 条有效样本`,
+          baseline: `${metricPct(feiguaBaseline.ordinaryFirst)} · ${metricCount(feiguaBaseline.ordinaryFirst)}`,
+          change: pointDelta(feiguaDeltas.ordinaryFirst), rule: feiguaRound2.ordinaryFirst.ruleVersion,
+          readout: '原始推荐顺序中的第一推荐占比较第一轮下降。',
+          contract: feiguaContract('ordinaryFirst', '普通首推率', '原始工具推荐顺序中飞瓜数据位于第一位的样本数 / 全部有效样本数'), tooltipKey: 'feigua-ordinary-first',
+        },
+        {
+          title: '有效首推率', tone: 'warn', badge: '数据不足',
+          metric: metricPct(feiguaRound2.effectiveFirst), count: `${metricCount(feiguaRound2.effectiveFirst)} 条存在第三方候选的回答`,
+          baseline: `${metricPct(feiguaBaseline.effectiveFirst)} · ${metricCount(feiguaBaseline.effectiveFirst)}`,
+          change: pointDelta(feiguaDeltas.effectiveFirst), rule: feiguaRound2.effectiveFirst.ruleVersion,
+          readout: '冻结包未提供此项飞瓜数据指标，不作推算。',
+          contract: feiguaContract('effectiveFirst', '有效首推率', '移除抖音官方工具后，飞瓜数据位于剩余第三方候选第一位的样本数 / 存在可识别第三方候选的样本数'), tooltipKey: 'feigua-effective-first',
+        },
+        {
+          title: '严格优势表达率', tone: 'warn', badge: '数据不足',
+          metric: metricPct(feiguaRound2.advantageExpression), count: `${metricCount(feiguaRound2.advantageExpression)} 条有效样本`,
+          baseline: `${metricPct(feiguaBaseline.advantageExpression)} · ${metricCount(feiguaBaseline.advantageExpression)}`,
+          change: pointDelta(feiguaDeltas.advantageExpression), rule: feiguaRound2.advantageExpression.ruleVersion,
+          readout: '冻结包未提供此项飞瓜数据指标，不作推算。',
+          contract: feiguaContract('advantageExpression', '严格优势表达率', '回答把正向能力、适配性、推荐理由或比较优势明确归属于飞瓜数据的样本数 / 全部有效样本数；仅品牌提及、并列推荐、其他品牌优势或负向表述不计'), tooltipKey: 'feigua-advantage-expression',
+        },
+        {
+          title: '前三率', tone: 'risk', badge: '前三占比下降',
+          metric: metricPct(feiguaRound2.top3), count: `${metricCount(feiguaRound2.top3)} 条有效样本`,
+          baseline: `${metricPct(feiguaBaseline.top3)} · ${metricCount(feiguaBaseline.top3)}`,
+          change: pointDelta(feiguaDeltas.top3), rule: feiguaRound2.top3.ruleVersion,
+          readout: '飞瓜数据进入原始推荐顺序前三的占比较第一轮下降。',
+          contract: feiguaContract('top3', '前三率', '飞瓜数据在原始工具推荐顺序中进入前三的样本数 / 全部有效样本数'), tooltipKey: 'feigua-top3',
+        },
+        {
+          title: '平均排名', tone: 'risk', badge: '数值越低越好',
+          metric: preciseRank(feiguaRound2.rank.average), count: `${number(feiguaRound2.rank.count)} 条提及样本`,
+          baseline: `${preciseRank(feiguaBaseline.rank.average)} · ${number(feiguaBaseline.rank.count)} 条`,
+          change: `+${preciseRank(feiguaDeltas.rank)} · 变差`, rule: feiguaRound2.rank.ruleVersion,
+          readout: '平均排名数值上升，推荐位置较第一轮后移。',
+          contract: feiguaContract('rank', '平均排名', '仅在提到飞瓜数据的样本中计算其平均工具顺序排名，数值越低越好'), tooltipKey: 'feigua-average-rank',
+        },
+      ];
+      document.getElementById('feiguaGrid').innerHTML = feiguaCards.map(executiveCard).join('');
+      document.getElementById('actionNote').textContent = `Day 1 阶段性 ${number(summary.valid_sample_count)}/${number(summary.planned_sample_count)}；指标仅使用 288 条有效样本。`;
+      document.getElementById('actionList').innerHTML = [
+        '补强“为什么首推蝉妈妈”的推荐理由',
+        '把高提及进一步转化为普通首推',
+        '保持第三方候选中的有效首推优势',
+        '继续沿用 advantage-expression-v2 严格口径'
+      ].map(item => `<div class="action-item">${esc(item)}</div>`).join('');
+
+      const progressRows = [
+        ['Day 1', summary.day1_valid_count || 0, (summary.planned_sample_count || 0) / 2, 'blue'],
+        ['Day 2', summary.day2_valid_count || 0, (summary.planned_sample_count || 0) / 2, 'amber'],
+        ['来源状态完整', summary.source_complete_count || 0, summary.valid_sample_count || 0, 'green']
+      ];
+      document.getElementById('progressGrid').innerHTML = progressRows.map(([label, value, total, color]) => {
+        const width = total ? Math.min(100, value * 100 / total) : 0;
+        return `<div class="progress-item"><div class="progress-top"><span class="progress-name">${esc(label)}</span><span class="progress-number">${number(value)}/${number(total)}</span></div><div class="track"><div class="fill ${color}" style="width:${width}%"></div></div></div>`;
+      }).join('');
+
+      document.getElementById('sourceGrid').innerHTML = (data.source_summary || []).map(row => `<div class="source-item"><div class="source-title">${esc(row.source_label)}</div><div class="source-metrics"><div class="source-metric"><strong>${number(row.citation_count)}</strong><span>引用链接次数</span></div><div class="source-metric"><strong>${number(row.cited_sample_count)}</strong><span>引用样本数</span></div><div class="source-metric"><strong>${pct(row.sample_citation_rate_pct)}</strong><span>样本引用率</span></div><div class="source-metric"><strong>${number(row.cited_question_count)}</strong><span>引用问题数</span></div><div class="source-metric"><strong>${pct(row.question_citation_rate_pct)}</strong><span>完整问题覆盖率</span></div><div class="source-metric"><strong>${number(row.unique_page_count)}</strong><span>唯一页面数</span></div></div></div>`).join('');
+
+      const renderBars = (elementId, rows, labelKey, valueKey, color = '') => {
+        const max = Math.max(1, ...rows.map(row => Number(row[valueKey] || 0)));
+        document.getElementById(elementId).innerHTML = rows.map(row => `<div class="bar-row"><div class="bar-label">${esc(row[labelKey])}</div><div class="bar-track"><div class="bar-value ${color}" style="width:${Number(row[valueKey] || 0) * 100 / max}%"></div></div><div class="bar-count">${number(row[valueKey])}</div></div>`).join('') || '<div class="empty">暂无数据</div>';
+      };
+      renderBars('sourceDistribution', data.source_distribution || [], 'distribution', 'sample_count', 'green');
+      renderBars('statusBars', data.status_counts || [], 'status', 'count', 'amber');
+
+      const pages = data.source_pages || [];
+      document.getElementById('sourcePages').innerHTML = pages.length ? pages.slice(0, 20).map(row => `<tr><td>${esc(row.source_label)}</td><td class="url-cell"><a href="${esc(row.normalized_url)}" target="_blank" rel="noreferrer">${esc(row.source_title || row.normalized_url)}</a><br>${esc(row.normalized_url)}</td><td class="num">${number(row.citation_count)}</td></tr>`).join('') : '<tr><td colspan="3" class="empty">引用分析不在本任务范围</td></tr>';
+
+      const comparisons = data.questions || [];
+      const aggregate = name => {
+        const baselineCount = comparisons.reduce((sum, row) => sum + Number(row[`baseline_${name}_count`] || 0), 0);
+        const currentCount = comparisons.reduce((sum, row) => sum + Number(row[`round2_${name}_count`] || 0), 0);
+        return { label: ({mention:'提及次数',first:'普通首推次数',top3:'前 3 次数',advantage:'严格优势表达次数'})[name], value: currentCount, baseline: baselineCount };
+      };
+      const aggregates = ['mention','first','top3','advantage'].map(aggregate);
+      const maxAggregate = Math.max(1, ...aggregates.flatMap(row => [row.value, row.baseline]));
+      document.getElementById('aggregateBars').innerHTML = aggregates.map(row => `<div class="bar-row"><div class="bar-label">${esc(row.label)}</div><div><div class="bar-track"><div class="bar-value" style="width:${row.baseline * 100 / maxAggregate}%"></div></div><div class="bar-track" style="margin-top:3px"><div class="bar-value green" style="width:${row.value * 100 / maxAggregate}%"></div></div></div><div class="bar-count">${number(row.baseline)}→${number(row.value)}</div></div>`).join('');
+
+      const groupRows = data.brand_group_comparison || [];
+      document.getElementById('groupTable').innerHTML = groupRows.length ? groupRows.map(row => `<tr><td>${esc(row.brand_group_name)}</td><td class="num">${number(row.mention_count)}</td><td class="num">${number(row.first_count)}</td><td class="num">${number(row.top3_count)}</td><td class="num">${rank(row.avg_rank)}</td></tr>`).join('') : '<tr><td colspan="5" class="empty">尚无有效样本</td></tr>';
+      const brandRows = data.brand_comparison || [];
+      document.getElementById('brandTable').innerHTML = brandRows.length ? brandRows.map(row => `<tr><td>${esc(row.brand)}</td><td>${esc(row.brand_group)}</td><td class="num">${number(row.mention_count)}</td><td class="num">${pct(row.mention_rate_pct)}</td><td class="num">${number(row.first_count)}</td><td class="num">${number(row.top3_count)}</td><td class="num">${rank(row.avg_rank)}</td></tr>`).join('') : '<tr><td colspan="7" class="empty">尚无有效样本</td></tr>';
+
+      const fillSelect = (id, values) => {
+        const select = document.getElementById(id);
+        [...new Set(values.filter(Boolean))].sort().forEach(value => select.insertAdjacentHTML('beforeend', `<option value="${esc(value)}">${esc(value)}</option>`));
+      };
+      fillSelect('priorityFilter', comparisons.map(row => row.priority));
+      fillSelect('categoryFilter', comparisons.map(row => row.category));
+      fillSelect('statusFilter', comparisons.map(row => row.round2_status));
+
+      const renderQuestions = () => {
+        const query = document.getElementById('questionSearch').value.trim().toLowerCase();
+        const priority = document.getElementById('priorityFilter').value;
+        const category = document.getElementById('categoryFilter').value;
+        const state = document.getElementById('statusFilter').value;
+        const rows = comparisons.filter(row => (!query || `${row.keyword} ${row.question_text}`.toLowerCase().includes(query)) && (!priority || row.priority === priority) && (!category || row.category === category) && (!state || row.round2_status === state));
+        document.getElementById('questionCount').textContent = `${rows.length}/${comparisons.length} 个问题`;
+        document.getElementById('questionTable').innerHTML = rows.length ? rows.map(row => `<tr><td class="question-cell"><strong>${esc(row.question_id)}</strong><br>${esc(row.question_text)}</td><td>${esc(row.keyword)}<br>${esc(row.priority)} · ${esc(row.category)}</td><td>${status(row.round2_status)}<br>${esc(row.status_transition)}</td><td class="num">${number(row.baseline_mention_count)}→${number(row.round2_mention_count)}<br>${delta(row.mention_rate_pct_delta)}%</td><td class="num">${number(row.baseline_first_count)}→${number(row.round2_first_count)}<br>${delta(row.first_rate_pct_delta)}%</td><td class="num">${number(row.baseline_top3_count)}→${number(row.round2_top3_count)}<br>${delta(row.top3_rate_pct_delta)}%</td><td class="num">${number(row.baseline_advantage_count)}→${number(row.round2_advantage_count)}<br>${delta(row.advantage_rate_pct_delta)}%</td><td class="num">${rank(row.baseline_avg_rank)}→${rank(row.round2_avg_rank)}<br>${delta(row.avg_rank_delta)}</td><td>${esc(row.main_gap)}</td></tr>`).join('') : '<tr><td colspan="9" class="empty">没有符合筛选条件的问题</td></tr>';
+      };
+      ['questionSearch','priorityFilter','categoryFilter','statusFilter'].forEach(id => document.getElementById(id).addEventListener(id === 'questionSearch' ? 'input' : 'change', renderQuestions));
+      renderQuestions();
+
+      const expectedSampleCount = Number(data.detail_meta?.sample_count || summary.valid_sample_count || 0);
+      const samplePageSize = 10;
+      let samples = [];
+      let samplePageIndex = 0;
+      const renderSamples = () => {
+        const totalPages = Math.max(1, Math.ceil(samples.length / samplePageSize));
+        samplePageIndex = Math.min(samplePageIndex, totalPages - 1);
+        const pageRows = samples.slice(samplePageIndex * samplePageSize, (samplePageIndex + 1) * samplePageSize);
+        document.getElementById('sampleTable').innerHTML = pageRows.length ? pageRows.map(row => {
+          const capture = row.source_capture_status || '待采集';
+          const performance = `提及：${row.mentioned_chanmama || '—'}\n普通首推：${row.chanmama_is_first || '—'}\n排名：${row.chanmama_rank || '—'}\n严格优势表达：${row.chanmama_advantage_explicit || '—'}`;
+          const sourceCounts = '引用归因不在本任务范围';
+          return `<tr><td>${esc(row.sample_id)}<br>${esc(row.sample_date)}</td><td>${esc(row.sampling_cadence)}</td><td class="question-cell">${esc(row.question_text)}</td><td>${status(capture === 'captured' || capture === 'no_references' ? '通过' : capture === 'failed' ? '采样失败' : '待采样')}</td><td style="white-space:pre-wrap">${esc(performance)}</td><td class="url-cell">${esc(sourceCounts)}</td><td class="answer-cell">${esc(row.answer_text)}</td></tr>`;
+        }).join('') : '<tr><td colspan="7" class="empty">Day 1 尚无有效样本</td></tr>';
+        document.getElementById('samplePage').textContent = `${samples.length ? samplePageIndex + 1 : 0}/${samples.length ? totalPages : 0}`;
+        document.getElementById('samplePrev').disabled = samplePageIndex === 0;
+        document.getElementById('sampleNext').disabled = samplePageIndex >= totalPages - 1 || !samples.length;
+      };
+      const setSamplePagerIdle = () => {
+        document.getElementById('samplePage').textContent = '';
+        document.getElementById('samplePrev').disabled = true;
+        document.getElementById('sampleNext').disabled = true;
+      };
+      const renderSampleLoading = () => {
+        document.getElementById('sampleCount').textContent = `正在加载 ${expectedSampleCount} 条采样记录`;
+        document.getElementById('sampleTable').innerHTML = `<tr><td colspan='7' class='empty'>样本详情加载中…</td></tr>`;
+        setSamplePagerIdle();
+      };
+      const renderSampleError = error => {
+        console.error('样本详情加载失败', error);
+        document.getElementById('sampleCount').textContent = '样本详情加载失败';
+        document.getElementById('sampleTable').innerHTML = `<tr><td colspan='7' class='empty'>未能加载样本详情<br><button class='sample-retry' id='sampleRetry' type='button'>重新加载</button></td></tr>`;
+        setSamplePagerIdle();
+        document.getElementById('sampleRetry').addEventListener('click', loadSampleDetails);
+      };
+      function loadSampleDetails() {
+        renderSampleLoading();
+        document.querySelector('script[data-dashboard-detail]')?.remove();
+        const script = document.createElement('script');
+        script.src = './dashboard-detail-data.js';
+        script.async = true;
+        script.dataset.dashboardDetail = 'true';
+        script.onload = () => {
+          try {
+            const detail = window.GEO_ROUND2_DASHBOARD_DETAIL;
+            if (!detail || !Array.isArray(detail.samples)) throw new Error('样本详情数据格式无效');
+            samples = detail.samples.filter(row => row.answer_text);
+            if (samples.length !== expectedSampleCount) throw new Error(`样本数量不匹配：${samples.length}/${expectedSampleCount}`);
+            document.getElementById('sampleCount').textContent = `${samples.length} 条已写入记录`;
+            samplePageIndex = 0;
+            renderSamples();
+          } catch (error) {
+            renderSampleError(error);
+          }
+        };
+        script.onerror = () => renderSampleError(new Error('样本详情请求失败'));
+        document.head.appendChild(script);
+      }
+      document.getElementById('samplePrev').addEventListener('click', () => { samplePageIndex -= 1; renderSamples(); });
+      document.getElementById('sampleNext').addEventListener('click', () => { samplePageIndex += 1; renderSamples(); });
+      renderSampleLoading();
+      const scheduleSampleLoad = window.requestIdleCallback
+        ? callback => window.requestIdleCallback(callback, { timeout: 1200 })
+        : callback => window.setTimeout(callback, 0);
+      scheduleSampleLoad(loadSampleDetails);
+    })();
+    });
+  </script>
+  <script defer src="../assets/platform-shell.js?v=20260819-workbench3" data-root="../" data-section="sampling" data-label="第三轮采样"></script>
+</body>
+</html>
