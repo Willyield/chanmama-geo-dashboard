@@ -416,7 +416,7 @@
         <div class="brief-title" id="briefTitle"></div>
         <div class="brief-note" id="briefNote"></div>
       </div>
-      <div class="brief-status"><span>GEO 健康度</span><strong id="briefTotal">288/576</strong><span id="briefStatusNote">Day 1 阶段结果</span></div>
+      <div class="brief-status"><span>GEO 健康度</span><strong id="briefTotal">576/576</strong><span id="briefStatusNote">全量复测 · 最终结果</span></div>
     </div>
 
     <div class="executive-grid" id="kpiGrid"></div>
@@ -427,7 +427,7 @@
           <div class="brand-metrics-kicker">FEIGUA DATA</div>
           <h2 class="brand-metrics-title" id="feiguaMetricsTitle">飞瓜数据表现</h2>
         </div>
-        <div class="section-note">Day 1 阶段性 288/576 · 非正式检查点</div>
+        <div class="section-note">第三轮最终 576/576 · 冻结终版</div>
       </div>
       <div class="executive-grid" id="feiguaGrid"></div>
     </section>
@@ -443,7 +443,7 @@
     <section>
       <div class="section-head">
         <h2>第三轮采样进度</h2>
-        <div class="section-note">Day 1 已完成 288 条；剩余 288 个计划位不进入指标分母</div>
+        <div class="section-note">Day 1 与 Day 2 各 288 条，合计 576 条全部完成</div>
       </div>
       <div class="progress-grid" id="progressGrid"></div>
     </section>
@@ -469,8 +469,8 @@
 
     <section id="compareSection">
       <div class="section-head">
-        <h2>Day 1 问题状态</h2>
-        <div class="section-note">阶段状态仅基于 Day 1 每题 3 条样本，不代表 576 条最终判断</div>
+        <h2>第三轮最终问题状态</h2>
+        <div class="section-note">达标门槛：提及 ≥ 5/6、首推 ≥ 4/6、优势表达 ≥ 4/6</div>
       </div>
       <div class="split-grid">
         <div><div class="bar-list" id="statusBars"></div></div>
@@ -489,14 +489,14 @@
 
     <section>
       <div class="section-head">
-        <h2>Day 1 逐问题结果</h2>
+        <h2>第三轮逐问题结果</h2>
         <div class="section-note" id="questionCount"></div>
       </div>
       <div class="filters">
         <label>关键词<input id="questionSearch" type="search" placeholder="搜索关键词或问题"></label>
         <label>优先级<select id="priorityFilter"><option value="">全部</option></select></label>
         <label>分类<select id="categoryFilter"><option value="">全部</option></select></label>
-        <label>Day 1 状态<select id="statusFilter"><option value="">全部</option></select></label>
+        <label>第三轮状态<select id="statusFilter"><option value="">全部</option></select></label>
       </div>
       <div class="table-wrap">
         <table>
@@ -508,7 +508,7 @@
 
     <section>
       <div class="section-head">
-        <h2>第三轮 Day 1 样本明细</h2>
+        <h2>第三轮最终样本明细</h2>
         <div class="section-note" id="sampleCount"></div>
       </div>
       <div class="table-wrap">
@@ -581,11 +581,11 @@
         `平台：${esc(summary.platform)}`
       ].map(item => `<span>${item}</span>`).join('');
 
-      document.getElementById('briefLabel').textContent = '阶段判断 / 第三轮 Day 1';
-      document.getElementById('briefTitle').textContent = `Day 1 已完成 ${summary.valid_sample_count || 0} 条有效样本，仅用于阶段判断。`;
-      document.getElementById('briefNote').textContent = `Day 1 阶段性 288/576；非正式 300 检查点，非最终页。剩余 288 个计划位不进入指标分母。`;
+      document.getElementById('briefLabel').textContent = '最终判断 / 第三轮全量采样';
+      document.getElementById('briefTitle').textContent = `${summary.valid_sample_count || 0} 条有效样本已全部完成，六项核心指标为第三轮冻结终版。`;
+      document.getElementById('briefNote').textContent = `最终 576/576；来源状态完整 576 条，失败与未决均为 0。`;
       document.getElementById('briefTotal').textContent = `${summary.valid_sample_count || 0}/${summary.planned_sample_count || 0}`;
-      document.getElementById('briefStatusNote').textContent = 'Day 1 阶段结果';
+      document.getElementById('briefStatusNote').textContent = '全量复测 · 最终结果';
 
       const evidenceRows = rows => `<ul class="evidence-list">${rows.map(([label, value]) => `<li><span>${esc(label)}</span><span>${esc(value)}</span></li>`).join('')}</ul>`;
       const executiveCard = ({ title, tone, badge, metric, count, baseline, change, rule, readout, contract, tooltipKey }) => `<article class="exec-card ${tone}">
@@ -601,14 +601,14 @@
           metric: metricPct(round2Metrics.mention), count: `${metricCount(round2Metrics.mention)} 条有效回答`,
           baseline: `${metricPct(baselineMetrics.mention)} · ${metricCount(baselineMetrics.mention)}`,
           change: metricDelta(metricDeltas.mention), rule: round2Metrics.mention.ruleVersion,
-          readout: '蝉妈妈在 Day 1 有效回答中的品牌可见度。', contract: round2Metrics.mention
+          readout: '蝉妈妈在第三轮 576 条有效回答中的品牌可见度。', contract: round2Metrics.mention
         },
         {
           title: '普通首推率', tone: 'warn', badge: '继续提升',
           metric: metricPct(round2Metrics.ordinaryFirst), count: `${metricCount(round2Metrics.ordinaryFirst)} 条有效回答`,
           baseline: `${metricPct(baselineMetrics.ordinaryFirst)} · ${metricCount(baselineMetrics.ordinaryFirst)}`,
           change: metricDelta(metricDeltas.ordinaryFirst), rule: round2Metrics.ordinaryFirst.ruleVersion,
-          readout: 'Day 1 原始推荐顺序中的第一推荐占比。', contract: round2Metrics.ordinaryFirst
+          readout: '第三轮原始推荐顺序中的第一推荐占比。', contract: round2Metrics.ordinaryFirst
         },
         {
           title: '有效首推率', tone: 'ok', badge: '第三方首位',
@@ -629,14 +629,14 @@
           metric: metricPct(round2Metrics.top3), count: `${metricCount(round2Metrics.top3)} 条有效回答`,
           baseline: `${metricPct(baselineMetrics.top3)} · ${metricCount(baselineMetrics.top3)}`,
           change: metricDelta(metricDeltas.top3), rule: round2Metrics.top3.ruleVersion,
-          readout: 'Day 1 进入前三的阶段性表现。', contract: round2Metrics.top3
+          readout: '第三轮进入前三的最终表现。', contract: round2Metrics.top3
         },
         {
           title: '平均排名', tone: 'ok', badge: '数值越低越好',
           metric: preciseRank(round2Metrics.averageRank.value), count: `${number(round2Metrics.averageRank.denominator)} 条提及样本`,
           baseline: `${preciseRank(baselineMetrics.averageRank.value)} · ${number(baselineMetrics.averageRank.denominator)} 条`,
           change: `改善 ${preciseRank(authoritative.averageRankImprovement)}`, rule: round2Metrics.averageRank.ruleVersion,
-          readout: 'Day 1 平均排名；数值越低代表推荐位置越靠前。', contract: round2Metrics.averageRank
+          readout: '第三轮平均排名；数值越低代表推荐位置越靠前。', contract: round2Metrics.averageRank
         }
       ];
       document.getElementById('kpiGrid').innerHTML = cards.map(executiveCard).join('');
@@ -657,7 +657,7 @@
           metric: metricPct(feiguaRound2.mention), count: `${metricCount(feiguaRound2.mention)} 条有效样本`,
           baseline: `${metricPct(feiguaBaseline.mention)} · ${metricCount(feiguaBaseline.mention)}`,
           change: pointDelta(feiguaDeltas.mention), rule: feiguaRound2.mention.ruleVersion,
-          readout: '飞瓜数据在 Day 1 有效回答中的品牌可见度。',
+          readout: '飞瓜数据在第三轮 576 条有效回答中的品牌可见度。',
           contract: feiguaContract('mention', '提及率', '有效回答的工具推荐顺序中出现飞瓜数据的样本数 / 全部有效样本数'), tooltipKey: 'feigua-mention',
         },
         {
@@ -702,7 +702,7 @@
         },
       ];
       document.getElementById('feiguaGrid').innerHTML = feiguaCards.map(executiveCard).join('');
-      document.getElementById('actionNote').textContent = `Day 1 阶段性 ${number(summary.valid_sample_count)}/${number(summary.planned_sample_count)}；指标仅使用 288 条有效样本。`;
+      document.getElementById('actionNote').textContent = `第三轮 ${number(summary.valid_sample_count)}/${number(summary.planned_sample_count)} 条全部完成，六项指标均使用冻结终版口径。`;
       document.getElementById('actionList').innerHTML = [
         '补强“为什么首推蝉妈妈”的推荐理由',
         '把高提及进一步转化为普通首推',
@@ -780,7 +780,7 @@
           const performance = `提及：${row.mentioned_chanmama || '—'}\n普通首推：${row.chanmama_is_first || '—'}\n排名：${row.chanmama_rank || '—'}\n严格优势表达：${row.chanmama_advantage_explicit || '—'}`;
           const sourceCounts = '引用归因不在本任务范围';
           return `<tr><td>${esc(row.sample_id)}<br>${esc(row.sample_date)}</td><td>${esc(row.sampling_cadence)}</td><td class="question-cell">${esc(row.question_text)}</td><td>${status(capture === 'captured' || capture === 'no_references' ? '通过' : capture === 'failed' ? '采样失败' : '待采样')}</td><td style="white-space:pre-wrap">${esc(performance)}</td><td class="url-cell">${esc(sourceCounts)}</td><td class="answer-cell">${esc(row.answer_text)}</td></tr>`;
-        }).join('') : '<tr><td colspan="7" class="empty">Day 1 尚无有效样本</td></tr>';
+        }).join('') : '<tr><td colspan="7" class="empty">第三轮尚无有效样本</td></tr>';
         document.getElementById('samplePage').textContent = `${samples.length ? samplePageIndex + 1 : 0}/${samples.length ? totalPages : 0}`;
         document.getElementById('samplePrev').disabled = samplePageIndex === 0;
         document.getElementById('sampleNext').disabled = samplePageIndex >= totalPages - 1 || !samples.length;
