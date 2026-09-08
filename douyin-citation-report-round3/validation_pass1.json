@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "checks": {
+    "source_hashes": true,
+    "source_samples_576": true,
+    "source_citations_11448": true,
+    "deduplicated_events_11426": true,
+    "event_ids_unique": true,
+    "summary_final_contract": true,
+    "official_main_44": true,
+    "employee_accounts_14": true,
+    "employee_collection_1014": true,
+    "employee_exact_video_events_687": true,
+    "employee_unique_videos_105": true,
+    "internal_links_183": true,
+    "internal_content_evidence": true,
+    "public_page_evidence_73_5": true,
+    "all_internal_links_have_topic_and_questions": true
+  },
+  "sourceHashes": {
+    "D:\\工作\\蝉妈妈\\geo-dashboard\\runs\\geo-round3-20260907-r1\\releases\\checkpoint-576\\package-manifest.json": true,
+    "D:\\工作\\蝉妈妈\\geo-dashboard\\runs\\geo-round3-20260907-r1\\releases\\checkpoint-576\\data\\samples.csv": true,
+    "D:\\工作\\蝉妈妈\\geo-dashboard\\runs\\geo-round3-20260907-r1\\releases\\checkpoint-576\\data\\source_citations.csv": true,
+    "D:\\工作\\蝉妈妈\\geo-dashboard\\runs\\geo-round3-20260907-r1\\releases\\checkpoint-576\\data\\questions.csv": true
+  }
+}

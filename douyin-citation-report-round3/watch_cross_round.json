@@ -1,0 +1,314 @@
+[
+  {
+    "site_key": "biemoyu.com",
+    "round1": {
+      "citation_events": 0,
+      "unique_pages": 0,
+      "answers": 0,
+      "questions": 0,
+      "first_citations": 0,
+      "sample_rate_pct": 0.0,
+      "question_rate_pct": 0.0
+    },
+    "round2": {
+      "citation_events": 17,
+      "unique_pages": 3,
+      "answers": 16,
+      "questions": 13,
+      "first_citations": 1,
+      "sample_rate_pct": 2.78,
+      "question_rate_pct": 13.54
+    },
+    "round3_final_576": {
+      "site_key": "biemoyu.com",
+      "citation_events": 0,
+      "unique_pages": 0,
+      "answers": 0,
+      "questions": 0,
+      "first_citations": 0,
+      "sample_rate_pct": 0.0,
+      "question_rate_pct": 0.0,
+      "verified_content_citation_events": 0,
+      "verified_content_unique_pages": 0,
+      "verified_content_answers": 0,
+      "verified_content_questions": 0,
+      "verified_content_first_citations": 0,
+      "page_evidence_status": "无命中页面"
+    },
+    "round2_vs_round1": "新增",
+    "round3_vs_round2": "未增加"
+  },
+  {
+    "site_key": "feizhuke.com",
+    "round1": {
+      "citation_events": 0,
+      "unique_pages": 0,
+      "answers": 0,
+      "questions": 0,
+      "first_citations": 0,
+      "sample_rate_pct": 0.0,
+      "question_rate_pct": 0.0
+    },
+    "round2": {
+      "citation_events": 0,
+      "unique_pages": 0,
+      "answers": 0,
+      "questions": 0,
+      "first_citations": 0,
+      "sample_rate_pct": 0.0,
+      "question_rate_pct": 0.0
+    },
+    "round3_final_576": {
+      "site_key": "feizhuke.com",
+      "citation_events": 0,
+      "unique_pages": 0,
+      "answers": 0,
+      "questions": 0,
+      "first_citations": 0,
+      "sample_rate_pct": 0.0,
+      "question_rate_pct": 0.0,
+      "verified_content_citation_events": 0,
+      "verified_content_unique_pages": 0,
+      "verified_content_answers": 0,
+      "verified_content_questions": 0,
+      "verified_content_first_citations": 0,
+      "page_evidence_status": "无命中页面"
+    },
+    "round2_vs_round1": "未增加",
+    "round3_vs_round2": "未增加"
+  },
+  {
+    "site_key": "ai-tab.cn",
+    "round1": {
+      "citation_events": 0,
+      "unique_pages": 0,
+      "answers": 0,
+      "questions": 0,
+      "first_citations": 0,
+      "sample_rate_pct": 0.0,
+      "question_rate_pct": 0.0
+    },
+    "round2": {
+      "citation_events": 6,
+      "unique_pages": 1,
+      "answers": 6,
+      "questions": 4,
+      "first_citations": 0,
+      "sample_rate_pct": 1.04,
+      "question_rate_pct": 4.17
+    },
+    "round3_final_576": {
+      "site_key": "ai-tab.cn",
+      "citation_events": 0,
+      "unique_pages": 0,
+      "answers": 0,
+      "questions": 0,
+      "first_citations": 0,
+      "sample_rate_pct": 0.0,
+      "question_rate_pct": 0.0,
+      "verified_content_citation_events": 0,
+      "verified_content_unique_pages": 0,
+      "verified_content_answers": 0,
+      "verified_content_questions": 0,
+      "verified_content_first_citations": 0,
+      "page_evidence_status": "无命中页面"
+    },
+    "round2_vs_round1": "新增",
+    "round3_vs_round2": "未增加"
+  },
+  {
+    "site_key": "ai-321.cn",
+    "round1": {
+      "citation_events": 0,
+      "unique_pages": 0,
+      "answers": 0,
+      "questions": 0,
+      "first_citations": 0,
+      "sample_rate_pct": 0.0,
+      "question_rate_pct": 0.0
+    },
+    "round2": {
+      "citation_events": 3,
+      "unique_pages": 1,
+      "answers": 3,
+      "questions": 3,
+      "first_citations": 1,
+      "sample_rate_pct": 0.52,
+      "question_rate_pct": 3.12
+    },
+    "round3_final_576": {
+      "site_key": "ai-321.cn",
+      "citation_events": 0,
+      "unique_pages": 0,
+      "answers": 0,
+      "questions": 0,
+      "first_citations": 0,
+      "sample_rate_pct": 0.0,
+      "question_rate_pct": 0.0,
+      "verified_content_citation_events": 0,
+      "verified_content_unique_pages": 0,
+      "verified_content_answers": 0,
+      "verified_content_questions": 0,
+      "verified_content_first_citations": 0,
+      "page_evidence_status": "无命中页面"
+    },
+    "round2_vs_round1": "新增",
+    "round3_vs_round2": "未增加"
+  },
+  {
+    "site_key": "yun88.com",
+    "round1": {
+      "citation_events": 11,
+      "unique_pages": 9,
+      "answers": 11,
+      "questions": 9,
+      "first_citations": 0,
+      "sample_rate_pct": 1.91,
+      "question_rate_pct": 9.38
+    },
+    "round2": {
+      "citation_events": 22,
+      "unique_pages": 5,
+      "answers": 22,
+      "questions": 19,
+      "first_citations": 0,
+      "sample_rate_pct": 3.82,
+      "question_rate_pct": 19.79
+    },
+    "round3_final_576": {
+      "site_key": "yun88.com",
+      "citation_events": 34,
+      "unique_pages": 3,
+      "answers": 34,
+      "questions": 21,
+      "first_citations": 0,
+      "sample_rate_pct": 5.9,
+      "question_rate_pct": 21.88,
+      "verified_content_citation_events": 0,
+      "verified_content_unique_pages": 0,
+      "verified_content_answers": 0,
+      "verified_content_questions": 0,
+      "verified_content_first_citations": 0,
+      "page_evidence_status": "页面内容待核验"
+    },
+    "round2_vs_round1": "增加",
+    "round3_vs_round2": "增加"
+  },
+  {
+    "site_key": "tmhzz.com",
+    "round1": {
+      "citation_events": 1,
+      "unique_pages": 1,
+      "answers": 1,
+      "questions": 1,
+      "first_citations": 0,
+      "sample_rate_pct": 0.17,
+      "question_rate_pct": 1.04
+    },
+    "round2": {
+      "citation_events": 0,
+      "unique_pages": 0,
+      "answers": 0,
+      "questions": 0,
+      "first_citations": 0,
+      "sample_rate_pct": 0.0,
+      "question_rate_pct": 0.0
+    },
+    "round3_final_576": {
+      "site_key": "tmhzz.com",
+      "citation_events": 0,
+      "unique_pages": 0,
+      "answers": 0,
+      "questions": 0,
+      "first_citations": 0,
+      "sample_rate_pct": 0.0,
+      "question_rate_pct": 0.0,
+      "verified_content_citation_events": 0,
+      "verified_content_unique_pages": 0,
+      "verified_content_answers": 0,
+      "verified_content_questions": 0,
+      "verified_content_first_citations": 0,
+      "page_evidence_status": "无命中页面"
+    },
+    "round2_vs_round1": "未增加",
+    "round3_vs_round2": "未增加"
+  },
+  {
+    "site_key": "aidhplus.com/twinny",
+    "round1": {
+      "citation_events": 0,
+      "unique_pages": 0,
+      "answers": 0,
+      "questions": 0,
+      "first_citations": 0,
+      "sample_rate_pct": 0.0,
+      "question_rate_pct": 0.0
+    },
+    "round2": {
+      "citation_events": 0,
+      "unique_pages": 0,
+      "answers": 0,
+      "questions": 0,
+      "first_citations": 0,
+      "sample_rate_pct": 0.0,
+      "question_rate_pct": 0.0
+    },
+    "round3_final_576": {
+      "site_key": "aidhplus.com/twinny",
+      "citation_events": 0,
+      "unique_pages": 0,
+      "answers": 0,
+      "questions": 0,
+      "first_citations": 0,
+      "sample_rate_pct": 0.0,
+      "question_rate_pct": 0.0,
+      "verified_content_citation_events": 0,
+      "verified_content_unique_pages": 0,
+      "verified_content_answers": 0,
+      "verified_content_questions": 0,
+      "verified_content_first_citations": 0,
+      "page_evidence_status": "无命中页面"
+    },
+    "round2_vs_round1": "未增加",
+    "round3_vs_round2": "未增加"
+  },
+  {
+    "site_key": "aiproducthub.cn",
+    "round1": {
+      "citation_events": 47,
+      "unique_pages": 2,
+      "answers": 46,
+      "questions": 28,
+      "first_citations": 5,
+      "sample_rate_pct": 7.99,
+      "question_rate_pct": 29.17
+    },
+    "round2": {
+      "citation_events": 146,
+      "unique_pages": 9,
+      "answers": 114,
+      "questions": 63,
+      "first_citations": 2,
+      "sample_rate_pct": 19.79,
+      "question_rate_pct": 65.62
+    },
+    "round3_final_576": {
+      "site_key": "aiproducthub.cn",
+      "citation_events": 90,
+      "unique_pages": 7,
+      "answers": 71,
+      "questions": 34,
+      "first_citations": 0,
+      "sample_rate_pct": 12.33,
+      "question_rate_pct": 35.42,
+      "verified_content_citation_events": 0,
+      "verified_content_unique_pages": 0,
+      "verified_content_answers": 0,
+      "verified_content_questions": 0,
+      "verified_content_first_citations": 0,
+      "page_evidence_status": "页面内容待核验"
+    },
+    "round2_vs_round1": "增加",
+    "round3_vs_round2": "未增加"
+  }
+]
