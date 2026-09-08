@@ -650,7 +650,7 @@
         denominator: key === 'rank' ? feiguaRound2.rank.count : feiguaRound2[key].denominator,
         definition,
       });
-      const pointDelta = value => `${Number(value) > 0 ? '+' : ''}${Number(value).toFixed(2)} 个百分点`;
+      const pointDelta = value => `${Number(value) > 0 ? '+' : ''}${Number(value).toFixed(2)}%`;
       const feiguaCards = [
         {
           title: '提及率', tone: 'info', badge: '可见度提升',
