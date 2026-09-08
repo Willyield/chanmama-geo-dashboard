@@ -6,7 +6,7 @@
   <meta name="color-scheme" content="light">
   <link rel="icon" href="data:,">
   <title>豆包第三轮引用源分析 | 最终 576/576 已核验</title>
-  <link rel="stylesheet" href="./assets/platform-shell.css?v=20260819-workbench3">
+  <link rel="stylesheet" href="./assets/platform-shell.css?v=20260908-r3compare">
   <style>
     :root {
       --ink: #151f2a;
@@ -85,7 +85,6 @@
     .method-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 24px; color: #475569; font-size: 13px; }
     .method-grid p { margin: 0; }
     .method-grid b { color: var(--ink); }
-    .comparison-overview-table { min-width: 1120px; }
     .metric-stack { display: grid; justify-items: end; gap: 2px; min-width: 112px; }
     .metric-primary { color: var(--ink); font: 700 14px/1.35 var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
     .metric-secondary { color: var(--muted); font-size: 12px; white-space: nowrap; }
@@ -205,7 +204,6 @@
     <nav class="side-nav" aria-label="报告目录">
       <p class="nav-label">Report Index</p>
       <a href="#overview" class="active">核心结论</a>
-      <a href="#comparison">两轮对比</a>
       <a href="#freshness">内容新旧</a>
       <a href="#question-types">问题类型</a>
       <a href="#sources">来源结构</a>
@@ -236,24 +234,6 @@
           <article class="kpi"><div class="kpi-label">唯一抖音视频</div><strong class="kpi-value" id="kpi-unique-videos">-</strong><div class="kpi-meta">按具体视频 ID 去重</div></article>
         </div>
         <div class="conclusion"><div class="conclusion-label">一句话结论</div><p class="conclusion-text" id="one-line">数据加载中。</p></div>
-      </section>
-
-      <section class="report-section" id="comparison">
-        <div class="section-head"><div><span class="section-number">02</span><h2>第一轮 vs 第二轮引用源</h2></div><p class="section-note">两轮均使用完整 576 个样本。绝对量、样本率和问题率按各自冻结包独立重算，不累计检查点。</p></div>
-        <div class="panel"><h3>自有账号总览</h3><div class="method-note" id="owned-method-note"><strong>口径说明</strong><div class="method-grid"><p><b>自有账号引用</b> = 高置信归属 + 中置信归属；分母“全部引用”是各轮冻结引用记录总量。</p><p><b>样本引用率</b> = 命中样本 ÷ 576 个完整有效样本。</p><p><b>归属置信度不是回答可信度</b>，也不评价文章质量或事实准确性。</p><p><b>高置信归属</b>使用账号/作者 ID 或 contentId 的确定性匹配；<b>中置信归属</b>仅有标题尾部账号名精确匹配，仍缺账号快照或作者页确认；<b>归属未解决</b>不计入自有账号引用。</p></div></div><div class="table-wrap"><table class="comparison-overview-table" aria-describedby="owned-method-note"><thead><tr><th>轮次</th><th class="numeric">自有账号引用 / 全部引用</th><th class="numeric">唯一自有文章</th><th class="numeric">命中样本 / 全部样本</th><th class="numeric">样本引用率</th><th class="numeric">高置信归属</th><th class="numeric">中置信归属</th><th class="numeric">归属未解决</th></tr></thead><tbody id="comparison-owned-total-body"></tbody></table></div></div>
-        <div class="panel" style="margin-top:16px">
-          <h3>官网引用对比</h3>
-          <div class="kpi-grid" id="comparison-official-cards"></div>
-          <div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>来源</th><th class="numeric">第一轮引用</th><th class="numeric">第一轮页面</th><th class="numeric">第一轮样本</th><th class="numeric">第一轮样本率</th><th class="numeric">第一轮问题</th><th class="numeric">第一轮问题率</th><th class="numeric">第二轮引用</th><th class="numeric">第二轮页面</th><th class="numeric">第二轮样本</th><th class="numeric">第二轮样本率</th><th class="numeric">第二轮问题</th><th class="numeric">第二轮问题率</th></tr></thead><tbody id="comparison-official-body"></tbody></table></div>
-          <div class="notice"><strong>互斥与并集：</strong>Open、运营圈、蝉妈妈官网和其他官方子域互斥；“蝉妈妈官方域合计”按引用 ID、规范 URL、样本 ID、问题 ID 分别取并集，不能直接相加样本数或百分比。</div>
-        </div>
-        <div class="panel" style="margin-top:16px"><h3>来源域名变化</h3><div class="table-wrap"><table><thead><tr><th>域名</th><th class="numeric">第一轮引用</th><th class="numeric">第一轮占比</th><th class="numeric">第二轮引用</th><th class="numeric">第二轮占比</th><th class="numeric">变化</th></tr></thead><tbody id="comparison-domain-body"></tbody></table></div></div>
-        <div class="two-col" style="margin-top:16px">
-          <div class="panel"><h3>来源类型变化</h3><div class="table-wrap"><table><thead><tr><th>类型</th><th class="numeric">第一轮</th><th class="numeric">第二轮</th><th class="numeric">变化</th></tr></thead><tbody id="comparison-platform-body"></tbody></table></div></div>
-          <div class="panel"><h3>四类问题变化</h3><div class="table-wrap"><table><thead><tr><th>问题类型</th><th class="numeric">第一轮回答覆盖</th><th class="numeric">第二轮回答覆盖</th><th class="numeric">变化</th></tr></thead><tbody id="comparison-question-body"></tbody></table></div></div>
-        </div>
-        <div class="panel" style="margin-top:16px"><h3>11 个自有账号同口径对比</h3><div class="table-wrap"><table><thead><tr><th>账号</th><th>平台</th><th class="numeric">第一轮引用</th><th class="numeric">第一轮文章</th><th class="numeric">第一轮样本</th><th class="numeric">第一轮样本率</th><th class="numeric">第一轮问题</th><th class="numeric">第一轮问题率</th><th class="numeric">第二轮引用</th><th class="numeric">第二轮文章</th><th class="numeric">第二轮样本</th><th class="numeric">第二轮样本率</th><th class="numeric">第二轮问题</th><th class="numeric">第二轮问题率</th></tr></thead><tbody id="comparison-account-body"></tbody></table></div></div>
-        <div class="notice" id="comparison-freshness-note"><strong>内容新旧度：</strong>加载中。</div>
       </section>
 
       <section class="report-section" id="freshness">
@@ -442,34 +422,6 @@
     setText('publish-coverage', `${number(coverage.publish_time_known)} / ${number(coverage.publish_time_total)}`);
     setText('video-publish-coverage', `${number(coverage.account_metadata_known)} / ${number(coverage.douyin_unique_videos)}`);
 
-    const comparison = report.comparison || {};
-    const delta = value => `${Number(value || 0) > 0 ? '+' : ''}${Number(value || 0).toFixed(2)}%`;
-    const comparisonOwnedTotalBody = $('comparison-owned-total-body');
-    [['第一轮 576/576', comparison.owned_totals?.round1, 9936], ['第二轮最终 576/576', comparison.owned_totals?.round2, 11943]].forEach(([label, item, allCitations]) => {
-      if (!item) return; const row = document.createElement('tr'); appendCell(row, label); appendMetricCell(row, `${number(item.citation_events)} / ${number(allCitations)}`, `占全部引用 ${pct(item.citation_events / allCitations * 100)}`); appendMetricCell(row, `${number(item.unique_articles)} 篇`); appendMetricCell(row, `${number(item.answers)} / 576`); appendMetricCell(row, pct(item.sample_rate_pct), '命中样本 ÷ 576'); appendMetricCell(row, number(item.high_confidence_events)); appendMetricCell(row, number(item.medium_confidence_events)); appendMetricCell(row, number(item.unresolved_events), '不计入自有账号引用'); comparisonOwnedTotalBody.appendChild(row);
-    });
-    const comparisonOfficialBody = $('comparison-official-body');
-    const officialItems = comparison.official_sources || [];
-    const officialCards = $('comparison-official-cards');
-    officialItems.filter(item => item.key !== 'feigua_official').forEach(item => {
-      const card = document.createElement('article'); card.className = 'kpi';
-      const label = document.createElement('div'); label.className = 'kpi-label'; label.textContent = item.label;
-      const value = document.createElement('strong'); value.className = 'kpi-value'; value.textContent = number(item.round2.citation_events);
-      const meta = document.createElement('div'); meta.className = 'kpi-meta'; meta.textContent = `第一轮 ${number(item.round1.citation_events)} → 第二轮 ${number(item.round2.citation_events)} · 样本率 ${pct(item.round2.sample_rate_pct)} · 问题率 ${pct(item.round2.question_rate_pct)}`;
-      card.append(label, value, meta); officialCards.appendChild(card);
-    });
-    officialItems.forEach(item => { const row = document.createElement('tr'); appendCell(row, item.label); appendCell(row, number(item.round1.citation_events), 'numeric'); appendCell(row, number(item.round1.unique_pages), 'numeric'); appendCell(row, number(item.round1.answers), 'numeric'); appendCell(row, pct(item.round1.sample_rate_pct), 'numeric'); appendCell(row, number(item.round1.questions), 'numeric'); appendCell(row, pct(item.round1.question_rate_pct), 'numeric'); appendCell(row, number(item.round2.citation_events), 'numeric'); appendCell(row, number(item.round2.unique_pages), 'numeric'); appendCell(row, number(item.round2.answers), 'numeric'); appendCell(row, pct(item.round2.sample_rate_pct), 'numeric'); appendCell(row, number(item.round2.questions), 'numeric'); appendCell(row, pct(item.round2.question_rate_pct), 'numeric'); comparisonOfficialBody.appendChild(row); });
-    const comparisonDomainBody = $('comparison-domain-body');
-    (comparison.domains || []).forEach(item => { const row = document.createElement('tr'); appendCell(row, item.label); appendCell(row, number(item.round1_events), 'numeric'); appendCell(row, pct(item.round1_share_pct), 'numeric'); appendCell(row, number(item.round2_events), 'numeric'); appendCell(row, pct(item.round2_share_pct), 'numeric'); appendCell(row, delta(item.delta_pp), 'numeric'); comparisonDomainBody.appendChild(row); });
-    const comparisonPlatformBody = $('comparison-platform-body');
-    (comparison.platforms || []).forEach(item => { const row = document.createElement('tr'); appendCell(row, item.label); appendCell(row, pct(item.round1_share_pct), 'numeric'); appendCell(row, pct(item.round2_share_pct), 'numeric'); appendCell(row, delta(item.delta_pp), 'numeric'); comparisonPlatformBody.appendChild(row); });
-    const comparisonQuestionBody = $('comparison-question-body');
-    (comparison.question_types || []).forEach(item => { const row = document.createElement('tr'); appendCell(row, item.label); appendCell(row, pct(item.round1_answer_rate_pct), 'numeric'); appendCell(row, pct(item.round2_answer_rate_pct), 'numeric'); appendCell(row, delta(item.delta_pp), 'numeric'); comparisonQuestionBody.appendChild(row); });
-    const comparisonAccountBody = $('comparison-account-body');
-    (comparison.owned_accounts || []).forEach(item => { const row = document.createElement('tr'); appendCell(row, item.label); appendCell(row, item.platform); appendCell(row, number(item.round1_events), 'numeric'); appendCell(row, number(item.round1_articles), 'numeric'); appendCell(row, number(item.round1_answers), 'numeric'); appendCell(row, pct(item.round1_sample_rate_pct), 'numeric'); appendCell(row, number(item.round1_questions), 'numeric'); appendCell(row, pct(item.round1_question_rate_pct), 'numeric'); appendCell(row, number(item.round2_events), 'numeric'); appendCell(row, number(item.round2_articles), 'numeric'); appendCell(row, number(item.round2_answers), 'numeric'); appendCell(row, pct(item.round2_sample_rate_pct), 'numeric'); appendCell(row, number(item.round2_questions), 'numeric'); appendCell(row, pct(item.round2_question_rate_pct), 'numeric'); comparisonAccountBody.appendChild(row); });
-    const freshness = comparison.freshness || {};
-    setText('comparison-freshness-note', `内容新旧度：第一轮发布时间覆盖 ${number(freshness.round1_publish_time_known)}/${number(freshness.round1_publish_time_total)}（${pct(freshness.round1_publish_time_coverage_pct)}），内容年龄中位数 ${number(freshness.round1_median_age_days)} 天；第二轮发布时间覆盖 ${number(freshness.round2_publish_time_known)}/${number(freshness.round2_publish_time_total)}，未采集，不能比较新旧变化。`);
-
     const questionBody = $('question-type-body');
     (report.question_types || []).forEach(item => {
       const row = document.createElement('tr');
@@ -578,6 +530,6 @@
     $('print-report').addEventListener('click', () => window.print()); const backTop = $('back-top'); window.addEventListener('scroll', () => backTop.classList.toggle('visible', window.scrollY > 700), { passive: true }); backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     renderPartners(); renderSourceUrls(); renderInternalLinks();
   </script>
-  <script defer src="./assets/platform-shell.js?v=20260819-workbench3" data-root="../" data-section="citation" data-label="第三轮引用源"></script>
+  <script defer src="./assets/platform-shell.js?v=20260908-r3compare" data-root="../" data-section="citation" data-label="第三轮引用源"></script>
 </body>
 </html>

@@ -40,7 +40,6 @@
       '<button class="geo-shell-mobile-toggle" type="button" aria-expanded="false" aria-controls="geo-shell-nav" aria-label="打开导航">☰</button>' +
       '<nav class="geo-shell-nav" id="geo-shell-nav" aria-label="综合平台导航">' +
         '<a href="' + href("./") + '"' + current("overview") + '>工作台</a>' +
-        '<a href="' + href("./sampling/") + '"' + current("orchestration") + '>采样设置</a>' +
         '<details data-active="' + (section === "sampling") + '"><summary>GEO 样本</summary><div class="geo-shell-submenu">' +
           submenuLink("./top01/", "第一轮核心问题", "基线") +
           submenuLink("./top01-round2/", "第二轮复测", "最终 576/576") +
@@ -54,6 +53,12 @@
           submenuLink("./chanquanquan-citation-report/", "蝉圈圈引用源", "最终 730/730") +
           submenuLink("./chanmama-creative-citation-report/", "创意引用源", "540/540 · 待恢复 2") +
         '</div></details>' +
+        '<details data-active="' + (section === "comparison") + '"><summary>对比仪表盘</summary><div class="geo-shell-submenu">' +
+          submenuLink("./top01-two-week-compare/", "两轮采样对比", "第一轮 + 第二轮") +
+          submenuLink("./douyin-citation-report-round2/#comparison", "第二轮引用对比", "第一轮 + 第二轮") +
+          submenuLink("./top01-three-round-compare/", "三轮采样对比", "三轮各 576") +
+          submenuLink("./douyin-citation-report-three-round-compare/", "三轮引用源对比", "三轮全量重算") +
+        '</div></details>' +
         '<details data-active="' + (section === "product") + '"><summary>产品 GEO</summary><div class="geo-shell-submenu">' +
           submenuLink("./chanjing-ai/", "蝉镜 AI", "双端观察") +
           submenuLink("./chanquanquan-geo/", "蝉圈圈 GEO", "最终 730/730") +
@@ -62,6 +67,9 @@
         '<details data-active="' + (section === "operations") + '"><summary>运营工作台</summary><div class="geo-shell-submenu">' +
           submenuLink("./account-matrix/", "账号矩阵日报", "11 账号 · 463 内容") +
           submenuLink("./daily-hotspot/", "热点与行业活动", "10 候选 · 7 优先") +
+        '</div></details>' +
+        '<details data-active="' + (section === "more") + '"><summary>更多</summary><div class="geo-shell-submenu">' +
+          submenuLink("./chanmama-creative-geo/", "蝉妈妈创意 GEO", "首日 270/270") +
         '</div></details>' +
         '<a href="' + href("./#method") + '">方法与口径</a>' +
       '</nav>' +
