@@ -6,7 +6,7 @@
   <link rel="icon" href="data:,">
   <title>蝉妈妈 GEO TOP0/TOP1 第三轮采样</title>
   <link rel="stylesheet" href="../assets/platform-shell.css?v=20260819-workbench3">
-  <script defer src="./dashboard-data.js"></script>
+  <script defer src="./dashboard-data.js?v=20260908-unifiedrepair1"></script>
   <style>
     :root {
       --canvas: #f8fafc;
@@ -598,42 +598,42 @@
       const cards = [
         {
           title: '提及率', tone: 'info', badge: '阶段结果',
-          metric: metricPct(round2Metrics.mention), count: `${metricCount(round2Metrics.mention)} 条有效回答`,
+          metric: metricPct(round2Metrics.mention), count: `命中 ${number(round2Metrics.mention.count)} / 总样本 ${number(round2Metrics.mention.denominator)}`,
           baseline: `${metricPct(baselineMetrics.mention)} · ${metricCount(baselineMetrics.mention)}`,
           change: metricDelta(metricDeltas.mention), rule: round2Metrics.mention.ruleVersion,
           readout: '蝉妈妈在第三轮 576 条有效回答中的品牌可见度。', contract: round2Metrics.mention
         },
         {
           title: '普通首推率', tone: 'warn', badge: '继续提升',
-          metric: metricPct(round2Metrics.ordinaryFirst), count: `${metricCount(round2Metrics.ordinaryFirst)} 条有效回答`,
+          metric: metricPct(round2Metrics.ordinaryFirst), count: `命中 ${number(round2Metrics.ordinaryFirst.count)} / 总样本 ${number(round2Metrics.ordinaryFirst.denominator)}`,
           baseline: `${metricPct(baselineMetrics.ordinaryFirst)} · ${metricCount(baselineMetrics.ordinaryFirst)}`,
           change: metricDelta(metricDeltas.ordinaryFirst), rule: round2Metrics.ordinaryFirst.ruleVersion,
           readout: '第三轮原始推荐顺序中的第一推荐占比。', contract: round2Metrics.ordinaryFirst
         },
         {
           title: '有效首推率', tone: 'ok', badge: '第三方首位',
-          metric: metricPct(round2Metrics.effectiveFirst), count: `${metricCount(round2Metrics.effectiveFirst)} 条存在第三方候选的回答`,
+          metric: metricPct(round2Metrics.effectiveFirst), count: `命中 ${number(round2Metrics.effectiveFirst.count)} / 候选样本 ${number(round2Metrics.effectiveFirst.denominator)}（总样本 576）`,
           baseline: `${metricPct(baselineMetrics.effectiveFirst)} · ${metricCount(baselineMetrics.effectiveFirst)}`,
           change: metricDelta(metricDeltas.effectiveFirst), rule: 'effective-first-non-official-v2',
           readout: '移除抖音官方工具后，蝉妈妈在第三方候选中保持领先。', contract: round2Metrics.effectiveFirst
         },
         {
           title: '严格优势表达率', tone: 'info', badge: 'v2 口径',
-          metric: metricPct(round2Metrics.advantageExpression), count: `${metricCount(round2Metrics.advantageExpression)} 条有效回答`,
+          metric: metricPct(round2Metrics.advantageExpression), count: `命中 ${number(round2Metrics.advantageExpression.count)} / 总样本 ${number(round2Metrics.advantageExpression.denominator)}`,
           baseline: `${metricPct(baselineMetrics.advantageExpression)} · ${metricCount(baselineMetrics.advantageExpression)}`,
           change: metricDelta(metricDeltas.advantageExpression), rule: 'advantage-expression-v2',
           readout: '仅统计明确归属于蝉妈妈的正向能力、适配性、推荐理由或比较优势。', contract: round2Metrics.advantageExpression
         },
         {
           title: '前三率', tone: 'warn', badge: '保持稳定',
-          metric: metricPct(round2Metrics.top3), count: `${metricCount(round2Metrics.top3)} 条有效回答`,
+          metric: metricPct(round2Metrics.top3), count: `命中 ${number(round2Metrics.top3.count)} / 总样本 ${number(round2Metrics.top3.denominator)}`,
           baseline: `${metricPct(baselineMetrics.top3)} · ${metricCount(baselineMetrics.top3)}`,
           change: metricDelta(metricDeltas.top3), rule: round2Metrics.top3.ruleVersion,
           readout: '第三轮进入前三的最终表现。', contract: round2Metrics.top3
         },
         {
           title: '平均排名', tone: 'ok', badge: '数值越低越好',
-          metric: preciseRank(round2Metrics.averageRank.value), count: `${number(round2Metrics.averageRank.denominator)} 条提及样本`,
+          metric: preciseRank(round2Metrics.averageRank.value), count: `基于 ${number(round2Metrics.averageRank.denominator)} 个提及样本（总样本 576）`,
           baseline: `${preciseRank(baselineMetrics.averageRank.value)} · ${number(baselineMetrics.averageRank.denominator)} 条`,
           change: `改善 ${preciseRank(authoritative.averageRankImprovement)}`, rule: round2Metrics.averageRank.ruleVersion,
           readout: '第三轮平均排名；数值越低代表推荐位置越靠前。', contract: round2Metrics.averageRank
@@ -654,7 +654,7 @@
       const feiguaCards = [
         {
           title: '提及率', tone: 'info', badge: '可见度提升',
-          metric: metricPct(feiguaRound2.mention), count: `${metricCount(feiguaRound2.mention)} 条有效样本`,
+          metric: metricPct(feiguaRound2.mention), count: `命中 ${number(feiguaRound2.mention.count)} / 总样本 ${number(feiguaRound2.mention.denominator)}`,
           baseline: `${metricPct(feiguaBaseline.mention)} · ${metricCount(feiguaBaseline.mention)}`,
           change: pointDelta(feiguaDeltas.mention), rule: feiguaRound2.mention.ruleVersion,
           readout: '飞瓜数据在第三轮 576 条有效回答中的品牌可见度。',
@@ -662,31 +662,31 @@
         },
         {
           title: '普通首推率', tone: 'risk', badge: '首推下降',
-          metric: metricPct(feiguaRound2.ordinaryFirst), count: `${metricCount(feiguaRound2.ordinaryFirst)} 条有效样本`,
+          metric: metricPct(feiguaRound2.ordinaryFirst), count: `命中 ${number(feiguaRound2.ordinaryFirst.count)} / 总样本 ${number(feiguaRound2.ordinaryFirst.denominator)}`,
           baseline: `${metricPct(feiguaBaseline.ordinaryFirst)} · ${metricCount(feiguaBaseline.ordinaryFirst)}`,
           change: pointDelta(feiguaDeltas.ordinaryFirst), rule: feiguaRound2.ordinaryFirst.ruleVersion,
           readout: '原始推荐顺序中的第一推荐占比较第一轮下降。',
           contract: feiguaContract('ordinaryFirst', '普通首推率', '原始工具推荐顺序中飞瓜数据位于第一位的样本数 / 全部有效样本数'), tooltipKey: 'feigua-ordinary-first',
         },
         {
-          title: '有效首推率', tone: 'warn', badge: '数据不足',
-          metric: metricPct(feiguaRound2.effectiveFirst), count: `${metricCount(feiguaRound2.effectiveFirst)} 条存在第三方候选的回答`,
+          title: '有效首推率', tone: 'risk', badge: '第三方首位',
+          metric: metricPct(feiguaRound2.effectiveFirst), count: `命中 ${number(feiguaRound2.effectiveFirst.count)} / 候选样本 ${number(feiguaRound2.effectiveFirst.denominator)}（总样本 576）`,
           baseline: `${metricPct(feiguaBaseline.effectiveFirst)} · ${metricCount(feiguaBaseline.effectiveFirst)}`,
           change: pointDelta(feiguaDeltas.effectiveFirst), rule: feiguaRound2.effectiveFirst.ruleVersion,
-          readout: '冻结包未提供此项飞瓜数据指标，不作推算。',
+          readout: '移除抖音官方工具后，统计飞瓜数据在第三方候选中的首位占比。',
           contract: feiguaContract('effectiveFirst', '有效首推率', '移除抖音官方工具后，飞瓜数据位于剩余第三方候选第一位的样本数 / 存在可识别第三方候选的样本数'), tooltipKey: 'feigua-effective-first',
         },
         {
-          title: '严格优势表达率', tone: 'warn', badge: '数据不足',
-          metric: metricPct(feiguaRound2.advantageExpression), count: `${metricCount(feiguaRound2.advantageExpression)} 条有效样本`,
+          title: '严格优势表达率', tone: 'info', badge: 'v2 口径',
+          metric: metricPct(feiguaRound2.advantageExpression), count: `命中 ${number(feiguaRound2.advantageExpression.count)} / 总样本 ${number(feiguaRound2.advantageExpression.denominator)}`,
           baseline: `${metricPct(feiguaBaseline.advantageExpression)} · ${metricCount(feiguaBaseline.advantageExpression)}`,
           change: pointDelta(feiguaDeltas.advantageExpression), rule: feiguaRound2.advantageExpression.ruleVersion,
-          readout: '冻结包未提供此项飞瓜数据指标，不作推算。',
+          readout: '仅统计明确归属于飞瓜数据的正向能力、适配性、推荐理由或比较优势。',
           contract: feiguaContract('advantageExpression', '严格优势表达率', '回答把正向能力、适配性、推荐理由或比较优势明确归属于飞瓜数据的样本数 / 全部有效样本数；仅品牌提及、并列推荐、其他品牌优势或负向表述不计'), tooltipKey: 'feigua-advantage-expression',
         },
         {
           title: '前三率', tone: 'risk', badge: '前三占比下降',
-          metric: metricPct(feiguaRound2.top3), count: `${metricCount(feiguaRound2.top3)} 条有效样本`,
+          metric: metricPct(feiguaRound2.top3), count: `命中 ${number(feiguaRound2.top3.count)} / 总样本 ${number(feiguaRound2.top3.denominator)}`,
           baseline: `${metricPct(feiguaBaseline.top3)} · ${metricCount(feiguaBaseline.top3)}`,
           change: pointDelta(feiguaDeltas.top3), rule: feiguaRound2.top3.ruleVersion,
           readout: '飞瓜数据进入原始推荐顺序前三的占比较第一轮下降。',
@@ -694,7 +694,7 @@
         },
         {
           title: '平均排名', tone: 'risk', badge: '数值越低越好',
-          metric: preciseRank(feiguaRound2.rank.average), count: `${number(feiguaRound2.rank.count)} 条提及样本`,
+          metric: preciseRank(feiguaRound2.rank.average), count: `基于 ${number(feiguaRound2.rank.count)} 个提及样本（总样本 576）`,
           baseline: `${preciseRank(feiguaBaseline.rank.average)} · ${number(feiguaBaseline.rank.count)} 条`,
           change: `+${preciseRank(feiguaDeltas.rank)} · 变差`, rule: feiguaRound2.rank.ruleVersion,
           readout: '平均排名数值上升，推荐位置较第一轮后移。',
@@ -806,7 +806,7 @@
         renderSampleLoading();
         document.querySelector('script[data-dashboard-detail]')?.remove();
         const script = document.createElement('script');
-        script.src = './dashboard-detail-data.js';
+        script.src = './dashboard-detail-data.js?v=20260908-unifiedrepair1';
         script.async = true;
         script.dataset.dashboardDetail = 'true';
         script.onload = () => {
@@ -835,6 +835,6 @@
     })();
     });
   </script>
-  <script defer src="../assets/platform-shell.js?v=20260819-workbench3" data-root="../" data-section="sampling" data-label="第三轮采样"></script>
+  <script defer src="../assets/platform-shell.js?v=20260908-unifiedrepair1" data-root="../" data-section="sampling" data-label="第三轮采样"></script>
 </body>
 </html>
