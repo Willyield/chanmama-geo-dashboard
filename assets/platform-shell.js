@@ -43,17 +43,25 @@
         '<details data-active="' + (section === "sampling") + '"><summary>GEO 样本</summary><div class="geo-shell-submenu">' +
           submenuLink("./top01/", "第一轮核心问题", "基线") +
           submenuLink("./top01-round2/", "第二轮复测", "最终 576/576") +
+          submenuLink("./top01-round3/", "第三轮采样", "最终 576/576") +
           submenuLink("./top01-two-week-compare/", "两周趋势对比", "趋势") +
           submenuLink("./top2-top3/", "扩展问题", "TOP2+TOP3") +
           submenuLink("./total/", "全部问题总览", "TOP0-TOP3") +
-          submenuLink("./chanmama-bi/", "第三轮采样", "FULL 192/192") +
+          submenuLink("./chanmama-bi/", "第三轮历史快照", "历史 192/192") +
         '</div></details>' +
         '<details data-active="' + (section === "citation") + '"><summary>引用源</summary><div class="geo-shell-submenu">' +
           submenuLink("./douyin-citation-report/", "第一轮引用源", "基线") +
           submenuLink("./douyin-citation-report-round2/", "第二轮引用源", "最终 576/576") +
+          submenuLink("./douyin-citation-report-round3/", "第三轮引用源", "最终 576/576") +
           submenuLink("./chanquanquan-citation-report/", "蝉圈圈引用源", "最终 730/730") +
           submenuLink("./chanmama-creative-citation-report/", "创意引用源", "270 样本 · 1 待回答恢复") +
-          submenuLink("./chanmama-bi-citation/", "第三轮引用源", "191/192 含引用 · 3578 条") +
+          submenuLink("./chanmama-bi-citation/", "第三轮引用历史快照", "历史 191/192 · 3,578 条") +
+        '</div></details>' +
+        '<details data-active="' + (section === "comparison") + '"><summary>对比仪表盘</summary><div class="geo-shell-submenu">' +
+          submenuLink("./top01-two-week-compare/", "两轮采样对比", "第一轮 + 第二轮") +
+          submenuLink("./douyin-citation-report-round2/#comparison", "第二轮引用对比", "第一轮 + 第二轮") +
+          submenuLink("./top01-three-round-compare/", "三轮采样对比", "三轮各 576") +
+          submenuLink("./douyin-citation-report-three-round-compare/", "三轮引用源对比", "三轮全量重算") +
         '</div></details>' +
         '<details data-active="' + (section === "product") + '"><summary>产品 GEO</summary><div class="geo-shell-submenu">' +
           submenuLink("./chanjing-ai/", "蝉镜 AI", "双端观察") +

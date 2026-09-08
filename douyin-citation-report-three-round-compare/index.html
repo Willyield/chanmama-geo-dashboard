@@ -1,0 +1,191 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><link rel="icon" href="data:,"><title>豆包三轮引用源对比 | 最终 576/576</title><link rel="stylesheet" href="../assets/platform-shell.css?v=20260819-workbench3"><style>
+    :root {
+      --ink: #151f2a;
+      --muted: #64748b;
+      --line: #cbd5e1;
+      --line-soft: #dbe3ec;
+      --paper: #ffffff;
+      --surface: #f4f7fa;
+      --surface-strong: #eaf0f5;
+      --blue: #1e5fb8;
+      --blue-soft: #dce9f8;
+      --teal: #16857a;
+      --amber: #9a6700;
+      --red: #b84a42;
+      --sans: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+      --mono: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--surface); font-family: var(--sans); line-height: 1.6; }
+    button, input, select { font: inherit; }
+    a { color: var(--blue); }
+    .page-bar { background: var(--paper); border-bottom: 1px solid var(--line); }
+    .page-bar-inner { width: min(1900px, calc(100% - 64px)); margin: auto; padding: 14px 0; color: var(--muted); font-size: 14px; }
+    .page-bar a { text-decoration: none; }
+    .hero { background: var(--paper); border-bottom: 1px solid var(--line); }
+    .hero-inner { width: min(1500px, calc(100% - 64px)); margin: auto; padding: 54px 0 38px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
+    .eyebrow, .nav-label, .section-number { color: var(--blue); font: 700 13px/1.3 var(--mono); text-transform: uppercase; }
+    h1 { max-width: 1100px; margin: 12px 0 8px; font-size: clamp(34px, 4vw, 62px); line-height: 1.12; letter-spacing: 0; }
+    .hero-meta { margin: 0; color: var(--muted); font-size: 17px; }
+    .stage-badge { display: inline-flex; align-items: center; min-height: 38px; padding: 7px 12px; border: 1px solid #8daed1; color: #174b86; background: #edf5ff; font-weight: 700; }
+    .hero-actions { display: flex; gap: 10px; }
+    .button { min-height: 44px; padding: 9px 15px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); cursor: pointer; font-weight: 700; text-decoration: none; }
+    .button.primary { border-color: var(--ink); background: var(--ink); color: #fff; }
+    .status-band { border-bottom: 1px solid var(--line); background: var(--surface-strong); }
+    .status-inner { width: min(1500px, calc(100% - 64px)); margin: auto; min-height: 54px; display: flex; align-items: center; gap: 24px; color: var(--muted); font: 13px/1.4 var(--mono); flex-wrap: wrap; }
+    .status-item::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 9px; background: var(--teal); }
+    .layout { width: min(1500px, calc(100% - 64px)); margin: 0 auto; display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 46px; padding: 38px 0 72px; }
+    .layout > * { min-width: 0; }
+    .side-nav { position: sticky; top: 18px; align-self: start; }
+    .side-nav .nav-label { margin: 0 0 10px; color: var(--muted); }
+    .side-nav a { display: block; min-height: 42px; padding: 9px 12px; border-left: 2px solid var(--line); color: var(--muted); text-decoration: none; }
+    .side-nav a:hover, .side-nav a.active { border-left-color: var(--blue); color: var(--ink); background: var(--blue-soft); font-weight: 700; }
+    .report-section { scroll-margin-top: 20px; padding: 0 0 52px; margin: 0 0 50px; border-bottom: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 460px); gap: 36px; align-items: end; margin-bottom: 24px; }
+    .section-head h2 { margin: 8px 0 0; font-size: 30px; line-height: 1.2; }
+    .section-note { margin: 0; color: var(--muted); }
+    .evidence-strip { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); background: var(--paper); }
+    .evidence-cell { min-height: 94px; padding: 18px; border-top: 4px solid var(--teal); }
+    .evidence-cell + .evidence-cell { border-left: 1px solid var(--line); }
+    .evidence-cell.medium { border-top-color: var(--amber); }
+    .evidence-cell.low { border-top-color: var(--red); }
+    .evidence-cell strong { display: block; margin-bottom: 4px; }
+    .evidence-cell span { color: var(--muted); font-size: 14px; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+    .kpi { min-height: 154px; padding: 20px; border: 1px solid var(--line-soft); background: var(--paper); }
+    .kpi-label { min-height: 44px; color: var(--muted); font-weight: 700; }
+    .kpi-value { display: block; margin: 2px 0; font: 700 38px/1.1 var(--sans); font-variant-numeric: tabular-nums; }
+    .kpi-value.blue { color: var(--blue); }
+    .kpi-meta { color: var(--muted); font-size: 14px; }
+    .progress { height: 4px; margin-top: 12px; background: #e5ebf1; }
+    .progress span { display: block; height: 100%; background: var(--blue); }
+    .conclusion { display: grid; grid-template-columns: 210px 1fr; margin-top: 18px; border: 1px solid #9db0c3; background: var(--paper); }
+    .conclusion-label { padding: 20px; background: var(--ink); color: white; font-weight: 700; }
+    .conclusion-text { margin: 0; padding: 20px 24px; font-size: 18px; font-weight: 700; }
+    .coverage-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); background: var(--paper); }
+    .coverage-cell { min-height: 110px; padding: 18px; }
+    .coverage-cell + .coverage-cell { border-left: 1px solid var(--line); }
+    .coverage-cell span { display: block; color: var(--muted); font-size: 13px; }
+    .coverage-cell strong { display: block; margin-top: 8px; font-size: 24px; }
+    .notice { margin-top: 18px; padding: 18px 20px; border-left: 4px solid var(--amber); background: #fffaf0; color: #624717; }
+    .panel { padding: 20px; border: 1px solid var(--line); background: var(--paper); }
+    .panel h3 { margin: 0 0 14px; font-size: 18px; }
+    .method-note { margin: 0 0 14px; padding: 14px 16px; border-left: 4px solid var(--blue); background: #f2f7fd; }
+    .method-note > strong { display: block; margin-bottom: 8px; color: #174b86; }
+    .method-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 24px; color: #475569; font-size: 13px; }
+    .method-grid p { margin: 0; }
+    .method-grid b { color: var(--ink); }
+    .comparison-overview-table { min-width: 1120px; }
+    .metric-stack { display: grid; justify-items: end; gap: 2px; min-width: 112px; }
+    .metric-primary { color: var(--ink); font: 700 14px/1.35 var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .metric-secondary { color: var(--muted); font-size: 12px; white-space: nowrap; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .bar-list { display: grid; gap: 13px; }
+    .bar-row { display: grid; grid-template-columns: 150px minmax(120px, 1fr) 72px; gap: 12px; align-items: center; }
+    .bar-track { height: 12px; background: #e6ebf0; }
+    .bar-fill { height: 100%; background: var(--blue); }
+    .bar-value, .numeric { text-align: right; font-variant-numeric: tabular-nums; }
+    main, .report-section, .panel, .table-wrap { min-width: 0; }
+    .table-wrap { width: 100%; max-width: 100%; overflow-x: auto; border: 1px solid var(--line); background: var(--paper); }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { padding: 12px 13px; border-bottom: 1px solid var(--line-soft); text-align: left; vertical-align: top; }
+    th { background: var(--surface-strong); color: #475569; white-space: nowrap; }
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: #f8fbff; }
+    .source-link { display: inline-block; max-width: 560px; overflow-wrap: anywhere; }
+    .source-url-cell { min-width: 360px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin: 0 0 14px; }
+    .filter { display: grid; gap: 5px; min-width: 140px; }
+    .filter.grow { flex: 1 1 320px; }
+    .filter label { color: var(--muted); font-size: 13px; }
+    .filter input, .filter select { min-height: 40px; padding: 8px 10px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); }
+    .table-summary { display: flex; justify-content: space-between; gap: 18px; margin: 10px 0; color: var(--muted); font-size: 14px; }
+    .pagination { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-top: 12px; }
+    .pagination button { min-width: 40px; min-height: 38px; border: 1px solid var(--line); background: var(--paper); cursor: pointer; }
+    .pagination button:disabled { opacity: .45; cursor: default; }
+    .answer-list { border-top: 1px solid var(--line); }
+    .answer-item { display: grid; grid-template-columns: 46px minmax(0, 1fr) 96px; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .answer-index { font: 700 14px/1.5 var(--mono); color: var(--blue); }
+    .answer-item h3 { margin: 0 0 5px; font-size: 17px; }
+    .answer-item p { margin: 0; color: #475569; }
+    .grade { align-self: start; padding: 5px 8px; border: 1px solid currentColor; text-align: center; font-size: 12px; font-weight: 700; }
+    .grade.high { color: var(--teal); }
+    .grade.medium { color: var(--amber); }
+    .grade.low { color: var(--red); }
+    .quality-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); background: var(--paper); }
+    .quality-cell { min-height: 98px; padding: 18px; }
+    .quality-cell + .quality-cell { border-left: 1px solid var(--line); }
+    .quality-cell span { display: block; color: var(--muted); font-size: 13px; }
+    .quality-cell strong { display: block; margin-top: 7px; color: var(--teal); font: 700 18px/1.4 var(--mono); }
+    .limits { margin: 0; padding-left: 20px; }
+    .limits li + li { margin-top: 8px; }
+    .download-list { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); }
+    .download-item { display: flex; justify-content: space-between; gap: 16px; padding: 17px 0; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+    .download-item:nth-child(odd) { padding-right: 24px; }
+    .download-item:nth-child(even) { padding-left: 24px; border-left: 1px solid var(--line); }
+    .download-name { display: block; font-weight: 700; }
+    .download-meta { display: block; color: var(--muted); font-size: 13px; }
+    .download-ext { font: 700 12px/1.5 var(--mono); color: var(--blue); }
+    footer { padding: 24px 32px; border-top: 1px solid var(--line); background: var(--paper); color: var(--muted); text-align: center; font-size: 13px; }
+    .back-top { position: fixed; right: 22px; bottom: 22px; width: 42px; height: 42px; border: 1px solid var(--ink); background: var(--ink); color: white; cursor: pointer; opacity: 0; pointer-events: none; }
+    .back-top.visible { opacity: 1; pointer-events: auto; }
+    .empty-row { padding: 24px; color: var(--muted); text-align: center; }
+    @media (max-width: 980px) {
+      .hero-inner, .section-head { grid-template-columns: 1fr; }
+      .layout { grid-template-columns: 1fr; }
+      .side-nav { position: static; display: flex; width: 100%; max-width: 100%; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+      .side-nav::-webkit-scrollbar { display: none; }
+      .side-nav .nav-label { display: none; }
+      .side-nav a { flex: 0 0 auto; border-left: 0; border-bottom: 2px solid var(--line); }
+      .kpi-grid, .coverage-grid { grid-template-columns: repeat(2, 1fr); }
+      .evidence-strip, .quality-grid { grid-template-columns: 1fr; }
+      .evidence-cell + .evidence-cell, .quality-cell + .quality-cell { border-left: 0; border-top: 1px solid var(--line); }
+      .two-col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 1200px) and (min-width: 981px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .page-bar-inner, .hero-inner, .status-inner, .layout { width: min(100% - 28px, 1500px); }
+      .hero-inner { padding: 34px 0 28px; }
+      h1 { font-size: 34px; }
+      .hero-actions { width: 100%; }
+      .hero-actions .button { flex: 1; text-align: center; }
+      .kpi-grid, .coverage-grid { grid-template-columns: 1fr; }
+      .coverage-cell + .coverage-cell { border-left: 0; border-top: 1px solid var(--line); }
+      .conclusion { grid-template-columns: 1fr; }
+      .bar-row { grid-template-columns: 110px minmax(80px, 1fr) 64px; }
+      .answer-item { grid-template-columns: 34px minmax(0, 1fr); }
+      .answer-item .grade { grid-column: 2; justify-self: start; }
+      .download-list { grid-template-columns: 1fr; }
+      .download-item:nth-child(odd), .download-item:nth-child(even) { padding-left: 0; padding-right: 0; border-left: 0; }
+      .method-grid { grid-template-columns: 1fr; }
+    }
+    @media print {
+      .page-bar, .hero-actions, .side-nav, .filters, .pagination, .back-top { display: none !important; }
+      .layout { display: block; width: 100%; padding: 20px; }
+      .report-section { break-inside: avoid; }
+    }
+  </style></head><body><div id="geo-shell-root"></div>
+<div class="page-bar"><div class="page-bar-inner"><a href="../">综合总览</a>　/　三轮引用源对比</div></div><header class="hero"><div class="hero-inner"><div><span class="stage-badge">最终 576/576 · 三轮全量重算</span><div class="eyebrow" style="margin-top:18px">AIDSO / DOUBAO CITATION STUDY / THREE ROUNDS</div><h1>豆包三轮引用源对比</h1><p class="hero-meta">第一、二、三轮各 576 个有效样本 · 来源事件按各轮冻结包独立全量重算</p></div><div class="hero-actions"><button class="button" type="button" onclick="window.print()">打印 / 导出 PDF</button></div></div></header>
+<div class="status-band"><div class="status-inner"><span class="status-item">引用事件：9,936 / 11,934 / 11,426</span><span class="status-item">来源状态明确：576 / 576 / 576</span><span class="status-item">严格归属口径</span></div></div>
+<div class="layout"><aside class="side-nav"><p class="nav-label">REPORT</p><a href="#scale">来源规模</a><a href="#official">官方来源</a><a href="#domains">来源域</a><a href="#platforms">来源平台</a><a href="#owned">自有账号</a><a href="#employees">员工号</a><a href="#watch">新收录网站</a></aside><main>
+<section class="report-section" id="scale"><div class="section-head"><div><span class="section-number">01 / SCALE</span><h2>来源规模、覆盖与集中度</h2></div><p class="section-note">三轮事件数、活跃来源域及 TOP10 来源集中度。</p></div><div class="kpi-grid" id="scaleCards"></div><div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>轮次</th><th class="numeric">有效样本</th><th class="numeric">引用事件</th><th class="numeric">活跃来源域</th><th class="numeric">TOP10 集中度</th></tr></thead><tbody id="scaleBody"></tbody></table></div><div class="notice"><strong>明细完整性：</strong>第一轮来源域比较明细合计 9,931 条，比第一轮权威去重事件总量 9,936 条少 5 条；总量卡使用权威总量，来源域表忠实显示输入明细。</div></section>
+<section class="report-section" id="official"><div class="section-head"><div><span class="section-number">02 / OFFICIAL</span><h2>官方来源互斥口径</h2></div><p class="section-note">Open、运营圈、蝉妈妈主站、其他官方子域、官方域去重并集与飞瓜官网。</p></div><div class="table-wrap"><table class="comparison-overview-table"><thead><tr><th>来源</th><th class="numeric">第一轮引用</th><th class="numeric">第一轮样本率</th><th class="numeric">第二轮引用</th><th class="numeric">第二轮样本率</th><th class="numeric">第三轮引用</th><th class="numeric">第三轮样本率</th></tr></thead><tbody id="officialBody"></tbody></table></div></section>
+<section class="report-section" id="domains"><div class="section-head"><div><span class="section-number">03 / DOMAINS</span><h2>来源域变化</h2></div><p class="section-note">953 个来源域，支持搜索、变化筛选和分页。</p></div><div class="filters"><div class="filter grow"><label for="domainSearch">搜索域名</label><input id="domainSearch" type="search" placeholder="输入域名"></div><div class="filter"><label for="domainChange">第三轮变化</label><select id="domainChange"><option value="all">全部</option><option value="up">增加</option><option value="down">减少</option><option value="flat">持平</option></select></div><div class="filter"><label for="domainSize">每页</label><select id="domainSize"><option value="20">20</option><option value="50">50</option><option value="100">100</option></select></div></div><div class="table-summary"><span id="domainCount"></span><span id="domainRange"></span></div><div class="table-wrap"><table><thead><tr><th>域名</th><th class="numeric">第一轮</th><th class="numeric">第二轮</th><th class="numeric">第三轮</th><th class="numeric">第三轮占比</th><th class="numeric">较第二轮</th></tr></thead><tbody id="domainBody"></tbody></table></div><div class="pagination"><button id="domainPrev" type="button" aria-label="上一页">←</button><span id="domainPage"></span><button id="domainNext" type="button" aria-label="下一页">→</button></div></section>
+<section class="report-section" id="platforms"><div class="section-head"><div><span class="section-number">04 / STRUCTURE</span><h2>来源平台结构</h2></div><p class="section-note">平台事件数及各轮独立占比。</p></div><div class="table-wrap"><table><thead><tr><th>平台</th><th class="numeric">第一轮</th><th class="numeric">第二轮</th><th class="numeric">第三轮</th><th class="numeric">第三轮较第二轮</th></tr></thead><tbody id="platformBody"></tbody></table></div></section>
+<section class="report-section" id="owned"><div class="section-head"><div><span class="section-number">05 / OWNED</span><h2>11 个自有来源账号</h2></div><p class="section-note">仅使用严格身份归属；模糊品牌词不计入。</p></div><div class="table-wrap"><table class="comparison-overview-table"><thead><tr><th>账号</th><th>平台</th><th class="numeric">第一轮引用</th><th class="numeric">第二轮引用</th><th class="numeric">第三轮引用</th><th class="numeric">第三轮样本率</th><th class="numeric">第三轮问题率</th></tr></thead><tbody id="ownedBody"></tbody></table></div></section>
+<section class="report-section" id="employees"><div class="section-head"><div><span class="section-number">06 / EMPLOYEES</span><h2>14 个抖音员工号</h2></div><p class="section-note">账号身份与完整作品集匹配，按具体作品 ID 归属。</p></div><div class="table-wrap"><table><thead><tr><th>账号</th><th class="numeric">发布作品</th><th class="numeric">被引视频</th><th class="numeric">引用事件</th><th class="numeric">命中样本</th><th class="numeric">命中问题</th></tr></thead><tbody id="employeeBody"></tbody></table></div></section>
+<section class="report-section" id="watch"><div class="section-head"><div><span class="section-number">07 / WATCH LIST</span><h2>8 个新收录网站三轮对比</h2></div><p class="section-note">同时呈现第三轮引用与正文含“蝉妈妈”的严格核验结果。</p></div><div class="table-wrap"><table class="comparison-overview-table"><thead><tr><th>网站</th><th class="numeric">第一轮引用</th><th class="numeric">第二轮引用</th><th class="numeric">第三轮引用</th><th class="numeric">第三轮样本</th><th class="numeric">严格核验引用</th><th>页面核验</th><th>第三轮较第二轮</th></tr></thead><tbody id="watchBody"></tbody></table></div><div class="notice"><strong>严格核验结论：</strong>yun88.com 第三轮 34 次引用，严格核验正文含“蝉妈妈”为 0；aiproducthub.cn 第三轮 90 次引用，其中严格核验 15 次、1 个唯一页面。</div></section>
+</main></div><footer>蝉妈妈 GEO 引用源研究 · 三轮冻结数据对比</footer><button class="back-top" id="backTop" type="button" aria-label="返回顶部">↑</button>
+<script src="./report-data.js"></script><script>
+(()=>{const d=window.THREE_ROUND_CITATION_REPORT,c=d.comparison,$=id=>document.getElementById(id),n=v=>Number(v||0).toLocaleString('zh-CN'),p=v=>Number(v||0).toFixed(2)+'%',cell=(row,text,cls='')=>{const td=document.createElement('td');td.textContent=text;td.className=cls;row.appendChild(td)};const rounds=['round1','round2','round3'],labels={round1:'第一轮 576/576',round2:'第二轮最终 576/576',round3:'第三轮最终 576/576'};
+$('scaleCards').innerHTML=rounds.map(r=>'<div class="kpi"><div class="kpi-label">'+labels[r]+'</div><span class="kpi-value blue">'+n(d.scale.totals[r])+'</span><div class="kpi-meta">引用事件 · '+n(d.scale.activeDomains[r])+' 个活跃来源域</div></div>').join('');$('scaleBody').innerHTML=rounds.map(r=>'<tr><td>'+labels[r]+'</td><td class="numeric">576</td><td class="numeric">'+n(d.scale.totals[r])+'</td><td class="numeric">'+n(d.scale.activeDomains[r])+'</td><td class="numeric">'+p(d.scale.top10Share[r])+'</td></tr>').join('');
+$('officialBody').innerHTML=(c.official_sources||[]).map(x=>'<tr><td>'+x.label+'</td>'+rounds.map(r=>'<td class="numeric">'+n(x[r].citation_events)+'</td><td class="numeric">'+p(x[r].sample_rate_pct)+'</td>').join('')+'</tr>').join('');
+$('platformBody').innerHTML=(c.platforms||[]).map(x=>{const delta=Number(x.round3_share_pct)-Number(x.round2_share_pct);return '<tr><td>'+x.label+'</td><td class="numeric">'+n(x.round1_events)+' · '+p(x.round1_share_pct)+'</td><td class="numeric">'+n(x.round2_events)+' · '+p(x.round2_share_pct)+'</td><td class="numeric">'+n(x.round3_events)+' · '+p(x.round3_share_pct)+'</td><td class="numeric">'+(delta>0?'+':'')+delta.toFixed(2)+'pp</td></tr>'}).join('');
+$('ownedBody').innerHTML=(c.owned_accounts||[]).map(x=>'<tr><td>'+x.label+'</td><td>'+x.platform+'</td><td class="numeric">'+n(x.round1_events)+'</td><td class="numeric">'+n(x.round2_events)+'</td><td class="numeric">'+n(x.round3_events)+'</td><td class="numeric">'+p(x.round3_sample_rate_pct)+'</td><td class="numeric">'+p(x.round3_question_rate_pct)+'</td></tr>').join('');
+$('employeeBody').innerHTML=(d.employeeAccounts.accounts||[]).map(x=>'<tr><td>'+x.account_name+'</td><td class="numeric">'+n(x.published_works)+'</td><td class="numeric">'+n(x.unique_videos)+'</td><td class="numeric">'+n(x.citation_events)+'</td><td class="numeric">'+n(x.answers)+'</td><td class="numeric">'+n(x.questions)+'</td></tr>').join('');
+$('watchBody').innerHTML=d.watchSites.map(x=>{const r=x.round3_final_576;return '<tr><td><strong>'+x.site_key+'</strong></td><td class="numeric">'+n(x.round1.citation_events)+'</td><td class="numeric">'+n(x.round2.citation_events)+'</td><td class="numeric">'+n(r.citation_events)+'</td><td class="numeric">'+n(r.answers)+'</td><td class="numeric">'+n(r.verified_content_citation_events)+'</td><td>'+r.page_evidence_status+'</td><td>'+x.round3_vs_round2+'</td></tr>'}).join('');
+let page=1;function renderDomains(){const q=$('domainSearch').value.trim().toLowerCase(),mode=$('domainChange').value,size=Number($('domainSize').value);const rows=c.domains.filter(x=>x.label.toLowerCase().includes(q)).filter(x=>{const v=Number(x.round3_events)-Number(x.round2_events);return mode==='all'||(mode==='up'&&v>0)||(mode==='down'&&v<0)||(mode==='flat'&&v===0)});const pages=Math.max(1,Math.ceil(rows.length/size));page=Math.min(page,pages);const part=rows.slice((page-1)*size,page*size);$('domainBody').innerHTML=part.map(x=>{const v=Number(x.round3_events)-Number(x.round2_events);return '<tr><td>'+x.label+'</td><td class="numeric">'+n(x.round1_events)+'</td><td class="numeric">'+n(x.round2_events)+'</td><td class="numeric">'+n(x.round3_events)+'</td><td class="numeric">'+p(x.round3_share_pct)+'</td><td class="numeric">'+(v>0?'+':'')+n(v)+'</td></tr>'}).join('')||'<tr><td class="empty-row" colspan="6">没有匹配来源域</td></tr>';$('domainCount').textContent=rows.length+'/'+c.domains.length+' 个来源域';$('domainRange').textContent=rows.length?((page-1)*size+1)+'-'+Math.min(page*size,rows.length):'0';$('domainPage').textContent=page+'/'+pages;$('domainPrev').disabled=page<=1;$('domainNext').disabled=page>=pages;}['domainSearch','domainChange','domainSize'].forEach(id=>$(id).addEventListener(id==='domainSearch'?'input':'change',()=>{page=1;renderDomains()}));$('domainPrev').addEventListener('click',()=>{if(page>1){page--;renderDomains()}});$('domainNext').addEventListener('click',()=>{page++;renderDomains()});renderDomains();const nav=[...document.querySelectorAll('.side-nav a')];const sections=[...document.querySelectorAll('.report-section')];const observer=new IntersectionObserver(es=>{const v=es.filter(x=>x.isIntersecting)[0];if(v)nav.forEach(a=>a.classList.toggle('active',a.hash==='#'+v.target.id))},{rootMargin:'-20% 0px -65% 0px'});sections.forEach(s=>observer.observe(s));$('backTop').onclick=()=>window.scrollTo({top:0,behavior:'smooth'});window.addEventListener('scroll',()=>$('backTop').classList.toggle('visible',scrollY>500));})();
+</script><script defer src="../assets/platform-shell.js?v=20260908-r3compare" data-root="../" data-section="comparison" data-label="三轮引用源对比"></script></body></html>

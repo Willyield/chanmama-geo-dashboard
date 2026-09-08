@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,">
+<title>蝉妈妈 GEO 三轮采样对比</title><link rel="stylesheet" href="../assets/platform-shell.css?v=20260819-workbench3"><script defer src="./dashboard-data.js"></script>
+<style>
+    :root {
+      --canvas: #f4f6f8;
+      --surface: #ffffff;
+      --ink: #18212b;
+      --muted: #64707d;
+      --line: #d7dde3;
+      --line-strong: #aeb8c2;
+      --nav: #17212b;
+      --blue: #2457a7;
+      --blue-soft: #e8f0fb;
+      --green: #16734a;
+      --green-soft: #e5f5ec;
+      --amber: #a75b10;
+      --amber-soft: #fff0dc;
+      --red: #ad3030;
+      --red-soft: #fbe8e8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 0;
+    }
+    a { color: inherit; }
+    header {
+      background: var(--nav);
+      color: #f8fafc;
+      border-bottom: 4px solid #d59a27;
+    }
+    .header-inner, .content {
+      width: min(1600px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+    .header-inner { padding: 22px 0 0; }
+    .header-kicker {
+      color: #9fb4c8;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    h1 {
+      margin: 7px 0 8px;
+      font-size: 32px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      color: #c8d2dc;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .tabs {
+      display: flex;
+      gap: 2px;
+      margin-top: 18px;
+    }
+    .tab {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      border: 1px solid transparent;
+      border-bottom: 0;
+      padding: 9px 14px;
+      color: #dce5ed;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .tab.active {
+      background: var(--canvas);
+      color: var(--ink);
+      border-color: #4b5967;
+    }
+    .content { padding: 22px 0 48px; }
+    .stage-banner {
+      border: 1px solid #10b981;
+      background: #ecfdf5;
+      color: #065f46;
+      padding: 10px 14px;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+    .brief {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      padding: 18px 0 22px;
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .brief-label { color: var(--blue); font-size: 12px; font-weight: 800; }
+    .brief-title { margin: 6px 0; font-size: 22px; line-height: 1.35; font-weight: 800; }
+    .brief-note { color: var(--muted); line-height: 1.6; }
+    .brief-total { text-align: right; font-variant-numeric: tabular-nums; }
+    .brief-total strong { display: block; font-size: 34px; }
+    .brief-total span { color: var(--muted); font-size: 12px; }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 18px 0 4px;
+    }
+    .kpi {
+      position: relative;
+      min-height: 112px;
+      padding: 14px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+    .kpi-head { display: flex; align-items: center; gap: 7px; }
+    .kpi-label { color: var(--muted); font-size: 12px; font-weight: 700; }
+    .metric-help-wrap { display: inline-flex; }
+    .metric-help {
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      background: var(--surface);
+      color: var(--muted);
+      font: 800 12px/1 inherit;
+      cursor: help;
+    }
+    .metric-tooltip {
+      position: absolute;
+      z-index: 20;
+      top: 42px;
+      right: 14px;
+      left: 14px;
+      border: 1px solid #334155;
+      border-radius: 5px;
+      background: #17212b;
+      color: #f8fafc;
+      padding: 9px 10px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, .18);
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.5;
+      text-align: left;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .metric-help:hover + .metric-tooltip, .metric-help:focus + .metric-tooltip { visibility: visible; opacity: 1; }
+    .kpi-value { margin-top: 10px; font-size: 27px; font-weight: 800; font-variant-numeric: tabular-nums; }
+    .kpi-sub { margin-top: 7px; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    section {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    h2 { margin: 0; font-size: 19px; letter-spacing: 0; }
+    .section-note { color: var(--muted); font-size: 12px; text-align: right; }
+    .progress-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .progress-item { min-width: 0; }
+    .progress-top { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+    .progress-name { font-weight: 750; }
+    .progress-number { color: var(--muted); font-variant-numeric: tabular-nums; }
+    .track { height: 12px; background: #dfe4e9; border: 1px solid #c8d0d8; overflow: hidden; }
+    .fill { height: 100%; background: var(--blue); }
+    .fill.green { background: var(--green); }
+    .fill.amber { background: var(--amber); }
+    .source-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .source-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--green);
+      border-radius: 6px;
+      padding: 15px;
+    }
+    .source-title { font-size: 16px; font-weight: 800; }
+    .source-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+    .source-metric strong { display: block; font-size: 20px; font-variant-numeric: tabular-nums; }
+    .source-metric span { color: var(--muted); font-size: 11px; line-height: 1.4; }
+    .split-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; }
+    .split-grid > * { min-width: 0; }
+    .bar-list { display: grid; gap: 10px; }
+    .bar-row { display: grid; grid-template-columns: minmax(120px, 180px) minmax(100px, 1fr) 72px; gap: 10px; align-items: center; }
+    .bar-label { overflow-wrap: anywhere; }
+    .bar-track { height: 14px; background: #e1e6eb; border: 1px solid #ccd4dc; }
+    .bar-value { height: 100%; background: var(--blue); }
+    .bar-value.green { background: var(--green); }
+    .bar-value.amber { background: var(--amber); }
+    .bar-count { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+    .filters {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(150px, 1fr));
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    label { display: grid; gap: 5px; color: var(--muted); font-size: 12px; font-weight: 700; }
+    select, input {
+      width: 100%;
+      min-height: 38px;
+      border: 1px solid var(--line-strong);
+      border-radius: 5px;
+      background: var(--surface);
+      color: var(--ink);
+      padding: 8px 10px;
+      font: inherit;
+    }
+    .table-wrap { width: 100%; overflow-x: auto; border: 1px solid var(--line); background: var(--surface); }
+    table { width: 100%; border-collapse: collapse; table-layout: auto; }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid #e7ebef;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      line-height: 1.55;
+    }
+    th { background: #edf1f4; color: #3b4651; font-size: 12px; position: sticky; top: 0; z-index: 1; }
+    tr:last-child td { border-bottom: 0; }
+    .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .question-cell { min-width: 310px; }
+    .answer-cell { min-width: 440px; max-width: 760px; white-space: pre-wrap; }
+    .url-cell { min-width: 340px; white-space: pre-wrap; }
+    .status {
+      display: inline-block;
+      border-radius: 4px;
+      padding: 3px 7px;
+      font-size: 12px;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+    .status.ok { background: var(--green-soft); color: var(--green); }
+    .status.warn { background: var(--amber-soft); color: var(--amber); }
+    .status.bad { background: var(--red-soft); color: var(--red); }
+    .status.muted { background: #e8edf1; color: #52606d; }
+    .empty { padding: 28px 12px; color: var(--muted); text-align: center; }
+    .delta-up { color: var(--green); font-weight: 700; }
+    .delta-down { color: var(--red); font-weight: 700; }
+    .delta-flat { color: var(--muted); }
+    .footnote { margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .pager {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .icon-button {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--line-strong);
+      border-radius: 5px;
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .icon-button:disabled { cursor: default; opacity: .4; }
+    select:focus-visible, input:focus-visible, .icon-button:focus-visible, .tab:focus-visible, .metric-help:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
+    }
+    [hidden] { display: none !important; }
+    @media (max-width: 980px) {
+      .header-inner, .content { width: min(100% - 24px, 1600px); }
+      h1 { font-size: 25px; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .progress-grid, .source-grid, .split-grid { grid-template-columns: 1fr; }
+      .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .source-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 620px) {
+      .brief { grid-template-columns: 1fr; }
+      .brief-total { text-align: left; }
+      .kpi-grid, .filters { grid-template-columns: 1fr; }
+      .tabs { overflow-x: auto; }
+      .tab { white-space: nowrap; }
+      .bar-row { grid-template-columns: 110px minmax(80px, 1fr) 62px; }
+    }
+  
+.round-stack{display:grid;gap:4px}.round-line{display:flex;justify-content:space-between;gap:12px}.round-line strong{font-variant-numeric:tabular-nums}.metric-definition{max-width:440px;color:var(--muted)}.comparison-table{min-width:940px}.trend-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.trend-card{padding:16px;border:1px solid var(--line);background:var(--surface)}@media(max-width:640px){.trend-grid{grid-template-columns:1fr}}
+</style></head>
+<body data-mode="compare"><div id="geo-shell-root"></div><header><div class="header-inner"><div class="header-kicker">GEO / TOP0 + TOP1 / 豆包网页版快速模式</div><h1 id="pageTitle">蝉妈妈 GEO TOP0/TOP1 三轮采样对比</h1><div class="meta"><span>第一、二、三轮各 576 个有效样本</span><span>各轮独立分母</span><span>更新：2026-09-08</span></div><nav class="tabs" aria-label="对比视图"><a class="tab active" href="#overview">三轮总览</a><a class="tab" href="#detail">指标明细</a></nav></div></header>
+<main class="content"><div class="stage-banner" id="stageBanner" role="status">最终 576/576 · 三轮全量对比</div>
+<div class="brief" id="overview"><div><div class="brief-label">第一轮 / 第二轮 / 第三轮</div><div class="brief-title">第三轮 TOP3 率提升，品牌提及与优势表达回落。</div><div class="brief-note">变化使用百分点；平均排名显示数值改善且越低越好。严格优势表达统一使用 advantage-expression-v2。</div></div><div class="brief-total"><strong>576 × 3</strong><span>有效样本</span></div></div>
+<div class="kpi-grid" id="kpiGrid"></div>
+<section><div class="section-head"><h2>三轮样本规模</h2><div class="section-note">每轮均按独立 576 条有效样本计算</div></div><div class="progress-grid" id="progressGrid"></div></section>
+<section><div class="section-head"><h2>第三轮相对第二轮</h2><div class="section-note">比例为百分点变化，平均排名为改善值</div></div><div class="trend-grid" id="deltaGrid"></div></section>
+<section id="detail"><div class="section-head"><h2>三轮指标总表</h2><div class="section-note">分子、分母与规则版本可审计</div></div><div class="table-wrap"><table class="comparison-table"><thead><tr><th>指标</th><th class="num">第一轮</th><th class="num">第二轮</th><th class="num">第三轮</th><th class="num">第三轮较第二轮</th><th>口径</th></tr></thead><tbody id="metricTable"></tbody></table></div></section>
+<section><div class="section-head"><h2>指标记录</h2><div class="section-note" id="rowCount"></div></div><div class="filters"><label>关键词<input id="metricSearch" type="search" placeholder="搜索指标或口径"></label><label>轮次<select id="roundFilter"><option value="">全部</option><option value="round1">第一轮</option><option value="round2">第二轮</option><option value="round3">第三轮</option></select></label></div><div class="table-wrap"><table><thead><tr><th>轮次</th><th>指标</th><th class="num">数值</th><th class="num">分子 / 分母</th><th>口径</th></tr></thead><tbody id="recordTable"></tbody></table></div><div class="pager"><button class="icon-button" id="recordPrev" type="button" aria-label="上一页">‹</button><span id="recordPage"></span><button class="icon-button" id="recordNext" type="button" aria-label="下一页">›</button></div></section>
+</main><script>
+document.addEventListener('DOMContentLoaded',()=>{const d=window.GEO_THREE_ROUND_COMPARISON;const e=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const n=v=>Number(v).toLocaleString('zh-CN');const p=v=>Number(v).toFixed(2)+'%';const rounds=['round1','round2','round3'];const names={round1:'第一轮',round2:'第二轮',round3:'第三轮'};const meta={"mention":{"label":"品牌提及率","definition":"回答正文明确提到蝉妈妈的有效样本数 / 全部有效样本数"},"ordinaryFirst":{"label":"普通首推率","definition":"蝉妈妈位于原始工具推荐顺序第 1 的有效样本数 / 全部有效样本数"},"effectiveFirst":{"label":"有效首推率","definition":"移除官方工具后蝉妈妈位于第三方候选第 1 / 存在第三方候选的有效样本数"},"top3":{"label":"TOP3 率","definition":"蝉妈妈位于原始工具推荐顺序前 3 / 全部有效样本数"},"averageRank":{"label":"平均排名","definition":"仅在提到蝉妈妈的样本中计算，数值越低越好"},"advantageExpression":{"label":"严格优势表达率","definition":"正向能力、适配性、推荐理由或比较优势明确归属于蝉妈妈；advantage-expression-v2"}};const keys=["mention","ordinaryFirst","effectiveFirst","top3","averageRank","advantageExpression"];const show=(key,item)=>key==='averageRank'?Number(item.value).toFixed(4):p(item.ratePct);const count=(key,item)=>key==='averageRank'?n(item.count):n(item.count)+' / '+n(item.denominator);const deltaMap=d.round3Deltas.vsRound2;
+document.getElementById('kpiGrid').innerHTML=keys.map(key=>{const m=meta[key];return '<div class="kpi"><div class="kpi-label">'+e(m.label)+'</div><div class="kpi-value">'+show(key,d.rounds.round3[key])+'</div><div class="kpi-sub">第三轮 · '+count(key,d.rounds.round3[key])+'</div></div>'}).join('');
+document.getElementById('progressGrid').innerHTML=rounds.map((r,i)=>'<div class="progress-item"><div class="progress-top"><span class="progress-name">'+names[r]+'</span><span class="progress-number">576/576</span></div><div class="track"><div class="fill '+(['blue','amber','green'][i])+'" style="width:100%"></div></div></div>').join('');
+const deltaKeys={mention:'mentionPp',ordinaryFirst:'ordinaryFirstPp',effectiveFirst:'effectiveFirstPp',top3:'top3Pp',averageRank:'averageRankImprovement',advantageExpression:'advantageExpressionPp'};document.getElementById('deltaGrid').innerHTML=keys.map(key=>{const v=deltaMap[deltaKeys[key]];const unit=key==='averageRank'?'':'pp';return '<div class="trend-card"><strong>'+e(meta[key].label)+'</strong><div class="kpi-value">'+(v>0?'+':'')+Number(v).toFixed(key==='averageRank'?3:2)+unit+'</div><div class="kpi-sub">'+(key==='averageRank'?'正值代表排名改善':'第三轮减第二轮')+'</div></div>'}).join('');
+document.getElementById('metricTable').innerHTML=keys.map(key=>'<tr><td><strong>'+e(meta[key].label)+'</strong></td>'+rounds.map(r=>'<td class="num"><strong>'+show(key,d.rounds[r][key])+'</strong><br><span class="kpi-sub">'+count(key,d.rounds[r][key])+'</span></td>').join('')+'<td class="num">'+(deltaMap[deltaKeys[key]]>0?'+':'')+Number(deltaMap[deltaKeys[key]]).toFixed(key==='averageRank'?3:2)+(key==='averageRank'?'':'pp')+'</td><td class="metric-definition">'+e(meta[key].definition)+'</td></tr>').join('');
+let page=1;const size=10;function render(){const q=document.getElementById('metricSearch').value.trim().toLowerCase(),rf=document.getElementById('roundFilter').value;const rows=d.metricRows.filter(x=>(!rf||x.round===rf)&&(!q||(x.label+' '+x.definition).toLowerCase().includes(q)));const pages=Math.max(1,Math.ceil(rows.length/size));page=Math.min(page,pages);document.getElementById('recordTable').innerHTML=rows.slice((page-1)*size,page*size).map(x=>'<tr><td>'+e(x.roundLabel)+'</td><td>'+e(x.label)+'</td><td class="num">'+show(x.key,x)+'</td><td class="num">'+count(x.key,x)+'</td><td class="metric-definition">'+e(x.definition)+'</td></tr>').join('')||'<tr><td colspan="5" class="empty">没有匹配记录</td></tr>';document.getElementById('rowCount').textContent=rows.length+'/'+d.metricRows.length+' 条';document.getElementById('recordPage').textContent=page+'/'+pages;document.getElementById('recordPrev').disabled=page<=1;document.getElementById('recordNext').disabled=page>=pages;}document.getElementById('metricSearch').addEventListener('input',()=>{page=1;render()});document.getElementById('roundFilter').addEventListener('change',()=>{page=1;render()});document.getElementById('recordPrev').addEventListener('click',()=>{if(page>1){page--;render()}});document.getElementById('recordNext').addEventListener('click',()=>{page++;render()});render();});
+</script><script defer src="../assets/platform-shell.js?v=20260908-r3compare" data-root="../" data-section="comparison" data-label="三轮采样对比"></script></body></html>
