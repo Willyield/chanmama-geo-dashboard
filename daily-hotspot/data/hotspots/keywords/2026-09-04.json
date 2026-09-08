@@ -1,0 +1,1709 @@
+{
+  "schemaVersion": 1,
+  "module": "hotspot-keywords",
+  "date": "2026-09-04",
+  "revision": 1,
+  "itemCount": 50,
+  "items": [
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-001",
+      "hotspot_name": "商家体验分规范升级浏览量升至67.3万，9月8日前需完成体验治理校准",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:merchant-experience-score-upgrade",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:merchant-experience-score-upgrade:01",
+      "keyword": "商家体验分升级",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:merchant-experience-score-upgrade"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-001",
+      "hotspot_name": "商家体验分规范升级浏览量升至67.3万，9月8日前需完成体验治理校准",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:merchant-experience-score-upgrade",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:merchant-experience-score-upgrade:02",
+      "keyword": "抖店体验分新规",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:merchant-experience-score-upgrade"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-001",
+      "hotspot_name": "商家体验分规范升级浏览量升至67.3万，9月8日前需完成体验治理校准",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:merchant-experience-score-upgrade",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:merchant-experience-score-upgrade:03",
+      "keyword": "9月8日体验分",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:merchant-experience-score-upgrade"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-001",
+      "hotspot_name": "商家体验分规范升级浏览量升至67.3万，9月8日前需完成体验治理校准",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:merchant-experience-score-upgrade",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:merchant-experience-score-upgrade:04",
+      "keyword": "体验分整改清单",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:merchant-experience-score-upgrade"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-001",
+      "hotspot_name": "商家体验分规范升级浏览量升至67.3万，9月8日前需完成体验治理校准",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:merchant-experience-score-upgrade",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:merchant-experience-score-upgrade:05",
+      "keyword": "抖音商家体验治理",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:merchant-experience-score-upgrade"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-002",
+      "hotspot_name": "图书类目专项治理上线，商家需复核出版资质与商品信息",
+      "hotspot_category": "类目与消费",
+      "subject_id": "rule:douyin:book-category-governance",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:book-category-governance:01",
+      "keyword": "图书类目治理",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:book-category-governance"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-002",
+      "hotspot_name": "图书类目专项治理上线，商家需复核出版资质与商品信息",
+      "hotspot_category": "类目与消费",
+      "subject_id": "rule:douyin:book-category-governance",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:book-category-governance:02",
+      "keyword": "图书出版资质",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:book-category-governance"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-002",
+      "hotspot_name": "图书类目专项治理上线，商家需复核出版资质与商品信息",
+      "hotspot_category": "类目与消费",
+      "subject_id": "rule:douyin:book-category-governance",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:book-category-governance:03",
+      "keyword": "图书商品信息",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:book-category-governance"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-002",
+      "hotspot_name": "图书类目专项治理上线，商家需复核出版资质与商品信息",
+      "hotspot_category": "类目与消费",
+      "subject_id": "rule:douyin:book-category-governance",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:book-category-governance:04",
+      "keyword": "版权证据",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:book-category-governance"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-002",
+      "hotspot_name": "图书类目专项治理上线，商家需复核出版资质与商品信息",
+      "hotspot_category": "类目与消费",
+      "subject_id": "rule:douyin:book-category-governance",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:book-category-governance:05",
+      "keyword": "图书电商合规",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:book-category-governance"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-003",
+      "hotspot_name": "部分商品不支持个人寄件，商家需提前校准发货方式与履约承诺",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:personal-shipping-fulfillment-notice",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:personal-shipping-fulfillment-notice:01",
+      "keyword": "个人寄件限制",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:personal-shipping-fulfillment-notice"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-003",
+      "hotspot_name": "部分商品不支持个人寄件，商家需提前校准发货方式与履约承诺",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:personal-shipping-fulfillment-notice",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:personal-shipping-fulfillment-notice:02",
+      "keyword": "商品发货方式",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:personal-shipping-fulfillment-notice"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-003",
+      "hotspot_name": "部分商品不支持个人寄件，商家需提前校准发货方式与履约承诺",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:personal-shipping-fulfillment-notice",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:personal-shipping-fulfillment-notice:03",
+      "keyword": "商家履约提示",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:personal-shipping-fulfillment-notice"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-003",
+      "hotspot_name": "部分商品不支持个人寄件，商家需提前校准发货方式与履约承诺",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:personal-shipping-fulfillment-notice",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:personal-shipping-fulfillment-notice:04",
+      "keyword": "仓配方案",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:personal-shipping-fulfillment-notice"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-003",
+      "hotspot_name": "部分商品不支持个人寄件，商家需提前校准发货方式与履约承诺",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:personal-shipping-fulfillment-notice",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:personal-shipping-fulfillment-notice:05",
+      "keyword": "发货承诺调整",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:personal-shipping-fulfillment-notice"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-004",
+      "hotspot_name": "不可抗力场景下平台发货与服务调整，商家需核对履约安排",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:force-majeure-shipping-adjustment",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:force-majeure-shipping-adjustment:01",
+      "keyword": "不可抗力发货",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:force-majeure-shipping-adjustment"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-004",
+      "hotspot_name": "不可抗力场景下平台发货与服务调整，商家需核对履约安排",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:force-majeure-shipping-adjustment",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:force-majeure-shipping-adjustment:02",
+      "keyword": "平台履约调整",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:force-majeure-shipping-adjustment"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-004",
+      "hotspot_name": "不可抗力场景下平台发货与服务调整，商家需核对履约安排",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:force-majeure-shipping-adjustment",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:force-majeure-shipping-adjustment:03",
+      "keyword": "发货时限",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:force-majeure-shipping-adjustment"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-004",
+      "hotspot_name": "不可抗力场景下平台发货与服务调整，商家需核对履约安排",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:force-majeure-shipping-adjustment",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:force-majeure-shipping-adjustment:04",
+      "keyword": "订单服务调整",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:force-majeure-shipping-adjustment"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-004",
+      "hotspot_name": "不可抗力场景下平台发货与服务调整，商家需核对履约安排",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:force-majeure-shipping-adjustment",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:force-majeure-shipping-adjustment:05",
+      "keyword": "自然灾害履约",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:force-majeure-shipping-adjustment"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-005",
+      "hotspot_name": "“香港大药房”相关标识宣传进入专项治理，主体与门店关系需可核",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:hong-kong-pharmacy-label-governance",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:hong-kong-pharmacy-label-governance:01",
+      "keyword": "香港大药房标识",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:hong-kong-pharmacy-label-governance"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-005",
+      "hotspot_name": "“香港大药房”相关标识宣传进入专项治理，主体与门店关系需可核",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:hong-kong-pharmacy-label-governance",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:hong-kong-pharmacy-label-governance:02",
+      "keyword": "药房宣传治理",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:hong-kong-pharmacy-label-governance"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-005",
+      "hotspot_name": "“香港大药房”相关标识宣传进入专项治理，主体与门店关系需可核",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:hong-kong-pharmacy-label-governance",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:hong-kong-pharmacy-label-governance:03",
+      "keyword": "经营主体证明",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:hong-kong-pharmacy-label-governance"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-005",
+      "hotspot_name": "“香港大药房”相关标识宣传进入专项治理，主体与门店关系需可核",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:hong-kong-pharmacy-label-governance",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:hong-kong-pharmacy-label-governance:04",
+      "keyword": "门店授权关系",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:hong-kong-pharmacy-label-governance"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-005",
+      "hotspot_name": "“香港大药房”相关标识宣传进入专项治理，主体与门店关系需可核",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:hong-kong-pharmacy-label-governance",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:hong-kong-pharmacy-label-governance:05",
+      "keyword": "药房直播合规",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:hong-kong-pharmacy-label-governance"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-006",
+      "hotspot_name": "无线 WiFi 设备虚假宣传进入治理，资费、覆盖与性能表述需复核",
+      "hotspot_category": "类目与消费",
+      "subject_id": "rule:douyin:wireless-wifi-claim-governance",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:wireless-wifi-claim-governance:01",
+      "keyword": "无线WiFi治理",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:wireless-wifi-claim-governance"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-006",
+      "hotspot_name": "无线 WiFi 设备虚假宣传进入治理，资费、覆盖与性能表述需复核",
+      "hotspot_category": "类目与消费",
+      "subject_id": "rule:douyin:wireless-wifi-claim-governance",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:wireless-wifi-claim-governance:02",
+      "keyword": "随身WiFi资费",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:wireless-wifi-claim-governance"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-006",
+      "hotspot_name": "无线 WiFi 设备虚假宣传进入治理，资费、覆盖与性能表述需复核",
+      "hotspot_category": "类目与消费",
+      "subject_id": "rule:douyin:wireless-wifi-claim-governance",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:wireless-wifi-claim-governance:03",
+      "keyword": "网速宣传合规",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:wireless-wifi-claim-governance"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-006",
+      "hotspot_name": "无线 WiFi 设备虚假宣传进入治理，资费、覆盖与性能表述需复核",
+      "hotspot_category": "类目与消费",
+      "subject_id": "rule:douyin:wireless-wifi-claim-governance",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:wireless-wifi-claim-governance:04",
+      "keyword": "流量套餐说明",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:wireless-wifi-claim-governance"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-006",
+      "hotspot_name": "无线 WiFi 设备虚假宣传进入治理，资费、覆盖与性能表述需复核",
+      "hotspot_category": "类目与消费",
+      "subject_id": "rule:douyin:wireless-wifi-claim-governance",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:wireless-wifi-claim-governance:05",
+      "keyword": "无线设备售后",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:wireless-wifi-claim-governance"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-007",
+      "hotspot_name": "巨量千川商品投放类目明细更新，商家需复核商品可投范围",
+      "hotspot_category": "类目与消费",
+      "subject_id": "rule:douyin:qianchuan-category-detail-update",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:qianchuan-category-detail-update:01",
+      "keyword": "千川投放类目",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:qianchuan-category-detail-update"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-007",
+      "hotspot_name": "巨量千川商品投放类目明细更新，商家需复核商品可投范围",
+      "hotspot_category": "类目与消费",
+      "subject_id": "rule:douyin:qianchuan-category-detail-update",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:qianchuan-category-detail-update:02",
+      "keyword": "商品可投范围",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:qianchuan-category-detail-update"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-007",
+      "hotspot_name": "巨量千川商品投放类目明细更新，商家需复核商品可投范围",
+      "hotspot_category": "类目与消费",
+      "subject_id": "rule:douyin:qianchuan-category-detail-update",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:qianchuan-category-detail-update:03",
+      "keyword": "千川类目准入",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:qianchuan-category-detail-update"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-007",
+      "hotspot_name": "巨量千川商品投放类目明细更新，商家需复核商品可投范围",
+      "hotspot_category": "类目与消费",
+      "subject_id": "rule:douyin:qianchuan-category-detail-update",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:qianchuan-category-detail-update:04",
+      "keyword": "投放计划复核",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:qianchuan-category-detail-update"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-007",
+      "hotspot_name": "巨量千川商品投放类目明细更新，商家需复核商品可投范围",
+      "hotspot_category": "类目与消费",
+      "subject_id": "rule:douyin:qianchuan-category-detail-update",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:qianchuan-category-detail-update:05",
+      "keyword": "商品广告合规",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:qianchuan-category-detail-update"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-008",
+      "hotspot_name": "保证金管理规范于9月3日更新，商家需复核缴存与经营风险",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:merchant-deposit-management-rule",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:merchant-deposit-management-rule:01",
+      "keyword": "保证金管理规范",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:merchant-deposit-management-rule"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-008",
+      "hotspot_name": "保证金管理规范于9月3日更新，商家需复核缴存与经营风险",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:merchant-deposit-management-rule",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:merchant-deposit-management-rule:02",
+      "keyword": "商家保证金",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:merchant-deposit-management-rule"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-008",
+      "hotspot_name": "保证金管理规范于9月3日更新，商家需复核缴存与经营风险",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:merchant-deposit-management-rule",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:merchant-deposit-management-rule:03",
+      "keyword": "类目保证金",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:merchant-deposit-management-rule"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-008",
+      "hotspot_name": "保证金管理规范于9月3日更新，商家需复核缴存与经营风险",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:merchant-deposit-management-rule",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:merchant-deposit-management-rule:04",
+      "keyword": "保证金补缴",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:merchant-deposit-management-rule"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-008",
+      "hotspot_name": "保证金管理规范于9月3日更新，商家需复核缴存与经营风险",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:merchant-deposit-management-rule",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:merchant-deposit-management-rule:05",
+      "keyword": "店铺经营风险",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:merchant-deposit-management-rule"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-009",
+      "hotspot_name": "虚假夸大风险解读第二部分更新，内容创作者需复核效果承诺",
+      "hotspot_category": "达人与内容案例",
+      "subject_id": "rule:douyin:false-exaggeration-risk-guide-part2",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:false-exaggeration-risk-guide-part2:01",
+      "keyword": "虚假夸大风险",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:false-exaggeration-risk-guide-part2"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-009",
+      "hotspot_name": "虚假夸大风险解读第二部分更新，内容创作者需复核效果承诺",
+      "hotspot_category": "达人与内容案例",
+      "subject_id": "rule:douyin:false-exaggeration-risk-guide-part2",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:false-exaggeration-risk-guide-part2:02",
+      "keyword": "直播效果承诺",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:false-exaggeration-risk-guide-part2"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-009",
+      "hotspot_name": "虚假夸大风险解读第二部分更新，内容创作者需复核效果承诺",
+      "hotspot_category": "达人与内容案例",
+      "subject_id": "rule:douyin:false-exaggeration-risk-guide-part2",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:false-exaggeration-risk-guide-part2:03",
+      "keyword": "短视频宣传合规",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:false-exaggeration-risk-guide-part2"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-009",
+      "hotspot_name": "虚假夸大风险解读第二部分更新，内容创作者需复核效果承诺",
+      "hotspot_category": "达人与内容案例",
+      "subject_id": "rule:douyin:false-exaggeration-risk-guide-part2",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:false-exaggeration-risk-guide-part2:04",
+      "keyword": "内容风险解读",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:false-exaggeration-risk-guide-part2"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-009",
+      "hotspot_name": "虚假夸大风险解读第二部分更新，内容创作者需复核效果承诺",
+      "hotspot_category": "达人与内容案例",
+      "subject_id": "rule:douyin:false-exaggeration-risk-guide-part2",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:false-exaggeration-risk-guide-part2:05",
+      "keyword": "商品效果证据",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:false-exaggeration-risk-guide-part2"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-010",
+      "hotspot_name": "虚假夸大风险解读第一部分上线，达人选品与脚本需前置核验",
+      "hotspot_category": "达人与内容案例",
+      "subject_id": "rule:douyin:false-exaggeration-risk-guide-part1",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:false-exaggeration-risk-guide-part1:01",
+      "keyword": "达人宣传风险",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:false-exaggeration-risk-guide-part1"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-010",
+      "hotspot_name": "虚假夸大风险解读第一部分上线，达人选品与脚本需前置核验",
+      "hotspot_category": "达人与内容案例",
+      "subject_id": "rule:douyin:false-exaggeration-risk-guide-part1",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:false-exaggeration-risk-guide-part1:02",
+      "keyword": "虚假夸大解读",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:false-exaggeration-risk-guide-part1"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-010",
+      "hotspot_name": "虚假夸大风险解读第一部分上线，达人选品与脚本需前置核验",
+      "hotspot_category": "达人与内容案例",
+      "subject_id": "rule:douyin:false-exaggeration-risk-guide-part1",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:false-exaggeration-risk-guide-part1:03",
+      "keyword": "选品合规核验",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:false-exaggeration-risk-guide-part1"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-010",
+      "hotspot_name": "虚假夸大风险解读第一部分上线，达人选品与脚本需前置核验",
+      "hotspot_category": "达人与内容案例",
+      "subject_id": "rule:douyin:false-exaggeration-risk-guide-part1",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:false-exaggeration-risk-guide-part1:04",
+      "keyword": "直播脚本风险",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:false-exaggeration-risk-guide-part1"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "revision": 1,
+      "hotspot_id": "HT-20260904-010",
+      "hotspot_name": "虚假夸大风险解读第一部分上线，达人选品与脚本需前置核验",
+      "hotspot_category": "达人与内容案例",
+      "subject_id": "rule:douyin:false-exaggeration-risk-guide-part1",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:false-exaggeration-risk-guide-part1:05",
+      "keyword": "商品证据审核",
+      "intent": "业务问题词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:false-exaggeration-risk-guide-part1"
+      ]
+    }
+  ]
+}
