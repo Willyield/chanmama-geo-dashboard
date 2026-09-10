@@ -34,45 +34,35 @@
   host.innerHTML =
     '<div class="geo-shell-inner">' +
       '<a class="geo-shell-brand" href="' + href("./") + '" aria-label="蝉妈妈 GEO 综合分析平台首页">' +
-        '<span class="geo-shell-mark" aria-hidden="true"><i></i><i></i></span>' +
+        '<span class="geo-shell-mark" aria-hidden="true"><img src="' + href("./assets/chanmama-logo.png") + '" alt=""></span>' +
         '<span class="geo-shell-brand-text">蝉妈妈 <span>GEO</span></span>' +
       '</a>' +
       '<button class="geo-shell-mobile-toggle" type="button" aria-expanded="false" aria-controls="geo-shell-nav" aria-label="打开导航">☰</button>' +
       '<nav class="geo-shell-nav" id="geo-shell-nav" aria-label="综合平台导航">' +
         '<a href="' + href("./") + '"' + current("overview") + '>工作台</a>' +
+        '<a href="' + href("./sampling/") + '"' + current("orchestration") + '>采样设置</a>' +
         '<details data-active="' + (section === "sampling") + '"><summary>GEO 样本</summary><div class="geo-shell-submenu">' +
           submenuLink("./top01/", "第一轮核心问题", "基线") +
           submenuLink("./top01-round2/", "第二轮复测", "最终 576/576") +
-          submenuLink("./top01-round3/?v=20260908-unifiedrepair1", "第三轮采样", "最终 576/576") +
           submenuLink("./top01-two-week-compare/", "两周趋势对比", "趋势") +
           submenuLink("./top2-top3/", "扩展问题", "TOP2+TOP3") +
           submenuLink("./total/", "全部问题总览", "TOP0-TOP3") +
-          submenuLink("./chanmama-bi/", "第三轮历史快照", "历史 192/192") +
         '</div></details>' +
         '<details data-active="' + (section === "citation") + '"><summary>引用源</summary><div class="geo-shell-submenu">' +
           submenuLink("./douyin-citation-report/", "第一轮引用源", "基线") +
           submenuLink("./douyin-citation-report-round2/", "第二轮引用源", "最终 576/576") +
-          submenuLink("./douyin-citation-report-round3/?v=20260908-unifiedrepair1", "第三轮引用源", "最终 576/576") +
           submenuLink("./chanquanquan-citation-report/", "蝉圈圈引用源", "最终 730/730") +
-          submenuLink("./chanmama-creative-citation-report/", "创意引用源", "270 样本 · 1 待回答恢复") +
-          submenuLink("./chanmama-bi-citation/", "第三轮引用历史快照", "历史 191/192 · 3,578 条") +
-        '</div></details>' +
-        '<details data-active="' + (section === "comparison") + '"><summary>对比仪表盘</summary><div class="geo-shell-submenu">' +
-          submenuLink("./top01-two-week-compare/", "两轮采样对比", "第一轮 + 第二轮") +
-          submenuLink("./douyin-citation-report-round2/#comparison", "第二轮引用对比", "第一轮 + 第二轮") +
-          submenuLink("./top01-three-round-compare/", "三轮采样对比", "三轮各 576") +
-          submenuLink("./douyin-citation-report-three-round-compare/?v=20260908-unifiedrepair1", "三轮引用源对比", "三轮全量重算") +
+          submenuLink("./chanmama-creative-citation-report/", "创意引用源", "540/540 · 待恢复 2") +
         '</div></details>' +
         '<details data-active="' + (section === "product") + '"><summary>产品 GEO</summary><div class="geo-shell-submenu">' +
           submenuLink("./chanjing-ai/", "蝉镜 AI", "双端观察") +
           submenuLink("./chanquanquan-geo/", "蝉圈圈 GEO", "最终 730/730") +
+          submenuLink("./chanmama-creative-geo/", "蝉妈妈创意 GEO", "540/540 · 正式 538") +
+          submenuLink("./makaplanet-overview/", "玛卡星球", "FULL · 424/424") +
         '</div></details>' +
         '<details data-active="' + (section === "operations") + '"><summary>运营工作台</summary><div class="geo-shell-submenu">' +
-          submenuLink("./account-matrix/", "账号矩阵日报", "更新至 08-06") +
-          submenuLink("./daily-hotspot/", "热点与行业活动", "更新至 08-10") +
-        '</div></details>' +
-        '<details data-active="' + (section === "more") + '"><summary>更多</summary><div class="geo-shell-submenu">' +
-          submenuLink("./chanmama-creative-geo/", "蝉妈妈创意 GEO", "首日 270/270") +
+          submenuLink("./account-matrix/", "账号矩阵日报", "11 账号 · 463 内容") +
+          submenuLink("./daily-hotspot/", "热点与行业活动", "10 候选 · 7 优先") +
         '</div></details>' +
         '<a href="' + href("./#method") + '">方法与口径</a>' +
       '</nav>' +

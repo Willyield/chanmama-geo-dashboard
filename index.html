@@ -7,11 +7,11 @@
   <meta name="theme-color" content="#111317">
   <link rel="icon" href="data:,">
   <title>蝉妈妈 GEO 工作台</title>
-  <link rel="stylesheet" href="./assets/platform-shell.css?v=20260818-workbench2">
+  <link rel="stylesheet" href="./assets/platform-shell.css?v=20260819-workbench3">
   <link rel="stylesheet" href="./assets/portal.css">
-  <script src="./portal-summary.js?v=20260904-thirdround1"></script>
-  <script defer src="./assets/platform-shell.js?v=20260908-r3compare" data-root="./" data-section="overview" data-label="综合总览"></script>
-  <script defer src="./assets/portal.js?v=20260902-r8"></script>
+  <script src="./portal-summary.js?v=20260819-ops2"></script>
+  <script defer src="./assets/platform-shell.js?v=20260819-workbench3" data-root="./" data-section="overview" data-label="综合总览"></script>
+  <script defer src="./assets/portal.js?v=20260819-ops1"></script>
 </head>
 <body class="portal-page">
   <a class="portal-skip-link" href="#main">跳到主要内容</a>
@@ -30,6 +30,9 @@
         </div>
 
         <div class="workspace-masthead-actions" aria-label="工作台工具">
+          <a class="portal-button portal-button-accent" href="./sampling/">
+            <span>新建采样</span><span aria-hidden="true">＋</span>
+          </a>
           <a class="portal-button portal-button-ghost" href="./roadshow/">
             <span>打开路演</span><span aria-hidden="true">↗</span>
           </a>
@@ -53,12 +56,12 @@
         </div>
         <div class="workspace-updated">
           <span>摘要状态</span>
-          <strong id="summary-updated">数据更新至 2026-09-03</strong>
+          <strong id="summary-updated">数据更新至 2026-08-18</strong>
         </div>
       </div>
 
       <div class="portal-container portal-metric-strip" id="hero-metrics" aria-label="核心数据摘要">
-        <div class="portal-metric"><strong>2026-09-03</strong><span>最新模块更新</span><small>跨模块摘要；各指标按自身截至日标注</small></div>
+        <div class="portal-metric"><strong>2026-08-18</strong><span>最新模块更新</span><small>跨模块摘要；各指标按自身截至日标注</small></div>
         <div class="portal-metric"><strong>1,152</strong><span>累计有效样本</span><small>第一轮 576 + 第二轮 576，为跨轮次累计 · 样本截至 2026-08-04</small></div>
         <div class="portal-metric"><strong>96.7%</strong><span>第二轮提及率</span><small>最终轮 · 557/576 条有效样本 · 截至 2026-08-04</small></div>
         <div class="portal-metric"><strong>2,662</strong><span>唯一引用来源</span><small>第二轮引用源报告 · 唯一规范化 URL · 截至 2026-08-04</small></div>
@@ -139,23 +142,42 @@
           </article>
 
           <article class="workspace-work-item workspace-work-item-planned">
-            <div class="workspace-work-state"><span></span>进度态</div>
+            <div class="workspace-work-state"><span></span>已完成，有缺口</div>
             <div class="workspace-work-copy">
               <div class="workspace-work-title">
                 <div>
                   <span>产品 GEO</span>
                   <h3>蝉妈妈创意 GEO</h3>
                 </div>
-                <strong id="creative-progress-text">270 / 540</strong>
+                <strong id="creative-progress-text">540 / 540</strong>
               </div>
-              <div class="workspace-progress-track" role="progressbar" aria-label="蝉妈妈创意 GEO 提交进度" aria-valuemin="0" aria-valuemax="540" aria-valuenow="270">
-                <i id="creative-progress-bar" style="width:50%"></i>
+              <div class="workspace-progress-track" role="progressbar" aria-label="蝉妈妈创意 GEO 采样位置进度" aria-valuemin="0" aria-valuemax="540" aria-valuenow="540">
+                <i id="creative-progress-bar" style="width:100%"></i>
               </div>
-              <div class="workspace-work-meta"><span>首日有效回答 270/270</span><span>更新至 2026-08-18</span></div>
+              <div class="workspace-work-meta"><span>正式回答 538 条 · 待恢复 2 条</span><span>数据截至 2026-08-19</span></div>
             </div>
             <div class="workspace-work-actions">
-              <a href="./chanmama-creative-geo/">查看首日仪表盘 <span aria-hidden="true">→</span></a>
-              <a href="./chanmama-creative-citation-report/">查看独立引用源报告</a>
+              <a href="./chanmama-creative-geo/">查看两日合并仪表盘 <span aria-hidden="true">→</span></a>
+              <a href="./chanmama-creative-citation-report/">查看两日引用源报告</a>
+            </div>
+          </article>
+
+          <article class="workspace-work-item workspace-work-item-product">
+            <div class="workspace-work-state"><span></span>已完成</div>
+            <div class="workspace-work-copy">
+              <div class="workspace-work-title">
+                <div>
+                  <span>产品 GEO</span>
+                  <h3>玛卡星球 GEO</h3>
+                </div>
+                <strong>424 / 424</strong>
+              </div>
+              <p>数据与引用源使用同一冻结快照；数据仪表盘新增 A-H 竞品商品卡和 G 组品牌事实双层口径。</p>
+              <div class="workspace-work-meta"><span>最终 FULL</span><span>更新至 2026-09-09</span></div>
+            </div>
+            <div class="workspace-work-actions">
+              <a href="./makaplanet-overview/">打开产品总览 <span aria-hidden="true">→</span></a>
+              <a href="./makaplanet/">数据仪表盘</a>
             </div>
           </article>
         </div>
@@ -172,7 +194,7 @@
         <div class="workspace-alert-list">
           <article class="workspace-alert workspace-alert-high">
             <span class="workspace-alert-index">01</span>
-            <div><strong>创意 GEO 首日批次已完整</strong><p id="attention-round2">08 月 18 日有效回答 270/270；两日 FULL 仍为 270/540，明日批次尚未授权。</p></div>
+            <div><strong>创意 GEO 两日数据已合并</strong><p id="attention-round2">两日共 540/540 个采样位置；538 条正式回答，2 条待恢复，状态为 FINAL_WITH_GAPS。</p></div>
           </article>
           <article class="workspace-alert">
             <span class="workspace-alert-index">02</span>
@@ -201,62 +223,44 @@
 
         <div class="workspace-entry-groups">
           <section class="workspace-entry-group" aria-labelledby="sampling-entry-title">
-            <div class="workspace-entry-group-title"><span class="workspace-entry-color workspace-entry-color-cyan"></span><h3 id="sampling-entry-title">GEO 样本</h3><small>7 个视图</small></div>
+            <div class="workspace-entry-group-title"><span class="workspace-entry-color workspace-entry-color-cyan"></span><h3 id="sampling-entry-title">GEO 样本</h3><small>5 个视图</small></div>
             <nav class="workspace-entry-list" aria-label="GEO 样本入口">
               <a href="./top01/"><span><b>第一轮核心问题</b><small>576 个基线样本</small></span><i aria-hidden="true">→</i></a>
               <a href="./top01-round2/"><span><b>第二轮复测</b><small>最终 576/576</small></span><i aria-hidden="true">→</i></a>
-              <a href="./top01-round3/"><span><b>第三轮采样</b><small>最终 576/576</small></span><i aria-hidden="true">→</i></a>
               <a href="./top01-two-week-compare/"><span><b>两周趋势对比</b><small>观察跨轮变化</small></span><i aria-hidden="true">→</i></a>
               <a href="./top2-top3/"><span><b>扩展问题</b><small>TOP2 + TOP3</small></span><i aria-hidden="true">→</i></a>
               <a href="./total/"><span><b>全部问题总览</b><small>TOP0 - TOP3</small></span><i aria-hidden="true">→</i></a>
-              <a href="./chanmama-bi/"><span><b>第三轮历史快照</b><small>历史 192/192</small></span><i aria-hidden="true">→</i></a>
             </nav>
           </section>
 
           <section class="workspace-entry-group" aria-labelledby="citation-entry-title">
-            <div class="workspace-entry-group-title"><span class="workspace-entry-color workspace-entry-color-orange"></span><h3 id="citation-entry-title">引用源</h3><small>6 个报告</small></div>
+            <div class="workspace-entry-group-title"><span class="workspace-entry-color workspace-entry-color-orange"></span><h3 id="citation-entry-title">引用源</h3><small>4 个报告</small></div>
             <nav class="workspace-entry-list" aria-label="引用源报告入口">
               <a href="./douyin-citation-report/"><span><b>第一轮引用源</b><small>9,936 次去重事件</small></span><i aria-hidden="true">→</i></a>
               <a href="./douyin-citation-report-round2/"><span><b>第二轮引用源</b><small>最终 576/576 · 11,934 次</small></span><i aria-hidden="true">→</i></a>
-              <a href="./douyin-citation-report-round3/"><span><b>第三轮引用源</b><small>最终 576/576 · 11,426 次</small></span><i aria-hidden="true">→</i></a>
               <a href="./chanquanquan-citation-report/"><span><b>蝉圈圈引用源</b><small>最终 730/730 · 7,161 条</small></span><i aria-hidden="true">→</i></a>
-              <a href="./chanmama-creative-citation-report/"><span><b>创意引用源</b><small>270 个样本 · 1 条待回答恢复</small></span><i aria-hidden="true">→</i></a>
-              <a href="./chanmama-bi-citation/"><span><b>第三轮引用历史快照</b><small>历史 191/192 含引用 · 3,578 条</small></span><i aria-hidden="true">→</i></a>
-            </nav>
-          </section>
-
-          <section class="workspace-entry-group" aria-labelledby="comparison-entry-title">
-            <div class="workspace-entry-group-title"><span class="workspace-entry-color workspace-entry-color-green"></span><h3 id="comparison-entry-title">对比仪表盘</h3><small>4 个视图</small></div>
-            <nav class="workspace-entry-list" aria-label="对比仪表盘入口">
-              <a href="./top01-two-week-compare/"><span><b>两轮采样对比</b><small>第一轮与第二轮</small></span><i aria-hidden="true">→</i></a>
-              <a href="./douyin-citation-report-round2/#comparison"><span><b>第二轮引用对比</b><small>第一轮与第二轮</small></span><i aria-hidden="true">→</i></a>
-              <a href="./top01-three-round-compare/"><span><b>三轮采样对比</b><small>三轮各 576 个样本</small></span><i aria-hidden="true">→</i></a>
-              <a href="./douyin-citation-report-three-round-compare/"><span><b>三轮引用源对比</b><small>三轮独立全量重算</small></span><i aria-hidden="true">→</i></a>
+              <a href="./chanmama-creative-citation-report/"><span><b>创意引用源</b><small>两日 540/540 · 538 条正式回答 · 2 条待恢复</small></span><i aria-hidden="true">→</i></a>
             </nav>
           </section>
 
           <section class="workspace-entry-group" aria-labelledby="product-entry-title">
-            <div class="workspace-entry-group-title"><span class="workspace-entry-color workspace-entry-color-violet"></span><h3 id="product-entry-title">产品 GEO</h3><small>2 个仪表盘</small></div>
+            <div class="workspace-entry-group-title"><span class="workspace-entry-color workspace-entry-color-violet"></span><h3 id="product-entry-title">产品 GEO</h3><small>4 个产品</small></div>
             <nav class="workspace-entry-list" aria-label="产品 GEO 入口">
               <a href="./chanjing-ai/"><span><b>蝉镜 AI</b><small>519/520 · 带 1 个未决</small></span><i aria-hidden="true">→</i></a>
               <a href="./chanquanquan-geo/"><span><b>蝉圈圈 GEO</b><small>最终 730/730</small></span><i aria-hidden="true">→</i></a>
+              <a href="./chanmama-creative-geo/"><span><b>蝉妈妈创意 GEO</b><small>两日 540/540 · 538 条正式回答 · 2 条待恢复</small></span><i aria-hidden="true">→</i></a>
+              <a href="./makaplanet-overview/"><span><b>玛卡星球</b><small>最终 424/424 · 数据与引用源双入口</small></span><i aria-hidden="true">→</i></a>
             </nav>
           </section>
 
           <section class="workspace-entry-group" aria-labelledby="operations-entry-title">
             <div class="workspace-entry-group-title"><span class="workspace-entry-color workspace-entry-color-green"></span><h3 id="operations-entry-title">运营工作台</h3><small>2 个仪表盘</small></div>
             <nav class="workspace-entry-list" aria-label="运营工作台入口">
-              <a href="./account-matrix/"><span><b>账号矩阵日报</b><small>更新至 2026-08-06</small></span><i aria-hidden="true">→</i></a>
-              <a href="./daily-hotspot/"><span><b>热点与行业活动</b><small>更新至 2026-08-10</small></span><i aria-hidden="true">→</i></a>
+              <a href="./account-matrix/"><span><b>账号矩阵日报</b><small>08-06 · 11 个账号 / 463 条内容 · PARTIAL</small></span><i aria-hidden="true">→</i></a>
+              <a href="./daily-hotspot/"><span><b>热点与行业活动</b><small>08-10 · 10 个候选 / 7 个优先 · 3 场活动</small></span><i aria-hidden="true">→</i></a>
             </nav>
           </section>
 
-          <section class="workspace-entry-group" aria-labelledby="more-entry-title">
-            <div class="workspace-entry-group-title"><span class="workspace-entry-color workspace-entry-color-cyan"></span><h3 id="more-entry-title">更多</h3><small>1 个仪表盘</small></div>
-            <nav class="workspace-entry-list" aria-label="更多入口">
-              <a href="./chanmama-creative-geo/"><span><b>蝉妈妈创意 GEO</b><small>首日有效回答 270/270</small></span><i aria-hidden="true">→</i></a>
-            </nav>
-          </section>
         </div>
       </section>
 
@@ -269,7 +273,7 @@
           <span class="workspace-panel-count">4 条</span>
         </div>
         <div class="portal-insight-list" id="insight-list" aria-live="polite">
-          <article class="portal-insight"><div class="portal-insight-meta">产品 GEO / 2026-08-18</div><p>蝉妈妈创意 GEO 首日有效回答 270/270；两日总进度 270/540，明日批次尚未授权。</p><a href="./chanmama-creative-geo/">查看依据 →</a></article>
+          <article class="portal-insight"><div class="portal-insight-meta">产品 GEO / 2026-08-19</div><p>蝉妈妈创意 GEO 两日共 540/540 个采样位置，538 条正式回答，2 条待恢复。</p><a href="./chanmama-creative-geo/">查看依据 →</a></article>
           <article class="portal-insight"><div class="portal-insight-meta">产品 GEO / 2026-08-07</div><p>蝉圈圈完成 730/730 个冻结样本，GEO 与引用源仪表盘均为最终 FULL。</p><a href="./chanquanquan-geo/">查看依据 →</a></article>
           <article class="portal-insight"><div class="portal-insight-meta">GEO 样本监测 / 2026-08-04</div><p>第二轮完成 576/576 个有效样本，提及率为 96.7%，两轮全量复测已完成。</p><a href="./top01-round2/">查看依据 →</a></article>
           <article class="portal-insight"><div class="portal-insight-meta">引用源分析 / 2026-08-04</div><p>第二轮识别 11,934 次去重引用事件和 2,662 个唯一 URL。</p><a href="./douyin-citation-report-round2/">查看依据 →</a></article>
@@ -302,7 +306,7 @@
         </div>
         <dl class="workspace-method-list">
           <div><dt>采样范围</dt><dd>覆盖蝉妈妈、蝉圈圈、蝉镜与创意产品问题池；平台与终端以各仪表盘标注为准。</dd></div>
-          <div><dt>时间周期</dt><dd id="data-period">2026-07-09 至 2026-09-03，各模块按标注日期更新。</dd></div>
+          <div><dt>时间周期</dt><dd id="data-period">2026-07-09 至 2026-08-19，各模块按标注日期更新。</dd></div>
           <div><dt>引用口径</dt><dd>按可核验引用事件、规范化 URL 和来源类型统计。</dd></div>
           <div><dt>使用边界</dt><dd>经营结果仍以官方后台为准；进度态、未决态与最终态严格分开。</dd></div>
         </dl>
@@ -313,7 +317,7 @@
   <footer class="portal-footer">
     <div class="portal-container">
       <div><strong>蝉妈妈 GEO 工作台</strong><span>内部研究与决策入口</span></div>
-      <span id="footer-updated">数据更新至 2026-09-03</span>
+      <span id="footer-updated">数据更新至 2026-08-18</span>
     </div>
   </footer>
 

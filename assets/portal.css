@@ -186,6 +186,18 @@ body.portal-page a {
   color: #b92d24;
 }
 
+.portal-button-accent {
+  border-color: var(--portal-brand);
+  background: var(--portal-brand);
+  color: #ffffff;
+}
+
+.portal-button-accent:hover {
+  border-color: #ce352b;
+  background: #ce352b;
+  color: #ffffff;
+}
+
 .workspace-masthead-status {
   min-height: 46px;
   display: flex;
@@ -758,6 +770,9 @@ body.portal-page a {
 }
 
 .portal-insight a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
   color: #b92d24;
   font-size: 12px;
   font-weight: 720;
@@ -1033,7 +1048,7 @@ body.portal-page a {
   .workspace-masthead-actions {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .portal-button {
@@ -1246,6 +1261,10 @@ body.portal-page a {
     align-items: flex-start;
     flex-direction: column;
   }
+}
+
+@media (max-width: 430px) {
+  .workspace-masthead-actions { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

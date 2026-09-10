@@ -1,15 +1,15 @@
 window.GEO_PORTAL_SUMMARY = {
   "schema_version": 1,
-  "generated_at": "2026-09-03",
+  "generated_at": "2026-09-09",
   "period": {
     "start": "2026-07-09",
-    "end": "2026-09-03"
+    "end": "2026-09-09"
   },
   "hero_metrics": [
     {
       "key": "data_date",
       "label": "最新模块更新",
-      "value": "2026-09-03",
+      "value": "2026-08-19",
       "unit": "",
       "source": "多模块摘要",
       "context": "跨模块摘要；各指标按自身截至日标注"
@@ -44,7 +44,7 @@ window.GEO_PORTAL_SUMMARY = {
       "id": "sampling",
       "label": "GEO 样本监测",
       "status": "complete",
-      "updated_at": "2026-09-03",
+      "updated_at": "2026-08-04",
       "href": "./top01/",
       "description": "持续观察蝉妈妈在核心业务问题中的出现、排序与优势表达。",
       "metrics": [
@@ -78,11 +78,6 @@ window.GEO_PORTAL_SUMMARY = {
         }
       ],
       "insights": [
-        {
-          "text": "蝉妈妈 BI 最新正式批次已完成 192/192 条采样与回收，共保留 3578 条引用证据。",
-          "source_href": "./chanmama-bi/",
-          "as_of": "2026-09-03"
-        },
         {
           "text": "第一轮完成 576 个有效样本，蝉妈妈提及率为 94.6%，TOP3 率为 46%。",
           "source_href": "./top01/",
@@ -124,12 +119,6 @@ window.GEO_PORTAL_SUMMARY = {
           "href": "./total/",
           "kind": "scope",
           "status": "complete"
-        },
-        {
-          "label": "第三轮采样",
-          "href": "./chanmama-bi/",
-          "kind": "round",
-          "status": "complete"
         }
       ]
     },
@@ -137,7 +126,7 @@ window.GEO_PORTAL_SUMMARY = {
       "id": "citation",
       "label": "引用源分析",
       "status": "complete",
-      "updated_at": "2026-09-03",
+      "updated_at": "2026-08-04",
       "href": "./douyin-citation-report-round2/",
       "description": "拆解两轮豆包回答引用了哪些页面、账号与内容类型。",
       "metrics": [
@@ -175,11 +164,6 @@ window.GEO_PORTAL_SUMMARY = {
           "text": "共识别 11934 次去重引用事件和 2662 个唯一 URL，抖音来源覆盖 96.88% 的问题。",
           "source_href": "./douyin-citation-report-round2/",
           "as_of": "2026-08-04"
-        },
-        {
-          "text": "第三轮 191/192 个样本含引用，1 个确认无引用，共 3578 条引用明细。",
-          "source_href": "./chanmama-bi-citation/",
-          "as_of": "2026-09-03"
         }
       ],
       "views": [
@@ -206,12 +190,6 @@ window.GEO_PORTAL_SUMMARY = {
           "href": "./chanmama-creative-citation-report/",
           "kind": "report",
           "status": "complete_with_gaps"
-        },
-        {
-          "label": "第三轮引用源",
-          "href": "./chanmama-bi-citation/",
-          "kind": "report",
-          "status": "complete"
         }
       ]
     },
@@ -219,9 +197,9 @@ window.GEO_PORTAL_SUMMARY = {
       "id": "product_geo",
       "label": "产品 GEO",
       "status": "active",
-      "updated_at": "2026-08-19",
-      "href": "./chanmama-creative-geo/",
-      "description": "集中查看蝉镜、蝉圈圈与蝉妈妈创意的 GEO 状态。",
+      "updated_at": "2026-09-09",
+      "href": "./makaplanet-overview/",
+      "description": "集中查看蝉镜、蝉圈圈、蝉妈妈创意与玛卡星球的 GEO 状态。",
       "metrics": [
         {
           "key": "chanjing_progress",
@@ -271,6 +249,13 @@ window.GEO_PORTAL_SUMMARY = {
           "value": 2,
           "unit": "",
           "source": "./chanmama-creative-geo/"
+        },
+        {
+          "key": "makaplanet_progress",
+          "label": "玛卡星球采样",
+          "value": 424,
+          "unit": "/424",
+          "source": "./makaplanet-overview/"
         }
       ],
       "insights": [
@@ -283,6 +268,11 @@ window.GEO_PORTAL_SUMMARY = {
           "text": "蝉妈妈创意 GEO 两日共 540/540 个采样位置，538 条正式回答，2 条待恢复，状态为 FINAL_WITH_GAPS。",
           "source_href": "./chanmama-creative-geo/",
           "as_of": "2026-08-19"
+        },
+        {
+          "text": "玛卡星球完成 424/424 条冻结回答，数据与引用源通过独立入口核验。",
+          "source_href": "./makaplanet-overview/",
+          "as_of": "2026-09-09"
         }
       ],
       "views": [
@@ -303,6 +293,12 @@ window.GEO_PORTAL_SUMMARY = {
           "href": "./chanmama-creative-geo/",
           "kind": "research",
           "status": "complete_with_gaps"
+        },
+        {
+          "label": "玛卡星球",
+          "href": "./makaplanet-overview/",
+          "kind": "research",
+          "status": "complete"
         }
       ]
     },
@@ -310,7 +306,7 @@ window.GEO_PORTAL_SUMMARY = {
       "id": "operations",
       "label": "运营工作台",
       "status": "active",
-      "updated_at": "2026-09-03",
+      "updated_at": "2026-08-10",
       "href": "./daily-hotspot/",
       "description": "查看账号矩阵、热点、行业活动与达人追踪。",
       "metrics": [
@@ -336,15 +332,15 @@ window.GEO_PORTAL_SUMMARY = {
           "value": 10,
           "unit": "",
           "source": "./daily-hotspot/",
-          "context": "10 个优先 · 截至 2026-09-03"
+          "context": "7 个优先 · 截至 2026-08-10"
         },
         {
           "key": "event_count",
           "label": "跟踪活动",
-          "value": 4,
+          "value": 3,
           "unit": "",
           "source": "./daily-hotspot/",
-          "context": "2 场优先准备 · 截至 2026-09-03"
+          "context": "2 场优先准备 · 截至 2026-08-10"
         }
       ],
       "insights": [
@@ -354,9 +350,9 @@ window.GEO_PORTAL_SUMMARY = {
           "as_of": "2026-08-06"
         },
         {
-          "text": "热点工作台收录 10 个正式候选，其中 10 个优先；同步跟踪 4 场活动，2 场进入优先准备。",
+          "text": "热点工作台收录 10 个正式候选，其中 7 个优先；同步跟踪 3 场活动，2 场进入优先准备。",
           "source_href": "./daily-hotspot/",
-          "as_of": "2026-09-03"
+          "as_of": "2026-08-10"
         }
       ],
       "views": [
