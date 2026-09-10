@@ -66,7 +66,6 @@
           submenuLink("./chanjing-ai/", "蝉镜 AI", "双端观察") +
           submenuLink("./chanquanquan-geo/", "蝉圈圈 GEO", "最终 730/730") +
           submenuLink("./chanmama-creative-geo/", "蝉妈妈创意 GEO", "540/540 · 正式 538") +
-          submenuLink("./makaplanet-overview/", "玛卡星球", "FULL · 424/424") +
         '</div></details>' +
         '<details data-active="' + (section === "operations") + '"><summary>运营工作台</summary><div class="geo-shell-submenu">' +
           submenuLink("./account-matrix/", "账号矩阵日报", "11 账号 · 463 内容") +
