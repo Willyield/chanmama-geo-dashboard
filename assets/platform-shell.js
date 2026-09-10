@@ -34,7 +34,7 @@
   host.innerHTML =
     '<div class="geo-shell-inner">' +
       '<a class="geo-shell-brand" href="' + href("./") + '" aria-label="蝉妈妈 GEO 综合分析平台首页">' +
-        '<span class="geo-shell-mark" aria-hidden="true"><img src="' + href("./assets/chanmama-logo.png") + '" alt=""></span>' +
+        '<span class="geo-shell-mark" aria-hidden="true"><img style="display:block;width:100%;height:100%;object-fit:contain" src="' + href("./assets/chanmama-logo.png") + '" alt=""></span>' +
         '<span class="geo-shell-brand-text">蝉妈妈 <span>GEO</span></span>' +
       '</a>' +
       '<button class="geo-shell-mobile-toggle" type="button" aria-expanded="false" aria-controls="geo-shell-nav" aria-label="打开导航">☰</button>' +
@@ -44,6 +44,7 @@
         '<details data-active="' + (section === "sampling") + '"><summary>GEO 样本</summary><div class="geo-shell-submenu">' +
           submenuLink("./top01/", "第一轮核心问题", "基线") +
           submenuLink("./top01-round2/", "第二轮复测", "最终 576/576") +
+          submenuLink("./top01-round3/", "第三轮采样", "最终 576/576") +
           submenuLink("./top01-two-week-compare/", "两周趋势对比", "趋势") +
           submenuLink("./top2-top3/", "扩展问题", "TOP2+TOP3") +
           submenuLink("./total/", "全部问题总览", "TOP0-TOP3") +
@@ -51,8 +52,15 @@
         '<details data-active="' + (section === "citation") + '"><summary>引用源</summary><div class="geo-shell-submenu">' +
           submenuLink("./douyin-citation-report/", "第一轮引用源", "基线") +
           submenuLink("./douyin-citation-report-round2/", "第二轮引用源", "最终 576/576") +
+          submenuLink("./douyin-citation-report-round3/", "第三轮引用源", "最终 576/576") +
           submenuLink("./chanquanquan-citation-report/", "蝉圈圈引用源", "最终 730/730") +
           submenuLink("./chanmama-creative-citation-report/", "创意引用源", "540/540 · 待恢复 2") +
+        '</div></details>' +
+        '<details data-active="' + (section === "comparison") + '"><summary>对比仪表盘</summary><div class="geo-shell-submenu">' +
+          submenuLink("./top01-two-week-compare/", "两轮采样对比", "两轮") +
+          submenuLink("./douyin-citation-report-round2/#comparison", "第二轮引用对比", "两轮") +
+          submenuLink("./top01-three-round-compare/", "三轮采样对比", "三轮") +
+          submenuLink("./douyin-citation-report-three-round-compare/", "三轮引用源对比", "三轮") +
         '</div></details>' +
         '<details data-active="' + (section === "product") + '"><summary>产品 GEO</summary><div class="geo-shell-submenu">' +
           submenuLink("./chanjing-ai/", "蝉镜 AI", "双端观察") +
