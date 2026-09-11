@@ -1,194 +1,24 @@
 {
   "schemaVersion": 1,
   "module": "hotspot-keywords",
-  "date": "2026-09-11",
+  "date": "2026-09-09",
   "revision": 1,
   "itemCount": 50,
   "items": [
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-001",
-      "hotspot_name": "关于禁止销售高风险分装/重组食品的公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajpc3zg3wxqk",
-      "subject_kind": "rule",
-      "industry": "抖音电商经营",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajpc3zg3wxqk:01",
-      "keyword": "关于禁止销售高风险分装/重组食品的公告",
-      "intent": "对象词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
-      "valid_until": "2026-09-25",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajpc3zg3wxqk"
-      ]
-    },
-    {
-      "date": "2026-09-11",
-      "revision": 1,
-      "hotspot_id": "HT-20260911-001",
-      "hotspot_name": "关于禁止销售高风险分装/重组食品的公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajpc3zg3wxqk",
-      "subject_kind": "rule",
-      "industry": "抖音电商经营",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajpc3zg3wxqk:02",
-      "keyword": "关于禁止销售高风险分装/重组食品的公告 规则",
-      "intent": "对象词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
-      "valid_until": "2026-09-25",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajpc3zg3wxqk"
-      ]
-    },
-    {
-      "date": "2026-09-11",
-      "revision": 1,
-      "hotspot_id": "HT-20260911-001",
-      "hotspot_name": "关于禁止销售高风险分装/重组食品的公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajpc3zg3wxqk",
-      "subject_kind": "rule",
-      "industry": "抖音电商经营",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajpc3zg3wxqk:03",
-      "keyword": "关于禁止销售高风险分装/重组食品的公告 影响",
-      "intent": "对象词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
-      "valid_until": "2026-09-25",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajpc3zg3wxqk"
-      ]
-    },
-    {
-      "date": "2026-09-11",
-      "revision": 1,
-      "hotspot_id": "HT-20260911-001",
-      "hotspot_name": "关于禁止销售高风险分装/重组食品的公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajpc3zg3wxqk",
-      "subject_kind": "rule",
-      "industry": "抖音电商经营",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajpc3zg3wxqk:04",
-      "keyword": "关于禁止销售高风险分装/重组食品的公告 商家",
-      "intent": "对象词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
-      "valid_until": "2026-09-25",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajpc3zg3wxqk"
-      ]
-    },
-    {
-      "date": "2026-09-11",
-      "revision": 1,
-      "hotspot_id": "HT-20260911-001",
-      "hotspot_name": "关于禁止销售高风险分装/重组食品的公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajpc3zg3wxqk",
-      "subject_kind": "rule",
-      "industry": "抖音电商经营",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajpc3zg3wxqk:05",
-      "keyword": "关于禁止销售高风险分装/重组食品的公告 操作清单",
-      "intent": "对象词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
-      "valid_until": "2026-09-25",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajpc3zg3wxqk"
-      ]
-    },
-    {
-      "date": "2026-09-11",
-      "revision": 1,
-      "hotspot_id": "HT-20260911-002",
-      "hotspot_name": "9.9更新-受不可抗力（自然灾害/会议赛事）影响，平台发货及服务调整公告",
+      "hotspot_id": "HT-20260909-001",
+      "hotspot_name": "【农资园艺】行业管理规范",
       "hotspot_category": "经营与规则",
-      "subject_id": "rule:douyin:force-majeure-shipping-adjustment",
+      "subject_id": "rule:douyin:doudian-learning-center-112743",
       "subject_kind": "rule",
       "industry": "抖音电商经营",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-aj5uc2mq9bw6:01",
-      "keyword": "9.9更新-受不可抗力（自然灾害/会议赛事）影响",
+      "keyword_id": "kw:doudian-learning-center-112743:01",
+      "keyword": "【农资园艺】行业管理规范",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -198,7 +28,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -206,23 +36,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:doudian-learning-center-aj5uc2mq9bw6"
+        "metric:douyin:doudian-learning-center-112743"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-002",
-      "hotspot_name": "9.9更新-受不可抗力（自然灾害/会议赛事）影响，平台发货及服务调整公告",
+      "hotspot_id": "HT-20260909-001",
+      "hotspot_name": "【农资园艺】行业管理规范",
       "hotspot_category": "经营与规则",
-      "subject_id": "rule:douyin:force-majeure-shipping-adjustment",
+      "subject_id": "rule:douyin:doudian-learning-center-112743",
       "subject_kind": "rule",
       "industry": "抖音电商经营",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-aj5uc2mq9bw6:02",
-      "keyword": "9.9更新-受不可抗力（自然灾害/会议赛事）影响 规则",
+      "keyword_id": "kw:doudian-learning-center-112743:02",
+      "keyword": "【农资园艺】行业管理规范 规则",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -232,7 +62,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -240,23 +70,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:doudian-learning-center-aj5uc2mq9bw6"
+        "metric:douyin:doudian-learning-center-112743"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-002",
-      "hotspot_name": "9.9更新-受不可抗力（自然灾害/会议赛事）影响，平台发货及服务调整公告",
+      "hotspot_id": "HT-20260909-001",
+      "hotspot_name": "【农资园艺】行业管理规范",
       "hotspot_category": "经营与规则",
-      "subject_id": "rule:douyin:force-majeure-shipping-adjustment",
+      "subject_id": "rule:douyin:doudian-learning-center-112743",
       "subject_kind": "rule",
       "industry": "抖音电商经营",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-aj5uc2mq9bw6:03",
-      "keyword": "9.9更新-受不可抗力（自然灾害/会议赛事）影响 影响",
+      "keyword_id": "kw:doudian-learning-center-112743:03",
+      "keyword": "【农资园艺】行业管理规范 影响",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -266,7 +96,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -274,23 +104,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:doudian-learning-center-aj5uc2mq9bw6"
+        "metric:douyin:doudian-learning-center-112743"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-002",
-      "hotspot_name": "9.9更新-受不可抗力（自然灾害/会议赛事）影响，平台发货及服务调整公告",
+      "hotspot_id": "HT-20260909-001",
+      "hotspot_name": "【农资园艺】行业管理规范",
       "hotspot_category": "经营与规则",
-      "subject_id": "rule:douyin:force-majeure-shipping-adjustment",
+      "subject_id": "rule:douyin:doudian-learning-center-112743",
       "subject_kind": "rule",
       "industry": "抖音电商经营",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-aj5uc2mq9bw6:04",
-      "keyword": "9.9更新-受不可抗力（自然灾害/会议赛事）影响 商家",
+      "keyword_id": "kw:doudian-learning-center-112743:04",
+      "keyword": "【农资园艺】行业管理规范 商家",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -300,7 +130,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -308,23 +138,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:doudian-learning-center-aj5uc2mq9bw6"
+        "metric:douyin:doudian-learning-center-112743"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-002",
-      "hotspot_name": "9.9更新-受不可抗力（自然灾害/会议赛事）影响，平台发货及服务调整公告",
+      "hotspot_id": "HT-20260909-001",
+      "hotspot_name": "【农资园艺】行业管理规范",
       "hotspot_category": "经营与规则",
-      "subject_id": "rule:douyin:force-majeure-shipping-adjustment",
+      "subject_id": "rule:douyin:doudian-learning-center-112743",
       "subject_kind": "rule",
       "industry": "抖音电商经营",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-aj5uc2mq9bw6:05",
-      "keyword": "9.9更新-受不可抗力（自然灾害/会议赛事）影响 操作清单",
+      "keyword_id": "kw:doudian-learning-center-112743:05",
+      "keyword": "【农资园艺】行业管理规范 操作清单",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -334,7 +164,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -342,23 +172,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:doudian-learning-center-aj5uc2mq9bw6"
+        "metric:douyin:doudian-learning-center-112743"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-003",
-      "hotspot_name": "关于规范床上用品商品属性填写和宣传的治理公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajqesmgxscsi",
+      "hotspot_id": "HT-20260909-002",
+      "hotspot_name": "【用户体验类】风险规则",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:doudian-learning-center-ajqp2tcqy8lq",
       "subject_kind": "rule",
       "industry": "抖音电商经营",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajqesmgxscsi:01",
-      "keyword": "关于规范床上用品商品属性填写和宣传的治理公告",
+      "keyword_id": "kw:doudian-learning-center-ajqp2tcqy8lq:01",
+      "keyword": "【用户体验类】风险规则",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -368,7 +198,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -376,23 +206,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajqesmgxscsi"
+        "metric:douyin:doudian-learning-center-ajqp2tcqy8lq"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-003",
-      "hotspot_name": "关于规范床上用品商品属性填写和宣传的治理公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajqesmgxscsi",
+      "hotspot_id": "HT-20260909-002",
+      "hotspot_name": "【用户体验类】风险规则",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:doudian-learning-center-ajqp2tcqy8lq",
       "subject_kind": "rule",
       "industry": "抖音电商经营",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajqesmgxscsi:02",
-      "keyword": "关于规范床上用品商品属性填写和宣传的治理公告 规则",
+      "keyword_id": "kw:doudian-learning-center-ajqp2tcqy8lq:02",
+      "keyword": "【用户体验类】风险规则 规则",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -402,7 +232,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -410,23 +240,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajqesmgxscsi"
+        "metric:douyin:doudian-learning-center-ajqp2tcqy8lq"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-003",
-      "hotspot_name": "关于规范床上用品商品属性填写和宣传的治理公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajqesmgxscsi",
+      "hotspot_id": "HT-20260909-002",
+      "hotspot_name": "【用户体验类】风险规则",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:doudian-learning-center-ajqp2tcqy8lq",
       "subject_kind": "rule",
       "industry": "抖音电商经营",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajqesmgxscsi:03",
-      "keyword": "关于规范床上用品商品属性填写和宣传的治理公告 影响",
+      "keyword_id": "kw:doudian-learning-center-ajqp2tcqy8lq:03",
+      "keyword": "【用户体验类】风险规则 影响",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -436,7 +266,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -444,23 +274,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajqesmgxscsi"
+        "metric:douyin:doudian-learning-center-ajqp2tcqy8lq"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-003",
-      "hotspot_name": "关于规范床上用品商品属性填写和宣传的治理公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajqesmgxscsi",
+      "hotspot_id": "HT-20260909-002",
+      "hotspot_name": "【用户体验类】风险规则",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:doudian-learning-center-ajqp2tcqy8lq",
       "subject_kind": "rule",
       "industry": "抖音电商经营",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajqesmgxscsi:04",
-      "keyword": "关于规范床上用品商品属性填写和宣传的治理公告 商家",
+      "keyword_id": "kw:doudian-learning-center-ajqp2tcqy8lq:04",
+      "keyword": "【用户体验类】风险规则 商家",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -470,7 +300,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -478,23 +308,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajqesmgxscsi"
+        "metric:douyin:doudian-learning-center-ajqp2tcqy8lq"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-003",
-      "hotspot_name": "关于规范床上用品商品属性填写和宣传的治理公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajqesmgxscsi",
+      "hotspot_id": "HT-20260909-002",
+      "hotspot_name": "【用户体验类】风险规则",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:doudian-learning-center-ajqp2tcqy8lq",
       "subject_kind": "rule",
       "industry": "抖音电商经营",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajqesmgxscsi:05",
-      "keyword": "关于规范床上用品商品属性填写和宣传的治理公告 操作清单",
+      "keyword_id": "kw:doudian-learning-center-ajqp2tcqy8lq:05",
+      "keyword": "【用户体验类】风险规则 操作清单",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -504,7 +334,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -512,23 +342,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajqesmgxscsi"
+        "metric:douyin:doudian-learning-center-ajqp2tcqy8lq"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-004",
-      "hotspot_name": "关于规范干货和五谷杂粮类目商品净含量信息描述的治理公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajq8aezfqmed",
+      "hotspot_id": "HT-20260909-003",
+      "hotspot_name": "【公司管理规定】风险解读",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:doudian-learning-center-ajqexzcev4zx",
       "subject_kind": "rule",
       "industry": "抖音电商经营",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajq8aezfqmed:01",
-      "keyword": "关于规范干货和五谷杂粮类目商品净含量信息描述的治",
+      "keyword_id": "kw:doudian-learning-center-ajqexzcev4zx:01",
+      "keyword": "【公司管理规定】风险解读",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -538,7 +368,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -546,23 +376,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajq8aezfqmed"
+        "metric:douyin:doudian-learning-center-ajqexzcev4zx"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-004",
-      "hotspot_name": "关于规范干货和五谷杂粮类目商品净含量信息描述的治理公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajq8aezfqmed",
+      "hotspot_id": "HT-20260909-003",
+      "hotspot_name": "【公司管理规定】风险解读",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:doudian-learning-center-ajqexzcev4zx",
       "subject_kind": "rule",
       "industry": "抖音电商经营",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajq8aezfqmed:02",
-      "keyword": "关于规范干货和五谷杂粮类目商品净含量信息描述的治 规则",
+      "keyword_id": "kw:doudian-learning-center-ajqexzcev4zx:02",
+      "keyword": "【公司管理规定】风险解读 规则",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -572,7 +402,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -580,23 +410,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajq8aezfqmed"
+        "metric:douyin:doudian-learning-center-ajqexzcev4zx"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-004",
-      "hotspot_name": "关于规范干货和五谷杂粮类目商品净含量信息描述的治理公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajq8aezfqmed",
+      "hotspot_id": "HT-20260909-003",
+      "hotspot_name": "【公司管理规定】风险解读",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:doudian-learning-center-ajqexzcev4zx",
       "subject_kind": "rule",
       "industry": "抖音电商经营",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajq8aezfqmed:03",
-      "keyword": "关于规范干货和五谷杂粮类目商品净含量信息描述的治 影响",
+      "keyword_id": "kw:doudian-learning-center-ajqexzcev4zx:03",
+      "keyword": "【公司管理规定】风险解读 影响",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -606,7 +436,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -614,23 +444,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajq8aezfqmed"
+        "metric:douyin:doudian-learning-center-ajqexzcev4zx"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-004",
-      "hotspot_name": "关于规范干货和五谷杂粮类目商品净含量信息描述的治理公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajq8aezfqmed",
+      "hotspot_id": "HT-20260909-003",
+      "hotspot_name": "【公司管理规定】风险解读",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:doudian-learning-center-ajqexzcev4zx",
       "subject_kind": "rule",
       "industry": "抖音电商经营",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajq8aezfqmed:04",
-      "keyword": "关于规范干货和五谷杂粮类目商品净含量信息描述的治 商家",
+      "keyword_id": "kw:doudian-learning-center-ajqexzcev4zx:04",
+      "keyword": "【公司管理规定】风险解读 商家",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -640,7 +470,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -648,23 +478,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajq8aezfqmed"
+        "metric:douyin:doudian-learning-center-ajqexzcev4zx"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-004",
-      "hotspot_name": "关于规范干货和五谷杂粮类目商品净含量信息描述的治理公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajq8aezfqmed",
+      "hotspot_id": "HT-20260909-003",
+      "hotspot_name": "【公司管理规定】风险解读",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:doudian-learning-center-ajqexzcev4zx",
       "subject_kind": "rule",
       "industry": "抖音电商经营",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajq8aezfqmed:05",
-      "keyword": "关于规范干货和五谷杂粮类目商品净含量信息描述的治 操作清单",
+      "keyword_id": "kw:doudian-learning-center-ajqexzcev4zx:05",
+      "keyword": "【公司管理规定】风险解读 操作清单",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -674,7 +504,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -682,193 +512,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajq8aezfqmed"
+        "metric:douyin:doudian-learning-center-ajqexzcev4zx"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-005",
-      "hotspot_name": "关于加强肉制品商品资质管控的治理公告",
+      "hotspot_id": "HT-20260909-004",
+      "hotspot_name": "【衣哥专属】Y01特步空军一号革面小白鞋男女板鞋厚底时尚休闲运动",
       "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajponjygmxwb",
-      "subject_kind": "rule",
-      "industry": "抖音电商经营",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajponjygmxwb:01",
-      "keyword": "关于加强肉制品商品资质管控的治理公告",
-      "intent": "对象词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
-      "valid_until": "2026-09-25",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajponjygmxwb"
-      ]
-    },
-    {
-      "date": "2026-09-11",
-      "revision": 1,
-      "hotspot_id": "HT-20260911-005",
-      "hotspot_name": "关于加强肉制品商品资质管控的治理公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajponjygmxwb",
-      "subject_kind": "rule",
-      "industry": "抖音电商经营",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajponjygmxwb:02",
-      "keyword": "关于加强肉制品商品资质管控的治理公告 规则",
-      "intent": "对象词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
-      "valid_until": "2026-09-25",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajponjygmxwb"
-      ]
-    },
-    {
-      "date": "2026-09-11",
-      "revision": 1,
-      "hotspot_id": "HT-20260911-005",
-      "hotspot_name": "关于加强肉制品商品资质管控的治理公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajponjygmxwb",
-      "subject_kind": "rule",
-      "industry": "抖音电商经营",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajponjygmxwb:03",
-      "keyword": "关于加强肉制品商品资质管控的治理公告 影响",
-      "intent": "对象词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
-      "valid_until": "2026-09-25",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajponjygmxwb"
-      ]
-    },
-    {
-      "date": "2026-09-11",
-      "revision": 1,
-      "hotspot_id": "HT-20260911-005",
-      "hotspot_name": "关于加强肉制品商品资质管控的治理公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajponjygmxwb",
-      "subject_kind": "rule",
-      "industry": "抖音电商经营",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajponjygmxwb:04",
-      "keyword": "关于加强肉制品商品资质管控的治理公告 商家",
-      "intent": "对象词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
-      "valid_until": "2026-09-25",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajponjygmxwb"
-      ]
-    },
-    {
-      "date": "2026-09-11",
-      "revision": 1,
-      "hotspot_id": "HT-20260911-005",
-      "hotspot_name": "关于加强肉制品商品资质管控的治理公告",
-      "hotspot_category": "类目与消费",
-      "subject_id": "rule:douyin:doudian-learning-center-ajponjygmxwb",
-      "subject_kind": "rule",
-      "industry": "抖音电商经营",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:doudian-learning-center-ajponjygmxwb:05",
-      "keyword": "关于加强肉制品商品资质管控的治理公告 操作清单",
-      "intent": "对象词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
-      "valid_until": "2026-09-25",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:douyin:doudian-learning-center-ajponjygmxwb"
-      ]
-    },
-    {
-      "date": "2026-09-11",
-      "revision": 1,
-      "hotspot_id": "HT-20260911-006",
-      "hotspot_name": "【小黄豆专属】润培香氛护手霜12g*6支礼盒装长效保湿芳香DB",
-      "hotspot_category": "类目与消费",
-      "subject_id": "product:chanmama:chanmama-lkgwyliuahjqsdg4diy4jfxe-hscjqgq-html",
+      "subject_id": "product:chanmama:chanmama-b04gcubgtdr8znm4bie-jjuiclxzwjuv-html",
       "subject_kind": "product",
       "industry": "抖音电商商品",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:chanmama-lkgwyliuahjqsdg4diy4jfxe-hscjqgq-html:01",
-      "keyword": "【小黄豆专属】润培香氛护手霜12g*6支礼盒装长",
+      "keyword_id": "kw:chanmama-b04gcubgtdr8znm4bie-jjuiclxzwjuv-html:01",
+      "keyword": "【衣哥专属】Y01特步空军一号革面小白鞋男女板鞋",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -878,7 +538,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -886,23 +546,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:chanmama-lkgwyliuahjqsdg4diy4jfxe-hscjqgq-html"
+        "metric:douyin:chanmama-b04gcubgtdr8znm4bie-jjuiclxzwjuv-html"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-006",
-      "hotspot_name": "【小黄豆专属】润培香氛护手霜12g*6支礼盒装长效保湿芳香DB",
+      "hotspot_id": "HT-20260909-004",
+      "hotspot_name": "【衣哥专属】Y01特步空军一号革面小白鞋男女板鞋厚底时尚休闲运动",
       "hotspot_category": "类目与消费",
-      "subject_id": "product:chanmama:chanmama-lkgwyliuahjqsdg4diy4jfxe-hscjqgq-html",
+      "subject_id": "product:chanmama:chanmama-b04gcubgtdr8znm4bie-jjuiclxzwjuv-html",
       "subject_kind": "product",
       "industry": "抖音电商商品",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:chanmama-lkgwyliuahjqsdg4diy4jfxe-hscjqgq-html:02",
-      "keyword": "【小黄豆专属】润培香氛护手霜12g*6支礼盒装长 规则",
+      "keyword_id": "kw:chanmama-b04gcubgtdr8znm4bie-jjuiclxzwjuv-html:02",
+      "keyword": "【衣哥专属】Y01特步空军一号革面小白鞋男女板鞋 规则",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -912,7 +572,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -920,23 +580,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:chanmama-lkgwyliuahjqsdg4diy4jfxe-hscjqgq-html"
+        "metric:douyin:chanmama-b04gcubgtdr8znm4bie-jjuiclxzwjuv-html"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-006",
-      "hotspot_name": "【小黄豆专属】润培香氛护手霜12g*6支礼盒装长效保湿芳香DB",
+      "hotspot_id": "HT-20260909-004",
+      "hotspot_name": "【衣哥专属】Y01特步空军一号革面小白鞋男女板鞋厚底时尚休闲运动",
       "hotspot_category": "类目与消费",
-      "subject_id": "product:chanmama:chanmama-lkgwyliuahjqsdg4diy4jfxe-hscjqgq-html",
+      "subject_id": "product:chanmama:chanmama-b04gcubgtdr8znm4bie-jjuiclxzwjuv-html",
       "subject_kind": "product",
       "industry": "抖音电商商品",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:chanmama-lkgwyliuahjqsdg4diy4jfxe-hscjqgq-html:03",
-      "keyword": "【小黄豆专属】润培香氛护手霜12g*6支礼盒装长 影响",
+      "keyword_id": "kw:chanmama-b04gcubgtdr8znm4bie-jjuiclxzwjuv-html:03",
+      "keyword": "【衣哥专属】Y01特步空军一号革面小白鞋男女板鞋 影响",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -946,7 +606,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -954,23 +614,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:chanmama-lkgwyliuahjqsdg4diy4jfxe-hscjqgq-html"
+        "metric:douyin:chanmama-b04gcubgtdr8znm4bie-jjuiclxzwjuv-html"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-006",
-      "hotspot_name": "【小黄豆专属】润培香氛护手霜12g*6支礼盒装长效保湿芳香DB",
+      "hotspot_id": "HT-20260909-004",
+      "hotspot_name": "【衣哥专属】Y01特步空军一号革面小白鞋男女板鞋厚底时尚休闲运动",
       "hotspot_category": "类目与消费",
-      "subject_id": "product:chanmama:chanmama-lkgwyliuahjqsdg4diy4jfxe-hscjqgq-html",
+      "subject_id": "product:chanmama:chanmama-b04gcubgtdr8znm4bie-jjuiclxzwjuv-html",
       "subject_kind": "product",
       "industry": "抖音电商商品",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:chanmama-lkgwyliuahjqsdg4diy4jfxe-hscjqgq-html:04",
-      "keyword": "【小黄豆专属】润培香氛护手霜12g*6支礼盒装长 商家",
+      "keyword_id": "kw:chanmama-b04gcubgtdr8znm4bie-jjuiclxzwjuv-html:04",
+      "keyword": "【衣哥专属】Y01特步空军一号革面小白鞋男女板鞋 商家",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -980,7 +640,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -988,23 +648,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:chanmama-lkgwyliuahjqsdg4diy4jfxe-hscjqgq-html"
+        "metric:douyin:chanmama-b04gcubgtdr8znm4bie-jjuiclxzwjuv-html"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-006",
-      "hotspot_name": "【小黄豆专属】润培香氛护手霜12g*6支礼盒装长效保湿芳香DB",
+      "hotspot_id": "HT-20260909-004",
+      "hotspot_name": "【衣哥专属】Y01特步空军一号革面小白鞋男女板鞋厚底时尚休闲运动",
       "hotspot_category": "类目与消费",
-      "subject_id": "product:chanmama:chanmama-lkgwyliuahjqsdg4diy4jfxe-hscjqgq-html",
+      "subject_id": "product:chanmama:chanmama-b04gcubgtdr8znm4bie-jjuiclxzwjuv-html",
       "subject_kind": "product",
       "industry": "抖音电商商品",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:chanmama-lkgwyliuahjqsdg4diy4jfxe-hscjqgq-html:05",
-      "keyword": "【小黄豆专属】润培香氛护手霜12g*6支礼盒装长 操作清单",
+      "keyword_id": "kw:chanmama-b04gcubgtdr8znm4bie-jjuiclxzwjuv-html:05",
+      "keyword": "【衣哥专属】Y01特步空军一号革面小白鞋男女板鞋 操作清单",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -1014,7 +674,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1022,13 +682,13 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:chanmama-lkgwyliuahjqsdg4diy4jfxe-hscjqgq-html"
+        "metric:douyin:chanmama-b04gcubgtdr8znm4bie-jjuiclxzwjuv-html"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-007",
+      "hotspot_id": "HT-20260909-005",
       "hotspot_name": "公仔牌顽渍净洗衣粉轻松搓洗去污渍除菌除螨3倍洁净去渍家用去黄",
       "hotspot_category": "类目与消费",
       "subject_id": "product:chanmama:chanmama-oifq5-ibxnjas6ywtmxo9u2tveaeurop-html",
@@ -1048,7 +708,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1060,9 +720,9 @@
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-007",
+      "hotspot_id": "HT-20260909-005",
       "hotspot_name": "公仔牌顽渍净洗衣粉轻松搓洗去污渍除菌除螨3倍洁净去渍家用去黄",
       "hotspot_category": "类目与消费",
       "subject_id": "product:chanmama:chanmama-oifq5-ibxnjas6ywtmxo9u2tveaeurop-html",
@@ -1082,7 +742,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1094,9 +754,9 @@
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-007",
+      "hotspot_id": "HT-20260909-005",
       "hotspot_name": "公仔牌顽渍净洗衣粉轻松搓洗去污渍除菌除螨3倍洁净去渍家用去黄",
       "hotspot_category": "类目与消费",
       "subject_id": "product:chanmama:chanmama-oifq5-ibxnjas6ywtmxo9u2tveaeurop-html",
@@ -1116,7 +776,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1128,9 +788,9 @@
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-007",
+      "hotspot_id": "HT-20260909-005",
       "hotspot_name": "公仔牌顽渍净洗衣粉轻松搓洗去污渍除菌除螨3倍洁净去渍家用去黄",
       "hotspot_category": "类目与消费",
       "subject_id": "product:chanmama:chanmama-oifq5-ibxnjas6ywtmxo9u2tveaeurop-html",
@@ -1150,7 +810,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1162,9 +822,9 @@
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-007",
+      "hotspot_id": "HT-20260909-005",
       "hotspot_name": "公仔牌顽渍净洗衣粉轻松搓洗去污渍除菌除螨3倍洁净去渍家用去黄",
       "hotspot_category": "类目与消费",
       "subject_id": "product:chanmama:chanmama-oifq5-ibxnjas6ywtmxo9u2tveaeurop-html",
@@ -1184,7 +844,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1196,19 +856,19 @@
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-008",
-      "hotspot_name": "陈伯 FF9985521",
+      "hotspot_id": "HT-20260909-006",
+      "hotspot_name": "王浩宇Whys Whys010821",
       "hotspot_category": "达人与内容案例",
-      "subject_id": "product:chanmama:chanmama-ndbmg1obl3wnodhh-aujsa-html",
+      "subject_id": "product:chanmama:chanmama-7gmvbcdkicq6lys9lowq5w-html",
       "subject_kind": "creator",
       "industry": "抖音内容达人",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:chanmama-ndbmg1obl3wnodhh-aujsa-html:01",
-      "keyword": "陈伯 FF9985521",
+      "keyword_id": "kw:chanmama-7gmvbcdkicq6lys9lowq5w-html:01",
+      "keyword": "王浩宇Whys Whys010821",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -1218,7 +878,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1226,23 +886,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:chanmama-ndbmg1obl3wnodhh-aujsa-html"
+        "metric:douyin:chanmama-7gmvbcdkicq6lys9lowq5w-html"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-008",
-      "hotspot_name": "陈伯 FF9985521",
+      "hotspot_id": "HT-20260909-006",
+      "hotspot_name": "王浩宇Whys Whys010821",
       "hotspot_category": "达人与内容案例",
-      "subject_id": "product:chanmama:chanmama-ndbmg1obl3wnodhh-aujsa-html",
+      "subject_id": "product:chanmama:chanmama-7gmvbcdkicq6lys9lowq5w-html",
       "subject_kind": "creator",
       "industry": "抖音内容达人",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:chanmama-ndbmg1obl3wnodhh-aujsa-html:02",
-      "keyword": "陈伯 FF9985521 规则",
+      "keyword_id": "kw:chanmama-7gmvbcdkicq6lys9lowq5w-html:02",
+      "keyword": "王浩宇Whys Whys010821 规则",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -1252,7 +912,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1260,23 +920,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:chanmama-ndbmg1obl3wnodhh-aujsa-html"
+        "metric:douyin:chanmama-7gmvbcdkicq6lys9lowq5w-html"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-008",
-      "hotspot_name": "陈伯 FF9985521",
+      "hotspot_id": "HT-20260909-006",
+      "hotspot_name": "王浩宇Whys Whys010821",
       "hotspot_category": "达人与内容案例",
-      "subject_id": "product:chanmama:chanmama-ndbmg1obl3wnodhh-aujsa-html",
+      "subject_id": "product:chanmama:chanmama-7gmvbcdkicq6lys9lowq5w-html",
       "subject_kind": "creator",
       "industry": "抖音内容达人",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:chanmama-ndbmg1obl3wnodhh-aujsa-html:03",
-      "keyword": "陈伯 FF9985521 影响",
+      "keyword_id": "kw:chanmama-7gmvbcdkicq6lys9lowq5w-html:03",
+      "keyword": "王浩宇Whys Whys010821 影响",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -1286,7 +946,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1294,23 +954,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:chanmama-ndbmg1obl3wnodhh-aujsa-html"
+        "metric:douyin:chanmama-7gmvbcdkicq6lys9lowq5w-html"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-008",
-      "hotspot_name": "陈伯 FF9985521",
+      "hotspot_id": "HT-20260909-006",
+      "hotspot_name": "王浩宇Whys Whys010821",
       "hotspot_category": "达人与内容案例",
-      "subject_id": "product:chanmama:chanmama-ndbmg1obl3wnodhh-aujsa-html",
+      "subject_id": "product:chanmama:chanmama-7gmvbcdkicq6lys9lowq5w-html",
       "subject_kind": "creator",
       "industry": "抖音内容达人",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:chanmama-ndbmg1obl3wnodhh-aujsa-html:04",
-      "keyword": "陈伯 FF9985521 商家",
+      "keyword_id": "kw:chanmama-7gmvbcdkicq6lys9lowq5w-html:04",
+      "keyword": "王浩宇Whys Whys010821 商家",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -1320,7 +980,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1328,23 +988,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:chanmama-ndbmg1obl3wnodhh-aujsa-html"
+        "metric:douyin:chanmama-7gmvbcdkicq6lys9lowq5w-html"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-008",
-      "hotspot_name": "陈伯 FF9985521",
+      "hotspot_id": "HT-20260909-006",
+      "hotspot_name": "王浩宇Whys Whys010821",
       "hotspot_category": "达人与内容案例",
-      "subject_id": "product:chanmama:chanmama-ndbmg1obl3wnodhh-aujsa-html",
+      "subject_id": "product:chanmama:chanmama-7gmvbcdkicq6lys9lowq5w-html",
       "subject_kind": "creator",
       "industry": "抖音内容达人",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:chanmama-ndbmg1obl3wnodhh-aujsa-html:05",
-      "keyword": "陈伯 FF9985521 操作清单",
+      "keyword_id": "kw:chanmama-7gmvbcdkicq6lys9lowq5w-html:05",
+      "keyword": "王浩宇Whys Whys010821 操作清单",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -1354,7 +1014,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1362,193 +1022,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:chanmama-ndbmg1obl3wnodhh-aujsa-html"
+        "metric:douyin:chanmama-7gmvbcdkicq6lys9lowq5w-html"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-009",
-      "hotspot_name": "云逛深圳珠宝展专场 小北珠宝 粉丝555.8w 09/09 12:30 5小时36分19秒 4.9w 213.2w 91 1000w+ 39,198,857 2w~10w 9,668",
-      "hotspot_category": "达人与内容案例",
-      "subject_id": "product:chanmama:chanmama-lhjtsflzan-nx7aqhc3ecfrdc9vqqatz-html",
-      "subject_kind": "creator",
-      "industry": "抖音内容达人",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:chanmama-lhjtsflzan-nx7aqhc3ecfrdc9vqqatz-html:01",
-      "keyword": "云逛深圳珠宝展专场 小北珠宝 粉丝555.8w ",
-      "intent": "对象词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
-      "valid_until": "2026-09-25",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:douyin:chanmama-lhjtsflzan-nx7aqhc3ecfrdc9vqqatz-html"
-      ]
-    },
-    {
-      "date": "2026-09-11",
-      "revision": 1,
-      "hotspot_id": "HT-20260911-009",
-      "hotspot_name": "云逛深圳珠宝展专场 小北珠宝 粉丝555.8w 09/09 12:30 5小时36分19秒 4.9w 213.2w 91 1000w+ 39,198,857 2w~10w 9,668",
-      "hotspot_category": "达人与内容案例",
-      "subject_id": "product:chanmama:chanmama-lhjtsflzan-nx7aqhc3ecfrdc9vqqatz-html",
-      "subject_kind": "creator",
-      "industry": "抖音内容达人",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:chanmama-lhjtsflzan-nx7aqhc3ecfrdc9vqqatz-html:02",
-      "keyword": "云逛深圳珠宝展专场 小北珠宝 粉丝555.8w  规则",
-      "intent": "对象词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
-      "valid_until": "2026-09-25",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:douyin:chanmama-lhjtsflzan-nx7aqhc3ecfrdc9vqqatz-html"
-      ]
-    },
-    {
-      "date": "2026-09-11",
-      "revision": 1,
-      "hotspot_id": "HT-20260911-009",
-      "hotspot_name": "云逛深圳珠宝展专场 小北珠宝 粉丝555.8w 09/09 12:30 5小时36分19秒 4.9w 213.2w 91 1000w+ 39,198,857 2w~10w 9,668",
-      "hotspot_category": "达人与内容案例",
-      "subject_id": "product:chanmama:chanmama-lhjtsflzan-nx7aqhc3ecfrdc9vqqatz-html",
-      "subject_kind": "creator",
-      "industry": "抖音内容达人",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:chanmama-lhjtsflzan-nx7aqhc3ecfrdc9vqqatz-html:03",
-      "keyword": "云逛深圳珠宝展专场 小北珠宝 粉丝555.8w  影响",
-      "intent": "对象词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
-      "valid_until": "2026-09-25",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:douyin:chanmama-lhjtsflzan-nx7aqhc3ecfrdc9vqqatz-html"
-      ]
-    },
-    {
-      "date": "2026-09-11",
-      "revision": 1,
-      "hotspot_id": "HT-20260911-009",
-      "hotspot_name": "云逛深圳珠宝展专场 小北珠宝 粉丝555.8w 09/09 12:30 5小时36分19秒 4.9w 213.2w 91 1000w+ 39,198,857 2w~10w 9,668",
-      "hotspot_category": "达人与内容案例",
-      "subject_id": "product:chanmama:chanmama-lhjtsflzan-nx7aqhc3ecfrdc9vqqatz-html",
-      "subject_kind": "creator",
-      "industry": "抖音内容达人",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:chanmama-lhjtsflzan-nx7aqhc3ecfrdc9vqqatz-html:04",
-      "keyword": "云逛深圳珠宝展专场 小北珠宝 粉丝555.8w  商家",
-      "intent": "对象词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
-      "valid_until": "2026-09-25",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:douyin:chanmama-lhjtsflzan-nx7aqhc3ecfrdc9vqqatz-html"
-      ]
-    },
-    {
-      "date": "2026-09-11",
-      "revision": 1,
-      "hotspot_id": "HT-20260911-009",
-      "hotspot_name": "云逛深圳珠宝展专场 小北珠宝 粉丝555.8w 09/09 12:30 5小时36分19秒 4.9w 213.2w 91 1000w+ 39,198,857 2w~10w 9,668",
-      "hotspot_category": "达人与内容案例",
-      "subject_id": "product:chanmama:chanmama-lhjtsflzan-nx7aqhc3ecfrdc9vqqatz-html",
-      "subject_kind": "creator",
-      "industry": "抖音内容达人",
-      "breakout_status": "observation_only",
-      "ad_eligible": false,
-      "eligible_modes": [],
-      "keyword_id": "kw:chanmama-lhjtsflzan-nx7aqhc3ecfrdc9vqqatz-html:05",
-      "keyword": "云逛深圳珠宝展专场 小北珠宝 粉丝555.8w  操作清单",
-      "intent": "对象词",
-      "applicable_modes": [
-        "search",
-        "interest"
-      ],
-      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
-      "landing_page_status": "planned",
-      "landing_page_url": null,
-      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
-      "valid_until": "2026-09-25",
-      "validation_status": "hypothesis",
-      "risk_flags": [
-        "主动搜索未验证",
-        "落地页与监测未就绪"
-      ],
-      "evidence_refs": [
-        "metric:douyin:chanmama-lhjtsflzan-nx7aqhc3ecfrdc9vqqatz-html"
-      ]
-    },
-    {
-      "date": "2026-09-11",
-      "revision": 1,
-      "hotspot_id": "HT-20260911-010",
-      "hotspot_name": "【7天淡纹】黄金胶原蛋白精华抗皱胶原炮面膜紧致舒缓补水保湿",
+      "hotspot_id": "HT-20260909-007",
+      "hotspot_name": "【蔡徐坤代言】BUV绿泥洗面奶控油深层清洁细腻毛孔去闭口男女通用",
       "hotspot_category": "类目与消费",
-      "subject_id": "product:chanmama:chanmama-yuwsgt3rys8ktutdywrkg6vtiwsmqx0x-html",
+      "subject_id": "product:chanmama:chanmama-mdi96101kdvjdqp-zvsfb6vxokyjumc2-html",
       "subject_kind": "product",
       "industry": "抖音电商商品",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:chanmama-yuwsgt3rys8ktutdywrkg6vtiwsmqx0x-html:01",
-      "keyword": "【7天淡纹】黄金胶原蛋白精华抗皱胶原炮面膜紧致舒",
+      "keyword_id": "kw:chanmama-mdi96101kdvjdqp-zvsfb6vxokyjumc2-html:01",
+      "keyword": "【蔡徐坤代言】BUV绿泥洗面奶控油深层清洁细腻毛",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -1558,7 +1048,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1566,23 +1056,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:chanmama-yuwsgt3rys8ktutdywrkg6vtiwsmqx0x-html"
+        "metric:douyin:chanmama-mdi96101kdvjdqp-zvsfb6vxokyjumc2-html"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-010",
-      "hotspot_name": "【7天淡纹】黄金胶原蛋白精华抗皱胶原炮面膜紧致舒缓补水保湿",
+      "hotspot_id": "HT-20260909-007",
+      "hotspot_name": "【蔡徐坤代言】BUV绿泥洗面奶控油深层清洁细腻毛孔去闭口男女通用",
       "hotspot_category": "类目与消费",
-      "subject_id": "product:chanmama:chanmama-yuwsgt3rys8ktutdywrkg6vtiwsmqx0x-html",
+      "subject_id": "product:chanmama:chanmama-mdi96101kdvjdqp-zvsfb6vxokyjumc2-html",
       "subject_kind": "product",
       "industry": "抖音电商商品",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:chanmama-yuwsgt3rys8ktutdywrkg6vtiwsmqx0x-html:02",
-      "keyword": "【7天淡纹】黄金胶原蛋白精华抗皱胶原炮面膜紧致舒 规则",
+      "keyword_id": "kw:chanmama-mdi96101kdvjdqp-zvsfb6vxokyjumc2-html:02",
+      "keyword": "【蔡徐坤代言】BUV绿泥洗面奶控油深层清洁细腻毛 规则",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -1592,7 +1082,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1600,23 +1090,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:chanmama-yuwsgt3rys8ktutdywrkg6vtiwsmqx0x-html"
+        "metric:douyin:chanmama-mdi96101kdvjdqp-zvsfb6vxokyjumc2-html"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-010",
-      "hotspot_name": "【7天淡纹】黄金胶原蛋白精华抗皱胶原炮面膜紧致舒缓补水保湿",
+      "hotspot_id": "HT-20260909-007",
+      "hotspot_name": "【蔡徐坤代言】BUV绿泥洗面奶控油深层清洁细腻毛孔去闭口男女通用",
       "hotspot_category": "类目与消费",
-      "subject_id": "product:chanmama:chanmama-yuwsgt3rys8ktutdywrkg6vtiwsmqx0x-html",
+      "subject_id": "product:chanmama:chanmama-mdi96101kdvjdqp-zvsfb6vxokyjumc2-html",
       "subject_kind": "product",
       "industry": "抖音电商商品",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:chanmama-yuwsgt3rys8ktutdywrkg6vtiwsmqx0x-html:03",
-      "keyword": "【7天淡纹】黄金胶原蛋白精华抗皱胶原炮面膜紧致舒 影响",
+      "keyword_id": "kw:chanmama-mdi96101kdvjdqp-zvsfb6vxokyjumc2-html:03",
+      "keyword": "【蔡徐坤代言】BUV绿泥洗面奶控油深层清洁细腻毛 影响",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -1626,7 +1116,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1634,23 +1124,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:chanmama-yuwsgt3rys8ktutdywrkg6vtiwsmqx0x-html"
+        "metric:douyin:chanmama-mdi96101kdvjdqp-zvsfb6vxokyjumc2-html"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-010",
-      "hotspot_name": "【7天淡纹】黄金胶原蛋白精华抗皱胶原炮面膜紧致舒缓补水保湿",
+      "hotspot_id": "HT-20260909-007",
+      "hotspot_name": "【蔡徐坤代言】BUV绿泥洗面奶控油深层清洁细腻毛孔去闭口男女通用",
       "hotspot_category": "类目与消费",
-      "subject_id": "product:chanmama:chanmama-yuwsgt3rys8ktutdywrkg6vtiwsmqx0x-html",
+      "subject_id": "product:chanmama:chanmama-mdi96101kdvjdqp-zvsfb6vxokyjumc2-html",
       "subject_kind": "product",
       "industry": "抖音电商商品",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:chanmama-yuwsgt3rys8ktutdywrkg6vtiwsmqx0x-html:04",
-      "keyword": "【7天淡纹】黄金胶原蛋白精华抗皱胶原炮面膜紧致舒 商家",
+      "keyword_id": "kw:chanmama-mdi96101kdvjdqp-zvsfb6vxokyjumc2-html:04",
+      "keyword": "【蔡徐坤代言】BUV绿泥洗面奶控油深层清洁细腻毛 商家",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -1660,7 +1150,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1668,23 +1158,23 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:chanmama-yuwsgt3rys8ktutdywrkg6vtiwsmqx0x-html"
+        "metric:douyin:chanmama-mdi96101kdvjdqp-zvsfb6vxokyjumc2-html"
       ]
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-09",
       "revision": 1,
-      "hotspot_id": "HT-20260911-010",
-      "hotspot_name": "【7天淡纹】黄金胶原蛋白精华抗皱胶原炮面膜紧致舒缓补水保湿",
+      "hotspot_id": "HT-20260909-007",
+      "hotspot_name": "【蔡徐坤代言】BUV绿泥洗面奶控油深层清洁细腻毛孔去闭口男女通用",
       "hotspot_category": "类目与消费",
-      "subject_id": "product:chanmama:chanmama-yuwsgt3rys8ktutdywrkg6vtiwsmqx0x-html",
+      "subject_id": "product:chanmama:chanmama-mdi96101kdvjdqp-zvsfb6vxokyjumc2-html",
       "subject_kind": "product",
       "industry": "抖音电商商品",
       "breakout_status": "observation_only",
       "ad_eligible": false,
       "eligible_modes": [],
-      "keyword_id": "kw:chanmama-yuwsgt3rys8ktutdywrkg6vtiwsmqx0x-html:05",
-      "keyword": "【7天淡纹】黄金胶原蛋白精华抗皱胶原炮面膜紧致舒 操作清单",
+      "keyword_id": "kw:chanmama-mdi96101kdvjdqp-zvsfb6vxokyjumc2-html:05",
+      "keyword": "【蔡徐坤代言】BUV绿泥洗面奶控油深层清洁细腻毛 操作清单",
       "intent": "对象词",
       "applicable_modes": [
         "search",
@@ -1694,7 +1184,7 @@
       "landing_page_status": "planned",
       "landing_page_url": null,
       "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
-      "valid_from": "2026-09-11",
+      "valid_from": "2026-09-09",
       "valid_until": "2026-09-25",
       "validation_status": "hypothesis",
       "risk_flags": [
@@ -1702,7 +1192,517 @@
         "落地页与监测未就绪"
       ],
       "evidence_refs": [
-        "metric:douyin:chanmama-yuwsgt3rys8ktutdywrkg6vtiwsmqx0x-html"
+        "metric:douyin:chanmama-mdi96101kdvjdqp-zvsfb6vxokyjumc2-html"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "revision": 1,
+      "hotspot_id": "HT-20260909-008",
+      "hotspot_name": "【净浮生】油污净厨房油烟机去重油污去油王污渍清洁剂油烟净清洗剂 相似高佣 40% 公开 28% 2,825 10w+ 420,954 0%~5%",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:chanmama-bp7oawn7ztj7cb4vo-cf7fcdqglqxnhu-html",
+      "subject_kind": "product",
+      "industry": "抖音电商商品",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:chanmama-bp7oawn7ztj7cb4vo-cf7fcdqglqxnhu-html:01",
+      "keyword": "【净浮生】油污净厨房油烟机去重油污去油王污渍清洁",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-09",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:chanmama-bp7oawn7ztj7cb4vo-cf7fcdqglqxnhu-html"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "revision": 1,
+      "hotspot_id": "HT-20260909-008",
+      "hotspot_name": "【净浮生】油污净厨房油烟机去重油污去油王污渍清洁剂油烟净清洗剂 相似高佣 40% 公开 28% 2,825 10w+ 420,954 0%~5%",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:chanmama-bp7oawn7ztj7cb4vo-cf7fcdqglqxnhu-html",
+      "subject_kind": "product",
+      "industry": "抖音电商商品",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:chanmama-bp7oawn7ztj7cb4vo-cf7fcdqglqxnhu-html:02",
+      "keyword": "【净浮生】油污净厨房油烟机去重油污去油王污渍清洁 规则",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-09",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:chanmama-bp7oawn7ztj7cb4vo-cf7fcdqglqxnhu-html"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "revision": 1,
+      "hotspot_id": "HT-20260909-008",
+      "hotspot_name": "【净浮生】油污净厨房油烟机去重油污去油王污渍清洁剂油烟净清洗剂 相似高佣 40% 公开 28% 2,825 10w+ 420,954 0%~5%",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:chanmama-bp7oawn7ztj7cb4vo-cf7fcdqglqxnhu-html",
+      "subject_kind": "product",
+      "industry": "抖音电商商品",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:chanmama-bp7oawn7ztj7cb4vo-cf7fcdqglqxnhu-html:03",
+      "keyword": "【净浮生】油污净厨房油烟机去重油污去油王污渍清洁 影响",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-09",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:chanmama-bp7oawn7ztj7cb4vo-cf7fcdqglqxnhu-html"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "revision": 1,
+      "hotspot_id": "HT-20260909-008",
+      "hotspot_name": "【净浮生】油污净厨房油烟机去重油污去油王污渍清洁剂油烟净清洗剂 相似高佣 40% 公开 28% 2,825 10w+ 420,954 0%~5%",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:chanmama-bp7oawn7ztj7cb4vo-cf7fcdqglqxnhu-html",
+      "subject_kind": "product",
+      "industry": "抖音电商商品",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:chanmama-bp7oawn7ztj7cb4vo-cf7fcdqglqxnhu-html:04",
+      "keyword": "【净浮生】油污净厨房油烟机去重油污去油王污渍清洁 商家",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-09",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:chanmama-bp7oawn7ztj7cb4vo-cf7fcdqglqxnhu-html"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "revision": 1,
+      "hotspot_id": "HT-20260909-008",
+      "hotspot_name": "【净浮生】油污净厨房油烟机去重油污去油王污渍清洁剂油烟净清洗剂 相似高佣 40% 公开 28% 2,825 10w+ 420,954 0%~5%",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:chanmama-bp7oawn7ztj7cb4vo-cf7fcdqglqxnhu-html",
+      "subject_kind": "product",
+      "industry": "抖音电商商品",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:chanmama-bp7oawn7ztj7cb4vo-cf7fcdqglqxnhu-html:05",
+      "keyword": "【净浮生】油污净厨房油烟机去重油污去油王污渍清洁 操作清单",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-09",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:chanmama-bp7oawn7ztj7cb4vo-cf7fcdqglqxnhu-html"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "revision": 1,
+      "hotspot_id": "HT-20260909-009",
+      "hotspot_name": "陈泽- 9896719.",
+      "hotspot_category": "达人与内容案例",
+      "subject_id": "product:chanmama:chanmama-mnznwr1cms5l5oo07wmjtw-html",
+      "subject_kind": "creator",
+      "industry": "抖音内容达人",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:chanmama-mnznwr1cms5l5oo07wmjtw-html:01",
+      "keyword": "陈泽- 9896719.",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-09",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:chanmama-mnznwr1cms5l5oo07wmjtw-html"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "revision": 1,
+      "hotspot_id": "HT-20260909-009",
+      "hotspot_name": "陈泽- 9896719.",
+      "hotspot_category": "达人与内容案例",
+      "subject_id": "product:chanmama:chanmama-mnznwr1cms5l5oo07wmjtw-html",
+      "subject_kind": "creator",
+      "industry": "抖音内容达人",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:chanmama-mnznwr1cms5l5oo07wmjtw-html:02",
+      "keyword": "陈泽- 9896719. 规则",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-09",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:chanmama-mnznwr1cms5l5oo07wmjtw-html"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "revision": 1,
+      "hotspot_id": "HT-20260909-009",
+      "hotspot_name": "陈泽- 9896719.",
+      "hotspot_category": "达人与内容案例",
+      "subject_id": "product:chanmama:chanmama-mnznwr1cms5l5oo07wmjtw-html",
+      "subject_kind": "creator",
+      "industry": "抖音内容达人",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:chanmama-mnznwr1cms5l5oo07wmjtw-html:03",
+      "keyword": "陈泽- 9896719. 影响",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-09",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:chanmama-mnznwr1cms5l5oo07wmjtw-html"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "revision": 1,
+      "hotspot_id": "HT-20260909-009",
+      "hotspot_name": "陈泽- 9896719.",
+      "hotspot_category": "达人与内容案例",
+      "subject_id": "product:chanmama:chanmama-mnznwr1cms5l5oo07wmjtw-html",
+      "subject_kind": "creator",
+      "industry": "抖音内容达人",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:chanmama-mnznwr1cms5l5oo07wmjtw-html:04",
+      "keyword": "陈泽- 9896719. 商家",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-09",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:chanmama-mnznwr1cms5l5oo07wmjtw-html"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "revision": 1,
+      "hotspot_id": "HT-20260909-009",
+      "hotspot_name": "陈泽- 9896719.",
+      "hotspot_category": "达人与内容案例",
+      "subject_id": "product:chanmama:chanmama-mnznwr1cms5l5oo07wmjtw-html",
+      "subject_kind": "creator",
+      "industry": "抖音内容达人",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:chanmama-mnznwr1cms5l5oo07wmjtw-html:05",
+      "keyword": "陈泽- 9896719. 操作清单",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-09",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:chanmama-mnznwr1cms5l5oo07wmjtw-html"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "revision": 1,
+      "hotspot_id": "HT-20260909-010",
+      "hotspot_name": "2026秋季新款半高领蝙蝠袖针织衫女宽松显瘦气质高贵紫色中袖上衣",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:chanmama-eengyay1ka3j5eeenqn1ba4ni3bewufr-html",
+      "subject_kind": "product",
+      "industry": "抖音电商商品",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:chanmama-eengyay1ka3j5eeenqn1ba4ni3bewufr-html:01",
+      "keyword": "2026秋季新款半高领蝙蝠袖针织衫女宽松显瘦气质",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-09",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:chanmama-eengyay1ka3j5eeenqn1ba4ni3bewufr-html"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "revision": 1,
+      "hotspot_id": "HT-20260909-010",
+      "hotspot_name": "2026秋季新款半高领蝙蝠袖针织衫女宽松显瘦气质高贵紫色中袖上衣",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:chanmama-eengyay1ka3j5eeenqn1ba4ni3bewufr-html",
+      "subject_kind": "product",
+      "industry": "抖音电商商品",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:chanmama-eengyay1ka3j5eeenqn1ba4ni3bewufr-html:02",
+      "keyword": "2026秋季新款半高领蝙蝠袖针织衫女宽松显瘦气质 规则",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-09",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:chanmama-eengyay1ka3j5eeenqn1ba4ni3bewufr-html"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "revision": 1,
+      "hotspot_id": "HT-20260909-010",
+      "hotspot_name": "2026秋季新款半高领蝙蝠袖针织衫女宽松显瘦气质高贵紫色中袖上衣",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:chanmama-eengyay1ka3j5eeenqn1ba4ni3bewufr-html",
+      "subject_kind": "product",
+      "industry": "抖音电商商品",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:chanmama-eengyay1ka3j5eeenqn1ba4ni3bewufr-html:03",
+      "keyword": "2026秋季新款半高领蝙蝠袖针织衫女宽松显瘦气质 影响",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-09",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:chanmama-eengyay1ka3j5eeenqn1ba4ni3bewufr-html"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "revision": 1,
+      "hotspot_id": "HT-20260909-010",
+      "hotspot_name": "2026秋季新款半高领蝙蝠袖针织衫女宽松显瘦气质高贵紫色中袖上衣",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:chanmama-eengyay1ka3j5eeenqn1ba4ni3bewufr-html",
+      "subject_kind": "product",
+      "industry": "抖音电商商品",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:chanmama-eengyay1ka3j5eeenqn1ba4ni3bewufr-html:04",
+      "keyword": "2026秋季新款半高领蝙蝠袖针织衫女宽松显瘦气质 商家",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-09",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:chanmama-eengyay1ka3j5eeenqn1ba4ni3bewufr-html"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "revision": 1,
+      "hotspot_id": "HT-20260909-010",
+      "hotspot_name": "2026秋季新款半高领蝙蝠袖针织衫女宽松显瘦气质高贵紫色中袖上衣",
+      "hotspot_category": "类目与消费",
+      "subject_id": "product:chanmama:chanmama-eengyay1ka3j5eeenqn1ba4ni3bewufr-html",
+      "subject_kind": "product",
+      "industry": "抖音电商商品",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:chanmama-eengyay1ka3j5eeenqn1ba4ni3bewufr-html:05",
+      "keyword": "2026秋季新款半高领蝙蝠袖针织衫女宽松显瘦气质 操作清单",
+      "intent": "对象词",
+      "applicable_modes": [
+        "search",
+        "interest"
+      ],
+      "match_suggestion": "短语匹配；仅在取得真实搜索词报告后再调整。",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "每日热点对象专题页（尚未达到广告承接就绪）",
+      "valid_from": "2026-09-09",
+      "valid_until": "2026-09-25",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "主动搜索未验证",
+        "落地页与监测未就绪"
+      ],
+      "evidence_refs": [
+        "metric:douyin:chanmama-eengyay1ka3j5eeenqn1ba4ni3bewufr-html"
       ]
     }
   ]

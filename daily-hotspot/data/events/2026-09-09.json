@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "module": "events",
-  "date": "2026-09-11",
+  "date": "2026-09-09",
   "observedAt": "2026-08-17 09:58",
-  "verifiedAt": "2026-09-11",
-  "revision": 1,
-  "updatedAt": "2026-09-11T02:18:13.420Z",
+  "verifiedAt": "2026-09-09",
+  "revision": 3,
+  "updatedAt": "2026-09-09T02:30:34.338Z",
   "sourceType": "structured-data",
   "sourceLabel": "活动数据与核验记录",
   "sourceFiles": [
@@ -27,7 +27,7 @@
       "verified": 4,
       "excludedRecent": 19
     },
-    "webSummary": "执行摘要：已核验 4 场活动满足至少提前 3 个自然月的准备门槛（最早准入日 2026-12-11），优先准备 2 场、重点观察 2 场、待补议程 0 场；19 场近期活动已排除并保留历史证据。\n今日优先：2027第八届CHWE出海网全球跨境电商展（深圳）春季、2027第七届中国（厦门）国际跨境电商展览会。",
+    "webSummary": "执行摘要：已核验 4 场活动满足至少提前 3 个自然月的准备门槛（最早准入日 2026-12-09），优先准备 2 场、重点观察 2 场、待补议程 0 场；19 场近期活动已排除并保留历史证据。\n今日优先：2027第八届CHWE出海网全球跨境电商展（深圳）春季、2027第七届中国（厦门）国际跨境电商展览会。",
     "topActions": [
       {
         "eventId": "EVT-022",
@@ -64,7 +64,7 @@
       "苏州"
     ]
   },
-  "thresholdDate": "2026-12-11",
+  "thresholdDate": "2026-12-09",
   "events": [
     {
       "eventId": "EVT-019",
@@ -107,21 +107,21 @@
           "label": "报名及原始来源",
           "domain": "pepc-expo.com",
           "url": "http://www.pepc-expo.com/about_13/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "pepc-expo.com",
           "url": "http://www.pepc-expo.com/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 2",
           "domain": "pepc-expo.com",
           "url": "http://www.pepc-expo.com/aboutus/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -346,42 +346,42 @@
           "label": "报名及原始来源",
           "domain": "areshow.com",
           "url": "http://www.areshow.com/about_13/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "areshow.com",
           "url": "http://www.areshow.com/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 2",
           "domain": "areshow.com",
           "url": "http://www.areshow.com/about_17/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 3",
           "domain": "areshow.com",
           "url": "http://www.areshow.com/about_19/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 4",
           "domain": "areshow.com",
           "url": "http://www.areshow.com/about_14/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 5",
           "domain": "areshow.com",
           "url": "http://www.areshow.com/about_24/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -541,35 +541,35 @@
           "label": "报名及原始来源",
           "domain": "spz.ecf-gov.com",
           "url": "http://spz.ecf-gov.com/about_19/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "spz.ecf-gov.com",
           "url": "http://spz.ecf-gov.com/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 2",
           "domain": "spz.ecf-gov.com",
           "url": "http://spz.ecf-gov.com/about_9/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 3",
           "domain": "spz.ecf-gov.com",
           "url": "http://spz.ecf-gov.com/about_10/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 4",
           "domain": "spz.ecf-gov.com",
           "url": "http://spz.ecf-gov.com/about_17/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -735,42 +735,42 @@
           "label": "报名及原始来源",
           "domain": "chinaple.com",
           "url": "http://www.chinaple.com/about_26/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "chinaple.com",
           "url": "http://www.chinaple.com/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 2",
           "domain": "chinaple.com",
           "url": "http://www.chinaple.com/about_31/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 3",
           "domain": "chinaple.com",
           "url": "http://www.chinaple.com/about_27/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 4",
           "domain": "chinaple.com",
           "url": "http://www.chinaple.com/about_12/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 5",
           "domain": "chinaple.com",
           "url": "http://www.chinaple.com/about_32/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -932,7 +932,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3079",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -1058,7 +1058,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-22 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-07-22 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-006",
@@ -1098,7 +1098,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3065",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -1225,7 +1225,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-007",
@@ -1263,7 +1263,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3049",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -1367,7 +1367,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-009",
@@ -1406,7 +1406,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3095",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -1509,7 +1509,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-003",
@@ -1546,7 +1546,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3056",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -1674,7 +1674,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-07-23 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-013",
@@ -1714,14 +1714,14 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3076",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "img.cifnews.com",
           "url": "https://img.cifnews.com/dev/20260720/6a50687efa264a009c965e0c8abc3af4.jpg",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -1847,7 +1847,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-24 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-07-24 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-015",
@@ -1887,7 +1887,7 @@
           "label": "报名及原始来源",
           "domain": "mp.weixin.qq.com",
           "url": "https://mp.weixin.qq.com/s?__biz=MzcwOTM1NDQ3NA%3D%3D&mid=2247483674&idx=1",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -2016,7 +2016,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-26 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-07-26 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-011",
@@ -2055,7 +2055,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/2951",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -2137,7 +2137,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-30 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-07-30 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-004",
@@ -2176,7 +2176,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3083",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -2325,7 +2325,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-07-31 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-07-31 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-002",
@@ -2365,14 +2365,14 @@
           "label": "报名及原始来源",
           "domain": "huodongxing.com",
           "url": "https://www.huodongxing.com/event/4863525375500",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3082",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -2503,7 +2503,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-08-04 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-08-04 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-008",
@@ -2542,7 +2542,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3106",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -2690,7 +2690,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-08-11 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-08-11 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-010",
@@ -2729,7 +2729,7 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3143",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -2833,7 +2833,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-08-13 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-08-13 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-001",
@@ -2872,14 +2872,14 @@
           "label": "报名及原始来源",
           "domain": "huodongxing.com",
           "url": "https://www.huodongxing.com/event/6869719596400",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "cn.chinadaily.com.cn",
           "url": "https://cn.chinadaily.com.cn/a/202607/14/WS6a55f89aa310d709c2fbd787.html",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -2963,7 +2963,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-08-14 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-08-14 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-014",
@@ -3011,7 +3011,7 @@
           "label": "报名及原始来源",
           "domain": "mp.weixin.qq.com",
           "url": "https://mp.weixin.qq.com/s?__biz=Mzg4NTUxMTUzMw%3D%3D&mid=2247499670&idx=1",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -3138,7 +3138,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-08-19 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-08-19 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-012",
@@ -3180,14 +3180,14 @@
           "label": "报名及原始来源",
           "domain": "cifnews.com",
           "url": "https://www.cifnews.com/activity/3027",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "img.cifnews.com",
           "url": "https://img.cifnews.com/dev/20260630/2bf2efc407934f96990d23853dcdb92c.png",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -3313,7 +3313,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-08-20 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-08-20 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-017",
@@ -3358,21 +3358,21 @@
           "label": "报名及原始来源",
           "domain": "szicbe.com",
           "url": "http://www.szicbe.com/article/detail/id/615.html",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "szicbe.com",
           "url": "http://www.szicbe.com/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 2",
           "domain": "szicbe.com",
           "url": "http://www.szicbe.com/article/detail/id/403.html",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -3524,7 +3524,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-10-28 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-10-28 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-016",
@@ -3579,28 +3579,28 @@
           "label": "报名及原始来源",
           "domain": "icbeshow.com",
           "url": "http://www.icbeshow.com/about_23/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "icbeshow.com",
           "url": "http://www.icbeshow.com/aboutexpo/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 2",
           "domain": "icbeshow.com",
           "url": "http://www.icbeshow.com/activity/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 3",
           "domain": "icbeshow.com",
           "url": "http://www.icbeshow.com/audience/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -3754,7 +3754,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-10-30 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-10-30 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-018",
@@ -3797,7 +3797,7 @@
           "label": "报名及原始来源",
           "domain": "mp.weixin.qq.com",
           "url": "https://mp.weixin.qq.com/s?__biz=MzA5NjQ0MzczOA==&mid=2652028935&idx=3&sn=2d0beabf405cdc5660f80c43e5d9710a",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -4014,7 +4014,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-11-27 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-11-27 早于最早准入日 2026-12-09"
     },
     {
       "eventId": "EVT-020",
@@ -4055,42 +4055,42 @@
           "label": "报名及原始来源",
           "domain": "mspeexpo.com",
           "url": "http://www.mspeexpo.com/about_13/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 1",
           "domain": "mspeexpo.com",
           "url": "http://www.mspeexpo.com/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 2",
           "domain": "mspeexpo.com",
           "url": "http://www.mspeexpo.com/about_17/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 3",
           "domain": "mspeexpo.com",
           "url": "http://www.mspeexpo.com/about_19/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 4",
           "domain": "mspeexpo.com",
           "url": "http://www.mspeexpo.com/about_22/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         },
         {
           "label": "补充来源 5",
           "domain": "mspeexpo.com",
           "url": "http://www.mspeexpo.com/about_24/",
-          "verifiedAt": "2026-09-11",
+          "verifiedAt": "2026-09-09",
           "accessStatus": "已核验"
         }
       ],
@@ -4246,7 +4246,7 @@
         }
       ],
       "exclusionCategory": "inside-preparation-window",
-      "exclusionReason": "开场日 2026-11-27 早于最早准入日 2026-12-11"
+      "exclusionReason": "开场日 2026-11-27 早于最早准入日 2026-12-09"
     }
   ],
   "keywords": [
