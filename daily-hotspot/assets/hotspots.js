@@ -565,7 +565,7 @@ function renderToolbar(data, filters, count) {
         <legend class="visually-hidden">热点领域</legend>
         ${domains.map(([value, label, domainCount]) => `<label><input type="radio" name="hotspot-domain" data-filter="domain" value="${value}" ${(filters.domain || "all") === value ? "checked" : ""}><span>${label}<b>${domainCount}</b></span></label>`).join("")}
       </fieldset>
-      <label class="search-box">${icon("search")}<input type="search" data-filter="search" value="${escapeHtml(filters.search)}" placeholder="搜索热点、信号或动作"></label>
+      <label class="search-box">${icon("search")}<input type="search" data-filter="search" value="${escapeHtml(filters.search)}" placeholder="搜索热点、信号或动作" aria-label="搜索热点、信号或动作"></label>
       <label class="filter-select">${icon("gauge")}<select data-filter="grade" aria-label="筛选业务响应">
         <option value="all">全部业务响应</option>
         ${["S", "A", "B", "C", "D"].map((grade) => `<option value="${grade}" ${filters.grade === grade ? "selected" : ""}>${escapeHtml(ACTION_LABELS[grade])}</option>`).join("")}
