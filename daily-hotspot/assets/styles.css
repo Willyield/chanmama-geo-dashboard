@@ -988,7 +988,6 @@ svg {
 
 .date-select-wrap select {
   width: 100%;
-  min-height: 24px;
   border: 0;
   outline: 0;
   background: transparent;
@@ -1527,15 +1526,7 @@ p {
 }
 
 .filter-select select {
-  min-height: 24px;
   cursor: pointer;
-}
-
-.date-select-wrap:focus-within,
-.search-box:focus-within,
-.filter-select:focus-within {
-  outline: 2px solid var(--link);
-  outline-offset: 2px;
 }
 
 .result-count {
@@ -2523,7 +2514,6 @@ p {
 
 .source-link {
   display: inline-flex;
-  min-height: 24px;
   max-width: 100%;
   align-items: center;
   gap: 4px;
