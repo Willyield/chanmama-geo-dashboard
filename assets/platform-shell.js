@@ -53,7 +53,6 @@
           submenuLink("./douyin-citation-report/", "第一轮引用源", "基线") +
           submenuLink("./douyin-citation-report-round2/", "第二轮引用源", "最终 576/576") +
           submenuLink("./douyin-citation-report-round3/", "第三轮引用源", "最终 576/576") +
-          submenuLink("./chanquanquan-citation-report/", "蝉圈圈引用源", "最终 730/730") +
           submenuLink("./chanmama-creative-citation-report/", "创意引用源", "540/540 · 待恢复 2") +
         '</div></details>' +
         '<details data-active="' + (section === "comparison") + '"><summary>对比仪表盘</summary><div class="geo-shell-submenu">' +
@@ -64,7 +63,7 @@
         '</div></details>' +
         '<details data-active="' + (section === "product") + '"><summary>产品 GEO</summary><div class="geo-shell-submenu">' +
           submenuLink("./chanjing-ai/", "蝉镜 AI", "双端观察") +
-          submenuLink("./chanquanquan-geo/", "蝉圈圈 GEO", "最终 730/730") +
+          submenuLink("./chanquanquan/", "蝉圈圈", "第一轮 · 730/730") +
           submenuLink("./chanmama-creative-geo/", "蝉妈妈创意 GEO", "540/540 · 正式 538") +
         '</div></details>' +
         '<details data-active="' + (section === "operations") + '"><summary>运营工作台</summary><div class="geo-shell-submenu">' +
