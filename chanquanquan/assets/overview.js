@@ -66,5 +66,5 @@
     document.getElementById('total-breakdown').innerHTML = Object.entries(data.groups).map(([name, group]) => `<div class="total-breakdown-row"><span>${esc(name)}</span><strong>${fmt(group.sampleCount)} 个样本</strong><small>${fmt(group.questionCount)} 道问题 · 提及 ${pct(group.metrics.mentionRate.numerator, group.metrics.mentionRate.denominator)}</small></div>`).join('');
     installTooltips();
   }
-  Promise.all([fetch('./round1/data/dashboard-data.json', { cache: 'no-store' }).then(response => response.json()), fetch('./round1/citation/citation-data.json', { cache: 'no-store' }).then(response => response.json())]).then(([data, citations]) => render(data, citations)).catch(error => { document.getElementById('total-dashboard-status').textContent = '总指标加载失败，请刷新页面。'; console.error(error); });
+  CQQ.load(CQQ.config.summary).then(s => { render(s.data, s.citation); document.documentElement.dataset.kpiReady = 'true'; }).catch(error => { document.getElementById('total-dashboard-status').textContent = '总指标加载失败，请刷新页面。'; console.error(error); });
 })();
