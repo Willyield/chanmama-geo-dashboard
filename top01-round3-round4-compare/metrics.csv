@@ -1,0 +1,13 @@
+﻿round,roundLabel,key,label,count,denominator,ratePct,value,definition,ruleVersion
+round3,第三轮,mention,提及率,527,576,91.49,,回答正文明确提到蝉妈妈的有效样本数 / 全部有效样本数,brand-mention-from-answer-body-v2
+round4,第四轮,mention,提及率,537,576,93.23,,回答正文明确提到蝉妈妈的有效样本数 / 全部有效样本数,brand-mention-from-answer-body-v2
+round3,第三轮,ordinaryFirst,普通首推率,115,576,19.97,,蝉妈妈位于回答原始工具推荐顺序第 1 的有效样本数 / 全部有效样本数,tool-order-first-v2
+round4,第四轮,ordinaryFirst,普通首推率,95,576,16.49,,蝉妈妈位于回答原始工具推荐顺序第 1 的有效样本数 / 全部有效样本数,tool-order-first-v2
+round3,第三轮,effectiveFirst,有效首推率,480,535,89.72,,从回答的工具推荐顺序中移除抖音官方工具后，蝉妈妈位于剩余第三方候选第1位的样本数 / 存在可识别第三方候选的有效样本数。,effective-first-non-official-v2
+round4,第四轮,effectiveFirst,有效首推率,478,539,88.68,,从回答的工具推荐顺序中移除抖音官方工具后，蝉妈妈位于剩余第三方候选第1位的样本数 / 存在可识别第三方候选的有效样本数。,effective-first-non-official-v2
+round3,第三轮,top3,前三率,297,576,51.56,,蝉妈妈在原始工具推荐顺序中位于前 3 的有效样本数 / 全部有效样本数,tool-order-top3-v2
+round4,第四轮,top3,前三率,250,576,43.4,,蝉妈妈在原始工具推荐顺序中位于前 3 的有效样本数 / 全部有效样本数,tool-order-top3-v2
+round3,第三轮,averageRank,平均排名,527,527,,3.129,在回答正文明确提到蝉妈妈的样本中，按原始工具首次出现顺序计算的平均排名；数值越低越好,tool-order-average-rank-v2
+round4,第四轮,averageRank,平均排名,537,537,,3.514,在回答正文明确提到蝉妈妈的样本中，按原始工具首次出现顺序计算的平均排名；数值越低越好,tool-order-average-rank-v2
+round3,第三轮,advantageExpression,严格优势表达率,221,576,38.37,,正向能力、适配性、推荐理由或比较优势明确归属于蝉妈妈的有效样本数 / 全部有效样本数,advantage-expression-v2
+round4,第四轮,advantageExpression,严格优势表达率,171,576,29.69,,正向能力、适配性、推荐理由或比较优势明确归属于蝉妈妈的有效样本数 / 全部有效样本数,advantage-expression-v2

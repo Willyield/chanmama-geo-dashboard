@@ -1,0 +1,212 @@
+{
+  "status": "PASS",
+  "businessComplete": false,
+  "publicationReady": false,
+  "replayFixture": false,
+  "sampleCount": 576,
+  "core": {
+    "raw_citation_rows": 9105,
+    "deduplicated_citation_events": 9090,
+    "duplicates_within_answer": 15,
+    "unique_canonical_urls": 2038,
+    "answers_total": 576,
+    "answers_with_any_citation": 565,
+    "questions_total": 96,
+    "questions_with_any_citation": 96,
+    "douyin_video_events": 3385,
+    "douyin_video_event_share_pct": 37.24,
+    "answers_with_douyin_video": 556,
+    "answer_douyin_video_rate_pct": 96.53,
+    "questions_with_douyin_video": 96,
+    "question_douyin_video_rate_pct": 100.0,
+    "unique_douyin_videos": 889,
+    "broad_douyin_domain_events": 3393,
+    "broad_douyin_domain_event_share_pct": 37.33,
+    "bytedance_citation_events": 5985,
+    "bytedance_event_share_pct": 65.84,
+    "answers_without_citations": 11
+  },
+  "baselineReplay": [
+    {
+      "metric": "core.raw_citation_rows",
+      "pass": true
+    },
+    {
+      "metric": "core.deduplicated_citation_events",
+      "pass": true
+    },
+    {
+      "metric": "core.duplicates_within_answer",
+      "pass": true
+    },
+    {
+      "metric": "core.unique_canonical_urls",
+      "pass": true
+    },
+    {
+      "metric": "core.answers_total",
+      "pass": true
+    },
+    {
+      "metric": "core.answers_with_any_citation",
+      "pass": true
+    },
+    {
+      "metric": "core.answers_without_citations",
+      "pass": true
+    },
+    {
+      "metric": "core.questions_total",
+      "pass": true
+    },
+    {
+      "metric": "core.questions_with_any_citation",
+      "pass": true
+    },
+    {
+      "metric": "core.douyin_video_events",
+      "pass": true
+    },
+    {
+      "metric": "core.douyin_video_event_share_pct",
+      "pass": true
+    },
+    {
+      "metric": "core.answers_with_douyin_video",
+      "pass": true
+    },
+    {
+      "metric": "core.answer_douyin_video_rate_pct",
+      "pass": true
+    },
+    {
+      "metric": "core.questions_with_douyin_video",
+      "pass": true
+    },
+    {
+      "metric": "core.question_douyin_video_rate_pct",
+      "pass": true
+    },
+    {
+      "metric": "core.unique_douyin_videos",
+      "pass": true
+    },
+    {
+      "metric": "core.broad_douyin_domain_events",
+      "pass": true
+    },
+    {
+      "metric": "core.broad_douyin_domain_event_share_pct",
+      "pass": true
+    },
+    {
+      "metric": "core.bytedance_citation_events",
+      "pass": true
+    },
+    {
+      "metric": "core.bytedance_event_share_pct",
+      "pass": true
+    },
+    {
+      "metric": "official.chanmama_open",
+      "pass": true
+    },
+    {
+      "metric": "official.chanmama_yunyingquan",
+      "pass": true
+    },
+    {
+      "metric": "official.chanmama_official_website",
+      "pass": true
+    },
+    {
+      "metric": "official.chanmama_other_official_subdomains",
+      "pass": true
+    },
+    {
+      "metric": "official.feigua_official",
+      "pass": true
+    },
+    {
+      "metric": "official.chanmama_official_domain_total",
+      "pass": true
+    }
+  ],
+  "templateParameters": {
+    "main": {
+      "cssIdentical": true,
+      "controlsIdentical": true,
+      "originalSha256": "8304AC6F9D27C7B54461EE1E07830154A511CEC67959E489848AA8C3E5C0662B",
+      "renderedSha256": "147CA1CBACBEA8035418E90174FFCE717E44A80B0DAB00CCAED4C3FB58E5E0F3",
+      "allowedChanges": [
+        "round labels",
+        "stage/date",
+        "data-driven narrative",
+        "null renders as pending",
+        "R3/R4 binding",
+        "remove round1 compare cells",
+        "explicit denominators",
+        "resource references"
+      ]
+    },
+    "compare": {
+      "cssIdentical": true,
+      "controlsIdentical": true,
+      "originalSha256": "0641887235EAF9381739F36EC0913E39A934EE493EF2E5F6E5A0055E75ED65E2",
+      "renderedSha256": "BB3AD4269C82156D20F8B1716E2A8481D371DB7916F3306511D3BBCA7A136951",
+      "allowedChanges": [
+        "round labels",
+        "stage/date",
+        "data-driven narrative",
+        "null renders as pending",
+        "R3/R4 binding",
+        "remove round1 compare cells",
+        "explicit denominators",
+        "resource references"
+      ]
+    }
+  },
+  "samplingDates": {
+    "basis": "per-answer collected attempt submitted_at",
+    "timezone": "Asia/Shanghai",
+    "dateCounts": {
+      "2026-09-29": 162,
+      "2026-09-30": 12,
+      "2026-10-07": 300,
+      "2026-10-08": 102
+    },
+    "actualDateCounts": {
+      "2026-09-29": 162,
+      "2026-09-30": 12,
+      "2026-10-07": 300,
+      "2026-10-08": 102
+    },
+    "terminalCounts": {
+      "web": 483,
+      "mobile": 93
+    },
+    "disclosure": "第四轮手机替换派生版：96题各6条、共576条；网页483条，手机93条。仅最近网页版无引用的93个槽位整答替换，其中复用6条已完成手机回答、新采87条。原始网页版576条、已验收网页补采版及第三轮冻结版独立保留。实际提交日期（北京时间）：2026-09-29（162条）、2026-09-30（12条）、2026-10-07（300条）、2026-10-08（102条）。D1/D2为原槽位阶段，补采不满足两个自然日各288条。本版按零引用条件选择后混合终端，不能把与第三轮的差异解释为纯网页自然变化或终端、引用的因果效果。"
+  },
+  "internalPreview": false,
+  "evidenceCoverage": {
+    "watch_unique_pages": 1,
+    "watch_checked_pages": 0,
+    "watch_contains_pages": 0,
+    "watch_excludes_pages": 0,
+    "social_accounts_complete": 0,
+    "employee_accounts_complete": 0
+  },
+  "pending": [
+    "current account/work/page evidence",
+    "independent business acceptance",
+    "browser QA at four sizes",
+    "latest shared-menu merge by second center"
+  ],
+  "sourceRuleSha256": "8BFC7AC2034CBB2956D653C13BD8702B7D1EF31156B2D7D1B4C95849620FAC0C",
+  "registryHashes": {
+    "social": "B689C4D2EB56B0B9602B42067D8A5BEF13BD0343742DE54FBDC6299525F49472",
+    "employees": "78C61E41D8505D46173176B36F3A513B8BC6336A952AEA95548E19FB1A8ADBC4"
+  },
+  "sharedMenuCopied": false,
+  "historicalFactsReusedForR4": false
+}
