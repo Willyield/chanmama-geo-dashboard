@@ -9,5 +9,5 @@ round3,第三轮,top3,前三率,297,576,51.56,,蝉妈妈在原始工具推荐顺
 round4,第四轮,top3,前三率,250,576,43.4,,蝉妈妈在原始工具推荐顺序中位于前 3 的有效样本数 / 全部有效样本数,tool-order-top3-v2
 round3,第三轮,averageRank,平均排名,527,527,,3.129,在回答正文明确提到蝉妈妈的样本中，按原始工具首次出现顺序计算的平均排名；数值越低越好,tool-order-average-rank-v2
 round4,第四轮,averageRank,平均排名,537,537,,3.514,在回答正文明确提到蝉妈妈的样本中，按原始工具首次出现顺序计算的平均排名；数值越低越好,tool-order-average-rank-v2
-round3,第三轮,advantageExpression,严格优势表达率,221,576,38.37,,正向能力、适配性、推荐理由或比较优势明确归属于蝉妈妈的有效样本数 / 全部有效样本数,advantage-expression-v2
-round4,第四轮,advantageExpression,严格优势表达率,171,576,29.69,,正向能力、适配性、推荐理由或比较优势明确归属于蝉妈妈的有效样本数 / 全部有效样本数,advantage-expression-v2
+round3,第三轮,advantageExpression,严格优势表达率,278,576,48.26,,正向能力、适配性、推荐理由或比较优势明确归属于蝉妈妈的有效样本数 / 全部有效样本数,advantage-expression-v4
+round4,第四轮,advantageExpression,严格优势表达率,245,576,42.53,,正向能力、适配性、推荐理由或比较优势明确归属于蝉妈妈的有效样本数 / 全部有效样本数,advantage-expression-v4

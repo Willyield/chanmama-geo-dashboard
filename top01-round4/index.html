@@ -6,7 +6,7 @@
   <link rel="icon" href="data:,">
   <title>蝉妈妈 GEO TOP0/TOP1 第四轮采样</title>
   <link rel="stylesheet" href="../assets/platform-shell.css?v=20260819-workbench3">
-  <script defer src="./dashboard-data.js?v=round4-576"></script>
+  <script defer src="./dashboard-data.js?v=v4-implementation-r2"></script>
   <style>
     :root {
       --canvas: #f8fafc;
@@ -580,6 +580,7 @@
       document.getElementById('briefLabel').textContent = authoritative.stage.status === 'FINAL' ? '最终判断 / 第四轮全量采样' : '阶段结果 / 第四轮累计采样';
       document.getElementById('briefTitle').textContent = `${summary.valid_sample_count || 0} 条有效样本；${authoritative.stage.label}。`;
       document.getElementById('briefNote').textContent = `来源状态完整 ${summary.source_complete_count} 条；${summary.date_disclosure}。`;
+      document.getElementById('briefNote').textContent += " 第三、四轮严格优势表达统一按 advantage-expression-v4 品牌章节归属规则派生复算（v4-implementation-r2）；明确品牌章节承接后续适配理由，优势词表未扩大，原始冻结及 v2/v3 回放保留。严格未命中不等于完全没有正面表述；统计变化不代表模型表现改善。 审计基准：advantage_audit.csv、changed_samples.csv 为 v2→v4；recomputed 与独立新增归属核查为 v3→v4。百分点差值从原始分子、分母计算后最后舍入。 排序指标沿既有编号/列表优先解析，搜索关键词残留可能影响排序，不等同于完整语义推荐顺位；本轮不改排序指标。";
       document.getElementById('briefTotal').textContent = `${summary.valid_sample_count || 0}/${summary.planned_sample_count || 0}`;
       document.getElementById('briefStatusNote').textContent = authoritative.stage.label;
 
@@ -614,11 +615,11 @@
           readout: '移除抖音官方工具后，按存在有效候选的回答计算首位占比。', contract: round2Metrics.effectiveFirst
         },
         {
-          title: '严格优势表达率', tone: 'info', badge: 'v2 口径',
+          title: '严格优势表达率', tone: 'info', badge: 'v4 口径',
           metric: metricPct(round2Metrics.advantageExpression), count: `命中 ${number(round2Metrics.advantageExpression.count)} / 总样本 ${number(round2Metrics.advantageExpression.denominator)}`,
           baseline: `${metricPct(baselineMetrics.advantageExpression)} · ${metricCount(baselineMetrics.advantageExpression)}`,
-          change: metricDelta(metricDeltas.advantageExpression), rule: 'advantage-expression-v2',
-          readout: '仅统计明确归属于蝉妈妈的正向能力、适配性、推荐理由或比较优势。', contract: round2Metrics.advantageExpression
+          change: metricDelta(metricDeltas.advantageExpression), rule: round2Metrics.advantageExpression.ruleVersion,
+          readout: 'v4 明确品牌章节承接后续适配理由；严格未命中不等于完全没有正面表述。', contract: round2Metrics.advantageExpression
         },
         {
           title: '前三率', tone: 'warn', badge: '当前结果',
@@ -673,11 +674,11 @@
           contract: feiguaContract('effectiveFirst', '有效首推率', '移除抖音官方工具后，飞瓜数据位于剩余第三方候选第一位的样本数 / 存在可识别第三方候选的样本数'), tooltipKey: 'feigua-effective-first',
         },
         {
-          title: '严格优势表达率', tone: 'info', badge: 'v2 口径',
+          title: '严格优势表达率', tone: 'info', badge: 'v4 口径',
           metric: metricPct(feiguaRound2.advantageExpression), count: `命中 ${number(feiguaRound2.advantageExpression.count)} / 总样本 ${number(feiguaRound2.advantageExpression.denominator)}`,
           baseline: `${metricPct(feiguaBaseline.advantageExpression)} · ${metricCount(feiguaBaseline.advantageExpression)}`,
           change: pointDelta(feiguaDeltas.advantageExpression), rule: feiguaRound2.advantageExpression.ruleVersion,
-          readout: '仅统计明确归属于飞瓜数据的正向能力、适配性、推荐理由或比较优势。',
+          readout: 'v4 明确归属于飞瓜数据的正向理由；严格未命中不等于完全没有正面表述。',
           contract: feiguaContract('advantageExpression', '严格优势表达率', '回答把正向能力、适配性、推荐理由或比较优势明确归属于飞瓜数据的样本数 / 全部有效样本数；仅品牌提及、并列推荐、其他品牌优势或负向表述不计'), tooltipKey: 'feigua-advantage-expression',
         },
         {
@@ -703,7 +704,7 @@
         '补强“为什么首推蝉妈妈”的推荐理由',
         '把高提及进一步转化为普通首推',
         '结合有效候选分母判断第三方首位表现',
-        '继续沿用 advantage-expression-v2 严格口径'
+        '统一使用 advantage-expression-v4；两轮同版本派生复算，原始冻结保留'
       ].map(item => `<div class="action-item">${esc(item)}</div>`).join('');
 
       const progressRows = [
@@ -758,7 +759,7 @@
         const state = document.getElementById('statusFilter').value;
         const rows = comparisons.filter(row => (!query || `${row.keyword} ${row.question_text}`.toLowerCase().includes(query)) && (!priority || row.priority === priority) && (!category || row.category === category) && (!state || row.round2_status === state));
         document.getElementById('questionCount').textContent = `${rows.length}/${comparisons.length} 个问题`;
-        document.getElementById('questionTable').innerHTML = rows.length ? rows.map(row => `<tr><td class="question-cell"><strong>${esc(row.question_id)}</strong><br>${esc(row.question_text)}</td><td>${esc(row.keyword)}<br>${esc(row.priority)} · ${esc(row.category)}</td><td>${status(row.round2_status)}<br>${esc(row.status_transition)}</td><td class="num">${number(row.baseline_mention_count)}→${number(row.round2_mention_count)}<br>${delta(row.mention_rate_pct_delta)}%</td><td class="num">${number(row.baseline_first_count)}→${number(row.round2_first_count)}<br>${delta(row.first_rate_pct_delta)}%</td><td class="num">${number(row.baseline_top3_count)}→${number(row.round2_top3_count)}<br>${delta(row.top3_rate_pct_delta)}%</td><td class="num">${number(row.baseline_advantage_count)}→${number(row.round2_advantage_count)}<br>${delta(row.advantage_rate_pct_delta)}%</td><td class="num">${rank(row.baseline_avg_rank)}→${rank(row.round2_avg_rank)}<br>${delta(row.avg_rank_delta)}</td><td>${esc(row.main_gap)}</td></tr>`).join('') : '<tr><td colspan="9" class="empty">没有符合筛选条件的问题</td></tr>';
+        document.getElementById('questionTable').innerHTML = rows.length ? rows.map(row => `<tr><td class="question-cell"><strong>${esc(row.question_id)}</strong><br>${esc(row.question_text)}</td><td>${esc(row.keyword)}<br>${esc(row.priority)} · ${esc(row.category)}</td><td>${status(row.round2_status)}<br>${esc(row.status_transition)}</td><td class="num">${number(row.baseline_mention_count)}→${number(row.round2_mention_count)}<br>${delta(row.mention_rate_pct_delta)} 个百分点</td><td class="num">${number(row.baseline_first_count)}→${number(row.round2_first_count)}<br>${delta(row.first_rate_pct_delta)} 个百分点</td><td class="num">${number(row.baseline_top3_count)}→${number(row.round2_top3_count)}<br>${delta(row.top3_rate_pct_delta)} 个百分点</td><td class="num">${number(row.baseline_advantage_count)}→${number(row.round2_advantage_count)}<br>${delta(row.advantage_rate_pct_delta)} 个百分点</td><td class="num">${rank(row.baseline_avg_rank)}→${rank(row.round2_avg_rank)}<br>${delta(row.avg_rank_delta)}</td><td>${esc(row.main_gap)}</td></tr>`).join('') : '<tr><td colspan="9" class="empty">没有符合筛选条件的问题</td></tr>';
       };
       ['questionSearch','priorityFilter','categoryFilter','statusFilter'].forEach(id => document.getElementById(id).addEventListener(id === 'questionSearch' ? 'input' : 'change', renderQuestions));
       renderQuestions();
@@ -773,7 +774,7 @@
         const pageRows = samples.slice(samplePageIndex * samplePageSize, (samplePageIndex + 1) * samplePageSize);
         document.getElementById('sampleTable').innerHTML = pageRows.length ? pageRows.map(row => {
           const capture = row.source_capture_status || '待采集';
-          const performance = `提及：${row.mentioned_chanmama || '—'}\n普通首推：${row.chanmama_is_first || '—'}\n排名：${row.chanmama_rank || '—'}\n严格优势表达：${row.chanmama_advantage_explicit || '—'}`;
+          const performance = `提及：${row.mentioned_chanmama || '—'}\n普通首推：${row.chanmama_is_first || '—'}\n排名：${row.chanmama_rank || '—'}\n严格优势表达（v4）：${row.chanmama_advantage_explicit || '—'}\n归属证据：${row.chanmama_advantage_evidence || '未命中严格口径，不等于完全没有正面表述'}`;
           const sourceCounts = '引用归因不在本任务范围';
           return `<tr><td>${esc(row.sample_id)}<br>${esc(row.sample_date)}<br>${esc(row.submitted_at || "")}</td><td>${esc(row.sampling_cadence)}<br>${esc(row.observed_terminal === "mobile" ? "豆包·手机" : "豆包·网页")}</td><td class="question-cell">${esc(row.question_text)}</td><td>${status(capture === 'captured' || capture === 'no_references' ? '通过' : capture === 'failed' ? '采样失败' : '待采样')}</td><td style="white-space:pre-wrap">${esc(performance)}</td><td class="url-cell">${esc(sourceCounts)}</td><td class="answer-cell">${esc(row.answer_text)}</td></tr>`;
         }).join('') : '<tr><td colspan="7" class="empty">第四轮尚无有效样本</td></tr>';
@@ -802,7 +803,7 @@
         renderSampleLoading();
         document.querySelector('script[data-dashboard-detail]')?.remove();
         const script = document.createElement('script');
-        script.src = './dashboard-detail-data.js?v=round4-576';
+        script.src = './dashboard-detail-data.js?v=v4-implementation-r2';
         script.async = true;
         script.dataset.dashboardDetail = 'true';
         script.onload = () => {
