@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "title": "每日热点库与电商圈层行业活动追踪",
-  "generatedAt": "2026-10-08T01:49:56.729Z",
+  "generatedAt": "2026-10-09T01:40:26.344Z",
   "modules": {
     "hotspots": {
-      "latest": "2026-10-08",
-      "dates": 56
+      "latest": "2026-10-09",
+      "dates": 57
     },
     "events": {
-      "latest": "2026-10-08",
-      "dates": 48
+      "latest": "2026-10-09",
+      "dates": 49
     },
     "creators": {
       "latest": "2026-07-22",

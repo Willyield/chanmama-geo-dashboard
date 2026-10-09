@@ -1,8 +1,28 @@
 {
   "schemaVersion": 2,
   "module": "hotspots",
-  "latest": "2026-10-08",
+  "latest": "2026-10-09",
   "dates": [
+    {
+      "date": "2026-10-09",
+      "observedAt": "2026-10-09T01:38:33.110Z",
+      "total": 10,
+      "priority": 0,
+      "gradeCounts": {
+        "S": 0,
+        "A": 0,
+        "B": 0,
+        "C": 10,
+        "D": 0
+      },
+      "domainCounts": {
+        "commerce": 10,
+        "technology": 0
+      },
+      "sourceType": "structured-data",
+      "sourceArtifact": "incoming/hotspots/2026-10-09.json",
+      "sourceWorkbook": null
+    },
     {
       "date": "2026-10-08",
       "observedAt": "2026-10-08T01:41:04.422Z",
