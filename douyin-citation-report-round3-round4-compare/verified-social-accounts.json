@@ -1,0 +1,267 @@
+{
+  "scope": "2026-10-09 当前作品清单与作者 ID 核验补充；含登记表外作品，与历史口径独立",
+  "samplesPerRound": 576,
+  "questionsPerRound": 96,
+  "accounts": [
+    {
+      "account_id": "122634602",
+      "source_id": "sohu-enterprise",
+      "name": "蝉妈妈",
+      "platform": "搜狐企业号",
+      "verified": true,
+      "round3": {
+        "events": 601,
+        "works": 51,
+        "answers": 367,
+        "questions": 92,
+        "sample_rate_pct": 63.72,
+        "question_rate_pct": 95.83
+      },
+      "round4": {
+        "events": 46,
+        "works": 3,
+        "answers": 46,
+        "questions": 30,
+        "sample_rate_pct": 7.99,
+        "question_rate_pct": 31.25
+      },
+      "note": "当前可见作品清单核验；不代表采样时历史全集或全部公开正文已核验"
+    },
+    {
+      "account_id": "4285267312118352",
+      "source_id": "toutiao-enterprise",
+      "name": "蝉妈妈电商增长",
+      "platform": "头条企业号",
+      "verified": true,
+      "round3": {
+        "events": 4,
+        "works": 3,
+        "answers": 4,
+        "questions": 3,
+        "sample_rate_pct": 0.69,
+        "question_rate_pct": 3.13
+      },
+      "round4": {
+        "events": 0,
+        "works": 0,
+        "answers": 0,
+        "questions": 0,
+        "sample_rate_pct": 0,
+        "question_rate_pct": 0
+      },
+      "note": "当前作品清单核验；32 条后台条目无公开链接，不代表历史全集或全部公开正文已核验"
+    },
+    {
+      "account_id": "63142626075276",
+      "source_id": "toutiao-personal",
+      "name": "电商数据观察员",
+      "platform": "头条个人号",
+      "verified": true,
+      "round3": {
+        "events": 24,
+        "works": 7,
+        "answers": 21,
+        "questions": 16,
+        "sample_rate_pct": 3.65,
+        "question_rate_pct": 16.67
+      },
+      "round4": {
+        "events": 0,
+        "works": 0,
+        "answers": 0,
+        "questions": 0,
+        "sample_rate_pct": 0,
+        "question_rate_pct": 0
+      },
+      "note": "当前作品清单核验；45 条后台条目无公开链接，不代表历史全集或全部公开正文已核验"
+    },
+    {
+      "account_id": "1855372062741462",
+      "source_id": "baijiahao-enterprise",
+      "name": "蝉妈妈",
+      "platform": "百家号企业号",
+      "verified": true,
+      "round3": {
+        "events": 0,
+        "works": 0,
+        "answers": 0,
+        "questions": 0,
+        "sample_rate_pct": 0,
+        "question_rate_pct": 0
+      },
+      "round4": {
+        "events": 0,
+        "works": 0,
+        "answers": 0,
+        "questions": 0,
+        "sample_rate_pct": 0,
+        "question_rate_pct": 0
+      },
+      "note": "当前作品清单核验；9 条后台条目无公开链接，不代表历史全集或全部公开正文已核验"
+    },
+    {
+      "account_id": "1858810168999840",
+      "source_id": "baijiahao-personal",
+      "name": "瓜趣笔记",
+      "platform": "百家号个人号",
+      "verified": true,
+      "round3": {
+        "events": 0,
+        "works": 0,
+        "answers": 0,
+        "questions": 0,
+        "sample_rate_pct": 0,
+        "question_rate_pct": 0
+      },
+      "round4": {
+        "events": 0,
+        "works": 0,
+        "answers": 0,
+        "questions": 0,
+        "sample_rate_pct": 0,
+        "question_rate_pct": 0
+      },
+      "note": "当前可见作品清单核验；不代表采样时历史全集或全部公开正文已核验"
+    },
+    {
+      "account_id": "chan-ma-ma-86-45",
+      "source_id": "zhihu-enterprise",
+      "name": "蝉妈妈",
+      "platform": "知乎企业号",
+      "verified": true,
+      "round3": {
+        "events": 0,
+        "works": 0,
+        "answers": 0,
+        "questions": 0,
+        "sample_rate_pct": 0,
+        "question_rate_pct": 0
+      },
+      "round4": {
+        "events": 0,
+        "works": 0,
+        "answers": 0,
+        "questions": 0,
+        "sample_rate_pct": 0,
+        "question_rate_pct": 0
+      },
+      "note": "当前可见作品清单核验；不代表采样时历史全集或全部公开正文已核验"
+    },
+    {
+      "account_id": "9hpck",
+      "source_id": "zhihu-personal",
+      "name": "电商数据观察员",
+      "platform": "知乎个人号",
+      "verified": true,
+      "round3": {
+        "events": 0,
+        "works": 0,
+        "answers": 0,
+        "questions": 0,
+        "sample_rate_pct": 0,
+        "question_rate_pct": 0
+      },
+      "round4": {
+        "events": 0,
+        "works": 0,
+        "answers": 0,
+        "questions": 0,
+        "sample_rate_pct": 0,
+        "question_rate_pct": 0
+      },
+      "note": "当前可见作品清单核验；不代表采样时历史全集或全部公开正文已核验"
+    },
+    {
+      "name": "chanmama8888",
+      "platform": "CSDN",
+      "account_id": "",
+      "verified": false,
+      "round3": {
+        "events": null,
+        "works": null,
+        "answers": null,
+        "questions": null,
+        "sample_rate_pct": null,
+        "question_rate_pct": null
+      },
+      "round4": {
+        "events": null,
+        "works": null,
+        "answers": null,
+        "questions": null,
+        "sample_rate_pct": null,
+        "question_rate_pct": null
+      },
+      "note": "用户暂缓；缺账号身份与完整作品清单"
+    },
+    {
+      "name": "蝉妈妈电商增长",
+      "platform": "B站",
+      "account_id": "",
+      "verified": false,
+      "round3": {
+        "events": null,
+        "works": null,
+        "answers": null,
+        "questions": null,
+        "sample_rate_pct": null,
+        "question_rate_pct": null
+      },
+      "round4": {
+        "events": null,
+        "works": null,
+        "answers": null,
+        "questions": null,
+        "sample_rate_pct": null,
+        "question_rate_pct": null
+      },
+      "note": "49 个登记链接保留；缺稳定作者 ID 与完整账号清单"
+    },
+    {
+      "name": "蝉妈妈运营圈",
+      "platform": "运营圈",
+      "account_id": "",
+      "verified": false,
+      "round3": {
+        "events": null,
+        "works": null,
+        "answers": null,
+        "questions": null,
+        "sample_rate_pct": null,
+        "question_rate_pct": null
+      },
+      "round4": {
+        "events": null,
+        "works": null,
+        "answers": null,
+        "questions": null,
+        "sample_rate_pct": null,
+        "question_rate_pct": null
+      },
+      "note": "未取得本次账号身份与完整作品清单"
+    },
+    {
+      "name": "值友6484631877",
+      "platform": "什么值得买",
+      "account_id": "",
+      "verified": false,
+      "round3": {
+        "events": null,
+        "works": null,
+        "answers": null,
+        "questions": null,
+        "sample_rate_pct": null,
+        "question_rate_pct": null
+      },
+      "round4": {
+        "events": null,
+        "works": null,
+        "answers": null,
+        "questions": null,
+        "sample_rate_pct": null,
+        "question_rate_pct": null
+      },
+      "note": "未取得本次账号身份与完整作品清单"
+    }
+  ]
+}

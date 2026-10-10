@@ -272,7 +272,7 @@
           <div class="panel"><h3>来源类型变化</h3><div class="table-wrap"><table><thead><tr><th>类型</th><th class="numeric">第三轮</th><th class="numeric">第四轮</th><th class="numeric">变化</th></tr></thead><tbody id="comparison-platform-body"></tbody></table></div></div>
           <div class="panel"><h3>四类问题变化</h3><div class="table-wrap"><table><thead><tr><th>问题类型</th><th class="numeric">第三轮回答覆盖</th><th class="numeric">第四轮回答覆盖</th><th class="numeric">变化</th></tr></thead><tbody id="comparison-question-body"></tbody></table></div></div>
         </div>
-        <div class="panel" style="margin-top:16px"><h3>11 个自有账号同口径对比</h3><div class="table-wrap"><table><thead><tr><th>账号</th><th>平台</th><th class="numeric">第三轮引用</th><th class="numeric">第三轮文章</th><th class="numeric">第三轮样本</th><th class="numeric">第三轮样本率</th><th class="numeric">第三轮问题</th><th class="numeric">第三轮问题率</th><th class="numeric">第四轮引用</th><th class="numeric">第四轮文章</th><th class="numeric">第四轮样本</th><th class="numeric">第四轮样本率</th><th class="numeric">第四轮问题</th><th class="numeric">第四轮问题率</th></tr></thead><tbody id="comparison-account-body"></tbody></table></div></div>
+        <div id="verified-social-accounts" class="verified-social" data-status="loading"><div class="douyin-account-head"><h3>自有社媒账号核验明细</h3><p id="verified-social-status" role="status">账号证据加载中</p></div><p>当前作者 ID 与作品 ID 核验范围：第三轮 629 次、第四轮 46 次；包括登记表外作品，与历史 619 次口径独立。样本率按命中回答 / 576，问题率按命中问题 / 96；跨账号覆盖不可相加。</p><div class="table-wrap" tabindex="0" role="region" aria-label="已核验社媒账号第三四轮对比"><table><thead><tr><th>账号 / 平台</th><th>第三轮引用 / 作品</th><th>第三轮样本率</th><th>第三轮问题率</th><th>第四轮引用 / 作品</th><th>第四轮样本率</th><th>第四轮问题率</th><th>证据状态与范围</th></tr></thead><tbody id="verified-social-body"></tbody></table></div><p class="section-note">0 仅表示这两份冻结样本未命中已核验作品；待核验不是 0。当前清单含晚发作品，不能作为账号历史全集；第四轮 483 网页 + 93 手机仅作描述，不作因果结论。百家号以核验作者“瓜趣笔记”展示，不沿用不一致的旧登记名称。</p></div><details class="social-history"><summary>历史登记账号口径与原核验状态</summary><div class="panel" style="margin-top:16px"><h3>11 个历史登记账号对比</h3><div class="table-wrap"><table><thead><tr><th>账号</th><th>平台</th><th class="numeric">第三轮引用</th><th class="numeric">第三轮文章</th><th class="numeric">第三轮样本</th><th class="numeric">第三轮样本率</th><th class="numeric">第三轮问题</th><th class="numeric">第三轮问题率</th><th class="numeric">第四轮引用</th><th class="numeric">第四轮文章</th><th class="numeric">第四轮样本</th><th class="numeric">第四轮样本率</th><th class="numeric">第四轮问题</th><th class="numeric">第四轮问题率</th></tr></thead><tbody id="comparison-account-body"></tbody></table></div></div></details>
         <div class="notice" id="comparison-freshness-note"><strong>内容新旧度：</strong>加载中。</div>
       </section>
 
@@ -332,7 +332,7 @@
 
       <section class="report-section" id="accounts">
         <div class="section-head"><div><span class="section-number">06</span><h2>自有账号归属与账号证据</h2></div><p class="section-note">只使用作者 ID、内容 ID、公开元数据和账号快照等严格证据；品牌词命中不算归属。</p></div>
-        <p class="section-note">下列账号级明细沿现有核验状态保留，不以总览汇总替代逐账号核验；四轮汇总见上方“自有账号四轮总览”。</p>
+        <p><a href="#verified-social-accounts">查看已补齐的第三、四轮社媒账号核验明细</a></p><details class="social-history"><summary>原冻结账号证据与核验缺口</summary><p class="section-note">下列账号级明细沿现有核验状态保留，不以总览汇总替代逐账号核验；四轮汇总见上方“自有账号四轮总览”。</p>
         <div class="kpi-grid">
           <article class="kpi"><div class="kpi-label">自有账号引用</div><strong class="kpi-value" id="owned-events">-</strong><div class="kpi-meta">引用次数</div></article>
           <article class="kpi"><div class="kpi-label">自有账号唯一文章</div><strong class="kpi-value" id="owned-articles">-</strong><div class="kpi-meta">严格文章键去重</div></article>
@@ -340,7 +340,7 @@
           <article class="kpi"><div class="kpi-label">账号级待核验</div><strong class="kpi-value" id="owned-unresolved">-</strong><div class="kpi-meta">账号明细未补齐；不等于旧规则候选数</div></article>
         </div>
         <div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>账号</th><th>平台</th><th>账号类型</th><th class="numeric">引用</th><th class="numeric">文章</th><th class="numeric">样本</th><th class="numeric">样本率</th><th class="numeric">问题</th><th class="numeric">问题率</th><th>置信度</th></tr></thead><tbody id="owned-account-body"></tbody></table></div>
-        <div class="notice"><strong>当前不能回答账号权重：</strong>冻结引用包没有全部抖音作者的认证、粉丝、活跃度和未引用候选，因此不能比较企业号、员工号与普通个人号的被选中概率。</div>
+        </details><div class="notice"><strong>当前不能回答账号权重：</strong>冻结引用包没有全部抖音作者的认证、粉丝、活跃度和未引用候选，因此不能比较企业号、员工号与普通个人号的被选中概率。</div>
       </section>
 
       <section class="report-section" id="internal-sources">
@@ -359,12 +359,9 @@
     <dt>清单外待核验</dt><dd>未匹配到当前清单的作品事件，归属待核验，不能认定为非自有。清单含晚于早期采样的作品；历史删除、私密和当前不可见作品未知。</dd>
     <dt>第一轮回收状态</dt><dd>第一轮缺少后续轮次来源回收状态字段；不补造状态，不声称该字段全部复核。使用冻结引用明细及样本关联。</dd>
   </dl></details>
-  <div class="douyin-account-head"><h4>14 个账号逐轮明细</h4><span class="douyin-scope">当前作品清单匹配 · 56 条账号 / 轮次记录</span></div>
-  <div class="douyin-filters"><div class="douyin-field grow"><label for="douyin-account-search">账号名称或账号 ID</label><input id="douyin-account-search" type="search" placeholder="搜索账号" autocomplete="off"></div><div class="douyin-field"><label for="douyin-round-filter">轮次</label><select id="douyin-round-filter"><option value="all">全部轮次</option><option value="round1">第一轮</option><option value="round2">第二轮</option><option value="round3">第三轮</option><option value="round4">第四轮</option></select></div><div class="douyin-field"><label for="douyin-page-size">每页记录</label><select id="douyin-page-size"><option value="14">14</option><option value="28">28</option><option value="56">56</option></select></div></div>
-  <p class="douyin-scope" id="douyin-account-count" role="status"></p>
-  <div class="table-wrap" tabindex="0" role="region" aria-label="14 个抖音账号四轮明细"><table class="douyin-account-table"><thead><tr><th scope="col">账号 / ID</th><th scope="col">轮次</th><th scope="col">当前公开清单作品</th><th scope="col">引用事件</th><th scope="col">被引作品</th><th scope="col">命中回答</th><th scope="col">样本引用率</th><th scope="col">命中问题</th><th scope="col">四轮明细</th></tr></thead><tbody id="douyin-account-body"></tbody></table></div>
-  <div class="douyin-pagination"><button id="douyin-page-prev" type="button" aria-label="上一页" title="上一页">←</button><span id="douyin-page-label" aria-live="polite"></span><button id="douyin-page-next" type="button" aria-label="下一页" title="下一页">→</button></div>
-  <details class="douyin-legacy" id="douyin-legacy"><summary>原 186 作品清单固定回放 · 独立历史范围</summary><p>同一原清单固定回放，不是账号全集；第一轮旧 0 只表示旧清单未匹配，不是历史上无引用。清单变化不等于冻结回答或引用变化，不能将旧清单 81 与新清单 515 拼成趋势。</p><div class="table-wrap" tabindex="0" role="region" aria-label="原 186 作品清单固定回放"><table><thead><tr><th scope="col">轮次</th><th scope="col">引用事件</th><th scope="col">被引作品</th><th scope="col">命中回答</th><th scope="col">样本引用率</th><th scope="col">命中问题</th></tr></thead><tbody id="douyin-legacy-body"></tbody></table></div></details>
+  <div class="douyin-account-head"><h4>14 个账号四轮对比</h4><span class="douyin-scope">同一账号并排 · 当前作品清单匹配</span></div>
+  <div class="douyin-filters"><div class="douyin-field round-choice"><label for="douyin-round-filter">轮次对比</label><select id="douyin-round-filter"><option value="compare" selected>四轮对比 · 同账号并排</option><option value="round4">第四轮</option><option value="round3">第三轮</option><option value="round2">第二轮</option><option value="round1">第一轮</option></select></div><div class="douyin-field grow"><label for="douyin-account-search">账号名称或账号 ID</label><input id="douyin-account-search" type="search" placeholder="搜索账号" autocomplete="off"></div></div><p class="douyin-scope" id="douyin-account-count" role="status"></p><div class="table-wrap" tabindex="0" role="region" aria-label="14 个抖音账号四轮并排对比"><table id="douyin-account-table" class="douyin-account-table"><thead id="douyin-account-head"></thead><tbody id="douyin-account-body"></tbody></table></div>
+<details class="douyin-legacy" id="douyin-legacy"><summary>原 186 作品清单固定回放 · 独立历史范围</summary><p>同一原清单固定回放，不是账号全集；第一轮旧 0 只表示旧清单未匹配，不是历史上无引用。清单变化不等于冻结回答或引用变化，不能将旧清单 81 与新清单 515 拼成趋势。</p><div class="table-wrap" tabindex="0" role="region" aria-label="原 186 作品清单固定回放"><table><thead><tr><th scope="col">轮次</th><th scope="col">引用事件</th><th scope="col">被引作品</th><th scope="col">命中回答</th><th scope="col">样本引用率</th><th scope="col">命中问题</th></tr></thead><tbody id="douyin-legacy-body"></tbody></table></div></details>
   <aside class="douyin-limits" aria-label="作品归属范围与限制"><strong>核验范围与限制</strong><ul id="douyin-limitations"></ul></aside>
   <p id="douyin-error" role="alert" hidden>抖音汇总未加载，缺失不等于 0。当前数字不可用于判断归属。</p>
 </div>
@@ -623,5 +620,5 @@
     renderPartners(); renderSourceUrls(); renderInternalLinks();
   </script>
   <script defer src="../assets/platform-shell.js?v=20260908-unifiedrepair1" data-root="../" data-section="citation" data-label="第四轮引用源"></script>
-<script defer src="./owned-overview.js?v=20261010-r1"></script><script defer src="./douyin-overview.js?v=20261010-r1"></script></body>
+<script defer src="./owned-overview.js?v=20261010-r1"></script><script defer src="./douyin-overview.js?v=20261010-r1"></script><script defer src="./verified-social.js?v=20261010-r2"></script></body>
 </html>

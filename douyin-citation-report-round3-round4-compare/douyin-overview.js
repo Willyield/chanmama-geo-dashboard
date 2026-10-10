@@ -30,40 +30,44 @@
     }
   }
   function renderAccounts(data) {
-    let page = 1;
-    const search = byId('douyin-account-search'), round = byId('douyin-round-filter'), size = byId('douyin-page-size');
+    const search=byId('douyin-account-search'),round=byId('douyin-round-filter');
+    const ids=[...new Set(data.accounts.map(x=>x.account_id))];
+    function stacked(row,primary,secondary,roundKey) {
+      const td=cell(row,'');td.dataset.round=roundKey;
+      if(roundKey==='round4')td.classList.add('douyin-current-cell');
+      const strong=document.createElement('strong'),small=document.createElement('small');
+      strong.textContent=primary;small.textContent=secondary;td.append(strong,small);
+    }
     function render() {
-      const query = search.value.trim().toLocaleLowerCase('zh-CN');
-      const rows = data.accounts.filter(x => (round.value === 'all' || x.round === round.value) && (!query || `${x.account_name} ${x.account_id}`.toLocaleLowerCase('zh-CN').includes(query)));
-      const count = Number(size.value), pages = Math.max(1, Math.ceil(rows.length / count));
-      page = Math.min(page, pages);
-      byId('douyin-account-count').textContent = `${rows.length} / 56 条记录 · 回答覆盖跨账号取并集，不直接相加`;
-      byId('douyin-page-label').textContent = `${page} / ${pages}`;
-      byId('douyin-page-prev').disabled = page === 1;
-      byId('douyin-page-next').disabled = page === pages;
-      const body = byId('douyin-account-body'); body.replaceChildren();
-      if (!rows.length) {const row = document.createElement('tr'); cell(row, '没有匹配的账号', '').colSpan = 9; body.append(row);}
-      for (const item of rows.slice((page - 1) * count, page * count)) {
-        const row = document.createElement('tr'); row.dataset.round = item.round; row.dataset.accountId = item.account_id;
-        const name = cell(row, '', ''), strong = document.createElement('strong'), id = document.createElement('small');
-        strong.textContent = item.account_name; id.textContent = item.account_id; name.append(strong, id);
-        cell(row, labels[item.round], '');
-        for (const key of ['current_public_works','citation_events','cited_works','answers','sample_rate_pct','questions']) cell(row, key === 'sample_rate_pct' ? percent(item[key]) : number(item[key]));
-        const detail = document.createElement('details'); detail.className = 'douyin-account-detail';
-        const summary = document.createElement('summary'); summary.textContent = '四轮明细'; detail.append(summary);
-        const note = document.createElement('p'); note.textContent = item.scope; detail.append(note);
-        for (const x of data.accounts.filter(x => x.account_id === item.account_id)) {
-          const p = document.createElement('p'); p.textContent = `${labels[x.round]}：${number(x.citation_events)} 事件 · ${number(x.cited_works)} 作品 · ${number(x.answers)} 回答 · ${percent(x.sample_rate_pct)} · ${number(x.questions)} 问题`; detail.append(p);
+      const query=search.value.trim().toLocaleLowerCase('zh-CN');
+      const rounds=round.value==='compare'?Object.keys(labels):[round.value];
+      const matches=ids.filter(id=>{const x=data.accounts.find(x=>x.account_id===id);return !query||`${x.account_name} ${id}`.toLocaleLowerCase('zh-CN').includes(query);});
+      const table=byId('douyin-account-table');table.dataset.mode=round.value;
+      const head=byId('douyin-account-head');head.replaceChildren();
+      const group=document.createElement('tr');
+      const name=document.createElement('th');name.scope='col';name.textContent='账号 / 当前公开清单';group.append(name);
+      for(const key of rounds){
+        const th=document.createElement('th');th.scope='col';th.textContent=labels[key];th.dataset.round=key;group.append(th);
+      }
+      head.append(group);
+      byId('douyin-account-count').textContent=`${matches.length} / 14 个账号 · ${round.value==='compare'?'四轮并排对比':labels[round.value]} · 每轮 576 样本 / 96 问题`;
+      const body=byId('douyin-account-body');body.replaceChildren();
+      if(!matches.length){const row=document.createElement('tr');cell(row,'没有匹配的账号','').colSpan=1+rounds.length;body.append(row);}
+      for(const id of matches){
+        const row=document.createElement('tr');row.dataset.accountId=id;
+        const item=data.accounts.find(x=>x.account_id===id),td=cell(row,'','');
+        const strong=document.createElement('strong'),small=document.createElement('small');
+        strong.textContent=item.account_name;small.textContent=`${id} · ${number(item.current_public_works)} 个作品`;td.append(strong,small);
+        for(const key of rounds){
+          const x=data.accounts.find(x=>x.account_id===id&&x.round===key);
+          stacked(row,`${number(x.citation_events)} 次引用`,`${number(x.cited_works)} 个被引作品\n${number(x.answers)} 回答 / ${percent(x.sample_rate_pct)}\n${number(x.questions)} 问题 / ${percent(x.questions/96*100)}`,key);
         }
-        cell(row, '', '').append(detail); body.append(row);
+        body.append(row);
       }
     }
-    search.addEventListener('input', () => {page = 1; render();});
-    for (const input of [round, size]) input.addEventListener('change', () => {page = 1; render();});
-    byId('douyin-page-prev').addEventListener('click', () => {page--; render();});
-    byId('douyin-page-next').addEventListener('click', () => {page++; render();});
-    render();
+    search.addEventListener('input',render);round.addEventListener('change',render);render();
   }
+
   function updateCurrentEmployeeDisplay(data) {
     const body = byId('internal-account-body');
     if (!body) return;
