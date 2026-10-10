@@ -65,7 +65,7 @@ function renderToolbar(data, filters, count) {
     ...data.events.map((event) => event.city),
   ]);
   return `<div class="toolbar"><div class="filter-group">
-    <label class="search-box">${icon("search")}<input type="search" data-filter="search" value="${escapeHtml(filters.search)}" placeholder="搜索活动、议题、城市或动作"></label>
+    <label class="search-box">${icon("search")}<input type="search" data-filter="search" value="${escapeHtml(filters.search)}" placeholder="搜索活动、议题、城市或动作" aria-label="搜索活动、议题、城市或动作"></label>
     <label class="filter-select">${icon("map-pin")}<select data-filter="city" aria-label="筛选城市"><option value="all">全部城市</option>${cities.map((city) => `<option value="${escapeHtml(city)}" ${filters.city === city ? "selected" : ""}>${escapeHtml(city)}</option>`).join("")}</select></label>
     <label class="filter-select">${icon("signal-high")}<select data-filter="priority" aria-label="筛选关注级别">
       <option value="all">全部级别</option>${["优先准备", "重点观察", "待补议程", "已取消"].map((priority) => `<option value="${priority}" ${filters.priority === priority ? "selected" : ""}>${priority}</option>`).join("")}
@@ -168,9 +168,9 @@ function renderKeywords(data, filters) {
     return matchesSearch && matchesCategory && matchesPriority;
   });
   const toolbar = `<div class="toolbar"><div class="filter-group">
-    <label class="search-box">${icon("search")}<input type="search" data-filter="search" value="${escapeHtml(filters.search)}" placeholder="搜索圈层、机构或行业黑话"></label>
-    <label class="filter-select">${icon("tags")}<select data-filter="keywordCategory"><option value="all">全部分类</option>${categories.map((category) => `<option value="${escapeHtml(category)}" ${filters.keywordCategory === category ? "selected" : ""}>${escapeHtml(category)}</option>`).join("")}</select></label>
-    <label class="filter-select">${icon("signal-high")}<select data-filter="keywordPriority"><option value="all">全部优先级</option>${["P0", "P1", "P2"].map((priority) => `<option value="${priority}" ${filters.keywordPriority === priority ? "selected" : ""}>${priority}</option>`).join("")}</select></label>
+    <label class="search-box">${icon("search")}<input type="search" data-filter="search" value="${escapeHtml(filters.search)}" placeholder="搜索圈层、机构或行业黑话" aria-label="搜索圈层、机构或行业黑话"></label>
+    <label class="filter-select">${icon("tags")}<select data-filter="keywordCategory" aria-label="筛选关键词分类"><option value="all">全部分类</option>${categories.map((category) => `<option value="${escapeHtml(category)}" ${filters.keywordCategory === category ? "selected" : ""}>${escapeHtml(category)}</option>`).join("")}</select></label>
+    <label class="filter-select">${icon("signal-high")}<select data-filter="keywordPriority" aria-label="筛选关键词优先级"><option value="all">全部优先级</option>${["P0", "P1", "P2"].map((priority) => `<option value="${priority}" ${filters.keywordPriority === priority ? "selected" : ""}>${priority}</option>`).join("")}</select></label>
   </div><span class="result-count">${keywords.length} / ${data.keywords.length} 个词</span></div>`;
   if (!keywords.length) return `${toolbar}<div class="data-region">${renderEmpty("当前筛选条件下没有关键词")}</div>`;
   const rows = keywords.map((keyword) => `<tr><td>${statusChip(keyword.priority, keyword.priority === "P0" ? "status-prepare" : "")}</td><td><span class="cell-primary">${escapeHtml(keyword.keyword)}</span><span class="cell-secondary">${escapeHtml(keyword.aliases.join(" / ") || "无别名")}</span></td><td>${escapeHtml(keyword.category)}</td><td><span class="cell-primary">${escapeHtml(keyword.contextRequired.join(" / ") || "无")}</span><span class="cell-secondary">排除：${escapeHtml(keyword.excludeContext.join(" / ") || "无")}</span></td><td>${escapeHtml(keyword.matchType)}</td><td><span class="cell-primary">${escapeHtml(keyword.source)}</span><span class="cell-secondary">${escapeHtml(keyword.verificationStatus)}</span></td><td>${escapeHtml(keyword.notes)}</td></tr>`).join("");
