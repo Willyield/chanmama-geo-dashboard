@@ -1,0 +1,5 @@
+﻿round,citation_events,cited_works,answers,questions,sample_rate_pct,samples,questions_total,all_citation_rows,all_douyin_answer_work_events,owned_share_of_douyin_events_pct,outside_inventory_answer_work_events,attribution_complete
+round1,9,2,9,9,1.56,576,96,9936,2247,0.4,2238,False
+round2,460,97,256,79,44.44,576,96,11943,2082,22.09,1622,False
+round3,687,105,322,85,55.9,576,96,11448,3626,18.95,2939,False
+round4,515,83,278,82,48.26,576,96,9105,3385,15.21,2870,False

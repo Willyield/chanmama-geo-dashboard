@@ -54,7 +54,7 @@
     for (const [key, item] of Object.entries(data.current_verified_supplement)) {
       const row = document.createElement('tr');
       cell(row, labels[key], '');
-      stacked(row, num(item.citation_events), `旧规则 ${num(data.owned_totals[key].citation_events)}`);
+      stacked(row, num(item.citation_events), `历史口径 ${num(data.owned_totals[key].citation_events)}`);
       cell(row, `${num(item.unique_articles)} 篇`);
       cell(row, `${num(item.answers)} / ${num(item.all_samples)}`);
       cell(row, `+${num(item.not_in_historical)} 个事件`, '');
@@ -63,7 +63,7 @@
     const limitations = document.getElementById('owned-overview-limitations');
     for (const text of data.limitations) {
       const li = document.createElement('li');
-      li.textContent = text;
+      li.textContent = text.replaceAll('旧规则候选', '历史口径候选').replaceAll('旧归属趋势', '历史归属趋势');
       limitations.append(li);
     }
     host.dataset.status = 'ready';

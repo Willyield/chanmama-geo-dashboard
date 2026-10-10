@@ -176,7 +176,7 @@
       .report-section { break-inside: avoid; }
     }
   </style>
-<link rel="stylesheet" href="./owned-overview.css?v=20261010-r1"></head>
+<link rel="stylesheet" href="./owned-overview.css?v=20261010-r1"><link rel="stylesheet" href="./douyin-overview.css?v=20261010-r1"></head>
 <body>
   <div class="page-bar"><div class="page-bar-inner"><a href="../">综合总览</a>　/　<a href="../douyin-citation-report/">第一轮引用源</a>　/　第四轮引用源</div></div>
   <header class="hero">
@@ -241,9 +241,9 @@
         <div class="section-head"><div><span class="section-number">02</span><h2>第三轮 vs 第四轮引用源</h2></div><p class="section-note">第三轮使用576个样本，第四轮使用当前576个样本。绝对量、样本率和问题率按各自冻结包独立重算，不累计检查点。</p></div>
         <div class="owned-overview" id="owned-overview" data-status="loading">
   <div class="owned-overview-head"><div><h3>自有账号四轮总览</h3><p class="owned-scope" id="owned-overview-status" role="status">四轮汇总加载中</p></div><a class="owned-download" href="./four-round-overview.csv" download>下载四轮汇总 CSV</a></div>
-  <p>四轮沿用旧规则归属口径；全部引用分母为冻结原始引用行，各轮有效回答均为 576。抖音员工号不属于本表。</p>
+  <p>四轮沿用历史归属口径；全部引用分母为冻结原始引用行，各轮有效回答均为 576。抖音员工号不属于本表。</p>
   <div class="table-wrap" tabindex="0" role="region" aria-label="自有账号四轮历史汇总" aria-describedby="owned-method-note">
-    <table class="owned-history-table"><thead><tr><th scope="col">轮次</th><th scope="col" class="numeric">自有账号引用 / 全部引用</th><th scope="col" class="numeric">唯一自有文章</th><th scope="col" class="numeric">命中样本 / 全部样本</th><th scope="col" class="numeric">样本引用率</th><th scope="col" class="numeric">高置信归属</th><th scope="col" class="numeric">中置信归属</th><th scope="col" class="numeric">旧规则待归属候选<br>（什么值得买）</th></tr></thead><tbody id="comparison-owned-total-body"></tbody></table>
+    <table class="owned-history-table"><thead><tr><th scope="col">轮次</th><th scope="col" class="numeric">自有账号引用 / 全部引用</th><th scope="col" class="numeric">唯一自有文章</th><th scope="col" class="numeric">命中样本 / 全部样本</th><th scope="col" class="numeric">样本引用率</th><th scope="col" class="numeric">高置信归属</th><th scope="col" class="numeric">中置信归属</th><th scope="col" class="numeric">历史口径待归属候选<br>（什么值得买）</th></tr></thead><tbody id="comparison-owned-total-body"></tbody></table>
   </div>
   <details class="owned-method" id="owned-method-note"><summary>指标与归属口径</summary><dl>
     <dt>自有账号引用</dt><dd>高置信归属 + 中置信归属；占比 = 自有账号引用 ÷ 各轮全部原始引用行。不是去重后的事件占比。</dd>
@@ -251,10 +251,10 @@
     <dt>命中样本 / 样本引用率</dt><dd>至少一次自有账号引用的有效回答数；样本引用率 = 命中样本 ÷ 576。文章、引用和样本的数量不能相加。</dd>
     <dt>高置信归属</dt><dd>账号 / 作者 ID 或 contentId 的确定性匹配。</dd>
     <dt>中置信归属</dt><dd>标题尾部账号名精确匹配，仍缺账号快照或作者页确认。归属置信度不评价回答、文章质量或事实准确性。</dd>
-    <dt>旧规则待归属候选</dt><dd>仅旧规则识别的什么值得买作者待确认候选，不计入自有账号引用；0 不代表所有账号核验完成。</dd>
+    <dt>历史口径待归属候选</dt><dd>仅历史口径识别的什么值得买作者待确认候选，不计入自有账号引用；0 不代表所有账号核验完成。</dd>
   </dl></details>
-  <div class="owned-latest"><h4>最新核验补充 · 独立范围</h4><p class="owned-scope">2026-10-09 已核验社媒作品 ID 范围，含登记表外，不含抖音员工号；不并入上表四轮趋势。</p>
-    <div class="table-wrap" tabindex="0" role="region" aria-label="最新核验补充"><table class="owned-audit-table"><thead><tr><th>轮次</th><th class="numeric">最新核验引用</th><th class="numeric">唯一文章</th><th class="numeric">命中样本 / 全部样本</th><th>相对旧规则</th></tr></thead><tbody id="owned-current-audit-body"></tbody></table></div>
+  <div class="owned-latest"><h4>账号与作品ID核验补充 · 独立范围</h4><p class="owned-scope">2026-10-09 已核验社媒作品 ID 范围，含登记表外，不含抖音员工号；不并入上表四轮趋势。</p>
+    <div class="table-wrap" tabindex="0" role="region" aria-label="账号与作品ID核验补充"><table class="owned-audit-table"><thead><tr><th>轮次</th><th class="numeric">最新核验引用</th><th class="numeric">唯一文章</th><th class="numeric">命中样本 / 全部样本</th><th>相对历史口径</th></tr></thead><tbody id="owned-current-audit-body"></tbody></table></div>
     <p>第三轮最新核验 629 与历史 619 的差异为新增 10 个头条回答作品事件，不是原始回答或引用变化。第四轮核验 46；第三轮冻结 619 保持不变。</p>
   </div>
   <aside class="owned-limitations" aria-label="核验范围与缺口"><strong>核验缺口仍保留</strong><ul id="owned-overview-limitations"></ul></aside>
@@ -345,7 +345,31 @@
 
       <section class="report-section" id="internal-sources">
         <div class="section-head"><div><span class="section-number">07</span><h2>内部信源细分与逐链接主题</h2></div><p class="section-note">官网排除运营圈、Open 与其他子域；抖音员工号只按 14 个登记账号的具体作品 ID 归因，主页不计。</p></div>
-        <div class="kpi-grid" id="internal-category-cards"></div>
+        <div class="douyin-overview" id="douyin-overview" data-status="loading">
+  <div class="douyin-head"><div><h3>抖音员工号四轮总览</h3><p class="douyin-scope" id="douyin-status" role="status">四轮数据加载中</p></div><div class="douyin-downloads"><a href="./four-round-douyin-overview.csv" download>下载四轮汇总 CSV</a><a href="./four-round-douyin-accounts.csv" download>下载账号明细 CSV</a></div></div>
+  <p class="douyin-basis">同一 2026-10-09 核验清单：14 个账号、1,394 个当前公开作品统一回算。不是采样时账号历史全集；社媒自有账号与抖音员工号独立统计。</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="抖音员工号四轮总览" aria-describedby="douyin-method">
+    <table class="douyin-total-table"><thead><tr><th scope="col">轮次</th><th scope="col">员工号引用事件</th><th scope="col">被引作品</th><th scope="col">命中回答 / 有效样本</th><th scope="col">样本引用率</th><th scope="col">命中问题 / 全部问题</th><th scope="col">全部抖音作品事件</th><th scope="col">员工号占抖音事件</th><th scope="col">清单外待核验事件</th><th scope="col">原始全部引用行</th></tr></thead><tbody id="douyin-total-body"></tbody></table>
+  </div>
+  <details class="douyin-method" id="douyin-method"><summary>指标与作品清单范围</summary><dl>
+    <dt>员工号引用事件</dt><dd>固定 14 个账号作品 ID 匹配，按同回答、同作品 ID 去重。账号 ID 和作品 ID 保留为字符串；不以品牌词或视频路径推断归属及真实内容形式。</dd>
+    <dt>被引作品</dt><dd>已匹配作品 ID 去重；不是发布作品总量，也不代表完整播放、审阅作品正文。</dd>
+    <dt>命中回答 / 样本引用率</dt><dd>至少一次命中的回答跨账号取并集。样本引用率 = 命中回答 ÷ 576；不能把各账号回答覆盖相加。</dd>
+    <dt>全部抖音作品事件 / 员工号占比</dt><dd>分母按同回答、同抖音作品 ID 去重；员工号占比 = 员工号引用事件 ÷ 全部抖音作品事件。原始全部引用行另列，不作为此占比的分母。</dd>
+    <dt>清单外待核验</dt><dd>未匹配到当前清单的作品事件，归属待核验，不能认定为非自有。清单含晚于早期采样的作品；历史删除、私密和当前不可见作品未知。</dd>
+    <dt>第一轮回收状态</dt><dd>第一轮缺少后续轮次来源回收状态字段；不补造状态，不声称该字段全部复核。使用冻结引用明细及样本关联。</dd>
+  </dl></details>
+  <div class="douyin-account-head"><h4>14 个账号逐轮明细</h4><span class="douyin-scope">当前作品清单匹配 · 56 条账号 / 轮次记录</span></div>
+  <div class="douyin-filters"><div class="douyin-field grow"><label for="douyin-account-search">账号名称或账号 ID</label><input id="douyin-account-search" type="search" placeholder="搜索账号" autocomplete="off"></div><div class="douyin-field"><label for="douyin-round-filter">轮次</label><select id="douyin-round-filter"><option value="all">全部轮次</option><option value="round1">第一轮</option><option value="round2">第二轮</option><option value="round3">第三轮</option><option value="round4">第四轮</option></select></div><div class="douyin-field"><label for="douyin-page-size">每页记录</label><select id="douyin-page-size"><option value="14">14</option><option value="28">28</option><option value="56">56</option></select></div></div>
+  <p class="douyin-scope" id="douyin-account-count" role="status"></p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="14 个抖音账号四轮明细"><table class="douyin-account-table"><thead><tr><th scope="col">账号 / ID</th><th scope="col">轮次</th><th scope="col">当前公开清单作品</th><th scope="col">引用事件</th><th scope="col">被引作品</th><th scope="col">命中回答</th><th scope="col">样本引用率</th><th scope="col">命中问题</th><th scope="col">四轮明细</th></tr></thead><tbody id="douyin-account-body"></tbody></table></div>
+  <div class="douyin-pagination"><button id="douyin-page-prev" type="button" aria-label="上一页" title="上一页">←</button><span id="douyin-page-label" aria-live="polite"></span><button id="douyin-page-next" type="button" aria-label="下一页" title="下一页">→</button></div>
+  <details class="douyin-legacy" id="douyin-legacy"><summary>原 186 作品清单固定回放 · 独立历史范围</summary><p>同一原清单固定回放，不是账号全集；第一轮旧 0 只表示旧清单未匹配，不是历史上无引用。清单变化不等于冻结回答或引用变化，不能将旧清单 81 与新清单 515 拼成趋势。</p><div class="table-wrap" tabindex="0" role="region" aria-label="原 186 作品清单固定回放"><table><thead><tr><th scope="col">轮次</th><th scope="col">引用事件</th><th scope="col">被引作品</th><th scope="col">命中回答</th><th scope="col">样本引用率</th><th scope="col">命中问题</th></tr></thead><tbody id="douyin-legacy-body"></tbody></table></div></details>
+  <aside class="douyin-limits" aria-label="作品归属范围与限制"><strong>核验范围与限制</strong><ul id="douyin-limitations"></ul></aside>
+  <p id="douyin-error" role="alert" hidden>抖音汇总未加载，缺失不等于 0。当前数字不可用于判断归属。</p>
+</div>
+
+<div class="kpi-grid" id="internal-category-cards"></div>
         <div class="panel" style="margin-top:16px">
           <h3>九个社媒账号与 14 个抖音员工号表现</h3>
           <div class="table-wrap"><table><thead><tr><th>类型</th><th>账号</th><th>平台</th><th class="numeric">全部作品</th><th class="numeric">被引作品</th><th class="numeric">引用</th><th class="numeric">样本</th><th class="numeric">问题</th><th>数据解释</th></tr></thead><tbody id="internal-account-body"></tbody></table></div>
@@ -355,7 +379,7 @@
           <div class="table-wrap"><table><thead><tr><th>内部类别</th><th>主题</th><th class="numeric">链接</th><th class="numeric">引用</th><th class="numeric">样本</th><th class="numeric">问题</th></tr></thead><tbody id="internal-topic-body"></tbody></table></div>
         </div>
         <div class="panel" style="margin-top:16px">
-          <h3>全部被引用内部链接</h3>
+          <h3>历史冻结内部链接证据</h3><p class="section-note">保留原逐链接主题与正文核验状态；该历史证据范围不代表上方当前作品清单的完整员工号匹配明细。</p>
           <div class="filters">
             <div class="filter grow"><label for="internal-link-search">搜索账号、网址、主题或命中问题</label><input id="internal-link-search" type="search" placeholder="输入关键词"></div>
             <div class="filter"><label for="internal-category-filter">内部类别</label><select id="internal-category-filter"><option value="all">全部类别</option></select></div>
@@ -409,8 +433,8 @@
           <a class="download-item" href="question_type_summary.csv"><span><span class="download-name">问题类型汇总</span><span class="download-meta">四类问题的抖音引用占比和覆盖率</span></span><span class="download-ext">CSV</span></a>
           <a class="download-item" href="owned_account_summary.csv"><span><span class="download-name">自有账号汇总</span><span class="download-meta">本轮归属待核验；缺失字段保持空值</span></span><span class="download-ext">CSV</span></a>
           <a class="download-item" href="internal_source_links.csv"><span><span class="download-name">内部信源逐链接明细</span><span class="download-meta">主题、引用、样本与具体命中问题</span></span><span class="download-ext">CSV</span></a>
-          <a class="download-item" href="employee_all_video_inventory.csv"><span><span class="download-name">14 个员工号作品核验清单</span><span class="download-meta">当前作品集的 URL、主题与引用匹配；缺失待核验</span></span><span class="download-ext">CSV</span></a>
-          <a class="download-item" href="internal_account_performance.csv"><span><span class="download-name">内部账号表现分析</span><span class="download-meta">九个社媒账号与 14 个员工号</span></span><span class="download-ext">CSV</span></a>
+          <a class="download-item" href="employee_all_video_inventory.csv"><span><span class="download-name">14 个员工号作品核验清单</span><span class="download-meta">历史冻结作品证据，不作为本次当前公开清单的全集</span></span><span class="download-ext">CSV</span></a>
+          <a class="download-item" href="internal_account_performance.csv"><span><span class="download-name">内部账号表现分析</span><span class="download-meta">历史冻结账号表现；本次员工号汇总与明细请用上方 CSV</span></span><span class="download-ext">CSV</span></a>
           <a class="download-item" href="internal_topic_summary.csv"><span><span class="download-name">内部信源主题汇总</span><span class="download-meta">按内部类别与主题汇总</span></span><span class="download-ext">CSV</span></a>
           <a class="download-item" href="internal_page_content_evidence.json"><span><span class="download-name">内部页面正文证据</span><span class="download-meta">检查时间、状态、最终 URL 与内容哈希</span></span><span class="download-ext">JSON</span></a>
           <a class="download-item" href="analysis_summary.json"><span><span class="download-name">机器可读分析汇总</span><span class="download-meta">核心指标、限制、输入哈希</span></span><span class="download-ext">JSON</span></a>
@@ -599,5 +623,5 @@
     renderPartners(); renderSourceUrls(); renderInternalLinks();
   </script>
   <script defer src="../assets/platform-shell.js?v=20260908-unifiedrepair1" data-root="../" data-section="citation" data-label="第四轮引用源"></script>
-<script defer src="./owned-overview.js?v=20261010-r1"></script></body>
+<script defer src="./owned-overview.js?v=20261010-r1"></script><script defer src="./douyin-overview.js?v=20261010-r1"></script></body>
 </html>
