@@ -1,0 +1,5 @@
+﻿round,citation_events,all_citation_rows,citation_share_pct,unique_articles,answers,all_samples,sample_rate_pct,high_confidence_events,medium_confidence_events,unresolved_events,unresolved_scope,attribution_complete
+round1,313,9936,3.15,36,211,576,36.63,306,7,72,旧规则识别的什么值得买作者待确认候选；不是全部账号未解决总量,False
+round2,866,11943,7.25,58,407,576,70.66,860,6,126,旧规则识别的什么值得买作者待确认候选；不是全部账号未解决总量,False
+round3,619,11448,5.41,53,371,576,64.41,619,0,80,旧规则识别的什么值得买作者待确认候选；不是全部账号未解决总量,False
+round4,46,9105,0.51,3,46,576,7.99,46,0,0,旧规则识别的什么值得买作者待确认候选；不是全部账号未解决总量,False

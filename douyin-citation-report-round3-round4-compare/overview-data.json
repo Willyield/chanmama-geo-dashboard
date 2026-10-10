@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "runId": "geo-round4-20260929-r1",
+  "rules_version": "owned-social-attribution-2026-08-03-r1",
+  "presentation_rule": "自有账号引用=高置信+中置信；全部引用分母为各轮冻结原始引用行数，保持截图历史口径",
+  "owned_totals": {
+    "round1": {
+      "citation_events": 313,
+      "all_citation_rows": 9936,
+      "citation_share_pct": 3.15,
+      "unique_articles": 36,
+      "answers": 211,
+      "all_samples": 576,
+      "sample_rate_pct": 36.63,
+      "high_confidence_events": 306,
+      "medium_confidence_events": 7,
+      "unresolved_events": 72,
+      "unresolved_scope": "旧规则识别的什么值得买作者待确认候选；不是全部账号未解决总量",
+      "attribution_complete": false
+    },
+    "round2": {
+      "citation_events": 866,
+      "all_citation_rows": 11943,
+      "citation_share_pct": 7.25,
+      "unique_articles": 58,
+      "answers": 407,
+      "all_samples": 576,
+      "sample_rate_pct": 70.66,
+      "high_confidence_events": 860,
+      "medium_confidence_events": 6,
+      "unresolved_events": 126,
+      "unresolved_scope": "旧规则识别的什么值得买作者待确认候选；不是全部账号未解决总量",
+      "attribution_complete": false
+    },
+    "round3": {
+      "citation_events": 619,
+      "all_citation_rows": 11448,
+      "citation_share_pct": 5.41,
+      "unique_articles": 53,
+      "answers": 371,
+      "all_samples": 576,
+      "sample_rate_pct": 64.41,
+      "high_confidence_events": 619,
+      "medium_confidence_events": 0,
+      "unresolved_events": 80,
+      "unresolved_scope": "旧规则识别的什么值得买作者待确认候选；不是全部账号未解决总量",
+      "attribution_complete": false
+    },
+    "round4": {
+      "citation_events": 46,
+      "all_citation_rows": 9105,
+      "citation_share_pct": 0.51,
+      "unique_articles": 3,
+      "answers": 46,
+      "all_samples": 576,
+      "sample_rate_pct": 7.99,
+      "high_confidence_events": 46,
+      "medium_confidence_events": 0,
+      "unresolved_events": 0,
+      "unresolved_scope": "旧规则识别的什么值得买作者待确认候选；不是全部账号未解决总量",
+      "attribution_complete": false
+    }
+  },
+  "denominators": {
+    "round1": {
+      "citations": 9936,
+      "samples": 576
+    },
+    "round2": {
+      "citations": 11943,
+      "samples": 576
+    },
+    "round3": {
+      "citations": 11448,
+      "samples": 576
+    },
+    "round4": {
+      "citations": 9105,
+      "samples": 576
+    }
+  },
+  "current_verified_supplement": {
+    "round3": {
+      "citation_events": 629,
+      "unique_articles": 61,
+      "answers": 372,
+      "all_samples": 576,
+      "scope": "2026-10-09已核验社媒作品ID范围，含登记表外，不含抖音员工号",
+      "not_in_historical": 10,
+      "not_in_current": 0
+    },
+    "round4": {
+      "citation_events": 46,
+      "unique_articles": 3,
+      "answers": 46,
+      "all_samples": 576,
+      "scope": "2026-10-09已核验社媒作品ID范围，含登记表外，不含抖音员工号",
+      "not_in_historical": 0,
+      "not_in_current": 0
+    }
+  },
+  "limitations": [
+    "旧规则未命中不等于账号无引用；十一登记账号全集未完全核验。",
+    "归属未解决列只扫描旧什么值得买候选；CSDN44暂缓、B站49缺稳定作者ID、后台86条无公开链接另列，单位不同不可相加。",
+    "新核验629与旧619区别为10个头条回答作品事件；不是原始回答或引用变化。第三轮冻结619保持不变。",
+    "第四轮为483网页+93手机条件替换，四轮变化只作描述，不能证明内容或终端因果。"
+  ]
+}

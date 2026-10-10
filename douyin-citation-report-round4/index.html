@@ -176,7 +176,7 @@
       .report-section { break-inside: avoid; }
     }
   </style>
-</head>
+<link rel="stylesheet" href="./owned-overview.css?v=20261010-r1"></head>
 <body>
   <div class="page-bar"><div class="page-bar-inner"><a href="../">综合总览</a>　/　<a href="../douyin-citation-report/">第一轮引用源</a>　/　第四轮引用源</div></div>
   <header class="hero">
@@ -239,7 +239,28 @@
 
       <section class="report-section" id="comparison">
         <div class="section-head"><div><span class="section-number">02</span><h2>第三轮 vs 第四轮引用源</h2></div><p class="section-note">第三轮使用576个样本，第四轮使用当前576个样本。绝对量、样本率和问题率按各自冻结包独立重算，不累计检查点。</p></div>
-        <div class="panel"><h3>自有账号总览</h3><div class="method-note" id="owned-method-note"><strong>口径说明</strong><div class="method-grid"><p><b>自有账号引用</b> = 高置信归属 + 中置信归属；分母“全部引用”是各轮冻结引用记录总量。</p><p><b>样本引用率</b> = 命中样本 ÷ 各轮有效样本数。</p><p><b>归属置信度不是回答可信度</b>，也不评价文章质量或事实准确性。</p><p><b>高置信归属</b>使用账号/作者 ID 或 contentId 的确定性匹配；<b>中置信归属</b>仅有标题尾部账号名精确匹配，仍缺账号快照或作者页确认；<b>归属未解决</b>不计入自有账号引用。</p></div></div><div class="table-wrap"><table class="comparison-overview-table" aria-describedby="owned-method-note"><thead><tr><th>轮次</th><th class="numeric">自有账号引用 / 全部引用</th><th class="numeric">唯一自有文章</th><th class="numeric">命中样本 / 全部样本</th><th class="numeric">样本引用率</th><th class="numeric">高置信归属</th><th class="numeric">中置信归属</th><th class="numeric">归属未解决</th></tr></thead><tbody id="comparison-owned-total-body"></tbody></table></div></div>
+        <div class="owned-overview" id="owned-overview" data-status="loading">
+  <div class="owned-overview-head"><div><h3>自有账号四轮总览</h3><p class="owned-scope" id="owned-overview-status" role="status">四轮汇总加载中</p></div><a class="owned-download" href="./four-round-overview.csv" download>下载四轮汇总 CSV</a></div>
+  <p>四轮沿用旧规则归属口径；全部引用分母为冻结原始引用行，各轮有效回答均为 576。抖音员工号不属于本表。</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="自有账号四轮历史汇总" aria-describedby="owned-method-note">
+    <table class="owned-history-table"><thead><tr><th scope="col">轮次</th><th scope="col" class="numeric">自有账号引用 / 全部引用</th><th scope="col" class="numeric">唯一自有文章</th><th scope="col" class="numeric">命中样本 / 全部样本</th><th scope="col" class="numeric">样本引用率</th><th scope="col" class="numeric">高置信归属</th><th scope="col" class="numeric">中置信归属</th><th scope="col" class="numeric">旧规则待归属候选<br>（什么值得买）</th></tr></thead><tbody id="comparison-owned-total-body"></tbody></table>
+  </div>
+  <details class="owned-method" id="owned-method-note"><summary>指标与归属口径</summary><dl>
+    <dt>自有账号引用</dt><dd>高置信归属 + 中置信归属；占比 = 自有账号引用 ÷ 各轮全部原始引用行。不是去重后的事件占比。</dd>
+    <dt>唯一自有文章</dt><dd>严格文章键去重；同一文章在不同回答中的引用可形成多个引用事件。</dd>
+    <dt>命中样本 / 样本引用率</dt><dd>至少一次自有账号引用的有效回答数；样本引用率 = 命中样本 ÷ 576。文章、引用和样本的数量不能相加。</dd>
+    <dt>高置信归属</dt><dd>账号 / 作者 ID 或 contentId 的确定性匹配。</dd>
+    <dt>中置信归属</dt><dd>标题尾部账号名精确匹配，仍缺账号快照或作者页确认。归属置信度不评价回答、文章质量或事实准确性。</dd>
+    <dt>旧规则待归属候选</dt><dd>仅旧规则识别的什么值得买作者待确认候选，不计入自有账号引用；0 不代表所有账号核验完成。</dd>
+  </dl></details>
+  <div class="owned-latest"><h4>最新核验补充 · 独立范围</h4><p class="owned-scope">2026-10-09 已核验社媒作品 ID 范围，含登记表外，不含抖音员工号；不并入上表四轮趋势。</p>
+    <div class="table-wrap" tabindex="0" role="region" aria-label="最新核验补充"><table class="owned-audit-table"><thead><tr><th>轮次</th><th class="numeric">最新核验引用</th><th class="numeric">唯一文章</th><th class="numeric">命中样本 / 全部样本</th><th>相对旧规则</th></tr></thead><tbody id="owned-current-audit-body"></tbody></table></div>
+    <p>第三轮最新核验 629 与历史 619 的差异为新增 10 个头条回答作品事件，不是原始回答或引用变化。第四轮核验 46；第三轮冻结 619 保持不变。</p>
+  </div>
+  <aside class="owned-limitations" aria-label="核验范围与缺口"><strong>核验缺口仍保留</strong><ul id="owned-overview-limitations"></ul></aside>
+  <p id="owned-overview-error" hidden>当前汇总未加载，不能将缺失数据解释为 0。请刷新后重试。</p>
+</div>
+
         <div class="panel" style="margin-top:16px">
           <h3>官网引用对比</h3>
           <div class="kpi-grid" id="comparison-official-cards"></div>
@@ -311,11 +332,12 @@
 
       <section class="report-section" id="accounts">
         <div class="section-head"><div><span class="section-number">06</span><h2>自有账号归属与账号证据</h2></div><p class="section-note">只使用作者 ID、内容 ID、公开元数据和账号快照等严格证据；品牌词命中不算归属。</p></div>
+        <p class="section-note">下列账号级明细沿现有核验状态保留，不以总览汇总替代逐账号核验；四轮汇总见上方“自有账号四轮总览”。</p>
         <div class="kpi-grid">
           <article class="kpi"><div class="kpi-label">自有账号引用</div><strong class="kpi-value" id="owned-events">-</strong><div class="kpi-meta">引用次数</div></article>
           <article class="kpi"><div class="kpi-label">自有账号唯一文章</div><strong class="kpi-value" id="owned-articles">-</strong><div class="kpi-meta">严格文章键去重</div></article>
           <article class="kpi"><div class="kpi-label">命中回答</div><strong class="kpi-value" id="owned-answers">-</strong><div class="kpi-meta" id="owned-answer-rate">-</div></article>
-          <article class="kpi"><div class="kpi-label">未决引用</div><strong class="kpi-value" id="owned-unresolved">-</strong><div class="kpi-meta">保留为未决，不强判</div></article>
+          <article class="kpi"><div class="kpi-label">账号级待核验</div><strong class="kpi-value" id="owned-unresolved">-</strong><div class="kpi-meta">账号明细未补齐；不等于旧规则候选数</div></article>
         </div>
         <div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>账号</th><th>平台</th><th>账号类型</th><th class="numeric">引用</th><th class="numeric">文章</th><th class="numeric">样本</th><th class="numeric">样本率</th><th class="numeric">问题</th><th class="numeric">问题率</th><th>置信度</th></tr></thead><tbody id="owned-account-body"></tbody></table></div>
         <div class="notice"><strong>当前不能回答账号权重：</strong>冻结引用包没有全部抖音作者的认证、粉丝、活跃度和未引用候选，因此不能比较企业号、员工号与普通个人号的被选中概率。</div>
@@ -443,10 +465,6 @@
 
     const comparison = report.comparison || {};
     const delta = value => value == null ? '待核验' : `${Number(value) > 0 ? '+' : ''}${Number(value).toFixed(2)} 个百分点`;
-    const comparisonOwnedTotalBody = $('comparison-owned-total-body');
-    [['第三轮最终 576/576', comparison.owned_totals?.round3, comparison.denominators.round3.citations], ['第四轮最终 576/576', comparison.owned_totals?.round4, core.raw_citation_rows]].forEach(([label, item, allCitations], index) => { const sampleDen = comparison.denominators[index === 0 ? 'round3' : 'round4'].samples;
-      if (!item) return; const row = document.createElement('tr'); appendCell(row, label); appendMetricCell(row, `${number(item.citation_events)} / ${number(allCitations)}`, `占全部引用 ${pct(item.citation_events == null ? null : item.citation_events / allCitations * 100)}`); appendMetricCell(row, `${number(item.unique_articles)} 篇`); appendMetricCell(row, `${number(item.answers)} / ${number(sampleDen)}`); appendMetricCell(row, pct(item.sample_rate_pct), `命中样本 ÷ ${number(sampleDen)}`); appendMetricCell(row, number(item.high_confidence_events)); appendMetricCell(row, number(item.medium_confidence_events)); appendMetricCell(row, number(item.unresolved_events), '不计入自有账号引用'); comparisonOwnedTotalBody.appendChild(row);
-    });
     const comparisonOfficialBody = $('comparison-official-body');
     const officialItems = comparison.official_sources || [];
     const officialCards = $('comparison-official-cards');
@@ -581,5 +599,5 @@
     renderPartners(); renderSourceUrls(); renderInternalLinks();
   </script>
   <script defer src="../assets/platform-shell.js?v=20260908-unifiedrepair1" data-root="../" data-section="citation" data-label="第四轮引用源"></script>
-</body>
+<script defer src="./owned-overview.js?v=20261010-r1"></script></body>
 </html>
