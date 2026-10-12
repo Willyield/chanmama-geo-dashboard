@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>GEO 研究平台</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="reader.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">GEO RESEARCH / PUBLIC SNAPSHOT</p>
+      <h1>GEO 研究平台</h1>
+    </div>
+    <div class="status"><span></span>免登录只读</div>
+  </header>
+  <nav aria-label="研究视图">
+    <button class="active" data-view="overview">总览</button>
+    <button data-view="samples">样本</button>
+    <button data-view="monitor">监测</button>
+    <button data-view="records">记录</button>
+    <button data-view="graph">关系</button>
+    <button data-view="planning">规划</button>
+  </nav>
+  <main>
+    <section class="release-band" aria-label="快照信息">
+      <div><span>数据截止</span><strong id="data-as-of">加载中</strong></div>
+      <div><span>发布批次时间</span><strong id="published-at">加载中</strong></div>
+      <div><span>发布版本</span><strong id="release-id">加载中</strong></div>
+      <p><span id="publication-status">快照候选 · 等待部署</span><br>数据按批次更新，研究记录与公开版本分别追踪。</p>
+    </section>
+    <section id="content" aria-live="polite"><p class="loading">正在读取研究快照...</p></section>
+  </main>
+  <footer>GEO RESEARCH · 证据可追溯，未知保留。</footer>
+  <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1088 @@
+{
+  "schema_version": 1,
+  "release_id": "geo-research-20261012-r1",
+  "data_as_of": "2026-10-11",
+  "published_at": "2026-10-12T04:26:54.234701+00:00",
+  "realtime": false,
+  "publication": {
+    "status": "prepared_snapshot",
+    "local_save_status": "saved",
+    "public_update_status": "pending_deployment"
+  },
+  "overview": {
+    "samples": 10,
+    "valid_answers": 10,
+    "real_samples": 10,
+    "synthetic_samples": 0,
+    "reviewed_samples": 1,
+    "groups": [
+      {
+        "key": "232fbc41af2779b05717",
+        "surface": "responses_api",
+        "terminal": "api",
+        "model_id": "doubao-seed-2-1-pro-260915",
+        "panel": "natural",
+        "dataset_role": "observational_unscheduled",
+        "rule_version": "geo-evidence-v1",
+        "is_synthetic": false,
+        "count": 10,
+        "metrics": {
+          "mention": {
+            "count": 10,
+            "denominator": 10,
+            "unknown": 0,
+            "not_applicable": 0,
+            "rate": 1,
+            "question_equal_rate": 1,
+            "median": 1.0,
+            "iqr": 0.0,
+            "included_questions": 10,
+            "missing_bounds": [
+              1.0,
+              1.0
+            ],
+            "answer_weighted_missing_bounds": [
+              1.0,
+              1.0
+            ],
+            "bounds_scope": "题等权缺失敏感性，仅覆盖导入的计划/样本记录；不是置信区间，未导入机会不被假设已覆盖"
+          },
+          "capability": {
+            "count": 0,
+            "denominator": 0,
+            "unknown": 10,
+            "not_applicable": 0,
+            "rate": null,
+            "question_equal_rate": null,
+            "median": null,
+            "iqr": null,
+            "included_questions": 0,
+            "missing_bounds": [
+              0.0,
+              1.0
+            ],
+            "answer_weighted_missing_bounds": [
+              0.0,
+              1.0
+            ],
+            "bounds_scope": "题等权缺失敏感性，仅覆盖导入的计划/样本记录；不是置信区间，未导入机会不被假设已覆盖"
+          },
+          "source_observable": {
+            "count": 10,
+            "denominator": 10,
+            "unknown": 0,
+            "not_applicable": 0,
+            "rate": 1,
+            "question_equal_rate": 1,
+            "median": 1.0,
+            "iqr": 0.0,
+            "included_questions": 10,
+            "missing_bounds": [
+              1.0,
+              1.0
+            ],
+            "answer_weighted_missing_bounds": [
+              1.0,
+              1.0
+            ],
+            "bounds_scope": "题等权缺失敏感性，仅覆盖导入的计划/样本记录；不是置信区间，未导入机会不被假设已覆盖"
+          },
+          "body_length": {
+            "count": null,
+            "denominator": 10,
+            "unknown": 0,
+            "not_applicable": 0,
+            "rate": 1311.4,
+            "question_equal_rate": 1311.4,
+            "median": 1212.5,
+            "iqr": 416.75,
+            "included_questions": 10,
+            "missing_bounds": null,
+            "answer_weighted_missing_bounds": null,
+            "bounds_scope": "题等权缺失敏感性，仅覆盖导入的计划/样本记录；不是置信区间，未导入机会不被假设已覆盖"
+          },
+          "recommended": {
+            "count": 0,
+            "denominator": 0,
+            "unknown": 10,
+            "not_applicable": 0,
+            "rate": null,
+            "question_equal_rate": null,
+            "median": null,
+            "iqr": null,
+            "included_questions": 0,
+            "missing_bounds": [
+              0.0,
+              1.0
+            ],
+            "answer_weighted_missing_bounds": [
+              0.0,
+              1.0
+            ],
+            "bounds_scope": "题等权缺失敏感性，仅覆盖导入的计划/样本记录；不是置信区间，未导入机会不被假设已覆盖"
+          },
+          "first": {
+            "count": 0,
+            "denominator": 0,
+            "unknown": 10,
+            "not_applicable": 0,
+            "rate": null,
+            "question_equal_rate": null,
+            "median": null,
+            "iqr": null,
+            "included_questions": 0,
+            "missing_bounds": [
+              0.0,
+              1.0
+            ],
+            "answer_weighted_missing_bounds": [
+              0.0,
+              1.0
+            ],
+            "bounds_scope": "题等权缺失敏感性，仅覆盖导入的计划/样本记录；不是置信区间，未导入机会不被假设已覆盖"
+          },
+          "top3": {
+            "count": 0,
+            "denominator": 0,
+            "unknown": 10,
+            "not_applicable": 0,
+            "rate": null,
+            "question_equal_rate": null,
+            "median": null,
+            "iqr": null,
+            "included_questions": 0,
+            "missing_bounds": [
+              0.0,
+              1.0
+            ],
+            "answer_weighted_missing_bounds": [
+              0.0,
+              1.0
+            ],
+            "bounds_scope": "题等权缺失敏感性，仅覆盖导入的计划/样本记录；不是置信区间，未导入机会不被假设已覆盖"
+          },
+          "fact_accuracy": {
+            "count": 0,
+            "denominator": 0,
+            "unknown": 10,
+            "not_applicable": 0,
+            "rate": null,
+            "question_equal_rate": null,
+            "median": null,
+            "iqr": null,
+            "included_questions": 0,
+            "missing_bounds": [
+              0.0,
+              1.0
+            ],
+            "answer_weighted_missing_bounds": [
+              0.0,
+              1.0
+            ],
+            "bounds_scope": "题等权缺失敏感性，仅覆盖导入的计划/样本记录；不是置信区间，未导入机会不被假设已覆盖"
+          },
+          "severe_error": {
+            "count": 0,
+            "denominator": 0,
+            "unknown": 10,
+            "not_applicable": 0,
+            "rate": null,
+            "question_equal_rate": null,
+            "median": null,
+            "iqr": null,
+            "included_questions": 0,
+            "missing_bounds": [
+              0.0,
+              1.0
+            ],
+            "answer_weighted_missing_bounds": [
+              0.0,
+              1.0
+            ],
+            "bounds_scope": "题等权缺失敏感性，仅覆盖导入的计划/样本记录；不是置信区间，未导入机会不被假设已覆盖"
+          }
+        },
+        "source_details": {
+          "valid_answer_denominator": 10,
+          "observable_answers": 10,
+          "unknown_answers": 0,
+          "observable_coverage": 1.0,
+          "composition_status": "available",
+          "answers_with_sources": 10,
+          "answers_with_valid_cards": 10,
+          "domain_answer_counts": {
+            "apps.apple.com": 2,
+            "ks.feigua.cn": 1,
+            "school.jinritemai.com": 7,
+            "www.91feiniao.com": 1,
+            "www.chanmama.com": 6,
+            "www.feigua.cn": 3,
+            "www.iesdouyin.com": 10,
+            "www.yun88.com": 1,
+            "compass.jinritemai.com": 5,
+            "fuwu.jinritemai.com": 2,
+            "ai.chanmama.com": 3,
+            "dy.feigua.cn": 4,
+            "webcdn.xiguaji.com": 1,
+            "matrix.newrank.cn": 1,
+            "trendinsight.oceanengine.com": 1,
+            "www.oceanengine.com": 1,
+            "www.tools-ai.cn": 1,
+            "www.woshipm.com": 1,
+            "developer.open-douyin.com": 2,
+            "op.jinritemai.com": 2,
+            "open.oceanengine.com": 1,
+            "partner.open-douyin.com": 2,
+            "www.ai-indeed.com": 1,
+            "buyin.jinritemai.com": 1,
+            "zhibo.rmeibao.com": 1
+          },
+          "domain_event_counts": {
+            "apps.apple.com": 3,
+            "ks.feigua.cn": 1,
+            "school.jinritemai.com": 24,
+            "www.91feiniao.com": 1,
+            "www.chanmama.com": 14,
+            "www.feigua.cn": 4,
+            "www.iesdouyin.com": 48,
+            "www.yun88.com": 1,
+            "compass.jinritemai.com": 14,
+            "fuwu.jinritemai.com": 3,
+            "ai.chanmama.com": 8,
+            "dy.feigua.cn": 5,
+            "webcdn.xiguaji.com": 1,
+            "matrix.newrank.cn": 1,
+            "trendinsight.oceanengine.com": 1,
+            "www.oceanengine.com": 1,
+            "www.tools-ai.cn": 1,
+            "www.woshipm.com": 1,
+            "developer.open-douyin.com": 4,
+            "op.jinritemai.com": 5,
+            "open.oceanengine.com": 1,
+            "partner.open-douyin.com": 5,
+            "www.ai-indeed.com": 1,
+            "buyin.jinritemai.com": 1,
+            "zhibo.rmeibao.com": 1
+          },
+          "url_event_denominator": 150,
+          "hhi": 0.1544000000000002,
+          "top1_domain_share": 0.32,
+          "top3_domain_share": 0.5733333333333334,
+          "source_type_status": "unavailable_without_versioned_classification",
+          "limitations": [
+            "域名覆盖按每回答去重，事件构成保留来源卡片事件；正文链接单列在样本中",
+            "来源可观测覆盖低于90%时来源构成仅为已见部分，不能比较为偏好变化",
+            "域名缺失界限按题等权，不是置信区间；不反推内部来源权重"
+          ]
+        }
+      }
+    ],
+    "source_summary": {
+      "observed": 10
+    },
+    "limitations": [
+      "按通道、模型、题池、解析/事实/提示/判定版本、自然/直接题、数据用途和真实/合成分轨",
+      "仅描述已导入样本，不代表真实用户流量或未来行为",
+      "多轨时不提供跨轨总命中率；重复回答不是独立实验单位",
+      "缺失界限不是置信区间；未导入的计划机会不在分母中",
+      "自动正文品牌命中是待核验实体候选",
+      "转化未接通，业务价值未知"
+    ],
+    "rule_version": "geo-evidence-v1"
+  },
+  "samples": [
+    {
+      "sample_id": "smp-21529466c6ac467f9511a98477a23452",
+      "question_id": "Q0063",
+      "observed_at": "2026-10-11T06:25:45.401057Z",
+      "surface": "responses_api",
+      "terminal": "api",
+      "model_id": "doubao-seed-2-1-pro-260915",
+      "panel": "natural",
+      "dataset_role": "observational_unscheduled",
+      "is_synthetic": false,
+      "status": "completed",
+      "answer_state": "valid",
+      "metrics": {
+        "mention": {
+          "value": 1,
+          "status": "value",
+          "method": "agent_reading",
+          "human_verified": false
+        },
+        "capability": {
+          "value": null,
+          "status": "unknown",
+          "method": "agent_reading",
+          "human_verified": false
+        },
+        "source_observable": {
+          "value": 1,
+          "status": "value",
+          "method": "capture_quality_not_preference",
+          "human_verified": null
+        },
+        "body_length": {
+          "value": 1119,
+          "status": "value",
+          "method": "codepoint_length",
+          "human_verified": null
+        },
+        "recommended": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "first": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "top3": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "fact_accuracy": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "severe_error": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        }
+      },
+      "source_summary": {
+        "capture_state": "observed",
+        "cards": 18,
+        "valid_cards": 12,
+        "empty_cards": 6,
+        "url_event_count": 12
+      }
+    },
+    {
+      "sample_id": "smp-2c9d323677d5462c818fd6045d34566b",
+      "question_id": "Q0049",
+      "observed_at": "2026-10-11T06:24:48.939374Z",
+      "surface": "responses_api",
+      "terminal": "api",
+      "model_id": "doubao-seed-2-1-pro-260915",
+      "panel": "natural",
+      "dataset_role": "observational_unscheduled",
+      "is_synthetic": false,
+      "status": "completed",
+      "answer_state": "valid",
+      "metrics": {
+        "mention": {
+          "value": 1,
+          "status": "value",
+          "method": "literal_entity_candidate",
+          "human_verified": null
+        },
+        "capability": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "source_observable": {
+          "value": 1,
+          "status": "value",
+          "method": "capture_quality_not_preference",
+          "human_verified": null
+        },
+        "body_length": {
+          "value": 925,
+          "status": "value",
+          "method": "codepoint_length",
+          "human_verified": null
+        },
+        "recommended": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "first": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "top3": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "fact_accuracy": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "severe_error": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        }
+      },
+      "source_summary": {
+        "capture_state": "observed",
+        "cards": 23,
+        "valid_cards": 18,
+        "empty_cards": 5,
+        "url_event_count": 18
+      }
+    },
+    {
+      "sample_id": "smp-5791ac20af31466fa090caced4286972",
+      "question_id": "Q0062",
+      "observed_at": "2026-10-11T06:25:15.393136Z",
+      "surface": "responses_api",
+      "terminal": "api",
+      "model_id": "doubao-seed-2-1-pro-260915",
+      "panel": "natural",
+      "dataset_role": "observational_unscheduled",
+      "is_synthetic": false,
+      "status": "completed",
+      "answer_state": "valid",
+      "metrics": {
+        "mention": {
+          "value": 1,
+          "status": "value",
+          "method": "literal_entity_candidate",
+          "human_verified": null
+        },
+        "capability": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "source_observable": {
+          "value": 1,
+          "status": "value",
+          "method": "capture_quality_not_preference",
+          "human_verified": null
+        },
+        "body_length": {
+          "value": 1121,
+          "status": "value",
+          "method": "codepoint_length",
+          "human_verified": null
+        },
+        "recommended": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "first": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "top3": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "fact_accuracy": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "severe_error": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        }
+      },
+      "source_summary": {
+        "capture_state": "observed",
+        "cards": 24,
+        "valid_cards": 12,
+        "empty_cards": 12,
+        "url_event_count": 12
+      }
+    },
+    {
+      "sample_id": "smp-595428a031064fe5853931a6daf0c792",
+      "question_id": "Q0092",
+      "observed_at": "2026-10-11T06:26:59.648016Z",
+      "surface": "responses_api",
+      "terminal": "api",
+      "model_id": "doubao-seed-2-1-pro-260915",
+      "panel": "natural",
+      "dataset_role": "observational_unscheduled",
+      "is_synthetic": false,
+      "status": "completed",
+      "answer_state": "valid",
+      "metrics": {
+        "mention": {
+          "value": 1,
+          "status": "value",
+          "method": "literal_entity_candidate",
+          "human_verified": null
+        },
+        "capability": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "source_observable": {
+          "value": 1,
+          "status": "value",
+          "method": "capture_quality_not_preference",
+          "human_verified": null
+        },
+        "body_length": {
+          "value": 1878,
+          "status": "value",
+          "method": "codepoint_length",
+          "human_verified": null
+        },
+        "recommended": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "first": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "top3": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "fact_accuracy": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "severe_error": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        }
+      },
+      "source_summary": {
+        "capture_state": "observed",
+        "cards": 24,
+        "valid_cards": 18,
+        "empty_cards": 6,
+        "url_event_count": 18
+      }
+    },
+    {
+      "sample_id": "smp-5c6047d19a064ca79146eb84965cacca",
+      "question_id": "Q0090",
+      "observed_at": "2026-10-11T06:26:19.468128Z",
+      "surface": "responses_api",
+      "terminal": "api",
+      "model_id": "doubao-seed-2-1-pro-260915",
+      "panel": "natural",
+      "dataset_role": "observational_unscheduled",
+      "is_synthetic": false,
+      "status": "completed",
+      "answer_state": "valid",
+      "metrics": {
+        "mention": {
+          "value": 1,
+          "status": "value",
+          "method": "literal_entity_candidate",
+          "human_verified": null
+        },
+        "capability": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "source_observable": {
+          "value": 1,
+          "status": "value",
+          "method": "capture_quality_not_preference",
+          "human_verified": null
+        },
+        "body_length": {
+          "value": 1605,
+          "status": "value",
+          "method": "codepoint_length",
+          "human_verified": null
+        },
+        "recommended": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "first": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "top3": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "fact_accuracy": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "severe_error": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        }
+      },
+      "source_summary": {
+        "capture_state": "observed",
+        "cards": 23,
+        "valid_cards": 12,
+        "empty_cards": 11,
+        "url_event_count": 12
+      }
+    },
+    {
+      "sample_id": "smp-8c241a42090e4f5babd9ce838f8d71eb",
+      "question_id": "Q0031",
+      "observed_at": "2026-10-11T06:24:26.271536Z",
+      "surface": "responses_api",
+      "terminal": "api",
+      "model_id": "doubao-seed-2-1-pro-260915",
+      "panel": "natural",
+      "dataset_role": "observational_unscheduled",
+      "is_synthetic": false,
+      "status": "completed",
+      "answer_state": "valid",
+      "metrics": {
+        "mention": {
+          "value": 1,
+          "status": "value",
+          "method": "literal_entity_candidate",
+          "human_verified": null
+        },
+        "capability": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "source_observable": {
+          "value": 1,
+          "status": "value",
+          "method": "capture_quality_not_preference",
+          "human_verified": null
+        },
+        "body_length": {
+          "value": 1238,
+          "status": "value",
+          "method": "codepoint_length",
+          "human_verified": null
+        },
+        "recommended": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "first": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "top3": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "fact_accuracy": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "severe_error": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        }
+      },
+      "source_summary": {
+        "capture_state": "observed",
+        "cards": 24,
+        "valid_cards": 12,
+        "empty_cards": 12,
+        "url_event_count": 12
+      }
+    },
+    {
+      "sample_id": "smp-96ce4138d19748a8be8d7c228c07c207",
+      "question_id": "Q0016",
+      "observed_at": "2026-10-11T06:22:42.384619Z",
+      "surface": "responses_api",
+      "terminal": "api",
+      "model_id": "doubao-seed-2-1-pro-260915",
+      "panel": "natural",
+      "dataset_role": "observational_unscheduled",
+      "is_synthetic": false,
+      "status": "completed",
+      "answer_state": "valid",
+      "metrics": {
+        "mention": {
+          "value": 1,
+          "status": "value",
+          "method": "literal_entity_candidate",
+          "human_verified": null
+        },
+        "capability": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "source_observable": {
+          "value": 1,
+          "status": "value",
+          "method": "capture_quality_not_preference",
+          "human_verified": null
+        },
+        "body_length": {
+          "value": 867,
+          "status": "value",
+          "method": "codepoint_length",
+          "human_verified": null
+        },
+        "recommended": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "first": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "top3": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "fact_accuracy": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "severe_error": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        }
+      },
+      "source_summary": {
+        "capture_state": "observed",
+        "cards": 30,
+        "valid_cards": 18,
+        "empty_cards": 12,
+        "url_event_count": 18
+      }
+    },
+    {
+      "sample_id": "smp-b32e346d07774748b611b71c9dfb2a68",
+      "question_id": "Q0026",
+      "observed_at": "2026-10-11T06:23:23.254883Z",
+      "surface": "responses_api",
+      "terminal": "api",
+      "model_id": "doubao-seed-2-1-pro-260915",
+      "panel": "natural",
+      "dataset_role": "observational_unscheduled",
+      "is_synthetic": false,
+      "status": "completed",
+      "answer_state": "valid",
+      "metrics": {
+        "mention": {
+          "value": 1,
+          "status": "value",
+          "method": "literal_entity_candidate",
+          "human_verified": null
+        },
+        "capability": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "source_observable": {
+          "value": 1,
+          "status": "value",
+          "method": "capture_quality_not_preference",
+          "human_verified": null
+        },
+        "body_length": {
+          "value": 1844,
+          "status": "value",
+          "method": "codepoint_length",
+          "human_verified": null
+        },
+        "recommended": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "first": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "top3": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "fact_accuracy": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "severe_error": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        }
+      },
+      "source_summary": {
+        "capture_state": "observed",
+        "cards": 24,
+        "valid_cards": 12,
+        "empty_cards": 12,
+        "url_event_count": 12
+      }
+    },
+    {
+      "sample_id": "smp-ecbbcde8c8d541009be6eea05c73c640",
+      "question_id": "Q0028",
+      "observed_at": "2026-10-11T06:23:56.598752Z",
+      "surface": "responses_api",
+      "terminal": "api",
+      "model_id": "doubao-seed-2-1-pro-260915",
+      "panel": "natural",
+      "dataset_role": "observational_unscheduled",
+      "is_synthetic": false,
+      "status": "completed",
+      "answer_state": "valid",
+      "metrics": {
+        "mention": {
+          "value": 1,
+          "status": "value",
+          "method": "literal_entity_candidate",
+          "human_verified": null
+        },
+        "capability": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "source_observable": {
+          "value": 1,
+          "status": "value",
+          "method": "capture_quality_not_preference",
+          "human_verified": null
+        },
+        "body_length": {
+          "value": 1330,
+          "status": "value",
+          "method": "codepoint_length",
+          "human_verified": null
+        },
+        "recommended": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "first": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "top3": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "fact_accuracy": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "severe_error": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        }
+      },
+      "source_summary": {
+        "capture_state": "observed",
+        "cards": 29,
+        "valid_cards": 18,
+        "empty_cards": 11,
+        "url_event_count": 18
+      }
+    },
+    {
+      "sample_id": "smp-f6001e2b354f4c55adbdf214a3d73729",
+      "question_id": "Q0005",
+      "observed_at": "2026-10-11T06:22:22.272308Z",
+      "surface": "responses_api",
+      "terminal": "api",
+      "model_id": "doubao-seed-2-1-pro-260915",
+      "panel": "natural",
+      "dataset_role": "observational_unscheduled",
+      "is_synthetic": false,
+      "status": "completed",
+      "answer_state": "valid",
+      "metrics": {
+        "mention": {
+          "value": 1,
+          "status": "value",
+          "method": "literal_entity_candidate",
+          "human_verified": null
+        },
+        "capability": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "source_observable": {
+          "value": 1,
+          "status": "value",
+          "method": "capture_quality_not_preference",
+          "human_verified": null
+        },
+        "body_length": {
+          "value": 1187,
+          "status": "value",
+          "method": "codepoint_length",
+          "human_verified": null
+        },
+        "recommended": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "first": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "top3": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "fact_accuracy": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        },
+        "severe_error": {
+          "value": null,
+          "status": "unknown",
+          "method": "visible_text",
+          "human_verified": null
+        }
+      },
+      "source_summary": {
+        "capture_state": "observed",
+        "cards": 30,
+        "valid_cards": 18,
+        "empty_cards": 12,
+        "url_event_count": 18
+      }
+    }
+  ],
+  "records": [],
+  "graph": {
+    "nodes": [],
+    "edges": []
+  },
+  "monitor": {
+    "status": "not_activated",
+    "scheduled_records": 0,
+    "baseline_required_days": 14,
+    "window_max_days": 21,
+    "notifications_sent": 0,
+    "limitations": [
+      "持续监测尚未激活；单日样本不能证明漂移或稳定改善",
+      "代理阅读与业务方人工核验分别记录"
+    ]
+  },
+  "planning": {
+    "execution_state": "draft_not_submitted",
+    "sampling_requests_created": 0,
+    "automation_activated": false,
+    "limitations": [
+      "计划草案保留在本机；公开查看不会执行采样、付费或通知"
+    ]
+  },
+  "capabilities": [
+    "overview",
+    "samples",
+    "monitor",
+    "records",
+    "graph",
+    "planning"
+  ],
+  "content_sha256": "f0272a69534c173b0d1abfc3ab97cae40f8544a72b35cd676069964927794e31"
+}
