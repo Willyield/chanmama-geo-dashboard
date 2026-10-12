@@ -1,33 +1,37 @@
 {
   "schemaVersion": 2,
   "module": "hotspots",
-  "date": "2026-10-10",
-  "observedAt": "2026-10-10T05:57:18.666Z",
-  "revision": 6,
-  "updatedAt": "2026-10-10T05:57:43.192Z",
+  "date": "2026-10-12",
+  "observedAt": "2026-10-12T03:37:18.138Z",
+  "revision": 1,
+  "updatedAt": "2026-10-12T03:37:29.058Z",
   "sourceType": "structured-data",
-  "sourceArtifact": "incoming/hotspots/2026-10-10.json",
+  "sourceArtifact": "incoming/hotspots/2026-10-12.json",
   "sourceWorkbook": null,
   "inputStatus": "incomplete",
   "incompleteReasons": [
+    "巨量云图：MIN_RECORDS_NOT_MET",
     "抖音规则中心：MIN_RECORDS_NOT_MET",
+    "百度指数：PAGE_OR_NETWORK_FAILURE",
+    "抖音创作者指数：HTTP_OR_EMPTY_BUSINESS_PAGE",
+    "小红书发现页：PAGE_OR_NETWORK_FAILURE",
+    "抖音站内搜索：MIN_RECORDS_NOT_MET",
+    "36氪综合站：MIN_RECORDS_NOT_MET",
     "人人都是产品经理：MIN_RECORDS_NOT_MET",
-    "百度指数：YEAR_MISREAD_AS_INDEX",
-    "抖音创作者指数：MIN_RECORDS_NOT_MET",
     "新智元：BUSINESS_PAGE_TYPE_NOT_VERIFIED",
     "AITNT：BUSINESS_PAGE_TYPE_NOT_VERIFIED",
-    "机器之心：PAGE_OR_NETWORK_FAILURE",
-    "量子位：PAGE_OR_NETWORK_FAILURE",
+    "机器之心：MIN_RECORDS_NOT_MET",
+    "量子位：MIN_RECORDS_NOT_MET",
+    "36氪AI：MIN_RECORDS_NOT_MET",
     "雷峰网：MIN_RECORDS_NOT_MET",
     "通义千问官方：BUSINESS_PAGE_TYPE_NOT_VERIFIED",
     "豆包与火山引擎官方：MIN_RECORDS_NOT_MET",
+    "腾讯混元官方：PAGE_OR_NETWORK_FAILURE",
     "百度文心官方：PAGE_OR_NETWORK_FAILURE",
     "智谱官方：MIN_RECORDS_NOT_MET",
     "Kimi与月之暗面官方：MIN_RECORDS_NOT_MET",
     "MiniMax官方：BUSINESS_PAGE_TYPE_NOT_VERIFIED",
-    "华为盘古官方：MIN_RECORDS_NOT_MET",
-    "小红书发现页：MIN_RECORDS_NOT_MET",
-    "抖音站内搜索：MIN_RECORDS_NOT_MET"
+    "华为盘古官方：MIN_RECORDS_NOT_MET"
   ],
   "scoringModels": [
     "commerce_v1"
@@ -35,37 +39,37 @@
   "summary": {
     "gradeCounts": {
       "S": 0,
-      "A": 2,
+      "A": 1,
       "B": 0,
       "C": 0,
       "D": 0
     },
     "domainCounts": {
-      "commerce": 2,
+      "commerce": 1,
       "technology": 0
     },
     "candidateKindCounts": {
-      "event": 2,
+      "event": 1,
       "potential_topic": 0
     },
     "contentPotentialCounts": {
       "S": 0,
       "A": 0,
       "B": 0,
-      "C": 2,
+      "C": 1,
       "D": 0
     },
     "topicValueCounts": {
       "S": 0,
       "A": 0,
       "B": 0,
-      "C": 2,
+      "C": 1,
       "D": 0
     },
     "publicationStatusCounts": {
       "priority_production": 0,
       "early_test": 0,
-      "targeted_publish": 2,
+      "targeted_publish": 1,
       "small_test": 0,
       "observe": 0,
       "do_not_publish": 0
@@ -73,7 +77,7 @@
     "breakoutCounts": {
       "confirmed_breakout": 0,
       "fast_rising": 0,
-      "observation_only": 2,
+      "observation_only": 1,
       "rejected": 0
     },
     "adModeEligibleCounts": {
@@ -83,32 +87,19 @@
     },
     "adOpportunityCount": 0,
     "adOpportunityQueue": [],
-    "priorityCount": 2,
+    "priorityCount": 1,
     "lowCostCount": 0,
     "observeCount": 0,
-    "evidenceE3Count": 2,
-    "publishNowCount": 2,
-    "webSummary": "2026-10-10按冻结合同深采36来源，基于各类结构化业务证据保留2条正式热点；国内9/27来源取得可接受终态，业务输入保持incomplete。",
+    "evidenceE3Count": 1,
+    "publishNowCount": 1,
+    "webSummary": "2026-10-12按冻结合同深采36来源，基于各类结构化业务证据保留1条正式热点；国内5/27来源取得可接受终态，业务输入保持incomplete。",
     "topContentActions": [
       {
-        "id": "HT-20261010-001",
+        "id": "HT-20261012-001",
         "grade": "C",
         "name": "“运费险”服务规范",
         "reason": "对照官方要求检查相关经营配置：消费者购买带有“运费险”标识的订单，若该订单在商家点击发货后的90天内申请退货退款/换货，将按如下流程进行运费险理赔：",
         "action": "定向发布｜“运费险”服务规范",
-        "domain": "commerce",
-        "contentPotentialScore": 40,
-        "topicValueScore": 40,
-        "topicValueLabel": "低潜力",
-        "publicationStatus": "定向发布",
-        "publicationStatusCode": "targeted_publish"
-      },
-      {
-        "id": "HT-20261010-002",
-        "grade": "C",
-        "name": "创作者违规申诉管理规则",
-        "reason": "对照官方要求检查相关经营配置：为保障抖音电商平台创作者权益，提升创作者违规申诉效率，帮助创作者及时、高效地进行违规申诉，根据现行法律法规、国家规定及《商品信息分享功能服务协议》《抖音电商创作者管理总则》《抖音电商创作者违规管理规则》等平台管理规则制定本规则。",
-        "action": "定向发布｜创作者违规申诉管理规则",
         "domain": "commerce",
         "contentPotentialScore": 40,
         "topicValueScore": 40,
@@ -120,21 +111,10 @@
     "topRollingUpdates": [],
     "topActions": [
       {
-        "id": "HT-20261010-001",
+        "id": "HT-20261012-001",
         "grade": "L-A｜业务重点响应",
         "name": "“运费险”服务规范",
         "reason": "消费者购买带有“运费险”标识的订单，若该订单在商家点击发货后的90天内申请退货退款/换货，将按如下流程进行运费险理赔：",
-        "action": "定向解读官方经营要求",
-        "domain": "commerce",
-        "totalScore": 55,
-        "techImpactScore": null,
-        "businessFitScore": null
-      },
-      {
-        "id": "HT-20261010-002",
-        "grade": "L-A｜业务重点响应",
-        "name": "创作者违规申诉管理规则",
-        "reason": "为保障抖音电商平台创作者权益，提升创作者违规申诉效率，帮助创作者及时、高效地进行违规申诉，根据现行法律法规、国家规定及《商品信息分享功能服务协议》《抖音电商创作者管理总则》《抖音电商创作者违规管理规则》等平台管理规则制定本规则。",
         "action": "定向解读官方经营要求",
         "domain": "commerce",
         "totalScore": 55,
@@ -145,9 +125,9 @@
   },
   "candidates": [
     {
-      "id": "HT-20261010-001",
+      "id": "HT-20261012-001",
       "event_key": "official-rule-5c16c199206e4d12",
-      "foundAt": "2026-10-10T02:49:21.525Z",
+      "foundAt": "2026-10-12T03:31:55.194Z",
       "name": "“运费险”服务规范",
       "type": "平台经营规则",
       "sourceLevel": "E3",
@@ -158,7 +138,7 @@
       "actionReason": "消费者购买带有“运费险”标识的订单，若该订单在商家点击发货后的90天内申请退货退款/换货，将按如下流程进行运费险理赔：",
       "actionDetail": "对照官方要求检查相关经营配置：消费者购买带有“运费险”标识的订单，若该订单在商家点击发货后的90天内申请退货退款/换货，将按如下流程进行运费险理赔：",
       "evidence": "https://school.jinritemai.com/doudian/web/article/aHyAb8cEj25f",
-      "deadline": "2026-10-10T18:00:00+08:00",
+      "deadline": "2026-10-12T18:00:00+08:00",
       "notRecommended": "不外推大众热度或经营成效",
       "sourceLinks": [
         {
@@ -202,7 +182,7 @@
         "summary": "6.1 【生效时间】本规范于2024年01月01日首次生效，于2026年10月08日修订执行。",
         "response_window": {
           "effectiveDate": "2026-10-08",
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-12",
           "validUntil": "2026-10-14",
           "evidence": "6.1 【生效时间】本规范于2024年01月01日首次生效，于2026年10月08日修订执行。",
           "rationale": "正文明确修订生效，处于修订后首周经营响应窗口；不是今日首次发布。"
@@ -227,7 +207,7 @@
             "platform_entity_id": "aHyAb8cEj25f",
             "url": "https://school.jinritemai.com/doudian/web/article/aHyAb8cEj25f",
             "verification_status": "verified",
-            "verified_at": "2026-10-10T02:49:21.525Z"
+            "verified_at": "2026-10-12T03:31:55.194Z"
           }
         ]
       },
@@ -238,8 +218,8 @@
           "metric_name": "官方规则正文要求",
           "metric_value": "6.1 【生效时间】本规范于2024年01月01日首次生效，于2026年10月08日修订执行。",
           "unit": "官方条款",
-          "period": "2026-10-10",
-          "observed_at": "2026-10-10T02:49:21.525Z",
+          "period": "2026-10-12",
+          "observed_at": "2026-10-12T03:31:55.194Z",
           "source_url": "https://school.jinritemai.com/doudian/web/article/aHyAb8cEj25f",
           "evidence_group": "rule",
           "underlying_signal_id": "official:rule:5c16c199206e4d12"
@@ -249,7 +229,7 @@
         "min_days": 1,
         "max_days": 7,
         "rationale": "用于当期规则解读，7日内复查；不预测趋势。",
-        "review_at": "2026-10-10"
+        "review_at": "2026-10-12"
       },
       "target_audience": [
         "抖店商家",
@@ -277,8 +257,8 @@
             "url": null,
             "route": "规则解读"
           },
-          "valid_from": "2026-10-10",
-          "valid_until": "2026-10-11",
+          "valid_from": "2026-10-12",
+          "valid_until": "2026-10-13",
           "validation_status": "hypothesis",
           "risk_flags": [
             "搜索量未核"
@@ -300,8 +280,8 @@
             "url": null,
             "route": "规则解读"
           },
-          "valid_from": "2026-10-10",
-          "valid_until": "2026-10-11",
+          "valid_from": "2026-10-12",
+          "valid_until": "2026-10-13",
           "validation_status": "hypothesis",
           "risk_flags": [
             "搜索量未核"
@@ -323,8 +303,8 @@
             "url": null,
             "route": "规则解读"
           },
-          "valid_from": "2026-10-10",
-          "valid_until": "2026-10-11",
+          "valid_from": "2026-10-12",
+          "valid_until": "2026-10-13",
           "validation_status": "hypothesis",
           "risk_flags": [
             "搜索量未核"
@@ -337,12 +317,12 @@
       "business_response_basis": "官方实质规则直接影响经营，保持高业务优先级。",
       "actions": [
         {
-          "hotspotId": "HT-20261010-001",
+          "hotspotId": "HT-20261012-001",
           "actionType": "优先制作",
           "task": "对照官方要求检查相关经营配置：消费者购买带有“运费险”标识的订单，若该订单在商家点击发货后的90天内申请退货退款/换货，将按如下流程进行运费险理赔：",
           "owner": "内容运营/合规",
           "collaborators": "数据研究、内容运营、合规",
-          "deadline": "2026-10-10",
+          "deadline": "2026-10-12",
           "deliverable": "事实核验、业务清单与关键词假设包",
           "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
           "stopCondition": "官方撤回、修订或证据失效时立即更新。",
@@ -924,809 +904,16 @@
         "多周期变化未核",
         "独立变化信号不足2项"
       ]
-    },
-    {
-      "id": "HT-20261010-002",
-      "event_key": "official-rule-cc5c4bda436e04a2",
-      "foundAt": "2026-10-10T02:49:21.525Z",
-      "name": "创作者违规申诉管理规则",
-      "type": "平台经营规则",
-      "sourceLevel": "E3",
-      "publishedAt": "2026-10-08",
-      "signal": "5.2 本规则于2021年05月27日发布公示，于2026年10月8日修订生效。",
-      "uncertainty": "只解释官方正文可核的经营要求，不宣称处罚规模、销售变化或大众热度；页面发布时间不等于所有条款首次生效。",
-      "recommended": "定向解读官方经营要求",
-      "actionReason": "为保障抖音电商平台创作者权益，提升创作者违规申诉效率，帮助创作者及时、高效地进行违规申诉，根据现行法律法规、国家规定及《商品信息分享功能服务协议》《抖音电商创作者管理总则》《抖音电商创作者违规管理规则》等平台管理规则制定本规则。",
-      "actionDetail": "对照官方要求检查相关经营配置：为保障抖音电商平台创作者权益，提升创作者违规申诉效率，帮助创作者及时、高效地进行违规申诉，根据现行法律法规、国家规定及《商品信息分享功能服务协议》《抖音电商创作者管理总则》《抖音电商创作者违规管理规则》等平台管理规则制定本规则。",
-      "evidence": "https://school.jinritemai.com/doudian/web/article/112409",
-      "deadline": "2026-10-10T18:00:00+08:00",
-      "notRecommended": "不外推大众热度或经营成效",
-      "sourceLinks": [
-        {
-          "label": "Core source",
-          "domain": "school.jinritemai.com",
-          "url": "https://school.jinritemai.com/doudian/web/article/112409"
-        }
-      ],
-      "source_links": [
-        {
-          "label": "Core source",
-          "domain": "school.jinritemai.com",
-          "url": "https://school.jinritemai.com/doudian/web/article/112409"
-        }
-      ],
-      "status": "正式热点",
-      "risk": "低风险",
-      "owner": "内容运营/合规",
-      "monitor": "官方修订、撤回与生效状态",
-      "candidate_kind": "event",
-      "daily_status": "NEW",
-      "previous_day_event_key_matched": null,
-      "hotspot_category": "经营与规则",
-      "signal_type": "official_rule",
-      "baseline_evidence": {
-        "signal_type": "official_rule",
-        "requires_baseline": false,
-        "baseline_verified": true,
-        "comparison_baseline_verified": false,
-        "multi_period_growth_verified": false,
-        "independent_change_signals": 1,
-        "baseline_type": "官方正文经营要求，非增长趋势",
-        "normalization_flags": []
-      },
-      "topic_resonance": null,
-      "official_rule": {
-        "substantive_change": true,
-        "direct_business_impact": true,
-        "active_window": true,
-        "business_priority_floor": "A",
-        "summary": "5.2 本规则于2021年05月27日发布公示，于2026年10月8日修订生效。",
-        "response_window": {
-          "effectiveDate": "2026-10-08",
-          "reviewedAt": "2026-10-10",
-          "validUntil": "2026-10-14",
-          "evidence": "5.2 本规则于2021年05月27日发布公示，于2026年10月8日修订生效。",
-          "rationale": "正文明确修订生效，处于修订后首周经营响应窗口；不是今日首次发布。"
-        }
-      },
-      "technology_change": "5.2 本规则于2021年05月27日发布公示，于2026年10月8日修订生效。",
-      "chanmama_relevance": "为保障抖音电商平台创作者权益，提升创作者违规申诉效率，帮助创作者及时、高效地进行违规申诉，根据现行法律法规、国家规定及《商品信息分享功能服务协议》《抖音电商创作者管理总则》《抖音电商创作者违规管理规则》等平台管理规则制定本规则。",
-      "next_step": "定向解读官方经营要求",
-      "explicitly_not_doing": "不外推大众热度或经营成效",
-      "official_evidence": [],
-      "circle_evidence": [],
-      "subject": {
-        "subject_id": "rule:douyin:cc5c4bda436e04a2",
-        "kind": "rule",
-        "canonical_name": "创作者违规申诉管理规则",
-        "aliases": [],
-        "industry": "抖音电商经营",
-        "identity_status": "verified",
-        "identities": [
-          {
-            "platform": "抖店学习中心",
-            "platform_entity_id": "112409",
-            "url": "https://school.jinritemai.com/doudian/web/article/112409",
-            "verification_status": "verified",
-            "verified_at": "2026-10-10T02:49:21.525Z"
-          }
-        ]
-      },
-      "subject_kind": "rule",
-      "trend_metrics": [
-        {
-          "metric_id": "metric:rule:cc5c4bda436e04a2",
-          "metric_name": "官方规则正文要求",
-          "metric_value": "5.2 本规则于2021年05月27日发布公示，于2026年10月8日修订生效。",
-          "unit": "官方条款",
-          "period": "2026-10-10",
-          "observed_at": "2026-10-10T02:49:21.525Z",
-          "source_url": "https://school.jinritemai.com/doudian/web/article/112409",
-          "evidence_group": "rule",
-          "underlying_signal_id": "official:rule:cc5c4bda436e04a2"
-        }
-      ],
-      "expected_duration": {
-        "min_days": 1,
-        "max_days": 7,
-        "rationale": "用于当期规则解读，7日内复查；不预测趋势。",
-        "review_at": "2026-10-10"
-      },
-      "target_audience": [
-        "抖店商家",
-        "电商运营"
-      ],
-      "active_search": {
-        "status": "not_observed",
-        "evidence": [],
-        "boundary": "未取得搜索量测量。"
-      },
-      "keyword_hypotheses": [
-        {
-          "keyword_id": "kw:cc5c4bda436e04a2:0",
-          "text": "创作者违规申诉管理规则",
-          "intent": "规则问题",
-          "evidence_refs": [
-            "metric:rule:cc5c4bda436e04a2"
-          ],
-          "applicable_modes": [
-            "search"
-          ],
-          "match_suggestion": "仅关键词假设，未开放投放",
-          "landing_page": {
-            "status": "planned",
-            "url": null,
-            "route": "规则解读"
-          },
-          "valid_from": "2026-10-10",
-          "valid_until": "2026-10-11",
-          "validation_status": "hypothesis",
-          "risk_flags": [
-            "搜索量未核"
-          ]
-        },
-        {
-          "keyword_id": "kw:cc5c4bda436e04a2:1",
-          "text": "创作者违规申诉管理规则 商家要求",
-          "intent": "规则问题",
-          "evidence_refs": [
-            "metric:rule:cc5c4bda436e04a2"
-          ],
-          "applicable_modes": [
-            "search"
-          ],
-          "match_suggestion": "仅关键词假设，未开放投放",
-          "landing_page": {
-            "status": "planned",
-            "url": null,
-            "route": "规则解读"
-          },
-          "valid_from": "2026-10-10",
-          "valid_until": "2026-10-11",
-          "validation_status": "hypothesis",
-          "risk_flags": [
-            "搜索量未核"
-          ]
-        },
-        {
-          "keyword_id": "kw:cc5c4bda436e04a2:2",
-          "text": "创作者违规申诉管理规则 操作清单",
-          "intent": "规则问题",
-          "evidence_refs": [
-            "metric:rule:cc5c4bda436e04a2"
-          ],
-          "applicable_modes": [
-            "search"
-          ],
-          "match_suggestion": "仅关键词假设，未开放投放",
-          "landing_page": {
-            "status": "planned",
-            "url": null,
-            "route": "规则解读"
-          },
-          "valid_from": "2026-10-10",
-          "valid_until": "2026-10-11",
-          "validation_status": "hypothesis",
-          "risk_flags": [
-            "搜索量未核"
-          ]
-        }
-      ],
-      "business_response_code": "A",
-      "business_response_label": "业务重点响应",
-      "business_response_score": 55,
-      "business_response_basis": "官方实质规则直接影响经营，保持高业务优先级。",
-      "actions": [
-        {
-          "hotspotId": "HT-20261010-002",
-          "actionType": "优先制作",
-          "task": "对照官方要求检查相关经营配置：为保障抖音电商平台创作者权益，提升创作者违规申诉效率，帮助创作者及时、高效地进行违规申诉，根据现行法律法规、国家规定及《商品信息分享功能服务协议》《抖音电商创作者管理总则》《抖音电商创作者违规管理规则》等平台管理规则制定本规则。",
-          "owner": "内容运营/合规",
-          "collaborators": "数据研究、内容运营、合规",
-          "deadline": "2026-10-10",
-          "deliverable": "事实核验、业务清单与关键词假设包",
-          "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
-          "stopCondition": "官方撤回、修订或证据失效时立即更新。",
-          "status": "待执行"
-        }
-      ],
-      "domain": "commerce",
-      "scoring_model": "commerce_v1",
-      "totalScore": 55,
-      "initialValue": 3,
-      "finalValue": 4,
-      "grade": "L-A｜业务重点响应",
-      "gradeCode": "A",
-      "followDecision": "业务重点响应",
-      "downgradeReason": "抖音官方实质规则业务优先级下限",
-      "scoreDetails": [
-        {
-          "name": "流量热度",
-          "score": 0,
-          "weight": 10
-        },
-        {
-          "name": "上升与持续",
-          "score": 0,
-          "weight": 10
-        },
-        {
-          "name": "目标人群",
-          "score": 4,
-          "weight": 15
-        },
-        {
-          "name": "业务关联",
-          "score": 5,
-          "weight": 20
-        },
-        {
-          "name": "转化价值",
-          "score": 1,
-          "weight": 15
-        },
-        {
-          "name": "品牌价值",
-          "score": 2,
-          "weight": 5
-        },
-        {
-          "name": "GEO价值",
-          "score": 4,
-          "weight": 10
-        },
-        {
-          "name": "产品承接",
-          "score": 3,
-          "weight": 5
-        },
-        {
-          "name": "执行成本",
-          "score": 3,
-          "weight": 5
-        },
-        {
-          "name": "响应窗口",
-          "score": 4,
-          "weight": 5
-        }
-      ],
-      "caps": {
-        "score": 3,
-        "evidence": 5,
-        "type": 5,
-        "core": 4,
-        "baseline": 5,
-        "risk": 5,
-        "window": 5,
-        "preparation": 5,
-        "official_rule_floor": 4
-      },
-      "baseline_assessment": {
-        "signal_type": "official_rule",
-        "requires_baseline": false,
-        "comparison_baseline_verified": false,
-        "baseline_type": "官方正文经营要求，非增长趋势",
-        "normalization_flags": [],
-        "multi_period_growth_verified": false,
-        "independent_change_signals": 1,
-        "is_verified": true
-      },
-      "business_priority_basis": "官方实质规则直接影响经营，保持高业务优先级。",
-      "hotness_scoring_model": "hotness_v1",
-      "hotness_score": 5,
-      "raw_hotness_level": "H-D",
-      "hotness_level": "H-D",
-      "hotness_final_value": 1,
-      "hotness_score_details": [
-        {
-          "key": "absolute_demand",
-          "name": "需求规模",
-          "score": 0,
-          "weight": 20,
-          "weighted_score": 0
-        },
-        {
-          "key": "baseline_deviation",
-          "name": "相对基线变化",
-          "score": 0,
-          "weight": 25,
-          "weighted_score": 0
-        },
-        {
-          "key": "growth_velocity",
-          "name": "上升速度",
-          "score": 0,
-          "weight": 20,
-          "weighted_score": 0
-        },
-        {
-          "key": "persistence",
-          "name": "持续时间",
-          "score": 0,
-          "weight": 15,
-          "weighted_score": 0
-        },
-        {
-          "key": "cross_platform_spread",
-          "name": "跨平台扩散",
-          "score": 0,
-          "weight": 15,
-          "weighted_score": 0
-        },
-        {
-          "key": "freshness",
-          "name": "数据新鲜度",
-          "score": 5,
-          "weight": 5,
-          "weighted_score": 5
-        }
-      ],
-      "hotness_caps": [
-        {
-          "rule": "single_platform_cap",
-          "hotness_cap": "H-C",
-          "changed": false,
-          "reason": "只有单平台信号，热点成立度最高H-C。"
-        },
-        {
-          "rule": "no_baseline_single_source",
-          "hotness_cap": "H-C",
-          "changed": false,
-          "reason": "既无历史基线又无跨平台验证，不能把绝对大数当成热点。"
-        }
-      ],
-      "hotness_signal_type": "official_rule",
-      "hotness_independent_platform_count": 1,
-      "hotness_baseline_verified": false,
-      "hotness_freshness_verified": true,
-      "hotness_change_signals": [
-        "5.2 本规则于2021年05月27日发布公示，于2026年10月8日修订生效。"
-      ],
-      "hotness_requires_baseline": false,
-      "hotness_comparison_baseline_verified": false,
-      "hotness_baseline_type": "官方正文经营要求，非增长趋势",
-      "hotness_normalization_flags": [],
-      "hotness_multi_period_growth_verified": false,
-      "hotness_independent_change_signals": 1,
-      "content_scoring_model": "content_potential_v1",
-      "content_potential_score": 40,
-      "raw_content_potential_level": "P-C",
-      "content_potential_level": "P-C",
-      "content_final_value": 2,
-      "content_score_details": [
-        {
-          "key": "audience_demand",
-          "name": "受众需求规模",
-          "score": 2,
-          "weight": 20,
-          "weighted_score": 8
-        },
-        {
-          "key": "demand_velocity",
-          "name": "需求上涨速度",
-          "score": 0,
-          "weight": 15,
-          "weighted_score": 0
-        },
-        {
-          "key": "content_supply_gap",
-          "name": "内容供给缺口",
-          "score": 0,
-          "weight": 15,
-          "weighted_score": 0
-        },
-        {
-          "key": "target_user_fit",
-          "name": "目标用户匹配",
-          "score": 4,
-          "weight": 15,
-          "weighted_score": 12
-        },
-        {
-          "key": "data_content_advantage",
-          "name": "蝉妈妈数据优势",
-          "score": 3,
-          "weight": 15,
-          "weighted_score": 9
-        },
-        {
-          "key": "discussion_shareability",
-          "name": "讨论与传播性",
-          "score": 2,
-          "weight": 10,
-          "weighted_score": 4
-        },
-        {
-          "key": "content_lifecycle",
-          "name": "内容生命周期",
-          "score": 3,
-          "weight": 5,
-          "weighted_score": 3
-        },
-        {
-          "key": "response_window",
-          "name": "响应窗口",
-          "score": 4,
-          "weight": 5,
-          "weighted_score": 4
-        }
-      ],
-      "content_caps": [
-        {
-          "rule": "single_platform_without_baseline",
-          "potential_cap": "P-B",
-          "changed": false,
-          "reason": "只有单平台快照且没有历史基线，内容潜力最高P-B。"
-        },
-        {
-          "rule": "targeted_audience_cap",
-          "potential_cap": "P-B",
-          "changed": false,
-          "reason": "定向专业内容可以高业务优先，但不按大众高流量话题评为P-A。"
-        }
-      ],
-      "content_source_tier": "E3",
-      "traffic_route": "targeted",
-      "independent_platform_count": 1,
-      "demand_signals": [],
-      "content_baseline_verified": false,
-      "content_requires_baseline": false,
-      "content_comparison_baseline_verified": false,
-      "content_baseline_type": "官方正文经营要求，非增长趋势",
-      "content_normalization_flags": [],
-      "content_multi_period_growth_verified": false,
-      "content_independent_change_signals": 1,
-      "supply_gap_verified": false,
-      "content_freshness_verified": true,
-      "chanmama_answerable": true,
-      "query_cluster": [
-        "创作者违规申诉管理规则",
-        "创作者违规申诉管理规则 商家要求",
-        "创作者违规申诉管理规则 操作清单"
-      ],
-      "channel_scores": {
-        "website": 75,
-        "wechat": 75,
-        "short_video": 50,
-        "xiaohongshu": 40,
-        "private_domain": 75
-      },
-      "channel_reasons": {
-        "primary": "官方经营要求适合商家定向解读；不假定大众传播适配。"
-      },
-      "recommended_channels": [
-        "website",
-        "private_domain"
-      ],
-      "primary_topic": "创作者违规申诉管理规则",
-      "early_publish_title": "创作者违规申诉管理规则",
-      "content_angle": "对照官方要求检查相关经营配置：为保障抖音电商平台创作者权益，提升创作者违规申诉效率，帮助创作者及时、高效地进行违规申诉，根据现行法律法规、国家规定及《商品信息分享功能服务协议》《抖音电商创作者管理总则》《抖音电商创作者违规管理规则》等平台管理规则制定本规则。",
-      "measurement_plan": "记录受影响商家问题、规则解读访问及反馈，不推断交易效果。",
-      "stop_condition": "官方撤回或正文证据失效时停止引用。",
-      "content_score_reasons": {
-        "scale": "无流量或增长测量，相关维度记0，不宣称热度。",
-        "audience": "为保障抖音电商平台创作者权益，提升创作者违规申诉效率，帮助创作者及时、高效地进行违规申诉，根据现行法律法规、国家规定及《商品信息分享功能服务协议》《抖音电商创作者管理总则》《抖音电商创作者违规管理规则》等平台管理规则制定本规则。",
-        "relevance": "官方经营规则直接关联抖店商家及运营工作流。",
-        "window": "5.2 本规则于2021年05月27日发布公示，于2026年10月8日修订生效。",
-        "supply": "未测量供给缺口，记0。",
-        "conversion": "尚无转化测量，低分；不形成广告结论。"
-      },
-      "topic_value_score": 40,
-      "topic_value_code": "C",
-      "topic_value_label": "低潜力",
-      "publication_status_code": "targeted_publish",
-      "publication_status": "定向发布",
-      "publication_priority": 4,
-      "publication_mode": "专业人群定向解读",
-      "publication_basis": "官方事实明确但受众较窄，面向受影响人群定向发布。",
-      "fact_boundary": "只解释官方正文可核的经营要求，不宣称处罚规模、销售变化或大众热度；页面发布时间不等于所有条款首次生效。 修订生效日为2026-10-08，今天为当前有效窗口复核，不称今日新规。",
-      "pending_confirmation": [],
-      "confirmed_trigger": false,
-      "publishable_channel": true,
-      "ad_opportunity_scoring_model": "ad_opportunity_v1",
-      "ad_modes": {
-        "search": {
-          "activation_mode": "search",
-          "raw_score": 0,
-          "score": 0,
-          "action": "not_eligible",
-          "eligible": false,
-          "score_details": [
-            {
-              "key": "active_search_evidence",
-              "name": "主动搜索证据",
-              "score": 0,
-              "weight": 30,
-              "weighted_score": 0
-            },
-            {
-              "key": "keyword_clarity",
-              "name": "关键词明确度",
-              "score": 0,
-              "weight": 20,
-              "weighted_score": 0
-            },
-            {
-              "key": "landing_fit",
-              "name": "落地承接",
-              "score": 0,
-              "weight": 20,
-              "weighted_score": 0
-            },
-            {
-              "key": "audience_fit",
-              "name": "目标人群",
-              "score": 0,
-              "weight": 10,
-              "weighted_score": 0
-            },
-            {
-              "key": "duration",
-              "name": "持续周期",
-              "score": 0,
-              "weight": 10,
-              "weighted_score": 0
-            },
-            {
-              "key": "conversion_path",
-              "name": "转化路径",
-              "score": 0,
-              "weight": 5,
-              "weighted_score": 0
-            },
-            {
-              "key": "compliance",
-              "name": "合规性",
-              "score": 0,
-              "weight": 5,
-              "weighted_score": 0
-            }
-          ],
-          "caps": [
-            {
-              "rule": "landing_or_measurement_not_ready",
-              "score_cap": 64,
-              "changed": false,
-              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
-            }
-          ],
-          "blockers": [
-            "无广告执行授权",
-            "落地页与监测未就绪",
-            "没有真实主动搜索证据",
-            "关键词边界未准备",
-            "搜索转化路径未准备"
-          ],
-          "evidence_refs": [
-            "metric:rule:cc5c4bda436e04a2"
-          ],
-          "reasons": {
-            "summary": "规则解读不是已验证广告机会，无广告测量或承接。"
-          },
-          "landing_page_ready": false,
-          "measurement_ready": false,
-          "compliance_ready": true,
-          "prerequisites": {
-            "active_search_confirmed": false,
-            "keyword_ready": false,
-            "conversion_path_ready": false
-          }
-        },
-        "interest": {
-          "activation_mode": "interest",
-          "raw_score": 0,
-          "score": 0,
-          "action": "not_eligible",
-          "eligible": false,
-          "score_details": [
-            {
-              "key": "content_diffusion",
-              "name": "内容扩散",
-              "score": 0,
-              "weight": 25,
-              "weighted_score": 0
-            },
-            {
-              "key": "audience_fit",
-              "name": "目标人群",
-              "score": 0,
-              "weight": 20,
-              "weighted_score": 0
-            },
-            {
-              "key": "creative_fit",
-              "name": "素材适配",
-              "score": 0,
-              "weight": 15,
-              "weighted_score": 0
-            },
-            {
-              "key": "product_fit",
-              "name": "产品承接",
-              "score": 0,
-              "weight": 20,
-              "weighted_score": 0
-            },
-            {
-              "key": "duration",
-              "name": "持续周期",
-              "score": 0,
-              "weight": 10,
-              "weighted_score": 0
-            },
-            {
-              "key": "conversion_path",
-              "name": "转化路径",
-              "score": 0,
-              "weight": 5,
-              "weighted_score": 0
-            },
-            {
-              "key": "compliance",
-              "name": "合规性",
-              "score": 0,
-              "weight": 5,
-              "weighted_score": 0
-            }
-          ],
-          "caps": [
-            {
-              "rule": "landing_or_measurement_not_ready",
-              "score_cap": 64,
-              "changed": false,
-              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
-            }
-          ],
-          "blockers": [
-            "无广告执行授权",
-            "落地页与监测未就绪",
-            "没有内容吸引信号",
-            "素材方向未准备",
-            "兴趣流量转化路径未准备"
-          ],
-          "evidence_refs": [
-            "metric:rule:cc5c4bda436e04a2"
-          ],
-          "reasons": {
-            "summary": "规则解读不是已验证广告机会，无广告测量或承接。"
-          },
-          "landing_page_ready": false,
-          "measurement_ready": false,
-          "compliance_ready": true,
-          "prerequisites": {
-            "content_signal_confirmed": false,
-            "creative_ready": false,
-            "conversion_path_ready": false
-          }
-        },
-        "commerce": {
-          "activation_mode": "commerce",
-          "raw_score": 0,
-          "score": 0,
-          "action": "not_eligible",
-          "eligible": false,
-          "score_details": [
-            {
-              "key": "transaction_trend",
-              "name": "交易趋势",
-              "score": 0,
-              "weight": 25,
-              "weighted_score": 0
-            },
-            {
-              "key": "product_path",
-              "name": "商品链路",
-              "score": 0,
-              "weight": 20,
-              "weighted_score": 0
-            },
-            {
-              "key": "audience_fit",
-              "name": "目标人群",
-              "score": 0,
-              "weight": 20,
-              "weighted_score": 0
-            },
-            {
-              "key": "shop_product_fit",
-              "name": "商品或店铺承接",
-              "score": 0,
-              "weight": 20,
-              "weighted_score": 0
-            },
-            {
-              "key": "duration",
-              "name": "持续周期",
-              "score": 0,
-              "weight": 5,
-              "weighted_score": 0
-            },
-            {
-              "key": "conversion_value",
-              "name": "转化价值",
-              "score": 0,
-              "weight": 5,
-              "weighted_score": 0
-            },
-            {
-              "key": "compliance",
-              "name": "合规性",
-              "score": 0,
-              "weight": 5,
-              "weighted_score": 0
-            }
-          ],
-          "caps": [
-            {
-              "rule": "landing_or_measurement_not_ready",
-              "score_cap": 64,
-              "changed": false,
-              "reason": "缺少匹配落地页或监测方案，该广告模式最高64分。"
-            }
-          ],
-          "blockers": [
-            "无广告执行授权",
-            "落地页与监测未就绪",
-            "商品或店铺身份未核",
-            "没有可核交易变化信号",
-            "电商转化链路未准备"
-          ],
-          "evidence_refs": [
-            "metric:rule:cc5c4bda436e04a2"
-          ],
-          "reasons": {
-            "summary": "规则解读不是已验证广告机会，无广告测量或承接。"
-          },
-          "landing_page_ready": false,
-          "measurement_ready": false,
-          "compliance_ready": true,
-          "prerequisites": {
-            "verified_offer": false,
-            "transaction_signal_confirmed": false,
-            "conversion_path_ready": false
-          }
-        }
-      },
-      "ad_eligible": false,
-      "ad_eligible_modes": [],
-      "ad_best_mode": "search",
-      "ad_global_blockers": [
-        "无广告执行授权",
-        "落地页与监测未就绪"
-      ],
-      "breakout_scoring_model": "breakout_v1",
-      "breakout_status": "observation_only",
-      "breakout_signal_count": 1,
-      "breakout_gates_passed": false,
-      "breakout_blockers": [
-        "对象不是商品、品类、达人、店铺、账号、品牌或技术产品",
-        "跨日或可比基线未核",
-        "多周期变化未核",
-        "独立变化信号不足2项"
-      ]
     }
   ],
   "actions": [
     {
-      "hotspotId": "HT-20261010-001",
+      "hotspotId": "HT-20261012-001",
       "actionType": "优先制作",
       "task": "对照官方要求检查相关经营配置：消费者购买带有“运费险”标识的订单，若该订单在商家点击发货后的90天内申请退货退款/换货，将按如下流程进行运费险理赔：",
       "owner": "内容运营/合规",
       "collaborators": "数据研究、内容运营、合规",
-      "deadline": "2026-10-10",
-      "deliverable": "事实核验、业务清单与关键词假设包",
-      "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
-      "stopCondition": "官方撤回、修订或证据失效时立即更新。",
-      "status": "待执行"
-    },
-    {
-      "hotspotId": "HT-20261010-002",
-      "actionType": "优先制作",
-      "task": "对照官方要求检查相关经营配置：为保障抖音电商平台创作者权益，提升创作者违规申诉效率，帮助创作者及时、高效地进行违规申诉，根据现行法律法规、国家规定及《商品信息分享功能服务协议》《抖音电商创作者管理总则》《抖音电商创作者违规管理规则》等平台管理规则制定本规则。",
-      "owner": "内容运营/合规",
-      "collaborators": "数据研究、内容运营、合规",
-      "deadline": "2026-10-10",
+      "deadline": "2026-10-12",
       "deliverable": "事实核验、业务清单与关键词假设包",
       "acceptance": "保留官方证据、动作和事实边界；不夸大榜单或指数。",
       "stopCondition": "官方撤回、修订或证据失效时立即更新。",
@@ -1737,29 +924,29 @@
     {
       "platform": "巨量云图",
       "url": "https://yuntu.oceanengine.com/yuntu_lite/commodity/trend/short/v2?aadvid=1794665196703756",
-      "status": "NO_DATA_VERIFIED",
+      "status": "INCOMPLETE",
       "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "METRIC_DASHBOARD_READ终态NO_DATA_VERIFIED；有效业务记录0条。",
-      "limitation": "DEEP_BUSINESS_ACTION_EXPLICIT_EMPTY_RESULT",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "METRIC_DASHBOARD_READ终态INCOMPLETE；有效业务记录0条。",
+      "limitation": "MIN_RECORDS_NOT_MET",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
+      "dataDate": "2026-10-12当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
     },
     {
       "platform": "抖店学习中心",
-      "url": "https://school.jinritemai.com/doudian/web/rules/nJjbkoeug9aS?tabKey=rules&btm_ppre=a0.b0.c0.d0&btm_pre=a4977.b31122.c0.d0&btm_show_id=d519536e-b3f6-4aa2-8ef2-538a9f08d055",
+      "url": "https://school.jinritemai.com/doudian/web/rules/nJjbkoeug9aS?tabKey=rules&btm_ppre=a0.b0.c0.d0&btm_pre=a4977.b31122.c0.d0&btm_show_id=fa2477ba-c5bd-4098-afa2-aeb754e17ac0",
       "status": "COMPLETE",
       "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "CURRENT_FEED_READ终态COMPLETE；有效业务记录9条。",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "CURRENT_FEED_READ终态COMPLETE；有效业务记录4条。",
       "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
+      "dataDate": "2026-10-12当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -1769,462 +956,87 @@
       "url": "https://www.douyin.com/rule/main",
       "status": "INCOMPLETE",
       "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
+      "observedAt": "2026-10-12T03:37:18.138Z",
       "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
       "limitation": "MIN_RECORDS_NOT_MET",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "36氪综合站",
-      "url": "https://www.36kr.com/information/web_news/",
-      "status": "COMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "CURRENT_FEED_READ终态COMPLETE；有效业务记录1条。",
-      "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "人人都是产品经理",
-      "url": "https://www.woshipm.com/category/it",
-      "status": "INCOMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
-      "limitation": "MIN_RECORDS_NOT_MET",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "百度指数",
-      "url": "https://index.baidu.com/v2/main/index.html#/trend/%E7%83%AD%E9%94%80%E5%95%86%E5%93%81?words=%E7%83%AD%E9%94%80%E5%95%86%E5%93%81",
-      "status": "INCOMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "KEYWORD_TREND_QUERY终态INCOMPLETE；有效业务记录1条。",
-      "limitation": "YEAR_MISREAD_AS_INDEX",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "抖音创作者指数",
-      "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index/analysis?source=creator&keyword=%E7%83%AD%E9%94%80%E5%95%86%E5%93%81&appName=aweme",
-      "status": "INCOMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "METRIC_DASHBOARD_READ终态INCOMPLETE；有效业务记录0条。",
-      "limitation": "MIN_RECORDS_NOT_MET",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
+      "dataDate": "2026-10-12当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
     },
     {
       "platform": "蝉妈妈",
-      "url": "https://www.chanmama.com/bloggerRank/bloggerRise/?category=&dateType=day&day=2026-10-09",
+      "url": "https://www.chanmama.com/bloggerRank/bloggerRise/?category=&dateType=day&day=2026-10-11",
       "status": "COMPLETE",
       "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "LEADERBOARD_READ终态COMPLETE；有效业务记录58条。",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "LEADERBOARD_READ终态COMPLETE；有效业务记录45条。",
       "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
+      "dataDate": "2026-10-12当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
     },
     {
-      "platform": "新智元",
-      "url": "https://aiera.com.cn/",
-      "status": "INCOMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
-      "limitation": "BUSINESS_PAGE_TYPE_NOT_VERIFIED",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "AITNT",
-      "url": "https://www.aitntnews.com/",
-      "status": "INCOMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
-      "limitation": "BUSINESS_PAGE_TYPE_NOT_VERIFIED",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "机器之心",
-      "url": "about:blank",
+      "platform": "百度指数",
+      "url": "https://index.baidu.com/v2/index.html#/",
       "status": "BLOCKED",
       "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "CURRENT_FEED_READ终态BLOCKED；有效业务记录0条。",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "KEYWORD_TREND_QUERY终态BLOCKED；有效业务记录0条。",
       "limitation": "PAGE_OR_NETWORK_FAILURE",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
+      "dataDate": "2026-10-12当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
     },
     {
-      "platform": "量子位",
-      "url": "about:blank",
+      "platform": "抖音创作者指数",
+      "url": "https://creator.douyin.com/creator-micro/creator-count/arithmetic-index",
       "status": "BLOCKED",
       "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "CURRENT_FEED_READ终态BLOCKED；有效业务记录0条。",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "METRIC_DASHBOARD_READ终态BLOCKED；有效业务记录0条。",
+      "limitation": "HTTP_OR_EMPTY_BUSINESS_PAGE",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "小红书发现页",
+      "url": "https://www.xiaohongshu.com/search_result/?keyword=%E8%BF%90%E8%B4%B9%E9%99%A9&source=web_explore_feed",
+      "status": "BLOCKED",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "DEMAND_QUERY终态BLOCKED；有效业务记录0条。",
       "limitation": "PAGE_OR_NETWORK_FAILURE",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
+      "dataDate": "2026-10-12当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
     },
     {
-      "platform": "36氪AI",
-      "url": "https://www.36kr.com/information/AI/",
-      "status": "COMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "CURRENT_FEED_READ终态COMPLETE；有效业务记录1条。",
-      "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "InfoQ AI",
-      "url": "https://www.infoq.cn/topic/AI",
-      "status": "COMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "CURRENT_FEED_READ终态COMPLETE；有效业务记录5条。",
-      "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "雷峰网",
-      "url": "https://www.leiphone.com/category/ai",
+      "platform": "抖音站内搜索",
+      "url": "https://www.douyin.com/search/%E8%BF%90%E8%B4%B9%E9%99%A9?aid=421459c2-f312-4158-910b-cd059b213c02&type=general",
       "status": "INCOMPLETE",
       "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "DEMAND_QUERY终态INCOMPLETE；有效业务记录0条。",
       "limitation": "MIN_RECORDS_NOT_MET",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "DeepSeek官方",
-      "url": "https://api-docs.deepseek.com/updates/",
-      "status": "COMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "OFFICIAL_RELEASE_READ终态COMPLETE；有效业务记录3条。",
-      "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "通义千问官方",
-      "url": "https://chat.qwen.ai/",
-      "status": "INCOMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
-      "limitation": "BUSINESS_PAGE_TYPE_NOT_VERIFIED",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "豆包与火山引擎官方",
-      "url": "https://www.volcengine.com/activity/agentplan",
-      "status": "INCOMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
-      "limitation": "MIN_RECORDS_NOT_MET",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "腾讯混元官方",
-      "url": "https://hunyuan.tencent.com/",
-      "status": "COMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "OFFICIAL_RELEASE_READ终态COMPLETE；有效业务记录1条。",
-      "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "百度文心官方",
-      "url": "https://wenxin.baidu.com/",
-      "status": "BLOCKED",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "OFFICIAL_RELEASE_READ终态BLOCKED；有效业务记录0条。",
-      "limitation": "PAGE_OR_NETWORK_FAILURE",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "智谱官方",
-      "url": "https://www.zhipuai.cn/zh",
-      "status": "INCOMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
-      "limitation": "MIN_RECORDS_NOT_MET",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "Kimi与月之暗面官方",
-      "url": "https://www.moonshot.cn/",
-      "status": "INCOMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
-      "limitation": "MIN_RECORDS_NOT_MET",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "MiniMax官方",
-      "url": "https://www.minimax.cn/",
-      "status": "INCOMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
-      "limitation": "BUSINESS_PAGE_TYPE_NOT_VERIFIED",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "华为盘古官方",
-      "url": "https://www.huaweicloud.com/product/pangu/nlp.html",
-      "status": "INCOMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
-      "limitation": "MIN_RECORDS_NOT_MET",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "OpenAI官方",
-      "url": "https://openai.com/zh-Hans-CN/news/",
-      "status": "INCOMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
-      "limitation": "BUSINESS_PAGE_TYPE_NOT_VERIFIED",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "Anthropic官方",
-      "url": "https://www.anthropic.com/news",
-      "status": "INCOMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
-      "limitation": "MIN_RECORDS_NOT_MET",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "Google DeepMind官方",
-      "url": "about:blank",
-      "status": "BLOCKED",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "OFFICIAL_RELEASE_READ终态BLOCKED；有效业务记录0条。",
-      "limitation": "BLOCKED_EXTERNAL_CONNECTIVITY",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "Meta AI官方",
-      "url": "about:blank",
-      "status": "BLOCKED",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "OFFICIAL_RELEASE_READ终态BLOCKED；有效业务记录0条。",
-      "limitation": "BLOCKED_EXTERNAL_CONNECTIVITY",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "Microsoft AI官方",
-      "url": "https://news.microsoft.com/source/topics/ai/",
-      "status": "INCOMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
-      "limitation": "MIN_RECORDS_NOT_MET",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "NVIDIA官方",
-      "url": "https://nvidianews.nvidia.com/",
-      "status": "INCOMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
-      "limitation": "MIN_RECORDS_NOT_MET",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "GitHub Trending",
-      "url": "https://github.com/trending",
-      "status": "COMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "TRENDING_LIST_READ终态COMPLETE；有效业务记录8条。",
-      "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "Hugging Face模型趋势",
-      "url": "about:blank",
-      "status": "BLOCKED",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "TRENDING_LIST_READ终态BLOCKED；有效业务记录0条。",
-      "limitation": "BLOCKED_EXTERNAL_CONNECTIVITY",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
-      "queryTerms": [],
-      "missingData": [],
-      "loginAction": null
-    },
-    {
-      "platform": "Product Hunt AI",
-      "url": "https://www.producthunt.com/topics/artificial-intelligence",
-      "status": "COMPLETE",
-      "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "TRENDING_LIST_READ终态COMPLETE；有效业务记录50条。",
-      "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
-      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
-      "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
+      "dataDate": "2026-10-12当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
@@ -2234,49 +1046,424 @@
       "url": "https://geo.aidso.com/question?keyword=%E8%BF%90%E8%B4%B9%E9%99%A9",
       "status": "NO_DATA_VERIFIED",
       "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
+      "observedAt": "2026-10-12T03:37:18.138Z",
       "signal": "DEMAND_QUERY终态NO_DATA_VERIFIED；有效业务记录0条。",
       "limitation": "DEEP_BUSINESS_ACTION_EXPLICIT_EMPTY_RESULT",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
+      "dataDate": "2026-10-12当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
     },
     {
-      "platform": "小红书发现页",
-      "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%BF%90%E8%B4%B9%E9%99%A9&source=web_explore_feed&type=51",
+      "platform": "36氪综合站",
+      "url": "https://www.36kr.com/information/web_news/",
       "status": "INCOMPLETE",
       "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "DEMAND_QUERY终态INCOMPLETE；有效业务记录0条。",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
       "limitation": "MIN_RECORDS_NOT_MET",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
+      "dataDate": "2026-10-12当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
     },
     {
-      "platform": "抖音站内搜索",
-      "url": "https://www.douyin.com/search/%E8%BF%90%E8%B4%B9%E9%99%A9?aid=deff78c4-11e8-4c94-81fb-ee7fe9814d18&type=general",
+      "platform": "人人都是产品经理",
+      "url": "https://www.woshipm.com/category/it",
       "status": "INCOMPLETE",
       "evidenceLevel": "深采集批末只读核验",
-      "observedAt": "2026-10-10T05:57:18.666Z",
-      "signal": "DEMAND_QUERY终态INCOMPLETE；有效业务记录0条。",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
       "limitation": "MIN_RECORDS_NOT_MET",
       "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
       "loginStatus": "not_blocked_by_login_text",
-      "dataDate": "2026-10-10当前窗口",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "新智元",
+      "url": "https://aiera.com.cn/",
+      "status": "INCOMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
+      "limitation": "BUSINESS_PAGE_TYPE_NOT_VERIFIED",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "AITNT",
+      "url": "https://www.aitntnews.com/",
+      "status": "INCOMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
+      "limitation": "BUSINESS_PAGE_TYPE_NOT_VERIFIED",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "机器之心",
+      "url": "https://www.jiqizhixin.com/articles",
+      "status": "INCOMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
+      "limitation": "MIN_RECORDS_NOT_MET",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "量子位",
+      "url": "https://www.qbitai.com/",
+      "status": "INCOMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
+      "limitation": "MIN_RECORDS_NOT_MET",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "36氪AI",
+      "url": "https://www.36kr.com/information/AI/",
+      "status": "INCOMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
+      "limitation": "MIN_RECORDS_NOT_MET",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "InfoQ AI",
+      "url": "https://www.infoq.cn/topic/AI",
+      "status": "COMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "CURRENT_FEED_READ终态COMPLETE；有效业务记录1条。",
+      "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "雷峰网",
+      "url": "https://www.leiphone.com/category/ai",
+      "status": "INCOMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "CURRENT_FEED_READ终态INCOMPLETE；有效业务记录0条。",
+      "limitation": "MIN_RECORDS_NOT_MET",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "DeepSeek官方",
+      "url": "https://api-docs.deepseek.com/updates/",
+      "status": "COMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "OFFICIAL_RELEASE_READ终态COMPLETE；有效业务记录2条。",
+      "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "通义千问官方",
+      "url": "https://chat.qwen.ai/",
+      "status": "INCOMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
+      "limitation": "BUSINESS_PAGE_TYPE_NOT_VERIFIED",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "豆包与火山引擎官方",
+      "url": "https://www.volcengine.com/activity/agentplan",
+      "status": "INCOMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
+      "limitation": "MIN_RECORDS_NOT_MET",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "腾讯混元官方",
+      "url": "https://hunyuan.tencent.com/",
+      "status": "BLOCKED",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "OFFICIAL_RELEASE_READ终态BLOCKED；有效业务记录0条。",
+      "limitation": "PAGE_OR_NETWORK_FAILURE",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "百度文心官方",
+      "url": "https://cloud.baidu.com/product-s/qianfan_home",
+      "status": "BLOCKED",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "OFFICIAL_RELEASE_READ终态BLOCKED；有效业务记录0条。",
+      "limitation": "PAGE_OR_NETWORK_FAILURE",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "智谱官方",
+      "url": "https://www.zhipuai.cn/zh",
+      "status": "INCOMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
+      "limitation": "MIN_RECORDS_NOT_MET",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "Kimi与月之暗面官方",
+      "url": "https://www.moonshot.cn/",
+      "status": "INCOMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
+      "limitation": "MIN_RECORDS_NOT_MET",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "MiniMax官方",
+      "url": "https://www.minimax.cn/",
+      "status": "INCOMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
+      "limitation": "BUSINESS_PAGE_TYPE_NOT_VERIFIED",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "华为盘古官方",
+      "url": "https://www.huaweicloud.com/product/pangu/nlp.html",
+      "status": "INCOMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
+      "limitation": "MIN_RECORDS_NOT_MET",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "OpenAI官方",
+      "url": "https://openai.com/zh-Hans-CN/news/",
+      "status": "INCOMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
+      "limitation": "BUSINESS_PAGE_TYPE_NOT_VERIFIED",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "Anthropic官方",
+      "url": "https://www.anthropic.com/news",
+      "status": "INCOMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
+      "limitation": "MIN_RECORDS_NOT_MET",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "Google DeepMind官方",
+      "url": "about:blank",
+      "status": "BLOCKED",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "OFFICIAL_RELEASE_READ终态BLOCKED；有效业务记录0条。",
+      "limitation": "BLOCKED_EXTERNAL_CONNECTIVITY",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "Meta AI官方",
+      "url": "about:blank",
+      "status": "BLOCKED",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "OFFICIAL_RELEASE_READ终态BLOCKED；有效业务记录0条。",
+      "limitation": "BLOCKED_EXTERNAL_CONNECTIVITY",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "Microsoft AI官方",
+      "url": "https://news.microsoft.com/source/topics/ai/",
+      "status": "BLOCKED",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "OFFICIAL_RELEASE_READ终态BLOCKED；有效业务记录0条。",
+      "limitation": "BLOCKED_EXTERNAL_CONNECTIVITY",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "NVIDIA官方",
+      "url": "https://nvidianews.nvidia.com/",
+      "status": "INCOMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "OFFICIAL_RELEASE_READ终态INCOMPLETE；有效业务记录0条。",
+      "limitation": "MIN_RECORDS_NOT_MET",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "GitHub Trending",
+      "url": "https://github.com/trending",
+      "status": "COMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "TRENDING_LIST_READ终态COMPLETE；有效业务记录7条。",
+      "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "Hugging Face模型趋势",
+      "url": "about:blank",
+      "status": "BLOCKED",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "TRENDING_LIST_READ终态BLOCKED；有效业务记录0条。",
+      "limitation": "BLOCKED_EXTERNAL_CONNECTIVITY",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
+      "queryTerms": [],
+      "missingData": [],
+      "loginAction": null
+    },
+    {
+      "platform": "Product Hunt AI",
+      "url": "https://www.producthunt.com/topics/artificial-intelligence",
+      "status": "COMPLETE",
+      "evidenceLevel": "深采集批末只读核验",
+      "observedAt": "2026-10-12T03:37:18.138Z",
+      "signal": "TRENDING_LIST_READ终态COMPLETE；有效业务记录50条。",
+      "limitation": "DEEP_CONTRACT_EVIDENCE_VERIFIED",
+      "nextAction": "本窗口不自动重放；下一工作日按持续authority重新执行。",
+      "loginStatus": "not_blocked_by_login_text",
+      "dataDate": "2026-10-12当前窗口",
       "queryTerms": [],
       "missingData": [],
       "loginAction": null
     }
   ],
   "boundaryText": "正式热点来自正文核验及有证据的评分，所有来源按原规则竞争；单日榜单只进入观察池，不以来源配额填充正式名额。",
-  "sourceBrief": "2026-10-10按冻结合同深采36来源，基于各类结构化业务证据保留2条正式热点；国内9/27来源取得可接受终态，业务输入保持incomplete。",
+  "sourceBrief": "2026-10-12按冻结合同深采36来源，基于各类结构化业务证据保留1条正式热点；国内5/27来源取得可接受终态，业务输入保持incomplete。",
   "adOpportunitySchemaVersion": 1,
   "adExperimentContract": {
     "contract_version": "ad_experiment_v1",

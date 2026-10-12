@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "module": "hotspot-keywords",
+  "date": "2026-10-12",
+  "revision": 1,
+  "itemCount": 3,
+  "items": [
+    {
+      "date": "2026-10-12",
+      "revision": 1,
+      "hotspot_id": "HT-20261012-001",
+      "hotspot_name": "“运费险”服务规范",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:5c16c199206e4d12",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:5c16c199206e4d12:0",
+      "keyword": "“运费险”服务规范",
+      "intent": "规则问题",
+      "applicable_modes": [
+        "search"
+      ],
+      "match_suggestion": "仅关键词假设，未开放投放",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "规则解读",
+      "valid_from": "2026-10-12",
+      "valid_until": "2026-10-13",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "搜索量未核"
+      ],
+      "evidence_refs": [
+        "metric:rule:5c16c199206e4d12"
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "revision": 1,
+      "hotspot_id": "HT-20261012-001",
+      "hotspot_name": "“运费险”服务规范",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:5c16c199206e4d12",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:5c16c199206e4d12:1",
+      "keyword": "“运费险”服务规范 商家要求",
+      "intent": "规则问题",
+      "applicable_modes": [
+        "search"
+      ],
+      "match_suggestion": "仅关键词假设，未开放投放",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "规则解读",
+      "valid_from": "2026-10-12",
+      "valid_until": "2026-10-13",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "搜索量未核"
+      ],
+      "evidence_refs": [
+        "metric:rule:5c16c199206e4d12"
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "revision": 1,
+      "hotspot_id": "HT-20261012-001",
+      "hotspot_name": "“运费险”服务规范",
+      "hotspot_category": "经营与规则",
+      "subject_id": "rule:douyin:5c16c199206e4d12",
+      "subject_kind": "rule",
+      "industry": "抖音电商经营",
+      "breakout_status": "observation_only",
+      "ad_eligible": false,
+      "eligible_modes": [],
+      "keyword_id": "kw:5c16c199206e4d12:2",
+      "keyword": "“运费险”服务规范 操作清单",
+      "intent": "规则问题",
+      "applicable_modes": [
+        "search"
+      ],
+      "match_suggestion": "仅关键词假设，未开放投放",
+      "landing_page_status": "planned",
+      "landing_page_url": null,
+      "landing_page_route": "规则解读",
+      "valid_from": "2026-10-12",
+      "valid_until": "2026-10-13",
+      "validation_status": "hypothesis",
+      "risk_flags": [
+        "搜索量未核"
+      ],
+      "evidence_refs": [
+        "metric:rule:5c16c199206e4d12"
+      ]
+    }
+  ]
+}
