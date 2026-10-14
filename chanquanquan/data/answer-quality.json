@@ -1,0 +1,149 @@
+{
+  "schema_version": "CQQ-ANSWER-QUALITY-1.0",
+  "coordinate": "Python Unicode codepoint [start,end), frozen CRLF raw text",
+  "standard": "CQQ-METRICS-1.0 section 2",
+  "interpretation": "Exclude invalid bodies from performance denominators; preserve all planned slots, pairs and citations.",
+  "addendum_sha256": "5991c8e22983be889b82fc7d89971d9f1be069b0a3fd733f92e3fab93ba8e680",
+  "round1": [
+    {
+      "schema_version": "CQQ-ANSWER-QUALITY-1.0",
+      "round": "R1",
+      "sample_id": "CQ-S-20260805-O1-Q0103",
+      "question_id": "CQ-Q0103",
+      "answer_sha256": "177c94221ec7e0141858a402b6936a866540dc5b377d6677e0272ab0f6385b34",
+      "answer_validity": "invalid_no_body",
+      "semantic_audit_status": "not_complete_due_to_source_quality",
+      "audit_complete": false,
+      "body_read_complete": false,
+      "reason": "Captured body contains only a loading placeholder; references are not answer prose.",
+      "observed_body_raw_range": [
+        29,
+        35
+      ],
+      "evidence": [
+        {
+          "quote": "解析中...",
+          "start": 29,
+          "end": 35
+        }
+      ],
+      "read_ranges": [
+        {
+          "start": 0,
+          "end": 1822,
+          "method": "actual examination of capture and reference tail"
+        }
+      ],
+      "review": {
+        "first_pass_capture_examined": true,
+        "second_pass_capture_examined": true,
+        "independent_human": false,
+        "at": null
+      },
+      "quality_checked": true,
+      "planned_slot_preserved": true,
+      "comparison_pair_preserved": true,
+      "new_sampling_performed": false
+    },
+    {
+      "schema_version": "CQQ-ANSWER-QUALITY-1.0",
+      "round": "R1",
+      "sample_id": "CQ-S-20260805-O1-Q0107",
+      "question_id": "CQ-Q0107",
+      "answer_sha256": "f41ac277e0ebf5b26bc3192093f80785ae03df7825a9b4c76f1e797f1ce5d85c",
+      "answer_validity": "invalid_no_body",
+      "semantic_audit_status": "not_complete_due_to_source_quality",
+      "audit_complete": false,
+      "body_read_complete": false,
+      "reason": "Captured body contains only a loading placeholder; references are not answer prose.",
+      "observed_body_raw_range": [
+        23,
+        29
+      ],
+      "evidence": [
+        {
+          "quote": "解析中...",
+          "start": 23,
+          "end": 29
+        }
+      ],
+      "read_ranges": [
+        {
+          "start": 0,
+          "end": 694,
+          "method": "actual examination of capture and reference tail"
+        }
+      ],
+      "review": {
+        "first_pass_capture_examined": true,
+        "second_pass_capture_examined": true,
+        "independent_human": false,
+        "at": null
+      },
+      "quality_checked": true,
+      "planned_slot_preserved": true,
+      "comparison_pair_preserved": true,
+      "new_sampling_performed": false
+    },
+    {
+      "schema_version": "CQQ-ANSWER-QUALITY-1.0",
+      "round": "R1",
+      "sample_id": "CQ-S-20260805-C1-Q0066",
+      "question_id": "CQ-Q0066",
+      "answer_sha256": "0d840a0380ba5afec5b530f6dc5a1fd1afa324bef5c7658c61cb8993fd351632",
+      "raw_source_sha256": "eb000ce1f95bfd54c9d5e732660231dfb6cf85f36f0190bdb3048ecfd64971ec",
+      "normalization": "LF to CRLF; frozen answer hash verified",
+      "coordinate": "Python Unicode codepoint [start,end), CRLF raw text",
+      "answer_validity": "invalid_truncated_repetitive_body",
+      "semantic_audit_status": "not_complete_due_to_source_quality",
+      "audit_complete": false,
+      "body_read_complete": false,
+      "reason": "正文仅开头和第一小节，随后brief连续重复8290次至原文结束；无其余分节、结语或界面尾部。不能认定完整实质答文，不作为清晰无品牌负例。",
+      "raw_codepoints": 50103,
+      "observed_body_raw_range": [
+        39,
+        50103
+      ],
+      "read_ranges": [
+        {
+          "start": 39,
+          "end": 364,
+          "method": "actual semantic reading of captured prose"
+        },
+        {
+          "start": 364,
+          "end": 50103,
+          "method": "deterministically verified identical token repetition, displayed folded with count; original preserved"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "达人自己原生视频数据很好，但商单数据暴跌 → 大概率**内容/ ",
+          "start": 332,
+          "end": 364
+        }
+      ],
+      "repetition": {
+        "token": "brief",
+        "count": 8290,
+        "start": 364,
+        "end": 50103,
+        "ends_at_raw_end": true
+      },
+      "review": {
+        "first_pass_capture_examined": true,
+        "second_pass_capture_examined": true,
+        "independent_human": false,
+        "at": null,
+        "second_pass_method": "Source re-examined: substantive opening and folded identical tail, not a full semantic review."
+      },
+      "planned_slot_preserved": true,
+      "comparison_pair_preserved": true,
+      "new_sampling_performed": false,
+      "quality_checked": true,
+      "original_quality_record_sha256": "1afdf2f44073a7075224f544b04585efc4d62aaa45f5d443aad8cc560e95bbf4"
+    }
+  ],
+  "round2": [],
+  "network_operations": 0
+}

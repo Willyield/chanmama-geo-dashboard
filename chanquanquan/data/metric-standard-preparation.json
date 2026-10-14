@@ -1,0 +1,31 @@
+{
+  "standardId": "CQQ-METRICS-2.0",
+  "standardFingerprint": "986fb0b166064ec6c07d6fcc81017f1f4b76a565f76364631bbf9761a7f8f08a",
+  "contractSha256": "57a9e76e43bfc2f864afcc39386ca4a11b31f9ce11ea61b379bf49cccd9ab695",
+  "contractPath": "metric-display-contract-v2.json",
+  "ruleDetails": {
+    "recommendation": {
+      "single_judgment": true,
+      "scope": "推荐必须回应题目指定的用户、平台、任务和条件；泛问法下仅某个子场景首选，不推导为全题统一首推。",
+      "accepted_order": "明确数字名次、明确第一/第二/第三及首选；文字明确第一可转为数值1，并同时用于首推、前三、平均排名。",
+      "excluded_order": "工具列表编号、正文首次出现先后、单独优先考虑、泛建议使用不构成名次。",
+      "partial_order": "明确前三候选但内部不排序：前三命中，首推未知，平均排名无观测。",
+      "ties": "明示并列第一计首推和前三，名次1；其他并列仅使用原文明确的名次，不自行给并列序号。",
+      "conditional": "条件与题目吻合才采用该场景名次；题目未确定条件或多个场景无统一结论时未知；条件明确不符且无适用推荐时不命中。",
+      "no_recommendation": "未提品牌，或只介绍/提名而没有推荐意图，不命中；有推荐意图但名次不明才记未知。"
+    },
+    "advantage": {
+      "unit": "每回答最多一次",
+      "minimum": "明确归属蝉圈圈的具体能力，并连接具体任务价值、使用收益或适配原因；或针对具体决策条件明确比较优势。",
+      "fact_gate": "优势涉及的品牌能力必须能由冻结资料支持；未核实为unknown，已证实冲突的优势不计命中。比较效果、数字提升和竞品能力也需要对应事实依据，不能从品牌能力存在自动证明比较优势。",
+      "excluded": "纯功能名称/普通功能罗列、品牌提名、泛好用/领先/效率高、否定、愿望、假设、未来功能、无归属的组合效果。",
+      "aggregation": "至少一条确认优势为pass；没有确认优势但有实质待核优势为unknown；其余fail。不同错误主张可以与真实优势共存，必须分句展示，不能把错误本身计入优势。"
+    }
+  },
+  "status": "rules_preview_only",
+  "independentAcceptance": "pending",
+  "twoRoundReaudit": "pending",
+  "activeMetricVersion": "CQQ-METRICS-1.0",
+  "businessLabelsChanged": 0,
+  "readyForDeployment": false
+}
