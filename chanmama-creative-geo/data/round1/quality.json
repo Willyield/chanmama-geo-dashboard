@@ -1,0 +1,21 @@
+{
+  "source_cards": 7042,
+  "valid_url_cards": 7042,
+  "url_events": 6537,
+  "unique_normalized_urls": 3390,
+  "captured_answers": 538,
+  "missing_answers": 2,
+  "empty_source_cards": 0,
+  "unparseable_cards": 0,
+  "unknown_answers": 0,
+  "original_failures_retained": null,
+  "original_uncertain_retained": null,
+  "replacement_count": null,
+  "actual_dates": [
+    "2026-08-18",
+    "2026-08-19"
+  ],
+  "cross_date_answers": 0,
+  "rendered_answer_screenshots": 538,
+  "source_webpage_screenshots": 0
+}
