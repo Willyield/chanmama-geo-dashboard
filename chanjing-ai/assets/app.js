@@ -39,7 +39,13 @@
     ['share','竞争份额','经审定候选集合中的提及事件份额，不是市场份额。'],
     ['completeness','适用优势项完整度','已确认的优势项 / 适用优势项；需要逐项原句证据。']
   ];
-  async function json(p){if(!cache.has(p))cache.set(p,fetch(href(p)).then(r=>{if(!r.ok)throw Error(`HTTP ${r.status}: ${p}`);return r.json();}).catch(e=>{cache.delete(p);throw e;}));return cache.get(p);}
+  async function json(p){
+    if(!cache.has(p)){
+      const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),p.endsWith('-sources.json')?30000:20000);
+      cache.set(p,fetch(href(p),{signal:controller.signal}).then(r=>{if(!r.ok)throw Error(`HTTP ${r.status}: ${p}`);return r.json();}).catch(e=>{cache.delete(p);throw e;}).finally(()=>clearTimeout(timer)));
+    }
+    return cache.get(p);
+  }
   function selected(n=round){return samples.filter(s=>(!n||s._round===n)&&(!state.category||s.category===state.category)&&(!state.date||n!==round||date(s)===state.date)&&(!state.terminal||n!==round||s.terminal===state.terminal));}
   function stat(ss){const known=ss.filter(s=>s.source_capture_status!=='not_exposed'), captured=ss.filter(s=>s.source_capture_status==='captured');return {count:ss.length,mentioned:ss.filter(mention).length,captured:captured.length,known:known.length,unknown:ss.length-known.length,events:ss.reduce((v,s)=>v+s._facts.url_events,0),cards:ss.reduce((v,s)=>v+s._facts.public_cards,0),parseable:ss.reduce((v,s)=>v+s._facts.parseable_cards,0),unparseable:ss.reduce((v,s)=>v+s._facts.unparseable_cards,0)};}
   function sampleLink(s,label=terminal(s.terminal)){return `<a href="${href(`round${s._round}/${citation?'citation':'data'}/?sample=${encodeURIComponent(s.sample_id)}`)}" data-sample="${esc(s.sample_id)}">${esc(label)}</a>`;}
@@ -83,7 +89,7 @@
   function method(){return `<details class="method-details"><summary>完整指标说明与规则</summary><p>第一轮名称命中来自历史可见文本（含界面、问题和搜索词）；第二轮来自API正文，不能视为完全同口径正文提及。第一轮首推、优势仍保留历史规则。首推、前三、优势、定位、准确性、错误率和竞争份额需要逐答语义审计，不从普通列表顺序或关键词命中推算。</p><p>引用 URL 事件在每条回答内按规范网址去重，全轮唯一网址再次跨回答去重。规范网址去掉片段和追踪参数，保留文章定位所需参数。平台分类按域名匹配，不代表所有权。</p><p>第一轮历史公开来源链接不是完整原始卡片；第二轮原始引用卡保留重复与顺序。引用未提供的回答不记作零或明确无引用。</p><p>第二轮两天各采一次，不区分网页与手机。两轮按相同题号查看回答集合，不把日期遍次映射成网页 / 手机一一配对。</p><p>第二轮已采集 520 / 520 条，两天各260条，比较仅描述采样差异，不作因果归因。</p></details>`;}
   function downloads(){return `<div class="download-list"><button class="button" data-download="questions">${icon('download')}260 题问题池</button><button class="button" data-download="samples">${icon('download')}回答索引</button><button class="button" data-download="metrics">${icon('download')}指标与状态</button><button class="button" data-download="rawSources">${icon('download')}原答与公开引用</button>${citation?'<button class="button" data-download="domains">'+icon('download')+'全部域名</button><button class="button" data-download="sources">'+icon('download')+'全部网址与引用映射</button><button class="button" data-download="questionsCitation">'+icon('download')+'逐题引用统计</button>':''}</div>${method()}`;}
   function insightSummary(){return `<section class="report-section verified-insights"><div class="section-head"><h2>本轮关键发现</h2><p>完整第二轮 · 已核验的业务观察</p></div><ol>${insights.findings.map(f=>`<li><h3>${esc(f.title)}</h3><p>${esc(f.text)}</p></li>`).join('')}</ol></section>`;}
-  function layout(){if(view==='home'){app.innerHTML=home()+insightSummary();app.setAttribute('aria-busy','false');icons();document.documentElement.dataset.ready='true';return;}
+  function layout(){if(view==='home'){if(!app.hasAttribute('data-prerendered'))app.innerHTML=home()+insightSummary();app.setAttribute('aria-busy','false');icons();document.documentElement.dataset.ready='true';return;}
     const heading=document.querySelector('.hero h1');if(heading)heading.innerHTML=`<span>蝉镜 · ${round?'第'+(round===1?'一':'二')+'轮'+(citation?'引用源':'采样数据'):'两轮'+(citation?'引用源':'采样')+'对比'}</span><span class="heading-category"> · ${esc(state.category||'总数据')}</span>`;
     const ss=selected();let body=globalFilters();if(!round)body+='<div class="notice compact">第二轮已采集 520 / 520 条；同题按回答集合对照。渠道、日期与模型条件不同，当前差异不归因于优化。</div>';
     body+=round?`<section class="report-section sampling-overview" id="overview">${samplingBrief(ss,round)}${overview(ss,round)}</section>`:section('overview','同题采样与引用对比','第一轮519条与第二轮520条冻结范围',compareCards()+(citation?sourceComparison():''));
@@ -149,14 +155,18 @@
     }catch(e){target.insertAdjacentHTML('beforeend','<p class="error-message" role="alert">原答读取失败，请关闭后重试。</p>');}}
   function closeEvidence(){evidenceGeneration++;dialog.close();const p=new URLSearchParams(location.search);p.delete('sample');history.replaceState(null,'',location.pathname+(p.size?'?'+p:'')+location.hash);priorFocus?.focus();}
   dialog.addEventListener('cancel',e=>{e.preventDefault();closeEvidence();});
-  async function start(){try{index=await json('data/index.json');[questions,...summaries]=await Promise.all([json(index.questions).then(d=>d.questions),...index.rounds.map(r=>json(r.summary))]);questionMap=new Map(questions.map(q=>[q.question_id,q]));
-      if(view==='home')insights=await json('analysis/insights.json');
-      const observations=new Map();if(view!=='home')for(const [n,d] of await Promise.all([1,2].map(async n=>[n,await json(`analysis/round${n}-observations.json`)])))observations.set(n,new Map(d.samples.map(s=>[s.sample_id,s])));
-      if(view!=='home'){for(const [n,d] of await Promise.all([1,2].map(async n=>[n,await json(`analysis/round${n}-facts.json`)])))facts.set(n,new Map(d.samples.map(s=>[s.sample_id,s])));}
+  async function start(){try{
+      const target=params.get('sample')||decodeURIComponent(location.hash.slice(1));
+      if(view==='home'&&!target&&app.hasAttribute('data-prerendered')){layout();return;}
+      const paths=['data/index.json','data/questions.json','data/round1/summary.json','data/round2/summary.json',...(view==='home'?['analysis/insights.json']:['analysis/round1-observations.json','analysis/round2-observations.json','analysis/round1-facts.json','analysis/round2-facts.json']),...(citation?['analysis/round1-sources.json','analysis/round2-sources.json']:[])];
+      const loaded=new Map(await Promise.all(paths.map(async p=>[p,await json(p)])));
+      index=loaded.get('data/index.json');questions=loaded.get(index.questions).questions;summaries=index.rounds.map(r=>loaded.get(r.summary));questionMap=new Map(questions.map(q=>[q.question_id,q]));
+      if(view==='home')insights=loaded.get('analysis/insights.json');
+      const observations=new Map();if(view!=='home')for(const n of [1,2]){const d=loaded.get(`analysis/round${n}-observations.json`);observations.set(n,new Map(d.samples.map(s=>[s.sample_id,s])));const f=loaded.get(`analysis/round${n}-facts.json`);facts.set(n,new Map(f.samples.map(s=>[s.sample_id,s])));}
       samples=summaries.flatMap((d,i)=>d.samples.map(s=>({...s,_round:i+1,_facts:facts.get(i+1)?.get(s.sample_id),_observations:observations.get(i+1)?.get(s.sample_id)})));
-      if(citation)for(const [n,d] of await Promise.all([1,2].map(async n=>[n,await json(`analysis/round${n}-sources.json`)])))sources.set(n,d);
-      layout();const target=params.get('sample')||decodeURIComponent(location.hash.slice(1));if(target&&samples.some(s=>s.sample_id===target))await openEvidence(target);
+      if(citation)for(const n of [1,2])sources.set(n,loaded.get(`analysis/round${n}-sources.json`));
+      layout();if(target&&samples.some(s=>s.sample_id===target))await openEvidence(target);
       addEventListener('popstate',()=>{const p=new URLSearchParams(location.search);Object.assign(state,{category:p.get('category')||'',date:p.get('date')||'',terminal:p.get('terminal')||'',search:p.get('query')||'',mode:p.get('view')||'samples',host:p.get('domain')||'',mention:p.get('mention')||'',change:p.get('change')||'',unit:p.get('unit')||'url',page:Number(p.get('page'))||1});const id=p.get('sample');if(id)openEvidence(id);else if(dialog.open){evidenceGeneration++;dialog.close();}layout();});
-    }catch(e){app.innerHTML='<div class="exception" role="alert"><h2>数据读取失败</h2><p>请刷新页面重试。未使用其他项目数据替代。</p></div>';console.error(e);}}
+    }catch(e){const message='<div class="exception" role="alert"><h2>数据读取失败</h2><p>网络响应超时或读取失败。未使用其他项目数据替代。</p><button class="button" id="retry-loading" type="button">重新加载</button></div>';if(view==='home'&&app.hasAttribute('data-prerendered'))app.insertAdjacentHTML('beforeend',message);else app.innerHTML=message;app.setAttribute('aria-busy','false');document.getElementById('retry-loading').onclick=()=>location.reload();console.error(e);}}
   start();
 })();
