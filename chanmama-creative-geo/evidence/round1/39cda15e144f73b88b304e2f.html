@@ -1,0 +1,24 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R1 CMCR-Q0059 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>商品卖点和图片能不能自动生成带货脚本？</h1><p class="meta">第 1 轮 · CMCR-Q0059 · 逻辑采样日期 2026-08-18 · C1</p><p class="meta">样本 CMCR-CMP-20260819-C1-Q0059</p><p class="meta">实际提交 历史记录仅保存采样日期 · 实际完成 历史记录未提供精确时间</p><p class="hash">回答 SHA-256 641babe6a815a349b28a0727ed04fd2a12db81018435fe456c73487002f1889b</p></header><main><pre id="original-answer"># 商品卖点+图片自动生成带货脚本
+**可以实现**，依靠多模态AI，上传商品图片，再补充文字卖点，AI识别图片产品外观、细节，结合输入的卖点，直接输出完整带货短视频脚本（含钩子、口播、分镜、时长、画面提示），部分工具还能直接生成完整视频（配音、字幕、BGM）。
+
+## 工作流程
+1. **输入素材**：上传商品图片（白底图效果最好），粘贴商品文字卖点、价格、目标人群、视频时长、平台（抖音/小红书等）。
+2. **AI解析**：视觉模型看懂图片，识别产品外观、材质；大模型结合文字卖点，提炼痛点、优势、场景。
+3. **输出脚本**：自动生成结构化脚本：黄金3秒钩子、痛点、卖点讲解、场景展示、促单结尾，附带分镜、画面描述、字幕文案。
+4. **人工微调**：AI生成内容会有偏差，需要手动修改卖点、话术、违禁词，之后可直接导出脚本，或一键生成视频。
+
+## 常用工具
+1. **即创AI（抖音官方）**：上传图片/填商品ID，输入卖点，自动生成带货脚本，自带违规词检测，支持数字人直接成片，适配抖音投放。
+2. **美图设计室**：上传商品图，粘贴卖点，选择种草/口播风格，批量输出多版脚本，适合小红书、短视频号。
+3. **ClipForge**：开源工具，单张商品图，自动提取卖点，写脚本，直接合成竖屏带货短视频，适合测试素材。
+4. **通用多模态大模型**（豆包、GPT‑4V等）：直接上传图片，提示词写：“根据图片和下面卖点，生成30秒抖音带货脚本，包含钩子、口播、分镜”，即可输出脚本文案。
+
+### 给大模型的参考提示词，直接复制使用
+&gt; 根据上传的商品图片，结合以下商品卖点：【粘贴你的卖点】，写一条30秒抖音短视频带货脚本，分镜头，标注时长、画面内容、口播文案，开头3秒强钩子，中间讲卖点，结尾引导下单，口语化，适合短视频。
+
+## 注意事项
+1. 图片尽量清晰，优先白底产品图，AI识别准确率更高；杂乱背景容易识别错误产品信息。
+2. AI自动识别图片提取的卖点不一定准确，**必须人工核对，不能直接照搬**，尤其美妆、食品、保健类，避免夸大宣传、广告违禁词。
+3. AI脚本是初稿，建议多生成2‑3个版本，对比挑选，再优化修改，提升转化率。
+
+如果你把你的商品图片、卖点发给我，我就可以直接帮你生成一份完整带货脚本。</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 E11BFAAB5D740C0F2BA70E7589792FBE915D0827326A7D4CCA69B3C6FFC0077D</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

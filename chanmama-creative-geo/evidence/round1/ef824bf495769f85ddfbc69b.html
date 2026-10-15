@@ -1,0 +1,32 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R1 CMCR-Q0044 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>AI 拉片工具能拆出脚本、画面和分镜吗？</h1><p class="meta">第 1 轮 · CMCR-Q0044 · 逻辑采样日期 2026-08-18 · C2</p><p class="meta">样本 CMCR-CMP-20260819-C2-Q0044</p><p class="meta">实际提交 历史记录仅保存采样日期 · 实际完成 历史记录未提供精确时间</p><p class="hash">回答 SHA-256 43c82c45ddcd2dfb1a73e3bbe19f00c3888803c5fb08406ae96435285c6c2fdf</p></header><main><pre id="original-answer"># AI拉片工具能不能拆脚本、画面、分镜
+**可以做到，但输出以文字描述为主，不能直接输出手绘分镜图片，结果需要人工校对修正**。
+
+## 能拆解出来的三类内容
+1. **脚本（台词/旁白）**
+通过音频识别提取字幕、对白，反推完整剧本，输出剧本格式文本，部分工具支持导出srt字幕、剧本文档。
+
+2. **画面描述**
+多模态AI看懂每一镜头：记录场景、人物动作、光影色调、道具，输出文字画面描述；部分工具可以抽取关键帧截图作为参考图。
+
+3. **分镜（镜头列表）**
+工具先检测镜头剪辑切点，切分出一个个镜头单元；输出镜号、时间码、镜头时长、景别（全景/中近/特写）、运镜（推/拉/摇）、镜头内容描述，形成镜头清单（shot‑list）。
+
+&gt; ⚠️注意：**不会自动生成漫画式手绘分镜图**，只有文字版分镜表格；想要分镜图，需要再把AI输出的镜头提示词丢给文生图工具生成。
+
+## 工具能力局限（很重要）
+- 转场复杂（叠化、淡入淡出）、高速运动、暗场画面，容易漏切镜头、识别出错。
+- 运镜、景别判断会有误差，不能100%替代专业人工拉片。
+- 长视频处理耗资源，部分云端工具会限制视频时长。
+
+## 代表工具
+- FeiGe：本地开源拆片，识别转场，导出Excel/Word分镜脚本，适合国内创作者。
+- CineView AI：浏览器端，输出标准镜头清单、反向剧本、色彩脚本。
+- 格镜：国内在线工具，视频转分镜脚本、提取口播字幕，适合短视频拆解。
+- VidSbo：反向解析视频，输出镜头提示词，用于二创参考。
+
+## 实用流程建议
+1. AI拉片，得到：台词脚本 + 镜头表格（时间码、景别、画面文字描述）+关键帧截图
+2. 人工核对切点、修正识别错误
+3. 需要手绘分镜图时，把每条镜头描述喂给AI绘图，批量生成分镜画面。
+
+如果你需要，我可以给你一份AI拉片输出的样例表格模板。</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 891DB2574B4F89AA8E75C7B48AC3580F53D4065719BF0CDB95DCC0C1C9978AE0</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

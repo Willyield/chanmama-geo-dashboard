@@ -1,0 +1,34 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R2 CMCR-Q0044 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>AI 拉片工具能拆出脚本、画面和分镜吗？</h1><p class="meta">第 2 轮 · CMCR-Q0044 · 逻辑采样日期 2026-10-13 · C3</p><p class="meta">样本 smp-822aed19b1e7419a9f44af44df1cef7a</p><p class="meta">实际提交 2026-10-13T17:30:33.270326Z · 实际完成 2026-10-13T17:30:52.614639Z</p><p class="hash">回答 SHA-256 d87c8857f8ec38adc40afa8b437f405b0cf4ae6fe424d0891267b2d6e5631995</p></header><main><pre id="original-answer"># ✅ 结论
+**可以拆，但有区分：能自动切镜头、提取台词脚本、输出画面描述、生成文字版分镜表；但不能直接输出手绘/矢量分镜图，并且会有识别误差**
+
+## 1. 能拆出什么
+1. **脚本（台词剧本）**
+语音转文字，提取对白、旁白OS，输出成标准剧本格式（人物、台词、动作描述），部分工具支持导出CSV/Word表格。
+&gt; 工具：积米律动Kimidance、VideoFlow、StoryFolder等
+
+2. **画面信息**
+自动检测镜头切分，截取每个镜头的关键帧截图；识别景别（近景/中景/远景）、运镜（推/拉/摇/移）、光影、场景、人物动作，生成文字画面描述。
+
+3. **分镜（文字分镜表）**
+按镜号排序，每一行包含：镜号、时长、截图、景别、运镜、画面内容、台词。
+&gt; ⚠️重点：**文字分镜清单，不是手绘分镜稿**。部分工具可以基于这份文字，再AI生成分镜插画，但不是直接从视频里“拆出原图分镜”，属于二次生成。
+
+## 2. 局限性（很关键）
+- 镜头切分偶尔出错：快速剪辑、闪白、叠化、轻微画面抖动，容易出现漏切或误切镜头。
+- 画面理解有偏差：复杂构图、隐喻镜头、细微演员表情，AI理解不如人，需要人工校对。
+- 音频干扰：嘈杂环境、背景音乐盖过人声，台词转录会出错。
+- 无法拿到**原片的手绘分镜原稿**：视频成片里本身不带原始分镜图，AI只能反向推断。
+
+## 3. 常见工具简单对比
+- **积米律动Kimidance**：主打短剧拉片，输出标准文学剧本+分镜速查表、镜头分析
+- **StoryFolder**：海外工具，自动切镜头、生成故事板（关键帧卡片）+字幕文本
+- **VideoFlow**：短视频/短剧，拆镜头、台词、反推AI视频提示词
+- **场鸽、LibTV**：AI视频创作类工具，拉片后直接输出逐镜提示词，用于复刻短片
+
+## 4. 适合场景
+✅ 学习爆款短片、短剧，快速做拉片分析、参考镜头节奏
+✅ 批量反推提示词，用来做AI视频二次创作
+❌ 直接拿来当定稿分镜、专业影视定稿剧本（必须人工复核修正）
+
+
+如果你需要，我可以给你一段通用提示词，直接丢给支持上传视频的AI（如千问、豆包），一键完成拉片，输出带镜号、画面描述、台词的分镜表格。</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 81af0bcd6a10dee6baf93230b720822cc9b29a2d5a6f21a37965b8e02e0b1cd4</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

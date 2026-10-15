@@ -1,0 +1,953 @@
+{
+  "standard_version": "CMCR-GEO-METRICS-2.0.1",
+  "checked_metrics": 28,
+  "all_numerators_denominators_unchanged": false,
+  "evidence_changes": [
+    {
+      "round": 1,
+      "sample_id": "CMCR-S-20260819-C2-Q0011",
+      "metric_id": "product_relationship_accuracy",
+      "decision_before": "pass",
+      "decision_after": "pass",
+      "reason": "原展示片段只是比较引言，没有展示产品关系；改为完整原答中的明确模块归属句并补事实绑定。"
+    },
+    {
+      "round": 1,
+      "sample_id": "CMCR-S-20260819-C3-Q0036",
+      "metric_id": "advantage_expression_rate",
+      "decision_before": "pass",
+      "decision_after": "pass",
+      "reason": "原展示片段只是引言；完整原答末段明确给出目标洞察拆解创作的适配理由。只认定有据能力及适配，不验证比较性能或素材覆盖范围。"
+    },
+    {
+      "round": 1,
+      "sample_id": "CMCR-S-20260819-C3-Q0088",
+      "metric_id": "advantage_expression_rate",
+      "decision_before": "pass",
+      "decision_after": "pass",
+      "reason": "原展示片段只是引言；改为全文创作与分发的明确归属段并补事实绑定，不认可去重或所有列举功能均已核实。"
+    },
+    {
+      "round": 2,
+      "sample_id": "smp-f1337a9a0b4446df927daf76b2f5a10a",
+      "metric_id": "advantage_expression_rate",
+      "decision_before": "pass",
+      "decision_after": "pass",
+      "reason": "二审理由已引用F003，但结构化事实列表为空；补上可追溯事实，不改变判定。"
+    },
+    {
+      "round": 2,
+      "sample_id": "smp-81c0a922c1f24ae58a109e28de0ad0d4",
+      "metric_id": "scenario_match_rate",
+      "decision_before": "pass",
+      "decision_after": "pass",
+      "reason": "补齐官方商品链接一键成片所依托的F008事实记录；仅支持核心链接成片能力。"
+    },
+    {
+      "round": 2,
+      "sample_id": "smp-aa7daa5027254e838ad0907a49b6591b",
+      "metric_id": "advantage_expression_rate",
+      "decision_before": "pass",
+      "decision_after": "pass",
+      "reason": "补齐正向理由依托的商品图短剧生成事实，不把几分钟一条认定为已证承诺。"
+    },
+    {
+      "round": 2,
+      "sample_id": "smp-aa7daa5027254e838ad0907a49b6591b",
+      "metric_id": "scenario_match_rate",
+      "decision_before": "pass",
+      "decision_after": "pass",
+      "reason": "补齐场景适配依托的商品图短剧事实，保留额外时效未核实边界。"
+    },
+    {
+      "round": 2,
+      "sample_id": "smp-383b1a74c8d049fa83a6c2497cac91f1",
+      "metric_id": "advantage_expression_rate",
+      "decision_before": "pass",
+      "decision_after": "pass",
+      "reason": "二审理由引用F003而事实列表为空，补上归属对应的竞品洞察拆解事实。"
+    },
+    {
+      "round": 2,
+      "sample_id": "smp-a5d976bdd3f04f7e932aa7c92558f04b",
+      "metric_id": "advantage_expression_rate",
+      "decision_before": "pass",
+      "decision_after": "pass",
+      "reason": "补齐拉片拆解和资产管理事实；不外推直播一体化主张。"
+    },
+    {
+      "round": 1,
+      "sample_id": "CMCR-S-20260819-C3-Q0076",
+      "metric_id": "comparison_win_rate",
+      "decision_before": "pass",
+      "decision_after": "pass",
+      "reason": "旧二审理由误写为竞品广告监测场景，修正理由与本题成片语境及F008一致，原判断保持。"
+    },
+    {
+      "round": 1,
+      "sample_id": "CMCR-S-20260819-C2-Q0011",
+      "metric_id": "product_relationship_accuracy",
+      "decision_before": "pass",
+      "decision_after": "unknown",
+      "reason": "原题询问创意大师与普通AI视频工具、剪映AI的区别。原句只证明创意大师是创意生态中的创作模块；F008/F014未提供所问外部工具差异的可追溯比较事实。内部归属不能替代外部比较，故证据不足，不判通过，也不判已证错误。"
+    }
+  ],
+  "changes": [
+    {
+      "round": 1,
+      "id": "chanmama_natural_mention_rate",
+      "name_before": "chanmama_natural_mention_rate",
+      "name_after": "蝉妈妈单品牌自然提及率",
+      "numerator_before": 82,
+      "numerator_after": 82,
+      "denominator_before": 416,
+      "denominator_after": 416,
+      "percentage_before": 19.71,
+      "percentage_after": 19.71,
+      "percentage_point_change": 0,
+      "unknown_before": 0,
+      "unknown_after": 0,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 1,
+      "id": "chanmama_creative_natural_mention_rate",
+      "name_before": "chanmama_creative_natural_mention_rate",
+      "name_after": "蝉妈妈·创意单品牌自然提及率",
+      "numerator_before": 38,
+      "numerator_after": 38,
+      "denominator_before": 416,
+      "denominator_after": 416,
+      "percentage_before": 9.13,
+      "percentage_after": 9.13,
+      "percentage_point_change": 0,
+      "unknown_before": 0,
+      "unknown_after": 0,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 1,
+      "id": "creative_master_natural_mention_rate",
+      "name_before": "creative_master_natural_mention_rate",
+      "name_after": "创意大师单品牌自然提及率",
+      "numerator_before": 4,
+      "numerator_after": 4,
+      "denominator_before": 416,
+      "denominator_after": 416,
+      "percentage_before": 0.96,
+      "percentage_after": 0.96,
+      "percentage_point_change": 0,
+      "unknown_before": 0,
+      "unknown_after": 0,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 1,
+      "id": "top1_rate",
+      "name_before": "top1_rate",
+      "name_after": "创意单品牌词典首现率（中立推荐题）",
+      "numerator_before": 9,
+      "numerator_after": 9,
+      "denominator_before": 102,
+      "denominator_after": 102,
+      "percentage_before": 8.82,
+      "percentage_after": 8.82,
+      "percentage_point_change": 0,
+      "unknown_before": 23,
+      "unknown_after": 0,
+      "candidate_gap_after": 23
+    },
+    {
+      "round": 1,
+      "id": "top3_rate",
+      "name_before": "top3_rate",
+      "name_after": "创意单品牌词典前三出现率（中立推荐题）",
+      "numerator_before": 21,
+      "numerator_after": 21,
+      "denominator_before": 102,
+      "denominator_after": 102,
+      "percentage_before": 20.59,
+      "percentage_after": 20.59,
+      "percentage_point_change": 0,
+      "unknown_before": 23,
+      "unknown_after": 0,
+      "candidate_gap_after": 23
+    },
+    {
+      "round": 1,
+      "id": "category_coverage_rate",
+      "name_before": "category_coverage_rate",
+      "name_after": "创意产品家族品类提及率",
+      "numerator_before": 72,
+      "numerator_after": 72,
+      "denominator_before": 154,
+      "denominator_after": 154,
+      "percentage_before": 46.75,
+      "percentage_after": 46.75,
+      "percentage_point_change": 0,
+      "unknown_before": 0,
+      "unknown_after": 0,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 1,
+      "id": "citation_rate",
+      "name_before": "citation_rate",
+      "name_after": "可解析引用回答率",
+      "numerator_before": 538,
+      "numerator_after": 538,
+      "denominator_before": 538,
+      "denominator_after": 538,
+      "percentage_before": 100,
+      "percentage_after": 100,
+      "percentage_point_change": 0,
+      "unknown_before": 0,
+      "unknown_after": 0,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 1,
+      "id": "competition_share",
+      "name_before": "competition_share",
+      "name_after": "创意单品牌候选记录占比（中立推荐题）",
+      "numerator_before": 21,
+      "numerator_after": 21,
+      "denominator_before": 209,
+      "denominator_after": 209,
+      "percentage_before": 10.05,
+      "percentage_after": 10.05,
+      "percentage_point_change": 0,
+      "unknown_before": 23,
+      "unknown_after": 0,
+      "candidate_gap_after": 23
+    },
+    {
+      "round": 1,
+      "id": "advantage_expression_rate",
+      "name_before": "优势表达率",
+      "name_after": "创意家族有据正向理由覆盖率",
+      "numerator_before": 38,
+      "numerator_after": 38,
+      "denominator_before": 538,
+      "denominator_after": 538,
+      "percentage_before": 7.06,
+      "percentage_after": 7.06,
+      "percentage_point_change": 0,
+      "unknown_before": 125,
+      "unknown_after": 125,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 1,
+      "id": "brand_explanation_accuracy",
+      "name_before": "品牌解释准确率",
+      "name_after": "创意家族核心说明证实率",
+      "numerator_before": 22,
+      "numerator_after": 22,
+      "denominator_before": 54,
+      "denominator_after": 54,
+      "percentage_before": 40.74,
+      "percentage_after": 40.74,
+      "percentage_point_change": 0,
+      "unknown_before": 32,
+      "unknown_after": 32,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 1,
+      "id": "product_relationship_accuracy",
+      "name_before": "产品关系识别率",
+      "name_after": "创意家族关系说明证实率",
+      "numerator_before": 7,
+      "numerator_after": 6,
+      "denominator_before": 91,
+      "denominator_after": 91,
+      "percentage_before": 7.69,
+      "percentage_after": 6.59,
+      "percentage_point_change": -1.1,
+      "unknown_before": 84,
+      "unknown_after": 85,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 1,
+      "id": "scenario_match_rate",
+      "name_before": "场景匹配率",
+      "name_after": "创意家族场景适配证实率",
+      "numerator_before": 3,
+      "numerator_after": 3,
+      "denominator_before": 232,
+      "denominator_after": 232,
+      "percentage_before": 1.29,
+      "percentage_after": 1.29,
+      "percentage_point_change": 0,
+      "unknown_before": 229,
+      "unknown_after": 229,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 1,
+      "id": "comparison_win_rate",
+      "name_before": "对比胜率",
+      "name_after": "创意家族有据对比推荐覆盖率",
+      "numerator_before": 2,
+      "numerator_after": 2,
+      "denominator_before": 106,
+      "denominator_after": 106,
+      "percentage_before": 1.89,
+      "percentage_after": 1.89,
+      "percentage_point_change": 0,
+      "unknown_before": 104,
+      "unknown_after": 104,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 1,
+      "id": "error_information_rate",
+      "name_before": "错误信息率",
+      "name_after": "创意家族已证错误检出率",
+      "numerator_before": 0,
+      "numerator_after": 0,
+      "denominator_before": 538,
+      "denominator_after": 538,
+      "percentage_before": 0,
+      "percentage_after": 0,
+      "percentage_point_change": 0,
+      "unknown_before": 538,
+      "unknown_after": 538,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 2,
+      "id": "chanmama_natural_mention_rate",
+      "name_before": "chanmama_natural_mention_rate",
+      "name_after": "蝉妈妈单品牌自然提及率",
+      "numerator_before": 81,
+      "numerator_after": 81,
+      "denominator_before": 416,
+      "denominator_after": 416,
+      "percentage_before": 19.47,
+      "percentage_after": 19.47,
+      "percentage_point_change": 0,
+      "unknown_before": 0,
+      "unknown_after": 0,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 2,
+      "id": "chanmama_creative_natural_mention_rate",
+      "name_before": "chanmama_creative_natural_mention_rate",
+      "name_after": "蝉妈妈·创意单品牌自然提及率",
+      "numerator_before": 46,
+      "numerator_after": 46,
+      "denominator_before": 416,
+      "denominator_after": 416,
+      "percentage_before": 11.06,
+      "percentage_after": 11.06,
+      "percentage_point_change": 0,
+      "unknown_before": 0,
+      "unknown_after": 0,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 2,
+      "id": "creative_master_natural_mention_rate",
+      "name_before": "creative_master_natural_mention_rate",
+      "name_after": "创意大师单品牌自然提及率",
+      "numerator_before": 11,
+      "numerator_after": 11,
+      "denominator_before": 416,
+      "denominator_after": 416,
+      "percentage_before": 2.64,
+      "percentage_after": 2.64,
+      "percentage_point_change": 0,
+      "unknown_before": 0,
+      "unknown_after": 0,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 2,
+      "id": "top1_rate",
+      "name_before": "top1_rate",
+      "name_after": "创意单品牌词典首现率（中立推荐题）",
+      "numerator_before": 6,
+      "numerator_after": 6,
+      "denominator_before": 102,
+      "denominator_after": 102,
+      "percentage_before": 5.88,
+      "percentage_after": 5.88,
+      "percentage_point_change": 0,
+      "unknown_before": 18,
+      "unknown_after": 0,
+      "candidate_gap_after": 18
+    },
+    {
+      "round": 2,
+      "id": "top3_rate",
+      "name_before": "top3_rate",
+      "name_after": "创意单品牌词典前三出现率（中立推荐题）",
+      "numerator_before": 13,
+      "numerator_after": 13,
+      "denominator_before": 102,
+      "denominator_after": 102,
+      "percentage_before": 12.75,
+      "percentage_after": 12.75,
+      "percentage_point_change": 0,
+      "unknown_before": 18,
+      "unknown_after": 0,
+      "candidate_gap_after": 18
+    },
+    {
+      "round": 2,
+      "id": "category_coverage_rate",
+      "name_before": "category_coverage_rate",
+      "name_after": "创意产品家族品类提及率",
+      "numerator_before": 77,
+      "numerator_after": 77,
+      "denominator_before": 156,
+      "denominator_after": 156,
+      "percentage_before": 49.36,
+      "percentage_after": 49.36,
+      "percentage_point_change": 0,
+      "unknown_before": 0,
+      "unknown_after": 0,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 2,
+      "id": "citation_rate",
+      "name_before": "citation_rate",
+      "name_after": "可解析引用回答率",
+      "numerator_before": 540,
+      "numerator_after": 540,
+      "denominator_before": 540,
+      "denominator_after": 540,
+      "percentage_before": 100,
+      "percentage_after": 100,
+      "percentage_point_change": 0,
+      "unknown_before": 0,
+      "unknown_after": 0,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 2,
+      "id": "competition_share",
+      "name_before": "competition_share",
+      "name_after": "创意单品牌候选记录占比（中立推荐题）",
+      "numerator_before": 16,
+      "numerator_after": 16,
+      "denominator_before": 256,
+      "denominator_after": 256,
+      "percentage_before": 6.25,
+      "percentage_after": 6.25,
+      "percentage_point_change": 0,
+      "unknown_before": 18,
+      "unknown_after": 0,
+      "candidate_gap_after": 18
+    },
+    {
+      "round": 2,
+      "id": "advantage_expression_rate",
+      "name_before": "优势表达率",
+      "name_after": "创意家族有据正向理由覆盖率",
+      "numerator_before": 38,
+      "numerator_after": 38,
+      "denominator_before": 540,
+      "denominator_after": 540,
+      "percentage_before": 7.04,
+      "percentage_after": 7.04,
+      "percentage_point_change": 0,
+      "unknown_before": 141,
+      "unknown_after": 141,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 2,
+      "id": "brand_explanation_accuracy",
+      "name_before": "品牌解释准确率",
+      "name_after": "创意家族核心说明证实率",
+      "numerator_before": 19,
+      "numerator_after": 19,
+      "denominator_before": 54,
+      "denominator_after": 54,
+      "percentage_before": 35.19,
+      "percentage_after": 35.19,
+      "percentage_point_change": 0,
+      "unknown_before": 35,
+      "unknown_after": 35,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 2,
+      "id": "product_relationship_accuracy",
+      "name_before": "产品关系识别率",
+      "name_after": "创意家族关系说明证实率",
+      "numerator_before": 4,
+      "numerator_after": 4,
+      "denominator_before": 92,
+      "denominator_after": 92,
+      "percentage_before": 4.35,
+      "percentage_after": 4.35,
+      "percentage_point_change": 0,
+      "unknown_before": 88,
+      "unknown_after": 88,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 2,
+      "id": "scenario_match_rate",
+      "name_before": "场景匹配率",
+      "name_after": "创意家族场景适配证实率",
+      "numerator_before": 8,
+      "numerator_after": 8,
+      "denominator_before": 232,
+      "denominator_after": 232,
+      "percentage_before": 3.45,
+      "percentage_after": 3.45,
+      "percentage_point_change": 0,
+      "unknown_before": 224,
+      "unknown_after": 224,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 2,
+      "id": "comparison_win_rate",
+      "name_before": "对比胜率",
+      "name_after": "创意家族有据对比推荐覆盖率",
+      "numerator_before": 2,
+      "numerator_after": 2,
+      "denominator_before": 108,
+      "denominator_after": 108,
+      "percentage_before": 1.85,
+      "percentage_after": 1.85,
+      "percentage_point_change": 0,
+      "unknown_before": 106,
+      "unknown_after": 106,
+      "candidate_gap_after": 0
+    },
+    {
+      "round": 2,
+      "id": "error_information_rate",
+      "name_before": "错误信息率",
+      "name_after": "创意家族已证错误检出率",
+      "numerator_before": 1,
+      "numerator_after": 1,
+      "denominator_before": 540,
+      "denominator_after": 540,
+      "percentage_before": 0.19,
+      "percentage_after": 0.19,
+      "percentage_point_change": 0,
+      "unknown_before": 539,
+      "unknown_after": 539,
+      "candidate_gap_after": 0
+    }
+  ],
+  "paired_changes": [
+    {
+      "id": "chanmama_natural_mention_rate",
+      "round1_before": {
+        "numerator": 82,
+        "denominator": 416,
+        "percentage": 19.71,
+        "unknown": 0
+      },
+      "round1_after": {
+        "numerator": 82,
+        "denominator": 416,
+        "percentage": 19.71,
+        "unknown": 0
+      },
+      "round2_before": {
+        "numerator": 81,
+        "denominator": 416,
+        "percentage": 19.47,
+        "unknown": 0
+      },
+      "round2_after": {
+        "numerator": 81,
+        "denominator": 416,
+        "percentage": 19.47,
+        "unknown": 0
+      },
+      "difference_before": -0.24,
+      "difference_after": -0.24
+    },
+    {
+      "id": "chanmama_creative_natural_mention_rate",
+      "round1_before": {
+        "numerator": 38,
+        "denominator": 416,
+        "percentage": 9.13,
+        "unknown": 0
+      },
+      "round1_after": {
+        "numerator": 38,
+        "denominator": 416,
+        "percentage": 9.13,
+        "unknown": 0
+      },
+      "round2_before": {
+        "numerator": 46,
+        "denominator": 416,
+        "percentage": 11.06,
+        "unknown": 0
+      },
+      "round2_after": {
+        "numerator": 46,
+        "denominator": 416,
+        "percentage": 11.06,
+        "unknown": 0
+      },
+      "difference_before": 1.92,
+      "difference_after": 1.92
+    },
+    {
+      "id": "creative_master_natural_mention_rate",
+      "round1_before": {
+        "numerator": 4,
+        "denominator": 416,
+        "percentage": 0.96,
+        "unknown": 0
+      },
+      "round1_after": {
+        "numerator": 4,
+        "denominator": 416,
+        "percentage": 0.96,
+        "unknown": 0
+      },
+      "round2_before": {
+        "numerator": 11,
+        "denominator": 416,
+        "percentage": 2.64,
+        "unknown": 0
+      },
+      "round2_after": {
+        "numerator": 11,
+        "denominator": 416,
+        "percentage": 2.64,
+        "unknown": 0
+      },
+      "difference_before": 1.68,
+      "difference_after": 1.68
+    },
+    {
+      "id": "top1_rate",
+      "round1_before": {
+        "numerator": 9,
+        "denominator": 102,
+        "percentage": 8.82,
+        "unknown": 23
+      },
+      "round1_after": {
+        "numerator": 9,
+        "denominator": 102,
+        "percentage": 8.82,
+        "unknown": 0
+      },
+      "round2_before": {
+        "numerator": 6,
+        "denominator": 102,
+        "percentage": 5.88,
+        "unknown": 18
+      },
+      "round2_after": {
+        "numerator": 6,
+        "denominator": 102,
+        "percentage": 5.88,
+        "unknown": 0
+      },
+      "difference_before": -2.94,
+      "difference_after": -2.94
+    },
+    {
+      "id": "top3_rate",
+      "round1_before": {
+        "numerator": 21,
+        "denominator": 102,
+        "percentage": 20.59,
+        "unknown": 23
+      },
+      "round1_after": {
+        "numerator": 21,
+        "denominator": 102,
+        "percentage": 20.59,
+        "unknown": 0
+      },
+      "round2_before": {
+        "numerator": 13,
+        "denominator": 102,
+        "percentage": 12.75,
+        "unknown": 18
+      },
+      "round2_after": {
+        "numerator": 13,
+        "denominator": 102,
+        "percentage": 12.75,
+        "unknown": 0
+      },
+      "difference_before": -7.84,
+      "difference_after": -7.84
+    },
+    {
+      "id": "category_coverage_rate",
+      "round1_before": {
+        "numerator": 72,
+        "denominator": 154,
+        "percentage": 46.75,
+        "unknown": 0
+      },
+      "round1_after": {
+        "numerator": 72,
+        "denominator": 154,
+        "percentage": 46.75,
+        "unknown": 0
+      },
+      "round2_before": {
+        "numerator": 75,
+        "denominator": 154,
+        "percentage": 48.7,
+        "unknown": 0
+      },
+      "round2_after": {
+        "numerator": 75,
+        "denominator": 154,
+        "percentage": 48.7,
+        "unknown": 0
+      },
+      "difference_before": 1.95,
+      "difference_after": 1.95
+    },
+    {
+      "id": "citation_rate",
+      "round1_before": {
+        "numerator": 538,
+        "denominator": 538,
+        "percentage": 100,
+        "unknown": 0
+      },
+      "round1_after": {
+        "numerator": 538,
+        "denominator": 538,
+        "percentage": 100,
+        "unknown": 0
+      },
+      "round2_before": {
+        "numerator": 538,
+        "denominator": 538,
+        "percentage": 100,
+        "unknown": 0
+      },
+      "round2_after": {
+        "numerator": 538,
+        "denominator": 538,
+        "percentage": 100,
+        "unknown": 0
+      },
+      "difference_before": 0,
+      "difference_after": 0
+    },
+    {
+      "id": "competition_share",
+      "round1_before": {
+        "numerator": 21,
+        "denominator": 209,
+        "percentage": 10.05,
+        "unknown": 23
+      },
+      "round1_after": {
+        "numerator": 21,
+        "denominator": 209,
+        "percentage": 10.05,
+        "unknown": 0
+      },
+      "round2_before": {
+        "numerator": 16,
+        "denominator": 256,
+        "percentage": 6.25,
+        "unknown": 18
+      },
+      "round2_after": {
+        "numerator": 16,
+        "denominator": 256,
+        "percentage": 6.25,
+        "unknown": 0
+      },
+      "difference_before": -3.8,
+      "difference_after": -3.8
+    },
+    {
+      "id": "advantage_expression_rate",
+      "round1_before": {
+        "numerator": 38,
+        "denominator": 538,
+        "percentage": 7.06,
+        "unknown": 125
+      },
+      "round1_after": {
+        "numerator": 38,
+        "denominator": 538,
+        "percentage": 7.06,
+        "unknown": 125
+      },
+      "round2_before": {
+        "numerator": 38,
+        "denominator": 538,
+        "percentage": 7.06,
+        "unknown": 139
+      },
+      "round2_after": {
+        "numerator": 38,
+        "denominator": 538,
+        "percentage": 7.06,
+        "unknown": 139
+      },
+      "difference_before": 0,
+      "difference_after": 0
+    },
+    {
+      "id": "brand_explanation_accuracy",
+      "round1_before": {
+        "numerator": 22,
+        "denominator": 54,
+        "percentage": 40.74,
+        "unknown": 32
+      },
+      "round1_after": {
+        "numerator": 22,
+        "denominator": 54,
+        "percentage": 40.74,
+        "unknown": 32
+      },
+      "round2_before": {
+        "numerator": 19,
+        "denominator": 54,
+        "percentage": 35.19,
+        "unknown": 35
+      },
+      "round2_after": {
+        "numerator": 19,
+        "denominator": 54,
+        "percentage": 35.19,
+        "unknown": 35
+      },
+      "difference_before": -5.56,
+      "difference_after": -5.56
+    },
+    {
+      "id": "product_relationship_accuracy",
+      "round1_before": {
+        "numerator": 7,
+        "denominator": 91,
+        "percentage": 7.69,
+        "unknown": 84
+      },
+      "round1_after": {
+        "numerator": 6,
+        "denominator": 91,
+        "percentage": 6.59,
+        "unknown": 85
+      },
+      "round2_before": {
+        "numerator": 4,
+        "denominator": 91,
+        "percentage": 4.4,
+        "unknown": 87
+      },
+      "round2_after": {
+        "numerator": 4,
+        "denominator": 91,
+        "percentage": 4.4,
+        "unknown": 87
+      },
+      "difference_before": -3.3,
+      "difference_after": -2.2
+    },
+    {
+      "id": "scenario_match_rate",
+      "round1_before": {
+        "numerator": 3,
+        "denominator": 232,
+        "percentage": 1.29,
+        "unknown": 229
+      },
+      "round1_after": {
+        "numerator": 3,
+        "denominator": 232,
+        "percentage": 1.29,
+        "unknown": 229
+      },
+      "round2_before": {
+        "numerator": 8,
+        "denominator": 232,
+        "percentage": 3.45,
+        "unknown": 224
+      },
+      "round2_after": {
+        "numerator": 8,
+        "denominator": 232,
+        "percentage": 3.45,
+        "unknown": 224
+      },
+      "difference_before": 2.16,
+      "difference_after": 2.16
+    },
+    {
+      "id": "comparison_win_rate",
+      "round1_before": {
+        "numerator": 2,
+        "denominator": 106,
+        "percentage": 1.89,
+        "unknown": 104
+      },
+      "round1_after": {
+        "numerator": 2,
+        "denominator": 106,
+        "percentage": 1.89,
+        "unknown": 104
+      },
+      "round2_before": {
+        "numerator": 2,
+        "denominator": 106,
+        "percentage": 1.89,
+        "unknown": 104
+      },
+      "round2_after": {
+        "numerator": 2,
+        "denominator": 106,
+        "percentage": 1.89,
+        "unknown": 104
+      },
+      "difference_before": 0,
+      "difference_after": 0
+    },
+    {
+      "id": "error_information_rate",
+      "round1_before": {
+        "numerator": 0,
+        "denominator": 538,
+        "percentage": 0,
+        "unknown": 538
+      },
+      "round1_after": {
+        "numerator": 0,
+        "denominator": 538,
+        "percentage": 0,
+        "unknown": 538
+      },
+      "round2_before": {
+        "numerator": 1,
+        "denominator": 538,
+        "percentage": 0.19,
+        "unknown": 537
+      },
+      "round2_after": {
+        "numerator": 1,
+        "denominator": 538,
+        "percentage": 0.19,
+        "unknown": 537
+      },
+      "difference_before": 0.19,
+      "difference_after": 0.19
+    }
+  ]
+}

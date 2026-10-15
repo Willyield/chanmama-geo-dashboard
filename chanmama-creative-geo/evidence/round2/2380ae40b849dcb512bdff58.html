@@ -1,0 +1,49 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R2 CMCR-Q0060 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>AI 商品特效怎么做，适合哪些电商场景？</h1><p class="meta">第 2 轮 · CMCR-Q0060 · 逻辑采样日期 2026-10-12 · C2</p><p class="meta">样本 smp-89f4382b4e464d3db997e528d535a91c</p><p class="meta">实际提交 2026-10-12T15:11:15.788441Z · 实际完成 2026-10-12T15:11:46.647213Z</p><p class="hash">回答 SHA-256 25fbc6ae72bf06e9717f5f0211412ac05e70577510a3c57cc678b429b701115c</p></header><main><pre id="original-answer"># ✨ AI商品特效怎么做 + 电商适用场景
+AI商品特效分**静态图片特效**（光效、水滴、烟雾、材质质感、场景合成）和**动态视频特效**（产品旋转、粒子、液体流动、烟雾显形、转场动画），核心是**白底产品图打底 → AI抠像/保留商品主体 → 叠加特效/动态**，不用AE、3D建模也能快速出片。
+
+## 🛠️ 完整制作流程（新手版）
+1. **准备素材**：拍一张干净白底商品图，尽量正面、对焦清晰；优先白底方便AI识别主体，减少产品变形。
+2. **方案/分镜**
+    - 简单：直接套电商预制模板（水滴、冰雪、粒子光效、产品旋转），不用写提示词
+    - 定制：写提示词，描述商品+特效+光影+运镜；也可以用AI生分镜脚本
+3. **AI抠像+主体锁定**：AI自动分离商品与背景，**锁定商品外形、logo文字不变**（重点，防止AI把产品画变形）
+4. **生成特效**
+    - 图片特效：局部重绘，在商品周围叠加水滴、雾气、金粉、光影、材质质感
+    - 视频特效：两种主流方式
+      - 图生视频：上传白底图，提示词写动态效果（产品缓慢旋转、水流滑落、烟雾散开露出产品）
+      - 首尾帧动画：首帧=原图，尾帧=带特效成品图，AI自动生成中间过渡动画，效果更稳
+5. **后期微调**：剪映等工具拼接片段、调色、加字幕/音效，导出短视频，适配抖音、小红书、商品主图视频。
+
+&gt; 常用工具：可灵、即梦、Lovart、稿定AI、PixGT；电商专用模板内置美妆、3C、食品特效，上手最快
+
+## 🛒 适合哪些电商场景
+### 1. 主图视频/首图（点击率提升首选）
+- 适配品类：**美妆护肤、香水、洗护**（水滴、液体流动、冰感、烟雾、珠光粒子）；3C数码（科技光效、电流线条、金属流光）
+- 作用：搜索页第一眼抓住用户，直观展示质地（精华流动性、面霜光泽）
+
+### 2. 短视频信息流广告（抖音/快手/小红书种草）
+- 适配品类：饮料、零食、香薰、家电、个护
+- 特效：液体飞溅、冰块凝结、花瓣绽放、产品悬浮拆解重组；3秒开头用特效吸引停留
+
+### 3. 详情页动态素材、卖点图
+用来可视化卖点：防水产品做**水花特效**；保暖产品做暖光/热粒子；清洁产品做污垢消散特效。
+&gt; 适合：家居、厨具、运动户外、清洁用品
+
+### 4. 新品测款、多场景批量素材
+一张白底图批量生成多套特效图/短视频，快速A/B测试哪版视觉点击率更高，不用反复实拍。跨境电商（Temu、亚马逊、Shopee）非常适合，降低拍摄成本
+
+### 5. 直播间贴片、商品弹窗短视频
+短特效动画（3–6秒），直播间循环播放，突出产品质感、核心卖点。
+
+## ❗ 不推荐/慎用场景
+1. 服装类：尽量少用夸张粒子特效，优先AI模特上身，特效容易扭曲面料纹理；
+2. 精密工业、医疗器械：特效不能夸大功效，避免违规宣传；
+3. 平台主图静态图（部分平台规则限制，不能过度炫特效，保证产品真实）。
+
+## 💡 实用提示词模板（直接套用）
+&gt; 白底护肤品瓶身，保留产品不变，柔和水滴从瓶身缓慢滑落，浅柔光，写实摄影，8K，干净简约背景，电影级光影，不要扭曲产品文字
+&gt; 无线耳机，缓慢360°旋转，蓝色科技粒子光效环绕，暗调高级背景，写实，4K，产品结构不变
+
+
+
+要不要我给你整理一份**电商高频AI商品特效提示词合集**（美妆、3C、食品、洗护分类），直接复制就能用？</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 36f08869f35f2f1fbd1a798faaf9671300ad8308006d5cf1a874665fd75da1ab</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

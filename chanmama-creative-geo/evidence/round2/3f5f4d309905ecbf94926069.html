@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R2 CMCR-Q0044 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>AI 拉片工具能拆出脚本、画面和分镜吗？</h1><p class="meta">第 2 轮 · CMCR-Q0044 · 逻辑采样日期 2026-10-12 · C2</p><p class="meta">样本 smp-aad1520368f340e38d3610c5f24679fd</p><p class="meta">实际提交 2026-10-12T15:04:55.046989Z · 实际完成 2026-10-12T15:05:15.491991Z</p><p class="hash">回答 SHA-256 6dedc05bd830c73ae6fc79c911d68b6e0e548ae245f51d35a654d596c9c6c43f</p></header><main><pre id="original-answer"># ✅ 结论
+**可以拆，但不是拿到导演原始手绘分镜，而是AI反向解析出来的文字脚本、关键截图、镜头信息表**，适合短剧、广告、短视频拉片学习，不能完全替代人工专业拉片校对。
+
+## 能输出三类东西
+1. **脚本（台词/文学剧本）**
+    通过语音识别转录台词、旁白、内心OS，按场次输出剧本格式：场景描述、人物台词、动作描述（积米律动Kimidance、包拆拆这类工具可输出标准剧本）。
+2. **画面（关键帧截图）**
+    AI自动识别镜头切换点，截取每个镜头的首帧/关键帧，每一条镜头附带截图预览，可以导出图片。
+3. **分镜信息（文字分镜表）**
+    输出镜号、时长、景别（全景/中近/特写）、机位、运镜（推/拉/摇/移）、光影、构图、画面内容描述，导出CSV/Excel表格，也就是**文字版分镜**；部分工具还能基于解析结果，**AI生成手绘风格分镜图**（属于AI二次绘图，不是原片导演的原始分镜）。
+
+## ⚠️ 局限（非常重要）
+- **镜头切分会出错**：快速剪辑、硬切、转场复杂、闪白、叠化时，AI容易把多个镜头合并，或者一刀拆碎同一个镜头，需要人工微调镜号边界。
+- **画面理解有误差**：人物动作、细微光影、道具、隐喻镜头，AI描述容易简化甚至理解错；字幕识别、嘈杂音频的台词转录也会有错别字。
+- **没有原始手绘分镜**：视频本身不包含导演手绘分镜文件，AI只能**反向推测**镜头信息，不是原片前期的分镜原稿。
+- **长电影/复杂长片成本更高**，容易漏场、人物识别混乱，更适合短视频、短剧、TVC广告。
+
+## 常见AI拉片工具
+- 积米律动 Kimidance：主打短剧，输出文学剧本+分镜速查表，台词转录相对稳定
+- LibTV / Shotlab（场鸽）：逐帧拉片，提取画面+运镜，还能把拉片结果转AI生图提示词
+- 包拆拆：输出剧本+分镜表格，支持导出Word/Excel，网页轻量工具
+
+## 适用场景
+✅ 快速扒爆款短剧/广告的镜头节奏、台词结构，做参考学习、写提示词
+✅ 替代手动暂停截图、打字记录，大幅节省拉片基础工作量
+❌ 直接当作专业拍摄分镜定稿，必须人工复核修正
+
+
+
+如果你需要，我可以给你一份**AI拉片校验清单**，拿到AI拆出来的分镜表之后快速排查镜头切分、台词、画面描述错误。</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 8a6fe597c2ebc6281abf510a3cf702ae0c7803181a60926a7e52fc7a52fcd247</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

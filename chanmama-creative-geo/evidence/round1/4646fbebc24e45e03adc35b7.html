@@ -1,0 +1,44 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R1 CMCR-Q0031 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>怎么监控同行爆量素材，一爆量就能收到提醒吗？</h1><p class="meta">第 1 轮 · CMCR-Q0031 · 逻辑采样日期 2026-08-18 · C1</p><p class="meta">样本 CMCR-CMP-20260819-C1-Q0031</p><p class="meta">实际提交 历史记录仅保存采样日期 · 实际完成 历史记录未提供精确时间</p><p class="hash">回答 SHA-256 496a5e52ea11922a88b7f434bced249bb247fd42ebc5c5247de91593bfa26cdd</p></header><main><pre id="original-answer"># 同行爆量素材监控&amp;实时提醒
+**可以做到爆量触发提醒，但不是毫秒级，一般是几分钟‑小时级延迟，平台不提供原生实时推送，主要靠第三方情报工具实现**。
+
+## 一、两类监控对象
+1. **千川/信息流付费广告素材（投流广告）**：同行付费跑量的广告视频，是投放最需要盯的；
+2. **自然流量短视频爆款**：同行自然起量的短视频。
+
+&gt; ⚠️注意：只能看到**公开曝光的广告/作品**，同行账户内部测试、没投放出去的素材看不到。
+
+## 二、主流工具怎么设置爆量提醒
+### 1）国内抖音千川/电商场景
+- **蝉妈妈 / 新抖 / 飞瓜**
+  1. 添加对标账号/竞品店铺/品牌关键词到监控列表
+  2. 在「创意监测/爆量监控」设置阈值：曝光、预估消耗、播放、销售额阈值
+  3. 告警推送：钉钉、飞书、微信消息，素材达到设定门槛就推送通知。
+- **巨量创意中心（官方免费）**
+  只能看行业热广告榜单，**没有原生告警提醒**，只能人工刷榜单，不能一爆就通知。
+
+### 2）广告情报工具（广告Spy）
+- 广大大SocialPeta、热云AdInsights、BigBigAds等
+  添加广告主监控，设置曝光突增阈值，支持邮件/webhook告警，适合APP、游戏、二类电商。
+
+### 3）跨境TikTok广告
+PiPiAds、Minea，支持监控广告主，广告量级突增推送提醒。
+
+## 三、监控的两种告警逻辑
+1. **绝对值阈值**：比如单条广告预估曝光&gt;50万就提醒；
+2. **增长突增（更适合抓刚起量）**：素材短时间内数据暴涨，识别“正在爆的早期素材”，而不是已经爆完的老素材。
+
+&gt; 重点：第三方都是爬虫采集，**存在5‑60分钟数据延迟**，做不到真正毫秒级实时。
+
+## 四、实操流程
+1. 整理对标清单：直接竞品账号、投放广告主ID、品牌词；
+2. 选定工具，把竞品加入监控；
+3. 配置告警阈值：不要设置太低，否则告警泛滥；优先盯**新发布短时间快速起量**的素材；
+4. 收到提醒立刻拆解脚本、钩子、画面、卖点；
+5. **只做参考借鉴，禁止直接搬运下载，巨量有暗水印机制，搬运会被限流打压**。
+
+## 五、缺点与局限
+1. 第三方工具的消耗、曝光都属于**估算值，不是平台真实后台数据**，只能做参考；
+2. 同行投放很快关停的短命爆量素材，有可能工具还没抓取就下线，抓不到；
+3. 官方后台没有“盯同行+告警”功能，告警全部依赖付费第三方。
+
+如果你需要，我可以帮你整理一份快速上手的配置参数示例（阈值怎么填比较合理）。</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 B66F712EE06CA55CBF238552970C1ACD780AB5C6CBFA7BC0D1C98334B3D9E82C</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

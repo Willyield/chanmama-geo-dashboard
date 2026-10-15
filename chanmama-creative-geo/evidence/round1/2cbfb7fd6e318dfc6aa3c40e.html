@@ -1,0 +1,32 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R1 CMCR-Q0044 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>AI 拉片工具能拆出脚本、画面和分镜吗？</h1><p class="meta">第 1 轮 · CMCR-Q0044 · 逻辑采样日期 2026-08-18 · C3</p><p class="meta">样本 CMCR-CMP-20260819-C3-Q0044</p><p class="meta">实际提交 历史记录仅保存采样日期 · 实际完成 历史记录未提供精确时间</p><p class="hash">回答 SHA-256 cdf559596160ec512a95da43b3487111be543503d10261c440853ade71031bc1</p></header><main><pre id="original-answer"># AI拉片工具拆解脚本、画面、分镜能力
+**可以做到，但不是100%完美还原，属于反向推导，不能等同于原始拍摄工程文件**。
+
+## 能输出什么
+1. **分镜（镜头列表/Shot list）**
+AI识别镜头切点（硬切、叠化、渐隐），输出镜号、时间码、镜头时长、景别（全景/中景/特写）、运镜（推、拉、摇、移、固定），可以导出表格、Excel。
+&gt; 局限：快速闪切、极短镜头、复杂叠化容易漏切，需要人工微调切点。
+
+2. **画面信息**
+提取关键帧，描述场景、人物动作、光线、色调、构图、道具，部分工具可以生成画面提示词、色卡。
+&gt; 局限：复杂光影、细微道具容易识别出错。
+
+3. **脚本（反向剧本）**
+通过音频转文字得到台词，结合画面动作描述，生成类似标准剧本格式：场景、动作、人物对白。
+&gt; 注意：这是AI反向生成的推导脚本，**不是原片原始拍摄脚本**，和真实原稿会存在差异。
+
+## 不能做到什么
+- 拿不到原片原始工程、原始分镜图、原始脚本源文件。
+- 不会输出手绘版分镜画稿，只会输出文字描述，部分工具可以根据描述AI生成分镜示意图。
+- 长电影、大量对话密集片段会出现台词错漏、人物混淆。
+
+## 简单区分三类输出
+- **分镜表**：镜号、时间、景别运镜（文字表格，绝大多数工具支持）
+- **反向脚本**：场景+动作+台词文本
+- **分镜图画稿**：AI根据拆解描述再生成的图片，不是原片自带分镜
+
+## 使用小建议
+1. 优先拆短视频、广告、短剧，准确率远高于长电影。
+2. AI输出只能当初稿，**必须人工复核修正镜头切点、台词、画面描述**。
+3. 部分工具支持导出Excel/Word，方便二次整理做拉片笔记。
+
+如果你需要，我可以给你一份AI拉片输出后，快速人工校对的简易核对清单。</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 E26DEDFF85718E4C76AC29EB2190BDBD616D9ABFC0CA2E18B4F2B972EBA3BABC</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

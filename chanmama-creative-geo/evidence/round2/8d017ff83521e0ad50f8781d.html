@@ -1,0 +1,31 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R2 CMCR-Q0083 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>成片能不能直接分发到巨量千川、巨量广告、磁力金牛和腾讯广告？</h1><p class="meta">第 2 轮 · CMCR-Q0083 · 逻辑采样日期 2026-10-13 · C1</p><p class="meta">样本 smp-4b32389ba566488d9e6e3a50400224b2</p><p class="meta">实际提交 2026-10-13T15:41:21.153852Z · 实际完成 2026-10-13T15:41:39.969676Z</p><p class="hash">回答 SHA-256 dd6a46eac78a04fd758f3532b255730707b04274667957439466142df889a5ca</p></header><main><pre id="original-answer"># 一句话结论
+**没有官方原生“一键同时分发到4个平台”的按钮；但成片文件本身，可以通过两种方式分别上传到巨量千川、巨量广告、磁力金牛、腾讯广告**：
+1. 手动：下载成片，分别登录4个广告后台上传素材
+2. 自动：用支持多平台素材分发的第三方素材中台/服务商，调用各家Marketing API批量推送到四个平台
+
+## 分平台说明
+✅ **巨量千川 + 巨量广告（巨量引擎体系）**
+同属巨量引擎，**巨量广告后台素材可以在巨量体系内跨账户共享**；成片上传到巨量素材库后，千川、巨量广告都可以直接取用，不用重复传文件（前提是账户授权、主体合规）。
+&gt; 注意：千川是电商带货广告，巨量广告是品牌/线索广告，素材审核标准不一样，即使素材文件一样，两边要分别过审。
+
+✅ **磁力金牛（快手）**
+独立平台，**和巨量、腾讯没有原生互通**。成片文件（mp4等）只能手动上传，或通过快手开放API上传到磁力金牛素材库。
+
+✅ **腾讯广告（微信/QQ广告）**
+独立体系，自有素材API，支持上传视频素材；和巨量、快手平台素材库不通，需要单独上传文件或调用接口推送。
+
+## 关键限制（重点）
+1. **文件只是素材，不等于直接建好广告计划**
+分发只是把视频/图片传到平台素材库；**不会自动新建广告计划、自动填落地页、商品、定向**，素材上传后仍要搭建创意和计划。
+2. **审核独立**
+四个平台审核规则、合规要求不一样，同一条成片，可能A平台过审，B平台被拒。
+3. **版权&amp;素材授权**
+如果不是你自有素材，必须拿到完整投放授权，否则投放会被下架、违规。
+4. **原生不互通**
+巨量、快手磁力金牛、腾讯广告是三家独立广告系统，**官方后台之间不能直接跨平台推送素材**，跨平台分发只能靠第三方工具/自研API对接。
+
+## 两种落地方案对比
+- 手动方案：成片导出MP4，分别登录4个后台上传。优点：零开发；缺点：重复操作，大批量素材很累。
+- API/第三方中台方案：素材中台上传成片，授权4家广告账户，API分发至4平台素材库。优点：批量自动化；缺点：需要服务商或开发对接，有成本。
+
+如果你需要，我可以帮你整理**4平台成片素材格式、码率、分辨率、大小上限的对照表**，一次导出成片满足所有平台要求。</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 dbc9c911599029dac25e93cf45d6f20c6e4e3369fcf29540b1c893b3cdfc32e7</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

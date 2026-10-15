@@ -1,0 +1,6168 @@
+{
+  "dictionary_sha256": "7d95771e0b00402e2a24ec4865d4363b4df8c9fe8beeec48de249f6938a87321",
+  "rank_definition": "冻结字典内去重品牌在正文中的首次出现顺序；不是模型明确推荐顺序。未识别品牌不自动加入。",
+  "denominator": 540,
+  "rows": [
+    {
+      "brand": "蝉妈妈",
+      "group": "蝉妈妈",
+      "mention_count": 163,
+      "answer_count": 163,
+      "first_count": 16,
+      "top3_count": 135,
+      "rank_sum": 429,
+      "categories": [
+        "案例/效果问题",
+        "对比决策问题",
+        "品牌产品问题",
+        "品类认知问题",
+        "业务场景问题",
+        "价格/开通问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "smp-6969c86e83b246d88988f3ca2cef65a1",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-92a95ef94df34fc39161927b88da3477",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-2b5113540bd341c39d6c82af01fcc9c4",
+          "rank": 6,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-51118c86ae1f496d9562d1766fb10c76",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b395cc0676934064bbf0230415e0cf79",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-74d68e72f8a144e1bfc49df9f8572a84",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-4cfe029803c64fb0815f1caac540b257",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-103232e4ff574a63bf41faeb76f9122e",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d4dfa1104e654a7bb9907627ac977807",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-96ded755d9d24c839b672f36fbf2fbd2",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-f4793cb1257543dba1245aa30ce09238",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-12b5776c67ec47c4b044f848053e5366",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-9bdec5970d5c440ab904c5767041fb0e",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-35fe30dcd6b6495c800c565bd1d9c514",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-14d6fc31402f46ab8d22e38b222e5a7f",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a5220e42efd44010a0c7301bcfe716ae",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-08228cb37ce84573b8c1ab23c70a5189",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-f1337a9a0b4446df927daf76b2f5a10a",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-417d8e0194a64473a922232ea52facf2",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-72e17e0d8d554b3fb341c0fa62de00ab",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-5672f67205c44a38ad49af67f05ccee9",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-f6dd9e1b4bf440f68b4041c0410aee7d",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-2c55e03715d147d1bc4ea3f6e8391a0c",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-bd7e7b7b9b5e4adcae4f47199a7c2fe9",
+          "rank": 6,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-fde73fd2a1614a4ab546b3df176a7898",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-001f3e9cd5cf44ea8eca17c20a90f105",
+          "rank": 5,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-fd0605ec61974b7cb712b0aacfec34d5",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-482c1ef72b104cd88c49efad3a9e9ce9",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-566410025f3b4f3a9914791e212c4ec4",
+          "rank": 6,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-51f1908d1dad492788a9a133352003eb",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-8a0b44ad7ac244d6996cb94625376bb3",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-8947014da4ec47a0a0e8a1b360ed9ae4",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-e99c9899843e4a1dbc88357c91eb8a45",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-7c2ba375b66b4604a1bf408d89b4541c",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-f420fe3c019c4154b71a7c35e36303fb",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-bf46587a98504371a0963646ed49d31a",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-4963572124be43889287ed324a818687",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-fc1c12445d944ea5881b4e62ed398dfa",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b6f7fc66a2d44c64a66a8cc650251af0",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-dc27abe525204a4484f7fd9269d19496",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-c8394e0fea3b4d94b64d0d284c49085a",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-c56c785c6a2e4ae1a6961a44088b0615",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-3a2bb2a5b3a443b48c8d0553e46231ae",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-335c464741784978b4362e08febf71c1",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a8622d765cde4db59c439da97b77aab7",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-65eb057a5161454ab5018315672eb882",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-f82407783d3640ff9a8f2958263d6098",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d061d24a7c9444cfb503ee47b11c952a",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-ab091533720b449eab0c43ef27c0fb87",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-1707c6cf4e6f4c51b8798884b3fde938",
+          "rank": 6,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-6651ce6d8397456ea72607ab0714fbd8",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-2a632b8390d04403b19316c5e5b5c501",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-c64758e8e6e4426391a61c96c8d6e982",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-00eb47fb839f4faa9927586f02791f00",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a2131c63e4b74bd081eff046384f04dc",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d2d4c17222b74079b757c6987cdc4878",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-9be12a6783b541ccbed9e6e96d8f7fce",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-ab7b15aa481546a08108460b52f9ceee",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-adb62142e48c4833b30193a2c83b47b2",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-ed26211e133b4c3c82b122f74ab84f53",
+          "rank": 6,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-5a317410efca4b8c8a20a2ebdc218cf1",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-23940ddf0f504b0bb0593caa220d0eab",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-323d3c385e3349faa7b88dfbf4364766",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-5a8c9badcfe94700a25880c507630f9e",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-575d535b8f454684a9c7fd3e9952bcfe",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-02b2b1646e41440a8cb76fb7dc908874",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-fb5eec9a21b34a71950bce6a2762c246",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-458bc3be769946de8abe7e38f1f00316",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-300b15927a374d22b9a3c30c33fb44fd",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-32edd134acd647bb8993192ad9c47910",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-e6e4abc2193743e2acddb8465d8a7f38",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b8e1c3b6d0544800afd5d7cd7adee747",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-7a22a0610e594fcca7ec32ad24af56c1",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-00d96b6b115f4cc9b47d86a3f608107f",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-0c753aadf2ac45338c80457bfa199d51",
+          "rank": 6,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-275d509ff9764446889178d1a75292d0",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-8934f8ba30494829be759b8e467b7adc",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-af7c32e8fb314ad896fdb2eac2da6621",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-35f853be17fb489ab47409a6ca89d9dd",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-54012ae235b94ef19b3200b4ed78c7dc",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d4afa89f3a424823b53df59db00647c5",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-943177a0aeb44581a104dace96d741d8",
+          "rank": 7,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-ab9dae46ca46439fa736778399b7a957",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-5490846b771e47a482b6bfd78d6a10de",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-bf3d5d214590478aaa9ea1de39a77cb6",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-99342094a87e4d57b6fe5fabf8ec1b7f",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-7c03ad354c54449890ca5d938db08aa3",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-8c53e61cd9e64b76bc21b3795d4352cd",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-56ef29a054ed4b4280667d941b6984f9",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-26d8aeb4135e472581110ef536a696a4",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-1aab8163472542b8802446feaeda00f8",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-397a5fa8313046fe81ef9084ad32d21f",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-3261285a3b2b4ec4922552c2aa4b52d8",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-205965cba62a401895dce953db91f511",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-fb83fe5af9ee43f5a3041bd45d848ad3",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-6830495a6b1945f188d8112a6b8498f9",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d5ddb8f8baa0474ba70c97f8fa9b2bc0",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-f1485c88cec3473fbe61fce82fdb1e55",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d63f445255b74722bf40bc22cd5a7a73",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-96df1014018649d09543bfcf3dc881fa",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-2c614907456c4a0ab9a6cf648aa78d8b",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-eadf579e5b28424f9ae1301527e67758",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-383b1a74c8d049fa83a6c2497cac91f1",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-3b75437672804603ab58f16589034e7e",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-5de81cd2430348ffa76c1f8e17d4e15c",
+          "rank": 6,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-1a2dac0405374180a5455d061b08508a",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-3a5ae68da12841879af7a5c3e4666be3",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-13049cc639d74fd89b9a6e67ab1171eb",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a8c913bc32ef440cb188a54a4dea74c7",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d5109c6164584bef8a9ee11507e8bf78",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-51738a0ea1c04905a89442558e64d649",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-e01826a79c5546e89e61702564b2b06b",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-5251b80d78f0406ea2b6f23d6dfe8b87",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d617b20804d64ac1bfa55cfeb5fb8ccc",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-aa025861fcf047b2bdccbdcccea60697",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-df04de31b7af41fd82216959f5b63641",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-ba7afe3ab2e041caa51bb78e576d9903",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-13bbf15044764909b3f5113944d7cb71",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-e19c0123290d43f790625ddef5e1646d",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-39338d49086c462aa326b76209de9284",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-138e02db2b434a3f9df647d37abf75bc",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-cb33955607924cf6889d56cf8984f9cc",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-4d8617382a9849918f5b21dee84769d7",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-453f9417cc0d4a979af49e967e81fdbb",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-5ac37afd4336467f872a776b5e67fa6c",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a10ae79f480f4c2ea6bf9a0e89d0731b",
+          "rank": 5,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-21ed7564c5af4d8c95f84811186626bd",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a079506302534e74a0aa889ede3e1a58",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a5d976bdd3f04f7e932aa7c92558f04b",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-06af3da78450472bb15697eca39a0807",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-dc85803538524add82b0b7e59c48b823",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-443e458ada0243dbb4a7b5a8e2725e4b",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-7cfa9dc1c15a4a899b02da39c2a5a843",
+          "rank": 6,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-442edda8a2c7456fa2889d64d2358869",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-0f2c199c900e49008763eff576f9fb5a",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b0161663aabf4339998a57922dd3d2c5",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-2a90fb0b04cd41b58246e529ecc40599",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b75e84f7069a4cdf9c36f160fd797adb",
+          "rank": 5,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-8d677d65d1a84761a5fec2ce35053f39",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-536d142526f54bfc8be6032d3b9f2a94",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-558b78b7512b4fc8985245ab5eee637f",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-2f5279cf4c6d44f1abf0a25c7efff26c",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-0c0565922a2f41a6b73da8924a91b5f9",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-4f0bfc51a9074afc93f36c9254427bc8",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-68a583cbe6ff462094d29b1d4dab3e44",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-44bbe979429c44c48dd1b348a303878e",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-89ab379d5b344c3b84bf2876151ac9f2",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-499ed9517cee4d91a10e57df73085702",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-046373380e8c417ba5fc5334a02a95a8",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-9777fad022584babacb0e29676fc11fe",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-8036d6037fda4a0aaa3014e9a25d8f23",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-c4b19a652fdb4dd6bca5b1b8b1acd9ba",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d26b4f6628364e6b8480c92989a69029",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-8aaa68168e4c43778cb8453804511920",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-42fd96e551ae473c8953d30974a5ca34",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b9563a155357449da6bed1bfb6f0c525",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-adddf53ae3634411930dc31e55f4141b",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b600d4f9c1174f8b8d0892a082c2aec6",
+          "rank": 6,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-06a009cfc102472e87a3dc76bfd8c2df",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-66b511b854af4d05b4aee4254af4451b",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-73bdc53b05ca4c0cb93c35125fe0266d",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-f70d01a5babd48f482fc654352f4ce9d",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-6cbcd1cafafb4432b81c217fc26157d3",
+          "rank": 3,
+          "group": "蝉妈妈"
+        }
+      ],
+      "samples": [
+        "smp-6969c86e83b246d88988f3ca2cef65a1",
+        "smp-92a95ef94df34fc39161927b88da3477",
+        "smp-2b5113540bd341c39d6c82af01fcc9c4",
+        "smp-51118c86ae1f496d9562d1766fb10c76",
+        "smp-b395cc0676934064bbf0230415e0cf79",
+        "smp-74d68e72f8a144e1bfc49df9f8572a84",
+        "smp-4cfe029803c64fb0815f1caac540b257",
+        "smp-103232e4ff574a63bf41faeb76f9122e",
+        "smp-d4dfa1104e654a7bb9907627ac977807",
+        "smp-96ded755d9d24c839b672f36fbf2fbd2",
+        "smp-f4793cb1257543dba1245aa30ce09238",
+        "smp-12b5776c67ec47c4b044f848053e5366",
+        "smp-9bdec5970d5c440ab904c5767041fb0e",
+        "smp-35fe30dcd6b6495c800c565bd1d9c514",
+        "smp-14d6fc31402f46ab8d22e38b222e5a7f",
+        "smp-a5220e42efd44010a0c7301bcfe716ae",
+        "smp-08228cb37ce84573b8c1ab23c70a5189",
+        "smp-f1337a9a0b4446df927daf76b2f5a10a",
+        "smp-417d8e0194a64473a922232ea52facf2",
+        "smp-72e17e0d8d554b3fb341c0fa62de00ab",
+        "smp-5672f67205c44a38ad49af67f05ccee9",
+        "smp-f6dd9e1b4bf440f68b4041c0410aee7d",
+        "smp-2c55e03715d147d1bc4ea3f6e8391a0c",
+        "smp-bd7e7b7b9b5e4adcae4f47199a7c2fe9",
+        "smp-fde73fd2a1614a4ab546b3df176a7898",
+        "smp-001f3e9cd5cf44ea8eca17c20a90f105",
+        "smp-fd0605ec61974b7cb712b0aacfec34d5",
+        "smp-482c1ef72b104cd88c49efad3a9e9ce9",
+        "smp-566410025f3b4f3a9914791e212c4ec4",
+        "smp-51f1908d1dad492788a9a133352003eb",
+        "smp-8a0b44ad7ac244d6996cb94625376bb3",
+        "smp-8947014da4ec47a0a0e8a1b360ed9ae4",
+        "smp-e99c9899843e4a1dbc88357c91eb8a45",
+        "smp-7c2ba375b66b4604a1bf408d89b4541c",
+        "smp-f420fe3c019c4154b71a7c35e36303fb",
+        "smp-bf46587a98504371a0963646ed49d31a",
+        "smp-4963572124be43889287ed324a818687",
+        "smp-fc1c12445d944ea5881b4e62ed398dfa",
+        "smp-b6f7fc66a2d44c64a66a8cc650251af0",
+        "smp-dc27abe525204a4484f7fd9269d19496",
+        "smp-c8394e0fea3b4d94b64d0d284c49085a",
+        "smp-c56c785c6a2e4ae1a6961a44088b0615",
+        "smp-3a2bb2a5b3a443b48c8d0553e46231ae",
+        "smp-335c464741784978b4362e08febf71c1",
+        "smp-a8622d765cde4db59c439da97b77aab7",
+        "smp-65eb057a5161454ab5018315672eb882",
+        "smp-f82407783d3640ff9a8f2958263d6098",
+        "smp-d061d24a7c9444cfb503ee47b11c952a",
+        "smp-ab091533720b449eab0c43ef27c0fb87",
+        "smp-1707c6cf4e6f4c51b8798884b3fde938",
+        "smp-6651ce6d8397456ea72607ab0714fbd8",
+        "smp-2a632b8390d04403b19316c5e5b5c501",
+        "smp-c64758e8e6e4426391a61c96c8d6e982",
+        "smp-00eb47fb839f4faa9927586f02791f00",
+        "smp-a2131c63e4b74bd081eff046384f04dc",
+        "smp-d2d4c17222b74079b757c6987cdc4878",
+        "smp-9be12a6783b541ccbed9e6e96d8f7fce",
+        "smp-ab7b15aa481546a08108460b52f9ceee",
+        "smp-adb62142e48c4833b30193a2c83b47b2",
+        "smp-ed26211e133b4c3c82b122f74ab84f53",
+        "smp-5a317410efca4b8c8a20a2ebdc218cf1",
+        "smp-23940ddf0f504b0bb0593caa220d0eab",
+        "smp-323d3c385e3349faa7b88dfbf4364766",
+        "smp-5a8c9badcfe94700a25880c507630f9e",
+        "smp-575d535b8f454684a9c7fd3e9952bcfe",
+        "smp-02b2b1646e41440a8cb76fb7dc908874",
+        "smp-fb5eec9a21b34a71950bce6a2762c246",
+        "smp-458bc3be769946de8abe7e38f1f00316",
+        "smp-300b15927a374d22b9a3c30c33fb44fd",
+        "smp-32edd134acd647bb8993192ad9c47910",
+        "smp-e6e4abc2193743e2acddb8465d8a7f38",
+        "smp-b8e1c3b6d0544800afd5d7cd7adee747",
+        "smp-7a22a0610e594fcca7ec32ad24af56c1",
+        "smp-00d96b6b115f4cc9b47d86a3f608107f",
+        "smp-0c753aadf2ac45338c80457bfa199d51",
+        "smp-275d509ff9764446889178d1a75292d0",
+        "smp-8934f8ba30494829be759b8e467b7adc",
+        "smp-af7c32e8fb314ad896fdb2eac2da6621",
+        "smp-35f853be17fb489ab47409a6ca89d9dd",
+        "smp-54012ae235b94ef19b3200b4ed78c7dc",
+        "smp-d4afa89f3a424823b53df59db00647c5",
+        "smp-943177a0aeb44581a104dace96d741d8",
+        "smp-ab9dae46ca46439fa736778399b7a957",
+        "smp-5490846b771e47a482b6bfd78d6a10de",
+        "smp-bf3d5d214590478aaa9ea1de39a77cb6",
+        "smp-99342094a87e4d57b6fe5fabf8ec1b7f",
+        "smp-7c03ad354c54449890ca5d938db08aa3",
+        "smp-8c53e61cd9e64b76bc21b3795d4352cd",
+        "smp-56ef29a054ed4b4280667d941b6984f9",
+        "smp-26d8aeb4135e472581110ef536a696a4",
+        "smp-1aab8163472542b8802446feaeda00f8",
+        "smp-397a5fa8313046fe81ef9084ad32d21f",
+        "smp-3261285a3b2b4ec4922552c2aa4b52d8",
+        "smp-205965cba62a401895dce953db91f511",
+        "smp-fb83fe5af9ee43f5a3041bd45d848ad3",
+        "smp-6830495a6b1945f188d8112a6b8498f9",
+        "smp-d5ddb8f8baa0474ba70c97f8fa9b2bc0",
+        "smp-f1485c88cec3473fbe61fce82fdb1e55",
+        "smp-d63f445255b74722bf40bc22cd5a7a73",
+        "smp-96df1014018649d09543bfcf3dc881fa",
+        "smp-2c614907456c4a0ab9a6cf648aa78d8b",
+        "smp-eadf579e5b28424f9ae1301527e67758",
+        "smp-383b1a74c8d049fa83a6c2497cac91f1",
+        "smp-3b75437672804603ab58f16589034e7e",
+        "smp-5de81cd2430348ffa76c1f8e17d4e15c",
+        "smp-1a2dac0405374180a5455d061b08508a",
+        "smp-3a5ae68da12841879af7a5c3e4666be3",
+        "smp-13049cc639d74fd89b9a6e67ab1171eb",
+        "smp-a8c913bc32ef440cb188a54a4dea74c7",
+        "smp-d5109c6164584bef8a9ee11507e8bf78",
+        "smp-51738a0ea1c04905a89442558e64d649",
+        "smp-e01826a79c5546e89e61702564b2b06b",
+        "smp-5251b80d78f0406ea2b6f23d6dfe8b87",
+        "smp-d617b20804d64ac1bfa55cfeb5fb8ccc",
+        "smp-aa025861fcf047b2bdccbdcccea60697",
+        "smp-df04de31b7af41fd82216959f5b63641",
+        "smp-ba7afe3ab2e041caa51bb78e576d9903",
+        "smp-13bbf15044764909b3f5113944d7cb71",
+        "smp-e19c0123290d43f790625ddef5e1646d",
+        "smp-39338d49086c462aa326b76209de9284",
+        "smp-138e02db2b434a3f9df647d37abf75bc",
+        "smp-cb33955607924cf6889d56cf8984f9cc",
+        "smp-4d8617382a9849918f5b21dee84769d7",
+        "smp-453f9417cc0d4a979af49e967e81fdbb",
+        "smp-5ac37afd4336467f872a776b5e67fa6c",
+        "smp-a10ae79f480f4c2ea6bf9a0e89d0731b",
+        "smp-21ed7564c5af4d8c95f84811186626bd",
+        "smp-a079506302534e74a0aa889ede3e1a58",
+        "smp-a5d976bdd3f04f7e932aa7c92558f04b",
+        "smp-06af3da78450472bb15697eca39a0807",
+        "smp-dc85803538524add82b0b7e59c48b823",
+        "smp-443e458ada0243dbb4a7b5a8e2725e4b",
+        "smp-7cfa9dc1c15a4a899b02da39c2a5a843",
+        "smp-442edda8a2c7456fa2889d64d2358869",
+        "smp-0f2c199c900e49008763eff576f9fb5a",
+        "smp-b0161663aabf4339998a57922dd3d2c5",
+        "smp-2a90fb0b04cd41b58246e529ecc40599",
+        "smp-b75e84f7069a4cdf9c36f160fd797adb",
+        "smp-8d677d65d1a84761a5fec2ce35053f39",
+        "smp-536d142526f54bfc8be6032d3b9f2a94",
+        "smp-558b78b7512b4fc8985245ab5eee637f",
+        "smp-2f5279cf4c6d44f1abf0a25c7efff26c",
+        "smp-0c0565922a2f41a6b73da8924a91b5f9",
+        "smp-4f0bfc51a9074afc93f36c9254427bc8",
+        "smp-68a583cbe6ff462094d29b1d4dab3e44",
+        "smp-44bbe979429c44c48dd1b348a303878e",
+        "smp-89ab379d5b344c3b84bf2876151ac9f2",
+        "smp-499ed9517cee4d91a10e57df73085702",
+        "smp-046373380e8c417ba5fc5334a02a95a8",
+        "smp-9777fad022584babacb0e29676fc11fe",
+        "smp-8036d6037fda4a0aaa3014e9a25d8f23",
+        "smp-c4b19a652fdb4dd6bca5b1b8b1acd9ba",
+        "smp-d26b4f6628364e6b8480c92989a69029",
+        "smp-8aaa68168e4c43778cb8453804511920",
+        "smp-42fd96e551ae473c8953d30974a5ca34",
+        "smp-b9563a155357449da6bed1bfb6f0c525",
+        "smp-adddf53ae3634411930dc31e55f4141b",
+        "smp-b600d4f9c1174f8b8d0892a082c2aec6",
+        "smp-06a009cfc102472e87a3dc76bfd8c2df",
+        "smp-66b511b854af4d05b4aee4254af4451b",
+        "smp-73bdc53b05ca4c0cb93c35125fe0266d",
+        "smp-f70d01a5babd48f482fc654352f4ce9d",
+        "smp-6cbcd1cafafb4432b81c217fc26157d3"
+      ],
+      "mention_rate": 30.19,
+      "average_rank": 2.63
+    },
+    {
+      "brand": "蝉妈妈·创意",
+      "group": "蝉妈妈",
+      "mention_count": 151,
+      "answer_count": 151,
+      "first_count": 89,
+      "top3_count": 146,
+      "rank_sum": 230,
+      "categories": [
+        "案例/效果问题",
+        "对比决策问题",
+        "品牌产品问题",
+        "品类认知问题",
+        "业务场景问题",
+        "价格/开通问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "smp-6969c86e83b246d88988f3ca2cef65a1",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-92a95ef94df34fc39161927b88da3477",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b47c47bc743f4a8b8bed6d60460b78ef",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-4852e6852ef24e37bc796f598139180f",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-6e2e22d6c5ce495b803bc0d77e72e923",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-51118c86ae1f496d9562d1766fb10c76",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b395cc0676934064bbf0230415e0cf79",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-74d68e72f8a144e1bfc49df9f8572a84",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-103232e4ff574a63bf41faeb76f9122e",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d4dfa1104e654a7bb9907627ac977807",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a8c079e86b4c45a08f771641507b026a",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-ed87540a220a469ba79e30dadcaab84c",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-9bdec5970d5c440ab904c5767041fb0e",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-2b171c2555ec449d9c8c9eaf260cbdd8",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-35fe30dcd6b6495c800c565bd1d9c514",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-14d6fc31402f46ab8d22e38b222e5a7f",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b16ee7d9f8a94980bec92f62117ff50c",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-881791dc13624371b55c244cb58b18d8",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b83cb117d91b4929a549feaf45893102",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-08228cb37ce84573b8c1ab23c70a5189",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-f1337a9a0b4446df927daf76b2f5a10a",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-417d8e0194a64473a922232ea52facf2",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-72e17e0d8d554b3fb341c0fa62de00ab",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-f6dd9e1b4bf440f68b4041c0410aee7d",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-001f3e9cd5cf44ea8eca17c20a90f105",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-469856bc5ed04315be93e87f3d0d3c99",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-fd0605ec61974b7cb712b0aacfec34d5",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-482c1ef72b104cd88c49efad3a9e9ce9",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-8c83fd70b12e4d1aae597616983e7e72",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-70129fdc1cbd42dfa6b3ddc75fc26b23",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-51f1908d1dad492788a9a133352003eb",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-8a0b44ad7ac244d6996cb94625376bb3",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-5bdbfe13dc164948834e4b67a860e202",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-27a768a0f65e4619a61725c11552d2b3",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-7c2ba375b66b4604a1bf408d89b4541c",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-dc27abe525204a4484f7fd9269d19496",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-8edae3f3ee5a4ce8bbdf044cf99e9f60",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-c8394e0fea3b4d94b64d0d284c49085a",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-59e3d1ae49f9444c8068f5cbcdcfa8c4",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-ae77d19d7d554780ab982c4774006f17",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-3cdfeaa1c4fa4809ac8c2c5222694a6a",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-3a2bb2a5b3a443b48c8d0553e46231ae",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a8622d765cde4db59c439da97b77aab7",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b498b19d591f4a378ff58af54d0525e3",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-65eb057a5161454ab5018315672eb882",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-f82407783d3640ff9a8f2958263d6098",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-ab091533720b449eab0c43ef27c0fb87",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-32b161f82ded465f9c90abc30410b5ee",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-2a632b8390d04403b19316c5e5b5c501",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-c64758e8e6e4426391a61c96c8d6e982",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-00eb47fb839f4faa9927586f02791f00",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-3daec9c2400041d686b9e5b2f4461922",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-2aa862db656e42508913673416263606",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-fde566b161fc4cc8a4ae6f2a1221843c",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d2d4c17222b74079b757c6987cdc4878",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-302bbeea62594c3e89b5b92856dce8b9",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-5a317410efca4b8c8a20a2ebdc218cf1",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-e787b85891ce4e79830d6b844093ba8d",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-459d9756f5b842c78a3a95fc73c5d8af",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-575d535b8f454684a9c7fd3e9952bcfe",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-1c71d96967294cda9015c916f1e35d59",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b0b6830415534de59f95a04834704620",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-02b2b1646e41440a8cb76fb7dc908874",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-6b87eb5a1fe24b2486c274dd67895dd3",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-458bc3be769946de8abe7e38f1f00316",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-300b15927a374d22b9a3c30c33fb44fd",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-32edd134acd647bb8993192ad9c47910",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-e6e4abc2193743e2acddb8465d8a7f38",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-7a22a0610e594fcca7ec32ad24af56c1",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-7e01ed84cd6645c28526abc72e7690b9",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-8934f8ba30494829be759b8e467b7adc",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-af7c32e8fb314ad896fdb2eac2da6621",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-9e9ffeaf387a4a2988af30a73ea176cb",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-fac73ac53a0044c481f5b6e3062cfc2e",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-54012ae235b94ef19b3200b4ed78c7dc",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d4afa89f3a424823b53df59db00647c5",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a1c730d95820473fa79b284a562a5e96",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-0e72ab6a065b4f03b552b442d9b4020b",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-ab9dae46ca46439fa736778399b7a957",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a0ecfb01fe544190bb4774a130337c12",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-5490846b771e47a482b6bfd78d6a10de",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-bb4f9eaab34d41489750594a78e12cb3",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-37fe2f78c3cf47808d0fe35ad2e143f3",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-397a5fa8313046fe81ef9084ad32d21f",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-3261285a3b2b4ec4922552c2aa4b52d8",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-205965cba62a401895dce953db91f511",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-db4274bbf2a5463996c5c0f44962ea29",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-7cdc4518c6d6465bb08c51e8dcf9957b",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-ba12a6be78b0429890b210b9667a7e46",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-624c51820c1e499db99caf36d5ee0be4",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d5ddb8f8baa0474ba70c97f8fa9b2bc0",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-f1485c88cec3473fbe61fce82fdb1e55",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d63f445255b74722bf40bc22cd5a7a73",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-96df1014018649d09543bfcf3dc881fa",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-2c614907456c4a0ab9a6cf648aa78d8b",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-eadf579e5b28424f9ae1301527e67758",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-383b1a74c8d049fa83a6c2497cac91f1",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-eefcd0dde33f400680dcfba20a7b0374",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-3a5ae68da12841879af7a5c3e4666be3",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-13049cc639d74fd89b9a6e67ab1171eb",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-9860b34eb50e42fea230099ee617613e",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-6d553902e0594285b11a8dc78d731384",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-51738a0ea1c04905a89442558e64d649",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-e01826a79c5546e89e61702564b2b06b",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-5251b80d78f0406ea2b6f23d6dfe8b87",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-4a4028e8963e436eaa3fd84d7c5ca3ee",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-df04de31b7af41fd82216959f5b63641",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-bb442a2cfebf4543983a7b41ce30d1cb",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-138e02db2b434a3f9df647d37abf75bc",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-c02f91a9756a4973b692ed7bbbc83067",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-cb33955607924cf6889d56cf8984f9cc",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-9a30ec66f61049c186e15a0245a8cb09",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-4d8617382a9849918f5b21dee84769d7",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-453f9417cc0d4a979af49e967e81fdbb",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-5ac37afd4336467f872a776b5e67fa6c",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-21ed7564c5af4d8c95f84811186626bd",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a079506302534e74a0aa889ede3e1a58",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a5d976bdd3f04f7e932aa7c92558f04b",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-06af3da78450472bb15697eca39a0807",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-dc85803538524add82b0b7e59c48b823",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-443e458ada0243dbb4a7b5a8e2725e4b",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-3b777dba47fa4e0ca552331e1d7842b1",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b0161663aabf4339998a57922dd3d2c5",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-2a90fb0b04cd41b58246e529ecc40599",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-9ce9663a74d54578baac170c1efa2149",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-9aa2bfac9fa548b3a94a28d397a9f08f",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-8d677d65d1a84761a5fec2ce35053f39",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-1177722f0d5c41098a3cc5aa7a685a35",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-bf6969fd558642ab8138d0c1ba8b513a",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-e404e90da163472a9692c96394754f25",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-2f5279cf4c6d44f1abf0a25c7efff26c",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-89ab379d5b344c3b84bf2876151ac9f2",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-499ed9517cee4d91a10e57df73085702",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-f7cd78cfa5b8497cb73b66165101be8e",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-046373380e8c417ba5fc5334a02a95a8",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-cc18a8b000cd401088f94751096f9b98",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-9777fad022584babacb0e29676fc11fe",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b7aee1b139e44dacbf897869ff4e4531",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-439a41e874274be1965bccb68bc5ee53",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d5b70d6ab9774a2a8adaa032b7dd1247",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-c4b19a652fdb4dd6bca5b1b8b1acd9ba",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-7f882205b6f84dc3b208d7c43a607ed1",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d26b4f6628364e6b8480c92989a69029",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-8aaa68168e4c43778cb8453804511920",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b9563a155357449da6bed1bfb6f0c525",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-090a51ab56d64af498a162279aff8d76",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-73bdc53b05ca4c0cb93c35125fe0266d",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-f70d01a5babd48f482fc654352f4ce9d",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-0b063bf2d9ca4ce79da7cc5413e64853",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-ab33fd5d1d7a469fbdbfc64461905c0b",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-6cbcd1cafafb4432b81c217fc26157d3",
+          "rank": 2,
+          "group": "蝉妈妈"
+        }
+      ],
+      "samples": [
+        "smp-6969c86e83b246d88988f3ca2cef65a1",
+        "smp-92a95ef94df34fc39161927b88da3477",
+        "smp-b47c47bc743f4a8b8bed6d60460b78ef",
+        "smp-4852e6852ef24e37bc796f598139180f",
+        "smp-6e2e22d6c5ce495b803bc0d77e72e923",
+        "smp-51118c86ae1f496d9562d1766fb10c76",
+        "smp-b395cc0676934064bbf0230415e0cf79",
+        "smp-74d68e72f8a144e1bfc49df9f8572a84",
+        "smp-103232e4ff574a63bf41faeb76f9122e",
+        "smp-d4dfa1104e654a7bb9907627ac977807",
+        "smp-a8c079e86b4c45a08f771641507b026a",
+        "smp-ed87540a220a469ba79e30dadcaab84c",
+        "smp-9bdec5970d5c440ab904c5767041fb0e",
+        "smp-2b171c2555ec449d9c8c9eaf260cbdd8",
+        "smp-35fe30dcd6b6495c800c565bd1d9c514",
+        "smp-14d6fc31402f46ab8d22e38b222e5a7f",
+        "smp-b16ee7d9f8a94980bec92f62117ff50c",
+        "smp-881791dc13624371b55c244cb58b18d8",
+        "smp-b83cb117d91b4929a549feaf45893102",
+        "smp-08228cb37ce84573b8c1ab23c70a5189",
+        "smp-f1337a9a0b4446df927daf76b2f5a10a",
+        "smp-417d8e0194a64473a922232ea52facf2",
+        "smp-72e17e0d8d554b3fb341c0fa62de00ab",
+        "smp-f6dd9e1b4bf440f68b4041c0410aee7d",
+        "smp-001f3e9cd5cf44ea8eca17c20a90f105",
+        "smp-469856bc5ed04315be93e87f3d0d3c99",
+        "smp-fd0605ec61974b7cb712b0aacfec34d5",
+        "smp-482c1ef72b104cd88c49efad3a9e9ce9",
+        "smp-8c83fd70b12e4d1aae597616983e7e72",
+        "smp-70129fdc1cbd42dfa6b3ddc75fc26b23",
+        "smp-51f1908d1dad492788a9a133352003eb",
+        "smp-8a0b44ad7ac244d6996cb94625376bb3",
+        "smp-5bdbfe13dc164948834e4b67a860e202",
+        "smp-27a768a0f65e4619a61725c11552d2b3",
+        "smp-7c2ba375b66b4604a1bf408d89b4541c",
+        "smp-dc27abe525204a4484f7fd9269d19496",
+        "smp-8edae3f3ee5a4ce8bbdf044cf99e9f60",
+        "smp-c8394e0fea3b4d94b64d0d284c49085a",
+        "smp-59e3d1ae49f9444c8068f5cbcdcfa8c4",
+        "smp-ae77d19d7d554780ab982c4774006f17",
+        "smp-3cdfeaa1c4fa4809ac8c2c5222694a6a",
+        "smp-3a2bb2a5b3a443b48c8d0553e46231ae",
+        "smp-a8622d765cde4db59c439da97b77aab7",
+        "smp-b498b19d591f4a378ff58af54d0525e3",
+        "smp-65eb057a5161454ab5018315672eb882",
+        "smp-f82407783d3640ff9a8f2958263d6098",
+        "smp-ab091533720b449eab0c43ef27c0fb87",
+        "smp-32b161f82ded465f9c90abc30410b5ee",
+        "smp-2a632b8390d04403b19316c5e5b5c501",
+        "smp-c64758e8e6e4426391a61c96c8d6e982",
+        "smp-00eb47fb839f4faa9927586f02791f00",
+        "smp-3daec9c2400041d686b9e5b2f4461922",
+        "smp-2aa862db656e42508913673416263606",
+        "smp-fde566b161fc4cc8a4ae6f2a1221843c",
+        "smp-d2d4c17222b74079b757c6987cdc4878",
+        "smp-302bbeea62594c3e89b5b92856dce8b9",
+        "smp-5a317410efca4b8c8a20a2ebdc218cf1",
+        "smp-e787b85891ce4e79830d6b844093ba8d",
+        "smp-459d9756f5b842c78a3a95fc73c5d8af",
+        "smp-575d535b8f454684a9c7fd3e9952bcfe",
+        "smp-1c71d96967294cda9015c916f1e35d59",
+        "smp-b0b6830415534de59f95a04834704620",
+        "smp-02b2b1646e41440a8cb76fb7dc908874",
+        "smp-6b87eb5a1fe24b2486c274dd67895dd3",
+        "smp-458bc3be769946de8abe7e38f1f00316",
+        "smp-300b15927a374d22b9a3c30c33fb44fd",
+        "smp-32edd134acd647bb8993192ad9c47910",
+        "smp-e6e4abc2193743e2acddb8465d8a7f38",
+        "smp-7a22a0610e594fcca7ec32ad24af56c1",
+        "smp-7e01ed84cd6645c28526abc72e7690b9",
+        "smp-8934f8ba30494829be759b8e467b7adc",
+        "smp-af7c32e8fb314ad896fdb2eac2da6621",
+        "smp-9e9ffeaf387a4a2988af30a73ea176cb",
+        "smp-fac73ac53a0044c481f5b6e3062cfc2e",
+        "smp-54012ae235b94ef19b3200b4ed78c7dc",
+        "smp-d4afa89f3a424823b53df59db00647c5",
+        "smp-a1c730d95820473fa79b284a562a5e96",
+        "smp-0e72ab6a065b4f03b552b442d9b4020b",
+        "smp-ab9dae46ca46439fa736778399b7a957",
+        "smp-a0ecfb01fe544190bb4774a130337c12",
+        "smp-5490846b771e47a482b6bfd78d6a10de",
+        "smp-bb4f9eaab34d41489750594a78e12cb3",
+        "smp-37fe2f78c3cf47808d0fe35ad2e143f3",
+        "smp-397a5fa8313046fe81ef9084ad32d21f",
+        "smp-3261285a3b2b4ec4922552c2aa4b52d8",
+        "smp-205965cba62a401895dce953db91f511",
+        "smp-db4274bbf2a5463996c5c0f44962ea29",
+        "smp-7cdc4518c6d6465bb08c51e8dcf9957b",
+        "smp-ba12a6be78b0429890b210b9667a7e46",
+        "smp-624c51820c1e499db99caf36d5ee0be4",
+        "smp-d5ddb8f8baa0474ba70c97f8fa9b2bc0",
+        "smp-f1485c88cec3473fbe61fce82fdb1e55",
+        "smp-d63f445255b74722bf40bc22cd5a7a73",
+        "smp-96df1014018649d09543bfcf3dc881fa",
+        "smp-2c614907456c4a0ab9a6cf648aa78d8b",
+        "smp-eadf579e5b28424f9ae1301527e67758",
+        "smp-383b1a74c8d049fa83a6c2497cac91f1",
+        "smp-eefcd0dde33f400680dcfba20a7b0374",
+        "smp-3a5ae68da12841879af7a5c3e4666be3",
+        "smp-13049cc639d74fd89b9a6e67ab1171eb",
+        "smp-9860b34eb50e42fea230099ee617613e",
+        "smp-6d553902e0594285b11a8dc78d731384",
+        "smp-51738a0ea1c04905a89442558e64d649",
+        "smp-e01826a79c5546e89e61702564b2b06b",
+        "smp-5251b80d78f0406ea2b6f23d6dfe8b87",
+        "smp-4a4028e8963e436eaa3fd84d7c5ca3ee",
+        "smp-df04de31b7af41fd82216959f5b63641",
+        "smp-bb442a2cfebf4543983a7b41ce30d1cb",
+        "smp-138e02db2b434a3f9df647d37abf75bc",
+        "smp-c02f91a9756a4973b692ed7bbbc83067",
+        "smp-cb33955607924cf6889d56cf8984f9cc",
+        "smp-9a30ec66f61049c186e15a0245a8cb09",
+        "smp-4d8617382a9849918f5b21dee84769d7",
+        "smp-453f9417cc0d4a979af49e967e81fdbb",
+        "smp-5ac37afd4336467f872a776b5e67fa6c",
+        "smp-21ed7564c5af4d8c95f84811186626bd",
+        "smp-a079506302534e74a0aa889ede3e1a58",
+        "smp-a5d976bdd3f04f7e932aa7c92558f04b",
+        "smp-06af3da78450472bb15697eca39a0807",
+        "smp-dc85803538524add82b0b7e59c48b823",
+        "smp-443e458ada0243dbb4a7b5a8e2725e4b",
+        "smp-3b777dba47fa4e0ca552331e1d7842b1",
+        "smp-b0161663aabf4339998a57922dd3d2c5",
+        "smp-2a90fb0b04cd41b58246e529ecc40599",
+        "smp-9ce9663a74d54578baac170c1efa2149",
+        "smp-9aa2bfac9fa548b3a94a28d397a9f08f",
+        "smp-8d677d65d1a84761a5fec2ce35053f39",
+        "smp-1177722f0d5c41098a3cc5aa7a685a35",
+        "smp-bf6969fd558642ab8138d0c1ba8b513a",
+        "smp-e404e90da163472a9692c96394754f25",
+        "smp-2f5279cf4c6d44f1abf0a25c7efff26c",
+        "smp-89ab379d5b344c3b84bf2876151ac9f2",
+        "smp-499ed9517cee4d91a10e57df73085702",
+        "smp-f7cd78cfa5b8497cb73b66165101be8e",
+        "smp-046373380e8c417ba5fc5334a02a95a8",
+        "smp-cc18a8b000cd401088f94751096f9b98",
+        "smp-9777fad022584babacb0e29676fc11fe",
+        "smp-b7aee1b139e44dacbf897869ff4e4531",
+        "smp-439a41e874274be1965bccb68bc5ee53",
+        "smp-d5b70d6ab9774a2a8adaa032b7dd1247",
+        "smp-c4b19a652fdb4dd6bca5b1b8b1acd9ba",
+        "smp-7f882205b6f84dc3b208d7c43a607ed1",
+        "smp-d26b4f6628364e6b8480c92989a69029",
+        "smp-8aaa68168e4c43778cb8453804511920",
+        "smp-b9563a155357449da6bed1bfb6f0c525",
+        "smp-090a51ab56d64af498a162279aff8d76",
+        "smp-73bdc53b05ca4c0cb93c35125fe0266d",
+        "smp-f70d01a5babd48f482fc654352f4ce9d",
+        "smp-0b063bf2d9ca4ce79da7cc5413e64853",
+        "smp-ab33fd5d1d7a469fbdbfc64461905c0b",
+        "smp-6cbcd1cafafb4432b81c217fc26157d3"
+      ],
+      "mention_rate": 27.96,
+      "average_rank": 1.52
+    },
+    {
+      "brand": "剪映",
+      "group": "第三方竞品",
+      "mention_count": 141,
+      "answer_count": 141,
+      "first_count": 97,
+      "top3_count": 129,
+      "rank_sum": 229,
+      "categories": [
+        "品牌产品问题",
+        "对比决策问题",
+        "品类认知问题",
+        "业务场景问题",
+        "风险/限制问题",
+        "案例/效果问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "smp-4852e6852ef24e37bc796f598139180f",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-2b5113540bd341c39d6c82af01fcc9c4",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-cb6a31ba1fca40eba7925beaeddddf8d",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-c92f4323a6564e8492668df8749013ba",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-6f7f24f628ba4a769af800ec1bc83d59",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-75471c088a82444fa086abf61ceedf80",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-e8aef65916694878816f683df8f6e133",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-8a73cca44fba4c2a9699e40f5953560c",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-f81dd0d43ed04c02850b49d5d8432fe3",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-b65cab02e6ef45208b8a9b349cd6fb2b",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-097c96afc8e14340918b84a4d30ab0c9",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-2d0163e1f42e46d98f2d4c83fa881c31",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-d224341ada644027b457efb388c7cc9d",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-3d7b35ecbdbf477c9811149819fc1305",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-08228cb37ce84573b8c1ab23c70a5189",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-35ca3c15c01a4c4cacb27bcd79b14a00",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-2c55e03715d147d1bc4ea3f6e8391a0c",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-bd7e7b7b9b5e4adcae4f47199a7c2fe9",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-adc439606c1c4a8b8a5a9c8b72cf6993",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-fde73fd2a1614a4ab546b3df176a7898",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-0aa71c667d44458ca38a171f509996e0",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-ce468d14dc9c4fc5b042d16d58d4bc76",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-70129fdc1cbd42dfa6b3ddc75fc26b23",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-566410025f3b4f3a9914791e212c4ec4",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-e99c9899843e4a1dbc88357c91eb8a45",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5105701c0b65408f88b466cb5c8be44f",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-075f6b3002804551a7752ddce8d65b08",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-cd10d9124583438cb1b456342397af3e",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-19d563d952134df09ad0170620b8a17a",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-08a7bba44c01418492092d1ba197f366",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-03b4b19e0a06475b9b2be5b0047a9b59",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-89f4382b4e464d3db997e528d535a91c",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-413b2803e4b346cfae1cd0238b82967c",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-dbd3a79c57b04737a865926c7a154e7e",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-0439f2fa5de945fc840fc69eff74f985",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-6aaf8c13723943328cc827c386469fdb",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-e8e8b979ff794fefbb15f188750ec8a9",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-a8622d765cde4db59c439da97b77aab7",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-d7a5e1efc2f44105bbf604bdd923b5dd",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-20f33144a3be44708cd20305d225e92a",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-1707c6cf4e6f4c51b8798884b3fde938",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-27912e9a748c4ea38c9c1aee7bceb2da",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-19f8392e97f0478dba5ea2bdfbb0fc0d",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-1582724c6cfc4f719cb2f318c0c850c6",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-3daec9c2400041d686b9e5b2f4461922",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-a2131c63e4b74bd081eff046384f04dc",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-7569fdf0f02a4e9c83c45d305c35e27e",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-ed26211e133b4c3c82b122f74ab84f53",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-54b5fa6c983e4133a59fe24e1e173d5f",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-9002dc595100439fae2979c092706086",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-345f46d463af404fb534b7d33caecc52",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-bdfca38ed2424a36b25c516ae6316334",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-fb5eec9a21b34a71950bce6a2762c246",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-4dad1d3121d64115ad85921ec24ec5ff",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-2716342e431a4cd4b6a2208c2485a358",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-cdefd863ce564157a912e05aec463e74",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-be8f366b629b4a3598713e3b5bd7cf76",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5502334b346d435dbd79f83b2367237f",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-458bc3be769946de8abe7e38f1f00316",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-ad75e1890ddd450a8a67f492308a5355",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-00d96b6b115f4cc9b47d86a3f608107f",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-0c753aadf2ac45338c80457bfa199d51",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-d5d28cdea8104199b6fa0b6b4d23fc20",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-9bc3f2f1d7a34f58ac18eb05af3e5b43",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-8712b9ce0a90460e9c0a18da40af97a5",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-23d1dd64da694520a272ec312d991dd5",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-39a207c45032493a92ad63b267870352",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-32e3e6abea9045d6bf13559e2ee28463",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-0e72ab6a065b4f03b552b442d9b4020b",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-943177a0aeb44581a104dace96d741d8",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-3b6641325e85400a80d9c1ff6c47a18f",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-e2402f893086448b81e4128b50e7d08b",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-8aef39f076764aaeac41917b1e886c30",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5838136255714a9386958e1329b58da5",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-a77f3dcce90440148e90e827b819d740",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-6830495a6b1945f188d8112a6b8498f9",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-4da92dfdad63437b8c3752d359a19724",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-ce05bf0405cc43bca2f0ddec0ba9ac1f",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-aa7daa5027254e838ad0907a49b6591b",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-798373b06b684f2293e0cc10935f0851",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-6e3fcbbdbb3c4331a9ccf3f8f475dc8c",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-f1485c88cec3473fbe61fce82fdb1e55",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-72420a328dbe45d1ac8fbd4a108d7bdd",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-109154482c284d55be286c5303f2bc16",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-3b75437672804603ab58f16589034e7e",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5de81cd2430348ffa76c1f8e17d4e15c",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-63c2db46230b48aa8dcdb354d6a115bc",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-cd729566117b4a34bcdddfdc6835c73f",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-4e598ff86a9e486a9bd6bd575713dfcf",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-6d553902e0594285b11a8dc78d731384",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-d5109c6164584bef8a9ee11507e8bf78",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-aa025861fcf047b2bdccbdcccea60697",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-6ace455555e14e0790d188f2903c99eb",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-3bd931690fea4684b44559ce7ab3ac8b",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-b1bd8f1d80af4650adc8cbf6fc63e5f8",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-386091386b9248f8bb995be843ce01df",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-351584a1fec7470e9592b3f6f1192f73",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-163ea7291383473e916e411fc45b8ae2",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-cb69f9c3b33b475bb0eb7d3ac6fc12cf",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-b2f5e6d83eac485993b1196750860dcd",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-a10ae79f480f4c2ea6bf9a0e89d0731b",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-8c3d78f6de4741b0880148894d01208d",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-2a70302f8a4b4a8fb1ac9a0c5429991a",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-abe36b0ca14c4357a138c6251566e6e7",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-c87e68538b314bd399f773440ba8b0c5",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-21ed7564c5af4d8c95f84811186626bd",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-3821ff2296ab413f926c9ee1cb926104",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-1876ebeda26640c28baab1cb8d931791",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-7cfa9dc1c15a4a899b02da39c2a5a843",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-6156e0c3ca814bf884156c8d09bde70b",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-442edda8a2c7456fa2889d64d2358869",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-981ceb0fcbcb44c8bd4e5650264ef268",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-8739d3f6c31349cfad512e2ddb9c200f",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-9ce9663a74d54578baac170c1efa2149",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-9aa2bfac9fa548b3a94a28d397a9f08f",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-b75e84f7069a4cdf9c36f160fd797adb",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-7697deb937b44df3acbd59930a05a22a",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-f24887f5cfc9493c8f95d27f38dfe639",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-13061d0bc55e4dc3b7e65ce2c43c81b9",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-4f90a33f69794c33860ca797b759ce0e",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-56835368772644e88a9cf2c586276178",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-21d3a98938c348caa5527264bfe4c48e",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-9f7633e74594443f815bbedeeed08a35",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-6b70569a75124da082654b08948a1ab2",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-4485bef2f4fd42a88e24a2a3a1c1d118",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-d5b70d6ab9774a2a8adaa032b7dd1247",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-c1edb7f75f6641d7a698a513e8cf08dd",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-941b3ba04bcb4f8aa3490e6975ad2574",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-353f34a933734e4e8486d46b40d996bd",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-65c302dd4e774e3d97c0ee496534b588",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-c4b19a652fdb4dd6bca5b1b8b1acd9ba",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-c0c61a7a8a914e2b963d6be35ccc3ab9",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-adddf53ae3634411930dc31e55f4141b",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-b600d4f9c1174f8b8d0892a082c2aec6",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-927bdd92184e4d8db8a21c2e9668a4c8",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-06a009cfc102472e87a3dc76bfd8c2df",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-1a92be8b647c46f0ae4b142ef4e07da8",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-81ef6d0f2f3b4a3e95d0b7d36459de03",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-83c060f6e64140ec9b57f2c0ed148d5a",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-425949cd4ad345da86d37beb46915755",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-361f90925fdb47de9a1ffe00340b5c16",
+          "rank": 1,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "smp-4852e6852ef24e37bc796f598139180f",
+        "smp-2b5113540bd341c39d6c82af01fcc9c4",
+        "smp-cb6a31ba1fca40eba7925beaeddddf8d",
+        "smp-c92f4323a6564e8492668df8749013ba",
+        "smp-6f7f24f628ba4a769af800ec1bc83d59",
+        "smp-75471c088a82444fa086abf61ceedf80",
+        "smp-e8aef65916694878816f683df8f6e133",
+        "smp-8a73cca44fba4c2a9699e40f5953560c",
+        "smp-f81dd0d43ed04c02850b49d5d8432fe3",
+        "smp-b65cab02e6ef45208b8a9b349cd6fb2b",
+        "smp-097c96afc8e14340918b84a4d30ab0c9",
+        "smp-2d0163e1f42e46d98f2d4c83fa881c31",
+        "smp-d224341ada644027b457efb388c7cc9d",
+        "smp-3d7b35ecbdbf477c9811149819fc1305",
+        "smp-08228cb37ce84573b8c1ab23c70a5189",
+        "smp-35ca3c15c01a4c4cacb27bcd79b14a00",
+        "smp-2c55e03715d147d1bc4ea3f6e8391a0c",
+        "smp-bd7e7b7b9b5e4adcae4f47199a7c2fe9",
+        "smp-adc439606c1c4a8b8a5a9c8b72cf6993",
+        "smp-fde73fd2a1614a4ab546b3df176a7898",
+        "smp-0aa71c667d44458ca38a171f509996e0",
+        "smp-ce468d14dc9c4fc5b042d16d58d4bc76",
+        "smp-70129fdc1cbd42dfa6b3ddc75fc26b23",
+        "smp-566410025f3b4f3a9914791e212c4ec4",
+        "smp-e99c9899843e4a1dbc88357c91eb8a45",
+        "smp-5105701c0b65408f88b466cb5c8be44f",
+        "smp-075f6b3002804551a7752ddce8d65b08",
+        "smp-cd10d9124583438cb1b456342397af3e",
+        "smp-19d563d952134df09ad0170620b8a17a",
+        "smp-08a7bba44c01418492092d1ba197f366",
+        "smp-03b4b19e0a06475b9b2be5b0047a9b59",
+        "smp-89f4382b4e464d3db997e528d535a91c",
+        "smp-413b2803e4b346cfae1cd0238b82967c",
+        "smp-dbd3a79c57b04737a865926c7a154e7e",
+        "smp-0439f2fa5de945fc840fc69eff74f985",
+        "smp-6aaf8c13723943328cc827c386469fdb",
+        "smp-e8e8b979ff794fefbb15f188750ec8a9",
+        "smp-a8622d765cde4db59c439da97b77aab7",
+        "smp-d7a5e1efc2f44105bbf604bdd923b5dd",
+        "smp-20f33144a3be44708cd20305d225e92a",
+        "smp-1707c6cf4e6f4c51b8798884b3fde938",
+        "smp-27912e9a748c4ea38c9c1aee7bceb2da",
+        "smp-19f8392e97f0478dba5ea2bdfbb0fc0d",
+        "smp-1582724c6cfc4f719cb2f318c0c850c6",
+        "smp-3daec9c2400041d686b9e5b2f4461922",
+        "smp-a2131c63e4b74bd081eff046384f04dc",
+        "smp-7569fdf0f02a4e9c83c45d305c35e27e",
+        "smp-ed26211e133b4c3c82b122f74ab84f53",
+        "smp-54b5fa6c983e4133a59fe24e1e173d5f",
+        "smp-9002dc595100439fae2979c092706086",
+        "smp-345f46d463af404fb534b7d33caecc52",
+        "smp-bdfca38ed2424a36b25c516ae6316334",
+        "smp-fb5eec9a21b34a71950bce6a2762c246",
+        "smp-4dad1d3121d64115ad85921ec24ec5ff",
+        "smp-2716342e431a4cd4b6a2208c2485a358",
+        "smp-cdefd863ce564157a912e05aec463e74",
+        "smp-be8f366b629b4a3598713e3b5bd7cf76",
+        "smp-5502334b346d435dbd79f83b2367237f",
+        "smp-458bc3be769946de8abe7e38f1f00316",
+        "smp-ad75e1890ddd450a8a67f492308a5355",
+        "smp-00d96b6b115f4cc9b47d86a3f608107f",
+        "smp-0c753aadf2ac45338c80457bfa199d51",
+        "smp-d5d28cdea8104199b6fa0b6b4d23fc20",
+        "smp-9bc3f2f1d7a34f58ac18eb05af3e5b43",
+        "smp-8712b9ce0a90460e9c0a18da40af97a5",
+        "smp-23d1dd64da694520a272ec312d991dd5",
+        "smp-39a207c45032493a92ad63b267870352",
+        "smp-32e3e6abea9045d6bf13559e2ee28463",
+        "smp-0e72ab6a065b4f03b552b442d9b4020b",
+        "smp-943177a0aeb44581a104dace96d741d8",
+        "smp-3b6641325e85400a80d9c1ff6c47a18f",
+        "smp-e2402f893086448b81e4128b50e7d08b",
+        "smp-8aef39f076764aaeac41917b1e886c30",
+        "smp-5838136255714a9386958e1329b58da5",
+        "smp-a77f3dcce90440148e90e827b819d740",
+        "smp-6830495a6b1945f188d8112a6b8498f9",
+        "smp-4da92dfdad63437b8c3752d359a19724",
+        "smp-ce05bf0405cc43bca2f0ddec0ba9ac1f",
+        "smp-aa7daa5027254e838ad0907a49b6591b",
+        "smp-798373b06b684f2293e0cc10935f0851",
+        "smp-6e3fcbbdbb3c4331a9ccf3f8f475dc8c",
+        "smp-f1485c88cec3473fbe61fce82fdb1e55",
+        "smp-72420a328dbe45d1ac8fbd4a108d7bdd",
+        "smp-109154482c284d55be286c5303f2bc16",
+        "smp-3b75437672804603ab58f16589034e7e",
+        "smp-5de81cd2430348ffa76c1f8e17d4e15c",
+        "smp-63c2db46230b48aa8dcdb354d6a115bc",
+        "smp-cd729566117b4a34bcdddfdc6835c73f",
+        "smp-4e598ff86a9e486a9bd6bd575713dfcf",
+        "smp-6d553902e0594285b11a8dc78d731384",
+        "smp-d5109c6164584bef8a9ee11507e8bf78",
+        "smp-aa025861fcf047b2bdccbdcccea60697",
+        "smp-6ace455555e14e0790d188f2903c99eb",
+        "smp-3bd931690fea4684b44559ce7ab3ac8b",
+        "smp-b1bd8f1d80af4650adc8cbf6fc63e5f8",
+        "smp-386091386b9248f8bb995be843ce01df",
+        "smp-351584a1fec7470e9592b3f6f1192f73",
+        "smp-163ea7291383473e916e411fc45b8ae2",
+        "smp-cb69f9c3b33b475bb0eb7d3ac6fc12cf",
+        "smp-b2f5e6d83eac485993b1196750860dcd",
+        "smp-a10ae79f480f4c2ea6bf9a0e89d0731b",
+        "smp-8c3d78f6de4741b0880148894d01208d",
+        "smp-2a70302f8a4b4a8fb1ac9a0c5429991a",
+        "smp-abe36b0ca14c4357a138c6251566e6e7",
+        "smp-c87e68538b314bd399f773440ba8b0c5",
+        "smp-21ed7564c5af4d8c95f84811186626bd",
+        "smp-3821ff2296ab413f926c9ee1cb926104",
+        "smp-1876ebeda26640c28baab1cb8d931791",
+        "smp-7cfa9dc1c15a4a899b02da39c2a5a843",
+        "smp-6156e0c3ca814bf884156c8d09bde70b",
+        "smp-442edda8a2c7456fa2889d64d2358869",
+        "smp-981ceb0fcbcb44c8bd4e5650264ef268",
+        "smp-8739d3f6c31349cfad512e2ddb9c200f",
+        "smp-9ce9663a74d54578baac170c1efa2149",
+        "smp-9aa2bfac9fa548b3a94a28d397a9f08f",
+        "smp-b75e84f7069a4cdf9c36f160fd797adb",
+        "smp-7697deb937b44df3acbd59930a05a22a",
+        "smp-f24887f5cfc9493c8f95d27f38dfe639",
+        "smp-13061d0bc55e4dc3b7e65ce2c43c81b9",
+        "smp-4f90a33f69794c33860ca797b759ce0e",
+        "smp-56835368772644e88a9cf2c586276178",
+        "smp-21d3a98938c348caa5527264bfe4c48e",
+        "smp-9f7633e74594443f815bbedeeed08a35",
+        "smp-6b70569a75124da082654b08948a1ab2",
+        "smp-4485bef2f4fd42a88e24a2a3a1c1d118",
+        "smp-d5b70d6ab9774a2a8adaa032b7dd1247",
+        "smp-c1edb7f75f6641d7a698a513e8cf08dd",
+        "smp-941b3ba04bcb4f8aa3490e6975ad2574",
+        "smp-353f34a933734e4e8486d46b40d996bd",
+        "smp-65c302dd4e774e3d97c0ee496534b588",
+        "smp-c4b19a652fdb4dd6bca5b1b8b1acd9ba",
+        "smp-c0c61a7a8a914e2b963d6be35ccc3ab9",
+        "smp-adddf53ae3634411930dc31e55f4141b",
+        "smp-b600d4f9c1174f8b8d0892a082c2aec6",
+        "smp-927bdd92184e4d8db8a21c2e9668a4c8",
+        "smp-06a009cfc102472e87a3dc76bfd8c2df",
+        "smp-1a92be8b647c46f0ae4b142ef4e07da8",
+        "smp-81ef6d0f2f3b4a3e95d0b7d36459de03",
+        "smp-83c060f6e64140ec9b57f2c0ed148d5a",
+        "smp-425949cd4ad345da86d37beb46915755",
+        "smp-361f90925fdb47de9a1ffe00340b5c16"
+      ],
+      "mention_rate": 26.11,
+      "average_rank": 1.62
+    },
+    {
+      "brand": "巨量创意",
+      "group": "官方工具",
+      "mention_count": 124,
+      "answer_count": 124,
+      "first_count": 84,
+      "top3_count": 119,
+      "rank_sum": 191,
+      "categories": [
+        "品类认知问题",
+        "业务场景问题",
+        "案例/效果问题",
+        "风险/限制问题",
+        "对比决策问题",
+        "价格/开通问题",
+        "品牌产品问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "smp-74d68e72f8a144e1bfc49df9f8572a84",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-103232e4ff574a63bf41faeb76f9122e",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-d4dfa1104e654a7bb9907627ac977807",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-a8c079e86b4c45a08f771641507b026a",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-ed87540a220a469ba79e30dadcaab84c",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-f83fc92142294d0e9dadcb9530f9adb3",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-96ded755d9d24c839b672f36fbf2fbd2",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-f4793cb1257543dba1245aa30ce09238",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-12b5776c67ec47c4b044f848053e5366",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-9bdec5970d5c440ab904c5767041fb0e",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-2b171c2555ec449d9c8c9eaf260cbdd8",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-28d986b1abe84defbab2e1abbf4b7c95",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-35fe30dcd6b6495c800c565bd1d9c514",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-436ae2c4cb1946fe9951dbc11895244b",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-c799663f13334048b44ce91a1bcc820e",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-6468dbb078bf40bfa6f5c5d0a570f34c",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-da61d38397fb4361ad3dd3aa3ef7ffee",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-72e17e0d8d554b3fb341c0fa62de00ab",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-5672f67205c44a38ad49af67f05ccee9",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-f6dd9e1b4bf440f68b4041c0410aee7d",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-fde73fd2a1614a4ab546b3df176a7898",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-001f3e9cd5cf44ea8eca17c20a90f105",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-469856bc5ed04315be93e87f3d0d3c99",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-8947014da4ec47a0a0e8a1b360ed9ae4",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-27a768a0f65e4619a61725c11552d2b3",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-e99c9899843e4a1dbc88357c91eb8a45",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-7c2ba375b66b4604a1bf408d89b4541c",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-f420fe3c019c4154b71a7c35e36303fb",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-1566faf7e5004e9fbda3f84cc04efaf1",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-4963572124be43889287ed324a818687",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-fc1c12445d944ea5881b4e62ed398dfa",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-b6f7fc66a2d44c64a66a8cc650251af0",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-dc27abe525204a4484f7fd9269d19496",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-8edae3f3ee5a4ce8bbdf044cf99e9f60",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-c56c785c6a2e4ae1a6961a44088b0615",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-3cdfeaa1c4fa4809ac8c2c5222694a6a",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-f60810e947f14e448f2a7932c8d18f0b",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-b8b03c53712046ad950559a5be1a0274",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-f82407783d3640ff9a8f2958263d6098",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-d061d24a7c9444cfb503ee47b11c952a",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-ab091533720b449eab0c43ef27c0fb87",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-20f33144a3be44708cd20305d225e92a",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-19f8392e97f0478dba5ea2bdfbb0fc0d",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-32b161f82ded465f9c90abc30410b5ee",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-6651ce6d8397456ea72607ab0714fbd8",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-9be12a6783b541ccbed9e6e96d8f7fce",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-ab7b15aa481546a08108460b52f9ceee",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-adb62142e48c4833b30193a2c83b47b2",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-5a317410efca4b8c8a20a2ebdc218cf1",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-43fa51be7ff54b9e8844abd3d4f9d801",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-323d3c385e3349faa7b88dfbf4364766",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-5a8c9badcfe94700a25880c507630f9e",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-150a81f6b47e4180ac5b1643546eea24",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-e787b85891ce4e79830d6b844093ba8d",
+          "rank": 4,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-459d9756f5b842c78a3a95fc73c5d8af",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-3fd8a1f5549f4d258b826ae02d413c09",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-f1f88845225e40448fec0053d2ad4fb7",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-e6e4abc2193743e2acddb8465d8a7f38",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-7a22a0610e594fcca7ec32ad24af56c1",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-00d96b6b115f4cc9b47d86a3f608107f",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-9bc3f2f1d7a34f58ac18eb05af3e5b43",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-7e01ed84cd6645c28526abc72e7690b9",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-275d509ff9764446889178d1a75292d0",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-99342094a87e4d57b6fe5fabf8ec1b7f",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-7c03ad354c54449890ca5d938db08aa3",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-37fe2f78c3cf47808d0fe35ad2e143f3",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-106a5743fa8c4cf789fe85bdad9fa79f",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-56ef29a054ed4b4280667d941b6984f9",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-26d8aeb4135e472581110ef536a696a4",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-1aab8163472542b8802446feaeda00f8",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-397a5fa8313046fe81ef9084ad32d21f",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-3261285a3b2b4ec4922552c2aa4b52d8",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-fb83fe5af9ee43f5a3041bd45d848ad3",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-ba12a6be78b0429890b210b9667a7e46",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-b346aec5badd4b738b08d89a8e68328b",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-52e72fae4b90415d93616c4750fa76d7",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-2c614907456c4a0ab9a6cf648aa78d8b",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-eadf579e5b28424f9ae1301527e67758",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-383b1a74c8d049fa83a6c2497cac91f1",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-3b75437672804603ab58f16589034e7e",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-cd729566117b4a34bcdddfdc6835c73f",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-1a2dac0405374180a5455d061b08508a",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-eefcd0dde33f400680dcfba20a7b0374",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-9860b34eb50e42fea230099ee617613e",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-aa025861fcf047b2bdccbdcccea60697",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-df04de31b7af41fd82216959f5b63641",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-bb442a2cfebf4543983a7b41ce30d1cb",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-13bbf15044764909b3f5113944d7cb71",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-e19c0123290d43f790625ddef5e1646d",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-39338d49086c462aa326b76209de9284",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-c02f91a9756a4973b692ed7bbbc83067",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-11422c3ff13441d28bf9d26ba3255fd4",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-e3d502a940dc4ef2a40a895263a313ff",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-dc3d7562707b4278a2ec958e61936d6d",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-06af3da78450472bb15697eca39a0807",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-dc85803538524add82b0b7e59c48b823",
+          "rank": 6,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-442edda8a2c7456fa2889d64d2358869",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-3b777dba47fa4e0ca552331e1d7842b1",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-0f2c199c900e49008763eff576f9fb5a",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-b0161663aabf4339998a57922dd3d2c5",
+          "rank": 4,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-9ce9663a74d54578baac170c1efa2149",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-536d142526f54bfc8be6032d3b9f2a94",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-558b78b7512b4fc8985245ab5eee637f",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-2f5279cf4c6d44f1abf0a25c7efff26c",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-0c0565922a2f41a6b73da8924a91b5f9",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-4305efa58c044c3a99c337322e0661d0",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-68a583cbe6ff462094d29b1d4dab3e44",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-44bbe979429c44c48dd1b348a303878e",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-89ab379d5b344c3b84bf2876151ac9f2",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-499ed9517cee4d91a10e57df73085702",
+          "rank": 4,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-f7cd78cfa5b8497cb73b66165101be8e",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-eb26aa7e120b4a82ac321f70d3b7fbf6",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-8036d6037fda4a0aaa3014e9a25d8f23",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-b7aee1b139e44dacbf897869ff4e4531",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-a65608b15cf74187a3b14c9ddb3e1616",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-2b17baf466d14cf584639ce9f525b541",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-8aaa68168e4c43778cb8453804511920",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-b9563a155357449da6bed1bfb6f0c525",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-adddf53ae3634411930dc31e55f4141b",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-06a009cfc102472e87a3dc76bfd8c2df",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-090a51ab56d64af498a162279aff8d76",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-66b511b854af4d05b4aee4254af4451b",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-f70d01a5babd48f482fc654352f4ce9d",
+          "rank": 4,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-0b063bf2d9ca4ce79da7cc5413e64853",
+          "rank": 2,
+          "group": "官方工具"
+        }
+      ],
+      "samples": [
+        "smp-74d68e72f8a144e1bfc49df9f8572a84",
+        "smp-103232e4ff574a63bf41faeb76f9122e",
+        "smp-d4dfa1104e654a7bb9907627ac977807",
+        "smp-a8c079e86b4c45a08f771641507b026a",
+        "smp-ed87540a220a469ba79e30dadcaab84c",
+        "smp-f83fc92142294d0e9dadcb9530f9adb3",
+        "smp-96ded755d9d24c839b672f36fbf2fbd2",
+        "smp-f4793cb1257543dba1245aa30ce09238",
+        "smp-12b5776c67ec47c4b044f848053e5366",
+        "smp-9bdec5970d5c440ab904c5767041fb0e",
+        "smp-2b171c2555ec449d9c8c9eaf260cbdd8",
+        "smp-28d986b1abe84defbab2e1abbf4b7c95",
+        "smp-35fe30dcd6b6495c800c565bd1d9c514",
+        "smp-436ae2c4cb1946fe9951dbc11895244b",
+        "smp-c799663f13334048b44ce91a1bcc820e",
+        "smp-6468dbb078bf40bfa6f5c5d0a570f34c",
+        "smp-da61d38397fb4361ad3dd3aa3ef7ffee",
+        "smp-72e17e0d8d554b3fb341c0fa62de00ab",
+        "smp-5672f67205c44a38ad49af67f05ccee9",
+        "smp-f6dd9e1b4bf440f68b4041c0410aee7d",
+        "smp-fde73fd2a1614a4ab546b3df176a7898",
+        "smp-001f3e9cd5cf44ea8eca17c20a90f105",
+        "smp-469856bc5ed04315be93e87f3d0d3c99",
+        "smp-8947014da4ec47a0a0e8a1b360ed9ae4",
+        "smp-27a768a0f65e4619a61725c11552d2b3",
+        "smp-e99c9899843e4a1dbc88357c91eb8a45",
+        "smp-7c2ba375b66b4604a1bf408d89b4541c",
+        "smp-f420fe3c019c4154b71a7c35e36303fb",
+        "smp-1566faf7e5004e9fbda3f84cc04efaf1",
+        "smp-4963572124be43889287ed324a818687",
+        "smp-fc1c12445d944ea5881b4e62ed398dfa",
+        "smp-b6f7fc66a2d44c64a66a8cc650251af0",
+        "smp-dc27abe525204a4484f7fd9269d19496",
+        "smp-8edae3f3ee5a4ce8bbdf044cf99e9f60",
+        "smp-c56c785c6a2e4ae1a6961a44088b0615",
+        "smp-3cdfeaa1c4fa4809ac8c2c5222694a6a",
+        "smp-f60810e947f14e448f2a7932c8d18f0b",
+        "smp-b8b03c53712046ad950559a5be1a0274",
+        "smp-f82407783d3640ff9a8f2958263d6098",
+        "smp-d061d24a7c9444cfb503ee47b11c952a",
+        "smp-ab091533720b449eab0c43ef27c0fb87",
+        "smp-20f33144a3be44708cd20305d225e92a",
+        "smp-19f8392e97f0478dba5ea2bdfbb0fc0d",
+        "smp-32b161f82ded465f9c90abc30410b5ee",
+        "smp-6651ce6d8397456ea72607ab0714fbd8",
+        "smp-9be12a6783b541ccbed9e6e96d8f7fce",
+        "smp-ab7b15aa481546a08108460b52f9ceee",
+        "smp-adb62142e48c4833b30193a2c83b47b2",
+        "smp-5a317410efca4b8c8a20a2ebdc218cf1",
+        "smp-43fa51be7ff54b9e8844abd3d4f9d801",
+        "smp-323d3c385e3349faa7b88dfbf4364766",
+        "smp-5a8c9badcfe94700a25880c507630f9e",
+        "smp-150a81f6b47e4180ac5b1643546eea24",
+        "smp-e787b85891ce4e79830d6b844093ba8d",
+        "smp-459d9756f5b842c78a3a95fc73c5d8af",
+        "smp-3fd8a1f5549f4d258b826ae02d413c09",
+        "smp-f1f88845225e40448fec0053d2ad4fb7",
+        "smp-e6e4abc2193743e2acddb8465d8a7f38",
+        "smp-7a22a0610e594fcca7ec32ad24af56c1",
+        "smp-00d96b6b115f4cc9b47d86a3f608107f",
+        "smp-9bc3f2f1d7a34f58ac18eb05af3e5b43",
+        "smp-7e01ed84cd6645c28526abc72e7690b9",
+        "smp-275d509ff9764446889178d1a75292d0",
+        "smp-99342094a87e4d57b6fe5fabf8ec1b7f",
+        "smp-7c03ad354c54449890ca5d938db08aa3",
+        "smp-37fe2f78c3cf47808d0fe35ad2e143f3",
+        "smp-106a5743fa8c4cf789fe85bdad9fa79f",
+        "smp-56ef29a054ed4b4280667d941b6984f9",
+        "smp-26d8aeb4135e472581110ef536a696a4",
+        "smp-1aab8163472542b8802446feaeda00f8",
+        "smp-397a5fa8313046fe81ef9084ad32d21f",
+        "smp-3261285a3b2b4ec4922552c2aa4b52d8",
+        "smp-fb83fe5af9ee43f5a3041bd45d848ad3",
+        "smp-ba12a6be78b0429890b210b9667a7e46",
+        "smp-b346aec5badd4b738b08d89a8e68328b",
+        "smp-52e72fae4b90415d93616c4750fa76d7",
+        "smp-2c614907456c4a0ab9a6cf648aa78d8b",
+        "smp-eadf579e5b28424f9ae1301527e67758",
+        "smp-383b1a74c8d049fa83a6c2497cac91f1",
+        "smp-3b75437672804603ab58f16589034e7e",
+        "smp-cd729566117b4a34bcdddfdc6835c73f",
+        "smp-1a2dac0405374180a5455d061b08508a",
+        "smp-eefcd0dde33f400680dcfba20a7b0374",
+        "smp-9860b34eb50e42fea230099ee617613e",
+        "smp-aa025861fcf047b2bdccbdcccea60697",
+        "smp-df04de31b7af41fd82216959f5b63641",
+        "smp-bb442a2cfebf4543983a7b41ce30d1cb",
+        "smp-13bbf15044764909b3f5113944d7cb71",
+        "smp-e19c0123290d43f790625ddef5e1646d",
+        "smp-39338d49086c462aa326b76209de9284",
+        "smp-c02f91a9756a4973b692ed7bbbc83067",
+        "smp-11422c3ff13441d28bf9d26ba3255fd4",
+        "smp-e3d502a940dc4ef2a40a895263a313ff",
+        "smp-dc3d7562707b4278a2ec958e61936d6d",
+        "smp-06af3da78450472bb15697eca39a0807",
+        "smp-dc85803538524add82b0b7e59c48b823",
+        "smp-442edda8a2c7456fa2889d64d2358869",
+        "smp-3b777dba47fa4e0ca552331e1d7842b1",
+        "smp-0f2c199c900e49008763eff576f9fb5a",
+        "smp-b0161663aabf4339998a57922dd3d2c5",
+        "smp-9ce9663a74d54578baac170c1efa2149",
+        "smp-536d142526f54bfc8be6032d3b9f2a94",
+        "smp-558b78b7512b4fc8985245ab5eee637f",
+        "smp-2f5279cf4c6d44f1abf0a25c7efff26c",
+        "smp-0c0565922a2f41a6b73da8924a91b5f9",
+        "smp-4305efa58c044c3a99c337322e0661d0",
+        "smp-68a583cbe6ff462094d29b1d4dab3e44",
+        "smp-44bbe979429c44c48dd1b348a303878e",
+        "smp-89ab379d5b344c3b84bf2876151ac9f2",
+        "smp-499ed9517cee4d91a10e57df73085702",
+        "smp-f7cd78cfa5b8497cb73b66165101be8e",
+        "smp-eb26aa7e120b4a82ac321f70d3b7fbf6",
+        "smp-8036d6037fda4a0aaa3014e9a25d8f23",
+        "smp-b7aee1b139e44dacbf897869ff4e4531",
+        "smp-a65608b15cf74187a3b14c9ddb3e1616",
+        "smp-2b17baf466d14cf584639ce9f525b541",
+        "smp-8aaa68168e4c43778cb8453804511920",
+        "smp-b9563a155357449da6bed1bfb6f0c525",
+        "smp-adddf53ae3634411930dc31e55f4141b",
+        "smp-06a009cfc102472e87a3dc76bfd8c2df",
+        "smp-090a51ab56d64af498a162279aff8d76",
+        "smp-66b511b854af4d05b4aee4254af4451b",
+        "smp-f70d01a5babd48f482fc654352f4ce9d",
+        "smp-0b063bf2d9ca4ce79da7cc5413e64853"
+      ],
+      "mention_rate": 22.96,
+      "average_rank": 1.54
+    },
+    {
+      "brand": "创意大师",
+      "group": "蝉妈妈",
+      "mention_count": 71,
+      "answer_count": 71,
+      "first_count": 16,
+      "top3_count": 61,
+      "rank_sum": 172,
+      "categories": [
+        "案例/效果问题",
+        "对比决策问题",
+        "品牌产品问题",
+        "品类认知问题",
+        "价格/开通问题",
+        "业务场景问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "smp-6969c86e83b246d88988f3ca2cef65a1",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-92a95ef94df34fc39161927b88da3477",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b47c47bc743f4a8b8bed6d60460b78ef",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d31c757b539f43d18ab4fcea4a91af3f",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-2b5113540bd341c39d6c82af01fcc9c4",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b395cc0676934064bbf0230415e0cf79",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-097c96afc8e14340918b84a4d30ab0c9",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-08228cb37ce84573b8c1ab23c70a5189",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-f1337a9a0b4446df927daf76b2f5a10a",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-f6dd9e1b4bf440f68b4041c0410aee7d",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-bd7e7b7b9b5e4adcae4f47199a7c2fe9",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-fd0605ec61974b7cb712b0aacfec34d5",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-8c83fd70b12e4d1aae597616983e7e72",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-daa1e074bc1b4e42ae7fdc0a0704f574",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-566410025f3b4f3a9914791e212c4ec4",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-5bdbfe13dc164948834e4b67a860e202",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-413b2803e4b346cfae1cd0238b82967c",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-6aaf8c13723943328cc827c386469fdb",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-1707c6cf4e6f4c51b8798884b3fde938",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-2a632b8390d04403b19316c5e5b5c501",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-c64758e8e6e4426391a61c96c8d6e982",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-00eb47fb839f4faa9927586f02791f00",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-3daec9c2400041d686b9e5b2f4461922",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-0ec032d76f6f4356808c766d77877c40",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a2131c63e4b74bd081eff046384f04dc",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-ed26211e133b4c3c82b122f74ab84f53",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-2716342e431a4cd4b6a2208c2485a358",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-458bc3be769946de8abe7e38f1f00316",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-7a22a0610e594fcca7ec32ad24af56c1",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-0c753aadf2ac45338c80457bfa199d51",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-8934f8ba30494829be759b8e467b7adc",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-af7c32e8fb314ad896fdb2eac2da6621",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-fac73ac53a0044c481f5b6e3062cfc2e",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-35f853be17fb489ab47409a6ca89d9dd",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-54012ae235b94ef19b3200b4ed78c7dc",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a1c730d95820473fa79b284a562a5e96",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-4aa81cea7eb34534ba442f4ce73daadf",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-943177a0aeb44581a104dace96d741d8",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-81c0a922c1f24ae58a109e28de0ad0d4",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d5ddb8f8baa0474ba70c97f8fa9b2bc0",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-aa7daa5027254e838ad0907a49b6591b",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-f1485c88cec3473fbe61fce82fdb1e55",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-383b1a74c8d049fa83a6c2497cac91f1",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-5de81cd2430348ffa76c1f8e17d4e15c",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-3a5ae68da12841879af7a5c3e4666be3",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-13049cc639d74fd89b9a6e67ab1171eb",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-9860b34eb50e42fea230099ee617613e",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-6d553902e0594285b11a8dc78d731384",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a8c913bc32ef440cb188a54a4dea74c7",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d5109c6164584bef8a9ee11507e8bf78",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-cb33955607924cf6889d56cf8984f9cc",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a10ae79f480f4c2ea6bf9a0e89d0731b",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-abe36b0ca14c4357a138c6251566e6e7",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-21ed7564c5af4d8c95f84811186626bd",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-a079506302534e74a0aa889ede3e1a58",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-443e458ada0243dbb4a7b5a8e2725e4b",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-7cfa9dc1c15a4a899b02da39c2a5a843",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b0161663aabf4339998a57922dd3d2c5",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-2a90fb0b04cd41b58246e529ecc40599",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-9ce9663a74d54578baac170c1efa2149",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-0e5d379084a84476961a19f769bcb17f",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b75e84f7069a4cdf9c36f160fd797adb",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-d5b70d6ab9774a2a8adaa032b7dd1247",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-c4b19a652fdb4dd6bca5b1b8b1acd9ba",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-7f882205b6f84dc3b208d7c43a607ed1",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b9563a155357449da6bed1bfb6f0c525",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-b600d4f9c1174f8b8d0892a082c2aec6",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-73bdc53b05ca4c0cb93c35125fe0266d",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-f70d01a5babd48f482fc654352f4ce9d",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-ab33fd5d1d7a469fbdbfc64461905c0b",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "smp-6cbcd1cafafb4432b81c217fc26157d3",
+          "rank": 1,
+          "group": "蝉妈妈"
+        }
+      ],
+      "samples": [
+        "smp-6969c86e83b246d88988f3ca2cef65a1",
+        "smp-92a95ef94df34fc39161927b88da3477",
+        "smp-b47c47bc743f4a8b8bed6d60460b78ef",
+        "smp-d31c757b539f43d18ab4fcea4a91af3f",
+        "smp-2b5113540bd341c39d6c82af01fcc9c4",
+        "smp-b395cc0676934064bbf0230415e0cf79",
+        "smp-097c96afc8e14340918b84a4d30ab0c9",
+        "smp-08228cb37ce84573b8c1ab23c70a5189",
+        "smp-f1337a9a0b4446df927daf76b2f5a10a",
+        "smp-f6dd9e1b4bf440f68b4041c0410aee7d",
+        "smp-bd7e7b7b9b5e4adcae4f47199a7c2fe9",
+        "smp-fd0605ec61974b7cb712b0aacfec34d5",
+        "smp-8c83fd70b12e4d1aae597616983e7e72",
+        "smp-daa1e074bc1b4e42ae7fdc0a0704f574",
+        "smp-566410025f3b4f3a9914791e212c4ec4",
+        "smp-5bdbfe13dc164948834e4b67a860e202",
+        "smp-413b2803e4b346cfae1cd0238b82967c",
+        "smp-6aaf8c13723943328cc827c386469fdb",
+        "smp-1707c6cf4e6f4c51b8798884b3fde938",
+        "smp-2a632b8390d04403b19316c5e5b5c501",
+        "smp-c64758e8e6e4426391a61c96c8d6e982",
+        "smp-00eb47fb839f4faa9927586f02791f00",
+        "smp-3daec9c2400041d686b9e5b2f4461922",
+        "smp-0ec032d76f6f4356808c766d77877c40",
+        "smp-a2131c63e4b74bd081eff046384f04dc",
+        "smp-ed26211e133b4c3c82b122f74ab84f53",
+        "smp-2716342e431a4cd4b6a2208c2485a358",
+        "smp-458bc3be769946de8abe7e38f1f00316",
+        "smp-7a22a0610e594fcca7ec32ad24af56c1",
+        "smp-0c753aadf2ac45338c80457bfa199d51",
+        "smp-8934f8ba30494829be759b8e467b7adc",
+        "smp-af7c32e8fb314ad896fdb2eac2da6621",
+        "smp-fac73ac53a0044c481f5b6e3062cfc2e",
+        "smp-35f853be17fb489ab47409a6ca89d9dd",
+        "smp-54012ae235b94ef19b3200b4ed78c7dc",
+        "smp-a1c730d95820473fa79b284a562a5e96",
+        "smp-4aa81cea7eb34534ba442f4ce73daadf",
+        "smp-943177a0aeb44581a104dace96d741d8",
+        "smp-81c0a922c1f24ae58a109e28de0ad0d4",
+        "smp-d5ddb8f8baa0474ba70c97f8fa9b2bc0",
+        "smp-aa7daa5027254e838ad0907a49b6591b",
+        "smp-f1485c88cec3473fbe61fce82fdb1e55",
+        "smp-383b1a74c8d049fa83a6c2497cac91f1",
+        "smp-5de81cd2430348ffa76c1f8e17d4e15c",
+        "smp-3a5ae68da12841879af7a5c3e4666be3",
+        "smp-13049cc639d74fd89b9a6e67ab1171eb",
+        "smp-9860b34eb50e42fea230099ee617613e",
+        "smp-6d553902e0594285b11a8dc78d731384",
+        "smp-a8c913bc32ef440cb188a54a4dea74c7",
+        "smp-d5109c6164584bef8a9ee11507e8bf78",
+        "smp-cb33955607924cf6889d56cf8984f9cc",
+        "smp-a10ae79f480f4c2ea6bf9a0e89d0731b",
+        "smp-abe36b0ca14c4357a138c6251566e6e7",
+        "smp-21ed7564c5af4d8c95f84811186626bd",
+        "smp-a079506302534e74a0aa889ede3e1a58",
+        "smp-443e458ada0243dbb4a7b5a8e2725e4b",
+        "smp-7cfa9dc1c15a4a899b02da39c2a5a843",
+        "smp-b0161663aabf4339998a57922dd3d2c5",
+        "smp-2a90fb0b04cd41b58246e529ecc40599",
+        "smp-9ce9663a74d54578baac170c1efa2149",
+        "smp-0e5d379084a84476961a19f769bcb17f",
+        "smp-b75e84f7069a4cdf9c36f160fd797adb",
+        "smp-d5b70d6ab9774a2a8adaa032b7dd1247",
+        "smp-c4b19a652fdb4dd6bca5b1b8b1acd9ba",
+        "smp-7f882205b6f84dc3b208d7c43a607ed1",
+        "smp-b9563a155357449da6bed1bfb6f0c525",
+        "smp-b600d4f9c1174f8b8d0892a082c2aec6",
+        "smp-73bdc53b05ca4c0cb93c35125fe0266d",
+        "smp-f70d01a5babd48f482fc654352f4ce9d",
+        "smp-ab33fd5d1d7a469fbdbfc64461905c0b",
+        "smp-6cbcd1cafafb4432b81c217fc26157d3"
+      ],
+      "mention_rate": 13.15,
+      "average_rank": 2.42
+    },
+    {
+      "brand": "有米云",
+      "group": "第三方竞品",
+      "mention_count": 65,
+      "answer_count": 65,
+      "first_count": 7,
+      "top3_count": 56,
+      "rank_sum": 176,
+      "categories": [
+        "业务场景问题",
+        "品类认知问题",
+        "案例/效果问题",
+        "对比决策问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "smp-103232e4ff574a63bf41faeb76f9122e",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-d4dfa1104e654a7bb9907627ac977807",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-a8c079e86b4c45a08f771641507b026a",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-ed87540a220a469ba79e30dadcaab84c",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-96ded755d9d24c839b672f36fbf2fbd2",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-f4793cb1257543dba1245aa30ce09238",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-12b5776c67ec47c4b044f848053e5366",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-9bdec5970d5c440ab904c5767041fb0e",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-2b171c2555ec449d9c8c9eaf260cbdd8",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-881791dc13624371b55c244cb58b18d8",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-417d8e0194a64473a922232ea52facf2",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-fde73fd2a1614a4ab546b3df176a7898",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-001f3e9cd5cf44ea8eca17c20a90f105",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-8947014da4ec47a0a0e8a1b360ed9ae4",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-e99c9899843e4a1dbc88357c91eb8a45",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-f420fe3c019c4154b71a7c35e36303fb",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-4963572124be43889287ed324a818687",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-fc1c12445d944ea5881b4e62ed398dfa",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-8edae3f3ee5a4ce8bbdf044cf99e9f60",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-3cdfeaa1c4fa4809ac8c2c5222694a6a",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-65eb057a5161454ab5018315672eb882",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-ab7b15aa481546a08108460b52f9ceee",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5a317410efca4b8c8a20a2ebdc218cf1",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-23940ddf0f504b0bb0593caa220d0eab",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-323d3c385e3349faa7b88dfbf4364766",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5a8c9badcfe94700a25880c507630f9e",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-150a81f6b47e4180ac5b1643546eea24",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-e787b85891ce4e79830d6b844093ba8d",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-459d9756f5b842c78a3a95fc73c5d8af",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-32edd134acd647bb8993192ad9c47910",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-9a9cc66d818a48e688d438cc538b5f58",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-bf3d5d214590478aaa9ea1de39a77cb6",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-99342094a87e4d57b6fe5fabf8ec1b7f",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-37fe2f78c3cf47808d0fe35ad2e143f3",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-56ef29a054ed4b4280667d941b6984f9",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-26d8aeb4135e472581110ef536a696a4",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-1aab8163472542b8802446feaeda00f8",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-397a5fa8313046fe81ef9084ad32d21f",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-3261285a3b2b4ec4922552c2aa4b52d8",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-ba12a6be78b0429890b210b9667a7e46",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-96df1014018649d09543bfcf3dc881fa",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-d617b20804d64ac1bfa55cfeb5fb8ccc",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-aa025861fcf047b2bdccbdcccea60697",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-bb442a2cfebf4543983a7b41ce30d1cb",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-ba7afe3ab2e041caa51bb78e576d9903",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-13bbf15044764909b3f5113944d7cb71",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-e19c0123290d43f790625ddef5e1646d",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-39338d49086c462aa326b76209de9284",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-c02f91a9756a4973b692ed7bbbc83067",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-453f9417cc0d4a979af49e967e81fdbb",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-3821ff2296ab413f926c9ee1cb926104",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-a5d976bdd3f04f7e932aa7c92558f04b",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-dc85803538524add82b0b7e59c48b823",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-536d142526f54bfc8be6032d3b9f2a94",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-558b78b7512b4fc8985245ab5eee637f",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-0c0565922a2f41a6b73da8924a91b5f9",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-68a583cbe6ff462094d29b1d4dab3e44",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-44bbe979429c44c48dd1b348a303878e",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-89ab379d5b344c3b84bf2876151ac9f2",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-f7cd78cfa5b8497cb73b66165101be8e",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-8036d6037fda4a0aaa3014e9a25d8f23",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-b7aee1b139e44dacbf897869ff4e4531",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-d26b4f6628364e6b8480c92989a69029",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-42fd96e551ae473c8953d30974a5ca34",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-090a51ab56d64af498a162279aff8d76",
+          "rank": 3,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "smp-103232e4ff574a63bf41faeb76f9122e",
+        "smp-d4dfa1104e654a7bb9907627ac977807",
+        "smp-a8c079e86b4c45a08f771641507b026a",
+        "smp-ed87540a220a469ba79e30dadcaab84c",
+        "smp-96ded755d9d24c839b672f36fbf2fbd2",
+        "smp-f4793cb1257543dba1245aa30ce09238",
+        "smp-12b5776c67ec47c4b044f848053e5366",
+        "smp-9bdec5970d5c440ab904c5767041fb0e",
+        "smp-2b171c2555ec449d9c8c9eaf260cbdd8",
+        "smp-881791dc13624371b55c244cb58b18d8",
+        "smp-417d8e0194a64473a922232ea52facf2",
+        "smp-fde73fd2a1614a4ab546b3df176a7898",
+        "smp-001f3e9cd5cf44ea8eca17c20a90f105",
+        "smp-8947014da4ec47a0a0e8a1b360ed9ae4",
+        "smp-e99c9899843e4a1dbc88357c91eb8a45",
+        "smp-f420fe3c019c4154b71a7c35e36303fb",
+        "smp-4963572124be43889287ed324a818687",
+        "smp-fc1c12445d944ea5881b4e62ed398dfa",
+        "smp-8edae3f3ee5a4ce8bbdf044cf99e9f60",
+        "smp-3cdfeaa1c4fa4809ac8c2c5222694a6a",
+        "smp-65eb057a5161454ab5018315672eb882",
+        "smp-ab7b15aa481546a08108460b52f9ceee",
+        "smp-5a317410efca4b8c8a20a2ebdc218cf1",
+        "smp-23940ddf0f504b0bb0593caa220d0eab",
+        "smp-323d3c385e3349faa7b88dfbf4364766",
+        "smp-5a8c9badcfe94700a25880c507630f9e",
+        "smp-150a81f6b47e4180ac5b1643546eea24",
+        "smp-e787b85891ce4e79830d6b844093ba8d",
+        "smp-459d9756f5b842c78a3a95fc73c5d8af",
+        "smp-32edd134acd647bb8993192ad9c47910",
+        "smp-9a9cc66d818a48e688d438cc538b5f58",
+        "smp-bf3d5d214590478aaa9ea1de39a77cb6",
+        "smp-99342094a87e4d57b6fe5fabf8ec1b7f",
+        "smp-37fe2f78c3cf47808d0fe35ad2e143f3",
+        "smp-56ef29a054ed4b4280667d941b6984f9",
+        "smp-26d8aeb4135e472581110ef536a696a4",
+        "smp-1aab8163472542b8802446feaeda00f8",
+        "smp-397a5fa8313046fe81ef9084ad32d21f",
+        "smp-3261285a3b2b4ec4922552c2aa4b52d8",
+        "smp-ba12a6be78b0429890b210b9667a7e46",
+        "smp-96df1014018649d09543bfcf3dc881fa",
+        "smp-d617b20804d64ac1bfa55cfeb5fb8ccc",
+        "smp-aa025861fcf047b2bdccbdcccea60697",
+        "smp-bb442a2cfebf4543983a7b41ce30d1cb",
+        "smp-ba7afe3ab2e041caa51bb78e576d9903",
+        "smp-13bbf15044764909b3f5113944d7cb71",
+        "smp-e19c0123290d43f790625ddef5e1646d",
+        "smp-39338d49086c462aa326b76209de9284",
+        "smp-c02f91a9756a4973b692ed7bbbc83067",
+        "smp-453f9417cc0d4a979af49e967e81fdbb",
+        "smp-3821ff2296ab413f926c9ee1cb926104",
+        "smp-a5d976bdd3f04f7e932aa7c92558f04b",
+        "smp-dc85803538524add82b0b7e59c48b823",
+        "smp-536d142526f54bfc8be6032d3b9f2a94",
+        "smp-558b78b7512b4fc8985245ab5eee637f",
+        "smp-0c0565922a2f41a6b73da8924a91b5f9",
+        "smp-68a583cbe6ff462094d29b1d4dab3e44",
+        "smp-44bbe979429c44c48dd1b348a303878e",
+        "smp-89ab379d5b344c3b84bf2876151ac9f2",
+        "smp-f7cd78cfa5b8497cb73b66165101be8e",
+        "smp-8036d6037fda4a0aaa3014e9a25d8f23",
+        "smp-b7aee1b139e44dacbf897869ff4e4531",
+        "smp-d26b4f6628364e6b8480c92989a69029",
+        "smp-42fd96e551ae473c8953d30974a5ca34",
+        "smp-090a51ab56d64af498a162279aff8d76"
+      ],
+      "mention_rate": 12.04,
+      "average_rank": 2.71
+    },
+    {
+      "brand": "即梦 AI",
+      "group": "第三方竞品",
+      "mention_count": 55,
+      "answer_count": 55,
+      "first_count": 7,
+      "top3_count": 50,
+      "rank_sum": 134,
+      "categories": [
+        "对比决策问题",
+        "品类认知问题",
+        "业务场景问题",
+        "品牌产品问题",
+        "案例/效果问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "smp-2b5113540bd341c39d6c82af01fcc9c4",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-cb6a31ba1fca40eba7925beaeddddf8d",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-c92f4323a6564e8492668df8749013ba",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-2a3262c4945744ffad0b9d8b2c81cdce",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-e8aef65916694878816f683df8f6e133",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-b65cab02e6ef45208b8a9b349cd6fb2b",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-f4e7db5038ff464ab4e8c9f6c08f4f14",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-d224341ada644027b457efb388c7cc9d",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-bd7e7b7b9b5e4adcae4f47199a7c2fe9",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-566410025f3b4f3a9914791e212c4ec4",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5105701c0b65408f88b466cb5c8be44f",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-075f6b3002804551a7752ddce8d65b08",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-08a7bba44c01418492092d1ba197f366",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-03b4b19e0a06475b9b2be5b0047a9b59",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-89f4382b4e464d3db997e528d535a91c",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-413b2803e4b346cfae1cd0238b82967c",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-6aaf8c13723943328cc827c386469fdb",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-1707c6cf4e6f4c51b8798884b3fde938",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-27912e9a748c4ea38c9c1aee7bceb2da",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-a2131c63e4b74bd081eff046384f04dc",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-345f46d463af404fb534b7d33caecc52",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-bdfca38ed2424a36b25c516ae6316334",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-4dad1d3121d64115ad85921ec24ec5ff",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-2716342e431a4cd4b6a2208c2485a358",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-cdefd863ce564157a912e05aec463e74",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-be8f366b629b4a3598713e3b5bd7cf76",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5502334b346d435dbd79f83b2367237f",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-0c753aadf2ac45338c80457bfa199d51",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-d5d28cdea8104199b6fa0b6b4d23fc20",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-35f853be17fb489ab47409a6ca89d9dd",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-39a207c45032493a92ad63b267870352",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-943177a0aeb44581a104dace96d741d8",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-3b6641325e85400a80d9c1ff6c47a18f",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-e2402f893086448b81e4128b50e7d08b",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-61b2bf72f34844cd946cd0d8faab58f8",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5838136255714a9386958e1329b58da5",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-4da92dfdad63437b8c3752d359a19724",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-d5ddb8f8baa0474ba70c97f8fa9b2bc0",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-ce05bf0405cc43bca2f0ddec0ba9ac1f",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-aa7daa5027254e838ad0907a49b6591b",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-798373b06b684f2293e0cc10935f0851",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5de81cd2430348ffa76c1f8e17d4e15c",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-6ace455555e14e0790d188f2903c99eb",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-3bd931690fea4684b44559ce7ab3ac8b",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-386091386b9248f8bb995be843ce01df",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-351584a1fec7470e9592b3f6f1192f73",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-a10ae79f480f4c2ea6bf9a0e89d0731b",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-abe36b0ca14c4357a138c6251566e6e7",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-7cfa9dc1c15a4a899b02da39c2a5a843",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-b75e84f7069a4cdf9c36f160fd797adb",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-21d3a98938c348caa5527264bfe4c48e",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-4485bef2f4fd42a88e24a2a3a1c1d118",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-941b3ba04bcb4f8aa3490e6975ad2574",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-353f34a933734e4e8486d46b40d996bd",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-b600d4f9c1174f8b8d0892a082c2aec6",
+          "rank": 2,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "smp-2b5113540bd341c39d6c82af01fcc9c4",
+        "smp-cb6a31ba1fca40eba7925beaeddddf8d",
+        "smp-c92f4323a6564e8492668df8749013ba",
+        "smp-2a3262c4945744ffad0b9d8b2c81cdce",
+        "smp-e8aef65916694878816f683df8f6e133",
+        "smp-b65cab02e6ef45208b8a9b349cd6fb2b",
+        "smp-f4e7db5038ff464ab4e8c9f6c08f4f14",
+        "smp-d224341ada644027b457efb388c7cc9d",
+        "smp-bd7e7b7b9b5e4adcae4f47199a7c2fe9",
+        "smp-566410025f3b4f3a9914791e212c4ec4",
+        "smp-5105701c0b65408f88b466cb5c8be44f",
+        "smp-075f6b3002804551a7752ddce8d65b08",
+        "smp-08a7bba44c01418492092d1ba197f366",
+        "smp-03b4b19e0a06475b9b2be5b0047a9b59",
+        "smp-89f4382b4e464d3db997e528d535a91c",
+        "smp-413b2803e4b346cfae1cd0238b82967c",
+        "smp-6aaf8c13723943328cc827c386469fdb",
+        "smp-1707c6cf4e6f4c51b8798884b3fde938",
+        "smp-27912e9a748c4ea38c9c1aee7bceb2da",
+        "smp-a2131c63e4b74bd081eff046384f04dc",
+        "smp-345f46d463af404fb534b7d33caecc52",
+        "smp-bdfca38ed2424a36b25c516ae6316334",
+        "smp-4dad1d3121d64115ad85921ec24ec5ff",
+        "smp-2716342e431a4cd4b6a2208c2485a358",
+        "smp-cdefd863ce564157a912e05aec463e74",
+        "smp-be8f366b629b4a3598713e3b5bd7cf76",
+        "smp-5502334b346d435dbd79f83b2367237f",
+        "smp-0c753aadf2ac45338c80457bfa199d51",
+        "smp-d5d28cdea8104199b6fa0b6b4d23fc20",
+        "smp-35f853be17fb489ab47409a6ca89d9dd",
+        "smp-39a207c45032493a92ad63b267870352",
+        "smp-943177a0aeb44581a104dace96d741d8",
+        "smp-3b6641325e85400a80d9c1ff6c47a18f",
+        "smp-e2402f893086448b81e4128b50e7d08b",
+        "smp-61b2bf72f34844cd946cd0d8faab58f8",
+        "smp-5838136255714a9386958e1329b58da5",
+        "smp-4da92dfdad63437b8c3752d359a19724",
+        "smp-d5ddb8f8baa0474ba70c97f8fa9b2bc0",
+        "smp-ce05bf0405cc43bca2f0ddec0ba9ac1f",
+        "smp-aa7daa5027254e838ad0907a49b6591b",
+        "smp-798373b06b684f2293e0cc10935f0851",
+        "smp-5de81cd2430348ffa76c1f8e17d4e15c",
+        "smp-6ace455555e14e0790d188f2903c99eb",
+        "smp-3bd931690fea4684b44559ce7ab3ac8b",
+        "smp-386091386b9248f8bb995be843ce01df",
+        "smp-351584a1fec7470e9592b3f6f1192f73",
+        "smp-a10ae79f480f4c2ea6bf9a0e89d0731b",
+        "smp-abe36b0ca14c4357a138c6251566e6e7",
+        "smp-7cfa9dc1c15a4a899b02da39c2a5a843",
+        "smp-b75e84f7069a4cdf9c36f160fd797adb",
+        "smp-21d3a98938c348caa5527264bfe4c48e",
+        "smp-4485bef2f4fd42a88e24a2a3a1c1d118",
+        "smp-941b3ba04bcb4f8aa3490e6975ad2574",
+        "smp-353f34a933734e4e8486d46b40d996bd",
+        "smp-b600d4f9c1174f8b8d0892a082c2aec6"
+      ],
+      "mention_rate": 10.19,
+      "average_rank": 2.44
+    },
+    {
+      "brand": "可灵 AI",
+      "group": "第三方竞品",
+      "mention_count": 50,
+      "answer_count": 50,
+      "first_count": 13,
+      "top3_count": 42,
+      "rank_sum": 116,
+      "categories": [
+        "对比决策问题",
+        "品类认知问题",
+        "业务场景问题",
+        "品牌产品问题",
+        "案例/效果问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "smp-2b5113540bd341c39d6c82af01fcc9c4",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-cb6a31ba1fca40eba7925beaeddddf8d",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-c92f4323a6564e8492668df8749013ba",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-b65cab02e6ef45208b8a9b349cd6fb2b",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-d224341ada644027b457efb388c7cc9d",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-bd7e7b7b9b5e4adcae4f47199a7c2fe9",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5105701c0b65408f88b466cb5c8be44f",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-075f6b3002804551a7752ddce8d65b08",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-29492df097a54b2e898576f921c7b723",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-08a7bba44c01418492092d1ba197f366",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-89f4382b4e464d3db997e528d535a91c",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-6aaf8c13723943328cc827c386469fdb",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-1707c6cf4e6f4c51b8798884b3fde938",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-7569fdf0f02a4e9c83c45d305c35e27e",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-ed26211e133b4c3c82b122f74ab84f53",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-a3a1649e25264eb2b9ea736de5255fa0",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-345f46d463af404fb534b7d33caecc52",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-bdfca38ed2424a36b25c516ae6316334",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-4dad1d3121d64115ad85921ec24ec5ff",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-2716342e431a4cd4b6a2208c2485a358",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-cdefd863ce564157a912e05aec463e74",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5502334b346d435dbd79f83b2367237f",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-0c753aadf2ac45338c80457bfa199d51",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-35f853be17fb489ab47409a6ca89d9dd",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-39a207c45032493a92ad63b267870352",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-943177a0aeb44581a104dace96d741d8",
+          "rank": 6,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-3b6641325e85400a80d9c1ff6c47a18f",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-e2402f893086448b81e4128b50e7d08b",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-61b2bf72f34844cd946cd0d8faab58f8",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-4da92dfdad63437b8c3752d359a19724",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-ce05bf0405cc43bca2f0ddec0ba9ac1f",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-798373b06b684f2293e0cc10935f0851",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5de81cd2430348ffa76c1f8e17d4e15c",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-6ace455555e14e0790d188f2903c99eb",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-3bd931690fea4684b44559ce7ab3ac8b",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5bae7faec8cb4352adaa496eda82ba36",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-386091386b9248f8bb995be843ce01df",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-351584a1fec7470e9592b3f6f1192f73",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-b2f5e6d83eac485993b1196750860dcd",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-a10ae79f480f4c2ea6bf9a0e89d0731b",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-8c3d78f6de4741b0880148894d01208d",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-abe36b0ca14c4357a138c6251566e6e7",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-7cfa9dc1c15a4a899b02da39c2a5a843",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-7697deb937b44df3acbd59930a05a22a",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-fe4a4662963f44e9ab92e3a259f0b720",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-9f7633e74594443f815bbedeeed08a35",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-4485bef2f4fd42a88e24a2a3a1c1d118",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-353f34a933734e4e8486d46b40d996bd",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-b600d4f9c1174f8b8d0892a082c2aec6",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-83c060f6e64140ec9b57f2c0ed148d5a",
+          "rank": 1,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "smp-2b5113540bd341c39d6c82af01fcc9c4",
+        "smp-cb6a31ba1fca40eba7925beaeddddf8d",
+        "smp-c92f4323a6564e8492668df8749013ba",
+        "smp-b65cab02e6ef45208b8a9b349cd6fb2b",
+        "smp-d224341ada644027b457efb388c7cc9d",
+        "smp-bd7e7b7b9b5e4adcae4f47199a7c2fe9",
+        "smp-5105701c0b65408f88b466cb5c8be44f",
+        "smp-075f6b3002804551a7752ddce8d65b08",
+        "smp-29492df097a54b2e898576f921c7b723",
+        "smp-08a7bba44c01418492092d1ba197f366",
+        "smp-89f4382b4e464d3db997e528d535a91c",
+        "smp-6aaf8c13723943328cc827c386469fdb",
+        "smp-1707c6cf4e6f4c51b8798884b3fde938",
+        "smp-7569fdf0f02a4e9c83c45d305c35e27e",
+        "smp-ed26211e133b4c3c82b122f74ab84f53",
+        "smp-a3a1649e25264eb2b9ea736de5255fa0",
+        "smp-345f46d463af404fb534b7d33caecc52",
+        "smp-bdfca38ed2424a36b25c516ae6316334",
+        "smp-4dad1d3121d64115ad85921ec24ec5ff",
+        "smp-2716342e431a4cd4b6a2208c2485a358",
+        "smp-cdefd863ce564157a912e05aec463e74",
+        "smp-5502334b346d435dbd79f83b2367237f",
+        "smp-0c753aadf2ac45338c80457bfa199d51",
+        "smp-35f853be17fb489ab47409a6ca89d9dd",
+        "smp-39a207c45032493a92ad63b267870352",
+        "smp-943177a0aeb44581a104dace96d741d8",
+        "smp-3b6641325e85400a80d9c1ff6c47a18f",
+        "smp-e2402f893086448b81e4128b50e7d08b",
+        "smp-61b2bf72f34844cd946cd0d8faab58f8",
+        "smp-4da92dfdad63437b8c3752d359a19724",
+        "smp-ce05bf0405cc43bca2f0ddec0ba9ac1f",
+        "smp-798373b06b684f2293e0cc10935f0851",
+        "smp-5de81cd2430348ffa76c1f8e17d4e15c",
+        "smp-6ace455555e14e0790d188f2903c99eb",
+        "smp-3bd931690fea4684b44559ce7ab3ac8b",
+        "smp-5bae7faec8cb4352adaa496eda82ba36",
+        "smp-386091386b9248f8bb995be843ce01df",
+        "smp-351584a1fec7470e9592b3f6f1192f73",
+        "smp-b2f5e6d83eac485993b1196750860dcd",
+        "smp-a10ae79f480f4c2ea6bf9a0e89d0731b",
+        "smp-8c3d78f6de4741b0880148894d01208d",
+        "smp-abe36b0ca14c4357a138c6251566e6e7",
+        "smp-7cfa9dc1c15a4a899b02da39c2a5a843",
+        "smp-7697deb937b44df3acbd59930a05a22a",
+        "smp-fe4a4662963f44e9ab92e3a259f0b720",
+        "smp-9f7633e74594443f815bbedeeed08a35",
+        "smp-4485bef2f4fd42a88e24a2a3a1c1d118",
+        "smp-353f34a933734e4e8486d46b40d996bd",
+        "smp-b600d4f9c1174f8b8d0892a082c2aec6",
+        "smp-83c060f6e64140ec9b57f2c0ed148d5a"
+      ],
+      "mention_rate": 9.26,
+      "average_rank": 2.32
+    },
+    {
+      "brand": "千川素材库",
+      "group": "官方工具",
+      "mention_count": 44,
+      "answer_count": 44,
+      "first_count": 23,
+      "top3_count": 42,
+      "rank_sum": 74,
+      "categories": [
+        "对比决策问题",
+        "业务场景问题",
+        "品类认知问题",
+        "案例/效果问题",
+        "风险/限制问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "smp-35fe30dcd6b6495c800c565bd1d9c514",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-5672f67205c44a38ad49af67f05ccee9",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-ce468d14dc9c4fc5b042d16d58d4bc76",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-001f3e9cd5cf44ea8eca17c20a90f105",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-469856bc5ed04315be93e87f3d0d3c99",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-e99c9899843e4a1dbc88357c91eb8a45",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-bf46587a98504371a0963646ed49d31a",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-1566faf7e5004e9fbda3f84cc04efaf1",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-666b2eb0207d4344b38f662bbd8902ed",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-c8394e0fea3b4d94b64d0d284c49085a",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-413b2803e4b346cfae1cd0238b82967c",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-d061d24a7c9444cfb503ee47b11c952a",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-3e576d0ebac34bdc88fa7237b920c173",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-23940ddf0f504b0bb0593caa220d0eab",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-323d3c385e3349faa7b88dfbf4364766",
+          "rank": 4,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-d092fe1cc73a4af08785305fc3d72d6c",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-575d535b8f454684a9c7fd3e9952bcfe",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-2716342e431a4cd4b6a2208c2485a358",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-b8e1c3b6d0544800afd5d7cd7adee747",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-377ac74b92474598b5ebf5d5159f2dba",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-99342094a87e4d57b6fe5fabf8ec1b7f",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-8c53e61cd9e64b76bc21b3795d4352cd",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-106a5743fa8c4cf789fe85bdad9fa79f",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-56ef29a054ed4b4280667d941b6984f9",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-205965cba62a401895dce953db91f511",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-d5ddb8f8baa0474ba70c97f8fa9b2bc0",
+          "rank": 5,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-eadf579e5b28424f9ae1301527e67758",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-67478da992be47eb8761f59aec46e01d",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-d617b20804d64ac1bfa55cfeb5fb8ccc",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-bb442a2cfebf4543983a7b41ce30d1cb",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-ba7afe3ab2e041caa51bb78e576d9903",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-13bbf15044764909b3f5113944d7cb71",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-cb33955607924cf6889d56cf8984f9cc",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-dc85803538524add82b0b7e59c48b823",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-443e458ada0243dbb4a7b5a8e2725e4b",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-8739d3f6c31349cfad512e2ddb9c200f",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-0f2c199c900e49008763eff576f9fb5a",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-4f0bfc51a9074afc93f36c9254427bc8",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-eb26aa7e120b4a82ac321f70d3b7fbf6",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-046373380e8c417ba5fc5334a02a95a8",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-d5b70d6ab9774a2a8adaa032b7dd1247",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-ce83ec69cd5346488fe994369a99f14d",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-42fd96e551ae473c8953d30974a5ca34",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-b2d9827a3b1e4f7abc4c3e577448b4a3",
+          "rank": 2,
+          "group": "官方工具"
+        }
+      ],
+      "samples": [
+        "smp-35fe30dcd6b6495c800c565bd1d9c514",
+        "smp-5672f67205c44a38ad49af67f05ccee9",
+        "smp-ce468d14dc9c4fc5b042d16d58d4bc76",
+        "smp-001f3e9cd5cf44ea8eca17c20a90f105",
+        "smp-469856bc5ed04315be93e87f3d0d3c99",
+        "smp-e99c9899843e4a1dbc88357c91eb8a45",
+        "smp-bf46587a98504371a0963646ed49d31a",
+        "smp-1566faf7e5004e9fbda3f84cc04efaf1",
+        "smp-666b2eb0207d4344b38f662bbd8902ed",
+        "smp-c8394e0fea3b4d94b64d0d284c49085a",
+        "smp-413b2803e4b346cfae1cd0238b82967c",
+        "smp-d061d24a7c9444cfb503ee47b11c952a",
+        "smp-3e576d0ebac34bdc88fa7237b920c173",
+        "smp-23940ddf0f504b0bb0593caa220d0eab",
+        "smp-323d3c385e3349faa7b88dfbf4364766",
+        "smp-d092fe1cc73a4af08785305fc3d72d6c",
+        "smp-575d535b8f454684a9c7fd3e9952bcfe",
+        "smp-2716342e431a4cd4b6a2208c2485a358",
+        "smp-b8e1c3b6d0544800afd5d7cd7adee747",
+        "smp-377ac74b92474598b5ebf5d5159f2dba",
+        "smp-99342094a87e4d57b6fe5fabf8ec1b7f",
+        "smp-8c53e61cd9e64b76bc21b3795d4352cd",
+        "smp-106a5743fa8c4cf789fe85bdad9fa79f",
+        "smp-56ef29a054ed4b4280667d941b6984f9",
+        "smp-205965cba62a401895dce953db91f511",
+        "smp-d5ddb8f8baa0474ba70c97f8fa9b2bc0",
+        "smp-eadf579e5b28424f9ae1301527e67758",
+        "smp-67478da992be47eb8761f59aec46e01d",
+        "smp-d617b20804d64ac1bfa55cfeb5fb8ccc",
+        "smp-bb442a2cfebf4543983a7b41ce30d1cb",
+        "smp-ba7afe3ab2e041caa51bb78e576d9903",
+        "smp-13bbf15044764909b3f5113944d7cb71",
+        "smp-cb33955607924cf6889d56cf8984f9cc",
+        "smp-dc85803538524add82b0b7e59c48b823",
+        "smp-443e458ada0243dbb4a7b5a8e2725e4b",
+        "smp-8739d3f6c31349cfad512e2ddb9c200f",
+        "smp-0f2c199c900e49008763eff576f9fb5a",
+        "smp-4f0bfc51a9074afc93f36c9254427bc8",
+        "smp-eb26aa7e120b4a82ac321f70d3b7fbf6",
+        "smp-046373380e8c417ba5fc5334a02a95a8",
+        "smp-d5b70d6ab9774a2a8adaa032b7dd1247",
+        "smp-ce83ec69cd5346488fe994369a99f14d",
+        "smp-42fd96e551ae473c8953d30974a5ca34",
+        "smp-b2d9827a3b1e4f7abc4c3e577448b4a3"
+      ],
+      "mention_rate": 8.15,
+      "average_rank": 1.68
+    },
+    {
+      "brand": "Runway",
+      "group": "第三方竞品",
+      "mention_count": 23,
+      "answer_count": 23,
+      "first_count": 0,
+      "top3_count": 9,
+      "rank_sum": 83,
+      "categories": [
+        "品类认知问题",
+        "对比决策问题",
+        "业务场景问题",
+        "案例/效果问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "smp-cb6a31ba1fca40eba7925beaeddddf8d",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-c92f4323a6564e8492668df8749013ba",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-2a3262c4945744ffad0b9d8b2c81cdce",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-566410025f3b4f3a9914791e212c4ec4",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5105701c0b65408f88b466cb5c8be44f",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-075f6b3002804551a7752ddce8d65b08",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-29492df097a54b2e898576f921c7b723",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-a2131c63e4b74bd081eff046384f04dc",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-7569fdf0f02a4e9c83c45d305c35e27e",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-ed26211e133b4c3c82b122f74ab84f53",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-a3a1649e25264eb2b9ea736de5255fa0",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-cdefd863ce564157a912e05aec463e74",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5502334b346d435dbd79f83b2367237f",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-39a207c45032493a92ad63b267870352",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-943177a0aeb44581a104dace96d741d8",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-3b6641325e85400a80d9c1ff6c47a18f",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-61b2bf72f34844cd946cd0d8faab58f8",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-6ace455555e14e0790d188f2903c99eb",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5bae7faec8cb4352adaa496eda82ba36",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-7697deb937b44df3acbd59930a05a22a",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-f24887f5cfc9493c8f95d27f38dfe639",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-fe4a4662963f44e9ab92e3a259f0b720",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-83c060f6e64140ec9b57f2c0ed148d5a",
+          "rank": 3,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "smp-cb6a31ba1fca40eba7925beaeddddf8d",
+        "smp-c92f4323a6564e8492668df8749013ba",
+        "smp-2a3262c4945744ffad0b9d8b2c81cdce",
+        "smp-566410025f3b4f3a9914791e212c4ec4",
+        "smp-5105701c0b65408f88b466cb5c8be44f",
+        "smp-075f6b3002804551a7752ddce8d65b08",
+        "smp-29492df097a54b2e898576f921c7b723",
+        "smp-a2131c63e4b74bd081eff046384f04dc",
+        "smp-7569fdf0f02a4e9c83c45d305c35e27e",
+        "smp-ed26211e133b4c3c82b122f74ab84f53",
+        "smp-a3a1649e25264eb2b9ea736de5255fa0",
+        "smp-cdefd863ce564157a912e05aec463e74",
+        "smp-5502334b346d435dbd79f83b2367237f",
+        "smp-39a207c45032493a92ad63b267870352",
+        "smp-943177a0aeb44581a104dace96d741d8",
+        "smp-3b6641325e85400a80d9c1ff6c47a18f",
+        "smp-61b2bf72f34844cd946cd0d8faab58f8",
+        "smp-6ace455555e14e0790d188f2903c99eb",
+        "smp-5bae7faec8cb4352adaa496eda82ba36",
+        "smp-7697deb937b44df3acbd59930a05a22a",
+        "smp-f24887f5cfc9493c8f95d27f38dfe639",
+        "smp-fe4a4662963f44e9ab92e3a259f0b720",
+        "smp-83c060f6e64140ec9b57f2c0ed148d5a"
+      ],
+      "mention_rate": 4.26,
+      "average_rank": 3.61
+    },
+    {
+      "brand": "Pika",
+      "group": "第三方竞品",
+      "mention_count": 18,
+      "answer_count": 18,
+      "first_count": 3,
+      "top3_count": 8,
+      "rank_sum": 64,
+      "categories": [
+        "品类认知问题",
+        "对比决策问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "smp-cb6a31ba1fca40eba7925beaeddddf8d",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-c92f4323a6564e8492668df8749013ba",
+          "rank": 6,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-2a3262c4945744ffad0b9d8b2c81cdce",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-566410025f3b4f3a9914791e212c4ec4",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5105701c0b65408f88b466cb5c8be44f",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-075f6b3002804551a7752ddce8d65b08",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-29492df097a54b2e898576f921c7b723",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-ed26211e133b4c3c82b122f74ab84f53",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-a3a1649e25264eb2b9ea736de5255fa0",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5502334b346d435dbd79f83b2367237f",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-943177a0aeb44581a104dace96d741d8",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-61b2bf72f34844cd946cd0d8faab58f8",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-6ace455555e14e0790d188f2903c99eb",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5bae7faec8cb4352adaa496eda82ba36",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-b75e84f7069a4cdf9c36f160fd797adb",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-7697deb937b44df3acbd59930a05a22a",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-f24887f5cfc9493c8f95d27f38dfe639",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-fe4a4662963f44e9ab92e3a259f0b720",
+          "rank": 2,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "smp-cb6a31ba1fca40eba7925beaeddddf8d",
+        "smp-c92f4323a6564e8492668df8749013ba",
+        "smp-2a3262c4945744ffad0b9d8b2c81cdce",
+        "smp-566410025f3b4f3a9914791e212c4ec4",
+        "smp-5105701c0b65408f88b466cb5c8be44f",
+        "smp-075f6b3002804551a7752ddce8d65b08",
+        "smp-29492df097a54b2e898576f921c7b723",
+        "smp-ed26211e133b4c3c82b122f74ab84f53",
+        "smp-a3a1649e25264eb2b9ea736de5255fa0",
+        "smp-5502334b346d435dbd79f83b2367237f",
+        "smp-943177a0aeb44581a104dace96d741d8",
+        "smp-61b2bf72f34844cd946cd0d8faab58f8",
+        "smp-6ace455555e14e0790d188f2903c99eb",
+        "smp-5bae7faec8cb4352adaa496eda82ba36",
+        "smp-b75e84f7069a4cdf9c36f160fd797adb",
+        "smp-7697deb937b44df3acbd59930a05a22a",
+        "smp-f24887f5cfc9493c8f95d27f38dfe639",
+        "smp-fe4a4662963f44e9ab92e3a259f0b720"
+      ],
+      "mention_rate": 3.33,
+      "average_rank": 3.56
+    },
+    {
+      "brand": "火山引擎",
+      "group": "第三方竞品",
+      "mention_count": 16,
+      "answer_count": 16,
+      "first_count": 14,
+      "top3_count": 16,
+      "rank_sum": 18,
+      "categories": [
+        "业务场景问题",
+        "品类认知问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "smp-5a53420a20f644fdb0672f287f79f931",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-8a73cca44fba4c2a9699e40f5953560c",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-694f2aa8be9b4c399ef579af4fd8c876",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-335c464741784978b4362e08febf71c1",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-82d4619f950446c69e61f510b1e66adb",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-02475b314f574fbc835a0c298598cf72",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-cf10bd1c7be9488f9c8446c17b08e095",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-b3f09f21237940e78062327cd18aecc1",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-81c0a922c1f24ae58a109e28de0ad0d4",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-6315447259164512a8c1bbe3a572c766",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-163ea7291383473e916e411fc45b8ae2",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-f24887f5cfc9493c8f95d27f38dfe639",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-6b70569a75124da082654b08948a1ab2",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-ce83ec69cd5346488fe994369a99f14d",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-1dbbf6b33da24de1843a5a5b4df16d0b",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-d5bfac7fd9544d0d8545972f53f41e43",
+          "rank": 1,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "smp-5a53420a20f644fdb0672f287f79f931",
+        "smp-8a73cca44fba4c2a9699e40f5953560c",
+        "smp-694f2aa8be9b4c399ef579af4fd8c876",
+        "smp-335c464741784978b4362e08febf71c1",
+        "smp-82d4619f950446c69e61f510b1e66adb",
+        "smp-02475b314f574fbc835a0c298598cf72",
+        "smp-cf10bd1c7be9488f9c8446c17b08e095",
+        "smp-b3f09f21237940e78062327cd18aecc1",
+        "smp-81c0a922c1f24ae58a109e28de0ad0d4",
+        "smp-6315447259164512a8c1bbe3a572c766",
+        "smp-163ea7291383473e916e411fc45b8ae2",
+        "smp-f24887f5cfc9493c8f95d27f38dfe639",
+        "smp-6b70569a75124da082654b08948a1ab2",
+        "smp-ce83ec69cd5346488fe994369a99f14d",
+        "smp-1dbbf6b33da24de1843a5a5b4df16d0b",
+        "smp-d5bfac7fd9544d0d8545972f53f41e43"
+      ],
+      "mention_rate": 2.96,
+      "average_rank": 1.13
+    },
+    {
+      "brand": "飞瓜易投",
+      "group": "第三方竞品",
+      "mention_count": 14,
+      "answer_count": 14,
+      "first_count": 1,
+      "top3_count": 13,
+      "rank_sum": 36,
+      "categories": [
+        "业务场景问题",
+        "对比决策问题",
+        "品类认知问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "smp-881791dc13624371b55c244cb58b18d8",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-f1337a9a0b4446df927daf76b2f5a10a",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-8947014da4ec47a0a0e8a1b360ed9ae4",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-b498b19d591f4a378ff58af54d0525e3",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-32b161f82ded465f9c90abc30410b5ee",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-9be12a6783b541ccbed9e6e96d8f7fce",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-e787b85891ce4e79830d6b844093ba8d",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-300b15927a374d22b9a3c30c33fb44fd",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-d63f445255b74722bf40bc22cd5a7a73",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-a079506302534e74a0aa889ede3e1a58",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-dc85803538524add82b0b7e59c48b823",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-3b777dba47fa4e0ca552331e1d7842b1",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-499ed9517cee4d91a10e57df73085702",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-7f882205b6f84dc3b208d7c43a607ed1",
+          "rank": 2,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "smp-881791dc13624371b55c244cb58b18d8",
+        "smp-f1337a9a0b4446df927daf76b2f5a10a",
+        "smp-8947014da4ec47a0a0e8a1b360ed9ae4",
+        "smp-b498b19d591f4a378ff58af54d0525e3",
+        "smp-32b161f82ded465f9c90abc30410b5ee",
+        "smp-9be12a6783b541ccbed9e6e96d8f7fce",
+        "smp-e787b85891ce4e79830d6b844093ba8d",
+        "smp-300b15927a374d22b9a3c30c33fb44fd",
+        "smp-d63f445255b74722bf40bc22cd5a7a73",
+        "smp-a079506302534e74a0aa889ede3e1a58",
+        "smp-dc85803538524add82b0b7e59c48b823",
+        "smp-3b777dba47fa4e0ca552331e1d7842b1",
+        "smp-499ed9517cee4d91a10e57df73085702",
+        "smp-7f882205b6f84dc3b208d7c43a607ed1"
+      ],
+      "mention_rate": 2.59,
+      "average_rank": 2.57
+    },
+    {
+      "brand": "抖音素材库",
+      "group": "官方工具",
+      "mention_count": 11,
+      "answer_count": 11,
+      "first_count": 9,
+      "top3_count": 11,
+      "rank_sum": 13,
+      "categories": [
+        "对比决策问题",
+        "风险/限制问题",
+        "业务场景问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "smp-ce468d14dc9c4fc5b042d16d58d4bc76",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-1582724c6cfc4f719cb2f318c0c850c6",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-3e576d0ebac34bdc88fa7237b920c173",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-8712b9ce0a90460e9c0a18da40af97a5",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-377ac74b92474598b5ebf5d5159f2dba",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-4e598ff86a9e486a9bd6bd575713dfcf",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-67478da992be47eb8761f59aec46e01d",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-442edda8a2c7456fa2889d64d2358869",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-981ceb0fcbcb44c8bd4e5650264ef268",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-8739d3f6c31349cfad512e2ddb9c200f",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "smp-b2d9827a3b1e4f7abc4c3e577448b4a3",
+          "rank": 1,
+          "group": "官方工具"
+        }
+      ],
+      "samples": [
+        "smp-ce468d14dc9c4fc5b042d16d58d4bc76",
+        "smp-1582724c6cfc4f719cb2f318c0c850c6",
+        "smp-3e576d0ebac34bdc88fa7237b920c173",
+        "smp-8712b9ce0a90460e9c0a18da40af97a5",
+        "smp-377ac74b92474598b5ebf5d5159f2dba",
+        "smp-4e598ff86a9e486a9bd6bd575713dfcf",
+        "smp-67478da992be47eb8761f59aec46e01d",
+        "smp-442edda8a2c7456fa2889d64d2358869",
+        "smp-981ceb0fcbcb44c8bd4e5650264ef268",
+        "smp-8739d3f6c31349cfad512e2ddb9c200f",
+        "smp-b2d9827a3b1e4f7abc4c3e577448b4a3"
+      ],
+      "mention_rate": 2.04,
+      "average_rank": 1.18
+    },
+    {
+      "brand": "Vidu",
+      "group": "第三方竞品",
+      "mention_count": 11,
+      "answer_count": 11,
+      "first_count": 0,
+      "top3_count": 8,
+      "rank_sum": 35,
+      "categories": [
+        "对比决策问题",
+        "业务场景问题",
+        "品类认知问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "smp-2b5113540bd341c39d6c82af01fcc9c4",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-b65cab02e6ef45208b8a9b349cd6fb2b",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-d224341ada644027b457efb388c7cc9d",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-bd7e7b7b9b5e4adcae4f47199a7c2fe9",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-1707c6cf4e6f4c51b8798884b3fde938",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-be8f366b629b4a3598713e3b5bd7cf76",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-0c753aadf2ac45338c80457bfa199d51",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-798373b06b684f2293e0cc10935f0851",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5de81cd2430348ffa76c1f8e17d4e15c",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-7cfa9dc1c15a4a899b02da39c2a5a843",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-b600d4f9c1174f8b8d0892a082c2aec6",
+          "rank": 3,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "smp-2b5113540bd341c39d6c82af01fcc9c4",
+        "smp-b65cab02e6ef45208b8a9b349cd6fb2b",
+        "smp-d224341ada644027b457efb388c7cc9d",
+        "smp-bd7e7b7b9b5e4adcae4f47199a7c2fe9",
+        "smp-1707c6cf4e6f4c51b8798884b3fde938",
+        "smp-be8f366b629b4a3598713e3b5bd7cf76",
+        "smp-0c753aadf2ac45338c80457bfa199d51",
+        "smp-798373b06b684f2293e0cc10935f0851",
+        "smp-5de81cd2430348ffa76c1f8e17d4e15c",
+        "smp-7cfa9dc1c15a4a899b02da39c2a5a843",
+        "smp-b600d4f9c1174f8b8d0892a082c2aec6"
+      ],
+      "mention_rate": 2.04,
+      "average_rank": 3.18
+    },
+    {
+      "brand": "Sora",
+      "group": "第三方竞品",
+      "mention_count": 6,
+      "answer_count": 6,
+      "first_count": 2,
+      "top3_count": 2,
+      "rank_sum": 20,
+      "categories": [
+        "对比决策问题",
+        "品类认知问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "smp-2a3262c4945744ffad0b9d8b2c81cdce",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-075f6b3002804551a7752ddce8d65b08",
+          "rank": 6,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-29492df097a54b2e898576f921c7b723",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-a3a1649e25264eb2b9ea736de5255fa0",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-5bae7faec8cb4352adaa496eda82ba36",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-fe4a4662963f44e9ab92e3a259f0b720",
+          "rank": 1,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "smp-2a3262c4945744ffad0b9d8b2c81cdce",
+        "smp-075f6b3002804551a7752ddce8d65b08",
+        "smp-29492df097a54b2e898576f921c7b723",
+        "smp-a3a1649e25264eb2b9ea736de5255fa0",
+        "smp-5bae7faec8cb4352adaa496eda82ba36",
+        "smp-fe4a4662963f44e9ab92e3a259f0b720"
+      ],
+      "mention_rate": 1.11,
+      "average_rank": 3.33
+    },
+    {
+      "brand": "Adobe",
+      "group": "第三方竞品",
+      "mention_count": 4,
+      "answer_count": 4,
+      "first_count": 0,
+      "top3_count": 0,
+      "rank_sum": 17,
+      "categories": [
+        "品类认知问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "smp-c92f4323a6564e8492668df8749013ba",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-e2402f893086448b81e4128b50e7d08b",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-3bd931690fea4684b44559ce7ab3ac8b",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "smp-f24887f5cfc9493c8f95d27f38dfe639",
+          "rank": 5,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "smp-c92f4323a6564e8492668df8749013ba",
+        "smp-e2402f893086448b81e4128b50e7d08b",
+        "smp-3bd931690fea4684b44559ce7ab3ac8b",
+        "smp-f24887f5cfc9493c8f95d27f38dfe639"
+      ],
+      "mention_rate": 0.74,
+      "average_rank": 4.25
+    }
+  ]
+}

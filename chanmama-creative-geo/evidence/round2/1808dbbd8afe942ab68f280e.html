@@ -1,0 +1,22 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R2 CMCR-Q0044 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>AI 拉片工具能拆出脚本、画面和分镜吗？</h1><p class="meta">第 2 轮 · CMCR-Q0044 · 逻辑采样日期 2026-10-12 · C1</p><p class="meta">样本 smp-c048c4b260e14851bb0e4c84fbea0339</p><p class="meta">实际提交 2026-10-12T13:16:35.309348Z · 实际完成 2026-10-12T13:16:56.091320Z</p><p class="hash">回答 SHA-256 e83999b7edd2264934bd30b102e880ca718f6bac95a4b226007eb91375ee7110</p></header><main><pre id="original-answer"># ✅ 结论
+**可以拆，但不是拿到原始导演脚本/手绘分镜，而是AI反向解析、自动生成的文字版拉片脚本、镜头截图、分镜描述**
+主流工具：LibTV、Shotlab（新片场）、包拆拆这类AI拉片工具，上传视频就能一次性输出三类内容：
+1. **画面**：自动切镜头，截取每一个镜头关键帧截图；识别景别、机位、光影、构图、色调、人物动作、转场方式
+2. **分镜（文字分镜）**：按镜头切分，给出每镜时长、运镜、画面描述，导出表格/故事板；**不能直接导出原片手绘分镜原稿**，是AI生成的镜头文字描述+关键截图版分镜板
+3. **脚本**：字幕OCR提取台词，再结合画面，生成带场次、镜号、台词、画面描述的拉片脚本（反向推断出来的，**不等于影片原始拍摄脚本**）
+
+## ⚠️ 局限很关键
+1. **镜头切分会出错**：快速剪辑、叠化、闪切容易误合并/误切割镜头，需要人工微调镜号
+2. **内容理解会幻觉**：复杂剧情、人物微表情、隐喻、镜头深层意图AI容易解读跑偏；人物名字、台词识别可能有错别字
+3. **没有原始原稿**：电影/短剧原本的导演脚本、手绘分镜文件AI拿不到，全部是**基于视频画面反向重写**的版本
+4. 长视频、低画质、画面昏暗、遮挡多的片段，拆解精度明显下降
+
+## 📌 适合什么场景
+✅ 短剧、广告片、短视频拉片学习、参考镜头语言、快速做分镜表、批量导出Excel/Word拉片文档
+❌ 不能直接拿来当正式拍摄剧本，必须人工校对修改
+
+## 简单工作流
+上传视频 → AI自动切镜头 → 提取关键画面截图+字幕 → 输出：镜号｜时长｜景别｜运镜｜画面描述｜台词（拉片脚本）→ 导出表格，还可以基于这份结果生成手绘风格分镜图
+
+
+如果你想，我可以给你一份**AI拉片结果的校对清单**，快速修正AI拆分错的镜头和幻觉描述。</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 fbc46d8e482b1e05d748324521c21867e9a14abdef9a822082d79c8026c556df</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

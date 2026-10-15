@@ -1,0 +1,28 @@
+{
+  "samples": 540,
+  "collected": 538,
+  "missing": 2,
+  "unique_questions": 100,
+  "citation_answers": 538,
+  "citation_known": 538,
+  "citation_unknown": 0,
+  "citation_rate": 100,
+  "raw_cards": 7042,
+  "valid_url_cards": 7042,
+  "sample_url_events": 6537,
+  "unique_urls": 3390,
+  "urls_per_answer": 12.15,
+  "official_events": 319,
+  "official_event_share": 4.88,
+  "official_answers": 145,
+  "official_answer_rate": 26.95,
+  "categories": {
+    "案例/效果问题": 70,
+    "对比决策问题": 108,
+    "品牌产品问题": 54,
+    "品类认知问题": 48,
+    "业务场景问题": 232,
+    "风险/限制问题": 24,
+    "价格/开通问题": 4
+  }
+}

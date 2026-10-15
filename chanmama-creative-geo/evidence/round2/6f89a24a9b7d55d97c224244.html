@@ -1,0 +1,31 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R2 CMCR-Q0044 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>AI 拉片工具能拆出脚本、画面和分镜吗？</h1><p class="meta">第 2 轮 · CMCR-Q0044 · 逻辑采样日期 2026-10-12 · C3</p><p class="meta">样本 smp-a59b8b733d044c8ca14e1d7580cd544e</p><p class="meta">实际提交 2026-10-12T15:39:58.156120Z · 实际完成 2026-10-12T15:40:17.568690Z</p><p class="hash">回答 SHA-256 105fdafd9545e42c8fe94c2efab98210b2c25d12610be41405696e06e0f76bae</p></header><main><pre id="original-answer"># ✅ 结论
+**AI拉片工具可以自动拆出台词脚本、镜头画面截图、文字版分镜描述，但不能直接导出手绘/原版分镜图**
+
+## 能拿到的三类内容
+1. **脚本（台词剧本）**
+通过语音识别ASR提取对白、旁白，输出成行业剧本格式：场次、人物、台词、动作描述。
+&gt; 代表工具：积米律动Kimidance，可以输出文学剧本，台词尽量不改写
+
+2. **画面**
+自动检测镜头切变，截取每个镜头**关键帧截图**，附带时间戳；同时用视觉模型识别画面信息：景别（近景/全景）、机位、光影、色调、人物、场景。
+
+3. **分镜（文字版分镜表）**
+输出表格（CSV/Excel），每一行对应一个镜头：镜头序号、时长、景别、运镜、画面描述、台词、情绪，也就是**分镜速查表**，可以直接当创作参考、AI视频提示词使用。
+&gt; 场鸽Shotlab、LibTV、包拆拆这类工具都支持，可导出表格/Word
+
+## ⚠️ 重要局限（一定要人工校对）
+1. **没有原始手绘分镜图**：原片如果是实拍电影，本身就没有公开分镜原稿；AI只能**反向推断文字描述**，不会自动画出美术分镜稿。
+2. **镜头切分容易出错**：快速剪辑、叠化、闪回、淡入淡出容易识别错，会把多个镜头合并，或者一个镜头拆碎。
+3. **画面理解会幻觉**：复杂画面容易认错物体、动作、运镜，安静无对白片段，全靠图像识别，误差更大。
+4. **台词识别缺陷**：嘈杂背景音、口音、小声OS容易识别错误。
+
+## 适合场景
+✅ 短视频、短剧、TVC快速拉片、扒爆款结构、写参考分镜提示词
+❌ 直接拿来当专业拍摄分镜定稿，**必须人工复核修正**
+
+## 简单工作流
+上传视频 → AI自动切镜头 → 提取台词+截图 → 生成文字分镜表 → 人工校对修正 → 可以再让AI根据这份文字分镜**生成分镜插画**
+
+
+
+如果你需要，我可以给你一份**AI拉片提示词模板**，丢给支持视频理解的大模型（如千问、GPT-4V）就能直接输出标准化分镜表格。</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 4d67f797a1c4d1530e08cc48906810a70866866564ee9ef2efac62022a543976</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

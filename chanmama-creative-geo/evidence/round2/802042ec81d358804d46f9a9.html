@@ -1,0 +1,22 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R2 CMCR-Q0044 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>AI 拉片工具能拆出脚本、画面和分镜吗？</h1><p class="meta">第 2 轮 · CMCR-Q0044 · 逻辑采样日期 2026-10-13 · C1</p><p class="meta">样本 smp-ec6f20246fea4b1b93198a7ef314c081</p><p class="meta">实际提交 2026-10-13T15:26:03.718245Z · 实际完成 2026-10-13T15:26:19.802304Z</p><p class="hash">回答 SHA-256 d3678724d44c45654639ddd167cc8573dd6a014d152d70cffdad7be21e5d85b7</p></header><main><pre id="original-answer"># ✅ 结论：可以拆，但**不是直接导出手绘原版分镜稿**，而是**镜头拆解+台词脚本+画面描述+分镜表**
+主流AI拉片工具（积米律动Kimidance、VideoFlow、StoryFolder、场鸽、包拆拆等）上传视频后，能一次性输出三类内容：
+1. **脚本（台词/文学剧本）**
+    AI语音转录，识别对白、旁白、内心OS，按场次整理成标准剧本格式：场号、人物、台词、动作描述。静音视频就只有画面动作脚本。
+    &gt; 局限：口音、嘈杂BGM、小语种容易识别出错，需要人工校对。
+
+2. **画面（镜头截图+画面描述）**
+    自动检测镜头切点，在每个镜头抓取关键帧截图；同时用图文模型描述画面内容：场景、人物、构图、光影、色彩、道具。
+
+3. **分镜（分镜清单/分镜表）**
+    输出**逐镜分镜表格**：镜号、镜头时长、景别（全景/中近/特写）、运镜（推/拉/摇/固定）、画面描述、台词。
+    ⚠️重点：**不会直接导出手绘分镜图**；部分工具可以基于这套分镜信息，再调用AI生图，自动画出每镜的分镜草图（属于附加生图功能，不是原始视频自带分镜）。
+
+## 简单对比
+- ✅能：切镜头、提取台词、导出镜头截图、生成结构化分镜表、标注景别运镜，导出Word/CSV表格，适合拉片学习、短剧拆解、反推提示词。
+- ❌不能：拿到导演原始手绘分镜稿；复杂剪辑、快速闪切、画面相似镜头容易切镜错误；画面细节识别会有幻觉，**必须人工复核**。
+
+## 简单工作流
+上传视频 → AI自动切镜头 → 转录台词+截图 → 生成【文学剧本+分镜速查表】→ 可选：基于分镜表AI生成分镜草图。
+
+
+如果你想，我可以给你一份AI拉片后输出的**分镜脚本模板**，直接复制给AI视频工具使用。</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 6dad388d224be48dd476d42838001e5cbb0e73513ea01a15b98d7754af5c7089</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

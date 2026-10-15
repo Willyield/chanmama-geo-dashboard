@@ -1,0 +1,48 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R2 CMCR-Q0043 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>哪个 AI 可以分析视频内容并输出拆解报告？</h1><p class="meta">第 2 轮 · CMCR-Q0043 · 逻辑采样日期 2026-10-13 · C2</p><p class="meta">样本 smp-6315447259164512a8c1bbe3a572c766</p><p class="meta">实际提交 2026-10-13T16:49:44.701817Z · 实际完成 2026-10-13T16:50:10.711718Z</p><p class="hash">回答 SHA-256 2fe0d4221d7a0509a60b16384fe010e790e54a80d9e98d76c9f23a44c0f8057a</p></header><main><pre id="original-answer"># ✅ 可以分析视频、输出结构化拆解报告的AI（分个人网页端 / 企业API）
+&gt; 区分两类：**只解析音频字幕**（便宜、长视频友好）、**多模态（画面+声音+字幕一起分析，真正拉片/内容拆解）**
+
+## 一、国内个人直接能用（网页，上传视频/粘贴链接，适合自媒体拉片、课程复盘）
+1. **通义听悟（阿里）**
+    侧重长视频音频+字幕，自动分章节、提取观点、生成摘要报告，导出Markdown/Word；**画面分析弱一点，适合讲座、网课、口播视频拆解**。
+2. **通义千问（多模态视频）**
+    直接上传视频文件，支持**画面+语音联合理解**，你可以写提示词：`做一份拉片拆解报告，分镜头、时长、画面信息、台词、叙事结构、优缺点，表格输出`。短视频、短剧、广告片拉片非常合适。
+3. **多维视界**
+    专门做音视频结构化解析，同时识别画面OCR字幕、人物、场景，支持B站/抖音链接，输出完整视频分析报告，适合短视频爆款拆解、录屏PPT分析。
+4. **格镜**
+    多模态解析（画面+语音），输出脚本、章节、核心要点，适合短视频、课程视频拆解，按时长计费。
+5. **讯飞听见**
+    语音识别强（方言、嘈杂环境），提取文稿+重点总结，**画面理解弱**，适合会议录像、访谈类视频整理报告。
+
+## 二、海外多模态模型（支持视频理解，适合深度拉片）
+1. **Gemini（Google）**
+    Gemini Flash/Pro支持上传视频，原生音视频多模态，可以直接要求输出结构化拆解报告、镜头分析、人物行为分析。
+2. **TwelveLabs**
+    业界专业视频理解模型，擅长检索+时序画面分析，输出场景分段、事件、结构化JSON/文本报告；适合专业媒体、广告视频分析，有免费额度，API为主。
+3. **Azure AI Video Indexer（微软）**
+    企业级，自动识别人物、场景、情绪、字幕、关键词，输出完整索引报告，适合监控、访谈、广告素材分析。
+
+## 三、国内云厂商API（企业业务开发）
+- 火山引擎视频精细理解：支持最长3小时视频，画面+音频联合分析，分镜、事件提取、生成结构化报告
+- 腾讯云数据万象AIMediaAnalysis：自定义指令分析视频，输出描述、标签、自定义报告模板
+- 阿里云Model Studio 影视媒体理解：视频内容分类、结构拆解、知识点提取API
+- 智谱GLM-4.1V：支持2小时视频，提取分镜、时间线、画面事件，API接入生成报告
+
+# 📌 快速选型建议
+- ✅ 自媒体拉片（短视频广告/短剧，看镜头、画面+台词）：**通义千问**
+- ✅ 长课程、讲座、会议录像，主要看语音内容：**通义听悟**
+- ✅ 专业批量视频分析、企业项目：**TwelveLabs / 火山引擎 / Azure Video Indexer**
+- ✅ 抖音/B站链接直接解析，不用下载视频：**多维视界**
+
+&gt; 提示词模板（直接复制给AI生成拆解报告）
+&gt;
+&gt; ```
+&gt; 对这个视频做完整拆解报告，按下面结构输出：
+&gt; 1.基础信息（时长、主题、风格）
+&gt; 2.分段时间线：每段起止时间、画面内容、台词、镜头信息
+&gt; 3.叙事结构：钩子、主体、结尾
+&gt; 4.亮点/不足
+&gt; 5.总结
+&gt; ```
+
+
+你是用来做**短视频爆款拉片**，还是**课程/会议录像整理报告**？我可以直接给你对应的最佳工具+定制提示词。</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 e520423d6b39d2b798837f13ec60b85757bf16bc23b65ae0ccec41749e31c706</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

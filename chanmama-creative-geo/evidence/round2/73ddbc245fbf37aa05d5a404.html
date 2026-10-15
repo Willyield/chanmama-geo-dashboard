@@ -1,0 +1,37 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R2 CMCR-Q0043 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>哪个 AI 可以分析视频内容并输出拆解报告？</h1><p class="meta">第 2 轮 · CMCR-Q0043 · 逻辑采样日期 2026-10-12 · C3</p><p class="meta">样本 smp-82d4619f950446c69e61f510b1e66adb</p><p class="meta">实际提交 2026-10-12T15:39:31.480025Z · 实际完成 2026-10-12T15:39:52.992246Z</p><p class="hash">回答 SHA-256 37319bd32cd0e4065b5f51fe69a057ba2d6ba517fb8be27b1c7b4f0d55488079</p></header><main><pre id="original-answer"># 国内可用（网页端，上手简单，优先推荐）
+## 1. 通义听悟（阿里）
+- 能力：上传本地视频 / 粘贴B站等视频链接，**语音转写、自动分章节、提取要点、生成结构化摘要报告**，带时间戳，可导出Word/Markdown报告
+- 局限：**主要识别音频内容，画面视觉理解弱**；适合课程、讲座、访谈、会议视频拆解
+- 适合：学习听课、会议复盘、长视频干货拆解
+
+## 2. WPS AI（企业版有完整视频解析）
+- 能力：上传视频，识别语音+关键帧，自动生成纪要、结构化拆解报告、思维导图，还能直接输出PPT/表格报告，支持视频问答，定位对应时间点画面
+- 局限：个人版视频能力有限，强视频解析在企业版
+- 适合：企业培训录像、会议视频、课程视频知识沉淀
+
+## 3. 讯飞听见
+- 能力：语音识别强，支持方言、多人对话，自动提炼重点、高亮关键信息，输出带时间戳的文字报告，适合杂音多的采访、会议视频
+- 局限：同样偏音频，画面内容识别弱
+
+## 4. 豆包（多模态版）
+- 能力：直接上传短视频文件，**同时看懂画面+音频**，你可以写提示词要求输出自定义拆解报告：比如脚本结构、镜头节奏、钩子、卖点、优缺点、思维导图
+- 局限：单次视频文件大小/时长有限制，长视频建议先转成音频字幕再分析
+- 适合：短视频爆款拆解、广告片、短片内容分析
+
+# 海外多模态模型（画面+音频双理解，专业结构化报告）
+1. **Gemini（Google）**：原生支持上传视频，同时理解画面、字幕、语音，自定义输出结构化拆解报告，长视频支持较好
+2. **TwelveLabs** 专门视频理解API，输入视频，可自定义输出格式：章节、时间线、事件、结构化JSON/Markdown报告，能识别画面文字、动作、场景，适合专业视频分析开发使用
+3. **Azure AI Video Indexer（微软）**：云端视频索引，自动提取说话人、字幕、场景、人物、情绪、关键帧，输出完整元数据报告，适合企业批量视频资产分析
+
+# 开发/私有化方案（技术人员）
+- 火山引擎LAS视频精细理解API：识别画面事件、人物动作、场景变化，输出时间线结构化JSON报告，支持最长3小时视频
+- 本地开源方案：Whisper（语音）+多模态VLM，本地部署，离线拆解视频，适合隐私要求高场景
+
+# 快速选型建议
+- 只需要**听内容、拆课程/会议长视频**：通义听悟
+- **短视频，要同时分析镜头+台词+画面**：豆包多模态 / Gemini
+- 企业批量、需要导出PPT/表格报告：WPS AI企业版
+- 开发对接API、需要画面事件识别：TwelveLabs / Azure Video Indexer
+
+如果你想，我可以给你一段**视频拆解报告提示词模板**，直接复制给豆包/Gemini，上传视频就自动输出完整结构化报告。
+</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 503efed306e448b9603ffa98c268be1f52fc247cc3a310055a620fcce62a9d60</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

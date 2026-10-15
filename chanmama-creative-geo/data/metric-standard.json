@@ -1,0 +1,292 @@
+{
+  "version": "CMCR-GEO-METRICS-2.0.1",
+  "effective_date": "2026-10-14",
+  "scope": "蝉妈妈创意GEO；两轮统一重算及后续同题池研究",
+  "previous_version": "CMCR-GEO-METRICS-2.0.0",
+  "revision_reason": "独立复评纠正Q0011所问工具差异与内部模块归属的证据错配；不改变题集、品牌范围、分母或unknown处理，只明确既有原题对应门槛并据此改一条误判。",
+  "question_contract": "work/plan-review-r2/question-contract.json",
+  "question_contract_sha256": "f34e78f50531a7ec1f12923232845182e8715fd5a3cdf7b37ebb183b53db1830",
+  "truth_contract_version": "CMCR-R2-TRUTH-1.1",
+  "evidence_requirement": "每个正判和已证冲突必须绑定原答哈希、准确原句区间、事实编号、事实来源版本和哈希、适用时点、语义复核结论。不能用回答标题或笼统引言代替支撑结论的内容。",
+  "question_alignment_requirement": "证据必须支持原题实际询问的断言。问外部工具区别时，产品内部模块归属只证明内部关系，不能替代工具差异的比较事实。fact_ids非空不等于证据足够；缺乏原题对应证据必须unknown，不为保持数值不变保留pass。",
+  "alias_sha256": "7d95771e0b00402e2a24ec4865d4363b4df8c9fe8beeec48de249f6938a87321",
+  "semantic_judgment_version": "CMCR-SEMANTIC-V2-CONSERVATIVE",
+  "semantic_policy": "正向语义指标的主值=已证实命中数/全部适用有效回答；证据不足在分母内，既不判正确也不判错误；因此主值是可证实覆盖比例，不是已核实样本的准确率。错误指标为已证错误检出比例，不是实际错误率。",
+  "stability_policy": "题池适用集、品牌词典、品牌范围、分母、命中门槛、unknown处理与去重单位均绑定本版本。不得为保持旧数字或改善新数字更改。规则变更必须生成新版本，说明原因，同一规则回放两轮，输出逐指标及逐样本影响；保留旧版。新事实先单独记录时点，不能用当前事实倒推历史状态。",
+  "populations": {
+    "valid": "取得非空完整回答的逻辑槽位；补采替代原失败槽位一次，原失败及未决不另计有效回答。",
+    "neutral": "原题不含三产品任一冻结别名的有效回答；题目出现蝉妈妈、蝉妈妈·创意或创意大师即排除。不是按回答是否提到品牌筛选。",
+    "recommendation": "中立有效回答与采样前priority_recommendation题目适用集的交集。",
+    "creative_family": "蝉妈妈·创意及创意大师；不含单独的蝉妈妈、蝉镜或第三方。品类指标沿用已冻结历史家族别名，不能从母品牌提及推导产品提及。",
+    "chanmama_camp": "蝉妈妈、蝉妈妈·创意、创意大师三个独立品牌的并集；按回答去重。"
+  },
+  "states": {
+    "pass": "证据满足该项命中门槛；只证明该指标指定的内容，不证明整答全部事实正确。",
+    "fail": "有明确不满足该项条件的证据；错误检出指标中表示至少一项已证错误。",
+    "unknown": "已经审阅，但事实、归属、比较依据或所问关系不足以支持确定结论；保留原句和原因，不填成fail或pass。",
+    "pending": "尚未完成必要审阅；阻止该指标作为最终成果发布。",
+    "missing": "未取得有效回答；不进入有效回答分母，单列缺失槽位。",
+    "not_applicable": "题池预先定义不适用；不进入该项分母。",
+    "candidate_gap": "回答中没有冻结词典可识别品牌；首位及前三确定未命中，仍在回答分母内；品牌记录占比不产生记录。不是事实证据不足。"
+  },
+  "metrics": [
+    {
+      "id": "chanmama_natural_mention_rate",
+      "label": "蝉妈妈单品牌自然提及率",
+      "legacy_label": "蝉妈妈自然提及率",
+      "kind": "descriptive",
+      "target": "蝉妈妈单品牌",
+      "population": "neutral",
+      "unit": "回答",
+      "numerator": "中立有效回答中独立命中蝉妈妈别名的回答数。长别名重叠区间优先归属具体产品，不因蝉妈妈·创意含蝉妈妈而重复计母品牌。",
+      "denominator": "全部中立有效回答。",
+      "unknown": "无提及明确记未命中；缺失回答另列，不进分母。",
+      "interpretation": "衡量未点名三产品的问题中模型自然提及蝉妈妈的比例。",
+      "example": "问素材工具有哪些，答仅写蝉妈妈·创意：本项不命中，创意自然提及命中。"
+    },
+    {
+      "id": "chanmama_creative_natural_mention_rate",
+      "label": "蝉妈妈·创意单品牌自然提及率",
+      "legacy_label": "蝉妈妈·创意自然提及率",
+      "kind": "descriptive",
+      "target": "蝉妈妈·创意单品牌",
+      "population": "neutral",
+      "unit": "回答",
+      "numerator": "中立有效回答中独立命中蝉妈妈·创意冻结别名的回答数。",
+      "denominator": "全部中立有效回答，与另外两项自然提及使用同一集合。",
+      "unknown": "无提及明确记未命中；不因单独出现创意大师或蝉妈妈而命中。",
+      "interpretation": "衡量创意单品牌的自然曝光；不能与含点名题的全量提及率直接相比。",
+      "example": "问蝉妈妈创意怎么用，即使答中提到创意，也不进入本项分子或分母。"
+    },
+    {
+      "id": "creative_master_natural_mention_rate",
+      "label": "创意大师单品牌自然提及率",
+      "legacy_label": "创意大师自然提及率",
+      "kind": "descriptive",
+      "target": "创意大师单品牌",
+      "population": "neutral",
+      "unit": "回答",
+      "numerator": "中立有效回答中独立命中创意大师冻结别名的回答数。",
+      "denominator": "全部中立有效回答。",
+      "unknown": "无提及明确记未命中；不与蝉妈妈·创意合并。",
+      "interpretation": "三个独立品牌分别统计；一条回答可命中多个品牌，三项比率不能相加成阵营率。",
+      "example": "中立回答同时写蝉妈妈·创意和创意大师：两项各计一条，阵营只计一条。"
+    },
+    {
+      "id": "top1_rate",
+      "label": "创意单品牌词典首现率（中立推荐题）",
+      "legacy_label": "首位出现率",
+      "kind": "descriptive",
+      "target": "蝉妈妈·创意单品牌",
+      "population": "recommendation",
+      "unit": "回答",
+      "numerator": "适用回答按冻结词典品牌在正文首次出现的位置排序，蝉妈妈·创意位次为1的回答数。",
+      "denominator": "全部中立推荐题有效回答；不是全部540条，不是仅提及创意的回答。",
+      "unknown": "无词典品牌的回答记未命中并单列candidate_gap，不再写成事实证据不足。",
+      "interpretation": "正文首现，不是模型首推或推荐胜出；负面提及也可能首现。",
+      "example": "答先写创意但随后明确不推荐它：首现仍命中，对比推荐未必命中。"
+    },
+    {
+      "id": "top3_rate",
+      "label": "创意单品牌词典前三出现率（中立推荐题）",
+      "legacy_label": "前三出现率",
+      "kind": "descriptive",
+      "target": "蝉妈妈·创意单品牌",
+      "population": "recommendation",
+      "unit": "回答",
+      "numerator": "与词典首现率相同集合中，创意首次出现的品牌位次为1至3的回答数。",
+      "denominator": "与词典首现率完全相同的中立推荐题有效回答。",
+      "unknown": "无词典品牌仍在分母且不命中；candidate_gap单列。",
+      "interpretation": "正文顺序曝光，不是前三推荐；首现命中集合必须是前三命中集合的子集。",
+      "example": "创意大师排第一但没有写创意：本项不因家族关系自动命中。"
+    },
+    {
+      "id": "category_coverage_rate",
+      "label": "创意产品家族品类提及率",
+      "legacy_label": "品类覆盖率",
+      "kind": "descriptive",
+      "target": "蝉妈妈·创意及创意大师的冻结历史家族别名",
+      "population": "category_coverage",
+      "unit": "回答",
+      "numerator": "预定义category_coverage适用回答中出现创意家族别名的回答数。",
+      "denominator": "该预定义适用集的全部有效回答，含点名题；不套用自然提及的排除条件。",
+      "unknown": "未命中家族别名记未命中；缺失另列。",
+      "interpretation": "题池指定品类问题的产品家族提及覆盖，不是覆盖了多少产品功能、多少行业或多少题目类别。",
+      "example": "适用品类回答只提创意大师：家族覆盖命中，创意单品牌提及不命中。"
+    },
+    {
+      "id": "citation_rate",
+      "label": "可解析引用回答率",
+      "legacy_label": "引用率",
+      "kind": "descriptive",
+      "target": "回答引用捕获状态",
+      "population": "citation_rate",
+      "unit": "回答",
+      "numerator": "引用状态可判定且至少有一个可解析http/https引用URL的有效回答数。",
+      "denominator": "引用状态可判定的适用有效回答，包含明确无来源的回答。",
+      "unknown": "平台未暴露、解析失败、只有空卡且不能确认无来源的回答单列未知并排除分母；缺失另列。",
+      "interpretation": "只证明采样捕获了URL，不证明网页支持答案、链接现在可访问或回答真实。",
+      "example": "一答有20张同一URL卡仍只计一个有引用回答；明确无引用为0/1，状态未知为0/0并单列。"
+    },
+    {
+      "id": "competition_share",
+      "label": "创意单品牌候选记录占比（中立推荐题）",
+      "legacy_label": "竞品份额",
+      "kind": "descriptive",
+      "target": "蝉妈妈·创意单品牌",
+      "population": "recommendation",
+      "unit": "回答-品牌记录",
+      "numerator": "中立推荐题有效回答中，创意单品牌每回答去重后的品牌记录数。",
+      "denominator": "同一回答集合内全部冻结词典品牌的回答-品牌去重记录数；不是回答数、市场份额或全部品牌提及率。",
+      "unknown": "无词典品牌的回答产生0条记录，candidate_gap按回答另列；不能把这类回答作为未知品牌记录加入分母。",
+      "interpretation": "同一回答可为多个品牌分别贡献一条记录；不以重复词频增加份额。",
+      "example": "一答写创意、创意、剪映：创意记录1，全部记录2，占比1/2。"
+    },
+    {
+      "id": "advantage_expression_rate",
+      "label": "创意家族有据正向理由覆盖率",
+      "legacy_label": "优势表达率",
+      "kind": "semantic",
+      "target": "创意产品家族",
+      "population": "valid",
+      "unit": "回答",
+      "numerator": "原答有明确归属目标家族的正向能力、场景适配理由或比较优势，冻结事实支持核心能力且语义复核通过的回答数。",
+      "denominator": "全部有效回答，包括已证未命中与证据不足。",
+      "unknown": "仅泛夸赞、归属不清、功能存在但正向理由不足、比较性能缺真值时记证据不足；明确无目标家族理由记未命中。",
+      "interpretation": "有据正向理由的可证实覆盖比例，不证明整体好感、实际投放效果或整答正确。",
+      "example": "把千川原生后台的优势写在创意旁边，不给创意计分；商品图成片降低制作门槛且有事实支持可计。"
+    },
+    {
+      "id": "brand_explanation_accuracy",
+      "label": "创意家族核心说明证实率",
+      "legacy_label": "品牌解释准确率",
+      "kind": "semantic",
+      "target": "题目所问的创意家族产品核心说明",
+      "population": "brand_explanation_accuracy",
+      "unit": "回答",
+      "numerator": "同名预定义适用集中，所问核心产品说明有冻结事实支持、归属正确且没有已证实的核心冲突，并完成语义复核的回答数。",
+      "denominator": "全部适用有效回答，证据不足仍在分母。",
+      "unknown": "只有品牌名或功能关键词不判通过；价格、权益、时效或额外主张缺真值时保留证据不足，不能以个别有据句证明整答全部正确。",
+      "interpretation": "核心说明得到证实的覆盖比例，不是完整回答准确率；不把1减主值解释成错误率。",
+      "example": "核心定位有依据但额外价格未核实：只能认定指定核心说明，不宣称整个回答正确；价格缺真值不是已证错误。"
+    },
+    {
+      "id": "product_relationship_accuracy",
+      "label": "创意家族关系说明证实率",
+      "legacy_label": "产品关系识别率",
+      "kind": "semantic",
+      "target": "题目实际询问的创意家族归属或与其他工具的关系和区别",
+      "population": "product_relationship_accuracy",
+      "unit": "回答",
+      "numerator": "预定义适用回答明确解释所问关系且有对应的冻结事实支持；内部归属须有归属事实，外部工具差异须有比较事实，并完成语义复核的回答数。",
+      "denominator": "全部适用有效回答；未充分解释关系及证据不足保留在分母。",
+      "unknown": "只同时出现两个名称不判正确；问外部工具区别时，仅证明创意大师是内部创作模块不足以通过，须记证据不足；关系未说明或事实支持不足记证据不足，明确产品混同须依据事实判冲突。",
+      "interpretation": "关系正确说明的证实覆盖，不是品牌共同出现率或三产品等同率。",
+      "example": "问创意大师与剪映AI有何区别，答只说它属于创意生态：证据不足，不能判通过。写创意大师就是蝉镜，有产品归属证据证明不等同则判冲突；只罗列名称不足以命中。"
+    },
+    {
+      "id": "scenario_match_rate",
+      "label": "创意家族场景适配证实率",
+      "legacy_label": "场景匹配率",
+      "kind": "semantic",
+      "target": "目标家族能力与原题具体任务",
+      "population": "scenario_match",
+      "unit": "回答",
+      "numerator": "预定义适用回答把有事实支持的目标能力明确用于解决所问任务，并完成语义复核的回答数。",
+      "denominator": "全部适用有效回答；已审但无法证明适配仍在分母。",
+      "unknown": "通用建议、仅提场景或工具名、缺少能力归属、功能与任务联系未证明，均不判通过；无法充分判断时保留证据不足。",
+      "interpretation": "目标能力与任务匹配的证实覆盖，不是所有工具答案的通用可行性评价。",
+      "example": "问商品链接成片，明确归属创意大师且官方支持链接成片可以命中；不能外推任意平台链接均可解析。"
+    },
+    {
+      "id": "comparison_win_rate",
+      "label": "创意家族有据对比推荐覆盖率",
+      "legacy_label": "对比胜率",
+      "kind": "semantic",
+      "target": "题目比较或取舍中的创意家族推荐",
+      "population": "comparison_win",
+      "unit": "回答",
+      "numerator": "预定义适用回答在实际比较语境中明确选择目标或给出其相对优势，关键理由有冻结事实支持并完成语义复核的回答数。",
+      "denominator": "全部适用有效回答，包含证据不足；不只选择有明确胜负的回答。",
+      "unknown": "首提、泛夸赞、搭配使用、没有可比事实的更强断言不判赢；不足以确认比较结论时记证据不足。",
+      "interpretation": "有据推荐的可证实覆盖比例，不是已决对局胜率，不表示未命中全部输给竞品。",
+      "example": "优先选择千川原生后台，建议搭配创意，不因此判创意胜出。"
+    },
+    {
+      "id": "error_information_rate",
+      "label": "创意家族已证错误检出率",
+      "legacy_label": "错误信息率",
+      "kind": "semantic",
+      "target": "回答中可归属创意家族的可核验事实",
+      "population": "error_information",
+      "unit": "回答",
+      "numerator": "适用有效回答至少有一项目标事实与可比较的冻结真值明确冲突、考虑上下文限定并完成复核的回答数。",
+      "denominator": "全部适用有效回答；无目标事实、真值不覆盖和未完全核实仍在该固定曝光分母，另列核实范围缺口。",
+      "unknown": "未发现冲突不等于确认无错；无来源价格不是已证错误；同句与全答限定一起看，不把当前功能倒推为历史已存在。",
+      "interpretation": "已检出的错误回答比例，是有证据的检出下限；不能据0个已证错误宣称正确率100%，也不能用1减此值作准确率。",
+      "example": "只知道支持投放数据回收，不能据此把不支持查看ROI判错；创意大师与蝉镜混同则依据产品归属核实。"
+    }
+  ],
+  "supplementary": [
+    {
+      "id": "brand_all_answer_mention_rate",
+      "label": "单品牌全量提及率",
+      "formula": "提及该品牌的有效回答数/当前集合全部有效回答数",
+      "note": "含点名题。与自然提及不同比较集合；同回答同品牌计一次。"
+    },
+    {
+      "id": "camp_all_answer_mention_rate",
+      "label": "阵营全量去重提及率",
+      "formula": "提及该阵营任一品牌的有效回答数/当前集合全部有效回答数",
+      "note": "蝉妈妈阵营是三品牌并集，重叠回答只计一次；不能加总品牌率或阵营率。"
+    },
+    {
+      "id": "brand_rank",
+      "label": "词典内正文首现位次",
+      "formula": "按每个已识别品牌正文首次出现位置排序；平均值只含该品牌出现的回答",
+      "note": "首现数与前三出现数都是回答数，阵营取本答成员最早位次；不是推荐顺序或市场排名。"
+    },
+    {
+      "id": "source_card",
+      "label": "原始来源卡数",
+      "formula": "采样捕获的来源卡逐卡计数，保留重复、空卡及无效URL卡",
+      "note": "可解析URL卡另列，不等于URL事件或去重URL数。"
+    },
+    {
+      "id": "url_event",
+      "label": "回答内去重URL事件",
+      "formula": "每个有效回答内按已冻结规范化URL去重，再跨回答相加",
+      "note": "同URL在两个回答出现为2事件、1个跨回答去重URL。"
+    },
+    {
+      "id": "unique_url",
+      "label": "集合内去重URL数",
+      "formula": "当前回答及来源筛选集合内规范化URL的集合大小",
+      "note": "不擅自解析重定向或合并参数不同URL；保留原始URL及既有规范化版本。"
+    },
+    {
+      "id": "official_event_share",
+      "label": "蝉妈妈域名URL事件占比",
+      "formula": "hostname为chanmama.com或其真实子域的URL事件数/当前集合全部URL事件数",
+      "note": "仅按域名归属，不代表均为创意产品页；chanmama.com.example.com不属官网。"
+    },
+    {
+      "id": "official_answer_coverage",
+      "label": "蝉妈妈域名回答覆盖率",
+      "formula": "至少含一个蝉妈妈域名事件的有效回答数/当前集合全部有效回答数",
+      "note": "分母是回答数，与域名URL事件占比不同。"
+    },
+    {
+      "id": "comparison",
+      "label": "同槽位两轮描述性对比",
+      "formula": "两轮均有效且原题SHA256、question_id、相对日次、遍次一致的槽位，逐指标按同标准重算；变化=第二轮比例减第一轮比例",
+      "note": "540计划、538共同有效。仅用同槽位，缺失双侧排除；来源状态未知时引用率取双方可判定子集；不是渠道或优化的因果效果。"
+    },
+    {
+      "id": "source_evidence",
+      "label": "引用证据状态",
+      "formula": "引用已捕获、页面当前可访问、页面支持答案、回答事实正确、截图为原始平台画面分别记录",
+      "note": "任一状态成功不能推导其他状态成功。文本存档截图不是采样时平台截图。"
+    }
+  ]
+}

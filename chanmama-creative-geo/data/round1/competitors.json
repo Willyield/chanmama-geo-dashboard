@@ -1,0 +1,5571 @@
+{
+  "dictionary_sha256": "7d95771e0b00402e2a24ec4865d4363b4df8c9fe8beeec48de249f6938a87321",
+  "rank_definition": "冻结字典内去重品牌在正文中的首次出现顺序；不是模型明确推荐顺序。未识别品牌不自动加入。",
+  "denominator": 538,
+  "rows": [
+    {
+      "brand": "蝉妈妈",
+      "group": "蝉妈妈",
+      "mention_count": 158,
+      "answer_count": 158,
+      "first_count": 36,
+      "top3_count": 142,
+      "rank_sum": 368,
+      "categories": [
+        "案例/效果问题",
+        "对比决策问题",
+        "品牌产品问题",
+        "品类认知问题",
+        "业务场景问题",
+        "价格/开通问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0001",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0002",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0011",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0012",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0015",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0017",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0019",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0025",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0029",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0031",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0036",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0038",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0041",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0076",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0088",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0090",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0091",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0092",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0099",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0100",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0001",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0002",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0011",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0012",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0015",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0017",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0019",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0025",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0028",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0029",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0031",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0032",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0036",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0037",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0039",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0040",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0041",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0045",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0059",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0076",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0088",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0090",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0091",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0092",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0094",
+          "rank": 6,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0099",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0001",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0002",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0011",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0012",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0015",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0019",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0025",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0029",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0030",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0031",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0036",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0037",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0039",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0040",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0041",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0076",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0088",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0090",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0091",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0092",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0094",
+          "rank": 6,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0096",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0003",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0004",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0009",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0001",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0002",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0006",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0011",
+          "rank": 5,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0012",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0015",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0017",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0025",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0028",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0029",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0030",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0031",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0036",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0037",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0040",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0041",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0042",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0048",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0051",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0076",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0087",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0088",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0090",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0091",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0092",
+          "rank": 5,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0096",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0099",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0100",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0001",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0002",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0006",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0011",
+          "rank": 7,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0012",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0013",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0014",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0015",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0019",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0024",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0025",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0027",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0030",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0031",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0032",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0036",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0037",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0039",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0040",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0041",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0046",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0048",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0051",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0076",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0088",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0090",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0091",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0093",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0094",
+          "rank": 6,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0096",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0100",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0001",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0002",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0010",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0012",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0015",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0017",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0019",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0025",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0029",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0030",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0031",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0036",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0037",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0041",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0042",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0076",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0087",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0090",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0092",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0093",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0094",
+          "rank": 6,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0096",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0099",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0100",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-O1-Q0003",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-O1-Q0004",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-O1-Q0005",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-O1-Q0009",
+          "rank": 2,
+          "group": "蝉妈妈"
+        }
+      ],
+      "samples": [
+        "CMCR-CMP-20260819-C1-Q0001",
+        "CMCR-CMP-20260819-C1-Q0002",
+        "CMCR-CMP-20260819-C1-Q0011",
+        "CMCR-CMP-20260819-C1-Q0012",
+        "CMCR-CMP-20260819-C1-Q0015",
+        "CMCR-CMP-20260819-C1-Q0017",
+        "CMCR-CMP-20260819-C1-Q0019",
+        "CMCR-CMP-20260819-C1-Q0025",
+        "CMCR-CMP-20260819-C1-Q0029",
+        "CMCR-CMP-20260819-C1-Q0031",
+        "CMCR-CMP-20260819-C1-Q0036",
+        "CMCR-CMP-20260819-C1-Q0038",
+        "CMCR-CMP-20260819-C1-Q0041",
+        "CMCR-CMP-20260819-C1-Q0076",
+        "CMCR-CMP-20260819-C1-Q0088",
+        "CMCR-CMP-20260819-C1-Q0090",
+        "CMCR-CMP-20260819-C1-Q0091",
+        "CMCR-CMP-20260819-C1-Q0092",
+        "CMCR-CMP-20260819-C1-Q0099",
+        "CMCR-CMP-20260819-C1-Q0100",
+        "CMCR-CMP-20260819-C2-Q0001",
+        "CMCR-CMP-20260819-C2-Q0002",
+        "CMCR-CMP-20260819-C2-Q0011",
+        "CMCR-CMP-20260819-C2-Q0012",
+        "CMCR-CMP-20260819-C2-Q0015",
+        "CMCR-CMP-20260819-C2-Q0017",
+        "CMCR-CMP-20260819-C2-Q0019",
+        "CMCR-CMP-20260819-C2-Q0025",
+        "CMCR-CMP-20260819-C2-Q0028",
+        "CMCR-CMP-20260819-C2-Q0029",
+        "CMCR-CMP-20260819-C2-Q0031",
+        "CMCR-CMP-20260819-C2-Q0032",
+        "CMCR-CMP-20260819-C2-Q0036",
+        "CMCR-CMP-20260819-C2-Q0037",
+        "CMCR-CMP-20260819-C2-Q0039",
+        "CMCR-CMP-20260819-C2-Q0040",
+        "CMCR-CMP-20260819-C2-Q0041",
+        "CMCR-CMP-20260819-C2-Q0045",
+        "CMCR-CMP-20260819-C2-Q0059",
+        "CMCR-CMP-20260819-C2-Q0076",
+        "CMCR-CMP-20260819-C2-Q0088",
+        "CMCR-CMP-20260819-C2-Q0090",
+        "CMCR-CMP-20260819-C2-Q0091",
+        "CMCR-CMP-20260819-C2-Q0092",
+        "CMCR-CMP-20260819-C2-Q0094",
+        "CMCR-CMP-20260819-C2-Q0099",
+        "CMCR-CMP-20260819-C3-Q0001",
+        "CMCR-CMP-20260819-C3-Q0002",
+        "CMCR-CMP-20260819-C3-Q0011",
+        "CMCR-CMP-20260819-C3-Q0012",
+        "CMCR-CMP-20260819-C3-Q0015",
+        "CMCR-CMP-20260819-C3-Q0019",
+        "CMCR-CMP-20260819-C3-Q0025",
+        "CMCR-CMP-20260819-C3-Q0029",
+        "CMCR-CMP-20260819-C3-Q0030",
+        "CMCR-CMP-20260819-C3-Q0031",
+        "CMCR-CMP-20260819-C3-Q0036",
+        "CMCR-CMP-20260819-C3-Q0037",
+        "CMCR-CMP-20260819-C3-Q0039",
+        "CMCR-CMP-20260819-C3-Q0040",
+        "CMCR-CMP-20260819-C3-Q0041",
+        "CMCR-CMP-20260819-C3-Q0076",
+        "CMCR-CMP-20260819-C3-Q0088",
+        "CMCR-CMP-20260819-C3-Q0090",
+        "CMCR-CMP-20260819-C3-Q0091",
+        "CMCR-CMP-20260819-C3-Q0092",
+        "CMCR-CMP-20260819-C3-Q0094",
+        "CMCR-CMP-20260819-C3-Q0096",
+        "CMCR-CMP-20260819-O1-Q0003",
+        "CMCR-CMP-20260819-O1-Q0004",
+        "CMCR-CMP-20260819-O1-Q0009",
+        "CMCR-S-20260819-C1-Q0001",
+        "CMCR-S-20260819-C1-Q0002",
+        "CMCR-S-20260819-C1-Q0006",
+        "CMCR-S-20260819-C1-Q0011",
+        "CMCR-S-20260819-C1-Q0012",
+        "CMCR-S-20260819-C1-Q0015",
+        "CMCR-S-20260819-C1-Q0017",
+        "CMCR-S-20260819-C1-Q0025",
+        "CMCR-S-20260819-C1-Q0028",
+        "CMCR-S-20260819-C1-Q0029",
+        "CMCR-S-20260819-C1-Q0030",
+        "CMCR-S-20260819-C1-Q0031",
+        "CMCR-S-20260819-C1-Q0036",
+        "CMCR-S-20260819-C1-Q0037",
+        "CMCR-S-20260819-C1-Q0040",
+        "CMCR-S-20260819-C1-Q0041",
+        "CMCR-S-20260819-C1-Q0042",
+        "CMCR-S-20260819-C1-Q0048",
+        "CMCR-S-20260819-C1-Q0051",
+        "CMCR-S-20260819-C1-Q0076",
+        "CMCR-S-20260819-C1-Q0087",
+        "CMCR-S-20260819-C1-Q0088",
+        "CMCR-S-20260819-C1-Q0090",
+        "CMCR-S-20260819-C1-Q0091",
+        "CMCR-S-20260819-C1-Q0092",
+        "CMCR-S-20260819-C1-Q0096",
+        "CMCR-S-20260819-C1-Q0099",
+        "CMCR-S-20260819-C1-Q0100",
+        "CMCR-S-20260819-C2-Q0001",
+        "CMCR-S-20260819-C2-Q0002",
+        "CMCR-S-20260819-C2-Q0006",
+        "CMCR-S-20260819-C2-Q0011",
+        "CMCR-S-20260819-C2-Q0012",
+        "CMCR-S-20260819-C2-Q0013",
+        "CMCR-S-20260819-C2-Q0014",
+        "CMCR-S-20260819-C2-Q0015",
+        "CMCR-S-20260819-C2-Q0019",
+        "CMCR-S-20260819-C2-Q0024",
+        "CMCR-S-20260819-C2-Q0025",
+        "CMCR-S-20260819-C2-Q0027",
+        "CMCR-S-20260819-C2-Q0030",
+        "CMCR-S-20260819-C2-Q0031",
+        "CMCR-S-20260819-C2-Q0032",
+        "CMCR-S-20260819-C2-Q0036",
+        "CMCR-S-20260819-C2-Q0037",
+        "CMCR-S-20260819-C2-Q0039",
+        "CMCR-S-20260819-C2-Q0040",
+        "CMCR-S-20260819-C2-Q0041",
+        "CMCR-S-20260819-C2-Q0046",
+        "CMCR-S-20260819-C2-Q0048",
+        "CMCR-S-20260819-C2-Q0051",
+        "CMCR-S-20260819-C2-Q0076",
+        "CMCR-S-20260819-C2-Q0088",
+        "CMCR-S-20260819-C2-Q0090",
+        "CMCR-S-20260819-C2-Q0091",
+        "CMCR-S-20260819-C2-Q0093",
+        "CMCR-S-20260819-C2-Q0094",
+        "CMCR-S-20260819-C2-Q0096",
+        "CMCR-S-20260819-C2-Q0100",
+        "CMCR-S-20260819-C3-Q0001",
+        "CMCR-S-20260819-C3-Q0002",
+        "CMCR-S-20260819-C3-Q0010",
+        "CMCR-S-20260819-C3-Q0012",
+        "CMCR-S-20260819-C3-Q0015",
+        "CMCR-S-20260819-C3-Q0017",
+        "CMCR-S-20260819-C3-Q0019",
+        "CMCR-S-20260819-C3-Q0025",
+        "CMCR-S-20260819-C3-Q0029",
+        "CMCR-S-20260819-C3-Q0030",
+        "CMCR-S-20260819-C3-Q0031",
+        "CMCR-S-20260819-C3-Q0036",
+        "CMCR-S-20260819-C3-Q0037",
+        "CMCR-S-20260819-C3-Q0041",
+        "CMCR-S-20260819-C3-Q0042",
+        "CMCR-S-20260819-C3-Q0076",
+        "CMCR-S-20260819-C3-Q0087",
+        "CMCR-S-20260819-C3-Q0090",
+        "CMCR-S-20260819-C3-Q0092",
+        "CMCR-S-20260819-C3-Q0093",
+        "CMCR-S-20260819-C3-Q0094",
+        "CMCR-S-20260819-C3-Q0096",
+        "CMCR-S-20260819-C3-Q0099",
+        "CMCR-S-20260819-C3-Q0100",
+        "CMCR-S-20260819-O1-Q0003",
+        "CMCR-S-20260819-O1-Q0004",
+        "CMCR-S-20260819-O1-Q0005",
+        "CMCR-S-20260819-O1-Q0009"
+      ],
+      "mention_rate": 29.37,
+      "average_rank": 2.33
+    },
+    {
+      "brand": "蝉妈妈·创意",
+      "group": "蝉妈妈",
+      "mention_count": 141,
+      "answer_count": 141,
+      "first_count": 81,
+      "top3_count": 140,
+      "rank_sum": 207,
+      "categories": [
+        "案例/效果问题",
+        "对比决策问题",
+        "品牌产品问题",
+        "品类认知问题",
+        "业务场景问题",
+        "价格/开通问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0001",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0002",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0006",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0008",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0012",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0013",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0014",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0015",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0016",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0024",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0030",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0032",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0036",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0037",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0038",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0039",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0040",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0045",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0076",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0087",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0088",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0090",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0092",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0001",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0002",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0006",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0008",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0012",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0013",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0014",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0015",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0016",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0024",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0030",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0036",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0037",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0038",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0040",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0045",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0076",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0088",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0090",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0092",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0093",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0100",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0001",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0002",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0006",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0008",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0012",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0013",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0014",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0015",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0016",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0024",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0032",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0036",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0037",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0038",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0040",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0045",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0076",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0087",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0088",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0090",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0092",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0099",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0100",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0003",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0004",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0005",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0007",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0001",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0002",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0006",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0008",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0012",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0013",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0014",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0015",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0017",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0019",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0024",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0032",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0036",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0037",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0038",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0040",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0045",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0076",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0087",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0088",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0090",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0092",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0001",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0002",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0006",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0008",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0011",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0012",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0013",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0014",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0015",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0024",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0031",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0036",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0037",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0038",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0040",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0045",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0076",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0087",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0088",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0090",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0099",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0001",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0002",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0006",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0008",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0012",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0013",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0014",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0015",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0016",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0024",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0032",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0036",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0037",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0038",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0040",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0045",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0076",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0087",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0088",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0090",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0091",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0092",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-O1-Q0003",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-O1-Q0004",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-O1-Q0005",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-O1-Q0007",
+          "rank": 1,
+          "group": "蝉妈妈"
+        }
+      ],
+      "samples": [
+        "CMCR-CMP-20260819-C1-Q0001",
+        "CMCR-CMP-20260819-C1-Q0002",
+        "CMCR-CMP-20260819-C1-Q0006",
+        "CMCR-CMP-20260819-C1-Q0008",
+        "CMCR-CMP-20260819-C1-Q0012",
+        "CMCR-CMP-20260819-C1-Q0013",
+        "CMCR-CMP-20260819-C1-Q0014",
+        "CMCR-CMP-20260819-C1-Q0015",
+        "CMCR-CMP-20260819-C1-Q0016",
+        "CMCR-CMP-20260819-C1-Q0024",
+        "CMCR-CMP-20260819-C1-Q0030",
+        "CMCR-CMP-20260819-C1-Q0032",
+        "CMCR-CMP-20260819-C1-Q0036",
+        "CMCR-CMP-20260819-C1-Q0037",
+        "CMCR-CMP-20260819-C1-Q0038",
+        "CMCR-CMP-20260819-C1-Q0039",
+        "CMCR-CMP-20260819-C1-Q0040",
+        "CMCR-CMP-20260819-C1-Q0045",
+        "CMCR-CMP-20260819-C1-Q0076",
+        "CMCR-CMP-20260819-C1-Q0087",
+        "CMCR-CMP-20260819-C1-Q0088",
+        "CMCR-CMP-20260819-C1-Q0090",
+        "CMCR-CMP-20260819-C1-Q0092",
+        "CMCR-CMP-20260819-C2-Q0001",
+        "CMCR-CMP-20260819-C2-Q0002",
+        "CMCR-CMP-20260819-C2-Q0006",
+        "CMCR-CMP-20260819-C2-Q0008",
+        "CMCR-CMP-20260819-C2-Q0012",
+        "CMCR-CMP-20260819-C2-Q0013",
+        "CMCR-CMP-20260819-C2-Q0014",
+        "CMCR-CMP-20260819-C2-Q0015",
+        "CMCR-CMP-20260819-C2-Q0016",
+        "CMCR-CMP-20260819-C2-Q0024",
+        "CMCR-CMP-20260819-C2-Q0030",
+        "CMCR-CMP-20260819-C2-Q0036",
+        "CMCR-CMP-20260819-C2-Q0037",
+        "CMCR-CMP-20260819-C2-Q0038",
+        "CMCR-CMP-20260819-C2-Q0040",
+        "CMCR-CMP-20260819-C2-Q0045",
+        "CMCR-CMP-20260819-C2-Q0076",
+        "CMCR-CMP-20260819-C2-Q0088",
+        "CMCR-CMP-20260819-C2-Q0090",
+        "CMCR-CMP-20260819-C2-Q0092",
+        "CMCR-CMP-20260819-C2-Q0093",
+        "CMCR-CMP-20260819-C2-Q0100",
+        "CMCR-CMP-20260819-C3-Q0001",
+        "CMCR-CMP-20260819-C3-Q0002",
+        "CMCR-CMP-20260819-C3-Q0006",
+        "CMCR-CMP-20260819-C3-Q0008",
+        "CMCR-CMP-20260819-C3-Q0012",
+        "CMCR-CMP-20260819-C3-Q0013",
+        "CMCR-CMP-20260819-C3-Q0014",
+        "CMCR-CMP-20260819-C3-Q0015",
+        "CMCR-CMP-20260819-C3-Q0016",
+        "CMCR-CMP-20260819-C3-Q0024",
+        "CMCR-CMP-20260819-C3-Q0032",
+        "CMCR-CMP-20260819-C3-Q0036",
+        "CMCR-CMP-20260819-C3-Q0037",
+        "CMCR-CMP-20260819-C3-Q0038",
+        "CMCR-CMP-20260819-C3-Q0040",
+        "CMCR-CMP-20260819-C3-Q0045",
+        "CMCR-CMP-20260819-C3-Q0076",
+        "CMCR-CMP-20260819-C3-Q0087",
+        "CMCR-CMP-20260819-C3-Q0088",
+        "CMCR-CMP-20260819-C3-Q0090",
+        "CMCR-CMP-20260819-C3-Q0092",
+        "CMCR-CMP-20260819-C3-Q0099",
+        "CMCR-CMP-20260819-C3-Q0100",
+        "CMCR-CMP-20260819-O1-Q0003",
+        "CMCR-CMP-20260819-O1-Q0004",
+        "CMCR-CMP-20260819-O1-Q0005",
+        "CMCR-CMP-20260819-O1-Q0007",
+        "CMCR-S-20260819-C1-Q0001",
+        "CMCR-S-20260819-C1-Q0002",
+        "CMCR-S-20260819-C1-Q0006",
+        "CMCR-S-20260819-C1-Q0008",
+        "CMCR-S-20260819-C1-Q0012",
+        "CMCR-S-20260819-C1-Q0013",
+        "CMCR-S-20260819-C1-Q0014",
+        "CMCR-S-20260819-C1-Q0015",
+        "CMCR-S-20260819-C1-Q0017",
+        "CMCR-S-20260819-C1-Q0019",
+        "CMCR-S-20260819-C1-Q0024",
+        "CMCR-S-20260819-C1-Q0032",
+        "CMCR-S-20260819-C1-Q0036",
+        "CMCR-S-20260819-C1-Q0037",
+        "CMCR-S-20260819-C1-Q0038",
+        "CMCR-S-20260819-C1-Q0040",
+        "CMCR-S-20260819-C1-Q0045",
+        "CMCR-S-20260819-C1-Q0076",
+        "CMCR-S-20260819-C1-Q0087",
+        "CMCR-S-20260819-C1-Q0088",
+        "CMCR-S-20260819-C1-Q0090",
+        "CMCR-S-20260819-C1-Q0092",
+        "CMCR-S-20260819-C2-Q0001",
+        "CMCR-S-20260819-C2-Q0002",
+        "CMCR-S-20260819-C2-Q0006",
+        "CMCR-S-20260819-C2-Q0008",
+        "CMCR-S-20260819-C2-Q0011",
+        "CMCR-S-20260819-C2-Q0012",
+        "CMCR-S-20260819-C2-Q0013",
+        "CMCR-S-20260819-C2-Q0014",
+        "CMCR-S-20260819-C2-Q0015",
+        "CMCR-S-20260819-C2-Q0024",
+        "CMCR-S-20260819-C2-Q0031",
+        "CMCR-S-20260819-C2-Q0036",
+        "CMCR-S-20260819-C2-Q0037",
+        "CMCR-S-20260819-C2-Q0038",
+        "CMCR-S-20260819-C2-Q0040",
+        "CMCR-S-20260819-C2-Q0045",
+        "CMCR-S-20260819-C2-Q0076",
+        "CMCR-S-20260819-C2-Q0087",
+        "CMCR-S-20260819-C2-Q0088",
+        "CMCR-S-20260819-C2-Q0090",
+        "CMCR-S-20260819-C2-Q0099",
+        "CMCR-S-20260819-C3-Q0001",
+        "CMCR-S-20260819-C3-Q0002",
+        "CMCR-S-20260819-C3-Q0006",
+        "CMCR-S-20260819-C3-Q0008",
+        "CMCR-S-20260819-C3-Q0012",
+        "CMCR-S-20260819-C3-Q0013",
+        "CMCR-S-20260819-C3-Q0014",
+        "CMCR-S-20260819-C3-Q0015",
+        "CMCR-S-20260819-C3-Q0016",
+        "CMCR-S-20260819-C3-Q0024",
+        "CMCR-S-20260819-C3-Q0032",
+        "CMCR-S-20260819-C3-Q0036",
+        "CMCR-S-20260819-C3-Q0037",
+        "CMCR-S-20260819-C3-Q0038",
+        "CMCR-S-20260819-C3-Q0040",
+        "CMCR-S-20260819-C3-Q0045",
+        "CMCR-S-20260819-C3-Q0076",
+        "CMCR-S-20260819-C3-Q0087",
+        "CMCR-S-20260819-C3-Q0088",
+        "CMCR-S-20260819-C3-Q0090",
+        "CMCR-S-20260819-C3-Q0091",
+        "CMCR-S-20260819-C3-Q0092",
+        "CMCR-S-20260819-O1-Q0003",
+        "CMCR-S-20260819-O1-Q0004",
+        "CMCR-S-20260819-O1-Q0005",
+        "CMCR-S-20260819-O1-Q0007"
+      ],
+      "mention_rate": 26.21,
+      "average_rank": 1.47
+    },
+    {
+      "brand": "剪映",
+      "group": "第三方竞品",
+      "mention_count": 126,
+      "answer_count": 126,
+      "first_count": 61,
+      "top3_count": 114,
+      "rank_sum": 245,
+      "categories": [
+        "品牌产品问题",
+        "对比决策问题",
+        "品类认知问题",
+        "业务场景问题",
+        "风险/限制问题",
+        "案例/效果问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0008",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0011",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0020",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0021",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0047",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0053",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0056",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0061",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0064",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0065",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0076",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0078",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0083",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0093",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0094",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0095",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0096",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0097",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0008",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0011",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0014",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0017",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0020",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0053",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0056",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0059",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0061",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0064",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0068",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0069",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0076",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0078",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0083",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0092",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0093",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0094",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0095",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0096",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0008",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0011",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0014",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0017",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0020",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0021",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0023",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0047",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0053",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0056",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0060",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0061",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0064",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0065",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0069",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0076",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0078",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0083",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0093",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0094",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0095",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0097",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0057",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0080",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0011",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0015",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0020",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0021",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0022",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0047",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0053",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0056",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0059",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0060",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0061",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0064",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0066",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0076",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0077",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0092",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0093",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0094",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0095",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0096",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0097",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0100",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0011",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0014",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0020",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0021",
+          "rank": 6,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0046",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0047",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0053",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0056",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0061",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0064",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0066",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0068",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0069",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0071",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0076",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0078",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0083",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0093",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0094",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0096",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0097",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0011",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0020",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0046",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0047",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0053",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0056",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0061",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0064",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0066",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0069",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0076",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0078",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0083",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0091",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0092",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0093",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0094",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0095",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0097",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-O1-Q0057",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-O1-Q0080",
+          "rank": 1,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "CMCR-CMP-20260819-C1-Q0008",
+        "CMCR-CMP-20260819-C1-Q0011",
+        "CMCR-CMP-20260819-C1-Q0020",
+        "CMCR-CMP-20260819-C1-Q0021",
+        "CMCR-CMP-20260819-C1-Q0047",
+        "CMCR-CMP-20260819-C1-Q0053",
+        "CMCR-CMP-20260819-C1-Q0056",
+        "CMCR-CMP-20260819-C1-Q0061",
+        "CMCR-CMP-20260819-C1-Q0064",
+        "CMCR-CMP-20260819-C1-Q0065",
+        "CMCR-CMP-20260819-C1-Q0076",
+        "CMCR-CMP-20260819-C1-Q0078",
+        "CMCR-CMP-20260819-C1-Q0083",
+        "CMCR-CMP-20260819-C1-Q0093",
+        "CMCR-CMP-20260819-C1-Q0094",
+        "CMCR-CMP-20260819-C1-Q0095",
+        "CMCR-CMP-20260819-C1-Q0096",
+        "CMCR-CMP-20260819-C1-Q0097",
+        "CMCR-CMP-20260819-C2-Q0008",
+        "CMCR-CMP-20260819-C2-Q0011",
+        "CMCR-CMP-20260819-C2-Q0014",
+        "CMCR-CMP-20260819-C2-Q0017",
+        "CMCR-CMP-20260819-C2-Q0020",
+        "CMCR-CMP-20260819-C2-Q0053",
+        "CMCR-CMP-20260819-C2-Q0056",
+        "CMCR-CMP-20260819-C2-Q0059",
+        "CMCR-CMP-20260819-C2-Q0061",
+        "CMCR-CMP-20260819-C2-Q0064",
+        "CMCR-CMP-20260819-C2-Q0068",
+        "CMCR-CMP-20260819-C2-Q0069",
+        "CMCR-CMP-20260819-C2-Q0076",
+        "CMCR-CMP-20260819-C2-Q0078",
+        "CMCR-CMP-20260819-C2-Q0083",
+        "CMCR-CMP-20260819-C2-Q0092",
+        "CMCR-CMP-20260819-C2-Q0093",
+        "CMCR-CMP-20260819-C2-Q0094",
+        "CMCR-CMP-20260819-C2-Q0095",
+        "CMCR-CMP-20260819-C2-Q0096",
+        "CMCR-CMP-20260819-C3-Q0008",
+        "CMCR-CMP-20260819-C3-Q0011",
+        "CMCR-CMP-20260819-C3-Q0014",
+        "CMCR-CMP-20260819-C3-Q0017",
+        "CMCR-CMP-20260819-C3-Q0020",
+        "CMCR-CMP-20260819-C3-Q0021",
+        "CMCR-CMP-20260819-C3-Q0023",
+        "CMCR-CMP-20260819-C3-Q0047",
+        "CMCR-CMP-20260819-C3-Q0053",
+        "CMCR-CMP-20260819-C3-Q0056",
+        "CMCR-CMP-20260819-C3-Q0060",
+        "CMCR-CMP-20260819-C3-Q0061",
+        "CMCR-CMP-20260819-C3-Q0064",
+        "CMCR-CMP-20260819-C3-Q0065",
+        "CMCR-CMP-20260819-C3-Q0069",
+        "CMCR-CMP-20260819-C3-Q0076",
+        "CMCR-CMP-20260819-C3-Q0078",
+        "CMCR-CMP-20260819-C3-Q0083",
+        "CMCR-CMP-20260819-C3-Q0093",
+        "CMCR-CMP-20260819-C3-Q0094",
+        "CMCR-CMP-20260819-C3-Q0095",
+        "CMCR-CMP-20260819-C3-Q0097",
+        "CMCR-CMP-20260819-O1-Q0057",
+        "CMCR-CMP-20260819-O1-Q0080",
+        "CMCR-S-20260819-C1-Q0011",
+        "CMCR-S-20260819-C1-Q0015",
+        "CMCR-S-20260819-C1-Q0020",
+        "CMCR-S-20260819-C1-Q0021",
+        "CMCR-S-20260819-C1-Q0022",
+        "CMCR-S-20260819-C1-Q0047",
+        "CMCR-S-20260819-C1-Q0053",
+        "CMCR-S-20260819-C1-Q0056",
+        "CMCR-S-20260819-C1-Q0059",
+        "CMCR-S-20260819-C1-Q0060",
+        "CMCR-S-20260819-C1-Q0061",
+        "CMCR-S-20260819-C1-Q0064",
+        "CMCR-S-20260819-C1-Q0066",
+        "CMCR-S-20260819-C1-Q0076",
+        "CMCR-S-20260819-C1-Q0077",
+        "CMCR-S-20260819-C1-Q0092",
+        "CMCR-S-20260819-C1-Q0093",
+        "CMCR-S-20260819-C1-Q0094",
+        "CMCR-S-20260819-C1-Q0095",
+        "CMCR-S-20260819-C1-Q0096",
+        "CMCR-S-20260819-C1-Q0097",
+        "CMCR-S-20260819-C1-Q0100",
+        "CMCR-S-20260819-C2-Q0011",
+        "CMCR-S-20260819-C2-Q0014",
+        "CMCR-S-20260819-C2-Q0020",
+        "CMCR-S-20260819-C2-Q0021",
+        "CMCR-S-20260819-C2-Q0046",
+        "CMCR-S-20260819-C2-Q0047",
+        "CMCR-S-20260819-C2-Q0053",
+        "CMCR-S-20260819-C2-Q0056",
+        "CMCR-S-20260819-C2-Q0061",
+        "CMCR-S-20260819-C2-Q0064",
+        "CMCR-S-20260819-C2-Q0066",
+        "CMCR-S-20260819-C2-Q0068",
+        "CMCR-S-20260819-C2-Q0069",
+        "CMCR-S-20260819-C2-Q0071",
+        "CMCR-S-20260819-C2-Q0076",
+        "CMCR-S-20260819-C2-Q0078",
+        "CMCR-S-20260819-C2-Q0083",
+        "CMCR-S-20260819-C2-Q0093",
+        "CMCR-S-20260819-C2-Q0094",
+        "CMCR-S-20260819-C2-Q0096",
+        "CMCR-S-20260819-C2-Q0097",
+        "CMCR-S-20260819-C3-Q0011",
+        "CMCR-S-20260819-C3-Q0020",
+        "CMCR-S-20260819-C3-Q0046",
+        "CMCR-S-20260819-C3-Q0047",
+        "CMCR-S-20260819-C3-Q0053",
+        "CMCR-S-20260819-C3-Q0056",
+        "CMCR-S-20260819-C3-Q0061",
+        "CMCR-S-20260819-C3-Q0064",
+        "CMCR-S-20260819-C3-Q0066",
+        "CMCR-S-20260819-C3-Q0069",
+        "CMCR-S-20260819-C3-Q0076",
+        "CMCR-S-20260819-C3-Q0078",
+        "CMCR-S-20260819-C3-Q0083",
+        "CMCR-S-20260819-C3-Q0091",
+        "CMCR-S-20260819-C3-Q0092",
+        "CMCR-S-20260819-C3-Q0093",
+        "CMCR-S-20260819-C3-Q0094",
+        "CMCR-S-20260819-C3-Q0095",
+        "CMCR-S-20260819-C3-Q0097",
+        "CMCR-S-20260819-O1-Q0057",
+        "CMCR-S-20260819-O1-Q0080"
+      ],
+      "mention_rate": 23.42,
+      "average_rank": 1.94
+    },
+    {
+      "brand": "巨量创意",
+      "group": "官方工具",
+      "mention_count": 98,
+      "answer_count": 98,
+      "first_count": 59,
+      "top3_count": 98,
+      "rank_sum": 148,
+      "categories": [
+        "业务场景问题",
+        "品类认知问题",
+        "案例/效果问题",
+        "对比决策问题",
+        "风险/限制问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0017",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0024",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0027",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0029",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0030",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0031",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0032",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0039",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0040",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0041",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0089",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0090",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0091",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0096",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0099",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0100",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0015",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0019",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0024",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0027",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0029",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0030",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0031",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0032",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0039",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0041",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0089",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0090",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0091",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0092",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0096",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0099",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0100",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0019",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0024",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0026",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0027",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0029",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0030",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0032",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0039",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0041",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0089",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0090",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0092",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0096",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0099",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0100",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0017",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0023",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0024",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0025",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0026",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0027",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0028",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0029",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0030",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0032",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0085",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0089",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0090",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0091",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0092",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0096",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0097",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0100",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0019",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0024",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0025",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0027",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0029",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0030",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0031",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0032",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0033",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0039",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0089",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0090",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0091",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0093",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0096",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0099",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0100",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0015",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0019",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0024",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0029",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0030",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0031",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0032",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0036",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0040",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0041",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0089",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0090",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0091",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0099",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0100",
+          "rank": 1,
+          "group": "官方工具"
+        }
+      ],
+      "samples": [
+        "CMCR-CMP-20260819-C1-Q0017",
+        "CMCR-CMP-20260819-C1-Q0024",
+        "CMCR-CMP-20260819-C1-Q0027",
+        "CMCR-CMP-20260819-C1-Q0029",
+        "CMCR-CMP-20260819-C1-Q0030",
+        "CMCR-CMP-20260819-C1-Q0031",
+        "CMCR-CMP-20260819-C1-Q0032",
+        "CMCR-CMP-20260819-C1-Q0039",
+        "CMCR-CMP-20260819-C1-Q0040",
+        "CMCR-CMP-20260819-C1-Q0041",
+        "CMCR-CMP-20260819-C1-Q0089",
+        "CMCR-CMP-20260819-C1-Q0090",
+        "CMCR-CMP-20260819-C1-Q0091",
+        "CMCR-CMP-20260819-C1-Q0096",
+        "CMCR-CMP-20260819-C1-Q0099",
+        "CMCR-CMP-20260819-C1-Q0100",
+        "CMCR-CMP-20260819-C2-Q0015",
+        "CMCR-CMP-20260819-C2-Q0019",
+        "CMCR-CMP-20260819-C2-Q0024",
+        "CMCR-CMP-20260819-C2-Q0027",
+        "CMCR-CMP-20260819-C2-Q0029",
+        "CMCR-CMP-20260819-C2-Q0030",
+        "CMCR-CMP-20260819-C2-Q0031",
+        "CMCR-CMP-20260819-C2-Q0032",
+        "CMCR-CMP-20260819-C2-Q0039",
+        "CMCR-CMP-20260819-C2-Q0041",
+        "CMCR-CMP-20260819-C2-Q0089",
+        "CMCR-CMP-20260819-C2-Q0090",
+        "CMCR-CMP-20260819-C2-Q0091",
+        "CMCR-CMP-20260819-C2-Q0092",
+        "CMCR-CMP-20260819-C2-Q0096",
+        "CMCR-CMP-20260819-C2-Q0099",
+        "CMCR-CMP-20260819-C2-Q0100",
+        "CMCR-CMP-20260819-C3-Q0019",
+        "CMCR-CMP-20260819-C3-Q0024",
+        "CMCR-CMP-20260819-C3-Q0026",
+        "CMCR-CMP-20260819-C3-Q0027",
+        "CMCR-CMP-20260819-C3-Q0029",
+        "CMCR-CMP-20260819-C3-Q0030",
+        "CMCR-CMP-20260819-C3-Q0032",
+        "CMCR-CMP-20260819-C3-Q0039",
+        "CMCR-CMP-20260819-C3-Q0041",
+        "CMCR-CMP-20260819-C3-Q0089",
+        "CMCR-CMP-20260819-C3-Q0090",
+        "CMCR-CMP-20260819-C3-Q0092",
+        "CMCR-CMP-20260819-C3-Q0096",
+        "CMCR-CMP-20260819-C3-Q0099",
+        "CMCR-CMP-20260819-C3-Q0100",
+        "CMCR-S-20260819-C1-Q0017",
+        "CMCR-S-20260819-C1-Q0023",
+        "CMCR-S-20260819-C1-Q0024",
+        "CMCR-S-20260819-C1-Q0025",
+        "CMCR-S-20260819-C1-Q0026",
+        "CMCR-S-20260819-C1-Q0027",
+        "CMCR-S-20260819-C1-Q0028",
+        "CMCR-S-20260819-C1-Q0029",
+        "CMCR-S-20260819-C1-Q0030",
+        "CMCR-S-20260819-C1-Q0032",
+        "CMCR-S-20260819-C1-Q0085",
+        "CMCR-S-20260819-C1-Q0089",
+        "CMCR-S-20260819-C1-Q0090",
+        "CMCR-S-20260819-C1-Q0091",
+        "CMCR-S-20260819-C1-Q0092",
+        "CMCR-S-20260819-C1-Q0096",
+        "CMCR-S-20260819-C1-Q0097",
+        "CMCR-S-20260819-C1-Q0100",
+        "CMCR-S-20260819-C2-Q0019",
+        "CMCR-S-20260819-C2-Q0024",
+        "CMCR-S-20260819-C2-Q0025",
+        "CMCR-S-20260819-C2-Q0027",
+        "CMCR-S-20260819-C2-Q0029",
+        "CMCR-S-20260819-C2-Q0030",
+        "CMCR-S-20260819-C2-Q0031",
+        "CMCR-S-20260819-C2-Q0032",
+        "CMCR-S-20260819-C2-Q0033",
+        "CMCR-S-20260819-C2-Q0039",
+        "CMCR-S-20260819-C2-Q0089",
+        "CMCR-S-20260819-C2-Q0090",
+        "CMCR-S-20260819-C2-Q0091",
+        "CMCR-S-20260819-C2-Q0093",
+        "CMCR-S-20260819-C2-Q0096",
+        "CMCR-S-20260819-C2-Q0099",
+        "CMCR-S-20260819-C2-Q0100",
+        "CMCR-S-20260819-C3-Q0015",
+        "CMCR-S-20260819-C3-Q0019",
+        "CMCR-S-20260819-C3-Q0024",
+        "CMCR-S-20260819-C3-Q0029",
+        "CMCR-S-20260819-C3-Q0030",
+        "CMCR-S-20260819-C3-Q0031",
+        "CMCR-S-20260819-C3-Q0032",
+        "CMCR-S-20260819-C3-Q0036",
+        "CMCR-S-20260819-C3-Q0040",
+        "CMCR-S-20260819-C3-Q0041",
+        "CMCR-S-20260819-C3-Q0089",
+        "CMCR-S-20260819-C3-Q0090",
+        "CMCR-S-20260819-C3-Q0091",
+        "CMCR-S-20260819-C3-Q0099",
+        "CMCR-S-20260819-C3-Q0100"
+      ],
+      "mention_rate": 18.22,
+      "average_rank": 1.51
+    },
+    {
+      "brand": "创意大师",
+      "group": "蝉妈妈",
+      "mention_count": 62,
+      "answer_count": 62,
+      "first_count": 17,
+      "top3_count": 52,
+      "rank_sum": 140,
+      "categories": [
+        "案例/效果问题",
+        "品牌产品问题",
+        "对比决策问题",
+        "业务场景问题",
+        "价格/开通问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0001",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0006",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0010",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0011",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0014",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0064",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0092",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0094",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0001",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0006",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0008",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0010",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0011",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0014",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0037",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0064",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0088",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0092",
+          "rank": 5,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0094",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0001",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0006",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0008",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0010",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0011",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0014",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0064",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0092",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0094",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0003",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0004",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0005",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0007",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0009",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0002",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0006",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0008",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0010",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0011",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0014",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0087",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0094",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0006",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0008",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0010",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0011",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0014",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0037",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0048",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0094",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0001",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0002",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0006",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0008",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0010",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0011",
+          "rank": 1,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0088",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0092",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0094",
+          "rank": 4,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-O1-Q0003",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-O1-Q0004",
+          "rank": 3,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-O1-Q0007",
+          "rank": 2,
+          "group": "蝉妈妈"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-O1-Q0009",
+          "rank": 1,
+          "group": "蝉妈妈"
+        }
+      ],
+      "samples": [
+        "CMCR-CMP-20260819-C1-Q0001",
+        "CMCR-CMP-20260819-C1-Q0006",
+        "CMCR-CMP-20260819-C1-Q0010",
+        "CMCR-CMP-20260819-C1-Q0011",
+        "CMCR-CMP-20260819-C1-Q0014",
+        "CMCR-CMP-20260819-C1-Q0064",
+        "CMCR-CMP-20260819-C1-Q0092",
+        "CMCR-CMP-20260819-C1-Q0094",
+        "CMCR-CMP-20260819-C2-Q0001",
+        "CMCR-CMP-20260819-C2-Q0006",
+        "CMCR-CMP-20260819-C2-Q0008",
+        "CMCR-CMP-20260819-C2-Q0010",
+        "CMCR-CMP-20260819-C2-Q0011",
+        "CMCR-CMP-20260819-C2-Q0014",
+        "CMCR-CMP-20260819-C2-Q0037",
+        "CMCR-CMP-20260819-C2-Q0064",
+        "CMCR-CMP-20260819-C2-Q0088",
+        "CMCR-CMP-20260819-C2-Q0092",
+        "CMCR-CMP-20260819-C2-Q0094",
+        "CMCR-CMP-20260819-C3-Q0001",
+        "CMCR-CMP-20260819-C3-Q0006",
+        "CMCR-CMP-20260819-C3-Q0008",
+        "CMCR-CMP-20260819-C3-Q0010",
+        "CMCR-CMP-20260819-C3-Q0011",
+        "CMCR-CMP-20260819-C3-Q0014",
+        "CMCR-CMP-20260819-C3-Q0064",
+        "CMCR-CMP-20260819-C3-Q0092",
+        "CMCR-CMP-20260819-C3-Q0094",
+        "CMCR-CMP-20260819-O1-Q0003",
+        "CMCR-CMP-20260819-O1-Q0004",
+        "CMCR-CMP-20260819-O1-Q0005",
+        "CMCR-CMP-20260819-O1-Q0007",
+        "CMCR-CMP-20260819-O1-Q0009",
+        "CMCR-S-20260819-C1-Q0002",
+        "CMCR-S-20260819-C1-Q0006",
+        "CMCR-S-20260819-C1-Q0008",
+        "CMCR-S-20260819-C1-Q0010",
+        "CMCR-S-20260819-C1-Q0011",
+        "CMCR-S-20260819-C1-Q0014",
+        "CMCR-S-20260819-C1-Q0087",
+        "CMCR-S-20260819-C1-Q0094",
+        "CMCR-S-20260819-C2-Q0006",
+        "CMCR-S-20260819-C2-Q0008",
+        "CMCR-S-20260819-C2-Q0010",
+        "CMCR-S-20260819-C2-Q0011",
+        "CMCR-S-20260819-C2-Q0014",
+        "CMCR-S-20260819-C2-Q0037",
+        "CMCR-S-20260819-C2-Q0048",
+        "CMCR-S-20260819-C2-Q0094",
+        "CMCR-S-20260819-C3-Q0001",
+        "CMCR-S-20260819-C3-Q0002",
+        "CMCR-S-20260819-C3-Q0006",
+        "CMCR-S-20260819-C3-Q0008",
+        "CMCR-S-20260819-C3-Q0010",
+        "CMCR-S-20260819-C3-Q0011",
+        "CMCR-S-20260819-C3-Q0088",
+        "CMCR-S-20260819-C3-Q0092",
+        "CMCR-S-20260819-C3-Q0094",
+        "CMCR-S-20260819-O1-Q0003",
+        "CMCR-S-20260819-O1-Q0004",
+        "CMCR-S-20260819-O1-Q0007",
+        "CMCR-S-20260819-O1-Q0009"
+      ],
+      "mention_rate": 11.52,
+      "average_rank": 2.26
+    },
+    {
+      "brand": "即梦 AI",
+      "group": "第三方竞品",
+      "mention_count": 59,
+      "answer_count": 59,
+      "first_count": 23,
+      "top3_count": 58,
+      "rank_sum": 109,
+      "categories": [
+        "品类认知问题",
+        "业务场景问题",
+        "对比决策问题",
+        "案例/效果问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0020",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0021",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0053",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0061",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0064",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0065",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0094",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0095",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0020",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0022",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0053",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0056",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0059",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0060",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0061",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0064",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0068",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0094",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0095",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0020",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0021",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0053",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0061",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0064",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0065",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0094",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0095",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0057",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0011",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0020",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0021",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0056",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0059",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0060",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0061",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0064",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0075",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0077",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0094",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0011",
+          "rank": 6,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0020",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0021",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0022",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0053",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0056",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0059",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0061",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0062",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0064",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0071",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0078",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0094",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0053",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0059",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0061",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0063",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0065",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0094",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0095",
+          "rank": 2,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "CMCR-CMP-20260819-C1-Q0020",
+        "CMCR-CMP-20260819-C1-Q0021",
+        "CMCR-CMP-20260819-C1-Q0053",
+        "CMCR-CMP-20260819-C1-Q0061",
+        "CMCR-CMP-20260819-C1-Q0064",
+        "CMCR-CMP-20260819-C1-Q0065",
+        "CMCR-CMP-20260819-C1-Q0094",
+        "CMCR-CMP-20260819-C1-Q0095",
+        "CMCR-CMP-20260819-C2-Q0020",
+        "CMCR-CMP-20260819-C2-Q0022",
+        "CMCR-CMP-20260819-C2-Q0053",
+        "CMCR-CMP-20260819-C2-Q0056",
+        "CMCR-CMP-20260819-C2-Q0059",
+        "CMCR-CMP-20260819-C2-Q0060",
+        "CMCR-CMP-20260819-C2-Q0061",
+        "CMCR-CMP-20260819-C2-Q0064",
+        "CMCR-CMP-20260819-C2-Q0068",
+        "CMCR-CMP-20260819-C2-Q0094",
+        "CMCR-CMP-20260819-C2-Q0095",
+        "CMCR-CMP-20260819-C3-Q0020",
+        "CMCR-CMP-20260819-C3-Q0021",
+        "CMCR-CMP-20260819-C3-Q0053",
+        "CMCR-CMP-20260819-C3-Q0061",
+        "CMCR-CMP-20260819-C3-Q0064",
+        "CMCR-CMP-20260819-C3-Q0065",
+        "CMCR-CMP-20260819-C3-Q0094",
+        "CMCR-CMP-20260819-C3-Q0095",
+        "CMCR-CMP-20260819-O1-Q0057",
+        "CMCR-S-20260819-C1-Q0011",
+        "CMCR-S-20260819-C1-Q0020",
+        "CMCR-S-20260819-C1-Q0021",
+        "CMCR-S-20260819-C1-Q0056",
+        "CMCR-S-20260819-C1-Q0059",
+        "CMCR-S-20260819-C1-Q0060",
+        "CMCR-S-20260819-C1-Q0061",
+        "CMCR-S-20260819-C1-Q0064",
+        "CMCR-S-20260819-C1-Q0075",
+        "CMCR-S-20260819-C1-Q0077",
+        "CMCR-S-20260819-C1-Q0094",
+        "CMCR-S-20260819-C2-Q0011",
+        "CMCR-S-20260819-C2-Q0020",
+        "CMCR-S-20260819-C2-Q0021",
+        "CMCR-S-20260819-C2-Q0022",
+        "CMCR-S-20260819-C2-Q0053",
+        "CMCR-S-20260819-C2-Q0056",
+        "CMCR-S-20260819-C2-Q0059",
+        "CMCR-S-20260819-C2-Q0061",
+        "CMCR-S-20260819-C2-Q0062",
+        "CMCR-S-20260819-C2-Q0064",
+        "CMCR-S-20260819-C2-Q0071",
+        "CMCR-S-20260819-C2-Q0078",
+        "CMCR-S-20260819-C2-Q0094",
+        "CMCR-S-20260819-C3-Q0053",
+        "CMCR-S-20260819-C3-Q0059",
+        "CMCR-S-20260819-C3-Q0061",
+        "CMCR-S-20260819-C3-Q0063",
+        "CMCR-S-20260819-C3-Q0065",
+        "CMCR-S-20260819-C3-Q0094",
+        "CMCR-S-20260819-C3-Q0095"
+      ],
+      "mention_rate": 10.97,
+      "average_rank": 1.85
+    },
+    {
+      "brand": "可灵 AI",
+      "group": "第三方竞品",
+      "mention_count": 55,
+      "answer_count": 55,
+      "first_count": 15,
+      "top3_count": 48,
+      "rank_sum": 126,
+      "categories": [
+        "对比决策问题",
+        "品类认知问题",
+        "业务场景问题",
+        "案例/效果问题",
+        "品牌产品问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0011",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0020",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0021",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0022",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0053",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0060",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0061",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0064",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0065",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0094",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0011",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0020",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0022",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0053",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0061",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0064",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0069",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0094",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0095",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0011",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0020",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0022",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0053",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0060",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0061",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0065",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0094",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0057",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0008",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0011",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0020",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0021",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0022",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0053",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0061",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0064",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0077",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0094",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0011",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0020",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0021",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0022",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0053",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0060",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0061",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0064",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0068",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0071",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0094",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0022",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0053",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0060",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0061",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0063",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0094",
+          "rank": 1,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "CMCR-CMP-20260819-C1-Q0011",
+        "CMCR-CMP-20260819-C1-Q0020",
+        "CMCR-CMP-20260819-C1-Q0021",
+        "CMCR-CMP-20260819-C1-Q0022",
+        "CMCR-CMP-20260819-C1-Q0053",
+        "CMCR-CMP-20260819-C1-Q0060",
+        "CMCR-CMP-20260819-C1-Q0061",
+        "CMCR-CMP-20260819-C1-Q0064",
+        "CMCR-CMP-20260819-C1-Q0065",
+        "CMCR-CMP-20260819-C1-Q0094",
+        "CMCR-CMP-20260819-C2-Q0011",
+        "CMCR-CMP-20260819-C2-Q0020",
+        "CMCR-CMP-20260819-C2-Q0022",
+        "CMCR-CMP-20260819-C2-Q0053",
+        "CMCR-CMP-20260819-C2-Q0061",
+        "CMCR-CMP-20260819-C2-Q0064",
+        "CMCR-CMP-20260819-C2-Q0069",
+        "CMCR-CMP-20260819-C2-Q0094",
+        "CMCR-CMP-20260819-C2-Q0095",
+        "CMCR-CMP-20260819-C3-Q0011",
+        "CMCR-CMP-20260819-C3-Q0020",
+        "CMCR-CMP-20260819-C3-Q0022",
+        "CMCR-CMP-20260819-C3-Q0053",
+        "CMCR-CMP-20260819-C3-Q0060",
+        "CMCR-CMP-20260819-C3-Q0061",
+        "CMCR-CMP-20260819-C3-Q0065",
+        "CMCR-CMP-20260819-C3-Q0094",
+        "CMCR-CMP-20260819-O1-Q0057",
+        "CMCR-S-20260819-C1-Q0008",
+        "CMCR-S-20260819-C1-Q0011",
+        "CMCR-S-20260819-C1-Q0020",
+        "CMCR-S-20260819-C1-Q0021",
+        "CMCR-S-20260819-C1-Q0022",
+        "CMCR-S-20260819-C1-Q0053",
+        "CMCR-S-20260819-C1-Q0061",
+        "CMCR-S-20260819-C1-Q0064",
+        "CMCR-S-20260819-C1-Q0077",
+        "CMCR-S-20260819-C1-Q0094",
+        "CMCR-S-20260819-C2-Q0011",
+        "CMCR-S-20260819-C2-Q0020",
+        "CMCR-S-20260819-C2-Q0021",
+        "CMCR-S-20260819-C2-Q0022",
+        "CMCR-S-20260819-C2-Q0053",
+        "CMCR-S-20260819-C2-Q0060",
+        "CMCR-S-20260819-C2-Q0061",
+        "CMCR-S-20260819-C2-Q0064",
+        "CMCR-S-20260819-C2-Q0068",
+        "CMCR-S-20260819-C2-Q0071",
+        "CMCR-S-20260819-C2-Q0094",
+        "CMCR-S-20260819-C3-Q0022",
+        "CMCR-S-20260819-C3-Q0053",
+        "CMCR-S-20260819-C3-Q0060",
+        "CMCR-S-20260819-C3-Q0061",
+        "CMCR-S-20260819-C3-Q0063",
+        "CMCR-S-20260819-C3-Q0094"
+      ],
+      "mention_rate": 10.22,
+      "average_rank": 2.29
+    },
+    {
+      "brand": "千川素材库",
+      "group": "官方工具",
+      "mention_count": 41,
+      "answer_count": 41,
+      "first_count": 26,
+      "top3_count": 38,
+      "rank_sum": 63,
+      "categories": [
+        "品类认知问题",
+        "案例/效果问题",
+        "业务场景问题",
+        "对比决策问题",
+        "价格/开通问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0015",
+          "rank": 3,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0026",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0027",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0036",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0083",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0091",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0098",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0026",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0027",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0036",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0061",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0083",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0091",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0098",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0023",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0024",
+          "rank": 4,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0026",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0027",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0029",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0036",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0091",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0098",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0004",
+          "rank": 4,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0026",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0027",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0036",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0091",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0092",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0098",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0026",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0027",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0036",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0091",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0098",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0026",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0027",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0036",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0061",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0091",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0098",
+          "rank": 2,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-O1-Q0004",
+          "rank": 4,
+          "group": "官方工具"
+        }
+      ],
+      "samples": [
+        "CMCR-CMP-20260819-C1-Q0015",
+        "CMCR-CMP-20260819-C1-Q0026",
+        "CMCR-CMP-20260819-C1-Q0027",
+        "CMCR-CMP-20260819-C1-Q0036",
+        "CMCR-CMP-20260819-C1-Q0083",
+        "CMCR-CMP-20260819-C1-Q0091",
+        "CMCR-CMP-20260819-C1-Q0098",
+        "CMCR-CMP-20260819-C2-Q0026",
+        "CMCR-CMP-20260819-C2-Q0027",
+        "CMCR-CMP-20260819-C2-Q0036",
+        "CMCR-CMP-20260819-C2-Q0061",
+        "CMCR-CMP-20260819-C2-Q0083",
+        "CMCR-CMP-20260819-C2-Q0091",
+        "CMCR-CMP-20260819-C2-Q0098",
+        "CMCR-CMP-20260819-C3-Q0023",
+        "CMCR-CMP-20260819-C3-Q0024",
+        "CMCR-CMP-20260819-C3-Q0026",
+        "CMCR-CMP-20260819-C3-Q0027",
+        "CMCR-CMP-20260819-C3-Q0029",
+        "CMCR-CMP-20260819-C3-Q0036",
+        "CMCR-CMP-20260819-C3-Q0091",
+        "CMCR-CMP-20260819-C3-Q0098",
+        "CMCR-CMP-20260819-O1-Q0004",
+        "CMCR-S-20260819-C1-Q0026",
+        "CMCR-S-20260819-C1-Q0027",
+        "CMCR-S-20260819-C1-Q0036",
+        "CMCR-S-20260819-C1-Q0091",
+        "CMCR-S-20260819-C1-Q0092",
+        "CMCR-S-20260819-C1-Q0098",
+        "CMCR-S-20260819-C2-Q0026",
+        "CMCR-S-20260819-C2-Q0027",
+        "CMCR-S-20260819-C2-Q0036",
+        "CMCR-S-20260819-C2-Q0091",
+        "CMCR-S-20260819-C2-Q0098",
+        "CMCR-S-20260819-C3-Q0026",
+        "CMCR-S-20260819-C3-Q0027",
+        "CMCR-S-20260819-C3-Q0036",
+        "CMCR-S-20260819-C3-Q0061",
+        "CMCR-S-20260819-C3-Q0091",
+        "CMCR-S-20260819-C3-Q0098",
+        "CMCR-S-20260819-O1-Q0004"
+      ],
+      "mention_rate": 7.62,
+      "average_rank": 1.54
+    },
+    {
+      "brand": "有米云",
+      "group": "第三方竞品",
+      "mention_count": 27,
+      "answer_count": 27,
+      "first_count": 6,
+      "top3_count": 21,
+      "rank_sum": 73,
+      "categories": [
+        "品类认知问题",
+        "业务场景问题",
+        "对比决策问题",
+        "案例/效果问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0015",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0017",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0024",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0029",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0040",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0088",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0099",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0024",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0039",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0088",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0099",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0024",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0025",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0031",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0032",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0039",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0088",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0096",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0099",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0024",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0088",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0024",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0088",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0096",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0024",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0040",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0088",
+          "rank": 1,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "CMCR-CMP-20260819-C1-Q0015",
+        "CMCR-CMP-20260819-C1-Q0017",
+        "CMCR-CMP-20260819-C1-Q0024",
+        "CMCR-CMP-20260819-C1-Q0029",
+        "CMCR-CMP-20260819-C1-Q0040",
+        "CMCR-CMP-20260819-C1-Q0088",
+        "CMCR-CMP-20260819-C1-Q0099",
+        "CMCR-CMP-20260819-C2-Q0024",
+        "CMCR-CMP-20260819-C2-Q0039",
+        "CMCR-CMP-20260819-C2-Q0088",
+        "CMCR-CMP-20260819-C2-Q0099",
+        "CMCR-CMP-20260819-C3-Q0024",
+        "CMCR-CMP-20260819-C3-Q0025",
+        "CMCR-CMP-20260819-C3-Q0031",
+        "CMCR-CMP-20260819-C3-Q0032",
+        "CMCR-CMP-20260819-C3-Q0039",
+        "CMCR-CMP-20260819-C3-Q0088",
+        "CMCR-CMP-20260819-C3-Q0096",
+        "CMCR-CMP-20260819-C3-Q0099",
+        "CMCR-S-20260819-C1-Q0024",
+        "CMCR-S-20260819-C1-Q0088",
+        "CMCR-S-20260819-C2-Q0024",
+        "CMCR-S-20260819-C2-Q0088",
+        "CMCR-S-20260819-C2-Q0096",
+        "CMCR-S-20260819-C3-Q0024",
+        "CMCR-S-20260819-C3-Q0040",
+        "CMCR-S-20260819-C3-Q0088"
+      ],
+      "mention_rate": 5.02,
+      "average_rank": 2.7
+    },
+    {
+      "brand": "抖音素材库",
+      "group": "官方工具",
+      "mention_count": 21,
+      "answer_count": 21,
+      "first_count": 21,
+      "top3_count": 21,
+      "rank_sum": 21,
+      "categories": [
+        "业务场景问题",
+        "风险/限制问题",
+        "对比决策问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0096",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0097",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0098",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0099",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0096",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0097",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0098",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0099",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0096",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0097",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0098",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0099",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0096",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0098",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0099",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0096",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0097",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0098",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0096",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0097",
+          "rank": 1,
+          "group": "官方工具"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0098",
+          "rank": 1,
+          "group": "官方工具"
+        }
+      ],
+      "samples": [
+        "CMCR-CMP-20260819-C1-Q0096",
+        "CMCR-CMP-20260819-C1-Q0097",
+        "CMCR-CMP-20260819-C1-Q0098",
+        "CMCR-CMP-20260819-C1-Q0099",
+        "CMCR-CMP-20260819-C2-Q0096",
+        "CMCR-CMP-20260819-C2-Q0097",
+        "CMCR-CMP-20260819-C2-Q0098",
+        "CMCR-CMP-20260819-C2-Q0099",
+        "CMCR-CMP-20260819-C3-Q0096",
+        "CMCR-CMP-20260819-C3-Q0097",
+        "CMCR-CMP-20260819-C3-Q0098",
+        "CMCR-CMP-20260819-C3-Q0099",
+        "CMCR-S-20260819-C1-Q0096",
+        "CMCR-S-20260819-C1-Q0098",
+        "CMCR-S-20260819-C1-Q0099",
+        "CMCR-S-20260819-C2-Q0096",
+        "CMCR-S-20260819-C2-Q0097",
+        "CMCR-S-20260819-C2-Q0098",
+        "CMCR-S-20260819-C3-Q0096",
+        "CMCR-S-20260819-C3-Q0097",
+        "CMCR-S-20260819-C3-Q0098"
+      ],
+      "mention_rate": 3.9,
+      "average_rank": 1
+    },
+    {
+      "brand": "火山引擎",
+      "group": "第三方竞品",
+      "mention_count": 20,
+      "answer_count": 20,
+      "first_count": 15,
+      "top3_count": 20,
+      "rank_sum": 28,
+      "categories": [
+        "业务场景问题",
+        "品类认知问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0063",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0069",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0043",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0058",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0063",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0069",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0093",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0017",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0059",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0063",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0078",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0093",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0023",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0047",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0058",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0063",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0068",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0078",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0058",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0063",
+          "rank": 1,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "CMCR-CMP-20260819-C1-Q0063",
+        "CMCR-CMP-20260819-C1-Q0069",
+        "CMCR-CMP-20260819-C2-Q0043",
+        "CMCR-CMP-20260819-C2-Q0058",
+        "CMCR-CMP-20260819-C2-Q0063",
+        "CMCR-CMP-20260819-C2-Q0069",
+        "CMCR-CMP-20260819-C2-Q0093",
+        "CMCR-CMP-20260819-C3-Q0017",
+        "CMCR-CMP-20260819-C3-Q0059",
+        "CMCR-S-20260819-C1-Q0063",
+        "CMCR-S-20260819-C1-Q0078",
+        "CMCR-S-20260819-C1-Q0093",
+        "CMCR-S-20260819-C2-Q0023",
+        "CMCR-S-20260819-C2-Q0047",
+        "CMCR-S-20260819-C2-Q0058",
+        "CMCR-S-20260819-C2-Q0063",
+        "CMCR-S-20260819-C2-Q0068",
+        "CMCR-S-20260819-C2-Q0078",
+        "CMCR-S-20260819-C3-Q0058",
+        "CMCR-S-20260819-C3-Q0063"
+      ],
+      "mention_rate": 3.72,
+      "average_rank": 1.4
+    },
+    {
+      "brand": "Runway",
+      "group": "第三方竞品",
+      "mention_count": 19,
+      "answer_count": 19,
+      "first_count": 4,
+      "top3_count": 9,
+      "rank_sum": 63,
+      "categories": [
+        "对比决策问题",
+        "品类认知问题",
+        "业务场景问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0011",
+          "rank": 6,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0022",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0011",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0020",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0060",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0011",
+          "rank": 6,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0022",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0061",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0021",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0064",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0011",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0020",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0021",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0022",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0044",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0061",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0011",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0022",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0064",
+          "rank": 2,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "CMCR-CMP-20260819-C1-Q0011",
+        "CMCR-CMP-20260819-C1-Q0022",
+        "CMCR-CMP-20260819-C2-Q0011",
+        "CMCR-CMP-20260819-C2-Q0020",
+        "CMCR-CMP-20260819-C2-Q0060",
+        "CMCR-CMP-20260819-C3-Q0011",
+        "CMCR-CMP-20260819-C3-Q0022",
+        "CMCR-CMP-20260819-C3-Q0061",
+        "CMCR-S-20260819-C1-Q0021",
+        "CMCR-S-20260819-C1-Q0064",
+        "CMCR-S-20260819-C2-Q0011",
+        "CMCR-S-20260819-C2-Q0020",
+        "CMCR-S-20260819-C2-Q0021",
+        "CMCR-S-20260819-C2-Q0022",
+        "CMCR-S-20260819-C2-Q0044",
+        "CMCR-S-20260819-C2-Q0061",
+        "CMCR-S-20260819-C3-Q0011",
+        "CMCR-S-20260819-C3-Q0022",
+        "CMCR-S-20260819-C3-Q0064"
+      ],
+      "mention_rate": 3.53,
+      "average_rank": 3.32
+    },
+    {
+      "brand": "Pika",
+      "group": "第三方竞品",
+      "mention_count": 15,
+      "answer_count": 15,
+      "first_count": 2,
+      "top3_count": 8,
+      "rank_sum": 48,
+      "categories": [
+        "对比决策问题",
+        "业务场景问题",
+        "品类认知问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0011",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0022",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0053",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0020",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0011",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0022",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0061",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0064",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0069",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0020",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0021",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0044",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0061",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0022",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0064",
+          "rank": 1,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "CMCR-CMP-20260819-C1-Q0011",
+        "CMCR-CMP-20260819-C1-Q0022",
+        "CMCR-CMP-20260819-C1-Q0053",
+        "CMCR-CMP-20260819-C2-Q0020",
+        "CMCR-CMP-20260819-C3-Q0011",
+        "CMCR-CMP-20260819-C3-Q0022",
+        "CMCR-CMP-20260819-C3-Q0061",
+        "CMCR-CMP-20260819-C3-Q0064",
+        "CMCR-CMP-20260819-C3-Q0069",
+        "CMCR-S-20260819-C2-Q0020",
+        "CMCR-S-20260819-C2-Q0021",
+        "CMCR-S-20260819-C2-Q0044",
+        "CMCR-S-20260819-C2-Q0061",
+        "CMCR-S-20260819-C3-Q0022",
+        "CMCR-S-20260819-C3-Q0064"
+      ],
+      "mention_rate": 2.79,
+      "average_rank": 3.2
+    },
+    {
+      "brand": "飞瓜易投",
+      "group": "第三方竞品",
+      "mention_count": 10,
+      "answer_count": 10,
+      "first_count": 5,
+      "top3_count": 9,
+      "rank_sum": 19,
+      "categories": [
+        "对比决策问题",
+        "业务场景问题",
+        "案例/效果问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0087",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0099",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0087",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0017",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0087",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0099",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0031",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0087",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0032",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0087",
+          "rank": 1,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "CMCR-CMP-20260819-C1-Q0087",
+        "CMCR-CMP-20260819-C2-Q0099",
+        "CMCR-CMP-20260819-C3-Q0087",
+        "CMCR-S-20260819-C1-Q0017",
+        "CMCR-S-20260819-C1-Q0087",
+        "CMCR-S-20260819-C1-Q0099",
+        "CMCR-S-20260819-C2-Q0031",
+        "CMCR-S-20260819-C2-Q0087",
+        "CMCR-S-20260819-C3-Q0032",
+        "CMCR-S-20260819-C3-Q0087"
+      ],
+      "mention_rate": 1.86,
+      "average_rank": 1.9
+    },
+    {
+      "brand": "Vidu",
+      "group": "第三方竞品",
+      "mention_count": 10,
+      "answer_count": 10,
+      "first_count": 0,
+      "top3_count": 8,
+      "rank_sum": 32,
+      "categories": [
+        "对比决策问题",
+        "业务场景问题",
+        "案例/效果问题",
+        "品类认知问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "CMCR-CMP-20260819-C1-Q0094",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0056",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0068",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0094",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0094",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-O1-Q0057",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0094",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0094",
+          "rank": 3,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0061",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C3-Q0094",
+          "rank": 3,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "CMCR-CMP-20260819-C1-Q0094",
+        "CMCR-CMP-20260819-C2-Q0056",
+        "CMCR-CMP-20260819-C2-Q0068",
+        "CMCR-CMP-20260819-C2-Q0094",
+        "CMCR-CMP-20260819-C3-Q0094",
+        "CMCR-CMP-20260819-O1-Q0057",
+        "CMCR-S-20260819-C1-Q0094",
+        "CMCR-S-20260819-C2-Q0094",
+        "CMCR-S-20260819-C3-Q0061",
+        "CMCR-S-20260819-C3-Q0094"
+      ],
+      "mention_rate": 1.86,
+      "average_rank": 3.2
+    },
+    {
+      "brand": "Adobe",
+      "group": "第三方竞品",
+      "mention_count": 3,
+      "answer_count": 3,
+      "first_count": 1,
+      "top3_count": 2,
+      "rank_sum": 8,
+      "categories": [
+        "业务场景问题",
+        "品类认知问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "CMCR-S-20260819-C1-Q0060",
+          "rank": 2,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0021",
+          "rank": 5,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0060",
+          "rank": 1,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "CMCR-S-20260819-C1-Q0060",
+        "CMCR-S-20260819-C2-Q0021",
+        "CMCR-S-20260819-C2-Q0060"
+      ],
+      "mention_rate": 0.56,
+      "average_rank": 2.67
+    },
+    {
+      "brand": "Sora",
+      "group": "第三方竞品",
+      "mention_count": 3,
+      "answer_count": 3,
+      "first_count": 1,
+      "top3_count": 1,
+      "rank_sum": 9,
+      "categories": [
+        "对比决策问题"
+      ],
+      "sample_ranks": [
+        {
+          "sample_id": "CMCR-CMP-20260819-C2-Q0022",
+          "rank": 1,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-CMP-20260819-C3-Q0022",
+          "rank": 4,
+          "group": "第三方竞品"
+        },
+        {
+          "sample_id": "CMCR-S-20260819-C2-Q0022",
+          "rank": 4,
+          "group": "第三方竞品"
+        }
+      ],
+      "samples": [
+        "CMCR-CMP-20260819-C2-Q0022",
+        "CMCR-CMP-20260819-C3-Q0022",
+        "CMCR-S-20260819-C2-Q0022"
+      ],
+      "mention_rate": 0.56,
+      "average_rank": 3
+    }
+  ]
+}

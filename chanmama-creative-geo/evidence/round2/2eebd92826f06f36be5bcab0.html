@@ -1,0 +1,35 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R2 CMCR-Q0044 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>AI 拉片工具能拆出脚本、画面和分镜吗？</h1><p class="meta">第 2 轮 · CMCR-Q0044 · 逻辑采样日期 2026-10-13 · C2</p><p class="meta">样本 smp-f6deeec9828a4062b5cc03df1408b426</p><p class="meta">实际提交 2026-10-13T16:50:16.430849Z · 实际完成 2026-10-13T16:50:37.148731Z</p><p class="hash">回答 SHA-256 982d25d5cbec74578e9db1588224a8087217d83351a15ce9b8817f9a4e7434e0</p></header><main><pre id="original-answer"># ✅ 结论
+**AI拉片工具可以拆出：字幕/台词脚本、镜头截图（画面）、结构化分镜描述，但不能直接输出手绘分镜稿**。
+它输出的是**拉片分析稿**，不是原片拍摄时的原始剧本/手绘分镜。
+
+## 能拆出来的内容
+1. **脚本（台词/口播）**
+依靠语音识别，提取视频里对白、旁白，带时间码；还能总结叙事结构、钩子、段落脚本，导出表格/文档。
+&gt; 注意：这是**转录+AI总结脚本**，不是导演原始剧本。
+
+2. **画面素材**
+自动检测镜头切分，截取每个镜头**关键帧截图**，把视频切成一个个镜头画面卡片；可导出图片包。
+
+3. **分镜文字描述（最常用）**
+识别镜号、单镜头时长、景别（特写/中景/远景）、机位、运镜、光影、构图、画面内容，输出结构化分镜表，甚至直接生成AI视频可用的提示词（适合短剧、TVC学习复刻）。
+部分工具还能基于分析**自动生成分镜草图**（AI绘画生成，不是原片手绘分镜）。
+
+## ⚠️ 重要局限（一定要人工复核）
+1. **快切镜头、闪帧、快速推拉摇移容易漏检、错切镜头边界**；小于0.5秒的短镜头经常识别失败。
+2. **画面细节容易出错**：小字、远处物体、复杂人物动作识别不准；光影、色彩判断会有偏差。
+3. **只能“反向推测”**：AI是看完成片反推分镜逻辑，**拿不到导演当初写的原始拍摄脚本、手绘分镜原稿**。
+4. **镜头语言理解有限**：隐喻、情绪留白、剪辑节奏的深层用意，AI只能做表层描述，专业深度拉片依然需要人校对、修改。
+
+## 常见工具举例
+- 蝉镜AI：短视频拉片，输出口播文案+镜头分析表格
+- LibTV（场鸽）：逐镜头拆解、提取运镜+一键生成AI提示词
+- StoryFolder：国外工具，自动切镜头、生成故事板（截图版分镜）
+- 大模型（千问、Gemini等）：上传视频，prompt拉片，输出文字版分镜脚本
+
+## 适合场景
+✅ 学习爆款短片、广告、短剧，快速扒镜头节奏
+✅ 快速做拉片表格，省掉手动截图、记景别的重复劳动
+❌ 直接拿来当专业拍摄分镜原稿使用（必须人工校对修改）
+
+
+要不要我给你一段通用拉片提示词，丢视频进多模态大模型就能直接输出带时间码的分镜脚本表格？</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 9c215b694afb44e53443b5071d379172526f4904e114d36e355e3c47eadeecc6</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

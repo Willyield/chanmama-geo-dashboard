@@ -1,0 +1,35 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R1 CMCR-Q0083 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>成片能不能直接分发到巨量千川、巨量广告、磁力金牛和腾讯广告？</h1><p class="meta">第 1 轮 · CMCR-Q0083 · 逻辑采样日期 2026-08-19 · C2</p><p class="meta">样本 CMCR-S-20260819-C2-Q0083</p><p class="meta">实际提交 历史记录仅保存采样日期 · 实际完成 历史记录未提供精确时间</p><p class="hash">回答 SHA-256 d43c99e7140ca74944831a8a03c714d2ceb738f3d82ea4909813fb8013bb77d8</p></header><main><pre id="original-answer"># 成片能否直接分发至巨量千川、巨量广告、磁力金牛、腾讯广告
+**原生剪辑软件（普通剪映本地导出）不能一键全平台直推；具备广告API对接的营销剪辑/混剪工具，可以直接分发推送，但不等于直接上线投放**。
+
+## 1、四个平台分发能力说明
+- **巨量千川 &amp; 巨量广告（巨量引擎）**
+  剪映营销成片、即创、第三方营销工具，授权账户后，成片可一键推送至账户素材库；推送后还需要在广告后台接收素材，再走平台广告审核，审核通过后才能用于计划投放。普通本地导出视频，只能下载后手动上传。
+
+- **磁力金牛（快手电商广告）**
+  仅支持打通磁力引擎开放API的第三方工具，成片直接推送至金牛素材库；需要先完成账号授权；原生快手剪辑工具**不支持直接推送金牛**，需要手动上传视频文件。
+
+- **腾讯广告（AMS）**
+  只有对接腾讯广告开放API的营销工具，才支持成片一键推送素材库；普通剪辑导出文件需要下载后手动上传至腾讯广告后台。
+
+&gt; 重点：**推送=上传到广告账户素材库，≠自动过审、≠自动创建广告计划**。推送完成依旧要经过各平台独立广告审核，四大平台审核规则不一样，同一素材A平台过审，B平台有可能被驳回。
+
+## 2、两种实现方式对比
+1. **手动模式（通用，所有成片都支持）**
+成片导出本地视频文件，分别登录4个广告后台，逐个上传素材，提交广告审核。
+✅优点：任何剪辑工具输出的成片都能用；
+❌缺点：重复下载上传，效率低。
+
+2. **API一键分发模式（需要专用营销剪辑平台）**
+工具对接四家广告平台开放接口，完成**账号OAuth授权**，成片渲染完成直接推送至各广告账户素材库，无需下载本地文件。
+✅优点：省去下载、本地上传步骤，支持批量成片分发；
+❌缺点：必须使用支持该能力的营销剪辑工具；普通版剪映仅支持推送巨量系，**原生不支持磁力金牛、腾讯广告一键推送**。
+
+## 3、关键限制
+1. 必须完成广告账户授权，没有授权无法推送素材；
+2. 推送仅把视频送入素材库，不会自动搭建广告计划；
+3. 四个平台素材规格、审核标准有差异，推送后仍可能审核驳回，需要修改成片重推；
+4. 普通个人剪辑软件，不具备全平台一键分发能力。
+
+简单总结：**普通成片文件不能“一键直接投放”，专用营销工具可以一键分发推送素材库，后续仍需平台审核，审核通过后才可投放**。
+
+如果你需要，我可以帮你整理一份四个平台广告素材规格简表。</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 未提供</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

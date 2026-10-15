@@ -1,0 +1,61 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R2 CMCR-Q0028 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>千川素材怎么看，怎么判断是否值得跟进？</h1><p class="meta">第 2 轮 · CMCR-Q0028 · 逻辑采样日期 2026-10-13 · C1</p><p class="meta">样本 smp-cdb979e88bdd4c03b0b65e2d88238674</p><p class="meta">实际提交 2026-10-13T15:18:07.098486Z · 实际完成 2026-10-13T15:18:35.392072Z</p><p class="hash">回答 SHA-256 35c980b6c2a10725e9a28ce30360c26f5fb023f704cef2e4ddb5fa7f545900fb</p></header><main><pre id="original-answer"># 一、在哪看千川素材数据
+千川后台 →【数据】→【素材数据/素材明细】，自定义列勾选：**消耗、展现、CTR点击率、CVR转化率、千展CPM、成交ROI、转化成本、3秒留存、完播率**
+&gt; 重点：**新素材必须跑够3000展现/小额消耗拿到样本，再做判断，不要几刀消耗就下结论**
+
+# 二、三层指标看素材（由浅到深）
+## 1）流量吸引力（能不能拿到曝光）
+- **3秒留存**：核心钩子指标，≥30%及格；低于30%=开头不行，大概率很难起量
+- **CTR点击率**
+  - 低价福利款：≥3%合格；中高客单非标：2%~2.5%合格
+  - 红线：**CTR＜1%，直接放弃**
+  - 坑：CTR＞10%要警惕，大概率标题党，只点击不成交，人群泛，CVR会很差
+- 完播率：看视频节奏，对比账户内素材均值即可
+
+&gt; 一句话：CTR/3秒留存好看=素材能抓人，但**抓人≠能赚钱**，必须看转化。
+
+## 2）成交结果（能不能赚钱，生死指标）
+**ROI（支付投产） &amp; 转化成本**，拿这条素材ROI和你的**保本ROI对比**
+- ROI＞保本ROI：盈利素材，可以跟进放量
+- ROI≈保本ROI 80%-100%：微亏/打平，可以小预算继续测、复制同脚本风格
+- ROI＜保本ROI的60%：不建议硬追，及时关停
+
+CVR转化率：代表素材人群精准度。CTR高、CVR低，典型：钩子吸引人，但产品卖点不匹配，进来的不是想买的人。
+
+CPM千展成本：只是参考，**不能单独用来判断好坏**。同样千展，有的高ROI、有的纯空耗，一定要搭配ROI一起看
+
+## 3）人群&amp;承接校验（容易忽略）
+1. 看**点击人群 vs 成交人群**：素材吸引进来的人，是不是你的目标客群；如果点击人群泛、成交人群窄，说明素材钩子吸引吃瓜群众
+2. 直播间承接：素材流量进来，直播间30s停留、点转、成交转化是否正常；素材再好，直播间接不住，投产照样崩
+3. 退款率：明显高于店铺均值，说明素材夸大宣传，短期能转化，长期会拉低账户权重
+
+# 三、4类素材，判断要不要跟进
+### ✅ 值得跟进/放量（优先加大预算、复制脚本）
+3秒留存+CTR达标，**ROI≥保本ROI，转化成本稳定低于账户均值，消耗持续爬坡**
+&gt; 动作：新建多条计划追这条素材，复制同钩子/同卖点批量翻拍，不要单条计划硬堆预算，加速衰退
+
+### ⚠️ 潜力素材（小额继续测试，不重仓）
+CTR/3秒留存不错，ROI达到保本线80%左右，样本量还不大（订单5-10单以内）
+&gt; 动作：小预算继续跑，观察2~3天趋势；看ROI是否持续走高；如果持续持平不改善，停止追加
+
+### ⚠️ 伪爆款（点击率很高，不要追）
+CTR很高、消耗快，但CVR极低、ROI远低于保本，属于泛流量素材，看着能跑量，实则亏钱
+&gt; 动作：直接降预算或关停，不要放大亏损
+
+### ❌ 直接放弃
+- 3秒留存低、CTR＜1%，很难拿量
+- 有足够样本（≥3000展现），ROI持续低于保本60%，转化成本居高不下
+- 老素材：ROI持续下滑、CPM越来越贵，进入衰退期，减少预算，逐步淘汰
+
+# 四、实操判断流程（简单版）
+1. 先看样本：有没有3000展现、足够订单，样本不足→继续小额测，不决策
+2. 看前端：3秒留存、CTR，判断钩子行不行
+3. 看后端：ROI vs 保本ROI、转化成本，判断赚不赚钱
+4. 看趋势：近几小时/近2天，ROI和成本是变好还是变差
+5. 看人群：进来的人是不是买货人群，直播间能不能承接
+
+# 五、追投2个原则
+1. **追高不追低**：只追已经验证盈利/潜力素材；不要追空耗素材
+2. **追新不追老**：优先跟进3天内新素材；老爆量素材到衰退窗口，控制消耗占比，不要重度依赖老素材
+
+&gt; 补充：素材衰退是必然，跟进素材的同时，持续上新同结构素材储备，不要一条素材吃到死。
+</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 859a938012abc9a4c85e78da3e0457ba8aea867ae27e5585d741855176de17fb</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

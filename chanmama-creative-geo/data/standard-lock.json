@@ -1,0 +1,27 @@
+{
+  "version": "CMCR-GEO-METRICS-2.0.1",
+  "status": "FROZEN_AFTER_SOURCE_VERIFICATION",
+  "behavior": "变更任何文件须显式新版本并复算影响；不得静默替换本版本。",
+  "files": [
+    {
+      "path": "standards/metric-standard.json",
+      "sha256": "9b98d7d63327a7955039829adde32fd4f628cba805ac046552be9a1c25972b9f"
+    },
+    {
+      "path": "standards/metric-engine.mjs",
+      "sha256": "302383f508e78d63ef2dbcf945e5fce20a3e3dbdc1a802e259a5d686ac8ea0e6"
+    },
+    {
+      "path": "standards/指标评判标准.md",
+      "sha256": "31fffd0e52e683d64a1e915b4cc9f863608d2300ac3d99dbeca4365b87265f75"
+    },
+    {
+      "path": "work/plan-review-r2/question-contract.json",
+      "sha256": "f34e78f50531a7ec1f12923232845182e8715fd5a3cdf7b37ebb183b53db1830"
+    },
+    {
+      "path": "work/startup-20261012/current-truth-contract.json",
+      "sha256": "0c8f5b633e0602f5ebf03ed4757536da804fda77e3da736ddbc6d421f2a49e34"
+    }
+  ]
+}

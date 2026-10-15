@@ -1,0 +1,20 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R2 CMCR-Q0083 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>成片能不能直接分发到巨量千川、巨量广告、磁力金牛和腾讯广告？</h1><p class="meta">第 2 轮 · CMCR-Q0083 · 逻辑采样日期 2026-10-13 · C3</p><p class="meta">样本 smp-ce83ec69cd5346488fe994369a99f14d</p><p class="meta">实际提交 2026-10-13T17:45:31.915162Z · 实际完成 2026-10-13T17:45:46.840879Z</p><p class="hash">回答 SHA-256 a4244422e8c0d2ce7bd10ee491af2b641318770b0bf4c1c509ff74fabff0e25c</p></header><main><pre id="original-answer"># 结论
+**原生「成片」平台本身不能一键直接分发到4个广告后台；但分两种情况：**
+1. ✅ **巨量千川 + 巨量广告（巨量引擎）**：成片如果是**火山引擎成片/巨量星图成片**，授权账户后，可以**一键推送素材到巨量广告、巨量千川素材库**，属于官方打通链路，推送后素材进入广告后台素材库，**但推送素材≠自动建广告计划**，还需要你在广告后台手动新建创意/计划。
+2. ❌ **磁力金牛、腾讯广告**：**没有官方原生一键推送**，成片平台不直接打通这两个平台。只能：
+    - 方案A：从成片平台**下载视频/图片本地文件**，手动上传到磁力金牛、腾讯广告素材库；
+    - 方案B：通过**第三方素材中台/自研系统**，调用磁力金牛开放API、腾讯广告API，实现自动化上传素材（需要开发、账户OAuth授权）。
+
+## 补充关键点
+1. **推送只是素材入库，不是直接上线广告**
+不管巨量这边一键推送，还是API上传金牛/腾讯广告，都**只会把素材传到素材库**，不会自动创建广告创意、计划、设置定向出价，素材依旧要走广告平台合规审核。
+2. **授权前提**
+巨量侧推送，需要广告主账户授权、主体匹配；达人素材还要提前拿到素材投放授权，否则推送也无法投放。
+3. **文件规范各自独立**
+4个广告平台视频编码、码率、分辨率、时长、大小限制不一样。就算推送成功，也可能在对应广告后台审核不通过，需要提前按各平台规范导出成片。
+
+## 最简落地路径
+- 巨量千川/巨量广告：成片后台绑定巨量广告账户 → 选中素材推送 → 素材进巨量素材库，再建计划
+- 磁力金牛 / 腾讯广告：成片导出原片 → 手动上传；量大就用API开发自动化上传
+
+如果你需要，我可以整理一份**4个平台素材格式、大小、时长限制对照表**。</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 bb703705a0bad23e7f323230fd3a726b9d5eab8e86ac3343c15bfb379f08adff</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

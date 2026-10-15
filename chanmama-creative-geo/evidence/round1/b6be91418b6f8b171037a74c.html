@@ -1,0 +1,32 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R1 CMCR-Q0083 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>成片能不能直接分发到巨量千川、巨量广告、磁力金牛和腾讯广告？</h1><p class="meta">第 1 轮 · CMCR-Q0083 · 逻辑采样日期 2026-08-19 · C3</p><p class="meta">样本 CMCR-S-20260819-C3-Q0083</p><p class="meta">实际提交 历史记录仅保存采样日期 · 实际完成 历史记录未提供精确时间</p><p class="hash">回答 SHA-256 8f9c7398c952fb03115f1b7446444f17130bc838cfa838ed26de41273b3ef295</p></header><main><pre id="original-answer"># 成片分发至巨量千川、巨量广告、磁力金牛、腾讯广告说明
+**原生剪辑工具（剪映等）本身不支持直接一键分发到这四个广告平台**；但通过**第三方创意工具/开放API**，成片可以推送至四大平台的广告素材库，但**不等于直接创建广告计划开始投放**。
+
+## 核心要点
+1. **推送结果：仅上传素材到广告平台素材资产库**
+成片推送后，视频会进入对应广告账户的素材库，可供后续广告计划选用；**不会自动生成广告、不会自动开启投放**，投放计划仍需要在广告后台手动配置（定向、出价、预算、转化目标等）。
+
+2. **前置必要条件**
+- 需要完成各广告平台的**账户API授权**，拿到广告主账户权限；
+- 成片需要满足各平台素材格式、时长、分辨率、内容审核规范；推送后素材仍要经过广告平台审核，审核通过才可用于投放。
+
+3. 各平台对应关系
+- **巨量千川、巨量广告**：基于巨量引擎Marketing API，千川属于电商投放账户，巨量广告是效果/品牌广告账户，授权后均可接收成片素材。
+- **磁力金牛**：快手磁力引擎开放API，成片推送至磁力金牛素材资产，用于快手电商广告投放。
+- **腾讯广告**：调用腾讯广告开放API，成片上传至创意资产‑视频素材库，用于微信、QQ系广告投放。
+
+## 两种实现方式
+### 方式1：第三方创意剪辑工具（如超级编导、秒影工场等）
+工具内渲染输出成片，在矩阵分发模块，完成四个平台账号授权，勾选成片，执行推送，素材自动进入各广告账户素材库。
+
+### 方式2：自研系统调用官方开放API
+1. 本地/云端生成成片视频文件；
+2. 分别对接巨量Marketing API、快手磁力金牛API、腾讯广告API；
+3. 调用各平台视频上传接口，传入视频文件与广告账户ID，完成素材上传；
+4. 在广告后台使用该素材搭建广告计划。
+
+## 重要限制
+1. 不支持从普通剪辑软件（剪映PC版/网页版）直接点按钮分发，剪映没有开放该广告推送接口；
+2. 推送不等于过审：即使推送成功，素材仍要过广告平台审核，违规素材无法用于投放；
+3. 仅上传素材，广告计划、出价、定向、预算等投放参数必须另外配置。
+
+&gt; 简单总结：**不能无授权直接一键分发投放；授权API/第三方工具可以把成片推送到四大广告平台素材库，后续再做投放配置**。</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 未提供</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

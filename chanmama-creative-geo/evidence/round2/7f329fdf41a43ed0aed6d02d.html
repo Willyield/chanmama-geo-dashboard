@@ -1,0 +1,34 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R2 CMCR-Q0083 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>成片能不能直接分发到巨量千川、巨量广告、磁力金牛和腾讯广告？</h1><p class="meta">第 2 轮 · CMCR-Q0083 · 逻辑采样日期 2026-10-12 · C3</p><p class="meta">样本 smp-cf10bd1c7be9488f9c8446c17b08e095</p><p class="meta">实际提交 2026-10-12T15:48:17.799015Z · 实际完成 2026-10-12T15:48:37.563240Z</p><p class="hash">回答 SHA-256 9cee9bd663f653e4f0d3f76c9090f6d7814b5e9857f28f04797529a6b453bee9</p></header><main><pre id="original-answer"># 一句话结论
+**四个后台原生互相独立，不能在巨量/磁力/腾讯任意一个官方后台里，直接一键分发成片到全部4个平台；但可以用第三方素材中台/创意工具，一次性把成片推送至巨量千川、巨量广告、磁力金牛、腾讯广告（ADQ）**。
+
+## 分平台说明
+1. **巨量千川 ↔ 巨量广告（巨量引擎）**
+    同属巨量引擎体系。
+    - 素材文件本身可以下载复用；
+    - 通过巨量开放API、方舟/素材管理平台，素材可以在巨量广告、千川之间推送同步；
+    - 但**账户权限、审核规则、创意组件不一样**，推送后仍要过各自审核、绑定对应的商品/落地页。
+
+2. **磁力金牛（快手）**
+    快手独立广告后台，**和巨量、腾讯官方没有原生素材互通**，官方后台不能直接从巨量推送成片到磁力金牛，必须文件上传或者第三方工具API推送。
+
+3. **腾讯广告（ADQ）**
+    腾讯独立广告体系，和巨量、快手之间**无官方原生素材分发通道**。
+
+## 两种方案
+✅ **方案1：第三方素材管理平台（推荐批量投放）**
+如火山引擎iAD、超级编导、柚柚兔这类素材中台，提前授权4个广告账户，成片上传到中台后，**批量一键推送至巨量千川、巨量广告、磁力金牛、腾讯广告素材库**；推送完成后素材进入各平台素材库，你再进各后台建广告计划、等待审核。
+&gt; 前提：成片满足每个平台的**视频格式、时长、内容合规规范**，不同平台审核标准不一样，推送不等于直接过审。
+
+✅ **方案2：纯官方后台手动方式（无额外工具）**
+成片导出MP4，**分别登录4个广告后台，逐个上传**：
+- 巨量广告后台素材库上传
+- 千川后台素材库上传
+- 磁力金牛素材中心上传
+- 腾讯ADQ素材中心上传
+
+## 重要限制
+1. 推送只是**把视频文件送入对应平台素材库**，**不会自动新建广告计划**；素材仍要单独过每个平台广告合规审核。
+2. 素材版权、画面里的话术、字幕、卖点文案，需要同时符合抖音、快手、腾讯三家广告规范，很容易出现A平台过审、B平台驳回。
+3. 千川素材有电商商品绑定、落地页、购物车组件要求，和巨量品牌广告创意要求不一样，即使视频一样，创意配置不能直接照搬。
+
+如果你需要，我可以帮你整理一份**4平台广告成片通用规范清单（分辨率、码率、时长、避坑要点）**。</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 f4644cc5d53e77ce2673672635bec6a6759c91332d802c16d3af3716e0a8647c</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

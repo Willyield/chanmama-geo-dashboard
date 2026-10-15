@@ -1,0 +1,42 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R2 CMCR-Q0043 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>哪个 AI 可以分析视频内容并输出拆解报告？</h1><p class="meta">第 2 轮 · CMCR-Q0043 · 逻辑采样日期 2026-10-13 · C1</p><p class="meta">样本 smp-04c5b8392a4d48ebbb5b677af3c16707</p><p class="meta">实际提交 2026-10-13T15:25:39.675908Z · 实际完成 2026-10-13T15:26:00.898665Z</p><p class="hash">回答 SHA-256 873df5c241fadf69e8ed1ffed4ae70df720aebd3dfa834823fd48340af4a41b7</p></header><main><pre id="original-answer"># ✅ 能上传视频、自动分析并输出**结构化拆解报告**的AI
+分为**国内网页/APP（上手最简单）**、**海外多模态大模型**、**云API商用工具**三类，按你的场景选：
+
+## 🇨🇳 国内可用（推荐普通人优先试）
+### 1. 通义听悟（阿里）
+- 能力：上传本地视频 / 粘贴B站等视频链接，自动语音转写、**划分章节、提取核心观点、生成结构化纪要**，可直接导出文档报告；适合网课、讲座、访谈、短视频口播拆解
+- 局限：画面视觉分析偏弱，**重点处理音频+字幕**，适合口播类视频；纯画面无语音的视频效果一般。
+
+### 2. 豆包（多模态版）
+- 能力：直接上传视频文件，同时看懂画面+音频，你可以给指令：
+&gt; “对这条视频做完整拆解报告：包含主题、时间轴分段、镜头结构、钩子设计、核心论点、优缺点总结、优化建议，输出markdown报告”
+- 适合：短视频爆款拆解、课程视频、演示视频，中文理解好，不用跳转别的平台。
+
+### 3. 智谱GLM-4V（智谱清言）
+支持上传视频，多模态理解画面+字幕+语音，输出带时间标记的结构化报告；长视频可分段分析，适合做镜头、人物、画面信息提取，网页端和API都能用。
+
+### 4. 钉钉AI听记
+上传视频或者直接录屏播放，生成纪要、思维导图，拆解视频的内容框架，适合会议录像、培训视频拆解，直接输出结构化文档。
+
+## 🌍 海外多模态模型（画面理解更强）
+### 1. Gemini（Google）
+Gemini Advanced支持上传视频，**画面+音频一起理解**，可以直接让它输出完整拆解报告、分镜分析、剧情拆解，对画面动作、画面文字识别很强。
+&gt; 注意：国内访问需要特殊网络。
+
+### 2. TwelveLabs（Pegasus）
+专门做视频理解API，最长支持2小时视频，自动生成章节、时间戳、结构化报告、标签，能识别画面文字、物体、场景切换；开发者/企业用居多，网页Demo也可以简单测试。
+
+## ☁️ 云厂商商用视频分析（企业/批量任务）
+1. **Azure AI视频索引器**：微软，自动转录、人物识别、场景检测、生成摘要与结构化报告，适合批量、监控/访谈类视频
+2. **腾讯云数据万象 视频分析**：多模态视频理解，自定义指令输出分析报告，可识别画面、字幕、时序事件，API调用
+3. **阿里云Model Studio 影视媒体理解**：支持批量视频内容解析，生成标签、内容洞察、结构化报告，适合自媒体批量分析视频素材
+
+# 📌 简单选型建议
+- ✅ 自媒体拆解短视频（钩子、脚本结构、口播文案）：**豆包 / 通义听悟**
+- ✅ 网课、讲座、会议长视频，重点提取文字知识点：**通义听悟、钉钉AI听记**
+- ✅ 需要深度看懂画面、镜头、人物动作、无旁白视频：**Gemini、GLM-4V、TwelveLabs**
+- ✅ 企业批量处理、对接自己系统：腾讯云/阿里云/Azure视频API
+
+&gt; 小提示：绝大多数工具对**超过1小时的长视频**会做分段处理；纯画面、没有语音字幕的视频，分析难度会高很多，报告细节会变少。
+
+如果你想要，我可以直接给你一份**视频拆解报告的提示词模板**，复制粘贴给AI就能一次性输出完整结构化报告。
+</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 258325fb203921aa2c526b0da92258189a44a1290e45f7ec3834244bbc0d1a16</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

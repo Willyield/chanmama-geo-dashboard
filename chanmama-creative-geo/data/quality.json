@@ -1,0 +1,22 @@
+{
+  "source_cards": 12556,
+  "valid_url_cards": 8305,
+  "url_events": 7692,
+  "unique_normalized_urls": 2631,
+  "captured_answers": 540,
+  "missing_answers": 0,
+  "empty_source_cards": 4251,
+  "unparseable_cards": 0,
+  "unknown_answers": 0,
+  "original_failures_retained": 1,
+  "original_uncertain_retained": 2,
+  "replacement_count": 3,
+  "actual_dates": [
+    "2026-10-12",
+    "2026-10-13",
+    "2026-10-14"
+  ],
+  "cross_date_answers": 168,
+  "rendered_answer_screenshots": 540,
+  "source_webpage_screenshots": 0
+}

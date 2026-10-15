@@ -1,0 +1,44 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R1 CMCR-Q0043 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>哪个 AI 可以分析视频内容并输出拆解报告？</h1><p class="meta">第 1 轮 · CMCR-Q0043 · 逻辑采样日期 2026-08-19 · C1</p><p class="meta">样本 CMCR-S-20260819-C1-Q0043</p><p class="meta">实际提交 历史记录仅保存采样日期 · 实际完成 历史记录未提供精确时间</p><p class="hash">回答 SHA-256 ce3967b36de9f3759bb1cb69377febf9fc2dfdb4a95658fa624b337300b580da</p></header><main><pre id="original-answer"># 可分析视频、输出拆解报告的AI工具
+分为**国内网页工具、大模型多模态、开源工具**三类，支持上传本地视频 / 粘贴视频链接，输出结构化拆解报告（脚本、镜头、时间戳、卖点、结构分析、思维导图等）。
+
+## 一、国内直接可用网页工具（上手最简单）
+1. **BibiGPT**
+    - 支持：B站、抖音等平台链接、本地MP4上传
+    - 输出：完整转录文稿、时间戳、结构化摘要、思维导图，可导出Markdown/PDF报告；可以要求输出视频结构拆解、脚本分析。
+    - 适合：学习长视频、课程、短视频竞品拆解。
+
+2. **多维视界**
+    - 支持：本地视频、主流平台链接
+    - 输出：语音转写、要点提取、思维导图、结构化笔记报告，适合长视频会议、课程深度拆解。
+
+3. **通义听悟（阿里）**
+    - 侧重音频+视频转写，可提取时间轴、核心要点；搭配提示词可以生成拆解报告；长视频友好，免费额度可用。
+
+&gt; 提示：上面工具大多侧重音频文本；如果需要**画面镜头、分镜、视觉元素分析**，要使用多模态大模型。
+
+## 二、多模态大模型（画面+音频一起分析，适合深度拆解）
+&gt; 用法：上传视频文件，配上提示词：“对这个视频做完整拆解报告：包含视频主题、叙事结构、分镜时间点、台词脚本、镜头特点、核心卖点、优缺点总结，输出结构化markdown报告”
+
+1. **豆包4.0（多模态）**
+    - 支持上传短视频文件，同时解析画面+声音，输出完整拆解报告，国内直连。限制：不支持超大时长视频。
+
+2. **通义千问VL（阿里云）**
+    - 多模态能力强，可分析画面、人物、字幕、台词，输出结构化报告，适合短视频竞品拆解。
+
+3. **Gemini / Claude**
+    - 支持上传视频，批量分析多条视频链接，做爆款视频拆解，输出脚本结构、镜头、营销卖点报告。
+
+## 三、开源/开发者工具（适合本地部署、批量处理）
+1. **video‑analyzer**
+    - 开源项目：提取关键帧、语音转写，输出JSON结构化视频分析报告，适合技术用户二次开发。
+2. **NarratoAI**
+    - 基于Qwen‑VL，解析视频画面音频，生成分析、脚本，可本地部署。
+
+## 选型小建议
+- 只想快速总结文字内容：**BibiGPT、通义听悟**
+- 需要同时看画面镜头+台词，做竞品拆解：**豆包多模态、通义千问VL**
+- 批量、本地处理、做系统集成：选开源项目
+
+&gt; 注意：绝大多数网页工具对视频时长有限制，几十分钟以上长视频优先选择大模型+本地转写工具组合。
+
+如果你需要，我可以给你一份现成的提示词模板，复制粘贴就可以直接让AI输出完整视频拆解报告。</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 未提供</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>

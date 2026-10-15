@@ -1,0 +1,39 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R1 CMCR-Q0031 原始回答存档</title><style>*{box-sizing:border-box}html{background:#fff;color:#18231e;font:15px/1.65 "Microsoft YaHei",sans-serif}body{max-width:1000px;margin:0 auto;padding:24px 32px}header{border-bottom:2px solid #267d57;padding-bottom:14px}h1{font-size:20px;line-height:1.5;margin:10px 0 8px;overflow-wrap:anywhere}p{margin:6px 0}.disclosure{background:#eef7f1;color:#235e43;padding:8px 12px;font-size:13px}.meta{font-size:12px;color:#53645a;overflow-wrap:anywhere}.hash{font-family:monospace;font-size:11px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 "Microsoft YaHei",sans-serif;margin:20px 0}footer{border-top:1px solid #d6e1d9;padding-top:12px;font-size:12px;color:#53645a}</style><body><header><p class="disclosure">原始回答文本存档截图，生成于2026-10-14，非采样时平台画面</p><h1>怎么监控同行爆量素材，一爆量就能收到提醒吗？</h1><p class="meta">第 1 轮 · CMCR-Q0031 · 逻辑采样日期 2026-08-18 · C3</p><p class="meta">样本 CMCR-CMP-20260819-C3-Q0031</p><p class="meta">实际提交 历史记录仅保存采样日期 · 实际完成 历史记录未提供精确时间</p><p class="hash">回答 SHA-256 433d22c8af31e39573b8cdca09f4e1131912a5f2af32ba82da4de962cafb7107</p></header><main><pre id="original-answer"># 同行爆量素材监控与实时提醒
+**可以做到接近实时提醒，但做不到毫秒级绝对即时；官方原生没有告警能力，需要第三方数据工具实现**。原理：工具持续扫描广告库，当素材消耗/播放增速超过你设定阈值，推送消息给到飞书、钉钉、微信、邮件。
+
+## 一、主流实现方案（抖音千川场景）
+### 1、蝉妈妈
+- 入口：创意→爆量监测，添加竞品小店/账号/品牌关键词，自定义爆量阈值（预估消耗、播放增量）。
+- 告警：触发后推送钉钉、飞书消息；数据刷新一般几十分钟级别，不是毫秒级。
+- 优势：可以直接看投放素材完整视频、消耗曲线、AI拉片拆解脚本。
+
+### 2、有米有数（有米云）
+- 添加竞品监控列表，设置素材消耗增速阈值，支持消息告警、日报推送；识别新素材、素材快速起量异动。
+- 适合批量盯多个竞品，自动输出竞品素材策略简报。
+
+### 3、飞瓜数据
+- 创意库监控，监控品牌/店铺，开启异动提醒，适合兼顾短视频自然爆款+千川投放素材。
+
+&gt; 注意：**巨量官方（千川后台、创意中心）本身没有“同行爆量提醒”功能，只能手动刷榜单看，不会主动推送通知**。
+
+## 二、怎么设置，才能一爆就收到提醒
+1. **添加监控对象**：把对标竞品抖音号、小店ID、品牌词加入监控列表，不要只加账号，很多千川素材用小店投放，企业号不发作品。
+2. **配置爆量触发阈值**
+    - 不要用总消耗，优先用**增量阈值**：比如1小时预估消耗上涨XX、24小时消耗增量；
+    - 阈值不要设置过低，否则会大量垃圾告警；过高会错过刚起量的潜力素材。
+3. **配置通知渠道**：优先选飞书/钉钉机器人，比邮件、APP推送响应更快。
+4. **理解延迟**：第三方工具是轮询抓取，一般5‑40分钟更新，素材刚爆的瞬间不能立刻捕捉，但足以抢占素材复制窗口期。
+
+## 三、两种素材类型区分
+1. **千川付费爆量素材（广告）**：第三方工具可以抓取，支持告警，这是监控重点。
+2. **自然流量短视频爆火（非付费）**：同样可以监控，设置播放、评论增速阈值触发提醒。
+
+## 四、局限与避坑
+1. 平台会做广告隐私保护，**部分极小账户、刚上线的隐性素材会漏抓，没有工具可以100%全覆盖**。
+2. 告警只是信号，收到提醒后，要自己去看素材脚本、卖点、画面，不能直接照搬，会有同质化限流风险。
+3. 免费版本大多没有实时告警，告警功能基本都在付费版。
+
+## 五、低成本简易方案（预算有限）
+不想买工具：使用浏览器页面监控工具（Distill、Visualping），监控抖音创意中心筛选后的竞品广告页面，页面更新就发邮件提醒。缺点：只能感知页面变化，**不能按消耗/爆量阈值触发，只能看到新广告上线，分不清是否爆量**。
+
+如果你需要，我可以给你一份直接复制可用的监控配置参数（阈值设置参考），拿来就填进工具里。</pre></main><footer>此页完整保留冻结回答原文。PNG 仅预览首屏，全文以本 HTML 为准。引用来源网页内容及采样时平台界面未通过此存档核验。<p class="hash">原始记录 SHA-256 2813F0B9CA845E7F6D1ECBE957B846F7AA4CEC24EDC7AFEC844619DDE5036EF0</p><p>生成时间 2026-10-14T02:15:22.507Z</p></footer></body></html>
