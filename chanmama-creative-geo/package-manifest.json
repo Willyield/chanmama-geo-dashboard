@@ -1,6 +1,6 @@
 {
   "project": "chanmama-creative-round2",
-  "stage": "USER_ACCEPTED_NUMERIC_TYPOGRAPHY_R5",
+  "stage": "LOAD_RELIABILITY_DETERMINISTIC_REPAIR_R28",
   "sourceHashes": {
     "round2-samples.json": "ff9a439d6d03484fd99009ce4db6a4830b480f1b0fb71fb70a951bfe40af2d94",
     "round2-sources.json": "d5298baee7524a6190b74c9aaa3f1db625303332816d36f2d164b8b1f9e9718a",
@@ -33,8 +33,8 @@
     },
     {
       "path": "assets/app.js",
-      "bytes": 61596,
-      "sha256": "11147cc7bb838c6610685323343efec722959c1229365b5054599de9c2335108"
+      "bytes": 66488,
+      "sha256": "afe087895bb0fe9ca7f8ce7da948a26ccd566b478e16f4c0e57bfcc31f7aadee"
     },
     {
       "path": "assets/favicon.png",
@@ -11033,6 +11033,11 @@
     "typographySourceCssSha256": "30fd859f702bc1dbd5e0352ece2f96a57656ab00826046fd9aa18bada43422f3",
     "typographyCandidateCssSha256": "77bc21ec0e188bd4c4ad4f60f07817beeebfedb7693fb7176f17214c5933018f",
     "numericReferenceSha256": "8e9f3978bc2fe1ab9f98915303b6ec26d70de5ed902878e3518b91fd35fec5ca",
-    "businessDataChanged": false
+    "businessDataChanged": false,
+    "loadingBaselineManifestSha256": "1e52d672b55b66683648e9d6c82f8a41f34af500fea15d1c21a6d0db0fa5ab00",
+    "metricStandardUnchanged": "CMCR-GEO-METRICS-2.0.1",
+    "changedCode": [
+      "assets/app.js"
+    ]
   }
 }

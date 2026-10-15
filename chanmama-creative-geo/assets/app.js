@@ -23,7 +23,26 @@
   const icons = () => window.lucide?.createIcons();
   const safeUrl = (value, local = false) => { try { const url = new URL(value, base); return /^https?:$/.test(url.protocol) && (local || /^https?:\/\//.test(value || '')) ? url.href : ''; } catch { return ''; } };
   const link = (url, text = url) => safeUrl(url) ? `<a class="source-link" target="_blank" rel="noopener noreferrer" href="${esc(safeUrl(url))}">${esc(text)}</a>` : esc(text || '无 URL');
-  const get = async file => { const response = await fetch(new URL(`data/${file}`, base)); if (!response.ok) throw new Error(`读取失败：${file}（${response.status}）`); return response.json(); };
+  const requests = new Map();
+  const get = file => {
+    if (requests.has(file)) return requests.get(file);
+    const pending = (async () => {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), /samples|citation-records|semantic-audit/.test(file) ? 45000 : 20000);
+      try {
+        const response = await fetch(new URL(`data/${file}`, base), { signal: controller.signal });
+        if (!response.ok) throw new Error(`读取失败：${file}（${response.status}）`);
+        // Keep the timeout active until the response body has finished, not just its headers.
+        return await response.json();
+      } catch (error) {
+        requests.delete(file);
+        if (error.name === 'AbortError') throw new Error(`读取超时：${file}`);
+        throw error;
+      } finally { clearTimeout(timer); }
+    })();
+    requests.set(file, pending);
+    return pending;
+  };
   const section = (id, title, subtitle, body) => `<section class="report-section" id="${id}"><div class="section-head"><h2>${title}</h2><p>${subtitle}</p></div>${body}</section>`;
   const table = (headers, rows, className = '') => `<div class="table-wrap"><table class="${className}"><thead><tr>${headers.map(x => `<th scope="col">${x}</th>`).join('')}</tr></thead><tbody>${rows.join('') || `<tr><td colspan="${headers.length}" class="empty">没有匹配记录</td></tr>`}</tbody></table></div>`;
   const cell = (value, className = '') => `<td class="${className}">${value}</td>`;
@@ -92,11 +111,11 @@
     const camp = valid.filter(s => s.brands.some(b => b.group === '蝉妈妈')).length;
     return section('mention-scope', '提及口径对照', `当前${num(valid.length)}条有效回答 = 中立题${num(neutral.length)}条 + 点名题${num(valid.length - neutral.length)}条。品牌分别计数；阵营按回答取并集。`, table(['独立品牌', '中立题自然提及', '点名题命中 / 点名题回答', '全量单品牌提及'], rows) + `<p class="scope-note">蝉妈妈阵营全量去重提及：${num(camp)} / ${num(valid.length)} = ${pct(percent(camp, valid.length))}。同答提及多个成员只计一次，不能把三品牌数量直接相加。</p>`);
   };
-  const metricsMarkup = (side, samples) => {
-    const metrics = metricRows(side, samples);
+  const metricsMarkup = (side, samples = null) => {
+    const metrics = samples ? metricRows(side, samples) : data[`r${side}`].metrics.rows;
     tables.set('metrics', metrics);
-    const content = table(['指标 / 评判标准', '结果', '命中 / 分母', '已审证据不足', '排除与候选缺口', '统计集合'], metrics.map(m => `<tr data-metric-id="${esc(m.id)}">${cell(metricCell(m.id))}${cell(`${pct(m.percentage)}${m.id === 'error_information_rate' ? `<div class="caption">已证错误 ${num(m.numerator)} 条；非实际错误率</div>` : m.kind === 'semantic' ? '<div class="caption">已证实覆盖比例</div>' : ''}`, 'num')}${cell(`${num(m.numerator)} / ${num(m.denominator)}<div class="caption">${esc(m.unit)}</div>`, 'num')}${cell(`${num(m.unknown)}<div class="caption">${m.kind === 'semantic' ? '包含在分母内；不等于错误' : m.id === 'citation_rate' ? '分母外；引用状态未知' : '不适用：确定性文本统计'}</div>`, 'num')}${cell(`缺失 ${num(m.missing)} · 不适用 ${num(m.not_applicable)}${m.candidate_gap_count ? `<div class="caption">无词典品牌 ${num(m.candidate_gap_count)} 条回答；非事实证据不足</div>` : ''}`)}${cell(`${esc(metricDefinition(m.id).denominator)}<div class="caption">当前筛选 · ${esc(data.standard.version)}</div>`)}</tr>`), 'metric-list');
-    return mentionReconciliation(samples) + section('metrics', '十四项研究指标', '语义主值是已证实结果 / 全部适用有效回答。证据不足保留在分母，不是错误；1减主值不是错误率。正文出现顺序不等于明确推荐。', `<p class="standard-version">执行标准 ${esc(data.standard.version)} · <a href="${esc(new URL('指标评判标准.md', base).href)}" target="_blank">完整评判标准</a></p>` + exportButtons('metrics') + content);
+    const content = table(['指标 / 评判标准', '结果', '命中 / 分母', '已审证据不足', '排除与候选缺口', '统计集合'], metrics.map(m => `<tr data-metric-id="${esc(m.id)}">${cell(metricCell(m.id))}${cell(`${pct(m.percentage)}${m.id === 'error_information_rate' ? `<div class="caption">已证错误 ${num(m.numerator)} 条；非实际错误率</div>` : m.kind === 'semantic' ? '<div class="caption">已证实覆盖比例</div>' : ''}`, 'num')}${cell(`${num(m.numerator)} / ${num(m.denominator)}<div class="caption">${esc(m.unit)}</div>`, 'num')}${cell(`${num(m.unknown)}<div class="caption">${m.kind === 'semantic' ? '包含在分母内；不等于错误' : m.id === 'citation_rate' ? '分母外；引用状态未知' : '不适用：确定性文本统计'}</div>`, 'num')}${cell(`缺失 ${num(m.missing)} · 不适用 ${num(m.not_applicable)}${m.candidate_gap_count ? `<div class="caption">无词典品牌 ${num(m.candidate_gap_count)} 条回答；非事实证据不足</div>` : ''}`)}${cell(`${esc(metricDefinition(m.id).denominator)}<div class="caption">${samples ? '当前筛选' : '全轮冻结结果'} · ${esc(data.standard.version)}</div>`)}</tr>`), 'metric-list');
+    return (samples ? mentionReconciliation(samples) : '') + section('metrics', '十四项研究指标', '语义主值是已证实结果 / 全部适用有效回答。证据不足保留在分母，不是错误；1减主值不是错误率。正文出现顺序不等于明确推荐。', `<p class="standard-version">${samples ? '当前筛选' : '全轮冻结结果 · 明细尚未加载'} · 执行标准 ${esc(data.standard.version)} · <a href="${esc(new URL('指标评判标准.md', base).href)}" target="_blank">完整评判标准</a></p>` + (samples ? exportButtons('metrics') : '') + content);
   };
   const groupOf = brand => brand.group || brand.camp || '其他工具';
   const brandsFor = (side, samples) => {
@@ -232,7 +251,7 @@
     return section('records', '逐条引用与原始证据', '空卡、无效 URL 和原始记录哈希完整保留。', modes + body);
   };
   const metricComparison = (pairs, semantic = false) => {
-    const [metrics1, metrics2] = engine.calculatePairedMetrics(data.standard, pairSamples(1, pairs), pairSamples(2, pairs), [auditRows(1), auditRows(2)]).map(rows => rows.map(m => ({ ...m, scoped: true })));
+    const [metrics1, metrics2] = pairs ? engine.calculatePairedMetrics(data.standard, pairSamples(1, pairs), pairSamples(2, pairs), [auditRows(1), auditRows(2)]).map(rows => rows.map(m => ({ ...m, scoped: true }))) : [[], []];
     const frozen = semantic ? data.comparison.semantic_metrics || [] : data.comparison.metrics || [];
     const rows = frozen.map(metric => {
       const a = metrics1.find(x => x.id === metric.id), b = metrics2.find(x => x.id === metric.id);
@@ -309,13 +328,16 @@
   };
   const layout = () => {
     app.setAttribute('aria-busy', 'false');
+    app.setAttribute('data-load-state', 'ready');
     const links = round ? (kind === 'data' ? [['overview', '数据总览'], ['metrics', '十四项指标'], ['competition', '竞品表现'], ['semantic', '语义证据'], ['quality', '数据质量'], ['records', '逐条记录'], ['screenshots', '截图证据']] : [['overview', '引用总览'], ['source-overview', '来源结构'], ['domains', '域名明细'], ['quality', '数据质量'], ['records', '逐条引用'], ['screenshots', '截图证据']]) : [['overview', '对比总览'], ...(kind === 'data' ? [['metric-compare', '描述指标'], ['semantic-compare', '语义指标'], ['competition-compare', '竞品变化']] : []), ['citation-compare', '引用源对比'], ['domain-compare', '域名变化'], ['url-compare', '网址变化'], ['records', '配对回答']];
     app.innerHTML = `<div class="creative-report"><nav class="section-links" aria-label="报告章节">${links.map(([id, label]) => `<a href="#${id}">${label}</a>`).join('')}<a href="#methods">口径</a></nav>${filters()}<div id="report-content"></div></div>`;
     renderContent();
+    restoreAnchor();
   };
   app.addEventListener('click', event => {
     const button = event.target.closest('button'); if (!button) return;
-    if (button.dataset.category) { state.category = button.dataset.category; state.pages = {}; layout(); }
+    if (button.id === 'retry-details') { void loadDetails(); }
+    else if (button.dataset.category) { state.category = button.dataset.category; state.pages = {}; layout(); }
     else if (button.id === 'reset') { Object.assign(state, { category: '全部', search: '', sourceType: '', sourceClass: '', domain: '', metric: '', decision: '', pages: {} }); layout(); }
     else if (button.dataset.mode) { state.mode = button.dataset.mode; state.pages.records = 1; renderContent(); }
     else if (button.dataset.page) { state.pages[button.dataset.page] = (state.pages[button.dataset.page] || 1) + Number(button.dataset.offset); const top = button.closest('section')?.offsetTop; renderContent(); if (top != null) window.scrollTo({ top, behavior: 'instant' }); }
@@ -349,19 +371,72 @@
   const numericStyle = document.createElement('style');
   numericStyle.textContent = '.metric-list td:nth-child(2),.metric-list td:nth-child(3){min-width:100px;white-space:nowrap}.metric-list td:nth-child(2) .caption,.metric-list td:nth-child(3) .caption{white-space:normal}.metric-list td:nth-child(4){min-width:130px}.metric-list td:nth-child(5){min-width:160px}.metric-list td:first-child{min-width:230px}.metric-list{min-width:1100px!important}.creative-report .caption{display:block}';
   document.head.append(numericStyle);
-  const loadRound = async side => {
-    const names = ['samples', 'summary', 'urls', 'metrics', 'quality', 'competitors', 'citation-records', 'semantic-audit'];
-    const values = await Promise.all(names.map(name => get(`round${side}/${name}.json`)));
-    const report = Object.fromEntries(names.map((name, index) => [name, values[index]]));
-    report.citations = report['citation-records']; report.audit = report['semantic-audit']; report.index = new Map(report.samples.map(s => [s.sample_id, s]));
-    data[`r${side}`] = report;
+  const sides = round ? [round] : [1, 2];
+  let detailLoading = false;
+  const restoreAnchor = () => {
+    if (location.hash) {
+      try { document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView?.(); } catch { /* Invalid anchor does not block the report. */ }
+    }
+  };
+  const summaryOverview = side => {
+    const s = data[`r${side}`].summary;
+    return section('overview' + (round ? '' : `-${side}`), round ? '数据总览' : `第${side}轮全轮概览`, '全轮冻结结果 · 未应用筛选', kpis([
+      ['有效回答', num(s.collected), `${num(s.samples)} 个槽位 · 缺失 ${num(s.missing)} 条`],
+      ['可解析引用回答率', pct(s.citation_rate), `${num(s.citation_answers)} / ${num(s.citation_known)}；状态未知 ${num(s.citation_unknown)}`],
+      ['去重 URL', num(s.unique_urls), `${num(s.sample_url_events)} 个回答内去重 URL 事件`],
+      ['蝉妈妈域名URL事件占比', pct(s.official_event_share), `${num(s.official_events)} / ${num(s.sample_url_events)} URL 事件`]
+    ]));
+  };
+  const renderSummary = (error = null, completed = 0) => {
+    tables.clear();
+    app.setAttribute('aria-busy', 'false');
+    app.setAttribute('data-load-state', error ? 'detail-error' : 'summary');
+    const categories = [...new Set(sides.flatMap(side => Object.keys(data[`r${side}`].summary.categories)))];
+    const pendingFilters = `<fieldset disabled style="border:0;padding:0;margin:0;min-width:0" aria-label="明细尚未加载"><div class="segmented"><button data-category="全部" aria-pressed="true">全部</button>${categories.map(c => `<button data-category="${esc(c)}">${esc(c)}</button>`).join('')}</div><div class="filters"><div class="filter grow"><label for="search">搜索问题、样本、回答、URL</label><input id="search" type="search" placeholder="明细尚未加载"></div></div></fieldset>`;
+    const stateMarkup = `<div class="notice" role="${error ? 'alert' : 'status'}"><strong>${error ? '明细加载失败，全轮指标仍可查看' : '全轮指标已就绪，明细加载中'}</strong><p>${error ? esc(error.message) : `已完成 ${completed} / ${sides.length * 4} 个明细文件`}；筛选、原答与明细导出将在明细就绪后开放。</p>${error ? `<button class="button" id="retry-details" type="button">${icon('refresh-cw')}重新加载明细</button>` : ''}</div>`;
+    const content = sides.map(summaryOverview).join('') + (round ? (kind === 'data' ? metricsMarkup(round) : '') : metricComparison(null) + metricComparison(null, true));
+    app.innerHTML = `<div class="creative-report">${stateMarkup}${pendingFilters}<div id="report-content"></div></div>`;
+    document.getElementById('report-content').innerHTML = content + methods();
+    app.querySelectorAll('[data-export]').forEach(button => { button.disabled = true; button.title = '明细尚未加载'; });
+    icons();
+  };
+  const loadDetails = async () => {
+    if (detailLoading) return;
+    detailLoading = true;
+    renderSummary();
+    try {
+      // Two bounded downloads at a time; retain completed files for explicit retry.
+      const jobs = sides.flatMap(side => ['samples', 'semantic-audit', 'citation-records', 'competitors'].map(name => ({ side, name })));
+      let completed = 0;
+      for (let offset = 0; offset < jobs.length; offset += 2) {
+        const results = await Promise.allSettled(jobs.slice(offset, offset + 2).map(async ({ side, name }) => {
+          data[`r${side}`][name] = await get(`round${side}/${name}.json`);
+          completed++;
+        }));
+        const failure = results.find(result => result.status === 'rejected');
+        if (failure) throw failure.reason;
+        renderSummary(null, completed);
+      }
+      for (const side of sides) {
+        const report = data[`r${side}`];
+        report.citations = report['citation-records']; report.audit = report['semantic-audit'];
+        report.index = new Map(report.samples.map(s => [s.sample_id, s]));
+      }
+      layout();
+    } catch (error) { renderSummary(error); }
+    finally { detailLoading = false; }
   };
   (async () => {
     const [standard, module, questionScopes] = await Promise.all([get('metric-standard.json'), import(new URL('assets/metric-engine.mjs', base).href), get('metric-question-scopes.json')]);
     data.standard = standard; data.questionScopes = questionScopes; engine = module;
     for (const def of standard.metrics) labels[def.id] = def.label;
-    if (round) await loadRound(round);
-    else await Promise.all([loadRound(1), loadRound(2), get('comparison.json').then(x => { data.comparison = x; }), get('pairs.json').then(x => { data.pairs = x; })]);
-    layout();
+    await Promise.all(sides.map(async side => {
+      const names = ['summary', 'metrics', 'quality'];
+      const values = await Promise.all(names.map(name => get(`round${side}/${name}.json`)));
+      data[`r${side}`] = Object.fromEntries(names.map((name, index) => [name, values[index]]));
+    }));
+    if (!round) await Promise.all([get('comparison.json').then(x => { data.comparison = x; }), get('pairs.json').then(x => { data.pairs = x; })]);
+    renderSummary();
+    await loadDetails();
   })().catch(error => { app.setAttribute('aria-busy', 'false'); app.innerHTML = `<div class="exception"><h2>数据读取失败</h2><p class="error-message">${esc(error.message)}</p><button class="button" type="button" onclick="location.reload()">重新读取</button></div>`; });
 })();
