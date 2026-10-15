@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "project": "蝉镜",
+  "round": 2,
+  "sampling_complete": true,
+  "valid_answers": 520,
+  "analysis_modules": [
+    "02",
+    "03",
+    "07"
+  ],
+  "metric_version": "visible-text-observations-v1",
+  "findings": [
+    {
+      "title": "两天采样完成",
+      "text": "同一260题，两天各一次，共520条有效回答；全部原答与引用证据保留。"
+    },
+    {
+      "title": "品牌出现情况",
+      "text": "第二轮API正文49/520条出现蝉镜；其中点名问题20/20，非点名问题29/500。名称出现不等于推荐。"
+    },
+    {
+      "title": "总比例接近，逐题仍有波动",
+      "text": "两天分别25/260和24/260；17题两天均出现，15题出现状态发生变化。"
+    },
+    {
+      "title": "跨轮比较有边界",
+      "text": "第一轮为网页、手机历史可见采集，第二轮为API正文；渠道、日期、模型及文本边界不同，不据此认定优化效果。"
+    },
+    {
+      "title": "引用可查，缺口保留",
+      "text": "第二轮12405张来源卡，6960次回答内去重URL事件；1条回答引用未提供，官网及账号归属仍待核验。"
+    }
+  ],
+  "groups": [
+    {
+      "explicit": {
+        "answers": 20,
+        "mentions": 20
+      },
+      "generic": {
+        "answers": 499,
+        "mentions": 92
+      }
+    },
+    {
+      "explicit": {
+        "answers": 20,
+        "mentions": 20
+      },
+      "generic": {
+        "answers": 500,
+        "mentions": 29
+      }
+    }
+  ],
+  "balanced_questions": 259,
+  "balanced": [
+    {
+      "answers": 518,
+      "mentions": 112
+    },
+    {
+      "answers": 518,
+      "mentions": 49
+    }
+  ],
+  "known_gaps": [
+    "官网和社媒所有权尚未核验",
+    "语义指标仍待逐答审计",
+    "第一轮缺1条手机回答",
+    "首日1条回答未提供引用"
+  ],
+  "visibility": "verified_business_summary_only"
+}
