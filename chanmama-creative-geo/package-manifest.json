@@ -1,6 +1,6 @@
 {
   "project": "chanmama-creative-round2",
-  "stage": "LOAD_RELIABILITY_DETERMINISTIC_REPAIR_R28",
+  "stage": "PRODUCT_EVIDENCE_2_2_0_FULL_BRAND_R33",
   "sourceHashes": {
     "round2-samples.json": "ff9a439d6d03484fd99009ce4db6a4830b480f1b0fb71fb70a951bfe40af2d94",
     "round2-sources.json": "d5298baee7524a6190b74c9aaa3f1db625303332816d36f2d164b8b1f9e9718a",
@@ -27,14 +27,9 @@
   },
   "files": [
     {
-      "path": "指标评判标准.md",
-      "bytes": 82601,
-      "sha256": "31fffd0e52e683d64a1e915b4cc9f863608d2300ac3d99dbeca4365b87265f75"
-    },
-    {
       "path": "assets/app.js",
-      "bytes": 66488,
-      "sha256": "afe087895bb0fe9ca7f8ce7da948a26ccd566b478e16f4c0e57bfcc31f7aadee"
+      "bytes": 72061,
+      "sha256": "e0bcb293e42d15aa29ed2ea45a3a5ebb84e863980c37e856f3f67a1f42554148"
     },
     {
       "path": "assets/favicon.png",
@@ -48,8 +43,8 @@
     },
     {
       "path": "assets/metric-engine.mjs",
-      "bytes": 6844,
-      "sha256": "302383f508e78d63ef2dbcf945e5fce20a3e3dbdc1a802e259a5d686ac8ea0e6"
+      "bytes": 8014,
+      "sha256": "a72f09ab400c55026cd2926092ae8500ec8e6956c4deece554ede112bfae66a5"
     },
     {
       "path": "assets/site.css",
@@ -67,14 +62,19 @@
       "sha256": "aaa5de4ea8e7a15a15cd2ab5233c1e86f42fb0926814af09a4047d680ebe9035"
     },
     {
+      "path": "data/brand-display-standard.json",
+      "bytes": 2270,
+      "sha256": "c9d0f9486937c489b4cc312fd1cdfadcbac2ab786cbdc336806fdb4f9d31416c"
+    },
+    {
       "path": "data/citation-records.json",
       "bytes": 16555868,
       "sha256": "477658f9aa6fc770f94e69875b94646a4eb2b504adeecae55e3e87a867f1b979"
     },
     {
       "path": "data/comparison.json",
-      "bytes": 2097748,
-      "sha256": "057976f53fd143aa40fe8d682e56e81fa4cb17e8159c2be95c53f3d2f1b5a607"
+      "bytes": 2310603,
+      "sha256": "647c921fd47fa294e050c5e74fc290ed4dda6cd63b02155ab287b9ddd97c2d06"
     },
     {
       "path": "data/competitors.json",
@@ -82,29 +82,39 @@
       "sha256": "1eeeda7ea4eac7b46b503efda55822f591731eaad0801564a1d7d4b6eb48878f"
     },
     {
+      "path": "data/first-recommendation-comparison.json",
+      "bytes": 9728,
+      "sha256": "66ca65447d313d502421dfe9579eb9fdd56b034aabbd8df99a6c4c1240fe7867"
+    },
+    {
       "path": "data/metric-question-scopes.json",
-      "bytes": 251249,
-      "sha256": "bbc63f0e9d9a54747032c8a89252dd93ad4a35497230ed84d762789bb5044af2"
+      "bytes": 257705,
+      "sha256": "b9b7fc6efc2b1f816dfcf858ec15f65f8e76a6067a04b1b8fabf0ae08dfcfcab"
     },
     {
       "path": "data/metric-standard-audit.json",
-      "bytes": 26856,
-      "sha256": "6c5de08b317774c4c87898d03d90e99f71f40c24a2ce21bf4c600f06ef6957c8"
+      "bytes": 29187,
+      "sha256": "f412b50b30c27cdc22e794c0204f078c95644734eb3a5f18b5c6cbbe0e8adb68"
     },
     {
       "path": "data/metric-standard.json",
-      "bytes": 20162,
-      "sha256": "59896d500ee4ab949a686593fb6ec7b59e113f6c50f401c887e60762ed5d4225"
+      "bytes": 25677,
+      "sha256": "409ae311d1ddc202318745d5287a16e101d86e14abb8dc8b8dea7250a7d51f99"
     },
     {
       "path": "data/metrics.json",
-      "bytes": 309270,
-      "sha256": "b5a2fa1c3d09630ceffc4157ab25ff2b5115db016b509b387ee4e482f067a245"
+      "bytes": 300224,
+      "sha256": "29b983941d814e53bafadff97e8af23c462f95634d0b1a3371e8418328cbf148"
     },
     {
       "path": "data/pairs.json",
       "bytes": 393564,
       "sha256": "2b54d043d7ebbdd6867baf6c4cd80b3d0977ca64daed386da5302481dce081f8"
+    },
+    {
+      "path": "data/product-evidence.json",
+      "bytes": 1141141,
+      "sha256": "32d0ecf0a8a2ea7e2b0feb537e5b51a962b12fa6aaa0cfedded5fcd10340ce25"
     },
     {
       "path": "data/quality.json",
@@ -122,9 +132,14 @@
       "sha256": "65ecd4704533f89842234e5f3da1efd017031d7b7f0803f86dc53f455fafbe69"
     },
     {
+      "path": "data/round1/first-recommendation-audit.json",
+      "bytes": 96293,
+      "sha256": "8a97aedc6cae64e642af1ecee984d0af285260a52c7d0eadb9d9895f8edf8003"
+    },
+    {
       "path": "data/round1/metrics.json",
-      "bytes": 242798,
-      "sha256": "636993ca714c72dc7800a5b0a3112e2dd34dbaee02137e15306140d28737bb09"
+      "bytes": 235428,
+      "sha256": "7348218f80905170debf4a3f25fd39a08847a44f0637f4c22eecd5bf71bfaa12"
     },
     {
       "path": "data/round1/quality.json",
@@ -138,8 +153,8 @@
     },
     {
       "path": "data/round1/semantic-audit.json",
-      "bytes": 6609395,
-      "sha256": "8df79ba8a402718acb9adc51604181be3e5929f40f1aa46de5c047a45efb2b6a"
+      "bytes": 7153764,
+      "sha256": "5fcb7cb746601ee37782ec8c58b40f0915faf4753ead3045656e4d974064183a"
     },
     {
       "path": "data/round1/summary.json",
@@ -162,9 +177,14 @@
       "sha256": "1eeeda7ea4eac7b46b503efda55822f591731eaad0801564a1d7d4b6eb48878f"
     },
     {
+      "path": "data/round2/first-recommendation-audit.json",
+      "bytes": 95438,
+      "sha256": "c19e15ab750362df476d27f15708dda211d2802cbb4c6c10474a676963b6fc82"
+    },
+    {
       "path": "data/round2/metrics.json",
-      "bytes": 309270,
-      "sha256": "b5a2fa1c3d09630ceffc4157ab25ff2b5115db016b509b387ee4e482f067a245"
+      "bytes": 300224,
+      "sha256": "29b983941d814e53bafadff97e8af23c462f95634d0b1a3371e8418328cbf148"
     },
     {
       "path": "data/round2/quality.json",
@@ -178,8 +198,8 @@
     },
     {
       "path": "data/round2/semantic-audit.json",
-      "bytes": 6620076,
-      "sha256": "a88d3e8f0639677436f3238144612c74b811ace49f592e2b81ceb8245ff1b8b4"
+      "bytes": 7206214,
+      "sha256": "3028679f1a125078498ed366bb18698912216343271ba7ef1d3e96a3edf27aea"
     },
     {
       "path": "data/round2/summary.json",
@@ -10998,8 +11018,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 2723,
-      "sha256": "0cad80f4303e9a900f4b0d717540e30d166328bb4cfcf4a6d1beca70bc9a5f9b"
+      "bytes": 3002,
+      "sha256": "7dab3fd765f19416d26ab0693bb1657cef695274d97364d97ab89ed2345461f6"
+    },
+    {
+      "path": "reports/完整分析报告-20261016.md",
+      "bytes": 55202,
+      "sha256": "b38abfd373081c73ec681dde5114d0094bb242dc96959954f34edcc5cd9fc742"
     },
     {
       "path": "round1/citation/index.html",
@@ -11020,24 +11045,36 @@
       "path": "round2/data/index.html",
       "bytes": 1561,
       "sha256": "9a345b0c69cb1bcd9ce3550af79334a682dbcbd1bd9bfef98155df4acd875c92"
+    },
+    {
+      "path": "指标评判标准.md",
+      "bytes": 23584,
+      "sha256": "88d80349886b52d9bee8fcea79c2a29b55deb35205b9a3ab914e77557b46caa6"
     }
   ],
   "standard_version": "CMCR-GEO-METRICS-2.0.1",
   "standard_sha256": "9b98d7d63327a7955039829adde32fd4f628cba805ac046552be9a1c25972b9f",
   "derivation": {
-    "baseline_manifest_sha256": "89c58b94a265e2293e35776c06116aaa7c7e0e1cef5ef2e02c92e1616abdc448",
-    "semantic_evidence_corrections_sha256": "98c1a3d620044fb9775fbfb5b015d6fed9c0f3d69388e7f54a920f2ff6100aae",
-    "same_semantic_decisions": false,
-    "judgment_correction_sha256": "99177e204819cfd7f4c637b1f55980397c1077a9bfa0ac22ca271258084fd8ce",
-    "typographyBaselineManifestSha256": "4a42c6e34ab1d606cc13cd0f57ff00035cc25bf00f2e0bb8bab0151e7a824fbd",
-    "typographySourceCssSha256": "30fd859f702bc1dbd5e0352ece2f96a57656ab00826046fd9aa18bada43422f3",
-    "typographyCandidateCssSha256": "77bc21ec0e188bd4c4ad4f60f07817beeebfedb7693fb7176f17214c5933018f",
-    "numericReferenceSha256": "8e9f3978bc2fe1ab9f98915303b6ec26d70de5ed902878e3518b91fd35fec5ca",
-    "businessDataChanged": false,
-    "loadingBaselineManifestSha256": "1e52d672b55b66683648e9d6c82f8a41f34af500fea15d1c21a6d0db0fa5ab00",
-    "metricStandardUnchanged": "CMCR-GEO-METRICS-2.0.1",
-    "changedCode": [
-      "assets/app.js"
-    ]
+    "previousManifestSha256": "55c45cba0232026ac6741abb83fac8ae08466b48690c4f7de31a3a41d0057760",
+    "metricStandard": "CMCR-GEO-METRICS-2.2.0",
+    "brandDisplayStandard": "CMCR-BRAND-DISPLAY-1.0",
+    "originalAnswersAndCitationsByteIdentical": true,
+    "sourceHandoffs": [
+      {
+        "path": "C:\\Users\\似等\\Documents\\ChatGPT\\蝉妈妈创意GEO仪表盘\\work\\product-evidence-20261016\\handoff.json",
+        "sha256": "7d157a6a0c4bb82a4fc2de2ab401d7773bd840b4ef9873fd90f670350c4537c2",
+        "files": 41
+      },
+      {
+        "path": "C:\\Users\\似等\\Documents\\ChatGPT\\蝉妈妈创意GEO仪表盘\\work\\brand-naming-20261016\\handoff.json",
+        "sha256": "d3c5cc39c7f2879c495bec5c35088cdd1d1d946360a58320b466104a95d29808",
+        "files": 13
+      }
+    ],
+    "facts": 53,
+    "reclassifiedAuditRecords": 683,
+    "unknownMetricRecords": 1563,
+    "qualification": "Product evidence rejudgment; not an optimization-effect or complete-verification claim.",
+    "loading": "Independent frozen summary; finite 180-second evidence body deadline; max two concurrent requests; explicit retry only."
   }
 }

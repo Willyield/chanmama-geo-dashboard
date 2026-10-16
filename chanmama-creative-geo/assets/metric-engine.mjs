@@ -15,7 +15,7 @@ export function calculateMetrics(standard, samples, auditRows) {
     let eligible = valid.filter(s => inPopulation(s, def.population));
     let hits = [], unknown = [], gaps = [], counts;
     const states = {};
-    if (def.kind === 'semantic') {
+    if (def.kind === 'semantic' || def.kind === 'recommendation') {
       const rows = auditRows.filter(r => r.metric_id === def.id && ids.has(r.sample_id));
       for (const row of rows) validateQuestionAlignment(row);
       const map = new Map(rows.map(r => [r.sample_id, r]));
@@ -23,6 +23,14 @@ export function calculateMetrics(standard, samples, auditRows) {
       if (eligible.some(s => !map.has(s.sample_id))) throw new Error(`Missing semantic judgment: ${def.id}`);
       if (rows.some(r => !eligible.some(s => s.sample_id === r.sample_id))) throw new Error(`Semantic applicability drift: ${def.id}`);
       if (rows.some(r => !['pass', 'fail', 'unknown'].includes(r.decision))) throw new Error(`Unfinished semantic judgment: ${def.id}`);
+      if (def.kind === 'recommendation') for (const row of rows) {
+        const sample = eligible.find(s => s.sample_id === row.sample_id);
+        if (row.answer_sha256 !== sample.answer_sha256 || row.question_sha256 !== sample.question_sha256) throw new Error('Recommendation evidence identity mismatch');
+        if (row.rule_version !== def.rule_version) throw new Error('Recommendation rule version mismatch');
+        if (row.review_method !== 'deterministic_absence' && (!row.evidence_quote || !Number.isInteger(row.evidence_start) || !Number.isInteger(row.evidence_end) || sample.answer_text.slice(row.evidence_start, row.evidence_end) !== row.evidence_quote)) throw new Error('Recommendation quote mismatch');
+        if (row.review_method === 'deterministic_absence' && (row.decision !== 'fail' || sample.distinct_products.includes('蝉妈妈·创意'))) throw new Error('Invalid recommendation absence judgment');
+        if (!row.reason || !row.question_alignment) throw new Error('Recommendation review reason missing');
+      }
       for (const r of rows) states[r.decision] = (states[r.decision] || 0) + 1;
       hits = eligible.filter(s => map.get(s.sample_id).decision === (def.id === 'error_information_rate' ? 'fail' : 'pass'));
       unknown = eligible.filter(s => map.get(s.sample_id).decision === 'unknown');
@@ -48,12 +56,12 @@ export function calculateMetrics(standard, samples, auditRows) {
     return {
       id: def.id, label: def.label, kind: def.kind, standard_version: standard.version,
       numerator: n, denominator: d, percentage: percentage(n, d), unit: def.unit,
-      unknown: unknown.length, unknownPolicy: def.id === 'citation_rate' ? 'outside_denominator' : def.kind === 'semantic' ? 'inside_denominator' : 'not_applicable',
+      unknown: unknown.length, unknownPolicy: def.id === 'citation_rate' ? 'outside_denominator' : ['semantic', 'recommendation'].includes(def.kind) ? 'inside_denominator' : 'not_applicable',
       candidate_gap_count: gaps.length, candidate_gap_sample_ids: gaps.map(s => s.sample_id),
       missing: planned.filter(s => !isValid(s)).length, not_applicable: samples.length - planned.length, pending: 0,
       state_counts: states, eligible_sample_ids: eligible.map(s => s.sample_id), pass_sample_ids: hits.map(s => s.sample_id), unknown_sample_ids: unknown.map(s => s.sample_id),
       ...(counts ? { sample_counts: counts } : {}),
-      ...(def.kind === 'semantic' ? { ruleVersion: standard.semantic_judgment_version } : {})
+      ...(def.kind === 'semantic' ? { ruleVersion: standard.semantic_judgment_version } : def.kind === 'recommendation' ? { ruleVersion: def.rule_version } : {})
     };
   });
 }

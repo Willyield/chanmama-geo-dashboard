@@ -4,20 +4,28 @@
   const kind = document.body.dataset.kind;
   const base = new URL('../../', location.href);
   const app = document.getElementById('app');
-  const state = { category: '全部', search: '', sourceType: '', sourceClass: '', domain: '', metric: '', decision: '', mode: 'answers', pages: {}, sorts: {} };
+  const state = { category: '全部', search: '', sourceType: '', sourceClass: '', domain: '', metric: '', decision: '', evidenceGap: '', mode: 'answers', pages: {}, sorts: {} };
   const data = {};
   const tables = new Map();
   const pageSize = 25;
   const labels = {};
   let engine;
   const decisions = { pass: '已证实命中', fail: '已证实未命中', unknown: '已审阅，证据不足', not_applicable: '不适用', excluded: '不纳入', missing: '原答缺失' };
-  const decisionLabel = row => row.metric_id === 'error_information_rate' ? ({ pass: '未发现已证错误', fail: '已证错误', unknown: '事实未完全核实（已审阅）' }[row.decision] || decisions[row.decision] || row.decision) : decisions[row.decision] || row.decision;
+  const decisionLabel = row => row.evidence_gap?.label || (row.metric_id === 'error_information_rate' ? ({ pass: '本项核实范围内未检出错误', fail: '已证错误', unknown: '未完成全部目标事实核实' }[row.decision] || row.decision) : decisions[row.decision] || row.decision);
+  const displayGroup = group => group === '蝉妈妈' ? '蝉妈妈、蝉妈妈·创意与创意大师' : group;
   const groups = ['官方工具', '蝉妈妈', '第三方竞品', '其他工具'];
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const num = value => Number.isFinite(Number(value)) ? Number(value).toLocaleString('zh-CN') : '未提供';
   const percent = (n, d) => d ? Math.round(n / d * 10000) / 100 : null;
   const pct = value => value == null || !Number.isFinite(Number(value)) ? '不适用' : `${Number(value).toFixed(2)}%`;
+  const isRecommendation = id => id === 'first_recommendation_rate';
+  const reviewed = kind => kind === 'semantic' || kind === 'recommendation';
+  const metricValue = metric => isRecommendation(metric.id) && metric.percentage != null ? `${pct(metric.percentage)}（${num(metric.numerator)}/${num(metric.denominator)}）` : pct(metric.percentage);
+  const reviewReason = row => row.final_review?.reason || row.reason || row.unknown_reason || '';
+  const evidenceBasis = row => isRecommendation(row.metric_id) ? '仅审阅原题条件下的唯一优先推荐表达，不判断推荐理由的事实正确性' : (row.fact_ids || []).join('、') || '无事实支持，不据此证实正确';
   const delta = (a, b) => a == null || b == null ? '不适用' : `${b - a > 0 ? '+' : ''}${(b - a).toFixed(2)}`;
+  const rateChange = (a, b) => !a?.denominator || !b?.denominator ? null : a.numerator === 0 ? (b.numerator === 0 ? 0 : null) : ((b.numerator / b.denominator) / (a.numerator / a.denominator) - 1) * 100;
+  const changeText = (a, b) => a?.denominator && b?.denominator && a.numerator === 0 && b.numerator !== 0 ? '基期为0，增幅无定义' : rateChange(a, b) == null ? '不适用' : `${rateChange(a, b) > 0 ? '+' : ''}${rateChange(a, b).toFixed(2)}%`;
   const icon = name => `<i data-lucide="${name}" aria-hidden="true"></i>`;
   const info = text => `<span class="tooltip"><button class="info" type="button" aria-label="指标口径">${icon('info')}</button><span class="tooltip-text">${esc(text)}</span></span>`;
   const icons = () => window.lucide?.createIcons();
@@ -28,7 +36,8 @@
     if (requests.has(file)) return requests.get(file);
     const pending = (async () => {
       const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), /samples|citation-records|semantic-audit/.test(file) ? 45000 : 20000);
+      // Full evidence files reach 16 MB; allow slow transfers without blocking the independent summary.
+      const timer = setTimeout(() => controller.abort(), /samples|citation-records|semantic-audit/.test(file) ? 180000 : 20000);
       try {
         const response = await fetch(new URL(`data/${file}`, base), { signal: controller.signal });
         if (!response.ok) throw new Error(`读取失败：${file}（${response.status}）`);
@@ -50,7 +59,7 @@
   const download = (name, rows, json) => { const a = document.createElement('a'); const url = URL.createObjectURL(new Blob([json ? JSON.stringify(rows, null, 2) : csv(rows)], { type: json ? 'application/json' : 'text/csv;charset=utf-8' })); a.href = url; a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); };
   const exportButtons = id => `<div class="download-list"><button class="icon-button" data-export="${id}" data-format="csv" title="下载当前筛选 CSV" aria-label="下载当前筛选 CSV">${icon('download')}</button><button class="icon-button" data-export="${id}" data-format="json" title="下载当前筛选 JSON" aria-label="下载当前筛选 JSON">${icon('file-json')}</button></div>`;
   const sampleIndex = side => data[`r${side}`].index;
-  const auditRows = side => data[`r${side}`].audit.rows || [];
+  const auditRows = side => (data[`r${side}`].audit.rows || []).map(row => ({ ...row, label: labels[row.metric_id], evidence_gap: data.gapIndex.get(`${side}:${row.sample_id}:${row.metric_id}`) || null }));
   const sampleCards = sample => sample.sources || [];
   const sourceType = card => card.source_type || (/(^|\.)chanmama\.com$/i.test(card.domain || card.host || '') ? 'official' : 'third_party');
   const matchesCard = card => (!state.sourceType || sourceType(card) === state.sourceType) && (!state.sourceClass || card.source_class === state.sourceClass) && (!state.domain || (card.domain || card.host) === state.domain);
@@ -91,14 +100,14 @@
       ['有效回答', num(s.collected), `${num(s.samples)} 个槽位 · 缺失 ${num(s.missing)} 条`],
       ['可解析引用回答率', pct(percent(s.cited, s.known)), `${num(s.cited)} / ${num(s.known)}；状态未知 ${num(s.unknown)}`, '至少有一条可解析引用URL的回答 / 引用状态可判定回答。未知不入分母，缺失另列；不证明来源支持答案。'],
       ['去重 URL', num(s.urls), `${num(s.events)} 个回答内去重 URL 事件`],
-      ['蝉妈妈域名URL事件占比', pct(percent(s.official, s.events)), `${num(s.official)} / ${num(s.events)} URL 事件`, 'chanmama.com及真实子域的事件/全部URL事件；不是回答比例，也不表示全是创意产品页。']
+      ['蝉妈妈域名URL事件占比', pct(percent(s.official, s.events)), `${num(s.official)} / ${num(s.events)} URL 事件`, 'chanmama.com及真实子域的事件/全部URL事件；不是回答比例，也不表示全是蝉妈妈·创意产品页。']
     ]);
   };
   const metricDefinition = id => data.standard.metrics.find(m => m.id === id);
   const metricExplanation = id => {
     const d = metricDefinition(id);
     const scope = data.questionScopes.metrics.find(m => m.id === id);
-    return `<details class="metric-definition"><summary aria-label="${esc(d.label)}的评判标准">评判标准与例子</summary><dl>${[['旧名称', d.legacy_label], ['统计对象', d.target], ['适用题目', `${scope.questions.length}题、每轮${scope.questions.reduce((sum, q) => sum + q.expected_slots_per_round, 0)}个计划槽位；具体题目见完整标准附录。`], ['计数单位', d.unit], ['命中条件', d.numerator], ['分母', d.denominator], ['证据不足及排除', d.unknown], ['结果含义', d.interpretation], ['例子', d.example]].map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl></details>`;
+    return `<details class="metric-definition"><summary aria-label="${esc(d.label)}的评判标准">评判标准与例子</summary><dl>${[['统计对象', d.target], ['适用题目', `${scope.questions.length}题、每轮${scope.questions.reduce((sum, q) => sum + q.expected_slots_per_round, 0)}个计划槽位；具体题目见完整标准附录。`], ['计数单位', d.unit], ['命中条件', d.numerator], ['分母', d.denominator], ['证据不足及排除', d.unknown], ['结果含义', d.interpretation], ['例子', d.example]].map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl></details>`;
   };
   const metricCell = id => `${esc(labels[id] || id)}${metricExplanation(id)}`;
   const mentionReconciliation = samples => {
@@ -109,13 +118,13 @@
       return `<tr>${cell(brand)}${cell(`${n} / ${neutral.length} = ${pct(percent(n, neutral.length))}`)}${cell(`${a - n} / ${valid.length - neutral.length}`)}${cell(`${a} / ${valid.length} = ${pct(percent(a, valid.length))}`)}</tr>`;
     });
     const camp = valid.filter(s => s.brands.some(b => b.group === '蝉妈妈')).length;
-    return section('mention-scope', '提及口径对照', `当前${num(valid.length)}条有效回答 = 中立题${num(neutral.length)}条 + 点名题${num(valid.length - neutral.length)}条。品牌分别计数；阵营按回答取并集。`, table(['独立品牌', '中立题自然提及', '点名题命中 / 点名题回答', '全量单品牌提及'], rows) + `<p class="scope-note">蝉妈妈阵营全量去重提及：${num(camp)} / ${num(valid.length)} = ${pct(percent(camp, valid.length))}。同答提及多个成员只计一次，不能把三品牌数量直接相加。</p>`);
+    return section('mention-scope', '提及口径对照', `当前${num(valid.length)}条有效回答 = 中立题${num(neutral.length)}条 + 点名题${num(valid.length - neutral.length)}条。品牌分别计数；阵营按回答取并集。`, table(['独立品牌', '中立题自然提及', '点名题命中 / 点名题回答', '全量单品牌提及'], rows) + `<p class="scope-note">蝉妈妈、蝉妈妈·创意与创意大师全量去重提及：${num(camp)} / ${num(valid.length)} = ${pct(percent(camp, valid.length))}。同答提及多个成员只计一次，不能把三品牌数量直接相加。</p>`);
   };
   const metricsMarkup = (side, samples = null) => {
     const metrics = samples ? metricRows(side, samples) : data[`r${side}`].metrics.rows;
     tables.set('metrics', metrics);
-    const content = table(['指标 / 评判标准', '结果', '命中 / 分母', '已审证据不足', '排除与候选缺口', '统计集合'], metrics.map(m => `<tr data-metric-id="${esc(m.id)}">${cell(metricCell(m.id))}${cell(`${pct(m.percentage)}${m.id === 'error_information_rate' ? `<div class="caption">已证错误 ${num(m.numerator)} 条；非实际错误率</div>` : m.kind === 'semantic' ? '<div class="caption">已证实覆盖比例</div>' : ''}`, 'num')}${cell(`${num(m.numerator)} / ${num(m.denominator)}<div class="caption">${esc(m.unit)}</div>`, 'num')}${cell(`${num(m.unknown)}<div class="caption">${m.kind === 'semantic' ? '包含在分母内；不等于错误' : m.id === 'citation_rate' ? '分母外；引用状态未知' : '不适用：确定性文本统计'}</div>`, 'num')}${cell(`缺失 ${num(m.missing)} · 不适用 ${num(m.not_applicable)}${m.candidate_gap_count ? `<div class="caption">无词典品牌 ${num(m.candidate_gap_count)} 条回答；非事实证据不足</div>` : ''}`)}${cell(`${esc(metricDefinition(m.id).denominator)}<div class="caption">${samples ? '当前筛选' : '全轮冻结结果'} · ${esc(data.standard.version)}</div>`)}</tr>`), 'metric-list');
-    return (samples ? mentionReconciliation(samples) : '') + section('metrics', '十四项研究指标', '语义主值是已证实结果 / 全部适用有效回答。证据不足保留在分母，不是错误；1减主值不是错误率。正文出现顺序不等于明确推荐。', `<p class="standard-version">${samples ? '当前筛选' : '全轮冻结结果 · 明细尚未加载'} · 执行标准 ${esc(data.standard.version)} · <a href="${esc(new URL('指标评判标准.md', base).href)}" target="_blank">完整评判标准</a></p>` + (samples ? exportButtons('metrics') : '') + content);
+    const content = table(['指标 / 评判标准', '结果', '命中 / 分母', '已审证据不足', '排除与候选缺口', '统计集合'], metrics.map(m => `<tr data-metric-id="${esc(m.id)}">${cell(metricCell(m.id))}${cell(`${metricValue(m)}${m.id === 'error_information_rate' ? `<div class="caption">已证错误 ${num(m.numerator)} 条；非实际错误率</div>` : m.kind === 'semantic' ? '<div class="caption">已证实覆盖比例</div>' : ''}`, 'num')}${cell(`${num(m.numerator)} / ${num(m.denominator)}<div class="caption">${esc(m.unit)}</div>`, 'num')}${cell(`${num(m.unknown)}<div class="caption">${reviewed(m.kind) ? '包含在分母内；不等于错误' : m.id === 'citation_rate' ? '分母外；引用状态未知' : '不适用：确定性文本统计'}</div>`, 'num')}${cell(`缺失 ${num(m.missing)} · 不适用 ${num(m.not_applicable)}${m.candidate_gap_count ? `<div class="caption">无词典品牌 ${num(m.candidate_gap_count)} 条回答；非事实证据不足</div>` : ''}`)}${cell(`${esc(metricDefinition(m.id).denominator)}<div class="caption">${samples ? '当前筛选' : '全轮冻结结果'} · ${esc(data.standard.version)}</div>`)}</tr>`), 'metric-list');
+    return (samples ? mentionReconciliation(samples) : '') + section('metrics', `${metrics.length} 项研究指标`, '语义主值是已证实结果 / 全部适用有效回答。证据不足保留在分母，不是错误；1减主值不是错误率。正文出现顺序不等于明确推荐。首推率为原题条件下唯一优先推荐的比例，0不表示从未出现并列或条件推荐。', `<p class="standard-version">${samples ? '当前筛选' : '全轮冻结结果 · 明细尚未加载'} · 执行标准 ${esc(data.standard.version)} · <a href="${esc(new URL('指标评判标准.md', base).href)}" target="_blank">完整评判标准</a></p>` + (samples ? exportButtons('metrics') : '') + content);
   };
   const groupOf = brand => brand.group || brand.camp || '其他工具';
   const brandsFor = (side, samples) => {
@@ -146,11 +155,11 @@
     });
   };
   const competitorHeaders = ['独立品牌 / 工具', '阵营', '提及回答', '全量提及率', '词典首现回答', '词典前三回答', '平均首现位次'];
-  const competitorCells = row => [`${esc(row.brand)} <button class="icon-button" data-brand="${esc(row.brand)}" title="查看提及该品牌的回答" aria-label="查看提及${esc(row.brand)}的回答">${icon('list-filter')}</button>`, esc(row.group), num(row.mention_count), pct(row.mention_rate), num(row.first_count), num(row.top3_count), row.average_rank == null ? '不适用' : num(row.average_rank)];
+  const competitorCells = row => [`${esc(row.brand)} <button class="icon-button" data-brand="${esc(row.brand)}" title="查看提及该品牌的回答" aria-label="查看提及${esc(row.brand)}的回答">${icon('list-filter')}</button>`, esc(displayGroup(row.group)), num(row.mention_count), pct(row.mention_rate), num(row.first_count), num(row.top3_count), row.average_rank == null ? '不适用' : num(row.average_rank)];
   const competitorMarkup = (side, samples) => {
     const camps = campsFor(side, samples), rows = brandsFor(side, samples);
     const denominator = samples.filter(collected).length;
-    const campTable = table(['阵营', '已出现品牌数', '去重提及回答', '全量去重提及率', '最早词典首现回答', '最早词典前三回答', '平均最早位次'], camps.map(row => `<tr>${[esc(row.group), num(row.brands), num(row.mention_count), pct(row.mention_rate), num(row.first_count), num(row.top3_count), row.average_rank == null ? '不适用' : num(row.average_rank)].map(x => cell(x)).join('')}</tr>`));
+    const campTable = table(['阵营', '已出现品牌数', '去重提及回答', '全量去重提及率', '最早词典首现回答', '最早词典前三回答', '平均最早位次'], camps.map(row => `<tr>${[esc(displayGroup(row.group)), num(row.brands), num(row.mention_count), pct(row.mention_rate), num(row.first_count), num(row.top3_count), row.average_rank == null ? '不适用' : num(row.average_rank)].map(x => cell(x)).join('')}</tr>`));
     return section('competition', '竞品阵营与逐品牌表现', `本区分母统一为当前${num(denominator)}条有效回答，包含点名题。阵营按回答去重，单品牌分别计数，不能相加。位次只表示词典内正文首现，不表示推荐；平均位次仅以出现该品牌或阵营的回答为分母。`, campTable + '<h3>逐品牌全量明细（含点名题）</h3>' + pagedTable('brands', rows, competitorHeaders, competitorCells, [{ key: 'mention_count', label: '提及回答' }, { key: 'first_count', label: '正文首现回答' }, { key: 'top3_count', label: '正文前三回答' }, { key: 'average_rank', label: '平均位次' }, { key: 'brand', label: '品牌名称' }]));
   };
   const qualityMarkup = (side, samples) => {
@@ -171,19 +180,36 @@
     });
     return section('sample-structure', '问题与日期分布', '日期为采样逻辑日；实际跨日时间在样本记录与数据质量区展示。', table(['问题类型', '有效回答 / 槽位', ...dates.map(esc), '引用率', 'URL 事件', '去重 URL'], rows));
   };
-  const auditEvidence = (side, samples) => { const ids = idsOf(samples); return auditRows(side).filter(x => ids.has(x.sample_id) && (!state.metric || x.metric_id === state.metric) && (!state.decision || x.decision === state.decision)); };
+  const auditEvidence = (side, samples) => { const ids = idsOf(samples); return auditRows(side).filter(x => ids.has(x.sample_id) && (!state.metric || x.metric_id === state.metric) && (!state.decision || x.decision === state.decision) && (!state.evidenceGap || x.evidence_gap?.category === state.evidenceGap)); };
   const evidenceCells = (row, side) => [
     `<span class="question-id">${esc(row.question_id)} · ${esc(row.sample_id)}</span>${esc(sampleIndex(side).get(row.sample_id)?.question_text || '')}`,
     esc(labels[row.metric_id] || row.metric_id), `<span class="state ${esc(row.decision)}">${esc(decisionLabel(row))}</span>`,
-    `<blockquote class="evidence-quote">${esc(row.evidence_quote || '该规则未发现匹配证据')}</blockquote><span class="caption">判定理由：${esc(row.final_review?.reason || row.unknown_reason || '')}</span><span class="caption">事实依据：${esc((row.fact_ids || []).join('、') || '无事实支持，不据此证实正确')}</span>`,
+    `<blockquote class="evidence-quote">${esc(row.evidence_quote || '该规则未发现匹配证据')}</blockquote><span class="caption">判定理由：${esc(reviewReason(row))}</span><span class="caption">${isRecommendation(row.metric_id) ? '推荐表达依据' : '事实依据'}：${esc(evidenceBasis(row))}</span>`,
     `<span class="hash-value">${esc(row.answer_sha256 || '未提供')}</span><div class="caption">${esc(row.rule_version || '')}</div>`,
     `<button class="icon-button" data-sample="${esc(row.sample_id)}" data-side="${side}" title="展开原回答" aria-label="展开原回答">${icon('chevron-down')}</button>`
   ];
   const semanticMarkup = (side, samples) => {
     const rows = auditEvidence(side, samples);
-    const controls = `<div class="filters"><div class="filter"><label for="audit-metric">审计指标</label><select id="audit-metric"><option value="">全部指标</option>${Object.entries(labels).slice(8).map(([id, label]) => `<option value="${id}" ${state.metric === id ? 'selected' : ''}>${label}</option>`).join('')}</select></div><div class="filter"><label for="audit-decision">判定</label><select id="audit-decision"><option value="">全部判定</option>${Object.entries(decisions).map(([key, label]) => `<option value="${key}" ${state.decision === key ? 'selected' : ''}>${label}</option>`).join('')}</select></div></div>`;
-    return section('semantic', '语义审阅与逐样本证据', '证实只限各指标指定核心内容，不保证整答全部正确。未知仍在固定分母内，包含真值覆盖不足、归属不清、所问关系未充分说明等情况；不把未知判为错误。程序完整扫描与模型语义阅读范围分别保留在原审阅记录。', controls + pagedTable('semantic', rows, ['问题 / 样本', '指标', '判定', '回答证据片段', '哈希 / 审阅版本', '原回答'], row => evidenceCells(row, side)));
+    const controls = `<div class="filters"><div class="filter"><label for="audit-metric">审计指标</label><select id="audit-metric"><option value="">全部指标</option>${data.standard.metrics.filter(m => reviewed(m.kind)).map(({ id, label }) => `<option value="${id}" ${state.metric === id ? 'selected' : ''}>${label}</option>`).join('')}</select></div><div class="filter"><label for="audit-decision">判定</label><select id="audit-decision"><option value="">全部判定</option>${Object.entries(decisions).map(([key, label]) => `<option value="${key}" ${state.decision === key ? 'selected' : ''}>${label}</option>`).join('')}</select></div></div>`;
+    const gapControl = `<div class="filter"><label for="evidence-gap">证据状态</label><select id="evidence-gap"><option value="">全部状态</option>${data.supplement.gapCategories.map(x => `<option value="${x.category}" ${state.evidenceGap === x.category ? 'selected' : ''}>${esc(x.label)}</option>`).join('')}</select></div>`;
+    return section('semantic', '语义审阅与逐样本证据', '正向未命中不等于错误。错误检出仅是下限：无目标事实及未完成整答核实分开披露，不能写成整答已证无错。', controls + gapControl + pagedTable('semantic', rows, ['问题 / 样本', '指标', '判定', '回答证据片段', '哈希 / 审阅版本', '原回答'], row => evidenceCells(row, side)));
   };
+  const evidenceDisclosure = (side, samples) => {
+    const ids = idsOf(samples);
+    const gaps = data.supplement.gaps.filter(x => x.round === Number(side) && ids.has(x.sample_id));
+    tables.set('evidence-gaps', gaps.map(x => ({ ...x, label: labels[x.metric_id], evidence_status: x.label })));
+    const rows = data.supplement.gapCategories.map(x => ({ category: x.category, label: x.label, count: gaps.filter(g => g.category === x.category).length }));
+    return section(`evidence-status-${side}`, '证据核实范围', '按回答与指标记录计数，同一回答可对应多项记录；全部状态沿用固定分母。', table(['状态', '当前记录数'], rows.map(x => `<tr>${cell(esc(x.label))}${cell(`${num(x.count)}条记录`, 'num')}</tr>`)) + exportButtons('evidence-gaps'));
+  };
+  const fullRoundComparison = () => {
+    const rows = data.standard.metrics.map(def => {
+      const a = data.r1.metrics.rows.find(x => x.id === def.id), b = data.r2.metrics.rows.find(x => x.id === def.id);
+      return { id: def.id, label: labels[def.id], round1: a, round2: b, change: rateChange(a, b), change_display: changeText(a, b), change_unit: 'relative_percent', scope: '全轮有效回答；各指标适用集' };
+    });
+    tables.set('full-metric-compare', rows);
+    return section('full-metric-compare', '两轮全量指标', '第一轮538条、第二轮540条有效回答；与下方538条同题比较分别展示，不混用适用分母。', exportButtons('full-metric-compare') + table(['指标', '第一轮', '第二轮', '变化'], rows.map(x => `<tr data-full-metric-id="${x.id}">${cell(metricCell(x.id))}${cell(`${pct(x.round1.percentage)}（${num(x.round1.numerator)}/${num(x.round1.denominator)}）`, 'num')}${cell(`${pct(x.round2.percentage)}（${num(x.round2.numerator)}/${num(x.round2.denominator)}）`, 'num')}${cell(x.change_display, 'num')}</tr>`)));
+  };
+  const supplementalMethods = () => section('product-evidence', '产品资料补证', '本次资料不计入历史模型引用数量，也不证明采样当日功能或营销效果。', `<p>53条官方事实支持683条回答与指标标签调整，其中599条为无目标正向项的明确未命中。490条正向指标记录仍缺逐项依据；错误项另有735条无目标可核验事实及338条未完成整答全部目标事实核实。</p><p><a href="${new URL('reports/完整分析报告-20261016.md', base).href}" target="_blank">完整分析报告</a> · <a href="${new URL('data/product-evidence.json', base).href}" target="_blank">逐项补证与缺口数据</a></p><details><summary>53条官方事实及适用边界</summary>${table(['事实', '资料 / 时点', '证据原文'], data.supplement.facts.map(f => `<tr>${cell(`${esc(f.id)}<p>${esc(f.statement)}</p>`)}${cell(`${esc(f.source_id)}${f.page ? ` · 第${esc(f.page)}页` : ''}<p>${esc(f.historical_policy || f.scope)}</p>`)}${cell(`<blockquote class="evidence-quote">${esc(f.quote || '')}</blockquote>` )}</tr>`))}</details>`);
   const citationRecords = (side, samples) => { const ids = idsOf(samples); return data[`r${side}`].citations.filter(x => ids.has(x.sample_id) && matchesCard(x)); };
   const urlsFor = (side, samples) => {
     const map = new Map();
@@ -252,20 +278,23 @@
   };
   const metricComparison = (pairs, semantic = false) => {
     const [metrics1, metrics2] = pairs ? engine.calculatePairedMetrics(data.standard, pairSamples(1, pairs), pairSamples(2, pairs), [auditRows(1), auditRows(2)]).map(rows => rows.map(m => ({ ...m, scoped: true }))) : [[], []];
-    const frozen = semantic ? data.comparison.semantic_metrics || [] : data.comparison.metrics || [];
+    const frozen = semantic ? data.comparison.semantic_metrics || [] : (data.comparison.metrics || []).filter(metric => metricDefinition(metric.id).kind !== 'semantic');
     const rows = frozen.map(metric => {
       const a = metrics1.find(x => x.id === metric.id), b = metrics2.find(x => x.id === metric.id);
-      const scoped = activeFilter() && a?.scoped && b?.scoped;
-      return { id: metric.id, a: scoped ? a : metric.round1, b: scoped ? b : metric.round2, scope: scoped ? '当前筛选配对' : `${num(data.pairs.length)} 个共同有效配对`, change: scoped ? (a.denominator && b.denominator ? Math.round((b.numerator / b.denominator - a.numerator / a.denominator) * 10000) / 100 : null) : metric.percentage_point_change };
+      const scoped = pairs && a?.scoped && b?.scoped;
+      const first = scoped ? a : metric.round1, second = scoped ? b : metric.round2;
+      return { id: metric.id, label: labels[metric.id], a: first, b: second, scope: activeFilter() ? '当前筛选配对' : `${num(data.pairs.length)} 个共同有效配对`, change: rateChange(first, second), change_display: changeText(first, second), change_unit: 'relative_percent', zero_baseline_display_convention: first?.numerator === 0 && second?.numerator === 0 };
     });
-    const body = table(['指标 / 评判标准', '第一轮', '第二轮', '变化（百分点）', '证据不足：一 / 二', '范围'], rows.map(row => `<tr data-metric-id="${esc(row.id)}">${cell(metricCell(row.id))}${cell(row.a ? `${pct(row.a.percentage)}<div class="caption">${row.id === 'error_information_rate' ? '已证错误 ' : ''}${num(row.a.numerator)} / ${num(row.a.denominator)}</div>` : '无可比基线', 'num')}${cell(row.b ? `${pct(row.b.percentage)}<div class="caption">${row.id === 'error_information_rate' ? '已证错误 ' : ''}${num(row.b.numerator)} / ${num(row.b.denominator)}</div>` : '无可比基线', 'num')}${cell(row.change != null ? `${row.change > 0 ? '+' : ''}${Number(row.change).toFixed(2)}` : delta(row.a?.percentage, row.b?.percentage), 'num')}${cell(`${num(row.a?.unknown ?? 0)} / ${num(row.b?.unknown ?? 0)}<div class="caption">${semantic ? '在各自分母内；非错误数' : row.id === 'citation_rate' ? '分母外引用状态未知' : `另有无词典品牌回答 ${num(row.a?.candidate_gap_count || 0)} / ${num(row.b?.candidate_gap_count || 0)}`}</div>`, 'num')}${cell(row.scope + '<div class="caption">双方同一适用集合重算</div>')}</tr>`));
+    const value = (row, metric) => !metric ? '无可比基线' : isRecommendation(row.id) ? metricValue(metric) : `${pct(metric.percentage)}<div class="caption">${row.id === 'error_information_rate' ? '已证错误 ' : ''}${num(metric.numerator)} / ${num(metric.denominator)}</div>`;
+    const changeValue = row => row.change_display;
+    const body = table(['指标 / 评判标准', '第一轮', '第二轮', '变化', '证据不足：一 / 二', '范围'], rows.map(row => `<tr data-metric-id="${esc(row.id)}">${cell(metricCell(row.id))}${cell(value(row, row.a), 'num')}${cell(value(row, row.b), 'num')}${cell(changeValue(row), 'num')}${cell(`${num(row.a?.unknown ?? 0)} / ${num(row.b?.unknown ?? 0)}<div class="caption">${semantic || isRecommendation(row.id) ? '在各自分母内；非错误数' : row.id === 'citation_rate' ? '分母外引用状态未知' : `另有无词典品牌回答 ${num(row.a?.candidate_gap_count || 0)} / ${num(row.b?.candidate_gap_count || 0)}`}</div>`, 'num')}${cell(row.scope + '<div class="caption">双方同一适用集合重算</div>')}</tr>`));
     const id = semantic ? 'semantic-compare' : 'metric-compare'; tables.set(id, rows);
-    return section(id, semantic ? '六项证实覆盖与检出指标对比' : '八项描述指标对比', `${data.standard.version}；${semantic ? '已证实结果占全部适用回答的比例，证据不足仍在分母。不是完整准确率、真实胜率或实际错误率。' : '中立自然提及、正文出现顺序、产品家族提及、可解析引用和候选记录占比各用固定分母。'}变化为第二轮减第一轮，仅描述差异。`, exportButtons(id) + body);
+    return section(id, semantic ? '六项证实覆盖与检出指标对比' : '描述与首推指标对比', `${data.standard.version}；比率变化由未舍入比率计算相对增减。${semantic ? '已证错误检出与正向未命中分别统计；证据缺口仍在固定分母。' : '唯一优先推荐与词典首现独立统计；两轮均0显示0.00%，不表示没有并列或条件推荐。'}`, exportButtons(id) + body);
   };
   const competitorComparison = pairs => {
     const a = new Map(brandsFor(1, pairSamples(1, pairs)).map(x => [x.brand, x])), b = new Map(brandsFor(2, pairSamples(2, pairs)).map(x => [x.brand, x]));
     const rows = [...new Set([...a.keys(), ...b.keys()])].map(brand => ({ brand, group: b.get(brand)?.group || a.get(brand)?.group, round1_mentions: a.get(brand)?.mention_count || 0, round2_mentions: b.get(brand)?.mention_count || 0, change: (b.get(brand)?.mention_count || 0) - (a.get(brand)?.mention_count || 0), r1: a.get(brand), r2: b.get(brand) }));
-    return section('competition-compare', '竞品表现变化', '全部品牌均可查看；各列顺序为第一轮 → 第二轮。首次出现顺序不代表明确推荐。', pagedTable('competition-compare', rows, ['品牌 / 阵营', '提及回答', '提及率', '首位出现', '前三出现', '平均位次', '提及变化'], row => [`${esc(row.brand)}<div class="caption">${esc(row.group)}</div>`, `${num(row.round1_mentions)} → ${num(row.round2_mentions)}`, `${pct(row.r1?.mention_rate ?? 0)} → ${pct(row.r2?.mention_rate ?? 0)}`, `${num(row.r1?.first_count || 0)} → ${num(row.r2?.first_count || 0)}`, `${num(row.r1?.top3_count || 0)} → ${num(row.r2?.top3_count || 0)}`, `${row.r1?.average_rank ?? '不适用'} → ${row.r2?.average_rank ?? '不适用'}`, `${row.change > 0 ? '+' : ''}${num(row.change)}`], [{ key: 'round2_mentions', label: '第二轮提及' }, { key: 'round1_mentions', label: '第一轮提及' }, { key: 'change', label: '提及变化' }, { key: 'brand', label: '品牌名称' } ]));
+    return section('competition-compare', '竞品表现变化', '全部品牌均可查看；各列顺序为第一轮 → 第二轮。首次出现顺序不代表明确推荐。', pagedTable('competition-compare', rows, ['品牌 / 阵营', '提及回答', '提及率', '首位出现', '前三出现', '平均位次', '提及变化'], row => [`${esc(row.brand)}<div class="caption">${esc(displayGroup(row.group))}</div>`, `${num(row.round1_mentions)} → ${num(row.round2_mentions)}`, `${pct(row.r1?.mention_rate ?? 0)} → ${pct(row.r2?.mention_rate ?? 0)}`, `${num(row.r1?.first_count || 0)} → ${num(row.r2?.first_count || 0)}`, `${num(row.r1?.top3_count || 0)} → ${num(row.r2?.top3_count || 0)}`, `${row.r1?.average_rank ?? '不适用'} → ${row.r2?.average_rank ?? '不适用'}`, `${row.change > 0 ? '+' : ''}${num(row.change)}`], [{ key: 'round2_mentions', label: '第二轮提及' }, { key: 'round1_mentions', label: '第一轮提及' }, { key: 'change', label: '提及变化' }, { key: 'brand', label: '品牌名称' } ]));
   };
   const citationComparison = pairs => {
     const a = pairSamples(1, pairs), b = pairSamples(2, pairs), s1 = summary(a), s2 = summary(b);
@@ -275,7 +304,7 @@
     const domains1 = new Map(domainsFor(urls1).map(x => [x.domain, x])), domains2 = new Map(domainsFor(urls2).map(x => [x.domain, x]));
     const domains = [...new Set([...domains1.keys(), ...domains2.keys()])].map(domain => ({ domain, r1_events: domains1.get(domain)?.events || 0, r2_events: domains2.get(domain)?.events || 0, r1_urls: domains1.get(domain)?.urls || 0, r2_urls: domains2.get(domain)?.urls || 0, change: (domains2.get(domain)?.events || 0) - (domains1.get(domain)?.events || 0), r1_answers: domains1.get(domain)?.answer_count || 0, r2_answers: domains2.get(domain)?.answer_count || 0 }));
     const overviewTable = table(['引用指标', '第一轮', '第二轮', '数量变化'], values.map(([label, first, second]) => `<tr>${cell(label)}${cell(num(first), 'num')}${cell(num(second), 'num')}${cell(`${second - first > 0 ? '+' : ''}${num(second - first)}`, 'num')}</tr>`));
-    const officialRates = table(['占比指标', '第一轮', '第二轮', '变化（百分点）'], [['引用率', percent(s1.cited, s1.known), percent(s2.cited, s2.known)], ['官网引用占比', percent(s1.official, s1.events), percent(s2.official, s2.events)], ['官网回答覆盖率', percent(s1.officialAnswers, a.length), percent(s2.officialAnswers, b.length)]].map(([label, first, second]) => `<tr>${cell(label)}${cell(pct(first), 'num')}${cell(pct(second), 'num')}${cell(delta(first, second), 'num')}</tr>`));
+    const officialRates = table(['占比指标', '第一轮', '第二轮', '变化'], [['引用率', s1.cited, s1.known, s2.cited, s2.known], ['官网引用占比', s1.official, s1.events, s2.official, s2.events], ['官网回答覆盖率', s1.officialAnswers, a.length, s2.officialAnswers, b.length]].map(([label, an, ad, bn, bd]) => `<tr>${cell(label)}${cell(pct(percent(an, ad)), 'num')}${cell(pct(percent(bn, bd)), 'num')}${cell(changeText({ numerator: an, denominator: ad }, { numerator: bn, denominator: bd }), 'num')}</tr>`));
     return section('citation-compare', '引用源完整对比', `${num(pairs.length)} 个当前共同有效槽位；URL 新增与未再出现仅表示本次采样集合变化。`, overviewTable + officialRates + kpis([['两轮共有 URL', num(joined.filter(x => x.state === '两轮共有').length)], ['第二轮新增 URL', num(joined.filter(x => x.state === '第二轮新增').length)], ['第二轮未再出现 URL', num(joined.filter(x => x.state === '第二轮未再出现').length)], ['两轮 URL 并集', num(joined.length)]])) + section('domain-compare', '逐域名变化', 'URL 事件、去重 URL 与覆盖回答均保留两轮值。', pagedTable('domain-compare', domains, ['域名', 'URL 事件：一 → 二', '去重 URL：一 → 二', '覆盖回答：一 → 二', '事件变化'], row => [esc(row.domain), `${num(row.r1_events)} → ${num(row.r2_events)}`, `${num(row.r1_urls)} → ${num(row.r2_urls)}`, `${num(row.r1_answers)} → ${num(row.r2_answers)}`, `${row.change > 0 ? '+' : ''}${num(row.change)}`], [{ key: 'r2_events', label: '第二轮事件' }, { key: 'r1_events', label: '第一轮事件' }, { key: 'change', label: '事件变化' }, { key: 'domain', label: '域名' }])) + section('url-compare', '逐网址变化', '每个规范化 URL 均可追溯到两轮事件数量。', pagedTable('url-compare', joined, ['标题 / 域名', '规范化 URL', '第一轮事件', '第二轮事件', '变化', '出现状态'], row => [link(row.url, row.title || row.url) + `<span class="host-label">${esc(row.domain)}</span>`, link(row.url), num(row.r1_events), num(row.r2_events), `${row.change > 0 ? '+' : ''}${num(row.change)}`, row.state], [{ key: 'r2_events', label: '第二轮事件' }, { key: 'change', label: '事件变化' }, { key: 'state', label: '出现状态' }, { key: 'domain', label: '域名' }]));
   };
   const pairsMarkup = pairs => section('records', '配对回答与证据', '每条对应同一逻辑槽位；展开查看两轮完整回答及引用。', pagedTable('pairs', pairs, ['问题 / 槽位', '第一轮', '第二轮', '变化', '两轮原回答'], pair => [`<span class="question-id">${esc(pair.question_id)}</span><span class="question-text">${esc(pair.r2_question || pair.r1_question)}</span><div class="caption">${esc(pair.category)} · ${esc(Array.isArray(pair.slot) ? pair.slot.slice(-2).join(' / ') : pair.slot)}</div>`, `${esc(pair.r1_date)}<div class="num">${num(pair.r1_events)} URL 事件</div>`, `${esc(pair.r2_date)}<div class="num">${num(pair.r2_events)} URL 事件</div>`, `${pair.r2_events - pair.r1_events > 0 ? '+' : ''}${num(pair.r2_events - pair.r1_events)}`, `<button class="icon-button" data-pair="${esc(pair.r2_sample_id)}" title="展开两轮原回答" aria-label="展开两轮原回答">${icon('chevron-down')}</button>`]));
@@ -289,7 +318,7 @@
   const methods = () => section('methods', '统一评判标准与统计边界', `执行版本 ${data.standard.version}。所有页面与导出从同一标准和计算程序生成；历史标准保留。`, `<p><a href="${esc(new URL('指标评判标准.md', base).href)}" target="_blank">完整评判标准</a> · <a href="${esc(new URL('data/metric-standard.json', base).href)}" target="_blank">机器标准</a> · <a href="${esc(new URL('data/metric-standard-audit.json', base).href)}" target="_blank">本次核查与修正影响</a></p><details class="method-details"><summary>状态、证据与版本规则</summary><dl>${Object.entries(data.standard.states).map(([k, v]) => `<dt>${esc(k === 'candidate_gap' ? '无词典品牌' : decisions[k] || k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl><p>${esc(data.standard.question_alignment_requirement)}</p><p>${esc(data.standard.stability_policy)}</p><p>当前共同事实快照用于两轮一致的回顾评估，不证明功能在第一轮采样当天已存在。补充新事实必须标明时点，不用当前功能倒推历史错误。</p><p>540为逻辑槽位，包含100道题的日次与遍次，不是540个独立问题或用户。两轮均有效的538槽位用于描述性比较，渠道、模型和日期不同，不作因果归因。筛选时两侧任一匹配即保留整对，双方在同一集合重算。</p></details><details class="method-details"><summary>竞品、引用与截图的全部补充口径</summary>${data.standard.supplementary.map(m => `<h3>${esc(m.label)}</h3><p>${esc(m.formula)}。${esc(m.note)}</p>`).join('')}</details>`);
   const answerMarkup = (sample, side) => {
     const evidence = auditRows(side).filter(row => row.sample_id === sample.sample_id);
-    return `<div class="answer-content"><h3>第${side}轮原回答</h3><div class="answer-meta"><span>${esc(sample.sample_id)}</span><span>${esc(sample.question_id)}</span><span>${esc(sample.sample_date)}</span></div><p class="hash-value caption">回答哈希：${esc(sample.answer_sha256 || '未提供')}</p><pre class="answer">${esc(sample.answer_text || '原始回答为空')}</pre><details><summary>语义证据审阅 ${num(evidence.length)} 项</summary>${table(['指标', '判定', '证据片段与理由', '事实依据'], evidence.map(row => `<tr>${cell(esc(labels[row.metric_id] || row.metric_id))}${cell(esc(decisionLabel(row)))}${cell(esc(row.evidence_quote || '未发现可判定证据片段') + `<p class="caption">${esc(row.final_review?.reason || row.unknown_reason || '')}</p>`)}${cell(esc((row.fact_ids || []).join('、')))}</tr>`))}</details><details><summary>引用卡 ${num(sampleCards(sample).length)} · URL 事件 ${num(sample.unique_url_events)}</summary><ul class="source-items">${sampleCards(sample).map(card => `<li>${link(card.raw_url, card.title || card.raw_url || '空引用卡')}<span class="state">${card.valid_url ? '可解析 URL' : '无可解析 URL'} · 网页内容未核验</span><div class="caption">规范化 URL：${esc(card.normalized_url || '无')}</div></li>`).join('')}</ul></details><p class="caption">截图：${screenshotLink(sample)}</p></div>`;
+    return `<div class="answer-content"><h3>第${side}轮原回答</h3><div class="answer-meta"><span>${esc(sample.sample_id)}</span><span>${esc(sample.question_id)}</span><span>${esc(sample.sample_date)}</span></div><p class="hash-value caption">回答哈希：${esc(sample.answer_sha256 || '未提供')}</p><pre class="answer">${esc(sample.answer_text || '原始回答为空')}</pre><details><summary>语义证据审阅 ${num(evidence.length)} 项</summary>${table(['指标', '判定', '证据片段与理由', '依据'], evidence.map(row => `<tr>${cell(esc(labels[row.metric_id] || row.metric_id))}${cell(esc(decisionLabel(row)))}${cell(esc(row.evidence_quote || '未发现可判定证据片段') + `<p class="caption">${esc(reviewReason(row))}</p>`)}${cell(esc(evidenceBasis(row)))}</tr>`))}</details><details><summary>引用卡 ${num(sampleCards(sample).length)} · URL 事件 ${num(sample.unique_url_events)}</summary><ul class="source-items">${sampleCards(sample).map(card => `<li>${link(card.raw_url, card.title || card.raw_url || '空引用卡')}<span class="state">${card.valid_url ? '可解析 URL' : '无可解析 URL'} · 网页内容未核验</span><div class="caption">规范化 URL：${esc(card.normalized_url || '无')}</div></li>`).join('')}</ul></details><p class="caption">截图：${screenshotLink(sample)}</p></div>`;
   };
   const expand = button => {
     const row = button.closest('tr');
@@ -312,24 +341,24 @@
     let content;
     if (round) {
       const samples = selection(round), report = data[`r${round}`], attempts = report.metrics.attempts;
-      const notice = `<div class="notice"><strong>第${round}轮 ${num(report.samples.length)} 个槽位 · 有效回答 ${num(report.samples.filter(collected).length)} 条 · 十四项指标已完成计算</strong>${round === '2' && attempts ? `实际 ${num(attempts)} 次尝试 · ${num(report.metrics.replacements)} 次补采。` : ''}当前筛选 ${num(samples.length)} 个槽位；六项语义指标已完成证据审阅，证据不足结论单列。</div>`;
+      const notice = `<div class="notice"><strong>第${round}轮 ${num(report.samples.length)} 个槽位 · 有效回答 ${num(report.samples.filter(collected).length)} 条 · ${data.standard.metrics.length} 项指标已完成计算</strong>${round === '2' && attempts ? `实际 ${num(attempts)} 次尝试 · ${num(report.metrics.replacements)} 次补采。` : ''}当前筛选 ${num(samples.length)} 个槽位；六项事实语义指标与首推表达已完成证据审阅，证据不足结论单列。</div>`;
       content = notice + section('overview', '数据总览', `当前筛选 ${num(samples.length)} 条回答`, overview(samples)) + breakdownMarkup(samples);
-      if (kind === 'data') content += metricsMarkup(round, samples) + competitorMarkup(round, samples) + qualityMarkup(round, samples) + semanticMarkup(round, samples);
+      if (kind === 'data') content += metricsMarkup(round, samples) + competitorMarkup(round, samples) + qualityMarkup(round, samples) + evidenceDisclosure(round, samples) + semanticMarkup(round, samples);
       else content += citationMarkup(round, samples) + qualityMarkup(round, samples);
       content += recordsMarkup(round, samples) + screenshotMarkup(round, samples);
     } else {
       const pairs = selectedPairs(), first = pairSamples(1, pairs), second = pairSamples(2, pairs), s1 = summary(first), s2 = summary(second);
       content = `<div class="notice"><strong>${num(pairs.length)} 个当前共同有效配对 · 全量 ${num(data.pairs.length)} / ${num(data.comparison.planned_slots || 540)} 个槽位</strong>两轮渠道、日期和模型不同；展示观察到的差异，不作因果归因。</div>` + section('overview', '两轮研究总览', '当前筛选共同槽位', kpis([['共同有效配对', num(pairs.length), `全量 ${num(data.pairs.length)} 个`], ['第一轮引用率', pct(percent(s1.cited, s1.known)), `${num(first.length)} 条回答`], ['第二轮引用率', pct(percent(s2.cited, s2.known)), `${num(second.length)} 条回答`], ['URL 事件变化', `${s2.events - s1.events > 0 ? '+' : ''}${num(s2.events - s1.events)}`, `${num(s1.events)} → ${num(s2.events)}`]]));
-      if (kind === 'data') content += metricComparison(pairs) + metricComparison(pairs, true) + competitorComparison(pairs);
+      if (kind === 'data') content += fullRoundComparison() + metricComparison(pairs) + metricComparison(pairs, true) + competitorComparison(pairs);
       content += citationComparison(pairs) + pairsMarkup(pairs);
     }
-    document.getElementById('report-content').innerHTML = content + methods();
+    document.getElementById('report-content').innerHTML = content + supplementalMethods() + methods();
     icons();
   };
   const layout = () => {
     app.setAttribute('aria-busy', 'false');
     app.setAttribute('data-load-state', 'ready');
-    const links = round ? (kind === 'data' ? [['overview', '数据总览'], ['metrics', '十四项指标'], ['competition', '竞品表现'], ['semantic', '语义证据'], ['quality', '数据质量'], ['records', '逐条记录'], ['screenshots', '截图证据']] : [['overview', '引用总览'], ['source-overview', '来源结构'], ['domains', '域名明细'], ['quality', '数据质量'], ['records', '逐条引用'], ['screenshots', '截图证据']]) : [['overview', '对比总览'], ...(kind === 'data' ? [['metric-compare', '描述指标'], ['semantic-compare', '语义指标'], ['competition-compare', '竞品变化']] : []), ['citation-compare', '引用源对比'], ['domain-compare', '域名变化'], ['url-compare', '网址变化'], ['records', '配对回答']];
+    const links = round ? (kind === 'data' ? [['overview', '数据总览'], ['metrics', `${data.standard.metrics.length} 项指标`], ['competition', '竞品表现'], ['semantic', '语义证据'], ['quality', '数据质量'], ['records', '逐条记录'], ['screenshots', '截图证据']] : [['overview', '引用总览'], ['source-overview', '来源结构'], ['domains', '域名明细'], ['quality', '数据质量'], ['records', '逐条引用'], ['screenshots', '截图证据']]) : [['overview', '对比总览'], ...(kind === 'data' ? [['metric-compare', '描述与首推'], ['semantic-compare', '语义指标'], ['competition-compare', '竞品变化']] : []), ['citation-compare', '引用源对比'], ['domain-compare', '域名变化'], ['url-compare', '网址变化'], ['records', '配对回答']];
     app.innerHTML = `<div class="creative-report"><nav class="section-links" aria-label="报告章节">${links.map(([id, label]) => `<a href="#${id}">${label}</a>`).join('')}<a href="#methods">口径</a></nav>${filters()}<div id="report-content"></div></div>`;
     renderContent();
     restoreAnchor();
@@ -338,10 +367,10 @@
     const button = event.target.closest('button'); if (!button) return;
     if (button.id === 'retry-details') { void loadDetails(); }
     else if (button.dataset.category) { state.category = button.dataset.category; state.pages = {}; layout(); }
-    else if (button.id === 'reset') { Object.assign(state, { category: '全部', search: '', sourceType: '', sourceClass: '', domain: '', metric: '', decision: '', pages: {} }); layout(); }
+    else if (button.id === 'reset') { Object.assign(state, { category: '全部', search: '', sourceType: '', sourceClass: '', domain: '', metric: '', decision: '', evidenceGap: '', pages: {} }); layout(); }
     else if (button.dataset.mode) { state.mode = button.dataset.mode; state.pages.records = 1; renderContent(); }
     else if (button.dataset.page) { state.pages[button.dataset.page] = (state.pages[button.dataset.page] || 1) + Number(button.dataset.offset); const top = button.closest('section')?.offsetTop; renderContent(); if (top != null) window.scrollTo({ top, behavior: 'instant' }); }
-    else if (button.dataset.export) { const id = button.dataset.export; download(`创意-${round ? `第${round}轮` : '两轮对比'}-${id}.${button.dataset.format}`, tables.get(id) || [], button.dataset.format === 'json'); }
+    else if (button.dataset.export) { const id = button.dataset.export; download(`蝉妈妈·创意-${round ? `第${round}轮` : '两轮对比'}-${id}.${button.dataset.format}`, tables.get(id) || [], button.dataset.format === 'json'); }
     else if (button.dataset.order) { const id = button.dataset.order; const sort = state.sorts[id] || { key: id === 'brands' ? 'mention_count' : id === 'competition-compare' ? 'round2_mentions' : id === 'url-compare' || id === 'domain-compare' ? 'r2_events' : 'events', order: 'desc' }; state.sorts[id] = { ...sort, order: sort.order === 'desc' ? 'asc' : 'desc' }; renderContent(); }
     else if (button.dataset.sample || button.dataset.pair) expand(button);
     else if (button.dataset.brand) {
@@ -359,7 +388,7 @@
   app.addEventListener('change', event => {
     const target = event.target;
     if (target.dataset.sort) { state.sorts[target.dataset.sort] = { key: target.value, order: 'desc' }; renderContent(); return; }
-    const key = { sourceType: 'sourceType', sourceClass: 'sourceClass', domain: 'domain', 'audit-metric': 'metric', 'audit-decision': 'decision' }[target.id];
+    const key = { sourceType: 'sourceType', sourceClass: 'sourceClass', domain: 'domain', 'audit-metric': 'metric', 'audit-decision': 'decision', 'evidence-gap': 'evidenceGap' }[target.id];
     if (key) { state[key] = target.value; state.pages = {}; renderContent(); }
   });
   const style = document.createElement('style');
@@ -372,6 +401,7 @@
   numericStyle.textContent = '.metric-list td:nth-child(2),.metric-list td:nth-child(3){min-width:100px;white-space:nowrap}.metric-list td:nth-child(2) .caption,.metric-list td:nth-child(3) .caption{white-space:normal}.metric-list td:nth-child(4){min-width:130px}.metric-list td:nth-child(5){min-width:160px}.metric-list td:first-child{min-width:230px}.metric-list{min-width:1100px!important}.creative-report .caption{display:block}';
   document.head.append(numericStyle);
   const sides = round ? [round] : [1, 2];
+  const detailFiles = ['samples', 'semantic-audit', 'citation-records', 'competitors'];
   let detailLoading = false;
   const restoreAnchor = () => {
     if (location.hash) {
@@ -393,10 +423,10 @@
     app.setAttribute('data-load-state', error ? 'detail-error' : 'summary');
     const categories = [...new Set(sides.flatMap(side => Object.keys(data[`r${side}`].summary.categories)))];
     const pendingFilters = `<fieldset disabled style="border:0;padding:0;margin:0;min-width:0" aria-label="明细尚未加载"><div class="segmented"><button data-category="全部" aria-pressed="true">全部</button>${categories.map(c => `<button data-category="${esc(c)}">${esc(c)}</button>`).join('')}</div><div class="filters"><div class="filter grow"><label for="search">搜索问题、样本、回答、URL</label><input id="search" type="search" placeholder="明细尚未加载"></div></div></fieldset>`;
-    const stateMarkup = `<div class="notice" role="${error ? 'alert' : 'status'}"><strong>${error ? '明细加载失败，全轮指标仍可查看' : '全轮指标已就绪，明细加载中'}</strong><p>${error ? esc(error.message) : `已完成 ${completed} / ${sides.length * 4} 个明细文件`}；筛选、原答与明细导出将在明细就绪后开放。</p>${error ? `<button class="button" id="retry-details" type="button">${icon('refresh-cw')}重新加载明细</button>` : ''}</div>`;
+    const stateMarkup = `<div class="notice" role="${error ? 'alert' : 'status'}"><strong>${error ? '明细加载失败，全轮指标仍可查看' : '全轮指标已就绪，明细加载中'}</strong><p>${error ? esc(error.message) : `已完成 ${completed} / ${sides.length * detailFiles.length} 个明细文件`}；筛选、原答与明细导出将在明细就绪后开放。</p>${error ? `<button class="button" id="retry-details" type="button">${icon('refresh-cw')}重新加载明细</button>` : ''}</div>`;
     const content = sides.map(summaryOverview).join('') + (round ? (kind === 'data' ? metricsMarkup(round) : '') : metricComparison(null) + metricComparison(null, true));
     app.innerHTML = `<div class="creative-report">${stateMarkup}${pendingFilters}<div id="report-content"></div></div>`;
-    document.getElementById('report-content').innerHTML = content + methods();
+    document.getElementById('report-content').innerHTML = content + supplementalMethods() + methods();
     app.querySelectorAll('[data-export]').forEach(button => { button.disabled = true; button.title = '明细尚未加载'; });
     icons();
   };
@@ -406,7 +436,7 @@
     renderSummary();
     try {
       // Two bounded downloads at a time; retain completed files for explicit retry.
-      const jobs = sides.flatMap(side => ['samples', 'semantic-audit', 'citation-records', 'competitors'].map(name => ({ side, name })));
+      const jobs = sides.flatMap(side => detailFiles.map(name => ({ side, name })));
       let completed = 0;
       for (let offset = 0; offset < jobs.length; offset += 2) {
         const results = await Promise.allSettled(jobs.slice(offset, offset + 2).map(async ({ side, name }) => {
@@ -427,9 +457,13 @@
     finally { detailLoading = false; }
   };
   (async () => {
-    const [standard, module, questionScopes] = await Promise.all([get('metric-standard.json'), import(new URL('assets/metric-engine.mjs', base).href), get('metric-question-scopes.json')]);
-    data.standard = standard; data.questionScopes = questionScopes; engine = module;
-    for (const def of standard.metrics) labels[def.id] = def.label;
+    const [standard, module, questionScopes, supplement, display] = await Promise.all([get('metric-standard.json'), import(new URL('assets/metric-engine.mjs', base).href), get('metric-question-scopes.json'), get('product-evidence.json'), get('brand-display-standard.json')]);
+    data.standard = standard; data.questionScopes = questionScopes; engine = module; data.supplement = supplement;
+    data.gapIndex = new Map(supplement.gaps.map(x => [`${x.round}:${x.sample_id}:${x.metric_id}`, x]));
+    for (const def of standard.metrics) {
+      if (!display.labels[def.id] || display.labels[def.id] !== def.label) throw new Error('品牌显示标准与指标标签不一致');
+      labels[def.id] = display.labels[def.id];
+    }
     await Promise.all(sides.map(async side => {
       const names = ['summary', 'metrics', 'quality'];
       const values = await Promise.all(names.map(name => get(`round${side}/${name}.json`)));

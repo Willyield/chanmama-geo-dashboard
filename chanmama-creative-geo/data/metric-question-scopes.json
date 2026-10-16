@@ -1,5 +1,5 @@
 {
-  "standard_version": "CMCR-GEO-METRICS-2.0.1",
+  "standard_version": "CMCR-GEO-METRICS-2.2.0",
   "question_contract_sha256": "f34e78f50531a7ec1f12923232845182e8715fd5a3cdf7b37ebb183b53db1830",
   "metrics": [
     {
@@ -1846,7 +1846,149 @@
     },
     {
       "id": "top1_rate",
-      "label": "创意单品牌词典首现率（中立推荐题）",
+      "label": "蝉妈妈·创意单品牌词典首现率（中立推荐题）",
+      "questions": [
+        {
+          "question_id": "CMCR-Q0015",
+          "text": "短视频素材洞察工具有哪些，电商团队怎么选？",
+          "category": "品类认知问题",
+          "target_directed": false,
+          "expected_slots_per_round": 6,
+          "text_sha256": "d21c4ca2f973a6292cde58b3c10b92c9a97dd94a34d2c3fa2b9425843493a878"
+        },
+        {
+          "question_id": "CMCR-Q0016",
+          "text": "短视频素材库网站和专业电商素材洞察工具有什么区别？",
+          "category": "对比决策问题",
+          "target_directed": false,
+          "expected_slots_per_round": 6,
+          "text_sha256": "257ca05c1e0f779d23ba0eca5abc1505e0f35bbcd84f8cf7d646a761c6d291ef"
+        },
+        {
+          "question_id": "CMCR-Q0020",
+          "text": "AI 带货视频生成工具有哪些，电商团队怎么选？",
+          "category": "品类认知问题",
+          "target_directed": false,
+          "expected_slots_per_round": 6,
+          "text_sha256": "d36ec0e5f0aa97acec04aa1e4d7931b8e0aec58c20e32725a989556c0908f145"
+        },
+        {
+          "question_id": "CMCR-Q0021",
+          "text": "AI 商品视频生成工具有哪些，能不能直接用于广告投放？",
+          "category": "品类认知问题",
+          "target_directed": false,
+          "expected_slots_per_round": 6,
+          "text_sha256": "eb45b020a35667831c5062583ba69676fc6616b3e9a61396148195b9eb64f238"
+        },
+        {
+          "question_id": "CMCR-Q0022",
+          "text": "通用 AI 视频生成工具和电商广告素材创作工具有什么区别？",
+          "category": "对比决策问题",
+          "target_directed": false,
+          "expected_slots_per_round": 6,
+          "text_sha256": "b1741e2e6901e0215964dfb30c51f6ec1c6ba6c73d31fa61c10f1f9b876c487d"
+        },
+        {
+          "question_id": "CMCR-Q0024",
+          "text": "千川素材监测工具有哪些，能不能看同行素材？",
+          "category": "品类认知问题",
+          "target_directed": false,
+          "expected_slots_per_round": 6,
+          "text_sha256": "1c40c2824515702c7e2d2d1a058b0279a5578504f93b8b9bbbd70d1b5857f937"
+        },
+        {
+          "question_id": "CMCR-Q0039",
+          "text": "千川直播引流素材和商品广告素材有什么区别，在哪里看？",
+          "category": "对比决策问题",
+          "target_directed": false,
+          "expected_slots_per_round": 6,
+          "text_sha256": "3e7e709d415aeecc646539c7d0c14de85da11d9a43f314479031a452b600014c"
+        },
+        {
+          "question_id": "CMCR-Q0061",
+          "text": "AI 商品特效工具怎么选，能不能做千川素材？",
+          "category": "品类认知问题",
+          "target_directed": false,
+          "expected_slots_per_round": 6,
+          "text_sha256": "12415888d3656c501c80004cb5065f818ce627c4f8148ae01fc6b1ece51ae041"
+        },
+        {
+          "question_id": "CMCR-Q0062",
+          "text": "AI 电商模特生成和 AI 素材影棚有什么区别？",
+          "category": "对比决策问题",
+          "target_directed": false,
+          "expected_slots_per_round": 6,
+          "text_sha256": "8e97af391e51fc6cde79c7ee8a822fa6b0250ecb89bd9e128c414865088ed85c"
+        },
+        {
+          "question_id": "CMCR-Q0065",
+          "text": "AI 短剧带货工具有哪些，怎么选？",
+          "category": "品类认知问题",
+          "target_directed": false,
+          "expected_slots_per_round": 6,
+          "text_sha256": "5579c39db9f31177215a2d8e4b4db407a1d102a83d5887ae501a81aa477b8c7b"
+        },
+        {
+          "question_id": "CMCR-Q0066",
+          "text": "AI 带货短剧和普通口播带货视频有什么区别？",
+          "category": "对比决策问题",
+          "target_directed": false,
+          "expected_slots_per_round": 6,
+          "text_sha256": "1b2a9e58ecda8db79e0313a3515a216a51b0214bab5ab68ef8e3e3809b179d6f"
+        },
+        {
+          "question_id": "CMCR-Q0077",
+          "text": "AI 一键成片和人工剪辑怎么搭配，才能提高电商素材产出效率？",
+          "category": "对比决策问题",
+          "target_directed": false,
+          "expected_slots_per_round": 6,
+          "text_sha256": "338865afa0d8a2496e9943eecf914337eb99ab7d04aa66e9fd60fac3d198aebe"
+        },
+        {
+          "question_id": "CMCR-Q0091",
+          "text": "巨量千川素材库和第三方素材洞察工具有什么区别？",
+          "category": "对比决策问题",
+          "target_directed": false,
+          "expected_slots_per_round": 6,
+          "text_sha256": "cddffdaa8a9b5c9ca9cfca9f34f74b027d6aea5cf68ba341069d109025008b4b"
+        },
+        {
+          "question_id": "CMCR-Q0093",
+          "text": "电商团队用剪映 AI 还需要素材洞察工具吗？",
+          "category": "品类认知问题",
+          "target_directed": false,
+          "expected_slots_per_round": 6,
+          "text_sha256": "0e1e670ebef48e46a95faaf12dfde8adcfb2b0a04cf6772171294be4febf8acd"
+        },
+        {
+          "question_id": "CMCR-Q0095",
+          "text": "AI 数字人工具和 AI 带货短剧工具怎么选？",
+          "category": "对比决策问题",
+          "target_directed": false,
+          "expected_slots_per_round": 6,
+          "text_sha256": "d2ba59ad399da4d4f3b5167310814f61be6309e95b8c7976cae4607e2e09ac7b"
+        },
+        {
+          "question_id": "CMCR-Q0098",
+          "text": "抖音素材库和千川素材库有什么区别？",
+          "category": "对比决策问题",
+          "target_directed": false,
+          "expected_slots_per_round": 6,
+          "text_sha256": "e870d5af39d70a378bae3067f48d7f732c6f36c74ab45c714c692559df1652cb"
+        },
+        {
+          "question_id": "CMCR-Q0100",
+          "text": "电商团队找抖音爆款素材，应该用素材库还是素材洞察工具？",
+          "category": "品类认知问题",
+          "target_directed": false,
+          "expected_slots_per_round": 6,
+          "text_sha256": "a9a11bc1925ac1e5dd79136b8817c4b3f0f37e4eccd9de3f17462a44afeef7db"
+        }
+      ]
+    },
+    {
+      "id": "first_recommendation_rate",
+      "label": "蝉妈妈·创意单品牌首推率（中立推荐题）",
       "questions": [
         {
           "question_id": "CMCR-Q0015",
@@ -1988,7 +2130,7 @@
     },
     {
       "id": "top3_rate",
-      "label": "创意单品牌词典前三出现率（中立推荐题）",
+      "label": "蝉妈妈·创意单品牌词典前三出现率（中立推荐题）",
       "questions": [
         {
           "question_id": "CMCR-Q0015",
@@ -2130,7 +2272,7 @@
     },
     {
       "id": "category_coverage_rate",
-      "label": "创意产品家族品类提及率",
+      "label": "蝉妈妈·创意与创意大师品类提及率",
       "questions": [
         {
           "question_id": "CMCR-Q0002",
@@ -3150,7 +3292,7 @@
     },
     {
       "id": "competition_share",
-      "label": "创意单品牌候选记录占比（中立推荐题）",
+      "label": "蝉妈妈·创意单品牌候选记录占比（中立推荐题）",
       "questions": [
         {
           "question_id": "CMCR-Q0015",
@@ -3292,7 +3434,7 @@
     },
     {
       "id": "advantage_expression_rate",
-      "label": "创意家族有据正向理由覆盖率",
+      "label": "蝉妈妈·创意与创意大师有据正向理由覆盖率",
       "questions": [
         {
           "question_id": "CMCR-Q0001",
@@ -4098,7 +4240,7 @@
     },
     {
       "id": "brand_explanation_accuracy",
-      "label": "创意家族核心说明证实率",
+      "label": "蝉妈妈·创意与创意大师核心说明证实率",
       "questions": [
         {
           "question_id": "CMCR-Q0005",
@@ -4192,7 +4334,7 @@
     },
     {
       "id": "product_relationship_accuracy",
-      "label": "创意家族关系说明证实率",
+      "label": "蝉妈妈·创意与创意大师关系说明证实率",
       "questions": [
         {
           "question_id": "CMCR-Q0002",
@@ -4326,7 +4468,7 @@
     },
     {
       "id": "scenario_match_rate",
-      "label": "创意家族场景适配证实率",
+      "label": "蝉妈妈·创意与创意大师场景适配证实率",
       "questions": [
         {
           "question_id": "CMCR-Q0017",
@@ -4668,7 +4810,7 @@
     },
     {
       "id": "comparison_win_rate",
-      "label": "创意家族有据对比推荐覆盖率",
+      "label": "蝉妈妈·创意与创意大师有据对比推荐覆盖率",
       "questions": [
         {
           "question_id": "CMCR-Q0002",
@@ -4818,7 +4960,7 @@
     },
     {
       "id": "error_information_rate",
-      "label": "创意家族已证错误检出率",
+      "label": "蝉妈妈·创意与创意大师已证错误检出率",
       "questions": [
         {
           "question_id": "CMCR-Q0001",

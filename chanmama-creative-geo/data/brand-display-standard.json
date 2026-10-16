@@ -1,0 +1,40 @@
+{
+  "version": "CMCR-BRAND-DISPLAY-1.0",
+  "metric_standard_version": "CMCR-GEO-METRICS-2.2.0",
+  "brands": {
+    "chanmama": "蝉妈妈",
+    "chanmama_creative": "蝉妈妈·创意",
+    "creative_master": "创意大师"
+  },
+  "aggregates": {
+    "creative_family": "蝉妈妈·创意与创意大师",
+    "chanmama_camp": "蝉妈妈、蝉妈妈·创意与创意大师"
+  },
+  "rule": "标题、表格、筛选、图例、解释、报告、导出及交接统一全称；不以创意简称蝉妈妈·创意。聚合范围写明成员。",
+  "evidence_rule": "原题、原答、证据引文及历史冻结产物保持原文；不将显示名称作为新增识别别名。",
+  "labels": {
+    "chanmama_natural_mention_rate": "蝉妈妈单品牌自然提及率",
+    "chanmama_creative_natural_mention_rate": "蝉妈妈·创意单品牌自然提及率",
+    "creative_master_natural_mention_rate": "创意大师单品牌自然提及率",
+    "top1_rate": "蝉妈妈·创意单品牌词典首现率（中立推荐题）",
+    "first_recommendation_rate": "蝉妈妈·创意单品牌首推率（中立推荐题）",
+    "top3_rate": "蝉妈妈·创意单品牌词典前三出现率（中立推荐题）",
+    "category_coverage_rate": "蝉妈妈·创意与创意大师品类提及率",
+    "citation_rate": "可解析引用回答率",
+    "competition_share": "蝉妈妈·创意单品牌候选记录占比（中立推荐题）",
+    "advantage_expression_rate": "蝉妈妈·创意与创意大师有据正向理由覆盖率",
+    "brand_explanation_accuracy": "蝉妈妈·创意与创意大师核心说明证实率",
+    "product_relationship_accuracy": "蝉妈妈·创意与创意大师关系说明证实率",
+    "scenario_match_rate": "蝉妈妈·创意与创意大师场景适配证实率",
+    "comparison_win_rate": "蝉妈妈·创意与创意大师有据对比推荐覆盖率",
+    "error_information_rate": "蝉妈妈·创意与创意大师已证错误检出率"
+  },
+  "unchanged": [
+    "指标ID",
+    "冻结识别别名",
+    "适用集合",
+    "计数和判定",
+    "首推与词典首现的定义"
+  ],
+  "render_note": "页面按metric_id从labels取名，说明按现行metric-standard.json取值；legacy_label仅历史追溯，不作现行显示。"
+}
