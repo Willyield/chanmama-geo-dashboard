@@ -46,6 +46,7 @@
           submenuLink("./top01-round2/", "第二轮复测", "最终 576/576") +
           submenuLink("./top01-round3/", "第三轮采样", "最终 576/576") +
           submenuLink("./top01-round4/", "第四轮采样", "576/576 · 网页483＋手机93") +
+          submenuLink("./top01-round5/", "新基线第一轮数据", "10月15—16日 · 588位置 / 587实质") +
           submenuLink("./top01-two-week-compare/", "两周趋势对比", "趋势") +
           submenuLink("./top2-top3/", "扩展问题", "TOP2+TOP3") +
           submenuLink("./total/", "全部问题总览", "TOP0-TOP3") +
@@ -55,6 +56,7 @@
           submenuLink("./douyin-citation-report-round2/", "第二轮引用源", "最终 576/576") +
           submenuLink("./douyin-citation-report-round3/", "第三轮引用源", "最终 576/576") +
           submenuLink("./douyin-citation-report-round4/", "第四轮引用源", "9,105条 · 账号证据待核验") +
+          submenuLink("./douyin-citation-report-round5/", "新基线第一轮引用源", "官网、其他社媒、抖音 · 两日完整") +
           submenuLink("./chanmama-creative-citation-report/", "创意引用源", "540/540 · 待恢复 2") +
         '</div></details>' +
         '<details data-active="' + (section === "comparison") + '"><summary>对比仪表盘</summary><div class="geo-shell-submenu">' +
@@ -64,6 +66,8 @@
           submenuLink("./douyin-citation-report-three-round-compare/", "三轮引用源对比", "三轮") +
           submenuLink("./top01-round3-round4-compare/", "第三轮与第四轮采样", "混合终端条件选择") +
           submenuLink("./douyin-citation-report-round3-round4-compare/", "第三轮与第四轮引用源", "同口径冻结对比") +
+          submenuLink("./top01-five-round-compare/", "新基线第一轮两日数据对照", "仅10月15—16日，不与旧轮比较") +
+          submenuLink("./douyin-citation-report-five-round-compare/", "新基线第一轮两日引用源对照", "整体与自有分列，保留未知") +
         '</div></details>' +
         '<details data-active="' + (section === "product") + '"><summary>产品 GEO</summary><div class="geo-shell-submenu">' +
           submenuLink("./chanjing-ai/", "蝉镜 AI", "双端观察") +

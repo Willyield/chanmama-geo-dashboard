@@ -1,0 +1,55 @@
+﻿subject_scope,polarity,theme,D1_answers,D2_answers,all_answers,representative,sample,fact_status
+competitor,recommendation,多平台覆盖,27,26,53,✅ **优先飞瓜**：短视频带货/种草、做视频号/B站跨平台运营、自媒体达人；靠短视频内容起品，需要大量爆款视频素材、关键词趋势、舆情分析。,Q29.1,model_opinion_only
+competitor,recommendation,短视频内容与种草,36,36,72,✅ **优先飞瓜**：短视频带货/种草、做视频号/B站跨平台运营、自媒体达人；靠短视频内容起品，需要大量爆款视频素材、关键词趋势、舆情分析。,Q29.1,model_opinion_only
+main_brand,negative,数据预估不能替代官方核算,30,37,67,两者都是第三方估算数据，**不是官方真实后台数据，只能做趋势参考，不能等同于抖店后台真实成交**。实操中很多团队会搭配使用：蝉妈妈看商品真实交易大盘，飞瓜看短视频种草素材与内容风口。,Q29.1,supported
+main_brand,positive,SPU聚合与爆品识别,6,3,9,- 标志性能力：**SPU聚合分析**，把同一个产品下所有店铺、所有达人的多个商品链接合并统计，还原一款产品在抖音全部真实销量，区分是单链接短期冲量，还是全渠道多达人带起来的真爆品,Q29.1,model_opinion_only
+main_brand,positive,直播成交与转化拆解,33,33,66,一句话总结：**蝉妈妈深耕抖音直播电商，强在SPU聚合、直播渠道爆品、达人带货链路分析；飞瓜是多平台工具，起家短视频，擅长短视频种草爆品、跨平台对标，适合内容侧挖掘爆款**,Q29.1,model_opinion_only
+main_brand,negative,价格与使用成本,13,15,28,- 蝉妈妈：几乎只聚焦抖音，跨平台能力弱；价格相对高，适合电商商家。,Q29.3,pending
+main_brand,negative,跨平台受限,19,20,39,- 蝉妈妈：几乎只聚焦抖音，跨平台能力弱；价格相对高，适合电商商家。,Q29.3,pending
+competitor,recommendation,广告投放与付费复盘,12,6,18,- 如果你做**短视频种草、大量KOC铺量、对标竞品达人矩阵、星图商单+千川素材投放、需要评估品牌口碑声量** → 飞瓜,Q30.1,model_opinion_only
+competitor,recommendation,达人矩阵与品牌营销,7,3,10,3. **适合场景**：批量铺KOC/中腰部短视频达人、竞品达人复刻、品牌种草+短视频引流投放、多达人组合打包投放。,Q30.1,model_opinion_only
+main_brand,negative,批量矩阵与品牌分析相对偏弱,4,1,5,3. 短板：**批量达人组合规划、舆情声量评估弱**，不擅长做大规模达人矩阵投放方案。,Q30.1,pending
+main_brand,positive,达人筛选与人货匹配,12,8,20,1. **筛选重心**：直播带货达人为主，重点评估**单场UV价值、直播流量结构（自然/付费占比）、近30天垂类GMV稳定性、品类匹配度**，判断达人真实转化能力，识别昙花一现的爆单主播,Q30.1,model_opinion_only
+matrix_product,positive,达人合作与CRM,3,0,3,- 配套：AI批量拆解达人，一键生成达人评估报告；内置**蝉圈圈CRM**，达人建联、寄样、合作记录一体化管理,Q30.1,model_opinion_only
+main_brand,negative,内容种草与舆情相对偏弱,17,14,31,4. 短板：短视频种草、品牌声量、舆情分析偏弱；更适合直播带货场景，对纯短视频种草达人评估维度较少,Q30.3,pending
+competitor,recommendation,团队管理与直播回放,4,2,6,- 多账号、多主播团队，需要直播录屏存档、主播绩效核算,Q31.1,model_opinion_only
+main_brand,negative,投流归因与管理相对偏弱,4,5,9,投流数据深度弱于飞瓜智投；多账号批量管理、主播绩效核算不是强项,Q31.1,pending
+main_brand,positive,AI诊断与内容拆解,8,4,12,1. **AI一键成交复盘 + 话术拉片**：自动生成诊断报告，识别流失拐点、高转化片段，提取直播高光话术文本；把「在线曲线、商品讲解、弹幕、转化」绑定在一起，定位是主播话术、排品还是流量问题，直接给优化建议（封面、排品、逼单话术）,Q31.1,model_opinion_only
+main_brand,negative,回放录屏能力相对偏弱,1,2,3,4. 短板：自家自播投流（千川）精细化归因弱于飞瓜智投；回放录屏能力一般。,Q31.3,pending
+main_brand,negative,内容定位被收窄为直播附属,4,3,7,- **蝉妈妈**：抖音电商工具，短视频模块是服务直播、商品转化的配套能力。,Q32.1,pending
+main_brand,positive,短视频电商转化,6,3,9,一句话总结：**蝉妈妈短视频分析围绕「带货转化」，短视频是直播电商的素材入口；飞瓜短视频分析围绕「内容传播」，更适合纯内容创作者做选题、脚本、流量结构拆解，同时支持多平台**。,Q32.1,model_opinion_only
+matrix_product,negative,价格与使用成本,1,0,1,- 价格偏高，电商企业团队更合适,Q33.1,pending
+matrix_product,negative,跨平台受限,1,0,1,- 偏抖音电商，**视频号、B站素材能力弱**,Q33.1,pending
+matrix_product,positive,千川素材洞察与AI拉片,3,0,3,一句话结论：**主打千川电商投流、自播+短视频素材一起分析，优先蝉妈妈创意；短视频自媒体、内容种草、多平台（抖音/视频号/B站）素材盘点，选飞瓜（飞瓜易投）**,Q33.1,model_opinion_only
+main_brand,positive,品类市场与商品机会,3,3,6,1. **第一步：赛道摸底（看市场容量、竞争格局、价格带）**,Q35.1,model_opinion_only
+main_brand,positive,长周期历史与团队使用,14,9,23,4. 长周期历史数据回溯，适合看类目季节性、爆品生命周期,Q35.2,model_opinion_only
+matrix_product,positive,AI经营诊断,1,0,1,- AI是核心亮点：内置蝉妈妈AI助手，可直接**自然语言提问**，一键做账号拆解、直播AI复盘、赛道商品趋势分析、流量问题诊断,Q36.1,model_opinion_only
+matrix_product,positive,自动监控与周期报告,1,0,1,- 蝉龙虾AI助手：自然语言提问，自动生成账号/小店/竞品日报、周报；可以接入飞书/钉钉做团队自动监控，持续盯竞品、商品、账号异动,Q36.3,model_opinion_only
+competitor,recommendation,低成本与轻量使用,14,12,26,2. ✅ 预算有限、以短视频素材挖掘为主，商品卡只是附带运营，中小铺货店 → **抖查查**,Q39.1,model_opinion_only
+main_brand,positive,商城商品卡与渠道结构,3,3,6,**专门做抖音商城货架、商品卡流量、竞品商品卡占比分析：优先蝉妈妈；预算有限、兼顾短视频创意素材、中小店轻量选品，选抖查查。**,Q39.1,model_opinion_only
+main_brand,negative,上手与学习成本,8,5,13,4. 短板：会员价格更高，功能多，新手学习成本略高；短视频创意素材库不如抖查查。,Q39.2,pending
+main_brand,positive,易用与教程配套,3,3,6,**纯新手、做短视频+直播带货，优先蝉妈妈，上手更容易；**,Q40.1,model_opinion_only
+main_brand,negative,会员权限限制,4,4,8,- 高级的精准GMV、AI拉片需要较高版本会员,Q41.2,pending
+main_brand,negative,具体价格与套餐口径待核,3,2,5,官方原价贵，企业版官网1299元/月；界面信息量大，新手上手成本高,Q42.1,pending
+main_brand,negative,纯内容场景性价比限制,2,4,6,- 纯内容号（不带货）的监控性价比一般。,Q43.2,pending
+main_brand,negative,不能替代官方佣金结算,3,3,6,|佣金结算|平台自动结算，官方担保|**不能结算佣金**|,Q44.1,supported
+official_tool,recommendation,官方履约与佣金结算,3,0,3,- 方案B：蝉妈妈拿到达人商务，私下沟通，谈好合作后，**回到精选联盟设置专属佣金链接**用于挂车和结算,Q44.1,model_opinion_only
+main_brand,negative,否认合作邀约能力,1,1,2,✅ 不能做：**不能直接发起合作邀约、不能设置佣金、不能成交结算**；查到达人后，你再去精选联盟/私信联系达人,Q44.2,incorrect_or_outdated
+main_brand,negative,仅自家经营时付费必要性低,3,3,6,### 👉 可以不用买蝉妈妈（只用罗盘足够）,Q45.1,pending
+main_brand,positive,外部市场竞品与素材调研,6,9,15,**罗盘不能替代蝉妈妈，二者是互补关系，不是二选一**：**内部自家数据、对账复盘看罗盘；全网爆款、竞品、达人、素材挖掘用蝉妈妈**。,Q45.1,model_opinion_only
+official_tool,recommendation,自有数据与官方核算,3,0,3,**罗盘不能替代蝉妈妈，二者是互补关系，不是二选一**：**内部自家数据、对账复盘看罗盘；全网爆款、竞品、达人、素材挖掘用蝉妈妈**。,Q45.1,model_opinion_only
+main_brand,negative,不能替代官方广告投放,3,3,6,核心：**看外部市场、竞品数据，帮你做投前调研、素材挖掘、多账户复盘**，**不能充值、不能新建千川广告计划**,Q46.1,supported
+official_tool,recommendation,广告执行与扣费,3,0,3,- 想花钱投广告、建计划、扣广告费 → **巨量千川（必须用）**,Q46.1,model_opinion_only
+matrix,positive,达人合作与CRM,0,1,1,- 达人库可直接筛选**可商务对接达人**，蝉圈圈CRM承接建联、寄样、合作跟进，偏向达人撮合业务,Q30.2,model_opinion_only
+matrix,positive,千川素材洞察与AI拉片,0,3,3,**千川直播投放、重点看素材+直播转化联动、要AI拉片拆解脚本、持续监控竞品上新素材 → 优先蝉妈妈创意；**,Q33.1,model_opinion_only
+matrix,negative,内容种草与舆情相对偏弱,0,2,2,4. **短板**：自媒体自然短视频、非带货内容分析弱；快手素材覆盖弱。,Q33.1,pending
+matrix,negative,会员权限限制,0,1,1,- 蝉妈妈创意是独立模块，要单独开创意权限，基础版蝉妈妈素材库功能有限；,Q33.1,pending
+main_brand,positive,千川素材洞察与AI拉片,0,4,4,**以千川投放、直播引流素材为主，要做竞品投流监控+AI拉片拆解，优先蝉妈妈；以短视频广告/达人种草素材、自媒体短视频内容分析为主，优先飞瓜（飞瓜易投）**。两者都是第三方估算数据，**不能替代千川后台真实消耗/ROI**，只用来做竞品素材洞察、创意参考。,Q33.2,model_opinion_only
+matrix,negative,跨平台受限,0,1,1,缺点：偏抖音电商，跨平台弱；素材预估消耗是估算，不是千川真实后台数据。,Q33.3,pending
+main_brand,positive,AI经营诊断,0,3,3,1. AI账号一键拆解：输入你的账号，自动生成经营诊断报告，直接指出问题：完播率低、转化率不足、流量结构问题、粉丝匹配度，附带可落地优化策略（比如3秒钩子、直播间品序调整、投流建议）,Q36.1,model_opinion_only
+main_brand,positive,自动监控与周期报告,0,3,3,2. **直播数据深度最强**：分钟级直播实时监控，直播流量拆解、商品转化、千川素材、历史直播长周期回溯，是电商MCN最核心需求；支持异常告警（直播间流量暴跌、GMV下滑）、自动日报周报，可推送到钉钉/飞书，减少人工盯盘。,Q43.1,pending
+official,recommendation,官方履约与佣金结算,0,3,3,"- **精选联盟（抖音官方）**
+  抖店内置功能，核心是**撮合+交易**。商家把商品上架、设置佣金；达人主动选品带货，商家也可以在达人广场筛选达人、**一键发起官方合作邀约**，成交后平台自动佣金结算、履约管理，是正式合作通道。",Q44.1,model_opinion_only
+official,recommendation,官方真实经营与核算,0,3,3,只看**自家店铺账号真实经营数据**，数据最准，用于对账、复盘、诊断自己的流量转化：,Q45.1,model_opinion_only
+official,recommendation,广告执行与扣费,0,3,3,**巨量千川：官方投放后台，花钱买流量、建计划、扣费、看自己账户真实成交数据（唯一可以真正投流的平台）**,Q46.1,model_opinion_only
+main_brand,positive,授权多账户投放复盘,0,3,3,1. 授权绑定你的千川账户，**多账户统一看板**，一屏汇总多个千川账户消耗、素材数据，批量对比素材好坏,Q46.1,pending
