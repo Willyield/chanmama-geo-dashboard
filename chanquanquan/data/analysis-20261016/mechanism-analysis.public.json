@@ -1,0 +1,238 @@
+{
+  "title": "数据变化背后的机制",
+  "standard_id": "CQQ-METRICS-2.0",
+  "facts": [
+    {
+      "title": "点名解释与主动选择没有同步改善",
+      "observation": "品牌解释准确率26.8%→38.0%；全部场景题品牌提及80/578→56/580。",
+      "interpretation": "被点名后的功能解释有所改善，但需求与品牌之间的连接不稳定。",
+      "nature": "数据事实与业务解释"
+    },
+    {
+      "title": "关键需求的可见品牌证据同时减少",
+      "observation": "五题30条答文，官方目录引用覆盖24→0，品牌提及29→0；第二轮仍有417个URL事件。",
+      "interpretation": "优先检查需求下的证据覆盖与采用；不等于官网被降权或未被检索。",
+      "nature": "已核实共变，因果未证实"
+    },
+    {
+      "title": "竞争包括解决方案类别",
+      "observation": "已读ROI、分销及效果追踪案例出现平台原生后台、BI、轻量数据库或链路追踪方案。",
+      "interpretation": "专业达人系统需要说明适用条件，而不只比较同类产品。两轮都存在方案分层，未全量编码总体变化。",
+      "nature": "案例事实与解释"
+    },
+    {
+      "title": "具体功能尚未稳定形成AI系统定位",
+      "observation": "定位准确率13.5%→6.7%，第二轮75/90条证据不足。",
+      "interpretation": "AI商务模块与整套AI驱动增长系统不同；证据不足不等于认定错误定位。",
+      "nature": "指标事实与解释"
+    },
+    {
+      "title": "出现品牌后也更少表达可核实价值",
+      "observation": "提及答文中优势命中111/221→79/186。",
+      "interpretation": "需要同时修复主动召回和能力到价值的连接，不能只增加品牌词。",
+      "nature": "派生诊断，不新增主指标"
+    },
+    {
+      "title": "份额上升不代表曝光增加",
+      "observation": "原固定推荐题集目标事件73→62，总候选事件254→192。",
+      "interpretation": "分母下降更快；固定名单未覆盖所有替代方案。",
+      "nature": "算术解释"
+    }
+  ],
+  "five_question_evidence": [
+    {
+      "question_id": "CQ-Q0016",
+      "theme": "达人CRM选型",
+      "round1": {
+        "answers": 6,
+        "brand_mentions": 6,
+        "official_directory_answers": 2,
+        "url_events": 111,
+        "sample_ids": [
+          "CQ-S-20260805-C1-Q0016",
+          "CQ-S-20260805-C2-Q0016",
+          "CQ-S-20260805-C3-Q0016",
+          "CQ-S-20260806-C1-Q0016",
+          "CQ-S-20260806-C2-Q0016",
+          "CQ-S-20260806-C3-Q0016"
+        ]
+      },
+      "round2": {
+        "answers": 6,
+        "brand_mentions": 0,
+        "official_directory_answers": 0,
+        "url_events": 96,
+        "sample_ids": [
+          "CQQ-R2-20261012-CORE-R01-CQ-Q0016",
+          "CQQ-R2-20261012-CORE-R02-CQ-Q0016",
+          "CQQ-R2-20261012-CORE-R03-CQ-Q0016",
+          "CQQ-R2-20261013-CORE-R01-CQ-Q0016",
+          "CQQ-R2-20261013-CORE-R02-CQ-Q0016",
+          "CQQ-R2-20261013-CORE-R03-CQ-Q0016"
+        ]
+      }
+    },
+    {
+      "question_id": "CQ-Q0053",
+      "theme": "团队绩效归因",
+      "round1": {
+        "answers": 6,
+        "brand_mentions": 6,
+        "official_directory_answers": 4,
+        "url_events": 124,
+        "sample_ids": [
+          "CQ-S-20260805-C1-Q0053",
+          "CQ-S-20260805-C2-Q0053",
+          "CQ-S-20260805-C3-Q0053",
+          "CQ-S-20260806-C1-Q0053",
+          "CQ-S-20260806-C2-Q0053",
+          "CQ-S-20260806-C3-Q0053"
+        ]
+      },
+      "round2": {
+        "answers": 6,
+        "brand_mentions": 0,
+        "official_directory_answers": 0,
+        "url_events": 92,
+        "sample_ids": [
+          "CQQ-R2-20261012-CORE-R01-CQ-Q0053",
+          "CQQ-R2-20261012-CORE-R02-CQ-Q0053",
+          "CQQ-R2-20261012-CORE-R03-CQ-Q0053",
+          "CQQ-R2-20261013-CORE-R01-CQ-Q0053",
+          "CQQ-R2-20261013-CORE-R02-CQ-Q0053",
+          "CQQ-R2-20261013-CORE-R03-CQ-Q0053"
+        ]
+      }
+    },
+    {
+      "question_id": "CQ-Q0057",
+      "theme": "老板看ROI",
+      "round1": {
+        "answers": 6,
+        "brand_mentions": 6,
+        "official_directory_answers": 6,
+        "url_events": 143,
+        "sample_ids": [
+          "CQ-S-20260805-C1-Q0057",
+          "CQ-S-20260805-C2-Q0057",
+          "CQ-S-20260805-C3-Q0057",
+          "CQ-S-20260806-C1-Q0057",
+          "CQ-S-20260806-C2-Q0057",
+          "CQ-S-20260806-C3-Q0057"
+        ]
+      },
+      "round2": {
+        "answers": 6,
+        "brand_mentions": 0,
+        "official_directory_answers": 0,
+        "url_events": 74,
+        "sample_ids": [
+          "CQQ-R2-20261012-CORE-R01-CQ-Q0057",
+          "CQQ-R2-20261012-CORE-R02-CQ-Q0057",
+          "CQQ-R2-20261012-CORE-R03-CQ-Q0057",
+          "CQQ-R2-20261013-CORE-R01-CQ-Q0057",
+          "CQQ-R2-20261013-CORE-R02-CQ-Q0057",
+          "CQQ-R2-20261013-CORE-R03-CQ-Q0057"
+        ]
+      }
+    },
+    {
+      "question_id": "CQ-Q0061",
+      "theme": "分销不用表格",
+      "round1": {
+        "answers": 6,
+        "brand_mentions": 6,
+        "official_directory_answers": 6,
+        "url_events": 119,
+        "sample_ids": [
+          "CQ-S-20260805-C1-Q0061",
+          "CQ-S-20260805-C2-Q0061",
+          "CQ-S-20260805-C3-Q0061",
+          "CQ-S-20260806-C1-Q0061",
+          "CQ-S-20260806-C2-Q0061",
+          "CQ-S-20260806-C3-Q0061"
+        ]
+      },
+      "round2": {
+        "answers": 6,
+        "brand_mentions": 0,
+        "official_directory_answers": 0,
+        "url_events": 64,
+        "sample_ids": [
+          "CQQ-R2-20261012-CORE-R01-CQ-Q0061",
+          "CQQ-R2-20261012-CORE-R02-CQ-Q0061",
+          "CQQ-R2-20261012-CORE-R03-CQ-Q0061",
+          "CQQ-R2-20261013-CORE-R01-CQ-Q0061",
+          "CQQ-R2-20261013-CORE-R02-CQ-Q0061",
+          "CQQ-R2-20261013-CORE-R03-CQ-Q0061"
+        ]
+      }
+    },
+    {
+      "question_id": "CQ-Q0096",
+      "theme": "达人及内容效果追踪",
+      "round1": {
+        "answers": 6,
+        "brand_mentions": 5,
+        "official_directory_answers": 6,
+        "url_events": 127,
+        "sample_ids": [
+          "CQ-S-20260805-C1-Q0096",
+          "CQ-S-20260805-C2-Q0096",
+          "CQ-S-20260805-C3-Q0096",
+          "CQ-S-20260806-C1-Q0096",
+          "CQ-S-20260806-C2-Q0096",
+          "CQ-S-20260806-C3-Q0096"
+        ]
+      },
+      "round2": {
+        "answers": 6,
+        "brand_mentions": 0,
+        "official_directory_answers": 0,
+        "url_events": 91,
+        "sample_ids": [
+          "CQQ-R2-20261012-CORE-R01-CQ-Q0096",
+          "CQQ-R2-20261012-CORE-R02-CQ-Q0096",
+          "CQQ-R2-20261012-CORE-R03-CQ-Q0096",
+          "CQQ-R2-20261013-CORE-R01-CQ-Q0096",
+          "CQQ-R2-20261013-CORE-R02-CQ-Q0096",
+          "CQQ-R2-20261013-CORE-R03-CQ-Q0096"
+        ]
+      }
+    }
+  ],
+  "scene_official_cross_diagnostic": [
+    {
+      "round": 1,
+      "official_directory_visible": true,
+      "answers": 99,
+      "brand_mentions": 42
+    },
+    {
+      "round": 1,
+      "official_directory_visible": false,
+      "answers": 479,
+      "brand_mentions": 38
+    },
+    {
+      "round": 2,
+      "official_directory_visible": true,
+      "answers": 87,
+      "brand_mentions": 22
+    },
+    {
+      "round": 2,
+      "official_directory_visible": false,
+      "answers": 493,
+      "brand_mentions": 34
+    }
+  ],
+  "limits": [
+    "第一轮网页渠道、第二轮API渠道，日期及模型条件未控制。",
+    "不能证明豆包修改官方源权重、第三方降权或商业推荐政策。",
+    "当前两轮均为CQQ-METRICS-2.0；旧版到新版的修订不当作品牌表现变化。",
+    "有官方引用不证明正文采用了其品牌主张；417个URL事件对应内容未逐个核验。",
+    "早期部分正面主张仍待核，不将其全部当成正确优势或为恢复数值而传播。"
+  ],
+  "next_diagnostic": "核验已有来源是否提及品牌、支持需求，以及正文是否采用；尚未完成逐链接内容核对。"
+}
