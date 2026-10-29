@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-29",
+  "rows": 1541,
+  "uniqueLinks": 1078,
+  "retainedLinks": 966,
+  "addedLinks": 112,
+  "removedLinks": 0,
+  "rowsWithoutLinks": 463,
+  "publishedRowsWithoutLinks": 335,
+  "ownedMatches": [
+    {
+      "round": 1,
+      "events": 0,
+      "denominator": 7499
+    },
+    {
+      "round": 2,
+      "events": 1,
+      "denominator": 8497
+    }
+  ],
+  "newLinksMatchedEvents": 0,
+  "identityLinked": 976,
+  "publicPageRefreshComplete": false,
+  "identityEvidenceDates": [
+    "2026-10-09",
+    "2026-10-16",
+    "2026-10-29"
+  ],
+  "unknownBodyTypeEvents": 9,
+  "supplement": {
+    "douyinWorks": 9,
+    "douyinSchoolPages": 2,
+    "otherSocial": 0
+  },
+  "limitations": [
+    "1,078个链接已全表匹配；976关联已确认身份、102作品作者待核，不表示所有公开页本次重新访问。",
+    "第二轮归属按公开证据和用户范围确认闭合：自有1、非自有308；65内容缺稳定作者ID。正文类型未知9次/8内容。",
+    "12个去重账号不重复累计；什么值得买排除当前自有，整体引用R1 4次/R2 2次仍保留，不改写历史所有权。",
+    "新正文证据不倒推采样日可访问性；曝光时长不等，不推断优化因果。"
+  ],
+  "publicationLinkAuthorPending": 102,
+  "confirmedDedupAccounts": 12,
+  "unknownBodyTypeContents": 8,
+  "authorIdMissingContents": 65,
+  "ownershipPendingEvents": {
+    "R1": 46,
+    "R2": 0
+  },
+  "threeAccountAuthorCheck": {
+    "total": 90,
+    "matched": 66,
+    "pending": 24,
+    "bilibili": [
+      49,
+      49
+    ],
+    "baijiahao": [
+      16,
+      16
+    ],
+    "zhihu": [
+      1,
+      25
+    ]
+  }
+}

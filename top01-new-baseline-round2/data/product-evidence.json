@@ -1,0 +1,367 @@
+{
+  "date": "2026-10-29",
+  "stage": "补证增量，不重判正式回答",
+  "claimCount": 33,
+  "claims": [
+    {
+      "id": "AD01",
+      "status": "supported_product_statement",
+      "conclusion": "创意内容管理中心宣称支持多账户数据回收及绩效分析；具体千川字段仍未知",
+      "quote": "多账户数据回收分析，自动呈现素材投放效果和绩效考核数据",
+      "url": "https://cy.chanmama.com/",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "AD02",
+      "status": "supported_historical_material",
+      "conclusion": "采样前资料已有多账户追踪；不能据此认证CPC/CPM/ROI/计划广告组",
+      "quote": "多账户投放数据回收：支持多账户投放数据追踪，第一时间发现潜力账户，优化投放计划",
+      "url": null,
+      "observed_date": "此前冻结材料，本轮回读",
+      "validity": "产品资料主张；沿用原材料时间边界",
+      "executed_product_feature": false
+    },
+    {
+      "id": "AD03",
+      "status": "supported_historical_material",
+      "conclusion": "竞品素材有跑量、预估播放、完播及互动画像；不是自有千川真实消耗的同义字段",
+      "quote": "爆量素材拆解：通过跑量分、投放天数、近3日预估播放量、5秒完播率、点赞/评论/收藏/受众画像",
+      "url": null,
+      "observed_date": "此前冻结材料，本轮回读",
+      "validity": "产品资料主张；沿用原材料时间边界",
+      "executed_product_feature": false
+    },
+    {
+      "id": "AD04",
+      "status": "supported_historical_material",
+      "conclusion": "产品资料支持素材复盘涉及消耗点击转化；未说明每个指标的数据源和粒度",
+      "quote": "结合消耗、点击、转化和趋势",
+      "url": null,
+      "observed_date": "此前冻结材料，本轮回读",
+      "validity": "产品资料主张；沿用原材料时间边界",
+      "executed_product_feature": false
+    },
+    {
+      "id": "MON01",
+      "status": "supported_historical_material",
+      "conclusion": "上新及销量变化监控、主动推送有资料支持；用户自定义销量阈值和降价规则仍未获证",
+      "quote": "持续监控竞品上新、销量变化、达人合作、直播动作、跑量素材，主动推送重点变化",
+      "url": null,
+      "observed_date": "此前冻结材料，本轮回读",
+      "validity": "产品资料主张；沿用原材料时间边界",
+      "executed_product_feature": false
+    },
+    {
+      "id": "MON02",
+      "status": "supported_historical_material",
+      "conclusion": "明确支持的是素材爆量阈值及三类通知，不能挪用到商品降价阈值",
+      "quote": "同行爆量监测：实时监测目标对象素材异动，一旦触发爆量域值，立即自动推送通知到钉钉/飞书/企业微信",
+      "url": null,
+      "observed_date": "此前冻结材料，本轮回读",
+      "validity": "产品资料主张；沿用原材料时间边界",
+      "executed_product_feature": false
+    },
+    {
+      "id": "MON03",
+      "status": "documented_path_not_executed",
+      "conclusion": "资料记载素材监控配置路径；本轮未实际创建任务",
+      "quote": "入口「创意-爆量监测/素材监控」；路径：添加竞品/品牌/小店/达人/关键词 -> 设阈值 -> 开启钉钉/飞书/企微推送",
+      "url": null,
+      "observed_date": "此前冻结材料，本轮回读",
+      "validity": "产品资料主张；沿用原材料时间边界",
+      "executed_product_feature": false
+    },
+    {
+      "id": "PUSH01",
+      "status": "supported_historical_material",
+      "conclusion": "定时报表及飞书钉钉问答有依据；不证明任意机器人Webhook字段与操作链路",
+      "quote": "汇总店铺关键经营数据，定时生成日报、周报、经营摘要，支持飞书/钉钉随时追问",
+      "url": null,
+      "observed_date": "此前冻结材料，本轮回读",
+      "validity": "产品资料主张；沿用原材料时间边界",
+      "executed_product_feature": false
+    },
+    {
+      "id": "DATA01",
+      "status": "supported_current_official_statement",
+      "conclusion": "Work官方明确数据接入方向；逐平台连接器、OAuth授权范围和刷新频率仍待证",
+      "quote": "蝉妈妈 Work 可接入蝉妈妈行业数据、千川素材、电商店铺、广告后台以及企业内部业务数据",
+      "url": "https://work.chanmama.com/",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "DATA02",
+      "status": "supported_current_official_statement",
+      "conclusion": "公开估算与平台授权、内部数据必须分开；不能默认竞品可见后台真实字段",
+      "quote": "汇聚行业公开数据、平台授权数据与企业内部经营数据",
+      "url": "https://work.chanmama.com/",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "DATA03",
+      "status": "supported_current_official_statement",
+      "conclusion": "Work具备周期自动执行的产品声明；非本机实测",
+      "quote": "具备任务理解、计划拆解、工具调用、文件处理、周期自动执行能力",
+      "url": "https://work.chanmama.com/",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "API01",
+      "status": "supported_current_official_statement",
+      "conclusion": "商业API为数据定制/接入合作路线，未公开逐接口合同",
+      "quote": "01. 数据定制和 API 服务",
+      "url": "https://www.chanmama.com/open-platform/",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "API02",
+      "status": "supported_current_official_statement",
+      "conclusion": "定制监测覆盖价格数据；不能推出原生降价阈值和通知配置",
+      "quote": "跟踪竞品上新、价格、内容投放与带货表现",
+      "url": "https://www.chanmama.com/open-platform/",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "API03",
+      "status": "supported_current_official_statement",
+      "conclusion": "商业定制宣传覆盖字幕脚本与表现数据；参数、返回schema及SLA未知",
+      "quote": "按行业类目 / 关键词等需求获取爆款视频、字幕脚本与表现数据",
+      "url": "https://www.chanmama.com/open-platform/",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "SK01",
+      "status": "supported_current_official_statement",
+      "conclusion": "Skills会员门槛明确为企业版及以上；不能外推商业API同条件",
+      "quote": "Skill仅支持蝉妈妈企业版及以上版本的会员使用。",
+      "url": "https://ai.chanmama.com/skills",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "SK02",
+      "status": "supported_current_official_statement",
+      "conclusion": "Skills数据权限沿数据会员，不代表积分免付",
+      "quote": "Skill 可查询的数据权限范围与会员一致。",
+      "url": "https://ai.chanmama.com/skills",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "SK03",
+      "status": "documented_path_not_executed",
+      "conclusion": "官方页面给出AI个人中心CMM_API_KEY路径；未读取密钥",
+      "quote": "进入个人中心生成密钥",
+      "url": "https://ai.chanmama.com/skills",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "SK04",
+      "status": "documented_path_not_executed",
+      "conclusion": "当前安装指南的准确命令；只取证，未执行",
+      "quote": "npx -y skills add https://cdn-cmm-ai-open.chanmama.com --skill -y",
+      "url": "https://ai.chanmama.com/skill-guide.md",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "SK05",
+      "status": "documented_path_not_executed",
+      "conclusion": "Skills环境变量和取钥入口已明确；商业API AppKey/AppSecret/签名未认证",
+      "quote": "CMM_API_KEY获取方式，前往蝉妈妈AI-个人中心获得 https://ai.chanmama.com/setting",
+      "url": "https://ai.chanmama.com/skill-guide.md",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "SK06",
+      "status": "supported_current_official_statement",
+      "conclusion": "基础检索0积分/次，仅返回ID和名称，不代表详情查询免费",
+      "quote": "商品、达人、小店、品牌、直播间、视频关键词搜索，仅返回蝉妈妈 ID 与名称\t0积分/次",
+      "url": "https://ai.chanmama.com/skills",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "SK07",
+      "status": "supported_current_official_statement",
+      "conclusion": "商品模块列评论明细和成交画像；不是全部逐字段schema",
+      "quote": "评论明细和成交画像",
+      "url": "https://ai.chanmama.com/skills",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "SK08",
+      "status": "supported_current_official_statement",
+      "conclusion": "直播模块列过程信息与高光讲解；不承诺任意视频片段下载",
+      "quote": "过程信息和高光讲解",
+      "url": "https://ai.chanmama.com/skills",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "SK09",
+      "status": "supported_current_official_statement",
+      "conclusion": "Skills按实际数据内容消耗AI积分；未取得QPS/日额度/积分人民币兑换合同",
+      "quote": "平台根据 Agent 实际调用数据查询的内容，消耗对应的 AI 积分",
+      "url": "https://ai.chanmama.com/skills",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "PKG01",
+      "status": "supported_current_official_statement",
+      "conclusion": "创意四模块可按需购买，不等于购买任意模块便包含蝉镜",
+      "quote": "业务板块按需购买，不花冤枉钱",
+      "url": "https://cy.chanmama.com/",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "PKG02",
+      "status": "supported_current_official_statement",
+      "conclusion": "创意官网FAQ确认模块组合订购；共享套餐未获证",
+      "quote": "您可以根据实际业务需求选择所需模块。只购买您真正需要的",
+      "url": "https://cy.chanmama.com/",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "PKG03",
+      "status": "supported_current_official_statement",
+      "conclusion": "蝉镜存在独立会员订购页和周期；不能据此断言从无联合套餐",
+      "quote": "会员订购周期有多长？",
+      "url": "https://www.chanjing.cc/member.html",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "PKG04",
+      "status": "supported_current_official_statement",
+      "conclusion": "蝉镜会员以蝉豆列额度，不同于Skills AI积分；未证实互通",
+      "quote": "2000 蝉豆每月",
+      "url": "https://www.chanjing.cc/member.html",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "ID01",
+      "status": "supported_current_official_statement",
+      "conclusion": "蝉管家是具独立官网与定位的产品，不宜仅按括号自动吞并为主站别名",
+      "quote": "直播运营管理，用蝉管家",
+      "url": "https://www.changuanjia.com/",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "ID02",
+      "status": "supported_current_official_statement",
+      "conclusion": "官网列独立运营主体；产品矩阵同集团关系不等于同一产品或同会员",
+      "quote": "蝉管家，厦门立马耀网络科技有限公司",
+      "url": "https://www.changuanjia.com/",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "ID03",
+      "status": "supported_current_official_statement",
+      "conclusion": "当前官方工作台多账户/数据管理能力有据；巨量纵横历史别名仍须权威对应",
+      "quote": "巨量引擎工作台实现了巨量引擎商业生态内的账户、数据和资产互联互通",
+      "url": "https://business.oceanengine.com/brand/index",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "ID04",
+      "status": "supported_current_official_statement",
+      "conclusion": "该工作台为平台官方产品；不能因此声称已核完所有巨量纵横提及",
+      "quote": "北京巨量引擎网络技术有限公司",
+      "url": "https://business.oceanengine.com/brand/index",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "ID05",
+      "status": "supported_current_official_statement",
+      "conclusion": "Microsoft官网确认为电子表格工具；候选资格仍按原答是否独立推荐判定",
+      "quote": "Excel",
+      "url": "https://www.microsoft.com/zh-cn/microsoft-365/excel",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    },
+    {
+      "id": "ID06",
+      "status": "supported_current_official_statement",
+      "conclusion": "官方工作台列巨量本地推；不能将原答中的投放渠道枚举自动算作独立推荐",
+      "quote": "巨量本地推",
+      "url": "https://business.oceanengine.com/brand/index",
+      "observed_date": "2026-10-29",
+      "validity": "本次当前公开页面观察；不自动倒推至采样日",
+      "executed_product_feature": false
+    }
+  ],
+  "accountConfirmation": {
+    "confirmed_account_count": 12,
+    "identity_associated_links": 976,
+    "publication_link_author_pending": 102,
+    "identity_components": [
+      850,
+      60,
+      66
+    ],
+    "three_account_group_links": 90,
+    "three_account_group_author_matched": 66,
+    "three_account_group_author_pending": 24,
+    "R1_R2_frozen_owned_event_counts": [
+      0,
+      1
+    ],
+    "official_citation_counts_recomputed": false,
+    "R2_ownership_pending_events": 0,
+    "R2_author_id_missing_contents": 65,
+    "R2_body_type_unknown_events": 9,
+    "R2_body_type_unknown_contents": 8,
+    "R1_ownership_pending_events": 46,
+    "R1_ownership_pending_contents": 21,
+    "smzdm_excluded_current_owned": true
+  },
+  "formalMetricsChanged": false,
+  "ownedCitationEvents": [
+    0,
+    1
+  ]
+}
