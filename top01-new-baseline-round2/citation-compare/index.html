@@ -1,0 +1,170 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>蝉妈妈 GEO 新基线第二轮 · 两轮引用源对比</title><link rel="icon" href="../../assets/chanmama-logo.png"><link rel="stylesheet" href="../../assets/platform-shell.css"><style>
+    :root {
+      --ink: #151f2a;
+      --muted: #64748b;
+      --line: #cbd5e1;
+      --line-soft: #dbe3ec;
+      --paper: #ffffff;
+      --surface: #f4f7fa;
+      --surface-strong: #eaf0f5;
+      --blue: #1e5fb8;
+      --blue-soft: #dce9f8;
+      --teal: #16857a;
+      --amber: #9a6700;
+      --red: #b84a42;
+      --sans: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+      --mono: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--surface); font-family: var(--sans); line-height: 1.6; }
+    button, input, select { font: inherit; }
+    a { color: var(--blue); }
+    .page-bar { background: var(--paper); border-bottom: 1px solid var(--line); }
+    .page-bar-inner { width: min(1900px, calc(100% - 64px)); margin: auto; padding: 14px 0; color: var(--muted); font-size: 14px; }
+    .page-bar a { text-decoration: none; }
+    .hero { background: var(--paper); border-bottom: 1px solid var(--line); }
+    .hero-inner { width: min(1500px, calc(100% - 64px)); margin: auto; padding: 54px 0 38px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
+    .eyebrow, .nav-label, .section-number { color: var(--blue); font: 700 13px/1.3 var(--mono); text-transform: uppercase; }
+    h1 { max-width: 1100px; margin: 12px 0 8px; font-size: clamp(34px, 4vw, 62px); line-height: 1.12; letter-spacing: 0; }
+    .hero-meta { margin: 0; color: var(--muted); font-size: 17px; }
+    .stage-badge { display: inline-flex; align-items: center; min-height: 38px; padding: 7px 12px; border: 1px solid #8daed1; color: #174b86; background: #edf5ff; font-weight: 700; }
+    .hero-actions { display: flex; gap: 10px; }
+    .button { min-height: 44px; padding: 9px 15px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); cursor: pointer; font-weight: 700; text-decoration: none; }
+    .button.primary { border-color: var(--ink); background: var(--ink); color: #fff; }
+    .status-band { border-bottom: 1px solid var(--line); background: var(--surface-strong); }
+    .status-inner { width: min(1500px, calc(100% - 64px)); margin: auto; min-height: 54px; display: flex; align-items: center; gap: 24px; color: var(--muted); font: 13px/1.4 var(--mono); flex-wrap: wrap; }
+    .status-item::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 9px; background: var(--teal); }
+    .layout { width: min(1500px, calc(100% - 64px)); margin: 0 auto; display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 46px; padding: 38px 0 72px; }
+    .layout > * { min-width: 0; }
+    .side-nav { position: sticky; top: 18px; align-self: start; }
+    .side-nav .nav-label { margin: 0 0 10px; color: var(--muted); }
+    .side-nav a { display: block; min-height: 42px; padding: 9px 12px; border-left: 2px solid var(--line); color: var(--muted); text-decoration: none; }
+    .side-nav a:hover, .side-nav a.active { border-left-color: var(--blue); color: var(--ink); background: var(--blue-soft); font-weight: 700; }
+    .report-section { scroll-margin-top: 20px; padding: 0 0 52px; margin: 0 0 50px; border-bottom: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 460px); gap: 36px; align-items: end; margin-bottom: 24px; }
+    .section-head h2 { margin: 8px 0 0; font-size: 30px; line-height: 1.2; }
+    .section-note { margin: 0; color: var(--muted); }
+    .evidence-strip { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); background: var(--paper); }
+    .evidence-cell { min-height: 94px; padding: 18px; border-top: 4px solid var(--teal); }
+    .evidence-cell + .evidence-cell { border-left: 1px solid var(--line); }
+    .evidence-cell.medium { border-top-color: var(--amber); }
+    .evidence-cell.low { border-top-color: var(--red); }
+    .evidence-cell strong { display: block; margin-bottom: 4px; }
+    .evidence-cell span { color: var(--muted); font-size: 14px; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+    .kpi { min-height: 154px; padding: 20px; border: 1px solid var(--line-soft); background: var(--paper); }
+    .kpi-label { min-height: 44px; color: var(--muted); font-weight: 700; }
+    .kpi-value { display: block; margin: 2px 0; font: 700 38px/1.1 var(--sans); font-variant-numeric: tabular-nums; }
+    .kpi-value.blue { color: var(--blue); }
+    .kpi-meta { color: var(--muted); font-size: 14px; }
+    .progress { height: 4px; margin-top: 12px; background: #e5ebf1; }
+    .progress span { display: block; height: 100%; background: var(--blue); }
+    .conclusion { display: grid; grid-template-columns: 210px 1fr; margin-top: 18px; border: 1px solid #9db0c3; background: var(--paper); }
+    .conclusion-label { padding: 20px; background: var(--ink); color: white; font-weight: 700; }
+    .conclusion-text { margin: 0; padding: 20px 24px; font-size: 18px; font-weight: 700; }
+    .coverage-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); background: var(--paper); }
+    .coverage-cell { min-height: 110px; padding: 18px; }
+    .coverage-cell + .coverage-cell { border-left: 1px solid var(--line); }
+    .coverage-cell span { display: block; color: var(--muted); font-size: 13px; }
+    .coverage-cell strong { display: block; margin-top: 8px; font-size: 24px; }
+    .notice { margin-top: 18px; padding: 18px 20px; border-left: 4px solid var(--amber); background: #fffaf0; color: #624717; }
+    .panel { padding: 20px; border: 1px solid var(--line); background: var(--paper); }
+    .panel h3 { margin: 0 0 14px; font-size: 18px; }
+    .method-note { margin: 0 0 14px; padding: 14px 16px; border-left: 4px solid var(--blue); background: #f2f7fd; }
+    .method-note > strong { display: block; margin-bottom: 8px; color: #174b86; }
+    .method-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 24px; color: #475569; font-size: 13px; }
+    .method-grid p { margin: 0; }
+    .method-grid b { color: var(--ink); }
+    .comparison-overview-table { min-width: 1120px; }
+    .metric-stack { display: grid; justify-items: end; gap: 2px; min-width: 112px; }
+    .metric-primary { color: var(--ink); font: 700 14px/1.35 var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .metric-secondary { color: var(--muted); font-size: 12px; white-space: nowrap; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .bar-list { display: grid; gap: 13px; }
+    .bar-row { display: grid; grid-template-columns: 150px minmax(120px, 1fr) 72px; gap: 12px; align-items: center; }
+    .bar-track { height: 12px; background: #e6ebf0; }
+    .bar-fill { height: 100%; background: var(--blue); }
+    .bar-value, .numeric { text-align: right; font-variant-numeric: tabular-nums; }
+    main, .report-section, .panel, .table-wrap { min-width: 0; }
+    .table-wrap { width: 100%; max-width: 100%; overflow-x: auto; border: 1px solid var(--line); background: var(--paper); }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { padding: 12px 13px; border-bottom: 1px solid var(--line-soft); text-align: left; vertical-align: top; }
+    th { background: var(--surface-strong); color: #475569; white-space: nowrap; }
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: #f8fbff; }
+    .source-link { display: inline-block; max-width: 560px; overflow-wrap: anywhere; }
+    .source-url-cell { min-width: 360px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin: 0 0 14px; }
+    .filter { display: grid; gap: 5px; min-width: 140px; }
+    .filter.grow { flex: 1 1 320px; }
+    .filter label { color: var(--muted); font-size: 13px; }
+    .filter input, .filter select { min-height: 40px; padding: 8px 10px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); }
+    .table-summary { display: flex; justify-content: space-between; gap: 18px; margin: 10px 0; color: var(--muted); font-size: 14px; }
+    .pagination { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-top: 12px; }
+    .pagination button { min-width: 40px; min-height: 38px; border: 1px solid var(--line); background: var(--paper); cursor: pointer; }
+    .pagination button:disabled { opacity: .45; cursor: default; }
+    .answer-list { border-top: 1px solid var(--line); }
+    .answer-item { display: grid; grid-template-columns: 46px minmax(0, 1fr) 96px; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .answer-index { font: 700 14px/1.5 var(--mono); color: var(--blue); }
+    .answer-item h3 { margin: 0 0 5px; font-size: 17px; }
+    .answer-item p { margin: 0; color: #475569; }
+    .grade { align-self: start; padding: 5px 8px; border: 1px solid currentColor; text-align: center; font-size: 12px; font-weight: 700; }
+    .grade.high { color: var(--teal); }
+    .grade.medium { color: var(--amber); }
+    .grade.low { color: var(--red); }
+    .quality-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); background: var(--paper); }
+    .quality-cell { min-height: 98px; padding: 18px; }
+    .quality-cell + .quality-cell { border-left: 1px solid var(--line); }
+    .quality-cell span { display: block; color: var(--muted); font-size: 13px; }
+    .quality-cell strong { display: block; margin-top: 7px; color: var(--teal); font: 700 18px/1.4 var(--mono); }
+    .limits { margin: 0; padding-left: 20px; }
+    .limits li + li { margin-top: 8px; }
+    .download-list { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); }
+    .download-item { display: flex; justify-content: space-between; gap: 16px; padding: 17px 0; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+    .download-item:nth-child(odd) { padding-right: 24px; }
+    .download-item:nth-child(even) { padding-left: 24px; border-left: 1px solid var(--line); }
+    .download-name { display: block; font-weight: 700; }
+    .download-meta { display: block; color: var(--muted); font-size: 13px; }
+    .download-ext { font: 700 12px/1.5 var(--mono); color: var(--blue); }
+    footer { padding: 24px 32px; border-top: 1px solid var(--line); background: var(--paper); color: var(--muted); text-align: center; font-size: 13px; }
+    .back-top { position: fixed; right: 22px; bottom: 22px; width: 42px; height: 42px; border: 1px solid var(--ink); background: var(--ink); color: white; cursor: pointer; opacity: 0; pointer-events: none; }
+    .back-top.visible { opacity: 1; pointer-events: auto; }
+    .empty-row { padding: 24px; color: var(--muted); text-align: center; }
+    @media (max-width: 980px) {
+      .hero-inner, .section-head { grid-template-columns: 1fr; }
+      .layout { grid-template-columns: 1fr; }
+      .side-nav { position: static; display: flex; width: 100%; max-width: 100%; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+      .side-nav::-webkit-scrollbar { display: none; }
+      .side-nav .nav-label { display: none; }
+      .side-nav a { flex: 0 0 auto; border-left: 0; border-bottom: 2px solid var(--line); }
+      .kpi-grid, .coverage-grid { grid-template-columns: repeat(2, 1fr); }
+      .evidence-strip, .quality-grid { grid-template-columns: 1fr; }
+      .evidence-cell + .evidence-cell, .quality-cell + .quality-cell { border-left: 0; border-top: 1px solid var(--line); }
+      .two-col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 1200px) and (min-width: 981px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .page-bar-inner, .hero-inner, .status-inner, .layout { width: min(100% - 28px, 1500px); }
+      .hero-inner { padding: 34px 0 28px; }
+      h1 { font-size: 34px; }
+      .hero-actions { width: 100%; }
+      .hero-actions .button { flex: 1; text-align: center; }
+      .kpi-grid, .coverage-grid { grid-template-columns: 1fr; }
+      .coverage-cell + .coverage-cell { border-left: 0; border-top: 1px solid var(--line); }
+      .conclusion { grid-template-columns: 1fr; }
+      .bar-row { grid-template-columns: 110px minmax(80px, 1fr) 64px; }
+      .answer-item { grid-template-columns: 34px minmax(0, 1fr); }
+      .answer-item .grade { grid-column: 2; justify-self: start; }
+      .download-list { grid-template-columns: 1fr; }
+      .download-item:nth-child(odd), .download-item:nth-child(even) { padding-left: 0; padding-right: 0; border-left: 0; }
+      .method-grid { grid-template-columns: 1fr; }
+    }
+    @media print {
+      .page-bar, .hero-actions, .side-nav, .filters, .pagination, .back-top { display: none !important; }
+      .layout { display: block; width: 100%; padding: 20px; }
+      .report-section { break-inside: avoid; }
+    }
+  </style><link rel="stylesheet" href="../reader.css"><script defer src="../../assets/platform-shell.js" data-root="../../" data-section="sampling" data-label="蝉妈妈 GEO 新基线第二轮 · 两轮引用源对比"></script><script type="module" src="../reader.js"></script><link rel="stylesheet" href="../report-library.css"><script type="module" src="../report-library.js"></script><script type="module" src="../structured-details.js"></script></head><body data-view="citation-compare"><header class="hero"><div class="hero-inner"><div><div class="eyebrow">CHANMAMA GEO · SOURCE RESEARCH</div><h1>蝉妈妈 GEO 新基线第二轮 · 两轮引用源对比</h1><p class="hero-meta">2026年10月28—29日 · 豆包 API / ai_search</p><p class="stage-badge">第二轮588条有效 · 新基线两轮对比</p></div></div></header><div class="status-band"><div class="status-inner"><span class="status-item">98道问题</span><span class="status-item">三专项齐备，保留未知</span></div></div><nav class="page-tabs" aria-label="本轮仪表盘"><a class="tab" href="../">数据仪表盘</a><a class="tab" href="../citations/">引用源仪表盘</a><a class="tab" href="../compare/">两轮数据对比</a><a class="tab" href="../citation-compare/" aria-current="page">两轮引用源对比</a><a class="tab" href="../effective-first/">有效首推专题</a></nav><div id="loadStatus" class="load-status" role="status">数据加载中…</div><div class="layout"><aside class="side-nav" aria-label="本页目录"><p class="nav-label">本轮引用研究</p><a href="#overview">来源总览</a><a href="#source-urls">来源明细</a><a href="#limits">限制</a><a href="#report">完整报告</a><a href="#downloads">下载</a></aside><main><div class="round-overview"><article class="kpi"><div class="kpi-label">第二轮有效回答</div><strong class="kpi-value">588 / 588</strong><div class="kpi-meta">98题 · 两个日次 · 每题3遍</div></article><article class="kpi"><div class="kpi-label">工具有效首推</div><strong class="kpi-value">63.89%</strong><div class="kpi-meta">84/108 → 69/108 · −13.89个百分点</div></article><article class="kpi"><div class="kpi-label">业务有效首推</div><strong class="kpi-value">37.50%</strong><div class="kpi-meta">26/64 → 24/64 · −3.13个百分点</div></article><article class="kpi"><div class="kpi-label">原始来源卡</div><strong class="kpi-value">14,126</strong><div class="kpi-meta">9,747张有URL · 4,379张无URL</div></article></div><nav class="section-index" aria-label="本页内容"><a href="#questions">逐题原答</a><a href="#reportLibrary">完整数据分析</a><a href="#limits">限制</a><a href="#downloads">下载</a></nav><section id="source-comparison" class="report-section"><div class="section-head"><div><h2>两轮引用源变化</h2></div><p class="section-note">自有下限与整体分列；不把归属未核误称实际损失，具体访问和分类缺口见完整专项。</p></div><div id="twoDaySources"></div></section><section id="overview" class="report-section"><div class="section-head"><div><h2>三类引用源总览</h2></div><p class="section-note">整体、自有与归属未知分开。覆盖回答不能跨渠道直接相加；原网址、规范网址和作品键按各自分母统计。</p></div><label class="filter">来源范围<select id="sourceChannel"><option value="all">全部专项</option><option value="官网">官网</option><option value="其他社媒">其他社媒</option><option value="抖音">抖音</option></select></label><div id="sourceMetrics" class="kpi-grid"></div><div id="scopeComparison"></div></section><section id="source-urls" class="report-section"><div class="section-head"><div><h2>第二轮来源网址与命中问题</h2></div><p class="section-note">936个已确认官网网址、149个其他社媒内容键、1,099个抖音作品；全部原始来源卡片在逐题原答中保留。</p></div><button class="button" id="loadUrls" type="button">查看完整专项网址清单</button><div id="urlsControls" hidden><div class="filters"><label class="filter grow">网址、标题或账号<input id="sourceSearch" type="search"></label><label class="filter">归属<select id="sourceOwnership"><option value="">全部归属</option><option value="owned">已确认自有</option><option value="unknown">归属待核或未知</option><option value="other">其他已确认范围</option></select></label><label class="filter">访问状态<select id="sourceVerification"><option value="">全部状态</option><option value="unvisited">未访问</option><option value="unknown">已访问但未知</option><option value="known">已读或已核证据</option></select></label><label class="filter">内容形式<select id="sourceFormat"><option value="">全部形式</option></select></label><label class="filter">每页<select id="sourceSize"><option>25</option><option>50</option><option>100</option></select></label></div><p id="sourceCount"></p><div class="table-wrap"><table><thead><tr><th scope="col">网址 / 标题</th><th scope="col">渠道 / 归属</th><th scope="col">形式 / 账号</th><th scope="col">引用 / 回答</th><th scope="col">核验状态 / 问题</th></tr></thead><tbody id="sourceTable"></tbody></table></div><div class="pagination"><button id="sourcePrev" type="button" aria-label="上一页">‹</button><span id="sourcePage" aria-live="polite"></span><button id="sourceNext" type="button" aria-label="下一页">›</button></div></div></section><section id="reportLibrary" class="report-section"><div class="section-head"><div><h2>完整数据与分析</h2></div><p class="section-note">报告中的数据表、解释和限制按章节直接展开；长表分页且可逐表下载。全部原始报告和原答仍可单独查阅。</p></div><div id="reportModuleTabs" class="report-module-tabs"></div><label class="filter">搜索报告章节、指标或证据<input id="reportSearch" type="search" placeholder="如：错误、待核、主题、形式、平台、账号、敏感性"></label><p id="reportCoverage" aria-live="polite"></p><div class="report-library-layout"><nav id="reportOutline" class="report-outline" aria-label="报告章节目录"></nav><div id="reportChapters"></div></div></section><section id="questions" class="report-section"><div class="section-head"><div><h2>逐问题结果与原始回答</h2></div><p class="section-note">98题，每轮两日各3次；两轮12条原始记录按需加载。第一轮10月15日匹配达人粉丝问题第2次保留原正式失败，不被补答替代。</p></div><div class="filters"><label class="filter grow">问题关键词<input id="questionSearch" type="search" placeholder="搜索实际问题"></label><label class="filter">问题分类<select id="questionGroup"><option value="">全部分类</option><option>品牌认知型</option><option>品牌对比型</option><option>工具选型型</option><option>业务场景型</option><option>长尾流量词型</option></select></label></div><p id="questionCount" aria-live="polite"></p><div class="table-wrap"><table><thead><tr><th scope="col">问题</th><th scope="col">分类</th><th scope="col">正式回答</th><th scope="col">原答与来源</th></tr></thead><tbody id="questionTable"></tbody></table></div><div class="pagination"><button id="questionPrev" type="button" aria-label="上一页">‹</button><span id="questionPage" aria-live="polite"></span><button id="questionNext" type="button" aria-label="下一页">›</button></div><div id="questionDetail" aria-live="polite"></div></section><section id="limits" class="report-section"><div class="section-head"><div><h2>缺口与使用限制</h2></div><p class="section-note"></p></div><div class="table-wrap"><table><thead><tr><th scope="col">范围</th><th scope="col">事实与限制</th></tr></thead><tbody><tr><td>正式回答</td><td>每轮588个正式位置；第一轮587条实质回答＋1个原失败，第二轮588有效。独立补答不填第一轮正式失败。</td></tr><tr><td>认知与业务承接</td><td>第二轮25条认知待核、20条业务承接待核；待核不当错误、不填0。</td></tr><tr><td>官网与作者身份</td><td>官网域托管社区内容不代表答主官方身份已核；首轮页面事实复用不证明本轮正文未变。域/主体归属待核单列。</td></tr><tr><td>社媒与抖音</td><td>本轮新增内容未访问；抖音2,553次归属未知、741作品形式未知；已确认自有为下限，不将差额解释为实际损失。</td></tr><tr><td>候选与产品边界</td><td>官方工具排除基于登记集合；候选清单不等于穷举。主品牌、Work与其他子品牌分别统计。模型产品说法未核，相关变化不构成因果。</td></tr><tr><td>比较范围</td><td>只比较新基线第一轮与第二轮；旧四轮及旧URL保留，不并入可比成绩。专题中“两个日次均”不混称“两轮均”。</td></tr></tbody></table></div></section><section id="report" class="report-section"><div class="section-head"><div><h2>完整报告与专题原句</h2></div><p class="section-note">公开阅读版仅移除本地路径与内部运行治理字段，正文数据、限制与原句保留；长报告按需加载。</p></div><label class="filter">报告范围<select id="reportChoice"><option value="analysis">综合分析及三专项附录</option><option value="official">官网专项</option><option value="social">社媒专项（整体与自有）</option><option value="douyin">抖音专项</option><option value="effective-first">有效首推下降专题</option></select></label><button class="button" id="loadReport" type="button">展开完整报告</button><div id="reportContent"></div></section><section id="downloads" class="report-section"><div class="section-head"><div><h2>数据、原答与报告下载</h2></div><p class="section-note">逐问题12条完整正式记录及全部来源可在原答详情单独下载。</p></div><div class="download-list"><a class="download-item" href="../data/reports/analysis.md" download><span class="download-name">综合分析与三专项附录</span><span class="download-ext" aria-hidden="true">↓</span></a><a class="download-item" href="../data/reports/effective-first.md" download><span class="download-name">有效首推下降专题</span><span class="download-ext" aria-hidden="true">↓</span></a><a class="download-item" href="../data/reports/official.md" download><span class="download-name">官网专项</span><span class="download-ext" aria-hidden="true">↓</span></a><a class="download-item" href="../data/reports/social.md" download><span class="download-name">社媒专项</span><span class="download-ext" aria-hidden="true">↓</span></a><a class="download-item" href="../data/reports/douyin.md" download><span class="download-name">抖音专项</span><span class="download-ext" aria-hidden="true">↓</span></a><a class="download-item" href="../data/metrics.json" download><span class="download-name">两轮分组指标</span><span class="download-ext" aria-hidden="true">↓</span></a><a class="download-item" href="../data/metric-dictionary.json" download><span class="download-name">指标定义与分子分母</span><span class="download-ext" aria-hidden="true">↓</span></a><a class="download-item" href="../data/entity-metrics.csv" download><span class="download-name">逐实体指标</span><span class="download-ext" aria-hidden="true">↓</span></a><a class="download-item" href="../data/comparison-theme-two-round.csv" download><span class="download-name">比较主题两轮对照</span><span class="download-ext" aria-hidden="true">↓</span></a><a class="download-item" href="../data/paired-transitions.csv" download><span class="download-name">逐位置变化</span><span class="download-ext" aria-hidden="true">↓</span></a><a class="download-item" href="../data/paired-evidence.json" download><span class="download-name">配对证据与20个上升项</span><span class="download-ext" aria-hidden="true">↓</span></a><a class="download-item" href="../data/source-url-index.json" download><span class="download-name">来源与全部原答关联</span><span class="download-ext" aria-hidden="true">↓</span></a></div></section></main></div><footer>蝉妈妈 GEO · 新基线第二轮 · 公开只读研究</footer></body></html>

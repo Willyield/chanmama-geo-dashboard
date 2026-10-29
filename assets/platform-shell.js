@@ -47,6 +47,7 @@
           submenuLink("./top01-round3/", "第三轮采样", "最终 576/576") +
           submenuLink("./top01-round4/", "第四轮采样", "576/576 · 网页483＋手机93") +
           submenuLink("./top01-round5/", "新基线第一轮数据", "10月15—16日 · 588位置 / 587实质") +
+          submenuLink("./top01-new-baseline-round2/", "新基线第二轮", "10月28—29日 · 数据、引用、两轮比较与首推专题") +
           submenuLink("./top01-two-week-compare/", "两周趋势对比", "趋势") +
           submenuLink("./top2-top3/", "扩展问题", "TOP2+TOP3") +
           submenuLink("./total/", "全部问题总览", "TOP0-TOP3") +
