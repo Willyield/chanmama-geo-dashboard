@@ -1,19 +1,51 @@
 import {views,scopeLabel,project,pct,pp,csv,exportRows} from './sources-model-20261101.mjs';
-let generation=0;const cache=new Map();
-export const dispose=()=>{generation++;};
+let generation=0,active;const cache=new Map();
+export const dispose=()=>{generation++;active?.abort();active=undefined;};
 const el=(tag,text,attrs={})=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;for(const[k,v]of Object.entries(attrs))n.setAttribute(k,v);return n;};
 const link=(text,href,attrs={})=>el('a',text,{href,...attrs});
 const digest=async bytes=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(x=>x.toString(16).padStart(2,'0')).join('');
-async function get(root,file,manifest){
- const url=new URL('citations/20261101/'+file,root).href;let promise=cache.get(url);if(!promise){promise=(async()=>{const r=await fetch(url,{signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error(file+' HTTP '+r.status);const bytes=await r.arrayBuffer();const entry=manifest?.files.find(e=>e.path===file);if(entry&&(bytes.byteLength!==entry.bytes||await digest(bytes)!==entry.sha256))throw Error(file+' 文件校验不一致');return JSON.parse(new TextDecoder().decode(bytes));})();cache.set(url,promise);promise.catch(()=>cache.delete(url));}return promise;
+// Cache only verified completed values. Aborted/failed requests never share a promise
+// with a newer route, so a late failure cannot remove a newer successful entry.
+async function get(root,file,manifest,session){
+ const url=new URL('citations/20261101/'+file,root).href,entry=manifest?.files.find(e=>e.path===file),key=url+'|'+(entry?.sha256||'manifest');
+ session.signal.throwIfAborted();
+ if(cache.has(key)){session.report(file,entry?.bytes||0,entry?.bytes||0,true);return cache.get(key);}
+ const controller=new AbortController(),abort=()=>controller.abort(session.signal.reason);
+ session.signal.addEventListener('abort',abort,{once:true});
+ // Allow the measured 33s/76s transfers without allowing a hung request forever.
+ // 60s for initial response, 45s without a chunk, 120..360s total by frozen size.
+ const limit=Math.min(360000,Math.max(120000,60000+(entry?.bytes||0)/32768*1000));
+ let idle,total,reader,complete=false,loaded=0;
+ const timeout=message=>controller.abort(new Error(file+' '+message));
+ const armIdle=ms=>{clearTimeout(idle);idle=setTimeout(()=>timeout('连接或传输长时间无进展，请重试'),ms);};
+ total=setTimeout(()=>timeout('已达到本次读取时限，请重试'),limit);armIdle(60000);session.report(file,0,entry?.bytes||0,false);
+ try{
+  const r=await fetch(url,{signal:controller.signal});if(!r.ok)throw Error(file+' HTTP '+r.status);
+  reader=r.body.getReader();const chunks=[];armIdle(45000);
+  while(true){const {done,value}=await reader.read();if(done)break;controller.signal.throwIfAborted();loaded+=value.byteLength;
+   // Enforce the frozen length while streaming, before allocating a combined buffer.
+   if(loaded>(entry?.bytes||1048576))throw Error(file+' 文件长度超出冻结清单');
+   chunks.push(value);armIdle(45000);session.report(file,loaded,entry?.bytes||0,false);
+  }
+  clearTimeout(idle);controller.signal.throwIfAborted();const bytes=new Uint8Array(loaded);let offset=0;for(const chunk of chunks){bytes.set(chunk,offset);offset+=chunk.byteLength;}
+  if(entry&&(bytes.byteLength!==entry.bytes||await digest(bytes)!==entry.sha256))throw Error(file+' 文件校验不一致');
+  const value=JSON.parse(new TextDecoder().decode(bytes));controller.signal.throwIfAborted();session.signal.throwIfAborted();cache.set(key,value);complete=true;session.report(file,loaded,entry?.bytes||loaded,true);return value;
+ }catch(e){throw controller.signal.aborted?controller.signal.reason:e;}
+ finally{clearTimeout(idle);clearTimeout(total);session.signal.removeEventListener('abort',abort);if(reader){if(!complete)await reader.cancel().catch(()=>{});reader.releaseLock();}}
 }
 function parse(route){const p=new URLSearchParams(route);const s=Object.fromEntries(p);s.view=views[s.view]?s.view:'domains';s.round=['1','2','3','all'].includes(s.round)?s.round:'3';s.pair=['1-2','2-3','1-3'].includes(s.pair)?s.pair:'2-3';s.kind=s.kind==='urls'?'urls':'domains';s.sort=(s.view==='changes'?['events','name','delta']:['events','name']).includes(s.sort)?s.sort:'events';s.size=[10,25,50,100].includes(Number(s.size))?Number(s.size):25;s.page=Math.max(1,Math.floor(Number(s.page)||1));return s;}
 const route=s=>'#sources/'+new URLSearchParams(Object.entries(s).filter(([,v])=>v!==''&&v!==undefined)).toString();
 export async function mount(main,root,params=''){
- const own=++generation,live=()=>own===generation,state=parse(params);document.documentElement.dataset.ready='false';main.replaceChildren(el('h1','全引用源'),el('p','正在读取当前轮次的完整引用事件…',{role:'status'}));
+ dispose();const own=generation,controller=new AbortController();active=controller;
+ const live=()=>own===generation,state=parse(params),progress=new Map(),status=el('p','正在读取当前轮次的完整引用事件…',{role:'status','aria-live':'polite'}),cancel=el('button','取消加载',{type:'button'});
+ document.documentElement.dataset.ready='false';main.replaceChildren(el('h1','全引用源'),status,cancel);
+ cancel.onclick=()=>controller.abort(new Error('已取消加载，可重新加载引用数据'));
+ let lastPaint=0;
+ const session={signal:controller.signal,report(file,loaded,size,done){progress.set(file,{loaded,size,done});if(!live()||controller.signal.aborted)return;const now=Date.now();if(!done&&now-lastPaint<250)return;lastPaint=now;const files=[...progress.values()],received=files.reduce((n,f)=>n+f.loaded,0),expected=files.reduce((n,f)=>n+f.size,0);status.textContent=`正在加载并校验完整引用数据：${(received/1048576).toFixed(1)} / ${(expected/1048576).toFixed(1)} MB · 已校验${files.filter(f=>f.done).length}/${files.length}项。网络较慢时请稍候，可取消后重试。`;}};
  let manifest,summary,answers,sources;
- try{manifest=await get(root,'manifest.json');[summary,{answers}]=await Promise.all([get(root,'summary.json',manifest),get(root,'answers-index.json',manifest)]);const rounds=state.view==='changes'?state.pair.split('-'):state.tracePair?state.tracePair.split('-'):state.round==='all'?['1','2','3']:[state.round];sources=[];for(let i=0;i<rounds.length;i+=2)sources.push(...await Promise.all(rounds.slice(i,i+2).map(n=>get(root,'round'+n+'-sources.json',manifest))));}
- catch(e){if(!live())return;main.replaceChildren(el('h1','全引用源'),el('p','引用数据未能加载：'+e.message,{role:'alert'}));const retry=el('button','重新加载引用数据',{type:'button'});retry.onclick=()=>mount(main,root,params);main.append(retry);return;}
+ try{manifest=await get(root,'manifest.json',undefined,session);const rounds=state.view==='changes'?state.pair.split('-'):state.tracePair?state.tracePair.split('-'):state.round==='all'?['1','2','3']:[state.round];
+  [summary,{answers},sources]=await Promise.all([get(root,'summary.json',manifest,session),get(root,'answers-index.json',manifest,session),(async()=>{const selected=[];for(let i=0;i<rounds.length;i+=2)selected.push(...await Promise.all(rounds.slice(i,i+2).map(n=>get(root,'round'+n+'-sources.json',manifest,session))));return selected;})()]);
+ }catch(e){controller.abort(e);if(!live())return;main.replaceChildren(el('h1','全引用源'),el('p','引用数据未能加载：'+e.message,{role:'alert'}));const retry=el('button','重新加载引用数据',{type:'button'});retry.onclick=()=>mount(main,root,params);main.append(retry);return;}
  if(!live())return;document.title=views[state.view]+' | 蝉圈圈全引用源';
  const wrapper=el('div',undefined,{class:'full-sources'});main.replaceChildren(wrapper);
  wrapper.append(el('h1','全引用源仪表盘'),el('p','按引用出现统计，不代表正文事实支持或网址可访问已核。第1轮网页采集，第2、3轮API采集；跨轮差异不归因为优化效果。',{class:'method-note'}));
