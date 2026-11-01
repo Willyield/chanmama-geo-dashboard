@@ -1,0 +1,73 @@
+{
+  "stage": "USER_ACCEPTED_PAUSE_WITH_GAPS",
+  "asOf": "2026-10-30",
+  "identityUnknownEvents": 507,
+  "identityUnknownWorks": 483,
+  "formatUnknownEvents": 501,
+  "formatUnknownWorks": 477,
+  "registered14Bounds": [
+    334,
+    841
+  ],
+  "confirmedOwned": {
+    "works": 92,
+    "citations": 334,
+    "answers": 179,
+    "questions": 41
+  },
+  "formats": {
+    "note": {
+      "works": 214,
+      "citations": 823,
+      "answers": 327,
+      "questions": 71
+    },
+    "video": {
+      "works": 408,
+      "citations": 1520,
+      "answers": 442,
+      "questions": 81
+    },
+    "other": {
+      "works": 0,
+      "citations": 0,
+      "answers": 0,
+      "questions": 0
+    },
+    "unknown": {
+      "works": 477,
+      "citations": 501,
+      "answers": 182,
+      "questions": 61
+    }
+  },
+  "registered14Formats": {
+    "note": {
+      "works": 76,
+      "citations": 289,
+      "answers": 157,
+      "questions": 38
+    },
+    "video": {
+      "works": 16,
+      "citations": 45,
+      "answers": 43,
+      "questions": 13
+    },
+    "other": {
+      "works": 0,
+      "citations": 0,
+      "answers": 0,
+      "questions": 0
+    },
+    "unknown": {
+      "works": 0,
+      "citations": 0,
+      "answers": 0,
+      "questions": 0
+    }
+  },
+  "publicComplete": 452,
+  "publicTargets": 1015,
+  "remainingTargets": 563
+}

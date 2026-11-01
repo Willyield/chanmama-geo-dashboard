@@ -1,0 +1,55 @@
+{
+  "version": "full-api-url-reader-projection-20261101-v1",
+  "scope": "588 unchanged formal positions per round; independent supplements excluded",
+  "url_key": "exact archived normalized_url; no new normalization or canonical merge",
+  "event_rule": "one event per formal answer and exact archived normalized_url",
+  "rank_rule": "competition rank by events descending; equal counts share rank; URL breaks display ties only",
+  "meaning": "Source-card association events, not proof of sentence-level citation adoption",
+  "specialist_scope": "Separate from the three specialist indexes; do not add their counts or equate row counts",
+  "source_hashes": {
+    "R1": "d22bd888670a973548863c32ed4cbfd59c85da5852ece3d593d05290b2e8be05",
+    "R2": "6cad62c310dca3dc8e189b2a559e2bd0b81f4605884456de6bef279aeb2f9f62"
+  },
+  "rounds": {
+    "R1": {
+      "formal_positions": 588,
+      "unique_urls": 2353,
+      "answer_url_events": 7530,
+      "raw_cards": 12815,
+      "empty_url_cards": 4223,
+      "answers_with_url": 587,
+      "question_count": 98
+    },
+    "R2": {
+      "formal_positions": 588,
+      "unique_urls": 2599,
+      "answer_url_events": 8543,
+      "raw_cards": 14126,
+      "empty_url_cards": 4379,
+      "answers_with_url": 588,
+      "question_count": 98
+    }
+  },
+  "comparison": {
+    "union_urls": 4114,
+    "shared": 838,
+    "added": 1761,
+    "removed": 1515,
+    "event_delta": 1013
+  },
+  "validation": {
+    "status": "PASS",
+    "source_files_unchanged": true,
+    "formal_positions_unique": true,
+    "ranking_totals_match_current_reports": true,
+    "public_projection_has_internal_sample_ids": false,
+    "browser_integration_tested": false,
+    "r1_matches_published_api_index": {
+      "url_set": true,
+      "all_event_counts": true,
+      "all_card_counts": true,
+      "all_answer_links": true,
+      "published_index_sha256": "5307c79e6252d8953b4a40d21823059582d0b31f4adac1f8d62aef969141bddb"
+    }
+  }
+}
