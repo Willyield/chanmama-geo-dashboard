@@ -41,8 +41,16 @@
   ];
   async function json(p){
     if(!cache.has(p)){
-      const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),p.endsWith('-sources.json')?30000:20000);
-      cache.set(p,fetch(href(p),{signal:controller.signal}).then(r=>{if(!r.ok)throw Error(`HTTP ${r.status}: ${p}`);return r.json();}).catch(e=>{cache.delete(p);throw e;}).finally(()=>clearTimeout(timer)));
+      const controller=new AbortController(),idleMs=p.endsWith('-sources.json')?30000:20000;
+      let idleTimer;const armIdle=()=>{clearTimeout(idleTimer);idleTimer=setTimeout(()=>controller.abort(),idleMs);};
+      armIdle();const totalTimer=setTimeout(()=>controller.abort(),60000);
+      cache.set(p,fetch(href(p),{signal:controller.signal}).then(async r=>{
+        if(!r.ok)throw Error(`HTTP ${r.status}: ${p}`);
+        if(!r.body?.getReader)return r.json();
+        const reader=r.body.getReader(),decoder=new TextDecoder(),parts=[];armIdle();
+        for(;;){const {done,value}=await reader.read();if(done)break;armIdle();parts.push(decoder.decode(value,{stream:true}));}
+        parts.push(decoder.decode());return JSON.parse(parts.join(''));
+      }).catch(e=>{cache.delete(p);throw e;}).finally(()=>{clearTimeout(idleTimer);clearTimeout(totalTimer);}));
     }
     return cache.get(p);
   }
