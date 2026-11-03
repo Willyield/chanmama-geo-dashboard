@@ -1,0 +1,7 @@
+{
+  "version": "CJ-ANALYSIS-20261015-r3",
+  "source_answers": 1039,
+  "metrics_file": "core-metrics.json",
+  "definition_file": "audit-projection.json",
+  "note": "Current same-version metrics replace earlier literal-name diagnostics."
+}

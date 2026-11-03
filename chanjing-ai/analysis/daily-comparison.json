@@ -1,0 +1,105 @@
+{
+  "version": "CJ-ANALYSIS-20261015-r3",
+  "days": [
+    {
+      "date": "2026-10-14",
+      "answers": 260,
+      "entities": {
+        "蝉镜": {
+          "mentions": 25,
+          "denominator": 260
+        },
+        "剪映": {
+          "mentions": 136,
+          "denominator": 260
+        },
+        "开拍": {
+          "mentions": 15,
+          "denominator": 260
+        },
+        "闪剪": {
+          "mentions": 38,
+          "denominator": 260
+        },
+        "即梦": {
+          "mentions": 49,
+          "denominator": 260
+        },
+        "飞影": {
+          "mentions": 3,
+          "denominator": 260
+        },
+        "筷子科技": {
+          "mentions": 3,
+          "denominator": 260
+        },
+        "腾讯智影": {
+          "mentions": 10,
+          "denominator": 260
+        },
+        "硅基智能": {
+          "mentions": 2,
+          "denominator": 260
+        },
+        "字节系": {
+          "mentions": 142,
+          "denominator": 260
+        },
+        "其余七款": {
+          "mentions": 66,
+          "denominator": 260
+        }
+      }
+    },
+    {
+      "date": "2026-10-15",
+      "answers": 260,
+      "entities": {
+        "蝉镜": {
+          "mentions": 24,
+          "denominator": 260
+        },
+        "剪映": {
+          "mentions": 142,
+          "denominator": 260
+        },
+        "开拍": {
+          "mentions": 18,
+          "denominator": 260
+        },
+        "闪剪": {
+          "mentions": 38,
+          "denominator": 260
+        },
+        "即梦": {
+          "mentions": 48,
+          "denominator": 260
+        },
+        "飞影": {
+          "mentions": 4,
+          "denominator": 260
+        },
+        "筷子科技": {
+          "mentions": 2,
+          "denominator": 260
+        },
+        "腾讯智影": {
+          "mentions": 11,
+          "denominator": 260
+        },
+        "硅基智能": {
+          "mentions": 4,
+          "denominator": 260
+        },
+        "字节系": {
+          "mentions": 147,
+          "denominator": 260
+        },
+        "其余七款": {
+          "mentions": 69,
+          "denominator": 260
+        }
+      }
+    }
+  ]
+}
